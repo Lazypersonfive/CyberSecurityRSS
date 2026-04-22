@@ -36,16 +36,18 @@ boards:
       technologyreview.com: 4
       theverge.com: 4
       techcrunch.com: 3
+      news.google.com: 10
   finance:
     display_name: "金融科技"
     opml: feeds/finance.opml
-    fetch_hours: 48
+    fetch_hours: 336  # 官方 IR 低频（Visa ~1.5 周、MC 月更、Amex 季更），14 天窗口保证 Card Networks 有量
     top_n: 15
     score_threshold: 5
     source_caps:
       pymnts.com: 4
       bankingdive.com: 4
       paymentsdive.com: 4
+      news.google.com: 15
 
 # Site
 site:

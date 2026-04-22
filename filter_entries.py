@@ -114,6 +114,22 @@ MIN_SUMMARY_LEN = 30  # below this, mark as title_only
 CVE_RE = re.compile(r"CVE[-–—]\d{4}[-–—]\d{4,7}", re.IGNORECASE)
 PATCH_TUESDAY_RE = re.compile(r"(微软|Microsoft).*补丁日", re.IGNORECASE)
 
+# Title-normalized dedup: strip punctuation, lowercase ASCII, collapse whitespace.
+# English stopwords dropped so "OpenAI launches GPT-5.4" and "OpenAI Launches GPT5.4 — live now"
+# collapse to the same key.
+TITLE_NORMALIZE_RE = re.compile(r"[^\w\u3400-\u4dbf\u4e00-\u9fff]+", re.UNICODE)
+# Google News RSS appends " - SourceName" to every headline; Yahoo/MSN similar.
+# Strip this suffix before normalizing so cross-publisher duplicates collapse.
+TITLE_SUFFIX_SEP_RE = re.compile(r"\s[-–—|]\s[^-–—|]+$")
+TITLE_STOPWORDS = frozenset((
+    "a", "an", "the", "is", "are", "was", "were", "be", "been", "being",
+    "of", "to", "in", "on", "at", "by", "for", "with", "from", "as",
+    "and", "or", "but", "if", "then", "than", "that", "this", "these", "those",
+    "it", "its", "has", "have", "had", "will", "would", "can", "could",
+    "new", "live", "now", "update", "updated", "report", "reports",
+))
+TITLE_DEDUP_PREFIX_LEN = 50
+
 # For Reddit URLs: require at least one hard security indicator to keep.
 # Forum subs are high-volume but mostly chatter; the few real posts always
 # carry one of these markers.
@@ -184,17 +200,34 @@ def _extract_cves(title: str, summary: str) -> list[str]:
     })
 
 
+def _normalize_title_for_dedup(title: str) -> str:
+    """Lowercase, strip ' - SourceName' suffix, drop stopwords, keep CJK intact."""
+    if not title:
+        return ""
+    # Google News / Yahoo style: "Real Headline - Publisher". Drop the tail.
+    stripped = TITLE_SUFFIX_SEP_RE.sub("", title).strip()
+    tokens = TITLE_NORMALIZE_RE.split(stripped.lower())
+    kept = [t for t in tokens if t and t not in TITLE_STOPWORDS]
+    return "".join(kept)[:TITLE_DEDUP_PREFIX_LEN]
+
+
 def _dedup_key(title: str, cves: list[str]) -> str | None:
     """Return a semantic dedup key, or None if entry has no obvious group.
 
-    - If CVEs present: join sorted CVE IDs.
-    - Else if matches 'Microsoft Patch Tuesday': constant bucket.
-    - Else: None (entry stands alone).
+    Priority:
+      1. CVE IDs — strongest signal (same vuln reported by multiple sources).
+      2. Patch Tuesday — constant bucket.
+      3. Normalized title prefix — catches cross-source duplicates for non-CVE
+         news (especially AI / finance where the same event is reported by
+         multiple outlets on the same day).
     """
     if cves:
-        return "|".join(cves)
+        return "cve:" + "|".join(cves)
     if PATCH_TUESDAY_RE.search(title):
         return "PATCH_TUESDAY"
+    norm = _normalize_title_for_dedup(title)
+    if len(norm) >= 12:  # avoid clustering on tiny fragments
+        return "t:" + norm
     return None
 
 

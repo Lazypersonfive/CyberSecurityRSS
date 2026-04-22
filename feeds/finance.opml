@@ -1,43 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
   <head>
-    <title>Finance &amp; Fintech Feeds</title>
+    <title>Finance &amp; Payments Feeds</title>
     <!--
-      TODO: 国内顶级银行公众号 RSS (需要通过 wechat2rss.xlab.app 订阅后拿到带 hash 的 URL):
-        工行 / 建行 / 招行 / 平安银行 / 中信银行 金融科技号
-      拿到后按下列格式追加到 <outline text="Chinese Banks"> 板块:
-        <outline type="rss" text="XXX" xmlUrl="https://wechat2rss.xlab.app/feed/<HASH>.xml"/>
+      Focus: top global payment networks + major digital wallets.
+      Strategy:
+        - Use official investor/newsroom RSS where it exists (Visa, Mastercard).
+        - For networks without public RSS (PayPal, Amex, JCB, Alipay, Tenpay),
+          use Google News RSS search as a unified fallback.
+        - Keep Payments Dive + PYMNTS as third-party editorial lens.
+      TODO (pending user): add wechat2rss hashes for 蚂蚁集团 / 支付宝 / 腾讯金融科技 / 财付通 official accounts.
     -->
   </head>
   <body>
-    <outline text="Payments" title="Payments">
-      <outline type="rss" text="Visa Newsroom" title="Visa Newsroom" xmlUrl="https://investor.visa.com/rss/news-releases.xml" htmlUrl="https://investor.visa.com/news-releases/"/>
-      <outline type="rss" text="Mastercard Newsroom" title="Mastercard Newsroom" xmlUrl="https://investor.mastercard.com/rss/news-releases.xml" htmlUrl="https://investor.mastercard.com/news-and-events/news-releases/"/>
-      <outline type="rss" text="Stripe Blog" title="Stripe Blog" xmlUrl="https://stripe.com/blog/feed.rss" htmlUrl="https://stripe.com/blog"/>
-      <outline type="rss" text="Adyen Newsroom" title="Adyen Newsroom" xmlUrl="https://www.adyen.com/knowledge-hub/rss.xml" htmlUrl="https://www.adyen.com/knowledge-hub"/>
+    <outline text="Card Networks" title="Card Networks">
+      <outline type="rss" text="Visa Investor Press" title="Visa Investor Press" xmlUrl="https://investor.visa.com/rss/PressRelease.aspx?CompanyID=VISA" htmlUrl="https://investor.visa.com/news/"/>
+      <outline type="rss" text="Mastercard Investor Press" title="Mastercard Investor Press" xmlUrl="https://investor.mastercard.com/rss/PressRelease.aspx?CompanyID=MASTERCARD" htmlUrl="https://investor.mastercard.com/news-and-events/news-releases/"/>
+      <outline type="rss" text="American Express Investor Press" title="American Express Investor Press" xmlUrl="https://ir.americanexpress.com/rss/PressRelease.aspx?CompanyID=AXP" htmlUrl="https://ir.americanexpress.com/"/>
+      <outline type="rss" text="JCB (Google News)" title="JCB (Google News)" xmlUrl="https://news.google.com/rss/search?q=%22JCB%22+(payments+OR+card+OR+network)&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" htmlUrl="https://www.global.jcb/en/press/"/>
+    </outline>
+    <outline text="Digital Wallets" title="Digital Wallets">
+      <outline type="rss" text="PayPal Investor Press" title="PayPal Investor Press" xmlUrl="https://investor.pypl.com/rss/PressRelease.aspx?CompanyID=PYPL" htmlUrl="https://investor.pypl.com/"/>
+      <outline type="rss" text="Alipay / Ant Group (Google News)" title="Alipay / Ant Group (Google News)" xmlUrl="https://news.google.com/rss/search?q=(%22Alipay%22+OR+%22Ant+Group%22)+(payments+OR+fintech)&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" htmlUrl="https://www.alipay.com/"/>
+      <outline type="rss" text="WeChat Pay / Tenpay (Google News)" title="WeChat Pay / Tenpay (Google News)" xmlUrl="https://news.google.com/rss/search?q=(%22WeChat+Pay%22+OR+%22Tenpay%22+OR+%22Tencent+Financial%22)&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" htmlUrl="https://pay.weixin.qq.com/"/>
+    </outline>
+    <outline text="Editorial Lens" title="Editorial Lens">
       <outline type="rss" text="Payments Dive" title="Payments Dive" xmlUrl="https://www.paymentsdive.com/feeds/news/" htmlUrl="https://www.paymentsdive.com/"/>
       <outline type="rss" text="PYMNTS" title="PYMNTS" xmlUrl="https://www.pymnts.com/feed/" htmlUrl="https://www.pymnts.com/"/>
     </outline>
-    <outline text="Banks / BigTech" title="Banks / BigTech">
-      <outline type="rss" text="JPMorgan Insights" title="JPMorgan Insights" xmlUrl="https://www.jpmorgan.com/insights/feed" htmlUrl="https://www.jpmorgan.com/insights"/>
-      <outline type="rss" text="Goldman Sachs Insights" title="Goldman Sachs Insights" xmlUrl="https://www.goldmansachs.com/insights/rss.xml" htmlUrl="https://www.goldmansachs.com/insights/"/>
-      <outline type="rss" text="a16z Fintech" title="a16z Fintech" xmlUrl="https://a16z.com/fintech/feed/" htmlUrl="https://a16z.com/fintech/"/>
-    </outline>
-    <outline text="Media (EN)" title="Media (EN)">
-      <outline type="rss" text="Finextra" title="Finextra" xmlUrl="https://www.finextra.com/rss/headlines.aspx" htmlUrl="https://www.finextra.com/"/>
-      <outline type="rss" text="American Banker" title="American Banker" xmlUrl="https://www.americanbanker.com/feed" htmlUrl="https://www.americanbanker.com/"/>
-      <outline type="rss" text="The Banker" title="The Banker" xmlUrl="https://www.thebanker.com/rss" htmlUrl="https://www.thebanker.com/"/>
-      <outline type="rss" text="Banking Dive" title="Banking Dive" xmlUrl="https://www.bankingdive.com/feeds/news/" htmlUrl="https://www.bankingdive.com/"/>
-      <outline type="rss" text="TechCrunch Fintech" title="TechCrunch Fintech" xmlUrl="https://techcrunch.com/category/fintech/feed/" htmlUrl="https://techcrunch.com/category/fintech/"/>
-      <outline type="rss" text="Reuters Tech" title="Reuters Tech" xmlUrl="https://www.reutersagency.com/feed/?best-topics=tech&amp;post_type=best" htmlUrl="https://www.reuters.com/technology/"/>
-    </outline>
-    <outline text="Media (CN)" title="Media (CN)">
-      <outline type="rss" text="36Kr 金融" title="36Kr 金融" xmlUrl="https://36kr.com/feed-article-channel/finance" htmlUrl="https://36kr.com/information/web_finance/"/>
-      <outline type="rss" text="财新网 金融" title="财新网 金融" xmlUrl="https://rsshub.app/caixin/finance" htmlUrl="https://www.caixin.com/"/>
-      <outline type="rss" text="中国金融杂志" title="中国金融杂志" xmlUrl="https://wechat2rss.xlab.app/feed/ac6b2b39f30b5bbf90b0077bac14e2d5f16e04dd.xml" htmlUrl="https://www.cnfinance.cn/"/>
-    </outline>
-    <outline text="Chinese Banks" title="Chinese Banks">
-      <!-- 待补充：工行/建行/招行/平安/中信 的公众号 wechat2rss 订阅链接 -->
+    <outline text="Chinese Wallets (TODO)" title="Chinese Wallets (TODO)">
+      <!-- 待补：wechat2rss hash for 蚂蚁集团 / 支付宝 / 腾讯金融科技 / 财付通 -->
     </outline>
   </body>
 </opml>
