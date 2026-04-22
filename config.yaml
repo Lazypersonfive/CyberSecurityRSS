@@ -1,0 +1,39 @@
+# CyberSecurityRSS — Multi-board Configuration
+
+# Discord webhook (legacy, unused by digest_pipeline / site workflow)
+discord_webhook_url: "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"
+
+# Legacy single-board defaults (kept for backward compat with main.py)
+fetch_hours: 24
+fetch_timeout: 10
+max_per_category: 30
+use_opml_cache: true
+
+# --- Multi-board config -------------------------------------------------
+# Each board maps to a local OPML file + fetch window + curated top_n.
+# display_name is what shows up in the site tabs.
+boards:
+  security:
+    display_name: "安全"
+    opml: feeds/security.opml
+    fetch_hours: 24
+    top_n: 20
+    score_threshold: 6
+  ai:
+    display_name: "AI 前沿"
+    opml: feeds/ai.opml
+    fetch_hours: 24
+    top_n: 20
+    score_threshold: 6
+  finance:
+    display_name: "金融科技"
+    opml: feeds/finance.opml
+    fetch_hours: 48
+    top_n: 15
+    score_threshold: 5
+
+# Site
+site:
+  title: "每日科技情报"
+  subtitle: "安全 · AI · 金融科技 — LLM 精选日报"
+  lookback_days: 7

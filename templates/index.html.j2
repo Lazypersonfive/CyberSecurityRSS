@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['-apple-system', 'PingFang SC', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .card:hover { transform: translateY(-1px); }
+    .tab-btn.active { background-color: rgb(15 23 42); color: white; }
+    .dark .tab-btn.active { background-color: rgb(226 232 240); color: rgb(15 23 42); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans">
+
+<header class="border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-5xl mx-auto px-4 py-6 flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl font-bold tracking-tight">{{ title }}</h1>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">{{ subtitle }}</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <select id="date-select" class="text-sm bg-transparent border border-slate-300 dark:border-slate-700 rounded px-2 py-1"></select>
+      <button id="theme-toggle" aria-label="toggle theme" class="text-lg px-2 py-1 border border-slate-300 dark:border-slate-700 rounded">🌓</button>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-4 py-6">
+  <nav class="flex gap-2 mb-6 flex-wrap" id="tabs"></nav>
+  <section id="feed-body" class="space-y-4"></section>
+  <p id="meta" class="mt-8 text-xs text-slate-400"></p>
+</main>
+
+<footer class="max-w-5xl mx-auto px-4 py-8 text-xs text-slate-400 border-t border-slate-200 dark:border-slate-800">
+  自动生成 · <a href="https://github.com/anthropics/claude-code" class="underline" target="_blank" rel="noopener">Powered by Claude</a> · 数据来自各源 RSS，版权归原作者所有。
+</footer>
+
+<script>
+const BOARDS = {{ boards_json | safe }};
+const BOARD_ORDER = {{ board_order_json | safe }};
+const DATES = {{ dates_json | safe }};
+
+let currentBoard = BOARD_ORDER[0];
+let currentDate = DATES[0];
+let feed = null;
+
+function fmtDate(iso) {
+  return iso.replace(/-/g, '/');
+}
+
+function fmtTime(iso) {
+  if (!iso) return '';
+  try {
+    const d = new Date(iso);
+    return d.toLocaleString('zh-CN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+  } catch (e) { return ''; }
+}
+
+function renderTabs() {
+  const tabs = document.getElementById('tabs');
+  tabs.innerHTML = '';
+  BOARD_ORDER.forEach(b => {
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition';
+    const count = feed?.boards?.[b]?.items?.length || 0;
+    btn.innerHTML = `${BOARDS[b].display_name} <span class="ml-1 text-xs opacity-60">${count}</span>`;
+    if (b === currentBoard) btn.classList.add('active');
+    btn.addEventListener('click', () => { currentBoard = b; renderAll(); });
+    tabs.appendChild(btn);
+  });
+}
+
+function renderBody() {
+  const body = document.getElementById('feed-body');
+  const block = feed?.boards?.[currentBoard];
+  if (!block || !block.items?.length) {
+    body.innerHTML = `<p class="text-center text-slate-500 py-12">该日期 ${fmtDate(currentDate)} 的 ${BOARDS[currentBoard].display_name} 板块暂无内容。</p>`;
+    return;
+  }
+  body.innerHTML = '';
+  block.items.forEach(it => {
+    const card = document.createElement('article');
+    card.className = 'card bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 transition shadow-sm hover:shadow';
+    const tags = (it.tags || []).map(t => `<span class="text-xs px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${t}</span>`).join(' ');
+    const cves = (it.cve_ids || []).map(c => `<span class="text-xs px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 font-mono">${c}</span>`).join(' ');
+    card.innerHTML = `
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="${it.url}" target="_blank" rel="noopener" class="hover:underline">${it.title_zh || it.title_orig}</a>
+      </h2>
+      ${it.title_zh && it.title_orig && it.title_zh !== it.title_orig ? `<p class="text-xs text-slate-400 mt-0.5">${it.title_orig}</p>` : ''}
+      <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 mt-2">
+        <span class="font-medium">${it.source || ''}</span>
+        <span>${fmtTime(it.published)}</span>
+        ${tags}
+        ${cves}
+      </div>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">${it.summary || ''}</p>
+    `;
+    body.appendChild(card);
+  });
+  const meta = document.getElementById('meta');
+  meta.textContent = `共 ${block.items.length} 条 · 原始抓取 ${block.raw_count || 0} 条 · 生成于 ${fmtTime(block.generated_at || '')}`;
+}
+
+function renderDateSelect() {
+  const sel = document.getElementById('date-select');
+  sel.innerHTML = '';
+  DATES.forEach(d => {
+    const opt = document.createElement('option');
+    opt.value = d;
+    opt.textContent = fmtDate(d);
+    if (d === currentDate) opt.selected = true;
+    sel.appendChild(opt);
+  });
+  sel.addEventListener('change', e => { currentDate = e.target.value; loadFeed(); });
+}
+
+async function loadFeed() {
+  const res = await fetch(`feed_${currentDate}.json`, { cache: 'no-cache' });
+  feed = await res.json();
+  // If currentBoard has no content on this date, switch to first board that does.
+  const hasContent = (b) => (feed?.boards?.[b]?.items?.length || 0) > 0;
+  if (!hasContent(currentBoard)) {
+    const firstWithContent = BOARD_ORDER.find(hasContent);
+    if (firstWithContent) currentBoard = firstWithContent;
+  }
+  renderAll();
+}
+
+function renderAll() {
+  renderTabs();
+  renderBody();
+}
+
+// theme
+const themeBtn = document.getElementById('theme-toggle');
+const storedTheme = localStorage.getItem('theme');
+if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+}
+themeBtn.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark');
+  localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+});
+
+renderDateSelect();
+loadFeed();
+</script>
+</body>
+</html>

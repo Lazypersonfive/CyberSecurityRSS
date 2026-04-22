@@ -1,0 +1,275 @@
+"""LLM pipeline: score raw entries with Haiku, then summarize top N with Sonnet.
+
+Reads output/<board>_latest.json and writes digest/<board>_YYYY-MM-DD.json.
+
+Usage:
+    python digest_pipeline.py --board security
+    python digest_pipeline.py --board ai
+    python digest_pipeline.py --board finance
+
+Environment:
+    ANTHROPIC_API_KEY (required)
+"""
+
+import argparse
+import json
+import logging
+import os
+import sys
+from datetime import date, datetime
+from pathlib import Path
+from typing import Any
+
+import anthropic
+import yaml
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s",
+    datefmt="%H:%M:%S",
+)
+logger = logging.getLogger(__name__)
+
+PROJECT_DIR = Path(__file__).parent
+CONFIG_PATH = PROJECT_DIR / "config.yaml"
+OUTPUT_DIR = PROJECT_DIR / "output"
+DIGEST_DIR = PROJECT_DIR / "digest"
+
+SCORE_MODEL = "claude-haiku-4-5-20251001"
+SUMMARIZE_MODEL = "claude-sonnet-4-5-20250929"
+
+# Fall-back summarize model if the primary id isn't enabled on the API key.
+SUMMARIZE_MODEL_FALLBACK = "claude-haiku-4-5-20251001"
+
+SCORE_BATCH_SIZE = 40
+SUMMARIZE_BATCH_SIZE = 8
+
+# Per-board scoring rubric
+BOARD_SCORE_SYSTEM = {
+    "security": """你是资深网安分析师，对安全资讯做 0-10 打分。
+评分标准：
+- 9-10: 在野利用 0day、重大 APT 活动、大规模供应链攻击
+- 7-8: 新型攻击技术、高危 CVE 详解、红蓝工具发布、关键威胁情报
+- 5-6: 安全研究、技术博客、可观察性分析
+- 0-4: 招聘、营销软文、职业规划、入门求助帖
+只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
+    "ai": """你是 AI 产业观察者，对 AI 资讯做 0-10 打分。
+评分标准：
+- 9-10: 主流实验室（Anthropic/OpenAI/Google/Meta/DeepSeek 等）重大模型发布、里程碑论文、Agentic 能力突破、产业格局级新闻
+- 7-8: 有实质技术增益的开源模型、能力评测、应用层关键动态、监管与安全政策
+- 5-6: 技术博客、一般产品更新、行业分析
+- 0-4: 纯营销 PR、个人观点水文、融资新闻（无技术细节）、招聘/培训广告
+只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
+    "finance": """你是金融科技观察者，关注金融机构（尤其是头部银行、支付网络、卡组织）
+的真实科技动作。对资讯做 0-10 打分。
+评分标准：
+- 9-10: 大行核心系统升级、支付网络战略动作（Visa/Mastercard/Stripe/中国顶级银行）、监管拐点、CBDC / 稳定币关键进展
+- 7-8: 具体技术合作、区域性支付新基建、金融 AI / 风控落地案例、关键数据披露
+- 5-6: 产品发布、一般性行业动态、高质量行业分析
+- 0-4: 融资 PR、营销软文、泛观点文章
+只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
+}
+
+SUMMARIZE_SYSTEM = """你是一位科技资讯编辑。你的任务是把给定的新闻原文加工成中文摘要卡片。
+严格规则：
+1. 所有输出字段使用简体中文（即便原文是英文）。
+2. 摘要只使用原文提供的信息，不得补充外部知识、不得猜测、不得夸大。
+3. 中文标题不超过 28 字，去除所有客套词和营销语。
+4. 摘要 120-180 字，两句：第一句「发生了什么」，第二句「为什么值得关注 / 对谁有影响」。
+5. tags 给 1-3 个中文关键词，每个不超过 6 字。
+6. 严格按 JSON 数组返回，不要解释、不要 Markdown 包裹。
+输出格式：[{"idx":0,"title_zh":"...","summary":"...","tags":["..."]}]"""
+
+
+def _load_config() -> dict[str, Any]:
+    return yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
+
+
+def _load_input(board: str) -> dict[str, Any]:
+    path = OUTPUT_DIR / f"{board}_latest.json"
+    if not path.exists():
+        raise SystemExit(f"{path} missing — run fetch_and_save.py --board {board} first")
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _parse_llm_json(raw: str) -> Any:
+    raw = raw.strip()
+    if raw.startswith("```"):
+        raw = raw.split("```", 2)[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+        raw = raw.strip("` \n")
+    return json.loads(raw)
+
+
+def _score_entries(
+    client: anthropic.Anthropic, board: str, entries: list[dict[str, Any]]
+) -> list[int]:
+    system = BOARD_SCORE_SYSTEM[board]
+    scores: list[int] = [0] * len(entries)
+    for i in range(0, len(entries), SCORE_BATCH_SIZE):
+        batch = entries[i : i + SCORE_BATCH_SIZE]
+        items = [
+            {
+                "idx": j,
+                "title": e.get("title", ""),
+                "summary": (e.get("summary") or "")[:240],
+                "category": e.get("category", ""),
+            }
+            for j, e in enumerate(batch)
+        ]
+        user_prompt = (
+            "对以下条目逐一打分。\n"
+            f"条目：\n{json.dumps(items, ensure_ascii=False)}"
+        )
+        resp = client.messages.create(
+            model=SCORE_MODEL,
+            max_tokens=1500,
+            system=[{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}],
+            messages=[{"role": "user", "content": user_prompt}],
+        )
+        try:
+            parsed = _parse_llm_json(resp.content[0].text)
+            smap = {int(r["idx"]): int(r["score"]) for r in parsed}
+        except Exception as exc:
+            logger.warning("score parse failed (batch %d): %s", i, exc)
+            smap = {}
+        for j in range(len(batch)):
+            scores[i + j] = smap.get(j, 5)
+    return scores
+
+
+def _summarize(
+    client: anthropic.Anthropic, entries: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    results: list[dict[str, Any]] = []
+    for i in range(0, len(entries), SUMMARIZE_BATCH_SIZE):
+        batch = entries[i : i + SUMMARIZE_BATCH_SIZE]
+        payload = [
+            {
+                "idx": j,
+                "title": e.get("title", ""),
+                "summary": (e.get("summary") or "")[:1200],
+                "url": e.get("url", ""),
+                "source_category": e.get("category", ""),
+            }
+            for j, e in enumerate(batch)
+        ]
+        user_prompt = (
+            "以下是需要加工的原始新闻。按系统指令返回 JSON 数组。\n\n"
+            f"输入：\n{json.dumps(payload, ensure_ascii=False)}"
+        )
+        model_id = SUMMARIZE_MODEL
+        try:
+            resp = client.messages.create(
+                model=model_id,
+                max_tokens=3500,
+                system=[
+                    {"type": "text", "text": SUMMARIZE_SYSTEM, "cache_control": {"type": "ephemeral"}}
+                ],
+                messages=[{"role": "user", "content": user_prompt}],
+            )
+        except anthropic.NotFoundError:
+            logger.warning("model %s unavailable, falling back to %s", model_id, SUMMARIZE_MODEL_FALLBACK)
+            model_id = SUMMARIZE_MODEL_FALLBACK
+            resp = client.messages.create(
+                model=model_id,
+                max_tokens=3500,
+                system=[
+                    {"type": "text", "text": SUMMARIZE_SYSTEM, "cache_control": {"type": "ephemeral"}}
+                ],
+                messages=[{"role": "user", "content": user_prompt}],
+            )
+
+        try:
+            parsed = _parse_llm_json(resp.content[0].text)
+            smap = {int(r["idx"]): r for r in parsed}
+        except Exception as exc:
+            logger.warning("summarize parse failed (batch %d): %s", i, exc)
+            smap = {}
+
+        for j, e in enumerate(batch):
+            s = smap.get(j, {})
+            results.append(
+                {
+                    "title_zh": (s.get("title_zh") or e.get("title", "")).strip()[:40],
+                    "title_orig": e.get("title", ""),
+                    "summary": (s.get("summary") or "").strip(),
+                    "tags": s.get("tags") or [],
+                    "url": e.get("url", ""),
+                    "source": _infer_source(e.get("url", "")),
+                    "category": e.get("category", ""),
+                    "published": e.get("published", ""),
+                    "cve_ids": e.get("cve_ids", []),
+                }
+            )
+    return results
+
+
+def _infer_source(url: str) -> str:
+    try:
+        from urllib.parse import urlparse
+
+        host = urlparse(url).netloc
+        return host.removeprefix("www.")
+    except Exception:
+        return ""
+
+
+def run(board: str, as_of: date | None = None) -> Path:
+    cfg = _load_config()
+    bcfg = (cfg.get("boards") or {}).get(board)
+    if not bcfg:
+        raise SystemExit(f"Board '{board}' not found in config.yaml")
+
+    threshold = int(bcfg.get("score_threshold", 6))
+    top_n = int(bcfg.get("top_n", 20))
+
+    data = _load_input(board)
+    entries = data.get("entries", [])
+    if not entries:
+        logger.warning("[%s] no entries to digest", board)
+
+    if "ANTHROPIC_API_KEY" not in os.environ:
+        raise SystemExit("ANTHROPIC_API_KEY env var is required")
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+    scored: list[tuple[dict[str, Any], int]] = []
+    if entries:
+        scores = _score_entries(client, board, entries)
+        scored = sorted(zip(entries, scores), key=lambda x: -x[1])
+
+    selected = [e for e, sc in scored if sc >= threshold][:top_n]
+    logger.info("[%s] scored=%d selected=%d (threshold=%d, top_n=%d)", board, len(scored), len(selected), threshold, top_n)
+
+    items = _summarize(client, selected) if selected else []
+
+    DIGEST_DIR.mkdir(parents=True, exist_ok=True)
+    as_of = as_of or date.today()
+    out_path = DIGEST_DIR / f"{board}_{as_of.isoformat()}.json"
+    payload = {
+        "board": board,
+        "display_name": bcfg.get("display_name", board),
+        "date": as_of.isoformat(),
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "raw_count": data.get("entry_count", 0),
+        "selected_count": len(items),
+        "items": items,
+    }
+    out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
+    logger.info("[%s] wrote %s", board, out_path)
+    return out_path
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--board", required=True, choices=["security", "ai", "finance"])
+    parser.add_argument("--date", default=None, help="YYYY-MM-DD (default today)")
+    args = parser.parse_args()
+
+    as_of = date.fromisoformat(args.date) if args.date else None
+    run(args.board, as_of=as_of)
+
+
+if __name__ == "__main__":
+    main()
