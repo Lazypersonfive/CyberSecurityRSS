@@ -86,9 +86,11 @@ function renderTabs() {
 
 function renderBody() {
   const body = document.getElementById('feed-body');
+  const meta = document.getElementById('meta');
   const block = feed?.boards?.[currentBoard];
   if (!block || !block.items?.length) {
     body.innerHTML = `<p class="text-center text-slate-500 py-12">该日期 ${fmtDate(currentDate)} 的 ${BOARDS[currentBoard].display_name} 板块暂无内容。</p>`;
+    meta.textContent = '';
     return;
   }
   body.innerHTML = '';
@@ -112,7 +114,6 @@ function renderBody() {
     `;
     body.appendChild(card);
   });
-  const meta = document.getElementById('meta');
   meta.textContent = `共 ${block.items.length} 条 · 原始抓取 ${block.raw_count || 0} 条 · 生成于 ${fmtTime(block.generated_at || '')}`;
 }
 

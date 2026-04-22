@@ -303,9 +303,7 @@ def filter_and_dedup(entries: Iterable[FeedEntry]) -> tuple[list[FilteredEntry],
             stats["dedup_merged"] += len(related)
 
     kept = [staged[i] for i in sorted(kept_indices)]
-    kept.sort(key=lambda fe: (-fe.quality_score, fe.published), reverse=False)
-    # Final sort: highest score first, then newest first among ties.
-    kept.sort(key=lambda fe: (-fe.quality_score, fe.published[::-1]))
+    kept.sort(key=lambda fe: (fe.quality_score, fe.published), reverse=True)
 
     stats["output"] = len(kept)
     return kept, dict(stats)

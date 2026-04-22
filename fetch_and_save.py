@@ -25,6 +25,7 @@ import yaml
 from fetch_feeds import fetch_all_entries, load_seen_urls
 from fetch_opml import fetch_opml
 from filter_entries import filter_and_dedup
+from rss_curation import curate_entries
 
 logging.basicConfig(
     level=logging.INFO,
@@ -92,9 +93,14 @@ def main() -> None:
     logger.info("[%s] Got %d raw entries (%d feeds errored)", board_label, len(entries), len(health))
 
     filtered, filter_stats = filter_and_dedup(entries)
+    curation_stats: dict[str, int] = {}
+    if args.board:
+        filtered, curation_stats = curate_entries(filtered, bcfg)
     logger.info(
         "[%s] Filter: %d -> %d", board_label, filter_stats.get("input", 0), filter_stats.get("output", 0)
     )
+    if curation_stats:
+        logger.info("[%s] Curation applied: %s", board_label, curation_stats)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     data = {
@@ -105,6 +111,7 @@ def main() -> None:
         "raw_entry_count": len(entries),
         "entry_count": len(filtered),
         "filter_stats": filter_stats,
+        "curation_stats": curation_stats,
         "entries": [
             {
                 "title": fe.title,

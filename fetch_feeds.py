@@ -75,7 +75,7 @@ async def fetch_all_entries(
 
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
-    category_counts: dict[str, int] = {}
+    category_entries: dict[str, list[FeedEntry]] = {}
     for (category, url), result in zip(meta, results):
         if isinstance(result, Exception):
             logger.debug("Feed error %s: %s", url, result)
@@ -88,11 +88,15 @@ async def fetch_all_entries(
             if entry.published.timestamp() < cutoff:
                 continue
             entry.category = category
-            count = category_counts.get(category, 0)
-            if count >= max_per_category:
-                continue
-            entries.append(entry)
-            category_counts[category] = count + 1
+            category_entries.setdefault(category, []).append(entry)
+
+    for category in feeds:
+        ranked = sorted(
+            category_entries.get(category, []),
+            key=lambda entry: entry.published,
+            reverse=True,
+        )
+        entries.extend(ranked[:max_per_category])
 
     entries.sort(key=lambda e: e.published, reverse=True)
     return entries, health

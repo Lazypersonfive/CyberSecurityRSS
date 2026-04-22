@@ -68,7 +68,7 @@ def build(lookback_days: int = 7) -> None:
     cfg = yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
     boards = cfg.get("boards") or {}
     site = cfg.get("site") or {}
-    lookback = int(site.get("lookback_days", lookback_days))
+    lookback = int(lookback_days if lookback_days is not None else site.get("lookback_days", 7))
 
     today = date.today()
     dates_with_content: list[str] = []
@@ -131,7 +131,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--lookback", type=int, default=None)
     args = parser.parse_args()
-    build(lookback_days=args.lookback or 7)
+    build(lookback_days=args.lookback)
 
 
 if __name__ == "__main__":
