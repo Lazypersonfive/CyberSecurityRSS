@@ -85,7 +85,7 @@ def main() -> None:
         fetch_all_entries(
             feeds,
             hours=hours,
-            timeout=10,
+            timeout=25,
             seen_urls=seen_urls,
         )
     )

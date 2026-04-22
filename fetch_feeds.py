@@ -58,12 +58,19 @@ async def fetch_all_entries(
     entries: list[FeedEntry] = []
     health: dict[str, int] = {}
 
-    async with httpx.AsyncClient(timeout=timeout, follow_redirects=True) as client:
+    limits = httpx.Limits(max_connections=80, max_keepalive_connections=30)
+    semaphore = asyncio.Semaphore(40)
+    async with httpx.AsyncClient(
+        timeout=timeout,
+        follow_redirects=True,
+        limits=limits,
+        headers={"User-Agent": "Mozilla/5.0 (daily-digest-bot)"},
+    ) as client:
         tasks = []
         meta = []  # (category, url) pairs matching tasks
         for category, urls in feeds.items():
             for url in urls:
-                tasks.append(_fetch_one(client, url))
+                tasks.append(_fetch_one_bounded(semaphore, client, url))
                 meta.append((category, url))
 
         results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -89,6 +96,13 @@ async def fetch_all_entries(
 
     entries.sort(key=lambda e: e.published, reverse=True)
     return entries, health
+
+
+async def _fetch_one_bounded(
+    semaphore: asyncio.Semaphore, client: httpx.AsyncClient, url: str
+) -> list[FeedEntry]:
+    async with semaphore:
+        return await _fetch_one(client, url)
 
 
 async def _fetch_one(client: httpx.AsyncClient, url: str) -> list[FeedEntry]:
