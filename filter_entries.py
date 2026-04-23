@@ -75,6 +75,8 @@ TITLE_BLACKLIST_SUBSTR = (
     "[ Removed by Reddit ]",
     "[removed]",
     "[deleted]",
+    # Claude / Anthropic help-center docs (surface via site:claude.com query)
+    "Claude Help Center",
 )
 
 # --- Title regex blacklist (for patterns that need more flexibility) ----
