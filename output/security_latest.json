@@ -3,17 +3,17 @@
   "fetched_at": "2026-04-23",
   "hours": 24,
   "total_feeds": 525,
-  "raw_entry_count": 109,
-  "entry_count": 80,
+  "raw_entry_count": 108,
+  "entry_count": 65,
   "filter_stats": {
-    "input": 109,
+    "input": 108,
     "dropped_reddit_chatter": 6,
     "dropped_title_blacklist": 2,
-    "dedup_merged": 14,
-    "output": 87
+    "dedup_merged": 29,
+    "output": 71
   },
   "curation_stats": {
-    "dropped_source_cap": 7
+    "dropped_source_cap": 6
   },
   "entries": [
     {
@@ -52,7 +52,9 @@
       "cve_ids": [
         "CVE-2026-40372"
       ],
-      "related_urls": [],
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-security-updates-for-critical-aspnet-flaw/"
+      ],
       "quality_score": 3
     },
     {
@@ -124,6 +126,17 @@
       "quality_score": 2
     },
     {
+      "title": "Attacking the MCP Trust Boundary",
+      "url": "https://lab.wallarm.com/attacking-the-mcp-trust-boundary/",
+      "summary": "Every secure API draws a line between code and data. HTTP separates headers from bodies. SQL has prepared statements. Even email distinguishes the envelope from the message. The Model Context Protocol (MCP), the fast-growing standard for connecting AI agents to external services, inherits that gap from the models it sits on top of. Its central [...] The post Attacking the MCP Trust Boundary appear",
+      "category": "WebSecurity",
+      "published": "2026-04-22T12:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2
+    },
+    {
       "title": "My terminal AI found 4 real bugs",
       "url": "https://www.reddit.com/r/Pentesting/comments/1ssgg5s/my_terminal_ai_found_4_real_bugs/",
       "summary": "In this video I ran OWASP crAPI locally and used an agent to execute the task shown on screen. It created 2 low-privilege accounts, went through the real app flows, and confirmed 4 issues: BOLA on vehicle location BOLA on service requests/reports workflow tampering / SSRF primitive password reset not revoking existing JWTs &#32; submitted by &#32; /u/RachidSahde [link] &#32; [comments]",
@@ -165,110 +178,34 @@
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [
+        "https://vulners.com/astralinux/ASTRA:1099702737698881784654020657632835?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:1140108485237914197089171009787459?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:1059216846859378621698261777733187?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:1139872967159607036767698273261123?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:1139951572725324127513672805602883?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:1099307528982284053229666321126979?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:977851691547056616571193453270595?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:1038459990686319220612755842487875?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:1058822247408337770673419189573187?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:1079500805087560269323660423419459?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:1058743332357610786524781894522435?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:998213016196712832603314316465731?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:1140031425893042543763998458074691?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:1059060243803464390743396540831299?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-        "https://vulners.com/astralinux/ASTRA:1140031736586978184723696357561923?utm_source=rss&utm_medium=rss&utm_campaign=rss"
-      ],
-      "quality_score": 1
-    },
-    {
-      "title": "Astra Linux - уязвимость в linux, linux-5.15, linux-5.10",
-      "url": "https://vulners.com/astralinux/ASTRA:1038459990686319220612755842487875?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: Input: raspberrypi-ts - fix refcount leak in rpitsprobe rpifirmwareget take reference, we need to release it in error paths as well. Use devmrpifirmwareget helper to handling the resources. Also remove the existing rpifirmwareput...",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Astra Linux - уязвимость в linux-5.10, linux-6.1",
-      "url": "https://vulners.com/astralinux/ASTRA:1058743332357610786524781894522435?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: netfilter: nftflowoffload: release dst in case direct xmit path is used Direct xmit does not use it since it calls devqueuexmit to send packets, hence it calls dstrelease. kmemleak reports: unreferenced object 0xffff88814f440900 size 184: comm \"softirq\", pid 0, jiffies 4294951896 hex dump first 32 bytes: 00 60 5b 04 81 88 ff ff 00",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Astra Linux - уязвимость в linux-5.15",
-      "url": "https://vulners.com/astralinux/ASTRA:1058902100594945364624847271188035?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: s390/qeth: fix use-after-free in hsci KASAN found that addr was dereferenced after br2deveventwork was freed. ================================================================== BUG: KASAN: use-after-free in qethl2br2devworker+0x5ba/0x6b0 Read of size 1 at addr 00000000fdcea440 by task kworker/u760:4/540 CPU: 17 PID: 540 Comm: kwor",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Astra Linux - уязвимость в linux-5.10, linux-5.15",
-      "url": "https://vulners.com/astralinux/ASTRA:1160314148613203716744583527618115?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: net: dsa: sja1105: fix memory leak in sja1105setupdevlinkregions When dsadevlinkregioncreate failed in sja1105setupdevlinkregions, priv-regions is not released...",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Astra Linux - уязвимость в linux-5.10, linux-5.15, linux",
-      "url": "https://vulners.com/astralinux/ASTRA:997816879020363558609785335404099?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved: mISDN: fix possible memory leak in mISDNdspelementregister Afer commit 1fa5ae857bb1 \"driver core: get rid of struct device's busid string array\", the name of device is allocated dynamically, use putdevice to give up the reference, so that the name can be freed in kobjectcleanup when the refcount is 0. The 'entry' is going to be fr",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [
+        "https://vulners.com/astralinux/ASTRA:1140031736586978184723696357561923?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:998054871783990353353005517329987?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:1058902100594945364624847271188035?utm_source=rss&utm_medium=rss&utm_campaign=rss",
         "https://vulners.com/astralinux/ASTRA:977851690342852947266651809994307?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-        "https://vulners.com/astralinux/ASTRA:1099546147964762969810335317710403?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+        "https://vulners.com/astralinux/ASTRA:1160314148613203716744583527618115?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:1099546147964762969810335317710403?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:997816879020363558609785335404099?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:1160155381584794670028771173946947?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:4215871526936047423551881696835?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:1160153207936171074983109090170435?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:1119667616891381998472808131548739?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:1139950026495033668896755382834755?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/astralinux/ASTRA:997656556104424739923819172812355?utm_source=rss&utm_medium=rss&utm_campaign=rss"
       ],
-      "quality_score": 1
-    },
-    {
-      "title": "Astra Linux - уязвимость в ceph",
-      "url": "https://vulners.com/astralinux/ASTRA:1160155381584794670028771173946947?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "A flaw was found in ceph-dashboard. The JSON Web Token JWT used for user authentication is stored by the frontend application in the browser’s localStorage which is potentially vulnerable to attackers via XSS attacks. The highest threat from this vulnerability is to data confidentiality and integrity...",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Astra Linux - уязвимость в webkit2gtk",
-      "url": "https://vulners.com/astralinux/ASTRA:4215871526936047423551881696835?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "This issue was addressed with improved iframe sandbox enforcement. This issue is fixed in macOS Big Sur 11.2, Security Update 2021-001 Catalina, Security Update 2021-001 Mojave. Maliciously crafted web content may violate iframe sandboxing policy...",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Astra Linux - уязвимость в chromium",
-      "url": "https://vulners.com/astralinux/ASTRA:997656556104424739923819172812355?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "Use after free in permissions in Google Chrome prior to 90.0.4430.72 allowed a remote attacker who had compromised the renderer process to potentially perform a sandbox escape via a crafted HTML page...",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
       "quality_score": 1
     },
     {
@@ -318,7 +255,7 @@
     {
       "title": "Bring your own Agent to MS Teams",
       "url": "https://microsoft.github.io/teams-sdk/blog/bring-your-agent-to-teams/",
-      "summary": "Article URL: https://microsoft.github.io/teams-sdk/blog/bring-your-agent-to-teams/ Comments URL: https://news.ycombinator.com/item?id=47870108 Points: 10 # Comments: 2",
+      "summary": "Article URL: https://microsoft.github.io/teams-sdk/blog/bring-your-agent-to-teams/ Comments URL: https://news.ycombinator.com/item?id=47870108 Points: 13 # Comments: 2",
       "category": "AI",
       "published": "2026-04-22T22:25:28+00:00",
       "fetch_status": "rss_only",
@@ -362,7 +299,7 @@
     {
       "title": "Apple fixes bug that cops used to extract deleted chat messages from iPhones",
       "url": "https://techcrunch.com/2026/04/22/apple-fixes-bug-that-cops-used-to-extract-deleted-chat-messages-from-iphones/",
-      "summary": "Article URL: https://techcrunch.com/2026/04/22/apple-fixes-bug-that-cops-used-to-extract-deleted-chat-messages-from-iphones/ Comments URL: https://news.ycombinator.com/item?id=47868867 Points: 325 # Comments: 83",
+      "summary": "Article URL: https://techcrunch.com/2026/04/22/apple-fixes-bug-that-cops-used-to-extract-deleted-chat-messages-from-iphones/ Comments URL: https://news.ycombinator.com/item?id=47868867 Points: 342 # Comments: 89",
       "category": "AI",
       "published": "2026-04-22T20:27:31+00:00",
       "fetch_status": "full",
@@ -373,7 +310,7 @@
     {
       "title": "The Illuminated Man: an unconventional portrait of JG Ballard",
       "url": "https://www.theguardian.com/books/2026/apr/20/the-illuminated-man-by-christopher-priest-and-nina-allan-review-an-unconventional-portrait-of-jg-ballard",
-      "summary": "Article URL: https://www.theguardian.com/books/2026/apr/20/the-illuminated-man-by-christopher-priest-and-nina-allan-review-an-unconventional-portrait-of-jg-ballard Comments URL: https://news.ycombinator.com/item?id=47868832 Points: 45 # Comments: 15",
+      "summary": "Article URL: https://www.theguardian.com/books/2026/apr/20/the-illuminated-man-by-christopher-priest-and-nina-allan-review-an-unconventional-portrait-of-jg-ballard Comments URL: https://news.ycombinator.com/item?id=47868832 Points: 47 # Comments: 15",
       "category": "AI",
       "published": "2026-04-22T20:24:05+00:00",
       "fetch_status": "full",
@@ -433,7 +370,9 @@
       "published": "2026-04-22T15:28:00+00:00",
       "fetch_status": "full",
       "cve_ids": [],
-      "related_urls": [],
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/new-gogra-malware-for-linux-uses-microsoft-graph-api-for-comms/"
+      ],
       "quality_score": 1
     },
     {
@@ -525,61 +464,6 @@
       "quality_score": 0
     },
     {
-      "title": "Astra Linux - уязвимость в systemd",
-      "url": "https://vulners.com/astralinux/ASTRA:1099702737698881784654020657632835?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "An issue was discovered in buttonopen in login/logind-button.c in systemd before 243. When executing the udevadm trigger command, a memory leak may occur...",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0
-    },
-    {
-      "title": "Astra Linux - уязвимость в mbedtls",
-      "url": "https://vulners.com/astralinux/ASTRA:1058822247408337770673419189573187?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "An issue was discovered in Mbed TLS 3.5.1. There is persistent handshake denial if a client sends a TLS 1.3 ClientHello without extensions...",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0
-    },
-    {
-      "title": "Astra Linux - уязвимость в chromium",
-      "url": "https://vulners.com/astralinux/ASTRA:1160153207936171074983109090170435?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "Inappropriate implementation in iframe sandbox in Google Chrome prior to 88.0.4324.96 allowed a remote attacker to bypass navigation restrictions via a crafted HTML page...",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0
-    },
-    {
-      "title": "Astra Linux - уязвимость в chromium",
-      "url": "https://vulners.com/astralinux/ASTRA:1119667616891381998472808131548739?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "Inappropriate implementation in Skia in Google Chrome prior to 88.0.4324.146 allowed a local attacker to spoof the contents of the Omnibox URL bar via a crafted HTML page...",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0
-    },
-    {
-      "title": "Astra Linux - уязвимость в chromium",
-      "url": "https://vulners.com/astralinux/ASTRA:1139950026495033668896755382834755?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "summary": "Heap buffer overflow in V8 in Google Chrome prior to 88.0.4324.150 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page...",
-      "category": "Synthesis",
-      "published": "2026-06-03T21:04:07+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0
-    },
-    {
       "title": "库克透露苹果公司CEO任期“首个大错误”",
       "url": "https://blog.upx8.com/%E5%BA%93%E5%85%8B%E9%80%8F%E9%9C%B2%E8%8B%B9%E6%9E%9C%E5%85%AC%E5%8F%B8CEO%E4%BB%BB%E6%9C%9F-%E9%A6%96%E4%B8%AA%E5%A4%A7%E9%94%99%E8%AF%AF",
       "summary": ".encrypted-content { background: linear-gradient(135deg, #fdfeff, #f3f9ff); padding: 20px; ...",
@@ -615,7 +499,7 @@
     {
       "title": "Approximating Hyperbolic Tangent",
       "url": "https://jtomschroeder.com/blog/approximating-tanh/",
-      "summary": "Article URL: https://jtomschroeder.com/blog/approximating-tanh/ Comments URL: https://news.ycombinator.com/item?id=47870709 Points: 12 # Comments: 2",
+      "summary": "Article URL: https://jtomschroeder.com/blog/approximating-tanh/ Comments URL: https://news.ycombinator.com/item?id=47870709 Points: 16 # Comments: 4",
       "category": "AI",
       "published": "2026-04-22T23:46:38+00:00",
       "fetch_status": "rss_only",
@@ -692,7 +576,7 @@
     {
       "title": "The Neon King of New Orleans",
       "url": "https://gardenandgun.com/new-orleans-neon-king",
-      "summary": "Article URL: https://gardenandgun.com/new-orleans-neon-king Comments URL: https://news.ycombinator.com/item?id=47869496 Points: 25 # Comments: 3",
+      "summary": "Article URL: https://gardenandgun.com/new-orleans-neon-king Comments URL: https://news.ycombinator.com/item?id=47869496 Points: 27 # Comments: 4",
       "category": "AI",
       "published": "2026-04-22T21:26:38+00:00",
       "fetch_status": "rss_only",
@@ -822,28 +706,6 @@
       "quality_score": 0
     },
     {
-      "title": "New GoGra malware for Linux uses Microsoft Graph API for comms",
-      "url": "https://www.bleepingcomputer.com/news/security/new-gogra-malware-for-linux-uses-microsoft-graph-api-for-comms/",
-      "summary": "A Linux variant of the GoGra backdoor uses legitimate Microsoft infrastructure, relying on an Outlook inbox for stealthy payload delivery. [...]",
-      "category": "OfficialAdvisories",
-      "published": "2026-04-22T10:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0
-    },
-    {
-      "title": "Microsoft releases emergency patches for critical ASP.NET flaw",
-      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-security-updates-for-critical-aspnet-flaw/",
-      "summary": "Microsoft has released out-of-band (OOB) security updates to patch a critical ASP.NET Core privilege escalation vulnerability. [...]",
-      "category": "OfficialAdvisories",
-      "published": "2026-04-22T08:08:16+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0
-    },
-    {
       "title": "Over 1,300 Microsoft SharePoint servers vulnerable to spoofing attacks",
       "url": "https://www.bleepingcomputer.com/news/security/over-1-300-microsoft-sharepoint-servers-vulnerable-to-ongoing-attacks/",
       "summary": "Over 1,300 Microsoft SharePoint servers exposed online remain unpatched against a spoofing vulnerability that was exploited as a zero-day and is still being abused in ongoing attacks. [...]",
@@ -904,17 +766,6 @@
       "summary": "",
       "category": "CN_News",
       "published": "2026-04-22T10:32:00+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1
-    },
-    {
-      "title": "Oracle 2026年4月补丁日多产品高危漏洞安全风险通告",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247505333&idx=1&sn=5d8eb18fb03812a7cd87753fe8e14929",
-      "summary": "致力于第一时间为企业级用户提供权威漏洞情报和有效解决方案。",
-      "category": "CN_News",
-      "published": "2026-04-22T01:27:00+00:00",
       "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
