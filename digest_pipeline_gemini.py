@@ -95,6 +95,12 @@ REPAIR_SUMMARIZE_SYSTEM = """你要修正新闻摘要的长度问题。
 4. 如果原草稿太短，就补足关键事实、影响对象和关注原因；如果太长，就压缩但保留核心信息。
 输出格式：[{"idx":0,"summary":"..."}]"""
 
+REPAIR_TITLE_SYSTEM = """你要把英文新闻标题译成简体中文短标题。
+严格规则：
+1. 只依据原文信息翻译，不得补充外部知识、不得夸张。
+2. 输出标题必须是简体中文，≤28 字，去除客套词和营销语。
+3. 严格按 JSON 数组返回：[{"idx":0,"title_zh":"..."}]"""
+
 
 def _load_config() -> dict[str, Any]:
     return yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
@@ -242,12 +248,13 @@ def _summarize(
                 logger.warning("summarize parse failed (batch %d, retry %d): %s", i, retry, exc)
 
         repaired_summaries = _repair_summaries(client, batch, smap)
+        repaired_titles = _repair_titles(client, batch, smap)
 
         for j, e in enumerate(batch):
             s = smap.get(j, {})
             results.append(
                 {
-                    "title_zh": (s.get("title_zh") or e.get("title", "")).strip()[:40],
+                    "title_zh": repaired_titles.get(j, (s.get("title_zh") or e.get("title", "")).strip()[:40]),
                     "title_orig": e.get("title", ""),
                     "summary": repaired_summaries.get(j, normalize_summary_text(s.get("summary") or "")),
                     "tags": s.get("tags") or [],
@@ -313,6 +320,61 @@ def _repair_summaries(
                 repaired[idx] = normalize_summary_text(row.get("summary") or repaired.get(idx, ""))
         except Exception as exc:
             logger.warning("summary repair parse failed: %s", exc)
+            break
+    return repaired
+
+
+def _title_needs_repair(title: str) -> bool:
+    text = (title or "").strip()
+    if not text:
+        return True
+    return count_chinese_chars(text) == 0
+
+
+def _repair_titles(
+    client: genai.Client,
+    batch: list[dict[str, Any]],
+    smap: dict[int, dict[str, Any]],
+) -> dict[int, str]:
+    repaired: dict[int, str] = {}
+    for idx, item in smap.items():
+        title = (item.get("title_zh") or "").strip()
+        if title:
+            repaired[idx] = title
+
+    to_fix = []
+    for idx, entry in enumerate(batch):
+        current = repaired.get(idx, "")
+        if _title_needs_repair(current):
+            to_fix.append(
+                {
+                    "idx": idx,
+                    "title": entry.get("title", ""),
+                    "source_summary": (entry.get("summary") or "")[:600],
+                    "draft_title": current,
+                }
+            )
+    if not to_fix:
+        return repaired
+
+    for _attempt in range(3):
+        pending = [row for row in to_fix if _title_needs_repair(repaired.get(row["idx"], row["draft_title"]))]
+        if not pending:
+            break
+        user_prompt = (
+            "以下标题不是简体中文或缺失，请逐条翻译。\n"
+            f"输入：\n{json.dumps(pending, ensure_ascii=False)}"
+        )
+        try:
+            text = _generate_json(client, SUMMARIZE_MODEL, REPAIR_TITLE_SYSTEM, user_prompt, 1500)
+            parsed = _parse_llm_json(text)
+            for row in parsed:
+                idx = int(row["idx"])
+                zh = (row.get("title_zh") or "").strip()
+                if zh:
+                    repaired[idx] = zh[:40]
+        except Exception as exc:
+            logger.warning("title repair parse failed: %s", exc)
             break
     return repaired
 
