@@ -28,7 +28,7 @@ boards:
   ai:
     display_name: "AI 前沿"
     opml: feeds/ai.opml
-    fetch_hours: 36  # 覆盖稀疏的研究员博客/一手官方稿（Apple ML、Anthropic 等）
+    fetch_hours: 30  # 略超 24h 覆盖 cron 之间的抖动；避免跨日重复叙事
     top_n: 20
     score_threshold: 6
     source_caps:
