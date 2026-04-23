@@ -62,7 +62,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/ digest/ output/ archive/ || true
+          for d in docs digest output archive; do
+            [ -d "$d" ] && git add "$d"
+          done
+          git status --short
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
