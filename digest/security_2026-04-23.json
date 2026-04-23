@@ -2,14 +2,14 @@
   "board": "security",
   "display_name": "安全",
   "date": "2026-04-23",
-  "generated_at": "2026-04-23T06:22:24.263165Z",
+  "generated_at": "2026-04-23T06:34:30.159497Z",
   "raw_count": 74,
   "selected_count": 20,
   "items": [
     {
       "title_zh": "CISA 将 Microsoft Defender 漏洞加入已知被利用漏洞目录",
       "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
-      "summary": "美国网络安全和基础设施安全局（CISA）正式将 CVE-2026-33825 漏洞添加到其已知被利用漏洞（KEV）目录中，该漏洞涉及 Microsoft Defender 访问控制粒度不足的问题。根据证据显示，该漏洞目前正处于活跃利用状态，已成为恶意网络攻击者的常用攻击矢量，对联邦企业级网络安全构成了重大风险。此举旨在提醒相关机构根据 BOD 22-01 绑定操作指令的要求，在规定时间内完成修复工作，以防范潜在的系统性安全威胁，保护关键基础设施免受恶意渗透和权限滥用，确保政府及相关组织的系统完整性与数据安全性，防止攻击者利用该漏洞获取不当的访问权限。",
+      "summary": "美国网络安全和基础设施安全局（CISA）近日正式将编号为 CVE-2026-33825 的 Microsoft Defender 访问控制粒度不足漏洞纳入其已知被利用漏洞（KEV）目录。该决定基于该漏洞已被证实存在活跃的攻击利用行为，恶意网络参与者常将其作为攻击矢量，对联邦企业级网络安全构成重大风险。根据绑定运营指令（BOD）22-01 的要求，所有受影响的联邦机构必须在规定时间内完成修复工作，以防范潜在的系统性安全威胁并确保关键基础设施的防御能力，此举也强烈提醒私营部门及相关组织应同步关注该漏洞的修复进度，及时采取补救措施以降低被攻击的可能性。",
       "tags": [
         "CISA",
         "微软",
@@ -24,9 +24,24 @@
       ]
     },
     {
-      "title_zh": "恶意 Docker 镜像与 VS Code 扩展入侵 Checkmarx 供应链",
+      "title_zh": "苹果修复 iOS 漏洞以防止已删除的 Signal 消息被恢复",
+      "title_orig": "Apple fixes bug that let the FBI recover deleted Signal messages",
+      "summary": "苹果公司针对 iPhone 和 iPad 设备发布了紧急带外安全更新，旨在修复一个影响通知服务的关键安全缺陷，该缺陷曾导致被标记为删除的通知数据仍违规保留在设备存储中。此前有报道称，联邦调查局（FBI）能够利用该漏洞恢复已删除的 Signal 加密消息，从而引发了全球用户对端到端加密隐私保护有效性的广泛担忧。此次修复对于依赖高度机密通信的用户至关重要，它确保了系统层面的数据清理机制能够正常运作，防止敏感信息在删除后被第三方通过专业取证手段提取，进一步加固了移动操作系统的隐私防线。",
+      "tags": [
+        "苹果",
+        "隐私安全",
+        "iOS更新"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/apple-fixes-ios-bug-that-retained-deleted-notification-data/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-22T20:58:58+00:00",
+      "cve_ids": []
+    },
+    {
+      "title_zh": "恶意 KICS 镜像与 VS Code 扩展入侵 Checkmarx 供应链",
       "title_orig": "Malicious KICS Docker Images and VS Code Extensions Hit Checkmarx Supply Chain",
-      "summary": "网络安全研究人员近日发出警告，官方 checkmarx/kics Docker Hub 仓库遭到恶意镜像入侵，攻击者通过覆盖现有标签并引入伪造版本号实施攻击。安全公司 Socket 透露，身份不明的威胁者成功篡改了包括 v2.1.20 和 alpine 在内的现有标签，并发布了并非官方发布的 v2.1.21 新标签。这一供应链攻击事件值得开发者高度关注，因为它直接污染了受信任的开发工具链，可能导致使用这些镜像的企业环境被植入恶意代码，严重威胁软件开发生命周期的安全性与完整性，相关企业需立即核查本地镜像版本并清理受污染的构建环境，以防止恶意代码在生产环境中进一步扩散。",
+      "summary": "网络安全研究人员近日发出警告，官方 Docker Hub 仓库中的“checkmarx/kics”镜像遭到恶意篡改，攻击者通过覆盖现有标签并引入伪造版本植入恶意代码。供应链安全公司 Socket 透露，未知威胁参与者不仅篡改了 v2.1.20 和 alpine 等合法标签，还发布了不属于官方正式版本的 v2.1.21 标签以诱导用户下载。此事件标志着针对开发工具链的精准打击，可能导致使用该基础设施的企业面临代码泄露或构建环境被控的严重风险。开发者务必严格校验镜像指纹并审查自动化流水线中的依赖配置，以应对日益严峻的容器镜像仓库供应链安全挑战，确保软件开发生命周期的整体安全性。",
       "tags": [
         "供应链攻击",
         "Docker",
@@ -39,9 +54,9 @@
       "cve_ids": []
     },
     {
-      "title_zh": "自传播供应链蠕虫通过劫持 npm 包窃取开发者令牌",
+      "title_zh": "自传播供应链蠕虫通过 npm 包窃取开发者令牌",
       "title_orig": "Self-Propagating Supply Chain Worm Hijacks npm Packages to Steal Developer Tokens",
-      "summary": "网络安全研究人员发现了一组被恶意利用的 npm 软件包，这些包携带一种能够利用被盗开发者令牌进行自传播的供应链蠕虫。Socket 和 StepSecurity 将此活动命名为 CanisterSprawl，攻击者利用 ICP 容器来接收和外传窃取的敏感数据。该事件对 Node.js 生态系统的开发者具有重大影响，因为蠕虫可以通过受害者账户自动发布更多恶意包，形成指数级扩散。开发者需警惕凭据泄露风险，并加强对自动化发布流程的审计，以防止个人令牌成为攻击者扩大感染范围的工具，确保开源组件在集成过程中的来源可靠性与代码安全性，避免整个开发社区受到此类自传播恶意软件的持续性侵害。",
+      "summary": "网络安全研究人员发现了一组被恶意利用的 npm 软件包，这些包携带一种能够利用被盗开发者令牌进行自我传播的供应链蠕虫。Socket 和 StepSecurity 将此活动命名为 CanisterSprawl，攻击者利用 ICP 容器作为隐蔽通道来外传窃取的凭据，实现了高度自动化的感染流程。这种攻击模式极具威胁性，因为它能通过受害者的权限自动感染更多合法项目，对整个 Node.js 生态系统的开发者安全和下游用户构成严重挑战。建议相关开发人员立即检查账户授权记录，并启用多因素身份验证以阻断蠕虫通过被盗令牌在软件供应链中进一步扩散。",
       "tags": [
         "npm",
         "蠕虫病毒",
@@ -56,11 +71,11 @@
     {
       "title_zh": "Harvester 组织利用微软 API 在南亚部署 Linux 后门",
       "title_orig": "Harvester Deploys Linux GoGra Backdoor in South Asia Using Microsoft Graph API",
-      "summary": "威胁组织 Harvester 被发现正在南亚地区部署其 GoGra 后门的全新 Linux 版本，该攻击行动主要针对当地的特定实体机构。该恶意软件的显著特征是利用合法的 Microsoft Graph API 和 Outlook 邮箱作为隐蔽的命令与控制（C2）通道，从而有效绕过传统的网络边界防御系统。这一技术动向值得安全运维人员关注，因为它展示了攻击者如何利用受信任的云服务来掩盖非法通信。对于在南亚运营的企业而言，需加强对异常云 API 调用行为的监控，以应对这种高度隐蔽的跨平台间谍活动，防止敏感数据通过合法云渠道被秘密窃取，并针对此类利用合法 API 的后门程序建立更严密的检测机制。",
+      "summary": "威胁组织 Harvester 近期被发现部署了其 GoGra 后门的最新 Linux 版本，主要针对南亚地区的实体发动定向网络攻击。该恶意软件利用合法的 Microsoft Graph API 和 Outlook 邮箱作为隐蔽的命令与控制（C2）通道，从而有效绕过传统的边界网络防御系统和流量监测工具。这种利用知名云服务进行通信的策略显著增加了检测难度，反映出针对 Linux 环境的间谍攻击正在演进。相关地区的机构需加强对异常云 API 流量的深度监控，并重新评估基于信任名单的防御策略，以应对这种利用合法基础设施掩护恶意活动的复杂攻击手段，防止敏感数据外泄或系统被长期潜伏控制。",
       "tags": [
         "Harvester",
-        "Linux后门",
-        "网络间谍"
+        "Linux安全",
+        "APT攻击"
       ],
       "url": "https://thehackernews.com/2026/04/harvester-deploys-linux-gogra-backdoor.html",
       "source": "thehackernews.com",
@@ -69,13 +84,13 @@
       "cve_ids": []
     },
     {
-      "title_zh": "新型 Lotus Wiper 恶意软件对委内瑞拉能源系统发起破坏性攻击",
+      "title_zh": "Lotus Wiper 恶意软件针对委内瑞拉能源系统发动破坏性攻击",
       "title_orig": "Lotus Wiper Malware Targets Venezuelan Energy Systems in Destructive Attack",
-      "summary": "网络安全研究人员发现了一种名为 Lotus Wiper 的新型数据擦除软件，该软件在 2025 年底至 2026 年初期间被用于针对委内瑞拉能源和公用事业部门的破坏性攻击。根据卡巴斯基的研究，该软件通过两个批处理脚本启动破坏流程，旨在永久删除目标系统中的关键数据。此类攻击不仅对特定国家的关键基础设施构成直接威胁，也标志着针对工业控制系统环境的破坏性手段正在演进。能源行业的技术人员应提高警惕，加强系统备份与恢复机制，并针对此类擦除类恶意软件强化终端防护，以降低潜在的停机风险和资产损失。",
+      "summary": "卡巴斯基研究人员发现了一种名为 Lotus Wiper 的新型数据擦除软件，该软件在 2025 年底至 2026 年初期间被用于攻击委内瑞拉的能源和公用事业部门。攻击过程由两个精心设计的批处理脚本启动，旨在彻底破坏目标系统中的关键数据并导致核心服务中断，具有极强的破坏性。这种针对国家级关键基础设施的定向行动凸显了工业控制系统面临的严峻威胁，可能对社会民生造成直接影响。对于能源行业的安全运维人员而言，建立完善的离线备份、强化系统访问控制以及制定快速恢复机制已成为应对此类国家级背景定向攻击的必要手段。",
       "tags": [
         "数据擦除",
         "能源安全",
-        "基础设施"
+        "委内瑞拉"
       ],
       "url": "https://thehackernews.com/2026/04/lotus-wiper-malware-targets-venezuelan.html",
       "source": "thehackernews.com",
@@ -86,11 +101,11 @@
     {
       "title_zh": "Mustang Panda 变体 LOTUSLITE 针对印度银行与韩国政界",
       "title_orig": "Mustang Panda’s New LOTUSLITE Variant Targets India Banks, South Korea Policy Circles",
-      "summary": "研究人员发现了一种名为 LOTUSLITE 的新型恶意软件变体，该变体由威胁组织 Mustang Panda 分发，主要利用与印度银行业相关的主题进行诱导攻击。该后门程序通过 HTTPS 与基于动态 DNS 的 C2 服务器通信，支持远程 Shell 访问、文件操作及会话管理，显示出极强的间谍活动能力。此活动不仅影响印度的金融机构，还波及了韩国的政策圈，表明攻击者的目标具有高度的政治和经济针对性。相关机构需防范针对性的钓鱼攻击，并加强对 HTTPS 异常流量的深度检测，以应对这种持续演进的远程访问威胁，确保金融系统与政策决策环境的安全稳定。",
+      "summary": "研究人员发现 Mustang Panda 组织正在分发名为 LOTUSLITE 的新型恶意软件变体，其诱饵主题涉及印度银行业务及韩国政策圈，显示出明确的地理政治目标。该后门程序通过 HTTPS 与基于动态 DNS 的服务器通信，支持远程 Shell 访问、文件操作和会话管理等功能，展现出该组织持续演进的间谍活动能力。此次活动表明该组织正在扩大其在亚洲的攻击范围，受影响行业的机构应警惕相关的钓鱼邮件和恶意文档。安全团队需加强对 HTTPS 异常长连接的审计与拦截，并利用威胁情报及时更新防御策略，以防范此类针对金融与政策核心领域的渗透。",
       "tags": [
         "Mustang Panda",
-        "金融安全",
-        "网络间谍"
+        "网络间谍",
+        "金融安全"
       ],
       "url": "https://thehackernews.com/2026/04/mustang-pandas-new-lotuslite-variant.html",
       "source": "thehackernews.com",
@@ -99,9 +114,9 @@
       "cve_ids": []
     },
     {
-      "title_zh": "新型 npm 供应链攻击通过自传播手段窃取身份验证令牌",
+      "title_zh": "新型 npm 供应链攻击通过自传播机制窃取身份验证令牌",
       "title_orig": "New npm supply-chain attack self-spreads to steal auth tokens",
-      "summary": "一种针对 Node Package Manager (npm) 生态系统的新型供应链攻击正在蔓延，该攻击旨在窃取开发者的凭据并尝试通过受损账户发布恶意包。这种攻击具有自传播特性，能够利用获取的权限进一步扩大感染范围，对整个开源社区的信任体系造成了严重冲击。对于依赖 npm 进行开发的团队而言，这意味着任何上游依赖项的微小变动都可能隐藏着致命风险。开发者应立即检查其发布令牌的权限设置，启用多因素身份验证，并密切关注其账户下是否存在未经授权的发布活动，以切断蠕虫式传播的链条，防止恶意代码在软件供应链中持续渗透。",
+      "summary": "针对 Node 软件包管理器（npm）生态系统的新型供应链攻击正在蔓延，攻击者旨在窃取开发者的身份验证凭据并接管相关账户。该恶意程序具备强大的自传播能力，能够利用从受害者处获取的权限发布更多受感染的软件包，从而在整个开源生态内形成连锁反应。这种攻击不仅威胁到单个开发者的账户安全，还可能通过受污染的依赖项渗透到大型企业生产项目中，造成大范围的安全事故。开发者社区需保持高度警惕，建议立即启用多因素身份验证，严格审查第三方依赖的更新日志，并利用自动化安全工具持续监测项目依赖项中是否存在异常的凭据外泄行为。",
       "tags": [
         "npm",
         "身份窃取",
@@ -114,13 +129,13 @@
       "cve_ids": []
     },
     {
-      "title_zh": "逾 1300 台 Microsoft SharePoint 服务器仍受欺骗攻击威",
+      "title_zh": "超1300台微软SharePoint服务器面临欺骗攻击风险",
       "title_orig": "Over 1,300 Microsoft SharePoint servers vulnerable to spoofing attacks",
-      "summary": "目前仍有超过 1300 台暴露在互联网上的 Microsoft SharePoint 服务器未修复已知的欺骗漏洞，该漏洞此前曾作为零日漏洞被利用，且目前仍处于活跃攻击中。尽管补丁已经发布，但大量服务器的滞后更新为攻击者提供了可乘之机，使其能够继续滥用该漏洞实施非法操作。这一现状对全球范围内使用 SharePoint 进行协作的企业构成了严重威胁，可能导致敏感信息泄露或内部权限被接管。系统管理员应尽快确认服务器版本并应用最新的安全更新，以消除这一长期存在的安全隐患，防止企业内网被进一步渗透，确保协同办公环境的整体防御能力得到有效提升。",
+      "summary": "目前仍有超过1300台暴露在互联网上的微软SharePoint服务器未修复特定的欺骗漏洞，该漏洞曾作为零日漏洞被黑客利用，且目前仍处于被持续滥用的活跃攻击状态。这一情况非常值得关注，因为攻击者正利用该漏洞进行活跃的恶意活动，未及时更新补丁的企业和组织将面临严重的安全威胁，可能导致敏感信息泄露或系统权限被非法获取。由于该漏洞在野外被广泛利用，建议相关管理员立即检查并应用微软发布的最新安全补丁，以防止潜在的欺骗攻击对内部网络造成进一步的损害，确保企业核心资产的安全不受侵害。",
       "tags": [
-        "SharePoint",
-        "服务器安全",
-        "补丁管理"
+        "微软",
+        "网络安全",
+        "漏洞预警"
       ],
       "url": "https://www.bleepingcomputer.com/news/security/over-1-300-microsoft-sharepoint-servers-vulnerable-to-ongoing-attacks/",
       "source": "bleepingcomputer.com",
@@ -129,13 +144,13 @@
       "cve_ids": []
     },
     {
-      "title_zh": "Cohere AI 沙箱漏洞可导致根权限代码执行与容器逃逸",
+      "title_zh": "Cohere AI沙箱漏洞可导致根权限代码执行与容器逃逸",
       "title_orig": "Cohere AI Terrarium Sandbox Flaw Enables Root Code Execution, Container Escape",
-      "summary": "安全研究人员披露了 Cohere AI 开发的 Python 沙箱 Terrarium 中存在一个编号为 CVE-2026-5752 的严重漏洞，其 CVSS 评分高达 9.3。该漏洞源于 JavaScript 原型链遍历缺陷，攻击者可利用此漏洞在宿主进程中以 root 权限执行任意代码并实现容器逃逸。这一发现对使用该沙箱进行代码隔离的开发者和 AI 基础设施提供商具有重大影响，若不及时修复，可能导致底层系统被完全接管，威胁到多租户环境下的数据安全与系统完整性。由于该沙箱被广泛用于运行不受信任的代码，此漏洞的曝光凸显了 AI 运行环境在隔离机制上的潜在脆弱性，急需相关方采取补丁更新或加固措施。",
+      "summary": "研究人员披露了名为Terrarium的Python沙箱中存在编号为CVE-2026-5752的关键安全漏洞，其CVSS评分高达9.3分。该漏洞允许攻击者通过JavaScript原型链遍历在宿主进程上以root权限执行任意代码，从而实现完全的沙箱逃逸。这一发现对使用该沙箱环境的AI开发者和云服务商具有重大影响，意味着原有的隔离机制可能彻底失效，攻击者能够突破限制并控制底层宿主系统。目前相关风险已公开，受影响的用户需高度关注官方修复方案，并重新评估其AI运行环境的安全性，以保障系统免受恶意代码执行和权限提升的威胁，防止核心业务数据遭到非法窃取或破坏。",
       "tags": [
-        "AI安全",
+        "人工智能",
         "沙箱逃逸",
-        "漏洞预警"
+        "代码执行"
       ],
       "url": "https://thehackernews.com/2026/04/cohere-ai-terrarium-sandbox-flaw.html",
       "source": "thehackernews.com",
@@ -146,12 +161,12 @@
       ]
     },
     {
-      "title_zh": "微软修复 ASP.NET Core 严重提权漏洞 CVE-2026-40372",
+      "title_zh": "微软修复ASP.NET Core高危权限提升漏洞",
       "title_orig": "Microsoft Patches Critical ASP.NET Core CVE-2026-40372 Privilege Escalation Bug",
-      "summary": "微软发布了针对 ASP.NET Core 的带外安全更新，旨在修复一个编号为 CVE-2026-40372 的严重提权漏洞，该漏洞的 CVSS 评分为 9.1。该漏洞主要是由于加密验证机制不当导致的，匿名研究员发现攻击者可借此提升其在受影响系统中的操作权限，从而绕过安全限制。此更新对依赖 ASP.NET Core 框架构建 Web 应用程序的企业和开发者至关重要，由于其严重程度被评为“重要”，建议相关用户立即部署补丁，以防止潜在的权限滥用风险，确保服务器环境的访问控制安全性。微软强调，及时应用此类带外更新是抵御针对关键基础设施攻击的必要手段，能有效防止攻击者利用加密缺陷获取系统控制权。",
+      "summary": "微软发布了针对ASP.NET Core安全漏洞CVE-2026-40372的带外更新，该漏洞的CVSS评分为9.1分，严重程度被评为“重要”。该漏洞源于加密验证不当的逻辑缺陷，可能允许匿名攻击者在受影响的系统中提升权限，从而获取更高的操作权限。此更新对依赖ASP.NET Core框架构建Web应用的开发者和企业至关重要，及时部署补丁可以有效阻止攻击者利用该漏洞进行越权操作。微软建议所有相关用户尽快安装此紧急更新，以消除潜在的安全隐患，防止因权限提升导致的敏感数据泄露或系统被非法控制，确保Web服务环境的整体安全性，维护广大企业级用户的网络资产安全。",
       "tags": [
         "微软",
-        "提权漏洞",
+        "权限提升",
         "补丁更新"
       ],
       "url": "https://thehackernews.com/2026/04/microsoft-patches-critical-aspnet-core.html",
@@ -163,24 +178,41 @@
       ]
     },
     {
-      "title_zh": "苹果修复 iOS 漏洞：防止已删除的 Signal 消息被恢复",
-      "title_orig": "Apple fixes bug that let the FBI recover deleted Signal messages",
-      "summary": "苹果公司发布了针对 iPhone 和 iPad 设备的带外安全更新，修复了一个涉及通知服务的关键缺陷。该漏洞曾导致被标记为删除的通知数据仍残留在设备存储中，甚至能让 FBI 等机构通过取证手段恢复已删除的 Signal 加密通信消息。此次修复对于注重隐私保护的用户和使用加密通讯软件的群体具有重要意义，它解决了数据删除不彻底带来的取证风险，防止了敏感信息在用户不知情的情况下被长期留存。用户应尽快升级至最新系统版本，以确保通知缓存机制能够正确清理敏感信息，保障个人通讯隐私不被非法或意外提取。这一补丁的发布也再次引发了公众对移动设备数据残留问题以及执法部门获取加密数据能力的广泛讨论。",
+      "title_zh": "Mirai变种利用D-Link停产路由器漏洞构建僵尸网络",
+      "title_orig": "New Mirai campaign exploits RCE flaw in EoL D-Link routers",
+      "summary": "一项新的Mirai恶意软件活动正在积极利用CVE-2025-29635漏洞，该漏洞是影响D-Link DIR-823X路由器的严重命令注入漏洞，旨在将这些设备招募进僵尸网络。由于受影响的路由器已处于生命周期结束（EoL）状态，官方可能不再提供常规安全支持，这使得大量存量设备处于极高风险中。此活动对家庭和小型办公网络安全构成严重威胁，攻击者可借此发起大规模分布式拒绝服务攻击。用户应警惕此类针对老旧设备的攻击，并考虑更换仍受支持的硬件，以防止设备被黑客控制并成为网络攻击的跳板，确保本地网络环境的长期安全稳定。",
       "tags": [
-        "苹果",
-        "隐私保护",
-        "数据安全"
+        "僵尸网络",
+        "路由器安全",
+        "Mirai"
       ],
-      "url": "https://www.bleepingcomputer.com/news/security/apple-fixes-ios-bug-that-retained-deleted-notification-data/",
+      "url": "https://www.bleepingcomputer.com/news/security/new-mirai-campaign-exploits-rce-flaw-in-eol-d-link-routers/",
       "source": "bleepingcomputer.com",
       "category": "OfficialAdvisories",
-      "published": "2026-04-22T20:58:58+00:00",
+      "published": "2026-04-22T20:04:46+00:00",
+      "cve_ids": [
+        "CVE-2025-29635"
+      ]
+    },
+    {
+      "title_zh": "AI代理社交网络Moltbook泄露百万级API令牌",
+      "title_orig": "Toxic Combinations: When Cross-App Permissions Stack into Risk",
+      "summary": "研究人员于2026年1月披露，专为AI代理设计的社交网络Moltbook因数据库未加密，导致3.5万个电子邮件地址和77万个活跃代理的150万个API令牌泄露。更严重的是，私信记录中包含大量明文第三方凭据，如代理间共享的OpenAI API密钥。这种“毒性组合”风险展示了跨应用权限堆叠带来的安全隐患，对AI开发者和API使用者具有极强的警示意义。该事件不仅威胁到用户隐私，还可能导致关联的第三方服务被大规模滥用，凸显了AI生态系统中凭据管理的脆弱性，要求相关从业者必须加强对AI代理间通信内容的加密保护与审计，防止因权限滥用引发的连锁性安全灾难。",
+      "tags": [
+        "数据泄露",
+        "AI安全",
+        "API密钥"
+      ],
+      "url": "https://thehackernews.com/2026/04/toxic-combinations-when-cross-app.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-22T10:41:36+00:00",
       "cve_ids": []
     },
     {
-      "title_zh": "Kyber 勒索软件团伙开始在 Windows 系统测试后量子加密",
+      "title_zh": "Kyber勒索软件团伙在Windows系统测试后量子加密",
       "title_orig": "Kyber ransomware gang toys with post-quantum encryption on Windows",
-      "summary": "一个新的 Kyber 勒索软件组织近期频繁攻击 Windows 系统和 VMware ESXi 端点，其变体版本已开始实施 Kyber1024 后量子加密算法。这种新型加密方式旨在对抗未来量子计算机的破解能力，增加了受害者恢复数据的难度，使得传统的解密尝试变得更加复杂。这一动向标志着勒索软件技术进入了新阶段，对企业网络安全防御提出了更高挑战，尤其是针对虚拟化环境的攻击可能导致大规模业务中断。安全团队需要关注这种前瞻性加密技术的应用趋势，因为传统的解密手段在面对后量子算法时可能完全失效，这要求组织必须加强事前防御和离线备份策略，以应对日益进化的加密威胁和更长的恢复周期。",
+      "summary": "一个新的Kyber勒索软件组织近期开始针对Windows系统和VMware ESXi端点发起攻击，其中一个变体已实现了Kyber1024后量子加密算法。这一动向表明勒索软件开发者正在尝试利用更先进的加密技术来对抗现有的解密手段和未来的计算挑战。此举对企业网络安全防御提出了严峻挑战，意味着传统的加密防护和恢复策略可能需要针对后量子时代进行全面升级。安全专家需密切关注此类加密技术的演进，以制定更有效的应对方案，防止企业数据被永久锁定。该事件标志着勒索软件已进入后量子加密的实验阶段，企业必须提升对新型加密威胁的防御能力。",
       "tags": [
         "勒索软件",
         "后量子加密",
@@ -193,13 +225,13 @@
       "cve_ids": []
     },
     {
-      "title_zh": "美国移民海关执法局承认使用以色列 Graphite 间谍软件",
+      "title_zh": "美国移民海关执法局承认使用Graphite间谍软件",
       "title_orig": "ICE Uses Graphite Spyware",
-      "summary": "美国移民及海关执法局（ICE）近日公开承认，该机构正在使用由以色列公司 Graphite 开发的间谍软件。虽然具体的部署范围和用途细节尚未完全披露，但这一表态确认了政府机构对高级监控工具的持续依赖，这些工具通常具备绕过加密和提取移动设备数据的能力。此举引发了人权组织和隐私倡导者对执法透明度及监控权滥用的广泛关注，担忧此类技术可能被用于无差别的监视活动。对于公众和法律界而言，这不仅揭示了现代执法手段的复杂性，也凸显了在数字时代平衡国家安全需求与公民隐私权之间日益严峻的挑战，相关监管政策和法律框架可能因此面临新的审视，以确保监控技术的使用符合正当程序。",
+      "summary": "美国移民海关执法局（ICE）已公开承认其正在使用由以色列公司Graphite开发的间谍软件。这一表态证实了政府机构在监控活动中采用了高级网络监听工具，引发了公众对隐私保护和行政权力边界的广泛讨论。对于网络安全研究人员和隐私倡导者而言，这提供了政府使用商业间谍软件的直接证据，有助于分析此类工具在执法过程中的实际应用范围。该事件反映了商业监控技术在全球范围内的扩散，以及其在国家机构行动中扮演的日益重要的角色，同时也促使各界重新审视数字时代下个人隐私权与国家安全需求之间的平衡问题，具有深远的社会影响。",
       "tags": [
         "间谍软件",
-        "政府监控",
-        "隐私争议"
+        "隐私监控",
+        "政府执法"
       ],
       "url": "https://www.schneier.com/blog/archives/2026/04/ice-uses-graphite-spyware.html",
       "source": "schneier.com",
@@ -208,30 +240,28 @@
       "cve_ids": []
     },
     {
-      "title_zh": "Mirai 变体利用 D-Link 弃用路由器漏洞构建僵尸网络",
-      "title_orig": "New Mirai campaign exploits RCE flaw in EoL D-Link routers",
-      "summary": "一个新的 Mirai 恶意软件变体正在积极利用 CVE-2025-29635 漏洞，该漏洞是针对已停止官方支持的 D-Link DIR-823X 系列路由器的命令注入缺陷。攻击者通过该高危漏洞远程控制设备，并将其强行加入僵尸网络以发起大规模分布式拒绝服务攻击。由于受影响的设备已处于生命周期终点（EoL），厂商不再提供官方补丁，这使得大量存量设备处于极高风险中，成为网络攻击的长期温床。此事件提醒用户和企业应及时更换过时的网络硬件，避免因无法获取安全更新而成为网络犯罪分子的攻击跳板。对于仍在使用此类设备的用户，建议立即采取断网或更换措施，以防止个人网络资源被恶意利用并威胁整体互联网安全。",
+      "title_zh": "研究人员分析AI代理连接协议MCP的信任边界漏洞",
+      "title_orig": "Attacking the MCP Trust Boundary",
+      "summary": "随着模型上下文协议（MCP）成为连接AI代理与外部服务的快速增长标准，研究人员开始关注其继承自底层模型的信任边界安全问题。MCP在处理代码与数据分离时存在潜在风险，类似于HTTP头与主体或SQL预处理语句中的界限划分挑战。这一研究对构建AI集成系统的架构师和开发者至关重要，因为它揭示了AI代理在访问外部数据时可能遭遇的注入攻击或权限逾越风险。理解并强化MCP的信任边界，是确保下一代AI自动化服务安全可靠运行的关键前提。开发者需在设计阶段就考虑如何有效隔离指令与数据，以防止恶意输入通过协议漏洞破坏整个AI系统的安全架构。",
       "tags": [
-        "僵尸网络",
-        "物联网安全",
-        "路由器漏洞"
+        "AI协议",
+        "信任边界",
+        "Web安全"
       ],
-      "url": "https://www.bleepingcomputer.com/news/security/new-mirai-campaign-exploits-rce-flaw-in-eol-d-link-routers/",
-      "source": "bleepingcomputer.com",
-      "category": "OfficialAdvisories",
-      "published": "2026-04-22T20:04:46+00:00",
-      "cve_ids": [
-        "CVE-2025-29635"
-      ]
+      "url": "https://lab.wallarm.com/attacking-the-mcp-trust-boundary/",
+      "source": "lab.wallarm.com",
+      "category": "WebSecurity",
+      "published": "2026-04-22T12:00:00+00:00",
+      "cve_ids": []
     },
     {
-      "title_zh": "Astra Linux 修复 Linux 内核 5.10 中的空指针访问漏洞",
+      "title_zh": "Linux内核修复x86架构PEBS记录处理中的空指针访问漏洞",
       "title_orig": "Astra Linux - уязвимость в linux-5.10",
-      "summary": "Astra Linux 针对 Linux 内核 5.10 版本中发现的一个安全漏洞发布了修复方案，该漏洞涉及 x86 架构下的性能监控单元（PMU）。具体而言，在调用相关函数清理 PEBS 记录时，可能会触发空指针访问并导致潜在的记录丢失或系统异常，甚至引发内核崩溃。此修复解决了内核在处理特定硬件中断时的稳定性问题，确保了性能分析工具在高负载下的可靠运行，防止了因事件溢出处理不当导致的系统挂起。对于使用 Astra Linux 操作系统的企业级用户，及时更新内核对于维持系统的高可用性和防止潜在的内核崩溃至关重要。该漏洞的修复体现了操作系统厂商对底层硬件兼容性及系统健壮性的持续关注，是保障关键业务运行的基础。",
+      "summary": "Linux内核社区近期针对5.10版本修复了一个存在于x86架构性能监控单元中的关键漏洞，该漏洞主要源于在调用特定函数清理PEBS记录时，可能触发中断限制并停止所有事件组，进而导致空指针访问或潜在的采样记录丢失风险。这一修复对于使用Astra Linux等基于该内核版本的操作系统至关重要，能够有效提升系统在进行高负载性能分析时的稳定性和数据完整性，防止因硬件采样溢出处理不当而引发的内核崩溃或监控功能失效，确保了底层硬件监控机制在复杂计算环境下的可靠运行与安全性，为开发者提供了更稳健的性能调试保障。",
       "tags": [
         "Linux内核",
-        "系统安全",
-        "漏洞修复"
+        "漏洞修复",
+        "系统安全"
       ],
       "url": "https://vulners.com/astralinux/ASTRA:1079341109623011584792090665899587?utm_source=rss&utm_medium=rss&utm_campaign=rss",
       "source": "vulners.com",
@@ -240,13 +270,13 @@
       "cve_ids": []
     },
     {
-      "title_zh": "新型静态分析工具助力恶意软件分析与 SOC 团队高效办公",
+      "title_zh": "面向恶意软件分析师的静态分析与文件元数据提取工具发布",
       "title_orig": "One Tool to Rule Them All: File Metadata & Static Analysis for Malware Analysts and SOC Teams",
-      "summary": "一款集成了文件元数据提取与深度静态分析的新型工具问世，支持 PE、ELF 及 Mach-O 等多种格式。该工具允许分析师在不运行文件、不反编译代码的情况下，快速获取哈希值、字符串、YARA 匹配项及特定格式元数据，极大简化了恶意软件的初步分拣流程。这为分拣可疑附件、构建威胁情报流水线提供了极大的便利，显著提升了 SOC 团队在面对海量样本时的响应速度。通过这种非执行式的分析方法，安全人员可以更安全、更高效地识别潜在威胁，降低了在分析过程中意外触发恶意代码的风险。该工具的推出旨在解决安全团队在处理复杂恶意软件时对快速、安全静态分析的需求，是提升网络防御能力的有效辅助手段。",
+      "summary": "安全研究人员推出了一款集成化的静态分析工具，旨在帮助SOC团队和分析师在不执行代码的情况下，快速提取哈希值、PE/ELF/Mach-O元数据、字符串及YARA匹配信息。该工具支持深度静态分析，解决了分析师在处理可疑附件时需要在多个工具间频繁切换的痛点，极大优化了分析流程。这对于构建自动化的文件情报流水线具有重要意义，能显著提升恶意软件分型和威胁情报比对的效率，在确保分析环境绝对安全的前提下获取关键样本特征，为安全团队提供了更高效的威胁研判手段与全面的文件取证能力。",
       "tags": [
-        "安全工具",
         "恶意软件分析",
-        "静态分析"
+        "静态分析",
+        "安全工具"
       ],
       "url": "https://infosecwriteups.com/one-tool-to-rule-them-all-file-metadata-static-analysis-for-malware-analysts-and-soc-teams-c6dba1f5b7de?source=rss----7b722bfd1b8d---4",
       "source": "infosecwriteups.com",
@@ -255,13 +285,13 @@
       "cve_ids": []
     },
     {
-      "title_zh": "OpenAI 针对 Axios 开发者工具遭入侵事件发布官方回应",
+      "title_zh": "OpenAI 针对 Axios 开发工具遭入侵事件发布官方回应",
       "title_orig": "OpenAI's response to the Axios developer tool compromise",
-      "summary": "OpenAI近期针对Axios开发者工具被入侵的安全事件发布了官方回应，详细说明了该事件的背景以及公司采取的紧急应对措施。此次事件涉及开发者工具链的安全漏洞，OpenAI通过公开透明的沟通机制，向社区通报了受影响的具体范围以及后续的修复进度。这一事件之所以值得高度关注，是因为它凸显了人工智能生态系统中供应链安全的关键性，提醒广大开发者在集成第三方工具时必须加强权限管理与多重审计，以防止敏感的API密钥或开发环境数据发生泄露，从而确保AI应用在复杂网络环境下的整体安全性与稳定性。",
+      "summary": "OpenAI近期就Axios开发工具安全性受损事件发表了正式回应，详细说明了该事件的影响范围及公司采取的紧急应对措施，此次安全事件在Hacker News等技术社区引发了广泛关注，开发者们围绕供应链安全、第三方集成风险以及AI开发工具的权限边界展开了深度讨论。作为行业领军者，OpenAI对此事的处理透明度直接影响到开发者生态的信任度，该事件也为广大使用AI API的企业敲响了警钟，提醒其必须加强对开发辅助工具的安全审计与权限管理，以防范潜在的集成风险并确保核心业务逻辑不被外部工具漏洞所侵害。",
       "tags": [
         "OpenAI",
-        "网络安全",
-        "开发者工具"
+        "供应链安全",
+        "安全事件"
       ],
       "url": "https://openai.com/index/axios-developer-tool-compromise/",
       "source": "openai.com",
@@ -270,48 +300,18 @@
       "cve_ids": []
     },
     {
-      "title_zh": "AI 代理社交网络 Moltbook 数据库泄露，暴露百万 API 令牌",
-      "title_orig": "Toxic Combinations: When Cross-App Permissions Stack into Risk",
-      "summary": "2026年1月31日，研究人员披露专为AI代理构建的社交网络Moltbook存在严重数据库漏洞，导致3.5万个电子邮件地址、150万个代理API令牌以及77万个活跃代理的数据完全公开。更严重的是，大量私信中包含明文存储的第三方凭据，其中包括代理间共享的OpenAI API密钥。该事件揭示了跨应用权限堆叠带来的“毒性组合”风险，对AI开发者和企业具有极强的警示意义，表明在AI代理自动化交互的背景下，凭据管理不当可能引发连锁反应，导致整个生态系统的安全防线崩溃，必须重新审视代理间通信的加密标准与身份验证机制，以防范潜在的系统性安全威胁。",
+      "title_zh": "SaaS平台API权限提升漏洞获800美元漏洞赏金",
+      "title_orig": "$800 Bounty: Privilege Escalation via API — From Scheduler to Team Admin",
+      "summary": "安全研究员在某SaaS平台中发现了一个严重的API访问控制失效漏洞，并成功演示了如何从普通调度员权限提升至团队管理员权限，该漏洞允许攻击者通过操纵API请求绕过既定的权限逻辑，非法获取高层级的管理控制权，研究员为此获得了800美元的漏洞赏金。这一案例再次凸显了现代SaaS架构中API安全校验的极端重要性，对于开发者而言，必须在后端严格实施细粒度的权限校验和最小特权原则，才能有效防范此类越权攻击，确保多租户环境下的敏感数据安全与系统逻辑完整，防止因权限配置疏忽导致的企业级数据泄露。",
       "tags": [
-        "数据泄露",
-        "AI代理",
-        "API安全"
+        "API安全",
+        "权限提升",
+        "漏洞赏金"
       ],
-      "url": "https://thehackernews.com/2026/04/toxic-combinations-when-cross-app.html",
-      "source": "thehackernews.com",
-      "category": "OfficialAdvisories",
-      "published": "2026-04-22T10:41:36+00:00",
-      "cve_ids": []
-    },
-    {
-      "title_zh": "加密货币诈骗诱导船只进入霍尔木兹海峡并导致其遭袭",
-      "title_orig": "Crypto scam lures ships into Strait of Hormuz, falsely promising safe passage",
-      "summary": "一艘船只在霍尔木兹海峡遭到伊朗袭击，据分析该船可能落入了虚假承诺“安全通行”的加密货币诈骗陷阱。诈骗者利用航运公司对地缘政治风险的担忧，通过虚假的数字资产交易诱导船只改变航线进入危险区域。这一事件标志着网络犯罪与现实世界物理冲突的危险结合，对全球航运业和海事安全专家提出了严峻挑战。它表明加密货币诈骗已不再局限于金融资产窃取，而是开始威胁到关键基础设施和人员的生命安全，凸显了在复杂地缘政治环境下加强信息核实的重要性，航运公司需警惕此类利用数字货币作为诱饵的新型复合式威胁。",
-      "tags": [
-        "加密货币诈骗",
-        "海事安全",
-        "地缘政治"
-      ],
-      "url": "https://arstechnica.com/security/2026/04/crypto-scam-lures-ships-into-strait-of-hormuz-falsely-promising-safe-passage/",
-      "source": "arstechnica.com",
-      "category": "AI",
-      "published": "2026-04-22T22:07:54+00:00",
-      "cve_ids": []
-    },
-    {
-      "title_zh": "低成本漏洞武器化趋势：1.5 万元即可将关键漏洞转化为武器",
-      "title_orig": "仅花1.5万元，就能把关键漏洞变成直接运行的网络武器",
-      "summary": "网络安全研究显示，目前仅需花费约1.5万元人民币的极低成本，就能将旧版本的关键漏洞转化为可直接运行的网络武器，且其可利用性正逼近100%。这种低门槛的漏洞利用方式使得攻击者能够快速针对未及时修补的系统发起大规模攻击，极大地缩短了从漏洞发现到实际破坏的周期。这一趋势对企业和政府机构的补丁管理机制提出了更高要求，意味着传统的防御节奏已无法应对高度自动化的威胁，网络安全防护必须从被动修补转向更具预见性的主动防御模式，以应对那些利用廉价技术手段即可实现的高成功率网络渗透攻击。",
-      "tags": [
-        "漏洞利用",
-        "网络武器",
-        "网络防御"
-      ],
-      "url": "https://mp.weixin.qq.com/s?__biz=MzI4NDY2MDMwMw==&mid=2247515853&idx=1&sn=a118f98eb5fcb3846c4194b9f9d94d3b",
-      "source": "mp.weixin.qq.com",
-      "category": "CN_News",
-      "published": "2026-04-22T10:32:00+00:00",
+      "url": "https://infosecwriteups.com/800-bounty-privilege-escalation-via-api-from-scheduler-to-team-admin-810bb8401a0f?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-23T06:03:15+00:00",
       "cve_ids": []
     }
   ]
