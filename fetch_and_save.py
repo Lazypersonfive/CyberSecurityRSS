@@ -23,7 +23,7 @@ from typing import Any
 import yaml
 
 from fetch_feeds import fetch_all_entries, load_seen_urls
-from fetch_opml import fetch_opml
+from fetch_opml import fetch_opml, fetch_opml_metadata
 from filter_entries import filter_and_dedup
 from rss_curation import curate_entries
 
@@ -75,6 +75,8 @@ def main() -> None:
 
     logger.info("[%s] Loading OPML from %s", board_label, opml_source or "(legacy cache)")
     feeds = fetch_opml(opml_source, use_cache=True)
+    feed_metadata = fetch_opml_metadata(opml_source, use_cache=True)
+    feed_titles = {url: meta.get("feed_title", url) for url, meta in feed_metadata.items()}
     total_feeds = sum(len(v) for v in feeds.values())
     logger.info("[%s] %d feeds across %d categories", board_label, total_feeds, len(feeds))
 
@@ -88,6 +90,7 @@ def main() -> None:
             hours=hours,
             timeout=25,
             seen_urls=seen_urls,
+            feed_titles=feed_titles,
         )
     )
     logger.info("[%s] Got %d raw entries (%d feeds errored)", board_label, len(entries), len(health))
@@ -112,6 +115,17 @@ def main() -> None:
         "entry_count": len(filtered),
         "filter_stats": filter_stats,
         "curation_stats": curation_stats,
+        "feed_stats": {
+            url: {
+                "feed_title": feed_metadata.get(url, {}).get("feed_title", url),
+                "category": feed_metadata.get(url, {}).get("category", ""),
+                "attempted": 1,
+                "succeeded": 0 if url in health else 1,
+                "raw_count": 0,
+            }
+            for urls in feeds.values()
+            for url in urls
+        },
         "entries": [
             {
                 "title": fe.title,
@@ -123,10 +137,16 @@ def main() -> None:
                 "cve_ids": fe.cve_ids,
                 "related_urls": fe.related_urls,
                 "quality_score": fe.quality_score,
+                "feed_url": fe.feed_url,
+                "feed_title": fe.feed_title,
             }
             for fe in filtered
         ],
     }
+    raw_counts = Counter(entry.feed_url for entry in entries)
+    for url, count in raw_counts.items():
+        if url in data["feed_stats"]:
+            data["feed_stats"][url]["raw_count"] = count
     out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2))
     logger.info("[%s] Saved to %s", board_label, out_path)
 

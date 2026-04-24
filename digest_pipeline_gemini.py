@@ -30,6 +30,7 @@ from google.genai import errors as genai_errors
 
 from digest_postprocess import normalize_summary_text, summary_needs_repair
 from digest_postprocess import count_chinese_chars, SUMMARY_TARGET_MAX_CHARS, SUMMARY_TARGET_MIN_CHARS
+from source_reports import refresh_latest_report, render_source_report, write_board_report
 
 logging.basicConfig(
     level=logging.INFO,
@@ -84,8 +85,9 @@ SUMMARIZE_SYSTEM = """你是一位科技资讯编辑。你的任务是把给定�
 3. 中文标题不超过 28 字，去除所有客套词和营销语。
 4. 摘要必须是 220-260 个汉字，不是英文字符数；写成 2-3 句，先讲发生了什么，再讲为什么值得关注 / 对谁有影响。
 5. tags 给 1-3 个中文关键词，每个不超过 6 字。
-6. 严格按 JSON 数组返回，不要解释、不要 Markdown 包裹。
-输出格式：[{"idx":0,"title_zh":"...","summary":"...","tags":["..."]}]"""
+6. selection_reason 用不超过 30 个中文字符说明这条新闻为何值得关注。
+7. 严格按 JSON 数组返回，不要解释、不要 Markdown 包裹。
+输出格式：[{"idx":0,"title_zh":"...","summary":"...","tags":["..."],"selection_reason":"..."}]"""
 
 REPAIR_SUMMARIZE_SYSTEM = """你要修正新闻摘要的长度问题。
 严格规则：
@@ -274,9 +276,15 @@ def _summarize(
                     "category": e.get("category", ""),
                     "published": e.get("published", ""),
                     "cve_ids": e.get("cve_ids", []),
+                    "selection_reason": _selection_reason(s),
                 }
             )
     return results
+
+
+def _selection_reason(item: dict[str, Any]) -> str:
+    reason = normalize_summary_text(item.get("selection_reason") or "")
+    return reason[:30]
 
 
 def _repair_summaries(
@@ -393,13 +401,13 @@ def _repair_titles(
 def _llm_dedupe(
     client: genai.Client,
     candidates: list[tuple[dict[str, Any], int]],
-) -> list[tuple[dict[str, Any], int]]:
+) -> tuple[list[tuple[dict[str, Any], int]], list[str]]:
     """Cluster same-story items via Gemini and keep the highest-scored per cluster.
 
     candidates are (entry, score) tuples already sorted by score desc.
     """
     if len(candidates) <= 1:
-        return candidates
+        return candidates, []
 
     payload = [
         {
@@ -425,15 +433,21 @@ def _llm_dedupe(
         logger.warning("llm dedupe parse failed: %s — keeping originals", exc)
 
     if not clusters:
-        return candidates
+        return candidates, []
 
     seen: set[int] = set()
     result: list[tuple[dict[str, Any], int]] = []
+    merged_urls: list[str] = []
     for group in clusters:
         members = [i for i in group if 0 <= i < len(candidates) and i not in seen]
         if not members:
             continue
         best = max(members, key=lambda i: candidates[i][1])
+        merged_urls.extend(
+            candidates[i][0].get("url", "")
+            for i in members
+            if i != best and candidates[i][0].get("url")
+        )
         seen.update(members)
         result.append(candidates[best])
 
@@ -445,7 +459,7 @@ def _llm_dedupe(
     # Re-sort by score desc since cluster order is arbitrary
     result.sort(key=lambda x: -x[1])
     logger.info("llm dedupe: %d candidates -> %d unique stories", len(candidates), len(result))
-    return result
+    return result, merged_urls
 
 
 def _infer_source(url: str) -> str:
@@ -485,7 +499,7 @@ def run(board: str, as_of: date | None = None) -> Path:
     above_threshold = [(e, sc) for e, sc in scored if sc >= threshold]
     pool_size = min(top_n * DEDUPE_POOL_MULTIPLIER, DEDUPE_MAX_CANDIDATES)
     pool = above_threshold[:pool_size]
-    deduped = _llm_dedupe(client, pool) if pool else []
+    deduped, merged_urls = _llm_dedupe(client, pool) if pool else ([], [])
     selected = [e for e, _sc in deduped[:top_n]]
     logger.info("[%s] scored=%d above_threshold=%d pool=%d unique=%d selected=%d (threshold=%d, top_n=%d)",
                 board, len(scored), len(above_threshold), len(pool), len(deduped),
@@ -508,7 +522,40 @@ def run(board: str, as_of: date | None = None) -> Path:
     }
     out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
     logger.info("[%s] wrote %s", board, out_path)
+
+    report = render_source_report(
+        board=board,
+        display_name=bcfg.get("display_name", board),
+        report_date=as_of,
+        feed_stats=data.get("feed_stats") or _fallback_feed_stats(entries),
+        entries=entries,
+        score_by_url={entry.get("url", ""): score for entry, score in scored if entry.get("url")},
+        selected_urls={entry.get("url", "") for entry in selected if entry.get("url")},
+        merged_urls=merged_urls,
+    )
+    write_board_report(board, as_of, report)
+    refresh_latest_report(as_of, list((cfg.get("boards") or {}).keys()))
     return out_path
+
+
+def _fallback_feed_stats(entries: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    stats: dict[str, dict[str, Any]] = {}
+    for entry in entries:
+        feed_url = entry.get("feed_url") or _infer_source(entry.get("url", ""))
+        if not feed_url:
+            continue
+        row = stats.setdefault(
+            feed_url,
+            {
+                "feed_title": entry.get("feed_title") or feed_url,
+                "category": entry.get("category", ""),
+                "attempted": 1,
+                "succeeded": 1,
+                "raw_count": 0,
+            },
+        )
+        row["raw_count"] += 1
+    return stats
 
 
 def main() -> None:

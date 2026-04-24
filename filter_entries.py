@@ -216,6 +216,8 @@ class FilteredEntry:
     cve_ids: list[str]
     related_urls: list[str]
     quality_score: int
+    feed_url: str = ""
+    feed_title: str = ""
 
 
 def _is_waf_polluted(text: str) -> bool:
@@ -427,6 +429,8 @@ def filter_and_dedup(entries: Iterable[FeedEntry]) -> tuple[list[FilteredEntry],
                 cve_ids=cves,
                 related_urls=[],
                 quality_score=score,
+                feed_url=e.feed_url,
+                feed_title=e.feed_title,
             )
         )
 

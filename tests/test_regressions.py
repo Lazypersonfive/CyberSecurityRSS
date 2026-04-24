@@ -5,9 +5,12 @@ from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
 from digest_postprocess import count_chinese_chars, summary_needs_repair
+from digest_pipeline_gemini import _selection_reason
 from fetch_feeds import FeedEntry, fetch_all_entries
+from fetch_opml import fetch_opml_metadata
 from filter_entries import filter_and_dedup
 from rss_curation import curate_entries
+from source_reports import refresh_latest_report, render_source_report
 from site_builder import build
 
 
@@ -30,9 +33,31 @@ class FetchFeedsTests(unittest.IsolatedAsyncioTestCase):
             return results[url]
 
         with patch("fetch_feeds._fetch_one_bounded", side_effect=fake_fetch):
-            entries, _health = await fetch_all_entries(feeds, hours=9999, max_per_category=2)
+            entries, _health = await fetch_all_entries(
+                feeds,
+                hours=9999,
+                max_per_category=2,
+                feed_titles={"feed-a": "Feed A", "feed-b": "Feed B"},
+            )
 
         self.assertEqual([entry.title for entry in entries], ["newer-2", "newer-1"])
+        self.assertEqual([entry.feed_url for entry in entries], ["feed-b", "feed-b"])
+        self.assertEqual([entry.feed_title for entry in entries], ["Feed B", "Feed B"])
+
+
+class FetchOpmlTests(unittest.TestCase):
+    def test_fetch_opml_metadata_preserves_feed_title(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            opml = Path(tmpdir) / "feeds.opml"
+            opml.write_text(
+                """<opml><body><outline text="Labs"><outline text="Anthropic" title="Anthropic News" xmlUrl="https://example.com/rss.xml" /></outline></body></opml>""",
+                encoding="utf-8",
+            )
+
+            metadata = fetch_opml_metadata(opml)
+
+        self.assertEqual(metadata["https://example.com/rss.xml"]["feed_title"], "Anthropic News")
+        self.assertEqual(metadata["https://example.com/rss.xml"]["category"], "Labs")
 
 
 class FilterEntriesTests(unittest.TestCase):
@@ -55,6 +80,22 @@ class FilterEntriesTests(unittest.TestCase):
         kept, _stats = filter_and_dedup([older, newer])
 
         self.assertEqual([entry.title for entry in kept], ["Newer advisory", "Older advisory"])
+
+    def test_filter_preserves_feed_metadata(self) -> None:
+        entry = FeedEntry(
+            title="CVE-2026-1234 exploited in product",
+            url="https://example.com/advisory",
+            summary="A" * 80,
+            category="security",
+            published=datetime(2026, 4, 22, 1, tzinfo=timezone.utc),
+            feed_url="https://feeds.example.com/rss",
+            feed_title="Example Feed",
+        )
+
+        kept, _stats = filter_and_dedup([entry])
+
+        self.assertEqual(kept[0].feed_url, "https://feeds.example.com/rss")
+        self.assertEqual(kept[0].feed_title, "Example Feed")
 
 
 class SiteBuilderTests(unittest.TestCase):
@@ -111,6 +152,56 @@ class SummaryLengthTests(unittest.TestCase):
         self.assertFalse(summary_needs_repair(enough_cn))
         self.assertTrue(summary_needs_repair(english_heavy))
         self.assertEqual(count_chinese_chars(enough_cn), 220)
+
+
+class GeminiPipelineTests(unittest.TestCase):
+    def test_selection_reason_falls_back_to_empty_string(self) -> None:
+        self.assertEqual(_selection_reason({}), "")
+        self.assertEqual(_selection_reason({"selection_reason": "值得关注的官方发布，影响企业部署策略"}), "值得关注的官方发布，影响企业部署策略")
+
+
+class SourceReportTests(unittest.TestCase):
+    def test_source_report_summarizes_scores_and_dedupe_counts(self) -> None:
+        feed_stats = {
+            "feed-a": {"feed_title": "Feed A", "category": "Labs", "attempted": 1, "succeeded": 1, "raw_count": 3},
+            "feed-b": {"feed_title": "Feed B", "category": "Media", "attempted": 1, "succeeded": 0, "raw_count": 0},
+        }
+        entries = [
+            {"url": "https://a/1", "feed_url": "feed-a", "feed_title": "Feed A"},
+            {"url": "https://a/2", "feed_url": "feed-a", "feed_title": "Feed A"},
+            {"url": "https://a/3", "feed_url": "feed-a", "feed_title": "Feed A"},
+        ]
+
+        markdown = render_source_report(
+            board="ai",
+            display_name="AI 前沿",
+            report_date=date(2026, 4, 24),
+            feed_stats=feed_stats,
+            entries=entries,
+            score_by_url={"https://a/1": 9, "https://a/2": 5, "https://a/3": 2},
+            selected_urls={"https://a/1"},
+            merged_urls=["https://a/3"],
+        )
+
+        self.assertIn("| Feed A | 1/1 | 3 -> 3 | 5.3 · 5 | 33% | 1 | 1 |", markdown)
+        self.assertIn("| Feed B | 0/1 | 0 -> 0 | - | - | 0 | 0 |", markdown)
+
+    def test_latest_report_combines_board_reports(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            reports = Path(tmpdir)
+            reports.joinpath("ai_2026-04-24.md").write_text("# AI\n", encoding="utf-8")
+            reports.joinpath("security_2026-04-24.md").write_text("# Security\n", encoding="utf-8")
+
+            latest = refresh_latest_report(
+                date(2026, 4, 24),
+                ["security", "ai", "finance"],
+                reports_dir=reports,
+            )
+
+            body = latest.read_text(encoding="utf-8")
+
+        self.assertLess(body.index("# Security"), body.index("# AI"))
+        self.assertNotIn("finance", body)
 
 
 if __name__ == "__main__":

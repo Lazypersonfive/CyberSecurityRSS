@@ -22,6 +22,8 @@ class FeedEntry:
     summary: str
     category: str
     published: datetime
+    feed_url: str = ""
+    feed_title: str = ""
 
 
 def load_seen_urls(date_str: str) -> set[str]:
@@ -39,6 +41,7 @@ async def fetch_all_entries(
     timeout: int = 10,
     seen_urls: set[str] | None = None,
     max_per_category: int = 30,
+    feed_titles: dict[str, str] | None = None,
 ) -> tuple[list[FeedEntry], dict[str, int]]:
     """Fetch all feeds concurrently and return recent entries.
 
@@ -48,11 +51,13 @@ async def fetch_all_entries(
         timeout: Per-request timeout in seconds.
         seen_urls: URLs already delivered; these will be skipped.
         max_per_category: Cap entries per category to limit API cost.
+        feed_titles: Optional feed URL -> feed label mapping from OPML.
 
     Returns:
         Tuple of (entry list, health dict mapping url -> error_count).
     """
     seen_urls = seen_urls or set()
+    feed_titles = feed_titles or {}
     cutoff = datetime.now(timezone.utc).timestamp() - hours * 3600
 
     entries: list[FeedEntry] = []
@@ -88,6 +93,8 @@ async def fetch_all_entries(
             if entry.published.timestamp() < cutoff:
                 continue
             entry.category = category
+            entry.feed_url = url
+            entry.feed_title = feed_titles.get(url, url)
             category_entries.setdefault(category, []).append(entry)
 
     for category in feeds:

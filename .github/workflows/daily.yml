@@ -62,7 +62,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for d in docs digest output archive; do
+          for d in docs digest output archive reports; do
             [ -d "$d" ] && git add "$d"
           done
           git status --short
