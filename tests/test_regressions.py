@@ -58,6 +58,13 @@ class FilterEntriesTests(unittest.TestCase):
 
 
 class SiteBuilderTests(unittest.TestCase):
+    def test_template_does_not_render_feed_items_with_inner_html(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertNotIn("card.innerHTML", template)
+        self.assertIn("safeUrl", template)
+        self.assertIn("textContent", template)
+
     def test_cli_lookback_overrides_config(self) -> None:
         with TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
