@@ -23,6 +23,7 @@ from typing import Any
 import anthropic
 import yaml
 
+from digest_clock import digest_today
 from digest_postprocess import normalize_summary_text, summary_needs_repair
 from digest_postprocess import count_chinese_chars, SUMMARY_TARGET_MAX_CHARS, SUMMARY_TARGET_MIN_CHARS
 
@@ -320,7 +321,7 @@ def run(board: str, as_of: date | None = None) -> Path:
     items = _summarize(client, selected) if selected else []
 
     DIGEST_DIR.mkdir(parents=True, exist_ok=True)
-    as_of = as_of or date.today()
+    as_of = as_of or digest_today()
     out_path = DIGEST_DIR / f"{board}_{as_of.isoformat()}.json"
     payload = {
         "board": board,

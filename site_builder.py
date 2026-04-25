@@ -20,6 +20,8 @@ from typing import Any
 import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+from digest_clock import digest_today
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(message)s",
@@ -70,7 +72,7 @@ def build(lookback_days: int = 7) -> None:
     site = cfg.get("site") or {}
     lookback = int(lookback_days if lookback_days is not None else site.get("lookback_days", 7))
 
-    today = date.today()
+    today = digest_today()
     dates_with_content: list[str] = []
 
     DOCS_DIR.mkdir(parents=True, exist_ok=True)

@@ -16,12 +16,12 @@ import asyncio
 import json
 import logging
 from collections import Counter
-from datetime import date
 from pathlib import Path
 from typing import Any
 
 import yaml
 
+from digest_clock import digest_today
 from fetch_feeds import fetch_all_entries, load_seen_urls
 from fetch_opml import fetch_opml, fetch_opml_metadata
 from filter_entries import filter_and_dedup
@@ -80,7 +80,7 @@ def main() -> None:
     total_feeds = sum(len(v) for v in feeds.values())
     logger.info("[%s] %d feeds across %d categories", board_label, total_feeds, len(feeds))
 
-    today_str = date.today().isoformat()
+    today_str = digest_today().isoformat()
     seen_urls = set() if args.no_dedup else load_seen_urls(today_str)
 
     logger.info("[%s] Fetching entries (last %dh)...", board_label, hours)

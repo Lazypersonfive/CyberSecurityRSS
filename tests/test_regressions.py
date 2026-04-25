@@ -4,6 +4,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
+from digest_clock import digest_today
 from digest_postprocess import count_chinese_chars, summary_needs_repair
 from digest_pipeline_gemini import _selection_reason
 from fetch_feeds import FeedEntry, fetch_all_entries
@@ -118,9 +119,9 @@ class SiteBuilderTests(unittest.TestCase):
                 with patch("site_builder.TEMPLATE_DIR", templates):
                     with patch("site_builder.yaml.safe_load", return_value={"boards": {}, "site": {"lookback_days": 7}}):
                         with patch("site_builder.Path.read_text", return_value="site: {}"):
-                            with patch("site_builder.date") as mock_date:
+                            with patch("site_builder.digest_today") as mock_today:
                                 with patch("site_builder._build_feed_for_date", return_value=None) as mock_feed:
-                                    mock_date.today.return_value = date(2026, 4, 22)
+                                    mock_today.return_value = date(2026, 4, 22)
                                     build(lookback_days=2)
 
         checked_dates = [call.args[1] for call in mock_feed.call_args_list]
@@ -202,6 +203,12 @@ class SourceReportTests(unittest.TestCase):
 
         self.assertLess(body.index("# Security"), body.index("# AI"))
         self.assertNotIn("finance", body)
+
+
+class DigestClockTests(unittest.TestCase):
+    def test_digest_today_honors_env_override(self) -> None:
+        with patch.dict("os.environ", {"DIGEST_DATE": "2026-04-25"}):
+            self.assertEqual(digest_today(), date(2026, 4, 25))
 
 
 if __name__ == "__main__":

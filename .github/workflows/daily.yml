@@ -2,8 +2,8 @@ name: daily-digest
 
 on:
   schedule:
-    # 23:15 UTC = 07:15 CST every day
-    - cron: "15 23 * * *"
+    # 22:45 UTC = 06:45 CST; GitHub schedule queue usually lands around 07:00-07:30 CST.
+    - cron: "45 22 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -44,6 +44,9 @@ jobs:
             echo "script=digest_pipeline_gemini.py" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Resolve digest date
+        run: echo "DIGEST_DATE=$(TZ=Asia/Shanghai date +'%Y-%m-%d')" >> "$GITHUB_ENV"
+
       - name: Fetch + digest all boards
         run: |
           for board in security ai finance; do
@@ -69,6 +72,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore(daily): refresh digest for $(date -u +'%Y-%m-%d')"
+            git commit -m "chore(daily): refresh digest for $DIGEST_DATE"
             git push
           fi
