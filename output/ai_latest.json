@@ -3,30 +3,398 @@
   "fetched_at": "2026-04-24",
   "hours": 30,
   "total_feeds": 30,
-  "raw_entry_count": 95,
-  "entry_count": 39,
+  "raw_entry_count": 102,
+  "entry_count": 45,
   "filter_stats": {
-    "input": 95,
-    "dropped_title_blacklist": 2,
-    "dedup_merged": 3,
-    "output": 90
+    "input": 102,
+    "dropped_title_blacklist": 3,
+    "dedup_merged": 14,
+    "output": 85
   },
   "curation_stats": {
-    "dropped_source_cap": 51
+    "dropped_source_cap": 40
+  },
+  "feed_stats": {
+    "https://news.google.com/rss/search?q=(site:anthropic.com+OR+site:claude.com)&hl=en-US&gl=US&ceid=US:en": {
+      "feed_title": "Anthropic + Claude (first-party)",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://news.google.com/rss/search?q=(%22Anthropic%22+OR+%22Claude+Opus%22+OR+%22Claude+Sonnet%22)&hl=en-US&gl=US&ceid=US:en": {
+      "feed_title": "Anthropic Coverage (Google News)",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 12
+    },
+    "https://openai.com/news/rss.xml": {
+      "feed_title": "OpenAI Blog",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://deepmind.google/blog/rss.xml": {
+      "feed_title": "Google DeepMind Blog",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://blog.google/technology/ai/rss/": {
+      "feed_title": "Google AI Blog",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://news.google.com/rss/search?q=(%22Meta+AI%22+OR+%22Llama%22+OR+%22Meta+FAIR%22)&hl=en-US&gl=US&ceid=US:en": {
+      "feed_title": "Meta AI (Google News)",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 1
+    },
+    "https://huggingface.co/blog/feed.xml": {
+      "feed_title": "Hugging Face Blog",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://news.google.com/rss/search?q=(%22Mistral+AI%22+OR+%22Le+Chat%22)&hl=en-US&gl=US&ceid=US:en": {
+      "feed_title": "Mistral (Google News)",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://blogs.nvidia.com/feed/": {
+      "feed_title": "NVIDIA Blog",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://news.google.com/rss/search?q=(%22xAI%22+OR+%22Grok%22)&hl=en-US&gl=US&ceid=US:en": {
+      "feed_title": "xAI (Google News)",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 10
+    },
+    "https://news.google.com/rss/search?q=%22Cohere%22+(model+OR+AI+OR+enterprise)&hl=en-US&gl=US&ceid=US:en": {
+      "feed_title": "Cohere (Google News)",
+      "category": "Labs",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 7
+    },
+    "http://export.arxiv.org/rss/cs.AI": {
+      "feed_title": "arXiv cs.AI recent",
+      "category": "Research",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 30
+    },
+    "http://export.arxiv.org/rss/cs.CL": {
+      "feed_title": "arXiv cs.CL recent",
+      "category": "Research",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "http://export.arxiv.org/rss/cs.LG": {
+      "feed_title": "arXiv cs.LG recent",
+      "category": "Research",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://machinelearning.apple.com/rss.xml": {
+      "feed_title": "Apple ML Research",
+      "category": "Research",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://lilianweng.github.io/posts/index.xml": {
+      "feed_title": "Lilian Weng",
+      "category": "Research",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://karpathy.github.io/feed.xml": {
+      "feed_title": "Andrej Karpathy",
+      "category": "Research",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://simonwillison.net/atom/everything/": {
+      "feed_title": "Simon Willison",
+      "category": "Commentary",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 10
+    },
+    "https://www.latent.space/feed": {
+      "feed_title": "Latent Space",
+      "category": "Commentary",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 2
+    },
+    "https://jack-clark.net/feed/": {
+      "feed_title": "Import AI",
+      "category": "Commentary",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://www.semianalysis.com/feed": {
+      "feed_title": "SemiAnalysis",
+      "category": "Commentary",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://www.oneusefulthing.org/feed": {
+      "feed_title": "One Useful Thing",
+      "category": "Commentary",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 1
+    },
+    "https://www.interconnects.ai/feed": {
+      "feed_title": "Interconnects",
+      "category": "Commentary",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://www.technologyreview.com/feed/": {
+      "feed_title": "MIT Tech Review AI",
+      "category": "Media",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 3
+    },
+    "https://arstechnica.com/ai/feed/": {
+      "feed_title": "Ars Technica AI",
+      "category": "Media",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 4
+    },
+    "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
+      "feed_title": "The Verge AI",
+      "category": "Media",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 9
+    },
+    "https://techcrunch.com/category/artificial-intelligence/feed/": {
+      "feed_title": "TechCrunch AI",
+      "category": "Media",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 13
+    },
+    "https://venturebeat.com/category/ai/feed/": {
+      "feed_title": "VentureBeat AI",
+      "category": "Media",
+      "attempted": 1,
+      "succeeded": 1,
+      "raw_count": 0
+    },
+    "https://wechat2rss.xlab.app/feed/8c82a4c97a7d8a34ecaab8c50c5bea02ce7542c2.xml": {
+      "feed_title": "机器之心",
+      "category": "Chinese",
+      "attempted": 1,
+      "succeeded": 0,
+      "raw_count": 0
+    },
+    "https://wechat2rss.xlab.app/feed/eaae15a4d2d9b87c42f74efe0cbb6cee3a97e0c1.xml": {
+      "feed_title": "量子位",
+      "category": "Chinese",
+      "attempted": 1,
+      "succeeded": 0,
+      "raw_count": 0
+    }
   },
   "entries": [
     {
-      "title": "OpenAI’s New GPT-5.5 Powers Codex on NVIDIA Infrastructure — and NVIDIA Is Already Putting It to Work",
-      "url": "https://blogs.nvidia.com/blog/openai-codex-gpt-5-5-ai-agents/",
-      "summary": "AI agents have revolutionized developer workflows, and their next frontier is knowledge work: processing information, solving complex problems, coming up with new ideas and driving innovation. Codex, OpenAI’s agentic coding application, is enabling this new frontier. It’s now powered by GPT-5.5, OpenAI’s latest frontier model, which runs on NVIDIA GB200 NVL72 rack-scale systems. Over 10,000 [&#823",
-      "category": "Labs",
-      "published": "2026-04-23T18:57:55+00:00",
+      "title": "How Project Maven taught the military to love AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/917996/project-maven-military-ai-katrina-manson",
+      "summary": "In the first 24 hours of the assault on Iran, the US military struck more than 1,000 targets, nearly double the scale of the \"shock and awe\" attack on Iraq over two decades ago. This acceleration was made possible by AI systems that speed up the targeting process. Chief among them is the Maven Smart [&#8230;]",
+      "category": "Media",
+      "published": "2026-04-24T17:00:00+00:00",
       "fetch_status": "full",
       "cve_ids": [],
-      "related_urls": [
-        "https://simonwillison.net/2026/Apr/23/gpt-5-5/#atom-everything"
-      ],
-      "quality_score": 2
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "feed_title": "The Verge AI"
+    },
+    {
+      "title": "DeepSeek previews new AI model that ‘closes the gap’ with frontier models",
+      "url": "https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/",
+      "summary": "DeepSeek says both models are more efficient and performant than DeepSeek V3.2 due to architectural improvements, and have almost \"closed the gap\" with current leading models, both open and closed, on reasoning benchmarks.",
+      "category": "Media",
+      "published": "2026-04-24T13:30:59+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "feed_title": "TechCrunch AI"
+    },
+    {
+      "title": "The Download: supercharged scams and studying AI healthcare",
+      "url": "https://www.technologyreview.com/2026/04/24/1136400/the-download-supercharged-scams-questionable-ai-healthcare/",
+      "summary": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. We’re in a new era of AI-driven scams When ChatGPT was released in late 2022, it showed how easily generative AI could create human-like text. This quickly caught the eye of&#8230;",
+      "category": "Media",
+      "published": "2026-04-24T12:10:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://www.technologyreview.com/feed/",
+      "feed_title": "MIT Tech Review AI"
+    },
+    {
+      "title": "China’s DeepSeek previews new AI model a year after jolting US rivals",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/918035/deepseek-preview-v4-ai-model",
+      "summary": "Chinese AI company DeepSeek released a preview of its hotly anticipated next-generation AI model V4 on Friday, saying that the open-source model can compete with leading closed-source systems from US rivals including Anthropic, Google, and OpenAI. DeepSeek says V4 marks a major improvement over prior models, especially in coding, a capability that has become central [&#8230;]",
+      "category": "Media",
+      "published": "2026-04-24T09:45:30+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "feed_title": "The Verge AI"
+    },
+    {
+      "title": "Health-care AI is here. We don’t know if it actually helps patients.",
+      "url": "https://www.technologyreview.com/2026/04/24/1136352/health-care-ai-dont-know-actually-helps-patients/",
+      "summary": "I don’t need to tell you that AI is everywhere. Or that it is being used, increasingly, in hospitals. Doctors are using AI to help them with notetaking. AI-based tools are trawling through patient records, flagging people who may require certain support or treatments. They are also used to interpret medical exam results and X-rays. A&#8230;",
+      "category": "Media",
+      "published": "2026-04-24T09:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://www.technologyreview.com/feed/",
+      "feed_title": "MIT Tech Review AI"
+    },
+    {
+      "title": "Architecture of an AI-Based Automated Course of Action Generation System for Military Operations",
+      "url": "https://arxiv.org/abs/2604.20862",
+      "summary": "arXiv:2604.20862v1 Announce Type: new Abstract: The automation system for Course of Action (CoA) planning is an essential element in future warfare. As maneuver speeds increase, surveillance ranges extend, and weapon ranges grow, the operational area expands, making traditional manned-based CoA planning increasingly challenging. Consequently, the development of an AI-based automated CoA planning s",
+      "category": "Research",
+      "published": "2026-04-24T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Escaping the Agreement Trap: Defensibility Signals for Evaluating Rule-Governed AI",
+      "url": "https://arxiv.org/abs/2604.20972",
+      "summary": "arXiv:2604.20972v1 Announce Type: new Abstract: Content moderation systems are typically evaluated by measuring agreement with human labels. In rule-governed environments this assumption fails: multiple decisions may be logically consistent with the governing policy, and agreement metrics penalize valid decisions while mischaracterizing ambiguity as error - a failure mode we term the Agreement Tra",
+      "category": "Research",
+      "published": "2026-04-24T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks",
+      "url": "https://arxiv.org/abs/2604.20987",
+      "summary": "arXiv:2604.20987v1 Announce Type: new Abstract: Long horizon interactive environments are a testbed for evaluating agents skill usage abilities. These environments demand multi step reasoning, the chaining of multiple skills over many timesteps, and robust decision making under delayed rewards and partial observability. Games are a good testbed for evaluating agent skill usage in environments. Lar",
+      "category": "Research",
+      "published": "2026-04-24T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Deep FinResearch Bench: Evaluating AI's Ability to Conduct Professional Financial Investment Research",
+      "url": "https://arxiv.org/abs/2604.21006",
+      "summary": "arXiv:2604.21006v1 Announce Type: new Abstract: We introduce Deep FinResearch Bench, a practical and comprehensive evaluation framework for deep research (DR) agents in financial investment research. The benchmark assesses three dimensions of report quality: qualitative rigor, quantitative forecasting and valuation accuracy, and claim credibility and verifiability. Particularly, we define correspo",
+      "category": "Research",
+      "published": "2026-04-24T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Who Defines Fairness? Target-Based Prompting for Demographic Representation in Generative Models",
+      "url": "https://arxiv.org/abs/2604.21036",
+      "summary": "arXiv:2604.21036v1 Announce Type: new Abstract: Text-to-image(T2I) models like Stable Diffusion and DALL-E have made generative AI widely accessible, yet recent studies reveal that these systems often replicate societal biases, particularly in how they depict demographic groups across professions. Prompts such as 'doctor' or 'CEO' frequently yield lighter-skinned outputs, while lower-status roles",
+      "category": "Research",
+      "published": "2026-04-24T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "InVitroVision: a Multi-Modal AI Model for Automated Description of Embryo Development using Natural Language",
+      "url": "https://arxiv.org/abs/2604.21061",
+      "summary": "arXiv:2604.21061v1 Announce Type: new Abstract: The application of artificial intelligence (AI) in IVF has shown promise in improving consistency and standardization of decisions, but often relies on annotated data and does not make use of the multimodal nature of IVF data. We investigated whether foundational vision-language models can be fine-tuned to predict natural language descriptions of emb",
+      "category": "Research",
+      "published": "2026-04-24T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Mind the Prompt: Self-adaptive Generation of Task Plan Explanations via LLMs",
+      "url": "https://arxiv.org/abs/2604.21092",
+      "summary": "arXiv:2604.21092v1 Announce Type: new Abstract: Integrating Large Language Models (LLMs) into complex software systems enables the generation of human-understandable explanations of opaque AI processes, such as automated task planning. However, the quality and reliability of these explanations heavily depend on effective prompt engineering. The lack of a systematic understanding of how diverse sta",
+      "category": "Research",
+      "published": "2026-04-24T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Propensity Inference: Environmental Contributors to LLM Behaviour",
+      "url": "https://arxiv.org/abs/2604.21098",
+      "summary": "arXiv:2604.21098v1 Announce Type: new Abstract: Motivated by loss of control risks from misaligned AI systems, we develop and apply methods for measuring language models' propensity for unsanctioned behaviour. We contribute three methodological improvements: analysing effects of changes to environmental factors on behaviour, quantifying effect sizes via Bayesian generalised linear models, and taki",
+      "category": "Research",
+      "published": "2026-04-24T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
     },
     {
       "title": "OpenAI says its new GPT-5.5 model is more efficient and better at coding",
@@ -36,187 +404,319 @@
       "published": "2026-04-23T18:00:00+00:00",
       "fetch_status": "full",
       "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "feed_title": "The Verge AI"
+    },
+    {
+      "title": "Alphabet backs Anthropic with $40B in intensifying AI compute race - Interesting Engineering",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMW85NWVvOUhSazFmcnBhX3NXd0dHak1QMFp3RkJISlJmZjBwaC1NT1RJcHJGSXhFd1lzR05DalQxMjhFcHA4b0k1YWwzV2R0dFhTUkRZSG5YbDJFVmt5eTFQVmNYZGhQOW5wbmVwRTc2STRQcHJXdlkwRjdXWEdFWTRqOGFjY3lhMFFn?oc=5",
+      "summary": "Alphabet backs Anthropic with $40B in intensifying AI compute race &nbsp;&nbsp; Interesting Engineering",
+      "category": "Labs",
+      "published": "2026-04-24T23:46:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22Anthropic%22+OR+%22Claude+Opus%22+OR+%22Claude+Sonnet%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Anthropic Coverage (Google News)"
+    },
+    {
+      "title": "White House pushed out new AI official after just four days on the job - The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxONVF3Nm5NaC1BdVRlclhrOFNuVUJqd0lnMl9LUExzV1RWTUsya0NJT0RLNDBnQUdYZldzTlNqd2tMV29VNmxtTWlHcjdLSmRCSjdIdldHRHlRUW5VazhGQ0dleHkySE9rZmg5T3YyemNRd0o4WDJNbnpabjJIWmxEV1VWeGt3UThKdEZtMUVaZEcxQkpPc1EwSQ?oc=5",
+      "summary": "White House pushed out new AI official after just four days on the job &nbsp;&nbsp; The Washington Post",
+      "category": "Labs",
+      "published": "2026-04-24T23:37:05+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22Anthropic%22+OR+%22Claude+Opus%22+OR+%22Claude+Sonnet%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Anthropic Coverage (Google News)"
+    },
+    {
+      "title": "The people do not yearn for automation",
+      "url": "https://simonwillison.net/2026/Apr/24/the-people-do-not-yearn-for-automation/#atom-everything",
+      "summary": "The people do not yearn for automation This written and video essay by Nilay Patel explores why AI is unpopular with the general public even as usage numbers for ChatGPT continue to skyrocket. It’s a superb piece of commentary, and something I expect I’ll be thinking about for a long time to come. Nilay’s core idea is that people afflicted with “software brain” - who see the world as something to",
+      "category": "Commentary",
+      "published": "2026-04-24T22:38:49+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "OpenAI’s GPT-5.5 vs Claude Opus 4.7: Which is better? - Mashable",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNYVBNZVhkenFXc1BPcDM1Q1Y3eWF0MWl3anpReWpkNFU4dmJBZXhtU3FIOFJDYWlDZ0theHVyQXBxZVl4MGl5SlJNTUxHc09MN0o4QVd3eTdYck1yMjFLbnBacWY4eDhOOXJ2cXU0b2djaGpKVGxqcVlJUTM3SDRUeFdfdGw?oc=5",
+      "summary": "OpenAI’s GPT-5.5 vs Claude Opus 4.7: Which is better? &nbsp;&nbsp; Mashable",
+      "category": "Labs",
+      "published": "2026-04-24T22:18:31+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22Anthropic%22+OR+%22Claude+Opus%22+OR+%22Claude+Sonnet%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Anthropic Coverage (Google News)"
+    },
+    {
+      "title": "Anthropic launches Memory in Claude Agents for enterprise - TestingCatalog",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSHVOSHRQejI2eFdLQXViTTNEdS1IY2I0M2NpU0RSUmdTZlhTcE52SWdfRzJZLUhCVkRqbUt3SUpEeVNJNDhaaGxyUFFyQjhOX1c3NVBFb0tMY1h6RDY2NDlTSUFVLTM4YklTYjdrcjM1RGpkM01NODVFV0JXR3pxYmNCM1VxWVE1QXF3bjRfWEdhbms?oc=5",
+      "summary": "Anthropic launches Memory in Claude Agents for enterprise &nbsp;&nbsp; TestingCatalog",
+      "category": "Labs",
+      "published": "2026-04-24T21:51:30+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22xAI%22+OR+%22Grok%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "xAI (Google News)"
+    },
+    {
+      "title": "xAI launches Grok Voice Think Fast 1.0 for voice agents - TestingCatalog",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOLUR2NFROVVp5YnhZSWZ4Q0NtemFJazVlSnczWjdnQVBibXdDcmFLZVVNSVAxcWhpX0R4ZmFfa1dWMHRldHNwdWJHMjhQeFZUSzBfRjg1WnpUOTBpOUJqRDVKYVZpSUhlVTNuUmM1VnBUaE9icDRnY0haemlIV2lKQXBKX2F1QVBHUEwyVkh1Mzc?oc=5",
+      "summary": "xAI launches Grok Voice Think Fast 1.0 for voice agents &nbsp;&nbsp; TestingCatalog",
+      "category": "Labs",
+      "published": "2026-04-24T21:51:15+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22xAI%22+OR+%22Grok%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "xAI (Google News)"
+    },
+    {
+      "title": "Three reasons why DeepSeek’s new model V4 matters",
+      "url": "https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/",
+      "summary": "On Friday, Chinese AI firm DeepSeek released a preview of V4, its long-awaited new flagship model. Notably, the model can process much longer prompts than its last generation, thanks to a new design that helps it handle large amounts of text more efficiently. Like DeepSeek’s previous models, V4 is open source, meaning it is available&#8230;",
+      "category": "Media",
+      "published": "2026-04-24T21:40:58+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.technologyreview.com/feed/",
+      "feed_title": "MIT Tech Review AI"
+    },
+    {
+      "title": "News of the day: Cohere AI merger, higher-paid newcomers, flying in comfort, DIY mortgages, Lululemon's new CEO and more - Financial Post",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPOEJfWmU2bkp4Q2pVMWZaRVQxOGVfcEJNZnhwd1g0c3gxN2UzMG15Q3FZaWpkaW9BNXo3X3UzTF9mWDhSZWloVlFNSW9USmtuaWpSTms0WVNxR0hSRUtHTnF4ZkNpZUZ3TE4zOHdGRXBnT1VCNjc0XzBqSDg5OUNORVA2bXdPSllGTWY1Y3QzRjZFcFZBV1B4dGtlYWJRWWdVMkNQTlh6ZlFTWlJPdnVGd0hXTWV3MkJjYjRZV2t1eDIzVjFEOGlPVGtIbGdXOGRLUXBsa1lwcGp3MlBaZ3o3SXJDS3BJdDN5VHc?oc=5",
+      "summary": "News of the day: Cohere AI merger, higher-paid newcomers, flying in comfort, DIY mortgages, Lululemon's new CEO and more &nbsp;&nbsp; Financial Post",
+      "category": "Labs",
+      "published": "2026-04-24T21:38:47+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
       "related_urls": [
-        "https://news.google.com/rss/articles/CBMifkFVX3lxTFBQTU0xLTktV1paWGFrQzg3XzQ4b3ZDQ1lYNmgtbTRMdTUzZEhtRTBPbFktUU45ZVExSjhGT24zWHpJdEVzcVc0WU1PNG0yUDZDMUxsYlVPMjNDSFl6d1AzSVhaOXNiVnFpbGttOEhaYTkxZ3hBMGd5S1h2VmZhUQ?oc=5",
-        "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdjlQX211bGxZVk5VTDNMVlBCTkZVUlN3SE1IT1JNTXd6Q1lMQXdPa2EzNTZOalo3Q1dTRncybkdyai1FSjVNd0lqbUV1M1llZ2FlQzdoRFBBOXY4QjFNQUFiMG51X1pMVWpRRkxMOHBheTQ1Q1I3YWt3V0hNQWF3cm1NemNMemxFRjd0LU5obEdJbUxYMEE?oc=5"
+        "https://news.google.com/rss/articles/CBMie0FVX3lxTE1fVjhCTGJMcHloYi0wTjc4SWhQZksxQThnSnN0RF9JOTl0NGFWaWZHT1otcnFBOVJEZTBrWGtOc0dOMmZtSGFyWlc0elZOVVVSdVJkcEE3ZkYzd2NhOW0ySEM3UUdiZF8wYllHRGtoNUVIcUtvNEJqb2Jycw?oc=5"
       ],
-      "quality_score": 2
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=%22Cohere%22+(model+OR+AI+OR+enterprise)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Cohere (Google News)"
     },
     {
-      "title": "You’re about to feel the AI money squeeze",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/917380/ai-monetization-anthropic-openai-token-economics-revenue",
-      "summary": "Earlier this month, millions of OpenClaw users woke up to a sweeping mandate: The viral AI agent tool, which this year took the worldwide tech industry by storm, had been severely restricted by Anthropic. Anthropic, like other leading AI labs, was under immense pressure to lessen the strain on its systems and start turning a [&#8230;]",
+      "title": "Google Plans Up To $40 Bln Investment In Anthropic Amid AI Race - RTTNews",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcndoRlYteUxVT2VQTDZlRURTejR3STVKR2RJdTN0REdPMjdXVWRGeWxMOXM0bmMxWjhFcFVFZzVIUGh1c1JRdmxpbDBBa0V3MEtMT1hHWUNMNXlhWVlTWWdSZ2hMRTJYV2NHaXBtT1dxU2o2YzdZRC1ub0h3aTVEbG5lYzlnYjVnTTlFZ0FVRUplWm5QVkN0NFU2d2FhaW92?oc=5",
+      "summary": "Google Plans Up To $40 Bln Investment In Anthropic Amid AI Race &nbsp;&nbsp; RTTNews",
+      "category": "Labs",
+      "published": "2026-04-24T21:24:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22Anthropic%22+OR+%22Claude+Opus%22+OR+%22Claude+Sonnet%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Anthropic Coverage (Google News)"
+    },
+    {
+      "title": "Cohere: Canadian firm charts different path to U.S. AI giants - Canadian Affairs",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPeFdtdGUtLTJWWFp5SXVUTlRjT211Nm9RdWpSRlhjVEZ2cG93NGszZVBRMjVPQi1nQmpPcEpaMV81dUJBc0V1cGdCdEFMckhGakJDV1I2YUJBNUxHSVEyb2Z3VnBqamE5SWZ1cWwxWG9FOVY3MGJuVWZIamliSnpjbHQtbHc0d1VOaktMbGpiUXlMQTJBT0JOU0JtdEJnZTEtV19SUy1rUQ?oc=5",
+      "summary": "Cohere: Canadian firm charts different path to U.S. AI giants &nbsp;&nbsp; Canadian Affairs",
+      "category": "Labs",
+      "published": "2026-04-24T21:03:51+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=%22Cohere%22+(model+OR+AI+OR+enterprise)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Cohere (Google News)"
+    },
+    {
+      "title": "OpenAI, Anthropic leaders say AI will shift from hype to balance sheet at UNC conference - The North State Journal",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOb1VZTDNDM1pkMUFuRDI3UnZKVDRDaE5LYjdIdHd1dE9HV1lpNXZSYW04eFZSVDBqN2tvaEZjMjUyMlc0VGJSa3RFUTBMX3F5TFBzM3g4WktEbjdmd2RiOGVUNXg0S2lZTHlRTDFwVXdPa0R2YUF6Q3dNd1l6RkRZa3pvMHhkaTItc08tcVBXMUZiWVA1ck9PQ2E0VDlrU2FBNWxwcFVCWDRIWkVNMnRkNmlxVG5Fb1B3TTlmRU1qbnF2QXgw?oc=5",
+      "summary": "OpenAI, Anthropic leaders say AI will shift from hype to balance sheet at UNC conference &nbsp;&nbsp; The North State Journal",
+      "category": "Labs",
+      "published": "2026-04-24T20:06:53+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22Anthropic%22+OR+%22Claude+Opus%22+OR+%22Claude+Sonnet%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Anthropic Coverage (Google News)"
+    },
+    {
+      "title": "Justice Department joins Elon Musk’s xAI in effort to block Colorado AI antidiscrimination law - The Colorado Sun",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOQ3FJQWFpUkZYWmg3V3dqV1lCWXBaWnVidEFLbEJYQlo2LU5qODJ1OWtIRG1LMTc3SXNXbU5zcHNZc2JXVFh0QWRFRVNvMk9oRlhCdGc4ZXg5V1l5OVVrX2FyTEdqYUVUbzQ3b09NNHRPLXZqWktCQXJTSV9oRDNmYXdxZ0d3ZGpQc24w?oc=5",
+      "summary": "Justice Department joins Elon Musk’s xAI in effort to block Colorado AI antidiscrimination law &nbsp;&nbsp; The Colorado Sun",
+      "category": "Labs",
+      "published": "2026-04-24T20:00:56+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxNS3FRcmNCdTRtU3RncVNqMVRXTTMwZEgwQVZoeWx0bXRIbXpsRkUzdU4xd2tUdFpZVzVHLWgzVk14LS1xVEJzb3N5WThUX0Y4SmRYU3FCX1hQUDRseEJRZkhJd2xTWE51MlJFOVptV0gyTFVudnFrX0pwT28tbUFRZll5M1loLVhTUlFOLVBKdF9VbUNJXy1COTB0Yw?oc=5",
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTE1oWk1xN3hiZVpkNE1nSjlyeHlnRVhOY2diS2VFYmlZWHZHN1hSUGt6MVdSMF9yUVA1M25IdmxYZTJ0OXJ3OFZ1Z3RORzJESFNoWDZ2bXRxRU56WFVMeWphNndic05ZTHprdXM0YjJxYkRnbVdfMkE?oc=5",
+        "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUkdycDVvUnVWTlJDbGk4OVd6OVBHaWpQMWJtb1hiRnVZZEpXcUJjekJlYVk5Ylp2bTlhMGQwSHhwSFNxMUhkSmFNUnljVDFoLXlVSlU0eHhjWWdkV3ZWakRHR3hvWHpUNGdSeTdhdklVakU2LXYyX2NWUjdtYUFPWlhn?oc=5",
+        "https://news.google.com/rss/articles/CBMizwFBVV95cUxPQVhVTkYtRkppeml4UUM5TU9JSG0tWWhxSEdwVXdRaGVRTXJFWlNZdVdvYWpKLVZCYzJwQzlmV25qS3l3b3NPTi1JeWV2Umh2VW9hT3p2SmZrb2s4aDFoMkdBejVUS0RhbldmQkdELV9EZVFYcEZjLTEwTDBZRjFCaVRQUmNRaHpPb0F1bXhGMnY1VERmLWtYTUVrek52OVdsLU40blJsbS01QjZSYlEwNzl3d3hNbE9QVkxGY05qMFRFWV81TlVsaUtQRVlfVXc?oc=5",
+        "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOcjdyTjJ6ZHptLTJ0enRYd3JGaE9CZXhDaGxiS09WdGI1am9PaTMtX3FUbV9nejdmOHJCSGM1eU05WnRxVG9jRFAxMkRhckpxaHdYdmRvMDdwWnl4R21KUmFYY0VEV3FMX1lOcGpZNHRSLXl1X2JDZHRjem50clVhUlFjMXQ3dXVtdF9jdFRhN1N5S2VUdDhna2xwdXhJR2J0cmNaejQtbFI3QQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiggFBVV95cUxPYlUxNTdUbWo5czN5NlU3TDFWQnFTbTRDM1I5QTVybUdieUZZMlR4RUxLOUpOU0VaNHJWb2dDVWEtTUFKNXpoLUNEM0d3X08xZG4xQnYyR1J1cUNBZ2NqYS1VVFQxS2tKQUdsUjZqTDFfOU83T3VqdjloYVNpVzFSWVpB0gGKAUFVX3lxTE5ycV9hTEN6OTh3QWEtUXJoTFhPeVV1Mldoanh2Z1VFZWRwaG82QTI3cjljdmVrUGVxNGdsT1BGdnBSY2VxTEJSdUFVTDFNdFZ2Rk9vTHo1TFFIcWpwOVhEci1PZ285eHg5ZnNFeVIzaVVYcDNvTl85MUhnX09rZkJ0LXpIeUZaZTd4QQ?oc=5",
+        "https://news.google.com/rss/articles/CBMingFBVV95cUxOM280RmdGV1o3MVZmOWF0ZVFnQS05SHFITTRLRkwyaXhHd3dCTnF5UllpVlkwcC1CdjlmZDVadW1yS1RnNXg3eHJ0cFZ1d0RoSlRQaWlVMnVRNVdTbTBZZ1F3RWlRUGJ6SU14c0N6VDhFRTEtUXQxUU42V3BJNHZRYTlEaGtteDNZc002Q01ZMVdLSENDZGQzdG1ac0l4Zw?oc=5"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22xAI%22+OR+%22Grok%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "xAI (Google News)"
+    },
+    {
+      "title": "Google commits billions to Anthropic in major AI partnership - USA Today",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNWDdyMjNoZU5pV3VVNnFtWUZkQ1BGV2wwREN1ZG9kMlRYUGtNZVI1ckFoeDgwUHRvNXFhVlB4TmR5cGVDc2dwS0ZQdVdTeVFMeTFFZ0tRYXdnRTNoNHBKU05XSWVtVGtjRk9tY2NZOHN2S25CNDdJZDhEVEJPUVNjRGdpY29Kb1RscHEtcC1R?oc=5",
+      "summary": "Google commits billions to Anthropic in major AI partnership &nbsp;&nbsp; USA Today",
+      "category": "Labs",
+      "published": "2026-04-24T19:57:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22Anthropic%22+OR+%22Claude+Opus%22+OR+%22Claude+Sonnet%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Anthropic Coverage (Google News)"
+    },
+    {
+      "title": "AI Arms Race Accelerates With New Models from OpenAI, DeepSeek and Anthropic - CNET",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPNFJPQjE4U0hEU1NzSktiR3ZYa0dRLTFYckJRNWVJSWNBYy1oRXQ4VWw1YVg2VE8tcHRDOTlycUh1UnFEVThadFZCdWpYOXVDYXdQWjBjR2VoZExRd0gyRnFSdGliSm1rUHdGSHJEZEhfeE5JQ0ZsRHhzU1hMRmdkZlFZSmdaeEpyR19LX2lGOW1vQQ?oc=5",
+      "summary": "AI Arms Race Accelerates With New Models from OpenAI, DeepSeek and Anthropic &nbsp;&nbsp; CNET",
+      "category": "Labs",
+      "published": "2026-04-24T19:48:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22Anthropic%22+OR+%22Claude+Opus%22+OR+%22Claude+Sonnet%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Anthropic Coverage (Google News)"
+    },
+    {
+      "title": "Apple’s new CEO, and why Elon Musk wants to buy Cursor for $60B",
+      "url": "https://techcrunch.com/podcast/apples-new-ceo-and-why-elon-musk-wants-to-buy-cursor-for-60b/",
+      "summary": "A new era is on the way for Apple as Tim Cook plans to step down from his CEO role in September,&#160;handing the reins to hardware chief John Ternus.&#160;&#160; Ternus may be inheriting one of the most durable businesses in tech, but&#160;he’s&#160;also stepping into&#160;a very different&#160;ecosystem than the one Cook spent decades shaping. The App [&#8230;]",
       "category": "Media",
-      "published": "2026-04-23T13:45:00+00:00",
+      "published": "2026-04-24T17:45:57+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2
+      "quality_score": 1,
+      "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "feed_title": "TechCrunch AI"
     },
     {
-      "title": "The Tool-Overuse Illusion: Why Does LLM Prefer External Tools over Internal Knowledge?",
-      "url": "https://arxiv.org/abs/2604.19749",
-      "summary": "arXiv:2604.19749v1 Announce Type: new Abstract: Equipping LLMs with external tools effectively addresses internal reasoning limitations. However, it introduces a critical yet under-explored phenomenon: tool overuse, the unnecessary tool-use during reasoning. In this paper, we first reveal this phenomenon is pervasive across diverse LLMs. We then experimentally elucidate its underlying mechanisms t",
-      "category": "Research",
-      "published": "2026-04-23T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2
-    },
-    {
-      "title": "AI to Learn 2.0: A Deliverable-Oriented Governance Framework and Maturity Rubric for Opaque AI in Learning-Intensive Domains",
-      "url": "https://arxiv.org/abs/2604.19751",
-      "summary": "arXiv:2604.19751v1 Announce Type: new Abstract: Generative AI is entering research, education, and professional work faster than current governance frameworks can specify how AI-assisted outputs should be judged in learning-intensive settings. The central problem is proxy failure: a polished artifact can be useful while no longer serving as credible evidence of the human understanding, judgment, o",
-      "category": "Research",
-      "published": "2026-04-23T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2
-    },
-    {
-      "title": "Exploring Data Augmentation and Resampling Strategies for Transformer-Based Models to Address Class Imbalance in AI Scoring of Scientific Explanations in NGSS Classroom",
-      "url": "https://arxiv.org/abs/2604.19754",
-      "summary": "arXiv:2604.19754v1 Announce Type: new Abstract: Automated scoring of students' scientific explanations offers the potential for immediate, accurate feedback, yet class imbalance in rubric categories particularly those capturing advanced reasoning remains a challenge. This study investigates augmentation strategies to improve transformer-based text classification of student responses to a physical",
-      "category": "Research",
-      "published": "2026-04-23T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2
-    },
-    {
-      "title": "Explainable AML Triage with LLMs: Evidence Retrieval and Counterfactual Checks",
-      "url": "https://arxiv.org/abs/2604.19755",
-      "summary": "arXiv:2604.19755v1 Announce Type: new Abstract: Anti-money laundering (AML) transaction monitoring generates large volumes of alerts that must be rapidly triaged by investigators under strict audit and governance constraints. While large language models (LLMs) can summarize heterogeneous evidence and draft rationales, unconstrained generation is risky in regulated workflows due to hallucinations,",
-      "category": "Research",
-      "published": "2026-04-23T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2
-    },
-    {
-      "title": "From Actions to Understanding: Conformal Interpretability of Temporal Concepts in LLM Agents",
-      "url": "https://arxiv.org/abs/2604.19775",
-      "summary": "arXiv:2604.19775v1 Announce Type: new Abstract: Large Language Models (LLMs) are increasingly deployed as autonomous agents capable of reasoning, planning, and acting within interactive environments. Despite their growing capability to perform multi-step reasoning and decision-making tasks, internal mechanisms guiding their sequential behavior remain opaque. This paper presents a framework for int",
-      "category": "Research",
-      "published": "2026-04-23T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2
-    },
-    {
-      "title": "Using Learning Theories to Evolve Human-Centered XAI: Future Perspectives and Challenges",
-      "url": "https://arxiv.org/abs/2604.19788",
-      "summary": "arXiv:2604.19788v1 Announce Type: new Abstract: As Artificial Intelligence (AI) systems continue to grow in size and complexity, so does the difficulty of the quest for AI transparency. In a world of large models and complex AI systems, why do we explain AI and what should we explain? While explanations serve multiple functions, in the face of complexity humans have used and continue to use explan",
-      "category": "Research",
-      "published": "2026-04-23T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2
-    },
-    {
-      "title": "From Data to Theory: Autonomous Large Language Model Agents for Materials Science",
-      "url": "https://arxiv.org/abs/2604.19789",
-      "summary": "arXiv:2604.19789v1 Announce Type: new Abstract: We present an autonomous large language model (LLM) agent for end-to-end, data-driven materials theory development. The model can choose an equation form, generate and run its own code, and test how well the theory matches the data without human intervention. The framework combines step-by-step reasoning with expert-supplied tools, allowing the agent",
-      "category": "Research",
-      "published": "2026-04-23T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2
-    },
-    {
-      "title": "SkillGraph: Graph Foundation Priors for LLM Agent Tool Sequence Recommendation",
-      "url": "https://arxiv.org/abs/2604.19793",
-      "summary": "arXiv:2604.19793v1 Announce Type: new Abstract: LLM agents must select tools from large API libraries and order them correctly. Existing methods use semantic similarity for both retrieval and ordering, but ordering depends on inter-tool data dependencies that are absent from tool descriptions. As a result, semantic-only methods can produce negative Kendall-$\\tau$ in structured workflow domains. We",
-      "category": "Research",
-      "published": "2026-04-23T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2
-    },
-    {
-      "title": "AI failure could trigger the next financial crisis, warns Elizabeth Warren",
-      "url": "https://www.theverge.com/policy/917026/ai-economy-bubble-elizabeth-warren",
-      "summary": "\"I know a bubble when I see one.\" That's what Sen. Elizabeth Warren (D-MA), who led the push to create a new consumer financial regulator in the wake of the 2008 recession, told a crowd at a Vanderbilt Policy Accelerator event in Washington, DC, on Wednesday. Warren warned of what she called \"striking\" parallels to [&#8230;]",
+      "title": "Marked-up Mac minis flood eBay amid shortages driven by AI",
+      "url": "https://techcrunch.com/2026/04/24/mac-mini-price-expensive-ebay-shortage-ai-memory/",
+      "summary": "Apple’s sold-out Mac mini is spawning marked-up eBay listings as demand surges for the compact desktop, now favored for running local AI models and tools.",
       "category": "Media",
-      "published": "2026-04-22T20:29:05+00:00",
-      "fetch_status": "full",
+      "published": "2026-04-24T16:42:19+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2
+      "quality_score": 1,
+      "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "feed_title": "TechCrunch AI"
     },
     {
-      "title": "OpenAI now lets teams make custom bots that can do work on their own",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/917065/openai-chatgpt-workspace-agents-custom-teams-bots",
-      "summary": "OpenAI is giving users of its Business, Enterprise, Edu, and Teachers plans access to cloud-based \"workspace\" agents available in ChatGPT that can perform business tasks. In its blog post, OpenAI gives examples of agents like one that finds product feedback on the web and sends a report in Slack and a sales agent that can [&#8230;]",
+      "title": "Man faces 5 years in prison for using AI to fake sighting of runaway wolf",
+      "url": "https://arstechnica.com/tech-policy/2026/04/after-wolf-escaped-zoo-man-arrested-for-creating-fake-ai-sighting-for-fun/",
+      "summary": "Beloved wolf gripped the nation after burrowing out of the zoo.",
       "category": "Media",
-      "published": "2026-04-22T20:09:02+00:00",
+      "published": "2026-04-24T15:05:23+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://arstechnica.com/ai/feed/",
+      "feed_title": "Ars Technica AI"
+    },
+    {
+      "title": "AirPods, Touch Bars, and the rest of Tim Cook&#8217;s legacy",
+      "url": "https://www.theverge.com/podcast/917965/apple-ceo-cook-ternus-transition",
+      "summary": "We knew at some point Tim Cook would step down from his position as Apple's CEO. Over the last year, it has become increasingly obvious that John Ternus was his likely successor. The news this week was still a surprise, though - and this year's succession could lead to some important changes at the most [&#8230;]",
+      "category": "Media",
+      "published": "2026-04-24T14:43:07+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2
+      "quality_score": 1,
+      "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "feed_title": "The Verge AI"
     },
     {
-      "title": "Anthropic's \"too dangerous\" AI was accessed by guessing the URL - Boing Boing",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQVUFVMzdZdkdXbkNyTEI3WThZeERvb1hsUExHb00xMERuMVdVQ2RKRE0xRE96SmhDTnh0bHNMX2lqV08xMmthVER2NURoWXRmcE9tNW5id2R5ejdTNjNXOGhPVmF5azh6bUlFYWd3aGliV2xKNEs4ZThLSk1UekthTnI3MTlIRVVHSFFLM3VkcWJNT0tNak9GSlkyUnIwbHRT0gGmAUFVX3lxTE9IZkJ6azFDRDhHM0IzMWFfS0kwNHpLbkJ0dHlUdWl0UXRKYl9vWlFBUE1nM0x3RXJFekFpeDVZby1VdmNHZzMyc1Fya1o4aWVFVDhMdWtxS1ZtTFpsbnNhLTRPSzdUTlVURVlBcjZzNDNLYW1QZlo0ZEc1Qml3SzJkWm9oSV9FUm13eVlSdWgtbkFSMjlaYUVtUHJaX2xsSEhQcmJSOHc?oc=5",
-      "summary": "Anthropic's \"too dangerous\" AI was accessed by guessing the URL &nbsp;&nbsp; Boing Boing",
-      "category": "Labs",
-      "published": "2026-04-23T23:05:49+00:00",
-      "fetch_status": "rss_only",
+      "title": "DeepSeek V4 - almost on the frontier, a fraction of the price",
+      "url": "https://simonwillison.net/2026/Apr/24/deepseek-v4/#atom-everything",
+      "summary": "Chinese AI lab DeepSeek's last model release was V3.2 (and V3.2 Speciale) last December . They just dropped the first of their hotly anticipated V4 series in the shape of two preview models, DeepSeek-V4-Pro and DeepSeek-V4-Flash . Both models are 1 million token context Mixture of Experts. Pro is 1.6T total parameters, 49B active. Flash is 284B total, 13B active. They're using the standard MIT lic",
+      "category": "Commentary",
+      "published": "2026-04-24T06:01:04+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
-      "title": "With jaw-dropping $1 trillion valuation, Anthropic overtakes OpenAI in market cap race - New York Post",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOEdTR1JsRHh0Mk4xeEVQZzdIVWI2WjlvcnA1VnJkTTBJTDZGRXpfYUc5ZlY2VmRhLXNwOE9OeEJuZDM3a2R3aExacl9sN1kxN0RmS0c5QXNJV1VjcDNIbjRwMkdwb1ZCd1gzaGR0bWo3R1U2U2pGZHRCd09WczJjR1d6c1dqR19udjBPdWtoUTJjTWl3Q0lhdTRWNkh3N1dlUkE5TUNfT2hoalg3YURRVTFtQmRhZjFvb2Q1cWlfSEZ1UQ?oc=5",
-      "summary": "With jaw-dropping $1 trillion valuation, Anthropic overtakes OpenAI in market cap race &nbsp;&nbsp; New York Post",
-      "category": "Labs",
-      "published": "2026-04-23T22:15:00+00:00",
-      "fetch_status": "rss_only",
+      "title": "It's a big one",
+      "url": "https://simonwillison.net/2026/Apr/24/weekly/#atom-everything",
+      "summary": "This week's edition of my email newsletter (aka content from this blog delivered to your inbox) features 4 pelicans riding bicycles, 1 possum on an e-scooter, up to 5 raccoons with ham radios hiding in crowds, 5 blog posts, 8 links, 3 quotes and a new chapter of my Agentic Engineering Patterns guide. Tags: newsletter",
+      "category": "Commentary",
+      "published": "2026-04-24T04:09:54+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
-      "title": "Creators of Grok, the AI Chatbot - xAI",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1HakU4ZHBrYk9DOWpZUUs1MTAtcUtUckJMMVhOTzNPRXBrbUZhTHlXOGNSTjZTdWNjWGIxakJGc3kyTFpJbGYzLURRcVRPU3dQeDFr?oc=5",
-      "summary": "Creators of Grok, the AI Chatbot &nbsp;&nbsp; xAI",
-      "category": "Labs",
-      "published": "2026-04-23T22:07:51+00:00",
-      "fetch_status": "rss_only",
+      "title": "russellromney/honker",
+      "url": "https://simonwillison.net/2026/Apr/24/honker/#atom-everything",
+      "summary": "russellromney/honker \"Postgres NOTIFY/LISTEN semantics\" for SQLite, implemented as a Rust SQLite extension and various language bindings to help make use of it. The design of this looks very solid. It lets you write Python code for queues that looks like this: import honker db = honker . open ( \"app.db\" ) emails = db . queue ( \"emails\" ) emails . enqueue ({ \"to\" : \"alice@example.com\" }) # Consume",
+      "category": "Commentary",
+      "published": "2026-04-24T01:50:07+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
-      "title": "Former U.S. Cyber Director Sounds the Alarm on Anthropic’s ‘Too Powerful’ AI Model - inc.com",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNLVBtT2FHVmtYa0U0N0VIMExlQW9XZ0lNRm52ZmNjOWtZdmU3VXduRVM5Q1REVkJhTkx6b0xyTWVNUl9XeGZHbjE0TTBYRFEwaTdJcWpCbXMzZ3J0SmFuc2dReWJwMW5zdFF0cXhHMk12V0tHSUdMQkE4TmdoTTVkV0lYTThjZWFVUXdfcnl6QWV5NWJxWnRZMVBwV1ltbm1JYXBtcEdBMVZiSjF3cW5KRXlSOVhTaVlhb3J1UmQ0NA?oc=5",
-      "summary": "Former U.S. Cyber Director Sounds the Alarm on Anthropic’s ‘Too Powerful’ AI Model &nbsp;&nbsp; inc.com",
-      "category": "Labs",
-      "published": "2026-04-23T22:06:25+00:00",
-      "fetch_status": "rss_only",
+      "title": "An update on recent Claude Code quality reports",
+      "url": "https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/#atom-everything",
+      "summary": "An update on recent Claude Code quality reports It turns out the high volume of complaints that Claude Code was providing worse quality results over the past two months was grounded in real problems. The models themselves were not to blame, but three separate issues in the Claude Code harness caused complex but material problems which directly affected users. Anthropic's postmortem describes these",
+      "category": "Commentary",
+      "published": "2026-04-24T01:31:25+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
-      "title": "Exclusive: SpaceX warns that inquiries into sexually abusive AI imagery may hurt market access - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPd2hNRklBclVfQkdZdkhPNi1OU0QxLXFmaV9ycU5VM3o5Y3dXWUZNRnFISWtPX3NPYzQ0aC1Qdks1bVhSLWVSOTRrVzJhT0o2M3VFUFJWUm0waldZVU5TZkVNRzhCXzUyNy1fWWxoaUI3eGY2M3JFUnZ3YnR3ZjdiTG91NHhKLTVoTXVPN2R3SWdCYURRUXRDc0JQdnVseW1PRlpObFdSd2dVb3NTRmZiMDdncFZoZ3pZMmc?oc=5",
-      "summary": "Exclusive: SpaceX warns that inquiries into sexually abusive AI imagery may hurt market access &nbsp;&nbsp; Reuters",
-      "category": "Labs",
-      "published": "2026-04-23T22:03:31+00:00",
-      "fetch_status": "rss_only",
+      "title": "Serving the For You feed",
+      "url": "https://simonwillison.net/2026/Apr/24/serving-the-for-you-feed/#atom-everything",
+      "summary": "Serving the For You feed One of Bluesky's most interesting features is that anyone can run their own custom \"feed\" implementation and make it available to other users - effectively enabling custom algorithms that can use any mechanism they like to recommend posts. spacecowboy runs the For You Feed , used by around 72,000 people. This guest post on the AT Protocol blog explains how it works. The ar",
+      "category": "Commentary",
+      "published": "2026-04-24T01:08:17+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
       "title": "Extract PDF text in your browser with LiteParse for the web",
@@ -227,7 +727,9 @@
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
       "title": "US accuses China of “industrial-scale” AI theft. China says it’s “slander.”",
@@ -238,106 +740,24 @@
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1
+      "quality_score": 1,
+      "feed_url": "https://arstechnica.com/ai/feed/",
+      "feed_title": "Ars Technica AI"
     },
     {
-      "title": "Parents Can Now See What Their Kids Are Asking Meta AI About - CNET",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcGRjZ0l1R1oxd1o3UGxwUnhhTkd2ek9ELWhmcl9mVnBRZnVLOEpPWEQtdUpBZmpMMURWX0JNTS1yRXRIekFCTzdCWllLVVo2bW1FUTN4ZE9UTnc1NHFHYU1vUzRiTU90NnA2aF9XM2xGOXdIa0FVMjVod2k0cldSaFYzMjM3R2p4Vi1UV3BHaTdxdHVWdHdpOE1mNXRLazVxN0V5R1Z0S3lickRE?oc=5",
-      "summary": "Parents Can Now See What Their Kids Are Asking Meta AI About &nbsp;&nbsp; CNET",
-      "category": "Labs",
-      "published": "2026-04-23T21:40:00+00:00",
-      "fetch_status": "rss_only",
+      "title": "A pelican for GPT-5.5 via the semi-official Codex backdoor API",
+      "url": "https://simonwillison.net/2026/Apr/23/gpt-5-5/#atom-everything",
+      "summary": "GPT-5.5 is out . It's available in OpenAI Codex and is rolling out to paid ChatGPT subscribers. I've had some preview access and found it to be a fast, effective and highly capable model. As is usually the case these days, it's hard to put into words what's good about it - I ask it to build things and it builds exactly what I ask for! There's one notable omission from today's release - the API: AP",
+      "category": "Commentary",
+      "published": "2026-04-23T19:59:47+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "SpaceX brings analysts to xAI’s Macrohard in Memphis - WREG.com",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPV1lqN29uOWFkcGpHU1o2TGwwVlFTVENVaUwtY2RIZFJMdXFVUDdjdUtYS2pGblJJd2RFamh1YU5CcnU1SDVUZ2YyWnZEOWo3elNwM0tMUGZXSV9hNVBESTBSeVRvRTBOamxKbGl4T0x6ZnNqbVB5RW5uRE9XcGVtMVJ6ZWxrcDJMTUFtTw?oc=5",
-      "summary": "SpaceX brings analysts to xAI’s Macrohard in Memphis &nbsp;&nbsp; WREG.com",
-      "category": "Labs",
-      "published": "2026-04-23T21:32:59+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Grok AI Prediction for XRP: RIpple to $15 If Ethereum Reaches $54K - Cryptonews",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE40cWFSTXVuSFVXQUlKVHJSVlNHMkJlc2RaQnQ5aHptSWtKODRWblNyN2ZKVDZPX21mRF9IMlVnX2ZyZGhiSUlZUXA4TFA5ZzJZckZuVWVkOENNQTZvTUlqbmhMUHcwbnM5?oc=5",
-      "summary": "Grok AI Prediction for XRP: RIpple to $15 If Ethereum Reaches $54K &nbsp;&nbsp; Cryptonews",
-      "category": "Labs",
-      "published": "2026-04-23T21:13:07+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Bret Taylor’s Sierra buys YC-backed AI startup Fragment",
-      "url": "https://techcrunch.com/2026/04/23/bret-taylors-sierra-buys-yc-backed-ai-startup-fragment/",
-      "summary": "Sierra, the AI customer service agent startup founded by technologist Bret Taylor, announced today that it has acquired the YC-backed French startup Fragment.",
-      "category": "Media",
-      "published": "2026-04-23T21:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "How OpenAI’s recently released GPT-5.5 stacks up with Anthropic’s gated Claude Mythos - R&D World",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNa0I0WDd5ZUV4UnZaWGlGTFFKQ3dSakJMVXJqamhpdTZsZEtwU1UxSzMtSVdUUkhkdU5maFFZZWk2TGlmRVZXaXdoTVRhamdfSm9hbGRFTjJiU0FJb0VrMUV2ampqX0dCd1dsUUQ2VTEtODQ0a2tpODZjOEF6NURaTXJicGRfbGpoM0NYNmt4Mk1PLTZJME5fZTRuS3g5QTRoSUVmZGs2SXdkY0V6RHhvRl9oN1k?oc=5",
-      "summary": "How OpenAI’s recently released GPT-5.5 stacks up with Anthropic’s gated Claude Mythos &nbsp;&nbsp; R&amp;D World",
-      "category": "Labs",
-      "published": "2026-04-23T20:40:42+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Meta AI introduces parental supervision feature for teen accounts - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOX0k0NzN5eTVyMENhQlJjWEVUYV9OaTNIOVl0Z2tlbk14RWN2b2NrZU1VTmxYdllsQlgwNG1jSnRZUmg1ay04T05VTDFlUGpIaF9LbmVVcXI3UzNOZ1o5SFdGVkxqRExqREdaNzN3bFNpVE91QWxlN1FuakVrT3pPMm1vQ2R2eHZVbVZPN0xCcw?oc=5",
-      "summary": "Meta AI introduces parental supervision feature for teen accounts &nbsp;&nbsp; Yahoo Finance",
-      "category": "Labs",
-      "published": "2026-04-23T20:30:08+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Users of xAI’s Grok Report Outages - The Information",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5JY19PZnVfRWM0WjBHUFFsVG9FSlhSSEFvZ0hfakVjeGV1UXpOYXJuNnR2QmtCWk4xY3RTQ2hsSHVsa0JITjN3X3A5bUpSR1ZBdUFsbmgtWm82SENSUzdFSElMc3NGVHJIRFhDR1BqMy1XNkdBMTIybWdwcw?oc=5",
-      "summary": "Users of xAI’s Grok Report Outages &nbsp;&nbsp; The Information",
-      "category": "Labs",
-      "published": "2026-04-23T20:27:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Why the world’s banks are so worried about Anthropic’s latest AI model - The Conversation",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUUJzODFIc2VuTHNzQnRUb1NSdC13MFJuM0dzbGhKRmtmWkhLSTYwcFJuakNlbEpRUkNCTXNjTnFtVWFvWXhSZk00eFFZemh6a0Rra3loSGlQV3FjRFVSemx3c3E0bjlYSGdIeHI3Y3M4b3dOeXZtSlExeXQwaWQ0QzdoRFBZNUM3WjFhT0tzM0dZaGkzN1VUdVJEOTUyR1hMcW5Zc0d3?oc=5",
-      "summary": "Why the world’s banks are so worried about Anthropic’s latest AI model &nbsp;&nbsp; The Conversation",
-      "category": "Labs",
-      "published": "2026-04-23T20:09:54+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Meet Noscroll, an AI bot that does your doomscrolling for you",
-      "url": "https://techcrunch.com/2026/04/23/meet-noscroll-an-ai-bot-that-does-your-doomscrolling-for-you/",
-      "summary": "Noscroll wants to cure doomscrolling with an AI bot that reads the internet for you.",
-      "category": "Media",
-      "published": "2026-04-23T19:38:25+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
+      "related_urls": [
+        "https://www.latent.space/p/ainews-gpt-55-and-openai-codex-superapp"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
       "title": "AIE Europe Debrief + Agent Labs Thesis: Unsupervised Learning x Latent Space Crossover Special (2026)",
@@ -348,73 +768,35 @@
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1
+      "quality_score": 1,
+      "feed_url": "https://www.latent.space/feed",
+      "feed_title": "Latent Space"
     },
     {
-      "title": "OpenAI releases GPT-5.5, bringing company one step closer to an AI ‘super app’",
-      "url": "https://techcrunch.com/2026/04/23/openai-chatgpt-gpt-5-5-ai-model-superapp/",
-      "summary": "OpenAI says its latest model offers increased capabilities across a broad variety of categories.",
+      "title": "Report: Samsung execs worried company could lose money on smartphones for the first time",
+      "url": "https://arstechnica.com/gadgets/2026/04/samsung-may-be-bracing-for-first-ever-annual-loss-in-smartphone-business/",
+      "summary": "The AI-driven memory shortage is hitting Samsung's bottom line.",
       "category": "Media",
-      "published": "2026-04-23T18:29:29+00:00",
+      "published": "2026-04-24T16:58:45+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1
+      "quality_score": 0,
+      "feed_url": "https://arstechnica.com/ai/feed/",
+      "feed_title": "Ars Technica AI"
     },
     {
-      "title": "Quoting Maggie Appleton",
-      "url": "https://simonwillison.net/2026/Apr/23/maggie-appleton/#atom-everything",
-      "summary": "[...] if you ever needed another reason to learn in public by digital gardening or podcasting or streaming or whathaveyou, add on that people will assume you’re more competent than you are. This will get you invites to very cool exclusive events filled with high-achieving, interesting people, even though you have no right to be there. A+ side benefit. &mdash; Maggie Appleton , Gathering Structures",
+      "title": "Millisecond Converter",
+      "url": "https://simonwillison.net/2026/Apr/24/milliseconds/#atom-everything",
+      "summary": "Tool: Millisecond Converter LLM reports prompt durations in milliseconds and I got fed up of having to think about how to convert those to seconds and minutes. Tags: tools",
       "category": "Commentary",
-      "published": "2026-04-23T13:35:37+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "The Download: introducing the Nature issue",
-      "url": "https://www.technologyreview.com/2026/04/23/1136346/the-download-introducing-nature-issue/",
-      "summary": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Introducing: the Nature issue When we talk about “nature,” we usually mean something untouched by humans. But little of that world exists today.&#160; From microplastics in rainforest wildlife to artificial light&#8230;",
-      "category": "Media",
-      "published": "2026-04-23T12:10:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Will fusion power get cheap? Don’t count on it.",
-      "url": "https://www.technologyreview.com/2026/04/23/1136329/fusion-power-cost/",
-      "summary": "Fusion power could provide a steady, zero-emissions source of electricity in the future—if companies can get plants built and running. But a new study suggests that even if that future arrives, it might not come cheap. Technologies tend to get less expensive over time. Lithium-ion batteries are now about 90% cheaper than they were in&#8230;",
-      "category": "Media",
-      "published": "2026-04-23T10:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "[AINews] Tasteful Tokenmaxxing",
-      "url": "https://www.latent.space/p/ainews-tasteful-tokenmaxxing",
-      "summary": "a quiet day lets us reflect on the top conversation that AI leaders are having everywhere.",
-      "category": "Commentary",
-      "published": "2026-04-23T02:45:37+00:00",
+      "published": "2026-04-24T04:23:11+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1
-    },
-    {
-      "title": "Shopify’s AI Phase Transition: 2026 Usage Explosion, Unlimited Opus-4.6 Token Budget, Tangle, Tangent, SimGym — with Mikhail Parakhin, Shopify CTO",
-      "url": "https://www.latent.space/p/shopify",
-      "summary": "A rare interview with Shopify's CTO on -everything- that Shopify is doing to maximize AI for their customers, with exclusive data on their own AI adoption.",
-      "category": "Commentary",
-      "published": "2026-04-22T19:33:49+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1
+      "quality_score": 0,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
       "title": "Sign of the future: GPT-5.5",
@@ -425,29 +807,22 @@
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 0
+      "quality_score": 0,
+      "feed_url": "https://www.oneusefulthing.org/feed",
+      "feed_title": "One Useful Thing"
     },
     {
-      "title": "Greenhouse gases from data center boom could outpace entire nations",
-      "url": "https://arstechnica.com/ai/2026/04/greenhouse-gases-from-data-center-boom-could-outpace-entire-nations/",
-      "summary": "Plants from OpenAI, Meta, xAI, and Microsoft could emit more than 129M tons annually.",
-      "category": "Media",
-      "published": "2026-04-23T14:51:16+00:00",
+      "title": "llm-openai-via-codex 0.1a0",
+      "url": "https://simonwillison.net/2026/Apr/23/llm-openai-via-codex/#atom-everything",
+      "summary": "Release: llm-openai-via-codex 0.1a0 Hijacks your Codex CLI credentials to make API calls with LLM, as described in my post about GPT-5.5 . Tags: openai , llm , codex-cli",
+      "category": "Commentary",
+      "published": "2026-04-23T19:22:29+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 0
-    },
-    {
-      "title": "Anthropic tested removing Claude Code from the Pro plan",
-      "url": "https://arstechnica.com/ai/2026/04/anthropic-tested-removing-claude-code-from-the-pro-plan/",
-      "summary": "Untenable demand has Anthropic exploring new approaches to rationing its service.",
-      "category": "Media",
-      "published": "2026-04-22T18:34:16+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0
+      "quality_score": 0,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     }
   ]
 }
