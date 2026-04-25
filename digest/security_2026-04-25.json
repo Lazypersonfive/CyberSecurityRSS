@@ -1,0 +1,337 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-04-25",
+  "generated_at": "2026-04-25T05:40:23.113545Z",
+  "raw_count": 71,
+  "selected_count": 20,
+  "items": [
+    {
+      "title_zh": "LMDeploy 高危漏洞披露后 13 小时内即遭利用",
+      "title_orig": "LMDeploy CVE-2026-33626 Flaw Exploited Within 13 Hours of Disclosure",
+      "summary": "开源大模型压缩与部署工具LMDeploy存在一个编号为CVE-2026-33626的高危安全漏洞，该漏洞在公开披露后不到13小时内就已在野外被积极利用，其CVSS评分高达7.5。该漏洞属于服务器端请求伪造类型，攻击者可利用其绕过安全限制并访问敏感数据，由于该工具广泛用于大语言模型的服务化部署，此漏洞的快速利用凸显了AI基础设施面临的严峻安全挑战。开发者和企业需立即采取补丁措施以防数据泄露，并加强对AI部署环境的网络流量监控，以应对日益缩短的漏洞利用窗口期，确保模型服务在复杂的网络环境中能够保持稳定与安全。",
+      "tags": [
+        "LMDeploy",
+        "SSRF漏洞",
+        "AI安全"
+      ],
+      "url": "https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T07:24:00+00:00",
+      "cve_ids": [
+        "CVE-2026-33626"
+      ],
+      "selection_reason": "漏洞从披露到被利用的速度极快，反映了AI工具链的安全风险。"
+    },
+    {
+      "title_zh": "新型后门 FIRESTARTER 攻击美国联邦机构 Cisco 设备",
+      "title_orig": "FIRESTARTER Backdoor Hit Federal Cisco Firepower Device, Survives Security Patches",
+      "summary": "美国网络安全和基础设施安全局披露，某联邦民事机构的Cisco Firepower设备在2025年9月遭到名为FIRESTARTER的新型恶意软件攻击，该设备当时正运行ASA软件。该恶意软件被定义为一种专门用于远程访问的后门，其最显著的特征是即使在设备安装了安全补丁后仍能存活，展现了极强的持久化能力，CISA与英国国家网络安全中心正联合对此进行深入评估。此事件引发了对关键基础设施面临高级持续性威胁的深度关注，提醒相关机构必须加强对网络边界设备的深度防御和持续监控，以识别并清除此类隐蔽且难以根除的后门程序，防止长期潜在的渗透风险。",
+      "tags": [
+        "Cisco",
+        "后门程序",
+        "网络安全"
+      ],
+      "url": "https://thehackernews.com/2026/04/firestarter-backdoor-hit-federal-cisco.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T17:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "新型后门具有极强的持久性，能绕过安全补丁，威胁等级高。"
+    },
+    {
+      "title_zh": "NASA 员工在针对美国国防软件的钓鱼攻击中受骗",
+      "title_orig": "NASA Employees Duped in Chinese Phishing Scheme Targeting U.S. Defense Software",
+      "summary": "美国国家航空航天局（NASA）监察长办公室披露，一名中国籍人员通过冒充美国研究人员，发起了一场针对 NASA 员工、政府实体、大学及私营企业的鱼叉式钓鱼攻击。该行动旨在获取敏感信息并违反出口管制法律，多年来已有多名 NASA 员工受骗并导致敏感数据外泄。此事件揭示了针对美国国防和航天领域科研人员的长期渗透威胁，攻击者利用学术交流的信任进行欺诈。这强调了在科研协作环境中加强身份验证和反钓鱼培训的紧迫性，以保护核心技术不被非法获取，并呼吁各机构在国际合作中建立更严格的背景审查机制。",
+      "tags": [
+        "NASA",
+        "鱼叉式钓鱼",
+        "间谍活动"
+      ],
+      "url": "https://thehackernews.com/2026/04/nasa-employees-duped-in-chinese.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T14:13:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及国家级航天机构的敏感信息泄露，具有高度的政治和技术敏感性"
+    },
+    {
+      "title_zh": "Tropic Trooper 利用木马化 PDF 软件部署后门",
+      "title_orig": "Tropic Trooper Uses Trojanized SumatraPDF and GitHub to Deploy AdaptixC2",
+      "summary": "安全机构发现Tropic Trooper组织正针对中文用户发起攻击，通过分发木马化的SumatraPDF阅读器来部署AdaptixC2 Beacon代理工具，并最终利用VS Code隧道功能实现隐蔽的远程访问。该行动展现了攻击者利用合法开发工具和常用办公软件进行渗透的新策略，增加了检测难度，Zscaler ThreatLabz对此表示高度关注并确认了攻击者的身份。对于企业和开发者而言，这提醒了从非官方渠道下载工具的巨大风险，需警惕开发环境被作为攻击跳板，并应加强对终端软件完整性的校验，防止此类供应链污染导致的敏感信息泄露，同时需对异常的远程隧道连接保持高度警惕。",
+      "tags": [
+        "TropicTrooper",
+        "木马软件",
+        "远程访问"
+      ],
+      "url": "https://thehackernews.com/2026/04/tropic-trooper-uses-trojanized.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T09:29:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "攻击手段隐蔽，利用常用开发工具进行渗透，对开发者群体威胁大。"
+    },
+    {
+      "title_zh": "Bitwarden 密码管理器遭遇供应链攻击",
+      "title_orig": "Your Password Manager Just Got Hacked. The Bitwarden Supply Chain Attack.",
+      "summary": "一款以《沙丘》怪物命名的自我复制蠕虫病毒近期劫持了备受信任的安全工具 Bitwarden，引发了严重的供应链攻击。该蠕虫病毒能够窃取用户存储的加密凭据和主密码，并利用软件更新或分发机制进行快速扩散。作为全球广泛使用的密码管理方案，Bitwarden 的沦陷意味着大量个人和企业的账户安全面临直接威胁，可能导致连锁性的数据泄露。此事件再次敲响了供应链安全的警钟，提醒用户必须关注官方发布的修复指引，并考虑重置所有存储在受影响平台上的关键账户凭据，同时建议启用多因素身份验证以增强防御。",
+      "tags": [
+        "Bitwarden",
+        "供应链攻击",
+        "密码安全"
+      ],
+      "url": "https://infosecwriteups.com/your-password-manager-just-got-hacked-the-bitwarden-supply-chain-attack-e5a83ede7e51?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-24T10:04:22+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名密码管理器受害，影响范围极广，属于重大供应链安全事件。"
+    },
+    {
+      "title_zh": "CISA 将三星及 D-Link 等四个已知漏洞加入预警清单",
+      "title_orig": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
+      "summary": "美国CISA根据在野利用证据，在已知被利用漏洞目录中新增了四个条目，涵盖了三星MagicINFO 9服务器的路径遍历漏洞、SimpleHelp的授权缺失及路径遍历漏洞，以及D-Link路由器的相关缺陷。CISA要求联邦机构限期修复这些漏洞，因为它们已被黑客用于实际攻击以获取系统权限，此举旨在提醒全球组织优先处理这些已被验证具有高度风险的漏洞，以降低被勒索或数据窃取的概率。各单位应立即检查资产清单并应用最新的安全补丁以阻断攻击路径，同时加强对受影响系统日志的审计，确保在漏洞修复前没有攻击者潜伏，从而全面提升组织应对已知威胁的防御能力。",
+      "tags": [
+        "CISA",
+        "漏洞预警",
+        "设备安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/04/24/cisa-adds-four-known-exploited-vulnerabilities-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2024-57726",
+        "CVE-2024-57728",
+        "CVE-2024-7399",
+        "CVE-2025-29635"
+      ],
+      "selection_reason": "官方机构确认的在野利用漏洞，具有极高的修复优先级。"
+    },
+    {
+      "title_zh": "苹果应用商店发现 26 个针对加密货币的虚假钱包应用",
+      "title_orig": "26 FakeWallet Apps Found on Apple App Store Targeting Crypto Seed Phrases",
+      "summary": "网络安全研究人员在苹果 App Store 中发现了 26 个恶意应用程序，这些应用通过模仿流行的加密货币钱包来窃取用户的助记词和私钥。自 2025 年秋季以来，这些应用通过重定向用户至伪造的浏览器页面，分发木马化的钱包版本以实施资产盗取。尽管苹果拥有严格的审核机制，但这些恶意软件仍成功上架，对全球加密资产持有者构成了严重威胁。用户在下载金融类应用时必须通过官方渠道验证，并对任何要求输入私钥的行为保持高度警惕。此事件凸显了移动应用商店生态中依然存在的安全盲区，用户需增强自我保护意识。",
+      "tags": [
+        "AppStore",
+        "加密货币",
+        "虚假应用"
+      ],
+      "url": "https://thehackernews.com/2026/04/26-fakewallet-apps-found-on-apple-app.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T11:48:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "突破了苹果商店的审核机制，直接威胁用户的数字资产安全。"
+    },
+    {
+      "title_zh": "家庭安全巨头 ADT 确认在勒索威胁后发生数据泄露",
+      "title_orig": "ADT confirms data breach after ShinyHunters leak threat",
+      "summary": "知名家庭安全服务商 ADT 证实其遭遇了数据泄露事件，此前勒索软件组织 ShinyHunters 威胁称若不支付赎金将公开窃取的大量内部数据。目前 ADT 已确认部分敏感信息被非法访问，但尚未详细说明受影响的用户规模及具体数据类型。作为家庭安防行业的领导者，ADT 的数据安全直接关系到用户的物理安全隐私，此次泄露引发了市场对其防护能力的担忧。此事件凸显了大型服务商在面对专业勒索组织时的脆弱性，也引发了公众对安防公司自身安全防护能力的质疑，提醒相关企业必须升级加密技术并强化内部访问控制流程。",
+      "tags": [
+        "ADT",
+        "数据泄露",
+        "勒索软件"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/adt-confirms-data-breach-after-shinyhunters-leak-threat/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T22:53:14+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名安防公司数据泄露，可能涉及大量家庭隐私信息。"
+    },
+    {
+      "title_zh": "新型勒索组织 BlackFile 针对零售与酒店业发起攻击",
+      "title_orig": "New BlackFile extortion group linked to surge of vishing attacks",
+      "summary": "自2026年2月以来，一个名为BlackFile的新型经济驱动型黑客组织被发现针对全球零售和酒店行业发起大规模数据窃取与勒索攻击。该组织主要通过高度欺骗性的语音钓鱼手段获取初始访问权限，随后实施敏感数据外泄并以此威胁受害者支付巨额赎金。这一趋势表明针对特定服务行业的社会工程学攻击正在激增，相关企业需高度警惕此类结合语音欺诈与数据勒索的新型复合威胁，必须立即加强员工安全意识培训、完善多因素身份验证及访问控制策略，以防止核心业务数据被非法窃取并造成严重的财务和声誉损失。",
+      "tags": [
+        "BlackFile",
+        "语音钓鱼",
+        "勒索攻击"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-blackfile-extortion-gang-targets-retail-and-hospitality-orgs/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T18:26:27+00:00",
+      "cve_ids": [],
+      "selection_reason": "新型勒索组织活跃，其语音钓鱼手段对服务行业构成严重威胁。"
+    },
+    {
+      "title_zh": "Linux 漏洞 Pack2TheRoot 可让本地用户获取根权限",
+      "title_orig": "New ‘Pack2TheRoot’ flaw gives hackers root Linux access",
+      "summary": "安全研究人员发现了一个名为Pack2TheRoot的高危Linux系统漏洞，该漏洞存在于广泛使用的PackageKit守护进程中。本地攻击者可以利用此缺陷在未经授权的情况下，通过特定接口安装或删除系统级软件包，并最终将权限提升至root级别。由于该漏洞直接威胁到Linux系统的核心访问控制机制，广大Linux个人用户和企业系统管理员应尽快关注各大发行版的补丁发布情况，并及时应用安全更新，以防止本地恶意用户利用此漏洞完全接管受影响的服务器或工作站，确保系统底层环境的安全与完整性，避免因权限失控导致的敏感数据泄露。",
+      "tags": [
+        "Linux漏洞",
+        "提权攻击",
+        "系统安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-pack2theroot-flaw-gives-hackers-root-linux-access/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T17:28:46+00:00",
+      "cve_ids": [],
+      "selection_reason": "严重的本地提权漏洞，直接威胁 Linux 系统的 root "
+    },
+    {
+      "title_zh": "逾万台 Zimbra 服务器受 XSS 漏洞影响面临攻击风险",
+      "title_orig": "Over 10,000 Zimbra servers vulnerable to ongoing XSS attacks",
+      "summary": "目前有超过10,000个暴露在互联网上的Zimbra协作套件（ZCS）实例存在跨站脚本（XSS）安全漏洞，且正面临持续的野外攻击威胁。美国网络安全与基础设施安全局（CISA）已确认该漏洞正被黑客积极利用，攻击者可借此窃取管理员或用户的敏感凭据、劫持活跃会话并获取邮件系统控制权。鉴于受影响的服务器数量庞大且涉及企业协作的核心通讯数据，所有使用Zimbra的组织必须立即检查系统版本并应用最新的安全补丁，同时建议进行全面的日志审计以阻断正在进行的恶意利用行为，防止企业内部机密信息通过协作平台外泄。",
+      "tags": [
+        "Zimbra",
+        "XSS漏洞",
+        "服务器安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-says-zimbra-flaw-now-exploited-over-10k-servers-vulnerable/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T13:35:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "受影响服务器规模巨大且漏洞正被积极利用，安全风险极高。"
+    },
+    {
+      "title_zh": "涵盖九大 OWASP 类别的 AI 渗透测试实验室发布",
+      "title_orig": "AI pentest lab covering 9 OWASP LLM categories",
+      "summary": "一个新的AI渗透测试实验室正式发布，其课程模块深度涵盖了九大OWASP LLM安全类别，包括直接与间接提示注入、系统提示提取、工具滥用及RAG中毒等核心风险点。该实验室通过八个精心设计的CTF风格浏览器挑战，为安全研究人员提供从理论概念学习到实战演练的完整路径，详细演示了数据外泄和防护绕过等关键攻击场景。随着大语言模型在企业业务中的快速普及，该资源为红队人员和AI开发者提供了宝贵的防御测试工具，有助于识别模型输出处理不当等漏洞，从而在开发阶段提升AI应用的安全性，构建更具韧性的智能系统。",
+      "tags": [
+        "AI安全",
+        "渗透测试",
+        "LLM"
+      ],
+      "url": "https://www.reddit.com/r/redteamsec/comments/1supvla/ai_pentest_lab_covering_9_owasp_llm_categories/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-04-24T19:37:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对 AI 模型安全的实战教学资源，对红队研究具有重要参考价"
+    },
+    {
+      "title_zh": "Astra Linux 修复内核内存泄漏漏洞",
+      "title_orig": "Astra Linux - уязвимость в linux-5.10, linux-5.15, linux",
+      "summary": "在Linux内核的mISDN组件中发现了一个内存泄漏漏洞，该问题已在Astra Linux的相关内核版本中得到修复。漏洞源于设备名称在动态分配后未正确释放引用计数，导致在对象清理过程中无法回收内存空间。虽然这属于内核底层的稳定性修复，但对于运行Astra Linux的关键基础设施和工业控制系统而言，及时应用此类补丁能够有效防止因内存耗尽导致的系统崩溃、性能下降或潜在的服务中断。建议管理员尽快更新内核版本，以确保操作系统的长期稳定运行，并消除因资源管理不当可能引发的拒绝服务风险，保障核心业务的连续性。",
+      "tags": [
+        "Astra Linux",
+        "内核漏洞",
+        "内存泄漏"
+      ],
+      "url": "https://vulners.com/astralinux/ASTRA:997816879020363558609785335404099?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-06-03T21:04:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及特定发行版内核稳定性，是维护系统长期运行的关键修复。"
+    },
+    {
+      "title_zh": "GNOME 邮件服务组件存在空指针解引用漏洞",
+      "title_orig": "Astra Linux - уязвимость в evolution-data-server",
+      "summary": "在3.35.91版本之前的GNOME evolution-data-server中存在一个安全缺陷，恶意服务器可能通过特定交互导致邮件客户端崩溃。攻击者可以在连接尝试期间发送无效的最小CAPABILITY行，触发程序内部的空指针解引用，从而使客户端进程异常终止。该漏洞主要影响使用该组件的Linux桌面用户，虽然其主要表现为拒绝服务攻击，但仍提醒开发者在处理外部服务器响应数据时必须加强输入验证和异常捕获。受影响的用户应尽快升级相关软件包，以提升桌面应用的健壮性，防止因连接恶意邮件服务器而导致的频繁闪退或工作数据丢失。",
+      "tags": [
+        "GNOME",
+        "拒绝服务",
+        "软件安全"
+      ],
+      "url": "https://vulners.com/astralinux/ASTRA:1119429938443745864992709690086979?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-06-03T21:04:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "影响 Linux 桌面组件的稳定性，属于典型的协议处理安全问"
+    },
+    {
+      "title_zh": "Metasploit 更新漏洞检测方法可见性逻辑",
+      "title_orig": "Metasploit Wrap-Up 04/25/2026",
+      "summary": "Metasploit在最新的周报中详细介绍了其漏洞检测方法（check method）的逻辑优化，旨在更准确地识别目标系统是否存在安全风险。该框架现在倾向于在不直接实施破坏性攻击的情况下，通过特定验证手段将目标分类为“易受攻击”或“疑似受影响”，以提供更保守且可靠的评估结果。这一更新对于渗透测试人员和安全审计员至关重要，因为它能显著减少自动化扫描中的误报，并降低测试过程对生产环境目标系统的干扰。通过这种更专业、可控的检测机制，安全团队可以在确保系统稳定性的前提下，更高效地完成漏洞验证与风险评估工作。",
+      "tags": [
+        "Metasploit",
+        "渗透测试",
+        "漏洞检测"
+      ],
+      "url": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-04-25-2026",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-24T20:17:56+00:00",
+      "cve_ids": [],
+      "selection_reason": "主流渗透测试工具的逻辑更新，直接影响安全从业者的工作流程。"
+    },
+    {
+      "title_zh": "文件夹名称换行符注入导致权限撤销功能失效",
+      "title_orig": "How a Newline Injection in Folder Names Broke Access Revocation: 750$ Bug",
+      "summary": "研究人员发现了一个价值750美元的高级逻辑漏洞，攻击者通过在文件夹名称中注入换行符（%0a），可以成功绕过系统的权限撤销机制。这种看似微小的输入验证缺失会导致后端逻辑失效，使得文件夹所有者无法正常取消他人的访问权限，从而让攻击者能够非法保留高权限访问。该案例深刻展示了简单的字符过滤错误如何演变成严重的业务逻辑漏洞，并直接威胁到云协作平台的数据安全。这提醒Web开发者在处理文件系统命名、数据库查询和权限校验逻辑时，必须严格过滤所有非标准字符，确保安全策略在各种极端输入情况下依然能够保持一致性。",
+      "tags": [
+        "逻辑漏洞",
+        "注入攻击",
+        "权限管理"
+      ],
+      "url": "https://infosecwriteups.com/how-a-newline-injection-in-folder-names-broke-access-revocation-750-bug-f9a73a8cd978?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-24T10:04:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的业务逻辑漏洞案例，展示了简单注入对权限控制的破坏力。"
+    },
+    {
+      "title_zh": "安全研究员通过链式利用SSRF与LFI获取电信服务器Root权限",
+      "title_orig": "Chaining SSRF and LFI to Achieve Root Access on a Major Telecom Server",
+      "summary": "一名安全研究员在对某大型电信公司进行渗透测试时，通过深度侦察发现了一个关键的漏洞利用链，成功将服务端请求伪造（SSRF）与本地文件包含（LFI）漏洞结合，最终突破了标准测试无法攻克的防御屏障并获取了服务器的完整Root访问权限。这一案例展示了在常规端点测试失效的情况下，通过组合低危漏洞实现高危攻击的可能性。该发现对于电信行业加强基础设施安全防护具有重要参考价值，提醒企业必须警惕内部服务接口的暴露风险，防止攻击者通过链式攻击手段渗透核心系统并造成严重的敏感数据泄露或系统失控。",
+      "tags": [
+        "SSRF",
+        "漏洞利用链",
+        "电信安全"
+      ],
+      "url": "https://infosecwriteups.com/chaining-ssrf-and-lfi-to-achieve-root-access-on-a-major-telecom-server-1a5f31923f81?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-24T10:04:41+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了如何通过组合漏洞突破大型企业防御，具有实战参考价值。"
+    },
+    {
+      "title_zh": "Spring Boot执行端点配置错误导致远程代码执行与权限提升",
+      "title_orig": "Spring — Spring Boot Actuator RCE + Symlink Arbitrary Write to Root | TryHackMe",
+      "summary": "在针对一个配置错误的Spring Boot应用程序进行的渗透测试中，研究人员利用暴露的.git目录重构了源代码，并从中发现了关键凭据和非标准IP信任头，从而成功绕过限制访问了Actuator执行端点。通过进一步利用符号链接任意写入漏洞，攻击者最终实现了远程代码执行（RCE）并获取了Root权限。此案例凸显了开发过程中敏感目录泄露和执行端点保护不当的严重后果，对使用Spring框架的开发者具有极强的警示意义。它强调了在生产环境中严格限制Actuator访问权限以及清理元数据的重要性，以防被黑客利用实现系统级提权。",
+      "tags": [
+        "Spring Boot",
+        "RCE",
+        "权限提升"
+      ],
+      "url": "https://infosecwriteups.com/spring-spring-boot-actuator-rce-symlink-arbitrary-write-to-root-tryhackme-ed5c7635ed3c?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-24T10:04:04+00:00",
+      "cve_ids": [],
+      "selection_reason": "详细解析了Spring Boot常见配置疏忽导致的严重安全连"
+    },
+    {
+      "title_zh": "日本签署国际网络安全文件以加强针对性黑客防御",
+      "title_orig": "日本签署意在防御中国相关黑客的国际网络安全文件",
+      "summary": "日本政府近期签署了一份旨在防御特定国家背景黑客攻击的国际网络安全合作文件，旨在通过跨国协作提升其关键基础设施的防御能力。该文件强调了在当前复杂的国际局势下，通过共享情报和技术手段来应对日益增长的网络威胁，特别是针对政府机构和核心产业的渗透活动。这一举措标志着日本在网络空间安全战略上的进一步转向，通过加入国际防御阵线来增强其网络威慑力。此举对亚太地区的网络安全格局具有深远影响，值得相关安全从业者关注国际政策动向对技术防御体系构建的指导作用，以及未来可能出现的跨境安全协作新模式。",
+      "tags": [
+        "网络安全协议",
+        "日本",
+        "国际协作"
+      ],
+      "url": "https://blog.upx8.com/%E6%97%A5%E6%9C%AC%E7%AD%BE%E7%BD%B2%E6%84%8F%E5%9C%A8%E9%98%B2%E5%BE%A1%E4%B8%AD%E5%9B%BD%E7%9B%B8%E5%85%B3%E9%BB%91%E5%AE%A2%E7%9A%84%E5%9B%BD%E9%99%85%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%96%87%E4%BB%B6",
+      "source": "blog.upx8.com",
+      "category": "WebSecurity",
+      "published": "2026-04-25T00:34:26+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了国家级网络安全战略动向及国际合作防御的新趋势。"
+    },
+    {
+      "title_zh": "科研数据管理不当导致50万英国公民健康数据遭泄露出售",
+      "title_orig": "50万英国人健康数据在国内网站挂牌出售：因科研数据管理不当",
+      "summary": "由于三家研究机构在科研数据管理方面存在严重疏忽，导致约50万英国公民的敏感健康数据在网络上被挂牌出售，目前涉事机构已被认定为泄漏源并被撤销了相关合作。这起严重的医疗数据泄露事件暴露出科研合作链条中数据安全监管的薄弱环节，尤其是第三方机构在处理大规模个人隐私信息时的合规性问题。该事件不仅对受影响公民的隐私造成了巨大威胁，也引发了公众对医疗科研数据共享机制的信任危机。它警示所有处理大数据资产的组织必须强化全生命周期的安全审计，严格执行数据脱敏与访问控制协议，以防止因管理不善导致的法律风险与社会影响。",
+      "tags": [
+        "数据泄露",
+        "医疗隐私",
+        "数据合规"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI4NDY2MDMwMw==&mid=2247515862&idx=1&sn=6ad5c6f730900e1d681f3774f297c102",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-04-24T10:36:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "大规模医疗数据泄露事件，凸显了科研数据管理中的安全漏洞。"
+    }
+  ]
+}

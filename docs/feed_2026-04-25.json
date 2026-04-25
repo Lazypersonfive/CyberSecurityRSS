@@ -3,23 +3,528 @@
   "boards": {
     "security": {
       "display_name": "安全",
-      "items": [],
-      "raw_count": 0,
-      "generated_at": ""
+      "items": [
+        {
+          "title_zh": "LMDeploy 高危漏洞披露后 13 小时内即遭利用",
+          "title_orig": "LMDeploy CVE-2026-33626 Flaw Exploited Within 13 Hours of Disclosure",
+          "summary": "开源大模型压缩与部署工具LMDeploy存在一个编号为CVE-2026-33626的高危安全漏洞，该漏洞在公开披露后不到13小时内就已在野外被积极利用，其CVSS评分高达7.5。该漏洞属于服务器端请求伪造类型，攻击者可利用其绕过安全限制并访问敏感数据，由于该工具广泛用于大语言模型的服务化部署，此漏洞的快速利用凸显了AI基础设施面临的严峻安全挑战。开发者和企业需立即采取补丁措施以防数据泄露，并加强对AI部署环境的网络流量监控，以应对日益缩短的漏洞利用窗口期，确保模型服务在复杂的网络环境中能够保持稳定与安全。",
+          "tags": [
+            "LMDeploy",
+            "SSRF漏洞",
+            "AI安全"
+          ],
+          "url": "https://thehackernews.com/2026/04/lmdeploy-cve-2026-33626-flaw-exploited.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T07:24:00+00:00",
+          "cve_ids": [
+            "CVE-2026-33626"
+          ],
+          "selection_reason": "漏洞从披露到被利用的速度极快，反映了AI工具链的安全风险。"
+        },
+        {
+          "title_zh": "新型后门 FIRESTARTER 攻击美国联邦机构 Cisco 设备",
+          "title_orig": "FIRESTARTER Backdoor Hit Federal Cisco Firepower Device, Survives Security Patches",
+          "summary": "美国网络安全和基础设施安全局披露，某联邦民事机构的Cisco Firepower设备在2025年9月遭到名为FIRESTARTER的新型恶意软件攻击，该设备当时正运行ASA软件。该恶意软件被定义为一种专门用于远程访问的后门，其最显著的特征是即使在设备安装了安全补丁后仍能存活，展现了极强的持久化能力，CISA与英国国家网络安全中心正联合对此进行深入评估。此事件引发了对关键基础设施面临高级持续性威胁的深度关注，提醒相关机构必须加强对网络边界设备的深度防御和持续监控，以识别并清除此类隐蔽且难以根除的后门程序，防止长期潜在的渗透风险。",
+          "tags": [
+            "Cisco",
+            "后门程序",
+            "网络安全"
+          ],
+          "url": "https://thehackernews.com/2026/04/firestarter-backdoor-hit-federal-cisco.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T17:06:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "新型后门具有极强的持久性，能绕过安全补丁，威胁等级高。"
+        },
+        {
+          "title_zh": "NASA 员工在针对美国国防软件的钓鱼攻击中受骗",
+          "title_orig": "NASA Employees Duped in Chinese Phishing Scheme Targeting U.S. Defense Software",
+          "summary": "美国国家航空航天局（NASA）监察长办公室披露，一名中国籍人员通过冒充美国研究人员，发起了一场针对 NASA 员工、政府实体、大学及私营企业的鱼叉式钓鱼攻击。该行动旨在获取敏感信息并违反出口管制法律，多年来已有多名 NASA 员工受骗并导致敏感数据外泄。此事件揭示了针对美国国防和航天领域科研人员的长期渗透威胁，攻击者利用学术交流的信任进行欺诈。这强调了在科研协作环境中加强身份验证和反钓鱼培训的紧迫性，以保护核心技术不被非法获取，并呼吁各机构在国际合作中建立更严格的背景审查机制。",
+          "tags": [
+            "NASA",
+            "鱼叉式钓鱼",
+            "间谍活动"
+          ],
+          "url": "https://thehackernews.com/2026/04/nasa-employees-duped-in-chinese.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T14:13:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及国家级航天机构的敏感信息泄露，具有高度的政治和技术敏感性"
+        },
+        {
+          "title_zh": "Tropic Trooper 利用木马化 PDF 软件部署后门",
+          "title_orig": "Tropic Trooper Uses Trojanized SumatraPDF and GitHub to Deploy AdaptixC2",
+          "summary": "安全机构发现Tropic Trooper组织正针对中文用户发起攻击，通过分发木马化的SumatraPDF阅读器来部署AdaptixC2 Beacon代理工具，并最终利用VS Code隧道功能实现隐蔽的远程访问。该行动展现了攻击者利用合法开发工具和常用办公软件进行渗透的新策略，增加了检测难度，Zscaler ThreatLabz对此表示高度关注并确认了攻击者的身份。对于企业和开发者而言，这提醒了从非官方渠道下载工具的巨大风险，需警惕开发环境被作为攻击跳板，并应加强对终端软件完整性的校验，防止此类供应链污染导致的敏感信息泄露，同时需对异常的远程隧道连接保持高度警惕。",
+          "tags": [
+            "TropicTrooper",
+            "木马软件",
+            "远程访问"
+          ],
+          "url": "https://thehackernews.com/2026/04/tropic-trooper-uses-trojanized.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T09:29:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "攻击手段隐蔽，利用常用开发工具进行渗透，对开发者群体威胁大。"
+        },
+        {
+          "title_zh": "Bitwarden 密码管理器遭遇供应链攻击",
+          "title_orig": "Your Password Manager Just Got Hacked. The Bitwarden Supply Chain Attack.",
+          "summary": "一款以《沙丘》怪物命名的自我复制蠕虫病毒近期劫持了备受信任的安全工具 Bitwarden，引发了严重的供应链攻击。该蠕虫病毒能够窃取用户存储的加密凭据和主密码，并利用软件更新或分发机制进行快速扩散。作为全球广泛使用的密码管理方案，Bitwarden 的沦陷意味着大量个人和企业的账户安全面临直接威胁，可能导致连锁性的数据泄露。此事件再次敲响了供应链安全的警钟，提醒用户必须关注官方发布的修复指引，并考虑重置所有存储在受影响平台上的关键账户凭据，同时建议启用多因素身份验证以增强防御。",
+          "tags": [
+            "Bitwarden",
+            "供应链攻击",
+            "密码安全"
+          ],
+          "url": "https://infosecwriteups.com/your-password-manager-just-got-hacked-the-bitwarden-supply-chain-attack-e5a83ede7e51?source=rss----7b722bfd1b8d---4",
+          "source": "infosecwriteups.com",
+          "category": "WebSecurity",
+          "published": "2026-04-24T10:04:22+00:00",
+          "cve_ids": [],
+          "selection_reason": "知名密码管理器受害，影响范围极广，属于重大供应链安全事件。"
+        },
+        {
+          "title_zh": "CISA 将三星及 D-Link 等四个已知漏洞加入预警清单",
+          "title_orig": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
+          "summary": "美国CISA根据在野利用证据，在已知被利用漏洞目录中新增了四个条目，涵盖了三星MagicINFO 9服务器的路径遍历漏洞、SimpleHelp的授权缺失及路径遍历漏洞，以及D-Link路由器的相关缺陷。CISA要求联邦机构限期修复这些漏洞，因为它们已被黑客用于实际攻击以获取系统权限，此举旨在提醒全球组织优先处理这些已被验证具有高度风险的漏洞，以降低被勒索或数据窃取的概率。各单位应立即检查资产清单并应用最新的安全补丁以阻断攻击路径，同时加强对受影响系统日志的审计，确保在漏洞修复前没有攻击者潜伏，从而全面提升组织应对已知威胁的防御能力。",
+          "tags": [
+            "CISA",
+            "漏洞预警",
+            "设备安全"
+          ],
+          "url": "https://www.cisa.gov/news-events/alerts/2026/04/24/cisa-adds-four-known-exploited-vulnerabilities-catalog",
+          "source": "cisa.gov",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T12:00:00+00:00",
+          "cve_ids": [
+            "CVE-2024-57726",
+            "CVE-2024-57728",
+            "CVE-2024-7399",
+            "CVE-2025-29635"
+          ],
+          "selection_reason": "官方机构确认的在野利用漏洞，具有极高的修复优先级。"
+        },
+        {
+          "title_zh": "苹果应用商店发现 26 个针对加密货币的虚假钱包应用",
+          "title_orig": "26 FakeWallet Apps Found on Apple App Store Targeting Crypto Seed Phrases",
+          "summary": "网络安全研究人员在苹果 App Store 中发现了 26 个恶意应用程序，这些应用通过模仿流行的加密货币钱包来窃取用户的助记词和私钥。自 2025 年秋季以来，这些应用通过重定向用户至伪造的浏览器页面，分发木马化的钱包版本以实施资产盗取。尽管苹果拥有严格的审核机制，但这些恶意软件仍成功上架，对全球加密资产持有者构成了严重威胁。用户在下载金融类应用时必须通过官方渠道验证，并对任何要求输入私钥的行为保持高度警惕。此事件凸显了移动应用商店生态中依然存在的安全盲区，用户需增强自我保护意识。",
+          "tags": [
+            "AppStore",
+            "加密货币",
+            "虚假应用"
+          ],
+          "url": "https://thehackernews.com/2026/04/26-fakewallet-apps-found-on-apple-app.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T11:48:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "突破了苹果商店的审核机制，直接威胁用户的数字资产安全。"
+        },
+        {
+          "title_zh": "家庭安全巨头 ADT 确认在勒索威胁后发生数据泄露",
+          "title_orig": "ADT confirms data breach after ShinyHunters leak threat",
+          "summary": "知名家庭安全服务商 ADT 证实其遭遇了数据泄露事件，此前勒索软件组织 ShinyHunters 威胁称若不支付赎金将公开窃取的大量内部数据。目前 ADT 已确认部分敏感信息被非法访问，但尚未详细说明受影响的用户规模及具体数据类型。作为家庭安防行业的领导者，ADT 的数据安全直接关系到用户的物理安全隐私，此次泄露引发了市场对其防护能力的担忧。此事件凸显了大型服务商在面对专业勒索组织时的脆弱性，也引发了公众对安防公司自身安全防护能力的质疑，提醒相关企业必须升级加密技术并强化内部访问控制流程。",
+          "tags": [
+            "ADT",
+            "数据泄露",
+            "勒索软件"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/adt-confirms-data-breach-after-shinyhunters-leak-threat/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T22:53:14+00:00",
+          "cve_ids": [],
+          "selection_reason": "知名安防公司数据泄露，可能涉及大量家庭隐私信息。"
+        },
+        {
+          "title_zh": "新型勒索组织 BlackFile 针对零售与酒店业发起攻击",
+          "title_orig": "New BlackFile extortion group linked to surge of vishing attacks",
+          "summary": "自2026年2月以来，一个名为BlackFile的新型经济驱动型黑客组织被发现针对全球零售和酒店行业发起大规模数据窃取与勒索攻击。该组织主要通过高度欺骗性的语音钓鱼手段获取初始访问权限，随后实施敏感数据外泄并以此威胁受害者支付巨额赎金。这一趋势表明针对特定服务行业的社会工程学攻击正在激增，相关企业需高度警惕此类结合语音欺诈与数据勒索的新型复合威胁，必须立即加强员工安全意识培训、完善多因素身份验证及访问控制策略，以防止核心业务数据被非法窃取并造成严重的财务和声誉损失。",
+          "tags": [
+            "BlackFile",
+            "语音钓鱼",
+            "勒索攻击"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/new-blackfile-extortion-gang-targets-retail-and-hospitality-orgs/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T18:26:27+00:00",
+          "cve_ids": [],
+          "selection_reason": "新型勒索组织活跃，其语音钓鱼手段对服务行业构成严重威胁。"
+        },
+        {
+          "title_zh": "Linux 漏洞 Pack2TheRoot 可让本地用户获取根权限",
+          "title_orig": "New ‘Pack2TheRoot’ flaw gives hackers root Linux access",
+          "summary": "安全研究人员发现了一个名为Pack2TheRoot的高危Linux系统漏洞，该漏洞存在于广泛使用的PackageKit守护进程中。本地攻击者可以利用此缺陷在未经授权的情况下，通过特定接口安装或删除系统级软件包，并最终将权限提升至root级别。由于该漏洞直接威胁到Linux系统的核心访问控制机制，广大Linux个人用户和企业系统管理员应尽快关注各大发行版的补丁发布情况，并及时应用安全更新，以防止本地恶意用户利用此漏洞完全接管受影响的服务器或工作站，确保系统底层环境的安全与完整性，避免因权限失控导致的敏感数据泄露。",
+          "tags": [
+            "Linux漏洞",
+            "提权攻击",
+            "系统安全"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/new-pack2theroot-flaw-gives-hackers-root-linux-access/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T17:28:46+00:00",
+          "cve_ids": [],
+          "selection_reason": "严重的本地提权漏洞，直接威胁 Linux 系统的 root "
+        },
+        {
+          "title_zh": "逾万台 Zimbra 服务器受 XSS 漏洞影响面临攻击风险",
+          "title_orig": "Over 10,000 Zimbra servers vulnerable to ongoing XSS attacks",
+          "summary": "目前有超过10,000个暴露在互联网上的Zimbra协作套件（ZCS）实例存在跨站脚本（XSS）安全漏洞，且正面临持续的野外攻击威胁。美国网络安全与基础设施安全局（CISA）已确认该漏洞正被黑客积极利用，攻击者可借此窃取管理员或用户的敏感凭据、劫持活跃会话并获取邮件系统控制权。鉴于受影响的服务器数量庞大且涉及企业协作的核心通讯数据，所有使用Zimbra的组织必须立即检查系统版本并应用最新的安全补丁，同时建议进行全面的日志审计以阻断正在进行的恶意利用行为，防止企业内部机密信息通过协作平台外泄。",
+          "tags": [
+            "Zimbra",
+            "XSS漏洞",
+            "服务器安全"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/cisa-says-zimbra-flaw-now-exploited-over-10k-servers-vulnerable/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T13:35:33+00:00",
+          "cve_ids": [],
+          "selection_reason": "受影响服务器规模巨大且漏洞正被积极利用，安全风险极高。"
+        },
+        {
+          "title_zh": "涵盖九大 OWASP 类别的 AI 渗透测试实验室发布",
+          "title_orig": "AI pentest lab covering 9 OWASP LLM categories",
+          "summary": "一个新的AI渗透测试实验室正式发布，其课程模块深度涵盖了九大OWASP LLM安全类别，包括直接与间接提示注入、系统提示提取、工具滥用及RAG中毒等核心风险点。该实验室通过八个精心设计的CTF风格浏览器挑战，为安全研究人员提供从理论概念学习到实战演练的完整路径，详细演示了数据外泄和防护绕过等关键攻击场景。随着大语言模型在企业业务中的快速普及，该资源为红队人员和AI开发者提供了宝贵的防御测试工具，有助于识别模型输出处理不当等漏洞，从而在开发阶段提升AI应用的安全性，构建更具韧性的智能系统。",
+          "tags": [
+            "AI安全",
+            "渗透测试",
+            "LLM"
+          ],
+          "url": "https://www.reddit.com/r/redteamsec/comments/1supvla/ai_pentest_lab_covering_9_owasp_llm_categories/",
+          "source": "reddit.com",
+          "category": "RedTeam",
+          "published": "2026-04-24T19:37:30+00:00",
+          "cve_ids": [],
+          "selection_reason": "针对 AI 模型安全的实战教学资源，对红队研究具有重要参考价"
+        },
+        {
+          "title_zh": "Astra Linux 修复内核内存泄漏漏洞",
+          "title_orig": "Astra Linux - уязвимость в linux-5.10, linux-5.15, linux",
+          "summary": "在Linux内核的mISDN组件中发现了一个内存泄漏漏洞，该问题已在Astra Linux的相关内核版本中得到修复。漏洞源于设备名称在动态分配后未正确释放引用计数，导致在对象清理过程中无法回收内存空间。虽然这属于内核底层的稳定性修复，但对于运行Astra Linux的关键基础设施和工业控制系统而言，及时应用此类补丁能够有效防止因内存耗尽导致的系统崩溃、性能下降或潜在的服务中断。建议管理员尽快更新内核版本，以确保操作系统的长期稳定运行，并消除因资源管理不当可能引发的拒绝服务风险，保障核心业务的连续性。",
+          "tags": [
+            "Astra Linux",
+            "内核漏洞",
+            "内存泄漏"
+          ],
+          "url": "https://vulners.com/astralinux/ASTRA:997816879020363558609785335404099?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-06-03T21:04:07+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及特定发行版内核稳定性，是维护系统长期运行的关键修复。"
+        },
+        {
+          "title_zh": "GNOME 邮件服务组件存在空指针解引用漏洞",
+          "title_orig": "Astra Linux - уязвимость в evolution-data-server",
+          "summary": "在3.35.91版本之前的GNOME evolution-data-server中存在一个安全缺陷，恶意服务器可能通过特定交互导致邮件客户端崩溃。攻击者可以在连接尝试期间发送无效的最小CAPABILITY行，触发程序内部的空指针解引用，从而使客户端进程异常终止。该漏洞主要影响使用该组件的Linux桌面用户，虽然其主要表现为拒绝服务攻击，但仍提醒开发者在处理外部服务器响应数据时必须加强输入验证和异常捕获。受影响的用户应尽快升级相关软件包，以提升桌面应用的健壮性，防止因连接恶意邮件服务器而导致的频繁闪退或工作数据丢失。",
+          "tags": [
+            "GNOME",
+            "拒绝服务",
+            "软件安全"
+          ],
+          "url": "https://vulners.com/astralinux/ASTRA:1119429938443745864992709690086979?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-06-03T21:04:07+00:00",
+          "cve_ids": [],
+          "selection_reason": "影响 Linux 桌面组件的稳定性，属于典型的协议处理安全问"
+        },
+        {
+          "title_zh": "Metasploit 更新漏洞检测方法可见性逻辑",
+          "title_orig": "Metasploit Wrap-Up 04/25/2026",
+          "summary": "Metasploit在最新的周报中详细介绍了其漏洞检测方法（check method）的逻辑优化，旨在更准确地识别目标系统是否存在安全风险。该框架现在倾向于在不直接实施破坏性攻击的情况下，通过特定验证手段将目标分类为“易受攻击”或“疑似受影响”，以提供更保守且可靠的评估结果。这一更新对于渗透测试人员和安全审计员至关重要，因为它能显著减少自动化扫描中的误报，并降低测试过程对生产环境目标系统的干扰。通过这种更专业、可控的检测机制，安全团队可以在确保系统稳定性的前提下，更高效地完成漏洞验证与风险评估工作。",
+          "tags": [
+            "Metasploit",
+            "渗透测试",
+            "漏洞检测"
+          ],
+          "url": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-04-25-2026",
+          "source": "rapid7.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-24T20:17:56+00:00",
+          "cve_ids": [],
+          "selection_reason": "主流渗透测试工具的逻辑更新，直接影响安全从业者的工作流程。"
+        },
+        {
+          "title_zh": "文件夹名称换行符注入导致权限撤销功能失效",
+          "title_orig": "How a Newline Injection in Folder Names Broke Access Revocation: 750$ Bug",
+          "summary": "研究人员发现了一个价值750美元的高级逻辑漏洞，攻击者通过在文件夹名称中注入换行符（%0a），可以成功绕过系统的权限撤销机制。这种看似微小的输入验证缺失会导致后端逻辑失效，使得文件夹所有者无法正常取消他人的访问权限，从而让攻击者能够非法保留高权限访问。该案例深刻展示了简单的字符过滤错误如何演变成严重的业务逻辑漏洞，并直接威胁到云协作平台的数据安全。这提醒Web开发者在处理文件系统命名、数据库查询和权限校验逻辑时，必须严格过滤所有非标准字符，确保安全策略在各种极端输入情况下依然能够保持一致性。",
+          "tags": [
+            "逻辑漏洞",
+            "注入攻击",
+            "权限管理"
+          ],
+          "url": "https://infosecwriteups.com/how-a-newline-injection-in-folder-names-broke-access-revocation-750-bug-f9a73a8cd978?source=rss----7b722bfd1b8d--bug_bounty",
+          "source": "infosecwriteups.com",
+          "category": "WebSecurity",
+          "published": "2026-04-24T10:04:48+00:00",
+          "cve_ids": [],
+          "selection_reason": "典型的业务逻辑漏洞案例，展示了简单注入对权限控制的破坏力。"
+        },
+        {
+          "title_zh": "安全研究员通过链式利用SSRF与LFI获取电信服务器Root权限",
+          "title_orig": "Chaining SSRF and LFI to Achieve Root Access on a Major Telecom Server",
+          "summary": "一名安全研究员在对某大型电信公司进行渗透测试时，通过深度侦察发现了一个关键的漏洞利用链，成功将服务端请求伪造（SSRF）与本地文件包含（LFI）漏洞结合，最终突破了标准测试无法攻克的防御屏障并获取了服务器的完整Root访问权限。这一案例展示了在常规端点测试失效的情况下，通过组合低危漏洞实现高危攻击的可能性。该发现对于电信行业加强基础设施安全防护具有重要参考价值，提醒企业必须警惕内部服务接口的暴露风险，防止攻击者通过链式攻击手段渗透核心系统并造成严重的敏感数据泄露或系统失控。",
+          "tags": [
+            "SSRF",
+            "漏洞利用链",
+            "电信安全"
+          ],
+          "url": "https://infosecwriteups.com/chaining-ssrf-and-lfi-to-achieve-root-access-on-a-major-telecom-server-1a5f31923f81?source=rss----7b722bfd1b8d---4",
+          "source": "infosecwriteups.com",
+          "category": "WebSecurity",
+          "published": "2026-04-24T10:04:41+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了如何通过组合漏洞突破大型企业防御，具有实战参考价值。"
+        },
+        {
+          "title_zh": "Spring Boot执行端点配置错误导致远程代码执行与权限提升",
+          "title_orig": "Spring — Spring Boot Actuator RCE + Symlink Arbitrary Write to Root | TryHackMe",
+          "summary": "在针对一个配置错误的Spring Boot应用程序进行的渗透测试中，研究人员利用暴露的.git目录重构了源代码，并从中发现了关键凭据和非标准IP信任头，从而成功绕过限制访问了Actuator执行端点。通过进一步利用符号链接任意写入漏洞，攻击者最终实现了远程代码执行（RCE）并获取了Root权限。此案例凸显了开发过程中敏感目录泄露和执行端点保护不当的严重后果，对使用Spring框架的开发者具有极强的警示意义。它强调了在生产环境中严格限制Actuator访问权限以及清理元数据的重要性，以防被黑客利用实现系统级提权。",
+          "tags": [
+            "Spring Boot",
+            "RCE",
+            "权限提升"
+          ],
+          "url": "https://infosecwriteups.com/spring-spring-boot-actuator-rce-symlink-arbitrary-write-to-root-tryhackme-ed5c7635ed3c?source=rss----7b722bfd1b8d---4",
+          "source": "infosecwriteups.com",
+          "category": "WebSecurity",
+          "published": "2026-04-24T10:04:04+00:00",
+          "cve_ids": [],
+          "selection_reason": "详细解析了Spring Boot常见配置疏忽导致的严重安全连"
+        },
+        {
+          "title_zh": "日本签署国际网络安全文件以加强针对性黑客防御",
+          "title_orig": "日本签署意在防御中国相关黑客的国际网络安全文件",
+          "summary": "日本政府近期签署了一份旨在防御特定国家背景黑客攻击的国际网络安全合作文件，旨在通过跨国协作提升其关键基础设施的防御能力。该文件强调了在当前复杂的国际局势下，通过共享情报和技术手段来应对日益增长的网络威胁，特别是针对政府机构和核心产业的渗透活动。这一举措标志着日本在网络空间安全战略上的进一步转向，通过加入国际防御阵线来增强其网络威慑力。此举对亚太地区的网络安全格局具有深远影响，值得相关安全从业者关注国际政策动向对技术防御体系构建的指导作用，以及未来可能出现的跨境安全协作新模式。",
+          "tags": [
+            "网络安全协议",
+            "日本",
+            "国际协作"
+          ],
+          "url": "https://blog.upx8.com/%E6%97%A5%E6%9C%AC%E7%AD%BE%E7%BD%B2%E6%84%8F%E5%9C%A8%E9%98%B2%E5%BE%A1%E4%B8%AD%E5%9B%BD%E7%9B%B8%E5%85%B3%E9%BB%91%E5%AE%A2%E7%9A%84%E5%9B%BD%E9%99%85%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%96%87%E4%BB%B6",
+          "source": "blog.upx8.com",
+          "category": "WebSecurity",
+          "published": "2026-04-25T00:34:26+00:00",
+          "cve_ids": [],
+          "selection_reason": "反映了国家级网络安全战略动向及国际合作防御的新趋势。"
+        },
+        {
+          "title_zh": "科研数据管理不当导致50万英国公民健康数据遭泄露出售",
+          "title_orig": "50万英国人健康数据在国内网站挂牌出售：因科研数据管理不当",
+          "summary": "由于三家研究机构在科研数据管理方面存在严重疏忽，导致约50万英国公民的敏感健康数据在网络上被挂牌出售，目前涉事机构已被认定为泄漏源并被撤销了相关合作。这起严重的医疗数据泄露事件暴露出科研合作链条中数据安全监管的薄弱环节，尤其是第三方机构在处理大规模个人隐私信息时的合规性问题。该事件不仅对受影响公民的隐私造成了巨大威胁，也引发了公众对医疗科研数据共享机制的信任危机。它警示所有处理大数据资产的组织必须强化全生命周期的安全审计，严格执行数据脱敏与访问控制协议，以防止因管理不善导致的法律风险与社会影响。",
+          "tags": [
+            "数据泄露",
+            "医疗隐私",
+            "数据合规"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzI4NDY2MDMwMw==&mid=2247515862&idx=1&sn=6ad5c6f730900e1d681f3774f297c102",
+          "source": "mp.weixin.qq.com",
+          "category": "CN_News",
+          "published": "2026-04-24T10:36:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "大规模医疗数据泄露事件，凸显了科研数据管理中的安全漏洞。"
+        }
+      ],
+      "raw_count": 71,
+      "generated_at": "2026-04-25T05:40:23.113545Z"
     },
     "ai": {
       "display_name": "AI 前沿",
-      "items": [],
-      "raw_count": 0,
-      "generated_at": ""
+      "items": [
+        {
+          "title_zh": "DeepSeek 预览新 AI 模型，推理性能直逼顶尖闭源模型",
+          "title_orig": "DeepSeek previews new AI model that ‘closes the gap’ with frontier models",
+          "summary": "DeepSeek近日预览了其最新AI模型，宣称通过关键的架构改进，新模型在推理基准测试中已几乎抹平了与当前领先开源及闭源模型之间的差距。该系列模型在运行效率和综合性能上均显著优于此前的DeepSeek V3.2版本，展现了极强的技术竞争力，意味着国产大模型在核心逻辑推理能力上取得了重大突破。这一进展将进一步加剧全球顶尖AI领域的性能竞赛，并为开发者提供更高效、更具性价比的推理工具选择，同时也证明了通过架构优化提升模型效能的可行性，引发了行业内对于高效能计算架构以及未来模型迭代方向的广泛关注与深度讨论。",
+          "tags": [
+            "DeepSeek",
+            "AI模型",
+            "推理基准"
+          ],
+          "url": "https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/",
+          "source": "techcrunch.com",
+          "category": "Media",
+          "published": "2026-04-24T13:30:59+00:00",
+          "cve_ids": [],
+          "selection_reason": "DeepSeek 作为国产大模型代表，其性能追赶顶尖模型备受"
+        },
+        {
+          "title_zh": "xAI 发布 Grok Voice Think Fast 1.0 语音代理模型",
+          "title_orig": "xAI launches Grok Voice Think Fast 1.0 for voice agents - TestingCatalog",
+          "summary": "埃隆·马斯克旗下的AI公司xAI正式推出了名为Grok Voice Think Fast 1.0的新模型，该模型专门针对语音代理场景进行了深度优化与技术迭代。其核心目标是显著提升语音交互的实时响应速度与逻辑思考能力，为开发者构建更自然、更具流畅性的语音AI应用提供坚实的底层技术支持。此举标志着xAI在多模态交互领域迈出了重要一步，将直接与市场上现有的实时语音解决方案展开激烈竞争，并可能重塑未来智能语音助手的技术走向与用户体验标准，进一步巩固了xAI在快速迭代的生成式AI市场中的领先地位与品牌影响力。",
+          "tags": [
+            "xAI",
+            "Grok",
+            "语音AI"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOLUR2NFROVVp5YnhZSWZ4Q0NtemFJazVlSnczWjdnQVBibXdDcmFLZVVNSVAxcWhpX0R4ZmFfa1dWMHRldHNwdWJHMjhQeFZUSzBfRjg1WnpUOTBpOUJqRDVKYVZpSUhlVTNuUmM1VnBUaE9icDRnY0haemlIV2lKQXBKX2F1QVBHUEwyVkh1Mzc?oc=5",
+          "source": "news.google.com",
+          "category": "Labs",
+          "published": "2026-04-24T21:51:15+00:00",
+          "cve_ids": [],
+          "selection_reason": "xAI 在语音交互领域的最新进展，反映了多模态 AI 的竞争"
+        },
+        {
+          "title_zh": "苹果研究长期运动嵌入技术，提升运动生成效率",
+          "title_orig": "Learning Long-Term Motion Embeddings for Efficient Kinematics Generation",
+          "summary": "苹果机器学习研究团队提出了一种学习长期运动嵌入的新方法，旨在解决现代视频模型在预测复杂场景动态时因全视频合成导致的效率低下问题。该技术通过直接在学习到的运动嵌入空间上操作，实现了比传统方法高出数个数量级的场景动态建模效率，显著增强了视觉智能中的运动理解与预测能力。这项研究对于提升视觉任务的实时性具有重要意义，未来有望广泛应用于增强现实、自动驾驶及高效视频编辑等领域，为处理大规模视觉数据提供了一种更具扩展性的技术路径，展示了运动嵌入在视觉智能中的潜力。",
+          "tags": [
+            "苹果研究",
+            "运动嵌入",
+            "计算机视觉"
+          ],
+          "url": "https://machinelearning.apple.com/research/long-term-motion-embeddings",
+          "source": "machinelearning.apple.com",
+          "category": "Research",
+          "published": "2026-04-24T00:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "苹果在视觉智能效率方面的突破，对移动端 AI 应用具有指导意"
+        },
+        {
+          "title_zh": "Project Maven 计划加速美军 AI 化进程",
+          "title_orig": "How Project Maven taught the military to love AI",
+          "summary": "在针对伊朗的军事行动中，美军利用AI系统大幅提升了目标打击速度，在短短24小时内打击了超过1000个目标，其规模近乎二十年前伊拉克战争“震慑”行动的两倍之多。其中核心系统Maven Smart发挥了关键作用，它显著缩短了从目标识别到攻击决策的复杂流程，彻底改变了传统的军事作战模式。这一案例生动展示了AI技术在现代战争中扮演的决定性角色，引发了关于军事决策自动化、打击效率极限提升以及相关伦理风险的广泛讨论。该进展不仅体现了军事科技的跨代跃升，也对全球军事战略平衡和未来战争形态的演变产生了深远且复杂的影响。",
+          "tags": [
+            "军事AI",
+            "Project Maven",
+            "国防科技"
+          ],
+          "url": "https://www.theverge.com/ai-artificial-intelligence/917996/project-maven-military-ai-katrina-manson",
+          "source": "theverge.com",
+          "category": "Media",
+          "published": "2026-04-24T17:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "AI 在实战中的大规模应用是科技与军事伦理的重要转折点。"
+        },
+        {
+          "title_zh": "白宫新任 AI 官员上任仅四天即离职",
+          "title_orig": "White House pushed out new AI official after just four days on the job - The Washington Post",
+          "summary": "据《华盛顿邮报》报道，白宫的一名新任AI官员在入职仅仅四天后便被解职，这一突发的人事变动迅速引发了外界的高度关注。目前关于该官员离职的具体原因尚未完全公开，但在美国AI政策制定与监管框架构建的关键时期，出现此类高层变动显得尤为敏感且不寻常。这一事件反映出政府内部在AI监管策略、战略推进以及人才选拔过程中可能存在的挑战与不确定性。对于密切关注美国AI政策导向的行业观察者而言，这可能预示着管理层面的波动，并可能对后续相关政策的连续性与执行力度产生潜在的负面影响。",
+          "tags": [
+            "白宫",
+            "AI政策",
+            "人事变动"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxONVF3Nm5NaC1BdVRlclhrOFNuVUJqd0lnMl9LUExzV1RWTUsya0NJT0RLNDBnQUdYZldzTlNqd2tMV29VNmxtTWlHcjdLSmRCSjdIdldHRHlRUW5VazhGQ0dleHkySE9rZmg5T3YyemNRd0o4WDJNbnpabjJIWmxEV1VWeGt3UThKdEZtMUVaZEcxQkpPc1EwSQ?oc=5",
+          "source": "news.google.com",
+          "category": "Labs",
+          "published": "2026-04-25T03:35:14+00:00",
+          "cve_ids": [],
+          "selection_reason": "白宫 AI 核心岗位的人员剧变可能影响美国 AI 监管政策的"
+        },
+        {
+          "title_zh": "特朗普政府联手 xAI 挑战科罗拉多州新法律",
+          "title_orig": "Trump administration is joining Elon Musk’s xAI in its legal challenge to Colorado’s new state law - The Times of India",
+          "summary": "特朗普政府宣布加入埃隆·马斯克旗下的xAI公司，共同对科罗拉多州的一项新州法发起法律挑战，此举标志着政治力量与科技巨头在AI监管领域的深度结盟。目前该法律的具体争议点集中在AI监管边界与企业权利的博弈，双方的联手凸显了对州级立法干预科技创新的强烈抵制。此举不仅可能直接影响科罗拉多州本地的AI产业环境与法律适用，更可能在全美范围内引发关于州级监管权限与联邦政策冲突的广泛辩论。这一法律对决对于未来构建统一的AI法律框架具有重要的指标性意义，将决定科技企业在不同辖区下的合规成本。",
+          "tags": [
+            "xAI",
+            "法律挑战",
+            "AI监管"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNNklkSjJCZl8tNk1yUXdVN1o3bXIyUjVHYmFmMnB5LXpBZHFOT25TVWIwd0RZRUVpdjdNZ2dROWg1OEg3OFdpMVF5ZnJXZUVPQVZpUHJ4OUh5d3daY0VZbVd6NWNRSFpDUE9fUlNhUVY3akNhM05uVGVZc25SOUttOUJIYlFUbE9xWVFQaVBWM1hCZnBLa19oVm1vQXlESVFLSDRjbVJ2V3ZHNVE0SHo0QzZWUEVPaFV1UzlFZjV4ZGZ1YUd5dnJuOTVxYVYyNGlzRGtKVkhJUmFiUGZQaUVFckNnMXRzWFZJbFAxRmdRRVBrZEJjTkZRNFIwQXVyQzdpeElid1c3VlJtVUnSAZACQVVfeXFMT2FUV0t3UExqd0lkV3pwVkVwNkt1UTR5VnlIbkYzZ1g0YXBYS0tNQ2hleTZiSDdpeFdHM1lwaHlqVGZZZDJSYmhjMG84SENDR2xsQjlneWdUbHpJWnFoOEdrOTZnRkRuTmtjV2VUTEZUZ2ZDR0Y3RThZNnRxdmx0ajMzQWJmVjB4eVhSd0FwTVJWeDNDXzBaMmVCM3pFSlpsc1paZGxxX2Y0UHg0bEJpQ3Jod0xXakxYRmNRanNjaHc4Mk9LQXprTUk3S1ZVdURfZThsV3VBa3A2VW1sSEpuRFBpUlpqV0JBN29SRmgtOTZEZWNQMmk0SDIybWNNczYxaVFXZWY4WFhnUV9EWHdwUGU?oc=5",
+          "source": "news.google.com",
+          "category": "Labs",
+          "published": "2026-04-25T01:55:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "政企联手挑战州级 AI 法律，是 AI 监管博弈中的重大政治"
+        },
+        {
+          "title_zh": "OX Security 推出针对 Anthropic MCP 漏洞的防护方案",
+          "title_orig": "Anthropic MCP Vulnerability: How OX VibeSec Protects AI Code - OX Security",
+          "summary": "安全公司OX Security针对Anthropic的模型上下文协议（MCP）存在的安全漏洞，正式发布了OX VibeSec防护方案，旨在全方位保护AI生成的代码安全。随着AI辅助编程在开发流程中的广泛普及，MCP协议中的潜在漏洞可能导致敏感信息泄露或恶意代码注入等严重后果，该方案提供了针对性的防御机制与实时监控功能。这对于大量使用Anthropic技术的开发者和企业而言至关重要，再次强调了在追求AI开发效率的同时，必须构建配套的安全防护体系。此举不仅提升了AI工具的可靠性，也为行业树立了AI代码安全防护的新标准，助力企业在安全环境下利用AI。",
+          "tags": [
+            "AI安全",
+            "Anthropic",
+            "网络安全"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdmpMcUw3Tld4bVRmS2VuWTIzNnBud0REZ25US25aNUVKTnU2ZVpyaktzSFhZYUFmbC1rUFFfMFBVdjdtQzI0cDZzSzRzWkt3TGwxOTV2Z0drZFpGUUlHWmFzMmFmOW9DdkhPMmVSMFpsZm1QbXFkSmRjQVJqU3RLTHpQaHZBMkNzWExVRg?oc=5",
+          "source": "news.google.com",
+          "category": "Labs",
+          "published": "2026-04-24T22:22:06+00:00",
+          "cve_ids": [],
+          "selection_reason": "针对主流 AI 协议的安全漏洞修复，是保障 AI 落地应用的"
+        },
+        {
+          "title_zh": "马斯克与奥特曼法律诉讼开战，审判将于 4 月底开始",
+          "title_orig": "Musk vs. Altman is here, and it&#8217;s going to get messy",
+          "summary": "埃隆·马斯克与OpenAI首席执行官萨姆·奥特曼之间的法律纠纷持续升级，相关审判计划于4月27日在加州奥克兰正式开庭。马斯克在诉讼中指控OpenAI存在欺诈行为，认为其背离了最初的非营利初衷，而这场诉讼将揭开两家顶尖AI机构之间复杂的权力斗争与利益冲突。此案的进展将对OpenAI的治理结构、开源路径选择以及整个AI行业的商业道德标准产生重大影响。作为科技界近年来最受瞩目的法律对决之一，其判决结果不仅关乎两家公司的命运，更可能重新定义人工智能开发中公共利益与商业利润之间的法律界限。",
+          "tags": [
+            "马斯克",
+            "OpenAI",
+            "法律诉讼"
+          ],
+          "url": "https://www.theverge.com/ai-artificial-intelligence/917755/musk-altman-openai-xai-gossip",
+          "source": "theverge.com",
+          "category": "Media",
+          "published": "2026-04-24T12:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "AI 行业两位领袖的法律对决，将深刻影响行业格局与公众认知。"
+        },
+        {
+          "title_zh": "OpenAI 发布 GPT-5.5 提示词指南：优化多步任务响应体验",
+          "title_orig": "GPT-5.5 prompting guide",
+          "summary": "随着 GPT-5.5 正式接入 API，OpenAI 发布了一系列针对该新模型的提示词优化技巧，旨在提升开发者构建应用的效率。官方特别推荐在执行涉及多个工具调用的复杂任务时，先向用户发送简短的可见更新以确认请求，从而缓解模型在深度思考期间用户感知的延迟问题。这一指南对于正在适配新一代大模型的开发者具有重要参考价值，能够显著改善 AI 应用的交互流畅度与用户信任感，标志着大模型交互设计进入了更精细化的阶段，帮助开发者在长耗时任务中维持良好的用户体验，确保用户在等待多步任务完成时能获得及时的反馈。",
+          "tags": [
+            "GPT-5.5",
+            "提示词工程",
+            "OpenAI"
+          ],
+          "url": "https://simonwillison.net/2026/Apr/25/gpt-5-5-prompting-guide/#atom-everything",
+          "source": "simonwillison.net",
+          "category": "Commentary",
+          "published": "2026-04-25T04:13:36+00:00",
+          "cve_ids": [],
+          "selection_reason": "GPT-5.5 官方提示词指南发布，对开发者适配新模型至关重"
+        },
+        {
+          "title_zh": "LLM 命令行工具更新 0.31 版本：支持 GPT-5.5 及精细化控制",
+          "title_orig": "llm 0.31",
+          "summary": "LLM 命令行工具发布了 0.31 版本更新，正式新增了对 OpenAI 最新 GPT-5.5 模型的使用支持，用户可通过简单指令直接调用。此次更新引入了针对 GPT-5 系列模型的文本冗余度控制选项，允许用户在低、中、高三种级别间切换，同时还增强了图像附件细节水平的设置功能，支持包括原始质量、自动、高及低在内的多种模式。这些新特性为本地调用大模型提供了更强的自定义能力，方便开发者和研究人员根据具体需求精准调节模型的输出风格与处理成本，进一步拓宽了该工具在多模态任务中的应用场景，并支持在额外模型列表中列出相关模型。",
+          "tags": [
+            "LLM工具",
+            "GPT-5.5",
+            "开源软件"
+          ],
+          "url": "https://simonwillison.net/2026/Apr/24/llm/#atom-everything",
+          "source": "simonwillison.net",
+          "category": "Commentary",
+          "published": "2026-04-24T23:35:07+00:00",
+          "cve_ids": [],
+          "selection_reason": "主流 LLM 工具快速跟进 GPT-5.5，提供了更丰富的控"
+        },
+        {
+          "title_zh": "Anthropic 回应 Claude Code 质量下降：系外部框架问题所致",
+          "title_orig": "An update on recent Claude Code quality reports",
+          "summary": "针对过去两个月用户反映 Claude Code 生成质量下降的大量投诉，Anthropic 发布事后分析报告确认了问题的真实性，并明确指出根源并非模型本身。调查发现，Claude Code 运行环境中的三个独立技术问题导致了复杂且实质性的负面影响，直接干扰了最终的输出效果并影响了用户体验。这一事件提醒开发者和企业，在评估 AI 性能时需区分模型核心能力与集成框架的缺陷，同时也展示了 Anthropic 在维护开发者工具稳定性方面的透明度，通过详细的技术复盘向社区交代了故障原因及修复进展，强调了系统集成环节对最终生成质量的关键作用。",
+          "tags": [
+            "Anthropic",
+            "Claude",
+            "代码助手"
+          ],
+          "url": "https://simonwillison.net/2026/Apr/24/recent-claude-code-quality-reports/#atom-everything",
+          "source": "simonwillison.net",
+          "category": "Commentary",
+          "published": "2026-04-24T01:31:25+00:00",
+          "cve_ids": [],
+          "selection_reason": "澄清了 Claude Code 质量波动的技术真相，对开发者"
+        }
+      ],
+      "raw_count": 36,
+      "generated_at": "2026-04-25T05:41:03.670359Z"
     },
     "finance": {
       "display_name": "金融科技",
       "items": [
         {
-          "title_zh": "西联汇款押注稳定币与并购以应对美洲业务增长停滞",
+          "title_zh": "西联汇款押注稳定币与并购以寻求业务增长",
           "title_orig": "Western Union Bets on Stablecoins and M&A for Growth",
-          "summary": "西联汇款在最新财报中披露，受美洲业务下滑影响，其第一季度GAAP营收同比持平，调整后营收则下降1%。为应对业绩压力并寻求新的增长动力，公司计划将战略重心转向稳定币应用及并购活动，试图通过拥抱区块链技术和资本运作来优化收入结构并重塑竞争优势。这一举措反映了传统跨境支付巨头在数字化转型中的积极探索，对于投资者和支付行业而言，这标志着主流金融机构正加速将加密货币整合进全球汇款生态系统，旨在通过技术革新提升运营效率，在营收增长乏力的背景下，通过多元化布局确保其在全球市场中的领先地位。",
+          "summary": "西联汇款在美洲业务收入下滑导致季度营收持平后，正积极寻求通过稳定币技术和并购活动来实现增长。根据财报显示，该公司第一季度GAAP营收同比持平，而调整后营收则下降了1%，反映出传统业务面临的增长瓶颈。这一战略转型表明传统跨境汇款巨头正试图利用区块链技术和资本运作来扭转业绩停滞的局面，通过技术创新提升运营效率并开拓新的收入来源。此举值得关注，因为它反映了传统金融服务商在面临激烈市场竞争压力时，正加速向加密货币领域靠拢，以期在数字化浪潮中重塑其核心竞争力并寻找新的利润增长点。",
           "tags": [
             "西联汇款",
             "稳定币",
@@ -30,12 +535,12 @@
           "category": "Editorial Lens",
           "published": "2026-04-24T23:56:23+00:00",
           "cve_ids": [],
-          "selection_reason": "传统支付巨头通过稳定币寻求转型，具有行业风向标意义。"
+          "selection_reason": "传统汇款巨头转向加密货币领域以应对业绩增长瓶颈。"
         },
         {
-          "title_zh": "Visa 在 Tempo 区块链启动验证节点以加速链上支付发展",
+          "title_zh": "Visa 在 Tempo 区块链上启动验证节点",
           "title_orig": "Visa Launches Validator Node on Tempo Blockchain",
-          "summary": "全球数字支付领军企业Visa宣布正式在Tempo网络上启动验证节点，并以锚定验证者身份深度参与交易验证过程，标志着其在区块链基础设施建设方面迈出关键一步。此举旨在通过直接参与网络治理来加速链上支付生态的开发与完善，表明Visa正在从单纯的支付网络运营商向区块链底层架构的深度参与者转变。这一行动对提升去中心化支付的安全性和处理速度具有重要意义，将直接影响未来链上金融产品的合规性与技术标准设定。通过这种深度技术整合，Visa旨在进一步巩固其在数字支付领域的领导地位，并为全球用户提供更高效的链上金融服务。",
+          "summary": "全球支付巨头 Visa 宣布正式在 Tempo 网络上启动验证节点，并以锚定验证者的身份加入该网络，旨在支持交易验证并加速链上支付基础设施的开发。这一举措标志着 Visa 在推进区块链技术应用方面迈出了关键一步，进一步强化了其在数字支付领域的全球领先地位。此举对支付行业具有重要影响，展示了主流卡组织正深度参与去中心化网络的底层治理，通过构建更高效的链上支付生态，为未来全球范围内的实时数字资产交易奠定坚实的技术基础。随着传统金融与区块链的深度融合，Visa 此举将引领支付行业向更透明、更快捷的去中心化方向演进。",
           "tags": [
             "Visa",
             "区块链",
@@ -46,12 +551,12 @@
           "category": "Card Networks",
           "published": "2026-04-14T13:06:00+00:00",
           "cve_ids": [],
-          "selection_reason": "卡组织深度参与区块链底层基础设施，标志着支付清算体系的演进。"
+          "selection_reason": "Visa 深度参与区块链底层建设，加速链上支付基建发展。"
         },
         {
-          "title_zh": "支付宝在中国推出 AI 智能体支付，推动自主商业转型",
+          "title_zh": "支付宝在中国推出 AI 智能体支付功能",
           "title_orig": "Alipay Introduces AI Agent Payments in China, Pushing Shift Toward Autonomous Commerce - CXO Digitalpulse",
-          "summary": "支付宝近日在中国市场正式引入AI智能体支付功能，旨在推动商业模式向自主商业方向深度转变，引领数字钱包从工具型向智能决策型的功能革新。该技术允许人工智能代理在无需人工频繁干预的情况下独立完成支付流程，极大地提升了交易的自动化水平与响应速度，展示了AI技术在金融支付领域的深度应用。这一创新预示着未来消费场景将更加智能化和去中心化，对于零售商和消费者而言，这种转变将极大简化交易链路并降低操作成本。通过构建下一代智能商业生态系统，支付宝正试图重新定义人机交互下的支付逻辑，为全球金融科技的智能化演进提供重要参考。",
+          "summary": "支付宝近期在中国市场推出了 AI 智能体支付功能，旨在推动支付模式向自主商业方向转变，该技术允许人工智能代理在特定场景下代表用户完成支付流程，进一步简化了交易环节。这一创新不仅显著提升了用户体验，也标志着移动支付正从手动操作向智能化、自动化的新阶段演进。对于行业而言，这预示着未来商业交互将更加依赖 AI 驱动，支付机构正通过技术迭代抢占智能商业生态的先机。此举对支付安全与便捷性的平衡提出了新课题，同时也为全球金融科技领域提供了关于人工智能如何深度赋能支付场景的参考范本，展现了未来自主商业的广阔前景。",
           "tags": [
             "支付宝",
             "AI 支付",
@@ -62,12 +567,12 @@
           "category": "Digital Wallets",
           "published": "2026-04-22T05:31:06+00:00",
           "cve_ids": [],
-          "selection_reason": "AI 智能体支付是支付交互方式的重大突破，预示未来商业趋势。"
+          "selection_reason": "AI 智能体支付开启了自动化商业交易的新模式。"
         },
         {
-          "title_zh": "微信支付连接五大亚洲支付网络，深化跨境生态竞争",
+          "title_zh": "微信支付连接五大亚洲支付网络深化生态竞争",
           "title_orig": "Deepline | WeChat Pay vs. Alipay: Battle shifts to 'ecosystem deepening' as WeChat connects fve Asian payment networks - 點新聞",
-          "summary": "微信支付与支付宝的竞争焦点正转向“生态深化”，微信支付近期通过连接五个亚洲主要的支付网络，显著增强了其跨区域的互联互通能力。通过这种深度的网络整合，微信支付进一步扩大了其在亚洲市场的服务覆盖范围，并有效提升了用户粘性。此举旨在构建更深层次的区域支付生态系统，从而大幅提升跨境支付的便捷性与安全性。这对于在亚洲地区经营的商户和频繁往返的游客具有显著影响，标志着中国移动支付巨头在海外市场的竞争已从单纯的覆盖率竞争进入到体系化协作的新阶段。",
+          "summary": "微信支付与支付宝的竞争焦点正转向“生态深化”，微信支付已成功连接五个亚洲支付网络，进一步扩大了其跨境支付的覆盖范围。这一动作旨在通过加强区域间的互联互通，提升用户在海外市场的支付便利性，并巩固其在亚洲移动支付市场的份额。此举对亚洲支付格局影响深远，意味着中国支付巨头正通过构建更深层次的合作伙伴关系来巩固市场地位。对于跨境旅游和贸易参与者而言，这种生态系统的扩张将提供更无缝的支付体验，同时也加剧了移动支付在全球范围内的存量市场竞争，迫使竞争对手在技术兼容性和场景覆盖上投入更多资源以应对挑战。",
           "tags": [
             "微信支付",
             "跨境支付",
@@ -78,92 +583,116 @@
           "category": "Digital Wallets",
           "published": "2026-04-23T10:36:28+00:00",
           "cve_ids": [],
-          "selection_reason": "移动支付巨头在亚洲市场的生态化竞争升级，影响跨境支付格局。"
+          "selection_reason": "微信支付通过区域网络互联深化其在亚洲的竞争优势。"
         },
         {
-          "title_zh": "Adyen 与 JCB 联合推出卡片在册令牌化服务",
-          "title_orig": "Adyen and JCB roll out card-on-file tokenisation service - MSN",
-          "summary": "全球支付平台Adyen与日本信用卡巨头JCB达成合作，正式推出卡片在册（Card-on-file）令牌化服务，旨在显著提升在线支付的安全性和授权成功率。该服务通过将敏感的银行卡信息替换为唯一的数字令牌，确保在不暴露原始卡号的情况下完成交易，有效降低了数据泄露风险并优化了用户支付体验。这一合作不仅加强了JCB在全球电商环境中的竞争力，也为使用Adyen平台的商户提供了更稳健的支付保障。对于持卡人而言，这意味着在享受便捷自动扣款的同时，个人金融数据的安全防护得到了进一步升级，此举也标志着两家巨头在推动全球支付标准化与安全性方面迈出了重要一步。",
-          "tags": [
-            "Adyen",
-            "JCB",
-            "令牌化"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxNb2V4WFNLUlRNVXpvemxGeFI5cU0zUXNtTEQtTmNwX2V1QlNuS3VEakpUQVVjUXZVYzdXNEJJNTN3dmRzTkNZR21xWFhwR1NkVTczaVFEMUNhbnlLSmN4azZQVzJneFkzSlJnNFp2ZTFwRWlvRERDQ0NoeTRxYzloSkdkY2s4TEFqb1dlVmUyU2lhSVpKMVNwME5wV2hGZDFMTXJyR2VwcTRWdDBXWVBaN0Y1VEZQa3FYRUV4ZEQ3S2k0TlZ0anNDRmxsblZoazlvWHZVZ0RteXAwSFFjbTFBMUVqUlBHbGhtVUJRTzdwLUhQUUpVb01tUHVfR3IwNmk3dGl0SDc1dUJYcDFxWlpvbTdac29hTVBZc0xhSXBfY0ZreVpLWGg0aDRnQmIxNzc1WDk5Z2ZqSnA1V2FpcUZwT2JfbFhuNW0yT1B5Q0JzNW92N1RNd0EycjVwdTN4blREQ0VmVFBtQ2RUWlc5VlV5Y0VETG5CQTZxTDB3?oc=5",
-          "source": "news.google.com",
-          "category": "Card Networks",
-          "published": "2026-04-24T04:34:02+00:00",
-          "cve_ids": [],
-          "selection_reason": "令牌化技术是支付安全的关键趋势，两大巨头合作具有示范效应。"
-        },
-        {
-          "title_zh": "美国运通发布 2026 年第一季度财务业绩报告",
-          "title_orig": "American Express Reports First-Quarter 2026 Financial Results",
-          "summary": "美国运通（American Express）正式发布了其2026年第一季度的财务业绩报告，展示了公司在高端消费市场及企业支出领域的最新经营动态。作为全球领先的金融服务提供商，其财报数据通常被视为衡量全球宏观经济健康状况及消费者信贷质量的重要风向标。尽管具体营收和利润细节需参考详细报表，但该报告提供的信用卡违约率、消费增长趋势等关键信息，对于金融分析师和投资者评估市场风险具有重要参考价值。这份报告将帮助市场理解当前信贷环境，并为公司未来的全球战略调整提供数据支撑。",
-          "tags": [
-            "美国运通",
-            "财报",
-            "金融服务"
-          ],
-          "url": "https://ir.americanexpress.com/news/investor-relations-news/investor-relations-news-details/2026/American-Express-Reports-First-Quarter-2026-Financial-Results/default.aspx",
-          "source": "ir.americanexpress.com",
-          "category": "Card Networks",
-          "published": "2026-04-23T11:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "顶级卡组织财报是观察全球消费信贷和经济趋势的重要窗口。"
-        },
-        {
-          "title_zh": "Simply Business 将保险报价引入 ChatGPT 对话层",
-          "title_orig": "Insurance Quoting Enters the AI Conversation Layer",
-          "summary": "数字保险市场平台Simply Business宣布推出一项创新服务，将原本繁琐的小微企业保险报价流程整合进ChatGPT对话交互中，实现了保险科技的重大突破。以往需要回答长串复杂问题的过程，现在被简化为仅需在对话中提供三个关键数据点即可快速获取报价，极大地降低了用户获取服务的门槛并提升了投保效率。这种基于AI对话层的交互模式生动展示了生成式AI如何重塑传统金融服务的获客流程，对保险科技行业的发展具有极高的行业参考价值。对于寻求便捷金融服务的初创企业主而言，该举措不仅节省了时间成本，也预示着未来保险咨询将向更加智能化和人性化的方向发展。",
-          "tags": [
-            "保险科技",
-            "ChatGPT",
-            "人工智能"
-          ],
-          "url": "https://www.pymnts.com/artificial-intelligence-2/2026/insurance-quoting-enters-the-ai-conversation-layer/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-04-24T19:13:56+00:00",
-          "cve_ids": [],
-          "selection_reason": "生成式 AI 在保险垂直领域的落地应用，显著优化了用户体验。"
-        },
-        {
-          "title_zh": "Visa 启动 B-1 及 B-2 类普通股交换要约计划",
-          "title_orig": "Visa Commences Exchange Offer for Class B-1 and Class B-2 Common Stock",
-          "summary": "Visa公司宣布正式启动一项交换要约，允许持有其B-1和B-2类普通股的股东将其股份交换为B-3类普通股、C类普通股以及部分现金补偿。其中，C类普通股在经过特定的临时转让限制期后将实现自由交易，这为股东提供了更高的资产灵活性和退出通道。这是Visa优化其复杂股权结构、增加股份市场流动性的重要资本运作举措，旨在解决历史遗留的股权分类问题。此举主要影响Visa的机构投资者和长期持股方，通过简化股权层级，有助于进一步提升公司在资本市场的治理透明度与吸引力，并为市场提供更清晰的股份流通预期，确保公司资本结构的长期稳健与高效运行。",
-          "tags": [
-            "Visa",
-            "股权结构",
-            "资本运作"
-          ],
-          "url": "https://investor.visa.com/news/news-details/2026/Visa-Commences-Exchange-Offer-for-Class-B-1-and-Class-B-2-Common-Stock/default.aspx",
-          "source": "investor.visa.com",
-          "category": "Card Networks",
-          "published": "2026-04-13T13:14:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "支付巨头的重大资本结构调整，直接影响其二级市场流动性。"
-        },
-        {
-          "title_zh": "汇丰银行高管解析实时支付增长驱动力",
+          "title_zh": "汇丰银行高管解析实时支付增长的驱动因素",
           "title_orig": "What drives real-time payment growth",
-          "summary": "汇丰银行支付业务高管近日指出，企业正根据自身业务优先级和数字资产的兴起，加速采用更快捷的数字支付方式。随着全球商业节奏加快，实时支付已成为企业优化现金流管理和提升运营效率的关键工具，能够有效降低交易延迟并增强资金透明度。这一趋势预示着传统支付模式正向数字化、即时化深度转型，将深刻影响全球供应链金融和企业资金结算的未来布局，为金融科技服务商带来新的增长机遇，同时也对银行的实时处理能力提出了更高要求，促使金融机构必须不断升级技术架构以适应日益增长的即时结算需求。",
+          "summary": "汇丰银行支付业务高管指出，企业采用更快速数字支付的动力主要源于其业务优先级的调整以及数字资产的兴起。随着实时支付技术的成熟，企业正寻求通过更高效的资金周转来优化财务管理并降低运营成本。这一趋势值得金融从业者高度关注，因为它揭示了企业端支付需求正从传统模式向数字化、即时化转型。数字资产的普及不仅改变了支付手段，更在重塑全球资金流动的效率标准，对银行等金融机构的实时清算能力和数字化服务水平提出了更高要求。未来，能够提供无缝实时支付体验的金融机构将在激烈的对公业务竞争中占据显著优势，推动全球商业贸易的数字化进程。",
           "tags": [
             "实时支付",
-            "数字资产",
-            "汇丰银行"
+            "汇丰银行",
+            "数字资产"
           ],
           "url": "https://www.paymentsdive.com/news/what-drives-real-time-payment-growth/818387/",
           "source": "paymentsdive.com",
           "category": "Editorial Lens",
           "published": "2026-04-24T14:07:00+00:00",
           "cve_ids": [],
-          "selection_reason": "揭示了企业支付数字化转型的核心驱动力与未来趋势。"
+          "selection_reason": "揭示了企业端转向实时支付的核心动力与数字资产的影响。"
         },
         {
-          "title_zh": "支付宝将移动支付服务拓展至车载场景",
+          "title_zh": "美国运通公布2026年第一季度财务业绩",
+          "title_orig": "American Express Reports First-Quarter 2026 Financial Results",
+          "summary": "美国运通公司（American Express）预计将发布其2026年第一季度的财务业绩报告，届时将详细披露公司的营收增长、净利润表现以及各业务板块的运营数据。作为全球领先的支付与金融服务提供商，其财报不仅反映了高端消费市场的活跃程度，也是观察全球宏观经济走势的重要窗口。投资者和分析师将密切关注其信贷质量指标、持卡人支出趋势以及在数字化转型方面的最新进展。此次业绩发布对于评估美国运通在竞争激烈的支付行业中的市场地位至关重要，同时也将为市场提供关于未来信贷环境和消费者信心水平的关键参考信息，对相关金融板块的股价走势产生直接影响。",
+          "tags": [],
+          "url": "https://ir.americanexpress.com/news/investor-relations-news/investor-relations-news-details/2026/American-Express-Reports-First-Quarter-2026-Financial-Results/default.aspx",
+          "source": "ir.americanexpress.com",
+          "category": "Card Networks",
+          "published": "2026-04-23T11:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": ""
+        },
+        {
+          "title_zh": "万事达卡将召开2026年第一季度财报电话会议",
+          "title_orig": "Mastercard Incorporated to Host Conference Call on First Quarter 2026 Financial Results",
+          "summary": "万事达卡（Mastercard Incorporated）宣布将召开电话会议，专门讨论其2026年第一季度的财务业绩，届时公司管理层将就季度内的收入表现、跨境交易量及支付总额等核心指标进行详细解读。此次会议是投资者了解万事达卡在全球支付生态系统中最新战略布局的重要机会，特别是其在数字支付创新和新兴市场拓展方面的成果。市场参与者将重点关注公司对未来业绩的指引，以及在面临宏观经济波动时所采取的应对措施。作为全球支付行业的风向标，万事达卡的财务状况和业务展望将为评估全球消费支出健康状况提供关键数据支持，并对支付技术行业的整体估值逻辑产生深远影响。",
+          "tags": [],
+          "url": "https://investor.mastercard.com/investor-news/investor-news-details/2026/Mastercard-Incorporated-to-Host-Conference-Call-on-First-Quarter-2026-Financial-Results/default.aspx",
+          "source": "investor.mastercard.com",
+          "category": "Card Networks",
+          "published": "2026-04-13T20:15:00+00:00",
+          "cve_ids": [],
+          "selection_reason": ""
+        },
+        {
+          "title_zh": "Visa 启动 B 类普通股交换要约以优化股权结构",
+          "title_orig": "Visa Commences Exchange Offer for Class B-1 and Class B-2 Common Stock",
+          "summary": "Visa 公司宣布启动一项交换要约，允许其 B-1 类和 B-2 类普通股股东将其股份交换为 B-3 类、C 类普通股或现金补偿。其中 C 类普通股在临时转让限制解除后可自由交易，这是该公司进行的第二次此类交换活动，旨在优化公司的资本结构并为特定类别的股东提供流动性。对于投资者和市场分析师而言，这一财务动作反映了 Visa 在管理其复杂股权结构方面的持续努力，有助于提升其股票在公开市场的流通效率和治理透明度。此举不仅解决了历史遗留的股权限制问题，也为公司未来的资本运作提供了更大的灵活性，是 Visa 持续完善其公司治理架构和股东价值管理的重要步骤。",
+          "tags": [
+            "Visa",
+            "股权结构",
+            "交换要约"
+          ],
+          "url": "https://investor.visa.com/news/news-details/2026/Visa-Commences-Exchange-Offer-for-Class-B-1-and-Class-B-2-Common-Stock/default.aspx",
+          "source": "investor.visa.com",
+          "category": "Card Networks",
+          "published": "2026-04-13T13:14:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "Visa 通过复杂的股权交换计划优化资本结构与流动性。"
+        },
+        {
+          "title_zh": "信用卡利率上限政策或对消费者及小微企业产生负面影响",
+          "title_orig": "Why credit card rate caps hurt consumers, small businesses",
+          "summary": "前财政部官员指出，信用卡利率上限政策虽然初衷是降低借贷成本，但实际上可能导致金融机构因风险溢价受限而大幅收紧信贷审批标准，从而严重削弱信贷的可获得性。对于许多依赖信用卡维持日常现金流的小微企业和低信用评分消费者而言，这种政策可能导致他们被完全排除在正规金融体系之外，在面临紧急资金需求时无法获得必要的支持。该观点强调了负担能力不仅取决于信贷成本的高低，更取决于信贷渠道的稳定性，提醒政策制定者需警惕利率管制带来的市场扭曲风险，避免因保护初衷反而损害了弱势群体的金融权益。",
+          "tags": [
+            "信用卡利率",
+            "普惠金融",
+            "信贷政策"
+          ],
+          "url": "https://www.paymentsdive.com/news/why-credit-card-rate-caps-hurt-consumers-small-businesses/818381/",
+          "source": "paymentsdive.com",
+          "category": "Editorial Lens",
+          "published": "2026-04-24T14:27:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨金融监管政策对信贷市场可获得性的潜在负面冲击。"
+        },
+        {
+          "title_zh": "Simply Business 推出基于 ChatGPT 的小微企业保险报价工具",
+          "title_orig": "Insurance Quoting Enters the AI Conversation Layer",
+          "summary": "数字保险市场平台 Simply Business 近日宣布将小微企业保险报价流程整合至 ChatGPT 对话界面中，用户仅需提供三个关键数据点即可在对话过程中快速获取价格估算。这一创新彻底改变了以往需要回答冗长问卷并经过多个复杂接触点才能获得报价的繁琐模式，实现了保险咨询与投保流程的极简压缩。该举措标志着保险行业正式进入 AI 对话交互层，通过生成式人工智能大幅提升了小微企业获取金融服务的效率，展示了 AI 在垂直行业应用中的落地潜力，为未来保险行业的数字化转型和智能化服务提供了极具参考价值的实践案例。",
+          "tags": [
+            "生成式AI",
+            "保险科技",
+            "ChatGPT"
+          ],
+          "url": "https://www.pymnts.com/artificial-intelligence-2/2026/insurance-quoting-enters-the-ai-conversation-layer/",
+          "source": "pymnts.com",
+          "category": "Editorial Lens",
+          "published": "2026-04-24T19:13:56+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了生成式 AI 如何简化复杂的金融产品报价流程。"
+        },
+        {
+          "title_zh": "美联航联合 JCB 推出 MileagePlus JCB 白金信用卡",
+          "title_orig": "United Airlines and JCB Launch MileagePlus JCB Platinum Card - TRAICY Global",
+          "summary": "美国联合航空与日本唯一国际卡组织 JCB 宣布合作推出全新的 MileagePlus JCB 白金信用卡，旨在为频繁往返于国际航线的旅客提供更优质的里程累积与高端出行服务。该卡片深度整合了美联航的 MileagePlus 常旅客计划与 JCB 的全球支付网络，持卡人不仅可以在全球范围内享受专属的白金级礼遇，还能通过日常消费获得高效的积分回馈。此次合作不仅加强了美联航在亚洲市场的金融产品布局，也显著提升了 JCB 在航空联名卡领域的国际竞争力，为跨国商旅用户提供了更丰富的支付选择和更具吸引力的会员权益。",
+          "tags": [
+            "联名信用卡",
+            "JCB",
+            "航空里程"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBwVmdsRE80VEp1LVQ4QUZ2NTVLX3dNMm80YllWb19WaDNGVHpyd2tKc2E1cno0N0ZpcW1vRzdHcmFMbFpYNkg2Zm9nUEMzeUN6MWhUWA?oc=5",
+          "source": "news.google.com",
+          "category": "Card Networks",
+          "published": "2026-04-16T03:46:07+00:00",
+          "cve_ids": [],
+          "selection_reason": "航空巨头与国际卡组织跨界合作，影响跨境支付市场。"
+        },
+        {
+          "title_zh": "支付宝推出车载移动支付方案提升驾驶场景消费体验",
           "title_orig": "Alipay Brings Mobile Payments to the Car - finews.asia",
-          "summary": "支付宝近期宣布将其移动支付技术引入汽车领域，旨在通过车载系统为用户提供便捷的支付体验。这一举措标志着移动支付应用场景从手机端向智能座舱的进一步延伸，涵盖了停车缴费、加油充电及其他车载消费服务，实现了人、车、服务的无缝连接。该动态反映了支付巨头在物联网时代的生态布局，对于汽车制造商和互联网服务商而言，车载支付将成为构建智能出行生态、提升用户粘性的重要环节，同时也为未来自动驾驶场景下的商业化变现提供了基础设施支撑，进一步拓宽了数字支付在智慧交通领域的应用边界。",
+          "summary": "支付宝近日宣布将其移动支付技术延伸至汽车座舱环境，通过深度集成车载系统，让驾驶者能够在车内直接完成加油、停车及路桥费等相关服务的支付操作，无需再频繁操作手机。这一举措标志着移动支付场景从手机端向智能硬件终端的进一步扩张，旨在打造更加无缝的“人-车-生活”支付生态闭环。随着车载支付方案的普及，用户在驾驶过程中的支付便捷性与安全性将得到显著提升，同时也为汽车制造商和第三方服务商开辟了新的数字化运营渠道，有力推动了智能交通、车联网技术与数字金融服务的深度融合与协同发展。",
           "tags": [
             "支付宝",
             "车载支付",
@@ -174,75 +703,11 @@
           "category": "Digital Wallets",
           "published": "2026-04-24T07:08:00+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了移动支付向物联网及智能出行场景的深度渗透。"
-        },
-        {
-          "title_zh": "沃尔玛年度报告强调人工智能提升零售竞争力",
-          "title_orig": "Walmart Touts People and AI in Annual Report",
-          "summary": "沃尔玛在最新发布的年度报告中强调，人工智能驱动的工具正助力其成为客户的首选零售目的地。这些AI技术不仅显著增强了消费者的购物体验，还大幅提升了员工的生产力，并全面优化了供应链、运营管理、人才招聘及人才发展等关键环节的效率。作为全球零售巨头，沃尔玛对AI的深度集成展示了技术如何重塑传统零售业的每一个触点，对行业数字化转型具有重要的标杆意义，不仅提升了企业的核心竞争力，也为零售业如何利用前沿技术实现降本增效提供了宝贵的参考范本，预示着未来零售竞争将更多地依赖于算法与数据的深度融合。",
-          "tags": [
-            "沃尔玛",
-            "人工智能",
-            "零售科技"
-          ],
-          "url": "https://www.pymnts.com/news/retail/2026/walmart-touts-people-and-ai-in-annual-report/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-04-24T17:38:46+00:00",
-          "cve_ids": [],
-          "selection_reason": "零售巨头通过AI全面优化运营，是行业技术应用的典型案例。"
-        },
-        {
-          "title_zh": "美联航联合JCB推出前程万里白金信用卡",
-          "title_orig": "United Airlines and JCB Launch MileagePlus JCB Platinum Card - TRAICY Global",
-          "summary": "美国联合航空与日本信用卡品牌JCB宣布合作推出全新的MileagePlus JCB白金信用卡，旨在为持卡人提供更丰富的里程累积和旅行权益。该卡片的发布是双方深化合作伙伴关系的重要举措，专门针对频繁往返于国际航线的商旅人士提供了更具竞争力的金融服务方案，包括优先办理登机和专属贵宾厅服务。此举反映了航空业与卡组织在后疫情时代通过权益升级来争夺高净值客户的策略，对跨境旅游消费市场具有积极影响，同时也展示了跨国金融合作在提升客户忠诚度方面的关键作用，为持卡人创造了更具价值的全球出行与支付体验。",
-          "tags": [
-            "美联航",
-            "JCB",
-            "信用卡"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBwVmdsRE80VEp1LVQ4QUZ2NTVLX3dNMm80YllWb19WaDNGVHpyd2tKc2E1cno0N0ZpcW1vRzdHcmFMbFpYNkg2Zm9nUEMzeUN6MWhUWA?oc=5",
-          "source": "news.google.com",
-          "category": "Card Networks",
-          "published": "2026-04-16T03:46:07+00:00",
-          "cve_ids": [],
-          "selection_reason": "航空与支付跨界合作，反映了高端商旅金融市场的竞争动态。"
-        },
-        {
-          "title_zh": "前财政部官员警告信用卡利率上限或损害消费者利益",
-          "title_orig": "Why credit card rate caps hurt consumers, small businesses",
-          "summary": "一位前财政部官员撰文指出，设定信用卡利率上限可能会对消费者和小微企业产生严重的负面影响，因为负担能力不仅取决于信贷成本，更取决于信贷的可获得性。文章深入分析认为，过严的利率管制可能导致银行为了风险控制而大幅收紧放贷标准，使得急需资金的弱势群体和初创企业无法获得任何信贷支持，从而陷入更深的财务困境。这一观点引发了关于金融监管平衡点的广泛讨论，对于政策制定者评估信贷政策的社会经济影响、确保金融普惠性与市场稳定性具有重要的参考意义。",
-          "tags": [
-            "信用卡",
-            "利率上限",
-            "金融监管"
-          ],
-          "url": "https://www.paymentsdive.com/news/why-credit-card-rate-caps-hurt-consumers-small-businesses/818381/",
-          "source": "paymentsdive.com",
-          "category": "Editorial Lens",
-          "published": "2026-04-24T14:27:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "探讨了金融监管政策对信贷市场可获得性的潜在负面影响。"
-        },
-        {
-          "title_zh": "万事达卡将于近期召开2026年一季度财报电话会议",
-          "title_orig": "Mastercard Incorporated to Host Conference Call on First Quarter 2026 Financial Results",
-          "summary": "万事达卡公司宣布将主持召开电话会议，发布并讨论其2026年第一季度的财务业绩报告。作为全球领先的支付技术公司，其财报数据通常被视为全球消费支出和经济健康状况的重要风向标，反映了不同地区的购买力水平。投资者和行业分析师将密切关注其交易量增长、跨境支付表现以及在新兴数字支付领域的进展。此次会议不仅关乎公司股价表现，更能为观察全球支付行业的发展趋势和宏观经济走向提供关键的数据支撑，帮助市场参与者更好地理解全球贸易与消费模式的演变过程。",
-          "tags": [
-            "万事达卡",
-            "财报",
-            "支付行业"
-          ],
-          "url": "https://investor.mastercard.com/investor-news/investor-news-details/2026/Mastercard-Incorporated-to-Host-Conference-Call-on-First-Quarter-2026-Financial-Results/default.aspx",
-          "source": "investor.mastercard.com",
-          "category": "Card Networks",
-          "published": "2026-04-13T20:15:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "全球支付巨头的业绩发布是观察宏观经济和行业趋势的重要窗口。"
+          "selection_reason": "移动支付向车载场景延伸，代表了支付生态的新趋势。"
         }
       ],
-      "raw_count": 21,
-      "generated_at": "2026-04-25T00:00:17.070661Z"
+      "raw_count": 20,
+      "generated_at": "2026-04-25T05:41:35.495786Z"
     }
   }
 }
