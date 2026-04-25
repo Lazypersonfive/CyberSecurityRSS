@@ -1,4 +1,5 @@
 import unittest
+from contextlib import ExitStack
 from datetime import date, datetime, timezone
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -11,7 +12,7 @@ from fetch_feeds import FeedEntry, fetch_all_entries
 from fetch_opml import fetch_opml_metadata
 from filter_entries import filter_and_dedup
 from rss_curation import curate_entries
-from source_reports import refresh_latest_report, render_source_report
+from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
 from site_builder import build
 
 
@@ -115,14 +116,16 @@ class SiteBuilderTests(unittest.TestCase):
             templates.mkdir()
             templates.joinpath("index.html.j2").write_text("{{ title }}", encoding="utf-8")
 
-            with patch("site_builder.DOCS_DIR", docs):
-                with patch("site_builder.TEMPLATE_DIR", templates):
-                    with patch("site_builder.yaml.safe_load", return_value={"boards": {}, "site": {"lookback_days": 7}}):
-                        with patch("site_builder.Path.read_text", return_value="site: {}"):
-                            with patch("site_builder.digest_today") as mock_today:
-                                with patch("site_builder._build_feed_for_date", return_value=None) as mock_feed:
-                                    mock_today.return_value = date(2026, 4, 22)
-                                    build(lookback_days=2)
+            with ExitStack() as stack:
+                stack.enter_context(patch("site_builder.DOCS_DIR", docs))
+                stack.enter_context(patch("site_builder.TEMPLATE_DIR", templates))
+                stack.enter_context(patch("site_builder.yaml.safe_load", return_value={"boards": {}, "site": {"lookback_days": 7}}))
+                stack.enter_context(patch("site_builder.Path.read_text", return_value="site: {}"))
+                mock_today = stack.enter_context(patch("site_builder.digest_today"))
+                mock_feed = stack.enter_context(patch("site_builder._build_feed_for_date", return_value=None))
+                mock_today.return_value = date(2026, 4, 22)
+
+                build(lookback_days=2)
 
         checked_dates = [call.args[1] for call in mock_feed.call_args_list]
         self.assertEqual(len(checked_dates), 2)
@@ -182,10 +185,13 @@ class SourceReportTests(unittest.TestCase):
             score_by_url={"https://a/1": 9, "https://a/2": 5, "https://a/3": 2},
             selected_urls={"https://a/1"},
             merged_urls=["https://a/3"],
+            selection_reason_by_url={"https://a/1": "官方发布影响企业部署"},
         )
 
         self.assertIn("| Feed A | 1/1 | 3 -> 3 | 5.3 · 5 | 33% | 1 | 1 |", markdown)
-        self.assertIn("| Feed B | 0/1 | 0 -> 0 | - | - | 0 | 0 |", markdown)
+        self.assertNotIn("| Feed B |", markdown)
+        self.assertIn("另有 1 个源今日 0 条目（0/1 抓取成功）。", markdown)
+        self.assertIn("- **Feed A**：*为什么入选：官方发布影响企业部署*", markdown)
 
     def test_latest_report_combines_board_reports(self) -> None:
         with TemporaryDirectory() as tmpdir:
@@ -202,7 +208,53 @@ class SourceReportTests(unittest.TestCase):
             body = latest.read_text(encoding="utf-8")
 
         self.assertLess(body.index("# Security"), body.index("# AI"))
-        self.assertNotIn("finance", body)
+        self.assertIn("finance", body)
+        self.assertIn("未生成报表", body)
+
+    def test_weekly_report_aggregates_recent_board_reports(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            reports = Path(tmpdir)
+            reports.joinpath("ai_2026-04-23.md").write_text(
+                "\n".join(
+                    [
+                        "# AI 前沿 源质量报表 2026-04-23",
+                        "",
+                        "| Feed | 抓取 | 条目 | LLM 均分 | 低分占比 | 入选 | 去重被合并 |",
+                        "|---|---:|---:|---:|---:|---:|---:|",
+                        "| Feed A | 1/1 | 4 -> 3 | 6.0 · 6 | 0% | 2 | 1 |",
+                    ]
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            reports.joinpath("ai_2026-04-24.md").write_text(
+                "\n".join(
+                    [
+                        "# AI 前沿 源质量报表 2026-04-24",
+                        "",
+                        "| Feed | 抓取 | 条目 | LLM 均分 | 低分占比 | 入选 | 去重被合并 |",
+                        "|---|---:|---:|---:|---:|---:|---:|",
+                        "| Feed A | 1/1 | 2 -> 1 | 8.0 · 8 | 0% | 1 | 0 |",
+                        "| Feed B | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |",
+                        "| Empty Feed | 1/1 | 0 -> 0 | - | - | 0 | 0 |",
+                    ]
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+
+            weekly = refresh_weekly_report(
+                date(2026, 4, 24),
+                ["ai"],
+                reports_dir=reports,
+            )
+
+            body = weekly.read_text(encoding="utf-8")
+
+        self.assertIn("# 7 日源质量汇总 2026-04-18 至 2026-04-24", body)
+        self.assertIn("| Feed A | 2/2 | 6 | 6.5 | 3 | 1 |", body)
+        self.assertIn("| Feed B | 1/1 | 1 | 4.0 | 0 | 0 |", body)
+        self.assertNotIn("Empty Feed", body)
 
 
 class DigestClockTests(unittest.TestCase):

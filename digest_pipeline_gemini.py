@@ -31,7 +31,7 @@ from google.genai import errors as genai_errors
 from digest_clock import digest_today
 from digest_postprocess import normalize_summary_text, summary_needs_repair
 from digest_postprocess import count_chinese_chars, SUMMARY_TARGET_MAX_CHARS, SUMMARY_TARGET_MIN_CHARS
-from source_reports import refresh_latest_report, render_source_report, write_board_report
+from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report, write_board_report
 
 logging.basicConfig(
     level=logging.INFO,
@@ -533,9 +533,15 @@ def run(board: str, as_of: date | None = None) -> Path:
         score_by_url={entry.get("url", ""): score for entry, score in scored if entry.get("url")},
         selected_urls={entry.get("url", "") for entry in selected if entry.get("url")},
         merged_urls=merged_urls,
+        selection_reason_by_url={
+            item.get("url", ""): item.get("selection_reason", "")
+            for item in items
+            if item.get("url")
+        },
     )
     write_board_report(board, as_of, report)
     refresh_latest_report(as_of, list((cfg.get("boards") or {}).keys()))
+    refresh_weekly_report(as_of, list((cfg.get("boards") or {}).keys()))
     return out_path
 
 
