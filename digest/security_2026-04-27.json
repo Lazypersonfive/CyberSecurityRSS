@@ -1,0 +1,170 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-04-27",
+  "generated_at": "2026-04-26T23:27:37.218829Z",
+  "raw_count": 55,
+  "selected_count": 10,
+  "items": [
+    {
+      "title_zh": "2026年4月26日网络安全漏洞动态：Windows权限提升与零日利用",
+      "title_orig": "今日（2026年4月26日）热点网络安全漏洞动态",
+      "summary": "2026年4月26日，网络安全领域披露了多个威胁企业内网安全的高危漏洞动态。其中，PhantomRPC被发现存在无补丁可用的Windows权限提升风险，攻击者可借此获取系统最高权限；同时，Windows Defender零日系列漏洞依然保持高度活跃，持续威胁终端安全。此外，SharePoint零日漏洞已在野外被黑客频繁利用，可能导致企业核心敏感数据大规模泄露。这些漏洞的集中爆发对全球企业运维构成了严峻挑战，相关技术人员需密切关注官方补丁发布进度，并立即采取必要的临时防护措施以降低被攻击风险，确保业务系统在补丁空窗期的基本安全。",
+      "tags": [
+        "漏洞动态",
+        "零日漏洞",
+        "权限提升"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247505416&idx=1&sn=636e54844098a4c16540cd568eab6150",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-04-26T06:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖Windows及SharePoint等核心系统的在野利用"
+    },
+    {
+      "title_zh": "Fast16：揭秘比震网早5年的高精度软件破坏行动",
+      "title_orig": "Fast16: High-precision software sabotage 5 years before Stuxnet",
+      "summary": "SentinelOne实验室通过对Shadow Brokers泄露的机密资料进行深度挖掘，揭示了一个名为Fast16的神秘参考，其代表的高精度软件破坏行动比著名的震网病毒还要早五年。该发现有力地证明了在震网病毒出现之前，已有高度组织化的力量在进行针对特定工业控制系统或关键软件的精密攻击，这一证据彻底改写了网络战演进史的既有认知。这项研究对于理解国家级网络武器的早期发展脉络具有极高的学术与实战价值，它提醒全球安全专家必须重新评估早期网络武器的复杂程度，并从中汲取教训以应对现代防御体系面临的深层威胁，防范此类隐蔽破坏再次发生。",
+      "tags": [
+        "网络战",
+        "震网病毒",
+        "历史溯源"
+      ],
+      "url": "https://www.sentinelone.com/labs/fast16-mystery-shadowbrokers-reference-reveals-high-precision-software-sabotage-5-years-before-stuxnet/",
+      "source": "sentinelone.com",
+      "category": "AI",
+      "published": "2026-04-26T20:18:37+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了网络攻击史上早于震网的高级持续性威胁证据。"
+    },
+    {
+      "title_zh": "Linux内核修复mISDN组件内存泄漏漏洞",
+      "title_orig": "Astra Linux - уязвимость в linux-5.10, linux-5.15, linux",
+      "summary": "Linux内核在5.10和5.15等主流版本中紧急修复了一个位于mISDN组件中的内存泄漏漏洞。该漏洞的根源在于设备名称动态分配后的引用计数处理逻辑存在缺陷。在之前的代码提交中，系统为了优化架构移除了结构体中的固定数组并改用动态分配模式，但未能确保在引用计数归零时正确调用释放函数，导致系统资源在长时间运行后可能被逐渐耗尽，进而引发系统崩溃或拒绝服务。此次修复通过引入put_device函数，确保了kobject在清理过程中能准确释放内存空间。这一更新显著提升了Linux系统在处理ISDN驱动时的稳定性和安全性，建议相关用户尽快升级内核版本。",
+      "tags": [
+        "Linux内核",
+        "内存泄漏",
+        "系统安全"
+      ],
+      "url": "https://vulners.com/astralinux/ASTRA:997816879020363558609785335404099?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-06-03T21:04:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "Linux内核基础组件的安全修复，影响多个主流内核版本。"
+    },
+    {
+      "title_zh": "美国公用事业巨头Itron披露内部IT网络遭入侵",
+      "title_orig": "American utility firm Itron discloses breach of internal IT network",
+      "summary": "美国知名公用事业服务商Itron公司近期向美国证券交易委员会提交了8-K法律文件，正式披露了一起严重的网络安全违规事件。文件确认未经授权的第三方已成功访问了公司的部分内部IT系统，目前Itron正在外部专家的协助下紧急评估受影响的范围以及数据泄露的具体细节，以确定该事件对日常业务运营和客户隐私信息的潜在损害。作为支撑社会运转的关键基础设施服务商，Itron此次遭遇黑客袭击再次引发了公众对公用事业供应链安全的深度担忧。这起事件强调了大型基建企业在面对高级持续性威胁时，加强内部网络隔离、实时监控以及应急响应机制建设的迫切性。",
+      "tags": [
+        "数据泄露",
+        "公用事业",
+        "关键基础设施"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/american-utility-firm-itron-discloses-breach-of-internal-it-network/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-26T14:22:34+00:00",
+      "cve_ids": [],
+      "selection_reason": "关键基础设施供应商的安全事件，具有较高的行业警示意义。"
+    },
+    {
+      "title_zh": "朱雀实验室扫描五万个Skill：语音生态免疫系统仍存隐患",
+      "title_orig": "我们扫描了五万个 Skill，发现危险仍然存在  ｜ 朱雀实验室",
+      "summary": "腾讯安全平台部朱雀实验室近期对全球范围内五万个智能语音Skill进行了大规模安全扫描，结果显示该生态系统中依然潜伏着大量未被修复的安全风险。研究团队指出，当前真正核心的问题并不在于具体漏洞的绝对数量，而在于整个语音应用生态是否已经建立起一套有效的“免疫系统”来抵御不断演进的攻击手段。这一发现向开发者和平台运营方敲响了警钟，在追求语音助手功能快速扩张和市场占有率的同时，必须同步建立起更为严苛的安全审核流程与实时异常监控机制。只有这样才能有效保护用户的个人隐私，并防止恶意指令通过语音控制对智能家居等物理环境造成实质性的破坏或安全威胁。",
+      "tags": [
+        "语音安全",
+        "生态安全",
+        "朱雀实验室"
+      ],
+      "url": "https://security.tencent.com/index.php/blog/msg/224",
+      "source": "security.tencent.com",
+      "category": "CN_News",
+      "published": "2026-04-26T15:51:04+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对智能语音生态的大规模安全扫描，揭示了系统性风险。"
+    },
+    {
+      "title_zh": "恶意软件分析：Agent Tesla木马最终载荷执行链解析",
+      "title_orig": "Malware Analysis: payloadfinal.bin (Agent Tesla)",
+      "summary": "安全研究人员近期对名为payloadfinal.bin的Agent Tesla木马载荷进行了全方位的技术分析，详细揭示了其从初始的RAR压缩包诱饵，到中间层的PowerShell脚本执行，再到最终交付.NET可执行文件的复杂攻击链条。通过PE Detective和CFF Explorer等专业分析工具的验证，确认该样本是一个经过高度混淆的.NET程序，其核心目标是潜伏在受害者系统中窃取各类敏感凭据和机密信息。此类深度的恶意软件分析工作有助于安全从业者快速识别Agent Tesla的最新变种及其采用的先进逃逸技术，从而在多层防御体系中更精准地拦截此类流行的信息窃取软件，保护企业资产安全。",
+      "tags": [
+        "恶意软件",
+        "Agent Tesla",
+        "载荷分析"
+      ],
+      "url": "https://infosecwriteups.com/malware-analysis-payloadfinal-bin-agent-tesla-c38cb9bc8c88?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-26T03:08:18+00:00",
+      "cve_ids": [],
+      "selection_reason": "详细解析了流行木马的执行链，对防御实战有指导意义。"
+    },
+    {
+      "title_zh": "针对活动目录的密码喷洒攻击技术解析",
+      "title_orig": "Ehxb | Password Spraying Attacks on AD",
+      "summary": "密码喷洒作为一种针对活动目录（AD）的高级定向登录攻击手段，正被攻击者广泛用于获取企业内网的初始访问权限或进行横向移动。与传统的针对单一账号尝试多种密码的暴力破解不同，该技术采用一个常用密码去测试海量的用户名或邮箱地址，从而有效规避了账号因多次登录失败而被自动锁定的安全机制，具有极强的隐蔽性。文章详细阐述了攻击者如何利用OSINT公开情报收集账号列表，并强调了在渗透测试中这种迭代攻击的威胁性。为了应对此类针对企业核心身份认证系统的挑战，企业必须强制推行多因素认证（MFA），并引入基于行为分析的异常登录监控，以识别并阻断潜伏的威胁。",
+      "tags": [
+        "密码喷洒",
+        "活动目录",
+        "内网渗透"
+      ],
+      "url": "https://infosecwriteups.com/ehxb-password-spraying-attacks-on-ad-46607fc4781b?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-26T03:06:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "解析了内网渗透中极具威胁的常用攻击手段及防御思路。"
+    },
+    {
+      "title_zh": "漏洞赏金案例：一个简单漏洞的重复修复与双倍收益",
+      "title_orig": "How A Simple Bug That Refused to Die, Paid Twice.",
+      "summary": "本文深入分享了一个在漏洞赏金计划中极具代表性的实战案例，讲述了一个看似简单的逻辑漏洞在初次修复后，因开发团队处理不彻底而在后续版本中再次复现，最终使研究员获得了双倍的奖金回报。作者通过这一曲折的过程，强调了漏洞挖掘者在工作中保持极致耐心与好奇心的职业素养，并指出即使是低难度的缺陷也可能在复杂的系统迭代中反复回潮。这不仅为广大白帽子黑客提供了宝贵的实战经验，更向企业安全团队发出了重要提醒：在修复已知漏洞时，必须进行深度的根因分析与回归测试，确保补丁能够从架构层面彻底消除安全隐患，而非仅仅在表面上掩盖问题，防止漏洞“死灰复燃”。",
+      "tags": [
+        "漏洞赏金",
+        "安全修复",
+        "实战经验"
+      ],
+      "url": "https://infosecwriteups.com/how-a-simple-bug-that-refused-to-die-paid-twice-80752e4d5ec5?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-26T03:03:44+00:00",
+      "cve_ids": [],
+      "selection_reason": "通过实际案例探讨了漏洞修复的彻底性问题，具有教育意义。"
+    },
+    {
+      "title_zh": "IServ学校服务器存在用户枚举漏洞，厂商拒绝修复",
+      "title_orig": "IServ Schoolserver User Enumeration",
+      "summary": "IServ学校服务器被曝存在严重的用户枚举漏洞，攻击者能够通过特定接口探测并确认系统内存在的合法用户账号。尽管该漏洞可能导致学校师生敏感信息泄露，并为后续的针对性攻击或暴力破解提供便利，但相关供应商在收到反馈后明确表示这并不属于安全问题，目前仍未发布任何修复补丁。这一事件值得教育行业IT管理人员高度关注，因为它不仅暴露了特定软件在隐私保护设计上的固有缺陷，更反映出厂商在漏洞响应态度上的消极表现，可能显著增加学校网络环境遭受社会工程学攻击的风险，用户需自行加强安全防护。",
+      "tags": [
+        "网络安全",
+        "漏洞预警",
+        "教育科技"
+      ],
+      "url": "https://vulners.com/packetstormnews/PACKETSTORMNEWS:217785?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-09-10T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及学校系统漏洞及厂商消极应对态度。"
+    },
+    {
+      "title_zh": "GoDaddy被指在无证明文件情况下将域名转给陌生人",
+      "title_orig": "GoDaddy gave a domain to a stranger without any documentation",
+      "summary": "知名域名注册商GoDaddy近日陷入严重的安全争议，一名用户指控该平台在未要求提供任何合法证明文件的情况下，竟擅自将其持有的域名所有权直接转移给了一名陌生人。该事件在技术社区引发了广泛讨论与批评，深度暴露出大型服务商在域名资产保护、身份验证流程以及内部审核机制中可能存在的重大安全漏洞。对于所有依赖域名开展业务的企业和个人而言，这起事故敲响了资产安全的警钟，提醒用户必须重新评估注册商的可靠性，并高度关注在缺乏严格监管下域名资产被非法侵占的风险，以及服务商在处理权属争议时的合规性缺陷。",
+      "tags": [
+        "GoDaddy",
+        "域名安全",
+        "资产保护"
+      ],
+      "url": "https://anchor.host/godaddy-gave-a-domain-to-a-stranger-without-any-documentation/",
+      "source": "anchor.host",
+      "category": "AI",
+      "published": "2026-04-26T16:57:56+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名注册商的安全流程漏洞引发资产风险。"
+    }
+  ]
+}
