@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 from digest_clock import digest_today
 from digest_postprocess import count_chinese_chars, summary_needs_repair
-from digest_pipeline_gemini import _apply_language_quota, _is_chinese_entry, _selection_reason
+from digest_pipeline_gemini import BOARD_SCORE_SYSTEM, _apply_language_quota, _is_chinese_entry, _selection_reason
 from fetch_feeds import FeedEntry, fetch_all_entries
 from fetch_opml import fetch_opml_metadata
 from filter_entries import filter_and_dedup
@@ -165,9 +165,17 @@ class GeminiPipelineTests(unittest.TestCase):
 
     def test_is_chinese_entry_detects_via_title_or_host(self) -> None:
         self.assertTrue(_is_chinese_entry({"title": "绿盟披露漏洞", "url": "https://example.com/x"}))
+        self.assertTrue(_is_chinese_entry({"title_orig": "支付宝发布AI支付能力", "url": "https://example.com/x"}))
         self.assertTrue(_is_chinese_entry({"title": "English title", "url": "https://mp.weixin.qq.com/s/abc"}))
+        self.assertTrue(_is_chinese_entry({"title": "English title", "url": "https://example.cn"}))
         self.assertTrue(_is_chinese_entry({"title": "English title", "feed_url": "https://wechat2rss.xlab.app/feed/x.xml"}))
         self.assertFalse(_is_chinese_entry({"title": "English title", "url": "https://thehackernews.com/x"}))
+        self.assertFalse(_is_chinese_entry({"title": "English title", "url": "https://example.com/cn/article"}))
+
+    def test_score_prompts_include_language_fairness(self) -> None:
+        for prompt in BOARD_SCORE_SYSTEM.values():
+            self.assertIn("评分只看新闻价值", prompt)
+            self.assertIn("不因语言", prompt)
 
     def test_language_quota_reserves_top_chinese_slots(self) -> None:
         # deduped sorted by score desc; CN at idx 0 (sc=9), 4 (sc=5); rest English

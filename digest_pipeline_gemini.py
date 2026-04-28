@@ -23,6 +23,7 @@ import time
 from datetime import date, datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 import yaml
 from google import genai
@@ -62,6 +63,7 @@ BOARD_SCORE_SYSTEM = {
 - 7-8: 新型攻击技术、高危 CVE 详解、红蓝工具发布、关键威胁情报
 - 5-6: 安全研究、技术博客、可观察性分析
 - 0-4: 招聘、营销软文、职业规划、入门求助帖
+评分只看新闻价值，不因语言、来源篇幅长短打折扣；中文一线媒体或官方源首发，权重等同英文媒体。
 只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
     "ai": """你是 AI 产业观察者，对 AI 资讯做 0-10 打分。
 评分标准：
@@ -69,6 +71,7 @@ BOARD_SCORE_SYSTEM = {
 - 7-8: 有实质技术增益的开源模型、能力评测、应用层关键动态、监管与安全政策
 - 5-6: 技术博客、一般产品更新、行业分析
 - 0-4: 纯营销 PR、个人观点水文、融资新闻（无技术细节）、招聘/培训广告
+评分只看新闻价值，不因语言、来源篇幅长短打折扣；中文一线媒体或官方源首发，权重等同英文媒体。
 只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
     "finance": """你是金融科技观察者，关注金融机构（尤其是头部银行、支付网络、卡组织）
 的真实科技动作。对资讯做 0-10 打分。
@@ -77,6 +80,7 @@ BOARD_SCORE_SYSTEM = {
 - 7-8: 具体技术合作、区域性支付新基建、金融 AI / 风控落地案例、关键数据披露
 - 5-6: 产品发布、一般性行业动态、高质量行业分析
 - 0-4: 融资 PR、营销软文、泛观点文章
+评分只看新闻价值，不因语言、来源篇幅长短打折扣；中文一线媒体或官方源首发，权重等同英文媒体。
 只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
 }
 
@@ -121,23 +125,35 @@ CHINESE_CHAR_RE = re.compile(r"[一-鿿]")
 
 def _is_chinese_entry(entry: dict[str, Any]) -> bool:
     """Detect whether an entry is Chinese-language by looking at title + URL host."""
-    text = (entry.get("title") or "") + " " + (entry.get("feed_title") or "")
+    text = " ".join(
+        str(entry.get(field) or "")
+        for field in ("title", "title_orig", "feed_title")
+    )
     if CHINESE_CHAR_RE.search(text):
         return True
-    url = entry.get("url") or ""
-    feed_url = entry.get("feed_url") or ""
+    hosts = {_host(entry.get("url") or ""), _host(entry.get("feed_url") or "")}
+    hosts.discard("")
     cn_hosts = (
         "weixin.qq.com",
-        "wechat2rss",
-        ".cn/",
-        ".cn?",
         "anquanke.com",
         "freebuf.com",
         "seebug.org",
         "cnvd.org",
-        "cnnvd.org.cn",
     )
-    return any(h in url or h in feed_url for h in cn_hosts)
+    if any("wechat2rss" in host for host in hosts):
+        return True
+    return any(
+        host == cn_host or host.endswith(f".{cn_host}") or host.endswith(".cn")
+        for host in hosts
+        for cn_host in cn_hosts
+    )
+
+
+def _host(url: str) -> str:
+    try:
+        return urlparse(url).hostname or ""
+    except ValueError:
+        return ""
 
 
 def _apply_language_quota(
