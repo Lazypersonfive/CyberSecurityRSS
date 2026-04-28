@@ -14,6 +14,8 @@ Cost: Gemini 2.5 Flash is ~$0.075/M input, $0.30/M output. A full 3-board run
 touching ~200 entries costs roughly $0.02-0.05/day.
 """
 
+from __future__ import annotations
+
 import argparse
 import json
 import logging
@@ -26,9 +28,18 @@ from typing import Any
 from urllib.parse import urlparse
 
 import yaml
-from google import genai
-from google.genai import types
-from google.genai import errors as genai_errors
+
+try:
+    from google import genai
+    from google.genai import errors as genai_errors
+    from google.genai import types
+except ImportError as exc:  # allow importing pure helpers in lean test environments
+    genai = None
+    genai_errors = None
+    types = None
+    GOOGLE_GENAI_IMPORT_ERROR: ImportError | None = exc
+else:
+    GOOGLE_GENAI_IMPORT_ERROR = None
 
 from digest_clock import digest_today
 from digest_postprocess import normalize_summary_text, summary_needs_repair
@@ -561,6 +572,8 @@ def run(board: str, as_of: date | None = None) -> Path:
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     if not api_key:
         raise SystemExit("GEMINI_API_KEY (or GOOGLE_API_KEY) env var is required")
+    if genai is None:
+        raise SystemExit(f"google-genai is required to run Gemini pipeline: {GOOGLE_GENAI_IMPORT_ERROR}")
     client = genai.Client(api_key=api_key)
 
     scored: list[tuple[dict[str, Any], int]] = []

@@ -16,6 +16,7 @@ import asyncio
 import json
 import logging
 from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -37,6 +38,10 @@ logger = logging.getLogger(__name__)
 PROJECT_DIR = Path(__file__).parent
 OUTPUT_DIR = PROJECT_DIR / "output"
 CONFIG_PATH = PROJECT_DIR / "config.yaml"
+
+
+def _utc_now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
 def _load_board_config(board: str) -> dict[str, Any]:
@@ -109,6 +114,7 @@ def main() -> None:
     data = {
         "board": args.board,
         "fetched_at": today_str,
+        "fetched_at_utc": _utc_now_iso(),
         "hours": hours,
         "total_feeds": total_feeds,
         "raw_entry_count": len(entries),

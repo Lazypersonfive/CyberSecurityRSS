@@ -1,3 +1,5 @@
+import json
+import sys
 import unittest
 from contextlib import ExitStack
 from datetime import date, datetime, timezone
@@ -8,16 +10,34 @@ from unittest.mock import patch
 from digest_clock import digest_today
 from digest_postprocess import count_chinese_chars, summary_needs_repair
 from digest_pipeline_gemini import BOARD_SCORE_SYSTEM, _apply_language_quota, _is_chinese_entry, _selection_reason
-from fetch_feeds import FeedEntry, fetch_all_entries
+import fetch_and_save
+import fetch_feeds
+from fetch_feeds import FeedEntry, fetch_all_entries, load_seen_urls
 from fetch_opml import fetch_opml_metadata
-from filter_entries import filter_and_dedup
+from filter_entries import FilteredEntry, filter_and_dedup
 from rss_curation import curate_entries
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
 from site_builder import build
 
 
 class FetchFeedsTests(unittest.IsolatedAsyncioTestCase):
+    def test_load_seen_urls_reads_utf8_archive(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            archive = Path(tmpdir)
+            archive.joinpath("2026-04-28.json").write_text(
+                json.dumps({"urls": ["https://example.com/安全"]}, ensure_ascii=False),
+                encoding="utf-8",
+            )
+
+            with patch("fetch_feeds.ARCHIVE_DIR", archive):
+                seen = load_seen_urls("2026-04-28")
+
+        self.assertEqual(seen, {"https://example.com/安全"})
+
     async def test_max_per_category_applies_after_recency_sort(self) -> None:
+        if fetch_feeds.httpx is None:
+            self.skipTest("httpx is not installed in this Python environment")
+
         feeds = {"security": ["feed-a", "feed-b"]}
         base = datetime(2026, 4, 22, tzinfo=timezone.utc)
         results = {
@@ -129,6 +149,89 @@ class SiteBuilderTests(unittest.TestCase):
 
         checked_dates = [call.args[1] for call in mock_feed.call_args_list]
         self.assertEqual(len(checked_dates), 2)
+
+    def test_daily_workflow_supports_single_board_dispatch(self) -> None:
+        workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
+
+        self.assertIn("workflow_dispatch:", workflow)
+        self.assertIn("board:", workflow)
+        self.assertIn("BOARD_SELECTION", workflow)
+        self.assertIn("security ai finance", workflow)
+
+
+class FetchAndSaveTests(unittest.TestCase):
+    def test_board_output_includes_full_utc_batch_timestamp(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            output_dir = root / "output"
+            config = root / "config.yaml"
+            config.write_text(
+                "\n".join(
+                    [
+                        "boards:",
+                        "  test:",
+                        "    display_name: Test",
+                        "    opml: feeds/test.opml",
+                        "    fetch_hours: 24",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            filtered = FilteredEntry(
+                title="测试新闻",
+                url="https://example.com/news",
+                summary="摘要",
+                category="Labs",
+                published="2026-04-28T00:00:00Z",
+                fetch_status="rss_only",
+                cve_ids=[],
+                related_urls=[],
+                quality_score=5,
+                feed_url="feed-a",
+                feed_title="Feed A",
+            )
+
+            async def fake_fetch_all_entries(*_args, **_kwargs):
+                return (
+                    [
+                        FeedEntry(
+                            title="测试新闻",
+                            url="https://example.com/news",
+                            summary="摘要",
+                            category="Labs",
+                            published=datetime(2026, 4, 28, tzinfo=timezone.utc),
+                            feed_url="feed-a",
+                            feed_title="Feed A",
+                        )
+                    ],
+                    {},
+                )
+
+            with ExitStack() as stack:
+                stack.enter_context(patch.object(sys, "argv", ["fetch_and_save.py", "--board", "test"]))
+                stack.enter_context(patch("fetch_and_save.PROJECT_DIR", root))
+                stack.enter_context(patch("fetch_and_save.CONFIG_PATH", config))
+                stack.enter_context(patch("fetch_and_save.OUTPUT_DIR", output_dir))
+                stack.enter_context(patch("fetch_and_save.digest_today", return_value=date(2026, 4, 28)))
+                stack.enter_context(patch("fetch_and_save._utc_now_iso", return_value="2026-04-28T02:03:04Z"))
+                stack.enter_context(patch("fetch_and_save.fetch_opml", return_value={"Labs": ["feed-a"]}))
+                stack.enter_context(
+                    patch(
+                        "fetch_and_save.fetch_opml_metadata",
+                        return_value={"feed-a": {"feed_title": "Feed A", "category": "Labs"}},
+                    )
+                )
+                stack.enter_context(patch("fetch_and_save.load_seen_urls", return_value=set()))
+                stack.enter_context(patch("fetch_and_save.fetch_all_entries", side_effect=fake_fetch_all_entries))
+                stack.enter_context(patch("fetch_and_save.filter_and_dedup", return_value=([filtered], {"input": 1, "output": 1})))
+                stack.enter_context(patch("fetch_and_save.curate_entries", return_value=([filtered], {})))
+
+                fetch_and_save.main()
+
+            payload = json.loads(output_dir.joinpath("test_latest.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(payload["fetched_at"], "2026-04-28")
+        self.assertEqual(payload["fetched_at_utc"], "2026-04-28T02:03:04Z")
 
 
 class CurationTests(unittest.TestCase):

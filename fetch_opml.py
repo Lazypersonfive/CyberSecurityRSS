@@ -7,7 +7,13 @@ Supports either a local path or an HTTP(S) URL. For local files under
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-import httpx
+try:
+    import httpx
+except ImportError as exc:
+    httpx = None
+    HTTPX_IMPORT_ERROR: ImportError | None = exc
+else:
+    HTTPX_IMPORT_ERROR = None
 
 LEGACY_OPML_URL = "https://raw.githubusercontent.com/zer0yu/CyberSecurityRSS/master/tiny.opml"
 LEGACY_OPML_CACHE = Path(__file__).parent / ".cache" / "tiny.opml"
@@ -54,6 +60,8 @@ def _looks_like_url(s: str) -> bool:
 
 
 def _fetch_remote(url: str) -> str:
+    if httpx is None:
+        raise RuntimeError(f"httpx is required to fetch remote OPML: {HTTPX_IMPORT_ERROR}")
     response = httpx.get(url, timeout=30, follow_redirects=True)
     response.raise_for_status()
     return response.text

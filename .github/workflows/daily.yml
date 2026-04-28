@@ -4,7 +4,18 @@ on:
   schedule:
     # 22:45 UTC = 06:45 CST; GitHub schedule queue usually lands around 07:00-07:30 CST.
     - cron: "45 22 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      board:
+        description: "Board to refresh"
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - all
+          - security
+          - ai
+          - finance
 
 permissions:
   contents: write  # needed to push docs/ + digest/ back to main
@@ -21,6 +32,7 @@ jobs:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       LLM_BACKEND: ${{ vars.LLM_BACKEND || 'gemini' }}
+      BOARD_SELECTION: ${{ inputs.board || 'all' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,7 +61,11 @@ jobs:
 
       - name: Fetch + digest all boards
         run: |
-          for board in security ai finance; do
+          boards="security ai finance"
+          if [ "$BOARD_SELECTION" != "all" ]; then
+            boards="$BOARD_SELECTION"
+          fi
+          for board in $boards; do
             echo "::group::Fetch $board"
             python fetch_and_save.py --board "$board"
             echo "::endgroup::"

@@ -1,5 +1,7 @@
 """Concurrently fetch RSS feeds and filter entries from the last N hours."""
 
+from __future__ import annotations
+
 import asyncio
 import json
 import logging
@@ -7,8 +9,21 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
-import feedparser
-import httpx
+try:
+    import feedparser
+except ImportError as exc:
+    feedparser = None
+    FEEDPARSER_IMPORT_ERROR: ImportError | None = exc
+else:
+    FEEDPARSER_IMPORT_ERROR = None
+
+try:
+    import httpx
+except ImportError as exc:
+    httpx = None
+    HTTPX_IMPORT_ERROR: ImportError | None = exc
+else:
+    HTTPX_IMPORT_ERROR = None
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +46,7 @@ def load_seen_urls(date_str: str) -> set[str]:
     path = ARCHIVE_DIR / f"{date_str}.json"
     if not path.exists():
         return set()
-    data = json.loads(path.read_text())
+    data = json.loads(path.read_text(encoding="utf-8"))
     return set(data.get("urls", []))
 
 
@@ -56,6 +71,9 @@ async def fetch_all_entries(
     Returns:
         Tuple of (entry list, health dict mapping url -> error_count).
     """
+    if httpx is None:
+        raise RuntimeError(f"httpx is required to fetch feeds: {HTTPX_IMPORT_ERROR}")
+
     seen_urls = seen_urls or set()
     feed_titles = feed_titles or {}
     cutoff = datetime.now(timezone.utc).timestamp() - hours * 3600
@@ -117,6 +135,9 @@ async def _fetch_one_bounded(
 
 
 async def _fetch_one(client: httpx.AsyncClient, url: str) -> list[FeedEntry]:
+    if feedparser is None:
+        raise RuntimeError(f"feedparser is required to parse feeds: {FEEDPARSER_IMPORT_ERROR}")
+
     response = await client.get(url)
     response.raise_for_status()
     parsed = feedparser.parse(response.text)
