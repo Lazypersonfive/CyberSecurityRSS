@@ -1,0 +1,341 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-04-29",
+  "generated_at": "2026-04-28T23:40:55.255355Z",
+  "raw_count": 80,
+  "selected_count": 20,
+  "items": [
+    {
+      "title_zh": "CISA 将 Windows 及 ConnectWise 漏洞列入已知利用清单",
+      "title_orig": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
+      "summary": "美国网络安全和基础设施安全局（CISA）近日正式将两个已被证实处于活跃利用状态的安全漏洞添加到其“已知被利用漏洞”（KEV）目录中，这两个漏洞分别是涉及ConnectWise ScreenConnect的路径遍历漏洞CVE-2024-1708，以及涉及微软Windows Shell的保护机制失效漏洞CVE-2026-32202。微软方面随后证实该Windows漏洞已被黑客用于在野攻击，攻击者可借此绕过系统安全机制并获取敏感信息。由于此类漏洞是黑客频繁使用的攻击手段，CISA的通报旨在提醒各联邦机构及相关组织必须在规定期限内完成修复，以防范潜在的数据泄露风险，确保关键基础设施的安全性，并以此降低网络攻击对政府及企业运营造成的负面影响。",
+      "tags": [
+        "CISA",
+        "Windows漏洞",
+        "网络安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/04/28/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2024-1708",
+        "CVE-2026-32202"
+      ],
+      "selection_reason": "CISA 确认漏洞被在野利用，具有极高的修复优先级。"
+    },
+    {
+      "title_zh": "微软确认 Windows Shell 欺骗漏洞 CVE-2026-32202 已遭利用",
+      "title_orig": "Microsoft Confirms Active Exploitation of Windows Shell CVE-2026-32202",
+      "summary": "微软官方近日修订了针对 Windows Shell 高危安全漏洞 CVE-2026-32202 的安全公告，正式承认该漏洞已在野外被黑客积极利用。该漏洞属于欺骗类漏洞，CVSS 评分虽为 4.3 分，但攻击者可利用其非法访问系统中的敏感信息，微软已在周二补丁日更新中发布了针对性修复程序。此消息值得广大 Windows 用户和企业管理员高度关注，因为它意味着即便评分不高的漏洞，一旦被黑客掌握利用方式，也会对系统安全构成实质性威胁，建议相关用户立即检查并安装最新的安全补丁以确保环境安全，防止因信息泄露导致更严重的连锁反应。",
+      "tags": [
+        "微软",
+        "Windows",
+        "零日漏洞"
+      ],
+      "url": "https://thehackernews.com/2026/04/microsoft-confirms-active-exploitation.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T05:50:00+00:00",
+      "cve_ids": [
+        "CVE-2026-32202"
+      ],
+      "selection_reason": "微软官方确认漏洞已被利用，提醒用户需紧急更新补丁。"
+    },
+    {
+      "title_zh": "黑客正利用 LiteLLM 开源网关中的关键 SQL 注入漏洞",
+      "title_orig": "Hackers are exploiting a critical LiteLLM pre-auth SQLi flaw",
+      "summary": "黑客目前正针对 LiteLLM 开源大语言模型（LLM）网关中一个代号为 CVE-2026-42208 的关键漏洞发起攻击，旨在窃取其中存储的敏感信息。该漏洞属于预身份验证 SQL 注入漏洞，意味着攻击者无需获取任何权限即可对数据库执行恶意查询。由于 LiteLLM 被广泛用于管理和统一多种大模型接口，其安全性直接关系到企业 AI 应用的数据安全。此事件凸显了开源 AI 基础设施在快速普及过程中面临的严峻安全挑战，相关开发者和企业应尽快排查并升级受影响的组件，以防止核心业务数据和模型配置信息遭到泄露，确保人工智能服务在受控且安全的环境下运行。",
+      "tags": [
+        "LiteLLM",
+        "SQL注入",
+        "AI安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-are-exploiting-a-critical-litellm-pre-auth-sqli-flaw/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T21:07:23+00:00",
+      "cve_ids": [
+        "CVE-2026-42208"
+      ],
+      "selection_reason": "涉及大模型基础设施的关键漏洞，且已有活跃攻击行为。"
+    },
+    {
+      "title_zh": "GitHub 曝出关键 RCE 漏洞：单次 Git Push 即可触发",
+      "title_orig": "Researchers Discover Critical GitHub CVE-2026-3854 RCE Flaw Exploitable via Single Git Push",
+      "summary": "网络安全研究人员披露了 GitHub.com 及 GitHub 企业版服务器中存在的一个关键安全漏洞 CVE-2026-3854，该漏洞 CVSS 评分高达 8.7 分。研究表明，拥有仓库推送权限的已认证用户只需执行一次简单的“git push”命令，即可利用该命令注入漏洞在服务器上实现远程代码执行（RCE）。这一发现对依赖 GitHub 进行协作开发的全球开发者和企业具有重大影响，因为攻击者可能借此控制代码托管环境。目前相关细节已公开，提醒使用 GitHub 企业版服务器的机构务必关注官方安全更新，确保代码库和底层服务器的完整性与安全性，防止恶意代码注入影响软件供应链。",
+      "tags": [
+        "GitHub",
+        "远程代码执行",
+        "代码安全"
+      ],
+      "url": "https://thehackernews.com/2026/04/researchers-discover-critical-github.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T18:19:00+00:00",
+      "cve_ids": [
+        "CVE-2026-3854"
+      ],
+      "selection_reason": "GitHub 核心功能漏洞，影响范围广且触发方式简单。"
+    },
+    {
+      "title_zh": "Hugging Face 机器人平台 LeRobot 存在高危 RCE 漏洞",
+      "title_orig": "Critical Unpatched Flaw Leaves Hugging Face LeRobot Open to Unauthenticated RCE",
+      "summary": "网络安全研究人员披露了 Hugging Face 旗下开源机器人平台 LeRobot 的一个关键安全漏洞 CVE-2026-25874，该漏洞 CVSS 评分高达 9.3 分。该漏洞源于对不可信数据的反序列化处理不当，允许未经身份验证的远程攻击者在受影响的系统上执行任意代码。LeRobot 在 GitHub 上拥有近 2.4 万颗星，是机器人研究领域的重要工具，目前该漏洞仍处于未修复状态。此漏洞的发现提醒 AI 和机器人开发者，在集成开源平台时必须审慎评估其安全性，尤其是处理外部输入数据时的风险，以避免物理设备或研究数据被黑客非法控制，造成不可估量的科研损失或安全事故。",
+      "tags": [
+        "Hugging Face",
+        "机器人安全",
+        "RCE漏洞"
+      ],
+      "url": "https://thehackernews.com/2026/04/critical-cve-2026-25874-leaves-hugging.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T11:18:00+00:00",
+      "cve_ids": [
+        "CVE-2026-25874"
+      ],
+      "selection_reason": "知名 AI 机器人平台的高危未修复漏洞，安全风险极大。"
+    },
+    {
+      "title_zh": "美国起诉在芬兰被捕的 Scattered Spider 黑客组织成员",
+      "title_orig": "US reportedly charges Scattered Spider hacker arrested in Finland",
+      "summary": "一名在芬兰被捕的 19 岁美籍爱沙尼亚裔男子目前面临美国联邦政府的指控，据称他是臭名昭著的黑客组织 Scattered Spider 的核心成员。该组织以擅长社交工程攻击和针对大型企业进行勒索而闻名，曾导致多家知名公司业务中断。此次跨国逮捕和起诉行动展示了国际执法部门在打击网络犯罪方面的协作成果，对于震慑此类高活跃度的黑客团伙具有重要意义。此案的进展值得网络安全从业者关注，因为它可能揭示该组织更多的攻击手段和内部运作机制，有助于企业针对性地加强防御措施，特别是针对社交工程类攻击的防护。",
+      "tags": [
+        "黑客组织",
+        "网络犯罪",
+        "跨国执法"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/us-reportedly-charges-scattered-spider-hacker-arrested-in-finland/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T15:39:52+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名黑客组织成员落网，对网络犯罪打击具有里程碑意义。"
+    },
+    {
+      "title_zh": "中国籍黑客因涉嫌攻击新冠研究机构被从意大利引渡至美",
+      "title_orig": "Chinese Silk Typhoon Hacker Extradited to U.S. Over COVID Research Cyberattacks",
+      "summary": "一名被指控为“Silk Typhoon”黑客组织成员的 34 岁中国籍男子徐泽伟（音译）已从意大利被引渡至美国受审。美国司法部指控其在 2020 年至 2021 年期间，策划并参与了针对美国政府机构及多家组织的系列网络攻击，其中包括窃取新冠肺炎（COVID-19）相关的研究成果。该男子于 2025 年 7 月在意大利被捕，美方认为该组织具有国家背景。此事件不仅涉及网络间谍活动，还牵涉到敏感的公共卫生科研数据安全，反映了地缘政治背景下网络安全冲突的复杂性，以及国际司法在处理此类跨国网络攻击案件中的关键作用，引发了国际社会对科研数据保护的广泛讨论。",
+      "tags": [
+        "网络间谍",
+        "引渡",
+        "科研安全"
+      ],
+      "url": "https://thehackernews.com/2026/04/chinese-silk-typhoon-hacker-extradited.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T07:57:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及敏感科研数据窃取及跨国引渡，具有高度新闻价值。"
+    },
+    {
+      "title_zh": "微软修复 Entra ID 漏洞：防止 AI 代理角色被非法接管",
+      "title_orig": "Microsoft Patches Entra ID Role Flaw That Enabled Service Principal Takeover",
+      "summary": "微软近日修复了 Microsoft Entra ID 中的一个管理角色漏洞，该漏洞曾允许攻击者实现权限提升并接管身份。安全机构 Silverfort 发现，专门为 AI 代理设计的“Agent ID Administrator”内置角色存在缺陷，攻击者可利用该角色操纵 AI 代理的身份生命周期操作。随着企业越来越多地在业务中部署 AI 代理，此类针对身份管理平台的漏洞成为了新的攻击向量。微软的及时修复对于保障企业 AI 生态系统的身份安全至关重要，同时也提醒企业在配置 AI 相关权限时需遵循最小权限原则，防止因新型管理角色配置不当而导致全局安全风险，确保自动化代理在安全框架内运行。",
+      "tags": [
+        "微软",
+        "Entra ID",
+        "AI身份安全"
+      ],
+      "url": "https://thehackernews.com/2026/04/microsoft-patches-entra-id-role-flaw.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T06:37:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及 AI 代理身份管理的新型漏洞，反映了 AI 安全的新趋"
+    },
+    {
+      "title_zh": "VECT 2.0 勒索软件存在缺陷，可永久损毁大文件",
+      "title_orig": "VECT 2.0 Ransomware Irreversibly Destroys Files Over 131KB on Windows, Linux, ESXi",
+      "summary": "威胁猎人发出警告，网络犯罪组织 VECT 2.0 旗下的勒索软件在 Windows、Linux 及 ESXi 变体中存在严重的加密实现缺陷，导致其行为更接近于数据擦除器。该软件在处理超过 131KB 的文件时会造成不可逆的破坏，即使受害者支付赎金，攻击者也无法恢复这些受损数据。这一发现提醒广大企业和运维人员，面对此类勒索攻击时，传统的支付赎金策略已彻底失效，必须依靠离线备份和灾难恢复机制来保护核心业务数据，否则将面临永久性的资产损失。由于加密逻辑的根本性错误，该恶意软件已成为一种极具破坏性的纯粹抹除工具，对全球多平台服务器构成了严峻的安全威胁。",
+      "tags": [
+        "勒索软件",
+        "数据安全",
+        "网络攻击"
+      ],
+      "url": "https://thehackernews.com/2026/04/vect-20-ransomware-irreversibly.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T14:01:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "该勒索软件具有擦除器属性，支付赎金也无法恢复数据。"
+    },
+    {
+      "title_zh": "VoiceGoat：用于练习 LLM 攻击技术的易受攻击语音代理",
+      "title_orig": "VoiceGoat – A vulnerable voice agent for practicing LLM attack techniques",
+      "summary": "安全研究人员发布了名为 VoiceGoat 的开源项目，这是一个基于 Docker Compose 运行的故意留有漏洞的语音代理系统，旨在帮助从业者练习大语言模型攻击技术。该系统包含 VoiceBank、VoiceAdmin 和 VoiceRAG 等多个服务模块，涵盖了提示词注入、权限滥用、RAG 中毒及跨租户数据泄露等多种漏洞场景，并设有从易到难的 CTF 风格挑战。该工具为红队人员和安全研究员提供了宝贵的实战演练环境，有助于提升针对 AI 驱动应用的安全防御和渗透测试能力。通过模拟真实的 AI 语音交互环境，它填补了当前大模型安全教学中语音代理领域的空白，是研究人员掌握复杂攻击链条的重要实验平台。",
+      "tags": [
+        "大模型安全",
+        "红队工具",
+        "漏洞练习"
+      ],
+      "url": "https://www.reddit.com/r/redteamsec/comments/1sy4acx/voicegoat_a_vulnerable_voice_agent_for_practicing/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-04-28T15:14:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对 LLM 应用安全的实战演练工具，具有极高的学习价值。"
+    },
+    {
+      "title_zh": "Infiltrate AI：自动化 LLM 提示词注入测试与监控仪表盘",
+      "title_orig": "I built an LLM Red-Teaming Dashboard to automate prompt injection testing and security monitoring",
+      "summary": "针对大多数大语言模型应用容易受到越狱和提示词注入攻击导致指令泄露或越权操作的问题，开发者推出了 Infiltrate AI 安全层。该工具通过构建自动化的红队测试仪表盘，能够替代低效的人工手动测试，对 LLM 部署进行压力测试和持续的安全监控。这对于正在开发 AI 应用的企业和研究人员至关重要，它能有效识别模型在处理恶意输入时的脆弱性，为 LLM 应用在生产环境中的安全性提供了一层自动化的防御保障和风险评估手段。该仪表盘通过可视化方式展示安全漏洞，使开发者能够快速定位并修复模型逻辑中的缺陷，从而在应用上线前大幅降低被恶意利用的风险，确保 AI 系统的稳健运行。",
+      "tags": [
+        "AI 安全",
+        "自动化测试",
+        "红队渗透"
+      ],
+      "url": "https://www.reddit.com/r/redteamsec/comments/1sxuj4f/i_built_an_llm_redteaming_dashboard_to_automate/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-04-28T07:39:12+00:00",
+      "cve_ids": [],
+      "selection_reason": "自动化 LLM 安全测试工具，解决人工测试效率低下的痛点。"
+    },
+    {
+      "title_zh": "巴西 LofyGang 组织回归，利用 Minecraft 传播木马",
+      "title_orig": "Brazilian LofyGang Resurfaces After Three Years With Minecraft LofyStealer Campaign",
+      "summary": "起源于巴西的网络犯罪组织 LofyGang 在沉寂三年后重新活跃，发起了一场针对 Minecraft 玩家的恶意软件攻击活动。该组织利用名为 LofyStealer（又名 GrabBot）的新型窃取木马，伪装成名为“Slinky”的游戏外挂，并使用官方游戏图标诱导玩家主动下载执行。此活动主要威胁游戏玩家的个人账户安全和敏感信息，反映出网络犯罪组织在利用流行游戏社区进行社交工程攻击方面的持续性，提醒广大玩家应警惕非官方渠道提供的游戏辅助工具。根据安全公司 ZenoX 的技术报告，这种利用玩家对游戏外挂需求的心理进行渗透的手段极具欺骗性，玩家一旦运行该伪装程序，其设备上的各类凭据和隐私数据将被迅速窃取并上传至攻击者服务器。",
+      "tags": [
+        "网络犯罪",
+        "恶意软件",
+        "游戏安全"
+      ],
+      "url": "https://thehackernews.com/2026/04/brazilian-lofygang-resurfaces-after.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T17:39:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "老牌犯罪组织回归并针对流行游戏社区，具有广泛的影响面。"
+    },
+    {
+      "title_zh": "威胁参与者发布 OPSEC 手册以逃避安全检测",
+      "title_orig": "Inside an OPSEC Playbook: How Threat Actors Evade Detection",
+      "summary": "安全机构 Flare 揭示了威胁参与者正在发布结构化的行动安全（OPSEC）手册，旨在指导攻击者在行动中保持隐蔽。这些手册详细介绍了如何构建分层基础设施、实施身份隔离以及采取长期规避策略，以防止被安全防御系统识别。这一趋势表明网络攻击者的专业化程度正在进一步提升，他们不仅在技术上寻求突破，更在战术流程上进行标准化。对于防御方而言，了解这些逃避策略对于优化威胁狩猎流程和提升检测系统的鲁棒性具有重要的参考价值。通过研究这些攻击者的内部指南，安全团队可以预判对手的隐匿手段，从而在网络对抗中占据主动地位，针对性地加强对复杂攻击路径的监控与拦截能力。",
+      "tags": [
+        "行动安全",
+        "威胁情报",
+        "防御规避"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/inside-an-opsec-playbook-how-threat-actors-evade-detection/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T12:50:58+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了攻击者战术标准化的新趋势，有助于提升防御意识。"
+    },
+    {
+      "title_zh": "NSA GRASSMARLIN 工具存在 XML 外部实体引用漏洞",
+      "title_orig": "NSA GRASSMARLIN",
+      "summary": "CISA 发布安全公告，指出美国国家安全局（NSA）开发的网络分析工具 GRASSMARLIN 存在不当限制 XML 外部实体引用（XXE）的漏洞。成功利用该漏洞的攻击者可能导致敏感信息泄露，受影响的版本涵盖了该工具的所有版本。由于该工具常用于关键基础设施领域的信息技术分析，此漏洞的发现提醒相关机构需关注内部安全工具自身的安全性。建议使用该工具的组织及时关注供应商发布的补丁或采取相应的缓解措施，以防止潜在的供应链或内部信息泄露风险。该漏洞的 CVSS 评分为 5.5，涉及信息技术等多个关键行业，凸显了即使是专业安全分析软件也可能成为攻击者渗透关键系统的潜在入口，必须加强全生命周期的漏洞管理。",
+      "tags": [
+        "漏洞预警",
+        "关键基础设施",
+        "XXE 漏洞"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-118-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及 NSA 开发的工具及关键基础设施安全，具有高度敏感性。"
+    },
+    {
+      "title_zh": "利用 MCP 服务器实现横向移动的关键安全发现",
+      "title_orig": "Abused an MCP Server to Perform Lateral Movement | Critical Finding | MCP Testing Methodology",
+      "summary": "安全研究员在最近的一次评估中发现，可以通过滥用模型上下文协议（MCP）服务器来实现网络环境中的横向移动。该研究详细介绍了针对 MCP 组件的测试方法论，并指出这一关键发现可能影响集成 AI 代理和服务器的系统架构。随着 MCP 协议在 AI 生态系统中的应用日益广泛，该漏洞利用路径的发现为系统架构师和安全审计员敲响了警钟。相关组织在部署基于 MCP 的 AI 服务时，必须重新评估其访问控制策略，以防止攻击者利用 AI 基础设施作为跳板渗透核心网络。这一研究成果强调了在引入新兴 AI 协议时，必须同步建立完善的安全隔离机制，防止 AI 组件成为企业内网中新的安全薄弱环节，从而保障整体架构的安全性。",
+      "tags": [
+        "MCP 协议",
+        "横向移动",
+        "AI 基础设施"
+      ],
+      "url": "https://infosecwriteups.com/abused-an-mcp-server-to-perform-lateral-movement-critical-finding-mcp-testing-methodology-dd0557d49522?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-28T07:04:37+00:00",
+      "cve_ids": [],
+      "selection_reason": "首个关于 MCP 协议安全性的实战案例，对 AI 架构安全有"
+    },
+    {
+      "title_zh": "简单参数篡改导致政府网站公民身份信息泄露",
+      "title_orig": "I Changed One Number… and Got Access to Citizens’ ID and Address Proofs",
+      "summary": "一名安全研究员在探索某州政府 Web 应用程序时发现，通过简单的参数篡改即可非法获取公民的身份证件和地址证明。该漏洞存在于用户上传和检索证明文件的功能模块中，攻击者只需更改请求中的数字编号，就能越权访问其他申请人的敏感记录。这种典型的越权访问漏洞暴露了政府政务系统在数据保护和权限校验方面的脆弱性。该案例再次强调了 Web 开发中严格执行服务端权限验证的重要性，提醒相关部门必须加强对公共服务平台的安全审计，以保护公民的个人隐私数据。由于该漏洞涉及大量敏感的政府记录，其潜在的社会影响巨大，开发者应引以为戒，在处理涉及个人隐私的查询接口时，必须实施多重身份校验和严格的参数过滤机制。",
+      "tags": [
+        "Web 安全",
+        "越权漏洞",
+        "数据泄露"
+      ],
+      "url": "https://infosecwriteups.com/i-changed-one-number-and-got-access-to-citizens-id-and-address-proofs-a02084428801?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-28T07:04:35+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的 Web 漏洞导致大规模敏感数据泄露，具有警示意义。"
+    },
+    {
+      "title_zh": "视频服务商Vimeo确认因第三方供应商漏洞导致用户数据泄露",
+      "title_orig": "Video service Vimeo confirms Anodot breach exposed user data",
+      "summary": "视频托管平台Vimeo近日正式证实，由于其合作伙伴数据异常检测公司Anodot遭遇网络攻击，导致部分Vimeo客户和用户的数据在未经授权的情况下被第三方非法访问。此次事件源于典型的第三方供应链安全漏洞，泄露的信息可能涉及用户的账户关联敏感数据，目前Vimeo已开始向受影响的用户发出正式通知并采取相关补救措施。该事件再次凸显了企业在高度依赖外部服务商进行数据处理时所面临的严峻供应链安全风险，提醒广大互联网服务提供商必须显著加强对合作伙伴安全资质的审核与实时监控，以确保用户隐私和数据资产不受侵害。",
+      "tags": [
+        "Vimeo",
+        "数据泄露",
+        "供应链安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/video-service-vimeo-confirms-anodot-breach-exposed-user-data/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T19:04:22+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名视频平台受供应链攻击影响，警示第三方服务风险。"
+    },
+    {
+      "title_zh": "安全公司Checkmarx证实LAPSUS$黑客泄露其GitHub源代码",
+      "title_orig": "Checkmarx confirms LAPSUS$ hackers leaked its stolen GitHub data",
+      "summary": "应用安全公司Checkmarx正式确认，臭名昭著的黑客组织LAPSUS$已将其从公司私有GitHub存储库中窃取的数据公之于众，泄露内容包含了部分受保护的源代码及相关核心开发文档。Checkmarx表示目前正在全力评估泄露资料的具体范围及其对公司知识产权的潜在负面影响，并加强内部防御。作为一家专门提供代码安全审计工具的知名企业，其自身源代码的泄露不仅对其商业竞争力构成直接威胁，也引发了业界对安全厂商自身防御能力的广泛关注与担忧，这充分表明即便是专业安全机构也可能成为顶级黑客组织针对性攻击的重点目标。",
+      "tags": [
+        "Checkmarx",
+        "源代码泄露",
+        "LAPSUS$"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/checkmarx-confirms-lapsus-hackers-leaked-its-stolen-github-data/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-28T14:50:40+00:00",
+      "cve_ids": [],
+      "selection_reason": "安全厂商自身源码遭泄露，对行业安全信誉具有重大影响。"
+    },
+    {
+      "title_zh": "北约“锁定盾牌”网络防御演习聚焦技术防御与危机管理",
+      "title_orig": "北约“锁定盾牌”网络防御演习重点关注技术防御和危机管理",
+      "summary": "北约近日举行了代号为“锁定盾牌”的大规模网络防御演习，共有来自41个国家的4000余名专家参与，在模拟环境中成功抵御了超过8000次高强度且复杂的网络攻击。本次演习重点测试了参演国在极端压力下的技术防御能力、法律应对框架以及跨国危机管理协作机制，旨在全面提升成员国应对复杂网络威胁的整体韧性与协同作战水平。随着全球地缘政治局势日益紧张，此类国家级、多国参与的实战化模拟演习对于构建集体防御体系至关重要，也深刻反映出网络空间已成为现代军事与国家安全博弈中不可或缺的核心战场之一。",
+      "tags": [
+        "北约",
+        "网络演习",
+        "集体防御"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI4NDY2MDMwMw==&mid=2247515872&idx=2&sn=8c17b04b560eb0e7f0ee07b79a0b2c57",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-04-28T09:14:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "全球规模最大的网络防御演习，体现国际网络对抗新趋势。"
+    },
+    {
+      "title_zh": "国家信息安全漏洞共享平台发布2026年第16期漏洞周报",
+      "title_orig": "CNVD漏洞周报2026年第16期",
+      "summary": "国家信息安全漏洞共享平台（CNVD）近日发布了2026年第16期漏洞周报，对过去一周内发现的各类软硬件安全漏洞进行了系统性梳理与通报。报告详细列出了新增漏洞的危害等级、受影响范围以及相应的修复建议，涵盖了操作系统、Web应用及工业控制系统等多个关键领域。该周报是国内政企单位进行安全加固和风险排查的重要参考依据，通过及时获取权威的漏洞情报，相关机构能够赶在攻击者利用漏洞之前完成补丁更新，从而有效降低网络安全事故的发生概率，保障关键信息基础设施的运行安全。",
+      "tags": [
+        "CNVD",
+        "漏洞通报",
+        "网络安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIwNDk0MDgxMw==&mid=2247501525&idx=1&sn=f9cc040dd3056d42367c7c9685d0fffe",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-04-28T01:19:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "权威机构发布的漏洞汇总，是企业安全运维的重要参考。"
+    }
+  ]
+}
