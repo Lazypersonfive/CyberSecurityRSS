@@ -18,6 +18,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import time
 from datetime import date, datetime
 from pathlib import Path
@@ -114,6 +115,60 @@ DEDUPE_SYSTEM = """你要对新闻条目做去重聚类。
 
 DEDUPE_POOL_MULTIPLIER = 2
 DEDUPE_MAX_CANDIDATES = 80
+
+CHINESE_CHAR_RE = re.compile(r"[一-鿿]")
+
+
+def _is_chinese_entry(entry: dict[str, Any]) -> bool:
+    """Detect whether an entry is Chinese-language by looking at title + URL host."""
+    text = (entry.get("title") or "") + " " + (entry.get("feed_title") or "")
+    if CHINESE_CHAR_RE.search(text):
+        return True
+    url = entry.get("url") or ""
+    feed_url = entry.get("feed_url") or ""
+    cn_hosts = (
+        "weixin.qq.com",
+        "wechat2rss",
+        ".cn/",
+        ".cn?",
+        "anquanke.com",
+        "freebuf.com",
+        "seebug.org",
+        "cnvd.org",
+        "cnnvd.org.cn",
+    )
+    return any(h in url or h in feed_url for h in cn_hosts)
+
+
+def _apply_language_quota(
+    deduped: list[tuple[dict[str, Any], int]],
+    top_n: int,
+    min_chinese: int,
+) -> list[tuple[dict[str, Any], int]]:
+    """Reserve up to min_chinese slots for top-scored Chinese entries.
+
+    Score order is preserved within each language. If fewer Chinese candidates
+    exist than min_chinese, the remaining slots fall back to score order.
+    """
+    if min_chinese <= 0 or not deduped:
+        return deduped[:top_n]
+
+    cn_indices = [i for i, (e, _) in enumerate(deduped) if _is_chinese_entry(e)]
+    if not cn_indices:
+        return deduped[:top_n]
+
+    reserve_count = min(min_chinese, len(cn_indices), top_n)
+    reserved = set(cn_indices[:reserve_count])
+
+    selected_indices: list[int] = list(reserved)
+    for i in range(len(deduped)):
+        if len(selected_indices) >= top_n:
+            break
+        if i not in reserved:
+            selected_indices.append(i)
+
+    selected_indices.sort()
+    return [deduped[i] for i in selected_indices][:top_n]
 
 
 def _load_config() -> dict[str, Any]:
@@ -501,10 +556,13 @@ def run(board: str, as_of: date | None = None) -> Path:
     pool_size = min(top_n * DEDUPE_POOL_MULTIPLIER, DEDUPE_MAX_CANDIDATES)
     pool = above_threshold[:pool_size]
     deduped, merged_urls = _llm_dedupe(client, pool) if pool else ([], [])
-    selected = [e for e, _sc in deduped[:top_n]]
-    logger.info("[%s] scored=%d above_threshold=%d pool=%d unique=%d selected=%d (threshold=%d, top_n=%d)",
+    min_chinese = int(bcfg.get("min_chinese", 0))
+    quota_applied = _apply_language_quota(deduped, top_n, min_chinese)
+    selected = [e for e, _sc in quota_applied]
+    cn_count = sum(1 for e in selected if _is_chinese_entry(e))
+    logger.info("[%s] scored=%d above_threshold=%d pool=%d unique=%d selected=%d cn=%d (threshold=%d, top_n=%d, min_cn=%d)",
                 board, len(scored), len(above_threshold), len(pool), len(deduped),
-                len(selected), threshold, top_n)
+                len(selected), cn_count, threshold, top_n, min_chinese)
 
     items = _summarize(client, selected) if selected else []
 

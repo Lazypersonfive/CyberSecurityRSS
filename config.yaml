@@ -19,6 +19,7 @@ boards:
     fetch_hours: 24
     top_n: 20
     score_threshold: 6
+    min_chinese: 3  # top_n 里硬保留至少 N 条中文（如有候选）
     source_caps:
       cisa.gov: 8
       blog.upx8.com: 4
@@ -31,12 +32,13 @@ boards:
     fetch_hours: 30  # 略超 24h 覆盖 cron 之间的抖动；避免跨日重复叙事
     top_n: 20
     score_threshold: 6
+    min_chinese: 3  # 同安全板块：保留至少 N 条中文
     source_caps:
       arxiv.org: 8
       technologyreview.com: 4
       theverge.com: 4
       techcrunch.com: 3
-      news.google.com: 12  # 两条 Anthropic query + xAI/Meta/Mistral/Cohere 各一条
+      news.google.com: 18  # 两条 Anthropic query + xAI/Meta/Mistral/Cohere + 中文 AI
   finance:
     display_name: "金融科技"
     opml: feeds/finance.opml
