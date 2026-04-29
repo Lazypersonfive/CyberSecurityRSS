@@ -9,13 +9,19 @@ from unittest.mock import patch
 
 from digest_clock import digest_today
 from digest_postprocess import count_chinese_chars, summary_needs_repair
-from digest_pipeline_gemini import BOARD_SCORE_SYSTEM, _apply_language_quota, _is_chinese_entry, _selection_reason
+from digest_pipeline_gemini import (
+    BOARD_SCORE_SYSTEM,
+    _finalize_digest_item,
+    _is_chinese_entry,
+    _selection_reason,
+)
 import fetch_and_save
 import fetch_feeds
 from fetch_feeds import FeedEntry, fetch_all_entries, load_seen_urls
 from fetch_opml import fetch_opml_metadata
 from filter_entries import FilteredEntry, filter_and_dedup
 from rss_curation import curate_entries
+from source_policy import select_with_source_policy, source_profile
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
 from site_builder import build
 
@@ -158,6 +164,13 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertIn("BOARD_SELECTION", workflow)
         self.assertIn("security ai finance", workflow)
 
+    def test_daily_workflow_uses_pinned_requirements(self) -> None:
+        workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
+
+        self.assertIn('cache: "pip"', workflow)
+        self.assertIn("pip install -r requirements.txt", workflow)
+        self.assertTrue(Path("requirements.txt").exists())
+
 
 class FetchAndSaveTests(unittest.TestCase):
     def test_board_output_includes_full_utc_batch_timestamp(self) -> None:
@@ -248,17 +261,105 @@ class CurationTests(unittest.TestCase):
         self.assertEqual([entry.title for entry in curated], ["A1", "A2", "B1"])
         self.assertEqual(stats["dropped_source_cap"], 1)
 
+    def test_max_entries_trims_after_source_caps(self) -> None:
+        entries = [
+            FeedEntry(
+                f"A{i}",
+                f"https://source-{i}.example/a",
+                "summary text",
+                "Media",
+                datetime.now(timezone.utc),
+            )
+            for i in range(5)
+        ]
+
+        curated, stats = curate_entries(entries, {"max_entries": 3})
+
+        self.assertEqual([entry.title for entry in curated], ["A0", "A1", "A2"])
+        self.assertEqual(stats["dropped_max_entries"], 2)
+
 
 class SummaryLengthTests(unittest.TestCase):
     def test_summary_length_checks_use_chinese_characters(self) -> None:
         short_cn = "这是一个很短的摘要。"
-        enough_cn = "汉" * 220
+        enough_cn = "汉" * 150
+        too_long_cn = "汉" * 220
         english_heavy = "A" * 260
 
         self.assertTrue(summary_needs_repair(short_cn))
         self.assertFalse(summary_needs_repair(enough_cn))
+        self.assertTrue(summary_needs_repair(too_long_cn))
         self.assertTrue(summary_needs_repair(english_heavy))
-        self.assertEqual(count_chinese_chars(enough_cn), 220)
+        self.assertEqual(count_chinese_chars(enough_cn), 150)
+
+
+class SourcePolicyTests(unittest.TestCase):
+    def test_source_profile_classifies_google_news_and_wechat(self) -> None:
+        google = source_profile(
+            {
+                "title": "OpenAI news",
+                "url": "https://news.google.com/rss/articles/abc",
+                "feed_url": "https://news.google.com/rss/search?q=OpenAI",
+            }
+        )
+        wechat = source_profile(
+            {
+                "title": "中文安全研究",
+                "url": "https://example.com/article",
+                "feed_url": "https://wechat2rss.xlab.app/feed/hash.xml",
+            }
+        )
+
+        self.assertTrue(google.is_google_news)
+        self.assertTrue(google.is_aggregator)
+        self.assertFalse(google.is_direct)
+        self.assertTrue(wechat.is_wechat)
+        self.assertTrue(wechat.is_chinese)
+        self.assertTrue(wechat.is_direct)
+
+    def test_selection_policy_caps_google_news_and_reserves_chinese(self) -> None:
+        candidates = [
+            ({"title": "Google 1", "url": "https://news.google.com/rss/articles/1"}, 10),
+            ({"title": "Google 2", "url": "https://news.google.com/rss/articles/2"}, 9),
+            ({"title": "Direct 1", "url": "https://openai.com/news/a"}, 8),
+            ({"title": "Direct 2", "url": "https://anthropic.com/news/b"}, 7),
+            (
+                {
+                    "title": "中文源",
+                    "url": "https://example.com/cn",
+                    "feed_url": "https://wechat2rss.xlab.app/feed/x.xml",
+                },
+                6,
+            ),
+            ({"title": "Direct 3", "url": "https://deepmind.google/blog/c"}, 5),
+        ]
+
+        selected = select_with_source_policy(
+            candidates,
+            top_n=4,
+            policy={"max_google_news": 1, "max_aggregator": 1, "min_chinese": 1, "max_per_source": 2},
+        )
+        urls = [entry["url"] for entry, _score in selected]
+
+        self.assertEqual(sum(1 for url in urls if "news.google.com" in url), 1)
+        self.assertIn("https://example.com/cn", urls)
+        self.assertEqual(len(urls), 4)
+
+    def test_selection_policy_reserves_direct_source(self) -> None:
+        candidates = [
+            ({"title": "Google 1", "url": "https://news.google.com/rss/articles/1"}, 10),
+            ({"title": "Google 2", "url": "https://news.google.com/rss/articles/2"}, 9),
+            ({"title": "Direct", "url": "https://openai.com/news/direct"}, 4),
+        ]
+
+        selected = select_with_source_policy(
+            candidates,
+            top_n=2,
+            policy={"min_direct": 1, "max_google_news": 2, "max_aggregator": 2},
+        )
+        urls = [entry["url"] for entry, _score in selected]
+
+        self.assertIn("https://openai.com/news/direct", urls)
 
 
 class GeminiPipelineTests(unittest.TestCase):
@@ -280,7 +381,7 @@ class GeminiPipelineTests(unittest.TestCase):
             self.assertIn("评分只看新闻价值", prompt)
             self.assertIn("不因语言", prompt)
 
-    def test_language_quota_reserves_top_chinese_slots(self) -> None:
+    def test_source_policy_reserves_top_chinese_slots(self) -> None:
         # deduped sorted by score desc; CN at idx 0 (sc=9), 4 (sc=5); rest English
         deduped = [
             ({"title": "中文 A", "url": "u/cn1"}, 9),
@@ -290,7 +391,7 @@ class GeminiPipelineTests(unittest.TestCase):
             ({"title": "中文 B", "url": "u/cn2"}, 5),
             ({"title": "EN D", "url": "u/en4"}, 4),
         ]
-        result = _apply_language_quota(deduped, top_n=4, min_chinese=2)
+        result = select_with_source_policy(deduped, top_n=4, policy={"min_chinese": 2})
         urls = [e["url"] for e, _ in result]
         # Expect: top 4 by score, but CN B (sc=5) bumps EN C (sc=6) since min_cn=2
         self.assertIn("u/cn1", urls)
@@ -300,13 +401,36 @@ class GeminiPipelineTests(unittest.TestCase):
         scores = [sc for _, sc in result]
         self.assertEqual(scores, sorted(scores, reverse=True))
 
-    def test_language_quota_no_op_when_no_chinese_candidates(self) -> None:
+    def test_source_policy_no_op_when_no_chinese_candidates(self) -> None:
         deduped = [
             ({"title": "EN A", "url": "u/en1"}, 8),
             ({"title": "EN B", "url": "u/en2"}, 7),
         ]
-        result = _apply_language_quota(deduped, top_n=2, min_chinese=3)
+        result = select_with_source_policy(deduped, top_n=2, policy={"min_chinese": 3})
         self.assertEqual([e["url"] for e, _ in result], ["u/en1", "u/en2"])
+
+    def test_finalize_digest_item_fills_required_fields(self) -> None:
+        entry = {
+            "title": "OpenAI and Anthropic discuss cybersecurity models",
+            "summary": "OpenAI and Anthropic discussed cybersecurity models with lawmakers.",
+            "url": "https://news.google.com/rss/articles/abc",
+            "category": "Media",
+            "published": "2026-04-29T00:00:00Z",
+        }
+        item = {
+            "title_zh": "OpenAI and Anthropic discuss cybersecurity models",
+            "summary": "短摘要",
+            "tags": [],
+            "selection_reason": "",
+        }
+
+        finalized = _finalize_digest_item(entry, item)
+
+        self.assertGreaterEqual(count_chinese_chars(finalized["summary"]), 120)
+        self.assertLessEqual(count_chinese_chars(finalized["summary"]), 180)
+        self.assertTrue(finalized["tags"])
+        self.assertTrue(finalized["selection_reason"])
+        self.assertGreater(count_chinese_chars(finalized["title_zh"]), 0)
 
 
 class SourceReportTests(unittest.TestCase):

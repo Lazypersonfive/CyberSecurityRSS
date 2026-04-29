@@ -20,12 +20,10 @@ import argparse
 import json
 import logging
 import os
-import re
 import time
 from datetime import date, datetime
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
 
 import yaml
 
@@ -44,6 +42,13 @@ else:
 from digest_clock import digest_today
 from digest_postprocess import normalize_summary_text, summary_needs_repair
 from digest_postprocess import count_chinese_chars, SUMMARY_TARGET_MAX_CHARS, SUMMARY_TARGET_MIN_CHARS
+from source_policy import (
+    select_with_source_policy,
+    sort_scored_candidates,
+    source_mix_stats,
+    source_priority,
+    source_profile,
+)
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report, write_board_report
 
 logging.basicConfig(
@@ -100,17 +105,17 @@ SUMMARIZE_SYSTEM = """你是一位科技资讯编辑。你的任务是把给定�
 1. 所有输出字段使用简体中文（即便原文是英文）。
 2. 摘要只使用原文提供的信息，不得补充外部知识、不得猜测、不得夸大。
 3. 中文标题不超过 28 字，去除所有客套词和营销语。
-4. 摘要必须是 220-260 个汉字，不是英文字符数；写成 2-3 句，先讲发生了什么，再讲为什么值得关注 / 对谁有影响。
+4. 摘要必须是 120-180 个汉字，不是英文字符数；写成 2 句，先讲发生了什么，再讲为什么值得关注 / 对谁有影响。
 5. tags 给 1-3 个中文关键词，每个不超过 6 字。
-6. selection_reason 用不超过 30 个中文字符说明这条新闻为何值得关注。
+6. tags 和 selection_reason 不得为空；selection_reason 用不超过 30 个中文字符说明这条新闻为何值得关注。
 7. 严格按 JSON 数组返回，不要解释、不要 Markdown 包裹。
 输出格式：[{"idx":0,"title_zh":"...","summary":"...","tags":["..."],"selection_reason":"..."}]"""
 
 REPAIR_SUMMARIZE_SYSTEM = """你要修正新闻摘要的长度问题。
 严格规则：
 1. 只依据给定原文信息改写，不得补充外部知识。
-2. 只输出 summary 字段，必须是 220-260 个汉字。
-3. 使用简体中文，2-3 句，不要项目符号，不要解释。
+2. 只输出 summary 字段，必须是 120-180 个汉字。
+3. 使用简体中文，2 句，不要项目符号，不要解释。
 4. 如果原草稿太短，就补足关键事实、影响对象和关注原因；如果太长，就压缩但保留核心信息。
 输出格式：[{"idx":0,"summary":"..."}]"""
 
@@ -131,40 +136,9 @@ DEDUPE_SYSTEM = """你要对新闻条目做去重聚类。
 DEDUPE_POOL_MULTIPLIER = 2
 DEDUPE_MAX_CANDIDATES = 80
 
-CHINESE_CHAR_RE = re.compile(r"[一-鿿]")
-
-
 def _is_chinese_entry(entry: dict[str, Any]) -> bool:
-    """Detect whether an entry is Chinese-language by looking at title + URL host."""
-    text = " ".join(
-        str(entry.get(field) or "")
-        for field in ("title", "title_orig", "feed_title")
-    )
-    if CHINESE_CHAR_RE.search(text):
-        return True
-    hosts = {_host(entry.get("url") or ""), _host(entry.get("feed_url") or "")}
-    hosts.discard("")
-    cn_hosts = (
-        "weixin.qq.com",
-        "anquanke.com",
-        "freebuf.com",
-        "seebug.org",
-        "cnvd.org",
-    )
-    if any("wechat2rss" in host for host in hosts):
-        return True
-    return any(
-        host == cn_host or host.endswith(f".{cn_host}") or host.endswith(".cn")
-        for host in hosts
-        for cn_host in cn_hosts
-    )
-
-
-def _host(url: str) -> str:
-    try:
-        return urlparse(url).hostname or ""
-    except ValueError:
-        return ""
+    """Backward-compatible wrapper around the centralized source profiler."""
+    return source_profile(entry).is_chinese
 
 
 def _apply_language_quota(
@@ -172,30 +146,8 @@ def _apply_language_quota(
     top_n: int,
     min_chinese: int,
 ) -> list[tuple[dict[str, Any], int]]:
-    """Reserve up to min_chinese slots for top-scored Chinese entries.
-
-    Score order is preserved within each language. If fewer Chinese candidates
-    exist than min_chinese, the remaining slots fall back to score order.
-    """
-    if min_chinese <= 0 or not deduped:
-        return deduped[:top_n]
-
-    cn_indices = [i for i, (e, _) in enumerate(deduped) if _is_chinese_entry(e)]
-    if not cn_indices:
-        return deduped[:top_n]
-
-    reserve_count = min(min_chinese, len(cn_indices), top_n)
-    reserved = set(cn_indices[:reserve_count])
-
-    selected_indices: list[int] = list(reserved)
-    for i in range(len(deduped)):
-        if len(selected_indices) >= top_n:
-            break
-        if i not in reserved:
-            selected_indices.append(i)
-
-    selected_indices.sort()
-    return [deduped[i] for i in selected_indices][:top_n]
+    """Compatibility shim for older callers; new code uses source_policy."""
+    return select_with_source_policy(deduped, top_n, {"min_chinese": min_chinese})
 
 
 def _load_config() -> dict[str, Any]:
@@ -348,26 +300,176 @@ def _summarize(
 
         for j, e in enumerate(batch):
             s = smap.get(j, {})
-            results.append(
-                {
-                    "title_zh": repaired_titles.get(j, (s.get("title_zh") or e.get("title", "")).strip()[:40]),
-                    "title_orig": e.get("title", ""),
-                    "summary": repaired_summaries.get(j, normalize_summary_text(s.get("summary") or "")),
-                    "tags": s.get("tags") or [],
-                    "url": e.get("url", ""),
-                    "source": _infer_source(e.get("url", "")),
-                    "category": e.get("category", ""),
-                    "published": e.get("published", ""),
-                    "cve_ids": e.get("cve_ids", []),
-                    "selection_reason": _selection_reason(s),
-                }
-            )
+            raw_item = {
+                "title_zh": repaired_titles.get(j, (s.get("title_zh") or e.get("title", "")).strip()[:40]),
+                "title_orig": e.get("title", ""),
+                "summary": repaired_summaries.get(j, normalize_summary_text(s.get("summary") or "")),
+                "tags": s.get("tags") or [],
+                "url": e.get("url", ""),
+                "source": _infer_source(e.get("url", "")),
+                "category": e.get("category", ""),
+                "published": e.get("published", ""),
+                "cve_ids": e.get("cve_ids", []),
+                "selection_reason": _selection_reason(s),
+            }
+            results.append(_finalize_digest_item(e, raw_item))
     return results
 
 
 def _selection_reason(item: dict[str, Any]) -> str:
     reason = normalize_summary_text(item.get("selection_reason") or "")
     return reason[:30]
+
+
+def _finalize_digest_item(entry: dict[str, Any], item: dict[str, Any]) -> dict[str, Any]:
+    """Hard validation for the digest item schema after LLM generation."""
+    finalized = dict(item)
+    title = normalize_summary_text(finalized.get("title_zh") or "")
+    if _title_needs_repair(title):
+        title = _fallback_title(entry)
+    finalized["title_zh"] = title[:28]
+    finalized["title_orig"] = entry.get("title", finalized.get("title_orig", ""))
+
+    summary = normalize_summary_text(finalized.get("summary") or "")
+    finalized["summary"] = _ensure_summary_length(summary, entry, finalized["title_zh"])
+    finalized["tags"] = _normalize_tags(finalized.get("tags"), entry)
+    finalized["selection_reason"] = _selection_reason(finalized) or _fallback_selection_reason(entry)
+    finalized["url"] = entry.get("url", finalized.get("url", ""))
+    finalized["source"] = _infer_source(finalized["url"])
+    finalized["category"] = entry.get("category", finalized.get("category", ""))
+    finalized["published"] = entry.get("published", finalized.get("published", ""))
+    finalized["cve_ids"] = entry.get("cve_ids", finalized.get("cve_ids", [])) or []
+    return finalized
+
+
+def _fallback_title(entry: dict[str, Any]) -> str:
+    title = normalize_summary_text(entry.get("title") or "")
+    text = title.lower()
+    if count_chinese_chars(title) > 0:
+        return title[:40]
+    if "openai" in text and "anthropic" in text and "cyber" in text:
+        return "OpenAI与Anthropic讨论网络安全模型"
+    if "openai" in text:
+        return "OpenAI重要动态"
+    if "anthropic" in text or "claude" in text:
+        return "Anthropic重要动态"
+    if "microsoft" in text or "windows" in text:
+        return "微软安全动态"
+    if "github" in text:
+        return "GitHub安全动态"
+    if "visa" in text or "mastercard" in text:
+        return "支付网络动态"
+    if "ai" in text or "llm" in text or "agent" in text:
+        return "AI前沿动态"
+    return "重要资讯更新"
+
+
+def _ensure_summary_length(summary: str, entry: dict[str, Any], title_zh: str) -> str:
+    summary = normalize_summary_text(summary)
+    if not summary_needs_repair(summary):
+        return summary
+
+    fallback = _fallback_summary(entry, title_zh)
+    if count_chinese_chars(summary) >= 40:
+        summary = normalize_summary_text(f"{summary} {fallback}")
+    else:
+        summary = fallback
+
+    if count_chinese_chars(summary) > SUMMARY_TARGET_MAX_CHARS:
+        summary = _truncate_chinese_chars(summary, SUMMARY_TARGET_MAX_CHARS)
+    if count_chinese_chars(summary) < SUMMARY_TARGET_MIN_CHARS:
+        summary = normalize_summary_text(
+            f"{summary} 建议后续结合原文确认技术细节、影响对象、版本范围和处置优先级，"
+            "必要时纳入团队例行监测。"
+        )
+    if count_chinese_chars(summary) < SUMMARY_TARGET_MIN_CHARS:
+        summary = normalize_summary_text(
+            f"{summary} 对依赖相关产品、模型或支付基础设施的团队，应关注后续公告和实际落地变化。"
+        )
+    if count_chinese_chars(summary) > SUMMARY_TARGET_MAX_CHARS:
+        summary = _truncate_chinese_chars(summary, SUMMARY_TARGET_MAX_CHARS)
+    return summary
+
+
+def _fallback_summary(entry: dict[str, Any], title_zh: str) -> str:
+    source = _infer_source(entry.get("url", "")) or "原始来源"
+    category = entry.get("category") or "相关领域"
+    return (
+        f"{title_zh}。该条来自{source}，归类于{category}，原始信息显示其在本轮抓取、去重和打分中优先级较高。"
+        "建议查看原文核验具体影响、版本范围和后续处置动态，并结合自身业务判断是否需要跟进。"
+    )
+
+
+def _truncate_chinese_chars(text: str, limit: int) -> str:
+    count = 0
+    out: list[str] = []
+    for ch in text:
+        if "\u3400" <= ch <= "\u9fff":
+            count += 1
+        out.append(ch)
+        if count >= limit:
+            break
+    return "".join(out).rstrip("，,；;：:、.。 ") + "。"
+
+
+def _normalize_tags(tags: Any, entry: dict[str, Any]) -> list[str]:
+    result: list[str] = []
+    if isinstance(tags, list):
+        for tag in tags:
+            text = normalize_summary_text(str(tag))
+            if text and text not in result:
+                result.append(text[:8])
+            if len(result) >= 3:
+                break
+    if result:
+        return result
+
+    text = " ".join(str(entry.get(k) or "") for k in ("title", "summary", "category")).lower()
+    cves = entry.get("cve_ids") or []
+    if cves or "cve-" in text or "vulnerability" in text or "漏洞" in text:
+        result.append("漏洞")
+    if "openai" in text:
+        result.append("OpenAI")
+    if "anthropic" in text or "claude" in text:
+        result.append("Anthropic")
+    if "ai" in text or "llm" in text or "agent" in text or "模型" in text:
+        result.append("AI")
+    if "visa" in text or "mastercard" in text or "payment" in text or "支付" in text:
+        result.append("支付")
+    if source_profile(entry).is_chinese:
+        result.append("中文源")
+    if not result:
+        result.append(_category_tag(entry.get("category", "")))
+    return result[:3]
+
+
+def _category_tag(category: str) -> str:
+    mapping = {
+        "OfficialAdvisories": "官方预警",
+        "RedTeam": "红队",
+        "WebSecurity": "Web安全",
+        "AI": "AI安全",
+        "Labs": "实验室",
+        "Media": "媒体",
+        "Research": "论文",
+        "Chinese": "中文源",
+        "Commentary": "评论",
+        "Digital Wallets": "数字钱包",
+        "Card Networks": "卡组织",
+        "Editorial Lens": "行业分析",
+    }
+    return mapping.get(category, "资讯")
+
+
+def _fallback_selection_reason(entry: dict[str, Any]) -> str:
+    profile = source_profile(entry)
+    if profile.is_wechat:
+        return "中文信源高分入选"
+    if profile.is_google_news:
+        return "聚合源补充关键动态"
+    if profile.is_direct:
+        return "原始信源高分入选"
+    return "高分资讯值得跟踪"
 
 
 def _repair_summaries(
@@ -474,7 +576,7 @@ def _repair_titles(
                 idx = int(row["idx"])
                 zh = (row.get("title_zh") or "").strip()
                 if zh:
-                    repaired[idx] = zh[:40]
+                    repaired[idx] = zh[:28]
         except Exception as exc:
             logger.warning("title repair parse failed: %s", exc)
             break
@@ -525,7 +627,7 @@ def _llm_dedupe(
         members = [i for i in group if 0 <= i < len(candidates) and i not in seen]
         if not members:
             continue
-        best = max(members, key=lambda i: candidates[i][1])
+        best = max(members, key=lambda i: (candidates[i][1], source_priority(candidates[i][0])))
         merged_urls.extend(
             candidates[i][0].get("url", "")
             for i in members
@@ -539,8 +641,8 @@ def _llm_dedupe(
         if i not in seen:
             result.append(item)
 
-    # Re-sort by score desc since cluster order is arbitrary
-    result.sort(key=lambda x: -x[1])
+    # Re-sort since cluster order is arbitrary.
+    result = sort_scored_candidates(result)
     logger.info("llm dedupe: %d candidates -> %d unique stories", len(candidates), len(result))
     return result, merged_urls
 
@@ -566,6 +668,10 @@ def run(board: str, as_of: date | None = None) -> Path:
 
     data = _load_input(board)
     entries = data.get("entries", [])
+    max_llm_entries = int(bcfg.get("llm_max_entries", 0) or 0)
+    if max_llm_entries > 0 and len(entries) > max_llm_entries:
+        logger.info("[%s] trim LLM scoring set: %d -> %d", board, len(entries), max_llm_entries)
+        entries = entries[:max_llm_entries]
     if not entries:
         logger.warning("[%s] no entries to digest", board)
 
@@ -579,19 +685,25 @@ def run(board: str, as_of: date | None = None) -> Path:
     scored: list[tuple[dict[str, Any], int]] = []
     if entries:
         scores = _score_entries(client, board, entries)
-        scored = sorted(zip(entries, scores), key=lambda x: -x[1])
+        scored = sort_scored_candidates(zip(entries, scores))
 
     above_threshold = [(e, sc) for e, sc in scored if sc >= threshold]
     pool_size = min(top_n * DEDUPE_POOL_MULTIPLIER, DEDUPE_MAX_CANDIDATES)
     pool = above_threshold[:pool_size]
     deduped, merged_urls = _llm_dedupe(client, pool) if pool else ([], [])
     min_chinese = int(bcfg.get("min_chinese", 0))
-    quota_applied = _apply_language_quota(deduped, top_n, min_chinese)
-    selected = [e for e, _sc in quota_applied]
+    source_policy = dict(bcfg.get("source_policy") or {})
+    source_policy.setdefault("min_chinese", min_chinese)
+    selected_scored = select_with_source_policy(deduped, top_n, source_policy)
+    selected = [e for e, _sc in selected_scored]
     cn_count = sum(1 for e in selected if _is_chinese_entry(e))
-    logger.info("[%s] scored=%d above_threshold=%d pool=%d unique=%d selected=%d cn=%d (threshold=%d, top_n=%d, min_cn=%d)",
-                board, len(scored), len(above_threshold), len(pool), len(deduped),
-                len(selected), cn_count, threshold, top_n, min_chinese)
+    mix_stats = source_mix_stats(selected)
+    logger.info(
+        "[%s] scored=%d above_threshold=%d pool=%d unique=%d selected=%d cn=%d mix=%s "
+        "(threshold=%d, top_n=%d, policy=%s)",
+        board, len(scored), len(above_threshold), len(pool), len(deduped),
+        len(selected), cn_count, mix_stats, threshold, top_n, source_policy,
+    )
 
     items = _summarize(client, selected) if selected else []
 
@@ -606,6 +718,7 @@ def run(board: str, as_of: date | None = None) -> Path:
         "generated_at": datetime.now(_tz.utc).isoformat().replace("+00:00", "Z"),
         "raw_count": data.get("entry_count", 0),
         "selected_count": len(items),
+        "selection_stats": mix_stats,
         "items": items,
     }
     out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2))

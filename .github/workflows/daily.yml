@@ -33,6 +33,7 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       LLM_BACKEND: ${{ vars.LLM_BACKEND || 'gemini' }}
       BOARD_SELECTION: ${{ inputs.board || 'all' }}
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,11 +42,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install anthropic google-genai feedparser httpx pyyaml jinja2
+          pip install -r requirements.txt
 
       - name: Pick digest script
         id: pick

@@ -47,4 +47,9 @@ def curate_entries(entries: Iterable[Any], board_cfg: dict[str, Any]) -> tuple[l
             source_counts[source] += 1
         curated = kept
 
+    max_entries = int(board_cfg.get("max_entries", 0) or 0)
+    if max_entries > 0 and len(curated) > max_entries:
+        stats["dropped_max_entries"] += len(curated) - max_entries
+        curated = curated[:max_entries]
+
     return curated, dict(stats)

@@ -17,9 +17,17 @@ boards:
     display_name: "安全"
     opml: feeds/security.opml
     fetch_hours: 24
+    max_entries: 70       # 控制进入 LLM 打分的上限，降低每日固定成本
+    llm_max_entries: 70
     top_n: 20
     score_threshold: 6
-    min_chinese: 3  # top_n 里硬保留至少 N 条中文（如有候选）
+    min_chinese: 4  # top_n 里硬保留至少 N 条中文（如有候选）
+    source_policy:
+      min_chinese: 4
+      min_direct: 16
+      max_google_news: 2
+      max_aggregator: 3
+      max_per_source: 4
     source_caps:
       cisa.gov: 8
       blog.upx8.com: 4
@@ -30,26 +38,44 @@ boards:
     display_name: "AI 前沿"
     opml: feeds/ai.opml
     fetch_hours: 30  # 略超 24h 覆盖 cron 之间的抖动；避免跨日重复叙事
+    max_entries: 55
+    llm_max_entries: 55
     top_n: 20
     score_threshold: 6
-    min_chinese: 3  # 同安全板块：保留至少 N 条中文
+    min_chinese: 4  # 同安全板块：保留至少 N 条中文
+    source_policy:
+      min_chinese: 4
+      min_direct: 15
+      max_google_news: 4
+      max_aggregator: 5
+      max_per_source: 4
     source_caps:
       arxiv.org: 8
       technologyreview.com: 4
       theverge.com: 4
       techcrunch.com: 3
-      news.google.com: 18  # 两条 Anthropic query + xAI/Meta/Mistral/Cohere + 中文 AI
+      news.google.com: 10  # Google News 只做覆盖补充，不做主体来源
   finance:
     display_name: "金融科技"
     opml: feeds/finance.opml
     fetch_hours: 336  # 官方 IR 低频（Visa ~1.5 周、MC 月更、Amex 季更），14 天窗口保证 Card Networks 有量
+    max_entries: 35
+    llm_max_entries: 35
     top_n: 15
     score_threshold: 5
+    min_chinese: 1
+    source_policy:
+      min_chinese: 1
+      min_direct: 10
+      max_google_news: 6
+      max_aggregator: 6
+      max_per_source: 4
+      allow_cap_relaxation: true
     source_caps:
       pymnts.com: 4
       bankingdive.com: 4
       paymentsdive.com: 4
-      news.google.com: 15
+      news.google.com: 8
 
 # Site
 site:
