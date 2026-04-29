@@ -303,6 +303,7 @@ def run(board: str, as_of: date | None = None) -> Path:
         raise SystemExit(f"Board '{board}' not found in config.yaml")
 
     threshold = int(bcfg.get("score_threshold", 6))
+    fill_score_floor = int(bcfg.get("fill_score_floor", max(0, threshold - 1)))
     top_n = int(bcfg.get("top_n", 20))
 
     data = _load_input(board)
@@ -323,7 +324,8 @@ def run(board: str, as_of: date | None = None) -> Path:
         scores = _score_entries(client, board, entries)
         scored = sort_scored_candidates(zip(entries, scores))
 
-    candidates = [(e, sc) for e, sc in scored if sc >= threshold]
+    above_threshold = [(e, sc) for e, sc in scored if sc >= threshold]
+    candidates = [(e, sc) for e, sc in scored if sc >= fill_score_floor]
     source_policy = dict(bcfg.get("source_policy") or {})
     source_policy.setdefault("min_chinese", int(bcfg.get("min_chinese", 0) or 0))
     # TODO: Port Gemini's LLM story clustering here before making Anthropic the
@@ -333,8 +335,10 @@ def run(board: str, as_of: date | None = None) -> Path:
     selected = [e for e, _sc in selected_scored]
     mix_stats = source_mix_stats(selected)
     logger.info(
-        "[%s] scored=%d selected=%d mix=%s (threshold=%d, top_n=%d, policy=%s)",
-        board, len(scored), len(selected), mix_stats, threshold, top_n, source_policy,
+        "[%s] scored=%d above_threshold=%d candidates=%d selected=%d mix=%s "
+        "(threshold=%d, fill_floor=%d, top_n=%d, policy=%s)",
+        board, len(scored), len(above_threshold), len(candidates), len(selected),
+        mix_stats, threshold, fill_score_floor, top_n, source_policy,
     )
 
     items = _summarize(client, selected) if selected else []

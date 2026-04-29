@@ -11,6 +11,7 @@ from digest_clock import digest_today
 from digest_postprocess import count_chinese_chars, summary_needs_repair
 from digest_pipeline_gemini import (
     BOARD_SCORE_SYSTEM,
+    _candidate_pool,
     _finalize_digest_item,
     _is_chinese_entry,
     _selection_reason,
@@ -431,6 +432,18 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertTrue(finalized["tags"])
         self.assertTrue(finalized["selection_reason"])
         self.assertGreater(count_chinese_chars(finalized["title_zh"]), 0)
+
+    def test_candidate_pool_uses_fill_floor_to_backfill_below_threshold(self) -> None:
+        scored = [
+            ({"title": "A", "url": "https://a.example"}, 8),
+            ({"title": "B", "url": "https://b.example"}, 6),
+            ({"title": "C", "url": "https://c.example"}, 5),
+            ({"title": "D", "url": "https://d.example"}, 4),
+        ]
+
+        pool = _candidate_pool(scored, top_n=4, fill_score_floor=5)
+
+        self.assertEqual([entry["title"] for entry, _score in pool], ["A", "B", "C"])
 
 
 class SourceReportTests(unittest.TestCase):

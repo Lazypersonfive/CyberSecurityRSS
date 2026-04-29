@@ -647,6 +647,17 @@ def _llm_dedupe(
     return result, merged_urls
 
 
+def _candidate_pool(
+    scored: list[tuple[dict[str, Any], int]],
+    *,
+    top_n: int,
+    fill_score_floor: int,
+) -> list[tuple[dict[str, Any], int]]:
+    """Build the LLM dedupe pool from high-value items plus acceptable fillers."""
+    pool_size = min(top_n * DEDUPE_POOL_MULTIPLIER, DEDUPE_MAX_CANDIDATES)
+    return [(entry, score) for entry, score in scored if score >= fill_score_floor][:pool_size]
+
+
 def _infer_source(url: str) -> str:
     try:
         from urllib.parse import urlparse
@@ -664,6 +675,7 @@ def run(board: str, as_of: date | None = None) -> Path:
         raise SystemExit(f"Board '{board}' not found in config.yaml")
 
     threshold = int(bcfg.get("score_threshold", 6))
+    fill_score_floor = int(bcfg.get("fill_score_floor", max(0, threshold - 1)))
     top_n = int(bcfg.get("top_n", 20))
 
     data = _load_input(board)
@@ -688,8 +700,7 @@ def run(board: str, as_of: date | None = None) -> Path:
         scored = sort_scored_candidates(zip(entries, scores))
 
     above_threshold = [(e, sc) for e, sc in scored if sc >= threshold]
-    pool_size = min(top_n * DEDUPE_POOL_MULTIPLIER, DEDUPE_MAX_CANDIDATES)
-    pool = above_threshold[:pool_size]
+    pool = _candidate_pool(scored, top_n=top_n, fill_score_floor=fill_score_floor)
     deduped, merged_urls = _llm_dedupe(client, pool) if pool else ([], [])
     min_chinese = int(bcfg.get("min_chinese", 0))
     source_policy = dict(bcfg.get("source_policy") or {})
@@ -700,9 +711,9 @@ def run(board: str, as_of: date | None = None) -> Path:
     mix_stats = source_mix_stats(selected)
     logger.info(
         "[%s] scored=%d above_threshold=%d pool=%d unique=%d selected=%d cn=%d mix=%s "
-        "(threshold=%d, top_n=%d, policy=%s)",
+        "(threshold=%d, fill_floor=%d, top_n=%d, policy=%s)",
         board, len(scored), len(above_threshold), len(pool), len(deduped),
-        len(selected), cn_count, mix_stats, threshold, top_n, source_policy,
+        len(selected), cn_count, mix_stats, threshold, fill_score_floor, top_n, source_policy,
     )
 
     items = _summarize(client, selected) if selected else []
