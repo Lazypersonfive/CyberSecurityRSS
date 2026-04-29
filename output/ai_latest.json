@@ -1,18 +1,19 @@
 {
   "board": "ai",
   "fetched_at": "2026-04-29",
-  "fetched_at_utc": "2026-04-28T23:41:01.596905Z",
+  "fetched_at_utc": "2026-04-29T08:17:13.433263Z",
   "hours": 30,
   "total_feeds": 33,
-  "raw_entry_count": 125,
-  "entry_count": 48,
+  "raw_entry_count": 119,
+  "entry_count": 35,
   "filter_stats": {
-    "input": 125,
-    "dedup_merged": 9,
-    "output": 116
+    "input": 119,
+    "dropped_title_blacklist": 2,
+    "dedup_merged": 6,
+    "output": 111
   },
   "curation_stats": {
-    "dropped_source_cap": 68
+    "dropped_source_cap": 76
   },
   "feed_stats": {
     "https://news.google.com/rss/search?q=(site:anthropic.com+OR+site:claude.com)&hl=en-US&gl=US&ceid=US:en": {
@@ -27,7 +28,7 @@
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 25
+      "raw_count": 24
     },
     "https://openai.com/news/rss.xml": {
       "feed_title": "OpenAI Blog",
@@ -69,7 +70,7 @@
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 3
     },
     "https://blogs.nvidia.com/feed/": {
       "feed_title": "NVIDIA Blog",
@@ -83,7 +84,7 @@
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 1
     },
     "https://news.google.com/rss/search?q=%22Cohere%22+(model+OR+AI+OR+enterprise)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Cohere (Google News)",
@@ -139,7 +140,7 @@
       "category": "Commentary",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 4
     },
     "https://www.latent.space/feed": {
       "feed_title": "Latent Space",
@@ -181,14 +182,14 @@
       "category": "Media",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://arstechnica.com/ai/feed/": {
       "feed_title": "Ars Technica AI",
       "category": "Media",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 7
+      "raw_count": 3
     },
     "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml": {
       "feed_title": "The Verge AI",
@@ -202,7 +203,7 @@
       "category": "Media",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 9
     },
     "https://venturebeat.com/category/ai/feed/": {
       "feed_title": "VentureBeat AI",
@@ -249,6 +250,110 @@
   },
   "entries": [
     {
+      "title": "PExA: Parallel Exploration Agent for Complex Text-to-SQL",
+      "url": "https://arxiv.org/abs/2604.22934",
+      "summary": "arXiv:2604.22934v1 Announce Type: new Abstract: LLM-based agents for text-to-SQL often struggle with latency-performance trade-off, where performance improvements come at the cost of latency or vice versa. We reformulate text-to-SQL generation within the lens of software test coverage where the original query is prepared with a suite of test cases with simpler, atomic SQLs that are executed in par",
+      "category": "Research",
+      "published": "2026-04-29T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean",
+      "url": "https://arxiv.org/abs/2604.23002",
+      "summary": "arXiv:2604.23002v1 Announce Type: new Abstract: Formalising informal mathematical reasoning into formally verifiable code is a significant challenge for large language models. In scientific fields such as physics, domain-specific machinery (\\textit{e.g.} Dirac notation, vector calculus) imposes additional formalisation challenges that modern LLMs and agentic approaches have yet to tackle. To aid a",
+      "category": "Research",
+      "published": "2026-04-29T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "A Decoupled Human-in-the-Loop System for Controlled Autonomy in Agentic Workflows",
+      "url": "https://arxiv.org/abs/2604.23049",
+      "summary": "arXiv:2604.23049v1 Announce Type: new Abstract: AI agents are increasingly deployed to execute tasks and make decisions within agentic workflows, introducing new requirements for safe and controlled autonomy. Prior work has established the importance of human oversight for ensuring transparency, accountability, and trustworthiness in such systems. However, existing implementations of Human-in-the-",
+      "category": "Research",
+      "published": "2026-04-29T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Don't Make the LLM Read the Graph: Make the Graph Think",
+      "url": "https://arxiv.org/abs/2604.23057",
+      "summary": "arXiv:2604.23057v1 Announce Type: new Abstract: We investigate whether explicit belief graphs improve LLM performance in cooperative multi-agent reasoning. Through 3,000+ controlled trials across four LLM families in the cooperative card game Hanabi, we establish four findings. First, integration architecture determines whether belief graphs provide value: as prompt context, graphs are decorative",
+      "category": "Research",
+      "published": "2026-04-29T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis",
+      "url": "https://arxiv.org/abs/2604.23072",
+      "summary": "arXiv:2604.23072v1 Announce Type: new Abstract: Large language model (LLM) agents are increasingly tasked with complex real-world analysis (e.g., in financial forecasting, scientific discovery), yet their reasoning suffers from stochastic instability and lacks a verifiable, compositional structure. To address this, we introduce Analytica, a novel agent architecture built on the principle of Soft P",
+      "category": "Research",
+      "published": "2026-04-29T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Towards Automated Ontology Generation from Unstructured Text: A Multi-Agent LLM Approach",
+      "url": "https://arxiv.org/abs/2604.23090",
+      "summary": "arXiv:2604.23090v1 Announce Type: new Abstract: Automatically generating formal ontologies from unstructured natural language remains a central challenge in knowledge engineering. While large language models (LLMs) show promise, it remains unclear which architectural design choices drive generation quality and why current approaches fail. We present a controlled experimental study using domain-spe",
+      "category": "Research",
+      "published": "2026-04-29T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "PhySE: A Psychological Framework for Real-Time AR-LLM Social Engineering Attacks",
+      "url": "https://arxiv.org/abs/2604.23148",
+      "summary": "arXiv:2604.23148v1 Announce Type: new Abstract: The emerging threat of AR-LLM-based Social Engineering (AR-LLM-SE) attacks (e.g. SEAR) poses a significant risk to real-world social interactions. In such an attack, a malicious actor uses Augmented Reality (AR) glasses to capture a target visual and vocal data. A Large Language Model (LLM) then analyzes this data to identify the individual and gener",
+      "category": "Research",
+      "published": "2026-04-29T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Judging the Judges: A Systematic Evaluation of Bias Mitigation Strategies in LLM-as-a-Judge Pipelines",
+      "url": "https://arxiv.org/abs/2604.23178",
+      "summary": "arXiv:2604.23178v1 Announce Type: new Abstract: LLM-as-a-Judge has become the dominant paradigm for evaluating language model outputs, yet LLM judges exhibit systematic biases that compromise evaluation reliability. We present a comprehensive empirical study comparing nine debiasing strategies across five judge models from four provider families (Google, Anthropic, OpenAI, Meta), three benchmarks",
+      "category": "Research",
+      "published": "2026-04-29T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
       "title": "Quoting OpenAI Codex base_instructions",
       "url": "https://simonwillison.net/2026/Apr/28/openai-codex/#atom-everything",
       "summary": "Never talk about goblins, gremlins, raccoons, trolls, ogres, pigeons, or other animals or creatures unless it is absolutely and unambiguously relevant to the user's query. &mdash; OpenAI Codex base_instructions , for GPT-5.5 Tags: openai , ai , llms , system-prompts , prompt-engineering , codex-cli , generative-ai , gpt",
@@ -282,10 +387,7 @@
       "published": "2026-04-28T19:27:50+00:00",
       "fetch_status": "full",
       "cve_ids": [],
-      "related_urls": [
-        "https://www.technologyreview.com/2026/04/27/1136466/elon-musk-and-sam-altman-are-going-to-court-over-openais-future/",
-        "https://arstechnica.com/tech-policy/2026/04/musk-and-altman-face-off-in-trial-that-will-determine-openais-future/"
-      ],
+      "related_urls": [],
       "quality_score": 2,
       "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "feed_title": "The Verge AI"
@@ -325,175 +427,18 @@
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [
-        "https://news.google.com/rss/articles/CBMif0FVX3lxTE9vTWM3T3o3M0hRWkpZRnFOQzhzRTMyYy1yS0RIVlpwalUtUHQwRGpxemlGTFB3dGFweVAyQzMxRXIxZ2V3ZzV6Vmx1SEF4aUFKdk1iVkppcWVhMEpVd25DcEYwVlJ1dWlZOHJGb0hsYjNHMWh1aXUzZ3hZZHpfd0k?oc=5",
-        "https://news.google.com/rss/articles/CBMif0FVX3lxTE9vTWM3T3o3M0hRWkpZRnFOQzhzRTMyYy1yS0RIVlpwalUtUHQwRGpxemlGTFB3dGFweVAyQzMxRXIxZ2V3ZzV6Vmx1SEF4aUFKdk1iVkppcWVhMEpVd25DcEYwVlJ1dWlZOHJGb0hsYjNHMWh1aXUzZ3hZZHpfd0k?oc=5"
+        "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVDhzU2ZNZnBTVy1DTXJWbE4xeVMwVi1wQUJaZlU2Rk05NWJOdGRTekZyQm9aSktaaDUyUmdIeFpZYW0yVmQ1SWNBNDhrQ3RWUW51MEdyRGktS2FSQjV6RW1nSU9fbUpUWjgyV016VzR0NU5rMjA0eWZEY1QtTXhha2NuTTFlaEZia0dxWUFYd1RUUzRxTUVz?oc=5"
       ],
       "quality_score": 2,
       "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "feed_title": "The Verge AI"
     },
     {
-      "title": "PExA: Parallel Exploration Agent for Complex Text-to-SQL",
-      "url": "https://arxiv.org/abs/2604.22934",
-      "summary": "arXiv:2604.22934v1 Announce Type: new Abstract: LLM-based agents for text-to-SQL often struggle with latency-performance trade-off, where performance improvements come at the cost of latency or vice versa. We reformulate text-to-SQL generation within the lens of software test coverage where the original query is prepared with a suite of test cases with simpler, atomic SQLs that are executed in par",
-      "category": "Research",
-      "published": "2026-04-28T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://export.arxiv.org/rss/cs.AI",
-      "feed_title": "arXiv cs.AI recent"
-    },
-    {
-      "title": "FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean",
-      "url": "https://arxiv.org/abs/2604.23002",
-      "summary": "arXiv:2604.23002v1 Announce Type: new Abstract: Formalising informal mathematical reasoning into formally verifiable code is a significant challenge for large language models. In scientific fields such as physics, domain-specific machinery (\\textit{e.g.} Dirac notation, vector calculus) imposes additional formalisation challenges that modern LLMs and agentic approaches have yet to tackle. To aid a",
-      "category": "Research",
-      "published": "2026-04-28T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://export.arxiv.org/rss/cs.AI",
-      "feed_title": "arXiv cs.AI recent"
-    },
-    {
-      "title": "A Decoupled Human-in-the-Loop System for Controlled Autonomy in Agentic Workflows",
-      "url": "https://arxiv.org/abs/2604.23049",
-      "summary": "arXiv:2604.23049v1 Announce Type: new Abstract: AI agents are increasingly deployed to execute tasks and make decisions within agentic workflows, introducing new requirements for safe and controlled autonomy. Prior work has established the importance of human oversight for ensuring transparency, accountability, and trustworthiness in such systems. However, existing implementations of Human-in-the-",
-      "category": "Research",
-      "published": "2026-04-28T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://export.arxiv.org/rss/cs.AI",
-      "feed_title": "arXiv cs.AI recent"
-    },
-    {
-      "title": "Don't Make the LLM Read the Graph: Make the Graph Think",
-      "url": "https://arxiv.org/abs/2604.23057",
-      "summary": "arXiv:2604.23057v1 Announce Type: new Abstract: We investigate whether explicit belief graphs improve LLM performance in cooperative multi-agent reasoning. Through 3,000+ controlled trials across four LLM families in the cooperative card game Hanabi, we establish four findings. First, integration architecture determines whether belief graphs provide value: as prompt context, graphs are decorative",
-      "category": "Research",
-      "published": "2026-04-28T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://export.arxiv.org/rss/cs.AI",
-      "feed_title": "arXiv cs.AI recent"
-    },
-    {
-      "title": "Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis",
-      "url": "https://arxiv.org/abs/2604.23072",
-      "summary": "arXiv:2604.23072v1 Announce Type: new Abstract: Large language model (LLM) agents are increasingly tasked with complex real-world analysis (e.g., in financial forecasting, scientific discovery), yet their reasoning suffers from stochastic instability and lacks a verifiable, compositional structure. To address this, we introduce Analytica, a novel agent architecture built on the principle of Soft P",
-      "category": "Research",
-      "published": "2026-04-28T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://export.arxiv.org/rss/cs.AI",
-      "feed_title": "arXiv cs.AI recent"
-    },
-    {
-      "title": "Towards Automated Ontology Generation from Unstructured Text: A Multi-Agent LLM Approach",
-      "url": "https://arxiv.org/abs/2604.23090",
-      "summary": "arXiv:2604.23090v1 Announce Type: new Abstract: Automatically generating formal ontologies from unstructured natural language remains a central challenge in knowledge engineering. While large language models (LLMs) show promise, it remains unclear which architectural design choices drive generation quality and why current approaches fail. We present a controlled experimental study using domain-spe",
-      "category": "Research",
-      "published": "2026-04-28T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://export.arxiv.org/rss/cs.AI",
-      "feed_title": "arXiv cs.AI recent"
-    },
-    {
-      "title": "PhySE: A Psychological Framework for Real-Time AR-LLM Social Engineering Attacks",
-      "url": "https://arxiv.org/abs/2604.23148",
-      "summary": "arXiv:2604.23148v1 Announce Type: new Abstract: The emerging threat of AR-LLM-based Social Engineering (AR-LLM-SE) attacks (e.g. SEAR) poses a significant risk to real-world social interactions. In such an attack, a malicious actor uses Augmented Reality (AR) glasses to capture a target visual and vocal data. A Large Language Model (LLM) then analyzes this data to identify the individual and gener",
-      "category": "Research",
-      "published": "2026-04-28T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://export.arxiv.org/rss/cs.AI",
-      "feed_title": "arXiv cs.AI recent"
-    },
-    {
-      "title": "Judging the Judges: A Systematic Evaluation of Bias Mitigation Strategies in LLM-as-a-Judge Pipelines",
-      "url": "https://arxiv.org/abs/2604.23178",
-      "summary": "arXiv:2604.23178v1 Announce Type: new Abstract: LLM-as-a-Judge has become the dominant paradigm for evaluating language model outputs, yet LLM judges exhibit systematic biases that compromise evaluation reliability. We present a comprehensive empirical study comparing nine debiasing strategies across five judge models from four provider families (Google, Anthropic, OpenAI, Meta), three benchmarks",
-      "category": "Research",
-      "published": "2026-04-28T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://export.arxiv.org/rss/cs.AI",
-      "feed_title": "arXiv cs.AI recent"
-    },
-    {
-      "title": "Tracking the history of the now-deceased OpenAI Microsoft AGI clause",
-      "url": "https://simonwillison.net/2026/Apr/27/now-deceased-agi-clause/#atom-everything",
-      "summary": "For many years, Microsoft and OpenAI's relationship has included a weird clause saying that, should AGI be achieved, Microsoft's commercial IP rights to OpenAI's technology would be null and void. That clause appeared to end today. I decided to try and track its expression over time on openai.com . OpenAI, July 22nd 2019 in Microsoft invests in and partners with OpenAI to support us building benef",
-      "category": "Commentary",
-      "published": "2026-04-27T18:38:17+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "OpenAI预计用户将大幅转向更便宜的ChatGPT套餐 - 新浪财经",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE94REVwN0JycGl1eVBPZC1xLWJIR21XTFY4WnBQcHVuVFNmVW1QSFpSV1cxM19pNm41WmM5bXQtLTh0TXBoNy02Y3hlcw?oc=5",
-      "summary": "OpenAI预计用户将大幅转向更便宜的ChatGPT套餐 &nbsp;&nbsp; 新浪财经",
-      "category": "Chinese",
-      "published": "2026-04-28T23:32:43+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "AI概念股重挫，纳指跌近1%，英伟达跌1.63%，软银狂泻12%，国际油价连续七天走高 - 第一财经",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5NMFdzc01HTFIxUVB0X0t2MmhHcUpCbzZRb2hWMFhoOG9DRHdmOXRlMUs2S3dKUmIxMXFhUlBvSldqYnNHOXNtWFpSVTlOQURJRmlF?oc=5",
-      "summary": "AI概念股重挫，纳指跌近1%，英伟达跌1.63%，软银狂泻12%，国际油价连续七天走高 &nbsp;&nbsp; 第一财经",
-      "category": "Chinese",
-      "published": "2026-04-28T23:32:40+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "亚马逊入局SaaS：推出AI办公生产力工具，并将引入OpenAI模型 - Moomoo",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQYUowcDRUeWFQSU56WlFCX1d0cFJtdWlWNzhTdGpldEdVVEdzV1RNeU9EbU1PVS1FZTNVZjhGd25LaWVVTTdRbWZoUzdNVTlTa2N4S0dqVU1fLVMzRjFOeDFyeVhpdFlIM29TQ2NfQnB6UUcxOUctdnFlLTV2Y0hWUjc5eUctTjgtUHYteEdpQmkwV0pETTBQcC10eEg2NHRrQnBhbFRHZzhXV2VTVHdUbDRGRGNyOFk?oc=5",
-      "summary": "亚马逊入局SaaS：推出AI办公生产力工具，并将引入OpenAI模型 &nbsp;&nbsp; Moomoo",
-      "category": "Chinese",
-      "published": "2026-04-28T23:32:16+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "Trimble Links SketchUp with Anthropic's Claude, Bringing New Conversational AI-powered Capabilities to 3D Modeling - PR Newswire",
-      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPTUJyeU5JY2VIeWNCX2hZUGxxMUgxMHY5ejdVOWdFSnFtb3JoWXc3SDdkRTM3cXpKRndCUzZYT0E0NzNQOXFfS1ZFWHlQLUNjLW83QlRzc1BPQ1pGM2lHY2JZQXVWc1RoelRyWmk4cVFRTmNnYndmVGJyMnppVGYxdjBpcHpuTjFCVVJyYUl0NlJoYlR2WktERlUydnJzbzk5Zkx3SjAxODdzbC1zNVZtVWk4c3ZuTEE1di1tNW5WcXZmZUlYZTdDbk9kNXdhR3pjcEpJcTR6NHdQM2JZT2lKbDJHSkpWeEdKYlFHQ1pwdFBpanhzVFptR3hhQmY?oc=5",
-      "summary": "Trimble Links SketchUp with Anthropic's Claude, Bringing New Conversational AI-powered Capabilities to 3D Modeling &nbsp;&nbsp; PR Newswire",
+      "title": "OpenAI, Anthropic brief US lawmakers on AI cyber threats - Latest news from Azerbaijan",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUURRY3pxeS1fZUF6Y3ZRRnJVcERvWGRyc2tLanVYMHJqRkxrdnRPejVHVThFak1GUmhPSGdPYXVuZEFBT3ZjeWJoQWphVUw0Q3pRVkdmdFdmUWVlUjN0MDZUMTVxMk0tSkZ3WDItN2Q5ZWpVcmxvelBzZXNHanZ1ZkJB?oc=5",
+      "summary": "OpenAI, Anthropic brief US lawmakers on AI cyber threats &nbsp;&nbsp; Latest news from Azerbaijan",
       "category": "Labs",
-      "published": "2026-04-28T23:27:00+00:00",
+      "published": "2026-04-29T08:04:56+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -502,11 +447,11 @@
       "feed_title": "Anthropic Coverage (Google News)"
     },
     {
-      "title": "港股早报 | OpenAI强硬回击增长质疑 中国海洋石油一季营收及净利同比增超7% - 财联社",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5aZEtKZXZqOVdxdlRjYXgzRWhSUUtJaV93b1lHN2pYODlUU05ENWZSTlZUZXRaZm9FOUNzdURtdWNCUkN1Z1pobA?oc=5",
-      "summary": "港股早报 | OpenAI强硬回击增长质疑 中国海洋石油一季营收及净利同比增超7% &nbsp;&nbsp; 财联社",
+      "title": "北京亦庄设立大模型生态服务站 助力AI产业合规发展 - 品玩",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE13b3N2VU1ZLS1iVXExcXdadFFiSmhWNkhQTGwtNjNEODNJb3E0OFJpSTQxT3NCT2hSaDdKZ0swYnIteVY4TkdwUQ?oc=5",
+      "summary": "北京亦庄设立大模型生态服务站 助力AI产业合规发展 &nbsp;&nbsp; 品玩",
       "category": "Chinese",
-      "published": "2026-04-28T23:05:00+00:00",
+      "published": "2026-04-29T08:03:25+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -515,11 +460,11 @@
       "feed_title": "Google News 中文 AI"
     },
     {
-      "title": "马斯克就起诉OpenAI案作证：奥特曼窃取慈善机构不能成为先例 - 凤凰网",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFAzdmlLVWY1b3FxNlZNM1RvOEVaZ05rT2ZTdjBsYlMwbFlSZDlPUVY3NXRNSzBNQ3NsVFZFSGNsWm0xdDlNcG8tcA?oc=5",
-      "summary": "马斯克就起诉OpenAI案作证：奥特曼窃取慈善机构不能成为先例 &nbsp;&nbsp; 凤凰网",
+      "title": "AI 写代码太烧钱了：Copilot、Claude 一起涨价，不如把程序员请回来？ - Infoq.cn",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1aLTdKRE1QZGtqODk3VWxtSTFMdUZ1Mkc0cnpGYmFPMTlGTDZGS0FiNUN5YXlfOUtwWDk0TFY4SHU4N1pVR2s3Y0gtQjZWdUZVakxXb01POXJFT2pzbnc?oc=5",
+      "summary": "AI 写代码太烧钱了：Copilot、Claude 一起涨价，不如把程序员请回来？ &nbsp;&nbsp; Infoq.cn",
       "category": "Chinese",
-      "published": "2026-04-28T22:54:36+00:00",
+      "published": "2026-04-29T08:03:08+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -528,11 +473,11 @@
       "feed_title": "Google News 中文 AI"
     },
     {
-      "title": "OpenAI预计用户将大幅转向更便宜的ChatGPT套餐 - 新浪财经",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5MUzZEb3loYjQybmxudjZUYTZXOERKQ1hqSTcwd0l1ZnZIZkxjSmp0WlNLREpYTHRLNi1ac1VUYVpiZ1FMSGc5RVNtRQ?oc=5",
-      "summary": "OpenAI预计用户将大幅转向更便宜的ChatGPT套餐 &nbsp;&nbsp; 新浪财经",
+      "title": "马斯克称奥尔特曼是“小偷”，OpenAI反驳：酸葡萄心理 - 凤凰网",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9haXhhcTdDRGZnWTNJVVE3UzN6ajREWUlNSnYybXZQb1NGNDMyNWJyZDFFX2lmTUZVZmd1M2JpeC1hOXFLZGs5TTRYank?oc=5",
+      "summary": "马斯克称奥尔特曼是“小偷”，OpenAI反驳：酸葡萄心理 &nbsp;&nbsp; 凤凰网",
       "category": "Chinese",
-      "published": "2026-04-28T22:30:59+00:00",
+      "published": "2026-04-29T08:01:48+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -541,11 +486,11 @@
       "feed_title": "Google News 中文 AI"
     },
     {
-      "title": "4000亿市值反转，AI四小龙的黄昏与大模型新贵的黎明 - thepaper.cn",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1yWjAwS1pVcWpvQUZ2QjFnUmh5blhkMmVYR2VJZXpjY2hYSkYwSndJNk9RZ0poUHRMOEFTYnlDYWt2RTExVVYtdFVRek9tQTFJZWgwVWZXSTlCM3FNUHc?oc=5",
-      "summary": "4000亿市值反转，AI四小龙的黄昏与大模型新贵的黎明 &nbsp;&nbsp; thepaper.cn",
+      "title": "“人工智能+教育”的全国实践：AI如何为教师“照镜子”？ - 搜狐网",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTVZZck1EMkh6di10eDVwUzV3djdZMVBPVGYwdzNzQ3lNNFVrZmp3YlJXUlctRW1fT3pPckJCd3FzczRQV1hHd3Fzd3Jvajd4SkZndUFKcHQxeXdXdjcyeFRyYVU5S01Qc01oZG93ZzgzRm03N3doOGJfYjROOTd4OEkzcEJFNTdm?oc=5",
+      "summary": "“人工智能+教育”的全国实践：AI如何为教师“照镜子”？ &nbsp;&nbsp; 搜狐网",
       "category": "Chinese",
-      "published": "2026-04-28T22:22:00+00:00",
+      "published": "2026-04-29T08:01:03+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -554,50 +499,11 @@
       "feed_title": "Google News 中文 AI"
     },
     {
-      "title": "OpenAI和Anthropic就高阶网络安全AI模型与美国众议院委员会展开会晤 - 新浪网",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFAtaTBkSE9pbDdaczdTc01FTWZiblZtNnVmZWpvMno5bzQ2SDJISTlmUDQxTVVWR3czdUtSaXRIWTBnekxzcjhEUjI2WnhDemZMQnRsSzVCaG1Pd1cxM1FINE0xY0UtTDA4T2plRk5XSEFJNzdjM1FHbw?oc=5",
-      "summary": "OpenAI和Anthropic就高阶网络安全AI模型与美国众议院委员会展开会晤 &nbsp;&nbsp; 新浪网",
-      "category": "Chinese",
-      "published": "2026-04-28T22:01:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "4月29日外盘头条：阿联酋将于5月退出OPEC OpenAI称公司各项业务“火力全开” 马斯克在OpenAI审判中出庭作证 - 新浪网",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE82eE12dURRcE5WempNRHU0ejZ4TlBiUkpOM1p1X3ZseENxX3ZwOHV0cDdicHVqZmliS3V6WXFWUUtuREdVOUh1WE5icDZNRVdLd2w3M2FvMUdzWXJkWGpTYVpNejVNTU1hNUVsMElvXzN6Qm0wOTJOVEhR?oc=5",
-      "summary": "4月29日外盘头条：阿联酋将于5月退出OPEC OpenAI称公司各项业务“火力全开” 马斯克在OpenAI审判中出庭作证 &nbsp;&nbsp; 新浪网",
-      "category": "Chinese",
-      "published": "2026-04-28T22:01:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "OpenAI与Ant......_7x24快讯_新浪财经 - 新浪财经",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5iaEJrZVo4b2Vna0lIMjhfYUlsblRtS2pBdWp5YW9jM0JjNmlCX3RtN3E5LWFtU2FnUExjUFZiYy1weXF4UGVmM2QyVQ?oc=5",
-      "summary": "OpenAI与Ant......_7x24快讯_新浪财经 &nbsp;&nbsp; 新浪财经",
-      "category": "Chinese",
-      "published": "2026-04-28T21:56:26+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "Exclusive: OpenAI, Anthropic meet with House Homeland Security behind closed doors on cyber threats - Axios",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFAxM0dOTTJlZVo0X21uek9OSUdOQmg2Y20tY0t1ckUzOVJEMmtuODJhVC1qR1hMSElFVVB1eWpCN1h0NXBmUkx2UzBianh1dTZSTGJDWmU5TU0tUFJWckhWTGN3U1F5R1lQTzNjS3RHQ2ZjdmZMUDhBX0JESnpwRDg?oc=5",
-      "summary": "Exclusive: OpenAI, Anthropic meet with House Homeland Security behind closed doors on cyber threats &nbsp;&nbsp; Axios",
+      "title": "Anthropic's AI agents spark debate over business risk - IT Brief UK",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPQkxXdTNYMVE4dXNVLXpnVDJOd09vM003RnhXSVRrcVVlblZKVU1yYlQwWEtjUjdZX280UVl4TnpWTm1jWUM3UUIybHd3OGMxZ3dMNXRSTkdCODJqZ0huREdyWTZMUVMweXBjMmpuV1VtNVYzMFcyVExGUW0zaEhLTlRaMVYyTmdF?oc=5",
+      "summary": "Anthropic's AI agents spark debate over business risk &nbsp;&nbsp; IT Brief UK",
       "category": "Labs",
-      "published": "2026-04-28T21:56:17+00:00",
+      "published": "2026-04-29T08:00:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -606,26 +512,11 @@
       "feed_title": "Anthropic Coverage (Google News)"
     },
     {
-      "title": "AI 世纪对决开庭，马斯克在OpenAI审判中出庭作证 - 搜狐网",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxORms5eEF3UklQd2xNWWkwNmxiRGRGenZjd3k2QlBPUUZ2UW9aWFp0WHMwb2tlQjI4alJibUdoWi1lYU41MDNkcW5aNzR0M2hTdFpYeFhVODZHV0JpWmpLaGR2Mm9Td3doQnU4MTBuN2FhMkJmRXlNdFd2ZkcyVG4wMmN4NU1WbGNLblcyUQ?oc=5",
-      "summary": "AI 世纪对决开庭，马斯克在OpenAI审判中出庭作证 &nbsp;&nbsp; 搜狐网",
-      "category": "Chinese",
-      "published": "2026-04-28T21:55:50+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [
-        "https://news.google.com/rss/articles/CBMiekFVX3lxTE5VeW9HZkVSX0FYdHB6a1dWbEotZHBnS3dDMU40aXVCZThvUmo1dHlYMWxxcllVRUxXVUt2VHVJYXhEdk5hQkNERHNlV3ZOOXppMEhfSVdrUHJ1VTU0RC02VldsWW1xaTJCUmItN1RmZXJpUVNrTDNOdmRn?oc=5"
-      ],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "Google Bets Up to $40B on Anthropic as AI Compute Race Grows - BankInfoSecurity",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOUFRNTTlWV3I2bXluM1ZVbXdYQU4zUVl6U3QzNzBsal93QjNFN3lvOWRkV3FtTkhPbm9zeVNhbC1Ld0FaUkFrU2NvZ1pBMXE2NUVrUnJKZG5VU0pfT1JaOTdNQmh6Wld0TkVwR014X2VhUzhzYWlRZmhJS3JIUUItOGNpVFhzeDR5c3VqT3pfUk1EajJVUTdMYmV6NzdYSi1zOGc?oc=5",
-      "summary": "Google Bets Up to $40B on Anthropic as AI Compute Race Grows &nbsp;&nbsp; BankInfoSecurity",
+      "title": "OpenAI, Anthropic brief US House Committee over new AI models: Report - Anadolu Ajansı",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPQmlieDMwSXR0Z2tvUUdsV2Y5OGdTOGhnck1NTHc5eEJtX19BTTM4M1ZWc1N0XzVja0NobEhQU1BpeU5pb25Wa3puX1FaM0wwRFBuUXA5d0J2MW9wOExKUzU5NVhJVUhVNUgwTFVxWkxHWDBjMnoxY2Y1T0dBUjU2VUQxeE5jUHI2MGVsUnNGRF9ZSUEzVGVrVll3aGd0X0FzNnlUbjhGb055aV82SlE?oc=5",
+      "summary": "OpenAI, Anthropic brief US House Committee over new AI models: Report &nbsp;&nbsp; Anadolu Ajansı",
       "category": "Labs",
-      "published": "2026-04-28T21:51:20+00:00",
+      "published": "2026-04-29T07:56:06+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -634,11 +525,11 @@
       "feed_title": "Anthropic Coverage (Google News)"
     },
     {
-      "title": "美股收盘：OpenAI相关股票承压 三大指数集体下跌 热门中概股多数下跌 - QQ News",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5uY1NIbnpmRDdJb1ZXYWw3NnpreGg2dW94eGFVTUlDV19qVUNGdHdrUGdaOHpKQjFMYnU2TlA1aHVZVGVfX19oQlg4WS1kT3NKaFUtdTU2Qi05Zk9RSkc4QmFRUmEybnladWVvbndR?oc=5",
-      "summary": "美股收盘：OpenAI相关股票承压 三大指数集体下跌 热门中概股多数下跌 &nbsp;&nbsp; QQ News",
+      "title": "科技连线｜DeepSeek V4上线，AI世界正在改变的规则 - thepaper.cn",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE43MGIwLWE4dXVUb3NlOUNhdldFRkNsR1JDejZadjVpZjJQalN3aWQ0RUlzRTlNUXgxTENiTkgtWW1uT0UtYy1aOF95dlp4Z0VRY1k0dkFQUWViN2gtd3E3QQ?oc=5",
+      "summary": "科技连线｜DeepSeek V4上线，AI世界正在改变的规则 &nbsp;&nbsp; thepaper.cn",
       "category": "Chinese",
-      "published": "2026-04-28T21:39:00+00:00",
+      "published": "2026-04-29T07:53:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -647,24 +538,11 @@
       "feed_title": "Google News 中文 AI"
     },
     {
-      "title": "Pentagon AI chief confirms DOD's expanded use of Google, says reliance on one model 'never a good thing' - CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM3pSMEp5eWlSb1BmNDBUWDNGVmRpM2lkdUNRYlBHWE8yaWl6MGItM1d1NW11dnhuTnlHN29uLUpqREhBbzRqZkFTVGREcENubkREaDg4S0tXZGVSU1dKSFhXMDV6QW1kNllWSUlrS2dEaU5KMjNtTkJyVkxSVncxMEw0RDFTWUlUUHVHUE5DbkYxR1l2dVNkbXBiX3lrWGp4WjFRRkFITS1Xd9IBrwFBVV95cUxPQjd4dFRTM3VBWnNqZWFJMklKYXlQb2l1UmF2V1hKTFhpSmltRW9mWjBNVEozcXM2dlF4WHVaSGE4YlQ5cWQxZTBqdG1UalA2WGdfUnhEbGdTeml5NkprS3drT0xtT1ZXcFd3Rk9XUWdwTXhoWEoxRWtlcldrT0pQODdCaUN3VHlRbWVOeDlCOWhpelo2czkzS1BvQXRhRXRKWl9nRzlRYXBnMGdQSTdV?oc=5",
-      "summary": "Pentagon AI chief confirms DOD's expanded use of Google, says reliance on one model 'never a good thing' &nbsp;&nbsp; CNBC",
-      "category": "Labs",
-      "published": "2026-04-28T21:34:49+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22Anthropic%22+OR+%22Claude+Opus%22+OR+%22Claude+Sonnet%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Anthropic Coverage (Google News)"
-    },
-    {
-      "title": "亚马逊已在 AWS 上架多款全新 OpenAI 产品 - 新浪网",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOdG9tajlMVUVUV05Iemc2cFAteEM4emU5bkhQN01KV2JkSzdPZ3BBclZ5clNCalItMEh6NTlYUElXU3Y2M1owckVkRTc0QXRZcEFLUVFCdWtyYTE1d2xGVGIyNU1feTJRaWdja0I3ZDl1R0hnM1MtaWg1cXpGaURkbm9ucnFLc0dsY0lDckVwaEZpcU5zNTA0MUlfSnNDOUdlb2lqbzEzT2VRckViQTJrR055bnJaRlVLbUVpRkM0QkZaWnBjWm5Fbkt0enl0dUcwb0E?oc=5",
-      "summary": "亚马逊已在 AWS 上架多款全新 OpenAI 产品 &nbsp;&nbsp; 新浪网",
+      "title": "亚马逊云科技与OpenAI宣布深化合作 - 新浪财经",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBfUlFSYWR6SWJ6dGVEeWFncE9lMVhWRWxGVDZ5Y1BzSnNHXzctZU5BZlRjUUNENXktY2dHd3lvU0t4NFY5WDVfZU1aOA?oc=5",
+      "summary": "亚马逊云科技与OpenAI宣布深化合作 &nbsp;&nbsp; 新浪财经",
       "category": "Chinese",
-      "published": "2026-04-28T21:26:00+00:00",
+      "published": "2026-04-29T07:44:17+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -673,17 +551,30 @@
       "feed_title": "Google News 中文 AI"
     },
     {
-      "title": "报道称OpenAI业绩未达标，相关概念股全线大跌 - 新浪网",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBQT1Y1dEVxTm5TUFYtY1VONDhRRFlnblE0cVJLa196RWhFV2lQOGNZRW1QeGZfeGVvLXE5d0NKUjNNdVpkNDU2QUkyLUIzY2ZRbGxwNlFzZElyYndqMzBJb0IwSTVPdjI4MzlFWU93SW9hRk9WRzg0czln?oc=5",
-      "summary": "报道称OpenAI业绩未达标，相关概念股全线大跌 &nbsp;&nbsp; 新浪网",
+      "title": "结束与微软独家合作，OpenAI模型接入亚马逊AWS|预览版|插件|客户端|合约|上线_手机新浪网 - 新浪财经",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQXUxa3htdFVTdGVOZDlDY3V5eWd5SFdBN0tDa2hhWUEySExLbUxqQWRrWk12VXRObDlYU29sNmlPamNJWmVOcXFxSVRsUG42VF9pZnhMNUdoc09qZEhkOXBsVy1JX2RwYl9Jd3FYOFpIZVN5ZmZIdG16T2ZDNHBoamtEdWpOUTBXOEUxVkNJMVg5QVNpU0F5YUU0eFgyZFZKQ3k1N2RlYnAwNzhva2dKMUp3?oc=5",
+      "summary": "结束与微软独家合作，OpenAI模型接入亚马逊AWS|预览版|插件|客户端|合约|上线_手机新浪网 &nbsp;&nbsp; 新浪财经",
       "category": "Chinese",
-      "published": "2026-04-28T21:10:00+00:00",
+      "published": "2026-04-29T07:41:15+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
       "feed_title": "Google News 中文 AI"
+    },
+    {
+      "title": "At his OpenAI trial, Musk relitigates an old friendship",
+      "url": "https://techcrunch.com/2026/04/28/at-his-openai-trial-musk-relitigates-an-old-friendship/",
+      "summary": "It's a story Musk has told before -- in interviews and to author Walter Isaacson for his bestselling biography of Musk -- but Tuesday was the first time he said it under oath.",
+      "category": "Media",
+      "published": "2026-04-29T00:40:16+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "feed_title": "TechCrunch AI"
     },
     {
       "title": "Amazon is already offering new OpenAI products on AWS",
@@ -704,19 +595,6 @@
       "summary": "Amazon's new \"Join the chat\" feature lets you ask questions about products and receive AI-powered audio responses.",
       "category": "Media",
       "published": "2026-04-28T18:49:54+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
-      "feed_title": "TechCrunch AI"
-    },
-    {
-      "title": "Google expands Pentagon’s access to its AI after Anthropic’s refusal",
-      "url": "https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/",
-      "summary": "After Anthropic refused to allow the DoD to use its AI for domestic mass surveillance and autonomous weapons, Google has signed a new contract with the department.",
-      "category": "Media",
-      "published": "2026-04-28T18:15:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -790,69 +668,17 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "microsoft/VibeVoice",
-      "url": "https://simonwillison.net/2026/Apr/27/vibevoice/#atom-everything",
-      "summary": "microsoft/VibeVoice VibeVoice is Microsoft's Whisper-style audio model for speech-to-text, MIT licensed and with speaker diarization built into the model. Microsoft released it on January 21st, 2026 but I hadn't tried it until today. Here's a one-liner to run it on a Mac with uv , mlx-audio (by Prince Canuma) and the 5.71GB mlx-community/VibeVoice-ASR-4bit MLX conversion of the 17.3GB VibeVoice-AS",
+      "title": "[AINews] not much happened today",
+      "url": "https://www.latent.space/p/ainews-not-much-happened-today",
+      "summary": "a quiet day.",
       "category": "Commentary",
-      "published": "2026-04-27T23:46:56+00:00",
-      "fetch_status": "full",
+      "published": "2026-04-29T01:46:59+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "Physical AI that Moves the World — Qasar Younis & Peter Ludwig, Applied Intuition",
-      "url": "https://www.latent.space/p/appliedintuition",
-      "summary": "Applied Intuition puts the AI in mining rigs, drones, trucks, warships and physical vehicles in the most adversarial environments imaginable. We dive in with their CEO and CTO as they emerge.",
-      "category": "Commentary",
-      "published": "2026-04-27T23:02:37+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "https://www.latent.space/feed",
       "feed_title": "Latent Space"
-    },
-    {
-      "title": "OpenAI ends its exclusive partnership with Microsoft",
-      "url": "https://arstechnica.com/ai/2026/04/no-longer-exclusive-microsoft-agrees-to-let-openai-see-other-cloud-providers/",
-      "summary": "Amended agreement clears the way for OpenAI models to run on Amazon Bedrock.",
-      "category": "Media",
-      "published": "2026-04-27T20:10:11+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://arstechnica.com/ai/feed/",
-      "feed_title": "Ars Technica AI"
-    },
-    {
-      "title": "EU tells Google to open up AI on Android; Google says that's \"unwarranted intervention\"",
-      "url": "https://arstechnica.com/ai/2026/04/europe-could-force-google-to-open-android-to-other-ai-assistants/",
-      "summary": "Gemini gets preferential treatment on Android, but maybe not for long (in Europe).",
-      "category": "Media",
-      "published": "2026-04-27T20:03:49+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://arstechnica.com/ai/feed/",
-      "feed_title": "Ars Technica AI"
-    },
-    {
-      "title": "China kills Meta’s acquisition of Manus as US-China AI rivalry deepens",
-      "url": "https://arstechnica.com/ai/2026/04/china-kills-metas-acquisition-of-manus-as-us-china-ai-rivalry-deepens/",
-      "summary": "The unwinding of Meta’s deal shows how tech founders struggle to cut China ties.",
-      "category": "Media",
-      "published": "2026-04-27T18:12:04+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://arstechnica.com/ai/feed/",
-      "feed_title": "Ars Technica AI"
     },
     {
       "title": "Humanoid robots start sorting luggage in Tokyo airport test amid labor shortage",

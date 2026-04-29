@@ -5,64 +5,27 @@
       "display_name": "安全",
       "items": [
         {
-          "title_zh": "CISA 将 Windows 及 ConnectWise 漏洞列入已知利用清单",
-          "title_orig": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
-          "summary": "美国网络安全和基础设施安全局（CISA）近日正式将两个已被证实处于活跃利用状态的安全漏洞添加到其“已知被利用漏洞”（KEV）目录中，这两个漏洞分别是涉及ConnectWise ScreenConnect的路径遍历漏洞CVE-2024-1708，以及涉及微软Windows Shell的保护机制失效漏洞CVE-2026-32202。微软方面随后证实该Windows漏洞已被黑客用于在野攻击，攻击者可借此绕过系统安全机制并获取敏感信息。由于此类漏洞是黑客频繁使用的攻击手段，CISA的通报旨在提醒各联邦机构及相关组织必须在规定期限内完成修复，以防范潜在的数据泄露风险，确保关键基础设施的安全性，并以此降低网络攻击对政府及企业运营造成的负面影响。",
-          "tags": [
-            "CISA",
-            "Windows漏洞",
-            "网络安全"
-          ],
-          "url": "https://www.cisa.gov/news-events/alerts/2026/04/28/cisa-adds-two-known-exploited-vulnerabilities-catalog",
-          "source": "cisa.gov",
-          "category": "OfficialAdvisories",
-          "published": "2026-04-28T12:00:00+00:00",
-          "cve_ids": [
-            "CVE-2024-1708",
-            "CVE-2026-32202"
-          ],
-          "selection_reason": "CISA 确认漏洞被在野利用，具有极高的修复优先级。"
-        },
-        {
-          "title_zh": "微软确认 Windows Shell 欺骗漏洞 CVE-2026-32202 已遭利用",
-          "title_orig": "Microsoft Confirms Active Exploitation of Windows Shell CVE-2026-32202",
-          "summary": "微软官方近日修订了针对 Windows Shell 高危安全漏洞 CVE-2026-32202 的安全公告，正式承认该漏洞已在野外被黑客积极利用。该漏洞属于欺骗类漏洞，CVSS 评分虽为 4.3 分，但攻击者可利用其非法访问系统中的敏感信息，微软已在周二补丁日更新中发布了针对性修复程序。此消息值得广大 Windows 用户和企业管理员高度关注，因为它意味着即便评分不高的漏洞，一旦被黑客掌握利用方式，也会对系统安全构成实质性威胁，建议相关用户立即检查并安装最新的安全补丁以确保环境安全，防止因信息泄露导致更严重的连锁反应。",
-          "tags": [
-            "微软",
-            "Windows",
-            "零日漏洞"
-          ],
-          "url": "https://thehackernews.com/2026/04/microsoft-confirms-active-exploitation.html",
-          "source": "thehackernews.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-04-28T05:50:00+00:00",
-          "cve_ids": [
-            "CVE-2026-32202"
-          ],
-          "selection_reason": "微软官方确认漏洞已被利用，提醒用户需紧急更新补丁。"
-        },
-        {
-          "title_zh": "黑客正利用 LiteLLM 开源网关中的关键 SQL 注入漏洞",
-          "title_orig": "Hackers are exploiting a critical LiteLLM pre-auth SQLi flaw",
-          "summary": "黑客目前正针对 LiteLLM 开源大语言模型（LLM）网关中一个代号为 CVE-2026-42208 的关键漏洞发起攻击，旨在窃取其中存储的敏感信息。该漏洞属于预身份验证 SQL 注入漏洞，意味着攻击者无需获取任何权限即可对数据库执行恶意查询。由于 LiteLLM 被广泛用于管理和统一多种大模型接口，其安全性直接关系到企业 AI 应用的数据安全。此事件凸显了开源 AI 基础设施在快速普及过程中面临的严峻安全挑战，相关开发者和企业应尽快排查并升级受影响的组件，以防止核心业务数据和模型配置信息遭到泄露，确保人工智能服务在受控且安全的环境下运行。",
+          "title_zh": "LiteLLM 关键 SQL 注入漏洞在披露 36 小时",
+          "title_orig": "LiteLLM CVE-2026-42208 SQL Injection Exploited within 36 Hours of Disclosure",
+          "summary": "BerriAI的LiteLLM软件包被发现存在编号为CVE-2026-42208的严重SQL注入漏洞，该漏洞在公开披露后的36小时内即遭到威胁攻击者的积极利用。此事件凸显了攻击者利用新漏洞的速度极快，由于该工具广泛用于大模型集成，漏洞可能导致底层数据被非法修改，对使用该框架的企业构成严重安全风险，需引起开发者高度警惕。",
           "tags": [
             "LiteLLM",
             "SQL注入",
-            "AI安全"
+            "漏洞利用"
           ],
-          "url": "https://www.bleepingcomputer.com/news/security/hackers-are-exploiting-a-critical-litellm-pre-auth-sqli-flaw/",
-          "source": "bleepingcomputer.com",
+          "url": "https://thehackernews.com/2026/04/litellm-cve-2026-42208-sql-injection.html",
+          "source": "thehackernews.com",
           "category": "OfficialAdvisories",
-          "published": "2026-04-28T21:07:23+00:00",
+          "published": "2026-04-29T05:34:00+00:00",
           "cve_ids": [
             "CVE-2026-42208"
           ],
-          "selection_reason": "涉及大模型基础设施的关键漏洞，且已有活跃攻击行为。"
+          "selection_reason": "该漏洞 CVSS 评分高达 9.3，且在极短时间内被利用。"
         },
         {
-          "title_zh": "GitHub 曝出关键 RCE 漏洞：单次 Git Push 即可触发",
+          "title_zh": "GitHub 严重漏洞可让攻击者通过单次推送实现远程代码",
           "title_orig": "Researchers Discover Critical GitHub CVE-2026-3854 RCE Flaw Exploitable via Single Git Push",
-          "summary": "网络安全研究人员披露了 GitHub.com 及 GitHub 企业版服务器中存在的一个关键安全漏洞 CVE-2026-3854，该漏洞 CVSS 评分高达 8.7 分。研究表明，拥有仓库推送权限的已认证用户只需执行一次简单的“git push”命令，即可利用该命令注入漏洞在服务器上实现远程代码执行（RCE）。这一发现对依赖 GitHub 进行协作开发的全球开发者和企业具有重大影响，因为攻击者可能借此控制代码托管环境。目前相关细节已公开，提醒使用 GitHub 企业版服务器的机构务必关注官方安全更新，确保代码库和底层服务器的完整性与安全性，防止恶意代码注入影响软件供应链。",
+          "summary": "研究人员披露了GitHub平台的一个关键安全漏洞CVE-2026-3854，该漏洞允许经过身份验证的用户仅通过执行一次git push命令即可实现远程代码执行。这一命令注入漏洞影响了GitHub官网及企业版服务器，意味着任何拥有仓库推送权限的攻击者都能获取系统控制权，对托管在GitHub上的代码安全及企业私有资产构成巨大威胁。",
           "tags": [
             "GitHub",
             "远程代码执行",
@@ -75,16 +38,35 @@
           "cve_ids": [
             "CVE-2026-3854"
           ],
-          "selection_reason": "GitHub 核心功能漏洞，影响范围广且触发方式简单。"
+          "selection_reason": "GitHub 作为核心基础设施，其 RCE 漏洞影响范围极广"
         },
         {
-          "title_zh": "Hugging Face 机器人平台 LeRobot 存在高危 RCE 漏洞",
-          "title_orig": "Critical Unpatched Flaw Leaves Hugging Face LeRobot Open to Unauthenticated RCE",
-          "summary": "网络安全研究人员披露了 Hugging Face 旗下开源机器人平台 LeRobot 的一个关键安全漏洞 CVE-2026-25874，该漏洞 CVSS 评分高达 9.3 分。该漏洞源于对不可信数据的反序列化处理不当，允许未经身份验证的远程攻击者在受影响的系统上执行任意代码。LeRobot 在 GitHub 上拥有近 2.4 万颗星，是机器人研究领域的重要工具，目前该漏洞仍处于未修复状态。此漏洞的发现提醒 AI 和机器人开发者，在集成开源平台时必须审慎评估其安全性，尤其是处理外部输入数据时的风险，以避免物理设备或研究数据被黑客非法控制，造成不可估量的科研损失或安全事故。",
+          "title_zh": "CISA 将 ConnectWise 和 Windows",
+          "title_orig": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
+          "summary": "美国网络安全和基础设施安全局CISA近日将ConnectWise ScreenConnect的路径遍历漏洞CVE-2024-1708以及微软Windows保护机制失效漏洞CVE-2026-32202正式加入其已知已利用漏洞目录。由于已有确凿证据表明这些漏洞正处于活跃利用状态且是攻击者的常用手段，CISA强制要求联邦机构及相关组织必须在规定期限内完成补丁修复，以有效降低潜在的网络攻击风险并保障关键系统的运行安全。",
           "tags": [
-            "Hugging Face",
+            "CISA",
+            "漏洞修复",
+            "Windows"
+          ],
+          "url": "https://www.cisa.gov/news-events/alerts/2026/04/28/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+          "source": "cisa.gov",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-28T12:00:00+00:00",
+          "cve_ids": [
+            "CVE-2024-1708",
+            "CVE-2026-32202"
+          ],
+          "selection_reason": "CISA KEV 目录是企业修补漏洞的权威优先级指南。"
+        },
+        {
+          "title_zh": "Hugging Face 机器人平台 LeRobot 存",
+          "title_orig": "Critical Unpatched Flaw Leaves Hugging Face LeRobot Open to Unauthenticated RCE",
+          "summary": "网络安全研究人员披露了Hugging Face开源机器人平台LeRobot的一个严重安全漏洞CVE-2026-25874，该漏洞源于不安全的数据反序列化且目前尚未修复。攻击者无需身份验证即可实现远程代码执行，考虑到该项目在GitHub上拥有近2.4万颗星，大量开发者和机器人研究机构正面临被黑客入侵的风险，急需采取缓解措施以保护系统安全。",
+          "tags": [
+            "Hugging ",
             "机器人安全",
-            "RCE漏洞"
+            "开源软件"
           ],
           "url": "https://thehackernews.com/2026/04/critical-cve-2026-25874-leaves-hugging.html",
           "source": "thehackernews.com",
@@ -93,207 +75,63 @@
           "cve_ids": [
             "CVE-2026-25874"
           ],
-          "selection_reason": "知名 AI 机器人平台的高危未修复漏洞，安全风险极大。"
+          "selection_reason": "涉及热门 AI 机器人平台且处于未修复状态，风险极高。"
         },
         {
-          "title_zh": "美国起诉在芬兰被捕的 Scattered Spider 黑客组织成员",
+          "title_zh": "美国起诉在芬兰被捕的 Scattered Spider ",
           "title_orig": "US reportedly charges Scattered Spider hacker arrested in Finland",
-          "summary": "一名在芬兰被捕的 19 岁美籍爱沙尼亚裔男子目前面临美国联邦政府的指控，据称他是臭名昭著的黑客组织 Scattered Spider 的核心成员。该组织以擅长社交工程攻击和针对大型企业进行勒索而闻名，曾导致多家知名公司业务中断。此次跨国逮捕和起诉行动展示了国际执法部门在打击网络犯罪方面的协作成果，对于震慑此类高活跃度的黑客团伙具有重要意义。此案的进展值得网络安全从业者关注，因为它可能揭示该组织更多的攻击手段和内部运作机制，有助于企业针对性地加强防御措施，特别是针对社交工程类攻击的防护。",
+          "summary": "一名在芬兰被捕的 19 岁美埃双重国籍男子目前面临美国联邦指控，据称他是臭名昭著的黑客组织 Scattered Spider 的活跃成员。该组织此前因对多家大型企业发动复杂攻击而闻名，此次跨国逮捕和起诉行动标志着执法部门在打击该高调网络犯罪团伙方面取得了重要进展，旨在震慑针对美国基础设施的黑客活动。",
           "tags": [
             "黑客组织",
             "网络犯罪",
-            "跨国执法"
+            "法律诉讼"
           ],
           "url": "https://www.bleepingcomputer.com/news/security/us-reportedly-charges-scattered-spider-hacker-arrested-in-finland/",
           "source": "bleepingcomputer.com",
           "category": "OfficialAdvisories",
           "published": "2026-04-28T15:39:52+00:00",
           "cve_ids": [],
-          "selection_reason": "知名黑客组织成员落网，对网络犯罪打击具有里程碑意义。"
+          "selection_reason": "Scattered Spider 是近年来最具威胁性的黑客团"
         },
         {
-          "title_zh": "中国籍黑客因涉嫌攻击新冠研究机构被从意大利引渡至美",
-          "title_orig": "Chinese Silk Typhoon Hacker Extradited to U.S. Over COVID Research Cyberattacks",
-          "summary": "一名被指控为“Silk Typhoon”黑客组织成员的 34 岁中国籍男子徐泽伟（音译）已从意大利被引渡至美国受审。美国司法部指控其在 2020 年至 2021 年期间，策划并参与了针对美国政府机构及多家组织的系列网络攻击，其中包括窃取新冠肺炎（COVID-19）相关的研究成果。该男子于 2025 年 7 月在意大利被捕，美方认为该组织具有国家背景。此事件不仅涉及网络间谍活动，还牵涉到敏感的公共卫生科研数据安全，反映了地缘政治背景下网络安全冲突的复杂性，以及国际司法在处理此类跨国网络攻击案件中的关键作用，引发了国际社会对科研数据保护的广泛讨论。",
+          "title_zh": "Anthropic 发布可自主发现并武器化漏洞的 AI ",
+          "title_orig": "What Anthropic’s Mythos Means for the Future of Cybersecurity",
+          "summary": "Anthropic 宣布其新模型 Claude Mythos Preview 具备自主发现软件漏洞并将其转化为可用攻击载荷的能力，无需专家指导即可完成。该模型成功找出了操作系统和互联网基础设施等关键软件中开发者未能发现的漏洞，这一突破性进展预示着网络安全攻防平衡将发生重大变化，AI 驱动的自动化攻击可能成为未来的核心威胁。",
           "tags": [
-            "网络间谍",
-            "引渡",
-            "科研安全"
+            "Anthropi",
+            "AI安全",
+            "漏洞挖掘"
           ],
-          "url": "https://thehackernews.com/2026/04/chinese-silk-typhoon-hacker-extradited.html",
-          "source": "thehackernews.com",
+          "url": "https://www.schneier.com/blog/archives/2026/04/what-anthropics-mythos-means-for-the-future-of-cybersecurity.html",
+          "source": "schneier.com",
           "category": "OfficialAdvisories",
-          "published": "2026-04-28T07:57:00+00:00",
+          "published": "2026-04-28T11:06:44+00:00",
           "cve_ids": [],
-          "selection_reason": "涉及敏感科研数据窃取及跨国引渡，具有高度新闻价值。"
+          "selection_reason": "AI 自主武器化漏洞是网络安全领域的里程碑式挑战。"
         },
         {
-          "title_zh": "微软修复 Entra ID 漏洞：防止 AI 代理角色被非法接管",
-          "title_orig": "Microsoft Patches Entra ID Role Flaw That Enabled Service Principal Takeover",
-          "summary": "微软近日修复了 Microsoft Entra ID 中的一个管理角色漏洞，该漏洞曾允许攻击者实现权限提升并接管身份。安全机构 Silverfort 发现，专门为 AI 代理设计的“Agent ID Administrator”内置角色存在缺陷，攻击者可利用该角色操纵 AI 代理的身份生命周期操作。随着企业越来越多地在业务中部署 AI 代理，此类针对身份管理平台的漏洞成为了新的攻击向量。微软的及时修复对于保障企业 AI 生态系统的身份安全至关重要，同时也提醒企业在配置 AI 相关权限时需遵循最小权限原则，防止因新型管理角色配置不当而导致全局安全风险，确保自动化代理在安全框架内运行。",
+          "title_zh": "LangChain Core 1.2.4 版本被曝存在 ",
+          "title_orig": "[webapps] LangChain Core 1.2.4 - SSTI/RCE",
+          "summary": "安全研究人员在LangChain Core 1.2.4版本中发现了严重的服务器端模板注入和远程代码执行漏洞，这可能导致底层系统被攻击者完全控制。作为构建大语言模型应用的核心框架，LangChain的这一安全缺陷可能导致开发者构建的AI应用被接管，提醒广大开发者需立即检查并升级相关依赖库，以确保AI应用在运行环境中的整体安全性。",
           "tags": [
-            "微软",
-            "Entra ID",
-            "AI身份安全"
+            "LangChai",
+            "AI框架",
+            "RCE漏洞"
           ],
-          "url": "https://thehackernews.com/2026/04/microsoft-patches-entra-id-role-flaw.html",
-          "source": "thehackernews.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-04-28T06:37:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及 AI 代理身份管理的新型漏洞，反映了 AI 安全的新趋"
-        },
-        {
-          "title_zh": "VECT 2.0 勒索软件存在缺陷，可永久损毁大文件",
-          "title_orig": "VECT 2.0 Ransomware Irreversibly Destroys Files Over 131KB on Windows, Linux, ESXi",
-          "summary": "威胁猎人发出警告，网络犯罪组织 VECT 2.0 旗下的勒索软件在 Windows、Linux 及 ESXi 变体中存在严重的加密实现缺陷，导致其行为更接近于数据擦除器。该软件在处理超过 131KB 的文件时会造成不可逆的破坏，即使受害者支付赎金，攻击者也无法恢复这些受损数据。这一发现提醒广大企业和运维人员，面对此类勒索攻击时，传统的支付赎金策略已彻底失效，必须依靠离线备份和灾难恢复机制来保护核心业务数据，否则将面临永久性的资产损失。由于加密逻辑的根本性错误，该恶意软件已成为一种极具破坏性的纯粹抹除工具，对全球多平台服务器构成了严峻的安全威胁。",
-          "tags": [
-            "勒索软件",
-            "数据安全",
-            "网络攻击"
-          ],
-          "url": "https://thehackernews.com/2026/04/vect-20-ransomware-irreversibly.html",
-          "source": "thehackernews.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-04-28T14:01:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "该勒索软件具有擦除器属性，支付赎金也无法恢复数据。"
-        },
-        {
-          "title_zh": "VoiceGoat：用于练习 LLM 攻击技术的易受攻击语音代理",
-          "title_orig": "VoiceGoat – A vulnerable voice agent for practicing LLM attack techniques",
-          "summary": "安全研究人员发布了名为 VoiceGoat 的开源项目，这是一个基于 Docker Compose 运行的故意留有漏洞的语音代理系统，旨在帮助从业者练习大语言模型攻击技术。该系统包含 VoiceBank、VoiceAdmin 和 VoiceRAG 等多个服务模块，涵盖了提示词注入、权限滥用、RAG 中毒及跨租户数据泄露等多种漏洞场景，并设有从易到难的 CTF 风格挑战。该工具为红队人员和安全研究员提供了宝贵的实战演练环境，有助于提升针对 AI 驱动应用的安全防御和渗透测试能力。通过模拟真实的 AI 语音交互环境，它填补了当前大模型安全教学中语音代理领域的空白，是研究人员掌握复杂攻击链条的重要实验平台。",
-          "tags": [
-            "大模型安全",
-            "红队工具",
-            "漏洞练习"
-          ],
-          "url": "https://www.reddit.com/r/redteamsec/comments/1sy4acx/voicegoat_a_vulnerable_voice_agent_for_practicing/",
-          "source": "reddit.com",
-          "category": "RedTeam",
-          "published": "2026-04-28T15:14:01+00:00",
-          "cve_ids": [],
-          "selection_reason": "针对 LLM 应用安全的实战演练工具，具有极高的学习价值。"
-        },
-        {
-          "title_zh": "Infiltrate AI：自动化 LLM 提示词注入测试与监控仪表盘",
-          "title_orig": "I built an LLM Red-Teaming Dashboard to automate prompt injection testing and security monitoring",
-          "summary": "针对大多数大语言模型应用容易受到越狱和提示词注入攻击导致指令泄露或越权操作的问题，开发者推出了 Infiltrate AI 安全层。该工具通过构建自动化的红队测试仪表盘，能够替代低效的人工手动测试，对 LLM 部署进行压力测试和持续的安全监控。这对于正在开发 AI 应用的企业和研究人员至关重要，它能有效识别模型在处理恶意输入时的脆弱性，为 LLM 应用在生产环境中的安全性提供了一层自动化的防御保障和风险评估手段。该仪表盘通过可视化方式展示安全漏洞，使开发者能够快速定位并修复模型逻辑中的缺陷，从而在应用上线前大幅降低被恶意利用的风险，确保 AI 系统的稳健运行。",
-          "tags": [
-            "AI 安全",
-            "自动化测试",
-            "红队渗透"
-          ],
-          "url": "https://www.reddit.com/r/redteamsec/comments/1sxuj4f/i_built_an_llm_redteaming_dashboard_to_automate/",
-          "source": "reddit.com",
-          "category": "RedTeam",
-          "published": "2026-04-28T07:39:12+00:00",
-          "cve_ids": [],
-          "selection_reason": "自动化 LLM 安全测试工具，解决人工测试效率低下的痛点。"
-        },
-        {
-          "title_zh": "巴西 LofyGang 组织回归，利用 Minecraft 传播木马",
-          "title_orig": "Brazilian LofyGang Resurfaces After Three Years With Minecraft LofyStealer Campaign",
-          "summary": "起源于巴西的网络犯罪组织 LofyGang 在沉寂三年后重新活跃，发起了一场针对 Minecraft 玩家的恶意软件攻击活动。该组织利用名为 LofyStealer（又名 GrabBot）的新型窃取木马，伪装成名为“Slinky”的游戏外挂，并使用官方游戏图标诱导玩家主动下载执行。此活动主要威胁游戏玩家的个人账户安全和敏感信息，反映出网络犯罪组织在利用流行游戏社区进行社交工程攻击方面的持续性，提醒广大玩家应警惕非官方渠道提供的游戏辅助工具。根据安全公司 ZenoX 的技术报告，这种利用玩家对游戏外挂需求的心理进行渗透的手段极具欺骗性，玩家一旦运行该伪装程序，其设备上的各类凭据和隐私数据将被迅速窃取并上传至攻击者服务器。",
-          "tags": [
-            "网络犯罪",
-            "恶意软件",
-            "游戏安全"
-          ],
-          "url": "https://thehackernews.com/2026/04/brazilian-lofygang-resurfaces-after.html",
-          "source": "thehackernews.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-04-28T17:39:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "老牌犯罪组织回归并针对流行游戏社区，具有广泛的影响面。"
-        },
-        {
-          "title_zh": "威胁参与者发布 OPSEC 手册以逃避安全检测",
-          "title_orig": "Inside an OPSEC Playbook: How Threat Actors Evade Detection",
-          "summary": "安全机构 Flare 揭示了威胁参与者正在发布结构化的行动安全（OPSEC）手册，旨在指导攻击者在行动中保持隐蔽。这些手册详细介绍了如何构建分层基础设施、实施身份隔离以及采取长期规避策略，以防止被安全防御系统识别。这一趋势表明网络攻击者的专业化程度正在进一步提升，他们不仅在技术上寻求突破，更在战术流程上进行标准化。对于防御方而言，了解这些逃避策略对于优化威胁狩猎流程和提升检测系统的鲁棒性具有重要的参考价值。通过研究这些攻击者的内部指南，安全团队可以预判对手的隐匿手段，从而在网络对抗中占据主动地位，针对性地加强对复杂攻击路径的监控与拦截能力。",
-          "tags": [
-            "行动安全",
-            "威胁情报",
-            "防御规避"
-          ],
-          "url": "https://www.bleepingcomputer.com/news/security/inside-an-opsec-playbook-how-threat-actors-evade-detection/",
-          "source": "bleepingcomputer.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-04-28T12:50:58+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了攻击者战术标准化的新趋势，有助于提升防御意识。"
-        },
-        {
-          "title_zh": "NSA GRASSMARLIN 工具存在 XML 外部实体引用漏洞",
-          "title_orig": "NSA GRASSMARLIN",
-          "summary": "CISA 发布安全公告，指出美国国家安全局（NSA）开发的网络分析工具 GRASSMARLIN 存在不当限制 XML 外部实体引用（XXE）的漏洞。成功利用该漏洞的攻击者可能导致敏感信息泄露，受影响的版本涵盖了该工具的所有版本。由于该工具常用于关键基础设施领域的信息技术分析，此漏洞的发现提醒相关机构需关注内部安全工具自身的安全性。建议使用该工具的组织及时关注供应商发布的补丁或采取相应的缓解措施，以防止潜在的供应链或内部信息泄露风险。该漏洞的 CVSS 评分为 5.5，涉及信息技术等多个关键行业，凸显了即使是专业安全分析软件也可能成为攻击者渗透关键系统的潜在入口，必须加强全生命周期的漏洞管理。",
-          "tags": [
-            "漏洞预警",
-            "关键基础设施",
-            "XXE 漏洞"
-          ],
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-118-01",
-          "source": "cisa.gov",
-          "category": "OfficialAdvisories",
-          "published": "2026-04-28T12:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及 NSA 开发的工具及关键基础设施安全，具有高度敏感性。"
-        },
-        {
-          "title_zh": "利用 MCP 服务器实现横向移动的关键安全发现",
-          "title_orig": "Abused an MCP Server to Perform Lateral Movement | Critical Finding | MCP Testing Methodology",
-          "summary": "安全研究员在最近的一次评估中发现，可以通过滥用模型上下文协议（MCP）服务器来实现网络环境中的横向移动。该研究详细介绍了针对 MCP 组件的测试方法论，并指出这一关键发现可能影响集成 AI 代理和服务器的系统架构。随着 MCP 协议在 AI 生态系统中的应用日益广泛，该漏洞利用路径的发现为系统架构师和安全审计员敲响了警钟。相关组织在部署基于 MCP 的 AI 服务时，必须重新评估其访问控制策略，以防止攻击者利用 AI 基础设施作为跳板渗透核心网络。这一研究成果强调了在引入新兴 AI 协议时，必须同步建立完善的安全隔离机制，防止 AI 组件成为企业内网中新的安全薄弱环节，从而保障整体架构的安全性。",
-          "tags": [
-            "MCP 协议",
-            "横向移动",
-            "AI 基础设施"
-          ],
-          "url": "https://infosecwriteups.com/abused-an-mcp-server-to-perform-lateral-movement-critical-finding-mcp-testing-methodology-dd0557d49522?source=rss----7b722bfd1b8d--bug_bounty",
-          "source": "infosecwriteups.com",
+          "url": "https://www.exploit-db.com/exploits/52514",
+          "source": "exploit-db.com",
           "category": "WebSecurity",
-          "published": "2026-04-28T07:04:37+00:00",
+          "published": "2026-04-29T00:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "首个关于 MCP 协议安全性的实战案例，对 AI 架构安全有"
+          "selection_reason": "LangChain 是 AI 开发的主流框架，其漏洞影响大量"
         },
         {
-          "title_zh": "简单参数篡改导致政府网站公民身份信息泄露",
-          "title_orig": "I Changed One Number… and Got Access to Citizens’ ID and Address Proofs",
-          "summary": "一名安全研究员在探索某州政府 Web 应用程序时发现，通过简单的参数篡改即可非法获取公民的身份证件和地址证明。该漏洞存在于用户上传和检索证明文件的功能模块中，攻击者只需更改请求中的数字编号，就能越权访问其他申请人的敏感记录。这种典型的越权访问漏洞暴露了政府政务系统在数据保护和权限校验方面的脆弱性。该案例再次强调了 Web 开发中严格执行服务端权限验证的重要性，提醒相关部门必须加强对公共服务平台的安全审计，以保护公民的个人隐私数据。由于该漏洞涉及大量敏感的政府记录，其潜在的社会影响巨大，开发者应引以为戒，在处理涉及个人隐私的查询接口时，必须实施多重身份校验和严格的参数过滤机制。",
-          "tags": [
-            "Web 安全",
-            "越权漏洞",
-            "数据泄露"
-          ],
-          "url": "https://infosecwriteups.com/i-changed-one-number-and-got-access-to-citizens-id-and-address-proofs-a02084428801?source=rss----7b722bfd1b8d--bug_bounty",
-          "source": "infosecwriteups.com",
-          "category": "WebSecurity",
-          "published": "2026-04-28T07:04:35+00:00",
-          "cve_ids": [],
-          "selection_reason": "典型的 Web 漏洞导致大规模敏感数据泄露，具有警示意义。"
-        },
-        {
-          "title_zh": "视频服务商Vimeo确认因第三方供应商漏洞导致用户数据泄露",
-          "title_orig": "Video service Vimeo confirms Anodot breach exposed user data",
-          "summary": "视频托管平台Vimeo近日正式证实，由于其合作伙伴数据异常检测公司Anodot遭遇网络攻击，导致部分Vimeo客户和用户的数据在未经授权的情况下被第三方非法访问。此次事件源于典型的第三方供应链安全漏洞，泄露的信息可能涉及用户的账户关联敏感数据，目前Vimeo已开始向受影响的用户发出正式通知并采取相关补救措施。该事件再次凸显了企业在高度依赖外部服务商进行数据处理时所面临的严峻供应链安全风险，提醒广大互联网服务提供商必须显著加强对合作伙伴安全资质的审核与实时监控，以确保用户隐私和数据资产不受侵害。",
-          "tags": [
-            "Vimeo",
-            "数据泄露",
-            "供应链安全"
-          ],
-          "url": "https://www.bleepingcomputer.com/news/security/video-service-vimeo-confirms-anodot-breach-exposed-user-data/",
-          "source": "bleepingcomputer.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-04-28T19:04:22+00:00",
-          "cve_ids": [],
-          "selection_reason": "知名视频平台受供应链攻击影响，警示第三方服务风险。"
-        },
-        {
-          "title_zh": "安全公司Checkmarx证实LAPSUS$黑客泄露其GitHub源代码",
+          "title_zh": "Checkmarx 证实其 GitHub 私有仓库数据遭",
           "title_orig": "Checkmarx confirms LAPSUS$ hackers leaked its stolen GitHub data",
-          "summary": "应用安全公司Checkmarx正式确认，臭名昭著的黑客组织LAPSUS$已将其从公司私有GitHub存储库中窃取的数据公之于众，泄露内容包含了部分受保护的源代码及相关核心开发文档。Checkmarx表示目前正在全力评估泄露资料的具体范围及其对公司知识产权的潜在负面影响，并加强内部防御。作为一家专门提供代码安全审计工具的知名企业，其自身源代码的泄露不仅对其商业竞争力构成直接威胁，也引发了业界对安全厂商自身防御能力的广泛关注与担忧，这充分表明即便是专业安全机构也可能成为顶级黑客组织针对性攻击的重点目标。",
+          "summary": "应用安全公司Checkmarx官方证实，黑客组织LAPSUS$已将其从公司私有GitHub仓库中窃取的数据泄露，引发了业界对供应链安全的广泛关注。尽管Checkmarx本身是安全服务提供商，但此次数据泄露事件表明即便是专业安全公司也难以完全免疫针对源代码托管平台的攻击，这对于依赖其安全产品的客户而言，可能引发对潜在间接风险的深度担忧。",
           "tags": [
-            "Checkmarx",
-            "源代码泄露",
+            "Checkmar",
+            "数据泄露",
             "LAPSUS$"
           ],
           "url": "https://www.bleepingcomputer.com/news/security/checkmarx-confirms-lapsus-hackers-leaked-its-stolen-github-data/",
@@ -301,12 +139,12 @@
           "category": "OfficialAdvisories",
           "published": "2026-04-28T14:50:40+00:00",
           "cve_ids": [],
-          "selection_reason": "安全厂商自身源码遭泄露，对行业安全信誉具有重大影响。"
+          "selection_reason": "知名安全厂商数据遭窃，反映了供应链安全的严峻性。"
         },
         {
-          "title_zh": "北约“锁定盾牌”网络防御演习聚焦技术防御与危机管理",
+          "title_zh": "北约举行锁定盾牌网络防御演习",
           "title_orig": "北约“锁定盾牌”网络防御演习重点关注技术防御和危机管理",
-          "summary": "北约近日举行了代号为“锁定盾牌”的大规模网络防御演习，共有来自41个国家的4000余名专家参与，在模拟环境中成功抵御了超过8000次高强度且复杂的网络攻击。本次演习重点测试了参演国在极端压力下的技术防御能力、法律应对框架以及跨国危机管理协作机制，旨在全面提升成员国应对复杂网络威胁的整体韧性与协同作战水平。随着全球地缘政治局势日益紧张，此类国家级、多国参与的实战化模拟演习对于构建集体防御体系至关重要，也深刻反映出网络空间已成为现代军事与国家安全博弈中不可或缺的核心战场之一。",
+          "summary": "北约组织来自41个国家的4000余名专家，模拟抵御了超过8000次针对关键基础设施的网络攻击，重点测试技术防御与危机管理能力。此次演习通过大规模实战模拟，旨在强化成员国及合作伙伴在复杂网络威胁环境下的协同应对能力与集体防御水平，确保在面临真实网络战威胁时能够迅速做出有效反应。",
           "tags": [
             "北约",
             "网络演习",
@@ -317,54 +155,214 @@
           "category": "CN_News",
           "published": "2026-04-28T09:14:00+00:00",
           "cve_ids": [],
-          "selection_reason": "全球规模最大的网络防御演习，体现国际网络对抗新趋势。"
+          "selection_reason": "全球规模最大的网络防御演习，展示了跨国协同防御的新趋势。"
         },
         {
-          "title_zh": "国家信息安全漏洞共享平台发布2026年第16期漏洞周报",
-          "title_orig": "CNVD漏洞周报2026年第16期",
-          "summary": "国家信息安全漏洞共享平台（CNVD）近日发布了2026年第16期漏洞周报，对过去一周内发现的各类软硬件安全漏洞进行了系统性梳理与通报。报告详细列出了新增漏洞的危害等级、受影响范围以及相应的修复建议，涵盖了操作系统、Web应用及工业控制系统等多个关键领域。该周报是国内政企单位进行安全加固和风险排查的重要参考依据，通过及时获取权威的漏洞情报，相关机构能够赶在攻击者利用漏洞之前完成补丁更新，从而有效降低网络安全事故的发生概率，保障关键信息基础设施的运行安全。",
+          "title_zh": "VECT 2.0勒索软件存在缺陷导致数据永久损毁",
+          "title_orig": "VECT 2.0 Ransomware Irreversibly Destroys Files Over 131KB on Windows, Linux, ESXi",
+          "summary": "安全研究人员警告称，VECT 2.0勒索软件在加密Windows、Linux及ESXi系统上超过131KB的文件时存在严重逻辑缺陷，会导致数据不可逆转地损坏。这意味着受害者即使支付赎金也无法恢复大文件，该软件的行为已从传统的数据加密演变为纯粹的数据破坏，对受害组织的关键业务数据构成了毁灭性威胁，其破坏性特征使其更像是一种雨刷器程序而非传统勒索软件。",
           "tags": [
-            "CNVD",
-            "漏洞通报",
+            "勒索软件",
+            "数据损毁",
             "网络安全"
           ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzIwNDk0MDgxMw==&mid=2247501525&idx=1&sn=f9cc040dd3056d42367c7c9685d0fffe",
-          "source": "mp.weixin.qq.com",
-          "category": "CN_News",
-          "published": "2026-04-28T01:19:00+00:00",
+          "url": "https://thehackernews.com/2026/04/vect-20-ransomware-irreversibly.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-28T14:01:00+00:00",
           "cve_ids": [],
-          "selection_reason": "权威机构发布的漏洞汇总，是企业安全运维的重要参考。"
+          "selection_reason": "该勒索软件的缺陷使其具有破坏性，提醒企业备份比赎金更重要。"
+        },
+        {
+          "title_zh": "VoiceGoat：针对大模型攻击技术的易受攻击语音代理",
+          "title_orig": "VoiceGoat – A vulnerable voice agent for practicing LLM attack techniques",
+          "summary": "VoiceGoat是一个基于Docker部署的故意留有漏洞的语音代理服务，涵盖了提示词注入、权限滥用、RAG向量库中毒及访问绕过等多种大模型特有漏洞。该工具通过CTF关卡模式，为安全研究人员提供了一个练习针对AI语音助手进行复杂链式攻击的实验环境，帮助其深入理解并防御针对生成式人工智能系统的安全威胁。",
+          "tags": [
+            "AI安全",
+            "大模型攻击",
+            "安全工具"
+          ],
+          "url": "https://www.reddit.com/r/redteamsec/comments/1sy4acx/voicegoat_a_vulnerable_voice_agent_for_practicing/",
+          "source": "reddit.com",
+          "category": "RedTeam",
+          "published": "2026-04-28T15:14:01+00:00",
+          "cve_ids": [],
+          "selection_reason": "针对AI语音助手的安全测试工具，反映了AI安全研究的前沿方向"
+        },
+        {
+          "title_zh": "Linux内核5.10版本修复afpacket模块漏洞",
+          "title_orig": "Astra Linux - уязвимость в linux-5.10",
+          "summary": "Linux内核开发者修复了afpacket模块中的一个漏洞，该漏洞因在无效上下文中调用睡眠函数而导致系统错误，涉及RCU临界区与互斥锁的冲突。此修复解决了Syzkaller报告的内核崩溃问题，确保了网络驱动在处理数据包设备通知时的系统稳定性，防止了因特定网络配置变更引发的内核恐慌与拒绝服务风险，提升了底层网络协议栈在处理复杂并发场景下的健壮性与安全性。",
+          "tags": [
+            "Linux内核",
+            "漏洞修复",
+            "系统安全"
+          ],
+          "url": "https://vulners.com/astralinux/ASTRA:977769986295537961858420936365635?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-06-03T21:04:07+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及Linux内核底层稳定性，对使用5.10内核的发行版至关"
+        },
+        {
+          "title_zh": "ShellForge：具备约束感知能力的多架构Shell",
+          "title_orig": "ShellForge: Building a Constraint-Aware Shellcode Generator from Scratch",
+          "summary": "开发者发布了名为ShellForge的C语言工具，该工具在规避坏字符等约束条件方面表现优于msfvenom，支持多架构Shellcode合成。它通过约束驱动的开发模式，解决了渗透测试中缓冲区溢出载荷因特定字符限制而失效的痛点，为安全从业者在复杂漏洞利用场景下生成高效、兼容的攻击载荷提供了全新的技术方案，并深入探讨了多架构环境下自动化合成载荷的实现机制与优化路径。",
+          "tags": [
+            "渗透测试",
+            "Shellcod",
+            "漏洞利用"
+          ],
+          "url": "https://infosecwriteups.com/shellforge-building-a-constraint-aware-shellcode-generator-from-scratch-f57eaea15c78?source=rss----7b722bfd1b8d---4",
+          "source": "infosecwriteups.com",
+          "category": "WebSecurity",
+          "published": "2026-04-29T05:07:30+00:00",
+          "cve_ids": [],
+          "selection_reason": "提升了漏洞利用载荷生成的效率和成功率，是红队工具的有力补充。"
+        },
+        {
+          "title_zh": "威胁猎人揭秘攻击者规避检测的OPSEC手册",
+          "title_orig": "Inside an OPSEC Playbook: How Threat Actors Evade Detection",
+          "summary": "Flare披露了威胁参与者正在使用的结构化OPSEC手册，详细记录了如何通过分层基础设施、身份隔离和长期规避策略来躲避安全监测。这些手册展示了攻击者如何系统化地隐藏踪迹，对防御方识别和追踪高级持续性威胁提出了更高挑战，揭示了现代网络犯罪组织在对抗安全审计和取证分析时日益成熟的专业化运作模式。",
+          "tags": [
+            "攻击者行为",
+            "OPSEC",
+            "威胁情报"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/inside-an-opsec-playbook-how-threat-actors-evade-detection/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-28T12:50:58+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示了攻击者隐匿行踪的系统化方法，有助于提升防御方的侦测能力"
+        },
+        {
+          "title_zh": "NSA GRASSMARLIN 工具存在XXE漏洞",
+          "title_orig": "NSA GRASSMARLIN",
+          "summary": "CISA发布公告称，NSA开发的网络态势感知工具GRASSMARLIN存在XML外部实体引用限制不当漏洞，可能导致攻击者获取敏感信息。该漏洞影响所有版本，鉴于该工具常用于关键基础设施的IT部门，相关机构需高度关注潜在的信息泄露风险，并根据官方建议采取必要的缓解措施以保护关键信息资产的安全，防止攻击者利用此XXE漏洞对关键基础设施的敏感数据进行非法读取或探测。",
+          "tags": [
+            "NSA工具",
+            "XXE漏洞",
+            "关键基础设施"
+          ],
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-118-01",
+          "source": "cisa.gov",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-28T12:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "NSA工具自身的漏洞可能成为攻击关键基础设施的跳板，风险极高"
+        },
+        {
+          "title_zh": "OpenWrt 23.05版本存在身份验证后远程代码执行",
+          "title_orig": "[local] OpenWrt 23.05 - Authenticated Remote Code Execution (RCE)",
+          "summary": "开源路由器操作系统OpenWrt 23.05版本被曝存在一个身份验证后的远程代码执行漏洞，攻击者在获取合法凭据后可完全控制受影响的设备。该漏洞已被收录至Exploit-DB，提醒广大使用该版本固件的用户及时进行安全加固或版本更新，以防范潜在的恶意攻击者利用该漏洞对网络环境进行深度渗透与破坏，确保家庭及企业级网络网关的完整性与机密性不受此类高危漏洞的威胁。",
+          "tags": [
+            "OpenWrt",
+            "RCE漏洞",
+            "路由器安全"
+          ],
+          "url": "https://www.exploit-db.com/exploits/52521",
+          "source": "exploit-db.com",
+          "category": "WebSecurity",
+          "published": "2026-04-29T00:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "OpenWrt应用广泛，其RCE漏洞直接威胁大量网络设备的控"
+        },
+        {
+          "title_zh": "GUnet OpenEclass 平台存在远程代码执行漏",
+          "title_orig": "[webapps] GUnet OpenEclass E-learning platform < 4.2 - Remote Code Execution (RCE)",
+          "summary": "安全研究人员发现GUnet OpenEclass电子学习平台在4.2版本之前存在严重的远程代码执行漏洞，攻击者能够利用该漏洞在目标服务器上执行任意指令并获取系统权限。这一发现对全球范围内使用该平台的教育机构构成了重大安全威胁，相关管理员必须立即采取行动升级系统至安全版本，以防止潜在的黑客攻击、敏感数据泄露以及教学业务中断。",
+          "tags": [
+            "漏洞预警",
+            "RCE",
+            "教育安全"
+          ],
+          "url": "https://www.exploit-db.com/exploits/52519",
+          "source": "exploit-db.com",
+          "category": "WebSecurity",
+          "published": "2026-04-29T00:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "教育平台高危漏洞，可能导致大规模教学数据泄露。"
+        },
+        {
+          "title_zh": "JuzaWeb CMS 3.4.2 发现身份验证后远程代",
+          "title_orig": "[webapps] JuzaWeb CMS 3.4.2 - Authenticated Remote Code Execution",
+          "summary": "JuzaWeb CMS 3.4.2版本被曝存在身份验证后的远程代码执行漏洞，允许已获取登录凭据的攻击者通过特定接口上传恶意脚本，进而完全控制后端服务器。该漏洞凸显了内容管理系统在权限校验后的深层安全风险，对于依赖此CMS构建网站的企业而言，及时修补漏洞并加强代码审计是保障核心业务数据安全的关键，否则将面临严重的系统沦陷风险。",
+          "tags": [
+            "CMS安全",
+            "RCE",
+            "漏洞披露"
+          ],
+          "url": "https://www.exploit-db.com/exploits/52518",
+          "source": "exploit-db.com",
+          "category": "WebSecurity",
+          "published": "2026-04-29T00:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "CMS 系统常见漏洞，影响网站后端服务器的完整性。"
+        },
+        {
+          "title_zh": "视频服务商 Vimeo 证实因第三方供应商遭入侵导致数据",
+          "title_orig": "Video service Vimeo confirms Anodot breach exposed user data",
+          "summary": "知名视频平台Vimeo证实，由于其第三方数据异常检测服务商Anodot遭遇黑客攻击，导致部分Vimeo客户和用户的个人数据在未经授权的情况下被非法访问。此次泄露事件再次敲响了供应链安全的警钟，提醒广大互联网服务提供商必须加强对合作伙伴的数据访问权限管理，并定期进行严格的安全审计，以确保在复杂的第三方协作环境中依然能够有效保护用户隐私。",
+          "tags": [
+            "数据泄露",
+            "供应链安全",
+            "Vimeo"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/video-service-vimeo-confirms-anodot-breach-exposed-user-data/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-04-28T19:04:22+00:00",
+          "cve_ids": [],
+          "selection_reason": "知名视频平台受供应链攻击影响，涉及大量用户信息安全。"
+        },
+        {
+          "title_zh": "Sorry 勒索软件加密实现与行为特征深度分析",
+          "title_orig": "深度分析Sorry勒索软件的加密实现与行为特征",
+          "summary": "安全专家对Sorry勒索软件的加密机制和恶意行为特征进行了深度技术剖析，详细揭示了该软件在感染系统后如何实施文件锁定、持久化驻留以及后续的勒索赎金流程。该分析报告为网络安全从业者提供了关键的防御参考信息，有助于企业安全团队在日常监测中快速识别此类勒索软件的攻击迹象，并据此制定针对性的应急响应策略与数据备份方案。",
+          "tags": [
+            "勒索软件",
+            "恶意软件分析",
+            "网络防御"
+          ],
+          "url": "https://www.anquanke.com/post/id/315390",
+          "source": "anquanke.com",
+          "category": "CN_News",
+          "published": "2026-04-29T13:32:51+00:00",
+          "cve_ids": [],
+          "selection_reason": "深度技术分析有助于提升对特定勒索软件的防御能力。"
         }
       ],
-      "raw_count": 80,
-      "generated_at": "2026-04-28T23:40:55.255355Z"
+      "raw_count": 70,
+      "generated_at": "2026-04-29T08:17:09.300835Z"
     },
     "ai": {
       "display_name": "AI 前沿",
       "items": [
         {
-          "title_zh": "OpenAI 终止与微软独家合作，模型将上线亚马逊 AWS",
-          "title_orig": "OpenAI ends its exclusive partnership with Microsoft",
-          "summary": "OpenAI与微软正式修改了原有的独家合作协议，此举为OpenAI的人工智能模型在亚马逊Bedrock等竞争对手的云平台上运行扫清了障碍，标志着双方长期以来的排他性绑定关系终结。目前亚马逊已在AWS上架多款全新的OpenAI产品，使开发者和企业用户在部署顶级AI模型时拥有了更多灵活的云基础设施选择。这一转变不仅深刻改变了云服务市场的竞争格局，也反映出AI巨头在寻求更广泛的市场覆盖，通过多云战略降低对单一供应商的依赖并提升其技术的普及率，从而在激烈的全球AI竞赛中占据更有利的市场地位，为行业生态注入了新的活力。",
+          "title_zh": "DeepSeek V4 正式上线，重塑全球 AI 竞争格",
+          "title_orig": "科技连线｜DeepSeek V4上线，AI世界正在改变的规则 - thepaper.cn",
+          "summary": "DeepSeek V4模型已正式发布上线，通过展示中国AI技术在模型架构与性能上的最新突破，有力证明了国产大模型在技术研发层面的强劲竞争力。该版本的推出标志着全球AI行业的竞争规则正在发生深刻改变，不仅显著提升了算力使用效率，还通过优化成本结构对全球AI市场的商业逻辑与技术演进方向产生了深远影响。",
           "tags": [
-            "OpenAI",
-            "微软",
-            "亚马逊AWS"
+            "DeepSeek",
+            "大模型",
+            "人工智能"
           ],
-          "url": "https://arstechnica.com/ai/2026/04/no-longer-exclusive-microsoft-agrees-to-let-openai-see-other-cloud-providers/",
-          "source": "arstechnica.com",
-          "category": "Media",
-          "published": "2026-04-27T20:10:11+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE43MGIwLWE4dXVUb3NlOUNhdldFRkNsR1JDejZadjVpZjJQalN3aWQ0RUlzRTlNUXgxTENiTkgtWW1uT0UtYy1aOF95dlp4Z0VRY1k0dkFQUWViN2gtd3E3QQ?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese",
+          "published": "2026-04-29T07:53:00+00:00",
           "cve_ids": [],
-          "selection_reason": "OpenAI 结束独家绑定是 AI 行业格局的重大转折点。"
+          "selection_reason": "DeepSeek 作为国产大模型代表，其迭代对行业格局有重大"
         },
         {
-          "title_zh": "马斯克与阿尔特曼就 OpenAI 未来愿景展开法庭对峙",
+          "title_zh": "马斯克与奥特曼就 OpenAI 未来愿景展开法庭对决",
           "title_orig": "Live updates from Elon Musk and Sam Altman’s court battle over the future of OpenAI",
-          "summary": "特斯拉首席执行官埃隆·马斯克与OpenAI首席执行官萨姆·阿尔特曼在一场备受瞩目的审判中正式交锋，该诉讼可能彻底改变OpenAI及其核心产品ChatGPT的未来发展方向。马斯克于2024年提起诉讼，指控OpenAI背离了开发AI以造福人类的非营利初衷，转而将重心转向追求利润最大化，审判结果将直接影响这家AI巨头的治理结构。这场法律斗争不仅关乎两人的个人恩怨，更涉及人工智能技术发展路径、商业化边界以及开源与闭源之争等深层次的行业伦理讨论，其最终裁决将为整个人工智能行业的合规经营与社会责任设定新的基调。",
+          "summary": "埃隆·马斯克与萨姆·奥特曼因OpenAI的发展方向对簿公堂，马斯克指控该公司背离了最初造福人类的非营利初衷，转而追求利润最大化。这场备受瞩目的高风险法律审判不仅可能彻底改变OpenAI及其核心产品ChatGPT的未来命运，还将对整个人工智能行业在非营利使命与商业化边界之间的法律定论产生关键性影响。",
           "tags": [
-            "马斯克",
             "OpenAI",
+            "马斯克",
             "法律诉讼"
           ],
           "url": "https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit",
@@ -372,534 +370,354 @@
           "category": "Media",
           "published": "2026-04-28T19:27:50+00:00",
           "cve_ids": [],
-          "selection_reason": "该诉讼涉及 AI 领军企业的使命定义与未来治理权。"
+          "selection_reason": "涉及 AI 巨头创始人的法律纠纷，将定义行业伦理与商业模式。"
         },
         {
-          "title_zh": "亚马逊 AWS 上架多款全新 OpenAI 产品",
-          "title_orig": "亚马逊已在 AWS 上架多款全新 OpenAI 产品 - 新浪网",
-          "summary": "根据新浪网报道，亚马逊已在其云计算平台AWS上正式上架了多款全新的OpenAI产品，这标志着两家公司在人工智能领域的合作进入了实质性阶段。此举意味着企业用户现在可以通过亚马逊的云基础设施直接调用OpenAI的先进模型，极大地丰富了AWS的AI服务生态系统并提升了其市场竞争力。这一合作不仅为开发者提供了更多样化的部署选择，也反映出当前AI行业正从排他性竞争转向更开放的生态整合，旨在通过强强联手加速生成式人工智能技术在各行各业的落地应用，同时也为寻求多云部署方案的企业提供了更具吸引力的技术支持。",
-          "tags": [],
-          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOdG9tajlMVUVUV05Iemc2cFAteEM4emU5bkhQN01KV2JkSzdPZ3BBclZ5clNCalItMEh6NTlYUElXU3Y2M1owckVkRTc0QXRZcEFLUVFCdWtyYTE1d2xGVGIyNU1feTJRaWdja0I3ZDl1R0hnM1MtaWg1cXpGaURkbm9ucnFLc0dsY0lDckVwaEZpcU5zNTA0MUlfSnNDOUdlb2lqbzEzT2VRckViQTJrR055bnJaRlVLbUVpRkM0QkZaWnBjWm5Fbkt0enl0dUcwb0E?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-04-28T21:26:00+00:00",
-          "cve_ids": [],
-          "selection_reason": ""
-        },
-        {
-          "title_zh": "中国监管机构否决 Meta 收购 AI 初创公司 Manus",
-          "title_orig": "China kills Meta’s acquisition of Manus as US-China AI rivalry deepens",
-          "summary": "受中美人工智能竞争不断加剧的影响，中国监管机构阻止了Meta公司对AI初创企业Manus的收购计划，导致该项备受关注的跨境交易最终流产。这一案例深刻凸显了在全球科技博弈的宏观背景下，科技初创企业在试图处理或切断与中国市场联系时所面临的巨大挑战与复杂困境。此举反映了跨境技术并购正面临日益严峻的监管审查，不仅对全球AI产业的资本流动和技术整合产生了深远影响，也预示着未来科技巨头在全球化扩张过程中将遭遇更多来自地缘政治因素的阻碍与不确定性，使得跨国技术合作的门槛与风险成本被进一步推高。",
+          "title_zh": "亚马逊 AWS 迅速上线 OpenAI 产品及代理服务",
+          "title_orig": "Amazon is already offering new OpenAI products on AWS",
+          "summary": "在OpenAI终止与微软的独家协议后，亚马逊AWS迅速宣布在其平台上提供包括全新代理服务在内的多款OpenAI模型，打破了微软长期以来的技术垄断地位。此举使得企业用户能够通过AWS云平台更加灵活地调用顶尖AI能力，在加剧云服务巨头之间市场竞争的同时，也为广大开发者提供了更多样化的模型部署与应用选择。",
           "tags": [
-            "Meta",
-            "监管政策",
-            "中美竞争"
+            "AWS",
+            "OpenAI",
+            "云计算"
           ],
-          "url": "https://arstechnica.com/ai/2026/04/china-kills-metas-acquisition-of-manus-as-us-china-ai-rivalry-deepens/",
-          "source": "arstechnica.com",
+          "url": "https://techcrunch.com/2026/04/28/amazon-is-already-offering-new-openai-products-on-aws/",
+          "source": "techcrunch.com",
           "category": "Media",
-          "published": "2026-04-27T18:12:04+00:00",
+          "published": "2026-04-28T19:48:02+00:00",
           "cve_ids": [],
-          "selection_reason": "反映了地缘政治对全球 AI 行业并购活动的直接干预。"
+          "selection_reason": "打破了微软的独家限制，标志着 AI 分发渠道的重大转向。"
         },
         {
-          "title_zh": "谷歌与美国国防部达成协议，允许军方合法使用其 AI",
+          "title_zh": "谷歌与美国国防部达成 AI 模型使用机密协议",
           "title_orig": "Google and Pentagon reportedly agree on deal for ‘any lawful’ use of AI",
-          "summary": "据 The Information 报道，谷歌已与美国国防部签署了一项机密协议，允许五角大楼出于任何合法的政府目的使用其人工智能模型。尽管谷歌员工曾集体要求首席执行官桑达尔·皮查伊阻止军方使用其技术，担心其被用于战争等非和平用途，但该协议仍在争议中达成。这一决策标志着科技巨头与军事机构合作关系的进一步深化，引发了关于 AI 技术在军事领域应用伦理的广泛关注。该事件不仅可能对谷歌内部的企业文化和员工关系产生冲击，也反映出在国家安全需求下科技公司面临的立场选择压力。",
+          "summary": "谷歌已签署一项机密协议，允许美国国防部将谷歌的AI模型用于任何合法的政府用途，这一举动在科技界与政府合作领域引发了广泛关注。尽管此前大量谷歌员工曾联名要求首席执行官阻止此类合作，担心AI技术会被用于军事目的，但该协议的达成依然意味着科技巨头与政府在国家安全及军事防御领域的合作正在进一步加深。",
           "tags": [
             "谷歌",
-            "五角大楼",
-            "AI伦理"
+            "国防部",
+            "AI 伦理"
           ],
           "url": "https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal",
           "source": "theverge.com",
           "category": "Media",
           "published": "2026-04-28T11:09:32+00:00",
           "cve_ids": [],
-          "selection_reason": "科技巨头与军方合作的机密协议具有高度社会争议性。"
+          "selection_reason": "涉及 AI 军事化用途及科技巨头与政府的敏感合作。"
         },
         {
-          "title_zh": "OpenAI 与 Anthropic 就高阶网络安全 AI 模型会晤美众议院",
-          "title_orig": "OpenAI和Anthropic就高阶网络安全AI模型与美国众议院委员会展开会晤 - 新浪网",
-          "summary": "根据新浪网的最新报道，人工智能领域的两大巨头OpenAI和Anthropic近期与美国众议院委员会展开了正式会晤，重点讨论了高阶网络安全AI模型的开发与监管问题。此次会晤旨在加强政府与顶尖AI企业之间的沟通，以应对日益复杂的网络安全威胁并确保先进AI技术在安全可控的框架下运行。双方就如何利用AI提升防御能力以及防止模型被滥用于恶意攻击等核心议题交换了意见。这反映了监管机构对前沿AI技术潜在风险的高度重视，也标志着AI行业在制定安全标准和合规准则方面迈出了重要一步，体现了政企协同应对技术安全挑战的新趋势。",
-          "tags": [],
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFAtaTBkSE9pbDdaczdTc01FTWZiblZtNnVmZWpvMno5bzQ2SDJISTlmUDQxTVVWR3czdUtSaXRIWTBnekxzcjhEUjI2WnhDemZMQnRsSzVCaG1Pd1cxM1FINE0xY0UtTDA4T2plRk5XSEFJNzdjM1FHbw?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-04-28T22:01:00+00:00",
-          "cve_ids": [],
-          "selection_reason": ""
-        },
-        {
-          "title_zh": "谷歌拟向 Anthropic 投资 400 亿美元加码算力竞赛",
-          "title_orig": "Google Bets Up to $40B on Anthropic as AI Compute Race Grows - BankInfoSecurity",
-          "summary": "随着人工智能算力竞赛的持续升级，谷歌计划向AI研发公司Anthropic投入高达400亿美元的巨额资金，以强化其在生成式AI领域的竞争力并锁定顶级算力资源。与此同时，OpenAI和Anthropic的代表近期还与美国众议院委员会会晤，就高阶网络安全AI模型的开发、监管以及潜在的安全风险进行了深入讨论。这笔巨额投资显示了科技巨头不惜成本抢占AI高地的决心，将进一步推高大模型研发的资金门槛。这一系列动态反映出AI行业在资本扩张的同时，也正面临着来自政府层面日益严厉的监管审视，行业发展正处于高投入与高监管并行的关键阶段。",
-          "tags": [
-            "谷歌",
-            "Anthropic",
-            "行业投资"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOUFRNTTlWV3I2bXluM1ZVbXdYQU4zUVl6U3QzNzBsal93QjNFN3lvOWRkV3FtTkhPbm9zeVNhbC1Ld0FaUkFrU2NvZ1pBMXE2NUVrUnJKZG5VU0pfT1JaOTdNQmh6Wld0TkVwR014X2VhUzhzYWlRZmhJS3JIUUItOGNpVFhzeDR5c3VqT3pfUk1EajJVUTdMYmV6NzdYSi1zOGc?oc=5",
-          "source": "news.google.com",
-          "category": "Labs",
-          "published": "2026-04-28T21:51:20+00:00",
-          "cve_ids": [],
-          "selection_reason": "400 亿美元的投资额度刷新了 AI 领域的融资记录。"
-        },
-        {
-          "title_zh": "微软发布 VibeVoice 音频模型：支持语音转文字与说话人识别",
-          "title_orig": "microsoft/VibeVoice",
-          "summary": "微软于2026年1月21日发布了名为VibeVoice的音频模型，这是一款类似于Whisper的语音转文本工具，采用了MIT开源许可协议并内置了说话人日志功能。该模型原生体积高达17.3GB，但通过mlx-community提供的4bit量化版本已压缩至5.71GB，极大方便了开发者在Mac等个人设备上利用uv和mlx-audio等工具实现快速部署。作为微软在开源AI领域的重要布局，VibeVoice的发布不仅丰富了语音处理工具链，也为开发者提供了高性能且低门槛的本地化语音转写解决方案，进一步推动了端侧AI技术的普及与应用，展示了微软在语音识别领域持续创新的技术实力。",
-          "tags": [],
-          "url": "https://simonwillison.net/2026/Apr/27/vibevoice/#atom-everything",
-          "source": "simonwillison.net",
-          "category": "Commentary",
-          "published": "2026-04-27T23:46:56+00:00",
-          "cve_ids": [],
-          "selection_reason": ""
-        },
-        {
-          "title_zh": "欧盟要求谷歌向第三方AI开放安卓系统，谷歌称其干预过度",
-          "title_orig": "EU tells Google to open up AI on Android; Google says that's \"unwarranted intervention\"",
-          "summary": "欧盟监管机构近期向谷歌发出指令，要求其在安卓操作系统中为第三方人工智能助手提供与自家Gemini同等的集成权限，旨在打破谷歌在移动端AI领域的垄断地位。谷歌对此回应称，这种强制性要求属于“毫无根据的干预”，会破坏安卓系统的用户体验与安全性。这一动态值得高度关注，因为它预示着欧洲可能通过法律手段重塑移动AI生态，迫使科技巨头开放核心系统接口，从而为其他AI开发者提供更公平的竞争环境，直接影响全球数亿安卓用户获取AI服务的方式，并可能引发全球范围内对移动操作系统开放性的新一轮法律博弈。",
-          "tags": [
-            "谷歌",
-            "欧盟监管",
-            "安卓系统"
-          ],
-          "url": "https://arstechnica.com/ai/2026/04/europe-could-force-google-to-open-android-to-other-ai-assistants/",
-          "source": "arstechnica.com",
-          "category": "Media",
-          "published": "2026-04-27T20:03:49+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及科技巨头反垄断与移动AI生态开放的重要政策博弈。"
-        },
-        {
-          "title_zh": "PExA：通过并行探索代理优化复杂Text-to-SQL性能",
-          "title_orig": "PExA: Parallel Exploration Agent for Complex Text-to-SQL",
-          "summary": "研究人员提出了一种名为PExA的新型并行探索代理框架，旨在解决大语言模型在处理复杂Text-to-SQL任务时面临的延迟与性能权衡难题。该方法借鉴了软件测试覆盖率的概念，将原始查询拆解为一系列简单的原子SQL测试用例并进行并行执行，从而在不牺牲响应速度的前提下显著提升生成结果的准确性。这项研究对于需要高效、精准数据库交互的企业级应用具有重要意义，展示了如何通过并行化架构优化AI代理在结构化数据查询中的表现，为复杂数据分析提供了更可靠的技术路径，并有效降低了大规模数据检索时的计算成本与响应时间。",
-          "tags": [
-            "Text-to-SQL",
-            "AI代理",
-            "并行计算"
-          ],
-          "url": "https://arxiv.org/abs/2604.22934",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-04-28T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "针对Text-to-SQL领域核心的延迟与准确性矛盾提出了创"
-        },
-        {
-          "title_zh": "FormalScience：利用Lean语言实现科学推理的自动形式化",
-          "title_orig": "FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean",
-          "summary": "针对大语言模型在处理物理、数学等科学领域复杂符号推理时的局限性，研究人员开发了FormalScience系统，通过Lean语言实现可扩展的人机协作自动形式化。该系统利用代理代码生成技术，将非正式的科学推理转化为可形式化验证的代码，有效解决了狄拉克符号和矢量微积分等特定领域表达方式带来的挑战。这一进展对于提升科学研究的严谨性至关重要，它不仅能辅助科学家验证复杂的理论推导，还为构建具备深层科学理解能力的AI系统奠定了基础，是AI for Science领域的重要突破，有助于加速科学发现的自动化进程并确保研究成果的逻辑严密性。",
-          "tags": [
-            "自动形式化",
-            "Lean语言",
-            "AI科学"
-          ],
-          "url": "https://arxiv.org/abs/2604.23002",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-04-28T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "攻克了科学领域复杂符号推理形式化验证的难题。"
-        },
-        {
-          "title_zh": "解耦式人机协作系统：提升代理工作流的可控自主性",
-          "title_orig": "A Decoupled Human-in-the-Loop System for Controlled Autonomy in Agentic Workflows",
-          "summary": "随着AI代理在决策任务中部署增加，如何在保证自主性的同时实现有效的人类监督成为关键，为此研究人员提出了一种解耦式人机协作系统。该系统旨在解决现有框架中透明度与问责制不足的问题，通过将人类干预逻辑与代理执行流程进行解耦，确保在复杂的工作流中实现更安全、可控的自动化。这一研究对部署高风险AI应用的行业具有参考价值，它提供了一种平衡机器效率与人类判断的新架构，有助于增强用户对自主AI系统的信任，确保AI代理在执行任务时始终遵循人类设定的安全边界。",
-          "tags": [
-            "人机协作",
-            "AI代理",
-            "自主性控制"
-          ],
-          "url": "https://arxiv.org/abs/2604.23049",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-04-28T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "为AI代理工作流中的安全监管和信任问题提供了新架构。"
-        },
-        {
-          "title_zh": "研究发现显式信念图能显著提升多智能体协作推理能力",
-          "title_orig": "Don't Make the LLM Read the Graph: Make the Graph Think",
-          "summary": "一项针对3000多次受控实验的研究探讨了显式信念图对大语言模型在协作推理任务中表现的影响，实验环境采用了复杂的扑克游戏Hanabi。研究发现，集成架构决定了信念图的价值：当图作为提示词上下文时效果有限，但作为模型内部推理的一部分时能显著增强协作效率。这一发现挑战了传统的提示工程思路，强调了结构化知识表示在多智能体交互中的核心作用。对于开发需要高度协作能力的AI系统而言，该研究提供了明确的架构指导，证明了让“图”参与思考比单纯让模型阅读图更有效，为未来多智能体协同作业提供了全新的技术优化方向。",
-          "tags": [
-            "多智能体",
-            "信念图",
-            "协作推理"
-          ],
-          "url": "https://arxiv.org/abs/2604.23057",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-04-28T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了结构化知识在提升AI协作推理能力中的关键架构作用。"
-        },
-        {
-          "title_zh": "Analytica：基于软命题推理的稳健可扩展LLM分析架构",
-          "title_orig": "Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis",
-          "summary": "为了解决大语言模型代理在进行金融预测和科学发现等复杂分析时存在的随机不稳定性及缺乏可验证结构的问题，研究者引入了Analytica架构。该架构基于软命题推理原则，为LLM驱动的分析提供了可验证且具有组合性的结构，从而显著提升了推理过程的稳健性与可扩展性。这项技术对于追求高可靠性分析的专业领域意义重大，它通过引入逻辑约束和结构化框架，克服了生成式模型在处理严谨逻辑任务时的随机性缺陷，为构建下一代工业级AI分析工具提供了核心技术支撑，确保了在处理大规模、高风险数据分析任务时的输出结果具备逻辑一致性。",
-          "tags": [
-            "逻辑推理",
-            "LLM代理",
-            "稳健性"
-          ],
-          "url": "https://arxiv.org/abs/2604.23072",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-04-28T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "解决了LLM在复杂分析任务中不稳定性这一核心痛点。"
-        },
-        {
-          "title_zh": "多智能体LLM方法推动非结构化文本自动生成本体论",
-          "title_orig": "Towards Automated Ontology Generation from Unstructured Text: A Multi-Agent LLM Approach",
-          "summary": "从非结构化自然语言中自动生成正式本体论一直是知识工程的难题，最新研究提出了一种基于多智能体大语言模型的新方法。通过受控实验研究，该团队分析了驱动生成质量的关键架构设计选择，并揭示了现有方法失败的深层原因。这项研究不仅提升了从海量文本中提取结构化知识的自动化水平，还为构建更智能的知识图谱和语义网提供了理论依据。对于需要处理大规模行业文档并将其转化为机器可理解知识的企业而言，这种多智能体协作模式提供了一种比单模型更高效、更精准的解决方案。",
-          "tags": [
-            "本体生成",
-            "知识工程",
-            "多智能体"
-          ],
-          "url": "https://arxiv.org/abs/2604.23090",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-04-28T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "在知识工程自动化领域取得了重要进展，提升了知识提取质量。"
-        },
-        {
-          "title_zh": "系统性评估揭示LLM作为评审员时的偏见缓解策略效果",
+          "title_zh": "学术研究系统评估 LLM 作为评审员的偏见问题",
           "title_orig": "Judging the Judges: A Systematic Evaluation of Bias Mitigation Strategies in LLM-as-a-Judge Pipelines",
-          "summary": "随着“LLM作为评审员”成为评估语言模型输出的主流范式，其自带的系统性偏见严重影响了评估的可靠性。本研究对来自谷歌、Anthropic、OpenAI和Meta四大厂商的五种主流模型进行了深度测评，对比了九种不同的偏见缓解策略在三个基准测试中的表现。研究系统性地揭示了哪些策略能有效提升评审的公正性，哪些则收效甚微。这对于AI开发者和研究人员至关重要，因为它为建立更公平、更客观的AI评价体系提供了实证依据，有助于推动整个行业向更透明、无偏见的模型评估方向发展，并为未来制定更严格的AI监管标准和性能衡量准则提供了参考。",
+          "summary": "一项最新的学术研究对来自谷歌、OpenAI、Anthropic和Meta等四家公司的五种主流大模型进行了系统评估，深入分析其在作为评审员时的偏见缓解策略。研究指出，虽然LLM-as-a-Judge已成为评估模型输出的主流范式，但其存在的系统性偏见仍会严重损害评估的可靠性，这对未来构建更公正的AI自动化评价体系具有重要参考价值。",
           "tags": [
-            "LLM评估",
-            "偏见缓解",
-            "模型评审"
+            "大模型评估",
+            "偏见研究",
+            "学术动态"
           ],
           "url": "https://arxiv.org/abs/2604.23178",
           "source": "arxiv.org",
           "category": "Research",
-          "published": "2026-04-28T04:00:00+00:00",
+          "published": "2026-04-29T04:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "针对当前AI评估体系中的偏见问题提供了系统性的解决方案。"
+          "selection_reason": "探讨了 AI 评估体系的可靠性，是提升模型质量的关键研究。"
         },
         {
-          "title_zh": "GitHub Copilot 将根据 AI 实际使用量向用户收费",
+          "title_zh": "GitHub Copilot 将根据用户实际使用量计费",
           "title_orig": "GitHub will start charging Copilot users based on their actual AI usage",
-          "summary": "GitHub 宣布将改变其 AI 编程助手 Copilot 的计费模式，正式从固定订阅费转向基于实际 AI 使用量的阶梯式收费。官方明确表示，此举是因为公司无法再继续承担重度用户带来的高昂推理成本，旨在通过更公平的定价机制来维持服务的长期可持续性。这一重大变化标志着 AI 行业正从早期的低价扩张阶段转向精细化运营模式，将直接影响依赖该工具的企业和开发者的成本预算，并可能引发其他 AI 服务商效仿。为了应对不断攀升的算力开支，GitHub 必须通过调整商业策略来平衡技术创新与盈利压力，确保在激烈的市场竞争中保持领先地位。",
+          "summary": "GitHub宣布将改变Copilot的收费模式，开始根据用户的实际AI使用量进行计费，旨在应对重度用户带来的日益增长且难以吸收的推理成本压力。这一转变反映了AI服务商在面临高昂算力成本时，正从传统的固定订阅制转向更精细化的商业模式，这将直接影响开发者和企业的成本支出，并可能引发行业内定价策略的连锁反应。",
           "tags": [
             "GitHub",
-            "AI计费",
-            "Copilot"
+            "Copilot",
+            "收费模式"
           ],
           "url": "https://arstechnica.com/ai/2026/04/github-will-start-charging-copilot-users-based-on-their-actual-ai-usage/",
           "source": "arstechnica.com",
           "category": "Media",
           "published": "2026-04-28T15:41:32+00:00",
           "cve_ids": [],
-          "selection_reason": "反映了 AI 行业从固定收费转向按量计费的成本压力趋势。"
+          "selection_reason": "反映了 AI 行业因成本压力而产生的商业模式变革。"
         },
         {
-          "title_zh": "Talkie 推出：基于 1930 年前历史文本训练的复古大模型",
+          "title_zh": "OpenAI 与 Anthropic 向美议员简报 AI",
+          "title_orig": "OpenAI, Anthropic brief US lawmakers on AI cyber threats - Latest news from Azerbaijan",
+          "summary": "OpenAI和Anthropic的代表近期向美国立法者提供了关于人工智能可能引发的网络安全威胁的简报，重点讨论了AI在网络攻击中的潜在风险。此次沟通旨在帮助政策制定者深入了解前沿AI技术对国家安全的挑战，推动政府在AI安全监管、防御机制建设以及相关法律法规制定方面做出更具前瞻性和针对性的决策。",
+          "tags": [
+            "AI 安全",
+            "网络威胁",
+            "政策监管"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUURRY3pxeS1fZUF6Y3ZRRnJVcERvWGRyc2tLanVYMHJqRkxrdnRPejVHVThFak1GUmhPSGdPYXVuZEFBT3ZjeWJoQWphVUw0Q3pRVkdmdFdmUWVlUjN0MDZUMTVxMk0tSkZ3WDItN2Q5ZWpVcmxvelBzZXNHanZ1ZkJB?oc=5",
+          "source": "news.google.com",
+          "category": "Labs",
+          "published": "2026-04-29T08:04:56+00:00",
+          "cve_ids": [],
+          "selection_reason": "AI 安全性已成为立法关注焦点，影响未来监管走向。"
+        },
+        {
+          "title_zh": "Anthropic AI 代理引发企业应用风险广泛讨论",
+          "title_orig": "Anthropic's AI agents spark debate over business risk - IT Brief UK",
+          "summary": "Anthropic推出的AI代理功能在行业内引发了关于业务风险的激烈辩论，主要聚焦于AI在企业核心流程中权限增加所带来的不确定性。随着AI代理自主决策能力的提升，其行为的不可控性以及潜在的安全漏洞已成为企业关注的焦点，这对于正在考虑部署自动化AI方案的公司来说，具有极其重要的风险警示意义与战略参考价值。",
+          "tags": [
+            "Anthropi",
+            "AI 代理",
+            "企业风险"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPQkxXdTNYMVE4dXNVLXpnVDJOd09vM003RnhXSVRrcVVlblZKVU1yYlQwWEtjUjdZX280UVl4TnpWTm1jWUM3UUIybHd3OGMxZ3dMNXRSTkdCODJqZ0huREdyWTZMUVMweXBjMmpuV1VtNVYzMFcyVExGUW0zaEhLTlRaMVYyTmdF?oc=5",
+          "source": "news.google.com",
+          "category": "Labs",
+          "published": "2026-04-29T08:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "AI 代理是当前技术热点，其风险讨论关乎企业落地应用。"
+        },
+        {
+          "title_zh": "PExA：通过并行探索代理优化复杂 Text-to-SQ",
+          "title_orig": "PExA: Parallel Exploration Agent for Complex Text-to-SQL",
+          "summary": "研究人员提出PExA框架，将Text-to-SQL任务重新表述为软件测试覆盖问题，通过并行执行一套包含简单原子SQL的测试用例来生成查询，从而在复杂数据库环境下实现高效的逻辑验证。该方法有效解决了基于大模型代理在处理复杂查询时面临的延迟与准确率权衡难题，为提升自动化数据分析效率提供了兼顾速度与性能的新方案，具有重要的学术与应用价值。",
+          "tags": [
+            "Text-to-",
+            "并行计算",
+            "大模型代理"
+          ],
+          "url": "https://arxiv.org/abs/2604.22934",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-04-29T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "该研究解决了数据库查询生成中延迟与性能难以兼得的核心痛点。"
+        },
+        {
+          "title_zh": "FormalScience：利用 Lean 语言实现科学",
+          "title_orig": "FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean",
+          "summary": "FormalScience框架引入人机协作模式，利用代理代码生成技术将物理等科学领域的非正式数学推理转化为Lean语言的可验证代码，旨在解决大模型在科学形式化任务中的短板。该系统针对狄拉克符号和向量微积分等特定领域工具进行了深度优化，克服了现有模型处理复杂科学逻辑时的局限性，显著提升了科学研究的可验证性与严谨性，为自动化科学发现奠定了基础。",
+          "tags": [
+            "自动化形式化",
+            "Lean语言",
+            "科学计算"
+          ],
+          "url": "https://arxiv.org/abs/2604.23002",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-04-29T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "将大模型应用于科学推理的形式化验证，是 AI for Sci"
+        },
+        {
+          "title_zh": "解耦式人机协作系统：提升代理工作流的可控自主性",
+          "title_orig": "A Decoupled Human-in-the-Loop System for Controlled Autonomy in Agentic Workflows",
+          "summary": "该研究提出一种解耦式人机协作系统，旨在为AI代理在执行复杂任务和决策过程中提供更安全的受控自主性，确保系统在自动化运行的同时能够接受人类的有效实时监督。通过优化干预机制，该系统显著增强了代理工作流的透明度、问责制和可信度，妥善解决了现有实现方式中人类干预与系统自主性之间的冲突，为构建更可靠的工业级AI应用提供了关键的技术支撑。",
+          "tags": [
+            "人机协作",
+            "AI代理",
+            "系统安全"
+          ],
+          "url": "https://arxiv.org/abs/2604.23049",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-04-29T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨了 AI 代理在实际部署中至关重要的安全可控与信任问题。"
+        },
+        {
+          "title_zh": "Talkie：基于 1931 年前历史文本训练的 13B",
           "title_orig": "Introducing talkie: a 13B vintage language model from 1930",
-          "summary": "由 GPT 系列核心成员 Alec Radford 等人发起的 Talkie 项目正式发布，包含一个拥有 130 亿参数的复古语言模型。该模型完全基于 1931 年之前的 2600 亿个英文历史文本 Token 进行训练，并利用从早期文献中提取的指令对数据集进行了微调，文件大小最高达 53.1 GB。这一项目为研究人员提供了探索早期人类语言风格和文化语境的独特工具，对于数字人文研究、历史语言模拟以及理解 AI 在特定时空数据下的表现具有重要的学术价值。通过这种方式，开发者成功复刻了上世纪三十年代的语言逻辑，为大语言模型在特定历史维度的应用开辟了全新的路径。",
+          "summary": "由GPT系列核心成员参与开发的Talkie模型正式发布，该13B规模的大语言模型完全基于2600亿个1931年之前的历史英语Token训练而成，展现了极高的历史语料还原度。它包含基础版和经过指令微调的特定版本，通过独特的历史语料库精准重现了20世纪初的语言风格与表达习惯，为研究全球语言演变规律及特定历史时期的文本生成提供了极具价值的数字化工具。",
           "tags": [
             "复古模型",
-            "Talkie",
-            "历史文本"
+            "历史语料",
+            "大语言模型"
           ],
           "url": "https://simonwillison.net/2026/Apr/28/talkie/#atom-everything",
           "source": "simonwillison.net",
           "category": "Commentary",
           "published": "2026-04-28T02:47:42+00:00",
           "cve_ids": [],
-          "selection_reason": "由顶级 AI 专家打造，展示了特定历史语境下的大模型应用。"
-        },
-        {
-          "title_zh": "OpenAI Codex 系统指令曝光：严禁无关的生物描述",
-          "title_orig": "Quoting OpenAI Codex base_instructions",
-          "summary": "针对 GPT-5.5 的 OpenAI Codex 基础指令集近日被披露，其中包含一条极为具体的限制规则，即严禁模型主动提及哥布林、浣熊、鸽子、食人魔等特定生物。除非用户的查询与这些生物明确且无歧义地相关，否则模型必须在回复中严格避开这些内容，以确保输出的纯净度。这揭示了 OpenAI 在提示词工程和模型行为对齐方面的最新策略，展示了开发者如何通过底层指令精细化控制 AI 的输出偏好，从而减少无关信息的干扰并提升回复的专业性。这种针对特定动物或虚构生物的规避指令，反映了当前大模型在系统提示词层面进行内容过滤和逻辑约束的复杂性与多样性。",
-          "tags": [
-            "OpenAI",
-            "系统提示词",
-            "GPT-5.5"
-          ],
-          "url": "https://simonwillison.net/2026/Apr/28/openai-codex/#atom-everything",
-          "source": "simonwillison.net",
-          "category": "Commentary",
-          "published": "2026-04-28T22:02:53+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了 OpenAI 下一代模型在行为对齐和指令控制上的细节"
-        },
-        {
-          "title_zh": "OpenAI 预计用户将大规模转向更廉价的 ChatGPT 套餐",
-          "title_orig": "OpenAI预计用户将大幅转向更便宜的ChatGPT套餐 - 新浪财经",
-          "summary": "OpenAI 近期预测其用户群体将出现显著的结构性调整，预计大量用户将从高价订阅服务转向价格更低廉的 ChatGPT 套餐。这一预测反映了当前 AI 市场竞争加剧以及用户对成本敏感度提升的现状，促使公司必须重新评估其产品定价策略以留住存量用户。对于整个行业而言，这预示着大模型服务正进入价格战或普及化阶段，OpenAI 需要在维持营收增长与扩大用户基数之间寻找新的平衡点，以应对日益多元化的市场需求。随着更多廉价选项的推出，AI 工具的门槛将进一步降低，但这也对服务商的成本控制能力和商业模式的灵活性提出了更高要求，标志着行业竞争进入下半场。",
-          "tags": [
-            "OpenAI",
-            "ChatGPT",
-            "市场策略"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE94REVwN0JycGl1eVBPZC1xLWJIR21XTFY4WnBQcHVuVFNmVW1QSFpSV1cxM19pNm41WmM5bXQtLTh0TXBoNy02Y3hlcw?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-04-28T23:32:43+00:00",
-          "cve_ids": [],
-          "selection_reason": "预示了 AI 订阅市场可能出现的消费降级与竞争策略转变。"
+          "selection_reason": "由知名专家开发，其独特的历史语料训练背景在模型领域非常罕见。"
         }
       ],
-      "raw_count": 48,
-      "generated_at": "2026-04-28T23:41:58.317595Z"
+      "raw_count": 35,
+      "generated_at": "2026-04-29T08:17:38.777303Z"
     },
     "finance": {
       "display_name": "金融科技",
       "items": [
         {
-          "title_zh": "谷歌与万事达向 FIDO 联盟提交代理商业标准",
-          "title_orig": "Google and Mastercard Contribute Agentic Commerce Standards to FIDO Alliance",
-          "summary": "FIDO 联盟计划开发人工智能代理交互与商业标准，旨在为 AI 代理代表用户进行身份验证、执行操作和交易定义受信任的机制。该倡议将利用谷歌和万事达贡献的技术标准，结合联盟在通行密钥和数字凭证领域的既有成果，解决 AI 代理在自动交易中的信任难题。这一举措标志着支付行业开始为自主 AI 商业建立统一的安全框架，将直接影响未来 AI 驱动的自动化消费场景及相关金融安全协议的制定，确保在日益复杂的智能生态系统中，每一笔由 AI 发起的交易都能获得可靠的身份验证与安全保障。",
-          "tags": [
-            "人工智能",
-            "支付标准",
-            "FIDO联盟"
-          ],
-          "url": "https://www.pymnts.com/artificial-intelligence-2/2026/google-and-mastercard-contribute-agentic-commerce-standards-to-fido-alliance/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-04-28T20:48:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "AI 代理商业标准的制定是金融科技迈向自主交易的关键一步。"
-        },
-        {
-          "title_zh": "Nacha 将于 2027 年提高当日 ACH 网络交易限额",
-          "title_orig": "Nacha raises same-day ACH network limit",
-          "summary": "Nacha宣布将提高当日ACH网络的交易限额，该新规计划于2027年正式生效，旨在简化高额交易的处理流程并提升支付效率。此举涵盖了税收缴纳、工资发放以及其他大额支付场景，通过满足市场对高效资金流转的需求，显著增强了ACH网络在支付领域的整体竞争力。这一调整将为企业和金融机构提供更便捷的大额实时支付选择，减少对传统慢速结算方式的依赖，进一步推动美国支付基础设施的现代化进程，确保金融系统能够支撑日益增长的数字化大额转账需求，从而在激烈的市场竞争中保持其核心地位，为用户提供更优质的金融服务体验。",
-          "tags": [
-            "ACH",
-            "支付限额",
-            "金融监管"
-          ],
-          "url": "https://www.paymentsdive.com/news/nacha-raises-same-day-ach-network-limit/818688/",
-          "source": "paymentsdive.com",
-          "category": "Editorial Lens",
-          "published": "2026-04-28T15:10:18+00:00",
-          "cve_ids": [],
-          "selection_reason": "ACH 限额提升将直接影响企业大额支付效率和资金流转速度。"
-        },
-        {
-          "title_zh": "Visa 与万事达在法庭听证会上辩护刷卡费和解协议",
-          "title_orig": "Visa, Mastercard defend card fee settlement",
-          "summary": "在周一举行的法庭听证会上，Visa 和万事达针对此前的刷卡费和解协议进行了辩护，而大型零售商对此表示强烈反对，认为允许刷卡附加费和折扣政策会给商业运营带来沉重负担。这场法律博弈反映了卡组织与商户之间长期存在的利益冲突，其最终结果将决定未来零售支付的成本分配。对于消费者而言，这可能意味着在不同支付方式下将面临不同的价格标签，直接影响日常消费体验。该案件的进展受到金融界和零售业的高度关注，因为它不仅关乎手续费率的调整，更涉及支付市场定价机制的根本性变革与公平竞争环境的重塑。",
-          "tags": [
-            "Visa",
-            "刷卡费",
-            "法律诉讼"
-          ],
-          "url": "https://www.paymentsdive.com/news/visa-mastercard-defend-card-fee-settlement/818655/",
-          "source": "paymentsdive.com",
-          "category": "Editorial Lens",
-          "published": "2026-04-28T15:02:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "刷卡费和解协议的进展将重塑零售支付的成本结构和定价模式。"
-        },
-        {
-          "title_zh": "中国通过支付宝与微信支付改革提升外籍游客支付便利性",
-          "title_orig": "Now, China Enhances Digital Payment Access for Foreign Visitors with Alipay and WeChat Pay Integration Reforms - Travel And Tour World",
-          "summary": "中国近期通过对支付宝和微信支付的整合改革，进一步优化了外籍来华游客的数字支付访问权限，旨在降低外国用户使用移动支付的门槛并提升跨境支付的兼容性。此举是提升旅游服务质量的重要环节，不仅有助于吸引更多国际游客，也展示了中国支付生态系统在国际化对接方面的积极进展。对于全球旅游业和跨境支付服务商而言，这标志着中国移动支付市场正加速向全球用户开放，通过技术手段消除支付壁垒，为国际友人提供与本土居民同等便捷的消费体验，进一步增强了中国作为国际旅游目的地的吸引力与数字化服务竞争力。",
-          "tags": [
-            "跨境支付",
-            "移动支付",
-            "旅游科技"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNcGJqU3JUNWR4Y3J1UUswNy1VVnNCYjlXSjdnckpwWTFUYjVFM29Pc1I5YzlJZTBlRkVYTC1IaVQyb0laczhKSEZqS0tpRWNvamVCci1sZE03Si1BMVlMRy1vMWJDaEpsUEtwanhod3liNXBfcXFlc3pnSkNXRDhrNVFZWEhqUGJIR1pKYzhiYXpvOEJyb1FmMXFwT1FMN1A5eXZHUnJnZERkeVZVcTUzMTlyLTJQdWd5cDhHTU5seVhkaC1jWXZFRXZNOGplbWs0S3hQY1RkaVpmUklhM3EySVBaNW5jZW9Pa3FCa0VXaw?oc=5",
-          "source": "news.google.com",
-          "category": "Digital Wallets",
-          "published": "2026-04-23T03:50:25+00:00",
-          "cve_ids": [],
-          "selection_reason": "中国支付市场的国际化改革对全球旅游业及跨境金融具有重要意义。"
-        },
-        {
           "title_zh": "Visa 发布 2026 财年第二季度财务业绩报告",
           "title_orig": "Visa Fiscal Second Quarter 2026 Financial Results",
-          "summary": "Visa 公司通过美国证券交易委员会及投资者关系网站正式发布了 2026 财年第二季度的财务业绩，并随后举行了现场音频网络研讨会，向投资者和分析师详细解读该季度的营收表现、交易量增长及未来业务展望。作为全球支付巨头，Visa 的财报数据是观察全球消费趋势和电子支付普及程度的风向标。这些财务指标不仅反映了公司的经营状况，也为评估宏观经济健康度和支付行业竞争格局提供了关键的量化依据。通过分析其跨境交易额和支付总额的变动，市场参与者能够更清晰地洞察全球贸易活跃度以及消费者支付习惯向数字化转型的深度。",
+          "summary": "Visa公司今日正式发布了2026财年第二季度的财务业绩报告，相关数据已通过美国证券交易委员会及官方投资者关系网站同步公开。作为全球支付行业的领军企业，Visa的财报不仅揭示了公司的营收与盈利状况，更是外界观察全球消费趋势、跨境交易活跃度以及支付行业整体增长前景的重要窗口，直接影响着投资者的市场预期。",
           "tags": [
             "Visa",
             "财报",
-            "金融业绩"
+            "支付行业"
           ],
           "url": "https://investor.visa.com/news/news-details/2026/Visa-Fiscal-Second-Quarter-2026-Financial-Results/default.aspx",
           "source": "investor.visa.com",
           "category": "Card Networks",
           "published": "2026-04-28T20:05:00+00:00",
           "cve_ids": [],
-          "selection_reason": "Visa 财报是衡量全球消费活力和支付行业趋势的核心指标。"
+          "selection_reason": "Visa 的财报是衡量全球宏观经济和消费支出的关键指标。"
         },
         {
-          "title_zh": "支付宝推出 AI 驱动支付方案以支持自主商业交易",
-          "title_orig": "Alipay launches AI-powered payment solutions to enable autonomous business transactions - CXO Digitalpulse",
-          "summary": "支付宝正式推出了基于人工智能的支付解决方案，旨在实现自主商业交易的自动化处理，利用 AI 技术优化支付流程，使机器或智能代理能够在无需人工干预的情况下完成特定商业场景下的支付任务。这一创新标志着移动支付正从“人机交互”向“智能自主”演进，为无人零售、智能供应链等未来商业模式提供了坚实的技术支撑。对于开发者和企业而言，这开启了构建全自动化商业闭环的新可能性，不仅提升了交易效率，还通过 AI 的精准识别与决策能力，为自动化经济时代的到来奠定了支付层面的安全与便捷基础。",
+          "title_zh": "Nacha 将于 2027 年提高当日 ACH 网络交易",
+          "title_orig": "Nacha raises same-day ACH network limit",
+          "summary": "Nacha宣布将于2027年正式提高当日ACH网络的交易限额，旨在显著增强该系统处理高额交易的能力，从而简化税务缴纳、工资发放及其他大额支付流程。此举对于提升美国自动化清算系统的整体运作效率具有重要意义，能够有效加快企业的资金周转速度，并满足现代商业环境对实时、大额资金调拨日益增长的迫切需求。",
           "tags": [
-            "支付宝",
-            "人工智能",
-            "自动交易"
+            "Nacha",
+            "ACH",
+            "支付限额"
           ],
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaUFRQUFreHRwSGZsTWRUck5XNi1OTmdZQ2ZzWGxpcERqanpRVGx0RkptRFJOQ2V3QXNkZTN1WVdRbnRsNHVyQ1dKeUFnQlpkUjhEZDlLWFUtN2xkc2hVa2pzWTF5U2NLWG5meDdjZ245bVU2dkE0ZTdJZ2NQMGNwQ2haSUhvSTk5UUNHM3p1SVQ5bzNxVHBVd1Bxb0VRNkdhYW1wc3FUbWdzZjdYMVNjWGJ2by1YQVF6SDV2WA?oc=5",
-          "source": "news.google.com",
-          "category": "Digital Wallets",
-          "published": "2026-04-28T05:31:23+00:00",
+          "url": "https://www.paymentsdive.com/news/nacha-raises-same-day-ach-network-limit/818688/",
+          "source": "paymentsdive.com",
+          "category": "Editorial Lens",
+          "published": "2026-04-28T15:10:18+00:00",
           "cve_ids": [],
-          "selection_reason": "AI 支付方案的推出预示着自主商业时代的到来，具有技术前瞻性"
+          "selection_reason": "ACH 限额提升将直接改变大额商业支付的效率和成本结构。"
         },
         {
-          "title_zh": "微信支付连接五个亚洲支付网络以深化生态竞争",
-          "title_orig": "Deepline | WeChat Pay vs. Alipay: Battle shifts to 'ecosystem deepening' as WeChat connects fve Asian payment networks - 點新聞",
-          "summary": "微信支付与支付宝的竞争焦点正转向“生态深化”，微信支付近期已成功连接五个亚洲主流支付网络，通过这种跨区域的网络整合，进一步扩大了其在亚洲市场的覆盖范围和影响力。这一动态反映了中国支付巨头在海外市场从单一应用推广转向深层基础设施互联的策略转变，旨在强化其跨境支付生态系统。此举将加剧亚洲支付市场的竞争，同时也为区域内的跨境贸易和人员往来提供了更顺畅的支付体验。随着支付网络的深度互联，用户在不同国家间的消费将变得更加无缝化，推动了区域经济一体化进程中支付手段的标准化与便利化。",
+          "title_zh": "Visa 与万事达卡就刷卡费和解协议进行辩护",
+          "title_orig": "Visa, Mastercard defend card fee settlement",
+          "summary": "在近期举行的法庭听证会上，Visa和万事达卡针对刷卡费和解协议进行了辩护，而大型零售商则坚称附加费和折扣规定会给企业经营带来沉重的经济负担。这场博弈的核心在于支付网络巨头与商户之间的利益分配，其最终裁决结果将对零售行业的支付成本、信用卡收费标准以及未来支付市场的竞争格局产生深远且持久的影响。",
           "tags": [
-            "微信支付",
-            "亚洲市场",
-            "跨境支付"
+            "Visa",
+            "万事达卡",
+            "刷卡费"
           ],
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB0djdMS1phMno0WTZweEQ5NFdjb1lPMDA1RVp4VldSQ0hxejZRUVZ6QTIxZVNfbk1aVG1qcWY0RHlGSFA0UXdlRjlOelh3Y08yeTNIbS03MVFZTWtodnZpc01SVDJjSElqWTYtM3JWcWZFM251Y3JwREdrSkFBTDQ?oc=5",
-          "source": "news.google.com",
-          "category": "Digital Wallets",
-          "published": "2026-04-23T10:36:28+00:00",
+          "url": "https://www.paymentsdive.com/news/visa-mastercard-defend-card-fee-settlement/818655/",
+          "source": "paymentsdive.com",
+          "category": "Editorial Lens",
+          "published": "2026-04-28T15:02:00+00:00",
           "cve_ids": [],
-          "selection_reason": "微信支付在亚洲的生态扩张反映了跨境支付竞争进入了新阶段。"
+          "selection_reason": "该诉讼涉及支付巨头与商户的核心利益冲突，影响行业定价规则。"
         },
         {
-          "title_zh": "美国运通公布 2026 年第一季度财务业绩",
+          "title_zh": "美国运通发布 2026 财年第一季度财务业绩",
           "title_orig": "American Express Reports First-Quarter 2026 Financial Results",
-          "summary": "美国运通公司正式发布了 2026 年第一季度的财务报告，披露了公司在该季度的盈利状况和业务增长数据，其业绩表现深刻反映了特定高端消费群体和商务旅行市场的复苏与增长态势。该报告为市场提供了关于信用卡支出、信贷质量及客户忠诚度计划表现的重要信息，是评估高端金融服务领域健康度的关键参考。投资者和行业分析师将据此评估美国运通在竞争激烈的支付卡市场中的地位及其应对宏观经济波动的能力。通过这些详尽的财务指标，外界可以洞察高净值人群的消费信心变化，以及企业在数字化支付转型过程中维持客户粘性的策略成效。",
+          "summary": "美国运通公司今日正式对外公布了2026财年第一季度的财务报告，详细披露了公司在该阶段的营收增长、盈利表现及各项核心业务指标。由于美国运通长期专注于服务高端客群，其业绩表现已成为金融行业评估高净值人群消费信心、信用卡信贷质量以及高端消费市场波动的重要参考依据，受到全球金融分析师的广泛关注。",
           "tags": [
             "美国运通",
             "财报",
-            "金融服务"
+            "信用卡"
           ],
           "url": "https://ir.americanexpress.com/news/investor-relations-news/investor-relations-news-details/2026/American-Express-Reports-First-Quarter-2026-Financial-Results/default.aspx",
           "source": "ir.americanexpress.com",
           "category": "Card Networks",
           "published": "2026-04-23T11:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "美国运通的业绩是观察高端消费和商务支付市场的重要窗口。"
+          "selection_reason": "反映高端消费市场动态及信用卡巨头的经营状况。"
         },
         {
-          "title_zh": "人工智能重塑银行核心云合同",
-          "title_orig": "Everything Is AI Now. And It’s Reshaping Banking Core Cloud Contracts",
-          "summary": "随着金融服务业面临技术变革，银行核心云合同正发生深刻变化。过去银行将云迁移视为成本优化、可扩展性和韧性的提升，合同条款主要围绕存储层级、正常运行时间保证及可预测的定价展开。然而，生成式人工智能的兴起正迫使银行重新审视这些架构，将重点转向计算能力、数据治理以及AI驱动的现代化。这一趋势值得关注，因为它标志着银行基础设施从简单的资源租赁向深度集成AI能力的战略转型，将直接影响金融机构的长期竞争力和技术架构布局，同时也对云服务提供商的合同条款提出了更高的数据主权与算力分配要求。",
+          "title_zh": "微信支付连接五大亚洲支付网络深化生态竞争",
+          "title_orig": "Deepline | WeChat Pay vs. Alipay: Battle shifts to 'ecosystem deepening' as WeChat connects fve Asian payment networks - 點新聞",
+          "summary": "微信支付通过连接五个亚洲支付网络，将与支付宝的竞争焦点转向“生态深化”，旨在通过更深层次的系统整合进一步拓展其在亚洲地区的跨境支付版图。此举不仅大幅提升了中国游客在海外的支付便利性，也标志着中国移动支付巨头在东南亚及亚洲市场的本地化渗透进入新阶段，通过构建支付生态圈来强化其国际市场竞争力。",
           "tags": [
-            "银行科技",
-            "云计算",
-            "人工智能"
+            "微信支付",
+            "跨境支付",
+            "移动支付"
           ],
-          "url": "https://www.pymnts.com/news/banking/2026/everything-is-ai-now-and-its-reshaping-banking-core-cloud-contracts/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-04-28T20:42:43+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了AI如何从底层架构层面改变金融行业的商业合同与技术标准"
-        },
-        {
-          "title_zh": "斑马智行联合支付宝推出AI座舱支付方案",
-          "title_orig": "Banma and Alipay introduce AI cockpit payment solution - Travel Daily News Asia-Pacific",
-          "summary": "斑马智行与支付宝近日联合推出了全新的AI座舱支付解决方案，旨在提升车载环境下的金融交互体验。该方案将先进的人工智能技术与移动支付深度融合，为驾驶者和乘客提供更加便捷、安全的车内支付场景。这一动态值得关注，因为它展示了智能座舱生态与支付巨头的跨界合作，预示着车载支付将从简单的扫码向更智能的感应与语音交互演进。对于汽车制造商和金融科技公司而言，这为拓展车内消费场景和提升用户粘性提供了新的技术路径，同时也标志着智能网联汽车在支付安全和用户体验方面迈出了关键一步，具有重要的行业示范意义。",
-          "tags": [
-            "智能座舱",
-            "支付宝",
-            "车载支付"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNa1U4UGxxbEtjcTV6aXpYbTVYVk9Bdm9wT0phcXp4a0J0eTN1c0dCUEhaTFNrSG1ZS2pab1dGRFAzRmo4U291czZFdzJwRGRoMndJd3Bzb1RlZ1gybERMZkU5SzRKZ0tRSTRIXzhhWjlzMXItZGZXZE1XSlNKLVZqVzdrMHZKMk42LUppQklRSjlMTjNaTFRFWk9fSVBrbHc4?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB0djdMS1phMno0WTZweEQ5NFdjb1lPMDA1RVp4VldSQ0hxejZRUVZ6QTIxZVNfbk1aVG1qcWY0RHlGSFA0UXdlRjlOelh3Y08yeTNIbS03MVFZTWtodnZpc01SVDJjSElqWTYtM3JWcWZFM251Y3JwREdrSkFBTDQ?oc=5",
           "source": "news.google.com",
           "category": "Digital Wallets",
-          "published": "2026-04-26T21:04:48+00:00",
+          "published": "2026-04-23T10:36:28+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了AI与支付技术在智能汽车垂直领域的深度融合应用。"
+          "selection_reason": "展示了中国支付巨头在亚洲市场的最新竞争策略和生态布局。"
         },
         {
-          "title_zh": "ISO 20022国际标准数据红利仍难以触达",
-          "title_orig": "ISO 20022 gains remain elusive",
-          "summary": "尽管ISO 20022国际标准在美国的采用率不断提高，但企业在获取其丰富的支付数据收益方面仍面临挑战。目前许多公司正努力挖掘该标准所蕴含的数据潜力，以期提升支付效率和透明度，但实际进展依然缓慢。这一现象值得关注，因为ISO 20022被视为全球支付现代化的基石，其推广受阻意味着金融机构在实现跨境支付标准化和自动化方面仍存在技术或流程瓶颈。对于支付行业从业者而言，如何将标准转化为实际的业务洞察是当前亟待解决的难题，这不仅关系到企业内部系统的升级改造，更涉及全球金融生态系统在数据共享与合规性方面的深度协同。",
+          "title_zh": "支付宝推出 AI 驱动支付方案支持自主商业交易",
+          "title_orig": "Alipay launches AI-powered payment solutions to enable autonomous business transactions - CXO Digitalpulse",
+          "summary": "支付宝近日推出了基于人工智能的创新支付解决方案，旨在通过AI技术实现更加智能化的自主商业交易流程，从而提升交易效率并降低人工干预成本。该技术的应用预示着支付行业正从简单的支付工具属性向智能化、自动化的服务平台转型，将为未来无人零售、自动化供应链管理等新兴商业场景提供坚实的技术支撑与核心驱动力。",
           "tags": [
-            "ISO 20022",
+            "支付宝",
+            "人工智能",
+            "金融科技"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaUFRQUFreHRwSGZsTWRUck5XNi1OTmdZQ2ZzWGxpcERqanpRVGx0RkptRFJOQ2V3QXNkZTN1WVdRbnRsNHVyQ1dKeUFnQlpkUjhEZDlLWFUtN2xkc2hVa2pzWTF5U2NLWG5meDdjZ245bVU2dkE0ZTdJZ2NQMGNwQ2haSUhvSTk5UUNHM3p1SVQ5bzNxVHBVd1Bxb0VRNkdhYW1wc3FUbWdzZjdYMVNjWGJ2by1YQVF6SDV2WA?oc=5",
+          "source": "news.google.com",
+          "category": "Digital Wallets",
+          "published": "2026-04-28T05:31:23+00:00",
+          "cve_ids": [],
+          "selection_reason": "AI 与支付的结合是未来金融科技发展的重要技术趋势。"
+        },
+        {
+          "title_zh": "微信支付进一步扩大海外二维码支付覆盖范围",
+          "title_orig": "WeChat Pay expands QR code payment abroad - China Daily - Global Edition",
+          "summary": "微信支付正在全球范围内持续扩张其二维码支付业务，致力于为出境用户提供与中国国内完全一致的便捷支付体验，从而打破跨境消费中的支付壁垒。随着海外受理点和合作商户的不断增加，这不仅巩固了微信支付在跨境金融市场的领先地位，也积极推动了中国二维码支付标准在国际市场的普及，加速了全球支付方式的数字化变革。",
+          "tags": [
+            "微信支付",
+            "二维码支付",
+            "全球化"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNYXRLY0Jtc2tYU3JOVVRlYTc3MmNzTWV0TTRYMlhFSTlURjZLbUNDQTBPRHlGdEtLZDJjVFBXX3RlZmpreWF5M2pBczFQQ0xteGFoSTVZclVQMFJTMk9zQld0V1pRSWRlbWFHTm9BT3J4bTItbEIxM3lOZGVNSUxwSjNn?oc=5",
+          "source": "news.google.com",
+          "category": "Digital Wallets",
+          "published": "2026-04-24T03:53:32+00:00",
+          "cve_ids": [],
+          "selection_reason": "反映了中国支付标准在国际市场影响力的持续扩大。"
+        },
+        {
+          "title_zh": "FIS 称代理商业时代需注重 AI 治理与实证",
+          "title_orig": "FIS Says Agentic Commerce Needs Proof, Not Promises",
+          "summary": "FIS高管指出支付行业正从传统的交易型向关系型转变，并正式进入AI代理代表用户进行决策与行动的“代理商业”时代，强调有效的治理是确保该模式成功的核心。这一转变要求金融机构在利用人工智能提升交易效率的同时，必须建立起严密的监管框架与治理标准，以确保自动化交易的安全性、合规性以及在复杂金融环境中的可靠性。",
+          "tags": [
+            "FIS",
+            "AI 治理",
+            "代理商业"
+          ],
+          "url": "https://www.pymnts.com/opinion/2026/fis-says-agentic-commerce-needs-proof-not-promises/",
+          "source": "pymnts.com",
+          "category": "Editorial Lens",
+          "published": "2026-04-29T08:00:40+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨了 AI 代理在支付领域应用的前沿趋势及治理挑战。"
+        },
+        {
+          "title_zh": "ISO 20022 国际支付标准在美普及，但数据红利仍难",
+          "title_orig": "ISO 20022 gains remain elusive",
+          "summary": "随着 ISO 20022 国际标准在美国支付领域的采用率不断提高，众多企业正积极尝试挖掘该标准所蕴含的丰富数据价值，以期提升跨境支付的透明度与处理效率。这一进展值得关注，因为尽管标准统一化正在推进，但如何将复杂的数据结构转化为实际的业务洞察和运营效率，仍是当前金融机构和企业在数字化转型中面临的主要挑战。",
+          "tags": [
             "支付标准",
-            "数据分析"
+            "ISO 2002",
+            "金融科技"
           ],
           "url": "https://www.paymentsdive.com/news/iso-20022-gains-remain-elusive/818550/",
           "source": "paymentsdive.com",
           "category": "Editorial Lens",
           "published": "2026-04-27T14:54:00+00:00",
           "cve_ids": [],
-          "selection_reason": "反映了全球支付标准化进程中的实际落地困境与数据应用挑战。"
+          "selection_reason": "探讨全球支付标准统一化进程中的实际落地挑战。"
         },
         {
-          "title_zh": "Adyen与JCB合作推出卡片在档令牌化服务",
-          "title_orig": "Adyen and JCB roll out card-on-file tokenisation service - MSN",
-          "summary": "全球支付平台Adyen与日本支付巨头JCB宣布合作推出卡片在档（Card-on-file）令牌化服务。该服务通过将敏感的银行卡信息替换为唯一的令牌，旨在提升在线交易的安全性和授权率，同时优化消费者的结账体验。这一合作值得关注，因为它加强了跨国支付网络的安全防护能力，减少了数据泄露风险。对于全球电商卖家和JCB持卡人而言，这意味着在进行跨境交易时将获得更稳健的安全保障和更流畅的支付流程，有助于推动国际贸易的数字化发展。此外，该举措也体现了支付行业在保护用户信息安全的同时，不断追求交易效率与用户体验平衡的长期技术趋势。",
+          "title_zh": "美联航联合 JCB 推出 MileagePlus JCB",
+          "title_orig": "United Airlines and JCB Launch MileagePlus JCB Platinum Card - TRAICY Global",
+          "summary": "美国联合航空与日本信用卡巨头 JCB 宣布正式达成合作，面向市场推出全新的 MileagePlus JCB 铂金等级信用卡，旨在深度挖掘跨国航空支付市场的增长潜力。此举通过整合航空里程奖励与高端支付权益，增强了双方在国际旅行金融领域的竞争力，为频繁往返于美日及全球的旅客提供了更具吸引力的积分回馈与优质服务体验。",
           "tags": [
-            "Adyen",
-            "JCB",
-            "令牌化"
+            "信用卡",
+            "美联航",
+            "JCB"
           ],
-          "url": "https://news.google.com/rss/articles/CBMi-gJBVV95cUxQS1RELThsVnJLUkJibU1uWXZGbVJzbDR5d1IzaUlNYTF1ajVGRkFHSUpablUtSTlpbVRFek1pVGpHLW00RkcxZXVES1U1RWI1WDlBU05LUjBzS20tUVR5dFRjUE1RQnBCVzRtR3BGbnNtQU5BUS1sZnBaTURydmhFS3g2VGtsTk9JTnZ3akM4T0h4bzRFOXdNVkFMejZLbTlhS1hiTG5NVy04elA0WFhnbFMxUUx2ajFmSVUwckpfUWUxMGJjaUJiV1B3bVo5WlIydEpMUXUzUVhzWklvcXFuUWR1Ylp1MXV5ak5UN3lhQmg1b2s4ZlAxaEp4ZzEwSC1HMlZaVEE4enhHQTdhdXM4cm4wTTNiT05pY2tQSndoS3QxMjFMMTR5dmZheXFfNTBLSG9lcTVKOF9jRzZRdGZ5aVZmdzVuREhDTU4wbHRwUWZHaHp4V1ZRckhGdzhvYUxGLXRDOFd2QlZxdGtJY09zVEhMWUpqV09ZWUE?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBwVmdsRE80VEp1LVQ4QUZ2NTVLX3dNMm80YllWb19WaDNGVHpyd2tKc2E1cno0N0ZpcW1vRzdHcmFMbFpYNkg2Zm9nUEMzeUN6MWhUWA?oc=5",
           "source": "news.google.com",
           "category": "Card Networks",
-          "published": "2026-04-26T12:02:58+00:00",
+          "published": "2026-04-16T03:46:07+00:00",
           "cve_ids": [],
-          "selection_reason": "涉及两大支付巨头的安全技术合作，对跨境支付安全有重要意义。"
+          "selection_reason": "展示航空业与支付网络在高端卡片市场的最新跨境合作。"
         },
         {
-          "title_zh": "OpenAI模型正式上线亚马逊Bedrock平台",
-          "title_orig": "OpenAI Joins Amazon Bedrock After New Agreement With Microsoft",
-          "summary": "根据与微软达成的新协议，OpenAI的模型现已通过亚马逊Bedrock平台提供限量预览，包括最新的OpenAI模型和Codex编程代理。此外，双方还推出了由OpenAI驱动的Amazon Bedrock托管代理体验，旨在帮助开发者构建生产级别的AI代理应用。这一举动值得高度关注，因为它打破了以往的模型供应格局，使开发者能在亚马逊的云生态中直接调用OpenAI的能力。这对于希望在AWS上构建生成式AI应用的开发者和企业而言，提供了更多的模型选择和集成便利，同时也预示着云服务巨头与顶级AI实验室之间的合作模式正变得更加多元化和开放，将加速AI技术的普及。",
-          "tags": [
-            "OpenAI",
-            "亚马逊云",
-            "生成式AI"
-          ],
-          "url": "https://www.pymnts.com/artificial-intelligence-2/2026/openai-joins-amazon-bedrock-after-new-agreement-with-microsoft/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-04-28T23:15:01+00:00",
-          "cve_ids": [],
-          "selection_reason": "OpenAI打破生态壁垒入驻AWS，是AI云服务市场的重大竞"
-        },
-        {
-          "title_zh": "支付行业利用人工智能对抗AI驱动的欺诈",
-          "title_orig": "Harnessing AI to fight fraud",
-          "summary": "支付行业从业者正积极利用人工智能技术来反击日益猖獗的AI驱动型欺诈行为，同时美国国会也可能提供相关立法支持。随着犯罪分子利用AI手段升级攻击方式，金融机构必须通过更先进的机器学习模型来实时识别和拦截异常交易。这一趋势值得关注，因为它揭示了金融安全领域正在上演的“AI对攻战”，即技术升级带来的安全挑战必须依靠更强的技术手段来化解。对于支付平台和监管机构而言，如何平衡技术创新与风险防控将是未来一段时期的核心议题。此外，国会的介入可能为行业提供统一的法律框架，从而在打击新型金融犯罪方面形成更有效的政企合力，保障金融体系稳定。",
-          "tags": [
-            "反欺诈",
-            "金融安全",
-            "人工智能"
-          ],
-          "url": "https://www.paymentsdive.com/news/harnessing-ai-to-fight-fraud/818676/",
-          "source": "paymentsdive.com",
-          "category": "Editorial Lens",
-          "published": "2026-04-28T14:50:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "探讨了AI在金融安全领域的双刃剑效应及行业应对策略。"
-        },
-        {
-          "title_zh": "北京友宝在线续签支付宝支付与广告协议",
+          "title_zh": "北京友宝在线与支付宝续签支付及广告关联交易协议",
           "title_orig": "Beijing UBOX Renews Connected Deals With Alipay for Payments and Ads - TipRanks",
-          "summary": "北京友宝在线（UBOX）近日宣布与支付宝续签关联交易协议，双方将在支付服务和广告业务领域继续开展深度合作。作为自动售货机行业的领先运营商，友宝通过此次续约将进一步巩固其在无人零售场景下的支付便捷性，并利用支付宝的平台流量提升广告触达效率。这一动态值得关注，因为它反映了线下零售终端与互联网支付巨头之间长期稳定的共生关系。对于无人零售行业而言，这种支付与营销的深度绑定有助于提升运营效率并探索更多元化的盈利模式。同时，这也展示了在数字化转型背景下，传统零售设备如何通过与金融科技平台的深度集成，实现从单一售货向综合服务平台的跨越式升级。",
+          "summary": "北京友宝在线近日宣布与支付宝续签关联交易协议，双方将在支付服务及广告投放领域继续开展深度合作，共同探索智慧零售场景下的流量变现新模式。此次续约巩固了自动售货机巨头与领先支付平台的伙伴关系，有助于友宝进一步优化线下支付流程并利用支付宝的庞大流量资源提升广告收益，从而在竞争激烈的无人零售市场中保持领先地位。",
           "tags": [
             "友宝在线",
             "支付宝",
-            "无人零售"
+            "智慧零售"
           ],
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNQUpYbUo3MTNYUHNqU3BHX1pzQ1k4YllzUHQwRW1xQ3dRRTFFRW8xM0QwS05nVnQxNVRMbmsyQm1zRTFjNGw0UEh2TzRXS0t5Q2trOHQ4cWIwSUJtajNiOVpfWS0zV1RTdUdXSndJT3VWTnpDeHFpcVhCQ0N0Qk41OGNzQlFVZllhd09yOWFpck05ODgzeFBubzBSUVdBMHAwREhUaEhvVkRtNUNZYU9ncURLOHJxT2IzbFdqVQ?oc=5",
           "source": "news.google.com",
           "category": "Digital Wallets",
           "published": "2026-04-28T11:58:06+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了无人零售领军企业与支付巨头在支付及营销领域的持续合作。"
+          "selection_reason": "反映移动支付巨头与线下零售终端的长期战略绑定关系。"
         }
       ],
-      "raw_count": 24,
-      "generated_at": "2026-04-28T23:42:36.946385Z"
+      "raw_count": 19,
+      "generated_at": "2026-04-29T08:18:02.328596Z"
     }
   }
 }
