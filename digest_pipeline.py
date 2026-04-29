@@ -15,7 +15,6 @@ import argparse
 import json
 import logging
 import os
-import sys
 from datetime import date, datetime
 from pathlib import Path
 from typing import Any
@@ -327,7 +326,6 @@ def run(board: str, as_of: date | None = None) -> Path:
     above_threshold = [(e, sc) for e, sc in scored if sc >= threshold]
     candidates = [(e, sc) for e, sc in scored if sc >= fill_score_floor]
     source_policy = dict(bcfg.get("source_policy") or {})
-    source_policy.setdefault("min_chinese", int(bcfg.get("min_chinese", 0) or 0))
     # TODO: Port Gemini's LLM story clustering here before making Anthropic the
     # primary backend again. This backup path currently relies on fetch-time
     # title/CVE dedupe plus deterministic source policy.

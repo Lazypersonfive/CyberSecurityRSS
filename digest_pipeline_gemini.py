@@ -49,7 +49,13 @@ from source_policy import (
     source_priority,
     source_profile,
 )
-from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report, write_board_report
+from source_reports import (
+    refresh_latest_report,
+    refresh_weekly_report,
+    render_source_report,
+    write_board_report,
+    write_board_report_json,
+)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -702,9 +708,7 @@ def run(board: str, as_of: date | None = None) -> Path:
     above_threshold = [(e, sc) for e, sc in scored if sc >= threshold]
     pool = _candidate_pool(scored, top_n=top_n, fill_score_floor=fill_score_floor)
     deduped, merged_urls = _llm_dedupe(client, pool) if pool else ([], [])
-    min_chinese = int(bcfg.get("min_chinese", 0))
     source_policy = dict(bcfg.get("source_policy") or {})
-    source_policy.setdefault("min_chinese", min_chinese)
     selected_scored = select_with_source_policy(deduped, top_n, source_policy)
     selected = [e for e, _sc in selected_scored]
     cn_count = sum(1 for e in selected if _is_chinese_entry(e))
@@ -751,6 +755,14 @@ def run(board: str, as_of: date | None = None) -> Path:
         },
     )
     write_board_report(board, as_of, report)
+    write_board_report_json(
+        board=board,
+        report_date=as_of,
+        feed_stats=data.get("feed_stats") or _fallback_feed_stats(entries),
+        entries=entries,
+        score_by_url={entry.get("url", ""): score for entry, score in scored if entry.get("url")},
+        selected_urls={entry.get("url", "") for entry in selected if entry.get("url")},
+    )
     refresh_latest_report(as_of, list((cfg.get("boards") or {}).keys()))
     refresh_weekly_report(as_of, list((cfg.get("boards") or {}).keys()))
     return out_path

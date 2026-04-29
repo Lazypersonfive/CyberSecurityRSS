@@ -131,6 +131,62 @@ def write_board_report(
     return path
 
 
+def write_board_report_json(
+    board: str,
+    report_date: date,
+    feed_stats: dict[str, dict[str, Any]],
+    entries: Iterable[dict[str, Any]],
+    score_by_url: dict[str, int],
+    selected_urls: set[str],
+    reports_dir: Path = REPORTS_DIR,
+) -> Path:
+    """Sidecar JSON for weekly aggregation; MD stays human-readable.
+
+    Captures one row per feed (including zero-entry feeds that the MD folds)
+    so weekly.md can flag long-running silent or low-quality sources.
+    """
+    import json as _json
+
+    reports_dir.mkdir(parents=True, exist_ok=True)
+    entries_list = list(entries)
+    by_feed = {}
+    selected_per_feed: Counter[str] = Counter()
+    scores_per_feed: dict[str, list[int]] = defaultdict(list)
+    raw_per_feed: Counter[str] = Counter()
+    for entry in entries_list:
+        feed_url = entry.get("feed_url") or ""
+        if not feed_url:
+            continue
+        raw_per_feed[feed_url] += 1
+        url = entry.get("url", "")
+        if url in score_by_url:
+            scores_per_feed[feed_url].append(score_by_url[url])
+        if url in selected_urls:
+            selected_per_feed[feed_url] += 1
+
+    for feed_url, stats in feed_stats.items():
+        scores = scores_per_feed.get(feed_url, [])
+        avg = sum(scores) / len(scores) if scores else None
+        by_feed[feed_url] = {
+            "feed_title": stats.get("feed_title") or feed_url,
+            "category": stats.get("category", ""),
+            "attempted": int(stats.get("attempted") or 0),
+            "succeeded": int(stats.get("succeeded") or 0),
+            "raw_count": int(stats.get("raw_count") or 0),
+            "filtered_count": raw_per_feed.get(feed_url, 0),
+            "avg_score": avg,
+            "selected": selected_per_feed.get(feed_url, 0),
+        }
+
+    path = reports_dir / f"{board}_{report_date.isoformat()}.json"
+    path.write_text(
+        _json.dumps({"board": board, "date": report_date.isoformat(), "feeds": by_feed},
+                    ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return path
+
+
 def refresh_latest_report(
     report_date: date,
     board_order: list[str],
@@ -226,6 +282,10 @@ def refresh_weekly_report(
                 f"{row['selected']} | "
                 f"{row['merged']} |"
             )
+
+    review_section = _build_review_section(report_date, board_order, reports_dir, days)
+    if review_section:
+        lines.extend(review_section)
 
     weekly = reports_dir / "weekly.md"
     weekly.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -339,3 +399,105 @@ def _parse_int(value: str) -> int:
         return int(value.strip())
     except ValueError:
         return 0
+
+
+# Review thresholds (intentionally not in config: avoid policy creep)
+ZERO_STREAK_DAYS = 7         # raw_count == 0 for every observed day
+LOW_QUALITY_MIN_RAW = 5      # consider only feeds that produced enough samples
+LOW_QUALITY_AVG_SCORE = 3.0  # avg_score < this is consistently low quality
+
+
+def _build_review_section(
+    report_date: date,
+    board_order: list[str],
+    reports_dir: Path,
+    days: int,
+) -> list[str]:
+    """Aggregate per-day sidecar JSONs into a review checklist.
+
+    Falls back gracefully if no sidecars exist (e.g. first run after upgrade).
+    """
+    import json as _json
+
+    start_date = report_date - timedelta(days=days - 1)
+    feeds: dict[tuple[str, str], dict[str, Any]] = {}
+    days_observed = 0
+    for offset in range(days):
+        current = start_date + timedelta(days=offset)
+        any_present = False
+        for board in board_order:
+            path = reports_dir / f"{board}_{current.isoformat()}.json"
+            if not path.exists():
+                continue
+            any_present = True
+            try:
+                doc = _json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, _json.JSONDecodeError):
+                continue
+            for feed_url, stats in (doc.get("feeds") or {}).items():
+                key = (board, feed_url)
+                row = feeds.setdefault(key, {
+                    "title": stats.get("feed_title") or feed_url,
+                    "days_seen": 0,
+                    "days_zero_raw": 0,
+                    "raw_total": 0,
+                    "score_total": 0.0,
+                    "score_weight": 0,
+                    "selected_total": 0,
+                })
+                row["days_seen"] += 1
+                raw = int(stats.get("raw_count") or 0)
+                row["raw_total"] += raw
+                if raw == 0:
+                    row["days_zero_raw"] += 1
+                avg = stats.get("avg_score")
+                filtered = int(stats.get("filtered_count") or 0)
+                if avg is not None and filtered > 0:
+                    row["score_total"] += float(avg) * filtered
+                    row["score_weight"] += filtered
+                row["selected_total"] += int(stats.get("selected") or 0)
+        if any_present:
+            days_observed += 1
+
+    if not feeds:
+        return []
+
+    silent: list[tuple[tuple[str, str], dict[str, Any]]] = []
+    low_quality: list[tuple[tuple[str, str], dict[str, Any]]] = []
+    for key, row in feeds.items():
+        if row["days_seen"] >= ZERO_STREAK_DAYS and row["days_zero_raw"] == row["days_seen"]:
+            silent.append((key, row))
+        if (
+            row["raw_total"] >= LOW_QUALITY_MIN_RAW
+            and row["score_weight"] > 0
+            and (row["score_total"] / row["score_weight"]) < LOW_QUALITY_AVG_SCORE
+        ):
+            low_quality.append((key, row))
+
+    if not silent and not low_quality:
+        return []
+
+    lines: list[str] = ["", "## ⚠️ 建议人工 review（不自动删）"]
+
+    if silent:
+        lines.extend(["", f"### 连续 {ZERO_STREAK_DAYS} 天 0 条目源（疑似失效）", ""])
+        for (board, _feed_url), row in sorted(silent, key=lambda x: (x[0][0], x[1]["title"].lower())):
+            lines.append(f"- [{board}] {_clean_cell(row['title'])}：{row['days_seen']} 天 0 raw")
+
+    if low_quality:
+        lines.extend([
+            "",
+            f"### 持续低质源（avg_score < {LOW_QUALITY_AVG_SCORE} 且 raw ≥ {LOW_QUALITY_MIN_RAW}）",
+            "",
+        ])
+        for (board, _feed_url), row in sorted(
+            low_quality,
+            key=lambda x: (x[0][0], x[1]["score_total"] / x[1]["score_weight"]),
+        ):
+            avg = row["score_total"] / row["score_weight"]
+            lines.append(
+                f"- [{board}] {_clean_cell(row['title'])}：raw={row['raw_total']}，avg={avg:.1f}，"
+                f"入选={row['selected_total']}"
+            )
+
+    return lines

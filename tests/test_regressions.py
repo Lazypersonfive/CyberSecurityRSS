@@ -2,7 +2,7 @@ import json
 import sys
 import unittest
 from contextlib import ExitStack
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
@@ -18,7 +18,7 @@ from digest_pipeline_gemini import (
 )
 import fetch_and_save
 import fetch_feeds
-from fetch_feeds import FeedEntry, fetch_all_entries, load_seen_urls
+from fetch_feeds import FeedEntry, archive_urls, fetch_all_entries, load_seen_urls
 from fetch_opml import fetch_opml_metadata
 from filter_entries import FilteredEntry, filter_and_dedup
 from rss_curation import curate_entries
@@ -37,9 +37,40 @@ class FetchFeedsTests(unittest.IsolatedAsyncioTestCase):
             )
 
             with patch("fetch_feeds.ARCHIVE_DIR", archive):
-                seen = load_seen_urls("2026-04-28")
+                seen = load_seen_urls("2026-04-28", lookback_days=1)
 
         self.assertEqual(seen, {"https://example.com/安全"})
+
+    def test_load_seen_urls_merges_recent_days(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            archive = Path(tmpdir)
+            archive.joinpath("2026-04-27.json").write_text(
+                json.dumps({"urls": ["https://example.com/old"]}), encoding="utf-8"
+            )
+            archive.joinpath("2026-04-29.json").write_text(
+                json.dumps({"urls": ["https://example.com/new"]}), encoding="utf-8"
+            )
+
+            with patch("fetch_feeds.ARCHIVE_DIR", archive):
+                merged = load_seen_urls("2026-04-29", lookback_days=3)
+                only_today = load_seen_urls("2026-04-29", lookback_days=1)
+
+        self.assertEqual(merged, {"https://example.com/old", "https://example.com/new"})
+        self.assertEqual(only_today, {"https://example.com/new"})
+
+    def test_archive_urls_merges_with_existing(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            archive = Path(tmpdir)
+            archive.joinpath("2026-04-29.json").write_text(
+                json.dumps({"urls": ["https://example.com/a"]}), encoding="utf-8"
+            )
+
+            with patch("fetch_feeds.ARCHIVE_DIR", archive):
+                archive_urls("2026-04-29", ["https://example.com/b", "https://example.com/a", ""])
+
+            payload = json.loads(archive.joinpath("2026-04-29.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(payload["urls"], ["https://example.com/a", "https://example.com/b"])
 
     async def test_max_per_category_applies_after_recency_sort(self) -> None:
         if fetch_feeds.httpx is None:
@@ -236,6 +267,7 @@ class FetchAndSaveTests(unittest.TestCase):
                     )
                 )
                 stack.enter_context(patch("fetch_and_save.load_seen_urls", return_value=set()))
+                stack.enter_context(patch("fetch_and_save.archive_urls", return_value=root / "archive" / "stub.json"))
                 stack.enter_context(patch("fetch_and_save.fetch_all_entries", side_effect=fake_fetch_all_entries))
                 stack.enter_context(patch("fetch_and_save.filter_and_dedup", return_value=([filtered], {"input": 1, "output": 1})))
                 stack.enter_context(patch("fetch_and_save.curate_entries", return_value=([filtered], {})))
@@ -537,6 +569,63 @@ class SourceReportTests(unittest.TestCase):
         self.assertIn("| Feed A | 2/2 | 6 | 6.5 | 3 | 1 |", body)
         self.assertIn("| Feed B | 1/1 | 1 | 4.0 | 0 | 0 |", body)
         self.assertNotIn("Empty Feed", body)
+
+    def test_weekly_review_flags_silent_and_low_quality_feeds(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            reports = Path(tmpdir)
+            base = date(2026, 4, 24)
+            for offset in range(7):
+                day = (base - timedelta(days=offset)).isoformat()
+                reports.joinpath(f"ai_{day}.md").write_text(
+                    f"# AI 前沿 源质量报表 {day}\n", encoding="utf-8"
+                )
+                payload = {
+                    "board": "ai",
+                    "date": day,
+                    "feeds": {
+                        "https://feeds.example.com/silent": {
+                            "feed_title": "Silent Feed",
+                            "category": "Chinese",
+                            "attempted": 1,
+                            "succeeded": 1,
+                            "raw_count": 0,
+                            "filtered_count": 0,
+                            "avg_score": None,
+                            "selected": 0,
+                        },
+                        "https://feeds.example.com/junk": {
+                            "feed_title": "Noisy Junk",
+                            "category": "Media",
+                            "attempted": 1,
+                            "succeeded": 1,
+                            "raw_count": 4,
+                            "filtered_count": 4,
+                            "avg_score": 2.0,
+                            "selected": 0,
+                        },
+                        "https://feeds.example.com/good": {
+                            "feed_title": "Good Source",
+                            "category": "Labs",
+                            "attempted": 1,
+                            "succeeded": 1,
+                            "raw_count": 2,
+                            "filtered_count": 2,
+                            "avg_score": 8.0,
+                            "selected": 2,
+                        },
+                    },
+                }
+                reports.joinpath(f"ai_{day}.json").write_text(
+                    json.dumps(payload, ensure_ascii=False), encoding="utf-8"
+                )
+
+            refresh_weekly_report(base, ["ai"], reports_dir=reports)
+            body = (reports / "weekly.md").read_text(encoding="utf-8")
+
+        self.assertIn("⚠️ 建议人工 review", body)
+        self.assertIn("Silent Feed", body)
+        self.assertIn("Noisy Junk", body)
+        self.assertNotIn("Good Source", body.split("⚠️")[1])
 
 
 class DigestClockTests(unittest.TestCase):

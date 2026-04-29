@@ -23,7 +23,7 @@ from typing import Any
 import yaml
 
 from digest_clock import digest_today
-from fetch_feeds import fetch_all_entries, load_seen_urls
+from fetch_feeds import archive_urls, fetch_all_entries, load_seen_urls
 from fetch_opml import fetch_opml, fetch_opml_metadata
 from filter_entries import filter_and_dedup
 from rss_curation import curate_entries
@@ -155,6 +155,10 @@ def main() -> None:
             data["feed_stats"][url]["raw_count"] = count
     out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2))
     logger.info("[%s] Saved to %s", board_label, out_path)
+
+    if not args.no_dedup:
+        archive_path = archive_urls(today_str, [fe.url for fe in filtered])
+        logger.info("[%s] Archived %d URLs to %s", board_label, len(filtered), archive_path)
 
     print(f"\n=== FETCH COMPLETE [{board_label}] ===")
     print(f"Date: {today_str} | Hours: {hours}h")

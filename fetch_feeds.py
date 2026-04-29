@@ -6,7 +6,7 @@ import asyncio
 import json
 import logging
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import date as _date, datetime, timedelta, timezone
 from pathlib import Path
 
 try:
@@ -41,13 +41,42 @@ class FeedEntry:
     feed_title: str = ""
 
 
-def load_seen_urls(date_str: str) -> set[str]:
-    """Load already-sent URLs for a given date to avoid duplicates."""
+def load_seen_urls(date_str: str, lookback_days: int = 7) -> set[str]:
+    """Merge URLs from the last N days of archive/<date>.json files.
+
+    The fetch window for sparse boards (finance) can span up to 14 days, but
+    URL collisions outside a 7-day rolling window are rare in practice. This
+    keeps the dedup set bounded while covering same-story republication
+    across consecutive cron runs.
+    """
+    target = _date.fromisoformat(date_str)
+    seen: set[str] = set()
+    for offset in range(max(1, lookback_days)):
+        path = ARCHIVE_DIR / f"{(target - timedelta(days=offset)).isoformat()}.json"
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            logger.warning("archive %s unreadable: %s", path.name, exc)
+            continue
+        seen.update(data.get("urls", []))
+    return seen
+
+
+def archive_urls(date_str: str, urls: list[str]) -> Path:
+    """Persist URLs to archive/<date>.json, merging with any existing entries."""
+    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
     path = ARCHIVE_DIR / f"{date_str}.json"
-    if not path.exists():
-        return set()
-    data = json.loads(path.read_text(encoding="utf-8"))
-    return set(data.get("urls", []))
+    existing: set[str] = set()
+    if path.exists():
+        try:
+            existing = set(json.loads(path.read_text(encoding="utf-8")).get("urls", []))
+        except (OSError, json.JSONDecodeError):
+            existing = set()
+    merged = sorted(existing | {u for u in urls if u})
+    path.write_text(json.dumps({"urls": merged}, ensure_ascii=False, indent=2), encoding="utf-8")
+    return path
 
 
 async def fetch_all_entries(

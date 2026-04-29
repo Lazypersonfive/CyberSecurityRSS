@@ -33,6 +33,12 @@
       <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">{{ subtitle }}</p>
     </div>
     <div class="flex items-center gap-3">
+      <div class="relative">
+        <input id="search" type="search" placeholder="搜索标题 / 摘要 / 标签" autocomplete="off"
+               class="text-sm bg-transparent border border-slate-300 dark:border-slate-700 rounded pl-2 pr-7 py-1 w-44 sm:w-56" />
+        <button id="search-clear" aria-label="清空搜索" type="button"
+                class="hidden absolute right-1 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-sm leading-none px-1">✕</button>
+      </div>
       <select id="date-select" class="text-sm bg-transparent border border-slate-300 dark:border-slate-700 rounded px-2 py-1"></select>
       <button id="theme-toggle" aria-label="toggle theme" class="text-lg px-2 py-1 border border-slate-300 dark:border-slate-700 rounded">🌓</button>
     </div>
@@ -57,6 +63,7 @@ const DATES = {{ dates_json | safe }};
 let currentBoard = BOARD_ORDER[0];
 let currentDate = DATES[0];
 let feed = null;
+let searchQuery = '';
 
 function fmtDate(iso) {
   return iso.replace(/-/g, '/');
@@ -86,33 +93,64 @@ function el(tag, className, text) {
   return node;
 }
 
+function matchesQuery(item, query) {
+  if (!query) return true;
+  const haystack = [
+    item.title_zh, item.title_orig, item.summary, item.source,
+    ...(item.tags || []), ...(item.cve_ids || []),
+  ].filter(Boolean).join(' ').toLowerCase();
+  return haystack.includes(query.toLowerCase());
+}
+
+function visibleItems(boardKey) {
+  const items = feed?.boards?.[boardKey]?.items || [];
+  return items.filter(it => matchesQuery(it, searchQuery));
+}
+
 function renderTabs() {
   const tabs = document.getElementById('tabs');
   tabs.innerHTML = '';
   BOARD_ORDER.forEach(b => {
     const btn = document.createElement('button');
     btn.className = 'tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition';
-    const count = feed?.boards?.[b]?.items?.length || 0;
+    const total = feed?.boards?.[b]?.items?.length || 0;
+    const matching = visibleItems(b).length;
+    const label = searchQuery ? `${matching}/${total}` : `${total}`;
     btn.append(document.createTextNode(BOARDS[b].display_name + ' '));
-    btn.appendChild(el('span', 'ml-1 text-xs opacity-60', count));
+    btn.appendChild(el('span', 'ml-1 text-xs opacity-60', label));
     if (b === currentBoard) btn.classList.add('active');
     btn.addEventListener('click', () => { currentBoard = b; renderAll(); });
     tabs.appendChild(btn);
   });
 }
 
+function makeTagPill(text, kind) {
+  const baseClass = kind === 'cve'
+    ? 'text-xs px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 font-mono'
+    : 'text-xs px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300';
+  const span = el('span', baseClass + ' cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-700', text);
+  span.title = `点击筛选 "${text}"`;
+  span.addEventListener('click', () => applySearch(text));
+  return span;
+}
+
 function renderBody() {
   const body = document.getElementById('feed-body');
   const meta = document.getElementById('meta');
   const block = feed?.boards?.[currentBoard];
+  body.innerHTML = '';
   if (!block || !block.items?.length) {
-    body.innerHTML = '';
     body.appendChild(el('p', 'text-center text-slate-500 py-12', `该日期 ${fmtDate(currentDate)} 的 ${BOARDS[currentBoard].display_name} 板块暂无内容。`));
     meta.textContent = '';
     return;
   }
-  body.innerHTML = '';
-  block.items.forEach(it => {
+  const filtered = visibleItems(currentBoard);
+  if (!filtered.length) {
+    body.appendChild(el('p', 'text-center text-slate-500 py-12', `没有匹配 "${searchQuery}" 的条目。`));
+    meta.textContent = `共 ${block.items.length} 条 · 0 条匹配当前搜索`;
+    return;
+  }
+  filtered.forEach(it => {
     const card = document.createElement('article');
     card.className = 'card bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 transition shadow-sm hover:shadow';
 
@@ -131,18 +169,15 @@ function renderBody() {
     const detail = el('div', 'flex flex-wrap items-center gap-2 text-xs text-slate-500 mt-2');
     detail.appendChild(el('span', 'font-medium', it.source || ''));
     detail.appendChild(el('span', '', fmtTime(it.published)));
-    (it.tags || []).forEach(t => {
-      detail.appendChild(el('span', 'text-xs px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300', t));
-    });
-    (it.cve_ids || []).forEach(c => {
-      detail.appendChild(el('span', 'text-xs px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 font-mono', c));
-    });
+    (it.tags || []).forEach(t => detail.appendChild(makeTagPill(t, 'tag')));
+    (it.cve_ids || []).forEach(c => detail.appendChild(makeTagPill(c, 'cve')));
     card.appendChild(detail);
 
     card.appendChild(el('p', 'mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300', it.summary || ''));
     body.appendChild(card);
   });
-  meta.textContent = `共 ${block.items.length} 条 · 原始抓取 ${block.raw_count || 0} 条 · 生成于 ${fmtTime(block.generated_at || '')}`;
+  const matchSuffix = searchQuery ? ` · 匹配 ${filtered.length}/${block.items.length}` : '';
+  meta.textContent = `共 ${block.items.length} 条${matchSuffix} · 原始抓取 ${block.raw_count || 0} 条 · 生成于 ${fmtTime(block.generated_at || '')}`;
 }
 
 function renderDateSelect() {
@@ -185,6 +220,18 @@ themeBtn.addEventListener('click', () => {
   document.documentElement.classList.toggle('dark');
   localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
 });
+
+// search
+const searchInput = document.getElementById('search');
+const searchClear = document.getElementById('search-clear');
+function applySearch(value) {
+  searchQuery = (value || '').trim();
+  searchInput.value = searchQuery;
+  searchClear.classList.toggle('hidden', !searchQuery);
+  renderAll();
+}
+searchInput.addEventListener('input', e => applySearch(e.target.value));
+searchClear.addEventListener('click', () => applySearch(''));
 
 renderDateSelect();
 loadFeed();
