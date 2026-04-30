@@ -1,122 +1,108 @@
-# 安全 源质量报表 2026-04-30
+# 安全 源质量报表 2026-05-01
 
 - board: `security`
-- entries: 70
+- entries: 80
 
 | Feed | 抓取 | 条目 | LLM 均分 | 低分占比 | 入选 | 去重被合并 |
 |---|---:|---:|---:|---:|---:|---:|
-| BleepingComputer | 1/1 | 10 -> 6 | 7.7 · 8 | 0% | 4 | 1 |
-| The Hacker News | 1/1 | 7 -> 7 | 7.1 · 9 | 29% | 4 | 1 |
-| InfoSec Write-ups - Medium | 1/1 | 10 -> 6 | 6.0 · 6 | 0% | 3 | 0 |
-| Schneier on Security | 1/1 | 1 -> 1 | 9.0 · 9 | 0% | 1 | 0 |
-| text/plain | 1/1 | 1 -> 1 | 7.0 · 7 | 0% | 1 | 0 |
-| Trail of Bits Blog | 1/1 | 1 -> 1 | 7.0 · 7 | 0% | 1 | 0 |
-| CISA Advisories | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 1 | 0 |
-| 安全客 | 1/1 | 3 -> 1 | 6.0 · 6 | 0% | 1 | 0 |
-| Vulners.com RSS Feed | 1/1 | 30 -> 3 | 5.7 · 5 | 0% | 1 | 0 |
-| 先知社区 | 1/1 | 5 -> 1 | 5.0 · 5 | 0% | 1 | 0 |
-| Rapid7 Blog | 1/1 | 3 -> 3 | 4.7 · 3 | 67% | 1 | 0 |
-| Hacker News Frontpage | 1/1 | 9 -> 9 | 2.4 · 0 | 67% | 1 | 0 |
-| The Decoder | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
-| AWS Security Blog | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| Simon Willison | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| 专注APT攻击与防御 | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| Bug Bounty in InfoSec Write-ups on Medium | 1/1 | 3 -> 2 | 3.5 · 3.5 | 50% | 0 | 0 |
-| bunnie's blog | 1/1 | 2 -> 2 | 3.5 · 3.5 | 50% | 0 | 0 |
-| Microsoft Security Blog | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| ThunderJie | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| Ars Technica | 1/1 | 2 -> 2 | 2.0 · 2 | 100% | 0 | 0 |
-| Emergent Minds / paddo.dev | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
-| Wired | 1/1 | 3 -> 3 | 1.7 · 1 | 100% | 0 | 0 |
-| 黑海洋 | 1/1 | 10 -> 2 | 1.0 · 1 | 100% | 0 | 0 |
-| Pentesting | 1/1 | 1 -> 1 | 1.0 · 1 | 100% | 0 | 0 |
-| TechCrunch | 1/1 | 5 -> 5 | 0.4 · 0 | 100% | 0 | 0 |
-| The Verge | 1/1 | 5 -> 5 | 0.2 · 0 | 100% | 0 | 0 |
-| Daring Fireball | 1/1 | 1 -> 1 | 0.0 · 0 | 100% | 0 | 0 |
-| Chybeta | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| CNCERT风险评估 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| Exploit-DB.com RSS Feed | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| LoRexxar's Blog | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| r/MachineLearning | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| Red Team Security | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| SecWiki News | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| 中国信息安全 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| 安全内参 | 1/1 | 2 -> 0 | - | - | 0 | 0 |
+| CISA Advisories | 1/1 | 7 -> 7 | 7.9 · 8 | 0% | 5 | 0 |
+| The Hacker News | 1/1 | 6 -> 6 | 7.5 · 7.5 | 0% | 5 | 0 |
+| InfoSec Write-ups - Medium | 1/1 | 7 -> 6 | 6.5 · 6 | 0% | 4 | 0 |
+| BleepingComputer | 1/1 | 10 -> 8 | 4.9 · 4 | 62% | 3 | 0 |
+| Red Team Security | 1/1 | 3 -> 1 | 7.0 · 7 | 0% | 1 | 0 |
+| Cloudflare Security | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 1 | 0 |
+| Simon Willison | 1/1 | 3 -> 2 | 4.0 · 4 | 50% | 1 | 0 |
+| Vulners.com RSS Feed | 1/1 | 30 -> 1 | 7.0 · 7 | 0% | 0 | 1 |
+| Bug Bounty in InfoSec Write-ups on Medium | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
+| Pentesting | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
+| Security Engineering Blog | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
+| Microsoft Security Blog | 1/1 | 2 -> 2 | 4.5 · 4.5 | 50% | 0 | 0 |
+| Intigriti | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
+| Krebs on Security | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
+| Schneier on Security | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
+| Emergent Minds / paddo.dev | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
+| GuidePoint Security | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
+| Hacker News Frontpage | 1/1 | 6 -> 6 | 2.5 · 1.5 | 83% | 0 | 1 |
+| 安全客 | 1/1 | 2 -> 2 | 2.0 · 2 | 100% | 0 | 0 |
+| NVIDIA AI Blog | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
+| PwnDefend | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
+| Ars Technica | 1/1 | 5 -> 5 | 1.8 · 0 | 80% | 0 | 1 |
+| 黑海洋 | 1/1 | 10 -> 4 | 1.0 · 0 | 100% | 0 | 0 |
+| 博客 | 1/1 | 8 -> 8 | 0.4 · 0 | 100% | 0 | 0 |
+| The Verge | 1/1 | 6 -> 6 | 0.3 · 0 | 100% | 0 | 0 |
+| TechCrunch | 1/1 | 4 -> 3 | 0.0 · 0 | 100% | 0 | 0 |
+| Chybeta | 1/1 | 1 -> 1 | 0.0 · 0 | 100% | 0 | 0 |
+| Wired | 1/1 | 1 -> 1 | 0.0 · 0 | 100% | 0 | 0 |
+| Muuu Nya's Blog | 1/1 | 1 -> 0 | - | - | 0 | 0 |
+| r/MachineLearning | 1/1 | 3 -> 0 | - | - | 0 | 0 |
+| SecWiki News | 1/1 | 2 -> 0 | - | - | 0 | 0 |
 
-另有 471 个源今日 0 条目（449/471 抓取成功）。
+另有 427 个源今日 0 条目（400/427 抓取成功）。
 
 ## 入选理由摘录
-- **BleepingComputer**：*为什么入选：GitHub 作为核心开发平台，其私有仓库的安全直接关系到全*
-- **The Hacker News**：*为什么入选：该漏洞响应窗口极短，反映了当前 AI 基础设施面临的严峻安全*
-- **InfoSec Write-ups - Medium**：*为什么入选：原始信源高分入选*
-- **Schneier on Security**：*为什么入选：AI 发现漏洞的数量规模惊人，体现了 AI 在网络安全攻防中*
-- **text/plain**：*为什么入选：揭示了攻击者如何利用内核权限对抗安全防护软件的核心逻辑。*
-- **Trail of Bits Blog**：*为什么入选：反映了模糊测试领域主流工具链的迁移趋势及对Ruby生态的影响*
-- **CISA Advisories**：*为什么入选：该指南为关键基础设施的 OT 环境提供了权威的安全架构指导。*
-- **安全客**：*为什么入选：原始信源高分入选*
-- **Vulners.com RSS Feed**：*为什么入选：原始信源高分入选*
-- **先知社区**：*为什么入选：探讨了当前最前沿的 AI 技术在云安全领域的落地实践。*
-- **Rapid7 Blog**：*为什么入选：cPanel 是全球最流行的服务器管理面板之一，高分漏洞影响*
-- **Hacker News Frontpage**：*为什么入选：原始信源高分入选*
+- **CISA Advisories**：*为什么入选：CISA KEV 目录更新，表明该漏洞具有极高的实战威胁。*
+- **The Hacker News**：*为什么入选：涉及 Linux 内核页面缓存机制的提权漏洞，技术原理具有深*
+- **InfoSec Write-ups - Medium**：*为什么入选：高质量的 XSS 实战挑战解析，有助于提升漏洞挖掘思维。*
+- **BleepingComputer**：*为什么入选：关键基础设施管理面板的严重漏洞，影响大量 Web 主机。*
+- **Red Team Security**：*为什么入选：聚焦于开发环境的持久化技术，是红蓝对抗中的重要技术点。*
+- **Cloudflare Security**：*为什么入选：展示了后量子加密技术在主流网络设备中的商用进展。*
+- **Simon Willison**：*为什么入选：权威机构对顶级 LLM 网络安全能力的评估，反映了 AI 安*
 
 ---
 
-# AI 前沿 源质量报表 2026-04-30
+# AI 前沿 源质量报表 2026-05-01
 
 - board: `ai`
-- entries: 32
+- entries: 41
 
 | Feed | 抓取 | 条目 | LLM 均分 | 低分占比 | 入选 | 去重被合并 |
 |---|---:|---:|---:|---:|---:|---:|
-| arXiv cs.AI recent | 1/1 | 30 -> 8 | 6.0 · 6 | 0% | 8 | 0 |
-| Google News 中文 AI | 1/1 | 30 -> 6 | 5.8 · 5 | 33% | 3 | 1 |
-| The Verge AI | 1/1 | 8 -> 4 | 5.8 · 5 | 25% | 3 | 0 |
-| Ars Technica AI | 1/1 | 3 -> 3 | 5.7 · 6 | 33% | 2 | 0 |
-| Mistral (Google News) | 1/1 | 3 -> 1 | 7.0 · 7 | 0% | 1 | 0 |
-| Anthropic Coverage (Google News) | 1/1 | 22 -> 3 | 5.3 · 5 | 33% | 1 | 0 |
-| TechCrunch AI | 1/1 | 10 -> 3 | 5.0 · 5 | 33% | 1 | 1 |
-| MIT Tech Review AI | 1/1 | 2 -> 2 | 5.0 · 5 | 0% | 1 | 1 |
-| Simon Willison | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| Latent Space | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
-| Meta AI (Google News) | 1/1 | 3 -> 0 | - | - | 0 | 0 |
-| xAI (Google News) | 1/1 | 2 -> 0 | - | - | 0 | 0 |
+| arXiv cs.AI recent | 1/1 | 30 -> 8 | 7.0 · 7 | 0% | 4 | 0 |
+| Simon Willison | 1/1 | 7 -> 7 | 5.4 · 5 | 29% | 4 | 0 |
+| Anthropic Coverage (Google News) | 1/1 | 15 -> 5 | 6.4 · 7 | 20% | 3 | 0 |
+| Ars Technica AI | 1/1 | 4 -> 4 | 5.2 · 5 | 25% | 3 | 0 |
+| The Verge AI | 1/1 | 8 -> 4 | 5.5 · 5 | 50% | 2 | 0 |
+| xAI (Google News) | 1/1 | 6 -> 1 | 9.0 · 9 | 0% | 1 | 0 |
+| NVIDIA Blog | 1/1 | 1 -> 1 | 8.0 · 8 | 0% | 1 | 0 |
+| TechCrunch AI | 1/1 | 15 -> 3 | 4.3 · 4 | 67% | 1 | 0 |
+| MIT Tech Review AI | 1/1 | 3 -> 3 | 4.0 · 3 | 67% | 1 | 0 |
+| Mistral (Google News) | 1/1 | 3 -> 2 | 6.5 · 6.5 | 0% | 0 | 0 |
+| Meta AI (Google News) | 1/1 | 5 -> 2 | 5.0 · 5 | 0% | 0 | 0 |
+| Latent Space | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
+| Google News 中文 AI | 1/1 | 30 -> 0 | - | - | 0 | 0 |
 
-另有 21 个源今日 0 条目（21/21 抓取成功）。
+另有 20 个源今日 0 条目（20/20 抓取成功）。
 
 ## 入选理由摘录
-- **arXiv cs.AI recent**：*为什么入选：探讨 AI 在前沿科学研究自动化领域的最新进展。*
-- **Google News 中文 AI**：*为什么入选：DeepSeek 是近期国产大模型的焦点，反映行业竞争态势。*
-- **The Verge AI**：*为什么入选：涉及全球顶尖 AI 机构的控制权与发展路线之争。*
-- **Ars Technica AI**：*为什么入选：地缘冲突直接影响全球算力基础设施建设的重大风险事件。*
-- **Mistral (Google News)**：*为什么入选：欧洲领先 AI 实验室的重要产品迭代更新。*
-- **Anthropic Coverage (Google News)**：*为什么入选：探讨 AI 独角兽在军事合作与治理原则间的冲突。*
-- **TechCrunch AI**：*为什么入选：揭示 AI 视频生成领域的未来技术演进方向。*
-- **MIT Tech Review AI**：*为什么入选：探讨了核能复兴背景下关键的环保与能源安全挑战。*
+- **arXiv cs.AI recent**：*为什么入选：展示了AI在形式化科学推理领域的最新研究进展。*
+- **Simon Willison**：*为什么入选：披露了OpenAI最新型号的安全基准测试结果。*
+- **Anthropic Coverage (Google News)**：*为什么入选：Anthropic进军开发者工具领域的重要动作。*
+- **Ars Technica AI**：*为什么入选：展示了 AI 在改变生命基础遗传结构方面的尖端应用。*
+- **The Verge AI**：*为什么入选：涉及行业巨头间的法律纠纷及核心训练争议。*
+- **xAI (Google News)**：*为什么入选：xAI核心产品的重大迭代，涉及性能提升与降价。*
+- **NVIDIA Blog**：*为什么入选：关注开源智能体生态的爆发式增长及其行业影响。*
+- **TechCrunch AI**：*为什么入选：反映 AI 需求对硬件供应链的直接冲击。*
+- **MIT Tech Review AI**：*为什么入选：提供了解决大模型黑箱问题的新型技术工具。*
 
 ---
 
-# 金融科技 源质量报表 2026-04-30
+# 金融科技 源质量报表 2026-05-01
 
 - board: `finance`
-- entries: 21
+- entries: 13
 
 | Feed | 抓取 | 条目 | LLM 均分 | 低分占比 | 入选 | 去重被合并 |
 |---|---:|---:|---:|---:|---:|---:|
-| PYMNTS | 1/1 | 10 -> 4 | 6.2 · 6 | 25% | 4 | 0 |
-| Visa Investor Press | 1/1 | 3 -> 3 | 8.3 · 9 | 0% | 3 | 0 |
-| Payments Dive | 1/1 | 10 -> 4 | 7.8 · 8.5 | 0% | 3 | 1 |
-| WeChat Pay / Tenpay (Google News) | 1/1 | 8 -> 2 | 7.5 · 7.5 | 0% | 2 | 0 |
-| Alipay / Ant Group (Google News) | 1/1 | 11 -> 5 | 7.2 · 8 | 0% | 2 | 2 |
-| American Express Investor Press | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 1 | 0 |
-| JCB (Google News) | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| Mastercard Investor Press | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
+| Payments Dive | 1/1 | 6 -> 4 | 8.0 · 8 | 0% | 4 | 0 |
+| PYMNTS | 1/1 | 10 -> 4 | 4.2 · 4 | 75% | 3 | 0 |
+| Alipay / Ant Group (Google News) | 1/1 | 7 -> 2 | 7.5 · 7.5 | 0% | 2 | 0 |
+| WeChat Pay / Tenpay (Google News) | 1/1 | 6 -> 2 | 7.5 · 7.5 | 0% | 1 | 1 |
+| Mastercard Investor Press | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 0 | 1 |
 
-另有 1 个源今日 0 条目（0/1 抓取成功）。
+另有 4 个源今日 0 条目（3/4 抓取成功）。
 
 ## 入选理由摘录
-- **PYMNTS**：*为什么入选：体现了 AI 代理与支付基础设施结合的最新商业趋势。*
-- **Visa Investor Press**：*为什么入选：展示了传统支付巨头在稳定币结算领域的重大扩张。*
-- **Payments Dive**：*为什么入选：金融科技公司获得银行牌照是行业合规化发展的关键里程碑。*
-- **WeChat Pay / Tenpay (Google News)**：*为什么入选：揭示了移动支付巨头在亚洲跨境支付生态中的竞争新动态。*
-- **Alipay / Ant Group (Google News)**：*为什么入选：展示了国内支付巨头在 AI 驱动自动化交易方面的技术落地。*
-- **American Express Investor Press**：*为什么入选：揭示了高端信用卡市场和信用消费的最新趋势。*
+- **Payments Dive**：*为什么入选：揭示了传统支付巨头在宏观环境压力下向加密货币转型的趋势。*
+- **PYMNTS**：*为什么入选：OpenAI首次推出专门针对网络安全防御的垂直领域大模型。*
+- **Alipay / Ant Group (Google News)**：*为什么入选：AI智能体自主支付是金融科技领域的前沿突破。*
+- **WeChat Pay / Tenpay (Google News)**：*为什么入选：反映了中国支付巨头在海外基础设施互联互通方面的最新进展。*

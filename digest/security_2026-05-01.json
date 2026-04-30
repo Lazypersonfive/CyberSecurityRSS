@@ -1,0 +1,338 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-01",
+  "generated_at": "2026-04-30T23:38:45.539046Z",
+  "raw_count": 80,
+  "selected_count": 20,
+  "selection_stats": {
+    "total": 20,
+    "direct": 20
+  },
+  "items": [
+    {
+      "title_zh": "CISA 将 WebPros cPanel 与 WHM 关键功能身份验证缺失漏洞纳入已知漏洞目录",
+      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "summary": "美国网络安全和基础设施安全局（CISA）正式将 CVE-2026-41940 漏洞加入其已知被利用漏洞目录，该漏洞源于 WebPros cPanel、WHM 及 WP2 组件中关键功能的身份验证缺失。目前已有确凿证据表明该漏洞正被恶意网络攻击者积极利用，攻击者可借此绕过验证并访问控制面板，此类漏洞是网络攻击的常见向量，受影响用户需根据 CISA 指导尽快采取补救措施。",
+      "tags": [
+        "身份验证绕过",
+        "cPanel",
+        "漏洞预警"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/04/30/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-41940"
+      ],
+      "selection_reason": "CISA KEV 目录更新，表明该漏洞具有极高的实战威胁。"
+    },
+    {
+      "title_zh": "Linux 出现 Copy Fail 高危本地提权漏洞，攻击者可向页面缓存写入受控数据获取 Root 权限",
+      "title_orig": "New Linux 'Copy Fail' Vulnerability Enables Root Access on Major Distributions",
+      "summary": "网络安全研究人员披露了代号为 Copy Fail 的 Linux 本地提权漏洞 CVE-2026-31431，该高危漏洞的 CVSS 评分高达 7.8，对主流发行版的系统底层安全构成了严重威胁。该漏洞允许非特权本地用户向系统中任何可读文件的页面缓存写入四个受控字节，从而实现从普通用户到 Root 权限的非法提升，目前 Xint.io 和 Theori 已发布相关技术细节并引发广泛关注。",
+      "tags": [
+        "Linux",
+        "本地提权",
+        "内核安全"
+      ],
+      "url": "https://thehackernews.com/2026/04/new-linux-copy-fail-vulnerability.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T09:24:00+00:00",
+      "cve_ids": [
+        "CVE-2026-31431"
+      ],
+      "selection_reason": "涉及 Linux 内核页面缓存机制的提权漏洞，技术原理具有深"
+    },
+    {
+      "title_zh": "Google 修复 Gemini CLI 与 GitHub Actions 工作流中 CVSS 10 分的远程代码执行漏洞",
+      "title_orig": "Google Fixes CVSS 10 Gemini CLI CI RCE and Cursor Flaws Enable Code Execution",
+      "summary": "Google 修复了 npm 软件包 @google/gemini-cli 及相关 GitHub Actions 工作流中一个 CVSS 评分为 10 的最高级别安全漏洞，该漏洞具有极高的远程代码执行风险。该漏洞允许非特权外部攻击者强制将恶意内容加载为 Gemini 配置，从而在宿主系统上执行任意命令，影响范围涵盖了所有集成该 CLI 工具的持续集成环境，建议相关开发者立即采取更新措施以防范潜在攻击。",
+      "tags": [
+        "RCE",
+        "供应链安全",
+        "Google"
+      ],
+      "url": "https://thehackernews.com/2026/04/google-fixes-cvss-10-gemini-cli-ci-rce.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T07:07:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "CVSS 满分漏洞，涉及流行的 AI 开发工具链安全。"
+    },
+    {
+      "title_zh": "cPanel 与 WHM 发布紧急更新修复可导致控制面板被完全接管的关键身份验证绕过漏洞",
+      "title_orig": "cPanel, WHM emergency update fixes critical auth bypass bug",
+      "summary": "cPanel 官方针对其 WebHost Manager 仪表板发布紧急安全更新，旨在修复一个影响几乎所有旧版本的关键身份验证绕过漏洞。成功利用此漏洞的攻击者无需任何凭据即可获得对控制面板的完全访问权限，进而实现对受影响服务器环境的全面控制，由于该漏洞可能导致大规模服务器沦陷，官方强烈建议所有管理人员立即完成升级。",
+      "tags": [
+        "身份验证绕过",
+        "服务器管理",
+        "紧急补丁"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/cpanel-whm-emergency-update-fixes-critical-auth-bypass-bug/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-29T15:51:44+00:00",
+      "cve_ids": [],
+      "selection_reason": "关键基础设施管理面板的严重漏洞，影响大量 Web 主机。"
+    },
+    {
+      "title_zh": "PyTorch Lightning 流行 Python 包遭遇供应链攻击，恶意版本被用于窃取用户凭据",
+      "title_orig": "PyTorch Lightning and Intercom-client Hit in Supply Chain Attacks to Steal Credentials",
+      "summary": "威胁者针对流行的 Python 机器学习框架 PyTorch Lightning 实施了软件供应链攻击，并在 PyPI 仓库发布了 2.6.2 和 2.6.3 两个包含恶意代码的版本以窃取开发者凭据。根据多家安全机构评估，这些恶意版本均发布于 2026 年 4 月 30 日，若用户在此期间下载或更新了受影响的包，其系统敏感信息将面临严重泄露风险，需立即排查并清理相关环境。",
+      "tags": [
+        "供应链攻击",
+        "PyPI",
+        "凭据窃取"
+      ],
+      "url": "https://thehackernews.com/2026/04/pytorch-lightning-compromised-in-pypi.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T16:31:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对主流机器学习库的供应链攻击，对 AI 开发者群体威胁大。"
+    },
+    {
+      "title_zh": "ABB AWIN 网关固件存在安全漏洞，攻击者可远程重启设备或获取敏感系统配置信息",
+      "title_orig": "ABB AWIN Gateways",
+      "summary": "CISA 发布预警指出 ABB AWIN 网关固件存在多个安全漏洞，涉及 GW100 rev.2 等型号的 2.0-0 和 2.0-1 版本，成功利用这些漏洞可能严重影响工业控制网络的运行稳定性。攻击者若成功利用漏洞，可以远程触发工业设备重启，或者在未经身份验证的情况下执行查询以获取包括系统配置在内的敏感详细信息，这不仅会泄露关键技术参数，还可能导致生产流程中断。",
+      "tags": [
+        "工控安全",
+        "ABB",
+        "信息泄露"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-120-05",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "工业网关漏洞可能导致生产环境停机或敏感信息外泄。"
+    },
+    {
+      "title_zh": "ABB Ability OPTIMAX 能源管理系统存在身份验证绕过漏洞，涉及 Azure AD 集成组件",
+      "title_orig": "ABB Ability OPTIMAX",
+      "summary": "ABB Ability OPTIMAX 能源管理系统的多个版本存在严重安全漏洞，主要波及使用 Azure Active Directory 单点登录集成功能的安装环境，受影响版本包括 6.1、6.2 以及部分 6.3 版本。攻击者可利用该漏洞绕过用户身份验证，此类漏洞可能导致能源调度系统被非法访问，进而威胁到能源基础设施的安全，建议相关企业参考 CSAF 摘要尽快完成系统补丁升级。",
+      "tags": [
+        "身份验证绕过",
+        "SSO",
+        "能源安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-120-04",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及能源管理系统的身份验证漏洞，具有较高的关键基础设施风险。"
+    },
+    {
+      "title_zh": "ABB PCM600 保护控制装置管理工具存在路径遍历漏洞，可导致远程执行任意代码",
+      "title_orig": "ABB PCM600",
+      "summary": "ABB PCM600 保护继电器配置工具在处理受限目录路径名时存在路径遍历漏洞，受影响版本涵盖 1.5 至 2.13 之间的所有版本。攻击者能够向系统节点发送经过特殊设计的恶意消息，从而在目标系统上触发任意代码执行，尽管该漏洞的 CVSS 评分为 4.4，但其具备的代码执行能力仍可能对电力自动化系统的完整性造成潜在威胁。",
+      "tags": [
+        "路径遍历",
+        "RCE",
+        "工控软件"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-120-02",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "工控配置工具的路径遍历漏洞，可转化为代码执行攻击。"
+    },
+    {
+      "title_zh": "ABB Edgenius 管理门户存在严重漏洞，攻击者可远程安装恶意代码并修改系统配置",
+      "title_orig": "ABB Edgenius Management Portal",
+      "summary": "ABB Edgenius Management Portal 3.2.0.0 和 3.2.1.1 版本存在严重安全漏洞，该漏洞源于系统未能正确处理特制消息，导致攻击者可以向系统节点发送恶意构造的数据包。成功利用此漏洞的攻击者能够远程安装并运行任意代码、卸载现有应用程序或篡改已安装应用的配置，从而完全控制受影响的系统节点，虽然原文未披露具体的漏洞编号及 CVSS 评分细节，但其潜在威胁不容忽视。",
+      "tags": [
+        "工业控制系统",
+        "远程代码执行",
+        "ABB"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-120-03",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键工业控制系统管理平台的远程代码执行风险。"
+    },
+    {
+      "title_zh": "Intigriti 2026 年 4 月 XSS 挑战赛技术解析：通过绕过浏览器限制窃取 Cookie",
+      "title_orig": "Intigriti April 2026 XSS Challenge Writeup",
+      "summary": "本文详细介绍了 Intigriti 发布的 4 月浏览器安全挑战赛的解题过程，核心目标是诱导评审机器人执行恶意 JavaScript 以泄露包含 Flag 的 Cookie。技术点涵盖了复杂的跨站脚本攻击（XSS）构造以及针对特定浏览器安全机制的绕过策略。该挑战对于安全从业者研究现代 Web 漏洞利用技巧和提升代码审计能力具有较高的实战参考价值。",
+      "tags": [
+        "XSS",
+        "CTF",
+        "Web安全"
+      ],
+      "url": "https://infosecwriteups.com/intigriti-april-2026-xss-challenge-writeup-a85b483e86f8?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-30T04:43:44+00:00",
+      "cve_ids": [],
+      "selection_reason": "高质量的 XSS 实战挑战解析，有助于提升漏洞挖掘思维。"
+    },
+    {
+      "title_zh": "新型 Bluekit 网络钓鱼服务上线，集成 AI 助手并提供 40 余种主流服务模板",
+      "title_orig": "New Bluekit phishing service includes an AI assistant, 40 templates",
+      "summary": "名为 Bluekit 的新型钓鱼工具包近期被发现，其显著特点是集成了基础的人工智能功能，用于自动生成钓鱼活动草案。该工具包提供了超过 40 个针对全球流行互联网服务的伪造模板，旨在降低攻击门槛并提高欺诈信息的迷惑性。目前该服务主要面向网络犯罪分子提供，通过 AI 技术辅助进行大规模的社会工程学攻击。",
+      "tags": [
+        "网络钓鱼",
+        "人工智能",
+        "社会工程学"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-bluekit-phishing-service-includes-an-ai-assistant-40-templates/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T18:58:50+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 技术被应用于自动化钓鱼攻击的最新趋势。"
+    },
+    {
+      "title_zh": "DEEP#DOOR 隐蔽 Python 后门框架曝光，利用隧道服务窃取浏览器及云端凭据",
+      "title_orig": "New Python Backdoor Uses Tunneling Service to Steal Browser and Cloud Credentials",
+      "summary": "研究人员披露了一个名为 DEEP#DOOR 的隐蔽 Python 后门框架，该框架通过执行混淆的批处理脚本来禁用 Windows 安全控制并提取恶意组件。它利用隧道服务建立持久访问通道，专门用于从受感染主机中收割浏览器数据和云服务凭据。该后门展现了极高的隐蔽性，通过动态解密和多阶段感染链规避传统安全软件的检测。",
+      "tags": [
+        "Python后门",
+        "凭据窃取",
+        "持久化"
+      ],
+      "url": "https://thehackernews.com/2026/04/new-python-backdoor-uses-tunneling.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T12:36:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了新型 Python 后门的感染链及规避安全检测的技术细"
+    },
+    {
+      "title_zh": "EtherRAT 恶意活动通过 GitHub 伪装管理工具，精准打击 DevOps 与安全分析师",
+      "title_orig": "EtherRAT Distribution Spoofing Administrative Tools via GitHub Facades",
+      "summary": "Atos 研究中心于 2026 年 3 月发现了一场针对企业高权限账户的 EtherRAT 传播活动，攻击者通过 GitHub Facades 伪装成运维人员常用的管理工具。该行动结合了搜索引擎优化技术，精准诱导 DevOps 工程师和安全分析师下载并运行恶意程序，这种针对特定专业群体的攻击具有极强的欺骗性与高韧性，旨在通过获取专业人员的凭据来渗透并控制企业核心基础设施。",
+      "tags": [
+        "远控木马",
+        "社会工程学",
+        "GitHub"
+      ],
+      "url": "https://thehackernews.com/2026/04/etherrat-distribution-spoofing.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T11:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对技术人员的精准钓鱼手段，具有较强的警示意义。"
+    },
+    {
+      "title_zh": "实战案例分析：攻击者如何利用 Microsoft Teams 渗透员工机器及 SOC 响应过程",
+      "title_orig": "We Got Targeted: How Attackers Used Microsoft Teams to Own an Employee’s Machine, And How We Caught…",
+      "summary": "本文由一名 SOC 分析师撰写，详细记录了攻击者利用 Microsoft Teams 平台作为攻击矢量渗透员工终端的真实案例。文章深入剖析了攻击链条中使用的规避技巧，以及防御方如何通过监控异常行为最终成功拦截攻击。该案例展示了现代办公协作软件在企业边界防御中的脆弱性，为安全运维人员提供了宝贵的实战防御经验。",
+      "tags": [
+        "蓝队防御",
+        "Teams攻击",
+        "入侵检测"
+      ],
+      "url": "https://infosecwriteups.com/we-got-targeted-how-attackers-used-microsoft-teams-to-own-an-employees-machine-and-how-we-caught-40fcf202098b?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-30T05:14:35+00:00",
+      "cve_ids": [],
+      "selection_reason": "来自一线 SOC 的真实案例，对办公软件安全防护有参考价值。"
+    },
+    {
+      "title_zh": "VisualSploit 工具发布：利用 MSBuild 项目文件特性实现恶意 Shellcode 植入",
+      "title_orig": "VisualSploit, weaponizing MSBuild project files",
+      "summary": "VisualSploit 是一款新型命令行工具，演示了攻击者如何利用 Visual Studio 项目文件中的 RoslynCodeTaskFactory 和 InitialTargets 特性，通过植入自定义 Shellcode 轻松构建后门。该工具将复杂的供应链攻击利用过程自动化，虽然其核心原理并非首创，但它展示了如何通过篡改构建系统实现对开发环境的隐蔽控制，提醒安全研究员必须高度关注项目文件在构建过程中的安全性。",
+      "tags": [
+        "红队工具",
+        "MSBuild",
+        "供应链安全"
+      ],
+      "url": "https://www.reddit.com/r/redteamsec/comments/1szh4be/visualsploit_weaponizing_msbuild_project_files/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-04-30T00:51:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚焦于开发环境的持久化技术，是红蓝对抗中的重要技术点。"
+    },
+    {
+      "title_zh": "英国 AI 安全研究院评估 OpenAI GPT-5.5 网络安全能力，发现其漏洞挖掘水平显著",
+      "title_orig": "Our evaluation of OpenAI's GPT-5.5 cyber capabilities",
+      "summary": "英国 AI 安全研究院对 OpenAI 最新的 GPT-5.5 模型进行了网络安全能力评估，重点考察其在发现安全漏洞方面的表现。评估结果显示，GPT-5.5 的漏洞挖掘能力已可与 Claude Mythos 相媲美，且目前已处于普遍可用状态。这项研究反映了大型语言模型在辅助安全审计方面的潜力，同时也引发了关于 AI 被用于自动化漏洞利用的风险讨论。",
+      "tags": [
+        "AI安全",
+        "GPT-5.5",
+        "漏洞挖掘"
+      ],
+      "url": "https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AI",
+      "published": "2026-04-30T23:03:24+00:00",
+      "cve_ids": [],
+      "selection_reason": "权威机构对顶级 LLM 网络安全能力的评估，反映了 AI 安"
+    },
+    {
+      "title_zh": "Vulnerable AI Lab：面向安全研究员的 AI 漏洞测试、场景编写与模块开发技术指南",
+      "title_orig": "Vulnerable AI Lab",
+      "summary": "该项目提供了一个专门用于AI安全研究的实验环境，涵盖了从基础使用、攻击测试到场景编写及漏洞模块开发的完整技术流程。安全从业者可以通过该实验室深入学习如何构建复杂的AI攻击场景，并针对性地开发漏洞检测模块，是理解AI模型及其基础设施安全风险、提升防御实战能力的必备参考指南。",
+      "tags": [
+        "AI安全",
+        "漏洞实验室",
+        "攻防实践"
+      ],
+      "url": "https://infosecwriteups.com/vulnerable-ai-lab-3747e96314dd?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-30T04:46:38+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了系统化的AI安全实验环境和漏洞开发指南。"
+    },
+    {
+      "title_zh": "AI 进攻性安全实战：针对大语言模型（LLM）智能体的实际攻击技术手册",
+      "title_orig": "AI Offensive Security: Practical Attacks Against LLM Agents",
+      "summary": "本文是一份面向红队和应用安全从业者的实战指南，重点介绍了针对大语言模型智能体（LLM Agents）的多种攻击向量与防御策略。文章详细探讨了如何利用LLM的逻辑缺陷和交互机制实施有效攻击，旨在为安全专家在评估新兴AI应用安全性时提供必要的攻击模型参考，帮助其在复杂环境下识别并修复潜在的安全漏洞。",
+      "tags": [
+        "LLM攻击",
+        "红队技术",
+        "智能体安全"
+      ],
+      "url": "https://infosecwriteups.com/ai-offensive-security-practical-attacks-against-llm-agents-516dbdabbf86?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-04-30T04:45:57+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚焦于LLM智能体这一新兴攻击面的实战技术。"
+    },
+    {
+      "title_zh": "Windows 11 安全更新 KB5083769 导致多厂商第三方备份软件运行故障",
+      "title_orig": "April KB5083769 Windows 11 update causes backup software failures",
+      "summary": "微软发布的2026年4月安全更新KB5083769存在严重兼容性缺陷，会导致运行Windows 11 24H2和25H2系统的多个供应商的第三方备份应用程序发生故障。该故障主要表现为备份任务无法正常启动或执行失败，受影响的组件涉及系统底层备份接口，目前已确认该问题波及了市场上多款主流的备份软件产品，给企业和个人用户的数据安全保护工作带来了显著的负面影响。",
+      "tags": [
+        "Windows更",
+        "补丁兼容性",
+        "系统故障"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/microsoft/april-kb5083769-windows-11-update-causes-backup-software-failures/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T15:23:03+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注安全补丁对关键业务系统稳定性的副作用。"
+    },
+    {
+      "title_zh": "Cloudflare IPsec 正式支持后量子加密技术并实现与思科及飞塔设备的互操作性",
+      "title_orig": "Post-quantum encryption for Cloudflare IPsec is generally available",
+      "summary": "Cloudflare宣布其IPsec服务正式支持基于混合ML-KEM算法的后量子加密技术，旨在提前防御未来量子计算对传统加密体系构成的潜在威胁。目前该技术已成功通过与Cisco和Fortinet等主流网络设备供应商的互操作性验证，标志着后量子加密在企业级VPN和网络基础设施中迈向了大规模实际落地的关键阶段，为全球用户提供了更高等级的长期数据传输安全保障。",
+      "tags": [
+        "后量子加密",
+        "IPsec",
+        "网络安全"
+      ],
+      "url": "https://blog.cloudflare.com/post-quantum-ipsec/",
+      "source": "blog.cloudflare.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-04-30T14:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了后量子加密技术在主流网络设备中的商用进展。"
+    }
+  ]
+}
