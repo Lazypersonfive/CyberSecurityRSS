@@ -61,6 +61,8 @@ def _build_feed_for_date(boards: dict[str, dict], d: date) -> dict[str, Any] | N
             "display_name": bcfg.get("display_name", board),
             "items": digest.get("items", []),
             "raw_count": digest.get("raw_count", 0),
+            "selected_count": digest.get("selected_count", len(digest.get("items", []))),
+            "selection_stats": digest.get("selection_stats", {}),
             "generated_at": digest.get("generated_at", ""),
         }
     return out if any_content else None

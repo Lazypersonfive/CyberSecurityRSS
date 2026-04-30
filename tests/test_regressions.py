@@ -24,7 +24,7 @@ from filter_entries import FilteredEntry, filter_and_dedup
 from rss_curation import curate_entries
 from source_policy import select_with_source_policy, source_profile
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
-from site_builder import build
+from site_builder import _build_feed_for_date, build
 
 
 class FetchFeedsTests(unittest.IsolatedAsyncioTestCase):
@@ -54,9 +54,11 @@ class FetchFeedsTests(unittest.IsolatedAsyncioTestCase):
             with patch("fetch_feeds.ARCHIVE_DIR", archive):
                 merged = load_seen_urls("2026-04-29", lookback_days=3)
                 only_today = load_seen_urls("2026-04-29", lookback_days=1)
+                previous_days = load_seen_urls("2026-04-29", lookback_days=3, include_today=False)
 
         self.assertEqual(merged, {"https://example.com/old", "https://example.com/new"})
         self.assertEqual(only_today, {"https://example.com/new"})
+        self.assertEqual(previous_days, {"https://example.com/old"})
 
     def test_archive_urls_merges_with_existing(self) -> None:
         with TemporaryDirectory() as tmpdir:
@@ -188,6 +190,33 @@ class SiteBuilderTests(unittest.TestCase):
         checked_dates = [call.args[1] for call in mock_feed.call_args_list]
         self.assertEqual(len(checked_dates), 2)
 
+    def test_feed_json_preserves_digest_selection_stats(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            digest_dir = Path(tmpdir)
+            digest_dir.joinpath("security_2026-04-30.json").write_text(
+                json.dumps(
+                    {
+                        "board": "security",
+                        "display_name": "安全",
+                        "date": "2026-04-30",
+                        "raw_count": 70,
+                        "selected_count": 20,
+                        "selection_stats": {"total": 20, "direct": 20, "chinese": 2},
+                        "generated_at": "2026-04-30T00:00:00Z",
+                        "items": [{"title_zh": "测试", "url": "https://example.com"}],
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            with patch("site_builder.DIGEST_DIR", digest_dir):
+                feed = _build_feed_for_date({"security": {"display_name": "安全"}}, date(2026, 4, 30))
+
+        block = feed["boards"]["security"]
+        self.assertEqual(block["selected_count"], 20)
+        self.assertEqual(block["selection_stats"]["chinese"], 2)
+
     def test_daily_workflow_supports_single_board_dispatch(self) -> None:
         workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
 
@@ -266,7 +295,7 @@ class FetchAndSaveTests(unittest.TestCase):
                         return_value={"feed-a": {"feed_title": "Feed A", "category": "Labs"}},
                     )
                 )
-                stack.enter_context(patch("fetch_and_save.load_seen_urls", return_value=set()))
+                seen_mock = stack.enter_context(patch("fetch_and_save.load_seen_urls", return_value=set()))
                 stack.enter_context(patch("fetch_and_save.archive_urls", return_value=root / "archive" / "stub.json"))
                 stack.enter_context(patch("fetch_and_save.fetch_all_entries", side_effect=fake_fetch_all_entries))
                 stack.enter_context(patch("fetch_and_save.filter_and_dedup", return_value=([filtered], {"input": 1, "output": 1})))
@@ -278,6 +307,7 @@ class FetchAndSaveTests(unittest.TestCase):
 
         self.assertEqual(payload["fetched_at"], "2026-04-28")
         self.assertEqual(payload["fetched_at_utc"], "2026-04-28T02:03:04Z")
+        seen_mock.assert_called_once_with("2026-04-28", include_today=False)
 
 
 class CurationTests(unittest.TestCase):
@@ -464,6 +494,26 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertTrue(finalized["tags"])
         self.assertTrue(finalized["selection_reason"])
         self.assertGreater(count_chinese_chars(finalized["title_zh"]), 0)
+
+    def test_finalize_digest_item_does_not_truncate_complete_chinese_title(self) -> None:
+        title = "GitHub Copilot将根据用户实际AI使用量调整计费方式"
+        entry = {
+            "title": "GitHub will start charging Copilot users based on their actual AI usage",
+            "summary": "GitHub will start charging Copilot users based on their actual AI usage.",
+            "url": "https://example.com/copilot",
+            "category": "Labs",
+            "published": "2026-04-30T00:00:00Z",
+        }
+        item = {
+            "title_zh": title,
+            "summary": "GitHub宣布将根据Copilot用户的实际AI使用量调整计费方式，这意味着相关服务的成本将更直接地与调用规模挂钩。该变化值得企业和开发团队关注，因为它可能影响日常开发工具预算、团队席位管理和AI辅助编码的使用策略。",
+            "tags": ["开发工具"],
+            "selection_reason": "计费变化影响开发者",
+        }
+
+        finalized = _finalize_digest_item(entry, item)
+
+        self.assertEqual(finalized["title_zh"], title)
 
     def test_candidate_pool_uses_fill_floor_to_backfill_below_threshold(self) -> None:
         scored = [

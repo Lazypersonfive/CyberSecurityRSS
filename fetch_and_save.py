@@ -86,7 +86,10 @@ def main() -> None:
     logger.info("[%s] %d feeds across %d categories", board_label, total_feeds, len(feeds))
 
     today_str = digest_today().isoformat()
-    seen_urls = set() if args.no_dedup else load_seen_urls(today_str)
+    # Site refreshes should be idempotent within the same day: use previous
+    # archive files for cross-day dedupe, but do not filter against URLs that
+    # an earlier board wrote minutes ago in the same workflow.
+    seen_urls = set() if args.no_dedup else load_seen_urls(today_str, include_today=False)
 
     logger.info("[%s] Fetching entries (last %dh)...", board_label, hours)
     entries, health = asyncio.run(

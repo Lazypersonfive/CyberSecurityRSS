@@ -41,8 +41,11 @@ class FeedEntry:
     feed_title: str = ""
 
 
-def load_seen_urls(date_str: str, lookback_days: int = 7) -> set[str]:
+def load_seen_urls(date_str: str, lookback_days: int = 7, include_today: bool = True) -> set[str]:
     """Merge URLs from the last N days of archive/<date>.json files.
+
+    When include_today is false, the current date is skipped so a same-day
+    site refresh does not become an incremental run.
 
     The fetch window for sparse boards (finance) can span up to 14 days, but
     URL collisions outside a 7-day rolling window are rare in practice. This
@@ -51,7 +54,9 @@ def load_seen_urls(date_str: str, lookback_days: int = 7) -> set[str]:
     """
     target = _date.fromisoformat(date_str)
     seen: set[str] = set()
-    for offset in range(max(1, lookback_days)):
+    start_offset = 0 if include_today else 1
+    stop_offset = start_offset + max(1, lookback_days)
+    for offset in range(start_offset, stop_offset):
         path = ARCHIVE_DIR / f"{(target - timedelta(days=offset)).isoformat()}.json"
         if not path.exists():
             continue
