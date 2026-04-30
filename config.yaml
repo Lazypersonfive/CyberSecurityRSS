@@ -16,23 +16,22 @@ boards:
   security:
     display_name: "安全"
     opml: feeds/security.opml
-    fetch_hours: 24
-    max_entries: 70       # 控制进入 LLM 打分的上限，降低每日固定成本
-    llm_max_entries: 70
+    fetch_hours: 36       # 覆盖国内公众号/官方通告的前一日下午和晚间发布
+    max_entries: 120      # 安全板块中文源多且更新分散，需保留更大候选池
+    llm_max_entries: 120
     top_n: 20
     score_threshold: 6
     fill_score_floor: 5
     source_policy:
-      # min_chinese: top_n 里硬保留至少 N 条中文（如有候选）
-      min_chinese: 4
+      # security editorial target: 20 条里尽量 15 条中文技术源
+      min_chinese: 15
       min_direct: 16
-      max_google_news: 2
-      max_aggregator: 3
-      max_per_source: 4
+      max_google_news: 1
+      max_aggregator: 2
+      max_per_source: 5
     source_caps:
       cisa.gov: 8
       blog.upx8.com: 4
-      mp.weixin.qq.com: 6
       simonwillison.net: 2
       reddit.com: 2
   ai:

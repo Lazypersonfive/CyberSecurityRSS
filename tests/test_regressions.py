@@ -23,6 +23,7 @@ from fetch_opml import fetch_opml_metadata
 from filter_entries import FilteredEntry, filter_and_dedup
 from rss_curation import curate_entries
 from source_policy import select_with_source_policy, source_profile
+from security_editorial import adjust_security_score
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
 from site_builder import _build_feed_for_date, build
 
@@ -120,6 +121,24 @@ class FetchOpmlTests(unittest.TestCase):
 
         self.assertEqual(metadata["https://example.com/rss.xml"]["feed_title"], "Anthropic News")
         self.assertEqual(metadata["https://example.com/rss.xml"]["category"], "Labs")
+
+    def test_security_opml_includes_domestic_vulnerability_sources(self) -> None:
+        body = Path("feeds/security.opml").read_text(encoding="utf-8")
+
+        for name in ("奇安信CERT", "绿盟科技CERT", "安全客", "先知社区"):
+            self.assertIn(name, body)
+
+    def test_security_opml_has_no_duplicate_wechat_feed_urls(self) -> None:
+        import xml.etree.ElementTree as ET
+
+        root = ET.parse("feeds/security.opml").getroot()
+        urls = [
+            node.get("xmlUrl")
+            for node in root.findall(".//outline")
+            if "wechat2rss.xlab.app" in (node.get("xmlUrl") or "")
+        ]
+
+        self.assertEqual(len(urls), len(set(urls)))
 
 
 class FilterEntriesTests(unittest.TestCase):
@@ -380,6 +399,25 @@ class SourcePolicyTests(unittest.TestCase):
         self.assertTrue(wechat.is_chinese)
         self.assertTrue(wechat.is_direct)
 
+    def test_wechat_source_key_uses_feed_url_not_shared_host(self) -> None:
+        first = source_profile(
+            {
+                "title": "漏洞分析",
+                "url": "https://mp.weixin.qq.com/s/a",
+                "feed_url": "https://wechat2rss.xlab.app/feed/source-a.xml",
+            }
+        )
+        second = source_profile(
+            {
+                "title": "安全通告",
+                "url": "https://mp.weixin.qq.com/s/b",
+                "feed_url": "https://wechat2rss.xlab.app/feed/source-b.xml",
+            }
+        )
+
+        self.assertNotEqual(first.source_key, second.source_key)
+        self.assertIn("source-a", first.source_key)
+
     def test_selection_policy_caps_google_news_and_reserves_chinese(self) -> None:
         candidates = [
             ({"title": "Google 1", "url": "https://news.google.com/rss/articles/1"}, 10),
@@ -441,8 +479,34 @@ class GeminiPipelineTests(unittest.TestCase):
 
     def test_score_prompts_include_language_fairness(self) -> None:
         for prompt in BOARD_SCORE_SYSTEM.values():
-            self.assertIn("评分只看新闻价值", prompt)
+            self.assertRegex(prompt, r"评分只看(新闻|技术)价值")
             self.assertIn("不因语言", prompt)
+
+    def test_security_prompt_prioritizes_cn_vuln_mechanics_and_deprioritizes_geo_attribution(self) -> None:
+        prompt = BOARD_SCORE_SYSTEM["security"]
+
+        self.assertIn("中文漏洞分析", prompt)
+        self.assertIn("漏洞原理", prompt)
+        self.assertIn("地缘归因", prompt)
+        self.assertIn("上限 4", prompt)
+
+    def test_security_editorial_caps_geopolitical_attribution(self) -> None:
+        entry = {
+            "title": "New Wave of DPRK Attacks Uses AI-Inserted npm Malware",
+            "summary": "North Korea hackers used AI-generated packages in a campaign.",
+        }
+
+        self.assertEqual(adjust_security_score(entry, 9), 4)
+
+    def test_security_config_targets_chinese_technical_sources(self) -> None:
+        import yaml
+
+        security = yaml.safe_load(Path("config.yaml").read_text(encoding="utf-8"))["boards"]["security"]
+
+        self.assertGreaterEqual(security["fetch_hours"], 36)
+        self.assertGreaterEqual(security["llm_max_entries"], 100)
+        self.assertEqual(security["source_policy"]["min_chinese"], 15)
+        self.assertNotIn("mp.weixin.qq.com", security.get("source_caps") or {})
 
     def test_source_policy_reserves_top_chinese_slots(self) -> None:
         # deduped sorted by score desc; CN at idx 0 (sc=9), 4 (sc=5); rest English

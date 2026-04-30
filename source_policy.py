@@ -69,7 +69,6 @@ def source_profile(entry: Any) -> SourceProfile:
     feed_url = _get(entry, "feed_url")
     host = _host(url)
     feed_host = _host(feed_url)
-    source_key = host or feed_host
 
     is_google_news = host == "news.google.com" or feed_host == "news.google.com"
     is_aggregator = _host_matches(host, AGGREGATOR_HOSTS) or _host_matches(
@@ -77,6 +76,7 @@ def source_profile(entry: Any) -> SourceProfile:
         AGGREGATOR_HOSTS,
     )
     is_wechat = "wechat2rss" in feed_host or host == "mp.weixin.qq.com"
+    source_key = feed_url if is_wechat and feed_url else host or feed_host
     text = " ".join(
         _get(entry, field)
         for field in ("title", "title_orig", "feed_title", "summary")
