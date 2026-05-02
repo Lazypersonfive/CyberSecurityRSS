@@ -1,0 +1,342 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-03",
+  "generated_at": "2026-05-02T23:30:14.470212Z",
+  "raw_count": 63,
+  "selected_count": 20,
+  "selection_stats": {
+    "total": 20,
+    "direct": 20,
+    "chinese": 4,
+    "wechat": 4
+  },
+  "items": [
+    {
+      "title_zh": "Linux 内核高危漏洞 CVE-2026-31431 曝光，可导致云环境及 Kubernetes 容器提权至 Root",
+      "title_orig": "CVE-2026-31431: Copy Fail vulnerability enables Linux root privilege escalation across cloud environments",
+      "summary": "高危漏洞“Copy Fail”存在于Linux内核中，攻击者可利用该漏洞在云环境及Kubernetes工作负载中实现Root权限提升，目前有效的利用程序已在野外流传。该漏洞影响范围涵盖多种主流Linux发行版及关键云基础设施组件，官方强烈建议相关组织尽快开展漏洞检测并采取必要的缓解措施，通过及时更新补丁来降低安全风险，防止敏感数据泄露或系统控制权被夺取。",
+      "tags": [
+        "Linux提权",
+        "内核漏洞",
+        "云安全"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/01/cve-2026-31431-copy-fail-vulnerability-enables-linux-root-privilege-escalation/",
+      "source": "microsoft.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T03:06:08+00:00",
+      "cve_ids": [
+        "CVE-2026-31431"
+      ],
+      "selection_reason": "高危内核提权漏洞且已有在野利用，对云原生安全威胁极大。"
+    },
+    {
+      "title_zh": "cPanel 管理面板漏洞 CVE-2026-41940 遭到大规模在野利用",
+      "title_orig": "cPanel Vulnerability Exploited ITW",
+      "summary": "安全研究人员近期监测到针对 cPanel 管理面板漏洞 CVE-2026-41940 的大规模互联网扫描与利用活动，该漏洞正处于被积极利用的活跃状态。虽然原文未详细披露该漏洞的具体技术原理与触发条件，但鉴于其潜在的危害性，建议所有使用 cPanel 的管理员立即检查系统更新，并密切关注官方发布的补丁及相关安全通告。",
+      "tags": [
+        "cPanel",
+        "在野利用",
+        "漏洞预警"
+      ],
+      "url": "https://www.pwndefend.com/2026/05/01/cpanel-vulnerability-exploited-itw/",
+      "source": "pwndefend.com",
+      "category": "RedTeam",
+      "published": "2026-05-01T13:39:13+00:00",
+      "cve_ids": [
+        "CVE-2026-41940"
+      ],
+      "selection_reason": "cPanel 广泛用于 Web 托管，其在野利用漏洞具有高影"
+    },
+    {
+      "title_zh": "Gay Jailbreak 越狱技术利用大模型对齐机制漏洞诱导生成恶意代码",
+      "title_orig": "利用Gay身份绕过大模型安全机制",
+      "summary": "新型越狱技术 Gay Jailbreak 利用大模型在特定群体友好性对齐上的策略漏洞，通过构建特定身份角色和语境话术成功绕过 ChatGPT 和 Claude 4 等主流模型的安全审查。该攻击的核心在于模型为避免产生冒犯性输出而放宽了既定防护规则，导致攻击者能诱导模型输出勒索软件、键盘记录器等高危违规内容与恶意代码。",
+      "tags": [
+        "大模型越狱",
+        "AI安全",
+        "提示词攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451186602&idx=1&sn=bd1bef36613247148d82ca06fee540c8",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T15:03:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 LLM 对齐机制被反向利用的新型攻击路径，具有技术启"
+    },
+    {
+      "title_zh": "Chrome 浏览器文件预览机制存在隐私缺陷，JS 可在上传前窃取本地文件内容",
+      "title_orig": "The file sandbox works. The privacy contract doesn't. Chrome closed the ticket anyway.",
+      "summary": "客户端文件预览功能在上传前会将完整内容以data或blob URI形式加载到DOM中，导致页面上下文中的JS脚本可通过XSS等手段在用户选择文件瞬间静默读取并外传内容。该攻击利用MutationObserver监听DOM变化实现窃取，用户无需提交表单且无任何视觉提示即可触发，尽管这种机制存在严重的隐私泄露风险，但Chrome官方在收到反馈后仍选择关闭该工单且未修复此逻辑缺陷。",
+      "tags": [
+        "浏览器安全",
+        "隐私泄露",
+        "XSS利用"
+      ],
+      "url": "https://www.reddit.com/r/redteamsec/comments/1t1iakg/the_file_sandbox_works_the_privacy_contract/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-05-02T06:43:47+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及浏览器底层预览机制的隐私风险，对红队文件窃取技术有参考价"
+    },
+    {
+      "title_zh": "ConsentFix v3 攻击工具利用自动化 OAuth 滥用手段针对 Azure 平台",
+      "title_orig": "ConsentFix v3 attacks target Azure with automated OAuth abuse",
+      "summary": "黑客论坛近期出现的 ConsentFix v3 攻击技术在原有基础上增加了自动化和规模化能力，专门针对 Azure 环境进行 OAuth 授权滥用以获取云资源访问权。该攻击通过诱导用户授予恶意应用权限来实现非法访问，虽然原文未披露具体的自动化实现细节，但明确指出该技术显著提升了攻击效率和覆盖范围，对云安全构成了新威胁。",
+      "tags": [
+        "Azure安全",
+        "OAuth滥用",
+        "云攻击"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/consentfix-v3-attacks-target-azure-with-automated-oauth-abuse/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-02T14:32:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注云身份认证协议的自动化滥用趋势，对云安全防御有预警意义。"
+    },
+    {
+      "title_zh": "AI 漏洞挖掘实现工程化交付，十天内产出 39 个涵盖多领域的公开 CVE",
+      "title_orig": "【安全圈】十天 39 个公开 CVE",
+      "summary": "AI 红队技术已从灵感阶段转向工程化产出，在短短十天内发现了 39 个公开 CVE 漏洞，涉及音频解码、工业 CAD、车端 CAN 帧及企业 Java 中间件等多个关键领域。这标志着利用 AI 进行大规模自动化漏洞挖掘已具备实战能力，能够跨越不同技术栈高效识别安全缺陷，显著提升了漏洞发现的频率，展现了 AI 在安全领域的交付成果。",
+      "tags": [
+        "AI安全",
+        "漏洞挖掘",
+        "自动化测试"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652076153&idx=1&sn=d3c400f4e823caa80aba5c0c20ec7201",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T12:09:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 在漏洞挖掘领域的工程化突破，反映了安全攻防的新"
+    },
+    {
+      "title_zh": "新型 Python 后门 DEEP#DOOR 利用公共 TCP 隧道服务窃取云凭据",
+      "title_orig": "【安全圈】新型Python后门DEEP#DOOR来袭：竟用公共隧道服务窃取云凭据",
+      "summary": "安全研究人员发现名为 DEEP#DOOR 的 Python 后门框架，该框架利用公共 TCP 隧道服务作为通信基础设施，通过公共服务的合法性来规避传统网络流量监控。攻击者利用此后门隐蔽地窃取受害系统的云服务凭据，虽然原文未详细披露其具体的持久化机制和受影响的云平台类型，但这种利用公共隧道进行数据外传的方式增加了检测难度。",
+      "tags": [
+        "Python后门",
+        "云凭据窃取",
+        "隧道技术"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652076153&idx=4&sn=a09afed0d8ae385c412ac992be6489fe",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T12:09:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "利用合法隧道服务进行 C2 通信是常见的免杀手段，值得防御方"
+    },
+    {
+      "title_zh": "Ha-Natraj 靶机实战：从 PHP 文件包含到 SSH 日志投毒实现 Root 提权",
+      "title_orig": "Ha-Natraj — LFI Log Poisoning + Apache2 User Hijack + sudo nmap to Root | OffSec PG Play",
+      "summary": "本文详细介绍了通过 LFI 漏洞读取系统日志并结合 SSH 连接尝试进行日志投毒的技术路径，成功将文件读取权限转化为远程代码执行。在获取 Apache2 用户权限后，攻击者进一步利用 sudo nmap 的配置不当缺陷成功提升至 Root 权限，完整展示了从 Web 漏洞利用到系统配置缺陷结合的典型攻击链条，强调了侧向思维在渗透测试中的重要性。",
+      "tags": [
+        "LFI利用",
+        "日志投毒",
+        "提权技术"
+      ],
+      "url": "https://infosecwriteups.com/ha-natraj-lfi-log-poisoning-apache2-user-hijack-sudo-nmap-to-root-offsec-pg-play-dbbd1fa12bee?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-02T07:48:12+00:00",
+      "cve_ids": [],
+      "selection_reason": "详细展示了从 Web 漏洞到系统提权的完整攻击链，适合安全从"
+    },
+    {
+      "title_zh": "INE eCPPT 认证 PowerShell 渗透测试实战：从本地映射发现到系统权限提升的 CTF 攻防路径",
+      "title_orig": "eCPPT Powershell for Pentesters INE’s CTF 1 : A Practical Attack Story",
+      "summary": "本文详细记录了在 INE CTF 实验室环境中使用 PowerShell 进行渗透测试的技术过程，重点展示了如何通过本地主机映射发现潜在入口点。作者通过逐步调查机器暴露的服务与配置，演示了在受限环境下利用脚本工具进行内网探测与权限提升的实战技巧，强调了细致的信息收集在复杂攻击链中的核心价值。",
+      "tags": [
+        "PowerShe",
+        "渗透测试",
+        "CTF实战"
+      ],
+      "url": "https://infosecwriteups.com/ecppt-powershell-for-pentesters-ines-ctf-1-a-practical-attack-story-cdb40c55d476?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-02T07:47:38+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 PowerShell 在内网渗透中的实战应用流程。"
+    },
+    {
+      "title_zh": "Web 应用注销机制缺陷导致敏感数据泄露：低危漏洞背后的会话管理安全风险与修复实践",
+      "title_orig": "When Logout Isn’t Really Goodbye: A Subtle Data Exposure Bug.",
+      "summary": "该漏洞属于 Web 会话管理缺陷，触发条件为用户在执行注销操作后，由于后端未彻底失效会话凭证或前端缓存处理不当，导致敏感数据仍可被访问。虽然该漏洞被评为 P4 低危级别，但其揭示了数据暴露的隐蔽路径，目前相关厂商已完成修复并向报告者支付了漏洞赏金，原文未披露受影响的具体组件名称。",
+      "tags": [
+        "会话管理",
+        "数据泄露",
+        "BugBount"
+      ],
+      "url": "https://infosecwriteups.com/when-logout-isnt-really-goodbye-a-subtle-data-exposure-bug-271b683ddb9a?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-02T07:46:46+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型逻辑漏洞案例，对 Web 开发和审计有参考意义。"
+    },
+    {
+      "title_zh": "网络安全巨头 Trellix 证实其源代码库遭遇未经授权访问：部分核心代码泄露并已通报执法部门",
+      "title_orig": "Trellix Confirms Source Code Breach With Unauthorized Repository Access",
+      "summary": "网络安全公司 Trellix 官方确认其源代码库遭到非法入侵，导致部分核心源代码被未经授权的第三方访问，公司在发现异常后已立即启动应急响应机制并聘请外部取证专家进行深入调查。目前 Trellix 已正式通知执法机构协助处理，虽然尚未披露攻击者的具体入侵手段及受影响的代码模块细节，但该事件引发了业界对潜在供应链风险以及后续安全漏洞利用的高度关注。",
+      "tags": [
+        "源代码泄露",
+        "企业安全",
+        "数据泄露"
+      ],
+      "url": "https://thehackernews.com/2026/05/trellix-confirms-source-code-breach.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-02T06:41:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名安全厂商的安全事件，具有行业警示和关注价值。"
+    },
+    {
+      "title_zh": "Netflix 安全专家分享 LLM 漏洞发现新方法：利用 Source-to-Sink 污点分析提升 AI 安全审计效率",
+      "title_orig": "[un]prompted 2026 – Source to Sink: Improving LLM Vuln Discovery",
+      "summary": "来自 Netflix 的安全工程师在 [un]prompted 2026 活动中分享了针对大语言模型的漏洞挖掘技术，重点介绍了如何将传统的 Source-to-Sink 污点分析模型创新性地应用于生成式 AI 安全领域。该方法旨在通过系统化的路径分析帮助安全从业者更精准地识别 AI 集成过程中的安全缺陷，标志着自动化 AI 漏洞发现技术在应对复杂生成式应用风险方面迈出了重要一步。",
+      "tags": [
+        "LLM安全",
+        "污点分析",
+        "自动化审计"
+      ],
+      "url": "https://securityboulevard.com/2026/05/unprompted-2026-source-to-sink-improving-llm-vuln-discovery/",
+      "source": "securityboulevard.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T15:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了传统安全分析方法在 AI 新赛道的迁移与应用。"
+    },
+    {
+      "title_zh": "新型 Bluekit 钓鱼工具包集成 AI 助手：自动化域名注册与智能化欺诈攻击能力分析",
+      "title_orig": "New Bluekit Phishing Kit Features AI Assistant",
+      "summary": "安全研究人员发现一款名为 Bluekit 的新型钓鱼攻击工具包正处于活跃开发阶段，其核心特征是集成了 AI 助手功能以实现自动化的域名注册和攻击流程优化。该工具利用 AI 技术大幅降低了发起大规模、高可信度网络欺诈攻击的技术门槛，使攻击者能够更高效地生成诱导性内容并管理基础设施，这预示着利用生成式人工智能驱动的自动化网络犯罪威胁正在不断升级。",
+      "tags": [
+        "钓鱼攻击",
+        "AI威胁",
+        "自动化工具"
+      ],
+      "url": "https://www.securityweek.com/new-bluekit-phishing-kit-features-ai-assistant/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T10:50:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了攻击工具利用 AI 技术进行演进的最新趋势。"
+    },
+    {
+      "title_zh": "针对网易 Youdao Ads 营销诈骗的深度取证调查：SSL 证书与 DNS 链条揭示的黑产运作内幕",
+      "title_orig": "PART 2: I Published a Scam Expose.",
+      "summary": "这是一篇针对特定营销诈骗活动的法证调查报告，通过对 SSL 证书时间线、WHOIS 信息操纵、DNS 解析链以及付费信任评分的深度分析，还原了诈骗组织的运作模式。作者指出在发布曝光文章后，相关公司对其操作进行了大规模重写，展示了技术调查对打击网络黑产及迫使违规实体改变行为的实际影响力。",
+      "tags": [
+        "网络诈骗",
+        "数字取证",
+        "威胁情报"
+      ],
+      "url": "https://infosecwriteups.com/part-2-i-published-a-scam-expose-bc420e0bbc00?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-02T07:46:18+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了详尽的数字取证思路和黑产对抗实录。"
+    },
+    {
+      "title_zh": "Wahoo Bolt 骑行码表隐藏调试模式探索：硬件设备后门发现与开发者模式进入技术细节",
+      "title_orig": "Welcome to Hell Developer",
+      "summary": "安全研究员通过对 Wahoo Bolt 硬件设备的深入逆向工程，成功发现了其系统中隐藏的开发者调试模式，并详细记录了进入该模式的技术步骤及其暴露的底层系统权限。这一发现对于物联网设备安全审计具有重要的参考价值，揭示了消费级智能硬件在出厂配置中可能残留敏感调试接口的普遍风险，提醒制造商必须加强硬件层面的访问控制以防止潜在的物理或远程越权攻击。",
+      "tags": [
+        "硬件安全",
+        "物联网",
+        "逆向工程"
+      ],
+      "url": "https://noahclements.com/Wahoo-Bolt-Hidden-Debug-Mode/",
+      "source": "noahclements.com",
+      "category": "AI",
+      "published": "2026-05-02T17:25:54+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及硬件调试接口发现，是典型的 IoT 安全研究案例。"
+    },
+    {
+      "title_zh": "威胁情报预警：检测到 Sliver C2 框架恶意活动，关联特定 IP 地址与非标准通信端口",
+      "title_orig": "Sliver C2 Detected – 117[.]148[.]177[.]48:31337",
+      "summary": "安全监测系统近期检测到 Sliver C2 远程控制框架的异常活跃迹象，相关攻击基础设施已明确指向特定 IP 地址及其使用的 31337 通信端口，并触发了针对 Covenant 等框架的关联预警。该事件提醒企业安全运维人员需严密监控内网中符合该特征的异常流量，因为 Sliver 作为一种功能强大的开源红队框架，常被高级威胁参与者用于后渗透阶段的持久化控制与敏感数据窃取。",
+      "tags": [
+        "C2检测",
+        "Sliver",
+        "威胁情报"
+      ],
+      "url": "https://www.redpacketsecurity.com/sliver-c2-detected-117-148-177-48-port-31337/",
+      "source": "redpacketsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T20:36:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "具体的 IOC 情报，可直接用于安全加固和流量监测。"
+    },
+    {
+      "title_zh": "五眼联盟发布《智能体AI服务的审慎采用》指导文件，聚焦AI系统全生命周期安全风险",
+      "title_orig": "五眼联盟发布《智能体AI服务的审慎采用》指导性文件",
+      "summary": "五眼联盟网络安全机构联合发布指导性文件，旨在帮助组织机构在采用智能体AI服务时识别并缓解潜在的安全威胁。该文件详细阐述了AI系统在开发、部署及运行全生命周期中的风险管理框架，重点关注数据隐私保护、模型鲁棒性以及防止恶意利用等关键技术领域，为企业构建安全的AI应用环境提供战略性建议。",
+      "tags": [
+        "AI安全",
+        "风险管理",
+        "合规指导"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIxODM0NDU4MQ==&mid=2247508397&idx=1&sn=a956071df39becd04f5023c51494eaf6",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T00:48:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了针对新兴智能体AI技术的权威安全治理框架。"
+    },
+    {
+      "title_zh": "Sunnet CTMS 系统被曝存在 CVE-2026-7490 安全漏洞，相关技术细节与影响范围待披露",
+      "title_orig": "CVE Alert: CVE-2026-7490 – Sunnet – CTMS",
+      "summary": "安全监测发现 Sunnet 旗下的 CTMS 临床试验管理系统存在编号为 CVE-2026-7490 的安全漏洞，目前该漏洞的具体触发原理、受影响版本及技术细节在原文中尚未明确披露。该预警提醒相关医疗机构及用户密切关注官方补丁的发布动态，以防止潜在攻击者利用该未知漏洞对系统实施非法访问、篡改或破坏敏感的临床试验数据。",
+      "tags": [
+        "漏洞预警",
+        "CVE",
+        "系统安全"
+      ],
+      "url": "https://www.redpacketsecurity.com/cve-alert-cve-2026-7490-sunnet-ctms/",
+      "source": "redpacketsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T19:34:24+00:00",
+      "cve_ids": [
+        "CVE-2026-7490"
+      ],
+      "selection_reason": "CVE漏洞预警，需关注特定行业管理系统的安全风险。"
+    },
+    {
+      "title_zh": "面向中小企业的 Burp Suite Web 应用安全测试实战指南，涵盖登录与后台管理场景",
+      "title_orig": "Web application testing with Burp Suite: a practical guide for UK SMEs",
+      "summary": "本文针对中小企业常用的 Web 应用场景，详细介绍了如何利用 Burp Suite 工具进行渗透测试，重点涵盖了客户登录、员工门户及内部管理后台等关键业务接口。文章通过实际操作流程展示了该工具在拦截请求、漏洞扫描及逻辑漏洞挖掘中的应用价值，旨在帮助安全从业者提升对企业级 Web 应用的风险评估能力。",
+      "tags": [
+        "BurpSuit",
+        "Web安全",
+        "渗透测试"
+      ],
+      "url": "https://securityboulevard.com/2026/05/web-application-testing-with-burp-suite-a-practical-guide-for-uk-smes/",
+      "source": "securityboulevard.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T08:48:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "实用的 Web 渗透测试指南，适合安全初学者和从业者。"
+    },
+    {
+      "title_zh": "安全监测发现特定 IP 地址部署 GoPhish 钓鱼平台登录页面，存在潜在网络钓鱼风险",
+      "title_orig": "GoPhish Login Page Detected – 54[.]197[.]69[.]114:443",
+      "summary": "安全机构在 IP 地址 54.197.69.114 的 443 端口监测到活跃的 GoPhish 登录页面，该开源工具常被攻击者用于发起高度仿真的网络钓鱼攻击活动。虽然原文未披露该设施背后的具体攻击组织或针对的目标群体，但此类钓鱼框架的暴露预示着相关威胁活动的活跃，建议企业安全团队立即加强对该恶意 IP 的流量监控与拦截，以防范潜在风险。",
+      "tags": [
+        "钓鱼攻击",
+        "威胁情报",
+        "GoPhish"
+      ],
+      "url": "https://www.redpacketsecurity.com/gophish-login-detected-54-197-69-114-port-443/",
+      "source": "redpacketsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-05-02T21:37:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "实时威胁情报，有助于安全团队及时阻断钓鱼基础设施。"
+    }
+  ]
+}
