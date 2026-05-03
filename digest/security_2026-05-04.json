@@ -1,0 +1,199 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-04",
+  "generated_at": "2026-05-03T23:30:55.277961Z",
+  "raw_count": 53,
+  "selected_count": 11,
+  "selection_stats": {
+    "total": 11,
+    "direct": 11,
+    "chinese": 1
+  },
+  "items": [
+    {
+      "title_zh": "cPanel 关键漏洞 CVE-2026-41940 遭 Sorry 勒索软件大规模利用以加密网站数据",
+      "title_orig": "Critrical cPanel flaw mass-exploited in \"Sorry\" ransomware attacks",
+      "summary": "关键漏洞 CVE-2026-41940 存在于 cPanel 控制面板中，目前正被攻击者大规模利用以入侵各类网站并部署名为“Sorry”的勒索软件。攻击者通过该漏洞获取服务器访问权限后，会迅速加密其中的敏感数据并以此进行勒索，虽然原文未披露具体技术细节，但其广泛的攻击态势已引起安全领域的持续关注，建议管理员尽快排查受影响的服务器环境。",
+      "tags": [
+        "cPanel",
+        "勒索软件",
+        "漏洞利用"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/critrical-cpanel-flaw-mass-exploited-in-sorry-ransomware-attacks/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-02T21:54:00+00:00",
+      "cve_ids": [
+        "CVE-2026-41940"
+      ],
+      "selection_reason": "cPanel 广泛用于 Web 托管，其漏洞被勒索软件大规模"
+    },
+    {
+      "title_zh": "Linux 内核 algif_aead 模块高危本地提权漏洞 CVE-2026-31431 细节及检测脚本发布",
+      "title_orig": "Exploit for Incorrect Resource Transfer Between Spheres in Linux Linux_Kernel",
+      "summary": "Linux内核algif_aead加密模块中存在一个自2017年引入的逻辑缺陷，该高危漏洞被追踪为CVE-2026-31431，属于严重的跨域资源传输不当漏洞。任何无权限的本地用户均可触发此错误以实现本地提权，目前已有配套的copyfail-check脚本用于检测内核漏洞状态、缓解措施及指导管理员进行修复，旨在通过SSH或Ansible等工具保护本地或大规模服务器集群的安全。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "CVE-2026"
+      ],
+      "url": "https://vulners.com/githubexploit/6058BC55-40E6-5884-A7CA-A819DB7DEF26?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-03T22:04:33+00:00",
+      "cve_ids": [
+        "CVE-2026-31431"
+      ],
+      "selection_reason": "涉及 Linux 内核长期存在的逻辑缺陷，且提供了检测与修复"
+    },
+    {
+      "title_zh": "WordPress 插件 Eventin 存在严重访问控制缺陷 CVE-2026-40776 导致订单伪造",
+      "title_orig": "Exploit for CVE-2026-40776",
+      "summary": "WordPress插件Eventin的公共REST端点会向任何访问者发放wprest nonce，而下游权限回调函数错误地将其作为身份验证替代品，导致授权机制彻底崩溃。该漏洞CVE-2026-40776影响超过1万个活跃安装版本，攻击者无需授权即可获取用户个人身份信息并伪造客户订单，严重威胁网站数据安全，建议受影响的网站管理员针对此越权访问漏洞立即采取补救措施。",
+      "tags": [
+        "WordPres",
+        "访问控制",
+        "信息泄露"
+      ],
+      "url": "https://vulners.com/githubexploit/445C517A-FBD0-5894-80F1-5C6758783847?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-03T21:47:09+00:00",
+      "cve_ids": [
+        "CVE-2026-40776"
+      ],
+      "selection_reason": "典型的逻辑鉴权绕过案例，对 Web 安全开发者具有警示意义。"
+    },
+    {
+      "title_zh": "npm 恶意软件包 feature-flag-service 试图与已知恶意域名进行通信",
+      "title_orig": "Malicious code in feature-flag-service (npm)",
+      "summary": "OpenSSF 软件包分析项目识别出 npm 平台上的 feature-flag-service @ 2.0.3 版本包含恶意代码，该包被发现会与关联恶意活动的特定域名进行通信。由于该恶意包存在潜在的数据外泄或远程控制风险，目前已被安全监测系统标记并预警，提醒开发者在集成第三方服务时务必核实包的安全性与来源，避免因供应链攻击导致企业内部敏感信息泄露。",
+      "tags": [
+        "npm",
+        "供应链安全",
+        "恶意包"
+      ],
+      "url": "https://vulners.com/ossf/OSSF:MAL-2026-3253?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-03T22:30:37+00:00",
+      "cve_ids": [],
+      "selection_reason": "供应链攻击持续活跃，及时发现恶意 npm 包对开发者环境安全"
+    },
+    {
+      "title_zh": "PyPI 恶意包 gauth-client 伪装谷歌客户端通过 PTH 文件实现持久化并窃取凭据",
+      "title_orig": "Malicious code in gauth-client (PyPI)",
+      "summary": "恶意软件包 gauth-client 通过伪装成 Google 官方客户端，试图外泄各类凭据文件，并利用 Python 初始化机制设置 PTH 文件以实现自动启动和持久化。虽然分析版本中的外泄目标被设置为本地主机，暗示其可能处于开发测试阶段，但其明确的凭据窃取意图和隐蔽的自启动手段仍对开发者环境构成严重威胁，用户应警惕此类针对 Python 生态系统的仿冒攻击。",
+      "tags": [
+        "PyPI",
+        "凭据窃取",
+        "持久化"
+      ],
+      "url": "https://vulners.com/ossf/OSSF:MAL-2026-3252?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-03T21:26:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用 Python PTH 文件实现持久化的技术手段，"
+    },
+    {
+      "title_zh": "Telegram Mini Apps 功能被滥用于加密货币诈骗及分发 Android 恶意软件",
+      "title_orig": "Telegram Mini Apps abused for crypto scams, Android malware delivery",
+      "summary": "研究人员发现一项大规模欺诈行动，攻击者利用 Telegram 的 Mini App 小程序功能冒充知名品牌进行加密货币诈骗，并作为分发渠道向移动端用户推送 Android 恶意软件。该行动利用社交软件的信任背书和便捷的小程序入口提高攻击成功率，不仅导致用户资产损失，还通过恶意软件进一步渗透受害者的移动设备，反映出即时通讯平台正成为网络犯罪的新型温床。",
+      "tags": [
+        "Telegram",
+        "移动安全",
+        "网络诈骗"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/telegram-mini-apps-abused-for-crypto-scams-android-malware-delivery/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-03T14:11:21+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了新型社交平台功能被转化为攻击向量的趋势。"
+    },
+    {
+      "title_zh": "Calibre-Web 存在授权不当漏洞 CVE-2026-7709 允许远程操纵用户令牌",
+      "title_orig": "CVE-2026-7709 janeczku Calibre-Web Endpoint kobo_auth.py generate_auth_token improper authorization",
+      "summary": "在janeczku Calibre-Web 0.6.26及以下版本中，cps/kobo_auth.py文件的generate_auth_token函数存在授权验证缺陷，被追踪为CVE-2026-7709。远程攻击者可以通过操纵userid参数触发该漏洞，实现不当授权并获取身份令牌，目前该漏洞的利用代码已在公开渠道流传，尽管厂商在披露前已获知相关信息，但该漏洞仍对全球范围内的电子书管理系统构成严重的安全威胁。 Calibre-Web 存在授权不当漏洞 CVE-2026-7709 允许远程操纵用户令牌。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文。",
+      "tags": [
+        "Calibre-",
+        "授权绕过",
+        "远程攻击"
+      ],
+      "url": "https://vulners.com/cve/CVE-2026-7709?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-03T23:00:16+00:00",
+      "cve_ids": [
+        "CVE-2026-7709"
+      ],
+      "selection_reason": "开源项目中的鉴权漏洞，且 PoC 已公开，需提醒相关用户及时"
+    },
+    {
+      "title_zh": "Microsoft Defender 误报 DigiCert 根证书为木马并导致证书被系统移除",
+      "title_orig": "Microsoft Defender wrongly flags DigiCert certs as Trojan:Win32/Cerdigent.A!dha",
+      "summary": "Microsoft Defender近期错误地将合法的DigiCert根证书识别为Trojan:Win32/Cerdigent.A!dha木马，引发了大规模的误报预警和系统混乱。在某些情况下，该杀毒软件甚至会直接从Windows系统中移除这些证书，导致依赖该证书的加密连接、网站访问及各类应用程序出现验证异常，影响了大量用户的正常使用，目前相关厂商正在紧急处理此严重的误报与证书删除问题。",
+      "tags": [
+        "误报",
+        "数字证书",
+        "Defender"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/microsoft-defender-wrongly-flags-digicert-certs-as-trojan-win32-cerdigentadha/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-03T18:11:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "安全工具误报导致基础设施受损的典型案例，对运维和安全策略制定"
+    },
+    {
+      "title_zh": "深入探讨 Linux 网络编程中 TProxy 透明代理与 NAT 地址转换的技术差异与应用场景",
+      "title_orig": "TProxy and NAT",
+      "summary": "本文深入探讨了 Linux 内核中 TProxy 透明代理与 NAT 网络地址转换两种技术的核心工作原理，并重点对比了它们在处理数据包重定向时的底层实现差异。TProxy 允许在不修改 IP 报文头的情况下直接拦截流量，非常适合构建高性能透明代理服务器，而 NAT 则通过修改地址实现转发，两者在连接追踪、端口管理及系统资源开销方面各有侧重。",
+      "tags": [
+        "网络安全",
+        "透明代理",
+        "Linux内核"
+      ],
+      "url": "https://dyrnq.com/tproxy-and-nat/",
+      "source": "dyrnq.com",
+      "category": "Dev",
+      "published": "2026-05-03T07:55:19+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入讲解底层网络转发机制，对安全网关开发有参考价值。"
+    },
+    {
+      "title_zh": "针对旧版本 SonarQube 7.8 管理员权限的代码执行漏洞利用路径与插件上传技术分析",
+      "title_orig": "SonarQube Exploitation",
+      "summary": "该技术讨论聚焦于在获取管理员凭据的前提下，如何针对旧版 SonarQube 7.8 实例进行渗透测试，以实现远程代码执行权限的获取。攻击者可以尝试将恶意的 JAR 归档文件作为系统插件上传，并利用 API 接口强制重启服务来触发恶意代码的加载，这种利用路径充分揭示了代码质量监控平台在插件管理与权限验证机制上的潜在安全风险。",
+      "tags": [
+        "漏洞利用",
+        "代码执行",
+        "红蓝对抗"
+      ],
+      "url": "https://www.reddit.com/r/Pentesting/comments/1t2zgeh/sonarqube_exploitation/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-05-03T22:22:28+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了常用开发工具的配置风险及插件扩展点的攻击面。"
+    },
+    {
+      "title_zh": "安全监测预警：公网发现活跃的 GoPhish 钓鱼框架登录页面及相关恶意 IP 地址通报",
+      "title_orig": "GoPhish Login Page Detected – 4[.]201[.]122[.]3:443",
+      "summary": "安全监测系统在特定 IP 地址 4.201.122.3 的 443 端口上探测到活跃的 GoPhish 登录页面，该开源框架常被攻击者用于发起大规模的自动化网络钓鱼攻击。由于 GoPhish 管理界面的暴露通常预示着该服务器正被用于部署或管理钓鱼活动，安全团队必须加强对此类恶意基础设施的特征识别，并及时采取拦截措施以防范潜在威胁。",
+      "tags": [
+        "威胁情报",
+        "钓鱼攻击",
+        "资产发现"
+      ],
+      "url": "https://www.redpacketsecurity.com/gophish-login-detected-4-201-122-3-port-443/",
+      "source": "redpacketsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-05-03T21:36:59+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供实时的威胁情报数据，有助于防御侧更新黑名单。"
+    }
+  ]
+}
