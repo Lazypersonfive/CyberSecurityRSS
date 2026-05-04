@@ -1,0 +1,342 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-05",
+  "generated_at": "2026-05-04T23:37:54.354565Z",
+  "raw_count": 78,
+  "selected_count": 20,
+  "selection_stats": {
+    "total": 20,
+    "direct": 20
+  },
+  "items": [
+    {
+      "title_zh": "CISA 警告 Linux 提权漏洞 Copy Fail 已被利用，攻击者可获取系统 Root 权限",
+      "title_orig": "CISA says ‘Copy Fail’ flaw now exploited to root Linux systems",
+      "summary": "CISA 警告称名为 Copy Fail 的 Linux 安全漏洞已在野外被利用，该漏洞在研究人员发布技术细节及 PoC 仅一天后即出现攻击活动。该漏洞允许本地攻击者绕过安全限制并提升至 Root 权限，目前已被列入已知被利用漏洞目录，受影响的 Linux 系统需尽快应用补丁以防范潜在的系统接管风险，避免攻击者获取服务器的最高控制权。",
+      "tags": [
+        "Linux",
+        "提权漏洞",
+        "在野利用"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-says-copy-fail-flaw-now-exploited-to-root-linux-systems/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-04T11:28:15+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及 Linux 核心权限提升且已出现快速在野利用。"
+    },
+    {
+      "title_zh": "泛微 e-cology 协同办公系统高危漏洞 CVE-2026-22679 自三月起遭黑客利用",
+      "title_orig": "Weaver E-cology critical bug exploited in attacks since March",
+      "summary": "黑客自 2026 年 3 月中旬以来一直在利用泛微 e-cology 办公自动化系统中的 CVE-2026-22679 关键漏洞，旨在受害服务器上执行发现命令。该漏洞属于远程代码执行或命令注入类风险，虽然原文未披露具体技术原理，但确认攻击者已通过该漏洞在企业内网进行初步探测，影响该 OA 系统的多个部署版本，对企业内部数据安全构成严重威胁。",
+      "tags": [
+        "泛微OA",
+        "RCE",
+        "漏洞利用"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/weaver-e-cology-critical-bug-exploited-in-attacks-since-march/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-04T22:12:57+00:00",
+      "cve_ids": [
+        "CVE-2026-22679"
+      ],
+      "selection_reason": "国内主流 OA 系统漏洞，具有较高的实战攻防参考价值。"
+    },
+    {
+      "title_zh": "Linux 内核 NFSv4.0 服务端存在堆溢出漏洞，远程攻击者可触发越界写入",
+      "title_orig": "kernel: nfsd: fix heap overflow in NFSv4.0 LOCK replay cache",
+      "summary": "Linux 内核 NFSv4.0 服务端的 nfsd 组件被发现存在堆溢出漏洞，远程未经身份验证的攻击者可通过特定操作触发该风险并损坏相邻堆内存。漏洞源于 LOCK 重放缓存的处理逻辑，通过两个协作的客户端分别设置大所有者字符串锁和请求冲突锁，可导致 slab 越界写入，影响启用了 NFSv4 服务的 Linux 内核版本，可能导致系统崩溃或执行任意代码。",
+      "tags": [
+        "Linux内核",
+        "堆溢出",
+        "NFS"
+      ],
+      "url": "https://vulners.com/redhat/RHSA-2026:13566-CVE-2026-31402?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-04T22:20:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "内核级堆溢出漏洞，涉及底层协议实现，技术深度高。"
+    },
+    {
+      "title_zh": "VENOMOUS#HELPER 钓鱼活动利用 SimpleHelp 等 RMM 工具入侵 80 余家机构",
+      "title_orig": "Phishing Campaign Hits 80+ Orgs Using SimpleHelp and ScreenConnect RMM Tools",
+      "summary": "自2025年4月以来，名为VENOMOUS#HELPER的活跃钓鱼活动针对全球80多家组织发起攻击，主要利用SimpleHelp和ScreenConnect等合法远程监控与管理工具在受感染主机上建立持久访问。该活动受害者大多集中在美国境内，攻击者通过滥用合法软件绕过传统安全检测并实现长期驻留，这种利用合法工具进行渗透的策略显著增加了防御者识别恶意行为的难度。",
+      "tags": [
+        "钓鱼攻击",
+        "RMM工具",
+        "持久化"
+      ],
+      "url": "https://thehackernews.com/2026/05/phishing-campaign-hits-80-orgs-using.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-04T18:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用合法远程管理工具进行持久化渗透的实战手法。"
+    },
+    {
+      "title_zh": "PyPI 平台 PyTorch Lightning 官方包遭供应链投毒，植入凭据窃取恶意代码",
+      "title_orig": "Backdoored PyTorch Lightning package drops credential stealer",
+      "summary": "在 Python 包索引 PyPI 上发现了一个被植入后门的恶意 PyTorch Lightning 版本，旨在窃取开发者的敏感凭据并回传至攻击者服务器。该恶意负载会针对浏览器存储的登录信息、环境变量文件以及云服务访问密钥进行深度扫描，利用深度学习框架的流行度进行供应链攻击，严重威胁下载并安装了该特定恶意版本的开发者环境及相关云端资产安全。",
+      "tags": [
+        "供应链安全",
+        "PyPI",
+        "凭据窃取"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/backdoored-pytorch-lightning-package-drops-credential-stealer/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-04T17:15:27+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对流行 AI 框架的供应链投毒，对开发者安全具有警示意义。"
+    },
+    {
+      "title_zh": "Progress 发布 MOVEit Automation 关键补丁，修复可导致身份验证绕过的漏洞",
+      "title_orig": "Progress Patches Critical MOVEit Automation Bug Enabling Authentication Bypass",
+      "summary": "Progress Software 发布了针对 MOVEit Automation 管理文件传输解决方案的安全更新，修复了一个可能导致身份验证绕过的关键漏洞。该漏洞允许攻击者在未经授权的情况下访问系统并操纵文件移动工作流，影响企业环境中的自动化任务处理，官方建议所有使用该 MFT 产品的用户立即升级以防止敏感数据泄露，确保企业自动化文件传输流程的完整性。",
+      "tags": [
+        "MOVEit",
+        "身份验证绕过",
+        "补丁更新"
+      ],
+      "url": "https://thehackernews.com/2026/05/progress-patches-critical-moveit.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-04T16:34:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关键 MFT 软件漏洞，历史上此类软件曾多次引发大规模数据泄"
+    },
+    {
+      "title_zh": "微软披露多阶段行为准则主题钓鱼攻击，利用 AiTM 技术绕过 MFA 窃取令牌",
+      "title_orig": "Breaking the code: Multi-stage ‘code of conduct’ phishing campaign leads to AiTM token compromise",
+      "summary": "微软研究人员观察到一种大规模凭据窃取活动，攻击者使用“行为准则”为诱饵发送多阶段钓鱼邮件，并利用合法域名分发信息。该攻击链采用了中间人攻击技术，通过拦截认证过程窃取会话令牌，从而绕过多因子身份验证，实现对目标账户的完全访问，体现了现代钓鱼攻击在对抗 MFA 方面的演进。",
+      "tags": [
+        "AiTM",
+        "MFA绕过",
+        "钓鱼攻击"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/04/breaking-the-code-multi-stage-code-of-conduct-phishing-campaign-leads-to-aitm-token-compromise/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-04T15:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "详细分析了绕过 MFA 的高级钓鱼技术，具有防御参考价值。"
+    },
+    {
+      "title_zh": "cPanel 关键漏洞遭武器化利用，东南亚政府及全球 MSP 服务商成为攻击目标",
+      "title_orig": "Critical cPanel Vulnerability Weaponized to Target Government and MSP Networks",
+      "summary": "近期披露的 cPanel 关键漏洞已被未知威胁者武器化，用于针对东南亚政府、军事实体以及全球多家托管服务提供商进行网络渗透。攻击活动涉及对 cPanel 管理面板的漏洞利用，旨在获取服务器控制权或进入受保护的网络环境，受影响范围涵盖菲律宾、加拿大及美国等地的 MSP 机构，显示出该漏洞在实战中具有极高的危害性，且攻击目标指向性极强。",
+      "tags": [
+        "cPanel",
+        "漏洞利用",
+        "定向攻击"
+      ],
+      "url": "https://thehackernews.com/2026/05/critical-cpanel-vulnerability.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-04T09:27:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关键基础设施管理工具漏洞被武器化，影响范围广泛且目标敏感。"
+    },
+    {
+      "title_zh": "从匿名 RPC 枚举到域管理员：利用 Azure AD Connect 漏洞实现内网权限提升的技术路径",
+      "title_orig": "From Anonymous to Administrator: A Chain of Quiet Mistakes",
+      "summary": "在 Windows 11 24H2 版本中发现了一个严重的本地权限提升漏洞，允许攻击者从普通用户权限直接提升至最高系统权限。虽然原文未披露该漏洞的具体 CVE 编号或触发该漏洞的具体系统组件名称，但已确认存在可用的利用程序，对最新的 Windows 11 操作系统构成直接安全威胁，相关安全从业者应密切关注微软后续发布的官方补丁及技术细节。",
+      "tags": [
+        "权限提升",
+        "Azure AD",
+        "内网渗透"
+      ],
+      "url": "https://infosecwriteups.com/from-anonymous-to-administrator-a-chain-of-quiet-mistakes-55d0daf90bf9?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-04T13:05:29+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了完整的攻击链条，对实战红蓝对抗有指导意义。"
+    },
+    {
+      "title_zh": "Linux 内核 6.18-rc5 版本 proc_readdir_de 函数存在本地权限提升漏洞",
+      "title_orig": "[local] Linux Kernel proc_readdir_de() 6.18-rc5 - Local Privilege Escalation",
+      "summary": "CodeCanyon Perfex CRM 3.4.1 及以下版本中存在 SQL 注入漏洞，漏洞编号为 CVE-2026-7783，主要影响 Admin Kanban 端点组件。该漏洞源于 AbstractKanban.php 文件的 applySortQuery 函数未对输入参数进行有效过滤，远程攻击者可以通过操纵排序查询参数发起攻击，目前该漏洞的利用代码已经公开，可能导致数据库敏感信息泄露并威胁系统安全。 Linux 内核 6.18-rc5 版本 proc_readdir_de 函数存在本地权限提升漏洞。该条来自exploit-db.com，归类于WebSecurity，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动。",
+      "tags": [
+        "Linux内核",
+        "提权漏洞",
+        "本地攻击"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52550",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-05-04T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "内核级提权漏洞，影响系统底层安全。"
+    },
+    {
+      "title_zh": "Linux 内核 6.19.3 版本 nf_tables 组件发现本地权限提升漏洞及利用代码",
+      "title_orig": "[local] Linux nf_tables 6.19.3 - Local Privilege Escalation",
+      "summary": "Totolink A8000RU 7.1cu.643_b20200521 版本存在严重的远程 OS 命令注入漏洞，漏洞编号为 CVE-2026-7823，被评定为关键级别。该漏洞位于 /cgi-bin/cstecgi.cgi 文件的 setAppFilterCfg 函数中，攻击者通过操纵 enable 参数即可远程发起攻击并在受影响设备上执行任意系统命令，目前针对该漏洞的利用程序已经公开可用，建议用户及时采取防护措施。 Linux 内核 6.19.3 版本 nf_tables 组件发现本地权限提升漏洞及利用代码。该条来自exploit-db.com，归类于WebSecurity，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和。",
+      "tags": [
+        "Linux内核",
+        "nf_table",
+        "提权漏洞"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52549",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-05-04T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "nf_tables 是常见的漏洞高发区，且已有公开利用。"
+    },
+    {
+      "title_zh": "Linksys E1200 路由器 2.0.04 版本存在身份验证后的栈缓冲区溢出漏洞",
+      "title_orig": "[hardware] Linksys E1200 2.0.04 - Authenticated Stack Buffer Overflow (RCE)",
+      "summary": "Amazon WorkSpaces for Windows 2.6.2034.0 之前版本的 Skylight Workspace 配置服务存在权限管理不当漏洞，编号为 CVE-2026-7791。该漏洞源于日志轮转机制的缺陷，允许本地非管理用户绕过文件系统权限保护，将任意文件放置在任意位置，从而实现从普通用户到 SYSTEM 权限的提升，受影响用户应尽快升级客户端版本以规避此类本地提权风险。 Linksys E1200 路由器 2.0.04 版本存在身份验证后的栈缓冲区溢出漏洞。该条来自exploit-db.com，归类于WebSecurity，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影。",
+      "tags": [
+        "硬件安全",
+        "缓冲区溢出",
+        "RCE"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52548",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-05-04T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的嵌入式设备栈溢出案例，具有教学和实战价值。"
+    },
+    {
+      "title_zh": "Windows 11 24H2 最新版本发现本地权限提升漏洞及 Exploit 详情",
+      "title_orig": "[local] Windows 11 24H2 - Local Privilege Escalation",
+      "summary": "在 Windows 11 24H2 版本中发现了一个本地权限提升漏洞，允许攻击者从普通用户权限提升至系统权限。原文未披露该漏洞的具体 CVE 编号或触发该漏洞的具体系统组件名称，但已确认存在可用的利用程序。该漏洞对最新的 Windows 11 操作系统构成直接威胁，安全从业者应关注微软后续发布的官方补丁及技术细节。 Windows 11 24H2 最新版本发现本地权限提升漏洞及 Exploit 详情。该条来自exploit-db.com，归类于WebSecurity，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原。",
+      "tags": [
+        "Windows ",
+        "提权漏洞",
+        "操作系统安全"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52546",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-05-04T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对最新版 Windows 系统的提权，影响范围广。"
+    },
+    {
+      "title_zh": "Perfex CRM 3.4.1 及以下版本 Admin Kanban 端点存在 SQL 注入漏洞",
+      "title_orig": "CVE-2026-7783 CodeCanyon Perfex CRM Admin Kanban Endpoint AbstractKanban.php applySortQuery sql injection",
+      "summary": "CodeCanyon Perfex CRM 3.4.1 及以下版本中存在 SQL 注入漏洞，漏洞编号为 CVE-2026-7783。该漏洞源于应用服务组件中 AbstractKanban.php 文件的 applySortQuery 函数未对输入参数进行有效过滤。远程攻击者可以通过操纵排序查询参数发起攻击，目前该漏洞的利用代码已经公开，可能导致数据库敏感信息泄露。 Perfex CRM 3.4.1 及以下版本 Admin Kanban 端点存在 SQL 注入漏洞。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合自身业务判断是。",
+      "tags": [
+        "SQL注入",
+        "Perfex C",
+        "Web安全"
+      ],
+      "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-7783?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-04T23:15:13+00:00",
+      "cve_ids": [
+        "CVE-2026-7783"
+      ],
+      "selection_reason": "流行的 CRM 系统漏洞，且 Exploit 已公开。"
+    },
+    {
+      "title_zh": "Totolink A8000RU 路由器 cstecgi.cgi 接口存在远程命令注入漏洞",
+      "title_orig": "CVE-2026-7823 | Totolink A8000RU 7.1cu.643_b20200521 /cgi-bin/cstecgi.cgi setAppFilterCfg enable os command injection",
+      "summary": "Totolink A8000RU 7.1cu.643_b20200521 版本存在严重的远程命令注入漏洞，编号为 CVE-2026-7823。漏洞位于 /cgi-bin/cstecgi.cgi 文件的 setAppFilterCfg 函数中，通过操纵 enable 参数即可触发。攻击者可以远程发起攻击并在受影响的设备上执行任意系统命令，目前针对该漏洞的利用工具已在社区流传。 Totolink A8000RU 路由器 cstecgi.cgi 接口存在远程命令注入漏洞。该条来自vuldb.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合自身业务判断是否需要跟进。",
+      "tags": [
+        "命令注入",
+        "物联网安全",
+        "Totolink"
+      ],
+      "url": "https://vuldb.com/vuln/361075",
+      "source": "vuldb.com",
+      "category": "Synthesis",
+      "published": "2026-05-04T22:19:12+00:00",
+      "cve_ids": [
+        "CVE-2026-7823"
+      ],
+      "selection_reason": "高危远程命令执行漏洞，直接威胁 IoT 设备控制权。"
+    },
+    {
+      "title_zh": "Amazon WorkSpaces Windows 客户端日志轮转机制存在本地提权漏洞",
+      "title_orig": "CVE-2026-7791",
+      "summary": "Amazon WorkSpaces for Windows 2.6.2034.0 之前版本的 Skylight Workspace 配置服务存在权限管理不当漏洞，编号为 CVE-2026-7791。该漏洞源于日志轮转机制的缺陷，允许本地非管理用户绕过文件系统权限保护，将任意文件放置在任意位置。通过此操作，攻击者可以实现从普通用户到 SYSTEM 权限的提升，建议受影响用户尽快升级客户端版本。 Amazon WorkSpaces Windows 客户端日志轮转机制存在本地提权漏洞。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和。",
+      "tags": [
+        "Amazon",
+        "权限提升",
+        "逻辑漏洞"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-7791?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-04T22:16:20+00:00",
+      "cve_ids": [
+        "CVE-2026-7791"
+      ],
+      "selection_reason": "涉及云桌面客户端的逻辑提权，利用思路具有代表性。"
+    },
+    {
+      "title_zh": "Linux 内核 algif_aead 密码算法接口存在逻辑缺陷可能导致数据完整性受损",
+      "title_orig": "kernel: crypto: algif_aead - Revert to operating out-of-place",
+      "summary": "该漏洞源于 Linux 内核的 algif_aead 密码算法接口引入了错误的“原地操作”逻辑，导致源数据与目标数据的映射不一致。在执行加密操作时，这种映射冲突可能引发非预期的行为或数据完整性问题，进而影响加密通信的可靠性；受影响的具体内核版本及组件范围原文未详细披露，目前已通过恢复非原地操作模式进行修复。",
+      "tags": [
+        "Linux内核",
+        "加密算法",
+        "数据完整性"
+      ],
+      "url": "https://vulners.com/redhat/RHSA-2026:13566-CVE-2026-31431?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-04T22:20:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及内核加密接口逻辑漏洞，对数据安全传输有直接影响。"
+    },
+    {
+      "title_zh": "Linux 内核 bonding 驱动程序存在释放后使用漏洞可导致本地拒绝服务攻击",
+      "title_orig": "kernel: Linux kernel: Use-after-free in bonding driver leads to denial of service",
+      "summary": "Linux内核的bonding驱动程序在执行bond_xmit_broadcast函数时存在释放后使用漏洞，低权限的本地攻击者可利用该缺陷对系统发起攻击。该漏洞主要源于并发从属设备在进行绑定或释放操作时产生的竞态条件，会导致原始套接字缓冲区被重复释放，成功利用此漏洞将直接引发系统崩溃并导致拒绝服务，严重威胁系统的运行稳定性与安全性。",
+      "tags": [
+        "Linux内核",
+        "UAF漏洞",
+        "拒绝服务"
+      ],
+      "url": "https://vulners.com/redhat/RHSA-2026:13566-CVE-2026-31419?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-04T22:20:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的内核驱动竞态条件漏洞，具有实际的本地攻击风险。"
+    },
+    {
+      "title_zh": "KubSTU CTF 2026 竞赛题解发布：涵盖取证及 RSA 与 3DES 加密挑战技术点",
+      "title_orig": "KubSTU CTF 2026 Writeups: Five Challenges, Saturday",
+      "summary": "本文详细记录了 KubSTU CTF 2026 竞赛中五个挑战项目的解题思路，重点涵盖了电子数据取证、RSA 加密算法、3DES 加密算法等核心技术领域。作者分享了在处理包含大量干扰文件的复杂场景下的分析技巧，以及在面对加密算法逻辑陷阱时的思维突破过程，为安全从业者提供了实战化的密码学分析与取证技术参考，具有较高的学习价值。",
+      "tags": [
+        "CTF题解",
+        "密码学",
+        "数字取证"
+      ],
+      "url": "https://infosecwriteups.com/kubstu-ctf-2026-writeups-five-challenges-saturday-43d7f2bec403?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-04T13:05:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供多维度的加密与取证实战思路，有助于提升技术分析能力。"
+    },
+    {
+      "title_zh": "网络安全公司 Trellix 证实其源代码库遭到黑客入侵并导致部分数据泄露",
+      "title_orig": "Trellix discloses data breach after source code repository hack",
+      "summary": "网络安全厂商 Trellix 官方披露了一起数据泄露事件，攻击者通过非法手段获得了其部分源代码库的访问权限。目前已知攻击者获取了存储库中的部分代码内容，但关于泄露的具体代码规模、受影响的产品线以及是否包含敏感凭据等详细技术细节，原文中并未给出进一步的披露，该事件反映了供应链核心资产面临的持续安全威胁。",
+      "tags": [
+        "数据泄露",
+        "源代码安全",
+        "企业安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/trellix-discloses-data-breach-after-source-code-repository-hack/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-04T16:25:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名安全厂商源码泄露事件，关注供应链安全与代码保护。"
+    }
+  ]
+}
