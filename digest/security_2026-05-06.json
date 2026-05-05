@@ -1,0 +1,352 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-06",
+  "generated_at": "2026-05-05T23:35:37.710496Z",
+  "raw_count": 90,
+  "selected_count": 20,
+  "selection_stats": {
+    "total": 20,
+    "direct": 20
+  },
+  "items": [
+    {
+      "title_zh": "泛微 e-cology 协同办公平台调试接口存在远程代码执行漏洞 CVE-2026-22679 并遭利用",
+      "title_orig": "Weaver E-cology RCE Flaw CVE-2026-22679 Actively Exploited via Debug API",
+      "summary": "泛微e-cology协同办公平台存在编号为CVE-2026-22679的严重漏洞，其CVSS评分高达9.8，主要源于系统调试接口API存在未经身份验证的远程代码执行缺陷。该漏洞影响20260312之前的10.0版本，攻击者可通过特定路径完全控制服务器，且目前已在野外被积极利用，建议相关企业立即安装官方发布的补丁以防范攻击并保护企业核心数据资产安全。",
+      "tags": [
+        "泛微OA",
+        "RCE漏洞",
+        "在野利用"
+      ],
+      "url": "https://thehackernews.com/2026/05/weaver-e-cology-rce-flaw-cve-2026-22679.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T07:37:00+00:00",
+      "cve_ids": [
+        "CVE-2026-22679"
+      ],
+      "selection_reason": "泛微OA在国内企业覆盖广，该RCE漏洞已在野利用，风险极高。"
+    },
+    {
+      "title_zh": "cPanel/WHM 存在 CRLF 注入漏洞 CVE-2026-41940 可绕过身份验证获取 Root 权限",
+      "title_orig": "Exploit for Missing Authentication for Critical Function in Cpanel",
+      "summary": "cPanel/WHM管理面板中存在关键功能身份验证缺失漏洞，编号为CVE-2026-41940，攻击者可利用CRLF注入手段绕过认证流程并实现权限提升。通过该漏洞，攻击者能够获得服务器的Root级别远程代码执行权限，目前已有开源工具包实现了自动化利用，建议管理员立即核查补丁状态并对受影响的cPanel组件进行安全加固，以防止服务器控制权被非法夺取。",
+      "tags": [
+        "cPanel",
+        "身份绕过",
+        "提权"
+      ],
+      "url": "https://vulners.com/githubexploit/8F486651-6CB4-54B6-8532-9AE328F49A9F?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-05T22:06:49+00:00",
+      "cve_ids": [
+        "CVE-2026-41940"
+      ],
+      "selection_reason": "涉及主流服务器管理面板的Root提权，且已有公开利用脚本。"
+    },
+    {
+      "title_zh": "Apache HTTP Server 修复 HTTP/2 协议双重释放漏洞 CVE-2026-23918 可致 RCE",
+      "title_orig": "Critical Apache HTTP/2 Flaw (CVE-2026-23918) Enables DoS and Potential RCE",
+      "summary": "Apache软件基金会发布安全更新修复了CVE-2026-23918漏洞，该漏洞存在于HTTP Server的HTTP/2协议处理模块中，属于严重的双重释放缺陷，CVSS评分为8.8。攻击者通过构造特殊的HTTP/2请求，可能导致服务崩溃形成拒绝服务攻击，甚至在特定条件下实现远程代码执行，建议所有受影响版本的用户及时升级至官方最新版本，以确保Web服务的可用性与安全性。",
+      "tags": [
+        "Apache",
+        "HTTP/2",
+        "双重释放"
+      ],
+      "url": "https://thehackernews.com/2026/05/critical-apache-http2-flaw-cve-2026.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T16:19:00+00:00",
+      "cve_ids": [
+        "CVE-2026-23918"
+      ],
+      "selection_reason": "Apache作为核心Web基础设施，其HTTP/2协议栈漏洞"
+    },
+    {
+      "title_zh": "MetInfo CMS 存在代码注入漏洞 CVE-2026-29014 已被黑客用于远程执行攻击",
+      "title_orig": "MetInfo CMS CVE-2026-29014 Exploited for Remote Code Execution Attacks",
+      "summary": "开源内容管理系统MetInfo CMS被曝存在CVE-2026-29014代码注入漏洞，受影响版本涵盖7.9、8.0及8.1，攻击者无需身份验证即可通过注入PHP代码执行任意指令。根据VulnCheck的监测，威胁参与者正利用此CVSS 9.8分的漏洞发起积极攻击，由于该系统应用广泛，建议所有使用MetInfo的用户立即更新至安全版本，防止网站服务器被黑客完全控制或导致敏感信息泄露。",
+      "tags": [
+        "MetInfo",
+        "代码注入",
+        "CMS安全"
+      ],
+      "url": "https://thehackernews.com/2026/05/metinfo-cms-cve-2026-29014-exploited.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T11:56:00+00:00",
+      "cve_ids": [
+        "CVE-2026-29014"
+      ],
+      "selection_reason": "开源CMS的高危RCE漏洞且已被在野利用，需重点关注。"
+    },
+    {
+      "title_zh": "Linux 内核 AF_ALG 子系统存在 Copy Fail 漏洞 CVE-2026-31431 可实现本地提权",
+      "title_orig": "Breakdown of CVE-2026–31431 (Copy Fail) an Overl00k3d Linux Kernel Vulnerability Enables Privilege…",
+      "summary": "Linux内核AF_ALG用户空间加密子系统存在名为“Copy Fail”的权限提升漏洞，编号为CVE-2026-31431，其根源在于2017年引入的AEAD密码操作性能优化补丁。本地用户可利用该缺陷损坏内存中任何可读文件的副本，包括关键的setuid二进制文件，从而非法获取Root最高权限，该漏洞影响多个主流Linux发行版内核，需引起系统管理员高度重视并尽快应用内核安全补丁。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "内存损坏"
+      ],
+      "url": "https://infosecwriteups.com/breakdown-of-cve-2026-31431-copy-fail-an-overl00k3d-linux-kernel-vulnerability-enables-privilege-f8658453ab81?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-04T13:05:50+00:00",
+      "cve_ids": [
+        "CVE-2026-31431"
+      ],
+      "selection_reason": "Linux内核子系统漏洞，涉及权限提升，技术原理具有深度。"
+    },
+    {
+      "title_zh": "DarkSword 恶意软件利用 iOS 多个零日漏洞组成全链条攻击以监控设备",
+      "title_orig": "DarkSword Malware",
+      "summary": "Google 威胁情报小组发现了一套名为 DarkSword 的 iOS 全链条漏洞利用工具，该工具利用了多个零日漏洞实现对设备的完全控制。研究表明该攻击自 2025 年 11 月起活跃，其有效载荷具有极高的复杂性，疑似由政府背景团队设计。虽然技术细节未完全披露，但该攻击链展示了针对移动端的高级持续性威胁特征，目前相关漏洞已由厂商进行处理。",
+      "tags": [
+        "iOS漏洞",
+        "零日攻击",
+        "间谍软件"
+      ],
+      "url": "https://www.schneier.com/blog/archives/2026/05/darksword-malware.html",
+      "source": "schneier.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T10:42:03+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及iOS全链条0-day利用，代表了移动端攻击的最高技术水"
+    },
+    {
+      "title_zh": "Apache HTTP Server 模块 mod_proxy_ajp 存在堆溢出漏洞 CVE-2026-28780",
+      "title_orig": "CVE-2026-28780",
+      "summary": "Apache HTTP Server的mod_proxy_ajp模块存在堆缓冲区溢出漏洞，编号为CVE-2026-28780，当模块连接到恶意AJP服务器时，攻击者可发送特制消息在堆内存末尾写入受控字节。该漏洞影响2.4.66及之前版本，可能导致服务异常或潜在的代码执行风险，官方强烈建议用户尽快升级至2.4.67版本以修复此安全缺陷，确保代理服务在处理外部AJP通信时的稳定性与安全性。",
+      "tags": [
+        "Apache",
+        "堆溢出",
+        "AJP协议"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-28780?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-05T22:16:00+00:00",
+      "cve_ids": [
+        "CVE-2026-28780"
+      ],
+      "selection_reason": "经典的堆溢出漏洞，涉及Apache代理模块，具有一定的技术分"
+    },
+    {
+      "title_zh": "虚拟光驱工具 DAEMON Tools 官方安装程序遭供应链攻击植入恶意载荷",
+      "title_orig": "DAEMON Tools Supply Chain Attack Compromises Official Installers with Malware",
+      "summary": "卡巴斯基研究人员发现 DAEMON Tools 官方网站分发的安装程序已被篡改，用于传播恶意载荷。这些受污染的安装程序带有开发者的合法数字签名，具有极高的欺骗性，属于典型的供应链攻击。攻击者通过控制官方分发渠道，使下载并运行该软件的用户面临设备被感染的风险。目前建议用户停止使用受影响版本的安装包，并检查系统是否存在异常行为。",
+      "tags": [
+        "供应链攻击",
+        "数字签名",
+        "软件安全"
+      ],
+      "url": "https://thehackernews.com/2026/05/daemon-tools-supply-chain-attack.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T16:07:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名工具软件的供应链污染事件，对软件分发安全具有警示意义。"
+    },
+    {
+      "title_zh": "深入探索 NVIDIA Linux 开源驱动程序内部机制与 IOCTL 接口安全分析",
+      "title_orig": "Exploring NVIDIA Linux Drivers Internals Basics & IOCTLs",
+      "summary": "本文深入探讨了 NVIDIA 自 2022 年开源的 Linux 驱动程序内部架构，重点分析了驱动程序的基本概念与 IOCTL 通信机制。文章通过对开源代码的逆向与审计，揭示了用户态与内核态交互的底层逻辑，为安全研究员提供了理解 GPU 驱动攻击面及寻找潜在内核漏洞的技术路径，帮助技术社区更好地掌握驱动程序的安全性。",
+      "tags": [
+        "驱动安全",
+        "Linux内核",
+        "NVIDIA"
+      ],
+      "url": "https://fuzzinglabs.com/exploring-nvidia-linux-drivers-internals-basics-ioctls/",
+      "source": "fuzzinglabs.com",
+      "category": "Pwn",
+      "published": "2026-05-05T13:05:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入分析 GPU 驱动底层机制，具有极高的漏洞挖掘参考价值。"
+    },
+    {
+      "title_zh": "Trail of Bits 发布 C/C++ 安全检查清单挑战赛解析：涵盖 Linux 网络程序与 Windows 驱动漏洞",
+      "title_orig": "C/C++ checklist challenges, solved",
+      "summary": "该文章深入解析了安全测试手册中新增的C/C++检查清单，通过两个具体的代码挑战展示了Linux ping程序中的inet_ntoa全局缓冲区竞争问题，以及Windows驱动注册表处理中因缺失类型校验标志位而导致的安全隐患。通过对这些底层技术细节和特定标志位的深度分析，作者不仅揭示了复杂系统编程中极易被忽视的安全陷阱，还为开发者提供了完整的修复指南以提升代码健壮性。",
+      "tags": [
+        "代码审计",
+        "C/C++安全",
+        "漏洞解析"
+      ],
+      "url": "https://blog.trailofbits.com/2026/05/05/c/c-checklist-challenges-solved/",
+      "source": "blog.trailofbits.com",
+      "category": "WebSecurity",
+      "published": "2026-05-05T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "通过实战案例讲解底层安全细节，适合提升代码审计能力。"
+    },
+    {
+      "title_zh": "新型 Linux 恶意软件 Quasar Linux 针对软件开发者：集成 Rootkit 与凭据窃取功能",
+      "title_orig": "New stealthy Quasar Linux malware targets software developers",
+      "summary": "研究人员发现了一种名为 Quasar Linux (QLNX) 的新型隐蔽植入物，该软件专门针对开发者的 Linux 系统进行攻击，具有极强的威胁性。该恶意软件集成了 Rootkit 隐藏技术、后门访问以及敏感凭据窃取功能，利用开发环境的高权限特性进行持久化潜伏，虽然目前具体的初始感染矢量尚未披露，但其对软件供应链安全的潜在影响不容忽视。",
+      "tags": [
+        "Linux恶意软",
+        "Rootkit",
+        "开发者安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-stealthy-quasar-linux-malware-targets-software-developers/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T22:01:39+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对特定高价值人群的隐蔽攻击，提醒开发者关注环境安全。"
+    },
+    {
+      "title_zh": "OpenMRS Core 电子病历系统存在路径遍历漏洞 CVE-2026-40075 可导致任意文件访问",
+      "title_orig": "CVE-2026-40075",
+      "summary": "开源电子病历平台OpenMRS Core在2.7.8及更早版本和2.8.0至2.8.5版本中存在路径遍历漏洞，该漏洞源于ModuleResourcesServlet组件在处理特定端点请求时未对用户输入进行边界校验。攻击者可以利用getFile方法直接拼接恶意路径，从而绕过安全限制并读取服务器上的敏感文件，这不仅威胁到医疗数据的机密性，也可能导致整个医疗信息系统的核心机密信息发生严重泄露。",
+      "tags": [
+        "路径遍历",
+        "OpenMRS",
+        "漏洞预警"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-40075?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-05T22:16:00+00:00",
+      "cve_ids": [
+        "CVE-2026-40075"
+      ],
+      "selection_reason": "医疗系统核心组件漏洞，涉及敏感数据保护，影响面广。"
+    },
+    {
+      "title_zh": "Jupyter Server 身份验证来源校验绕过漏洞 CVE-2026-40110：正则匹配缺陷导致安全风险",
+      "title_orig": "CVE-2026-40110",
+      "summary": "Jupyter Server 2.17.0及更早版本在Origin头部校验机制中存在逻辑缺陷，其后端系统使用Python的re.match函数对允许的来源模式进行匹配，但由于该函数仅从字符串开头锚定而未强制要求完全匹配，导致校验逻辑失效。攻击者可以利用此漏洞构造包含受信任域名的恶意伪造域名，从而轻松绕过白名单限制并实现跨站攻击，最终获取对服务器的未授权访问权限并威胁用户数据安全。",
+      "tags": [
+        "正则绕过",
+        "Jupyter",
+        "Web安全"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-40110?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-05T22:16:00+00:00",
+      "cve_ids": [
+        "CVE-2026-40110"
+      ],
+      "selection_reason": "典型的正则表达式使用不当导致的安全漏洞，具有教学意义。"
+    },
+    {
+      "title_zh": "Jupyter Server 身份验证 Cookie 密钥持久化且不轮换漏洞 CVE-2026-40934",
+      "title_orig": "CVE-2026-40934",
+      "summary": "在Jupyter Server 2.17.0及更早版本中，用于签署身份验证Cookie的密钥被持久化存储在本地静态运行目录中，且在用户重置密码后系统并不会自动轮换该密钥。这种机制导致即使在用户更改密码并重启服务器后，之前签发的身份验证Cookie在加密层面依然保持有效，攻击者若能获取旧的Cookie即可在不掌握新密码的情况下持续维持未授权访问状态，对用户账户安全构成了长期的潜在威胁。",
+      "tags": [
+        "凭据管理",
+        "Jupyter",
+        "认证绕过"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-40934?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-05T22:16:00+00:00",
+      "cve_ids": [
+        "CVE-2026-40934"
+      ],
+      "selection_reason": "涉及身份认证生命周期管理的缺陷，是常见的逻辑漏洞类型。"
+    },
+    {
+      "title_zh": "ABB B&R Automation Studio 工业自动化软件存在身份冒充漏洞预警",
+      "title_orig": "ABB B&R Automation Studio",
+      "summary": "ABB发布的预警指出其B&R Automation Studio产品存在安全漏洞，当系统通过ANSL over TLS或OPC-UA协议与服务器建立连接时，攻击者可利用该漏洞伪装成受信任的通信方。这种身份伪装可能导致工业控制网络中的中间人攻击或非法数据篡改，严重威胁自动化生产线的运行安全，目前官方已针对受影响版本发布了安全更新补丁，并强烈建议相关工业用户尽快完成系统升级以修复此身份验证弱点。",
+      "tags": [
+        "工控安全",
+        "身份冒充",
+        "ABB"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-125-04",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "工控协议实现中的安全漏洞，可能影响工业生产线安全。"
+    },
+    {
+      "title_zh": "Hitachi Energy PCM600 电力保护控制管理工具存在数据完整性漏洞",
+      "title_orig": "Hitachi Energy PCM600",
+      "summary": "Hitachi Energy 披露其 PCM600 产品存在安全漏洞，成功利用该漏洞的攻击者可以破坏产品的完整性，进而影响电力系统的正常运行。受影响版本包括 PCM600 及其相关组件，漏洞可能导致关键的电力系统配置数据被非法篡改，官方建议用户参考推荐的即时行动指南进行缓解或修复，以防止潜在的恶意攻击对能源基础设施造成损害。",
+      "tags": [
+        "电力安全",
+        "Hitachi",
+        "完整性破坏"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-125-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关键基础设施相关软件漏洞，对电力系统安全运行至关重要。"
+    },
+    {
+      "title_zh": "ABB B&R PVI 客户端应用存在敏感信息泄露漏洞，攻击者可读取日志数据中的关键信息",
+      "title_orig": "ABB B&R PVI",
+      "summary": "该漏洞存在于ABB B&R PVI客户端应用中，其核心原理是应用程序在生成的日志数据中记录了敏感机密信息，攻击者若成功利用此漏洞，将能够直接读取并获取这些关键数据。虽然在所有PVI客户端版本中日志功能默认处于关闭状态，但一旦用户手动开启将面临严重泄露风险，目前官方已针对受影响的版本发布了安全更新补丁，建议相关用户尽快完成修复以确保系统环境的安全。",
+      "tags": [
+        "信息泄露",
+        "工业控制系统",
+        "ABB"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-125-02",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及工控系统客户端安全及敏感日志处理规范。"
+    },
+    {
+      "title_zh": "CloudZ 恶意软件利用 Microsoft Phone Link 劫持 Pheno 插件以窃取短信和验证码",
+      "title_orig": "CloudZ malware abuses Microsoft Phone Link to steal SMS and OTPs",
+      "summary": "新版CloudZ远程访问工具正部署名为Pheno的恶意插件，该插件通过滥用Microsoft Phone Link的合法连接功能，实现对移动设备数据的非法同步与监控。攻击者利用此机制可以巧妙绕过传统的安全防御体系，直接从受害者的手机中窃取敏感短信内容及双重身份验证码，进而获取账户的完全控制权，这种针对跨设备连接协议的攻击手段对个人隐私和企业资产构成了严重威胁。",
+      "tags": [
+        "恶意软件",
+        "移动安全",
+        "权限滥用"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/cloudz-malware-abuses-microsoft-phone-link-to-steal-sms-and-otps/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T10:03:52+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了利用合法系统同步功能进行数据窃取的新路径。"
+    },
+    {
+      "title_zh": "安全研究员在联邦漏洞披露计划中发现无保护登录入口，探讨漏洞评级与实际影响",
+      "title_orig": "How I Found an Unprotected Login Portal on a Federal VDP (and Why It Still Got P5)",
+      "summary": "本文详细记录了一名安全研究员在参与联邦政府漏洞披露计划时，发现一个完全缺乏保护且暴露在公网的登录门户网站的技术细节，并深入探讨了此次渗透测试带来的经验教训。尽管该漏洞最终因实际危害评估被评定为最低优先级P5级别，但作者通过分析其背后的逻辑缺陷，强调了在安全审计中识别此类暴露接口的重要性，认为这些基础防御漏洞的修复对于完善整体网络安全体系具有不可忽视的价值。",
+      "tags": [
+        "漏洞挖掘",
+        "VDP",
+        "Web安全"
+      ],
+      "url": "https://infosecwriteups.com/how-i-found-an-unprotected-login-portal-on-a-federal-vdp-and-why-it-still-got-p5-e93dbed192b0?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-04T13:04:39+00:00",
+      "cve_ids": [],
+      "selection_reason": "对漏洞评级逻辑与资产暴露面发现具有实战参考价值。"
+    },
+    {
+      "title_zh": "安全机构扫描百万个暴露的 AI 服务，揭示自托管大语言模型基础设施存在的严重安全风险",
+      "title_orig": "We Scanned 1 Million Exposed AI Services. Here's How Bad the Security Actually Is",
+      "summary": "研究人员对全球一百万个暴露在互联网上的AI服务进行了大规模安全扫描，结果显示企业在快速部署自托管大语言模型基础设施的过程中，为了追求交付速度而严重忽视了基础安全性。由于缺乏必要的配置保护和访问控制，许多AI服务已成为攻击者侵入企业内网的新入口，这种在软件供应链中盲目追求AI效能而牺牲安全的做法，正使过去几十年积累的行业安全成果面临前所未有的严峻挑战。",
+      "tags": [
+        "AI安全",
+        "资产暴露",
+        "LLM"
+      ],
+      "url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-05T10:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "大规模扫描数据反映了当前 AI 基础设施的普遍安全现状。"
+    }
+  ]
+}
