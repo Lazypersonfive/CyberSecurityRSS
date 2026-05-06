@@ -200,8 +200,12 @@ class SiteBuilderTests(unittest.TestCase):
 
         self.assertIn("oai-shell", template)
         self.assertIn("oai-search", template)
+        self.assertIn("Docs / Daily intelligence", template)
         self.assertIn("--surface", template)
         self.assertIn("OpenAI-inspired interface", template)
+        self.assertNotIn("lg:text-8xl", template)
+        self.assertNotIn("sm:text-7xl", template)
+        self.assertIn("grid lg:grid-cols-[220px_minmax(0,1fr)]", template)
         self.assertNotIn("font-sans", template)
 
     def test_cli_lookback_overrides_config(self) -> None:

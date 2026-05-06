@@ -47,8 +47,8 @@
       background: color-mix(in srgb, var(--bg) 92%, transparent);
       backdrop-filter: blur(18px);
     }
-    .oai-hero { border-bottom: 1px solid var(--line); }
-    .oai-title { letter-spacing: -0.065em; line-height: 0.96; }
+    .oai-hero { border-bottom: 1px solid var(--line); background: var(--surface); }
+    .oai-title { letter-spacing: -0.035em; line-height: 1.08; }
     .oai-search {
       border: 1px solid var(--line-strong);
       background: var(--surface);
@@ -88,50 +88,50 @@
     }
     .date-rule { border-top: 1px solid var(--line); }
     @media (max-width: 720px) {
-      .oai-title { letter-spacing: -0.045em; }
+      .oai-title { letter-spacing: -0.025em; }
     }
   </style>
 </head>
 <body>
 <div class="oai-shell">
   <nav class="oai-nav sticky top-0 z-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
       <div class="flex items-center gap-3 min-w-0">
         <div class="w-7 h-7 rounded-full border border-[color:var(--fg)] grid place-items-center text-xs font-semibold">O</div>
         <span class="font-semibold truncate">{{ title }}</span>
       </div>
       <div class="hidden md:flex items-center gap-6 text-sm text-[color:var(--muted)]">
-        <span>Research</span><span>Products</span><span>Security</span><span>Company</span>
+        <span>Docs</span><span>Guides</span><span>Boards</span><span>Archive</span>
       </div>
       <button id="theme-toggle" aria-label="切换主题" class="control rounded-full px-4 py-2 text-sm">明/暗</button>
     </div>
   </nav>
 
   <header class="oai-hero">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 lg:py-24">
-      <div class="max-w-5xl">
-        <p class="text-sm text-[color:var(--muted)] mb-5">Daily intelligence across generated dates</p>
-        <h1 class="oai-title text-5xl sm:text-7xl lg:text-8xl font-semibold">{{ title }}</h1>
-        <p class="mt-6 text-lg sm:text-xl text-[color:var(--muted)] max-w-3xl leading-8">{{ subtitle }}</p>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <div class="max-w-3xl">
+        <p class="text-sm text-[color:var(--muted)] mb-5">Docs / Daily intelligence</p>
+        <h1 class="oai-title text-3xl sm:text-4xl lg:text-5xl font-semibold">{{ title }}</h1>
+        <p class="mt-4 text-base text-[color:var(--muted)] max-w-2xl leading-7">{{ subtitle }}</p>
       </div>
-      <div class="oai-search mt-10 rounded-[2rem] p-3 sm:p-4 max-w-4xl">
+      <div class="oai-search mt-7 rounded-2xl p-2 sm:p-3 max-w-3xl">
         <div class="flex flex-col md:flex-row gap-3">
           <div class="relative flex-1">
             <input id="search" type="search" placeholder="搜索全部日期的标题、摘要、标签、CVE" autocomplete="off"
-                   class="w-full rounded-full bg-transparent px-5 py-4 pr-16 text-base outline-none" />
+                   class="w-full rounded-xl bg-transparent px-4 py-3 pr-16 text-sm outline-none" />
             <button id="search-clear" aria-label="清空搜索" type="button"
                     class="hidden absolute right-3 top-1/2 -translate-y-1/2 rounded-full px-3 py-1 text-sm bg-[color:var(--surface-soft)] text-[color:var(--muted)]">清空</button>
           </div>
-          <select id="date-select" class="control rounded-full px-5 py-4 text-sm md:w-48"></select>
+          <select id="date-select" class="control rounded-xl px-4 py-3 text-sm md:w-44"></select>
         </div>
-        <p id="search-scope" class="px-3 pt-3 text-sm text-[color:var(--muted)]">无搜索时浏览单日；输入关键词后搜索全部已生成日期。</p>
+        <p id="search-scope" class="px-2 pt-2 text-xs sm:text-sm text-[color:var(--muted)]">无搜索时浏览单日；输入关键词后搜索全部已生成日期。</p>
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-    <div class="grid lg:grid-cols-[240px_1fr] gap-8 items-start">
-      <aside class="lg:sticky lg:top-24 space-y-4">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+    <div class="grid lg:grid-cols-[220px_minmax(0,1fr)] gap-6 lg:gap-10 items-start">
+      <aside class="lg:sticky lg:top-20 space-y-4">
         <nav class="flex lg:flex-col gap-2 overflow-x-auto" id="tabs"></nav>
         <p id="meta" class="mono text-xs leading-relaxed text-[color:var(--muted)]"></p>
       </aside>
@@ -139,7 +139,7 @@
     </div>
   </main>
 
-  <footer class="max-w-7xl mx-auto px-4 sm:px-6 py-10 border-t border-[color:var(--line)] text-sm text-[color:var(--muted)] flex flex-wrap justify-between gap-3">
+  <footer class="max-w-6xl mx-auto px-4 sm:px-6 py-8 border-t border-[color:var(--line)] text-sm text-[color:var(--muted)] flex flex-wrap justify-between gap-3">
     <span>自动生成，数据来自各源 RSS，版权归原作者所有。</span>
     <a href="https://openai.com/" class="underline" target="_blank" rel="noopener">OpenAI-inspired interface</a>
   </footer>
