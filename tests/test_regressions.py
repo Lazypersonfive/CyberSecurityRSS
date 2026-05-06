@@ -524,9 +524,12 @@ class GeminiPipelineTests(unittest.TestCase):
 
         security = yaml.safe_load(Path("config.yaml").read_text(encoding="utf-8"))["boards"]["security"]
 
+        self.assertEqual(security["top_n"], 15)
         self.assertGreaterEqual(security["fetch_hours"], 36)
         self.assertGreaterEqual(security["llm_max_entries"], 100)
-        self.assertEqual(security["source_policy"]["min_chinese"], 15)
+        self.assertEqual(security["source_policy"]["min_chinese"], 6)
+        self.assertEqual(security["source_policy"]["min_direct"], 12)
+        self.assertLessEqual(security["source_policy"]["max_google_news"], 1)
         self.assertNotIn("mp.weixin.qq.com", security.get("source_caps") or {})
 
     def test_ai_security_board_is_cost_bounded_and_direct_source_first(self) -> None:
@@ -540,6 +543,28 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertLessEqual(board["source_policy"]["max_google_news"], 2)
         self.assertGreaterEqual(board["source_policy"]["min_direct"], 8)
         self.assertTrue(Path(board["opml"]).exists())
+
+    def test_board_output_targets_match_current_editorial_policy(self) -> None:
+        import yaml
+
+        boards = yaml.safe_load(Path("config.yaml").read_text(encoding="utf-8"))["boards"]
+
+        self.assertEqual(boards["security"]["top_n"], 15)
+        self.assertEqual(boards["security"]["source_policy"]["min_chinese"], 6)
+        self.assertEqual(boards["ai_security"]["top_n"], 10)
+        self.assertEqual(boards["ai"]["top_n"], 15)
+        self.assertEqual(boards["ai"]["source_policy"]["min_chinese"], 3)
+        self.assertEqual(boards["finance"]["top_n"], 10)
+
+    def test_gemini_prompts_encode_current_board_targets(self) -> None:
+        self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["security"])
+        self.assertIn("至少 6 条", BOARD_SCORE_SYSTEM["security"])
+        self.assertIn("每日 10 条", BOARD_SCORE_SYSTEM["ai_security"])
+        self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["ai"])
+        self.assertIn("至少 3 条中文", BOARD_SCORE_SYSTEM["ai"])
+        self.assertIn("每日 10 条", BOARD_SCORE_SYSTEM["finance"])
+        self.assertIn("Google News 只做补充", BOARD_SCORE_SYSTEM["security"])
+        self.assertIn("优先于 Google News", BOARD_SCORE_SYSTEM["ai"])
 
     def test_digest_pipelines_accept_dynamic_board_names(self) -> None:
         for path in ("digest_pipeline_gemini.py", "digest_pipeline.py"):
