@@ -198,9 +198,10 @@ class SiteBuilderTests(unittest.TestCase):
     def test_template_uses_distinctive_editorial_visual_direction(self) -> None:
         template = Path("templates/index.html.j2").read_text(encoding="utf-8")
 
-        self.assertIn("font-display", template)
-        self.assertIn("--ink", template)
-        self.assertIn("radial-gradient", template)
+        self.assertIn("oai-shell", template)
+        self.assertIn("oai-search", template)
+        self.assertIn("--surface", template)
+        self.assertIn("OpenAI-inspired interface", template)
         self.assertNotIn("font-sans", template)
 
     def test_cli_lookback_overrides_config(self) -> None:

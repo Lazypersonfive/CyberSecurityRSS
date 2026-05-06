@@ -7,111 +7,141 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --ink: #16201b;
-      --muted: #647067;
-      --paper: #f4efe4;
-      --paper-2: #fffaf0;
-      --line: rgba(22, 32, 27, 0.16);
-      --accent: #d85f2d;
-      --accent-2: #0f766e;
-      --card: rgba(255, 250, 240, 0.82);
-      --shadow: 0 24px 80px rgba(58, 42, 22, 0.16);
+      --bg: #ffffff;
+      --fg: #0d0d0d;
+      --muted: #6f6f6f;
+      --subtle: #f5f5f5;
+      --line: #e3e3e3;
+      --line-strong: #c7c7c7;
+      --surface: #ffffff;
+      --surface-soft: #f7f7f7;
+      --accent: #111111;
+      --radius-xl: 28px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
     }
     .dark {
-      --ink: #f5f0e5;
-      --muted: #aeb7ad;
-      --paper: #101613;
-      --paper-2: #16201b;
-      --line: rgba(245, 240, 229, 0.14);
-      --accent: #ff8a4c;
-      --accent-2: #5eead4;
-      --card: rgba(22, 32, 27, 0.82);
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      --bg: #050505;
+      --fg: #f7f7f7;
+      --muted: #a1a1a1;
+      --subtle: #111111;
+      --line: #242424;
+      --line-strong: #3a3a3a;
+      --surface: #0b0b0b;
+      --surface-soft: #141414;
+      --accent: #ffffff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.34);
     }
-    @font-face { font-family: "NewsreaderLocal"; font-display: swap; src: local("Iowan Old Style"), local("Georgia"); }
-    @font-face { font-family: "MonoLocal"; font-display: swap; src: local("SF Mono"), local("Menlo"); }
     html { scroll-behavior: smooth; }
     body {
       min-height: 100vh;
-      color: var(--ink);
-      font-family: NewsreaderLocal, "Noto Serif SC", "Songti SC", Georgia, serif;
-      background:
-        radial-gradient(circle at 8% 0%, rgba(216, 95, 45, 0.20), transparent 30rem),
-        radial-gradient(circle at 92% 6%, rgba(15, 118, 110, 0.18), transparent 28rem),
-        linear-gradient(135deg, var(--paper), var(--paper-2));
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      text-rendering: geometricPrecision;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.28;
-      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size: 38px 38px;
-      mask-image: linear-gradient(to bottom, black, transparent 72%);
-    }
-    .mono { font-family: MonoLocal, ui-monospace, monospace; }
-    .shell { position: relative; z-index: 1; }
-    .glass {
-      background: var(--card);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+    .mono { font-family: "SF Mono", Menlo, ui-monospace, monospace; }
+    .oai-shell { min-height: 100vh; }
+    .oai-nav {
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
       backdrop-filter: blur(18px);
     }
-    .masthead-title { letter-spacing: -0.075em; line-height: 0.92; }
+    .oai-hero { border-bottom: 1px solid var(--line); }
+    .oai-title { letter-spacing: -0.065em; line-height: 0.96; }
+    .oai-search {
+      border: 1px solid var(--line-strong);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
     .control {
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.28);
-      color: var(--ink);
+      background: var(--surface-soft);
+      color: var(--fg);
       outline: none;
     }
-    .control:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(216, 95, 45, 0.16); }
-    .tab-btn { border: 1px solid var(--line); background: rgba(255,255,255,0.24); color: var(--muted); }
-    .tab-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-    .card { transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
-    .card:hover { transform: translateY(-3px); border-color: rgba(216, 95, 45, 0.45); }
-    .tag { border: 1px solid var(--line); background: rgba(255,255,255,0.28); }
+    .control:focus { border-color: var(--line-strong); background: var(--surface); }
+    .tab-btn {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+    }
+    .tab-btn.active {
+      background: var(--fg);
+      color: var(--bg);
+      border-color: var(--fg);
+    }
+    .oai-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .oai-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--line-strong);
+      box-shadow: var(--shadow);
+    }
+    .tag {
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      color: var(--muted);
+    }
     .date-rule { border-top: 1px solid var(--line); }
-    @media (max-width: 720px) { .masthead-title { letter-spacing: -0.045em; } }
+    @media (max-width: 720px) {
+      .oai-title { letter-spacing: -0.045em; }
+    }
   </style>
 </head>
 <body>
-<div class="shell max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
-  <header class="glass rounded-[2rem] p-5 sm:p-8 overflow-hidden relative">
-    <div class="absolute right-6 top-6 mono text-[10px] uppercase tracking-[0.3em] text-[color:var(--muted)]">RSS Intelligence</div>
-    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-end pt-8">
-      <div>
-        <p class="mono text-xs uppercase tracking-[0.34em] text-[color:var(--accent)] mb-4">Daily Brief</p>
-        <h1 class="masthead-title text-5xl sm:text-7xl md:text-8xl font-black">每日科技情报</h1>
-        <p class="mt-5 text-base sm:text-lg text-[color:var(--muted)] max-w-2xl">安全 · AI安全 · AI · 金融科技 — LLM 精选日报</p>
+<div class="oai-shell">
+  <nav class="oai-nav sticky top-0 z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 min-w-0">
+        <div class="w-7 h-7 rounded-full border border-[color:var(--fg)] grid place-items-center text-xs font-semibold">O</div>
+        <span class="font-semibold truncate">每日科技情报</span>
       </div>
-      <div class="space-y-3">
-        <div class="relative">
-          <input id="search" type="search" placeholder="跨日期搜索标题、摘要、标签、CVE" autocomplete="off"
-                 class="control w-full rounded-2xl px-4 py-3 pr-12 text-sm" />
-          <button id="search-clear" aria-label="清空搜索" type="button"
-                  class="hidden absolute right-3 top-1/2 -translate-y-1/2 mono text-xs px-2 py-1 rounded-full tag">清空</button>
+      <div class="hidden md:flex items-center gap-6 text-sm text-[color:var(--muted)]">
+        <span>Research</span><span>Products</span><span>Security</span><span>Company</span>
+      </div>
+      <button id="theme-toggle" aria-label="切换主题" class="control rounded-full px-4 py-2 text-sm">明/暗</button>
+    </div>
+  </nav>
+
+  <header class="oai-hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 lg:py-24">
+      <div class="max-w-5xl">
+        <p class="text-sm text-[color:var(--muted)] mb-5">Daily intelligence across generated dates</p>
+        <h1 class="oai-title text-5xl sm:text-7xl lg:text-8xl font-semibold">每日科技情报</h1>
+        <p class="mt-6 text-lg sm:text-xl text-[color:var(--muted)] max-w-3xl leading-8">安全 · AI安全 · AI · 金融科技 — LLM 精选日报</p>
+      </div>
+      <div class="oai-search mt-10 rounded-[2rem] p-3 sm:p-4 max-w-4xl">
+        <div class="flex flex-col md:flex-row gap-3">
+          <div class="relative flex-1">
+            <input id="search" type="search" placeholder="搜索全部日期的标题、摘要、标签、CVE" autocomplete="off"
+                   class="w-full rounded-full bg-transparent px-5 py-4 pr-16 text-base outline-none" />
+            <button id="search-clear" aria-label="清空搜索" type="button"
+                    class="hidden absolute right-3 top-1/2 -translate-y-1/2 rounded-full px-3 py-1 text-sm bg-[color:var(--surface-soft)] text-[color:var(--muted)]">清空</button>
+          </div>
+          <select id="date-select" class="control rounded-full px-5 py-4 text-sm md:w-48"></select>
         </div>
-        <div class="flex gap-3">
-          <select id="date-select" class="control rounded-2xl px-4 py-3 text-sm flex-1"></select>
-          <button id="theme-toggle" aria-label="切换主题" class="control rounded-2xl px-4 py-3 mono text-xs">明/暗</button>
-        </div>
-        <p id="search-scope" class="mono text-[11px] text-[color:var(--muted)]">无搜索时浏览单日；输入关键词后搜索全部已生成日期。</p>
+        <p id="search-scope" class="px-3 pt-3 text-sm text-[color:var(--muted)]">无搜索时浏览单日；输入关键词后搜索全部已生成日期。</p>
       </div>
     </div>
   </header>
 
-  <main class="mt-6 grid lg:grid-cols-[220px_1fr] gap-6 items-start">
-    <aside class="glass rounded-[1.5rem] p-3 sticky top-4">
-      <nav class="flex lg:flex-col gap-2 overflow-x-auto" id="tabs"></nav>
-      <p id="meta" class="mono mt-4 px-2 text-[11px] leading-relaxed text-[color:var(--muted)]"></p>
-    </aside>
-    <section id="feed-body" class="space-y-5"></section>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+    <div class="grid lg:grid-cols-[240px_1fr] gap-8 items-start">
+      <aside class="lg:sticky lg:top-24 space-y-4">
+        <nav class="flex lg:flex-col gap-2 overflow-x-auto" id="tabs"></nav>
+        <p id="meta" class="mono text-xs leading-relaxed text-[color:var(--muted)]"></p>
+      </aside>
+      <section id="feed-body" class="grid gap-4"></section>
+    </div>
   </main>
 
-  <footer class="mt-10 pb-8 mono text-[11px] text-[color:var(--muted)] flex flex-wrap gap-2 justify-between">
+  <footer class="max-w-7xl mx-auto px-4 sm:px-6 py-10 border-t border-[color:var(--line)] text-sm text-[color:var(--muted)] flex flex-wrap justify-between gap-3">
     <span>自动生成，数据来自各源 RSS，版权归原作者所有。</span>
-    <a href="https://github.com/anthropics/claude-code" class="underline" target="_blank" rel="noopener">Powered by Claude</a>
+    <a href="https://openai.com/" class="underline" target="_blank" rel="noopener">OpenAI-inspired interface</a>
   </footer>
 </div>
 
@@ -168,7 +198,7 @@ function renderTabs() {
   tabs.textContent = '';
   BOARD_ORDER.forEach(boardKey => {
     const btn = document.createElement('button');
-    btn.className = 'tab-btn rounded-2xl px-4 py-3 text-left text-sm transition min-w-fit';
+    btn.className = 'tab-btn rounded-full px-4 py-3 text-left text-sm transition min-w-fit';
     const matching = itemsForBoard(boardKey).length;
     const total = totalForBoard(boardKey);
     btn.append(el('span', 'block font-bold', BOARDS[boardKey].display_name));
@@ -180,8 +210,8 @@ function renderTabs() {
 }
 function makeTagPill(text, kind) {
   const cls = kind === 'cve'
-    ? 'tag mono text-[11px] px-2 py-1 rounded-full text-[color:var(--accent)] cursor-pointer'
-    : 'tag mono text-[11px] px-2 py-1 rounded-full text-[color:var(--muted)] cursor-pointer';
+    ? 'tag mono text-[11px] px-2 py-1 rounded-full cursor-pointer'
+    : 'tag mono text-[11px] px-2 py-1 rounded-full cursor-pointer';
   const pill = el('span', cls, text);
   pill.title = `点击筛选 "${text}"`;
   pill.addEventListener('click', () => applySearch(text));
@@ -189,15 +219,15 @@ function makeTagPill(text, kind) {
 }
 function renderCard(item) {
   const card = document.createElement('article');
-  card.className = 'card glass rounded-[1.5rem] p-5 sm:p-6';
-  const top = el('div', 'flex flex-wrap items-center gap-2 mono text-[11px] text-[color:var(--muted)] mb-3');
-  top.append(el('span', 'text-[color:var(--accent)]', fmtDate(item._date || currentDate)));
+  card.className = 'oai-card rounded-3xl p-5 sm:p-6';
+  const top = el('div', 'flex flex-wrap items-center gap-2 mono text-xs text-[color:var(--muted)] mb-4');
+  top.append(el('span', 'text-[color:var(--fg)]', fmtDate(item._date || currentDate)));
   top.append(el('span', '', item.source || ''));
   top.append(el('span', '', fmtTime(item.published)));
   card.append(top);
 
-  const heading = el('h2', 'text-xl sm:text-2xl font-black leading-tight');
-  const link = el('a', 'hover:text-[color:var(--accent)] transition-colors', item.title_zh || item.title_orig || '');
+  const heading = el('h2', 'text-xl sm:text-2xl font-semibold leading-tight tracking-[-0.02em]');
+  const link = el('a', 'hover:underline underline-offset-4 transition-colors', item.title_zh || item.title_orig || '');
   link.href = safeUrl(item.url); link.target = '_blank'; link.rel = 'noopener';
   heading.append(link); card.append(heading);
   if (item.title_zh && item.title_orig && item.title_zh !== item.title_orig) card.append(el('p', 'mt-2 mono text-[11px] text-[color:var(--muted)]', item.title_orig));
@@ -206,7 +236,7 @@ function renderCard(item) {
   (item.tags || []).forEach(t => detail.append(makeTagPill(t, 'tag')));
   (item.cve_ids || []).forEach(c => detail.append(makeTagPill(c, 'cve')));
   card.append(detail);
-  card.append(el('p', 'mt-4 text-[15px] sm:text-base leading-8 text-[color:var(--ink)]', item.summary || ''));
+  card.append(el('p', 'mt-4 text-[15px] sm:text-base leading-8 text-[color:var(--fg)]', item.summary || ''));
   return card;
 }
 function renderBody() {
@@ -219,7 +249,7 @@ function renderBody() {
     ? `正在跨 ${DATES.length} 个日期搜索：“${searchQuery}”`
     : `当前日期：${fmtDate(currentDate)}。输入关键词后搜索全部已生成日期。`;
   if (!items.length) {
-    body.append(el('p', 'glass rounded-[1.5rem] p-10 text-center text-[color:var(--muted)]', searchQuery ? `没有匹配“${searchQuery}”的条目。` : `该日期 ${fmtDate(currentDate)} 的 ${BOARDS[currentBoard].display_name} 板块暂无内容。`));
+    body.append(el('p', 'oai-card rounded-3xl p-10 text-center text-[color:var(--muted)]', searchQuery ? `没有匹配“${searchQuery}”的条目。` : `该日期 ${fmtDate(currentDate)} 的 ${BOARDS[currentBoard].display_name} 板块暂无内容。`));
     meta.textContent = searchQuery ? `0/${total} 匹配` : '暂无内容';
     return;
   }
@@ -282,7 +312,7 @@ searchClear.addEventListener('click', () => applySearch(''));
 
 renderDateSelect();
 loadAllFeeds().catch(err => {
-  document.getElementById('feed-body').append(el('p', 'glass rounded-[1.5rem] p-10 text-center text-[color:var(--muted)]', `加载失败：${err.message}`));
+  document.getElementById('feed-body').append(el('p', 'oai-card rounded-3xl p-10 text-center text-[color:var(--muted)]', `加载失败：${err.message}`));
 });
 </script>
 </body>
