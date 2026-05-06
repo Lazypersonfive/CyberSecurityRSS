@@ -16,7 +16,7 @@ boards:
   security:
     display_name: "安全"
     opml: feeds/security.opml
-    fetch_hours: 36       # 覆盖国内公众号/官方通告的前一日下午和晚间发布
+    fetch_hours: 72       # 覆盖国内公众号/官方通告的前两日发布，避免中文漏洞分析错过候选池
     max_entries: 120      # 安全板块中文源多且更新分散，需保留更大候选池
     llm_max_entries: 120
     top_n: 20
@@ -31,7 +31,6 @@ boards:
       max_per_source: 5
     source_caps:
       cisa.gov: 8
-      blog.upx8.com: 4
       simonwillison.net: 2
       reddit.com: 2
   ai:
