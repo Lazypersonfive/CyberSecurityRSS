@@ -187,6 +187,22 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertIn("safeUrl", template)
         self.assertIn("textContent", template)
 
+    def test_template_searches_across_all_available_dates(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("allFeeds", template)
+        self.assertIn("loadAllFeeds", template)
+        self.assertIn("itemsForBoard", template)
+        self.assertIn("searchQuery ? DATES : [currentDate]", template)
+
+    def test_template_uses_distinctive_editorial_visual_direction(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("font-display", template)
+        self.assertIn("--ink", template)
+        self.assertIn("radial-gradient", template)
+        self.assertNotIn("font-sans", template)
+
     def test_cli_lookback_overrides_config(self) -> None:
         with TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
@@ -242,7 +258,7 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertIn("workflow_dispatch:", workflow)
         self.assertIn("board:", workflow)
         self.assertIn("BOARD_SELECTION", workflow)
-        self.assertIn("security ai finance", workflow)
+        self.assertIn("security ai_security ai finance", workflow)
 
     def test_daily_workflow_uses_pinned_requirements(self) -> None:
         workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
@@ -507,6 +523,24 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertGreaterEqual(security["llm_max_entries"], 100)
         self.assertEqual(security["source_policy"]["min_chinese"], 15)
         self.assertNotIn("mp.weixin.qq.com", security.get("source_caps") or {})
+
+    def test_ai_security_board_is_cost_bounded_and_direct_source_first(self) -> None:
+        import yaml
+
+        boards = yaml.safe_load(Path("config.yaml").read_text(encoding="utf-8"))["boards"]
+        board = boards["ai_security"]
+
+        self.assertEqual(board["top_n"], 10)
+        self.assertLessEqual(board["llm_max_entries"], 35)
+        self.assertLessEqual(board["source_policy"]["max_google_news"], 2)
+        self.assertGreaterEqual(board["source_policy"]["min_direct"], 8)
+        self.assertTrue(Path(board["opml"]).exists())
+
+    def test_digest_pipelines_accept_dynamic_board_names(self) -> None:
+        for path in ("digest_pipeline_gemini.py", "digest_pipeline.py"):
+            body = Path(path).read_text(encoding="utf-8")
+            self.assertNotIn('choices=["security", "ai", "finance"]', body)
+            self.assertIn("parser.add_argument(\"--board\", required=True)", body)
 
     def test_source_policy_reserves_top_chinese_slots(self) -> None:
         # deduped sorted by score desc; CN at idx 0 (sc=9), 4 (sc=5); rest English

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Run the daily multi-board pipeline locally. Pass one or more board names to
-# only process a subset, e.g. ./run_daily.sh ai  or  ./run_daily.sh security ai.
-# With no args, runs all three boards.
+# only process a subset, e.g. ./run_daily.sh ai_security  or  ./run_daily.sh security ai.
+# With no args, runs all configured boards.
 #
 # Backend selection (env var):
 #   LLM_BACKEND=gemini   (default) — uses digest_pipeline_gemini.py, needs GEMINI_API_KEY
@@ -24,7 +24,7 @@ echo "LLM backend: $LLM_BACKEND ($DIGEST_SCRIPT)"
 
 BOARDS=("$@")
 if [ ${#BOARDS[@]} -eq 0 ]; then
-  BOARDS=(security ai finance)
+  BOARDS=(security ai_security ai finance)
 fi
 
 for board in "${BOARDS[@]}"; do

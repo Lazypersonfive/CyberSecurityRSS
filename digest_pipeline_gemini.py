@@ -89,6 +89,14 @@ BOARD_SCORE_SYSTEM = {
 - 0-4: 招聘、营销软文、职业规划、入门求助帖、纯观点；只有地缘归因/政治叙事/攻击组织命名但缺少漏洞原理或技术细节的新闻，上限 4 分
 评分只看技术价值，不因语言、来源篇幅长短打折扣；中文漏洞分析、国内官方源、厂商 CERT/安全实验室首发，权重等同或高于英文媒体。
 只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
+    "ai_security": """你是 AI 安全编辑，对 AI 安全资讯做 0-10 打分。目标是技术安全日报，不是泛 AI 新闻。
+评分标准：
+- 9-10: LLM/Agent 漏洞、提示词注入、模型供应链、AI 代码执行/数据泄露、越狱攻防、模型安全评测或一线厂商安全公告，且有技术机制或可操作影响
+- 7-8: AI 安全研究、红队评测、检测/防护工具、模型滥用与防护案例、AI 基础设施安全
+- 5-6: 有明确安全含义的产品/政策/研究更新
+- 0-4: 泛 AI 产品发布、融资、纯观点、营销软文、没有安全技术点的行业新闻
+评分只看技术价值，不因语言、来源篇幅长短打折扣；官方博客、研究团队和中文一线安全源优先于聚合转述。
+只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
     "ai": """你是 AI 产业观察者，对 AI 资讯做 0-10 打分。
 评分标准：
 - 9-10: 主流实验室（Anthropic/OpenAI/Google/Meta/DeepSeek 等）重大模型发布、里程碑论文、Agentic 能力突破、产业格局级新闻
@@ -293,7 +301,7 @@ def _summarize(
     client: genai.Client, board: str, entries: list[dict[str, Any]]
 ) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
-    system_prompt = SECURITY_SUMMARIZE_SYSTEM if board == "security" else SUMMARIZE_SYSTEM
+    system_prompt = SECURITY_SUMMARIZE_SYSTEM if board in {"security", "ai_security"} else SUMMARIZE_SYSTEM
     for i in range(0, len(entries), SUMMARIZE_BATCH_SIZE):
         batch = entries[i : i + SUMMARIZE_BATCH_SIZE]
         payload = [
@@ -821,7 +829,7 @@ def _fallback_feed_stats(entries: list[dict[str, Any]]) -> dict[str, dict[str, A
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--board", required=True, choices=["security", "ai", "finance"])
+    parser.add_argument("--board", required=True)
     parser.add_argument("--date", default=None, help="YYYY-MM-DD (default today)")
     args = parser.parse_args()
 
