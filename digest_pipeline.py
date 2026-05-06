@@ -26,6 +26,13 @@ from digest_clock import digest_today
 from digest_postprocess import normalize_summary_text, summary_needs_repair
 from digest_postprocess import count_chinese_chars, SUMMARY_TARGET_MAX_CHARS, SUMMARY_TARGET_MIN_CHARS
 from source_policy import select_with_source_policy, sort_scored_candidates, source_mix_stats
+from source_reports import (
+    refresh_latest_report,
+    refresh_weekly_report,
+    render_source_report,
+    write_board_report,
+    write_board_report_json,
+)
 from security_editorial import adjust_security_score
 
 logging.basicConfig(
@@ -313,6 +320,26 @@ def _infer_source(url: str) -> str:
         return ""
 
 
+def _fallback_feed_stats(entries: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    stats: dict[str, dict[str, Any]] = {}
+    for entry in entries:
+        feed_url = entry.get("feed_url") or _infer_source(entry.get("url", ""))
+        if not feed_url:
+            continue
+        row = stats.setdefault(
+            feed_url,
+            {
+                "feed_title": entry.get("feed_title") or feed_url,
+                "category": entry.get("category", ""),
+                "attempted": 1,
+                "succeeded": 1,
+                "raw_count": 0,
+            },
+        )
+        row["raw_count"] += 1
+    return stats
+
+
 def run(board: str, as_of: date | None = None) -> Path:
     cfg = _load_config()
     bcfg = (cfg.get("boards") or {}).get(board)
@@ -374,6 +401,31 @@ def run(board: str, as_of: date | None = None) -> Path:
     }
     out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
     logger.info("[%s] wrote %s", board, out_path)
+
+    feed_stats = data.get("feed_stats") or _fallback_feed_stats(entries)
+    score_by_url = {entry.get("url", ""): score for entry, score in scored if entry.get("url")}
+    selected_urls = {entry.get("url", "") for entry in selected if entry.get("url")}
+    report = render_source_report(
+        board=board,
+        display_name=bcfg.get("display_name", board),
+        report_date=as_of,
+        feed_stats=feed_stats,
+        entries=entries,
+        score_by_url=score_by_url,
+        selected_urls=selected_urls,
+        merged_urls=[],
+    )
+    write_board_report(board, as_of, report)
+    write_board_report_json(
+        board=board,
+        report_date=as_of,
+        feed_stats=feed_stats,
+        entries=entries,
+        score_by_url=score_by_url,
+        selected_urls=selected_urls,
+    )
+    refresh_latest_report(as_of, list((cfg.get("boards") or {}).keys()))
+    refresh_weekly_report(as_of, list((cfg.get("boards") or {}).keys()))
     return out_path
 
 

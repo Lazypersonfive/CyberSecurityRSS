@@ -741,6 +741,13 @@ class SourceReportTests(unittest.TestCase):
         self.assertIn("Noisy Junk", body)
         self.assertNotIn("Good Source", body.split("⚠️")[1])
 
+    def test_anthropic_backup_writes_source_report_sidecar(self) -> None:
+        body = Path("digest_pipeline.py").read_text(encoding="utf-8")
+
+        self.assertIn("write_board_report_json(", body)
+        self.assertIn("refresh_weekly_report(", body)
+        self.assertIn("render_source_report(", body)
+
 
 class DigestClockTests(unittest.TestCase):
     def test_digest_today_honors_env_override(self) -> None:
