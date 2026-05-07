@@ -586,7 +586,7 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(security["source_policy"]["min_chinese"], 6)
         self.assertEqual(security["source_policy"]["min_direct"], 12)
         self.assertLessEqual(security["source_policy"]["max_google_news"], 1)
-        self.assertLessEqual(security["source_policy"]["max_aggregator"], 3)
+        self.assertEqual(security["source_policy"]["max_aggregator"], 7)
         self.assertNotIn("mp.weixin.qq.com", security.get("source_caps") or {})
 
     def test_ai_security_board_is_cost_bounded_and_direct_source_first(self) -> None:
@@ -599,7 +599,7 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertLessEqual(board["llm_max_entries"], 60)
         self.assertLessEqual(board["source_policy"]["max_google_news"], 2)
         self.assertGreaterEqual(board["source_policy"]["min_direct"], 4)
-        self.assertGreaterEqual(board["source_policy"]["max_aggregator"], 7)
+        self.assertEqual(board["source_policy"]["max_aggregator"], 5)
         self.assertTrue(Path(board["opml"]).exists())
 
     def test_board_output_targets_match_current_editorial_policy(self) -> None:
@@ -613,7 +613,7 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(boards["ai"]["top_n"], 15)
         self.assertEqual(boards["ai"]["source_policy"]["min_chinese"], 5)
         self.assertEqual(boards["finance"]["top_n"], 10)
-        self.assertGreaterEqual(boards["ai"]["source_policy"]["max_aggregator"], 9)
+        self.assertEqual(boards["ai"]["source_policy"]["max_aggregator"], 7)
 
     def test_gemini_prompts_encode_current_board_targets(self) -> None:
         self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["security"])
