@@ -1,0 +1,266 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-08",
+  "generated_at": "2026-05-07T23:38:58.964708Z",
+  "raw_count": 105,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "chinese": 1
+  },
+  "items": [
+    {
+      "title_zh": "Palo Alto Networks PAN-OS 身份验证门户存在严重缓冲区溢出漏洞 CVE-2026-0300",
+      "title_orig": "Critical Buffer Overflow in Palo Alto Networks PAN-OS User-ID Authentication Portal (CVE-2026-0300)",
+      "summary": "Palo Alto Networks于2026年5月发布安全公告，披露PAN-OS中存在编号为CVE-2026-0300的严重缓冲区溢出漏洞，该漏洞CVSSv4评分高达9.3且已确认在野外被利用。该漏洞主要影响PA系列和VM系列防火墙的User-ID身份验证门户，允许未经身份验证的远程攻击者触发溢出，而Prisma Access、Cloud NGFW及Panorama等组件则不受此漏洞影响。 Palo Alto Networks PAN-OS 身份验证门户存在严重缓冲区溢出漏洞 CVE-2026-0300。该条来自rapid7.com，归类于OfficialAdvisories，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合。",
+      "tags": [
+        "缓冲区溢出",
+        "PAN-OS",
+        "野外利用"
+      ],
+      "url": "https://www.rapid7.com/blog/post/etr-critical-buffer-overflow-in-palo-alto-networks-pan-os-user-id-authentication-portal-cve-2026-0300",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-06T13:27:31+00:00",
+      "cve_ids": [
+        "CVE-2026-0300"
+      ],
+      "selection_reason": "高评分关键基础设施漏洞，且已有活跃攻击，技术风险极高。"
+    },
+    {
+      "title_zh": "Dirtyfrag：Linux 内核通用本地权限提升漏洞研究",
+      "title_orig": "Dirtyfrag: Universal Linux LPE",
+      "summary": "Dirtyfrag被披露为一种通用的Linux本地权限提升技术，主要涉及内核内存管理或碎片处理机制中的安全缺陷，允许低权限本地用户绕过系统限制并获取最高root权限。目前该漏洞的技术细节已在oss-security邮件列表公开并引发社区广泛讨论，虽然原文未明确具体的CVE编号，但其通用性意味着大量Linux发行版可能面临安全风险，需引起系统管理员的高度警惕。",
+      "tags": [
+        "Linux内核",
+        "权限提升",
+        "漏洞研究"
+      ],
+      "url": "https://www.openwall.com/lists/oss-security/2026/05/07/8",
+      "source": "openwall.com",
+      "category": "AI",
+      "published": "2026-05-07T19:21:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "通用型内核提权技术，对 Linux 系统安全具有广泛的潜在影"
+    },
+    {
+      "title_zh": "Ivanti Endpoint Manager Mobile 存在被零日攻击利用的高危远程代码执行漏洞",
+      "title_orig": "Ivanti warns of new EPMM flaw exploited in zero-day attacks",
+      "summary": "Ivanti近日向用户发出警告，其Endpoint Manager Mobile产品中存在一个高危远程代码执行漏洞，且该漏洞已被攻击者作为零日漏洞在实际攻击中利用。该漏洞源于输入验证不当，攻击者可借此在受影响的移动设备管理平台上执行任意指令，目前CISA已将此漏洞CVE-2026-6973加入已知利用漏洞目录，并要求相关联邦机构在规定期限内完成补丁修复以防范风险。",
+      "tags": [
+        "Ivanti",
+        "远程代码执行",
+        "零日攻击"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-new-epmm-flaw-exploited-in-zero-day-attacks/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-07T15:20:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及移动管理平台的零日攻击，已被 CISA KEV 收录，威"
+    },
+    {
+      "title_zh": "Next.js v16.2.4 安全漏洞 CVE-2026-23870 逆向工程 PoC 集合发布",
+      "title_orig": "Exploit for CVE-2026-23870",
+      "summary": "该项目通过ProjectDiscovery的Neo工具对Next.js v16.2.5版本中修复的安全缺陷进行了深度逆向工程，并公开发布了针对CVE-2026-23870等漏洞的PoC利用代码集合。这些资源详细展示了漏洞的触发路径与利用原理，旨在帮助研究人员理解现代Web框架的安全缺陷，是针对该版本Next.js进行漏洞复现、安全分析以及防御加固工作的重要参考资料。 Next.js v16.2.4 安全漏洞 CVE-2026-23870 逆向工程 PoC 集合发布。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影。",
+      "tags": [
+        "Next.js",
+        "PoC",
+        "逆向工程"
+      ],
+      "url": "https://vulners.com/githubexploit/146F34D4-FCEF-5324-8CFE-5AF0750377F4?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-07T23:00:40+00:00",
+      "cve_ids": [
+        "CVE-2026-23870"
+      ],
+      "selection_reason": "知名 Web 框架的漏洞复现，对前端安全研究和防御有实战价值"
+    },
+    {
+      "title_zh": "美国网络安全和基础设施安全局（CISA）将 Ivanti 漏洞加入已知被利用漏洞目录，该漏洞存在输入验证不当风险",
+      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "summary": "美国网络安全和基础设施安全局CISA近日将CVE-2026-6973漏洞正式加入其已知利用漏洞目录，该漏洞涉及Ivanti Endpoint Manager Mobile产品的输入验证不当问题。由于已有证据表明该漏洞正被恶意网络参与者积极利用，且此类漏洞是攻击联邦企业系统的常见矢量，CISA根据约束性操作指令要求相关机构必须在限期内完成修复工作以降低显著的安全风险。",
+      "tags": [
+        "漏洞"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/05/07/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-07T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-6973"
+      ],
+      "selection_reason": "原始信源高分入选"
+    },
+    {
+      "title_zh": "利用 CVE-2025-48804 降级攻击在 5 分钟内绕过 Windows Bitlocker 加密",
+      "title_orig": "Bypassing Bitlocker under 5 min using downgrade attack on CVE-2025-48804",
+      "summary": "安全研究人员展示了利用CVE-2025-48804漏洞实施降级攻击的方法，能够在不到5分钟的时间内成功绕过Windows系统的Bitlocker磁盘加密保护。该攻击通过强制系统回退到存在已知缺陷的旧版本组件，从而规避了现代加密防御机制，这种方式主要威胁到具有物理接触权限或引导控制权的设备，揭示了固件与操作系统在协同防御逻辑中存在的薄弱环节，需引起硬件厂商重视。",
+      "tags": [
+        "Bitlocke",
+        "降级攻击",
+        "加密绕过"
+      ],
+      "url": "https://www.reddit.com/r/Pentesting/comments/1t6ck0y/bypassing_bitlocker_under_5_min_using_downgrade/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-05-07T14:41:31+00:00",
+      "cve_ids": [
+        "CVE-2025-48804"
+      ],
+      "selection_reason": "展示了针对硬件加密的实战绕过技巧，对红蓝对抗具有指导意义。"
+    },
+    {
+      "title_zh": "Solana Agave 虚拟机加密系统调用漏洞深度技术分析",
+      "title_orig": "Solana’s virtual machine crypto syscall pwned by CTF inspiration",
+      "summary": "安全研究员深入分析了 Solana Agave 虚拟机中加密系统调用的漏洞，该漏洞源于底层加密原语的实现缺陷。通过对低级系统交互的审计，研究者成功实现了对虚拟机的逃逸或非预期控制，挑战了“经过战斗测试”的加密集成安全性。文章详细介绍了漏洞的发现过程和技术细节，强调了区块链基础设施中嵌入式加密组件的安全风险。",
+      "tags": [
+        "Solana",
+        "区块链安全",
+        "虚拟机逃逸"
+      ],
+      "url": "https://fuzzinglabs.com/solana-agave-vm-crypto-syscall-vulnerability/",
+      "source": "fuzzinglabs.com",
+      "category": "Pwn",
+      "published": "2026-05-07T08:19:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对主流区块链虚拟机的底层漏洞分析，技术深度极高。"
+    },
+    {
+      "title_zh": "Argo CD 存在越权漏洞 CVE-2026-42880 可导致 Kubernetes 机密数据泄露",
+      "title_orig": "CVE-2026-42880",
+      "summary": "GitOps工具Argo CD在3.2.0至3.3.9等多个版本中存在授权缺失与数据脱敏缺陷，导致具备只读权限的攻击者能利用ServerSideDiff端点，通过Kubernetes API的干跑机制从etcd中提取明文Secret数据。目前官方已在3.2.11和3.3.9版本中修复了此漏洞，建议所有使用该工具管理Kubernetes集群的用户尽快升级以防敏感信息泄露。 Argo CD 存在越权漏洞 CVE-2026-42880 可导致 Kubernetes 机密数据泄露。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合。",
+      "tags": [
+        "Argo CD",
+        "Kubernet",
+        "信息泄露"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-42880?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-07T23:16:32+00:00",
+      "cve_ids": [
+        "CVE-2026-42880"
+      ],
+      "selection_reason": "云原生持续交付工具的安全漏洞，直接威胁 K8s 集群的凭据安"
+    },
+    {
+      "title_zh": "Oracle VirtualBox 存在整数溢出漏洞 CVE-2026-35250 可导致拒绝服务",
+      "title_orig": "Exploit for Improper Access Control in Oracle Vm_Virtualbox",
+      "summary": "该漏洞源于 DevVGAVBVA.cpp 组件中的逻辑判断错误，在进行维度检查时错误地使用了逻辑或而非逻辑与，导致特权虚拟机用户可以触发整数溢出。攻击者通过提供特定的宽度和高度参数即可绕过校验，最终造成虚拟机拒绝服务，目前该漏洞的 PoC 已由 AI 辅助生成并公开。原文未披露受影响的具体版本号，但明确了漏洞触发位置及原理。",
+      "tags": [
+        "虚拟化安全",
+        "拒绝服务",
+        "AI安全"
+      ],
+      "url": "https://vulners.com/githubexploit/6A6412FB-9FCD-53BB-BA01-3B1C5BBF56FE?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-07T22:54:24+00:00",
+      "cve_ids": [
+        "CVE-2026-35250"
+      ],
+      "selection_reason": "展示了 AI 在漏洞挖掘与 PoC 编写中的实际应用案例。"
+    },
+    {
+      "title_zh": "GitHub Enterprise Server 笔记本查看器存在 SSRF 漏洞 CVE-2026-8034",
+      "title_orig": "CVE-2026-8034",
+      "summary": "GitHub Enterprise Server的笔记本查看器被发现存在服务端请求伪造漏洞，其根源在于验证层与HTTP请求库之间对URL解析逻辑的不一致。攻击者能够利用这种解析器混淆构造恶意URL，从而绕过主机名验证机制并诱导服务器访问内部受限服务，该漏洞对企业内部网络安全构成严重威胁，目前相关用户需关注官方针对解析差异的修复进展。",
+      "tags": [
+        "SSRF",
+        "解析混淆",
+        "GitHub"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-8034?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-07T22:16:37+00:00",
+      "cve_ids": [
+        "CVE-2026-8034"
+      ],
+      "selection_reason": "解析器不一致导致的 SSRF 是典型的逻辑漏洞，具有研究价值"
+    },
+    {
+      "title_zh": "微软研究披露 AI 代理框架中的提示注入可导致远程代码执行漏洞",
+      "title_orig": "When prompts become shells: RCE vulnerabilities in AI agent frameworks",
+      "summary": "微软安全团队的最新研究揭示了 AI 代理框架中存在的一类新型安全威胁，即通过提示注入攻击实现远程代码执行。研究详细介绍了攻击者如何利用精心构造的提示词操纵 AI 代理的行为，从而在目标系统上执行恶意指令。该研究强调了 AI 框架在处理外部输入时的脆弱性，并提供了相应的加固建议，旨在提升 AI 代理的安全性。",
+      "tags": [
+        "AI安全",
+        "提示注入",
+        "RCE"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-07T20:22:39+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 基础设施安全，揭示了从提示词到系统权限的攻击路径"
+    },
+    {
+      "title_zh": "PCPJack 凭据窃取框架利用 5 个漏洞在云系统中实现类蠕虫传播",
+      "title_orig": "PCPJack Credential Stealer Exploits 5 CVEs to Spread Worm-Like Across Cloud Systems",
+      "summary": "安全研究人员发现了一个名为 PCPJack 的新型凭据窃取工具集，该工具专门针对暴露在公网的云基础设施。它通过利用 5 个已知漏洞在云环境、容器及开发服务中进行类蠕虫式的自动化传播，旨在收割各类服务凭据并通过攻击者控制的设施外发数据。该框架还会清理环境中与 TeamPCP 相关的痕迹，表现出较强的对抗性与持久化特征。",
+      "tags": [
+        "云安全",
+        "凭据窃取",
+        "蠕虫攻击"
+      ],
+      "url": "https://thehackernews.com/2026/05/pcpjack-credential-stealer-exploits-5.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-07T17:45:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "该工具集展示了针对云原生环境的自动化攻击趋势。"
+    },
+    {
+      "title_zh": "Cloudflare 披露针对 Linux 内核权限提升漏洞 Copy Fail 的响应过程",
+      "title_orig": "How Cloudflare responded to the “Copy Fail” Linux vulnerability",
+      "summary": "Cloudflare 详细介绍了其应对 Linux 内核关键权限提升漏洞的处置流程，该漏洞被公开披露后可能威胁全球服务器安全。Cloudflare 的安全与工程团队通过在全球节点进行检测、调查与缓解，成功在未对客户造成影响的情况下完成了漏洞修复。文章重点分享了在大规模基础设施中快速响应内核级漏洞的实战经验，确认目前无恶意利用迹象。",
+      "tags": [
+        "Linux内核",
+        "提权漏洞",
+        "应急响应"
+      ],
+      "url": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+      "source": "blog.cloudflare.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-07T13:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级互联网基础设施厂商的漏洞响应实践，具有防御参考价值。"
+    },
+    {
+      "title_zh": "MAXHUB Pivot 客户端应用存在信息泄露与拒绝服务漏洞",
+      "title_orig": "MAXHUB Pivot Client Application",
+      "summary": "MAXHUB Pivot客户端应用被曝存在高危安全漏洞，成功利用该漏洞的攻击者不仅可以以明文形式非法获取租户的电子邮件地址及相关关联敏感信息，还可能通过特定手段触发拒绝服务状态。该漏洞的CVSS风险评分高达7.3分，受影响的设备用户应尽快采取防护措施，以防止因弱加密或逻辑缺陷导致的敏感数据泄露及业务系统停摆风险。",
+      "tags": [
+        "信息泄露",
+        "拒绝服务",
+        "工业控制"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-127-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-07T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "CISA 官方预警，涉及企业协作工具的安全性。"
+    },
+    {
+      "title_zh": "作者重新整理个人博客并汇总发布在其他平台的文章，内容涵盖CVE-20漏洞分析等技术分享",
+      "title_orig": "My Articles",
+      "summary": "该作者近期完成了个人博客系统的重新搭建与上线工作，并计划在未来不定期发布关于网络安全及技术研究的原创性内容，旨在分享具有趣味性和深度参考价值的技术文章。目前该平台已开始收集并同步作者在其他第三方平台上发布的历史作品，其中包括针对CVE-20系列漏洞的深入分析报告，为安全研究人员提供了一个集中获取其技术见解和漏洞研究成果的新渠道。",
+      "tags": [
+        "漏洞",
+        "中文源"
+      ],
+      "url": "https://thunderjie.github.io/2099/01/01/My-Articles/",
+      "source": "thunderjie.github.io",
+      "category": "WebSecurity",
+      "published": "2099-01-01T04:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选"
+    }
+  ]
+}
