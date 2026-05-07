@@ -76,12 +76,17 @@
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| Embrace The Red | 1/1 | 1 | 10.0 | 1 | 0 |
-| Google News AI Security | 1/1 | 28 | 3.2 | 1 | 0 |
-| Simon Willison | 1/1 | 3 | 2.3 | 0 | 0 |
-| Unit 42 | 1/1 | 1 | 2.0 | 0 | 0 |
-| Google News 中文 AI安全 | 1/1 | 2 | - | 0 | 0 |
-| OpenAI News | 1/1 | 10 | 0.3 | 0 | 0 |
+| X / rez0 | 1/1 | 15 | 2.7 | 2 | 1 |
+| Embrace The Red | 1/1 | 1 | 9.0 | 1 | 0 |
+| Google News 中文 AI安全 | 1/1 | 4 | 5.0 | 1 | 0 |
+| Google News AI Security | 1/1 | 26 | 4.0 | 1 | 0 |
+| X / PortSwigger Research | 1/1 | 2 | 3.5 | 1 | 0 |
+| X / Simon Willison | 1/1 | 5 | 2.0 | 0 | 0 |
+| Unit 42 | 1/1 | 2 | 2.0 | 0 | 0 |
+| Simon Willison | 1/1 | 3 | 1.3 | 0 | 0 |
+| X / Johann Rehberger | 1/1 | 2 | 1.0 | 0 | 0 |
+| 先知社区 | 1/1 | 2 | 1.0 | 0 | 0 |
+| OpenAI News | 1/1 | 9 | 0.3 | 0 | 0 |
 
 ## AI 前沿
 
@@ -541,7 +546,9 @@
 
 ### 持续低质源（avg_score < 3.0 且 raw ≥ 5）
 
-- [ai_security] OpenAI News：raw=10，avg=0.3，入选=0
+- [ai_security] OpenAI News：raw=9，avg=0.3，入选=0
+- [ai_security] X / Simon Willison：raw=5，avg=2.0，入选=0
+- [ai_security] X / rez0：raw=15，avg=2.7，入选=2
 - [security] The Verge：raw=24，avg=0.1，入选=0
 - [security] Daring Fireball：raw=14，avg=0.2，入选=0
 - [security] TechCrunch：raw=31，avg=0.3，入选=0

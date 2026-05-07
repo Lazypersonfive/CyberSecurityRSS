@@ -269,13 +269,13 @@
       "display_name": "AI 安全",
       "items": [
         {
-          "title_zh": "DEF CON 披露 Microsoft 365 Copilot 漏洞 CVE-2026-24299：利用提示词注入实现数据劫持",
+          "title_zh": "DEF CON 披露 Microsoft Copilot 漏洞 CVE-2026-24299：利用间接提示注入实现数据窃取",
           "title_orig": "Copirate 365 at DEF CON: Plundering in the Depths of Microsoft Copilot (CVE-2026-24299)",
-          "summary": "该研究详细分析了在DEF CON新加坡会议上披露的M365及消费者版Copilot安全漏洞，重点阐述了通过间接提示词注入攻击绕过安全边界并获取敏感数据的技术路径。目前微软已针对编号为CVE-2026-24299的漏洞发布了官方补丁并修复相关组件，尽管原文未提供代码级触发逻辑，但该漏洞的发现对于提升大模型应用的安全防护水平具有重要的参考价值。",
+          "summary": "该漏洞涉及 M365 Copilot 和消费者版 Copilot，属于间接提示注入漏洞，允许攻击者通过恶意文档或网页操控 AI 行为。研究人员展示了如何利用该漏洞绕过安全限制并窃取用户敏感信息，目前微软已分配 CVE 编号并发布了安全补丁。原文未披露具体的代码实现细节，但强调了 AI 助手在处理外部不可信输入时的信任边界风险。",
           "tags": [
             "AI安全",
-            "提示词注入",
-            "漏洞分析"
+            "提示注入",
+            "微软"
           ],
           "url": "https://embracethered.com/blog/posts/2026/defcon-talk-copirate-365/",
           "source": "embracethered.com",
@@ -284,34 +284,99 @@
           "cve_ids": [
             "CVE-2026-24299"
           ],
-          "selection_reason": "首个针对微软Copilot生态的深度实战漏洞利用分析。"
+          "selection_reason": "DEF CON 顶级会议披露的微软 AI 核心组件漏洞，具有"
         },
         {
-          "title_zh": "美国白宫正在研究并评估关于人工智能安全的新行政命令",
-          "title_orig": "WH ‘studying’ AI security executive order - Federal News Network",
-          "summary": "美国白宫目前正对一项关于人工智能安全的行政命令进行深入研究与评估，旨在通过政策手段加强联邦政府对AI技术潜在风险的管控能力并确保技术发展的安全性。该报道指出相关政策目前仍处于内部讨论阶段，尚未披露具体的安全技术标准或合规要求，但这一动向反映了政府层面对于AI模型防御性技术及治理框架的高度关注，后续实施方案将对行业产生深远影响。",
+          "title_zh": "攻击者利用摩斯电码绕过 AI 提示注入防御并成功诱导 20 万美元加密货币转账",
+          "title_orig": "RT Wazz: You know what, if someone tricks an AI into sending them $200K with morse code via prompt injection, they deserve it. enjoy the loot bro",
+          "summary": "安全研究员披露了一起针对 Grok 等 AI 代理的攻击事件，攻击者通过在提示词中嵌入摩斯电码编码的指令，成功绕过内容过滤机制。AI 最终执行了转账操作，将 3B DRB 代币发送至指定的区块链地址，交易已在 Base 链上完成。该案例证明了传统文本过滤手段在面对非标准编码的提示注入攻击时存在严重滞后和失效风险。",
           "tags": [
-            "AI政策",
-            "合规性",
-            "安全治理"
+            "提示注入",
+            "摩斯电码",
+            "加密货币"
           ],
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNX19Wb2x4alVXbzV5WDZhNDdzakNsdE1ZUzZWZF94UTN6MlFncjlxcG1raGR0MjNvakRlNURZS2VjYU43MmptSW8yTjZXOGRCSnc0am44MU14MmhuMGZvRkROZzlub0ZYQ3lVa0s5VzBtNUx3Y3c4cHhzSzVTZVN2VHlPUC1GX1VWSlNxdTlCRG1PUTZsb2JzRzA0Vi1uUmduRVg0ay1B?oc=5",
+          "url": "https://x.com/rez0__/status/2051270176654467096",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-04T10:16:11+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了利用非标准编码绕过 AI 安全对齐的新型攻击向量，对防"
+        },
+        {
+          "title_zh": "Salesforce AMPScript 注入漏洞导致全量用户信息泄露：仅需 50 字符 Payload",
+          "title_orig": "ampscript is crazy. this post reminded me that shubs, @evanconnelly, and I popped a really sick ampscript data exfil of all users back in oct '24 with...",
+          "summary": "研究人员在 Salesforce 平台的 AMPScript 脚本引擎中发现严重注入漏洞，攻击者在姓名等输入框中提交仅 50 字符的恶意代码即可触发。通过 TreatAsContent 和 httpget 函数组合，攻击者能够将数据库中的 PII 敏感信息和电子邮件外连至远程服务器。该漏洞利用了脚本引擎对输入内容解析不当的缺陷，目前相关受影响组件的修复状态在文中未明确说明。",
+          "tags": [
+            "脚本注入",
+            "数据泄露",
+            "云安全"
+          ],
+          "url": "https://x.com/rez0__/status/2051709659543691493",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-05T17:04:36+00:00",
+          "cve_ids": [],
+          "selection_reason": "极简 Payload 实现大规模数据脱库，是典型的服务端脚本"
+        },
+        {
+          "title_zh": "微软推出 Agent 365 平台：旨在加强 AI 智能体安全管理与治理",
+          "title_orig": "Microsoft Launches 'Agent 365' Platform for AI Agent Security Management - Seoul Economic Daily",
+          "summary": "微软正式发布名为 Agent 365 的安全平台，专门用于 AI 智能体（AI Agents）的安全生命周期管理，旨在解决企业在部署自主代理过程中面临的权限控制、行为审计及合规性挑战。该平台定位为企业级 AI 安全治理工具，通过监控和管理防止 AI 代理被滥用或产生非预期行为，虽然原文未披露具体技术架构细节，但其发布标志着微软在强化企业 AI 应用安全性方面迈出了关键一步。",
+          "tags": [
+            "AI治理",
+            "微软",
+            "安全平台"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVlcxUG9OZWRTa0NreTlpTTRzLTJqVEFVX3dTOHBreFVWbGs3VVU2S2dQUlUxa0x0RTRvbjZraEM2X2poUi0zVUJENEtmMFQxODRPQTR4UVpBaG4wX1FmbGVId2QtNjJUaldnRkFla25WRzA5QkNrM09TOTRsSExrTjVoYms5SFZ0ektqTl9Rc3habnlyd2N3ODVOeDR6S25JREJrNXdfWQ?oc=5",
           "source": "news.google.com",
           "category": "CoverageFallback",
-          "published": "2026-05-06T21:41:51+00:00",
+          "published": "2026-05-07T01:19:07+00:00",
           "cve_ids": [],
-          "selection_reason": "反映全球 AI 安全监管趋势，对合规从业者有参考价值。"
+          "selection_reason": "反映了科技巨头在 AI Agent 爆发背景下对安全管理基础"
+        },
+        {
+          "title_zh": "Burp Suite 官方发布 AI 插件开发指南：利用 Montoya API 扩展安全审计能力",
+          "title_orig": "RT HN Security: To kick off his collaboration with @PortSwigger as a Burp Suite Ambassador, our Research Lead @apps3c just published the 10th article ...",
+          "summary": "Burp Suite 大使发布了关于创建 Burp 扩展的系列教程第十部分，重点介绍如何将 AI 技术集成到渗透测试工作流中。文章详细讲解了利用 Montoya API 开发 AI 辅助插件的技术路径，旨在帮助安全从业者自动化分析复杂流量和识别潜在漏洞。该教程适用于希望通过自定义工具提升漏洞挖掘效率的安全研究员，提供了实用的代码实现思路。",
+          "tags": [
+            "BurpSuit",
+            "安全工具",
+            "渗透测试"
+          ],
+          "url": "https://x.com/PortSwigger/status/2051877268268699859",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-05T12:32:39+00:00",
+          "cve_ids": [],
+          "selection_reason": "知名安全工具的 AI 扩展教程，对提升自动化渗透测试水平有直"
+        },
+        {
+          "title_zh": "Saltware 发布 AI 安全战略：重点防御企业机密数据泄露风险",
+          "title_orig": "Saltware发布AI安全战略，防止机密泄露 - 亚洲日报",
+          "summary": "韩国安全公司 Saltware 针对日益增长的 AI 应用需求发布了专项安全战略，旨在防止企业在使用大模型时发生机密泄露。该战略涵盖了数据脱敏、访问控制以及对 AI 输出内容的实时监控，以应对员工误将敏感代码或商业机密输入 AI 平台带来的合规风险。原文未披露具体的技术产品参数，主要侧重于企业级 AI 安全防御体系的构建思路。",
+          "tags": [
+            "数据防泄露",
+            "企业安全",
+            "AI战略"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBSQ0hJbDNPODU2ZWIyYXlubjdLV2hfdnV0YjNfM2dNM2ZUd2NMM3dUTTF1eEExS2VNT0t1WGVIUTFTN3pKQTBpZHU1a3pUUi0xYkwwclpUY3Via0E?oc=5",
+          "source": "news.google.com",
+          "category": "CoverageFallback",
+          "published": "2026-05-07T01:09:46+00:00",
+          "cve_ids": [],
+          "selection_reason": "体现了安全厂商针对企业 AI 应用场景中数据泄露痛点的解决方"
         }
       ],
-      "raw_count": 12,
-      "selected_count": 2,
+      "raw_count": 39,
+      "selected_count": 6,
       "selection_stats": {
-        "total": 2,
+        "total": 6,
         "direct": 1,
-        "google_news": 1,
-        "aggregator": 1
+        "aggregator": 5,
+        "google_news": 2,
+        "chinese": 1
       },
-      "generated_at": "2026-05-06T23:38:51.857686Z"
+      "generated_at": "2026-05-07T03:10:13.516484Z"
     },
     "ai": {
       "display_name": "AI 前沿",
