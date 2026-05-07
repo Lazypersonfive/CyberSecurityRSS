@@ -19,7 +19,7 @@ from digest_pipeline_gemini import (
 import fetch_and_save
 import fetch_feeds
 from fetch_feeds import FeedEntry, archive_urls, fetch_all_entries, load_seen_urls
-from fetch_opml import fetch_opml_metadata
+from fetch_opml import fetch_opml, fetch_opml_metadata
 from filter_entries import FilteredEntry, filter_and_dedup
 from rss_curation import curate_entries
 from source_policy import select_with_source_policy, source_profile
@@ -139,6 +139,28 @@ class FetchOpmlTests(unittest.TestCase):
         ]
 
         self.assertEqual(len(urls), len(set(urls)))
+
+    def test_ai_opml_includes_rsshub_x_signal_feeds(self) -> None:
+        feeds = fetch_opml("feeds/ai.opml")
+        ai_security_feeds = fetch_opml("feeds/ai_security.opml")
+
+        self.assertIn("XSignals", feeds)
+        self.assertIn("https://rsshub.app/twitter/user/OpenAI", feeds["XSignals"])
+        self.assertIn("https://rsshub.app/twitter/user/AnthropicAI", feeds["XSignals"])
+        self.assertIn("XSignals", ai_security_feeds)
+        self.assertIn(
+            "https://rsshub.app/twitter/user/EmbraceTheRed",
+            ai_security_feeds["XSignals"],
+        )
+
+    def test_rsshub_base_url_can_be_overridden_for_private_instance(self) -> None:
+        with patch.dict("os.environ", {"RSSHUB_BASE_URL": "https://rsshub.example.com/"}):
+            feeds = fetch_opml("feeds/ai.opml")
+
+        self.assertIn(
+            "https://rsshub.example.com/twitter/user/OpenAI",
+            feeds["XSignals"],
+        )
 
 
 class FilterEntriesTests(unittest.TestCase):
@@ -420,6 +442,21 @@ class SourcePolicyTests(unittest.TestCase):
         self.assertTrue(wechat.is_chinese)
         self.assertTrue(wechat.is_direct)
 
+    def test_source_profile_classifies_rsshub_x_signal_as_aggregator(self) -> None:
+        profile = source_profile(
+            {
+                "title": "OpenAI ships a model update",
+                "url": "https://x.com/OpenAI/status/123",
+                "feed_url": "https://rsshub.app/twitter/user/OpenAI",
+                "feed_title": "X / OpenAI",
+                "category": "XSignals",
+            }
+        )
+
+        self.assertTrue(profile.is_aggregator)
+        self.assertFalse(profile.is_google_news)
+        self.assertFalse(profile.is_direct)
+
     def test_wechat_source_key_uses_feed_url_not_shared_host(self) -> None:
         first = source_profile(
             {
@@ -539,7 +576,7 @@ class GeminiPipelineTests(unittest.TestCase):
         board = boards["ai_security"]
 
         self.assertEqual(board["top_n"], 10)
-        self.assertLessEqual(board["llm_max_entries"], 35)
+        self.assertLessEqual(board["llm_max_entries"], 60)
         self.assertLessEqual(board["source_policy"]["max_google_news"], 2)
         self.assertGreaterEqual(board["source_policy"]["min_direct"], 8)
         self.assertTrue(Path(board["opml"]).exists())
@@ -553,7 +590,7 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(boards["security"]["source_policy"]["min_chinese"], 6)
         self.assertEqual(boards["ai_security"]["top_n"], 10)
         self.assertEqual(boards["ai"]["top_n"], 15)
-        self.assertEqual(boards["ai"]["source_policy"]["min_chinese"], 3)
+        self.assertEqual(boards["ai"]["source_policy"]["min_chinese"], 5)
         self.assertEqual(boards["finance"]["top_n"], 10)
 
     def test_gemini_prompts_encode_current_board_targets(self) -> None:
@@ -561,7 +598,7 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertIn("至少 6 条", BOARD_SCORE_SYSTEM["security"])
         self.assertIn("每日 10 条", BOARD_SCORE_SYSTEM["ai_security"])
         self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["ai"])
-        self.assertIn("至少 3 条中文", BOARD_SCORE_SYSTEM["ai"])
+        self.assertIn("至少 5 条中文", BOARD_SCORE_SYSTEM["ai"])
         self.assertIn("每日 10 条", BOARD_SCORE_SYSTEM["finance"])
         self.assertIn("Google News 只做补充", BOARD_SCORE_SYSTEM["security"])
         self.assertIn("优先于 Google News", BOARD_SCORE_SYSTEM["ai"])

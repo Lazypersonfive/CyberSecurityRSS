@@ -37,8 +37,8 @@ boards:
     display_name: "AI 安全"
     opml: feeds/ai_security.opml
     fetch_hours: 72
-    max_entries: 35
-    llm_max_entries: 35
+    max_entries: 60
+    llm_max_entries: 60
     top_n: 10
     score_threshold: 6
     fill_score_floor: 5
@@ -57,13 +57,13 @@ boards:
     display_name: "AI 前沿"
     opml: feeds/ai.opml
     fetch_hours: 30  # 略超 24h 覆盖 cron 之间的抖动；避免跨日重复叙事
-    max_entries: 45
-    llm_max_entries: 45
+    max_entries: 80
+    llm_max_entries: 80
     top_n: 15
     score_threshold: 6
     fill_score_floor: 5
     source_policy:
-      min_chinese: 3
+      min_chinese: 5
       min_direct: 12
       max_google_news: 3
       max_aggregator: 4

@@ -5,6 +5,7 @@ Supports either a local path or an HTTP(S) URL. For local files under
 """
 
 import xml.etree.ElementTree as ET
+import os
 from pathlib import Path
 
 try:
@@ -51,8 +52,8 @@ def _load_raw(source: str | Path | None, use_cache: bool) -> str:
         return _load_legacy(use_cache)
 
     if isinstance(source, (str, Path)) and _looks_like_url(str(source)):
-        return _fetch_remote(str(source))
-    return Path(source).read_text(encoding="utf-8")
+        return _rewrite_rsshub_base(_fetch_remote(str(source)))
+    return _rewrite_rsshub_base(Path(source).read_text(encoding="utf-8"))
 
 
 def _looks_like_url(s: str) -> bool:
@@ -65,6 +66,14 @@ def _fetch_remote(url: str) -> str:
     response = httpx.get(url, timeout=30, follow_redirects=True)
     response.raise_for_status()
     return response.text
+
+
+def _rewrite_rsshub_base(raw: str) -> str:
+    """Allow private RSSHub deployments without editing OPML source files."""
+    base = (os.getenv("RSSHUB_BASE_URL") or "").strip().rstrip("/")
+    if not base:
+        return raw
+    return raw.replace("https://rsshub.app", base)
 
 
 def _load_legacy(use_cache: bool) -> str:

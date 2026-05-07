@@ -18,6 +18,7 @@ AGGREGATOR_HOSTS = {
     "news.yahoo.com",
     "msn.com",
     "rss.app",
+    "rsshub.app",
 }
 
 CHINESE_HOSTS = {
@@ -55,6 +56,13 @@ def _host(url: str) -> str:
         return ""
 
 
+def _path(url: str) -> str:
+    try:
+        return urlparse(url).path or ""
+    except ValueError:
+        return ""
+
+
 def _host_matches(host: str, candidates: Iterable[str]) -> bool:
     return any(host == candidate or host.endswith(f".{candidate}") for candidate in candidates)
 
@@ -69,11 +77,14 @@ def source_profile(entry: Any) -> SourceProfile:
     feed_url = _get(entry, "feed_url")
     host = _host(url)
     feed_host = _host(feed_url)
+    feed_path = _path(feed_url)
 
     is_google_news = host == "news.google.com" or feed_host == "news.google.com"
-    is_aggregator = _host_matches(host, AGGREGATOR_HOSTS) or _host_matches(
-        feed_host,
-        AGGREGATOR_HOSTS,
+    is_rsshub_x_signal = feed_path.startswith("/twitter/")
+    is_aggregator = (
+        _host_matches(host, AGGREGATOR_HOSTS)
+        or _host_matches(feed_host, AGGREGATOR_HOSTS)
+        or is_rsshub_x_signal
     )
     is_wechat = "wechat2rss" in feed_host or host == "mp.weixin.qq.com"
     source_key = feed_url if is_wechat and feed_url else host or feed_host
