@@ -147,6 +147,10 @@ class FetchOpmlTests(unittest.TestCase):
 
         self.assertIn("XSignals", ai_feeds)
         self.assertIn("https://rsshub.app/twitter/user/OpenAI", ai_feeds["XSignals"])
+        self.assertIn("https://rsshub.app/twitter/user/OpenAIDevs", ai_feeds["XSignals"])
+        self.assertIn("https://rsshub.app/twitter/user/ClaudeDevs", ai_feeds["XSignals"])
+        self.assertIn("https://rsshub.app/twitter/user/claudeai", ai_feeds["XSignals"])
+        self.assertIn("https://rsshub.app/twitter/user/ChatGPTapp", ai_feeds["XSignals"])
         self.assertIn("https://rsshub.app/twitter/user/AnthropicAI", ai_feeds["XSignals"])
         self.assertIn("https://rsshub.app/twitter/user/dotey", ai_feeds["XSignals"])
         self.assertIn("https://rsshub.app/twitter/user/trq212", ai_feeds["XSignals"])
