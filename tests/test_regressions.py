@@ -140,18 +140,25 @@ class FetchOpmlTests(unittest.TestCase):
 
         self.assertEqual(len(urls), len(set(urls)))
 
-    def test_ai_opml_includes_rsshub_x_signal_feeds(self) -> None:
-        feeds = fetch_opml("feeds/ai.opml")
+    def test_opml_includes_rsshub_x_signal_feeds(self) -> None:
+        ai_feeds = fetch_opml("feeds/ai.opml")
         ai_security_feeds = fetch_opml("feeds/ai_security.opml")
+        security_feeds = fetch_opml("feeds/security.opml")
 
-        self.assertIn("XSignals", feeds)
-        self.assertIn("https://rsshub.app/twitter/user/OpenAI", feeds["XSignals"])
-        self.assertIn("https://rsshub.app/twitter/user/AnthropicAI", feeds["XSignals"])
+        self.assertIn("XSignals", ai_feeds)
+        self.assertIn("https://rsshub.app/twitter/user/OpenAI", ai_feeds["XSignals"])
+        self.assertIn("https://rsshub.app/twitter/user/AnthropicAI", ai_feeds["XSignals"])
+        self.assertIn("https://rsshub.app/twitter/user/dotey", ai_feeds["XSignals"])
+        self.assertIn("https://rsshub.app/twitter/user/trq212", ai_feeds["XSignals"])
+        self.assertIn("https://rsshub.app/twitter/user/bcherny", ai_feeds["XSignals"])
         self.assertIn("XSignals", ai_security_feeds)
         self.assertIn(
             "https://rsshub.app/twitter/user/EmbraceTheRed",
             ai_security_feeds["XSignals"],
         )
+        self.assertIn("XSignals", security_feeds)
+        self.assertIn("https://rsshub.app/twitter/user/IntCyberDigest", security_feeds["XSignals"])
+        self.assertIn("https://rsshub.app/twitter/user/thsottiaux", security_feeds["XSignals"])
 
     def test_rsshub_base_url_can_be_overridden_for_private_instance(self) -> None:
         with patch.dict("os.environ", {"RSSHUB_BASE_URL": "https://rsshub.example.com/"}):
@@ -575,6 +582,7 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(security["source_policy"]["min_chinese"], 6)
         self.assertEqual(security["source_policy"]["min_direct"], 12)
         self.assertLessEqual(security["source_policy"]["max_google_news"], 1)
+        self.assertLessEqual(security["source_policy"]["max_aggregator"], 3)
         self.assertNotIn("mp.weixin.qq.com", security.get("source_caps") or {})
 
     def test_ai_security_board_is_cost_bounded_and_direct_source_first(self) -> None:
@@ -586,7 +594,8 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(board["top_n"], 10)
         self.assertLessEqual(board["llm_max_entries"], 60)
         self.assertLessEqual(board["source_policy"]["max_google_news"], 2)
-        self.assertGreaterEqual(board["source_policy"]["min_direct"], 8)
+        self.assertGreaterEqual(board["source_policy"]["min_direct"], 4)
+        self.assertGreaterEqual(board["source_policy"]["max_aggregator"], 7)
         self.assertTrue(Path(board["opml"]).exists())
 
     def test_board_output_targets_match_current_editorial_policy(self) -> None:
@@ -600,6 +609,7 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(boards["ai"]["top_n"], 15)
         self.assertEqual(boards["ai"]["source_policy"]["min_chinese"], 5)
         self.assertEqual(boards["finance"]["top_n"], 10)
+        self.assertGreaterEqual(boards["ai"]["source_policy"]["max_aggregator"], 9)
 
     def test_gemini_prompts_encode_current_board_targets(self) -> None:
         self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["security"])
@@ -610,6 +620,8 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertIn("每日 10 条", BOARD_SCORE_SYSTEM["finance"])
         self.assertIn("Google News 只做补充", BOARD_SCORE_SYSTEM["security"])
         self.assertIn("优先于 Google News", BOARD_SCORE_SYSTEM["ai"])
+        self.assertIn("顶级开发者 X 动态", BOARD_SCORE_SYSTEM["ai"])
+        self.assertIn("顶级安全研究者 X 动态", BOARD_SCORE_SYSTEM["ai_security"])
 
     def test_digest_pipelines_accept_dynamic_board_names(self) -> None:
         for path in ("digest_pipeline_gemini.py", "digest_pipeline.py"):
