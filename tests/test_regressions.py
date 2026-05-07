@@ -294,6 +294,14 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertIn("pip install -r requirements.txt", workflow)
         self.assertTrue(Path("requirements.txt").exists())
 
+    def test_daily_workflow_can_start_ephemeral_rsshub(self) -> None:
+        workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
+
+        self.assertIn("Start RSSHub for X signals", workflow)
+        self.assertIn("TWITTER_AUTH_TOKEN", workflow)
+        self.assertIn("diygod/rsshub:chromium-bundled", workflow)
+        self.assertIn("RSSHUB_BASE_URL=http://127.0.0.1:1200", workflow)
+
 
 class FetchAndSaveTests(unittest.TestCase):
     def test_board_output_includes_full_utc_batch_timestamp(self) -> None:

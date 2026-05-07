@@ -66,6 +66,38 @@ jobs:
       - name: Resolve digest date
         run: echo "DIGEST_DATE=$(TZ=Asia/Shanghai date +'%Y-%m-%d')" >> "$GITHUB_ENV"
 
+      - name: Start RSSHub for X signals
+        env:
+          TWITTER_AUTH_TOKEN: ${{ secrets.TWITTER_AUTH_TOKEN }}
+        run: |
+          if [ -n "$RSSHUB_BASE_URL" ]; then
+            echo "Using configured RSSHUB_BASE_URL=$RSSHUB_BASE_URL"
+            exit 0
+          fi
+          if [ -z "$TWITTER_AUTH_TOKEN" ]; then
+            echo "TWITTER_AUTH_TOKEN is not configured; XSignals will fall back to OPML default."
+            exit 0
+          fi
+
+          docker run -d --name rsshub -p 1200:1200 \
+            -e CACHE_TYPE=memory \
+            -e CACHE_EXPIRE=1800 \
+            -e TWITTER_AUTH_TOKEN="$TWITTER_AUTH_TOKEN" \
+            diygod/rsshub:chromium-bundled
+
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:1200/ >/dev/null; then
+              echo "RSSHUB_BASE_URL=http://127.0.0.1:1200" >> "$GITHUB_ENV"
+              echo "RSSHub is ready at http://127.0.0.1:1200"
+              exit 0
+            fi
+            sleep 2
+          done
+
+          docker logs rsshub --tail 100
+          echo "RSSHub did not become ready in time."
+          exit 1
+
       - name: Fetch + digest all boards
         run: |
           boards="security ai_security ai finance"
