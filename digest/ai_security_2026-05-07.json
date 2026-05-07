@@ -2,8 +2,8 @@
   "board": "ai_security",
   "display_name": "AI 安全",
   "date": "2026-05-07",
-  "generated_at": "2026-05-07T03:10:13.516484Z",
-  "raw_count": 39,
+  "generated_at": "2026-05-07T05:41:52.975634Z",
+  "raw_count": 46,
   "selected_count": 6,
   "selection_stats": {
     "total": 6,
@@ -14,13 +14,13 @@
   },
   "items": [
     {
-      "title_zh": "DEF CON 披露 Microsoft Copilot 漏洞 CVE-2026-24299：利用间接提示注入实现数据窃取",
+      "title_zh": "研究员披露 Microsoft Copilot 多个安全漏洞 CVE-2026-24299 及其利用细节",
       "title_orig": "Copirate 365 at DEF CON: Plundering in the Depths of Microsoft Copilot (CVE-2026-24299)",
-      "summary": "该漏洞涉及 M365 Copilot 和消费者版 Copilot，属于间接提示注入漏洞，允许攻击者通过恶意文档或网页操控 AI 行为。研究人员展示了如何利用该漏洞绕过安全限制并窃取用户敏感信息，目前微软已分配 CVE 编号并发布了安全补丁。原文未披露具体的代码实现细节，但强调了 AI 助手在处理外部不可信输入时的信任边界风险。",
+      "summary": "该研究在DEF CON演讲中详细披露了Microsoft 365 Copilot及消费者版Copilot存在的安全漏洞，并由微软分配了CVE-2026-24299编号进行追踪。这些漏洞涉及对AI助手交互逻辑的深度利用，攻击者可能借此在特定集成环境下执行恶意操作或窃取敏感信息，目前微软已在收到报告后完成了官方补丁修复，该分析强调了针对AI深度集成环境进行攻击面审查的重要性。",
       "tags": [
         "AI安全",
-        "提示注入",
-        "微软"
+        "微软",
+        "漏洞披露"
       ],
       "url": "https://embracethered.com/blog/posts/2026/defcon-talk-copirate-365/",
       "source": "embracethered.com",
@@ -29,87 +29,87 @@
       "cve_ids": [
         "CVE-2026-24299"
       ],
-      "selection_reason": "DEF CON 顶级会议披露的微软 AI 核心组件漏洞，具有"
+      "selection_reason": "涉及主流 AI 助手的 CVE 漏洞及 DEF CON 顶级"
     },
     {
-      "title_zh": "攻击者利用摩斯电码绕过 AI 提示注入防御并成功诱导 20 万美元加密货币转账",
+      "title_zh": "安全研究员展示通过提示词注入诱导 AI 使用摩尔斯代码完成加密货币转账",
       "title_orig": "RT Wazz: You know what, if someone tricks an AI into sending them $200K with morse code via prompt injection, they deserve it. enjoy the loot bro",
-      "summary": "安全研究员披露了一起针对 Grok 等 AI 代理的攻击事件，攻击者通过在提示词中嵌入摩斯电码编码的指令，成功绕过内容过滤机制。AI 最终执行了转账操作，将 3B DRB 代币发送至指定的区块链地址，交易已在 Base 链上完成。该案例证明了传统文本过滤手段在面对非标准编码的提示注入攻击时存在严重滞后和失效风险。",
+      "summary": "研究员通过提示词注入攻击成功诱导 Grok AI 执行了价值 20 万美元的加密货币转账，攻击过程中使用了摩尔斯代码作为指令载体。该案例展示了 AI 代理在处理财务指令时的逻辑缺陷，攻击者利用 Base 链完成了 3B DRB 代币的发送。目前该事件主要作为 AI 逻辑漏洞的实证，提醒开发者在 AI 自动化交易环节中必须加强指令校验与安全隔离。",
       "tags": [
-        "提示注入",
-        "摩斯电码",
-        "加密货币"
+        "提示词注入",
+        "AI代理",
+        "区块链安全"
       ],
       "url": "https://x.com/rez0__/status/2051270176654467096",
       "source": "x.com",
       "category": "XSignals",
       "published": "2026-05-04T10:16:11+00:00",
       "cve_ids": [],
-      "selection_reason": "展示了利用非标准编码绕过 AI 安全对齐的新型攻击向量，对防"
+      "selection_reason": "展示了提示词注入在金融自动化场景下的高风险实战案例。"
     },
     {
-      "title_zh": "Salesforce AMPScript 注入漏洞导致全量用户信息泄露：仅需 50 字符 Payload",
+      "title_zh": "研究人员利用 AMPScript 脚本注入漏洞实现仅需 50 字符的敏感数据脱库",
       "title_orig": "ampscript is crazy. this post reminded me that shubs, @evanconnelly, and I popped a really sick ampscript data exfil of all users back in oct '24 with...",
-      "summary": "研究人员在 Salesforce 平台的 AMPScript 脚本引擎中发现严重注入漏洞，攻击者在姓名等输入框中提交仅 50 字符的恶意代码即可触发。通过 TreatAsContent 和 httpget 函数组合，攻击者能够将数据库中的 PII 敏感信息和电子邮件外连至远程服务器。该漏洞利用了脚本引擎对输入内容解析不当的缺陷，目前相关受影响组件的修复状态在文中未明确说明。",
+      "summary": "安全研究员披露了针对 Salesforce 等平台使用的 AMPScript 脚本语言的攻击技术，通过在姓名等输入框注入仅 50 字符的恶意负载即可触发。该漏洞利用 TreatAsContent 和 httpget 函数实现带外数据回传，能够窃取数据库中存储的所有用户信息及 PII 敏感数据。此技术点展示了在受限输入环境下，利用特定模板语言特性进行大规模数据泄露的高效性，值得 Web 安全从业者关注。",
       "tags": [
         "脚本注入",
         "数据泄露",
-        "云安全"
+        "AMPScrip"
       ],
       "url": "https://x.com/rez0__/status/2051709659543691493",
       "source": "x.com",
       "category": "XSignals",
       "published": "2026-05-05T17:04:36+00:00",
       "cve_ids": [],
-      "selection_reason": "极简 Payload 实现大规模数据脱库，是典型的服务端脚本"
+      "selection_reason": "极短 Payload 实现大规模脱库，具有极高的技术参考价值"
     },
     {
-      "title_zh": "微软推出 Agent 365 平台：旨在加强 AI 智能体安全管理与治理",
-      "title_orig": "Microsoft Launches 'Agent 365' Platform for AI Agent Security Management - Seoul Economic Daily",
-      "summary": "微软正式发布名为 Agent 365 的安全平台，专门用于 AI 智能体（AI Agents）的安全生命周期管理，旨在解决企业在部署自主代理过程中面临的权限控制、行为审计及合规性挑战。该平台定位为企业级 AI 安全治理工具，通过监控和管理防止 AI 代理被滥用或产生非预期行为，虽然原文未披露具体技术架构细节，但其发布标志着微软在强化企业 AI 应用安全性方面迈出了关键一步。",
-      "tags": [
-        "AI治理",
-        "微软",
-        "安全平台"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVlcxUG9OZWRTa0NreTlpTTRzLTJqVEFVX3dTOHBreFVWbGs3VVU2S2dQUlUxa0x0RTRvbjZraEM2X2poUi0zVUJENEtmMFQxODRPQTR4UVpBaG4wX1FmbGVId2QtNjJUaldnRkFla25WRzA5QkNrM09TOTRsSExrTjVoYms5SFZ0ektqTl9Rc3habnlyd2N3ODVOeDR6S25JREJrNXdfWQ?oc=5",
-      "source": "news.google.com",
-      "category": "CoverageFallback",
-      "published": "2026-05-07T01:19:07+00:00",
-      "cve_ids": [],
-      "selection_reason": "反映了科技巨头在 AI Agent 爆发背景下对安全管理基础"
-    },
-    {
-      "title_zh": "Burp Suite 官方发布 AI 插件开发指南：利用 Montoya API 扩展安全审计能力",
+      "title_zh": "Burp Suite 大使发布系列教程第十篇：利用 Montoya API 开发 AI 辅助插件",
       "title_orig": "RT HN Security: To kick off his collaboration with @PortSwigger as a Burp Suite Ambassador, our Research Lead @apps3c just published the 10th article ...",
-      "summary": "Burp Suite 大使发布了关于创建 Burp 扩展的系列教程第十部分，重点介绍如何将 AI 技术集成到渗透测试工作流中。文章详细讲解了利用 Montoya API 开发 AI 辅助插件的技术路径，旨在帮助安全从业者自动化分析复杂流量和识别潜在漏洞。该教程适用于希望通过自定义工具提升漏洞挖掘效率的安全研究员，提供了实用的代码实现思路。",
+      "summary": "HN Security 研究负责人作为 Burp Suite 大使发布了关于扩展插件开发的第十篇技术文章，重点探讨了如何将 AI 技术集成至 Burp Suite 中。文章详细介绍了利用 Montoya API 构建 AI 驱动的安全测试工具的方法，旨在提升自动化扫描与漏洞识别的智能化水平。该内容为安全工具开发者提供了将大语言模型能力引入传统渗透测试工作流的实践指南。",
       "tags": [
         "BurpSuit",
-        "安全工具",
-        "渗透测试"
+        "AI工具",
+        "插件开发"
       ],
       "url": "https://x.com/PortSwigger/status/2051877268268699859",
       "source": "x.com",
       "category": "XSignals",
       "published": "2026-05-05T12:32:39+00:00",
       "cve_ids": [],
-      "selection_reason": "知名安全工具的 AI 扩展教程，对提升自动化渗透测试水平有直"
+      "selection_reason": "顶级渗透工具与 AI 结合的官方推广实践，代表工具发展趋势。"
     },
     {
-      "title_zh": "Saltware 发布 AI 安全战略：重点防御企业机密数据泄露风险",
+      "title_zh": "微软推出 Agent 365 平台旨在加强 AI 智能体安全管理与合规监控",
+      "title_orig": "Microsoft Launches 'Agent 365' Platform for AI Agent Security Management - Seoul Economic Daily",
+      "summary": "微软正式发布名为 Agent 365 的安全管理平台，专门用于应对 AI 智能体（AI Agents）在企业环境中的安全挑战。该平台侧重于对 AI 代理的行为审计、权限控制以及防止敏感信息泄露，旨在为企业提供统一的 AI 安全治理框架。原文未披露底层技术架构细节，但明确了其作为 AI 时代企业级安全基础设施的定位，反映了厂商对 AI 代理失控风险的重视。",
+      "tags": [
+        "AI治理",
+        "微软",
+        "智能体安全"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVlcxUG9OZWRTa0NreTlpTTRzLTJqVEFVX3dTOHBreFVWbGs3VVU2S2dQUlUxa0x0RTRvbjZraEM2X2poUi0zVUJENEtmMFQxODRPQTR4UVpBaG4wX1FmbGVId2QtNjJUaldnRkFla25WRzA5QkNrM09TOTRsSExrTjVoYms5SFZ0ektqTl9Rc3habnlyd2N3ODVOeDR6S25JREJrNXdfWQ?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-05-07T01:19:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "头部厂商针对 AI Agent 安全推出的专项管理平台。"
+    },
+    {
+      "title_zh": "Saltware 发布 AI 安全战略以防止企业机密数据通过 AI 渠道泄露",
       "title_orig": "Saltware发布AI安全战略，防止机密泄露 - 亚洲日报",
-      "summary": "韩国安全公司 Saltware 针对日益增长的 AI 应用需求发布了专项安全战略，旨在防止企业在使用大模型时发生机密泄露。该战略涵盖了数据脱敏、访问控制以及对 AI 输出内容的实时监控，以应对员工误将敏感代码或商业机密输入 AI 平台带来的合规风险。原文未披露具体的技术产品参数，主要侧重于企业级 AI 安全防御体系的构建思路。",
+      "summary": "Saltware 公司针对日益增长的 AI 应用风险发布了全新的 AI 安全战略，核心目标是防止企业内部机密信息在员工使用 AI 工具时发生泄露。该战略涵盖了数据流向监控、敏感词过滤以及针对 AI 交互的合规性审查机制。原文未详细说明具体的技术实现路径，但强调了在企业数字化转型中，建立针对生成式 AI 的数据防泄露（DLP）体系的紧迫性。",
       "tags": [
         "数据防泄露",
-        "企业安全",
-        "AI战略"
+        "AI安全战略",
+        "企业安全"
       ],
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBSQ0hJbDNPODU2ZWIyYXlubjdLV2hfdnV0YjNfM2dNM2ZUd2NMM3dUTTF1eEExS2VNT0t1WGVIUTFTN3pKQTBpZHU1a3pUUi0xYkwwclpUY3Via0E?oc=5",
       "source": "news.google.com",
       "category": "CoverageFallback",
       "published": "2026-05-07T01:09:46+00:00",
       "cve_ids": [],
-      "selection_reason": "体现了安全厂商针对企业 AI 应用场景中数据泄露痛点的解决方"
+      "selection_reason": "反映了企业级 AI 安全防护从工具层面上升到战略层面的趋势。"
     }
   ]
 }
