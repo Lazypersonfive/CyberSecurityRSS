@@ -329,6 +329,11 @@ def _finalize_digest_item(entry: dict[str, Any], item: dict[str, Any]) -> dict[s
     finalized["category"] = entry.get("category", finalized.get("category", ""))
     finalized["published"] = entry.get("published", finalized.get("published", ""))
     finalized["cve_ids"] = entry.get("cve_ids", finalized.get("cve_ids", [])) or []
+    profile = source_profile(entry)
+    finalized["source_tier"] = profile.source_tier
+    finalized["source_kind"] = profile.source_kind
+    finalized["source_label"] = profile.source_label
+    finalized["source_key"] = profile.source_key
     return finalized
 
 

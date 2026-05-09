@@ -242,6 +242,15 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertIn("grid lg:grid-cols-[220px_minmax(0,1fr)]", template)
         self.assertNotIn("font-sans", template)
 
+
+    def test_template_renders_source_tier_badge(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("sourceBadge", template)
+        self.assertIn("source_tier", template)
+        self.assertIn("source_kind", template)
+        self.assertIn("source_label", template)
+
     def test_cli_lookback_overrides_config(self) -> None:
         with TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
@@ -290,6 +299,34 @@ class SiteBuilderTests(unittest.TestCase):
         block = feed["boards"]["security"]
         self.assertEqual(block["selected_count"], 20)
         self.assertEqual(block["selection_stats"]["chinese"], 2)
+
+
+    def test_feed_json_backfills_source_registry_metadata(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            digest_dir = Path(tmpdir)
+            digest_dir.joinpath("security_2026-04-30.json").write_text(
+                json.dumps(
+                    {
+                        "board": "security",
+                        "display_name": "安全",
+                        "date": "2026-04-30",
+                        "raw_count": 1,
+                        "selected_count": 1,
+                        "generated_at": "2026-04-30T00:00:00Z",
+                        "items": [{"title_zh": "CISA 通告", "url": "https://cisa.gov/news-events/alerts/x"}],
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            with patch("site_builder.DIGEST_DIR", digest_dir):
+                feed = _build_feed_for_date({"security": {"display_name": "安全"}}, date(2026, 4, 30))
+
+        item = feed["boards"]["security"]["items"][0]
+        self.assertEqual(item["source_tier"], "t1")
+        self.assertEqual(item["source_kind"], "official")
+        self.assertEqual(item["source_label"], "官方通告")
 
     def test_daily_workflow_supports_single_board_dispatch(self) -> None:
         workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
@@ -477,6 +514,29 @@ class SourcePolicyTests(unittest.TestCase):
         self.assertFalse(profile.is_google_news)
         self.assertFalse(profile.is_direct)
 
+
+    def test_source_profile_uses_registry_for_official_domain(self) -> None:
+        profile = source_profile({"title": "OpenAI update", "url": "https://openai.com/news/update"})
+
+        self.assertEqual(profile.source_tier, "t1")
+        self.assertEqual(profile.source_kind, "official")
+        self.assertEqual(profile.source_label, "官网")
+
+    def test_source_profile_uses_registry_for_rsshub_x_handle(self) -> None:
+        profile = source_profile(
+            {
+                "title": "OpenAI ships a model update",
+                "url": "https://x.com/OpenAIDevs/status/123",
+                "feed_url": "https://rsshub.app/twitter/user/OpenAIDevs",
+                "feed_title": "X / OpenAIDevs",
+                "category": "XSignals",
+            }
+        )
+
+        self.assertEqual(profile.source_tier, "t1_5")
+        self.assertEqual(profile.source_kind, "official_x")
+        self.assertEqual(profile.source_label, "官方 X")
+
     def test_wechat_source_key_uses_feed_url_not_shared_host(self) -> None:
         first = source_profile(
             {
@@ -554,6 +614,29 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertTrue(_is_chinese_entry({"title": "English title", "feed_url": "https://wechat2rss.xlab.app/feed/x.xml"}))
         self.assertFalse(_is_chinese_entry({"title": "English title", "url": "https://thehackernews.com/x"}))
         self.assertFalse(_is_chinese_entry({"title": "English title", "url": "https://example.com/cn/article"}))
+
+
+    def test_digest_item_includes_source_registry_metadata(self) -> None:
+        item = _finalize_digest_item(
+            {
+                "title": "OpenAI releases important model update",
+                "summary": "OpenAI releases important model update for developers.",
+                "url": "https://openai.com/news/update",
+                "category": "Labs",
+                "published": "2026-05-09T00:00:00Z",
+            },
+            {
+                "title_zh": "OpenAI发布重要模型更新",
+                "summary": "OpenAI发布重要模型更新，面向开发者提供新的能力和使用方式。这条资讯来自官方来源，适合关注模型能力、产品节奏和生态变化的读者继续查看原文。",
+                "tags": ["模型发布"],
+                "url": "https://openai.com/news/update",
+                "selection_reason": "官方发布",
+            },
+        )
+
+        self.assertEqual(item["source_tier"], "t1")
+        self.assertEqual(item["source_kind"], "official")
+        self.assertEqual(item["source_label"], "官网")
 
     def test_score_prompts_include_language_fairness(self) -> None:
         for prompt in BOARD_SCORE_SYSTEM.values():

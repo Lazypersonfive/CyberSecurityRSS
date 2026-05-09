@@ -12,6 +12,8 @@ from dataclasses import dataclass
 from typing import Any, Iterable
 from urllib.parse import urlparse
 
+from source_registry import registry_match, x_handle_from_urls
+
 
 AGGREGATOR_HOSTS = {
     "news.google.com",
@@ -41,6 +43,10 @@ class SourceProfile:
     is_wechat: bool
     is_chinese: bool
     is_direct: bool
+    source_tier: str
+    source_kind: str
+    source_label: str
+    x_handle: str
 
 
 def _get(entry: Any, key: str, default: str = "") -> str:
@@ -80,6 +86,7 @@ def source_profile(entry: Any) -> SourceProfile:
     feed_path = _path(feed_url)
 
     is_google_news = host == "news.google.com" or feed_host == "news.google.com"
+    x_handle = x_handle_from_urls(url, feed_url)
     is_rsshub_x_signal = feed_path.startswith("/twitter/")
     is_aggregator = (
         _host_matches(host, AGGREGATOR_HOSTS)
@@ -87,7 +94,7 @@ def source_profile(entry: Any) -> SourceProfile:
         or is_rsshub_x_signal
     )
     is_wechat = "wechat2rss" in feed_host or host == "mp.weixin.qq.com"
-    source_key = feed_url if is_wechat and feed_url else host or feed_host
+    source_key = feed_url if is_wechat and feed_url else (f"x:{x_handle.lower()}" if x_handle else host or feed_host)
     text = " ".join(
         _get(entry, field)
         for field in ("title", "title_orig", "feed_title", "summary")
@@ -101,6 +108,17 @@ def source_profile(entry: Any) -> SourceProfile:
         or feed_host.endswith(".cn")
     )
 
+    registry = registry_match(host=host, feed_host=feed_host, x_handle=x_handle)
+    source_kind = registry["kind"]
+    source_tier = registry["tier"]
+    source_label = registry["label"]
+    if is_google_news:
+        source_kind = "google_news"
+        source_label = "Google News"
+    elif is_wechat and source_kind == "media":
+        source_kind = "cn_expert"
+        source_label = "中文公众号"
+
     return SourceProfile(
         host=host,
         feed_host=feed_host,
@@ -110,6 +128,10 @@ def source_profile(entry: Any) -> SourceProfile:
         is_wechat=is_wechat,
         is_chinese=is_chinese,
         is_direct=not is_aggregator,
+        source_tier=source_tier,
+        source_kind=source_kind,
+        source_label=source_label,
+        x_handle=x_handle,
     )
 
 

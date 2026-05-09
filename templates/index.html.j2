@@ -86,6 +86,21 @@
       background: var(--surface-soft);
       color: var(--muted);
     }
+    .source-badge {
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      color: var(--muted);
+    }
+    .source-badge[data-tier="t1"] { border-color: #166534; color: #166534; background: #f0fdf4; }
+    .source-badge[data-tier="t1_5"] { border-color: #1d4ed8; color: #1d4ed8; background: #eff6ff; }
+    .source-badge[data-kind="google_news"],
+    .source-badge[data-kind="aggregator"],
+    .source-badge[data-kind="community"] { border-color: #a16207; color: #854d0e; background: #fefce8; }
+    .dark .source-badge[data-tier="t1"] { border-color: #22c55e; color: #86efac; background: rgba(34, 197, 94, 0.10); }
+    .dark .source-badge[data-tier="t1_5"] { border-color: #60a5fa; color: #93c5fd; background: rgba(59, 130, 246, 0.12); }
+    .dark .source-badge[data-kind="google_news"],
+    .dark .source-badge[data-kind="aggregator"],
+    .dark .source-badge[data-kind="community"] { border-color: #facc15; color: #fde68a; background: rgba(250, 204, 21, 0.10); }
     .date-rule { border-top: 1px solid var(--line); }
     @media (max-width: 720px) {
       .oai-title { letter-spacing: -0.025em; }
@@ -177,7 +192,7 @@ function el(tag, className, text) {
 }
 function matchesQuery(item, query) {
   if (!query) return true;
-  const haystack = [item.title_zh, item.title_orig, item.summary, item.source, ...(item.tags || []), ...(item.cve_ids || [])]
+  const haystack = [item.title_zh, item.title_orig, item.summary, item.source, item.source_label, item.source_kind, item.source_tier, ...(item.tags || []), ...(item.cve_ids || [])]
     .filter(Boolean).join(' ').toLowerCase();
   return haystack.includes(query.toLowerCase());
 }
@@ -208,6 +223,17 @@ function renderTabs() {
     tabs.appendChild(btn);
   });
 }
+function sourceBadge(item) {
+  const tier = item.source_tier || 'unknown';
+  const kind = item.source_kind || 'media';
+  const label = item.source_label || (kind === 'google_news' ? 'Google News' : '未登记源');
+  const badge = el('span', 'source-badge mono text-[11px] px-2.5 py-1 rounded-full', `${label} · ${tier}`);
+  badge.dataset.tier = tier;
+  badge.dataset.kind = kind;
+  badge.title = `source_tier=${tier} · source_kind=${kind}`;
+  return badge;
+}
+
 function makeTagPill(text, kind) {
   const cls = kind === 'cve'
     ? 'tag mono text-[11px] px-2 py-1 rounded-full cursor-pointer'
@@ -222,6 +248,7 @@ function renderCard(item) {
   card.className = 'oai-card rounded-3xl p-5 sm:p-6';
   const top = el('div', 'flex flex-wrap items-center gap-2 mono text-xs text-[color:var(--muted)] mb-4');
   top.append(el('span', 'text-[color:var(--fg)]', fmtDate(item._date || currentDate)));
+  top.append(sourceBadge(item));
   top.append(el('span', '', item.source || ''));
   top.append(el('span', '', fmtTime(item.published)));
   card.append(top);
