@@ -208,6 +208,16 @@ function totalForBoard(boardKey) {
   const dateKeys = searchQuery ? DATES : [currentDate];
   return dateKeys.reduce((sum, dateKey) => sum + (boardBlock(boardKey, dateKey)?.items?.length || 0), 0);
 }
+function sourceMixLine(stats) {
+  if (!stats) return '';
+  const parts = [];
+  if (stats.tier_t1) parts.push(`T1 ${stats.tier_t1}`);
+  if (stats.tier_t1_5) parts.push(`T1.5 ${stats.tier_t1_5}`);
+  if (stats.tier_t2) parts.push(`T2 ${stats.tier_t2}`);
+  if (stats.tier_unknown) parts.push(`未登记 ${stats.tier_unknown}`);
+  if (stats.google_news) parts.push(`GN ${stats.google_news}`);
+  return parts.length ? ` · 来源 ${parts.join(' / ')}` : '';
+}
 function renderTabs() {
   const tabs = document.getElementById('tabs');
   tabs.textContent = '';
@@ -292,7 +302,7 @@ function renderBody() {
   const currentBlock = boardBlock(currentBoard, currentDate);
   meta.textContent = searchQuery
     ? `${items.length}/${total} 条匹配 · 覆盖 ${DATES.length} 日`
-    : `共 ${total} 条 · 原始抓取 ${currentBlock?.raw_count || 0} 条 · 生成于 ${fmtTime(currentBlock?.generated_at || '')}`;
+    : `共 ${total} 条 · 原始抓取 ${currentBlock?.raw_count || 0} 条 · 生成于 ${fmtTime(currentBlock?.generated_at || '')}${sourceMixLine(currentBlock?.selection_stats)}`;
 }
 function renderDateSelect() {
   const sel = document.getElementById('date-select');

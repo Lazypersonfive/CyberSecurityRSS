@@ -23,7 +23,7 @@ from fetch_feeds import FeedEntry, archive_urls, fetch_all_entries, load_seen_ur
 from fetch_opml import fetch_opml, fetch_opml_metadata
 from filter_entries import FilteredEntry, filter_and_dedup
 from rss_curation import curate_entries
-from source_policy import select_with_source_policy, source_profile
+from source_policy import select_with_source_policy, source_mix_stats, source_profile
 from security_editorial import adjust_security_score
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
 from site_builder import _build_feed_for_date, build
@@ -251,6 +251,14 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertIn("source_kind", template)
         self.assertIn("source_label", template)
 
+
+    def test_template_summarizes_source_mix_in_sidebar_meta(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("sourceMixLine", template)
+        self.assertIn("tier_t1", template)
+        self.assertIn("tier_unknown", template)
+
     def test_cli_lookback_overrides_config(self) -> None:
         with TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
@@ -327,6 +335,46 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertEqual(item["source_tier"], "t1")
         self.assertEqual(item["source_kind"], "official")
         self.assertEqual(item["source_label"], "官方通告")
+
+
+    def test_feed_json_recomputes_unknown_source_metadata_from_registry(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            digest_dir = Path(tmpdir)
+            digest_dir.joinpath("security_2026-04-30.json").write_text(
+                json.dumps(
+                    {
+                        "board": "security",
+                        "display_name": "安全",
+                        "date": "2026-04-30",
+                        "raw_count": 1,
+                        "selected_count": 1,
+                        "selection_stats": {"total": 1},
+                        "generated_at": "2026-04-30T00:00:00Z",
+                        "items": [
+                            {
+                                "title_zh": "先知社区技术文章",
+                                "url": "https://xz.aliyun.com/news/1",
+                                "source_tier": "unknown",
+                                "source_kind": "media",
+                                "source_label": "未登记源",
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            with patch("site_builder.DIGEST_DIR", digest_dir):
+                feed = _build_feed_for_date({"security": {"display_name": "安全"}}, date(2026, 4, 30))
+
+        block = feed["boards"]["security"]
+        item = block["items"][0]
+        self.assertEqual(item["source_tier"], "t2")
+        self.assertEqual(item["source_kind"], "cn_expert")
+        self.assertEqual(item["source_label"], "中文安全")
+        self.assertEqual(block["selection_stats"]["tier_t2"], 1)
+        self.assertEqual(block["selection_stats"]["kind_cn_expert"], 1)
 
     def test_daily_workflow_supports_single_board_dispatch(self) -> None:
         workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
@@ -555,6 +603,20 @@ class SourcePolicyTests(unittest.TestCase):
 
         self.assertNotEqual(first.source_key, second.source_key)
         self.assertIn("source-a", first.source_key)
+
+
+    def test_source_mix_stats_includes_registry_distribution(self) -> None:
+        stats = source_mix_stats([
+            {"title": "OpenAI", "url": "https://openai.com/news/a"},
+            {"title": "中文安全", "url": "https://xz.aliyun.com/news/1"},
+            {"title": "Google", "url": "https://news.google.com/rss/articles/1"},
+        ])
+
+        self.assertEqual(stats["tier_t1"], 1)
+        self.assertEqual(stats["tier_t2"], 2)
+        self.assertEqual(stats["kind_official"], 1)
+        self.assertEqual(stats["kind_cn_expert"], 1)
+        self.assertEqual(stats["kind_google_news"], 1)
 
     def test_selection_policy_caps_google_news_and_reserves_chinese(self) -> None:
         candidates = [

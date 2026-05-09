@@ -21,7 +21,7 @@ import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from digest_clock import digest_today
-from source_policy import source_profile
+from source_policy import source_mix_stats, source_profile
 
 logging.basicConfig(
     level=logging.INFO,
@@ -58,12 +58,15 @@ def _build_feed_for_date(boards: dict[str, dict], d: date) -> dict[str, Any] | N
             }
             continue
         any_content = any_content or bool(digest.get("items"))
+        items = [_with_source_metadata(item) for item in digest.get("items", [])]
+        selection_stats = dict(digest.get("selection_stats") or {})
+        selection_stats.update(source_mix_stats(items))
         out["boards"][board] = {
             "display_name": bcfg.get("display_name", board),
-            "items": [_with_source_metadata(item) for item in digest.get("items", [])],
+            "items": items,
             "raw_count": digest.get("raw_count", 0),
             "selected_count": digest.get("selected_count", len(digest.get("items", []))),
-            "selection_stats": digest.get("selection_stats", {}),
+            "selection_stats": selection_stats,
             "generated_at": digest.get("generated_at", ""),
         }
     return out if any_content else None
@@ -74,10 +77,10 @@ def _with_source_metadata(item: dict[str, Any]) -> dict[str, Any]:
     """Backfill source registry metadata for older digest files."""
     enriched = dict(item)
     profile = source_profile(enriched)
-    enriched.setdefault("source_tier", profile.source_tier)
-    enriched.setdefault("source_kind", profile.source_kind)
-    enriched.setdefault("source_label", profile.source_label)
-    enriched.setdefault("source_key", profile.source_key)
+    enriched["source_tier"] = profile.source_tier
+    enriched["source_kind"] = profile.source_kind
+    enriched["source_label"] = profile.source_label
+    enriched["source_key"] = profile.source_key
     return enriched
 
 def build(lookback_days: int = 7) -> None:

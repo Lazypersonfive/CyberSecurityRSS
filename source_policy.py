@@ -283,6 +283,8 @@ def source_mix_stats(entries: Iterable[dict[str, Any]]) -> dict[str, int]:
             stats["direct"] += 1
         if profile.is_wechat:
             stats["wechat"] += 1
+        stats[f"tier_{profile.source_tier}"] += 1
+        stats[f"kind_{profile.source_kind}"] += 1
     return dict(stats)
 
 
