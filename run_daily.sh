@@ -4,8 +4,8 @@
 # With no args, runs all configured boards.
 #
 # Backend selection (env var):
-#   LLM_BACKEND=gemini   (default) — uses digest_pipeline_gemini.py, needs GEMINI_API_KEY
-#   LLM_BACKEND=anthropic          — uses digest_pipeline.py, needs ANTHROPIC_API_KEY
+#   LLM_BACKEND=gemini   (default) — needs GEMINI_API_KEY
+#   LLM_BACKEND=deepseek           — needs DEEPSEEK_API_KEY
 
 set -euo pipefail
 
@@ -15,12 +15,11 @@ PYTHON="${PYTHON:-/Users/dedsec/anaconda3/envs/work3124/bin/python}"
 LLM_BACKEND="${LLM_BACKEND:-gemini}"
 
 case "$LLM_BACKEND" in
-  gemini) DIGEST_SCRIPT=digest_pipeline_gemini.py ;;
-  anthropic) DIGEST_SCRIPT=digest_pipeline.py ;;
+  gemini|deepseek) ;;
   *) echo "unknown LLM_BACKEND=$LLM_BACKEND" >&2; exit 1 ;;
 esac
 
-echo "LLM backend: $LLM_BACKEND ($DIGEST_SCRIPT)"
+echo "LLM backend: $LLM_BACKEND (digest_pipeline_gemini.py)"
 
 BOARDS=("$@")
 if [ ${#BOARDS[@]} -eq 0 ]; then
@@ -33,7 +32,7 @@ for board in "${BOARDS[@]}"; do
   echo "  Board: $board"
   echo "=========================================="
   "$PYTHON" fetch_and_save.py --board "$board"
-  "$PYTHON" "$DIGEST_SCRIPT" --board "$board"
+  "$PYTHON" digest_pipeline_gemini.py --board "$board"
 done
 
 echo ""

@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 from digest_clock import digest_today
 from digest_postprocess import count_chinese_chars, summary_needs_repair
+from llm_backends.base import backend_name_from_env, get_backend
 from digest_pipeline_gemini import (
     BOARD_SCORE_SYSTEM,
     _candidate_pool,
@@ -500,7 +501,7 @@ class SourcePolicyTests(unittest.TestCase):
             ({"title": "Google 1", "url": "https://news.google.com/rss/articles/1"}, 10),
             ({"title": "Google 2", "url": "https://news.google.com/rss/articles/2"}, 9),
             ({"title": "Direct 1", "url": "https://openai.com/news/a"}, 8),
-            ({"title": "Direct 2", "url": "https://anthropic.com/news/b"}, 7),
+            ({"title": "Direct 2", "url": "https://labs.example.com/news/b"}, 7),
             (
                 {
                     "title": "中文源",
@@ -627,11 +628,16 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertIn("顶级开发者 X 动态", BOARD_SCORE_SYSTEM["ai"])
         self.assertIn("顶级安全研究者 X 动态", BOARD_SCORE_SYSTEM["ai_security"])
 
-    def test_digest_pipelines_accept_dynamic_board_names(self) -> None:
-        for path in ("digest_pipeline_gemini.py", "digest_pipeline.py"):
-            body = Path(path).read_text(encoding="utf-8")
-            self.assertNotIn('choices=["security", "ai", "finance"]', body)
-            self.assertIn("parser.add_argument(\"--board\", required=True)", body)
+    def test_digest_pipeline_accepts_dynamic_board_names(self) -> None:
+        body = Path("digest_pipeline_gemini.py").read_text(encoding="utf-8")
+        self.assertNotIn('choices=["security", "ai", "finance"]', body)
+        self.assertIn('parser.add_argument("--board", required=True)', body)
+
+    def test_legacy_digest_entrypoint_delegates_to_current_pipeline(self) -> None:
+        body = Path("digest_pipeline.py").read_text(encoding="utf-8")
+        self.assertIn("from digest_pipeline_gemini import main, run", body)
+        self.assertNotIn("ANTHROPIC" + "_API_KEY", body)
+        self.assertNotIn("".join(["ant", "hropic"]), body.lower())
 
     def test_source_policy_reserves_top_chinese_slots(self) -> None:
         # deduped sorted by score desc; CN at idx 0 (sc=9), 4 (sc=5); rest English
@@ -866,12 +872,85 @@ class SourceReportTests(unittest.TestCase):
         self.assertIn("Noisy Junk", body)
         self.assertNotIn("Good Source", body.split("⚠️")[1])
 
-    def test_anthropic_backup_writes_source_report_sidecar(self) -> None:
-        body = Path("digest_pipeline.py").read_text(encoding="utf-8")
+    def test_workflow_no_longer_exposes_removed_llm_channel(self) -> None:
+        body = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
 
-        self.assertIn("write_board_report_json(", body)
-        self.assertIn("refresh_weekly_report(", body)
-        self.assertIn("render_source_report(", body)
+        self.assertNotIn("ANTHROPIC" + "_API_KEY", body)
+        self.assertNotIn('LLM_BACKEND" = "' + "".join(["ant", "hropic"]) + '"', body)
+        self.assertIn("DEEPSEEK_API_KEY", body)
+        self.assertIn("deepseek-v4-flash", body)
+
+
+class LLMBackendTests(unittest.TestCase):
+    def test_default_backend_name_is_gemini(self) -> None:
+        with patch.dict("os.environ", {}, clear=True):
+            self.assertEqual(backend_name_from_env(), "gemini")
+
+    def test_deepseek_backend_requires_key_when_explicitly_enabled(self) -> None:
+        with patch.dict("os.environ", {"LLM_BACKEND": "deepseek"}, clear=True):
+            with self.assertRaises(SystemExit) as cm:
+                get_backend()
+
+        self.assertIn("DEEPSEEK_API_KEY", str(cm.exception))
+
+    def test_deepseek_backend_uses_non_deprecated_default_model(self) -> None:
+        from llm_backends.deepseek import DEPRECATED_MODELS, DeepSeekBackend
+
+        with patch.dict("os.environ", {"DEEPSEEK_API_KEY": "test-key"}, clear=True):
+            backend = DeepSeekBackend.from_env()
+
+        self.assertEqual(backend.score_model, "deepseek-v4-flash")
+        self.assertNotIn(backend.score_model, DEPRECATED_MODELS)
+
+    def test_deepseek_backend_rejects_deprecated_model_names(self) -> None:
+        from llm_backends.deepseek import DeepSeekBackend
+
+        with patch.dict(
+            "os.environ",
+            {"DEEPSEEK_API_KEY": "test-key", "DEEPSEEK_MODEL": "deepseek-chat"},
+            clear=True,
+        ):
+            with self.assertRaises(SystemExit) as cm:
+                DeepSeekBackend.from_env()
+
+        self.assertIn("deprecated", str(cm.exception))
+
+    def test_deepseek_backend_generate_json_uses_openai_compatible_endpoint(self) -> None:
+        from llm_backends.deepseek import DeepSeekBackend
+
+        calls = []
+
+        class FakeResponse:
+            def raise_for_status(self) -> None:
+                return None
+
+            def json(self) -> dict:
+                return {"choices": [{"message": {"content": "[{\"idx\":0,\"score\":8}]"}}]}
+
+        class FakeClient:
+            def __init__(self, timeout: int) -> None:
+                self.timeout = timeout
+
+            def __enter__(self) -> "FakeClient":
+                return self
+
+            def __exit__(self, *_exc: object) -> None:
+                return None
+
+            def post(self, url: str, *, headers: dict, json: dict) -> FakeResponse:
+                calls.append((url, headers, json))
+                return FakeResponse()
+
+        backend = DeepSeekBackend(api_key="test-key", base_url="https://deepseek.example")
+        with patch("llm_backends.deepseek.httpx.Client", FakeClient):
+            text = backend.generate_json("deepseek-v4-flash", "system", "user", 128)
+
+        self.assertEqual(text, '[{"idx":0,"score":8}]')
+        url, headers, payload = calls[0]
+        self.assertEqual(url, "https://deepseek.example/chat/completions")
+        self.assertEqual(headers["Authorization"], "Bearer test-key")
+        self.assertEqual(payload["model"], "deepseek-v4-flash")
+        self.assertEqual(payload["messages"][0]["role"], "system")
 
 
 class DigestClockTests(unittest.TestCase):

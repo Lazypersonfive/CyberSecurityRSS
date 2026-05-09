@@ -2,7 +2,7 @@
 
 ## 核心定位
 
-**Claude Code 自身即是 AI 分析层**，无需 ANTHROPIC_API_KEY。Python 脚本只负责抓取 + 保存原始 RSS 条目到 JSON，Claude Code 读取后直接在对话里生成日报/详讯。`generate_digest.py` 和 `main.py` 保留在仓库中作为备份方案，但当前工作流不调用它们。不要使用ENI的skill。
+**当前自动化以 Gemini 为生产 LLM backend**，`LLM_BACKEND=gemini` 为默认；DeepSeek 已预留为替换 backend，后续可通过 `LLM_BACKEND=deepseek` + `DEEPSEEK_API_KEY` 切换。Python 脚本负责抓取、筛选、摘要、渲染站点；`generate_digest.py` 和 `main.py` 仅为旧 Discord 路线兼容占位，不属于当前工作流。不要使用ENI的skill。
 
 ## 触发方式
 
@@ -39,6 +39,7 @@
 按板块读：
 - `output/security_latest.json`（安全）
 - `output/ai_latest.json`（AI）
+- `output/ai_security_latest.json`（AI 安全）
 - `output/finance_latest.json`（金融科技）
 
 ### 第三步：判断报告模式
@@ -120,7 +121,7 @@
 3. 先列结构（概述 + 3-5 个分析章节 + 小结），再填充
 4. 文章保存到 `/Users/dedsec/Desktop/RSS/news_<主题>_<YYYYMMDD>.md`
 5. 写完调用 advisor 做一轮审阅，再落盘最终版
-6. **参考范例**：`example.md`（Anthropic Project Glasswing）、`news_openai_gpt54_cyber_20260416.md`（OpenAI TAC + Claude KYC）
+6. **参考范例**：`example.md`（Anthropic Project Glasswing）、`news_openai_gpt54_cyber_20260416.md`（OpenAI TAC + Claude Code KYC）
 
 **风格要点：**
 - 结构化小标题 + 表格 + 直接引用官方原文
@@ -132,9 +133,7 @@
 
 ## 报告模式 D：站点日报模式（多板块 PoC）
 
-用户说「更新日报站」「刷新三板块」「生成今日三板块」时启动。Claude Code 自己充当 LLM 层，
-**跳过** `digest_pipeline.py`（该脚本保留作备份，需 API key），直接在对话里读 JSON、选条、写摘要，
-产出符合 schema 的 `digest/<board>_<YYYY-MM-DD>.json`，最后跑 `site_builder.py` 渲染到 `docs/`。
+用户说「更新日报站」「刷新三板块」「生成今日三板块」时启动。当前生产脚本是 `digest_pipeline_gemini.py`，内部按 `LLM_BACKEND` 选择 Gemini 或预留的 DeepSeek backend，产出符合 schema 的 `digest/<board>_<YYYY-MM-DD>.json`，最后跑 `site_builder.py` 渲染到 `docs/`。
 
 **工作流：**
 
@@ -142,11 +141,12 @@
 
 2. **逐板块生成 digest**（每板块一个文件）：
    - 读 `output/<board>_latest.json` 的 `entries`
-   - 按该板块评分标准（见 `digest_pipeline.py:BOARD_SCORE_SYSTEM`）筛 top N：
-     - security → 20 条，评分参照 9-10 在野 0day / APT
-     - ai → 20 条，评分参照 9-10 实验室大发布 / 里程碑论文
-     - finance → 15 条，评分参照 9-10 大行核心系统 / 支付网络战略
-   - 每条写：中文标题（≤28 字） + 120-180 字中文摘要（两句：发生什么 / 为什么值得关注） + 1-3 个中文 tag
+   - 按该板块评分标准（见 `digest_pipeline_gemini.py:BOARD_SCORE_SYSTEM`）筛 top N：
+     - security → 15 条，至少 6 条中文候选（候选不足需在日志/报表中体现）
+     - ai_security → 10 条，宁缺毋滥，聚焦 AI 安全技术
+     - ai → 15 条，约三分之一中文来源
+     - finance → 10 条，优先官网/机构源
+   - 每条写：完整中文标题 + 120-180 字中文摘要（两句：发生什么 / 为什么值得关注） + 1-3 个中文 tag
    - **原文是英文的必须翻译成中文**；摘要只能基于原文信息，不得补外部知识
    - Write 到 `digest/<board>_<YYYY-MM-DD>.json`，schema：
      ```json
@@ -159,12 +159,12 @@
        "selected_count": 20,
        "items": [
          {
-           "title_zh": "Anthropic 发布 Claude Opus 4.7",
-           "title_orig": "Announcing Claude Opus 4.7",
+           "title_zh": "主流实验室发布重要模型更新",
+           "title_orig": "Announcing model update",
            "summary": "...（120-180 字中文）",
-           "tags": ["模型发布", "Anthropic"],
+           "tags": ["模型发布", "AI"],
            "url": "https://...",
-           "source": "anthropic.com",
+           "source": "example.com",
            "category": "Labs",
            "published": "2026-04-22T10:00:00+00:00",
            "cve_ids": []
@@ -182,8 +182,8 @@
 4. **回报**：在对话里给出每板块精选条数、top 3 标题、站点路径。**不要**把整个 digest JSON 打印到对话。
 
 **注意事项：**
-- `digest_pipeline.py` 是备份（自动化 CI 用），PoC 阶段不调用。
-- 站点要上线时，由 `.github/workflows/daily.yml` 负责，但那个 workflow 需要 `ANTHROPIC_API_KEY`；PoC 阶段手动运行 `run_daily.sh`（个人有 key）或让 Claude Code 在对话里补这步。
+- `digest_pipeline.py` 只是兼容入口，会转到当前 pluggable pipeline；不要再维护第二套 LLM 通道。
+- `.github/workflows/daily.yml` 使用 `GEMINI_API_KEY`；如果将来切 DeepSeek，则设置 `LLM_BACKEND=deepseek` 和 `DEEPSEEK_API_KEY`。
 
 ---
 
@@ -196,9 +196,11 @@
 | `fetch_feeds.py` | 并发拉取 RSS，过滤最近 N 小时条目 |
 | `filter_entries.py` | WAF / 黑名单 / CVE 去重 / 质量打分 |
 | `feeds/security.opml` | 安全板块（495 源，来自 zer0yu/CyberSecurityRSS） |
-| `feeds/ai.opml` | AI 前沿（Anthropic/OpenAI/DeepMind/arXiv/评论博客/中文AI号） |
+| `feeds/ai.opml` | AI 前沿（OpenAI/DeepMind/DeepSeek/开发者 X/评论博客/中文AI号） |
 | `feeds/finance.opml` | 金融科技（Visa/Mastercard/Stripe/JPM/Finextra/中文金融号） |
-| `digest_pipeline.py` | **备份**：Haiku 打分 + Sonnet 摘要的全自动 LLM 管道（PoC 阶段不用） |
+| `digest_pipeline_gemini.py` | 当前生产 digest pipeline，按 `LLM_BACKEND` 选择 Gemini 或预留 DeepSeek backend |
+| `digest_pipeline.py` | 旧兼容入口，转到当前生产 pipeline |
+| `llm_backends/` | Gemini / DeepSeek backend adapter |
 | `site_builder.py` | 读 `digest/*.json` 渲染 `docs/index.html` + `feed_<date>.json` |
 | `templates/index.html.j2` | 站点模板：Tailwind 单页，三 tab，日期下拉，暗色模式 |
 | `run_daily.sh` | 一键跑所有板块（本地调试用；需要 API key） |
@@ -222,3 +224,23 @@
 - **公众号 mp.weixin.qq.com 链接**：可以直接用，用户端打开正常。不要因为 WebFetch 打不开就删掉。
 - **wechat2rss.xlab.app**：这是微信公众号的 RSS 代理，条目质量普遍较高，优先选。
 - **标题里有 "CVE-" 且 CVSS ≥ 9.0 或写明"在野利用"的**：一定要进日报且放在最前。
+
+---
+
+## AIHOT 外部对比
+
+当用户明确要求“参考 AIHOT / 对比 AIHOT / 看 AIHOT 今天选了什么 / AIHOT skill”时，可以调用 AIHOT 公开 API 作为外部参考。
+
+规则：
+- 不安装 skill，也不要把完整 `SKILL.md` 塞进生产 prompt。
+- API 只作为手动对比或后续 eval 基准，不是当前生产主信源。
+- 调 `/api/public/*` 必须带浏览器 User-Agent。
+- 宽问题默认拉 selected items；只有用户明确说“日报”才拉 daily；只有用户明确说“全部/完整/所有/全量”才拉 all。
+- 输出给用户时只写人话时间、标题、摘要、来源、原文 URL，不暴露 endpoint、cursor、限流、缓存等基础设施细节。
+
+示例：
+```bash
+UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+curl -sH "User-Agent: $UA" "https://aihot.virxact.com/api/public/items?mode=selected&take=50"
+```
+

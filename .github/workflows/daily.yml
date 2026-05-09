@@ -31,7 +31,9 @@ jobs:
     timeout-minutes: 45
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
+      DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
       LLM_BACKEND: ${{ vars.LLM_BACKEND || 'gemini' }}
       # Optional: point RSSHub XSignals at a private instance configured with
       # TWITTER_AUTH_TOKEN. Empty means keep the OPML default (rsshub.app).
@@ -53,15 +55,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Pick digest script
-        id: pick
-        run: |
-          if [ "$LLM_BACKEND" = "anthropic" ]; then
-            echo "script=digest_pipeline.py" >> "$GITHUB_OUTPUT"
-          else
-            echo "script=digest_pipeline_gemini.py" >> "$GITHUB_OUTPUT"
-          fi
 
       - name: Resolve digest date
         run: echo "DIGEST_DATE=$(TZ=Asia/Shanghai date +'%Y-%m-%d')" >> "$GITHUB_ENV"
@@ -109,7 +102,7 @@ jobs:
             python fetch_and_save.py --board "$board"
             echo "::endgroup::"
             echo "::group::Digest $board"
-            python "${{ steps.pick.outputs.script }}" --board "$board"
+            python digest_pipeline_gemini.py --board "$board"
             echo "::endgroup::"
           done
 

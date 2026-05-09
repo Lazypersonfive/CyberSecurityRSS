@@ -1,6 +1,6 @@
 """Fetch RSS feeds for a named board and save raw entries to output/<board>_latest.json.
 
-No Claude API key required. ``digest_pipeline.py`` consumes the JSON downstream.
+No LLM API key required. The digest pipeline consumes the JSON downstream.
 
 Usage:
     python fetch_and_save.py --board security [--hours N]
