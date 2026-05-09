@@ -1,0 +1,311 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-10",
+  "generated_at": "2026-05-09T23:33:10.385606Z",
+  "raw_count": 42,
+  "selected_count": 14,
+  "selection_stats": {
+    "total": 14,
+    "direct": 14,
+    "tier_t2": 11,
+    "kind_media": 7,
+    "chinese": 2,
+    "wechat": 1,
+    "kind_cn_expert": 2,
+    "kind_community": 5,
+    "tier_unknown": 3
+  },
+  "items": [
+    {
+      "title_zh": "Linux 内核 Dirty Frag 零日漏洞曝光，可使攻击者在主流发行版中获取 Root 权限",
+      "title_orig": "New Linux 'Dirty Frag' zero-day gives root on all major distros",
+      "summary": "该漏洞被命名为 Dirty Frag，属于 Linux 内核中的本地提权漏洞，允许攻击者通过单条命令在大多数主流 Linux 发行版上获取最高权限。漏洞的具体原理涉及内核内存处理机制，受影响范围涵盖了当前广泛使用的多个主要发行版，目前相关 PoC 已经公开。原文未披露具体的 CVE 编号及详细的补丁修复时间线，但建议用户关注各发行版的安全更新。",
+      "tags": [
+        "Linux",
+        "提权漏洞",
+        "零日漏洞"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-linux-dirty-frag-zero-day-with-poc-exploit-gives-root-privileges/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-08T07:45:24+00:00",
+      "cve_ids": [],
+      "selection_reason": "Linux 内核级提权漏洞对服务器安全具有极高威胁。",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com"
+    },
+    {
+      "title_zh": "红队视角下的 Microsoft 365 Token 窃取武器化：绕过条件访问与持久化接管",
+      "title_orig": "Token 窃取的武器化: 红队视角",
+      "summary": "本文从红队对抗视角深度剖析了针对 Microsoft 365 的 Token 窃取武器化全链路，详细介绍了利用 Evilginx 进行钓鱼攻击并结合 TokenTactics 工具实现设备代码绕过的核心技术细节。研究进一步涵盖了使用 OS/2 等特定 User Agent 突破 trustType 条件访问限制，并通过 roadtx 工具接管休眠账户的 MFA 与设备注册流程，最终在启用 Entra ID join 的云环境中实现长达 90 天的持久化访问。 红队视角下的 Microsoft 365 Token 窃取武器化：绕过条件访问与持久化接管。该条来自mp.weixin.qq.com，归类于CN_News，原始信息显示其在本轮抓取、去重和打分中优先级。",
+      "tags": [
+        "红队对抗",
+        "身份认证",
+        "云安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496019&idx=1&sn=08d2045a47bb87cc7fc7862c39fe9e69",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-09T09:40:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "详细展示了绕过现代云办公环境安全策略的实战链路。",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml"
+    },
+    {
+      "title_zh": "基于大语言模型的 AI 智能体安全威胁综述：分层攻击面框架与防御体系研究",
+      "title_orig": "基于大语言模型的 AI 智能体安全威胁与防御系统性综述——分层攻击面框架",
+      "summary": "本文针对具备规划、记忆和工具调用能力的 AI 智能体系统，提出了一个系统性的分层攻击面模型，解决了现有分类法无法说明架构组件脆弱性的问题。研究分析了智能体在跨会话交互和对等协作中的安全风险，包括提示注入、越狱等威胁在不同时间尺度下的表现。该综述为安全从业者理解 AI 智能体特有的结构性缺陷提供了理论框架，并探讨了相应的防御系统构建方法。",
+      "tags": [
+        "AI 安全",
+        "大模型",
+        "攻击面"
+      ],
+      "url": "https://paper.seebug.org/3484",
+      "source": "paper.seebug.org",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-09T08:53:56+00:00",
+      "cve_ids": [],
+      "selection_reason": "前瞻性地定义了 AI 智能体架构的安全风险框架。",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org"
+    },
+    {
+      "title_zh": "GrapheneOS 修复 CVE-2026-45182 漏洞：防止 VPN 用户真实 IP 地址泄露",
+      "title_orig": "CVE-2026-45182",
+      "summary": "CVE-2026-45182 漏洞影响 2026050400 版本之前的 GrapheneOS 系统，该漏洞源于 registerQuicConnectionClosePayload 优化缺陷导致恶意应用可诱导系统服务代其传输 UDP 流量。即使在用户开启了“禁止非 VPN 连接”和“始终开启 VPN”等高安全性设置的情况下，攻击者仍能借此绕过限制并发现 VPN 用户的真实 IP 地址，目前官方已在最新版本中修复该问题并建议用户及时升级以防隐私泄露。",
+      "tags": [
+        "隐私泄露",
+        "移动安全",
+        "VPN"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-45182?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-09T23:16:32+00:00",
+      "cve_ids": [
+        "CVE-2026-45182"
+      ],
+      "selection_reason": "涉及隐私保护系统的核心功能失效，具有较高研究价值。",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com"
+    },
+    {
+      "title_zh": "IDA Pro 修复 CVE-2026-45181 参数注入漏洞，防止恶意插件目录代码执行",
+      "title_orig": "CVE-2026-45181",
+      "summary": "CVE-2026-45181 影响 Hex-Rays IDA Pro 9.2 及 9.3sp2 之前的版本，漏洞核心在于程序未能有效阻止通过参数注入方式生成的 Clang 依赖文件。当受害者打开攻击者精心构造的恶意 .i64 数据库文件时，攻击者可利用该漏洞将恶意代码植入插件目录中执行，目前官方已发布 9.3sp2 补丁进行修复，建议广大逆向工程从业者尽快更新工具版本以规避潜在的供应链攻击风险。",
+      "tags": [
+        "IDA Pro",
+        "参数注入",
+        "代码执行"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-45181?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-09T22:16:08+00:00",
+      "cve_ids": [
+        "CVE-2026-45181"
+      ],
+      "selection_reason": "针对安全从业者常用工具的供应链攻击风险。",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com"
+    },
+    {
+      "title_zh": "JDownloader 官方网站遭入侵，Windows 与 Linux 安装包被替换为 Python 木马",
+      "title_orig": "JDownloader site hacked to replace installers with Python RAT malware",
+      "summary": "流行下载管理器 JDownloader 的官方网站近期遭到入侵，攻击者将合法的 Windows 和 Linux 安装程序替换为包含恶意负载的版本。其中 Windows 平台的负载被确认为一种基于 Python 的远程访问木马（RAT），可实现对受害者机器的远程控制。目前该事件已被发现，受影响用户需检查近期下载的安装包签名，原文未披露攻击者的具体入侵途径及受影响用户的确切数量。",
+      "tags": [
+        "供应链攻击",
+        "木马",
+        "软件安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/jdownloader-site-hacked-to-replace-installers-with-python-rat-malware/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-09T19:27:58+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的软件官网供应链投毒事件，影响范围较广。",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com"
+    },
+    {
+      "title_zh": "cPanel 修复三个关键漏洞，此前曾有四万余台服务器遭勒索软件攻击",
+      "title_orig": "CPanel's Black Week: 3 New Vulnerabilities Patched After Attack on 44k Servers",
+      "summary": "在经历针对约 44,000 台服务器的勒索软件攻击后，cPanel 官方紧急修复了三个新发现的安全漏洞。这些漏洞在攻击中被利用以获取服务器权限并部署勒索软件，对托管服务提供商造成了严重影响。原文未详细披露漏洞的具体技术原理和 CVE 编号，但强调了受影响服务器规模巨大，目前补丁已发布，建议所有使用 cPanel 面板的管理人员立即执行系统更新。",
+      "tags": [
+        "cPanel",
+        "勒索软件",
+        "漏洞修复"
+      ],
+      "url": "https://www.copahost.com/blog/cpanels-black-week-three-new-vulnerabilities-patched-after-ransomware-attack-on-44000-servers/",
+      "source": "copahost.com",
+      "category": "AI",
+      "published": "2026-05-09T17:06:46+00:00",
+      "cve_ids": [],
+      "selection_reason": "大规模服务器受影响事件，反映了虚拟主机管理面板的安全性挑战。",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "copahost.com"
+    },
+    {
+      "title_zh": "Hugging Face 出现伪造 OpenAI 项目，利用趋势榜单分发窃密木马",
+      "title_orig": "Fake OpenAI repository on Hugging Face pushes infostealer malware",
+      "summary": "一个伪装成 OpenAI “Privacy Filter”项目的恶意仓库出现在 Hugging Face 的趋势列表中，旨在向 Windows 用户分发信息窃取木马。攻击者利用平台信任度和热门标签诱导开发者下载，实际运行后会窃取系统敏感信息。目前该恶意仓库已被识别，原文未披露具体的木马家族名称或详细的感染指标，此事件提醒开发者在下载 AI 模型及相关工具时需严格校验来源。",
+      "tags": [
+        "Hugging ",
+        "恶意仓库",
+        "窃密木马"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-09T14:26:03+00:00",
+      "cve_ids": [],
+      "selection_reason": "AI 模型托管平台成为新的恶意软件分发渠道，值得警惕。",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com"
+    },
+    {
+      "title_zh": "GrapheneOS 修复 Android 长期存在的 VPN 流量泄漏漏洞，Google 此前曾拒绝修复",
+      "title_orig": "GrapheneOS fixes Android VPN leak Google refused to patch",
+      "summary": "该漏洞源于 Android 系统在 VPN 建立连接前或连接断开时，会通过默认网关泄露 DNS 查询和部分连接数据，即使开启了“始终开启 VPN”和“阻止非 VPN 连接”选项也无法完全避免。GrapheneOS 通过在内核和框架层实施更严格的路由策略解决了此问题，确保所有流量在 VPN 未就绪时被强制丢弃。目前 Google 官方尚未在原生 Android 中修复此逻辑缺陷，仅由第三方安全系统 GrapheneOS 完成了补丁集成。",
+      "tags": [
+        "VPN泄漏",
+        "隐私保护",
+        "Android"
+      ],
+      "url": "https://cyberinsider.com/grapheneos-fixes-android-vpn-leak-google-refused-to-patch/",
+      "source": "cyberinsider.com",
+      "category": "AI",
+      "published": "2026-05-09T14:11:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及移动操作系统底层网络安全逻辑及隐私合规性。",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cyberinsider.com"
+    },
+    {
+      "title_zh": "OSGeo GDAL 库 Grid 文件处理器组件存在堆缓冲区溢出漏洞 CVE-2026-8213",
+      "title_orig": "CVE-2026-8213",
+      "summary": "该漏洞存在于 OSGeo gdal 3.13.0dev-4 及以下版本的 Grid 文件处理器组件中，具体位于 GDapi.c 文件的 GDSDfldsrch 函数。攻击者可以通过本地构造恶意数据触发堆缓冲区溢出，从而可能导致程序崩溃或执行任意代码。目前该漏洞的利用代码已公开，受影响用户应尽快升级至 3.13.0RC1 或更高版本以修复此安全隐患，原文未披露具体的漏洞触发细节。",
+      "tags": [
+        "堆溢出",
+        "GDAL",
+        "漏洞预警"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-8213?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-09T23:16:33+00:00",
+      "cve_ids": [
+        "CVE-2026-8213"
+      ],
+      "selection_reason": "GDAL 是广泛使用的地理空间数据处理库，其漏洞影响面广。",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com"
+    },
+    {
+      "title_zh": "Codelibs Fess 搜索平台 JSP 文件处理器存在远程代码注入漏洞 CVE-2026-8211",
+      "title_orig": "CVE-2026-8211",
+      "summary": "在Codelibs Fess 15.5.1及以下版本中，JSP文件处理组件的AdminDesignAction.java文件存在代码注入漏洞，其update函数对content参数缺乏严格校验。远程攻击者可利用此漏洞在服务器上执行恶意代码，目前该漏洞的利用程序已在互联网上公开，建议受影响的用户尽快检查系统逻辑并关注厂商发布的官方补丁以防范潜在攻击，确保业务环境的安全稳定。",
+      "tags": [
+        "代码注入",
+        "远程攻击",
+        "Fess"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-8211?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-09T23:16:32+00:00",
+      "cve_ids": [
+        "CVE-2026-8211"
+      ],
+      "selection_reason": "远程代码注入属于高危漏洞，且利用代码已公开。",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com"
+    },
+    {
+      "title_zh": "视频编辑软件 Kdenlive 存在危险代理参数处理漏洞 CVE-2026-45184",
+      "title_orig": "CVE-2026-45184",
+      "summary": "Kdenlive 在 26.04.1 之前的版本中存在安全缺陷，当软件加载由攻击者控制的恶意项目文件时，会允许执行危险的代理参数。该漏洞可能导致在用户编辑视频的过程中触发非预期的系统行为或命令执行，具体触发原理与项目文件解析逻辑有关。目前官方已在 26.04.1 版本中修复了此问题，建议用户及时更新软件以避免因打开来源不明的项目文件而遭受攻击，原文未披露更多技术细节。",
+      "tags": [
+        "参数注入",
+        "客户端安全",
+        "Kdenlive"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-45184?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-09T23:16:32+00:00",
+      "cve_ids": [
+        "CVE-2026-45184"
+      ],
+      "selection_reason": "涉及常用开源视频编辑工具的输入验证安全问题。",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com"
+    },
+    {
+      "title_zh": "安全监测发现 Cobalt Strike Beacon 恶意通信活动及相关 IP 地址",
+      "title_orig": "Cobalt Strike Beacon Detected – 8[.]137[.]149[.]67:80",
+      "summary": "安全监测系统近期捕获到针对特定IP地址8.137.149.67端口80的Cobalt Strike Beacon通信告警，该组件常被攻击者用于在受感染主机上执行远程指令和回传敏感数据。由于Cobalt Strike是极具威胁的渗透测试框架，安全人员应立即在防火墙或IDS中配置拦截规则，重点排查与该恶意IP相关的异常流量，以识别并阻断潜在的后门连接和横向移动行为。",
+      "tags": [
+        "CobaltSt",
+        "威胁情报",
+        "入侵检测"
+      ],
+      "url": "https://www.redpacketsecurity.com/cobalt-strike-beacon-detected-8-137-149-67-port-80-24/",
+      "source": "redpacketsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-05-09T23:14:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供实时的威胁情报数据，有助于企业防御常见的攻击框架。",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "redpacketsecurity.com"
+    },
+    {
+      "title_zh": "通用汽车因泄露驾驶员隐私数据同意支付 1275 万美元达成和解",
+      "title_orig": "GM agrees to pay $12.75M in California driver privacy settlement",
+      "summary": "通用汽车（GM）已与加利福尼亚州总检察长领导的执法机构达成隐私诉讼和解，同意支付 1275 万美元。该诉讼涉及通用汽车在未经充分授权的情况下收集并共享驾驶员的行踪及驾驶习惯数据，违反了相关的隐私保护法规。除了罚款外，和解协议通常还要求企业改进数据收集的透明度和用户授权流程。此事件反映了车联网时代汽车制造商在数据合规与用户隐私保护方面面临的法律压力，原文未披露技术细节。",
+      "tags": [
+        "数据隐私",
+        "合规性",
+        "车联网"
+      ],
+      "url": "https://techcrunch.com/2026/05/09/gm-agrees-to-pay-12-75m-in-california-driver-privacy-settlement/",
+      "source": "techcrunch.com",
+      "category": "AI",
+      "published": "2026-05-09T19:05:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了汽车行业在数据安全与隐私合规方面的重大法律进展。",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "科技媒体",
+      "source_key": "techcrunch.com"
+    }
+  ]
+}
