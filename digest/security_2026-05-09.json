@@ -2,43 +2,85 @@
   "board": "security",
   "display_name": "安全",
   "date": "2026-05-09",
-  "generated_at": "2026-05-08T23:41:43.540458Z",
-  "raw_count": 107,
+  "generated_at": "2026-05-09T09:25:48.392033Z",
+  "raw_count": 98,
   "selected_count": 15,
   "selection_stats": {
     "total": 15,
     "direct": 13,
+    "chinese": 6,
     "aggregator": 2,
-    "chinese": 5,
-    "wechat": 2
+    "wechat": 1
   },
   "items": [
     {
-      "title_zh": "CISA 将 BerriAI LiteLLM 的 SQL 注入漏洞 CVE-2026-42208 加入已知被利用漏洞目录",
-      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
-      "summary": "美国网络安全和基础设施安全局（CISA）确认 BerriAI LiteLLM 存在严重的 SQL 注入漏洞，并已将其正式列入已知被利用漏洞目录，该漏洞编号为 CVE-2026-42208。此类漏洞是网络攻击者频繁使用的关键向量，对联邦政府企业环境构成了重大的安全风险，官方要求相关机构必须在规定期限内完成修复，以防范潜在的恶意网络活动和数据泄露威胁。",
+      "title_zh": "CISA 要求联邦机构在四天内修复已被零日漏洞攻击利用的 Ivanti 高危漏洞",
+      "title_orig": "CISA gives feds four days to patch Ivanti flaw exploited as zero-day",
+      "summary": "该高危漏洞存在于 Ivanti Endpoint Manager Mobile 组件中，属于已被野外利用的零日安全缺陷，攻击者可借此渗透政府网络。CISA 明确要求美国联邦机构在四天内完成补丁修复，强调了该漏洞作为攻击载体的紧迫性，目前官方已发布修复建议。虽然原文未披露具体 CVE 编号，但提醒各机构必须迅速采取行动以保护网络免受此类高风险零日攻击的持续威胁。",
       "tags": [
-        "SQL注入",
-        "CISA",
-        "LiteLLM"
+        "Ivanti",
+        "零日漏洞",
+        "CISA"
       ],
-      "url": "https://www.cisa.gov/news-events/alerts/2026/05/08/cisa-adds-one-known-exploited-vulnerability-catalog",
-      "source": "cisa.gov",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-gives-feds-four-days-to-patch-ivanti-flaw-exploited-as-zero-day/",
+      "source": "bleepingcomputer.com",
       "category": "OfficialAdvisories",
-      "published": "2026-05-08T12:00:00+00:00",
-      "cve_ids": [
-        "CVE-2026-42208"
-      ],
-      "selection_reason": "KEV 目录更新代表该漏洞具有真实的在野攻击威胁。"
+      "published": "2026-05-08T12:16:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及零日漏洞野外利用及监管机构的紧急修复指令。",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com"
     },
     {
-      "title_zh": "Linux 内核 Dirty Frag 本地提权漏洞曝光，可导致主流发行版获取 Root 权限",
+      "title_zh": "HackTheBox AirTouch 靶机渗透：从 SNMP 信息泄露到 WPA2 无线内网攻陷全过程",
+      "title_orig": "HackTheBox AirTouch：一场从 SNMP 泄露打进 WPA2 无线内网的攻击链",
+      "summary": "本文详细解析了针对 AirTouch 靶机的攻击链，通过 UDP 扫描发现 SNMP 服务并利用默认团体字获取账号凭据。攻击者在登录后利用 Docker 容器化无线实验环境，通过枚举虚拟网卡并执行 Deauth 攻击与监听，最终实现对 WPA2 无线内网的渗透。该案例展示了 SNMP 误配置在复杂网络拓扑发现中的关键作用，适合研究无线安全与容器渗透的从业者。",
+      "tags": [
+        "SNMP",
+        "无线安全",
+        "渗透测试"
+      ],
+      "url": "https://xz.aliyun.com/news/92102",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-08T10:15:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了从服务误配置到无线内网渗透的完整实战攻击链。",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "xz.aliyun.com"
+    },
+    {
+      "title_zh": "基于 Java Attach API 与 Linux memfd_create 实现的纯内存态 Agent 注入技术",
+      "title_orig": "Java Attach API内存注入",
+      "summary": "该技术利用 Java Attach API 底层的 Unix Domain Socket 通信协议，结合 Linux 内核的 memfd_create 系统调用实现无文件注入。安全研究员可以在不产生磁盘文件的情况下将 Agent 注入目标 Java 进程，从而实现隐蔽的内存态监控或控制。这种方法有效规避了传统文件监控工具的检测，是研究内存马与无文件攻击的重要技术参考，展示了利用底层内核特性进行高级渗透的新思路。",
+      "tags": [
+        "Java安全",
+        "内存注入",
+        "无文件攻击"
+      ],
+      "url": "https://xz.aliyun.com/news/92103",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-08T11:15:26+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了利用内核特性实现高隐蔽性 Java 内存注入的底层原理",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "xz.aliyun.com"
+    },
+    {
+      "title_zh": "Linux 内核 Dirty Frag 本地提权漏洞曝光，影响多个主流发行版并可获取 Root 权限",
       "title_orig": "Linux Kernel Dirty Frag LPE Exploit Enables Root Access Across Major Distributions",
-      "summary": "研究人员近期披露了一个名为 Dirty Frag 的 Linux 内核本地提权漏洞，该漏洞被视为此前已遭在野利用的 Copy Fail 漏洞的继任者，其严重性引起了广泛关注。目前该漏洞在多个主流 Linux 发行版中尚未获得修复，攻击者能够利用该缺陷将普通用户权限提升至 Root 级别，且已有迹象表明该漏洞正面临活跃的在野攻击威胁，对系统底层安全构成了严峻挑战。",
+      "summary": "Dirty Frag 是 Linux 内核中新发现的本地提权漏洞，被视为近期活跃利用的 Copy Fail 漏洞的后续演进版本，对服务器安全构成严重威胁。该漏洞允许本地攻击者在主流 Linux 发行版上提升至 Root 权限，且在报告给内核维护者时仍处于未修复状态。目前已有迹象表明该漏洞在野外被积极利用，相关安全专家敦促管理员关注后续补丁发布，以防范潜在的系统越权攻击风险。",
       "tags": [
         "Linux内核",
-        "本地提权",
-        "DirtyFra"
+        "提权漏洞",
+        "Dirty Fr"
       ],
       "url": "https://thehackernews.com/2026/05/linux-kernel-dirty-frag-lpe-exploit.html",
       "source": "thehackernews.com",
@@ -47,15 +89,19 @@
       "cve_ids": [
         "CVE-2026-31431"
       ],
-      "selection_reason": "Linux 内核级提权漏洞影响范围广，且属于未修复状态。"
+      "selection_reason": "Linux 内核高危提权漏洞，具有广泛的影响范围和实战价值。",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com"
     },
     {
-      "title_zh": "Palo Alto Networks PAN-OS 身份验证门户缓冲区溢出漏洞 CVE-2026-0300 遭在野利用",
+      "title_zh": "Palo Alto Networks PAN-OS 身份验证门户缓冲区溢出漏洞遭野外利用，可导致远程代码执行",
       "title_orig": "PAN-OS RCE Exploit Under Active Use Enabling Root Access and Espionage",
-      "summary": "Palo Alto Networks 披露其 PAN-OS 软件的 User-ID 身份验证门户服务存在高危缓冲区溢出漏洞，该漏洞编号为 CVE-2026-0300 且 CVSS 评分极高。未经身份验证的远程攻击者可借此获取 Root 权限并执行间谍活动，官方监测数据显示早在 2026 年 4 月初就有威胁参与者尝试利用该漏洞，建议用户立即采取防护措施以防止敏感信息被非法窃取或系统被完全控制。",
+      "summary": "CVE-2026-0300 是 PAN-OS 软件 User-ID 身份验证门户服务中的缓冲区溢出漏洞，其 CVSS 评分高达 9.3，属于极高危级别。未经身份验证的远程攻击者可利用此漏洞获取 Root 权限并执行间谍活动，官方监测到早在 2026 年 4 月即有攻击尝试。目前该漏洞已被确认处于活跃利用状态，建议受影响用户立即检查组件暴露情况并应用官方安全补丁，以防止敏感数据泄露或系统被完全控制。",
       "tags": [
         "PAN-OS",
-        "远程代码执行",
+        "RCE漏洞",
         "缓冲区溢出"
       ],
       "url": "https://thehackernews.com/2026/05/pan-os-rce-exploit-under-active-use.html",
@@ -65,16 +111,20 @@
       "cve_ids": [
         "CVE-2026-0300"
       ],
-      "selection_reason": "关键基础设施组件的高危 RCE 漏洞且已被用于间谍活动。"
+      "selection_reason": "关键网络基础设施的高危 RCE 漏洞，且已有野外攻击记录。",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com"
     },
     {
-      "title_zh": "微软修复 M365 Copilot 三个关键数据泄露漏洞，支持远程无感跨租户访问",
+      "title_zh": "微软修复 M365 Copilot 三项关键数据泄露漏洞，支持远程无交互零点击攻击",
       "title_orig": "‼️🚨 Microsoft just patched three critical M365 Copilot data leak vulnerabilities. All three are network-reachable, unauthenticated, and zero-clic...",
-      "summary": "微软紧急修复了M365 Copilot Business Chat中的三个关键数据泄露漏洞，包括涉及特殊元素中和不当的CVE-2026-26129等，这些漏洞均具备网络可达、无需身份验证及零点击触发的危险特性。攻击者可借此远程访问租户在SharePoint、OneDrive、Teams及Outlook等组件中的敏感信息，对企业数据安全构成严重威胁，管理员需立即关注并采取防护措施。 微软修复 M365 Copilot 三个关键数据泄露漏洞，支持远程无感跨租户访问。该条来自x.com，归类于XSignals，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查。",
+      "summary": "微软近期修复了 M365 Copilot 中的三个关键漏洞，包括 CVE-2026-26129 和 CVE-2026-26164，涉及特殊元素中和不当导致的信息泄露。这些漏洞允许未经身份验证的攻击者通过网络实现零点击触发，从而非法访问租户的 SharePoint、OneDrive、Outlook 及 Teams 数据。该预警强调了 AI 助手在集成企业敏感数据时面临的严峻权限隔离挑战，提醒企业用户必须重视此类自动化工具的安全配置。",
       "tags": [
+        "M365",
         "Copilot",
-        "数据泄露",
-        "微软"
+        "数据泄露"
       ],
       "url": "https://x.com/IntCyberDigest/status/2052864105153724723",
       "source": "x.com",
@@ -84,12 +134,182 @@
         "CVE-2026-26129",
         "CVE-2026-26164"
       ],
-      "selection_reason": "AI 助手权限过大导致的数据泄露是当前云安全的新挑战。"
+      "selection_reason": "涉及主流 AI 助手组件的零点击高危漏洞，影响企业核心数据安",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest"
     },
     {
-      "title_zh": "ReTokSync：一种解决生成式语言隐写中分词歧义问题的自同步分词消歧技术",
+      "title_zh": "Linux 连续出现第三个本地提权漏洞 Copy Fail 2，公开 PoC 且暂无协调补丁",
+      "title_orig": "❗️ Linux is having a brutal week. Another local to root privilege escalation vulnerability just dropped: \"Copy Fail 2: Electric Boogaloo.\" This is t...",
+      "summary": "继 Copy Fail 和 Dirty Frag 之后，Linux 内核再次爆出名为 Copy Fail 2 的本地提权漏洞，标志着该系统近期面临严峻的安全挑战。该漏洞允许本地用户获取 Root 权限，目前 GitHub 上已出现公开的 PoC 验证代码，但官方尚未发布统一的协调补丁。由于该漏洞目前处于零日状态且利用门槛降低，建议系统管理员密切关注各大发行版的安全更新动态，并采取必要的临时防护措施以降低风险。",
+      "tags": [
+        "Linux",
+        "提权漏洞",
+        "PoC"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2052859364751634587",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-08T21:13:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "短期内连续爆发的第三个 Linux 提权漏洞，且 PoC 已",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest"
+    },
+    {
+      "title_zh": "利用 LibAFL 扩展 Ruby 模糊测试器 Ruzzy：深入 ELF 初始化与 Sanitizer 覆盖率细节",
+      "title_orig": "用 LibAFL 扩展 Ruzzy - Trail of Bits 博客",
+      "summary": "本文记录了将 LibAFL 集成到 Ruzzy 模糊测试器的技术细节，重点分析了 ELF 的 .preinit_array 段及 SanitizerCoverage 的初始化时序等底层原理。作者分享了如何绕过 GNU ld 链接器限制以及修正 dummy 扩展加载顺序的补丁方案，解决了集成过程中的关键兼容性问题。该研究对于从事脚本语言解释器安全审计及底层 Fuzzing 工具开发的从业者具有极高的参考价值，提供了深入的底层调试经验。",
+      "tags": [
+        "Fuzzing",
+        "LibAFL",
+        "Ruby安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495988&idx=2&sn=f91313c8f4d94208e42b47e99062753e",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-07T11:13:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入探讨了模糊测试工具集成的底层技术细节，具有很强的技术深度",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml"
+    },
+    {
+      "title_zh": "伪装成10086官网流量的Cobalt Strike木马深度分析",
+      "title_orig": "伪装成10086官网流量的Cobalt Strike木马深度分析",
+      "summary": "该木马通过海量IP地址字符串转码生成恶意Shellcode，并利用Beacon组件将Referer请求头伪造为10086官网，以此规避流量检测系统并实现隐蔽通信。其核心技术在于利用复杂的字符串变换隐藏恶意载荷，通过模拟合法业务流量特征进行攻击，目前相关手法已被安全研究人员深度分析并披露，提醒相关单位加强对异常流量特征的监测与防范。",
+      "tags": [
+        "CobaltSt",
+        "流量伪装",
+        "木马分析"
+      ],
+      "url": "https://xz.aliyun.com/news/92100",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-07T15:45:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了攻击者利用合法业务特征进行流量隐匿的实战技巧。",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "xz.aliyun.com"
+    },
+    {
+      "title_zh": "海康威视部分已停产交换机产品存在身份验证后的远程命令执行漏洞",
+      "title_orig": "CVE-2026-3828",
+      "summary": "CVE-2026-3828漏洞源于输入验证不足，影响2023年12月起停产的部分海康威视交换机产品，可能导致严重的远程代码执行风险。拥有合法凭据的攻击者可以通过向受影响设备发送包含恶意指令的特制数据包，从而触发任意命令执行；由于相关产品已停产，建议用户关注官方缓解措施或及时制定设备更新计划。",
+      "tags": [
+        "海康威视",
+        "RCE漏洞",
+        "IoT安全"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-3828?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-09T09:16:09+00:00",
+      "cve_ids": [
+        "CVE-2026-3828"
+      ],
+      "selection_reason": "涉及主流IoT厂商的RCE漏洞，且影响已停产的存量设备。",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com"
+    },
+    {
+      "title_zh": "cPanel与WHM发布安全更新修复包括权限提升在内的三个新漏洞",
+      "title_orig": "cPanel, WHM Release Fixes for Three New Vulnerabilities — Patch Now",
+      "summary": "cPanel官方发布补丁修复了三个安全漏洞，其中CVE-2026-29201涉及adminbin调用中对功能文件名的输入验证不足，可能导致严重的系统安全风险。这些漏洞若被利用，攻击者可实现权限提升、远程代码执行或拒绝服务攻击，目前官方已发布修复版本，建议管理员立即执行系统更新以规避潜在的供应链安全风险，确保Web管理平台的整体安全性。",
+      "tags": [
+        "cPanel",
+        "权限提升",
+        "安全补丁"
+      ],
+      "url": "https://thehackernews.com/2026/05/cpanel-whm-patch-3-new-vulnerabilities.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-09T07:16:00+00:00",
+      "cve_ids": [
+        "CVE-2026-29201"
+      ],
+      "selection_reason": "cPanel是广泛使用的服务器管理面板，其漏洞影响大量Web",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com"
+    },
+    {
+      "title_zh": "HikCentral Professional 平台存在访问控制漏洞可导致管理员权限泄露",
+      "title_orig": "CVE-2026-1749",
+      "summary": "CVE-2026-1749披露了HikCentral Professional部分版本中存在的一个访问控制漏洞，该漏洞对系统管理权限的安全性构成直接威胁。该漏洞允许未经身份验证的远程用户绕过权限校验，从而非法获取系统的最高管理员权限，目前原文未详细说明具体受影响的版本号及修复补丁的发布状态，相关用户需持续关注官方通报并及时采取必要的安全加固措施。",
+      "tags": [
+        "访问控制",
+        "权限绕过",
+        "海康威视"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-1749?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-09T09:16:08+00:00",
+      "cve_ids": [
+        "CVE-2026-1749"
+      ],
+      "selection_reason": "未经身份验证即可获取管理员权限，属于高危逻辑漏洞。",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com"
+    },
+    {
+      "title_zh": "新型 Linux 远程控制木马 QLNX 针对软件供应链开发者窃取凭据",
+      "title_orig": "Quasar Linux RAT Steals Developer Credentials for Software Supply Chain Compromise",
+      "summary": "名为Quasar Linux RAT的新型植入程序被发现专门针对开发者和DevOps人员，旨在通过渗透软件供应链来建立长期的隐蔽据点并执行恶意活动。该木马具备凭据收集、键盘记录、文件操作、剪贴板监控及网络隧道等多种后渗透功能，通过在开发者系统中窃取关键凭据，为后续更大规模的供应链攻击提供技术支撑，对软件开发环境的安全构成了严重威胁。",
+      "tags": [
+        "供应链安全",
+        "Linux木马",
+        "凭据窃取"
+      ],
+      "url": "https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-08T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对开发者群体的定向攻击是供应链安全的重要威胁向量。",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com"
+    },
+    {
+      "title_zh": "神龙漏洞库推出基于 MCP 协议的 CVE 查询与 AI 分析工具",
+      "title_orig": "shenlong-cve-mcp",
+      "summary": "shenlong-cve-mcp是集成神龙漏洞库的MCP服务端，支持Claude等AI直接查询CVE详情、CVSS评分、受影响版本及KEV等威胁情报，并提供AI技术上下文分析与关键词搜索功能。该工具旨在通过自动化流程辅助安全研究员进行漏洞分析，用户可通过API Key获取预存的AI PoC报告或触发高级PoC生成任务，从而显著提升安全漏洞的验证效率与情报获取深度。",
+      "tags": [
+        "漏洞库",
+        "AI安全工具",
+        "CVE分析"
+      ],
+      "url": "https://vulners.com/githubexploit/A7534B6A-9CEA-5E15-BDCD-9555B4EDD59F?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-09T08:15:44+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 与漏洞库结合的新型交互模式，提升漏洞研究效率。",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com"
+    },
+    {
+      "title_zh": "ReTokSync：一种解决生成式语言隐写中分词歧义的自同步消歧方法",
       "title_orig": "ReTokSync：面向生成式语言隐写的自同步分词消歧方法",
-      "summary": "该研究针对生成式语言隐写在实际部署中面临的分词歧义挑战，提出了一种名为 ReTokSync 的自同步分词消歧方法，旨在解决接收端 token 序列恢复不一致的问题。通过该技术，通信双方能够确保在自然语言生成过程中嵌入的秘密信息被准确解码，有效维持了隐蔽通信状态的同步性，显著提升了隐写系统在复杂文本环境下的鲁棒性与可靠性。",
+      "summary": "该研究针对生成式语言隐写在实际部署中易受分词歧义影响的问题，提出了一种名为ReTokSync的自同步分词消歧方法，以提升隐蔽通信的稳定性。该技术通过解决接收端文本重新分词导致的解码状态破坏问题，确保了秘密信息嵌入自然语言生成过程后的通信可靠性，为生成式语言隐写在复杂环境下的应用提供了新方案。",
       "tags": [
         "语言隐写",
         "分词消歧",
@@ -100,175 +320,11 @@
       "category": "OfficialAdvisories",
       "published": "2026-05-08T08:42:48+00:00",
       "cve_ids": [],
-      "selection_reason": "探讨了 AI 生成内容在隐蔽通信中的前沿对抗技术。"
-    },
-    {
-      "title_zh": "FastGPT 平台 agent-sandbox 组件存在未授权远程代码执行漏洞 CVE-2026-42302",
-      "title_orig": "CVE-2026-42302",
-      "summary": "FastGPT AI 智能体编排平台在 4.14.10 至 4.14.13 版本之间被曝存在严重的远程代码执行漏洞，其 agent-sandbox 组件的启动脚本配置存在明显的安全缺陷。由于 entrypoint.sh 脚本以无身份验证模式初始化 code-server 并将其绑定至所有网络接口，导致任何具备网络访问权限的攻击者都能直接执行任意代码，严重威胁服务器安全并可能导致整个 AI 平台的控制权沦陷。",
-      "tags": [
-        "FastGPT",
-        "RCE漏洞",
-        "配置缺陷"
-      ],
-      "url": "https://vulners.com/nvd/NVD:CVE-2026-42302?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "source": "vulners.com",
-      "category": "Synthesis",
-      "published": "2026-05-08T23:16:36+00:00",
-      "cve_ids": [
-        "CVE-2026-42302"
-      ],
-      "selection_reason": "AI 基础设施组件的默认配置安全问题具有典型性。"
-    },
-    {
-      "title_zh": "利用 io_uring ZCRX 空闲列表实现 Linux 内核本地提权的技术深度解析",
-      "title_orig": "You gave me a u32. I gave you root. (io_uring ZCRX freelist LPE)",
-      "summary": "本文深入探讨了利用 Linux 内核 io_uring 子系统中的 ZCRX 空闲列表机制实现本地提权的技术路径，展示了如何通过传递特定的 u32 数值来诱发内核逻辑错误。该研究揭示了高性能异步 IO 接口在内存管理方面的潜在安全漏洞，攻击者可借此使普通用户成功获取 Root 权限，为针对现代 Linux 内核复杂特性的漏洞利用提供了极具价值的参考资料。",
-      "tags": [
-        "io_uring",
-        "内核安全",
-        "漏洞利用"
-      ],
-      "url": "https://ze3tar.github.io/post-zcrx.html",
-      "source": "ze3tar.github.io",
-      "category": "AI",
-      "published": "2026-05-08T19:40:39+00:00",
-      "cve_ids": [],
-      "selection_reason": "深入分析了 Linux 内核复杂子系统的漏洞利用链，技术含量"
-    },
-    {
-      "title_zh": "Linux 连续爆发第三个本地提权漏洞 Copy Fail 2，PoC 已在 GitHub 公开",
-      "title_orig": "❗️ Linux is having a brutal week. Another local to root privilege escalation vulnerability just dropped: \"Copy Fail 2: Electric Boogaloo.\" This is t...",
-      "summary": "Linux 平台近期安全形势严峻，在 Copy Fail 和 Dirty Frag 之后又爆出了名为 Copy Fail 2 的第三个本地提权漏洞，该漏洞的 PoC 验证代码已在 GitHub 上公开。目前官方尚未发布协调一致的修复补丁，这意味着大量 Linux 系统正处于无保护的零日漏洞威胁之下，攻击者可以利用这些公开资源轻易实现从普通用户到系统最高权限的提升，对全球服务器安全造成了巨大压力。",
-      "tags": [
-        "Linux",
-        "本地提权",
-        "零日漏洞"
-      ],
-      "url": "https://x.com/IntCyberDigest/status/2052859364751634587",
-      "source": "x.com",
-      "category": "XSignals",
-      "published": "2026-05-08T21:13:07+00:00",
-      "cve_ids": [],
-      "selection_reason": "短时间内连续出现的内核提权漏洞且 PoC 公开，风险极高。"
-    },
-    {
-      "title_zh": "利用 LibAFL 框架扩展 Ruby 模糊测试器 Ruzzy 的底层技术实现与补丁分析",
-      "title_orig": "用 LibAFL 扩展 Ruzzy - Trail of Bits 博客",
-      "summary": "本文详细记录了将高性能模糊测试框架 LibAFL 集成到 Ruby 专用工具 Ruzzy 的全过程，深入剖析了 ELF 文件的 .preinit_array 段以及 SanitizerCoverage 初始化时序等关键底层细节。针对集成过程中遇到的环境初始化冲突，文章提供了绕过 GNU ld 链接限制与修正 dummy 扩展加载顺序的实用补丁，为底层安全工具开发者在处理跨语言模糊测试时提供了深度的技术参考与实践指南。",
-      "tags": [
-        "模糊测试",
-        "LibAFL",
-        "Ruby"
-      ],
-      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495988&idx=2&sn=f91313c8f4d94208e42b47e99062753e",
-      "source": "mp.weixin.qq.com",
-      "category": "CN_News",
-      "published": "2026-05-07T11:13:00+00:00",
-      "cve_ids": [],
-      "selection_reason": "深入探讨了模糊测试框架集成中的底层链接与初始化时序问题。"
-    },
-    {
-      "title_zh": "伪装成 10086 官网流量的 Cobalt Strike 木马 Beacon 通信与 Shellcode 混淆分析",
-      "title_orig": "伪装成10086官网流量的Cobalt Strike木马深度分析",
-      "summary": "该木马通过海量 IP 地址字符串转码生成 Shellcode 载荷，并利用 Beacon 插件伪造 Referer 请求头，使其通信流量在外观上模仿 10086 官网以迷惑安全审计。技术分析揭示了其利用合法域名背书进行隐蔽传输的手段，以及通过特定编码方式规避静态特征检测的实现逻辑，虽然原文未披露具体的受影响范围，但其高度伪装性对企业流量监控构成了严峻挑战。",
-      "tags": [
-        "木马分析",
-        "流量伪装",
-        "CobaltSt"
-      ],
-      "url": "https://xz.aliyun.com/news/92100",
-      "source": "xz.aliyun.com",
-      "category": "CN_News",
-      "published": "2026-05-07T15:45:48+00:00",
-      "cve_ids": [],
-      "selection_reason": "展示了攻击者利用合法业务流量特征进行隐蔽通信的实战技巧。"
-    },
-    {
-      "title_zh": "Vim 编辑器堆缓冲区溢出漏洞 CVE-2026-45130 预警与技术原理分析",
-      "title_orig": "CVE-2026-45130",
-      "summary": "Vim 9.2.0450 之前版本在 UTF-8 编码激活状态下加载特制的 .spl 拼写文件时，其 src/spellfile.c 中的 readcompound 函数存在堆溢出漏洞。攻击者通过控制拼写文件复合部分的长度字段，触发 32 位有符号整数乘法溢出，导致分配的缓冲区过小并引发越界写入风险；目前官方已发布修复版本，建议所有使用拼写检查功能的 Vim 用户尽快完成软件更新以防范潜在攻击。",
-      "tags": [
-        "Vim",
-        "堆溢出",
-        "漏洞预警"
-      ],
-      "url": "https://vulners.com/nvd/NVD:CVE-2026-45130?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "source": "vulners.com",
-      "category": "Synthesis",
-      "published": "2026-05-08T23:16:40+00:00",
-      "cve_ids": [
-        "CVE-2026-45130"
-      ],
-      "selection_reason": "Vim 核心组件的内存安全漏洞，具有较高的影响力和技术分析价"
-    },
-    {
-      "title_zh": "Vim 编辑器命令行补全功能存在 OS 命令注入漏洞 CVE-2026-44656",
-      "title_orig": "CVE-2026-44656",
-      "summary": "在 Vim 9.2.0435 之前的版本中，其 :find 命令的补全逻辑存在操作系统命令注入风险，主要源于对 path 选项中反引号包裹的 shell 命令缺乏安全校验。当 path 选项未设置 PSECURE 标志时，攻击者可通过 modeline 设置恶意路径，在文件名补全期间触发任意命令执行；该漏洞利用了 Vim 对 modeline 权限控制的缺失，建议用户尽快升级至安全版本以保护本地系统安全。",
-      "tags": [
-        "Vim",
-        "命令注入",
-        "补全漏洞"
-      ],
-      "url": "https://vulners.com/nvd/NVD:CVE-2026-44656?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "source": "vulners.com",
-      "category": "Synthesis",
-      "published": "2026-05-08T23:16:39+00:00",
-      "cve_ids": [
-        "CVE-2026-44656"
-      ],
-      "selection_reason": "揭示了编辑器配置项与系统命令交互中的安全边界失效问题。"
-    },
-    {
-      "title_zh": "Sentry 监控平台 SAML SSO 实现存在严重账户接管漏洞 CVE-2026-42354",
-      "title_orig": "CVE-2026-42354",
-      "summary": "Sentry 21.12.0 至 26.4.1 之前的版本在 SAML 单点登录实现中存在严重漏洞，允许攻击者通过恶意身份提供者接管同一实例上任意组织的已知邮箱账户。攻击者需利用恶意 SAML 身份提供者并知晓目标用户的电子邮件地址，通过同一 Sentry 实例上的其他组织发起攻击；该漏洞直接威胁企业级账户安全与敏感性能监控数据，官方已在 26.4.1 版本中修复，受影响企业应立即执行升级。",
-      "tags": [
-        "Sentry",
-        "SSO",
-        "账户接管"
-      ],
-      "url": "https://vulners.com/nvd/NVD:CVE-2026-42354?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "source": "vulners.com",
-      "category": "Synthesis",
-      "published": "2026-05-08T23:16:38+00:00",
-      "cve_ids": [
-        "CVE-2026-42354"
-      ],
-      "selection_reason": "SAML 协议实现缺陷导致的严重逻辑漏洞，对企业身份认证安全"
-    },
-    {
-      "title_zh": "2026 年现代恶意软件规避技术演进全景：从加壳混淆到行为绕过",
-      "title_orig": "现代恶意软件内幕：2026 年规避技术正如何演进",
-      "summary": "本文深入剖析了现代恶意软件在 2026 年采用的规避检测技术，涵盖了高级加壳混淆、沙箱环境感知以及利用系统原生工具 LOLBin 的隐蔽攻击手段。文章重点讨论了分阶段载荷投递与复合攻击链的实现逻辑，并针对 EDR/XDR 系统的防御缺陷提出了基于行为分析的 SOC 实战检测思路，旨在帮助安全从业者理解攻击者如何绕过现代防御体系并提升企业整体的威胁狩猎能力。",
-      "tags": [
-        "恶意软件",
-        "规避技术",
-        "EDR"
-      ],
-      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495988&idx=1&sn=278862a56d423a1b5ff006ea80d2dc57",
-      "source": "mp.weixin.qq.com",
-      "category": "CN_News",
-      "published": "2026-05-07T11:13:00+00:00",
-      "cve_ids": [],
-      "selection_reason": "系统性总结了恶意软件对抗技术的最新趋势，对防御体系建设有参考"
-    },
-    {
-      "title_zh": "大语言模型提示词注入原理分析及针对开源模型 chat_template 的攻击手法",
-      "title_orig": "提示词注入原理及注入开源模型的一种特定手法",
-      "summary": "文章探讨了提示词注入的基本原理，并重点介绍了一种针对开源大模型 chat_template 模板的特定注入手法，揭示了对话结构解析过程中的安全隐患。通过分析模型如何处理特定模板，展示了攻击者如何绕过预设的安全对齐限制并诱导模型输出违规内容，该技术点对于研究 AI 模型接口安全、防御提示词攻击以及完善开源模型安全加固方案具有重要的学术与工程参考价值。",
-      "tags": [
-        "提示词注入",
-        "LLM安全",
-        "AI安全"
-      ],
-      "url": "https://xz.aliyun.com/news/92098",
-      "source": "xz.aliyun.com",
-      "category": "CN_News",
-      "published": "2026-05-07T03:21:38+00:00",
-      "cve_ids": [],
-      "selection_reason": "聚焦于开源模型特有的解析模板漏洞，是 AI 安全领域的前沿技"
+      "selection_reason": "探讨了生成式 AI 时代下的隐写术挑战，具有前瞻性技术价值。",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org"
     }
   ]
 }
