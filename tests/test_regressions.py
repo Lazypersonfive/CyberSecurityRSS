@@ -18,6 +18,7 @@ from digest_pipeline_gemini import (
     _candidate_pool,
     _finalize_digest_item,
     _is_chinese_entry,
+    _llm_dedupe,
     _score_candidates_for_selection,
     _selection_reason,
 )
@@ -1100,6 +1101,28 @@ class GeminiPipelineTests(unittest.TestCase):
         pool = _candidate_pool(scored, top_n=4, fill_score_floor=5)
 
         self.assertEqual([entry["title"] for entry, _score in pool], ["A", "B", "C"])
+
+    def test_llm_dedupe_preserves_related_urls_on_primary_item(self) -> None:
+        class FakeBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summarize"
+
+            def generate_json(self, *_args: object) -> str:
+                return "[[0,1]]"
+
+        deduped, merged_urls = _llm_dedupe(
+            FakeBackend(),
+            [
+                ({"title": "OpenAI official", "url": "https://openai.com/news/a"}, 8),
+                ({"title": "OpenAI rewrite", "url": "https://example.com/rewrite"}, 7),
+            ],
+        )
+
+        self.assertEqual(len(deduped), 1)
+        self.assertEqual(merged_urls, ["https://example.com/rewrite"])
+        self.assertEqual(deduped[0][0]["related_urls"], ["https://example.com/rewrite"])
+        self.assertEqual(deduped[0][0]["related_count"], 1)
 
 
 class SourceReportTests(unittest.TestCase):

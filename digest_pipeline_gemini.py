@@ -640,11 +640,18 @@ def _llm_dedupe(
         if not members:
             continue
         best = max(members, key=lambda i: (candidates[i][1], source_priority(candidates[i][0])))
-        merged_urls.extend(
+        related_urls = [
             candidates[i][0].get("url", "")
             for i in members
             if i != best and candidates[i][0].get("url")
-        )
+        ]
+        merged_urls.extend(related_urls)
+        if related_urls:
+            best_entry = dict(candidates[best][0])
+            existing = [url for url in best_entry.get("related_urls") or [] if url]
+            best_entry["related_urls"] = _dedupe_urls(existing + related_urls)
+            best_entry["related_count"] = len(best_entry["related_urls"])
+            candidates[best] = (best_entry, candidates[best][1])
         seen.update(members)
         result.append(candidates[best])
 
@@ -657,6 +664,17 @@ def _llm_dedupe(
     result = sort_scored_candidates(result)
     logger.info("llm dedupe: %d candidates -> %d unique stories", len(candidates), len(result))
     return result, merged_urls
+
+
+def _dedupe_urls(urls: list[str]) -> list[str]:
+    seen: set[str] = set()
+    result: list[str] = []
+    for url in urls:
+        if url in seen:
+            continue
+        seen.add(url)
+        result.append(url)
+    return result
 
 
 def _candidate_pool(
