@@ -35,6 +35,7 @@ from source_policy import (
     source_priority,
     source_profile,
 )
+from story_clustering import cluster_scored_candidates
 from security_editorial import adjust_security_score
 from source_reports import (
     refresh_latest_report,
@@ -335,6 +336,9 @@ def _finalize_digest_item(entry: dict[str, Any], item: dict[str, Any]) -> dict[s
     finalized["source_kind"] = profile.source_kind
     finalized["source_label"] = profile.source_label
     finalized["source_key"] = profile.source_key
+    finalized["story_id"] = entry.get("story_id", finalized.get("story_id", ""))
+    finalized["related_urls"] = entry.get("related_urls", finalized.get("related_urls", [])) or []
+    finalized["related_count"] = len(finalized["related_urls"])
     return finalized
 
 
@@ -711,9 +715,19 @@ def run(board: str, as_of: date | None = None) -> Path:
 
     above_threshold = [(e, sc) for e, sc in scored if sc >= threshold]
     pool = _candidate_pool(scored, top_n=top_n, fill_score_floor=fill_score_floor)
-    deduped, merged_urls = _llm_dedupe(backend, pool) if pool else ([], [])
+    clustered, deterministic_merged_urls = cluster_scored_candidates(pool) if pool else ([], [])
+    if deterministic_merged_urls:
+        logger.info(
+            "[%s] deterministic clustering merged %d URLs",
+            board,
+            len(deterministic_merged_urls),
+        )
+    deduped, llm_merged_urls = _llm_dedupe(backend, clustered) if clustered else ([], [])
+    merged_urls = deterministic_merged_urls + llm_merged_urls
     source_policy = dict(bcfg.get("source_policy") or {})
-    selected_scored = select_with_source_policy(deduped, top_n, source_policy)
+    legacy_score_by_url = {entry.get("url", ""): score for entry, score in scored if entry.get("url")}
+    final_scored = _score_candidates_for_selection(board, deduped, legacy_score_by_url, cfg.get("scoring"))
+    selected_scored = select_with_source_policy(final_scored, top_n, source_policy)
     selected = [e for e, _sc in selected_scored]
     cn_count = sum(1 for e in selected if _is_chinese_entry(e))
     mix_stats = source_mix_stats(selected)
@@ -725,7 +739,11 @@ def run(board: str, as_of: date | None = None) -> Path:
     )
 
     items = _summarize(backend, board, selected) if selected else []
-    items = _attach_final_scores(board, items, selected_scored, cfg.get("scoring"))
+    selected_legacy_scored = [
+        (entry, legacy_score_by_url.get(entry.get("url", ""), 5))
+        for entry in selected
+    ]
+    items = _attach_final_scores(board, items, selected_legacy_scored, cfg.get("scoring"))
 
     DIGEST_DIR.mkdir(parents=True, exist_ok=True)
     as_of = as_of or digest_today()
@@ -739,6 +757,11 @@ def run(board: str, as_of: date | None = None) -> Path:
         "raw_count": data.get("entry_count", 0),
         "selected_count": len(items),
         "selection_stats": mix_stats,
+        "clustering_stats": {
+            "deterministic_merged": len(deterministic_merged_urls),
+            "llm_merged": len(llm_merged_urls),
+            "merged_total": len(merged_urls),
+        },
         "items": items,
     }
     out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
@@ -750,7 +773,7 @@ def run(board: str, as_of: date | None = None) -> Path:
         report_date=as_of,
         feed_stats=data.get("feed_stats") or _fallback_feed_stats(entries),
         entries=entries,
-        score_by_url={entry.get("url", ""): score for entry, score in scored if entry.get("url")},
+        score_by_url=legacy_score_by_url,
         selected_urls={entry.get("url", "") for entry in selected if entry.get("url")},
         merged_urls=merged_urls,
         selection_reason_by_url={
@@ -765,12 +788,27 @@ def run(board: str, as_of: date | None = None) -> Path:
         report_date=as_of,
         feed_stats=data.get("feed_stats") or _fallback_feed_stats(entries),
         entries=entries,
-        score_by_url={entry.get("url", ""): score for entry, score in scored if entry.get("url")},
+        score_by_url=legacy_score_by_url,
         selected_urls={entry.get("url", "") for entry in selected if entry.get("url")},
     )
     refresh_latest_report(as_of, list((cfg.get("boards") or {}).keys()))
     refresh_weekly_report(as_of, list((cfg.get("boards") or {}).keys()))
     return out_path
+
+
+def _score_candidates_for_selection(
+    board: str,
+    candidates: list[tuple[dict[str, Any], int | float]],
+    legacy_score_by_url: dict[str, int],
+    scoring_config: dict[str, Any] | None,
+) -> list[tuple[dict[str, Any], float]]:
+    scored: list[tuple[dict[str, Any], float]] = []
+    for entry, fallback_score in candidates:
+        scoring_entry = dict(entry)
+        scoring_entry["score"] = legacy_score_by_url.get(entry.get("url", ""), int(fallback_score))
+        breakdown = compute_final_score(board, scoring_entry, scoring_config)
+        scored.append((entry, breakdown["final_score"]))
+    return sort_scored_candidates(scored)
 
 
 def _attach_final_scores(

@@ -5,12 +5,12 @@
 
 ## Board Health
 
-| Board | Name | Days | Avg Selected | Target | Full Days | Avg CN | Min CN | CN OK Days | Avg GN | Max GN | Unknown |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | AI 前沿 | 7 | 15.3 | 15 | 5/7 | 3.4 | 5 | 1/7 | 3.1 | 3 | 0 |
-| ai_security | AI 安全 | 7 | 3.1 | 10 | 0/7 | 0.6 | 2 | 1/7 | 1.1 | 2 | 0 |
-| finance | 金融科技 | 7 | 6.6 | 10 | 2/7 | 0.0 | 1 | 0/7 | 1.4 | 4 | 0 |
-| security | 安全 | 7 | 16.3 | 15 | 6/7 | 2.3 | 6 | 1/7 | 0.0 | 1 | 0 |
+| Board | Name | Days | Avg Selected | Target | Full Days | Avg CN | Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| ai | AI 前沿 | 7 | 15.3 | 15 | 5/7 | 3.4 | 5 | 1/7 | 3.1 | 3 | 0 | - | 0 |
+| ai_security | AI 安全 | 7 | 3.1 | 10 | 0/7 | 0.6 | 2 | 1/7 | 1.1 | 2 | 0 | - | 0 |
+| finance | 金融科技 | 7 | 6.6 | 10 | 2/7 | 0.0 | 1 | 0/7 | 1.4 | 4 | 0 | - | 0 |
+| security | 安全 | 7 | 16.3 | 15 | 6/7 | 2.3 | 6 | 1/7 | 0.0 | 1 | 0 | - | 0 |
 
 ## Source Mix
 

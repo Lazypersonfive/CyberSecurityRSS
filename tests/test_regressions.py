@@ -18,6 +18,7 @@ from digest_pipeline_gemini import (
     _candidate_pool,
     _finalize_digest_item,
     _is_chinese_entry,
+    _score_candidates_for_selection,
     _selection_reason,
 )
 import fetch_and_save
@@ -29,6 +30,7 @@ from rss_curation import curate_entries
 from source_policy import select_with_source_policy, source_mix_stats, source_profile
 from scoring_policy import compute_dimension_score, compute_final_score
 from security_editorial import adjust_security_score
+from story_clustering import cluster_scored_candidates, story_id_for_entry
 from source_audit import build_source_audit, render_source_audit
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
 from site_builder import _build_feed_for_date, build
@@ -790,6 +792,57 @@ class ScoringPolicyTests(unittest.TestCase):
         self.assertEqual(low["final_score"], 0.0)
 
 
+class StoryClusteringTests(unittest.TestCase):
+    def test_story_id_prefers_cve_key(self) -> None:
+        entry = {
+            "title": "Exploit for CVE-2026-12345 released",
+            "url": "https://example.com/post",
+            "cve_ids": ["CVE-2026-12345"],
+        }
+
+        self.assertEqual(story_id_for_entry(entry), "cve:cve-2026-12345")
+
+    def test_cluster_scored_candidates_merges_same_cve_and_keeps_authoritative_source(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "Google News: CVE-2026-12345 exploited in the wild",
+                    "url": "https://news.google.com/rss/articles/cve",
+                    "feed_url": "https://news.google.com/rss/search?q=CVE-2026-12345",
+                    "cve_ids": ["CVE-2026-12345"],
+                },
+                9,
+            ),
+            (
+                {
+                    "title": "CISA adds CVE-2026-12345 to KEV",
+                    "url": "https://www.cisa.gov/news-events/alerts/cve-2026-12345",
+                    "cve_ids": ["CVE-2026-12345"],
+                },
+                8,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 1)
+        self.assertEqual(clustered[0][0]["url"], "https://www.cisa.gov/news-events/alerts/cve-2026-12345")
+        self.assertEqual(clustered[0][0]["story_id"], "cve:cve-2026-12345")
+        self.assertEqual(clustered[0][0]["related_urls"], ["https://news.google.com/rss/articles/cve"])
+        self.assertEqual(merged_urls, ["https://news.google.com/rss/articles/cve"])
+
+    def test_cluster_scored_candidates_does_not_merge_weak_shared_vendor_only(self) -> None:
+        candidates = [
+            ({"title": "OpenAI launches a new voice model", "url": "https://openai.com/news/voice"}, 8),
+            ({"title": "OpenAI updates enterprise privacy controls", "url": "https://openai.com/news/privacy"}, 8),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 2)
+        self.assertEqual(merged_urls, [])
+
+
 class GeminiPipelineTests(unittest.TestCase):
     def test_selection_reason_falls_back_to_empty_string(self) -> None:
         self.assertEqual(_selection_reason({}), "")
@@ -926,6 +979,38 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(item["score"], 8)
         self.assertGreater(item["final_score"], 8)
         self.assertIn("source_bonus", item["score_breakdown"])
+
+    def test_selection_scoring_uses_final_score_not_raw_llm_score(self) -> None:
+        final_scored = _score_candidates_for_selection(
+            "ai",
+            [
+                (
+                    {
+                        "title": "OpenAI official update",
+                        "url": "https://openai.com/news/model-update",
+                        "published": "2026-05-11T06:00:00Z",
+                    },
+                    7,
+                ),
+                (
+                    {
+                        "title": "OpenAI update via Google News",
+                        "url": "https://news.google.com/rss/articles/model-update",
+                        "feed_url": "https://news.google.com/rss/search?q=OpenAI",
+                        "published": "2026-05-11T06:00:00Z",
+                    },
+                    8,
+                ),
+            ],
+            {
+                "https://openai.com/news/model-update": 7,
+                "https://news.google.com/rss/articles/model-update": 8,
+            },
+            None,
+        )
+
+        self.assertEqual(final_scored[0][0]["url"], "https://openai.com/news/model-update")
+        self.assertGreater(final_scored[0][1], final_scored[1][1])
 
     def test_legacy_digest_entrypoint_delegates_to_current_pipeline(self) -> None:
         body = Path("digest_pipeline.py").read_text(encoding="utf-8")
@@ -1345,20 +1430,24 @@ class OfflineEvalTests(unittest.TestCase):
                                 "url": "https://xz.aliyun.com/a",
                                 "source_tier": "t2",
                                 "source_kind": "cn_expert",
+                                "final_score": 7.8,
                             },
                             {
                                 "title_zh": "Google 转述",
                                 "url": "https://news.google.com/rss/articles/1",
                                 "source_tier": "t2",
                                 "source_kind": "google_news",
+                                "final_score": 5.9,
                             },
                             {
                                 "title_zh": "未登记源",
                                 "url": "https://unknown.example/a",
                                 "source_tier": "unknown",
                                 "source_kind": "media",
+                                "final_score": 4.3,
                             },
                         ],
+                        "clustering_stats": {"merged_total": 2},
                         "selection_stats": {
                             "total": 3,
                             "chinese": 1,
@@ -1384,7 +1473,7 @@ class OfflineEvalTests(unittest.TestCase):
 
         markdown = render_offline_eval(feeds, cfg)
 
-        self.assertIn("| security | 安全 | 1 | 3.0 | 15 | 0/1 | 1.0 | 6 | 0/1 | 1.0 | 1 | 1 |", markdown)
+        self.assertIn("| security | 安全 | 1 | 3.0 | 15 | 0/1 | 1.0 | 6 | 0/1 | 1.0 | 1 | 1 | 6.0 | 2 |", markdown)
         self.assertIn("2026-05-11 security：selected 3/15，中文 1/6，unknown 1", markdown)
 
     def test_build_offline_eval_writes_report_from_docs_feeds(self) -> None:

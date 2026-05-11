@@ -33,6 +33,8 @@ class BoardEval:
     avg_google_news: float
     max_google_news: int | None
     unknown_items: int
+    avg_final_score: float | None
+    merged_total: int
     tier_counts: Counter[str]
     kind_counts: Counter[str]
 
@@ -81,9 +83,9 @@ def render_offline_eval(feeds: list[dict[str, Any]], cfg: dict[str, Any]) -> str
         "",
         (
             "| Board | Name | Days | Avg Selected | Target | Full Days | Avg CN | "
-            "Min CN | CN OK Days | Avg GN | Max GN | Unknown |"
+            "Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |"
         ),
-        "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for evaluation in evaluations:
         max_gn = "-" if evaluation.max_google_news is None else str(evaluation.max_google_news)
@@ -93,7 +95,8 @@ def render_offline_eval(feeds: list[dict[str, Any]], cfg: dict[str, Any]) -> str
             f"{evaluation.avg_selected:.1f} | {evaluation.target_top_n} | "
             f"{evaluation.full_days}/{evaluation.days} | {evaluation.avg_chinese:.1f} | "
             f"{evaluation.min_chinese} | {evaluation.cn_ok_days}/{evaluation.days} | "
-            f"{evaluation.avg_google_news:.1f} | {max_gn} | {evaluation.unknown_items} |"
+            f"{evaluation.avg_google_news:.1f} | {max_gn} | {evaluation.unknown_items} | "
+            f"{_format_optional_float(evaluation.avg_final_score)} | {evaluation.merged_total} |"
         )
 
     lines.extend(
@@ -149,7 +152,7 @@ def _evaluate_boards(
     feeds: list[dict[str, Any]],
     board_cfgs: dict[str, Any],
 ) -> tuple[list[BoardEval], list[EvalMiss]]:
-    daily: dict[str, list[tuple[str, dict[str, int], int]]] = defaultdict(list)
+    daily: dict[str, list[tuple[str, dict[str, int], int, float | None, int]]] = defaultdict(list)
     misses: list[EvalMiss] = []
 
     for feed in feeds:
@@ -158,7 +161,7 @@ def _evaluate_boards(
             cfg = board_cfgs.get(board) or {}
             stats = _stats_for_block(block)
             selected = stats["total"]
-            daily[board].append((date, stats, selected))
+            daily[board].append((date, stats, selected, _avg_final_score(block), _clustering_merged_total(block)))
 
             target_top_n = int(cfg.get("top_n") or selected)
             policy = cfg.get("source_policy") or {}
@@ -194,12 +197,17 @@ def _evaluate_boards(
         max_google_news = _optional_int(policy.get("max_google_news"))
         rows = daily[board]
         days = len(rows)
-        total_selected = sum(selected for _date, _stats, selected in rows)
-        total_chinese = sum(stats["chinese"] for _date, stats, _selected in rows)
-        total_google_news = sum(stats["google_news"] for _date, stats, _selected in rows)
+        total_selected = sum(selected for _date, _stats, selected, _avg_final, _merged in rows)
+        total_chinese = sum(stats["chinese"] for _date, stats, _selected, _avg_final, _merged in rows)
+        total_google_news = sum(stats["google_news"] for _date, stats, _selected, _avg_final, _merged in rows)
+        final_score_values = [
+            avg_final
+            for _date, _stats, _selected, avg_final, _merged in rows
+            if avg_final is not None
+        ]
         tier_counts: Counter[str] = Counter()
         kind_counts: Counter[str] = Counter()
-        for _date, stats, _selected in rows:
+        for _date, stats, _selected, _avg_final, _merged in rows:
             for key, value in stats.items():
                 if key.startswith("tier_"):
                     tier_counts[key.removeprefix("tier_")] += value
@@ -213,15 +221,19 @@ def _evaluate_boards(
                 days=days,
                 avg_selected=total_selected / days if days else 0.0,
                 target_top_n=target_top_n,
-                full_days=sum(1 for _date, _stats, selected in rows if selected >= target_top_n),
+                full_days=sum(1 for _date, _stats, selected, _avg_final, _merged in rows if selected >= target_top_n),
                 avg_chinese=total_chinese / days if days else 0.0,
                 min_chinese=min_chinese,
                 cn_ok_days=sum(
-                    1 for _date, stats, _selected in rows if not min_chinese or stats["chinese"] >= min_chinese
+                    1
+                    for _date, stats, _selected, _avg_final, _merged in rows
+                    if not min_chinese or stats["chinese"] >= min_chinese
                 ),
                 avg_google_news=total_google_news / days if days else 0.0,
                 max_google_news=max_google_news,
                 unknown_items=tier_counts["unknown"],
+                avg_final_score=sum(final_score_values) / len(final_score_values) if final_score_values else None,
+                merged_total=sum(merged for _date, _stats, _selected, _avg_final, merged in rows),
                 tier_counts=tier_counts,
                 kind_counts=kind_counts,
             )
@@ -244,6 +256,25 @@ def _stats_for_block(block: dict[str, Any]) -> Counter[str]:
     return stats
 
 
+def _avg_final_score(block: dict[str, Any]) -> float | None:
+    values = [
+        float(item["final_score"])
+        for item in (block.get("items") or [])
+        if _is_number(item.get("final_score"))
+    ]
+    if not values:
+        return None
+    return sum(values) / len(values)
+
+
+def _clustering_merged_total(block: dict[str, Any]) -> int:
+    stats = block.get("clustering_stats") or {}
+    value = stats.get("merged_total")
+    if _is_int(value):
+        return int(value)
+    return 0
+
+
 def _load_recent_feeds(docs_dir: Path, lookback_days: int) -> list[dict[str, Any]]:
     paths = sorted(docs_dir.glob("feed_*.json"), reverse=True)[:lookback_days]
     feeds: list[dict[str, Any]] = []
@@ -264,6 +295,20 @@ def _optional_int(value: Any) -> int | None:
 
 def _is_int(value: Any) -> bool:
     return isinstance(value, int) and not isinstance(value, bool)
+
+
+def _is_number(value: Any) -> bool:
+    try:
+        float(value)
+        return True
+    except (TypeError, ValueError):
+        return False
+
+
+def _format_optional_float(value: float | None) -> str:
+    if value is None:
+        return "-"
+    return f"{value:.1f}"
 
 
 def main() -> None:
