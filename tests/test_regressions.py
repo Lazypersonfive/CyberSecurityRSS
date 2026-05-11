@@ -405,6 +405,76 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertNotIn("tier_unknown", block["selection_stats"])
         self.assertNotIn("kind_media", block["selection_stats"])
 
+    def test_feed_json_sorts_items_by_attention_score_then_source_tier(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            digest_dir = Path(tmpdir)
+            digest_dir.joinpath("ai_2026-05-11.json").write_text(
+                json.dumps(
+                    {
+                        "board": "ai",
+                        "display_name": "AI 前沿",
+                        "date": "2026-05-11",
+                        "raw_count": 3,
+                        "selected_count": 3,
+                        "generated_at": "2026-05-11T00:00:00Z",
+                        "items": [
+                            {
+                                "title_zh": "低分 T1",
+                                "url": "https://openai.com/news/low",
+                                "final_score": 6.0,
+                            },
+                            {
+                                "title_zh": "高分 T2",
+                                "url": "https://simonwillison.net/2026/high",
+                                "final_score": 8.5,
+                            },
+                            {
+                                "title_zh": "同分 T1",
+                                "url": "https://deepmind.google/blog/tie",
+                                "final_score": 8.5,
+                            },
+                        ],
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            with patch("site_builder.DIGEST_DIR", digest_dir):
+                feed = _build_feed_for_date({"ai": {"display_name": "AI 前沿"}}, date(2026, 5, 11))
+
+        titles = [item["title_zh"] for item in feed["boards"]["ai"]["items"]]
+        self.assertEqual(titles, ["同分 T1", "高分 T2", "低分 T1"])
+
+    def test_feed_json_sorts_items_by_source_tier_when_scores_missing(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            digest_dir = Path(tmpdir)
+            digest_dir.joinpath("security_2026-05-11.json").write_text(
+                json.dumps(
+                    {
+                        "board": "security",
+                        "display_name": "安全",
+                        "date": "2026-05-11",
+                        "raw_count": 3,
+                        "selected_count": 3,
+                        "generated_at": "2026-05-11T00:00:00Z",
+                        "items": [
+                            {"title_zh": "未登记", "url": "https://unknown.example/a"},
+                            {"title_zh": "T2 媒体", "url": "https://techcrunch.com/a"},
+                            {"title_zh": "T1 官方", "url": "https://cisa.gov/news-events/alerts/a"},
+                        ],
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            with patch("site_builder.DIGEST_DIR", digest_dir):
+                feed = _build_feed_for_date({"security": {"display_name": "安全"}}, date(2026, 5, 11))
+
+        titles = [item["title_zh"] for item in feed["boards"]["security"]["items"]]
+        self.assertEqual(titles, ["T1 官方", "T2 媒体", "未登记"])
+
     def test_feed_json_preserves_xsignals_as_aggregator(self) -> None:
         with TemporaryDirectory() as tmpdir:
             digest_dir = Path(tmpdir)

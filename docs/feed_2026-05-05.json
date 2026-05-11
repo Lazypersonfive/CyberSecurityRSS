@@ -5,24 +5,24 @@
       "display_name": "安全",
       "items": [
         {
-          "title_zh": "CISA 警告 Linux 提权漏洞 Copy Fail 已被利用，攻击者可获取系统 Root 权限",
-          "title_orig": "CISA says ‘Copy Fail’ flaw now exploited to root Linux systems",
-          "summary": "CISA 警告称名为 Copy Fail 的 Linux 安全漏洞已在野外被利用，该漏洞在研究人员发布技术细节及 PoC 仅一天后即出现攻击活动。该漏洞允许本地攻击者绕过安全限制并提升至 Root 权限，目前已被列入已知被利用漏洞目录，受影响的 Linux 系统需尽快应用补丁以防范潜在的系统接管风险，避免攻击者获取服务器的最高控制权。",
+          "title_zh": "微软披露多阶段行为准则主题钓鱼攻击，利用 AiTM 技术绕过 MFA 窃取令牌",
+          "title_orig": "Breaking the code: Multi-stage ‘code of conduct’ phishing campaign leads to AiTM token compromise",
+          "summary": "微软研究人员观察到一种大规模凭据窃取活动，攻击者使用“行为准则”为诱饵发送多阶段钓鱼邮件，并利用合法域名分发信息。该攻击链采用了中间人攻击技术，通过拦截认证过程窃取会话令牌，从而绕过多因子身份验证，实现对目标账户的完全访问，体现了现代钓鱼攻击在对抗 MFA 方面的演进。",
           "tags": [
-            "Linux",
-            "提权漏洞",
-            "在野利用"
+            "AiTM",
+            "MFA绕过",
+            "钓鱼攻击"
           ],
-          "url": "https://www.bleepingcomputer.com/news/security/cisa-says-copy-fail-flaw-now-exploited-to-root-linux-systems/",
-          "source": "bleepingcomputer.com",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/04/breaking-the-code-multi-stage-code-of-conduct-phishing-campaign-leads-to-aitm-token-compromise/",
+          "source": "microsoft.com",
           "category": "OfficialAdvisories",
-          "published": "2026-05-04T11:28:15+00:00",
+          "published": "2026-05-04T15:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "涉及 Linux 核心权限提升且已出现快速在野利用。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "bleepingcomputer.com"
+          "selection_reason": "详细分析了绕过 MFA 的高级钓鱼技术，具有防御参考价值。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "microsoft.com"
         },
         {
           "title_zh": "泛微 e-cology 协同办公系统高危漏洞 CVE-2026-22679 自三月起遭黑客利用",
@@ -45,26 +45,6 @@
           "source_kind": "media",
           "source_label": "安全媒体",
           "source_key": "bleepingcomputer.com"
-        },
-        {
-          "title_zh": "Linux 内核 NFSv4.0 服务端存在堆溢出漏洞，远程攻击者可触发越界写入",
-          "title_orig": "kernel: nfsd: fix heap overflow in NFSv4.0 LOCK replay cache",
-          "summary": "Linux 内核 NFSv4.0 服务端的 nfsd 组件被发现存在堆溢出漏洞，远程未经身份验证的攻击者可通过特定操作触发该风险并损坏相邻堆内存。漏洞源于 LOCK 重放缓存的处理逻辑，通过两个协作的客户端分别设置大所有者字符串锁和请求冲突锁，可导致 slab 越界写入，影响启用了 NFSv4 服务的 Linux 内核版本，可能导致系统崩溃或执行任意代码。",
-          "tags": [
-            "Linux内核",
-            "堆溢出",
-            "NFS"
-          ],
-          "url": "https://vulners.com/redhat/RHSA-2026:13566-CVE-2026-31402?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-04T22:20:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "内核级堆溢出漏洞，涉及底层协议实现，技术深度高。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com"
         },
         {
           "title_zh": "VENOMOUS#HELPER 钓鱼活动利用 SimpleHelp 等 RMM 工具入侵 80 余家机构",
@@ -127,24 +107,44 @@
           "source_key": "thehackernews.com"
         },
         {
-          "title_zh": "微软披露多阶段行为准则主题钓鱼攻击，利用 AiTM 技术绕过 MFA 窃取令牌",
-          "title_orig": "Breaking the code: Multi-stage ‘code of conduct’ phishing campaign leads to AiTM token compromise",
-          "summary": "微软研究人员观察到一种大规模凭据窃取活动，攻击者使用“行为准则”为诱饵发送多阶段钓鱼邮件，并利用合法域名分发信息。该攻击链采用了中间人攻击技术，通过拦截认证过程窃取会话令牌，从而绕过多因子身份验证，实现对目标账户的完全访问，体现了现代钓鱼攻击在对抗 MFA 方面的演进。",
+          "title_zh": "网络安全公司 Trellix 证实其源代码库遭到黑客入侵并导致部分数据泄露",
+          "title_orig": "Trellix discloses data breach after source code repository hack",
+          "summary": "网络安全厂商 Trellix 官方披露了一起数据泄露事件，攻击者通过非法手段获得了其部分源代码库的访问权限。目前已知攻击者获取了存储库中的部分代码内容，但关于泄露的具体代码规模、受影响的产品线以及是否包含敏感凭据等详细技术细节，原文中并未给出进一步的披露，该事件反映了供应链核心资产面临的持续安全威胁。",
           "tags": [
-            "AiTM",
-            "MFA绕过",
-            "钓鱼攻击"
+            "数据泄露",
+            "源代码安全",
+            "企业安全"
           ],
-          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/04/breaking-the-code-multi-stage-code-of-conduct-phishing-campaign-leads-to-aitm-token-compromise/",
-          "source": "microsoft.com",
+          "url": "https://www.bleepingcomputer.com/news/security/trellix-discloses-data-breach-after-source-code-repository-hack/",
+          "source": "bleepingcomputer.com",
           "category": "OfficialAdvisories",
-          "published": "2026-05-04T15:00:00+00:00",
+          "published": "2026-05-04T16:25:07+00:00",
           "cve_ids": [],
-          "selection_reason": "详细分析了绕过 MFA 的高级钓鱼技术，具有防御参考价值。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "官网",
-          "source_key": "microsoft.com"
+          "selection_reason": "知名安全厂商源码泄露事件，关注供应链安全与代码保护。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "bleepingcomputer.com"
+        },
+        {
+          "title_zh": "CISA 警告 Linux 提权漏洞 Copy Fail 已被利用，攻击者可获取系统 Root 权限",
+          "title_orig": "CISA says ‘Copy Fail’ flaw now exploited to root Linux systems",
+          "summary": "CISA 警告称名为 Copy Fail 的 Linux 安全漏洞已在野外被利用，该漏洞在研究人员发布技术细节及 PoC 仅一天后即出现攻击活动。该漏洞允许本地攻击者绕过安全限制并提升至 Root 权限，目前已被列入已知被利用漏洞目录，受影响的 Linux 系统需尽快应用补丁以防范潜在的系统接管风险，避免攻击者获取服务器的最高控制权。",
+          "tags": [
+            "Linux",
+            "提权漏洞",
+            "在野利用"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/cisa-says-copy-fail-flaw-now-exploited-to-root-linux-systems/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-04T11:28:15+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及 Linux 核心权限提升且已出现快速在野利用。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "bleepingcomputer.com"
         },
         {
           "title_zh": "cPanel 关键漏洞遭武器化利用，东南亚政府及全球 MSP 服务商成为攻击目标",
@@ -165,6 +165,152 @@
           "source_kind": "media",
           "source_label": "安全媒体",
           "source_key": "thehackernews.com"
+        },
+        {
+          "title_zh": "Perfex CRM 3.4.1 及以下版本 Admin Kanban 端点存在 SQL 注入漏洞",
+          "title_orig": "CVE-2026-7783 CodeCanyon Perfex CRM Admin Kanban Endpoint AbstractKanban.php applySortQuery sql injection",
+          "summary": "CodeCanyon Perfex CRM 3.4.1 及以下版本中存在 SQL 注入漏洞，漏洞编号为 CVE-2026-7783。该漏洞源于应用服务组件中 AbstractKanban.php 文件的 applySortQuery 函数未对输入参数进行有效过滤。远程攻击者可以通过操纵排序查询参数发起攻击，目前该漏洞的利用代码已经公开，可能导致数据库敏感信息泄露。 Perfex CRM 3.4.1 及以下版本 Admin Kanban 端点存在 SQL 注入漏洞。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合自身业务判断是。",
+          "tags": [
+            "SQL注入",
+            "Perfex C",
+            "Web安全"
+          ],
+          "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-7783?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-04T23:15:13+00:00",
+          "cve_ids": [
+            "CVE-2026-7783"
+          ],
+          "selection_reason": "流行的 CRM 系统漏洞，且 Exploit 已公开。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com"
+        },
+        {
+          "title_zh": "Linux 内核 NFSv4.0 服务端存在堆溢出漏洞，远程攻击者可触发越界写入",
+          "title_orig": "kernel: nfsd: fix heap overflow in NFSv4.0 LOCK replay cache",
+          "summary": "Linux 内核 NFSv4.0 服务端的 nfsd 组件被发现存在堆溢出漏洞，远程未经身份验证的攻击者可通过特定操作触发该风险并损坏相邻堆内存。漏洞源于 LOCK 重放缓存的处理逻辑，通过两个协作的客户端分别设置大所有者字符串锁和请求冲突锁，可导致 slab 越界写入，影响启用了 NFSv4 服务的 Linux 内核版本，可能导致系统崩溃或执行任意代码。",
+          "tags": [
+            "Linux内核",
+            "堆溢出",
+            "NFS"
+          ],
+          "url": "https://vulners.com/redhat/RHSA-2026:13566-CVE-2026-31402?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-04T22:20:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "内核级堆溢出漏洞，涉及底层协议实现，技术深度高。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com"
+        },
+        {
+          "title_zh": "Linux 内核 algif_aead 密码算法接口存在逻辑缺陷可能导致数据完整性受损",
+          "title_orig": "kernel: crypto: algif_aead - Revert to operating out-of-place",
+          "summary": "该漏洞源于 Linux 内核的 algif_aead 密码算法接口引入了错误的“原地操作”逻辑，导致源数据与目标数据的映射不一致。在执行加密操作时，这种映射冲突可能引发非预期的行为或数据完整性问题，进而影响加密通信的可靠性；受影响的具体内核版本及组件范围原文未详细披露，目前已通过恢复非原地操作模式进行修复。",
+          "tags": [
+            "Linux内核",
+            "加密算法",
+            "数据完整性"
+          ],
+          "url": "https://vulners.com/redhat/RHSA-2026:13566-CVE-2026-31431?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-04T22:20:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及内核加密接口逻辑漏洞，对数据安全传输有直接影响。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com"
+        },
+        {
+          "title_zh": "Linux 内核 bonding 驱动程序存在释放后使用漏洞可导致本地拒绝服务攻击",
+          "title_orig": "kernel: Linux kernel: Use-after-free in bonding driver leads to denial of service",
+          "summary": "Linux内核的bonding驱动程序在执行bond_xmit_broadcast函数时存在释放后使用漏洞，低权限的本地攻击者可利用该缺陷对系统发起攻击。该漏洞主要源于并发从属设备在进行绑定或释放操作时产生的竞态条件，会导致原始套接字缓冲区被重复释放，成功利用此漏洞将直接引发系统崩溃并导致拒绝服务，严重威胁系统的运行稳定性与安全性。",
+          "tags": [
+            "Linux内核",
+            "UAF漏洞",
+            "拒绝服务"
+          ],
+          "url": "https://vulners.com/redhat/RHSA-2026:13566-CVE-2026-31419?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-04T22:20:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "典型的内核驱动竞态条件漏洞，具有实际的本地攻击风险。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com"
+        },
+        {
+          "title_zh": "Totolink A8000RU 路由器 cstecgi.cgi 接口存在远程命令注入漏洞",
+          "title_orig": "CVE-2026-7823 | Totolink A8000RU 7.1cu.643_b20200521 /cgi-bin/cstecgi.cgi setAppFilterCfg enable os command injection",
+          "summary": "Totolink A8000RU 7.1cu.643_b20200521 版本存在严重的远程命令注入漏洞，编号为 CVE-2026-7823。漏洞位于 /cgi-bin/cstecgi.cgi 文件的 setAppFilterCfg 函数中，通过操纵 enable 参数即可触发。攻击者可以远程发起攻击并在受影响的设备上执行任意系统命令，目前针对该漏洞的利用工具已在社区流传。 Totolink A8000RU 路由器 cstecgi.cgi 接口存在远程命令注入漏洞。该条来自vuldb.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合自身业务判断是否需要跟进。",
+          "tags": [
+            "命令注入",
+            "物联网安全",
+            "Totolink"
+          ],
+          "url": "https://vuldb.com/vuln/361075",
+          "source": "vuldb.com",
+          "category": "Synthesis",
+          "published": "2026-05-04T22:19:12+00:00",
+          "cve_ids": [
+            "CVE-2026-7823"
+          ],
+          "selection_reason": "高危远程命令执行漏洞，直接威胁 IoT 设备控制权。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞库",
+          "source_key": "vuldb.com"
+        },
+        {
+          "title_zh": "Amazon WorkSpaces Windows 客户端日志轮转机制存在本地提权漏洞",
+          "title_orig": "CVE-2026-7791",
+          "summary": "Amazon WorkSpaces for Windows 2.6.2034.0 之前版本的 Skylight Workspace 配置服务存在权限管理不当漏洞，编号为 CVE-2026-7791。该漏洞源于日志轮转机制的缺陷，允许本地非管理用户绕过文件系统权限保护，将任意文件放置在任意位置。通过此操作，攻击者可以实现从普通用户到 SYSTEM 权限的提升，建议受影响用户尽快升级客户端版本。 Amazon WorkSpaces Windows 客户端日志轮转机制存在本地提权漏洞。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和。",
+          "tags": [
+            "Amazon",
+            "权限提升",
+            "逻辑漏洞"
+          ],
+          "url": "https://vulners.com/nvd/NVD:CVE-2026-7791?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-04T22:16:20+00:00",
+          "cve_ids": [
+            "CVE-2026-7791"
+          ],
+          "selection_reason": "涉及云桌面客户端的逻辑提权，利用思路具有代表性。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com"
+        },
+        {
+          "title_zh": "KubSTU CTF 2026 竞赛题解发布：涵盖取证及 RSA 与 3DES 加密挑战技术点",
+          "title_orig": "KubSTU CTF 2026 Writeups: Five Challenges, Saturday",
+          "summary": "本文详细记录了 KubSTU CTF 2026 竞赛中五个挑战项目的解题思路，重点涵盖了电子数据取证、RSA 加密算法、3DES 加密算法等核心技术领域。作者分享了在处理包含大量干扰文件的复杂场景下的分析技巧，以及在面对加密算法逻辑陷阱时的思维突破过程，为安全从业者提供了实战化的密码学分析与取证技术参考，具有较高的学习价值。",
+          "tags": [
+            "CTF题解",
+            "密码学",
+            "数字取证"
+          ],
+          "url": "https://infosecwriteups.com/kubstu-ctf-2026-writeups-five-challenges-saturday-43d7f2bec403?source=rss----7b722bfd1b8d---4",
+          "source": "infosecwriteups.com",
+          "category": "WebSecurity",
+          "published": "2026-05-04T13:05:42+00:00",
+          "cve_ids": [],
+          "selection_reason": "提供多维度的加密与取证实战思路，有助于提升技术分析能力。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "安全社区",
+          "source_key": "infosecwriteups.com"
         },
         {
           "title_zh": "从匿名 RPC 枚举到域管理员：利用 Azure AD Connect 漏洞实现内网权限提升的技术路径",
@@ -265,152 +411,6 @@
           "source_kind": "community",
           "source_label": "漏洞库",
           "source_key": "exploit-db.com"
-        },
-        {
-          "title_zh": "Perfex CRM 3.4.1 及以下版本 Admin Kanban 端点存在 SQL 注入漏洞",
-          "title_orig": "CVE-2026-7783 CodeCanyon Perfex CRM Admin Kanban Endpoint AbstractKanban.php applySortQuery sql injection",
-          "summary": "CodeCanyon Perfex CRM 3.4.1 及以下版本中存在 SQL 注入漏洞，漏洞编号为 CVE-2026-7783。该漏洞源于应用服务组件中 AbstractKanban.php 文件的 applySortQuery 函数未对输入参数进行有效过滤。远程攻击者可以通过操纵排序查询参数发起攻击，目前该漏洞的利用代码已经公开，可能导致数据库敏感信息泄露。 Perfex CRM 3.4.1 及以下版本 Admin Kanban 端点存在 SQL 注入漏洞。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合自身业务判断是。",
-          "tags": [
-            "SQL注入",
-            "Perfex C",
-            "Web安全"
-          ],
-          "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-7783?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-04T23:15:13+00:00",
-          "cve_ids": [
-            "CVE-2026-7783"
-          ],
-          "selection_reason": "流行的 CRM 系统漏洞，且 Exploit 已公开。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com"
-        },
-        {
-          "title_zh": "Totolink A8000RU 路由器 cstecgi.cgi 接口存在远程命令注入漏洞",
-          "title_orig": "CVE-2026-7823 | Totolink A8000RU 7.1cu.643_b20200521 /cgi-bin/cstecgi.cgi setAppFilterCfg enable os command injection",
-          "summary": "Totolink A8000RU 7.1cu.643_b20200521 版本存在严重的远程命令注入漏洞，编号为 CVE-2026-7823。漏洞位于 /cgi-bin/cstecgi.cgi 文件的 setAppFilterCfg 函数中，通过操纵 enable 参数即可触发。攻击者可以远程发起攻击并在受影响的设备上执行任意系统命令，目前针对该漏洞的利用工具已在社区流传。 Totolink A8000RU 路由器 cstecgi.cgi 接口存在远程命令注入漏洞。该条来自vuldb.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合自身业务判断是否需要跟进。",
-          "tags": [
-            "命令注入",
-            "物联网安全",
-            "Totolink"
-          ],
-          "url": "https://vuldb.com/vuln/361075",
-          "source": "vuldb.com",
-          "category": "Synthesis",
-          "published": "2026-05-04T22:19:12+00:00",
-          "cve_ids": [
-            "CVE-2026-7823"
-          ],
-          "selection_reason": "高危远程命令执行漏洞，直接威胁 IoT 设备控制权。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞库",
-          "source_key": "vuldb.com"
-        },
-        {
-          "title_zh": "Amazon WorkSpaces Windows 客户端日志轮转机制存在本地提权漏洞",
-          "title_orig": "CVE-2026-7791",
-          "summary": "Amazon WorkSpaces for Windows 2.6.2034.0 之前版本的 Skylight Workspace 配置服务存在权限管理不当漏洞，编号为 CVE-2026-7791。该漏洞源于日志轮转机制的缺陷，允许本地非管理用户绕过文件系统权限保护，将任意文件放置在任意位置。通过此操作，攻击者可以实现从普通用户到 SYSTEM 权限的提升，建议受影响用户尽快升级客户端版本。 Amazon WorkSpaces Windows 客户端日志轮转机制存在本地提权漏洞。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和。",
-          "tags": [
-            "Amazon",
-            "权限提升",
-            "逻辑漏洞"
-          ],
-          "url": "https://vulners.com/nvd/NVD:CVE-2026-7791?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-04T22:16:20+00:00",
-          "cve_ids": [
-            "CVE-2026-7791"
-          ],
-          "selection_reason": "涉及云桌面客户端的逻辑提权，利用思路具有代表性。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com"
-        },
-        {
-          "title_zh": "Linux 内核 algif_aead 密码算法接口存在逻辑缺陷可能导致数据完整性受损",
-          "title_orig": "kernel: crypto: algif_aead - Revert to operating out-of-place",
-          "summary": "该漏洞源于 Linux 内核的 algif_aead 密码算法接口引入了错误的“原地操作”逻辑，导致源数据与目标数据的映射不一致。在执行加密操作时，这种映射冲突可能引发非预期的行为或数据完整性问题，进而影响加密通信的可靠性；受影响的具体内核版本及组件范围原文未详细披露，目前已通过恢复非原地操作模式进行修复。",
-          "tags": [
-            "Linux内核",
-            "加密算法",
-            "数据完整性"
-          ],
-          "url": "https://vulners.com/redhat/RHSA-2026:13566-CVE-2026-31431?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-04T22:20:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及内核加密接口逻辑漏洞，对数据安全传输有直接影响。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com"
-        },
-        {
-          "title_zh": "Linux 内核 bonding 驱动程序存在释放后使用漏洞可导致本地拒绝服务攻击",
-          "title_orig": "kernel: Linux kernel: Use-after-free in bonding driver leads to denial of service",
-          "summary": "Linux内核的bonding驱动程序在执行bond_xmit_broadcast函数时存在释放后使用漏洞，低权限的本地攻击者可利用该缺陷对系统发起攻击。该漏洞主要源于并发从属设备在进行绑定或释放操作时产生的竞态条件，会导致原始套接字缓冲区被重复释放，成功利用此漏洞将直接引发系统崩溃并导致拒绝服务，严重威胁系统的运行稳定性与安全性。",
-          "tags": [
-            "Linux内核",
-            "UAF漏洞",
-            "拒绝服务"
-          ],
-          "url": "https://vulners.com/redhat/RHSA-2026:13566-CVE-2026-31419?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-04T22:20:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "典型的内核驱动竞态条件漏洞，具有实际的本地攻击风险。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com"
-        },
-        {
-          "title_zh": "KubSTU CTF 2026 竞赛题解发布：涵盖取证及 RSA 与 3DES 加密挑战技术点",
-          "title_orig": "KubSTU CTF 2026 Writeups: Five Challenges, Saturday",
-          "summary": "本文详细记录了 KubSTU CTF 2026 竞赛中五个挑战项目的解题思路，重点涵盖了电子数据取证、RSA 加密算法、3DES 加密算法等核心技术领域。作者分享了在处理包含大量干扰文件的复杂场景下的分析技巧，以及在面对加密算法逻辑陷阱时的思维突破过程，为安全从业者提供了实战化的密码学分析与取证技术参考，具有较高的学习价值。",
-          "tags": [
-            "CTF题解",
-            "密码学",
-            "数字取证"
-          ],
-          "url": "https://infosecwriteups.com/kubstu-ctf-2026-writeups-five-challenges-saturday-43d7f2bec403?source=rss----7b722bfd1b8d---4",
-          "source": "infosecwriteups.com",
-          "category": "WebSecurity",
-          "published": "2026-05-04T13:05:42+00:00",
-          "cve_ids": [],
-          "selection_reason": "提供多维度的加密与取证实战思路，有助于提升技术分析能力。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "安全社区",
-          "source_key": "infosecwriteups.com"
-        },
-        {
-          "title_zh": "网络安全公司 Trellix 证实其源代码库遭到黑客入侵并导致部分数据泄露",
-          "title_orig": "Trellix discloses data breach after source code repository hack",
-          "summary": "网络安全厂商 Trellix 官方披露了一起数据泄露事件，攻击者通过非法手段获得了其部分源代码库的访问权限。目前已知攻击者获取了存储库中的部分代码内容，但关于泄露的具体代码规模、受影响的产品线以及是否包含敏感凭据等详细技术细节，原文中并未给出进一步的披露，该事件反映了供应链核心资产面临的持续安全威胁。",
-          "tags": [
-            "数据泄露",
-            "源代码安全",
-            "企业安全"
-          ],
-          "url": "https://www.bleepingcomputer.com/news/security/trellix-discloses-data-breach-after-source-code-repository-hack/",
-          "source": "bleepingcomputer.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-04T16:25:07+00:00",
-          "cve_ids": [],
-          "selection_reason": "知名安全厂商源码泄露事件，关注供应链安全与代码保护。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "bleepingcomputer.com"
         }
       ],
       "raw_count": 78,
@@ -418,11 +418,11 @@
       "selection_stats": {
         "total": 20,
         "direct": 20,
+        "tier_t1": 1,
+        "kind_official": 1,
         "tier_t2": 19,
         "kind_media": 7,
-        "kind_community": 12,
-        "tier_t1": 1,
-        "kind_official": 1
+        "kind_community": 12
       },
       "clustering_stats": {},
       "generated_at": "2026-05-04T23:37:54.354565Z"
@@ -436,46 +436,6 @@
     "ai": {
       "display_name": "AI 前沿",
       "items": [
-        {
-          "title_zh": "Anthropic 联手金融科技巨头 FIS 开发 AI 智能体，旨在协助银行打击洗钱等金融犯罪",
-          "title_orig": "Anthropic联手FIS开发AI智能体，帮助银行打击金融犯罪 - 华尔街日报中文网",
-          "summary": "人工智能初创公司 Anthropic 与金融服务技术公司 FIS 达成战略合作，共同开发专门用于识别和预防金融犯罪的 AI 智能体。该合作旨在利用先进的大模型技术提升银行监测可疑交易的效率，并加强对洗钱及欺诈行为的打击力度，标志着生成式 AI 在高度合规的银行业进入深度应用阶段，为金融安全提供了更智能的防御手段。",
-          "tags": [
-            "金融科技",
-            "人工智能",
-            "反洗钱"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxPNUJ0WlpnaXZEN0NWRXhNWDExT3Nrb2R1bmNQa0FnZjZ4YWJYdWdOQ3FzeTBqUmdrRTlGdWk2cGZKZUc1VGhscTlyRHdtYzFKd05MUnVmRzNCU3BzU09tWHN0eFZoU1NRRUtNUUNrQUs1Z0Ryd0hvbVBTd1FQWTFnTHBFS0tVU1FFSHA3QVhhaVN1QXpQUGo5MGpYSXBSNVJoMWR6LWllLURIM2dnVllpSnUtY0kxLXBidmpuRFkyaHBmZDlUcll5ZDVDZWVFNnY0VjlwSGdjMjhxeHJDbU90b25VMVV2QzZPbnVyREp5bG1vYm4tWXB2eXFWR2RxWUkwNDZDLUZ5cUZQVTJDeWdKcTlDVmxKakRGazA2b1FMQ2FQbUlvNkNmNHBIN1c4UQ?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-05-04T23:20:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了生成式 AI 在金融合规与安全领域的具体落地应用。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
-        {
-          "title_zh": "Claude AI 实现与 Adobe、Canva 及 Blender 等创意软件连接，大幅提升多媒体创作效率",
-          "title_orig": "Claude AI connects to Adobe, Canva, Blender for creative work | ETIH EdTech News - EdTech Innovation Hub",
-          "summary": "Anthropic旗下的Claude AI现已实现与Adobe、Canva和Blender等主流创意设计工具的深度连接，支持跨平台的创作流协作与数据互通。这一重大更新允许用户通过AI智能体直接调用专业软件的各项核心功能，极大地简化了从初步构思到复杂多媒体内容生成的全流程，在显著提升设计师生产力的同时，也进一步拓展了生成式AI在专业创意领域的实际应用边界。",
-          "tags": [
-            "Claude",
-            "创意设计",
-            "生产力工具"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQRGdFWkx0WjAxZmNWbjV2STUzRlZ1eEZQWTNvMDU2dDV5TmVoNDQ5V3NXeVh6NWZMQnpCTkNwdFozc2R1c3Q0VVVMQnVnNnBZdmhhY0JaUjIyX0IxSjEyNTJzOU4tbnRtd0hZZGYyMkQzYnhjdDRYclR4dTgwMEJkYlJfaU1PTklWMmd4VXA3MG5wVHk4eGRyMUJlRHZxZHI3Y0kwQnR3Z0llWnlvSEg5VDZOa1d1WW1nZHU4UVduLUJYZE5ab1ozRmNhQXJqTGxRdm8wTENzLWZpallzTkVnVXlueWRKLTA?oc=5",
-          "source": "news.google.com",
-          "category": "Labs",
-          "published": "2026-05-04T23:30:42+00:00",
-          "cve_ids": [],
-          "selection_reason": "AI 智能体与主流设计生态的集成是创意产业的重要进展。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
         {
           "title_zh": "研究人员推出 NDBench 框架，评估前沿大语言模型在神经多样性语境下的系统提示响应",
           "title_orig": "How Frontier LLMs Adapt to Neurodivergence Context: A Measurement Framework for Surface vs. Structural Change in System-Prompted Responses",
@@ -557,46 +517,6 @@
           "source_key": "arxiv.org"
         },
         {
-          "title_zh": "马斯克诉 OpenAI 案在加州开庭，庭审首周揭示双方关于公司初衷与资金投入的争议",
-          "title_orig": "Week one of the Musk v. Altman trial: What it was like in the room",
-          "summary": "埃隆·马斯克与萨姆·奥特曼在加州奥克兰法院正式展开对垒，马斯克起诉 OpenAI 并指控其背离了最初作为非营利组织的使命。庭审首周聚焦于马斯克早期对 OpenAI 投入的数百万美元资金，以及双方在公司治理结构和商业化路径上的核心分歧，此案的最终裁决将对整个人工智能行业的开源准则与商业竞争格局产生深远的影响。",
-          "tags": [
-            "马斯克",
-            "OpenAI",
-            "法律诉讼"
-          ],
-          "url": "https://www.technologyreview.com/2026/05/04/1136826/week-one-of-the-musk-v-altman-trial-what-it-was-like-in-the-room/",
-          "source": "technologyreview.com",
-          "category": "Media",
-          "published": "2026-05-04T15:51:27+00:00",
-          "cve_ids": [],
-          "selection_reason": "AI 行业最具影响力的法律纠纷，关乎行业未来治理模式。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "科技媒体",
-          "source_key": "technologyreview.com"
-        },
-        {
-          "title_zh": "一项曾被广泛引用的 ChatGPT 教育应用研究因数据异常被撤稿，引发学术界关注",
-          "title_orig": "Influential study touting ChatGPT in education retracted over red flags",
-          "summary": "一份曾被引用数百次、旨在宣传 ChatGPT 在教育领域具有积极作用的影响力研究，因被发现存在严重数据红旗和缺陷而被正式撤回。该事件引发了学术界对 AI 相关研究质量的广泛担忧，提醒教育工作者和政策制定者在参考 AI 效能证据时需保持审慎，并强调了在人工智能技术热潮中坚持严谨科研审查与同行评议的重要性。",
-          "tags": [
-            "学术诚信",
-            "ChatGPT",
-            "教育研究"
-          ],
-          "url": "https://arstechnica.com/ai/2026/05/influential-study-touting-chatgpt-in-education-retracted-over-red-flags/",
-          "source": "arstechnica.com",
-          "category": "Media",
-          "published": "2026-05-04T19:03:39+00:00",
-          "cve_ids": [],
-          "selection_reason": "警示了 AI 研究领域的学术泡沫风险及对教育决策的影响。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "科技媒体",
-          "source_key": "arstechnica.com"
-        },
-        {
           "title_zh": "研究揭示零样本视觉语言模型安全分类器在语义等价提示词下存在显著评分偏差",
           "title_orig": "Prompt-Induced Score Variance in Zero-Shot Binary Vision-Language Safety Classification",
           "summary": "最新研究发现零样本视觉语言模型在进行安全分类时，即使提示词语义完全等价，其输出的首个标记概率也会产生显著波动。这种不稳定性意味着模型在处理细微措辞变化时可能给出截然不同的安全评分，直接影响了基于概率阈值的自动化安全审核系统的可靠性与鲁棒性，研究者指出这种决策分数在语义重构下是不可靠的。",
@@ -637,106 +557,6 @@
           "source_key": "arxiv.org"
         },
         {
-          "title_zh": "开源项目“理论神话”试图逆向工程 Anthropic 公司旗下最具风险的 AI 模型",
-          "title_orig": "Someone Built an Open-Source 'Theoretical Mythos' to Reverse-Engineer Anthropic's Most Dangerous AI - Yahoo Tech",
-          "summary": "有开发者构建并发布了一个名为“理论神话”的开源项目，旨在通过逆向工程手段分析Anthropic公司开发的最具风险的人工智能模型内部机制。该行动反映了开源社区对闭源顶尖模型透明度的探索尝试，同时也引发了关于前沿AI模型安全性、逆向工程合法性以及闭源系统潜在风险的广泛讨论，成为业界关注的焦点。",
-          "tags": [
-            "逆向工程",
-            "Anthropi",
-            "开源安全"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMGFKaE9UYUZ1bjdXX3RBUkhMaHI3MUJCZ0FqNXFtN25XUUUySVhSRzJka0Jsd0ZnbUxHMnNZOTBrMEFnMkszQnhRazF2aUxkQU52X1k4b2dESmNubWpnZUtkSUVkcFpKbVhWQnEzT19qLTB1VzBUcjZhMFZScU5kOEc0T2NKSDNWRTJCN3UxNVZmbWFsWTBzbDhn?oc=5",
-          "source": "news.google.com",
-          "category": "Labs",
-          "published": "2026-05-04T22:31:02+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及顶级AI实验室核心模型的安全性与开源对抗。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
-        {
-          "title_zh": "Import AI 455 期：自动化 AI 研究趋势预示人工智能系统即将开启自我构建模式",
-          "title_orig": "Import AI 455: Automating AI Research",
-          "summary": "本期Import AI简报深入探讨了自动化AI研究的最新进展，指出人工智能系统正趋向于能够自主进行研发与构建，并分析了这种自我迭代能力对未来的深远影响。通过对arXiv论文及公开信息的综合分析，作者认为AI系统开始构建自身将彻底改变技术的演进速度，并对未来技术生态和人类研究者的传统角色产生根本性挑战。",
-          "tags": [
-            "自动化研究",
-            "AI演进",
-            "技术趋势"
-          ],
-          "url": "https://jack-clark.net/2026/05/04/import-ai-455-automating-ai-research/",
-          "source": "jack-clark.net",
-          "category": "Commentary",
-          "published": "2026-05-04T12:32:09+00:00",
-          "cve_ids": [],
-          "selection_reason": "探讨AI自我迭代的终极趋势，具有前瞻性意义。",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "专家博客",
-          "source_key": "jack-clark.net"
-        },
-        {
-          "title_zh": "行业评论指出“蒸馏攻击”一词被误用并引发了当前 AI 领域的过度恐慌",
-          "title_orig": "The distillation panic",
-          "summary": "针对近期AI领域热议的“蒸馏攻击”现象，有评论文章指出该术语的使用存在误导性，并正在引发不必要的行业恐慌与认知偏差。文章认为当前发生的现象需要更准确的定义，过度渲染此类攻击的威胁可能会干扰正常的模型优化研究，呼吁业界回归理性讨论，避免被不恰当的术语带偏方向，从而确保AI安全研究的科学性。",
-          "tags": [
-            "蒸馏攻击",
-            "行业评论",
-            "AI安全"
-          ],
-          "url": "https://www.interconnects.ai/p/the-distillation-panic",
-          "source": "interconnects.ai",
-          "category": "Commentary",
-          "published": "2026-05-04T15:56:44+00:00",
-          "cve_ids": [],
-          "selection_reason": "对当前AI安全热点术语进行了批判性反思。",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "专家博客",
-          "source_key": "interconnects.ai"
-        },
-        {
-          "title_zh": "大模型成功打入制造业：AI 技术在发酵罐生产场景中助力产量突破天花板",
-          "title_orig": "99.9分！大模型获制造业入场券：最难发酵罐里，AI老法师撬开产量天花板 - Sohu",
-          "summary": "大模型在制造业应用中取得突破，通过对复杂发酵罐生产过程的精准控制，成功提升了产量上限并获得99.9分的高分评价。这一案例证明了AI技术在传统工业领域具备极高的落地价值，标志着大模型正从通用领域向高门槛的精密制造场景渗透，为工业数字化转型提供了实战范本，展示了AI解决极端复杂生产难题的巨大潜力。",
-          "tags": [
-            "工业AI",
-            "智能制造",
-            "大模型落地"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxORzY2dEZUQUFlejRicVNIVElkN1FSbWxJaWVqeTVkWTVzQzF0MjVJdVZJcGotZjExUEFDcHVhamhlUVkweGcwZDhoTVBvcmRoLXdaWDhXN2ZMQ0JtY3ZhZ0tCeGtVbXJ4NTA3YmF6c19jUEtnaGIxd2ZidHc1c05lU3QwRnpiSG5BbGRMSg?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-05-04T22:51:03+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了大模型在传统制造业垂直领域的实际应用成效。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
-        {
-          "title_zh": "针对医疗保健需求定制 AI 解决方案：应对老龄化与劳动力短缺的转型尝试",
-          "title_orig": "Tailoring AI solutions for health care needs",
-          "summary": "面对财务压力、劳动力短缺及人口老龄化挑战，AI开发者正致力于为医疗行业量身定制解决方案，涵盖从癌症治疗到手术辅助及流程优化等多个关键领域。这些技术旨在将宏大的转型承诺转化为实际的临床工具，帮助医疗机构在资源受限的情况下提升护理质量并减轻医护人员负担，从而应对日益增长的医疗需求与复杂的行业困境。",
-          "tags": [
-            "智慧医疗",
-            "AI应用",
-            "医疗转型"
-          ],
-          "url": "https://www.technologyreview.com/2026/05/04/1134425/tailoring-ai-solutions-for-health-care-needs/",
-          "source": "technologyreview.com",
-          "category": "Media",
-          "published": "2026-05-04T13:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "探讨AI在医疗这一高价值且高需求领域的具体落地路径。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "科技媒体",
-          "source_key": "technologyreview.com"
-        },
-        {
           "title_zh": "2026 年 4 月简报发布：Opus 4.7 与 GPT-5.5 涨价，Claude 安全研究受关注",
           "title_orig": "April 2026 newsletter",
           "summary": "作者发布了2026年4月赞助者专属月度简报，重点披露了Opus 4.7与GPT-5.5模型的最新发布动态及其价格上调情况，并深入探讨了Claude Mythos与大语言模型安全研究。简报还涵盖了ChatGPT图像功能2.0升级、多款新模型发布以及作者个人的技术工具使用心得，旨在为赞助者提供关于大模型市场竞争、安全前沿及技术更新的全面深度资讯。",
@@ -755,26 +575,6 @@
           "source_kind": "expert",
           "source_label": "专家博客",
           "source_key": "simonwillison.net"
-        },
-        {
-          "title_zh": "Appfigures 报告显示图像 AI 模型更新对应用下载量的拉动作用已显著超越聊天机器人升级",
-          "title_orig": "Image AI models now drive app growth, beating chatbot upgrades",
-          "summary": "Appfigures最新研究发现，图像AI模型的发布能带来比聊天机器人升级高出6.5倍的下载量增长，这表明视觉生成技术已成为移动端获客的核心驱动力。然而，尽管流量激增显著，多数应用却未能将这些新用户有效转化为实际收入，开发者在追求用户规模增长的同时，亟需深入探索并优化商业化路径以实现可持续盈利。",
-          "tags": [
-            "AI 应用",
-            "移动市场",
-            "图像生成"
-          ],
-          "url": "https://techcrunch.com/2026/05/04/image-ai-models-now-drive-app-growth-beating-chatbot-upgrades/",
-          "source": "techcrunch.com",
-          "category": "Media",
-          "published": "2026-05-04T19:12:49+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了 AI 驱动应用增长的最新趋势与变现挑战。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "科技媒体",
-          "source_key": "techcrunch.com"
         },
         {
           "title_zh": "安全研究展示 TRE 正则表达式引擎 Python 绑定在应对 ReDoS 拒绝服务攻击时的鲁棒性优势",
@@ -797,6 +597,86 @@
           "source_key": "simonwillison.net"
         },
         {
+          "title_zh": "行业评论指出“蒸馏攻击”一词被误用并引发了当前 AI 领域的过度恐慌",
+          "title_orig": "The distillation panic",
+          "summary": "针对近期AI领域热议的“蒸馏攻击”现象，有评论文章指出该术语的使用存在误导性，并正在引发不必要的行业恐慌与认知偏差。文章认为当前发生的现象需要更准确的定义，过度渲染此类攻击的威胁可能会干扰正常的模型优化研究，呼吁业界回归理性讨论，避免被不恰当的术语带偏方向，从而确保AI安全研究的科学性。",
+          "tags": [
+            "蒸馏攻击",
+            "行业评论",
+            "AI安全"
+          ],
+          "url": "https://www.interconnects.ai/p/the-distillation-panic",
+          "source": "interconnects.ai",
+          "category": "Commentary",
+          "published": "2026-05-04T15:56:44+00:00",
+          "cve_ids": [],
+          "selection_reason": "对当前AI安全热点术语进行了批判性反思。",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "interconnects.ai"
+        },
+        {
+          "title_zh": "Import AI 455 期：自动化 AI 研究趋势预示人工智能系统即将开启自我构建模式",
+          "title_orig": "Import AI 455: Automating AI Research",
+          "summary": "本期Import AI简报深入探讨了自动化AI研究的最新进展，指出人工智能系统正趋向于能够自主进行研发与构建，并分析了这种自我迭代能力对未来的深远影响。通过对arXiv论文及公开信息的综合分析，作者认为AI系统开始构建自身将彻底改变技术的演进速度，并对未来技术生态和人类研究者的传统角色产生根本性挑战。",
+          "tags": [
+            "自动化研究",
+            "AI演进",
+            "技术趋势"
+          ],
+          "url": "https://jack-clark.net/2026/05/04/import-ai-455-automating-ai-research/",
+          "source": "jack-clark.net",
+          "category": "Commentary",
+          "published": "2026-05-04T12:32:09+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨AI自我迭代的终极趋势，具有前瞻性意义。",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "jack-clark.net"
+        },
+        {
+          "title_zh": "Appfigures 报告显示图像 AI 模型更新对应用下载量的拉动作用已显著超越聊天机器人升级",
+          "title_orig": "Image AI models now drive app growth, beating chatbot upgrades",
+          "summary": "Appfigures最新研究发现，图像AI模型的发布能带来比聊天机器人升级高出6.5倍的下载量增长，这表明视觉生成技术已成为移动端获客的核心驱动力。然而，尽管流量激增显著，多数应用却未能将这些新用户有效转化为实际收入，开发者在追求用户规模增长的同时，亟需深入探索并优化商业化路径以实现可持续盈利。",
+          "tags": [
+            "AI 应用",
+            "移动市场",
+            "图像生成"
+          ],
+          "url": "https://techcrunch.com/2026/05/04/image-ai-models-now-drive-app-growth-beating-chatbot-upgrades/",
+          "source": "techcrunch.com",
+          "category": "Media",
+          "published": "2026-05-04T19:12:49+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示了 AI 驱动应用增长的最新趋势与变现挑战。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "techcrunch.com"
+        },
+        {
+          "title_zh": "一项曾被广泛引用的 ChatGPT 教育应用研究因数据异常被撤稿，引发学术界关注",
+          "title_orig": "Influential study touting ChatGPT in education retracted over red flags",
+          "summary": "一份曾被引用数百次、旨在宣传 ChatGPT 在教育领域具有积极作用的影响力研究，因被发现存在严重数据红旗和缺陷而被正式撤回。该事件引发了学术界对 AI 相关研究质量的广泛担忧，提醒教育工作者和政策制定者在参考 AI 效能证据时需保持审慎，并强调了在人工智能技术热潮中坚持严谨科研审查与同行评议的重要性。",
+          "tags": [
+            "学术诚信",
+            "ChatGPT",
+            "教育研究"
+          ],
+          "url": "https://arstechnica.com/ai/2026/05/influential-study-touting-chatgpt-in-education-retracted-over-red-flags/",
+          "source": "arstechnica.com",
+          "category": "Media",
+          "published": "2026-05-04T19:03:39+00:00",
+          "cve_ids": [],
+          "selection_reason": "警示了 AI 研究领域的学术泡沫风险及对教育决策的影响。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "arstechnica.com"
+        },
+        {
           "title_zh": "Roomba 扫地机器人创始人 Colin Angle 创办新公司并推出主打情感陪伴的犬型家用机器人",
           "title_orig": "The creator of Roomba is back with a furry robot companion",
           "summary": "曾推动五千万台家用机器人普及的Roomba创作者Colin Angle成立了新公司，并推出首款旨在提供情感陪伴而非清洁功能的犬型机器人，标志着其从功能性工具向社交伴侣的转型。这款由Familiar Machines & Magic公司研发的机器人，反映了家用机器人领域在心理支持与情感交互方向上的全新探索，旨在通过先进的AI硬件技术为用户提供更深层次的社交陪伴。",
@@ -815,6 +695,126 @@
           "source_kind": "media",
           "source_label": "科技媒体",
           "source_key": "theverge.com"
+        },
+        {
+          "title_zh": "马斯克诉 OpenAI 案在加州开庭，庭审首周揭示双方关于公司初衷与资金投入的争议",
+          "title_orig": "Week one of the Musk v. Altman trial: What it was like in the room",
+          "summary": "埃隆·马斯克与萨姆·奥特曼在加州奥克兰法院正式展开对垒，马斯克起诉 OpenAI 并指控其背离了最初作为非营利组织的使命。庭审首周聚焦于马斯克早期对 OpenAI 投入的数百万美元资金，以及双方在公司治理结构和商业化路径上的核心分歧，此案的最终裁决将对整个人工智能行业的开源准则与商业竞争格局产生深远的影响。",
+          "tags": [
+            "马斯克",
+            "OpenAI",
+            "法律诉讼"
+          ],
+          "url": "https://www.technologyreview.com/2026/05/04/1136826/week-one-of-the-musk-v-altman-trial-what-it-was-like-in-the-room/",
+          "source": "technologyreview.com",
+          "category": "Media",
+          "published": "2026-05-04T15:51:27+00:00",
+          "cve_ids": [],
+          "selection_reason": "AI 行业最具影响力的法律纠纷，关乎行业未来治理模式。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "technologyreview.com"
+        },
+        {
+          "title_zh": "针对医疗保健需求定制 AI 解决方案：应对老龄化与劳动力短缺的转型尝试",
+          "title_orig": "Tailoring AI solutions for health care needs",
+          "summary": "面对财务压力、劳动力短缺及人口老龄化挑战，AI开发者正致力于为医疗行业量身定制解决方案，涵盖从癌症治疗到手术辅助及流程优化等多个关键领域。这些技术旨在将宏大的转型承诺转化为实际的临床工具，帮助医疗机构在资源受限的情况下提升护理质量并减轻医护人员负担，从而应对日益增长的医疗需求与复杂的行业困境。",
+          "tags": [
+            "智慧医疗",
+            "AI应用",
+            "医疗转型"
+          ],
+          "url": "https://www.technologyreview.com/2026/05/04/1134425/tailoring-ai-solutions-for-health-care-needs/",
+          "source": "technologyreview.com",
+          "category": "Media",
+          "published": "2026-05-04T13:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨AI在医疗这一高价值且高需求领域的具体落地路径。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "technologyreview.com"
+        },
+        {
+          "title_zh": "Claude AI 实现与 Adobe、Canva 及 Blender 等创意软件连接，大幅提升多媒体创作效率",
+          "title_orig": "Claude AI connects to Adobe, Canva, Blender for creative work | ETIH EdTech News - EdTech Innovation Hub",
+          "summary": "Anthropic旗下的Claude AI现已实现与Adobe、Canva和Blender等主流创意设计工具的深度连接，支持跨平台的创作流协作与数据互通。这一重大更新允许用户通过AI智能体直接调用专业软件的各项核心功能，极大地简化了从初步构思到复杂多媒体内容生成的全流程，在显著提升设计师生产力的同时，也进一步拓展了生成式AI在专业创意领域的实际应用边界。",
+          "tags": [
+            "Claude",
+            "创意设计",
+            "生产力工具"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQRGdFWkx0WjAxZmNWbjV2STUzRlZ1eEZQWTNvMDU2dDV5TmVoNDQ5V3NXeVh6NWZMQnpCTkNwdFozc2R1c3Q0VVVMQnVnNnBZdmhhY0JaUjIyX0IxSjEyNTJzOU4tbnRtd0hZZGYyMkQzYnhjdDRYclR4dTgwMEJkYlJfaU1PTklWMmd4VXA3MG5wVHk4eGRyMUJlRHZxZHI3Y0kwQnR3Z0llWnlvSEg5VDZOa1d1WW1nZHU4UVduLUJYZE5ab1ozRmNhQXJqTGxRdm8wTENzLWZpallzTkVnVXlueWRKLTA?oc=5",
+          "source": "news.google.com",
+          "category": "Labs",
+          "published": "2026-05-04T23:30:42+00:00",
+          "cve_ids": [],
+          "selection_reason": "AI 智能体与主流设计生态的集成是创意产业的重要进展。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
+        },
+        {
+          "title_zh": "Anthropic 联手金融科技巨头 FIS 开发 AI 智能体，旨在协助银行打击洗钱等金融犯罪",
+          "title_orig": "Anthropic联手FIS开发AI智能体，帮助银行打击金融犯罪 - 华尔街日报中文网",
+          "summary": "人工智能初创公司 Anthropic 与金融服务技术公司 FIS 达成战略合作，共同开发专门用于识别和预防金融犯罪的 AI 智能体。该合作旨在利用先进的大模型技术提升银行监测可疑交易的效率，并加强对洗钱及欺诈行为的打击力度，标志着生成式 AI 在高度合规的银行业进入深度应用阶段，为金融安全提供了更智能的防御手段。",
+          "tags": [
+            "金融科技",
+            "人工智能",
+            "反洗钱"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxPNUJ0WlpnaXZEN0NWRXhNWDExT3Nrb2R1bmNQa0FnZjZ4YWJYdWdOQ3FzeTBqUmdrRTlGdWk2cGZKZUc1VGhscTlyRHdtYzFKd05MUnVmRzNCU3BzU09tWHN0eFZoU1NRRUtNUUNrQUs1Z0Ryd0hvbVBTd1FQWTFnTHBFS0tVU1FFSHA3QVhhaVN1QXpQUGo5MGpYSXBSNVJoMWR6LWllLURIM2dnVllpSnUtY0kxLXBidmpuRFkyaHBmZDlUcll5ZDVDZWVFNnY0VjlwSGdjMjhxeHJDbU90b25VMVV2QzZPbnVyREp5bG1vYm4tWXB2eXFWR2RxWUkwNDZDLUZ5cUZQVTJDeWdKcTlDVmxKakRGazA2b1FMQ2FQbUlvNkNmNHBIN1c4UQ?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese",
+          "published": "2026-05-04T23:20:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了生成式 AI 在金融合规与安全领域的具体落地应用。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
+        },
+        {
+          "title_zh": "大模型成功打入制造业：AI 技术在发酵罐生产场景中助力产量突破天花板",
+          "title_orig": "99.9分！大模型获制造业入场券：最难发酵罐里，AI老法师撬开产量天花板 - Sohu",
+          "summary": "大模型在制造业应用中取得突破，通过对复杂发酵罐生产过程的精准控制，成功提升了产量上限并获得99.9分的高分评价。这一案例证明了AI技术在传统工业领域具备极高的落地价值，标志着大模型正从通用领域向高门槛的精密制造场景渗透，为工业数字化转型提供了实战范本，展示了AI解决极端复杂生产难题的巨大潜力。",
+          "tags": [
+            "工业AI",
+            "智能制造",
+            "大模型落地"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxORzY2dEZUQUFlejRicVNIVElkN1FSbWxJaWVqeTVkWTVzQzF0MjVJdVZJcGotZjExUEFDcHVhamhlUVkweGcwZDhoTVBvcmRoLXdaWDhXN2ZMQ0JtY3ZhZ0tCeGtVbXJ4NTA3YmF6c19jUEtnaGIxd2ZidHc1c05lU3QwRnpiSG5BbGRMSg?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese",
+          "published": "2026-05-04T22:51:03+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了大模型在传统制造业垂直领域的实际应用成效。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
+        },
+        {
+          "title_zh": "开源项目“理论神话”试图逆向工程 Anthropic 公司旗下最具风险的 AI 模型",
+          "title_orig": "Someone Built an Open-Source 'Theoretical Mythos' to Reverse-Engineer Anthropic's Most Dangerous AI - Yahoo Tech",
+          "summary": "有开发者构建并发布了一个名为“理论神话”的开源项目，旨在通过逆向工程手段分析Anthropic公司开发的最具风险的人工智能模型内部机制。该行动反映了开源社区对闭源顶尖模型透明度的探索尝试，同时也引发了关于前沿AI模型安全性、逆向工程合法性以及闭源系统潜在风险的广泛讨论，成为业界关注的焦点。",
+          "tags": [
+            "逆向工程",
+            "Anthropi",
+            "开源安全"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMGFKaE9UYUZ1bjdXX3RBUkhMaHI3MUJCZ0FqNXFtN25XUUUySVhSRzJka0Jsd0ZnbUxHMnNZOTBrMEFnMkszQnhRazF2aUxkQU52X1k4b2dESmNubWpnZUtkSUVkcFpKbVhWQnEzT19qLTB1VzBUcjZhMFZScU5kOEc0T2NKSDNWRTJCN3UxNVZmbWFsWTBzbDhn?oc=5",
+          "source": "news.google.com",
+          "category": "Labs",
+          "published": "2026-05-04T22:31:02+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及顶级AI实验室核心模型的安全性与开源对抗。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
         },
         {
           "title_zh": "深度解析 AI 大模型领域存在的“中文税”现象：探讨中文 Token 消耗成本高于英文的底层原因",
@@ -841,16 +841,16 @@
       "selected_count": 20,
       "selection_stats": {
         "total": 20,
-        "google_news": 5,
-        "aggregator": 5,
-        "chinese": 3,
-        "tier_t2": 14,
-        "kind_google_news": 5,
         "direct": 15,
         "tier_t1": 6,
         "kind_official": 6,
+        "tier_t2": 14,
+        "kind_expert": 4,
         "kind_media": 5,
-        "kind_expert": 4
+        "google_news": 5,
+        "aggregator": 5,
+        "kind_google_news": 5,
+        "chinese": 3
       },
       "clustering_stats": {},
       "generated_at": "2026-05-04T23:38:42.311646Z"
@@ -858,86 +858,6 @@
     "finance": {
       "display_name": "金融科技",
       "items": [
-        {
-          "title_zh": "支付宝在中国市场正式推出AI智能体支付功能，引领移动支付进入人工智能自动化新阶段",
-          "title_orig": "Alipay launches AI agent payments in China - Tech in Asia",
-          "summary": "支付宝在中国境内正式上线了AI智能体支付功能，允许人工智能代理在获得授权后自动完成支付流程，标志着支付交互从手动操作向自动化决策的重大转变。这一创新将深刻影响未来智能硬件、车载系统及各类自动化服务场景的商业闭环，在提升支付便捷性的同时，也为开发者和用户在物联网时代的金融交互提供了全新的技术支撑与应用可能。",
-          "tags": [
-            "支付宝",
-            "AI支付",
-            "人工智能"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5tLS1lVWRVNG52UjJzQTNDSV85NGlpN2VCSXBlLUptWUUtS09Ud0RuZmdVNDVmdlZmRDczbzFxYVpneElPeERrNnU1MWl2WGxUMmxmd0hUcFZDOWI0SS11THJmWFdHLVRSdy10dGFHeVI1ZFJnX0ZKVG16YnliWWM?oc=5",
-          "source": "news.google.com",
-          "category": "Digital Wallets",
-          "published": "2026-04-21T09:54:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了支付技术从手动向AI自动化的代际跨越。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
-        {
-          "title_zh": "微信支付持续扩大跨境业务版图，将二维码支付服务正式拓展至五个亚洲国家",
-          "title_orig": "WeChat Pay expands QR payments to 5 Asian countries - Tech in Asia",
-          "summary": "微信支付近期宣布将其二维码支付业务进一步扩展至五个亚洲国家，旨在为出境游客和当地商户提供更便捷的跨境结算服务，并持续加强在东南亚及周边地区的市场渗透率。此举不仅反映了中国移动支付标准在国际化进程中的持续发力，也通过技术输出促进了区域性数字经济的深度融合，对构建互联互通的亚洲支付生态系统具有重要战略意义。",
-          "tags": [
-            "微信支付",
-            "跨境支付",
-            "二维码"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMzB5TmJndVFsM3dkRFlIcG1PdXZneVV1ZFFQSWJkeHlkR3lrYlBXeFpZUkExcGdpUUQtVThidDVCWVk3M1EzaGVJaFcyWTAwMlo4ZG55Z3E3OVlOVmVVVXRtVDlTdDdLTFRRYTdrSVJQQWRYY1FBQ05EMWdTVEw2Y1ZKOVk5VDA?oc=5",
-          "source": "news.google.com",
-          "category": "Digital Wallets",
-          "published": "2026-04-24T07:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "体现了中国支付巨头在亚洲市场的国际化扩张进程。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
-        {
-          "title_zh": "中国支付技术正低调重塑东南亚金融格局，推动区域支付体系逐步脱离对美元的依赖",
-          "title_orig": "How China is quietly reshaping Southeast Asia’s payments beyond the US dollar - South China Morning Post",
-          "summary": "中国支付巨头通过技术输出和跨境合作，正在东南亚地区悄然构建一套超越美元体系的支付网络，通过提升区域内本币结算效率改变了当地的金融基础设施。这种趋势在削弱传统美元霸权于零售支付领域影响力的同时，也显著增强了东南亚国家的金融主权，对推动区域经济一体化以及构建多元化的国际货币结算体系产生了深远且持久的影响。",
-          "tags": [
-            "东南亚支付",
-            "去美元化",
-            "金融科技"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVi1kRUpXeTc3ZFR3V0ZvTF9IYnpEMG5fTmdoeUNYM3dEdzJFR0dJRkJCaGFBU1VWUVJZZXBqZExPZ1V6T3BxMUMyS3dkY1kyUHlVUUNYTklhV19HaE5YNmR1NDZPdDdoTHlvZ1VnR0paX2JtLTA5VV9kOTc3MW5hc2tsZUdSY3k4WThENDVMWE9SQ0VsWjAtYjRhS3NzazltS0t3WllSeFJUVGkxY2VfbnBadUdTc18tRGZfTjZodFR3T3PSAcMBQVVfeXFMTW50VFhGWDFUQ2RCTjZYYldRUVhkcG1wQjRBQUdVaXJLbEQzWFFsMWVuS0V1VVFyTXFzQUY4azZld1VxVXJyR1pzeVVvR1Z4eTA4S2w0LXBjdXpUVGhYRVZ0Sy1zUnBJQXJBVTZXRkFDLW9RN1cxX2dUbHpSRW85dnJwQTQyTHdwa1d6NXhVM3k0aVJpM1dfQUNxZ2pudjNwbGg1dC1pWjJnN2dWVExWN2hIM3puOWZycHc5ZU1jTjRzLWhR?oc=5",
-          "source": "news.google.com",
-          "category": "Digital Wallets",
-          "published": "2026-05-04T09:00:26+00:00",
-          "cve_ids": [],
-          "selection_reason": "探讨了支付技术对地缘政治和国际金融秩序的深层影响。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
-        {
-          "title_zh": "斯里兰卡商业银行发起全岛推广活动，旨在提升LankaPay JCB借记卡的普及率与使用率",
-          "title_orig": "ComBank unveils islandwide drive to boost LankaPay JCB debit card adoption | Daily Mirror - Sri Lanka - newspaper - Magzter",
-          "summary": "斯里兰卡商业银行近期启动了一项覆盖全国的推广计划，重点推动LankaPay与JCB合作的借记卡在当地的普及，旨在通过强化本土支付网络与国际卡组织的联系来优化金融环境。该举措不仅为斯里兰卡民众提供了更多元化、更具国际兼容性的支付选择，还通过技术升级助力当地金融普惠，是该国支付基础设施迈向现代化与国际化的重要里程碑。",
-          "tags": [
-            "斯里兰卡",
-            "JCB",
-            "借记卡"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUzhCY2Q3REtBVnE5M01JeHBHa0JVN250VUVILWNXZzduaGs5YzVWMDEzT3l1bkZtdWd6bFNVMnBxdXpwQkI5UGhQZTRHRGNhUmdMdTU0anFKRFJybnlYczhvZmsxcFBMQlJ2YWExUUtIRVZkdndId0YwcWxkcU0yRmpXeENoaXdwLVQ0TE9ZMHN0TUpSQTA1Mmg5bmZWVnBIUzk4TEJTLTNwR21rLUI5OVZPenVtYzc0VW9oV2dyS2pXSk5vLTlXWkpPTUpwbFFZQ0FFOTJB?oc=5",
-          "source": "news.google.com",
-          "category": "Card Networks",
-          "published": "2026-05-04T00:16:13+00:00",
-          "cve_ids": [],
-          "selection_reason": "反映了新兴市场中本土支付网络与国际卡组织的合作动态。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
         {
           "title_zh": "美国运通宣布以15亿美元价格出售其在商务旅行服务公司GBT的近三分之一股权",
           "title_orig": "Amex to sell travel unit stake for $1.5B",
@@ -953,46 +873,6 @@
           "published": "2026-05-04T20:55:00+00:00",
           "cve_ids": [],
           "selection_reason": "涉及支付巨头的重大资产剥离与战略重心调整。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "paymentsdive.com"
-        },
-        {
-          "title_zh": "美国多州总检察长联合警告支付服务商，严厉打击涉及电子烟及尼古丁销售的违规支付",
-          "title_orig": "State AGs target e-cigarette payments",
-          "summary": "美国多位州总检察长向支付服务提供商发出警示，指出其处理的烟草和尼古丁销售业务可能违反了州级或联邦法律，要求机构加强合规审查。此举意味着监管机构正试图通过切断资金链的方式加强对电子烟行业的管控，支付机构因此面临更高的法律风险与审核压力，必须严格核查相关商户的经营资质，以确保在日益严苛的监管环境下实现合规运营。",
-          "tags": [
-            "支付监管",
-            "电子烟",
-            "合规风险"
-          ],
-          "url": "https://www.paymentsdive.com/news/state-ags-target-e-cigarette-payments/819201/",
-          "source": "paymentsdive.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-04T14:48:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了监管机构利用支付渠道进行行业治理的新趋势。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "paymentsdive.com"
-        },
-        {
-          "title_zh": "研究揭示中小企业采用嵌入式支付的主要障碍，注册与首笔交易间的时间差成关键",
-          "title_orig": "What keeps SMBs from using embedded payments",
-          "summary": "最新研究发现，中小企业在采用嵌入式支付时面临的主要挑战是注册到完成首笔交易之间的时间跨度过长，这一滞后现象严重影响了企业对新支付技术的接受度。该发现提示支付服务商必须重新设计入驻流程并大幅缩短激活周期，因为更快的转化速度和更流畅的体验是提升中小企业用户粘性、推动嵌入式金融在 B2B 领域广泛普及的核心驱动力。",
-          "tags": [
-            "中小企业",
-            "嵌入式支付",
-            "金融科技"
-          ],
-          "url": "https://www.paymentsdive.com/spons/what-keeps-smbs-from-using-embedded-payments/818644/",
-          "source": "paymentsdive.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-04T09:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "为支付平台优化B端用户体验提供了关键的市场洞察。",
           "source_tier": "t2",
           "source_kind": "media",
           "source_label": "金融媒体",
@@ -1057,18 +937,138 @@
           "source_kind": "media",
           "source_label": "金融媒体",
           "source_key": "pymnts.com"
+        },
+        {
+          "title_zh": "美国多州总检察长联合警告支付服务商，严厉打击涉及电子烟及尼古丁销售的违规支付",
+          "title_orig": "State AGs target e-cigarette payments",
+          "summary": "美国多位州总检察长向支付服务提供商发出警示，指出其处理的烟草和尼古丁销售业务可能违反了州级或联邦法律，要求机构加强合规审查。此举意味着监管机构正试图通过切断资金链的方式加强对电子烟行业的管控，支付机构因此面临更高的法律风险与审核压力，必须严格核查相关商户的经营资质，以确保在日益严苛的监管环境下实现合规运营。",
+          "tags": [
+            "支付监管",
+            "电子烟",
+            "合规风险"
+          ],
+          "url": "https://www.paymentsdive.com/news/state-ags-target-e-cigarette-payments/819201/",
+          "source": "paymentsdive.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-04T14:48:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了监管机构利用支付渠道进行行业治理的新趋势。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "paymentsdive.com"
+        },
+        {
+          "title_zh": "研究揭示中小企业采用嵌入式支付的主要障碍，注册与首笔交易间的时间差成关键",
+          "title_orig": "What keeps SMBs from using embedded payments",
+          "summary": "最新研究发现，中小企业在采用嵌入式支付时面临的主要挑战是注册到完成首笔交易之间的时间跨度过长，这一滞后现象严重影响了企业对新支付技术的接受度。该发现提示支付服务商必须重新设计入驻流程并大幅缩短激活周期，因为更快的转化速度和更流畅的体验是提升中小企业用户粘性、推动嵌入式金融在 B2B 领域广泛普及的核心驱动力。",
+          "tags": [
+            "中小企业",
+            "嵌入式支付",
+            "金融科技"
+          ],
+          "url": "https://www.paymentsdive.com/spons/what-keeps-smbs-from-using-embedded-payments/818644/",
+          "source": "paymentsdive.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-04T09:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "为支付平台优化B端用户体验提供了关键的市场洞察。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "paymentsdive.com"
+        },
+        {
+          "title_zh": "中国支付技术正低调重塑东南亚金融格局，推动区域支付体系逐步脱离对美元的依赖",
+          "title_orig": "How China is quietly reshaping Southeast Asia’s payments beyond the US dollar - South China Morning Post",
+          "summary": "中国支付巨头通过技术输出和跨境合作，正在东南亚地区悄然构建一套超越美元体系的支付网络，通过提升区域内本币结算效率改变了当地的金融基础设施。这种趋势在削弱传统美元霸权于零售支付领域影响力的同时，也显著增强了东南亚国家的金融主权，对推动区域经济一体化以及构建多元化的国际货币结算体系产生了深远且持久的影响。",
+          "tags": [
+            "东南亚支付",
+            "去美元化",
+            "金融科技"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVi1kRUpXeTc3ZFR3V0ZvTF9IYnpEMG5fTmdoeUNYM3dEdzJFR0dJRkJCaGFBU1VWUVJZZXBqZExPZ1V6T3BxMUMyS3dkY1kyUHlVUUNYTklhV19HaE5YNmR1NDZPdDdoTHlvZ1VnR0paX2JtLTA5VV9kOTc3MW5hc2tsZUdSY3k4WThENDVMWE9SQ0VsWjAtYjRhS3NzazltS0t3WllSeFJUVGkxY2VfbnBadUdTc18tRGZfTjZodFR3T3PSAcMBQVVfeXFMTW50VFhGWDFUQ2RCTjZYYldRUVhkcG1wQjRBQUdVaXJLbEQzWFFsMWVuS0V1VVFyTXFzQUY4azZld1VxVXJyR1pzeVVvR1Z4eTA4S2w0LXBjdXpUVGhYRVZ0Sy1zUnBJQXJBVTZXRkFDLW9RN1cxX2dUbHpSRW85dnJwQTQyTHdwa1d6NXhVM3k0aVJpM1dfQUNxZ2pudjNwbGg1dC1pWjJnN2dWVExWN2hIM3puOWZycHc5ZU1jTjRzLWhR?oc=5",
+          "source": "news.google.com",
+          "category": "Digital Wallets",
+          "published": "2026-05-04T09:00:26+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨了支付技术对地缘政治和国际金融秩序的深层影响。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
+        },
+        {
+          "title_zh": "斯里兰卡商业银行发起全岛推广活动，旨在提升LankaPay JCB借记卡的普及率与使用率",
+          "title_orig": "ComBank unveils islandwide drive to boost LankaPay JCB debit card adoption | Daily Mirror - Sri Lanka - newspaper - Magzter",
+          "summary": "斯里兰卡商业银行近期启动了一项覆盖全国的推广计划，重点推动LankaPay与JCB合作的借记卡在当地的普及，旨在通过强化本土支付网络与国际卡组织的联系来优化金融环境。该举措不仅为斯里兰卡民众提供了更多元化、更具国际兼容性的支付选择，还通过技术升级助力当地金融普惠，是该国支付基础设施迈向现代化与国际化的重要里程碑。",
+          "tags": [
+            "斯里兰卡",
+            "JCB",
+            "借记卡"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUzhCY2Q3REtBVnE5M01JeHBHa0JVN250VUVILWNXZzduaGs5YzVWMDEzT3l1bkZtdWd6bFNVMnBxdXpwQkI5UGhQZTRHRGNhUmdMdTU0anFKRFJybnlYczhvZmsxcFBMQlJ2YWExUUtIRVZkdndId0YwcWxkcU0yRmpXeENoaXdwLVQ0TE9ZMHN0TUpSQTA1Mmg5bmZWVnBIUzk4TEJTLTNwR21rLUI5OVZPenVtYzc0VW9oV2dyS2pXSk5vLTlXWkpPTUpwbFFZQ0FFOTJB?oc=5",
+          "source": "news.google.com",
+          "category": "Card Networks",
+          "published": "2026-05-04T00:16:13+00:00",
+          "cve_ids": [],
+          "selection_reason": "反映了新兴市场中本土支付网络与国际卡组织的合作动态。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
+        },
+        {
+          "title_zh": "微信支付持续扩大跨境业务版图，将二维码支付服务正式拓展至五个亚洲国家",
+          "title_orig": "WeChat Pay expands QR payments to 5 Asian countries - Tech in Asia",
+          "summary": "微信支付近期宣布将其二维码支付业务进一步扩展至五个亚洲国家，旨在为出境游客和当地商户提供更便捷的跨境结算服务，并持续加强在东南亚及周边地区的市场渗透率。此举不仅反映了中国移动支付标准在国际化进程中的持续发力，也通过技术输出促进了区域性数字经济的深度融合，对构建互联互通的亚洲支付生态系统具有重要战略意义。",
+          "tags": [
+            "微信支付",
+            "跨境支付",
+            "二维码"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMzB5TmJndVFsM3dkRFlIcG1PdXZneVV1ZFFQSWJkeHlkR3lrYlBXeFpZUkExcGdpUUQtVThidDVCWVk3M1EzaGVJaFcyWTAwMlo4ZG55Z3E3OVlOVmVVVXRtVDlTdDdLTFRRYTdrSVJQQWRYY1FBQ05EMWdTVEw2Y1ZKOVk5VDA?oc=5",
+          "source": "news.google.com",
+          "category": "Digital Wallets",
+          "published": "2026-04-24T07:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "体现了中国支付巨头在亚洲市场的国际化扩张进程。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
+        },
+        {
+          "title_zh": "支付宝在中国市场正式推出AI智能体支付功能，引领移动支付进入人工智能自动化新阶段",
+          "title_orig": "Alipay launches AI agent payments in China - Tech in Asia",
+          "summary": "支付宝在中国境内正式上线了AI智能体支付功能，允许人工智能代理在获得授权后自动完成支付流程，标志着支付交互从手动操作向自动化决策的重大转变。这一创新将深刻影响未来智能硬件、车载系统及各类自动化服务场景的商业闭环，在提升支付便捷性的同时，也为开发者和用户在物联网时代的金融交互提供了全新的技术支撑与应用可能。",
+          "tags": [
+            "支付宝",
+            "AI支付",
+            "人工智能"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5tLS1lVWRVNG52UjJzQTNDSV85NGlpN2VCSXBlLUptWUUtS09Ud0RuZmdVNDVmdlZmRDczbzFxYVpneElPeERrNnU1MWl2WGxUMmxmd0hUcFZDOWI0SS11THJmWFdHLVRSdy10dGFHeVI1ZFJnX0ZKVG16YnliWWM?oc=5",
+          "source": "news.google.com",
+          "category": "Digital Wallets",
+          "published": "2026-04-21T09:54:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了支付技术从手动向AI自动化的代际跨越。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
         }
       ],
       "raw_count": 13,
       "selected_count": 10,
       "selection_stats": {
         "total": 10,
+        "direct": 6,
+        "tier_t2": 10,
+        "kind_media": 6,
         "google_news": 4,
         "aggregator": 4,
-        "tier_t2": 10,
-        "kind_google_news": 4,
-        "direct": 6,
-        "kind_media": 6
+        "kind_google_news": 4
       },
       "clustering_stats": {},
       "generated_at": "2026-05-04T23:39:05.036868Z"

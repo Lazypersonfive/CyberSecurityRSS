@@ -5,88 +5,44 @@
       "display_name": "安全",
       "items": [
         {
-          "title_zh": "Palo Alto Networks PAN-OS 身份验证门户存在严重缓冲区溢出漏洞 CVE-2026-0300",
-          "title_orig": "Critical Buffer Overflow in Palo Alto Networks PAN-OS User-ID Authentication Portal (CVE-2026-0300)",
-          "summary": "Palo Alto Networks于2026年5月发布安全公告，披露PAN-OS中存在编号为CVE-2026-0300的严重缓冲区溢出漏洞，该漏洞CVSSv4评分高达9.3且已确认在野外被利用。该漏洞主要影响PA系列和VM系列防火墙的User-ID身份验证门户，允许未经身份验证的远程攻击者触发溢出，而Prisma Access、Cloud NGFW及Panorama等组件则不受此漏洞影响。 Palo Alto Networks PAN-OS 身份验证门户存在严重缓冲区溢出漏洞 CVE-2026-0300。该条来自rapid7.com，归类于OfficialAdvisories，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合。",
+          "title_zh": "微软研究披露 AI 代理框架中的提示注入可导致远程代码执行漏洞",
+          "title_orig": "When prompts become shells: RCE vulnerabilities in AI agent frameworks",
+          "summary": "微软安全团队的最新研究揭示了 AI 代理框架中存在的一类新型安全威胁，即通过提示注入攻击实现远程代码执行。研究详细介绍了攻击者如何利用精心构造的提示词操纵 AI 代理的行为，从而在目标系统上执行恶意指令。该研究强调了 AI 框架在处理外部输入时的脆弱性，并提供了相应的加固建议，旨在提升 AI 代理的安全性。",
           "tags": [
-            "缓冲区溢出",
-            "PAN-OS",
-            "野外利用"
+            "AI安全",
+            "提示注入",
+            "RCE"
           ],
-          "url": "https://www.rapid7.com/blog/post/etr-critical-buffer-overflow-in-palo-alto-networks-pan-os-user-id-authentication-portal-cve-2026-0300",
-          "source": "rapid7.com",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
+          "source": "microsoft.com",
           "category": "OfficialAdvisories",
-          "published": "2026-05-06T13:27:31+00:00",
-          "cve_ids": [
-            "CVE-2026-0300"
-          ],
-          "selection_reason": "高评分关键基础设施漏洞，且已有活跃攻击，技术风险极高。",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "安全厂商",
-          "source_key": "rapid7.com"
+          "published": "2026-05-07T20:22:39+00:00",
+          "cve_ids": [],
+          "selection_reason": "关注 AI 基础设施安全，揭示了从提示词到系统权限的攻击路径",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "microsoft.com"
         },
         {
-          "title_zh": "Dirtyfrag：Linux 内核通用本地权限提升漏洞研究",
-          "title_orig": "Dirtyfrag: Universal Linux LPE",
-          "summary": "Dirtyfrag被披露为一种通用的Linux本地权限提升技术，主要涉及内核内存管理或碎片处理机制中的安全缺陷，允许低权限本地用户绕过系统限制并获取最高root权限。目前该漏洞的技术细节已在oss-security邮件列表公开并引发社区广泛讨论，虽然原文未明确具体的CVE编号，但其通用性意味着大量Linux发行版可能面临安全风险，需引起系统管理员的高度警惕。",
+          "title_zh": "Cloudflare 披露针对 Linux 内核权限提升漏洞 Copy Fail 的响应过程",
+          "title_orig": "How Cloudflare responded to the “Copy Fail” Linux vulnerability",
+          "summary": "Cloudflare 详细介绍了其应对 Linux 内核关键权限提升漏洞的处置流程，该漏洞被公开披露后可能威胁全球服务器安全。Cloudflare 的安全与工程团队通过在全球节点进行检测、调查与缓解，成功在未对客户造成影响的情况下完成了漏洞修复。文章重点分享了在大规模基础设施中快速响应内核级漏洞的实战经验，确认目前无恶意利用迹象。",
           "tags": [
             "Linux内核",
-            "权限提升",
-            "漏洞研究"
+            "提权漏洞",
+            "应急响应"
           ],
-          "url": "https://www.openwall.com/lists/oss-security/2026/05/07/8",
-          "source": "openwall.com",
-          "category": "AI",
-          "published": "2026-05-07T19:21:32+00:00",
-          "cve_ids": [],
-          "selection_reason": "通用型内核提权技术，对 Linux 系统安全具有广泛的潜在影",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "安全社区",
-          "source_key": "openwall.com"
-        },
-        {
-          "title_zh": "Ivanti Endpoint Manager Mobile 存在被零日攻击利用的高危远程代码执行漏洞",
-          "title_orig": "Ivanti warns of new EPMM flaw exploited in zero-day attacks",
-          "summary": "Ivanti近日向用户发出警告，其Endpoint Manager Mobile产品中存在一个高危远程代码执行漏洞，且该漏洞已被攻击者作为零日漏洞在实际攻击中利用。该漏洞源于输入验证不当，攻击者可借此在受影响的移动设备管理平台上执行任意指令，目前CISA已将此漏洞CVE-2026-6973加入已知利用漏洞目录，并要求相关联邦机构在规定期限内完成补丁修复以防范风险。",
-          "tags": [
-            "Ivanti",
-            "远程代码执行",
-            "零日攻击"
-          ],
-          "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-new-epmm-flaw-exploited-in-zero-day-attacks/",
-          "source": "bleepingcomputer.com",
+          "url": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+          "source": "blog.cloudflare.com",
           "category": "OfficialAdvisories",
-          "published": "2026-05-07T15:20:51+00:00",
+          "published": "2026-05-07T13:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "涉及移动管理平台的零日攻击，已被 CISA KEV 收录，威",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "bleepingcomputer.com"
-        },
-        {
-          "title_zh": "Next.js v16.2.4 安全漏洞 CVE-2026-23870 逆向工程 PoC 集合发布",
-          "title_orig": "Exploit for CVE-2026-23870",
-          "summary": "该项目通过ProjectDiscovery的Neo工具对Next.js v16.2.5版本中修复的安全缺陷进行了深度逆向工程，并公开发布了针对CVE-2026-23870等漏洞的PoC利用代码集合。这些资源详细展示了漏洞的触发路径与利用原理，旨在帮助研究人员理解现代Web框架的安全缺陷，是针对该版本Next.js进行漏洞复现、安全分析以及防御加固工作的重要参考资料。 Next.js v16.2.4 安全漏洞 CVE-2026-23870 逆向工程 PoC 集合发布。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影。",
-          "tags": [
-            "Next.js",
-            "PoC",
-            "逆向工程"
-          ],
-          "url": "https://vulners.com/githubexploit/146F34D4-FCEF-5324-8CFE-5AF0750377F4?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-07T23:00:40+00:00",
-          "cve_ids": [
-            "CVE-2026-23870"
-          ],
-          "selection_reason": "知名 Web 框架的漏洞复现，对前端安全研究和防御有实战价值",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com"
+          "selection_reason": "顶级互联网基础设施厂商的漏洞响应实践，具有防御参考价值。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "blog.cloudflare.com"
         },
         {
           "title_zh": "美国网络安全和基础设施安全局（CISA）将 Ivanti 漏洞加入已知被利用漏洞目录，该漏洞存在输入验证不当风险",
@@ -109,26 +65,24 @@
           "source_key": "cisa.gov"
         },
         {
-          "title_zh": "利用 CVE-2025-48804 降级攻击在 5 分钟内绕过 Windows Bitlocker 加密",
-          "title_orig": "Bypassing Bitlocker under 5 min using downgrade attack on CVE-2025-48804",
-          "summary": "安全研究人员展示了利用CVE-2025-48804漏洞实施降级攻击的方法，能够在不到5分钟的时间内成功绕过Windows系统的Bitlocker磁盘加密保护。该攻击通过强制系统回退到存在已知缺陷的旧版本组件，从而规避了现代加密防御机制，这种方式主要威胁到具有物理接触权限或引导控制权的设备，揭示了固件与操作系统在协同防御逻辑中存在的薄弱环节，需引起硬件厂商重视。",
+          "title_zh": "MAXHUB Pivot 客户端应用存在信息泄露与拒绝服务漏洞",
+          "title_orig": "MAXHUB Pivot Client Application",
+          "summary": "MAXHUB Pivot客户端应用被曝存在高危安全漏洞，成功利用该漏洞的攻击者不仅可以以明文形式非法获取租户的电子邮件地址及相关关联敏感信息，还可能通过特定手段触发拒绝服务状态。该漏洞的CVSS风险评分高达7.3分，受影响的设备用户应尽快采取防护措施，以防止因弱加密或逻辑缺陷导致的敏感数据泄露及业务系统停摆风险。",
           "tags": [
-            "Bitlocke",
-            "降级攻击",
-            "加密绕过"
+            "信息泄露",
+            "拒绝服务",
+            "工业控制"
           ],
-          "url": "https://www.reddit.com/r/Pentesting/comments/1t6ck0y/bypassing_bitlocker_under_5_min_using_downgrade/",
-          "source": "reddit.com",
-          "category": "RedTeam",
-          "published": "2026-05-07T14:41:31+00:00",
-          "cve_ids": [
-            "CVE-2025-48804"
-          ],
-          "selection_reason": "展示了针对硬件加密的实战绕过技巧，对红蓝对抗具有指导意义。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "社区",
-          "source_key": "reddit.com"
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-127-01",
+          "source": "cisa.gov",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-07T12:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "CISA 官方预警，涉及企业协作工具的安全性。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官方通告",
+          "source_key": "cisa.gov"
         },
         {
           "title_zh": "Solana Agave 虚拟机加密系统调用漏洞深度技术分析",
@@ -151,6 +105,87 @@
           "source_key": "fuzzinglabs.com"
         },
         {
+          "title_zh": "Palo Alto Networks PAN-OS 身份验证门户存在严重缓冲区溢出漏洞 CVE-2026-0300",
+          "title_orig": "Critical Buffer Overflow in Palo Alto Networks PAN-OS User-ID Authentication Portal (CVE-2026-0300)",
+          "summary": "Palo Alto Networks于2026年5月发布安全公告，披露PAN-OS中存在编号为CVE-2026-0300的严重缓冲区溢出漏洞，该漏洞CVSSv4评分高达9.3且已确认在野外被利用。该漏洞主要影响PA系列和VM系列防火墙的User-ID身份验证门户，允许未经身份验证的远程攻击者触发溢出，而Prisma Access、Cloud NGFW及Panorama等组件则不受此漏洞影响。 Palo Alto Networks PAN-OS 身份验证门户存在严重缓冲区溢出漏洞 CVE-2026-0300。该条来自rapid7.com，归类于OfficialAdvisories，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合。",
+          "tags": [
+            "缓冲区溢出",
+            "PAN-OS",
+            "野外利用"
+          ],
+          "url": "https://www.rapid7.com/blog/post/etr-critical-buffer-overflow-in-palo-alto-networks-pan-os-user-id-authentication-portal-cve-2026-0300",
+          "source": "rapid7.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-06T13:27:31+00:00",
+          "cve_ids": [
+            "CVE-2026-0300"
+          ],
+          "selection_reason": "高评分关键基础设施漏洞，且已有活跃攻击，技术风险极高。",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "安全厂商",
+          "source_key": "rapid7.com"
+        },
+        {
+          "title_zh": "PCPJack 凭据窃取框架利用 5 个漏洞在云系统中实现类蠕虫传播",
+          "title_orig": "PCPJack Credential Stealer Exploits 5 CVEs to Spread Worm-Like Across Cloud Systems",
+          "summary": "安全研究人员发现了一个名为 PCPJack 的新型凭据窃取工具集，该工具专门针对暴露在公网的云基础设施。它通过利用 5 个已知漏洞在云环境、容器及开发服务中进行类蠕虫式的自动化传播，旨在收割各类服务凭据并通过攻击者控制的设施外发数据。该框架还会清理环境中与 TeamPCP 相关的痕迹，表现出较强的对抗性与持久化特征。",
+          "tags": [
+            "云安全",
+            "凭据窃取",
+            "蠕虫攻击"
+          ],
+          "url": "https://thehackernews.com/2026/05/pcpjack-credential-stealer-exploits-5.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-07T17:45:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "该工具集展示了针对云原生环境的自动化攻击趋势。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "thehackernews.com"
+        },
+        {
+          "title_zh": "Ivanti Endpoint Manager Mobile 存在被零日攻击利用的高危远程代码执行漏洞",
+          "title_orig": "Ivanti warns of new EPMM flaw exploited in zero-day attacks",
+          "summary": "Ivanti近日向用户发出警告，其Endpoint Manager Mobile产品中存在一个高危远程代码执行漏洞，且该漏洞已被攻击者作为零日漏洞在实际攻击中利用。该漏洞源于输入验证不当，攻击者可借此在受影响的移动设备管理平台上执行任意指令，目前CISA已将此漏洞CVE-2026-6973加入已知利用漏洞目录，并要求相关联邦机构在规定期限内完成补丁修复以防范风险。",
+          "tags": [
+            "Ivanti",
+            "远程代码执行",
+            "零日攻击"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-new-epmm-flaw-exploited-in-zero-day-attacks/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-07T15:20:51+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及移动管理平台的零日攻击，已被 CISA KEV 收录，威",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "bleepingcomputer.com"
+        },
+        {
+          "title_zh": "作者重新整理个人博客并汇总发布在其他平台的文章，内容涵盖CVE-20漏洞分析等技术分享",
+          "title_orig": "My Articles",
+          "summary": "该作者近期完成了个人博客系统的重新搭建与上线工作，并计划在未来不定期发布关于网络安全及技术研究的原创性内容，旨在分享具有趣味性和深度参考价值的技术文章。目前该平台已开始收集并同步作者在其他第三方平台上发布的历史作品，其中包括针对CVE-20系列漏洞的深入分析报告，为安全研究人员提供了一个集中获取其技术见解和漏洞研究成果的新渠道。",
+          "tags": [
+            "漏洞",
+            "中文源"
+          ],
+          "url": "https://thunderjie.github.io/2099/01/01/My-Articles/",
+          "source": "thunderjie.github.io",
+          "category": "WebSecurity",
+          "published": "2099-01-01T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "原始信源高分入选",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "个人安全博客",
+          "source_key": "thunderjie.github.io"
+        },
+        {
           "title_zh": "Argo CD 存在越权漏洞 CVE-2026-42880 可导致 Kubernetes 机密数据泄露",
           "title_orig": "CVE-2026-42880",
           "summary": "GitOps工具Argo CD在3.2.0至3.3.9等多个版本中存在授权缺失与数据脱敏缺陷，导致具备只读权限的攻击者能利用ServerSideDiff端点，通过Kubernetes API的干跑机制从etcd中提取明文Secret数据。目前官方已在3.2.11和3.3.9版本中修复了此漏洞，建议所有使用该工具管理Kubernetes集群的用户尽快升级以防敏感信息泄露。 Argo CD 存在越权漏洞 CVE-2026-42880 可导致 Kubernetes 机密数据泄露。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处置动态，并结合。",
@@ -167,6 +202,28 @@
             "CVE-2026-42880"
           ],
           "selection_reason": "云原生持续交付工具的安全漏洞，直接威胁 K8s 集群的凭据安",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com"
+        },
+        {
+          "title_zh": "Next.js v16.2.4 安全漏洞 CVE-2026-23870 逆向工程 PoC 集合发布",
+          "title_orig": "Exploit for CVE-2026-23870",
+          "summary": "该项目通过ProjectDiscovery的Neo工具对Next.js v16.2.5版本中修复的安全缺陷进行了深度逆向工程，并公开发布了针对CVE-2026-23870等漏洞的PoC利用代码集合。这些资源详细展示了漏洞的触发路径与利用原理，旨在帮助研究人员理解现代Web框架的安全缺陷，是针对该版本Next.js进行漏洞复现、安全分析以及防御加固工作的重要参考资料。 Next.js v16.2.4 安全漏洞 CVE-2026-23870 逆向工程 PoC 集合发布。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影。",
+          "tags": [
+            "Next.js",
+            "PoC",
+            "逆向工程"
+          ],
+          "url": "https://vulners.com/githubexploit/146F34D4-FCEF-5324-8CFE-5AF0750377F4?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-07T23:00:40+00:00",
+          "cve_ids": [
+            "CVE-2026-23870"
+          ],
+          "selection_reason": "知名 Web 框架的漏洞复现，对前端安全研究和防御有实战价值",
           "source_tier": "t2",
           "source_kind": "community",
           "source_label": "漏洞聚合",
@@ -217,103 +274,46 @@
           "source_key": "vulners.com"
         },
         {
-          "title_zh": "微软研究披露 AI 代理框架中的提示注入可导致远程代码执行漏洞",
-          "title_orig": "When prompts become shells: RCE vulnerabilities in AI agent frameworks",
-          "summary": "微软安全团队的最新研究揭示了 AI 代理框架中存在的一类新型安全威胁，即通过提示注入攻击实现远程代码执行。研究详细介绍了攻击者如何利用精心构造的提示词操纵 AI 代理的行为，从而在目标系统上执行恶意指令。该研究强调了 AI 框架在处理外部输入时的脆弱性，并提供了相应的加固建议，旨在提升 AI 代理的安全性。",
-          "tags": [
-            "AI安全",
-            "提示注入",
-            "RCE"
-          ],
-          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/",
-          "source": "microsoft.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-07T20:22:39+00:00",
-          "cve_ids": [],
-          "selection_reason": "关注 AI 基础设施安全，揭示了从提示词到系统权限的攻击路径",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "官网",
-          "source_key": "microsoft.com"
-        },
-        {
-          "title_zh": "PCPJack 凭据窃取框架利用 5 个漏洞在云系统中实现类蠕虫传播",
-          "title_orig": "PCPJack Credential Stealer Exploits 5 CVEs to Spread Worm-Like Across Cloud Systems",
-          "summary": "安全研究人员发现了一个名为 PCPJack 的新型凭据窃取工具集，该工具专门针对暴露在公网的云基础设施。它通过利用 5 个已知漏洞在云环境、容器及开发服务中进行类蠕虫式的自动化传播，旨在收割各类服务凭据并通过攻击者控制的设施外发数据。该框架还会清理环境中与 TeamPCP 相关的痕迹，表现出较强的对抗性与持久化特征。",
-          "tags": [
-            "云安全",
-            "凭据窃取",
-            "蠕虫攻击"
-          ],
-          "url": "https://thehackernews.com/2026/05/pcpjack-credential-stealer-exploits-5.html",
-          "source": "thehackernews.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-07T17:45:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "该工具集展示了针对云原生环境的自动化攻击趋势。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "thehackernews.com"
-        },
-        {
-          "title_zh": "Cloudflare 披露针对 Linux 内核权限提升漏洞 Copy Fail 的响应过程",
-          "title_orig": "How Cloudflare responded to the “Copy Fail” Linux vulnerability",
-          "summary": "Cloudflare 详细介绍了其应对 Linux 内核关键权限提升漏洞的处置流程，该漏洞被公开披露后可能威胁全球服务器安全。Cloudflare 的安全与工程团队通过在全球节点进行检测、调查与缓解，成功在未对客户造成影响的情况下完成了漏洞修复。文章重点分享了在大规模基础设施中快速响应内核级漏洞的实战经验，确认目前无恶意利用迹象。",
+          "title_zh": "Dirtyfrag：Linux 内核通用本地权限提升漏洞研究",
+          "title_orig": "Dirtyfrag: Universal Linux LPE",
+          "summary": "Dirtyfrag被披露为一种通用的Linux本地权限提升技术，主要涉及内核内存管理或碎片处理机制中的安全缺陷，允许低权限本地用户绕过系统限制并获取最高root权限。目前该漏洞的技术细节已在oss-security邮件列表公开并引发社区广泛讨论，虽然原文未明确具体的CVE编号，但其通用性意味着大量Linux发行版可能面临安全风险，需引起系统管理员的高度警惕。",
           "tags": [
             "Linux内核",
-            "提权漏洞",
-            "应急响应"
+            "权限提升",
+            "漏洞研究"
           ],
-          "url": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
-          "source": "blog.cloudflare.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-07T13:00:00+00:00",
+          "url": "https://www.openwall.com/lists/oss-security/2026/05/07/8",
+          "source": "openwall.com",
+          "category": "AI",
+          "published": "2026-05-07T19:21:32+00:00",
           "cve_ids": [],
-          "selection_reason": "顶级互联网基础设施厂商的漏洞响应实践，具有防御参考价值。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "官网",
-          "source_key": "blog.cloudflare.com"
-        },
-        {
-          "title_zh": "MAXHUB Pivot 客户端应用存在信息泄露与拒绝服务漏洞",
-          "title_orig": "MAXHUB Pivot Client Application",
-          "summary": "MAXHUB Pivot客户端应用被曝存在高危安全漏洞，成功利用该漏洞的攻击者不仅可以以明文形式非法获取租户的电子邮件地址及相关关联敏感信息，还可能通过特定手段触发拒绝服务状态。该漏洞的CVSS风险评分高达7.3分，受影响的设备用户应尽快采取防护措施，以防止因弱加密或逻辑缺陷导致的敏感数据泄露及业务系统停摆风险。",
-          "tags": [
-            "信息泄露",
-            "拒绝服务",
-            "工业控制"
-          ],
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-127-01",
-          "source": "cisa.gov",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-07T12:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "CISA 官方预警，涉及企业协作工具的安全性。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "官方通告",
-          "source_key": "cisa.gov"
-        },
-        {
-          "title_zh": "作者重新整理个人博客并汇总发布在其他平台的文章，内容涵盖CVE-20漏洞分析等技术分享",
-          "title_orig": "My Articles",
-          "summary": "该作者近期完成了个人博客系统的重新搭建与上线工作，并计划在未来不定期发布关于网络安全及技术研究的原创性内容，旨在分享具有趣味性和深度参考价值的技术文章。目前该平台已开始收集并同步作者在其他第三方平台上发布的历史作品，其中包括针对CVE-20系列漏洞的深入分析报告，为安全研究人员提供了一个集中获取其技术见解和漏洞研究成果的新渠道。",
-          "tags": [
-            "漏洞",
-            "中文源"
-          ],
-          "url": "https://thunderjie.github.io/2099/01/01/My-Articles/",
-          "source": "thunderjie.github.io",
-          "category": "WebSecurity",
-          "published": "2099-01-01T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "原始信源高分入选",
+          "selection_reason": "通用型内核提权技术，对 Linux 系统安全具有广泛的潜在影",
           "source_tier": "t2",
           "source_kind": "community",
-          "source_label": "个人安全博客",
-          "source_key": "thunderjie.github.io"
+          "source_label": "安全社区",
+          "source_key": "openwall.com"
+        },
+        {
+          "title_zh": "利用 CVE-2025-48804 降级攻击在 5 分钟内绕过 Windows Bitlocker 加密",
+          "title_orig": "Bypassing Bitlocker under 5 min using downgrade attack on CVE-2025-48804",
+          "summary": "安全研究人员展示了利用CVE-2025-48804漏洞实施降级攻击的方法，能够在不到5分钟的时间内成功绕过Windows系统的Bitlocker磁盘加密保护。该攻击通过强制系统回退到存在已知缺陷的旧版本组件，从而规避了现代加密防御机制，这种方式主要威胁到具有物理接触权限或引导控制权的设备，揭示了固件与操作系统在协同防御逻辑中存在的薄弱环节，需引起硬件厂商重视。",
+          "tags": [
+            "Bitlocke",
+            "降级攻击",
+            "加密绕过"
+          ],
+          "url": "https://www.reddit.com/r/Pentesting/comments/1t6ck0y/bypassing_bitlocker_under_5_min_using_downgrade/",
+          "source": "reddit.com",
+          "category": "RedTeam",
+          "published": "2026-05-07T14:41:31+00:00",
+          "cve_ids": [
+            "CVE-2025-48804"
+          ],
+          "selection_reason": "展示了针对硬件加密的实战绕过技巧，对红蓝对抗具有指导意义。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "社区",
+          "source_key": "reddit.com"
         }
       ],
       "raw_count": 105,
@@ -321,12 +321,12 @@
       "selection_stats": {
         "total": 15,
         "direct": 15,
+        "tier_t1": 4,
+        "kind_official": 4,
         "tier_t2": 11,
         "kind_expert": 2,
-        "kind_community": 7,
         "kind_media": 2,
-        "tier_t1": 4,
-        "kind_official": 4
+        "kind_community": 7
       },
       "clustering_stats": {},
       "generated_at": "2026-05-07T23:38:58.964708Z"
@@ -473,126 +473,6 @@
       "display_name": "AI 前沿",
       "items": [
         {
-          "title_zh": "OpenAI 发布三款 Realtime API 新语音模型，GPT-Realtime-2 具备 GPT-5 级推理能力",
-          "title_orig": "OpenAI 在 Realtime API 里上线了三款新语音模型：GPT-Realtime-2、GPT-Realtime-Translate 和 GPT-Realtime-Whisper，分别管对话、翻译和实时转录。 【1】主角...",
-          "summary": "OpenAI 在 Realtime API 中上线了 GPT-Realtime-2 等三款新模型，分别针对对话、翻译和实时转录进行了优化。其中 GPT-Realtime-2 在智能测试和多轮对话指令跟随上表现大幅提升，并新增了开口前垫话、工具调用透明化及 128K 超长上下文支持。这些更新显著提升了语音交互的自然度与逻辑性，为开发者构建更智能、更具透明度的语音 AI 智能体提供了核心支持。",
-          "tags": [
-            "OpenAI",
-            "语音模型",
-            "人工智能"
-          ],
-          "url": "https://x.com/dotey/status/2052440968863887715",
-          "source": "x.com",
-          "category": "XSignals",
-          "published": "2026-05-07T17:30:34+00:00",
-          "cve_ids": [],
-          "selection_reason": "OpenAI 语音能力的重大升级，展示了下一代模型的推理水平",
-          "source_tier": "t2",
-          "source_kind": "expert_x",
-          "source_label": "专家 X",
-          "source_key": "x:dotey"
-        },
-        {
-          "title_zh": "OpenAI 为编程智能体 Codex 推出 Chrome 浏览器扩展，支持后台多标签并行执行任务",
-          "title_orig": "OpenAI 给 Codex 推出了 Chrome 扩展，让它能直接在浏览器里干活。Mac 和 Windows 用户从今天起可以在 Codex app 里安装 Chrome 插件，让 Codex 直接在浏览器里...",
-          "summary": "OpenAI 为其编程智能体 Codex 推出了 Chrome 浏览器扩展，使其能够直接在浏览器中执行查后台、刷仪表盘及更新 CRM 信息等复杂表单流程。该扩展支持在后台多标签并行运行，Codex 可根据任务需求自主选择使用现成插件或通过编写代码操作页面。这意味着 AI 智能体从终端走向了更广泛的 Web 应用场景，能够处理更多需要登录权限和跨页面协作的办公自动化任务。",
-          "tags": [
-            "OpenAI",
-            "Codex",
-            "AI智能体"
-          ],
-          "url": "https://x.com/dotey/status/2052492340892221800",
-          "source": "x.com",
-          "category": "XSignals",
-          "published": "2026-05-07T20:54:42+00:00",
-          "cve_ids": [],
-          "selection_reason": "Codex 进入浏览器标志着 AI 自动化处理复杂网页任务能",
-          "source_tier": "t2",
-          "source_kind": "expert_x",
-          "source_label": "专家 X",
-          "source_key": "x:dotey"
-        },
-        {
-          "title_zh": "Anthropic 将 Claude 全面集成至 Microsoft 365，支持跨 Office 应用的上下文衔接",
-          "title_orig": "Anthropic 把 Claude 全面塞进了 Microsoft 365。Excel、PowerPoint、Word 三个插件从 beta 转为正式版（GA），Outlook 插件同步进入公测。 意味着不用再切到 ht...",
-          "summary": "Anthropic宣布Claude在Excel、PowerPoint和Word中的插件正式转为GA版本，并同步开启了Outlook插件的公测，使用户无需切换网页即可在Office应用内直接调用AI能力。该集成的核心卖点在于跨应用的上下文衔接，Claude能够携带前序步骤的信息，完成从邮件整理、Word简报分析到Excel财务建模及PPT制作的完整业务闭环，极大地简化了复杂办公场景下的操作流程。",
-          "tags": [
-            "Anthropi",
-            "Claude",
-            "Office36"
-          ],
-          "url": "https://x.com/dotey/status/2052487556474740870",
-          "source": "x.com",
-          "category": "XSignals",
-          "published": "2026-05-07T20:35:41+00:00",
-          "cve_ids": [],
-          "selection_reason": "Claude 与 Office 的深度集成是 AI 办公生产",
-          "source_tier": "t2",
-          "source_kind": "expert_x",
-          "source_label": "专家 X",
-          "source_key": "x:dotey"
-        },
-        {
-          "title_zh": "OpenAI 发现模型训练中存在思维链评分现象，初步监测显示未对可监测性造成负面影响",
-          "title_orig": "RT Micah Carroll: We recently found some instances of CoT grading during the training of previously deployed models after building a system that scans...",
-          "summary": "OpenAI 研究人员 Micah Carroll 表示，在建立扫描系统检查强化学习运行情况时，发现此前部署的模型在训练过程中存在思维链（CoT）评分实例。尽管发现了这些意外的评分情况，但目前尚未找到明确证据表明这些实例会降低思维链的可监测性。这一发现对于理解大模型内部推理过程的透明度具有重要意义，有助于研究人员进一步优化模型训练的监控机制和安全性。",
-          "tags": [
-            "OpenAI",
-            "思维链",
-            "模型训练"
-          ],
-          "url": "https://x.com/OpenAI/status/2052454114911756687",
-          "source": "x.com",
-          "category": "XSignals",
-          "published": "2026-05-07T18:14:23+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及模型训练透明度与安全性的内部技术发现。",
-          "source_tier": "t1_5",
-          "source_kind": "official_x",
-          "source_label": "官方 X",
-          "source_key": "x:openai"
-        },
-        {
-          "title_zh": "SpaceX 计划投资 550 亿美元在德克萨斯州建设 Terafab 芯片工厂以进军 AI 芯片制造",
-          "title_orig": "SpaceX has a $55 billion plan to build AI chips in Texas",
-          "summary": "根据格里姆斯县的公开听证会通知显示，埃隆·马斯克旗下的 SpaceX 计划投资至少 550 亿美元，在德克萨斯州奥斯汀建设名为“Terafab”的芯片工厂。此举标志着 SpaceX 正式进军成本高昂的 AI 芯片制造领域，旨在构建自主的硬件供应链。该投资规模巨大，反映了马斯克在人工智能基础设施领域的雄心，可能对未来的 AI 芯片市场格局产生深远影响。",
-          "tags": [
-            "SpaceX",
-            "AI芯片",
-            "马斯克"
-          ],
-          "url": "https://www.theverge.com/ai-artificial-intelligence/926356/spacex-terafab-plant-cost-ai-chips",
-          "source": "theverge.com",
-          "category": "Media",
-          "published": "2026-05-07T19:26:16+00:00",
-          "cve_ids": [],
-          "selection_reason": "SpaceX 巨额投资进军芯片制造，是 AI 硬件领域的重大",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "科技媒体",
-          "source_key": "theverge.com"
-        },
-        {
-          "title_zh": "Anthropic 与 SpaceX/xAI 达成协议，将使用 Colossus 数据中心的全部算力容量",
-          "title_orig": "Notes on the xAI/Anthropic data center deal",
-          "summary": "在 Code w/ Claude 活动中，Anthropic 宣布与 SpaceX 及 xAI 达成合作协议，将租用其 Colossus 数据中心的全部算力容量。Colossus 数据中心此前因环境记录问题受到关注，其最初运行的燃气轮机曾引发争议。此次合作意味着 Anthropic 正在积极扩张其底层算力资源，通过与马斯克旗下基础设施的深度绑定，为其后续大模型的研发和迭代提供必要的硬件支撑。",
-          "tags": [
-            "Anthropi",
-            "xAI",
-            "算力中心"
-          ],
-          "url": "https://simonwillison.net/2026/May/7/xai-anthropic/#atom-everything",
-          "source": "simonwillison.net",
-          "category": "Commentary",
-          "published": "2026-05-07T17:09:28+00:00",
-          "cve_ids": [],
-          "selection_reason": "两大 AI 巨头在基础设施层面的深度合作，影响算力分配格局。",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "专家博客",
-          "source_key": "simonwillison.net"
-        },
-        {
           "title_zh": "研究人员发布 AI 智能体内存电路分析报告，揭示模型内部提取与检索信息的计算机制",
           "title_orig": "What Happens Inside Agent Memory? Circuit Analysis from Emergence to Diagnosis",
           "summary": "arXiv 论文 2605.03354v1 提出了一种针对基于 LLM 的智能体内存失效的电路分析方法，旨在诊断模型在跨会话提取、保留和检索信息时的内部计算过程。研究指出智能体内存故障往往是隐性的，即使无法正确获取信息，模型仍能产生流畅响应。通过追踪内部特征电路，该研究为理解智能体如何实现“写入-管理-读取”循环提供了技术洞察，有助于解决 AI 智能体在长期任务中的记忆可靠性问题。",
@@ -653,46 +533,6 @@
           "source_key": "arxiv.org"
         },
         {
-          "title_zh": "Mozilla 利用 Claude Mythos 预览版深度强化 Firefox 浏览器安全性并修复数百个漏洞",
-          "title_orig": "Behind the Scenes Hardening Firefox with Claude Mythos Preview",
-          "summary": "Mozilla团队通过提前获取Claude Mythos预览版权限，成功在Firefox浏览器中定位并修复了数百个安全漏洞，这一显著成果充分展示了AI在复杂软件加固中的巨大潜力。该进展标志着AI生成的安全报告已从过去被视为低质量信息的“垃圾邮件”转变为高效的漏洞挖掘工具，显著提升了开源项目的安全防御能力与开发效率，为未来自动化安全审计树立了新的行业标杆。",
-          "tags": [
-            "网络安全",
-            "Firefox",
-            "Claude"
-          ],
-          "url": "https://simonwillison.net/2026/May/7/firefox-claude-mythos/#atom-everything",
-          "source": "simonwillison.net",
-          "category": "Commentary",
-          "published": "2026-05-07T17:56:25+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了顶级大模型在实际大规模软件工程安全加固中的实战价值。",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "专家博客",
-          "source_key": "simonwillison.net"
-        },
-        {
-          "title_zh": "OpenAI 发布官方命令行工具 openai-cli，支持在终端直接调用 API 及托管工具流",
-          "title_orig": "OpenAI 上线了官方命令行工具 openai-cli，开发者可以直接在终端里调 API，不用再写 SDK 代码。 项目开源在 GitHub (openai/openai-cli)，Apache 2.0 协议，可通...",
-          "summary": "OpenAI正式上线了基于Apache 2.0协议的开源命令行工具openai-cli，允许开发者无需编写SDK代码即可在终端直接调用API，并支持Web搜索、代码解释器及图像生成等所有托管工具。该工具提供支持管道操作的Unix风格结构化输出，并内建类似jq的GJSON语法抽字段功能，极大简化了智能体风格工作流的构建、调试与自动化过程，让开发者能更高效地管理资源。",
-          "tags": [
-            "OpenAI",
-            "开发者工具",
-            "命令行"
-          ],
-          "url": "https://x.com/dotey/status/2052512560264380737",
-          "source": "x.com",
-          "category": "XSignals",
-          "published": "2026-05-07T22:15:02+00:00",
-          "cve_ids": [],
-          "selection_reason": "OpenAI 官方出品的效率工具，改变了开发者与模型交互的范",
-          "source_tier": "t2",
-          "source_kind": "expert_x",
-          "source_label": "专家 X",
-          "source_key": "x:dotey"
-        },
-        {
           "title_zh": "ROME 框架发布：通过受控基准重写与类比推理增强 AI 智能体在欺骗性场景下的安全判断",
           "title_orig": "Enhancing Agent Safety Judgment: Controlled Benchmark Rewriting and Analogical Reasoning for Deceptive Out-of-Distribution Scenarios",
           "summary": "针对现有安全基准无法有效评估大语言模型智能体在模糊或欺骗性轨迹下判断力的问题，研究者引入了名为ROME的红队测试框架，旨在填补当前安全评估领域的空白。该框架通过受控的基准重写与类比推理技术，重点增强智能体在跨平台Web应用、操作系统及交易环境等复杂分布外场景中的安全性判断能力与系统鲁棒性。",
@@ -711,26 +551,6 @@
           "source_kind": "official",
           "source_label": "论文源",
           "source_key": "arxiv.org"
-        },
-        {
-          "title_zh": "中国顶尖 AI 实验室实地调研笔记：揭示国内人工智能研发的最新现状与洞察",
-          "title_orig": "Notes from inside China's AI labs",
-          "summary": "作者通过实地走访中国多家领先的AI实验室并与核心科研人员深入交流，记录了关于国内大语言模型研发进展、技术路径选择以及行业生态现状的第一手观察资料。这些详尽的笔记为外界理解中国AI领域的竞争格局、科研氛围以及在算力与数据限制下所面临的独特挑战提供了宝贵的行业内幕参考，揭示了中国AI发展的真实面貌。",
-          "tags": [
-            "中国 AI",
-            "行业调研",
-            "实验室"
-          ],
-          "url": "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
-          "source": "interconnects.ai",
-          "category": "Commentary",
-          "published": "2026-05-07T15:42:43+00:00",
-          "cve_ids": [],
-          "selection_reason": "提供了对中国 AI 核心研发圈层的深度观察和稀缺信息。",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "专家博客",
-          "source_key": "interconnects.ai"
         },
         {
           "title_zh": "RAC 鲁棒智能体补偿机制：为 AI 智能体提供日志级恢复范式以避免非预期副作用",
@@ -753,6 +573,26 @@
           "source_key": "arxiv.org"
         },
         {
+          "title_zh": "OpenAI 发现模型训练中存在思维链评分现象，初步监测显示未对可监测性造成负面影响",
+          "title_orig": "RT Micah Carroll: We recently found some instances of CoT grading during the training of previously deployed models after building a system that scans...",
+          "summary": "OpenAI 研究人员 Micah Carroll 表示，在建立扫描系统检查强化学习运行情况时，发现此前部署的模型在训练过程中存在思维链（CoT）评分实例。尽管发现了这些意外的评分情况，但目前尚未找到明确证据表明这些实例会降低思维链的可监测性。这一发现对于理解大模型内部推理过程的透明度具有重要意义，有助于研究人员进一步优化模型训练的监控机制和安全性。",
+          "tags": [
+            "OpenAI",
+            "思维链",
+            "模型训练"
+          ],
+          "url": "https://x.com/OpenAI/status/2052454114911756687",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-07T18:14:23+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及模型训练透明度与安全性的内部技术发现。",
+          "source_tier": "t1_5",
+          "source_kind": "official_x",
+          "source_label": "官方 X",
+          "source_key": "x:openai"
+        },
+        {
           "title_zh": "NVIDIA 与 Hugging Face 合作推出机器人应用商店，加速物理 AI 基础模型部署",
           "title_orig": "RT NVIDIA Robotics: .@huggingface's agentic robotics app store for Reachy Mini is a big step toward more accessible physical AI. 🙌 Excited to see N...",
           "summary": "NVIDIA与Hugging Face宣布深度合作，将Isaac GR00T平台集成至LeRobot开源机器人框架中，并针对Reachy Mini机器人推出了代理式机器人应用商店。此举通过开放的机器人工作流，支持开发者对机器人基础模型进行高效的后期训练、评估与物理部署，标志着具身智能技术向更易获取、更具协作性的方向迈出了重要一步，为物理AI的普及提供了强力支持。",
@@ -771,23 +611,183 @@
           "source_kind": "official_x",
           "source_label": "官方 X",
           "source_key": "x:huggingface"
+        },
+        {
+          "title_zh": "OpenAI 发布官方命令行工具 openai-cli，支持在终端直接调用 API 及托管工具流",
+          "title_orig": "OpenAI 上线了官方命令行工具 openai-cli，开发者可以直接在终端里调 API，不用再写 SDK 代码。 项目开源在 GitHub (openai/openai-cli)，Apache 2.0 协议，可通...",
+          "summary": "OpenAI正式上线了基于Apache 2.0协议的开源命令行工具openai-cli，允许开发者无需编写SDK代码即可在终端直接调用API，并支持Web搜索、代码解释器及图像生成等所有托管工具。该工具提供支持管道操作的Unix风格结构化输出，并内建类似jq的GJSON语法抽字段功能，极大简化了智能体风格工作流的构建、调试与自动化过程，让开发者能更高效地管理资源。",
+          "tags": [
+            "OpenAI",
+            "开发者工具",
+            "命令行"
+          ],
+          "url": "https://x.com/dotey/status/2052512560264380737",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-07T22:15:02+00:00",
+          "cve_ids": [],
+          "selection_reason": "OpenAI 官方出品的效率工具，改变了开发者与模型交互的范",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "专家 X",
+          "source_key": "x:dotey"
+        },
+        {
+          "title_zh": "OpenAI 为编程智能体 Codex 推出 Chrome 浏览器扩展，支持后台多标签并行执行任务",
+          "title_orig": "OpenAI 给 Codex 推出了 Chrome 扩展，让它能直接在浏览器里干活。Mac 和 Windows 用户从今天起可以在 Codex app 里安装 Chrome 插件，让 Codex 直接在浏览器里...",
+          "summary": "OpenAI 为其编程智能体 Codex 推出了 Chrome 浏览器扩展，使其能够直接在浏览器中执行查后台、刷仪表盘及更新 CRM 信息等复杂表单流程。该扩展支持在后台多标签并行运行，Codex 可根据任务需求自主选择使用现成插件或通过编写代码操作页面。这意味着 AI 智能体从终端走向了更广泛的 Web 应用场景，能够处理更多需要登录权限和跨页面协作的办公自动化任务。",
+          "tags": [
+            "OpenAI",
+            "Codex",
+            "AI智能体"
+          ],
+          "url": "https://x.com/dotey/status/2052492340892221800",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-07T20:54:42+00:00",
+          "cve_ids": [],
+          "selection_reason": "Codex 进入浏览器标志着 AI 自动化处理复杂网页任务能",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "专家 X",
+          "source_key": "x:dotey"
+        },
+        {
+          "title_zh": "Anthropic 将 Claude 全面集成至 Microsoft 365，支持跨 Office 应用的上下文衔接",
+          "title_orig": "Anthropic 把 Claude 全面塞进了 Microsoft 365。Excel、PowerPoint、Word 三个插件从 beta 转为正式版（GA），Outlook 插件同步进入公测。 意味着不用再切到 ht...",
+          "summary": "Anthropic宣布Claude在Excel、PowerPoint和Word中的插件正式转为GA版本，并同步开启了Outlook插件的公测，使用户无需切换网页即可在Office应用内直接调用AI能力。该集成的核心卖点在于跨应用的上下文衔接，Claude能够携带前序步骤的信息，完成从邮件整理、Word简报分析到Excel财务建模及PPT制作的完整业务闭环，极大地简化了复杂办公场景下的操作流程。",
+          "tags": [
+            "Anthropi",
+            "Claude",
+            "Office36"
+          ],
+          "url": "https://x.com/dotey/status/2052487556474740870",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-07T20:35:41+00:00",
+          "cve_ids": [],
+          "selection_reason": "Claude 与 Office 的深度集成是 AI 办公生产",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "专家 X",
+          "source_key": "x:dotey"
+        },
+        {
+          "title_zh": "Mozilla 利用 Claude Mythos 预览版深度强化 Firefox 浏览器安全性并修复数百个漏洞",
+          "title_orig": "Behind the Scenes Hardening Firefox with Claude Mythos Preview",
+          "summary": "Mozilla团队通过提前获取Claude Mythos预览版权限，成功在Firefox浏览器中定位并修复了数百个安全漏洞，这一显著成果充分展示了AI在复杂软件加固中的巨大潜力。该进展标志着AI生成的安全报告已从过去被视为低质量信息的“垃圾邮件”转变为高效的漏洞挖掘工具，显著提升了开源项目的安全防御能力与开发效率，为未来自动化安全审计树立了新的行业标杆。",
+          "tags": [
+            "网络安全",
+            "Firefox",
+            "Claude"
+          ],
+          "url": "https://simonwillison.net/2026/May/7/firefox-claude-mythos/#atom-everything",
+          "source": "simonwillison.net",
+          "category": "Commentary",
+          "published": "2026-05-07T17:56:25+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了顶级大模型在实际大规模软件工程安全加固中的实战价值。",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "simonwillison.net"
+        },
+        {
+          "title_zh": "OpenAI 发布三款 Realtime API 新语音模型，GPT-Realtime-2 具备 GPT-5 级推理能力",
+          "title_orig": "OpenAI 在 Realtime API 里上线了三款新语音模型：GPT-Realtime-2、GPT-Realtime-Translate 和 GPT-Realtime-Whisper，分别管对话、翻译和实时转录。 【1】主角...",
+          "summary": "OpenAI 在 Realtime API 中上线了 GPT-Realtime-2 等三款新模型，分别针对对话、翻译和实时转录进行了优化。其中 GPT-Realtime-2 在智能测试和多轮对话指令跟随上表现大幅提升，并新增了开口前垫话、工具调用透明化及 128K 超长上下文支持。这些更新显著提升了语音交互的自然度与逻辑性，为开发者构建更智能、更具透明度的语音 AI 智能体提供了核心支持。",
+          "tags": [
+            "OpenAI",
+            "语音模型",
+            "人工智能"
+          ],
+          "url": "https://x.com/dotey/status/2052440968863887715",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-07T17:30:34+00:00",
+          "cve_ids": [],
+          "selection_reason": "OpenAI 语音能力的重大升级，展示了下一代模型的推理水平",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "专家 X",
+          "source_key": "x:dotey"
+        },
+        {
+          "title_zh": "Anthropic 与 SpaceX/xAI 达成协议，将使用 Colossus 数据中心的全部算力容量",
+          "title_orig": "Notes on the xAI/Anthropic data center deal",
+          "summary": "在 Code w/ Claude 活动中，Anthropic 宣布与 SpaceX 及 xAI 达成合作协议，将租用其 Colossus 数据中心的全部算力容量。Colossus 数据中心此前因环境记录问题受到关注，其最初运行的燃气轮机曾引发争议。此次合作意味着 Anthropic 正在积极扩张其底层算力资源，通过与马斯克旗下基础设施的深度绑定，为其后续大模型的研发和迭代提供必要的硬件支撑。",
+          "tags": [
+            "Anthropi",
+            "xAI",
+            "算力中心"
+          ],
+          "url": "https://simonwillison.net/2026/May/7/xai-anthropic/#atom-everything",
+          "source": "simonwillison.net",
+          "category": "Commentary",
+          "published": "2026-05-07T17:09:28+00:00",
+          "cve_ids": [],
+          "selection_reason": "两大 AI 巨头在基础设施层面的深度合作，影响算力分配格局。",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "simonwillison.net"
+        },
+        {
+          "title_zh": "中国顶尖 AI 实验室实地调研笔记：揭示国内人工智能研发的最新现状与洞察",
+          "title_orig": "Notes from inside China's AI labs",
+          "summary": "作者通过实地走访中国多家领先的AI实验室并与核心科研人员深入交流，记录了关于国内大语言模型研发进展、技术路径选择以及行业生态现状的第一手观察资料。这些详尽的笔记为外界理解中国AI领域的竞争格局、科研氛围以及在算力与数据限制下所面临的独特挑战提供了宝贵的行业内幕参考，揭示了中国AI发展的真实面貌。",
+          "tags": [
+            "中国 AI",
+            "行业调研",
+            "实验室"
+          ],
+          "url": "https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs",
+          "source": "interconnects.ai",
+          "category": "Commentary",
+          "published": "2026-05-07T15:42:43+00:00",
+          "cve_ids": [],
+          "selection_reason": "提供了对中国 AI 核心研发圈层的深度观察和稀缺信息。",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "interconnects.ai"
+        },
+        {
+          "title_zh": "SpaceX 计划投资 550 亿美元在德克萨斯州建设 Terafab 芯片工厂以进军 AI 芯片制造",
+          "title_orig": "SpaceX has a $55 billion plan to build AI chips in Texas",
+          "summary": "根据格里姆斯县的公开听证会通知显示，埃隆·马斯克旗下的 SpaceX 计划投资至少 550 亿美元，在德克萨斯州奥斯汀建设名为“Terafab”的芯片工厂。此举标志着 SpaceX 正式进军成本高昂的 AI 芯片制造领域，旨在构建自主的硬件供应链。该投资规模巨大，反映了马斯克在人工智能基础设施领域的雄心，可能对未来的 AI 芯片市场格局产生深远影响。",
+          "tags": [
+            "SpaceX",
+            "AI芯片",
+            "马斯克"
+          ],
+          "url": "https://www.theverge.com/ai-artificial-intelligence/926356/spacex-terafab-plant-cost-ai-chips",
+          "source": "theverge.com",
+          "category": "Media",
+          "published": "2026-05-07T19:26:16+00:00",
+          "cve_ids": [],
+          "selection_reason": "SpaceX 巨额投资进军芯片制造，是 AI 硬件领域的重大",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "theverge.com"
         }
       ],
       "raw_count": 60,
       "selected_count": 15,
       "selection_stats": {
         "total": 15,
+        "direct": 9,
+        "tier_t1": 5,
+        "kind_official": 5,
         "aggregator": 6,
+        "tier_t1_5": 2,
+        "kind_official_x": 2,
         "chinese": 4,
         "tier_t2": 8,
         "kind_expert_x": 4,
-        "tier_t1_5": 2,
-        "kind_official_x": 2,
-        "direct": 9,
-        "kind_media": 1,
         "kind_expert": 3,
-        "tier_t1": 5,
-        "kind_official": 5
+        "kind_media": 1
       },
       "clustering_stats": {},
       "generated_at": "2026-05-07T23:40:07.033224Z"
@@ -816,26 +816,6 @@
           "source_key": "investor.visa.com"
         },
         {
-          "title_zh": "亚马逊 AWS 联合 Coinbase 与 Stripe 为 Bedrock 推出 AI 智能体支付功能",
-          "title_orig": "Amazon Bedrock Launches AI Agent Payment Capabilities With Coinbase, Stripe",
-          "summary": "亚马逊AWS正式推出Amazon Bedrock AgentCore支付功能，该工具允许AI智能体在无需人工干预的情况下，自主访问并支付网页内容、API及各类专业服务等数字资源。通过与Coinbase和Stripe的深度合作，该功能标志着AI智能体开始具备独立进行金融交易的能力，将从根本上重塑自动化服务的商业模式，并为广大开发者提供更加灵活高效的变现手段。",
-          "tags": [
-            "亚马逊",
-            "AI 智能体",
-            "移动支付"
-          ],
-          "url": "https://www.pymnts.com/amazon-payments/2026/amazon-bedrock-launches-ai-agent-payment-capabilities-with-coinbase-stripe/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-07T21:07:26+00:00",
-          "cve_ids": [],
-          "selection_reason": "AI 智能体获得自主支付能力是自动化商业的重要里程碑。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "pymnts.com"
-        },
-        {
           "title_zh": "Visa 宣布将其 Agentic Ready 计划扩展至亚太及拉美地区以支持智能体商业",
           "title_orig": "Visa Announces Global Expansion of Agentic Ready Program",
           "summary": "Visa宣布将其Agentic Ready计划从欧洲市场扩展至亚太和拉丁美洲地区的客户，旨在支持支付生态系统中的银行和发行伙伴积极应对即将到来的智能体商业新时代。该计划通过提供必要的技术框架和合作支持，为未来由人工智能驱动的自动化交易环境做好准备，充分体现了全球支付巨头在AI商业化趋势下抢占市场先机的战略布局。",
@@ -854,66 +834,6 @@
           "source_kind": "official",
           "source_label": "公司公告",
           "source_key": "investor.visa.com"
-        },
-        {
-          "title_zh": "美联储计划启动跨机构圆桌会议以协同打击日益严重的支付欺诈威胁",
-          "title_orig": "Fed to launch roundtable to fight payment fraud",
-          "summary": "美联储副主席公开表示，鉴于当前支付欺诈威胁呈现不断上升的态势，美联储计划启动一个专门的圆桌会议，旨在加强与政府及行业机构的协作以共同遏制此类金融犯罪。此举反映了监管机构对支付系统安全性的高度关注，意在通过跨部门的沟通机制建立起更强大的金融安全防线，从而有效保护消费者利益并维护全球金融系统的完整性。",
-          "tags": [
-            "美联储",
-            "支付安全",
-            "反欺诈"
-          ],
-          "url": "https://www.paymentsdive.com/news/fed-to-launch-roundtable-to-fight-payment-fraud/819593/",
-          "source": "paymentsdive.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-07T14:59:14+00:00",
-          "cve_ids": [],
-          "selection_reason": "美联储牵头打击支付欺诈，对金融监管政策有风向标作用。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "paymentsdive.com"
-        },
-        {
-          "title_zh": "支付宝面向企业用户推出 AI 支付解决方案以提升商业交易效率",
-          "title_orig": "Alipay launches AI payments for businesses - Tech in Asia",
-          "summary": "支付宝正式面向企业端推出全新的AI支付功能，旨在利用先进的人工智能技术深度优化商业支付流程，帮助企业更高效地处理复杂的财务交易与资金管理。作为移动支付平台向智能化转型的重要一步，该举措不仅提升了B端市场的支付体验和运营效率，也为企业在数字化转型过程中提供了更具竞争力的金融工具，进一步巩固了其市场地位。",
-          "tags": [
-            "支付宝",
-            "AI 支付",
-            "企业服务"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pa1dWZzg5eWEyUWlVSzQwSTlELXBKXzJzTUpldmdkMGhVWkR2My1OYlI0VmZucEdiVDJ3bE10NExOaWVsR1gtTm5tZURvUlZYU1RrUkVZXzhJUU11dnVpZ283aWNBbm9DdHFuamRud1NwcHpYdldkX1hHQm1mc0U?oc=5",
-          "source": "news.google.com",
-          "category": "Digital Wallets",
-          "published": "2026-04-28T07:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "支付宝在 B 端引入 AI 支付，展示了支付工具的智能化趋势",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
-        {
-          "title_zh": "印尼支付标准 QRIS 寻求与微信支付对接以扩大跨境支付合作",
-          "title_orig": "Expanding cross-border tie-ups, QRIS eyes link with WeChat Pay - The Jakarta Post",
-          "summary": "印尼通用二维码支付标准QRIS正积极寻求与微信支付建立互联互通的连接，以进一步扩大其跨境支付合作网络并提升区域间的金融服务能力。此举旨在为前往印尼的国际游客提供更加便捷、熟悉的支付体验，在促进当地旅游业复苏的同时，也推动了印尼与中国之间跨境贸易的数字化进程，是东南亚地区金融互联互通的重要里程碑。",
-          "tags": [
-            "QRIS",
-            "微信支付",
-            "跨境支付"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxObUQwWjJVTlZLd0hhQjhxSnVhTEFZb0RadjJuQVpzdGlMclNmVTQ5UTFXTlBGQkQzUmJJWTU4OWNSbzRYaWwtSmswR1Ffb0dpR0dKbDZ1VkZmekZQZzNKS0FpalZ6LVFjaWdzWkk0LWQ2dmJJV2g4ckFBYm1EU3J1cEphcm9Jak1VeWgxLUdVSUVjUVRPSHJfNmVZaXp6YURTWVY1dEhnNzJtYW9DZDhRWThnMnhlbDN6?oc=5",
-          "source": "news.google.com",
-          "category": "Digital Wallets",
-          "published": "2026-05-07T06:38:40+00:00",
-          "cve_ids": [],
-          "selection_reason": "东南亚支付标准与中国巨头对接，影响跨境支付格局。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
         },
         {
           "title_zh": "Visa 发布 2026 财年第二季度财务业绩报告并举行投资者电话会议",
@@ -936,6 +856,46 @@
           "source_key": "investor.visa.com"
         },
         {
+          "title_zh": "迪克体育用品联合 Synchrony 重新推出信用卡项目，为持卡人提供高达 10% 的消费奖励",
+          "title_orig": "Relaunched Dick’s Sporting Goods Credit Card Offers 10% Back",
+          "summary": "迪克体育用品公司与消费金融公司 Synchrony 延续了长达 20 多年的合作伙伴关系，正式重新发布其信用卡计划，并为持卡人在旗下品牌符合条件的消费提供高达 10% 的奖励回馈。该计划的更名与升级旨在通过极具吸引力的返利政策提升品牌忠诚度，同时也体现了零售商在当前市场环境下通过优化金融服务来刺激消费者支出的核心竞争策略。",
+          "tags": [
+            "零售金融",
+            "信用卡",
+            "消费者奖励"
+          ],
+          "url": "https://www.pymnts.com/credit-cards/2026/relaunched-dicks-sporting-goods-credit-card-offers-10-back/",
+          "source": "pymnts.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-07T22:41:56+00:00",
+          "cve_ids": [],
+          "selection_reason": "高额返利政策是零售金融领域吸引客户的重要市场信号。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "pymnts.com"
+        },
+        {
+          "title_zh": "亚马逊 AWS 联合 Coinbase 与 Stripe 为 Bedrock 推出 AI 智能体支付功能",
+          "title_orig": "Amazon Bedrock Launches AI Agent Payment Capabilities With Coinbase, Stripe",
+          "summary": "亚马逊AWS正式推出Amazon Bedrock AgentCore支付功能，该工具允许AI智能体在无需人工干预的情况下，自主访问并支付网页内容、API及各类专业服务等数字资源。通过与Coinbase和Stripe的深度合作，该功能标志着AI智能体开始具备独立进行金融交易的能力，将从根本上重塑自动化服务的商业模式，并为广大开发者提供更加灵活高效的变现手段。",
+          "tags": [
+            "亚马逊",
+            "AI 智能体",
+            "移动支付"
+          ],
+          "url": "https://www.pymnts.com/amazon-payments/2026/amazon-bedrock-launches-ai-agent-payment-capabilities-with-coinbase-stripe/",
+          "source": "pymnts.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-07T21:07:26+00:00",
+          "cve_ids": [],
+          "selection_reason": "AI 智能体获得自主支付能力是自动化商业的重要里程碑。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "pymnts.com"
+        },
+        {
           "title_zh": "ServiceNow、SAP 与 Workday 针对 AI 智能体调整数据访问收费模式",
           "title_orig": "ServiceNow, SAP and Workday Make AI Agents Pay to Play",
           "summary": "ServiceNow、SAP和Workday开始对其平台内的客户数据设置新的访问界限，以应对外部AI智能体对传统按席位计费模式带来的冲击。ServiceNow率先推出了针对智能体与数据之间的计量层，这一转变意味着企业软件巨头正在重塑AI时代的定价策略，旨在保护其核心商业利益并确保在自动化技术普及的过程中，依然能够维持其软件服务的盈利能力。",
@@ -954,6 +914,26 @@
           "source_kind": "media",
           "source_label": "金融媒体",
           "source_key": "pymnts.com"
+        },
+        {
+          "title_zh": "美联储计划启动跨机构圆桌会议以协同打击日益严重的支付欺诈威胁",
+          "title_orig": "Fed to launch roundtable to fight payment fraud",
+          "summary": "美联储副主席公开表示，鉴于当前支付欺诈威胁呈现不断上升的态势，美联储计划启动一个专门的圆桌会议，旨在加强与政府及行业机构的协作以共同遏制此类金融犯罪。此举反映了监管机构对支付系统安全性的高度关注，意在通过跨部门的沟通机制建立起更强大的金融安全防线，从而有效保护消费者利益并维护全球金融系统的完整性。",
+          "tags": [
+            "美联储",
+            "支付安全",
+            "反欺诈"
+          ],
+          "url": "https://www.paymentsdive.com/news/fed-to-launch-roundtable-to-fight-payment-fraud/819593/",
+          "source": "paymentsdive.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-07T14:59:14+00:00",
+          "cve_ids": [],
+          "selection_reason": "美联储牵头打击支付欺诈，对金融监管政策有风向标作用。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "paymentsdive.com"
         },
         {
           "title_zh": "Global Payments 加速推广 Genius 销售点解决方案，已成功接入 Worldpay 销售渠道与金融客户",
@@ -976,24 +956,44 @@
           "source_key": "paymentsdive.com"
         },
         {
-          "title_zh": "迪克体育用品联合 Synchrony 重新推出信用卡项目，为持卡人提供高达 10% 的消费奖励",
-          "title_orig": "Relaunched Dick’s Sporting Goods Credit Card Offers 10% Back",
-          "summary": "迪克体育用品公司与消费金融公司 Synchrony 延续了长达 20 多年的合作伙伴关系，正式重新发布其信用卡计划，并为持卡人在旗下品牌符合条件的消费提供高达 10% 的奖励回馈。该计划的更名与升级旨在通过极具吸引力的返利政策提升品牌忠诚度，同时也体现了零售商在当前市场环境下通过优化金融服务来刺激消费者支出的核心竞争策略。",
+          "title_zh": "印尼支付标准 QRIS 寻求与微信支付对接以扩大跨境支付合作",
+          "title_orig": "Expanding cross-border tie-ups, QRIS eyes link with WeChat Pay - The Jakarta Post",
+          "summary": "印尼通用二维码支付标准QRIS正积极寻求与微信支付建立互联互通的连接，以进一步扩大其跨境支付合作网络并提升区域间的金融服务能力。此举旨在为前往印尼的国际游客提供更加便捷、熟悉的支付体验，在促进当地旅游业复苏的同时，也推动了印尼与中国之间跨境贸易的数字化进程，是东南亚地区金融互联互通的重要里程碑。",
           "tags": [
-            "零售金融",
-            "信用卡",
-            "消费者奖励"
+            "QRIS",
+            "微信支付",
+            "跨境支付"
           ],
-          "url": "https://www.pymnts.com/credit-cards/2026/relaunched-dicks-sporting-goods-credit-card-offers-10-back/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-07T22:41:56+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxObUQwWjJVTlZLd0hhQjhxSnVhTEFZb0RadjJuQVpzdGlMclNmVTQ5UTFXTlBGQkQzUmJJWTU4OWNSbzRYaWwtSmswR1Ffb0dpR0dKbDZ1VkZmekZQZzNKS0FpalZ6LVFjaWdzWkk0LWQ2dmJJV2g4ckFBYm1EU3J1cEphcm9Jak1VeWgxLUdVSUVjUVRPSHJfNmVZaXp6YURTWVY1dEhnNzJtYW9DZDhRWThnMnhlbDN6?oc=5",
+          "source": "news.google.com",
+          "category": "Digital Wallets",
+          "published": "2026-05-07T06:38:40+00:00",
           "cve_ids": [],
-          "selection_reason": "高额返利政策是零售金融领域吸引客户的重要市场信号。",
+          "selection_reason": "东南亚支付标准与中国巨头对接，影响跨境支付格局。",
           "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "pymnts.com"
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
+        },
+        {
+          "title_zh": "支付宝面向企业用户推出 AI 支付解决方案以提升商业交易效率",
+          "title_orig": "Alipay launches AI payments for businesses - Tech in Asia",
+          "summary": "支付宝正式面向企业端推出全新的AI支付功能，旨在利用先进的人工智能技术深度优化商业支付流程，帮助企业更高效地处理复杂的财务交易与资金管理。作为移动支付平台向智能化转型的重要一步，该举措不仅提升了B端市场的支付体验和运营效率，也为企业在数字化转型过程中提供了更具竞争力的金融工具，进一步巩固了其市场地位。",
+          "tags": [
+            "支付宝",
+            "AI 支付",
+            "企业服务"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1pa1dWZzg5eWEyUWlVSzQwSTlELXBKXzJzTUpldmdkMGhVWkR2My1OYlI0VmZucEdiVDJ3bE10NExOaWVsR1gtTm5tZURvUlZYU1RrUkVZXzhJUU11dnVpZ283aWNBbm9DdHFuamRud1NwcHpYdldkX1hHQm1mc0U?oc=5",
+          "source": "news.google.com",
+          "category": "Digital Wallets",
+          "published": "2026-04-28T07:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "支付宝在 B 端引入 AI 支付，展示了支付工具的智能化趋势",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
         }
       ],
       "raw_count": 15,

@@ -44,6 +44,23 @@ SOURCE_MIX_KEYS = {
     "wechat",
 }
 SOURCE_MIX_PREFIXES = ("tier_", "kind_")
+SOURCE_TIER_RANK = {
+    "t1": 4,
+    "t1_5": 3,
+    "t2": 2,
+    "unknown": 0,
+}
+SOURCE_KIND_RANK = {
+    "official": 8,
+    "official_x": 7,
+    "expert": 6,
+    "expert_x": 6,
+    "cn_official": 6,
+    "cn_expert": 5,
+    "media": 3,
+    "community": 2,
+    "google_news": 1,
+}
 
 
 def _load_digest(board: str, d: date) -> dict[str, Any] | None:
@@ -67,7 +84,7 @@ def _build_feed_for_date(boards: dict[str, dict], d: date) -> dict[str, Any] | N
             }
             continue
         any_content = any_content or bool(digest.get("items"))
-        items = [_with_source_metadata(item) for item in digest.get("items", [])]
+        items = _sort_display_items([_with_source_metadata(item) for item in digest.get("items", [])])
         selection_stats = dict(digest.get("selection_stats") or {})
         selection_stats = _without_stale_source_mix(selection_stats)
         selection_stats.update(source_mix_stats(items))
@@ -102,6 +119,37 @@ def _with_source_metadata(item: dict[str, Any]) -> dict[str, Any]:
     enriched["source_label"] = profile.source_label
     enriched["source_key"] = profile.source_key
     return enriched
+
+
+def _sort_display_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Order cards by editorial value, then source authority.
+
+    `final_score` already includes source and freshness bonuses. Tier/kind are
+    tie-breakers and also keep older digest files sensible when score metadata
+    is missing.
+    """
+    indexed = list(enumerate(items))
+    indexed.sort(key=lambda pair: _display_sort_key(pair[0], pair[1]), reverse=True)
+    return [item for _idx, item in indexed]
+
+
+def _display_sort_key(index: int, item: dict[str, Any]) -> tuple[float, int, int, str, int]:
+    return (
+        _score_value(item),
+        SOURCE_TIER_RANK.get(str(item.get("source_tier") or "unknown"), 0),
+        SOURCE_KIND_RANK.get(str(item.get("source_kind") or "media"), 0),
+        str(item.get("published") or ""),
+        -index,
+    )
+
+
+def _score_value(item: dict[str, Any]) -> float:
+    for key in ("final_score", "score", "dimension_score"):
+        try:
+            return float(item.get(key))
+        except (TypeError, ValueError):
+            continue
+    return -1.0
 
 def build(lookback_days: int = 7) -> None:
     cfg = yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))

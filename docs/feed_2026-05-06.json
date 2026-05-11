@@ -5,176 +5,64 @@
       "display_name": "安全",
       "items": [
         {
-          "title_zh": "泛微 e-cology 协同办公平台调试接口存在远程代码执行漏洞 CVE-2026-22679 并遭利用",
-          "title_orig": "Weaver E-cology RCE Flaw CVE-2026-22679 Actively Exploited via Debug API",
-          "summary": "泛微e-cology协同办公平台存在编号为CVE-2026-22679的严重漏洞，其CVSS评分高达9.8，主要源于系统调试接口API存在未经身份验证的远程代码执行缺陷。该漏洞影响20260312之前的10.0版本，攻击者可通过特定路径完全控制服务器，且目前已在野外被积极利用，建议相关企业立即安装官方发布的补丁以防范攻击并保护企业核心数据资产安全。",
+          "title_zh": "ABB B&R Automation Studio 工业自动化软件存在身份冒充漏洞预警",
+          "title_orig": "ABB B&R Automation Studio",
+          "summary": "ABB发布的预警指出其B&R Automation Studio产品存在安全漏洞，当系统通过ANSL over TLS或OPC-UA协议与服务器建立连接时，攻击者可利用该漏洞伪装成受信任的通信方。这种身份伪装可能导致工业控制网络中的中间人攻击或非法数据篡改，严重威胁自动化生产线的运行安全，目前官方已针对受影响版本发布了安全更新补丁，并强烈建议相关工业用户尽快完成系统升级以修复此身份验证弱点。",
           "tags": [
-            "泛微OA",
-            "RCE漏洞",
-            "在野利用"
+            "工控安全",
+            "身份冒充",
+            "ABB"
           ],
-          "url": "https://thehackernews.com/2026/05/weaver-e-cology-rce-flaw-cve-2026-22679.html",
-          "source": "thehackernews.com",
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-125-04",
+          "source": "cisa.gov",
           "category": "OfficialAdvisories",
-          "published": "2026-05-05T07:37:00+00:00",
-          "cve_ids": [
-            "CVE-2026-22679"
-          ],
-          "selection_reason": "泛微OA在国内企业覆盖广，该RCE漏洞已在野利用，风险极高。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "thehackernews.com"
-        },
-        {
-          "title_zh": "cPanel/WHM 存在 CRLF 注入漏洞 CVE-2026-41940 可绕过身份验证获取 Root 权限",
-          "title_orig": "Exploit for Missing Authentication for Critical Function in Cpanel",
-          "summary": "cPanel/WHM管理面板中存在关键功能身份验证缺失漏洞，编号为CVE-2026-41940，攻击者可利用CRLF注入手段绕过认证流程并实现权限提升。通过该漏洞，攻击者能够获得服务器的Root级别远程代码执行权限，目前已有开源工具包实现了自动化利用，建议管理员立即核查补丁状态并对受影响的cPanel组件进行安全加固，以防止服务器控制权被非法夺取。",
-          "tags": [
-            "cPanel",
-            "身份绕过",
-            "提权"
-          ],
-          "url": "https://vulners.com/githubexploit/8F486651-6CB4-54B6-8532-9AE328F49A9F?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-05T22:06:49+00:00",
-          "cve_ids": [
-            "CVE-2026-41940"
-          ],
-          "selection_reason": "涉及主流服务器管理面板的Root提权，且已有公开利用脚本。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com"
-        },
-        {
-          "title_zh": "Apache HTTP Server 修复 HTTP/2 协议双重释放漏洞 CVE-2026-23918 可致 RCE",
-          "title_orig": "Critical Apache HTTP/2 Flaw (CVE-2026-23918) Enables DoS and Potential RCE",
-          "summary": "Apache软件基金会发布安全更新修复了CVE-2026-23918漏洞，该漏洞存在于HTTP Server的HTTP/2协议处理模块中，属于严重的双重释放缺陷，CVSS评分为8.8。攻击者通过构造特殊的HTTP/2请求，可能导致服务崩溃形成拒绝服务攻击，甚至在特定条件下实现远程代码执行，建议所有受影响版本的用户及时升级至官方最新版本，以确保Web服务的可用性与安全性。",
-          "tags": [
-            "Apache",
-            "HTTP/2",
-            "双重释放"
-          ],
-          "url": "https://thehackernews.com/2026/05/critical-apache-http2-flaw-cve-2026.html",
-          "source": "thehackernews.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-05T16:19:00+00:00",
-          "cve_ids": [
-            "CVE-2026-23918"
-          ],
-          "selection_reason": "Apache作为核心Web基础设施，其HTTP/2协议栈漏洞",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "thehackernews.com"
-        },
-        {
-          "title_zh": "MetInfo CMS 存在代码注入漏洞 CVE-2026-29014 已被黑客用于远程执行攻击",
-          "title_orig": "MetInfo CMS CVE-2026-29014 Exploited for Remote Code Execution Attacks",
-          "summary": "开源内容管理系统MetInfo CMS被曝存在CVE-2026-29014代码注入漏洞，受影响版本涵盖7.9、8.0及8.1，攻击者无需身份验证即可通过注入PHP代码执行任意指令。根据VulnCheck的监测，威胁参与者正利用此CVSS 9.8分的漏洞发起积极攻击，由于该系统应用广泛，建议所有使用MetInfo的用户立即更新至安全版本，防止网站服务器被黑客完全控制或导致敏感信息泄露。",
-          "tags": [
-            "MetInfo",
-            "代码注入",
-            "CMS安全"
-          ],
-          "url": "https://thehackernews.com/2026/05/metinfo-cms-cve-2026-29014-exploited.html",
-          "source": "thehackernews.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-05T11:56:00+00:00",
-          "cve_ids": [
-            "CVE-2026-29014"
-          ],
-          "selection_reason": "开源CMS的高危RCE漏洞且已被在野利用，需重点关注。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "thehackernews.com"
-        },
-        {
-          "title_zh": "Linux 内核 AF_ALG 子系统存在 Copy Fail 漏洞 CVE-2026-31431 可实现本地提权",
-          "title_orig": "Breakdown of CVE-2026–31431 (Copy Fail) an Overl00k3d Linux Kernel Vulnerability Enables Privilege…",
-          "summary": "Linux内核AF_ALG用户空间加密子系统存在名为“Copy Fail”的权限提升漏洞，编号为CVE-2026-31431，其根源在于2017年引入的AEAD密码操作性能优化补丁。本地用户可利用该缺陷损坏内存中任何可读文件的副本，包括关键的setuid二进制文件，从而非法获取Root最高权限，该漏洞影响多个主流Linux发行版内核，需引起系统管理员高度重视并尽快应用内核安全补丁。",
-          "tags": [
-            "Linux内核",
-            "本地提权",
-            "内存损坏"
-          ],
-          "url": "https://infosecwriteups.com/breakdown-of-cve-2026-31431-copy-fail-an-overl00k3d-linux-kernel-vulnerability-enables-privilege-f8658453ab81?source=rss----7b722bfd1b8d---4",
-          "source": "infosecwriteups.com",
-          "category": "WebSecurity",
-          "published": "2026-05-04T13:05:50+00:00",
-          "cve_ids": [
-            "CVE-2026-31431"
-          ],
-          "selection_reason": "Linux内核子系统漏洞，涉及权限提升，技术原理具有深度。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "安全社区",
-          "source_key": "infosecwriteups.com"
-        },
-        {
-          "title_zh": "DarkSword 恶意软件利用 iOS 多个零日漏洞组成全链条攻击以监控设备",
-          "title_orig": "DarkSword Malware",
-          "summary": "Google 威胁情报小组发现了一套名为 DarkSword 的 iOS 全链条漏洞利用工具，该工具利用了多个零日漏洞实现对设备的完全控制。研究表明该攻击自 2025 年 11 月起活跃，其有效载荷具有极高的复杂性，疑似由政府背景团队设计。虽然技术细节未完全披露，但该攻击链展示了针对移动端的高级持续性威胁特征，目前相关漏洞已由厂商进行处理。",
-          "tags": [
-            "iOS漏洞",
-            "零日攻击",
-            "间谍软件"
-          ],
-          "url": "https://www.schneier.com/blog/archives/2026/05/darksword-malware.html",
-          "source": "schneier.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-05T10:42:03+00:00",
+          "published": "2026-05-05T12:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "涉及iOS全链条0-day利用，代表了移动端攻击的最高技术水",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "专家博客",
-          "source_key": "schneier.com"
+          "selection_reason": "工控协议实现中的安全漏洞，可能影响工业生产线安全。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官方通告",
+          "source_key": "cisa.gov"
         },
         {
-          "title_zh": "Apache HTTP Server 模块 mod_proxy_ajp 存在堆溢出漏洞 CVE-2026-28780",
-          "title_orig": "CVE-2026-28780",
-          "summary": "Apache HTTP Server的mod_proxy_ajp模块存在堆缓冲区溢出漏洞，编号为CVE-2026-28780，当模块连接到恶意AJP服务器时，攻击者可发送特制消息在堆内存末尾写入受控字节。该漏洞影响2.4.66及之前版本，可能导致服务异常或潜在的代码执行风险，官方强烈建议用户尽快升级至2.4.67版本以修复此安全缺陷，确保代理服务在处理外部AJP通信时的稳定性与安全性。",
+          "title_zh": "Hitachi Energy PCM600 电力保护控制管理工具存在数据完整性漏洞",
+          "title_orig": "Hitachi Energy PCM600",
+          "summary": "Hitachi Energy 披露其 PCM600 产品存在安全漏洞，成功利用该漏洞的攻击者可以破坏产品的完整性，进而影响电力系统的正常运行。受影响版本包括 PCM600 及其相关组件，漏洞可能导致关键的电力系统配置数据被非法篡改，官方建议用户参考推荐的即时行动指南进行缓解或修复，以防止潜在的恶意攻击对能源基础设施造成损害。",
           "tags": [
-            "Apache",
-            "堆溢出",
-            "AJP协议"
+            "电力安全",
+            "Hitachi",
+            "完整性破坏"
           ],
-          "url": "https://vulners.com/nvd/NVD:CVE-2026-28780?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-05T22:16:00+00:00",
-          "cve_ids": [
-            "CVE-2026-28780"
-          ],
-          "selection_reason": "经典的堆溢出漏洞，涉及Apache代理模块，具有一定的技术分",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com"
-        },
-        {
-          "title_zh": "虚拟光驱工具 DAEMON Tools 官方安装程序遭供应链攻击植入恶意载荷",
-          "title_orig": "DAEMON Tools Supply Chain Attack Compromises Official Installers with Malware",
-          "summary": "卡巴斯基研究人员发现 DAEMON Tools 官方网站分发的安装程序已被篡改，用于传播恶意载荷。这些受污染的安装程序带有开发者的合法数字签名，具有极高的欺骗性，属于典型的供应链攻击。攻击者通过控制官方分发渠道，使下载并运行该软件的用户面临设备被感染的风险。目前建议用户停止使用受影响版本的安装包，并检查系统是否存在异常行为。",
-          "tags": [
-            "供应链攻击",
-            "数字签名",
-            "软件安全"
-          ],
-          "url": "https://thehackernews.com/2026/05/daemon-tools-supply-chain-attack.html",
-          "source": "thehackernews.com",
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-125-01",
+          "source": "cisa.gov",
           "category": "OfficialAdvisories",
-          "published": "2026-05-05T16:07:00+00:00",
+          "published": "2026-05-05T12:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "知名工具软件的供应链污染事件，对软件分发安全具有警示意义。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "thehackernews.com"
+          "selection_reason": "关键基础设施相关软件漏洞，对电力系统安全运行至关重要。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官方通告",
+          "source_key": "cisa.gov"
+        },
+        {
+          "title_zh": "ABB B&R PVI 客户端应用存在敏感信息泄露漏洞，攻击者可读取日志数据中的关键信息",
+          "title_orig": "ABB B&R PVI",
+          "summary": "该漏洞存在于ABB B&R PVI客户端应用中，其核心原理是应用程序在生成的日志数据中记录了敏感机密信息，攻击者若成功利用此漏洞，将能够直接读取并获取这些关键数据。虽然在所有PVI客户端版本中日志功能默认处于关闭状态，但一旦用户手动开启将面临严重泄露风险，目前官方已针对受影响的版本发布了安全更新补丁，建议相关用户尽快完成修复以确保系统环境的安全。",
+          "tags": [
+            "信息泄露",
+            "工业控制系统",
+            "ABB"
+          ],
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-125-02",
+          "source": "cisa.gov",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-05T12:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及工控系统客户端安全及敏感日志处理规范。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官方通告",
+          "source_key": "cisa.gov"
         },
         {
           "title_zh": "深入探索 NVIDIA Linux 开源驱动程序内部机制与 IOCTL 接口安全分析",
@@ -217,6 +105,26 @@
           "source_key": "blog.trailofbits.com"
         },
         {
+          "title_zh": "DarkSword 恶意软件利用 iOS 多个零日漏洞组成全链条攻击以监控设备",
+          "title_orig": "DarkSword Malware",
+          "summary": "Google 威胁情报小组发现了一套名为 DarkSword 的 iOS 全链条漏洞利用工具，该工具利用了多个零日漏洞实现对设备的完全控制。研究表明该攻击自 2025 年 11 月起活跃，其有效载荷具有极高的复杂性，疑似由政府背景团队设计。虽然技术细节未完全披露，但该攻击链展示了针对移动端的高级持续性威胁特征，目前相关漏洞已由厂商进行处理。",
+          "tags": [
+            "iOS漏洞",
+            "零日攻击",
+            "间谍软件"
+          ],
+          "url": "https://www.schneier.com/blog/archives/2026/05/darksword-malware.html",
+          "source": "schneier.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-05T10:42:03+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及iOS全链条0-day利用，代表了移动端攻击的最高技术水",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "schneier.com"
+        },
+        {
           "title_zh": "新型 Linux 恶意软件 Quasar Linux 针对软件开发者：集成 Rootkit 与凭据窃取功能",
           "title_orig": "New stealthy Quasar Linux malware targets software developers",
           "summary": "研究人员发现了一种名为 Quasar Linux (QLNX) 的新型隐蔽植入物，该软件专门针对开发者的 Linux 系统进行攻击，具有极强的威胁性。该恶意软件集成了 Rootkit 隐藏技术、后门访问以及敏感凭据窃取功能，利用开发环境的高权限特性进行持久化潜伏，虽然目前具体的初始感染矢量尚未披露，但其对软件供应链安全的潜在影响不容忽视。",
@@ -235,6 +143,154 @@
           "source_kind": "media",
           "source_label": "安全媒体",
           "source_key": "bleepingcomputer.com"
+        },
+        {
+          "title_zh": "Apache HTTP Server 修复 HTTP/2 协议双重释放漏洞 CVE-2026-23918 可致 RCE",
+          "title_orig": "Critical Apache HTTP/2 Flaw (CVE-2026-23918) Enables DoS and Potential RCE",
+          "summary": "Apache软件基金会发布安全更新修复了CVE-2026-23918漏洞，该漏洞存在于HTTP Server的HTTP/2协议处理模块中，属于严重的双重释放缺陷，CVSS评分为8.8。攻击者通过构造特殊的HTTP/2请求，可能导致服务崩溃形成拒绝服务攻击，甚至在特定条件下实现远程代码执行，建议所有受影响版本的用户及时升级至官方最新版本，以确保Web服务的可用性与安全性。",
+          "tags": [
+            "Apache",
+            "HTTP/2",
+            "双重释放"
+          ],
+          "url": "https://thehackernews.com/2026/05/critical-apache-http2-flaw-cve-2026.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-05T16:19:00+00:00",
+          "cve_ids": [
+            "CVE-2026-23918"
+          ],
+          "selection_reason": "Apache作为核心Web基础设施，其HTTP/2协议栈漏洞",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "thehackernews.com"
+        },
+        {
+          "title_zh": "虚拟光驱工具 DAEMON Tools 官方安装程序遭供应链攻击植入恶意载荷",
+          "title_orig": "DAEMON Tools Supply Chain Attack Compromises Official Installers with Malware",
+          "summary": "卡巴斯基研究人员发现 DAEMON Tools 官方网站分发的安装程序已被篡改，用于传播恶意载荷。这些受污染的安装程序带有开发者的合法数字签名，具有极高的欺骗性，属于典型的供应链攻击。攻击者通过控制官方分发渠道，使下载并运行该软件的用户面临设备被感染的风险。目前建议用户停止使用受影响版本的安装包，并检查系统是否存在异常行为。",
+          "tags": [
+            "供应链攻击",
+            "数字签名",
+            "软件安全"
+          ],
+          "url": "https://thehackernews.com/2026/05/daemon-tools-supply-chain-attack.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-05T16:07:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "知名工具软件的供应链污染事件，对软件分发安全具有警示意义。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "thehackernews.com"
+        },
+        {
+          "title_zh": "MetInfo CMS 存在代码注入漏洞 CVE-2026-29014 已被黑客用于远程执行攻击",
+          "title_orig": "MetInfo CMS CVE-2026-29014 Exploited for Remote Code Execution Attacks",
+          "summary": "开源内容管理系统MetInfo CMS被曝存在CVE-2026-29014代码注入漏洞，受影响版本涵盖7.9、8.0及8.1，攻击者无需身份验证即可通过注入PHP代码执行任意指令。根据VulnCheck的监测，威胁参与者正利用此CVSS 9.8分的漏洞发起积极攻击，由于该系统应用广泛，建议所有使用MetInfo的用户立即更新至安全版本，防止网站服务器被黑客完全控制或导致敏感信息泄露。",
+          "tags": [
+            "MetInfo",
+            "代码注入",
+            "CMS安全"
+          ],
+          "url": "https://thehackernews.com/2026/05/metinfo-cms-cve-2026-29014-exploited.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-05T11:56:00+00:00",
+          "cve_ids": [
+            "CVE-2026-29014"
+          ],
+          "selection_reason": "开源CMS的高危RCE漏洞且已被在野利用，需重点关注。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "thehackernews.com"
+        },
+        {
+          "title_zh": "安全机构扫描百万个暴露的 AI 服务，揭示自托管大语言模型基础设施存在的严重安全风险",
+          "title_orig": "We Scanned 1 Million Exposed AI Services. Here's How Bad the Security Actually Is",
+          "summary": "研究人员对全球一百万个暴露在互联网上的AI服务进行了大规模安全扫描，结果显示企业在快速部署自托管大语言模型基础设施的过程中，为了追求交付速度而严重忽视了基础安全性。由于缺乏必要的配置保护和访问控制，许多AI服务已成为攻击者侵入企业内网的新入口，这种在软件供应链中盲目追求AI效能而牺牲安全的做法，正使过去几十年积累的行业安全成果面临前所未有的严峻挑战。",
+          "tags": [
+            "AI安全",
+            "资产暴露",
+            "LLM"
+          ],
+          "url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-05T10:30:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "大规模扫描数据反映了当前 AI 基础设施的普遍安全现状。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "thehackernews.com"
+        },
+        {
+          "title_zh": "CloudZ 恶意软件利用 Microsoft Phone Link 劫持 Pheno 插件以窃取短信和验证码",
+          "title_orig": "CloudZ malware abuses Microsoft Phone Link to steal SMS and OTPs",
+          "summary": "新版CloudZ远程访问工具正部署名为Pheno的恶意插件，该插件通过滥用Microsoft Phone Link的合法连接功能，实现对移动设备数据的非法同步与监控。攻击者利用此机制可以巧妙绕过传统的安全防御体系，直接从受害者的手机中窃取敏感短信内容及双重身份验证码，进而获取账户的完全控制权，这种针对跨设备连接协议的攻击手段对个人隐私和企业资产构成了严重威胁。",
+          "tags": [
+            "恶意软件",
+            "移动安全",
+            "权限滥用"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/cloudz-malware-abuses-microsoft-phone-link-to-steal-sms-and-otps/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-05T10:03:52+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示了利用合法系统同步功能进行数据窃取的新路径。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "bleepingcomputer.com"
+        },
+        {
+          "title_zh": "泛微 e-cology 协同办公平台调试接口存在远程代码执行漏洞 CVE-2026-22679 并遭利用",
+          "title_orig": "Weaver E-cology RCE Flaw CVE-2026-22679 Actively Exploited via Debug API",
+          "summary": "泛微e-cology协同办公平台存在编号为CVE-2026-22679的严重漏洞，其CVSS评分高达9.8，主要源于系统调试接口API存在未经身份验证的远程代码执行缺陷。该漏洞影响20260312之前的10.0版本，攻击者可通过特定路径完全控制服务器，且目前已在野外被积极利用，建议相关企业立即安装官方发布的补丁以防范攻击并保护企业核心数据资产安全。",
+          "tags": [
+            "泛微OA",
+            "RCE漏洞",
+            "在野利用"
+          ],
+          "url": "https://thehackernews.com/2026/05/weaver-e-cology-rce-flaw-cve-2026-22679.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-05T07:37:00+00:00",
+          "cve_ids": [
+            "CVE-2026-22679"
+          ],
+          "selection_reason": "泛微OA在国内企业覆盖广，该RCE漏洞已在野利用，风险极高。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "thehackernews.com"
+        },
+        {
+          "title_zh": "Apache HTTP Server 模块 mod_proxy_ajp 存在堆溢出漏洞 CVE-2026-28780",
+          "title_orig": "CVE-2026-28780",
+          "summary": "Apache HTTP Server的mod_proxy_ajp模块存在堆缓冲区溢出漏洞，编号为CVE-2026-28780，当模块连接到恶意AJP服务器时，攻击者可发送特制消息在堆内存末尾写入受控字节。该漏洞影响2.4.66及之前版本，可能导致服务异常或潜在的代码执行风险，官方强烈建议用户尽快升级至2.4.67版本以修复此安全缺陷，确保代理服务在处理外部AJP通信时的稳定性与安全性。",
+          "tags": [
+            "Apache",
+            "堆溢出",
+            "AJP协议"
+          ],
+          "url": "https://vulners.com/nvd/NVD:CVE-2026-28780?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-05T22:16:00+00:00",
+          "cve_ids": [
+            "CVE-2026-28780"
+          ],
+          "selection_reason": "经典的堆溢出漏洞，涉及Apache代理模块，具有一定的技术分",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com"
         },
         {
           "title_zh": "OpenMRS Core 电子病历系统存在路径遍历漏洞 CVE-2026-40075 可导致任意文件访问",
@@ -303,84 +359,48 @@
           "source_key": "vulners.com"
         },
         {
-          "title_zh": "ABB B&R Automation Studio 工业自动化软件存在身份冒充漏洞预警",
-          "title_orig": "ABB B&R Automation Studio",
-          "summary": "ABB发布的预警指出其B&R Automation Studio产品存在安全漏洞，当系统通过ANSL over TLS或OPC-UA协议与服务器建立连接时，攻击者可利用该漏洞伪装成受信任的通信方。这种身份伪装可能导致工业控制网络中的中间人攻击或非法数据篡改，严重威胁自动化生产线的运行安全，目前官方已针对受影响版本发布了安全更新补丁，并强烈建议相关工业用户尽快完成系统升级以修复此身份验证弱点。",
+          "title_zh": "cPanel/WHM 存在 CRLF 注入漏洞 CVE-2026-41940 可绕过身份验证获取 Root 权限",
+          "title_orig": "Exploit for Missing Authentication for Critical Function in Cpanel",
+          "summary": "cPanel/WHM管理面板中存在关键功能身份验证缺失漏洞，编号为CVE-2026-41940，攻击者可利用CRLF注入手段绕过认证流程并实现权限提升。通过该漏洞，攻击者能够获得服务器的Root级别远程代码执行权限，目前已有开源工具包实现了自动化利用，建议管理员立即核查补丁状态并对受影响的cPanel组件进行安全加固，以防止服务器控制权被非法夺取。",
           "tags": [
-            "工控安全",
-            "身份冒充",
-            "ABB"
+            "cPanel",
+            "身份绕过",
+            "提权"
           ],
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-125-04",
-          "source": "cisa.gov",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-05T12:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "工控协议实现中的安全漏洞，可能影响工业生产线安全。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "官方通告",
-          "source_key": "cisa.gov"
-        },
-        {
-          "title_zh": "Hitachi Energy PCM600 电力保护控制管理工具存在数据完整性漏洞",
-          "title_orig": "Hitachi Energy PCM600",
-          "summary": "Hitachi Energy 披露其 PCM600 产品存在安全漏洞，成功利用该漏洞的攻击者可以破坏产品的完整性，进而影响电力系统的正常运行。受影响版本包括 PCM600 及其相关组件，漏洞可能导致关键的电力系统配置数据被非法篡改，官方建议用户参考推荐的即时行动指南进行缓解或修复，以防止潜在的恶意攻击对能源基础设施造成损害。",
-          "tags": [
-            "电力安全",
-            "Hitachi",
-            "完整性破坏"
+          "url": "https://vulners.com/githubexploit/8F486651-6CB4-54B6-8532-9AE328F49A9F?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-05T22:06:49+00:00",
+          "cve_ids": [
+            "CVE-2026-41940"
           ],
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-125-01",
-          "source": "cisa.gov",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-05T12:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "关键基础设施相关软件漏洞，对电力系统安全运行至关重要。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "官方通告",
-          "source_key": "cisa.gov"
-        },
-        {
-          "title_zh": "ABB B&R PVI 客户端应用存在敏感信息泄露漏洞，攻击者可读取日志数据中的关键信息",
-          "title_orig": "ABB B&R PVI",
-          "summary": "该漏洞存在于ABB B&R PVI客户端应用中，其核心原理是应用程序在生成的日志数据中记录了敏感机密信息，攻击者若成功利用此漏洞，将能够直接读取并获取这些关键数据。虽然在所有PVI客户端版本中日志功能默认处于关闭状态，但一旦用户手动开启将面临严重泄露风险，目前官方已针对受影响的版本发布了安全更新补丁，建议相关用户尽快完成修复以确保系统环境的安全。",
-          "tags": [
-            "信息泄露",
-            "工业控制系统",
-            "ABB"
-          ],
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-125-02",
-          "source": "cisa.gov",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-05T12:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及工控系统客户端安全及敏感日志处理规范。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "官方通告",
-          "source_key": "cisa.gov"
-        },
-        {
-          "title_zh": "CloudZ 恶意软件利用 Microsoft Phone Link 劫持 Pheno 插件以窃取短信和验证码",
-          "title_orig": "CloudZ malware abuses Microsoft Phone Link to steal SMS and OTPs",
-          "summary": "新版CloudZ远程访问工具正部署名为Pheno的恶意插件，该插件通过滥用Microsoft Phone Link的合法连接功能，实现对移动设备数据的非法同步与监控。攻击者利用此机制可以巧妙绕过传统的安全防御体系，直接从受害者的手机中窃取敏感短信内容及双重身份验证码，进而获取账户的完全控制权，这种针对跨设备连接协议的攻击手段对个人隐私和企业资产构成了严重威胁。",
-          "tags": [
-            "恶意软件",
-            "移动安全",
-            "权限滥用"
-          ],
-          "url": "https://www.bleepingcomputer.com/news/security/cloudz-malware-abuses-microsoft-phone-link-to-steal-sms-and-otps/",
-          "source": "bleepingcomputer.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-05T10:03:52+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了利用合法系统同步功能进行数据窃取的新路径。",
+          "selection_reason": "涉及主流服务器管理面板的Root提权，且已有公开利用脚本。",
           "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "bleepingcomputer.com"
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com"
+        },
+        {
+          "title_zh": "Linux 内核 AF_ALG 子系统存在 Copy Fail 漏洞 CVE-2026-31431 可实现本地提权",
+          "title_orig": "Breakdown of CVE-2026–31431 (Copy Fail) an Overl00k3d Linux Kernel Vulnerability Enables Privilege…",
+          "summary": "Linux内核AF_ALG用户空间加密子系统存在名为“Copy Fail”的权限提升漏洞，编号为CVE-2026-31431，其根源在于2017年引入的AEAD密码操作性能优化补丁。本地用户可利用该缺陷损坏内存中任何可读文件的副本，包括关键的setuid二进制文件，从而非法获取Root最高权限，该漏洞影响多个主流Linux发行版内核，需引起系统管理员高度重视并尽快应用内核安全补丁。",
+          "tags": [
+            "Linux内核",
+            "本地提权",
+            "内存损坏"
+          ],
+          "url": "https://infosecwriteups.com/breakdown-of-cve-2026-31431-copy-fail-an-overl00k3d-linux-kernel-vulnerability-enables-privilege-f8658453ab81?source=rss----7b722bfd1b8d---4",
+          "source": "infosecwriteups.com",
+          "category": "WebSecurity",
+          "published": "2026-05-04T13:05:50+00:00",
+          "cve_ids": [
+            "CVE-2026-31431"
+          ],
+          "selection_reason": "Linux内核子系统漏洞，涉及权限提升，技术原理具有深度。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "安全社区",
+          "source_key": "infosecwriteups.com"
         },
         {
           "title_zh": "安全研究员在联邦漏洞披露计划中发现无保护登录入口，探讨漏洞评级与实际影响",
@@ -401,26 +421,6 @@
           "source_kind": "community",
           "source_label": "安全社区",
           "source_key": "infosecwriteups.com"
-        },
-        {
-          "title_zh": "安全机构扫描百万个暴露的 AI 服务，揭示自托管大语言模型基础设施存在的严重安全风险",
-          "title_orig": "We Scanned 1 Million Exposed AI Services. Here's How Bad the Security Actually Is",
-          "summary": "研究人员对全球一百万个暴露在互联网上的AI服务进行了大规模安全扫描，结果显示企业在快速部署自托管大语言模型基础设施的过程中，为了追求交付速度而严重忽视了基础安全性。由于缺乏必要的配置保护和访问控制，许多AI服务已成为攻击者侵入企业内网的新入口，这种在软件供应链中盲目追求AI效能而牺牲安全的做法，正使过去几十年积累的行业安全成果面临前所未有的严峻挑战。",
-          "tags": [
-            "AI安全",
-            "资产暴露",
-            "LLM"
-          ],
-          "url": "https://thehackernews.com/2026/05/we-scanned-1-million-exposed-ai.html",
-          "source": "thehackernews.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-05T10:30:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "大规模扫描数据反映了当前 AI 基础设施的普遍安全现状。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "thehackernews.com"
         }
       ],
       "raw_count": 90,
@@ -428,12 +428,12 @@
       "selection_stats": {
         "total": 20,
         "direct": 20,
-        "tier_t2": 17,
-        "kind_media": 7,
-        "kind_community": 7,
-        "kind_expert": 3,
         "tier_t1": 3,
-        "kind_official": 3
+        "kind_official": 3,
+        "tier_t2": 17,
+        "kind_expert": 3,
+        "kind_media": 7,
+        "kind_community": 7
       },
       "clustering_stats": {},
       "generated_at": "2026-05-05T23:35:37.710496Z"
@@ -447,26 +447,6 @@
     "ai": {
       "display_name": "AI 前沿",
       "items": [
-        {
-          "title_zh": "Anthropic 推出金融服务 AI 智能体，美股收高且原油价格下跌",
-          "title_orig": "5月6日隔夜要闻：美股收高原油下跌鲁比奥称“史诗怒火”军事行动已结束Anthropic推出金融服务AI智能体 - 新浪财经",
-          "summary": "5月6日隔夜要闻显示美股市场收高而原油价格下跌，同时鲁比奥宣布代号为“史诗怒火”的军事行动已正式结束。在科技领域，Anthropic 针对金融服务行业推出了全新的 AI 智能体，旨在通过生成式技术加速垂直领域的应用落地。这些动态不仅展示了宏观经济与地缘政治的最新走向，也为金融从业者及投资者提供了关于技术趋势与市场波动的重要参考价值。",
-          "tags": [
-            "Anthropi",
-            "AI 智能体",
-            "金融科技"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQTDNvSk9JN1ZNVTk2UUVFd0VYa1pOOEU0VG00WjJmSFk4YTVMMWhkT2M3aERTSEVZc3BWNHAzS0dKU3c0LW9EZlEwQTVKQUROek5rM2puam1FMXRqZmpzR1BxYncyNWFsQm4yQ2NQQ2o4QjNkc2VueUMweGRURWM5TUZCYU1LTFk?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-05-05T22:30:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了头部 AI 公司在金融垂直领域的最新产品布局。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
         {
           "title_zh": "TADI 系统发布：利用智能体大模型编排实现异构油田数据的钻井智能分析",
           "title_orig": "TADI: Tool-Augmented Drilling Intelligence via Agentic LLM Orchestration over Heterogeneous Wellsite Data",
@@ -548,6 +528,86 @@
           "source_key": "arxiv.org"
         },
         {
+          "title_zh": "研究提出 LLM 工具调用评估框架：优化智能体决策以避免冗余或有害调用",
+          "title_orig": "To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling",
+          "summary": "科研人员开发了一个全新框架，专门用于评估和优化大语言模型在执行任务时是否应该调用外部工具。研究指出，虽然工具能显著增强模型能力，但不当或冗余的调用可能产生有害结果，甚至降低整体任务的成功率。该框架特别针对 Web 场景下的智能体决策进行了深度优化，通过建立科学的决策机制，帮助开发者在构建 AI 系统时平衡工具使用的收益与风险，从而提升智能体的可靠性。",
+          "tags": [
+            "工具调用",
+            "智能体架构",
+            "决策优化"
+          ],
+          "url": "https://arxiv.org/abs/2605.00737",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-05T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "关注智能体安全与效率，提出了工具调用的决策准则。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org"
+        },
+        {
+          "title_zh": "研究人员提出 AgentReputation 框架以解决去中心化 AI 代理市场的信任评估难题",
+          "title_orig": "AgentReputation: A Decentralized Agentic AI Reputation Framework",
+          "summary": "针对去中心化AI代理市场中存在的策略性优化评估、虚假评价等声誉机制失效问题，研究者在arXiv上提出了名为AgentReputation的新型信誉框架。该研究旨在解决软件工程任务中缺乏中心化监管的难题，通过构建可靠的信誉体系来提升调试、补丁生成和安全审计等协作任务的透明度，对构建去中心化AI生态具有重要意义。",
+          "tags": [
+            "AI 代理",
+            "去中心化",
+            "声誉系统"
+          ],
+          "url": "https://arxiv.org/abs/2605.00073",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-05T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨了 AI 代理生态中关键的信任与评价机制问题。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org"
+        },
+        {
+          "title_zh": "OpenAI 专家揭秘 GPT-5.x 如何在理论物理与量子引力研究中推导出新成果",
+          "title_orig": "🔬Doing Vibe Physics — Alex Lupsasca, OpenAI",
+          "summary": "来自OpenAI的Alex Lupsasca详细介绍了GPT-5.x模型在理论物理领域的研究突破，展示了该模型如何成功推导出关于量子引力的全新研究结果。这一案例有力证明了前沿大语言模型在处理极端复杂科学问题上的巨大潜力，不仅为科研工作者利用AI进行理论创新提供了新路径，也预示着AI在基础科学探索中将发挥更核心的作用。",
+          "tags": [
+            "OpenAI",
+            "理论物理",
+            "GPT-5"
+          ],
+          "url": "https://www.latent.space/p/lupsasca",
+          "source": "latent.space",
+          "category": "Commentary",
+          "published": "2026-05-05T20:34:11+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了 AI 在基础科学前沿研究中的突破性应用潜力。",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家播客",
+          "source_key": "latent.space"
+        },
+        {
+          "title_zh": "Datasette LLM 插件发布 0.1a7 版本，新增特定模型默认选项配置功能以优化插件支持机制",
+          "title_orig": "datasette-llm 0.1a7",
+          "summary": "Datasette 发布的 datasette-llm 0.1a7 版本引入了为特定模型配置默认选项的新机制，允许用户预设如温度值等参数，从而在执行数据富化等操作时确保模型调用的一致性。该更新作为 Datasette 插件生态演进的关键环节，进一步完善了其对大语言模型插件的支持体系，为开发者在管理复杂模型配置和提升自动化处理效率方面提供了更便捷的工具支持。",
+          "tags": [
+            "Datasett",
+            "LLM",
+            "开源工具"
+          ],
+          "url": "https://simonwillison.net/2026/May/5/datasette-llm/#atom-everything",
+          "source": "simonwillison.net",
+          "category": "Commentary",
+          "published": "2026-05-05T01:56:55+00:00",
+          "cve_ids": [],
+          "selection_reason": "反映了数据分析工具与大语言模型集成能力的持续演进。",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "simonwillison.net"
+        },
+        {
           "title_zh": "IBM 发布 Granite 4.1 系列大模型：涵盖 3B 至 30B 尺寸并采用 Apache 2.0 协议",
           "title_orig": "Granite 4.1 3B SVG Pelican Gallery",
           "summary": "IBM 正式推出了 Granite 4.1 系列大语言模型，包含 3B、8B 和 30B 三种参数规模，并遵循 Apache 2.0 开源协议供开发者使用。该系列模型提供了详细的训练过程说明，且 Unsloth 已发布了包含 21 种不同量化变体的 GGUF 版本，极大地方便了轻量化部署。这些模型的发布为企业级应用提供了更多样化、可定制的选择，有助于在不同硬件环境下实现高效的生成式 AI 落地。",
@@ -568,24 +628,24 @@
           "source_key": "simonwillison.net"
         },
         {
-          "title_zh": "研究提出 LLM 工具调用评估框架：优化智能体决策以避免冗余或有害调用",
-          "title_orig": "To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling",
-          "summary": "科研人员开发了一个全新框架，专门用于评估和优化大语言模型在执行任务时是否应该调用外部工具。研究指出，虽然工具能显著增强模型能力，但不当或冗余的调用可能产生有害结果，甚至降低整体任务的成功率。该框架特别针对 Web 场景下的智能体决策进行了深度优化，通过建立科学的决策机制，帮助开发者在构建 AI 系统时平衡工具使用的收益与风险，从而提升智能体的可靠性。",
+          "title_zh": "谷歌将 Google Home 智能家居助手升级至 Gemini 3.1 以处理复杂多步指令",
+          "title_orig": "Google Home&#8217;s Gemini AI can handle more complicated requests",
+          "summary": "谷歌宣布将Google Home的底层AI升级为Gemini 3.1版本，使用户能够通过单一命令执行更复杂的多步骤任务，并显著增强了助手对请求的理解与执行能力。此次升级旨在改善全球智能家居用户的交互体验，通过提升自动化效率让智能助手在处理复杂家居场景时更加得心应手，标志着谷歌在智能家居AI化进程中迈出重要一步。",
           "tags": [
-            "工具调用",
-            "智能体架构",
-            "决策优化"
+            "谷歌",
+            "智能家居",
+            "Gemini"
           ],
-          "url": "https://arxiv.org/abs/2605.00737",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-05T04:00:00+00:00",
+          "url": "https://www.theverge.com/tech/924755/google-home-gemini-3-1-upgrade",
+          "source": "theverge.com",
+          "category": "Media",
+          "published": "2026-05-05T21:46:04+00:00",
           "cve_ids": [],
-          "selection_reason": "关注智能体安全与效率，提出了工具调用的决策准则。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org"
+          "selection_reason": "展示了大型语言模型在智能家居实际应用场景中的性能提升。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "theverge.com"
         },
         {
           "title_zh": "苹果同意支付 2.5 亿美元和解金：因未能按期交付宣传的 Siri AI 功能遭起诉",
@@ -628,44 +688,24 @@
           "source_key": "arstechnica.com"
         },
         {
-          "title_zh": "研究人员提出 AgentReputation 框架以解决去中心化 AI 代理市场的信任评估难题",
-          "title_orig": "AgentReputation: A Decentralized Agentic AI Reputation Framework",
-          "summary": "针对去中心化AI代理市场中存在的策略性优化评估、虚假评价等声誉机制失效问题，研究者在arXiv上提出了名为AgentReputation的新型信誉框架。该研究旨在解决软件工程任务中缺乏中心化监管的难题，通过构建可靠的信誉体系来提升调试、补丁生成和安全审计等协作任务的透明度，对构建去中心化AI生态具有重要意义。",
+          "title_zh": "ASML 首席执行官称公司在光刻机领域拥有绝对垄断地位且暂无竞争对手",
+          "title_orig": "ASML CEO Christophe Fouquet on his company’s monopoly: no one is coming for us",
+          "summary": "ASML首席执行官Christophe Fouquet在接受采访时自信地表示，目前没有任何竞争对手能够挑战该公司在半导体设备市场的垄断地位。作为全球芯片产业链中最核心的环节，ASML的这种表态反映了高端光刻机制造领域极高的技术壁垒，其市场统治力对全球半导体供应链的稳定以及未来先进制程的发展具有深远且决定性的影响。",
           "tags": [
-            "AI 代理",
-            "去中心化",
-            "声誉系统"
+            "ASML",
+            "半导体",
+            "光刻机"
           ],
-          "url": "https://arxiv.org/abs/2605.00073",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-05T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "探讨了 AI 代理生态中关键的信任与评价机制问题。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org"
-        },
-        {
-          "title_zh": "谷歌将 Google Home 智能家居助手升级至 Gemini 3.1 以处理复杂多步指令",
-          "title_orig": "Google Home&#8217;s Gemini AI can handle more complicated requests",
-          "summary": "谷歌宣布将Google Home的底层AI升级为Gemini 3.1版本，使用户能够通过单一命令执行更复杂的多步骤任务，并显著增强了助手对请求的理解与执行能力。此次升级旨在改善全球智能家居用户的交互体验，通过提升自动化效率让智能助手在处理复杂家居场景时更加得心应手，标志着谷歌在智能家居AI化进程中迈出重要一步。",
-          "tags": [
-            "谷歌",
-            "智能家居",
-            "Gemini"
-          ],
-          "url": "https://www.theverge.com/tech/924755/google-home-gemini-3-1-upgrade",
-          "source": "theverge.com",
+          "url": "https://techcrunch.com/2026/05/05/asml-ceo-christophe-fouquet-no-one-is-coming-for-us/",
+          "source": "techcrunch.com",
           "category": "Media",
-          "published": "2026-05-05T21:46:04+00:00",
+          "published": "2026-05-05T20:06:40+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了大型语言模型在智能家居实际应用场景中的性能提升。",
+          "selection_reason": "半导体巨头对市场竞争格局的表态，关乎全球科技产业链。",
           "source_tier": "t2",
           "source_kind": "media",
           "source_label": "科技媒体",
-          "source_key": "theverge.com"
+          "source_key": "techcrunch.com"
         },
         {
           "title_zh": "微软 Xbox 新任首席执行官宣布停止开发游戏主机及移动端的 Copilot AI 功能",
@@ -688,46 +728,6 @@
           "source_key": "theverge.com"
         },
         {
-          "title_zh": "OpenAI 专家揭秘 GPT-5.x 如何在理论物理与量子引力研究中推导出新成果",
-          "title_orig": "🔬Doing Vibe Physics — Alex Lupsasca, OpenAI",
-          "summary": "来自OpenAI的Alex Lupsasca详细介绍了GPT-5.x模型在理论物理领域的研究突破，展示了该模型如何成功推导出关于量子引力的全新研究结果。这一案例有力证明了前沿大语言模型在处理极端复杂科学问题上的巨大潜力，不仅为科研工作者利用AI进行理论创新提供了新路径，也预示着AI在基础科学探索中将发挥更核心的作用。",
-          "tags": [
-            "OpenAI",
-            "理论物理",
-            "GPT-5"
-          ],
-          "url": "https://www.latent.space/p/lupsasca",
-          "source": "latent.space",
-          "category": "Commentary",
-          "published": "2026-05-05T20:34:11+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了 AI 在基础科学前沿研究中的突破性应用潜力。",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "专家播客",
-          "source_key": "latent.space"
-        },
-        {
-          "title_zh": "深度解析 Claude Code 成功秘诀：工程化设计对产品好用程度的贡献率高达 98.4%",
-          "title_orig": "撕开Claude Code真相：让它好用的98.4%，是工程不是AI - 51CTO",
-          "summary": "51CTO文章指出Claude Code之所以在实际应用中表现出色，其核心竞争力在于高达98.4%的极致工程化实现，而非单纯依赖AI模型本身的能力。这一观点深刻提醒了开发者和企业，在构建AI应用时，底层工程架构的优化对于最终用户体验和工具实用性至关重要，单纯追求模型参数而忽视工程细节往往难以打造出真正好用的产品。",
-          "tags": [
-            "Claude",
-            "软件工程",
-            "AI 开发"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1rNFJSY0NtcHRxOFZOYlF2UVBMbVl4ckZNbTlVR05mWDBMVzhxX2p3eXhPZmw3dG1jU1VRb2w0S1BrWWM4ZENfNTk3RVVPR2hJeGdR?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-05-05T23:15:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了 AI 工具成功的工程本质，对开发者具有实战参考价值。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
-        {
           "title_zh": "苹果 iOS 27 或将允许用户自主选择第三方 AI 模型作为系统默认助手",
           "title_orig": "Apple could let you pick a favorite AI model in iOS 27",
           "summary": "据爆料苹果计划在iOS 27等新系统中允许第三方聊天机器人驱动系统级AI功能，届时用户将能够根据个人偏好在全系统范围内选择首选的AI模型来运行。此举标志着苹果生态系统在人工智能领域的进一步开放，不仅将为第三方AI开发者提供巨大的流量入口，更可能彻底改变移动端AI市场的竞争格局与用户的交互习惯。",
@@ -746,26 +746,6 @@
           "source_kind": "media",
           "source_label": "科技媒体",
           "source_key": "theverge.com"
-        },
-        {
-          "title_zh": "ASML 首席执行官称公司在光刻机领域拥有绝对垄断地位且暂无竞争对手",
-          "title_orig": "ASML CEO Christophe Fouquet on his company’s monopoly: no one is coming for us",
-          "summary": "ASML首席执行官Christophe Fouquet在接受采访时自信地表示，目前没有任何竞争对手能够挑战该公司在半导体设备市场的垄断地位。作为全球芯片产业链中最核心的环节，ASML的这种表态反映了高端光刻机制造领域极高的技术壁垒，其市场统治力对全球半导体供应链的稳定以及未来先进制程的发展具有深远且决定性的影响。",
-          "tags": [
-            "ASML",
-            "半导体",
-            "光刻机"
-          ],
-          "url": "https://techcrunch.com/2026/05/05/asml-ceo-christophe-fouquet-no-one-is-coming-for-us/",
-          "source": "techcrunch.com",
-          "category": "Media",
-          "published": "2026-05-05T20:06:40+00:00",
-          "cve_ids": [],
-          "selection_reason": "半导体巨头对市场竞争格局的表态，关乎全球科技产业链。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "科技媒体",
-          "source_key": "techcrunch.com"
         },
         {
           "title_zh": "PayPal 宣布回归技术公司定位并全面拥抱 AI，通过自动化与架构重组计划节省 15 亿美元成本",
@@ -788,26 +768,6 @@
           "source_key": "techcrunch.com"
         },
         {
-          "title_zh": "Datasette LLM 插件发布 0.1a7 版本，新增特定模型默认选项配置功能以优化插件支持机制",
-          "title_orig": "datasette-llm 0.1a7",
-          "summary": "Datasette 发布的 datasette-llm 0.1a7 版本引入了为特定模型配置默认选项的新机制，允许用户预设如温度值等参数，从而在执行数据富化等操作时确保模型调用的一致性。该更新作为 Datasette 插件生态演进的关键环节，进一步完善了其对大语言模型插件的支持体系，为开发者在管理复杂模型配置和提升自动化处理效率方面提供了更便捷的工具支持。",
-          "tags": [
-            "Datasett",
-            "LLM",
-            "开源工具"
-          ],
-          "url": "https://simonwillison.net/2026/May/5/datasette-llm/#atom-everything",
-          "source": "simonwillison.net",
-          "category": "Commentary",
-          "published": "2026-05-05T01:56:55+00:00",
-          "cve_ids": [],
-          "selection_reason": "反映了数据分析工具与大语言模型集成能力的持续演进。",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "专家博客",
-          "source_key": "simonwillison.net"
-        },
-        {
           "title_zh": "OpenAI 旗舰代码生成模型 Codex 持续发力，支持 GitHub Copilot 并与 Claude Cowork 展开竞争",
           "title_orig": "这次直接硬刚Claude Cowork。 图片Codex是OpenAI的旗舰代码生成模型，支持GitHub Copilot - 51CTO",
           "summary": "OpenAI 旗下的旗舰代码生成模型 Codex 目前已深度支持 GitHub Copilot 等应用，并展现出直接与 Claude Cowork 等同类产品展开正面竞争的强劲态势。这一动态标志着代码生成领域的技术博弈进入白热化阶段，对于依赖 AI 辅助编程的开发者而言，意味着将拥有性能更强、选择更多的生产力工具，同时也推动了整个行业在模型效率与生成质量上的技术标准提升。",
@@ -822,6 +782,46 @@
           "published": "2026-05-05T23:17:00+00:00",
           "cve_ids": [],
           "selection_reason": "揭示了代码生成模型领域主流产品之间的直接竞争态势。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
+        },
+        {
+          "title_zh": "深度解析 Claude Code 成功秘诀：工程化设计对产品好用程度的贡献率高达 98.4%",
+          "title_orig": "撕开Claude Code真相：让它好用的98.4%，是工程不是AI - 51CTO",
+          "summary": "51CTO文章指出Claude Code之所以在实际应用中表现出色，其核心竞争力在于高达98.4%的极致工程化实现，而非单纯依赖AI模型本身的能力。这一观点深刻提醒了开发者和企业，在构建AI应用时，底层工程架构的优化对于最终用户体验和工具实用性至关重要，单纯追求模型参数而忽视工程细节往往难以打造出真正好用的产品。",
+          "tags": [
+            "Claude",
+            "软件工程",
+            "AI 开发"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1rNFJSY0NtcHRxOFZOYlF2UVBMbVl4ckZNbTlVR05mWDBMVzhxX2p3eXhPZmw3dG1jU1VRb2w0S1BrWWM4ZENfNTk3RVVPR2hJeGdR?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese",
+          "published": "2026-05-05T23:15:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示了 AI 工具成功的工程本质，对开发者具有实战参考价值。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
+        },
+        {
+          "title_zh": "Anthropic 推出金融服务 AI 智能体，美股收高且原油价格下跌",
+          "title_orig": "5月6日隔夜要闻：美股收高原油下跌鲁比奥称“史诗怒火”军事行动已结束Anthropic推出金融服务AI智能体 - 新浪财经",
+          "summary": "5月6日隔夜要闻显示美股市场收高而原油价格下跌，同时鲁比奥宣布代号为“史诗怒火”的军事行动已正式结束。在科技领域，Anthropic 针对金融服务行业推出了全新的 AI 智能体，旨在通过生成式技术加速垂直领域的应用落地。这些动态不仅展示了宏观经济与地缘政治的最新走向，也为金融从业者及投资者提供了关于技术趋势与市场波动的重要参考价值。",
+          "tags": [
+            "Anthropi",
+            "AI 智能体",
+            "金融科技"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQTDNvSk9JN1ZNVTk2UUVFd0VYa1pOOEU0VG00WjJmSFk4YTVMMWhkT2M3aERTSEVZc3BWNHAzS0dKU3c0LW9EZlEwQTVKQUROek5rM2puam1FMXRqZmpzR1BxYncyNWFsQm4yQ2NQQ2o4QjNkc2VueUMweGRURWM5TUZCYU1LTFk?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese",
+          "published": "2026-05-05T22:30:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了头部 AI 公司在金融垂直领域的最新产品布局。",
           "source_tier": "t2",
           "source_kind": "google_news",
           "source_label": "Google News",
@@ -852,16 +852,16 @@
       "selected_count": 20,
       "selection_stats": {
         "total": 20,
-        "google_news": 4,
-        "aggregator": 4,
-        "chinese": 4,
-        "tier_t2": 14,
-        "kind_google_news": 4,
         "direct": 16,
         "tier_t1": 6,
         "kind_official": 6,
+        "tier_t2": 14,
         "kind_expert": 3,
-        "kind_media": 7
+        "kind_media": 7,
+        "google_news": 4,
+        "aggregator": 4,
+        "chinese": 4,
+        "kind_google_news": 4
       },
       "clustering_stats": {},
       "generated_at": "2026-05-05T23:36:24.296828Z"
@@ -870,24 +870,24 @@
       "display_name": "金融科技",
       "items": [
         {
-          "title_zh": "微信支付进一步扩大海外二维码支付覆盖范围，提升中国游客跨境消费便利性",
-          "title_orig": "WeChat Pay expands QR code payment abroad - China Daily",
-          "summary": "微信支付近期宣布进一步扩大其在海外市场的二维码支付业务，旨在为出境旅游的中国用户提供更广泛的支付支持，并简化跨境交易的繁琐流程。这一举措不仅标志着中国移动支付巨头在国际市场竞争力的持续增强，也通过技术输出推动了全球零售业的数字化转型，为海外商户接入中国消费市场提供了更便捷的金融通道。",
+          "title_zh": "苹果计划将旗下设备打造为 AI 平台，允许用户自主选择第三方人工智能模型",
+          "title_orig": "Apple Plans to Turn Devices Into AI Platforms",
+          "summary": "据彭博社报道，苹果计划在自家软件中同时提供自研模型与第三方 AI 模型，让用户在处理文本生成和图像编辑等任务时能根据需求自由选择不同的模型。此举意味着苹果正致力于将旗下硬件设备转型为开放的 AI 平台，这不仅可能彻底改变移动端 AI 应用的生态格局，也将为用户带来更加个性化且多元化的智能交互体验。",
           "tags": [
-            "微信支付",
-            "跨境支付",
-            "移动支付"
+            "苹果",
+            "AI平台",
+            "人工智能"
           ],
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9fX2RwOWx4N2V6Ynhkc3J3ZXRkeFZBcWFrdTNCZlJDaDl6VUhDNlozZGEyTnE5YWRnbW5LaTZUU3BtY1FsSkpXUUoxV1BfOHFfODNBVVVJVm0tc0VJUFJFV21xb0dHYm9KSTRGUlZjaUZWVzVPM1hSN1Z6MnZ0UQ?oc=5",
-          "source": "news.google.com",
-          "category": "Digital Wallets",
-          "published": "2026-04-24T07:00:00+00:00",
+          "url": "https://www.pymnts.com/apple/2026/apple-plans-turn-devices-into-ai-platforms/",
+          "source": "pymnts.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-05T22:03:14+00:00",
           "cve_ids": [],
-          "selection_reason": "反映中国金融科技出海及跨境支付便利化的最新进展。",
+          "selection_reason": "苹果 AI 战略的重大转向，涉及生态开放与平台化。",
           "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "pymnts.com"
         },
         {
           "title_zh": "Anchorage Digital 推出代理银行基础设施，旨在连接人工智能代理与机构资金",
@@ -904,26 +904,6 @@
           "published": "2026-05-05T20:17:48+00:00",
           "cve_ids": [],
           "selection_reason": "探讨 AI 代理进入金融结算领域的合规化技术路径。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "pymnts.com"
-        },
-        {
-          "title_zh": "苹果计划将旗下设备打造为 AI 平台，允许用户自主选择第三方人工智能模型",
-          "title_orig": "Apple Plans to Turn Devices Into AI Platforms",
-          "summary": "据彭博社报道，苹果计划在自家软件中同时提供自研模型与第三方 AI 模型，让用户在处理文本生成和图像编辑等任务时能根据需求自由选择不同的模型。此举意味着苹果正致力于将旗下硬件设备转型为开放的 AI 平台，这不仅可能彻底改变移动端 AI 应用的生态格局，也将为用户带来更加个性化且多元化的智能交互体验。",
-          "tags": [
-            "苹果",
-            "AI平台",
-            "人工智能"
-          ],
-          "url": "https://www.pymnts.com/apple/2026/apple-plans-turn-devices-into-ai-platforms/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-05T22:03:14+00:00",
-          "cve_ids": [],
-          "selection_reason": "苹果 AI 战略的重大转向，涉及生态开放与平台化。",
           "source_tier": "t2",
           "source_kind": "media",
           "source_label": "金融媒体",
@@ -968,18 +948,38 @@
           "source_kind": "media",
           "source_label": "金融媒体",
           "source_key": "pymnts.com"
+        },
+        {
+          "title_zh": "微信支付进一步扩大海外二维码支付覆盖范围，提升中国游客跨境消费便利性",
+          "title_orig": "WeChat Pay expands QR code payment abroad - China Daily",
+          "summary": "微信支付近期宣布进一步扩大其在海外市场的二维码支付业务，旨在为出境旅游的中国用户提供更广泛的支付支持，并简化跨境交易的繁琐流程。这一举措不仅标志着中国移动支付巨头在国际市场竞争力的持续增强，也通过技术输出推动了全球零售业的数字化转型，为海外商户接入中国消费市场提供了更便捷的金融通道。",
+          "tags": [
+            "微信支付",
+            "跨境支付",
+            "移动支付"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9fX2RwOWx4N2V6Ynhkc3J3ZXRkeFZBcWFrdTNCZlJDaDl6VUhDNlozZGEyTnE5YWRnbW5LaTZUU3BtY1FsSkpXUUoxV1BfOHFfODNBVVVJVm0tc0VJUFJFV21xb0dHYm9KSTRGUlZjaUZWVzVPM1hSN1Z6MnZ0UQ?oc=5",
+          "source": "news.google.com",
+          "category": "Digital Wallets",
+          "published": "2026-04-24T07:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "反映中国金融科技出海及跨境支付便利化的最新进展。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
         }
       ],
       "raw_count": 8,
       "selected_count": 5,
       "selection_stats": {
         "total": 5,
+        "direct": 4,
+        "tier_t2": 5,
+        "kind_media": 4,
         "google_news": 1,
         "aggregator": 1,
-        "tier_t2": 5,
-        "kind_google_news": 1,
-        "direct": 4,
-        "kind_media": 4
+        "kind_google_news": 1
       },
       "clustering_stats": {},
       "generated_at": "2026-05-05T23:36:37.955270Z"

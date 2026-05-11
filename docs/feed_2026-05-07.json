@@ -5,190 +5,6 @@
       "display_name": "安全",
       "items": [
         {
-          "title_zh": "长城杯 2026 决赛 Shop 题 GLIBC 2.43 堆利用与 Tcache 劫持技术复现",
-          "title_orig": "长城杯 2026 决赛 Shop 题 GLIBC 2.43 Heap 利用与 Tcache 劫持",
-          "summary": "本文详细复现了长城杯决赛中针对 GLIBC 2.43 版本的堆漏洞利用过程，重点分析了高版本堆结构体的逆向还原方法。技术路径涵盖了通过伪造 Unsortedbin 泄露基址、利用 Tcache Perthread Struct 偏移缺陷劫持堆块指针，以及最终实现栈迁移并执行 ORW 链。该案例展示了在缺乏常规泄露手段下，如何利用特定偏移缺陷实现高版本 GLIBC 的内存布局控制。",
-          "tags": [
-            "GLIBC利用",
-            "堆漏洞",
-            "CTF"
-          ],
-          "url": "https://xz.aliyun.com/news/92081",
-          "source": "xz.aliyun.com",
-          "category": "CN_News",
-          "published": "2026-05-04T16:10:24+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了针对最新 GLIBC 版本的堆利用高级技巧。",
-          "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文安全",
-          "source_key": "xz.aliyun.com"
-        },
-        {
-          "title_zh": "Linux 内核 CVE-2026-31431 漏洞利用程序发布：针对 AF_ALG 路径的页面缓存损坏",
-          "title_orig": "Exploit for Incorrect Resource Transfer Between Spheres in Linux Linux_Kernel",
-          "summary": "该漏洞源于 Linux 内核 AF_ALG AEAD 路径中不同域之间的资源传输错误，可能导致页面缓存损坏。公开的 C 语言利用程序通过重复处理嵌入式负载的 4 字节窗口，尝试触发“Copy Fail”行为以实现提权或破坏。目前原文未明确披露受影响的具体内核版本范围，但已提供针对该路径的漏洞触发逻辑与利用代码，建议相关管理员关注内核补丁更新状态。",
-          "tags": [
-            "Linux内核",
-            "提权漏洞",
-            "CVE"
-          ],
-          "url": "https://vulners.com/githubexploit/35580C90-EE3C-5009-AF6C-BB6C2A516165?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-07T04:59:57+00:00",
-          "cve_ids": [
-            "CVE-2026-31431"
-          ],
-          "selection_reason": "提供了 Linux 内核关键路径漏洞的 PoC 实现细节。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com"
-        },
-        {
-          "title_zh": "Palo Alto Networks 警告 PAN-OS 防火墙 User-ID 认证门户存在 0day 远程代码执行漏洞",
-          "title_orig": "Palo Alto Networks warns of firewall RCE zero-day exploited in attacks",
-          "summary": "Palo Alto Networks 官方发布预警，指出其 PAN-OS 系统的 User-ID 身份验证门户组件存在一个关键级别的未修补漏洞。该漏洞目前正被攻击者在野利用，可导致未经身份验证的远程代码执行。受影响的具体版本和漏洞原理细节在原文中尚未完全公开，官方建议客户密切关注安全通告并采取必要的缓解措施，以防止防火墙设备被完全接管。",
-          "tags": [
-            "PaloAlto",
-            "0day",
-            "远程代码执行"
-          ],
-          "url": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-actively-exploited-firewall-zero-day/",
-          "source": "bleepingcomputer.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-06T09:18:16+00:00",
-          "cve_ids": [],
-          "selection_reason": "关键基础设施防火墙的在野 0day 攻击，风险等级极高。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "bleepingcomputer.com"
-        },
-        {
-          "title_zh": "DeepZero 自动化框架：利用 LLM 与静态分析批量挖掘 Windows 内核驱动 0day",
-          "title_orig": "DeepZero: 睡梦中自动化挖掘 Windows 内核驱动的 0day",
-          "summary": "DeepZero 是一款基于 Python 开发的自动化漏洞研究框架，旨在无人值守环境下批量发现 Windows 内核驱动的安全风险。该工具通过声明式 YAML 流水线整合了 PE 解析、Ghidra 反编译、Semgrep 静态扫描以及大语言模型评估技术。其核心价值在于能够高效识别 BYOVD 攻击面并筛选 0day 候选目标，为安全研究员提供了一套从逆向到漏洞评估的自动化工作流。",
-          "tags": [
-            "自动化挖洞",
-            "Windows内",
-            "LLM"
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495984&idx=2&sn=38cff337862a6436d3ea42c907c7cee6",
-          "source": "mp.weixin.qq.com",
-          "category": "CN_News",
-          "published": "2026-05-05T12:04:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了 LLM 结合传统静态分析在内核安全领域的工程化应用。",
-          "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文公众号",
-          "source_key": "mp.weixin.qq.com"
-        },
-        {
-          "title_zh": "基于 IronCurtain 框架的漏洞发现工作流：利用开源模型自主挖掘多项零日漏洞",
-          "title_orig": "用任何模型都能挖出零日漏洞",
-          "summary": "研究表明漏洞发现的瓶颈在于流程编排而非模型性能，基于开源 IronCurtain 框架构建的工作流已成功在多个项目中发现新漏洞。该方案利用 Opus、Sonnet 及 GLM 5.1 等模型，不仅复现了 1998 年 OpenBSD 的历史缺陷，还在四个主流开源项目中自主发现了全新的零日漏洞。这证明了通过合理的任务分解与编排，即使是开放权重模型也能在复杂代码审计中发挥显著作用。",
-          "tags": [
-            "AI安全",
-            "漏洞挖掘",
-            "开源框架"
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495982&idx=1&sn=683f7f4f0c395f90a94ef66463c5c023",
-          "source": "mp.weixin.qq.com",
-          "category": "CN_News",
-          "published": "2026-05-04T09:11:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "证明了 AI 编排框架在自主发现零日漏洞方面的实战能力。",
-          "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文公众号",
-          "source_key": "mp.weixin.qq.com"
-        },
-        {
-          "title_zh": "谷歌 Antigravity AI 智能体管理器漏洞预警：可实现沙箱逃逸与远程代码执行",
-          "title_orig": "谷歌Antigravity AI 智能体管理器曝出漏洞：可逃出沙箱，让攻击者实现远程代码执行",
-          "summary": "谷歌旗下的 Antigravity AI 智能体管理器被曝存在严重安全漏洞，攻击者可利用该漏洞逃逸预设的沙箱环境。漏洞触发后，攻击者能够在受影响的系统上实现远程代码执行，从而完全控制 AI 管理平台。原文未详细披露漏洞的具体成因、受影响的版本号以及修复补丁的发布状态。该事件凸显了 AI 基础设施在权限隔离与环境安全性方面面临的严峻挑战。",
-          "tags": [
-            "AI安全",
-            "沙箱逃逸",
-            "RCE"
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486593&idx=1&sn=2e77c910fc4084754cfa7361c288ae4d",
-          "source": "mp.weixin.qq.com",
-          "category": "CN_News",
-          "published": "2026-05-06T01:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "关注 AI 基础设施组件的安全性，涉及沙箱逃逸核心技术。",
-          "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文公众号",
-          "source_key": "mp.weixin.qq.com"
-        },
-        {
-          "title_zh": "LinkPro eBPF Rootkit 深度剖析：利用 XDP 与内核探针实现隐匿通信与持久化",
-          "title_orig": "LinkPro eBPF rootkit 深度剖析",
-          "summary": "本文深入剖析了在AWS EKS环境中发现的LinkPro eBPF Rootkit，详细揭示了该恶意软件利用Linux内核高级特性实现隐匿与持久化的复杂机制。该工具通过XDP和TC技术构建魔法包敲门机制，并利用tracepoint与kretprobe钩子隐藏自身进程及网络活动，同时将ld.so.preload作为内核选项缺失时的回退方案，展示了云原生环境下针对容器集群的高级攻击手段与潜在威胁。",
-          "tags": [
-            "eBPF",
-            "Rootkit",
-            "云原生安全"
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495984&idx=1&sn=375fbdcde44635ee0b7cc08403b10b1e",
-          "source": "mp.weixin.qq.com",
-          "category": "CN_News",
-          "published": "2026-05-05T12:04:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "深入分析了新型 eBPF 隐匿技术在云环境中的实战应用。",
-          "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文公众号",
-          "source_key": "mp.weixin.qq.com"
-        },
-        {
-          "title_zh": "TRX CTF 2026 House of Fishing 堆利用技术解析：无 Show 函数下的任意地址写",
-          "title_orig": "[原创]trx ctf 2026 house of fishing",
-          "summary": "本文针对 TRX CTF 2026 中的 House of Fishing 题目进行了技术拆解，探讨了在程序缺乏 Show 函数（无法直接泄露内存）情况下的堆利用策略。核心思路是通过特定的堆布局实现任意地址写，将管理员指针修改为目标地址以触发后门函数。文章详细记录了如何利用堆管理机制绕过限制并最终获取 Shell 的过程，为解决此类缺乏信息泄露手段的堆题提供了参考路径。",
-          "tags": [
-            "堆利用",
-            "CTF",
-            "内存安全"
-          ],
-          "url": "https://xz.aliyun.com/news/92088",
-          "source": "xz.aliyun.com",
-          "category": "CN_News",
-          "published": "2026-05-06T02:55:24+00:00",
-          "cve_ids": [],
-          "selection_reason": "探讨了在受限条件下（无泄露函数）的堆利用技巧，具有技术挑战性",
-          "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文安全",
-          "source_key": "xz.aliyun.com"
-        },
-        {
-          "title_zh": "Python 标准库 webbrowser 模块存在命令注入漏洞可导致远程代码执行",
-          "title_orig": "python: cpython: Python: Arbitrary code execution via command injection in webbrowser.open() API",
-          "summary": "该漏洞源于 Python 的 webbrowser.open API 在处理包含特定序列的恶意 URL 时存在缺陷，成功绕过了针对 CVE-2026-4519 的既有缓解措施。攻击者可以通过构造带有“%action”字符的特殊 URL，实现对底层 Shell 的命令注入，进而可能在受影响系统上执行任意代码；目前 Red Hat 等发行版已发布安全预警，建议用户密切关注官方补丁更新，以防范潜在的远程代码执行风险并确保系统环境的安全稳定。",
-          "tags": [
-            "Python",
-            "命令注入",
-            "代码执行"
-          ],
-          "url": "https://vulners.com/redhat/RHSA-2026:14656-CVE-2026-4786?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-07T05:25:28+00:00",
-          "cve_ids": [
-            "CVE-2026-4519"
-          ],
-          "selection_reason": "涉及 Python 核心库的逻辑绕过，影响面极广。",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com"
-        },
-        {
           "title_zh": "CISA 将 Palo Alto Networks PAN-OS 越界写入漏洞列入已知利用漏洞清单",
           "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
           "summary": "美国 CISA 将 CVE-2026-0300 漏洞正式添加到其已知利用漏洞目录中，该漏洞涉及 Palo Alto Networks PAN-OS 操作系统中的越界写入缺陷。此类漏洞已被观察到在野外被积极利用，成为恶意攻击者的频繁攻击矢量，对联邦企业网络安全构成重大风险；CISA 要求相关机构必须根据 BOD 22-01 指令在规定时间内完成修复，以应对这一紧迫威胁并防止潜在的非法入侵行为。",
@@ -231,26 +47,6 @@
           "source_key": "schneier.com"
         },
         {
-          "title_zh": "Node.js 沙箱库 vm2 曝出严重漏洞允许攻击者逃逸并执行宿主机代码",
-          "title_orig": "Critical vm2 sandbox bug lets attackers execute code on hosts",
-          "summary": "流行的 Node.js 沙箱库 vm2 被发现存在一个关键安全漏洞，该漏洞允许攻击者绕过沙箱隔离限制。通过利用该缺陷，攻击者可以在宿主机系统上执行任意代码，从而完全控制运行环境；由于 vm2 被广泛用于执行不受信任的代码，此漏洞对依赖该库的应用程序构成了严重的远程执行风险，建议开发者立即检查并更新。",
-          "tags": [
-            "Node.js",
-            "沙箱逃逸",
-            "代码执行"
-          ],
-          "url": "https://www.bleepingcomputer.com/news/security/critical-vm2-sandbox-bug-lets-attackers-execute-code-on-hosts/",
-          "source": "bleepingcomputer.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-06T18:38:38+00:00",
-          "cve_ids": [],
-          "selection_reason": "vm2 是常用的沙箱组件，其逃逸漏洞对后端安全影响巨大。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "bleepingcomputer.com"
-        },
-        {
           "title_zh": "cPanel 认证绕过漏洞引发全球勒索软件爆发及 AI 代码审查绕过风险预警",
           "title_orig": "每日安全动态推送(26/5/6)",
           "summary": "cPanel 存在的 CVE-2026-41940 认证绕过漏洞已导致全球范围内的大规模入侵与勒索软件感染，对企业数据安全造成了严重威胁。同时，安全研究指出恶意脚本正利用注释噪声和大文件产生的间接提示注入来绕过 AI 代码审查工具，而 AI 会议助手也被发现可能引发关键的内部威胁与 OAuth 攻击；这些案例共同反映了当前传统系统漏洞与新兴 AI 应用风险交织的复杂安全态势。",
@@ -267,26 +63,6 @@
             "CVE-2026-41940"
           ],
           "selection_reason": "涵盖了高影响力的认证绕过实战案例与前沿 AI 安全风险。",
-          "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文公众号",
-          "source_key": "mp.weixin.qq.com"
-        },
-        {
-          "title_zh": "Read2Own：从 OSINT 到全局管理员的 Microsoft Azure 红队渗透实战指南",
-          "title_orig": "Read2Own：Microsoft Azure 红队渗透实战",
-          "summary": "本文演示了一条完整的 Azure 红队攻击链，展示了如何从互联网公开情报（OSINT）搜集开始，逐步渗透直至获取全局管理员权限。文章不仅详细记录了攻击路径的技术细节，还提供了配套的部署脚本以及针对性的检测与加固建议；该实战案例对于安全从业者理解云原生环境下的权限提升和横向移动具有极高的参考价值。",
-          "tags": [
-            "Azure",
-            "红队渗透",
-            "云安全"
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495986&idx=1&sn=c4a089ed592f25ebb6a5719016e1029e",
-          "source": "mp.weixin.qq.com",
-          "category": "CN_News",
-          "published": "2026-05-06T02:24:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "提供了完整的云渗透链路，具有很强的实战指导意义。",
           "source_tier": "t2",
           "source_kind": "cn_expert",
           "source_label": "中文公众号",
@@ -311,22 +87,246 @@
           "source_kind": "cn_expert",
           "source_label": "中文安全",
           "source_key": "paper.seebug.org"
+        },
+        {
+          "title_zh": "TRX CTF 2026 House of Fishing 堆利用技术解析：无 Show 函数下的任意地址写",
+          "title_orig": "[原创]trx ctf 2026 house of fishing",
+          "summary": "本文针对 TRX CTF 2026 中的 House of Fishing 题目进行了技术拆解，探讨了在程序缺乏 Show 函数（无法直接泄露内存）情况下的堆利用策略。核心思路是通过特定的堆布局实现任意地址写，将管理员指针修改为目标地址以触发后门函数。文章详细记录了如何利用堆管理机制绕过限制并最终获取 Shell 的过程，为解决此类缺乏信息泄露手段的堆题提供了参考路径。",
+          "tags": [
+            "堆利用",
+            "CTF",
+            "内存安全"
+          ],
+          "url": "https://xz.aliyun.com/news/92088",
+          "source": "xz.aliyun.com",
+          "category": "CN_News",
+          "published": "2026-05-06T02:55:24+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨了在受限条件下（无泄露函数）的堆利用技巧，具有技术挑战性",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "xz.aliyun.com"
+        },
+        {
+          "title_zh": "Read2Own：从 OSINT 到全局管理员的 Microsoft Azure 红队渗透实战指南",
+          "title_orig": "Read2Own：Microsoft Azure 红队渗透实战",
+          "summary": "本文演示了一条完整的 Azure 红队攻击链，展示了如何从互联网公开情报（OSINT）搜集开始，逐步渗透直至获取全局管理员权限。文章不仅详细记录了攻击路径的技术细节，还提供了配套的部署脚本以及针对性的检测与加固建议；该实战案例对于安全从业者理解云原生环境下的权限提升和横向移动具有极高的参考价值。",
+          "tags": [
+            "Azure",
+            "红队渗透",
+            "云安全"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495986&idx=1&sn=c4a089ed592f25ebb6a5719016e1029e",
+          "source": "mp.weixin.qq.com",
+          "category": "CN_News",
+          "published": "2026-05-06T02:24:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "提供了完整的云渗透链路，具有很强的实战指导意义。",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "mp.weixin.qq.com"
+        },
+        {
+          "title_zh": "谷歌 Antigravity AI 智能体管理器漏洞预警：可实现沙箱逃逸与远程代码执行",
+          "title_orig": "谷歌Antigravity AI 智能体管理器曝出漏洞：可逃出沙箱，让攻击者实现远程代码执行",
+          "summary": "谷歌旗下的 Antigravity AI 智能体管理器被曝存在严重安全漏洞，攻击者可利用该漏洞逃逸预设的沙箱环境。漏洞触发后，攻击者能够在受影响的系统上实现远程代码执行，从而完全控制 AI 管理平台。原文未详细披露漏洞的具体成因、受影响的版本号以及修复补丁的发布状态。该事件凸显了 AI 基础设施在权限隔离与环境安全性方面面临的严峻挑战。",
+          "tags": [
+            "AI安全",
+            "沙箱逃逸",
+            "RCE"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486593&idx=1&sn=2e77c910fc4084754cfa7361c288ae4d",
+          "source": "mp.weixin.qq.com",
+          "category": "CN_News",
+          "published": "2026-05-06T01:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "关注 AI 基础设施组件的安全性，涉及沙箱逃逸核心技术。",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "mp.weixin.qq.com"
+        },
+        {
+          "title_zh": "DeepZero 自动化框架：利用 LLM 与静态分析批量挖掘 Windows 内核驱动 0day",
+          "title_orig": "DeepZero: 睡梦中自动化挖掘 Windows 内核驱动的 0day",
+          "summary": "DeepZero 是一款基于 Python 开发的自动化漏洞研究框架，旨在无人值守环境下批量发现 Windows 内核驱动的安全风险。该工具通过声明式 YAML 流水线整合了 PE 解析、Ghidra 反编译、Semgrep 静态扫描以及大语言模型评估技术。其核心价值在于能够高效识别 BYOVD 攻击面并筛选 0day 候选目标，为安全研究员提供了一套从逆向到漏洞评估的自动化工作流。",
+          "tags": [
+            "自动化挖洞",
+            "Windows内",
+            "LLM"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495984&idx=2&sn=38cff337862a6436d3ea42c907c7cee6",
+          "source": "mp.weixin.qq.com",
+          "category": "CN_News",
+          "published": "2026-05-05T12:04:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了 LLM 结合传统静态分析在内核安全领域的工程化应用。",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "mp.weixin.qq.com"
+        },
+        {
+          "title_zh": "LinkPro eBPF Rootkit 深度剖析：利用 XDP 与内核探针实现隐匿通信与持久化",
+          "title_orig": "LinkPro eBPF rootkit 深度剖析",
+          "summary": "本文深入剖析了在AWS EKS环境中发现的LinkPro eBPF Rootkit，详细揭示了该恶意软件利用Linux内核高级特性实现隐匿与持久化的复杂机制。该工具通过XDP和TC技术构建魔法包敲门机制，并利用tracepoint与kretprobe钩子隐藏自身进程及网络活动，同时将ld.so.preload作为内核选项缺失时的回退方案，展示了云原生环境下针对容器集群的高级攻击手段与潜在威胁。",
+          "tags": [
+            "eBPF",
+            "Rootkit",
+            "云原生安全"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495984&idx=1&sn=375fbdcde44635ee0b7cc08403b10b1e",
+          "source": "mp.weixin.qq.com",
+          "category": "CN_News",
+          "published": "2026-05-05T12:04:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "深入分析了新型 eBPF 隐匿技术在云环境中的实战应用。",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "mp.weixin.qq.com"
+        },
+        {
+          "title_zh": "长城杯 2026 决赛 Shop 题 GLIBC 2.43 堆利用与 Tcache 劫持技术复现",
+          "title_orig": "长城杯 2026 决赛 Shop 题 GLIBC 2.43 Heap 利用与 Tcache 劫持",
+          "summary": "本文详细复现了长城杯决赛中针对 GLIBC 2.43 版本的堆漏洞利用过程，重点分析了高版本堆结构体的逆向还原方法。技术路径涵盖了通过伪造 Unsortedbin 泄露基址、利用 Tcache Perthread Struct 偏移缺陷劫持堆块指针，以及最终实现栈迁移并执行 ORW 链。该案例展示了在缺乏常规泄露手段下，如何利用特定偏移缺陷实现高版本 GLIBC 的内存布局控制。",
+          "tags": [
+            "GLIBC利用",
+            "堆漏洞",
+            "CTF"
+          ],
+          "url": "https://xz.aliyun.com/news/92081",
+          "source": "xz.aliyun.com",
+          "category": "CN_News",
+          "published": "2026-05-04T16:10:24+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了针对最新 GLIBC 版本的堆利用高级技巧。",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "xz.aliyun.com"
+        },
+        {
+          "title_zh": "基于 IronCurtain 框架的漏洞发现工作流：利用开源模型自主挖掘多项零日漏洞",
+          "title_orig": "用任何模型都能挖出零日漏洞",
+          "summary": "研究表明漏洞发现的瓶颈在于流程编排而非模型性能，基于开源 IronCurtain 框架构建的工作流已成功在多个项目中发现新漏洞。该方案利用 Opus、Sonnet 及 GLM 5.1 等模型，不仅复现了 1998 年 OpenBSD 的历史缺陷，还在四个主流开源项目中自主发现了全新的零日漏洞。这证明了通过合理的任务分解与编排，即使是开放权重模型也能在复杂代码审计中发挥显著作用。",
+          "tags": [
+            "AI安全",
+            "漏洞挖掘",
+            "开源框架"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247495982&idx=1&sn=683f7f4f0c395f90a94ef66463c5c023",
+          "source": "mp.weixin.qq.com",
+          "category": "CN_News",
+          "published": "2026-05-04T09:11:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "证明了 AI 编排框架在自主发现零日漏洞方面的实战能力。",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "mp.weixin.qq.com"
+        },
+        {
+          "title_zh": "Node.js 沙箱库 vm2 曝出严重漏洞允许攻击者逃逸并执行宿主机代码",
+          "title_orig": "Critical vm2 sandbox bug lets attackers execute code on hosts",
+          "summary": "流行的 Node.js 沙箱库 vm2 被发现存在一个关键安全漏洞，该漏洞允许攻击者绕过沙箱隔离限制。通过利用该缺陷，攻击者可以在宿主机系统上执行任意代码，从而完全控制运行环境；由于 vm2 被广泛用于执行不受信任的代码，此漏洞对依赖该库的应用程序构成了严重的远程执行风险，建议开发者立即检查并更新。",
+          "tags": [
+            "Node.js",
+            "沙箱逃逸",
+            "代码执行"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/critical-vm2-sandbox-bug-lets-attackers-execute-code-on-hosts/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-06T18:38:38+00:00",
+          "cve_ids": [],
+          "selection_reason": "vm2 是常用的沙箱组件，其逃逸漏洞对后端安全影响巨大。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "bleepingcomputer.com"
+        },
+        {
+          "title_zh": "Palo Alto Networks 警告 PAN-OS 防火墙 User-ID 认证门户存在 0day 远程代码执行漏洞",
+          "title_orig": "Palo Alto Networks warns of firewall RCE zero-day exploited in attacks",
+          "summary": "Palo Alto Networks 官方发布预警，指出其 PAN-OS 系统的 User-ID 身份验证门户组件存在一个关键级别的未修补漏洞。该漏洞目前正被攻击者在野利用，可导致未经身份验证的远程代码执行。受影响的具体版本和漏洞原理细节在原文中尚未完全公开，官方建议客户密切关注安全通告并采取必要的缓解措施，以防止防火墙设备被完全接管。",
+          "tags": [
+            "PaloAlto",
+            "0day",
+            "远程代码执行"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-actively-exploited-firewall-zero-day/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-06T09:18:16+00:00",
+          "cve_ids": [],
+          "selection_reason": "关键基础设施防火墙的在野 0day 攻击，风险等级极高。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "bleepingcomputer.com"
+        },
+        {
+          "title_zh": "Python 标准库 webbrowser 模块存在命令注入漏洞可导致远程代码执行",
+          "title_orig": "python: cpython: Python: Arbitrary code execution via command injection in webbrowser.open() API",
+          "summary": "该漏洞源于 Python 的 webbrowser.open API 在处理包含特定序列的恶意 URL 时存在缺陷，成功绕过了针对 CVE-2026-4519 的既有缓解措施。攻击者可以通过构造带有“%action”字符的特殊 URL，实现对底层 Shell 的命令注入，进而可能在受影响系统上执行任意代码；目前 Red Hat 等发行版已发布安全预警，建议用户密切关注官方补丁更新，以防范潜在的远程代码执行风险并确保系统环境的安全稳定。",
+          "tags": [
+            "Python",
+            "命令注入",
+            "代码执行"
+          ],
+          "url": "https://vulners.com/redhat/RHSA-2026:14656-CVE-2026-4786?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-07T05:25:28+00:00",
+          "cve_ids": [
+            "CVE-2026-4519"
+          ],
+          "selection_reason": "涉及 Python 核心库的逻辑绕过，影响面极广。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com"
+        },
+        {
+          "title_zh": "Linux 内核 CVE-2026-31431 漏洞利用程序发布：针对 AF_ALG 路径的页面缓存损坏",
+          "title_orig": "Exploit for Incorrect Resource Transfer Between Spheres in Linux Linux_Kernel",
+          "summary": "该漏洞源于 Linux 内核 AF_ALG AEAD 路径中不同域之间的资源传输错误，可能导致页面缓存损坏。公开的 C 语言利用程序通过重复处理嵌入式负载的 4 字节窗口，尝试触发“Copy Fail”行为以实现提权或破坏。目前原文未明确披露受影响的具体内核版本范围，但已提供针对该路径的漏洞触发逻辑与利用代码，建议相关管理员关注内核补丁更新状态。",
+          "tags": [
+            "Linux内核",
+            "提权漏洞",
+            "CVE"
+          ],
+          "url": "https://vulners.com/githubexploit/35580C90-EE3C-5009-AF6C-BB6C2A516165?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-07T04:59:57+00:00",
+          "cve_ids": [
+            "CVE-2026-31431"
+          ],
+          "selection_reason": "提供了 Linux 内核关键路径漏洞的 PoC 实现细节。",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com"
         }
       ],
       "raw_count": 117,
       "selected_count": 15,
       "selection_stats": {
         "total": 15,
-        "chinese": 9,
         "direct": 15,
-        "tier_t2": 14,
-        "kind_cn_expert": 9,
-        "kind_community": 2,
-        "kind_media": 2,
-        "wechat": 6,
         "tier_t1": 1,
         "kind_official": 1,
-        "kind_expert": 1
+        "tier_t2": 14,
+        "kind_expert": 1,
+        "chinese": 9,
+        "wechat": 6,
+        "kind_cn_expert": 9,
+        "kind_media": 2,
+        "kind_community": 2
       },
       "clustering_stats": {},
       "generated_at": "2026-05-07T05:41:30.721036Z"
@@ -334,6 +334,46 @@
     "ai_security": {
       "display_name": "AI 安全",
       "items": [
+        {
+          "title_zh": "Burp Suite 大使发布系列教程第十篇：利用 Montoya API 开发 AI 辅助插件",
+          "title_orig": "RT HN Security: To kick off his collaboration with @PortSwigger as a Burp Suite Ambassador, our Research Lead @apps3c just published the 10th article ...",
+          "summary": "HN Security 研究负责人作为 Burp Suite 大使发布了关于扩展插件开发的第十篇技术文章，重点探讨了如何将 AI 技术集成至 Burp Suite 中。文章详细介绍了利用 Montoya API 构建 AI 驱动的安全测试工具的方法，旨在提升自动化扫描与漏洞识别的智能化水平。该内容为安全工具开发者提供了将大语言模型能力引入传统渗透测试工作流的实践指南。",
+          "tags": [
+            "BurpSuit",
+            "AI工具",
+            "插件开发"
+          ],
+          "url": "https://x.com/PortSwigger/status/2051877268268699859",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-05T12:32:39+00:00",
+          "cve_ids": [],
+          "selection_reason": "顶级渗透工具与 AI 结合的官方推广实践，代表工具发展趋势。",
+          "source_tier": "t1_5",
+          "source_kind": "official_x",
+          "source_label": "官方 X",
+          "source_key": "x:portswigger"
+        },
+        {
+          "title_zh": "研究人员利用 AMPScript 脚本注入漏洞实现仅需 50 字符的敏感数据脱库",
+          "title_orig": "ampscript is crazy. this post reminded me that shubs, @evanconnelly, and I popped a really sick ampscript data exfil of all users back in oct '24 with...",
+          "summary": "安全研究员披露了针对 Salesforce 等平台使用的 AMPScript 脚本语言的攻击技术，通过在姓名等输入框注入仅 50 字符的恶意负载即可触发。该漏洞利用 TreatAsContent 和 httpget 函数实现带外数据回传，能够窃取数据库中存储的所有用户信息及 PII 敏感数据。此技术点展示了在受限输入环境下，利用特定模板语言特性进行大规模数据泄露的高效性，值得 Web 安全从业者关注。",
+          "tags": [
+            "脚本注入",
+            "数据泄露",
+            "AMPScrip"
+          ],
+          "url": "https://x.com/rez0__/status/2051709659543691493",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-05T17:04:36+00:00",
+          "cve_ids": [],
+          "selection_reason": "极短 Payload 实现大规模脱库，具有极高的技术参考价值",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "安全专家 X",
+          "source_key": "x:rez0__"
+        },
         {
           "title_zh": "研究员披露 Microsoft Copilot 多个安全漏洞 CVE-2026-24299 及其利用细节",
           "title_orig": "Copirate 365 at DEF CON: Plundering in the Depths of Microsoft Copilot (CVE-2026-24299)",
@@ -375,46 +415,6 @@
           "source_kind": "expert_x",
           "source_label": "安全专家 X",
           "source_key": "x:rez0__"
-        },
-        {
-          "title_zh": "研究人员利用 AMPScript 脚本注入漏洞实现仅需 50 字符的敏感数据脱库",
-          "title_orig": "ampscript is crazy. this post reminded me that shubs, @evanconnelly, and I popped a really sick ampscript data exfil of all users back in oct '24 with...",
-          "summary": "安全研究员披露了针对 Salesforce 等平台使用的 AMPScript 脚本语言的攻击技术，通过在姓名等输入框注入仅 50 字符的恶意负载即可触发。该漏洞利用 TreatAsContent 和 httpget 函数实现带外数据回传，能够窃取数据库中存储的所有用户信息及 PII 敏感数据。此技术点展示了在受限输入环境下，利用特定模板语言特性进行大规模数据泄露的高效性，值得 Web 安全从业者关注。",
-          "tags": [
-            "脚本注入",
-            "数据泄露",
-            "AMPScrip"
-          ],
-          "url": "https://x.com/rez0__/status/2051709659543691493",
-          "source": "x.com",
-          "category": "XSignals",
-          "published": "2026-05-05T17:04:36+00:00",
-          "cve_ids": [],
-          "selection_reason": "极短 Payload 实现大规模脱库，具有极高的技术参考价值",
-          "source_tier": "t2",
-          "source_kind": "expert_x",
-          "source_label": "安全专家 X",
-          "source_key": "x:rez0__"
-        },
-        {
-          "title_zh": "Burp Suite 大使发布系列教程第十篇：利用 Montoya API 开发 AI 辅助插件",
-          "title_orig": "RT HN Security: To kick off his collaboration with @PortSwigger as a Burp Suite Ambassador, our Research Lead @apps3c just published the 10th article ...",
-          "summary": "HN Security 研究负责人作为 Burp Suite 大使发布了关于扩展插件开发的第十篇技术文章，重点探讨了如何将 AI 技术集成至 Burp Suite 中。文章详细介绍了利用 Montoya API 构建 AI 驱动的安全测试工具的方法，旨在提升自动化扫描与漏洞识别的智能化水平。该内容为安全工具开发者提供了将大语言模型能力引入传统渗透测试工作流的实践指南。",
-          "tags": [
-            "BurpSuit",
-            "AI工具",
-            "插件开发"
-          ],
-          "url": "https://x.com/PortSwigger/status/2051877268268699859",
-          "source": "x.com",
-          "category": "XSignals",
-          "published": "2026-05-05T12:32:39+00:00",
-          "cve_ids": [],
-          "selection_reason": "顶级渗透工具与 AI 结合的官方推广实践，代表工具发展趋势。",
-          "source_tier": "t1_5",
-          "source_kind": "official_x",
-          "source_label": "官方 X",
-          "source_key": "x:portswigger"
         },
         {
           "title_zh": "微软推出 Agent 365 平台旨在加强 AI 智能体安全管理与合规监控",
@@ -461,13 +461,13 @@
       "selected_count": 6,
       "selection_stats": {
         "total": 6,
-        "direct": 1,
-        "tier_t2": 5,
-        "kind_expert": 1,
         "aggregator": 5,
-        "kind_expert_x": 2,
         "tier_t1_5": 1,
         "kind_official_x": 1,
+        "tier_t2": 5,
+        "kind_expert_x": 2,
+        "direct": 1,
+        "kind_expert": 1,
         "google_news": 2,
         "kind_google_news": 2,
         "chinese": 1
@@ -478,6 +478,106 @@
     "ai": {
       "display_name": "AI 前沿",
       "items": [
+        {
+          "title_zh": "研究人员提出 SAC 架构，利用工具介导的 LLM 提升自主网络防御安全性",
+          "title_orig": "Stable Agentic Control: Tool-Mediated LLM Architecture for Autonomous Cyber Defense",
+          "summary": "针对高风险决策中的对抗压力，研究人员提出了一种名为稳定代理控制（SAC）的工具介导架构，旨在为安全运营中心在配置终端检测与响应策略时提供形式化保证。该架构解决了现有智能体系统在自主网络防御中缺乏安全保障的问题，通过LLM的精准配置提升防御稳定性，为关键基础设施在复杂对抗环境下的AI防御提供了全新的技术思路。",
+          "tags": [
+            "网络安全",
+            "LLM架构",
+            "自主防御"
+          ],
+          "url": "https://arxiv.org/abs/2605.03034",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-07T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨 AI 在高风险网络安全领域的可靠性应用。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org"
+        },
+        {
+          "title_zh": "Terminus-4B 模型发布，旨在智能体执行任务中替代大型前沿语言模型",
+          "title_orig": "Terminus-4B: Can a Smaller Model Replace Frontier LLMs at Agentic Execution Tasks?",
+          "summary": "研究人员推出了Terminus-4B模型，专门用于处理搜索、调试或终端执行等特定子任务，以验证小模型是否能在智能体工作流中替代大型前沿模型。该架构通过隔离冗长的构建日志和测试结果来保持主智能体的上下文整洁，展示了在复杂编码任务中利用小型化、专业化模型提升执行效率的技术路径，为优化智能体系统架构提供了重要参考。",
+          "tags": [
+            "小模型",
+            "AI智能体",
+            "Terminus"
+          ],
+          "url": "https://arxiv.org/abs/2605.03195",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-07T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了模型专业化分工在复杂任务中的潜力。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org"
+        },
+        {
+          "title_zh": "ADAPTS 框架发布：利用多智能体架构实现抑郁与焦虑症状的自动化评估",
+          "title_orig": "ADAPTS: Agentic Decomposition for Automated Protocol-agnostic Tracking of Symptoms",
+          "summary": "研究人员推出了名为ADAPTS的新框架，该框架采用混合智能体大模型架构，能够从非受限的临床互动中自动评估抑郁和焦虑等症状的严重程度。该技术有效解决了情感计算中建模潜在临床结构的独特挑战，为心理健康领域的自动化辅助诊断和症状追踪提供了高效的数字化解决方案，有助于提升临床评估的客观性与效率。",
+          "tags": [
+            "智慧医疗",
+            "多智能体",
+            "情感计算"
+          ],
+          "url": "https://arxiv.org/abs/2605.03212",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-07T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "该研究展示了AI在心理健康自动化诊断领域的最新技术突破。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org"
+        },
+        {
+          "title_zh": "CreativityBench 评测基准发布：通过工具重用评估大模型的创造性推理能力",
+          "title_orig": "CreativityBench: Evaluating Agent Creative Reasoning via Affordance-Based Tool Repurposing",
+          "summary": "科研人员开发了CreativityBench评测基准，旨在通过考察模型是否能根据物体属性重新定义其用途，来深入评估大语言模型在环境交互中的创造性推理能力。这一研究填补了现有模型在复杂问题解决中创造性评估的空白，对于开发具备更高灵活性、能够突破常规思维限制的类人智慧AI系统具有重要的学术价值。",
+          "tags": [
+            "AI评测",
+            "创造性推理",
+            "大语言模型"
+          ],
+          "url": "https://arxiv.org/abs/2605.02910",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-07T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "创造性推理是衡量AI是否具备类人智慧的关键维度。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org"
+        },
+        {
+          "title_zh": "研究提出程序化上下文增强方法以提升大语言模型在符号回归任务中的表现",
+          "title_orig": "Programmatic Context Augmentation for LLM-based Symbolic Regression",
+          "summary": "针对传统遗传算法在符号回归任务中存在的扩展性与表达力难题，研究者提出了一种基于大语言模型的程序化上下文增强方法，用于发现描述数据集的最佳数学表达式。该方法利用LLM的推理能力显著提升了科学发现的效率，为解决复杂的数学建模问题提供了新的计算范式，展示了AI在基础科学研究领域辅助发现规律的巨大潜力。",
+          "tags": [
+            "符号回归",
+            "科学AI",
+            "算法优化"
+          ],
+          "url": "https://arxiv.org/abs/2605.03101",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-07T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "符号回归是科学发现的基础，AI在该领域的进步具有深远影响。",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org"
+        },
         {
           "title_zh": "马斯克起诉 OpenAI 案庭审披露内部短信，还原萨姆·奥特曼被董事会解雇细节",
           "title_orig": "OpenAI 政变之夜内部短信曝光：董事会为何执意赶走 Altman？ 马斯克起诉 OpenAI 和 Sam Altman 的案子今天进入庭审第二周，前 CTO Mira Murati 的视频证词和 202...",
@@ -539,104 +639,24 @@
           "source_key": "x:dotey"
         },
         {
-          "title_zh": "马斯克解散 xAI 并将 22 万张 GPU 租给 Anthropic，算力市场格局发生剧变",
-          "title_orig": "马斯克解散xAI：22万张GPU租给Anthropic - 第一财经",
-          "summary": "据第一财经报道，马斯克已决定解散其人工智能初创公司xAI，并将原本用于训练的22万张GPU资源转租给竞争对手Anthropic，这一举动引发了行业广泛关注。该决策标志着马斯克在AI领域的战略重心发生重大偏移，同时也大幅增强了Anthropic在大模型竞赛中的算力储备，可能对当前全球AI行业的竞争版图产生深远影响。",
+          "title_zh": "台积电在 AI 芯片需求激增及台湾能源短缺背景下积极采购风电等可再生能源",
+          "title_orig": "TSMC taps wind power as AI chip demand soars, Taiwan feels energy crunch",
+          "summary": "随着AI芯片制造需求达到历史新高，台积电在台湾面临能源短缺的巨大压力下，开始大规模支持并采购风能等可再生能源以支撑高耗能的生产线。这一举措旨在保障半导体产能的稳定运行并应对电力供应挑战，同时也反映了在全球AI算力竞赛中，绿色能源的获取已成为制约顶尖芯片制造能力的关键竞争要素和战略资源。",
           "tags": [
-            "xAI",
-            "马斯克",
-            "算力租赁"
+            "台积电",
+            "绿色能源",
+            "AI芯片"
           ],
-          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9TYndfT24zRmlTMXdDY2tPVGpZN1YxSG1EcE5DelRkdDh3ZGg4VHVtbW9lZDlELUZPM0ZXNVhuNkpQT1VBQUZwclJVUllVSmhFdmtz?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-05-07T05:20:04+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及顶级 AI 公司解散与巨量算力流向，行业影响力极大。",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com"
-        },
-        {
-          "title_zh": "谷歌发布 Gemma 4 开源模型，通过预测未来 Token 技术实现 3 倍推理加速",
-          "title_orig": "Google's Gemma 4 AI models get 3x speed boost by predicting future tokens",
-          "summary": "谷歌推出了Gemma 4系列开源AI模型，在保持模型质量不变的前提下，通过引入投机采样等预测未来Token的技术，实现了高达3倍的推理速度提升。这一技术突破显著降低了开发者部署开源模型的硬件门槛和响应延迟，在提升用户体验的同时，进一步增强了谷歌Gemma系列在开源社区中的竞争力，为高效AI应用提供了新选择。",
-          "tags": [
-            "Gemma 4",
-            "谷歌",
-            "推理加速"
-          ],
-          "url": "https://arstechnica.com/ai/2026/05/googles-gemma-4-open-ai-models-use-speculative-decoding-to-get-up-to-3x-faster/",
+          "url": "https://arstechnica.com/gadgets/2026/05/tsmc-taps-wind-power-as-ai-chip-demand-soars-taiwan-feels-energy-crunch/",
           "source": "arstechnica.com",
           "category": "Media",
-          "published": "2026-05-06T15:44:20+00:00",
+          "published": "2026-05-06T21:47:27+00:00",
           "cve_ids": [],
-          "selection_reason": "开源模型性能重大突破，显著提升推理效率。",
+          "selection_reason": "揭示了AI算力扩张与能源供应短缺之间的核心矛盾。",
           "source_tier": "t2",
           "source_kind": "media",
           "source_label": "科技媒体",
           "source_key": "arstechnica.com"
-        },
-        {
-          "title_zh": "研究人员提出 SAC 架构，利用工具介导的 LLM 提升自主网络防御安全性",
-          "title_orig": "Stable Agentic Control: Tool-Mediated LLM Architecture for Autonomous Cyber Defense",
-          "summary": "针对高风险决策中的对抗压力，研究人员提出了一种名为稳定代理控制（SAC）的工具介导架构，旨在为安全运营中心在配置终端检测与响应策略时提供形式化保证。该架构解决了现有智能体系统在自主网络防御中缺乏安全保障的问题，通过LLM的精准配置提升防御稳定性，为关键基础设施在复杂对抗环境下的AI防御提供了全新的技术思路。",
-          "tags": [
-            "网络安全",
-            "LLM架构",
-            "自主防御"
-          ],
-          "url": "https://arxiv.org/abs/2605.03034",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-07T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "探讨 AI 在高风险网络安全领域的可靠性应用。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org"
-        },
-        {
-          "title_zh": "Terminus-4B 模型发布，旨在智能体执行任务中替代大型前沿语言模型",
-          "title_orig": "Terminus-4B: Can a Smaller Model Replace Frontier LLMs at Agentic Execution Tasks?",
-          "summary": "研究人员推出了Terminus-4B模型，专门用于处理搜索、调试或终端执行等特定子任务，以验证小模型是否能在智能体工作流中替代大型前沿模型。该架构通过隔离冗长的构建日志和测试结果来保持主智能体的上下文整洁，展示了在复杂编码任务中利用小型化、专业化模型提升执行效率的技术路径，为优化智能体系统架构提供了重要参考。",
-          "tags": [
-            "小模型",
-            "AI智能体",
-            "Terminus"
-          ],
-          "url": "https://arxiv.org/abs/2605.03195",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-07T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了模型专业化分工在复杂任务中的潜力。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org"
-        },
-        {
-          "title_zh": "机器人初创公司 Genesis AI 展示 GENE-26.5 模型及全栈复杂操作能力",
-          "title_orig": "Khosla-backed robotics startup Genesis AI has gone full stack, demo shows",
-          "summary": "由Khosla资助的机器人初创公司Genesis AI正式发布其首个基础模型GENE-26.5，并现场演示了一套机器人手执行复杂任务的过程，标志着该公司已具备全栈研发能力。这家此前已获得1.05亿美元种子轮融资的企业，通过此次展示不仅证明了其在机器人基础AI领域的领先地位，更向外界展示了将AI理论转化为实际物理操作能力的巨大潜力。",
-          "tags": [
-            "机器人",
-            "Genesis ",
-            "具身智能"
-          ],
-          "url": "https://techcrunch.com/2026/05/06/khosla-backed-robotics-startup-genesis-ai-has-gone-full-stack-demo-shows/",
-          "source": "techcrunch.com",
-          "category": "Media",
-          "published": "2026-05-06T15:46:38+00:00",
-          "cve_ids": [],
-          "selection_reason": "顶级资本支持的机器人初创公司发布重要技术进展。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "科技媒体",
-          "source_key": "techcrunch.com"
         },
         {
           "title_zh": "谷歌正式关闭实验性网页自动化助手 Project Mariner 并计划整合其技术",
@@ -679,6 +699,66 @@
           "source_key": "arstechnica.com"
         },
         {
+          "title_zh": "机器人初创公司 Genesis AI 展示 GENE-26.5 模型及全栈复杂操作能力",
+          "title_orig": "Khosla-backed robotics startup Genesis AI has gone full stack, demo shows",
+          "summary": "由Khosla资助的机器人初创公司Genesis AI正式发布其首个基础模型GENE-26.5，并现场演示了一套机器人手执行复杂任务的过程，标志着该公司已具备全栈研发能力。这家此前已获得1.05亿美元种子轮融资的企业，通过此次展示不仅证明了其在机器人基础AI领域的领先地位，更向外界展示了将AI理论转化为实际物理操作能力的巨大潜力。",
+          "tags": [
+            "机器人",
+            "Genesis ",
+            "具身智能"
+          ],
+          "url": "https://techcrunch.com/2026/05/06/khosla-backed-robotics-startup-genesis-ai-has-gone-full-stack-demo-shows/",
+          "source": "techcrunch.com",
+          "category": "Media",
+          "published": "2026-05-06T15:46:38+00:00",
+          "cve_ids": [],
+          "selection_reason": "顶级资本支持的机器人初创公司发布重要技术进展。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "techcrunch.com"
+        },
+        {
+          "title_zh": "谷歌发布 Gemma 4 开源模型，通过预测未来 Token 技术实现 3 倍推理加速",
+          "title_orig": "Google's Gemma 4 AI models get 3x speed boost by predicting future tokens",
+          "summary": "谷歌推出了Gemma 4系列开源AI模型，在保持模型质量不变的前提下，通过引入投机采样等预测未来Token的技术，实现了高达3倍的推理速度提升。这一技术突破显著降低了开发者部署开源模型的硬件门槛和响应延迟，在提升用户体验的同时，进一步增强了谷歌Gemma系列在开源社区中的竞争力，为高效AI应用提供了新选择。",
+          "tags": [
+            "Gemma 4",
+            "谷歌",
+            "推理加速"
+          ],
+          "url": "https://arstechnica.com/ai/2026/05/googles-gemma-4-open-ai-models-use-speculative-decoding-to-get-up-to-3x-faster/",
+          "source": "arstechnica.com",
+          "category": "Media",
+          "published": "2026-05-06T15:44:20+00:00",
+          "cve_ids": [],
+          "selection_reason": "开源模型性能重大突破，显著提升推理效率。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "arstechnica.com"
+        },
+        {
+          "title_zh": "马斯克解散 xAI 并将 22 万张 GPU 租给 Anthropic，算力市场格局发生剧变",
+          "title_orig": "马斯克解散xAI：22万张GPU租给Anthropic - 第一财经",
+          "summary": "据第一财经报道，马斯克已决定解散其人工智能初创公司xAI，并将原本用于训练的22万张GPU资源转租给竞争对手Anthropic，这一举动引发了行业广泛关注。该决策标志着马斯克在AI领域的战略重心发生重大偏移，同时也大幅增强了Anthropic在大模型竞赛中的算力储备，可能对当前全球AI行业的竞争版图产生深远影响。",
+          "tags": [
+            "xAI",
+            "马斯克",
+            "算力租赁"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9TYndfT24zRmlTMXdDY2tPVGpZN1YxSG1EcE5DelRkdDh3ZGg4VHVtbW9lZDlELUZPM0ZXNVhuNkpQT1VBQUZwclJVUllVSmhFdmtz?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese",
+          "published": "2026-05-07T05:20:04+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及顶级 AI 公司解散与巨量算力流向，行业影响力极大。",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com"
+        },
+        {
           "title_zh": "加拿大亚伯达省隐私监管机构拟针对 OpenAI 违规事件制定更严格监管规则",
           "title_orig": "亞省隱私監管機構擬更嚴規則 應對OpenAI違規事件 - 大纪元",
           "summary": "针对OpenAI发生的隐私违规事件，加拿大亚伯达省隐私监管机构正计划制定并实施更为严厉的规则，以加强对生成式AI企业在数据处理方面的法律约束。此举旨在应对日益严峻的数据安全挑战并切实保护公民隐私，同时也向全球AI开发者释放了地方监管力度升级的明确信号，预示着合规性审查将成为行业常态。",
@@ -697,102 +777,22 @@
           "source_kind": "google_news",
           "source_label": "Google News",
           "source_key": "news.google.com"
-        },
-        {
-          "title_zh": "ADAPTS 框架发布：利用多智能体架构实现抑郁与焦虑症状的自动化评估",
-          "title_orig": "ADAPTS: Agentic Decomposition for Automated Protocol-agnostic Tracking of Symptoms",
-          "summary": "研究人员推出了名为ADAPTS的新框架，该框架采用混合智能体大模型架构，能够从非受限的临床互动中自动评估抑郁和焦虑等症状的严重程度。该技术有效解决了情感计算中建模潜在临床结构的独特挑战，为心理健康领域的自动化辅助诊断和症状追踪提供了高效的数字化解决方案，有助于提升临床评估的客观性与效率。",
-          "tags": [
-            "智慧医疗",
-            "多智能体",
-            "情感计算"
-          ],
-          "url": "https://arxiv.org/abs/2605.03212",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-07T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "该研究展示了AI在心理健康自动化诊断领域的最新技术突破。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org"
-        },
-        {
-          "title_zh": "CreativityBench 评测基准发布：通过工具重用评估大模型的创造性推理能力",
-          "title_orig": "CreativityBench: Evaluating Agent Creative Reasoning via Affordance-Based Tool Repurposing",
-          "summary": "科研人员开发了CreativityBench评测基准，旨在通过考察模型是否能根据物体属性重新定义其用途，来深入评估大语言模型在环境交互中的创造性推理能力。这一研究填补了现有模型在复杂问题解决中创造性评估的空白，对于开发具备更高灵活性、能够突破常规思维限制的类人智慧AI系统具有重要的学术价值。",
-          "tags": [
-            "AI评测",
-            "创造性推理",
-            "大语言模型"
-          ],
-          "url": "https://arxiv.org/abs/2605.02910",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-07T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "创造性推理是衡量AI是否具备类人智慧的关键维度。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org"
-        },
-        {
-          "title_zh": "台积电在 AI 芯片需求激增及台湾能源短缺背景下积极采购风电等可再生能源",
-          "title_orig": "TSMC taps wind power as AI chip demand soars, Taiwan feels energy crunch",
-          "summary": "随着AI芯片制造需求达到历史新高，台积电在台湾面临能源短缺的巨大压力下，开始大规模支持并采购风能等可再生能源以支撑高耗能的生产线。这一举措旨在保障半导体产能的稳定运行并应对电力供应挑战，同时也反映了在全球AI算力竞赛中，绿色能源的获取已成为制约顶尖芯片制造能力的关键竞争要素和战略资源。",
-          "tags": [
-            "台积电",
-            "绿色能源",
-            "AI芯片"
-          ],
-          "url": "https://arstechnica.com/gadgets/2026/05/tsmc-taps-wind-power-as-ai-chip-demand-soars-taiwan-feels-energy-crunch/",
-          "source": "arstechnica.com",
-          "category": "Media",
-          "published": "2026-05-06T21:47:27+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了AI算力扩张与能源供应短缺之间的核心矛盾。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "科技媒体",
-          "source_key": "arstechnica.com"
-        },
-        {
-          "title_zh": "研究提出程序化上下文增强方法以提升大语言模型在符号回归任务中的表现",
-          "title_orig": "Programmatic Context Augmentation for LLM-based Symbolic Regression",
-          "summary": "针对传统遗传算法在符号回归任务中存在的扩展性与表达力难题，研究者提出了一种基于大语言模型的程序化上下文增强方法，用于发现描述数据集的最佳数学表达式。该方法利用LLM的推理能力显著提升了科学发现的效率，为解决复杂的数学建模问题提供了新的计算范式，展示了AI在基础科学研究领域辅助发现规律的巨大潜力。",
-          "tags": [
-            "符号回归",
-            "科学AI",
-            "算法优化"
-          ],
-          "url": "https://arxiv.org/abs/2605.03101",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-07T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "符号回归是科学发现的基础，AI在该领域的进步具有深远影响。",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org"
         }
       ],
       "raw_count": 58,
       "selected_count": 15,
       "selection_stats": {
         "total": 15,
+        "direct": 10,
+        "tier_t1": 5,
+        "kind_official": 5,
         "aggregator": 5,
         "chinese": 5,
         "tier_t2": 10,
         "kind_expert_x": 3,
-        "google_news": 2,
-        "kind_google_news": 2,
-        "direct": 10,
         "kind_media": 5,
-        "tier_t1": 5,
-        "kind_official": 5
+        "google_news": 2,
+        "kind_google_news": 2
       },
       "clustering_stats": {},
       "generated_at": "2026-05-07T05:42:44.287988Z"
@@ -821,24 +821,44 @@
           "source_key": "pymnts.com"
         },
         {
-          "title_zh": "PayPal 首席执行官回应分拆传闻，计划保持公司完整性并整合 Venmo 与 Braintree",
-          "title_orig": "PayPal CEO aims to keep company intact",
-          "summary": "PayPal新任首席执行官在分析师会议上明确回避了有关拆分公司的市场猜测，强调他认为PayPal、Venmo以及Braintree作为一个整体运营将更具竞争价值。此举旨在通过内部协同效应而非资产剥离来推动未来增长，向外界传递了公司维持业务完整性的坚定立场，并以此稳定投资者对该支付巨头长期战略方向的信心，确保公司在激烈的支付市场竞争中保持核心优势。",
+          "title_zh": "DoorDash 杂货业务增长推动市场销售额激增 37%，强调端到端交付体验是竞争核心",
+          "title_orig": "DoorDash Grocery Growth Fuels 37% Marketplace Sales Jump",
+          "summary": "DoorDash 第一季度财报显示其市场销售额大幅增长 37%，首席执行官徐迅指出杂货业务的强劲增长是核心驱动力，并强调提供最佳端到端体验的执行力是未来竞争的关键。公司认为客户会根据订单交付的准确性来评价平台，这反映了外卖平台在向全品类即时配送转型过程中，通过提升服务质量和执行细节来获取市场份额的战略成效。",
           "tags": [
-            "PayPal",
-            "企业战略",
-            "金融科技"
+            "DoorDash",
+            "即时配送",
+            "电子商务"
           ],
-          "url": "https://www.paymentsdive.com/news/paypal-ceo-aims-to-keep-company-intact/819447/",
-          "source": "paymentsdive.com",
+          "url": "https://www.pymnts.com/news/delivery/2026/doordash-grocery-growth-fuels-37-marketplace-sales-jump/",
+          "source": "pymnts.com",
           "category": "Editorial Lens",
-          "published": "2026-05-06T14:13:26+00:00",
+          "published": "2026-05-07T01:43:10+00:00",
           "cve_ids": [],
-          "selection_reason": "澄清了市场对支付巨头 PayPal 业务分拆的重大疑虑。",
+          "selection_reason": "展示了外卖平台通过多元化品类扩张实现高速增长的成功案例。",
           "source_tier": "t2",
           "source_kind": "media",
           "source_label": "金融媒体",
-          "source_key": "paymentsdive.com"
+          "source_key": "pymnts.com"
+        },
+        {
+          "title_zh": "谷歌与 Meta 竞相开发个人 AI 智能体，代号 Remy 的助手将实现自动化任务处理",
+          "title_orig": "Big Tech’s Personal AI Agents Are Coming for the to-Do List",
+          "summary": "谷歌与 Meta 正致力于开发能主动处理任务的个人 AI 智能体，其中谷歌的版本代号为 Remy，旨在通过长期运行精准预测用户需求并在后台自动处理各类待办事项。这种 AI 助手将超越传统的指令响应模式，向高度智能化和主动化演进，预示着大型科技公司正加速布局下一代个人生产力工具，以改变用户与数字设备的交互方式。",
+          "tags": [
+            "人工智能",
+            "谷歌",
+            "AI智能体"
+          ],
+          "url": "https://www.pymnts.com/news/artificial-intelligence/2026/big-tech-personal-ai-agents-are-coming-to-do-list/",
+          "source": "pymnts.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-06T20:57:28+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示了科技巨头在 AI 助手领域从被动响应向主动服务的关键转",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "pymnts.com"
         },
         {
           "title_zh": "支付处理商 Fiserv 步入转型年，通过高管聘用与成本削减计划重振业务增长",
@@ -855,6 +875,26 @@
           "published": "2026-05-06T14:42:45+00:00",
           "cve_ids": [],
           "selection_reason": "反映了传统支付处理商在行业变革中的自我调整与转型策略。",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "paymentsdive.com"
+        },
+        {
+          "title_zh": "PayPal 首席执行官回应分拆传闻，计划保持公司完整性并整合 Venmo 与 Braintree",
+          "title_orig": "PayPal CEO aims to keep company intact",
+          "summary": "PayPal新任首席执行官在分析师会议上明确回避了有关拆分公司的市场猜测，强调他认为PayPal、Venmo以及Braintree作为一个整体运营将更具竞争价值。此举旨在通过内部协同效应而非资产剥离来推动未来增长，向外界传递了公司维持业务完整性的坚定立场，并以此稳定投资者对该支付巨头长期战略方向的信心，确保公司在激烈的支付市场竞争中保持核心优势。",
+          "tags": [
+            "PayPal",
+            "企业战略",
+            "金融科技"
+          ],
+          "url": "https://www.paymentsdive.com/news/paypal-ceo-aims-to-keep-company-intact/819447/",
+          "source": "paymentsdive.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-06T14:13:26+00:00",
+          "cve_ids": [],
+          "selection_reason": "澄清了市场对支付巨头 PayPal 业务分拆的重大疑虑。",
           "source_tier": "t2",
           "source_kind": "media",
           "source_label": "金融媒体",
@@ -879,46 +919,6 @@
           "source_kind": "google_news",
           "source_label": "Google News",
           "source_key": "news.google.com"
-        },
-        {
-          "title_zh": "谷歌与 Meta 竞相开发个人 AI 智能体，代号 Remy 的助手将实现自动化任务处理",
-          "title_orig": "Big Tech’s Personal AI Agents Are Coming for the to-Do List",
-          "summary": "谷歌与 Meta 正致力于开发能主动处理任务的个人 AI 智能体，其中谷歌的版本代号为 Remy，旨在通过长期运行精准预测用户需求并在后台自动处理各类待办事项。这种 AI 助手将超越传统的指令响应模式，向高度智能化和主动化演进，预示着大型科技公司正加速布局下一代个人生产力工具，以改变用户与数字设备的交互方式。",
-          "tags": [
-            "人工智能",
-            "谷歌",
-            "AI智能体"
-          ],
-          "url": "https://www.pymnts.com/news/artificial-intelligence/2026/big-tech-personal-ai-agents-are-coming-to-do-list/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-06T20:57:28+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了科技巨头在 AI 助手领域从被动响应向主动服务的关键转",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "pymnts.com"
-        },
-        {
-          "title_zh": "DoorDash 杂货业务增长推动市场销售额激增 37%，强调端到端交付体验是竞争核心",
-          "title_orig": "DoorDash Grocery Growth Fuels 37% Marketplace Sales Jump",
-          "summary": "DoorDash 第一季度财报显示其市场销售额大幅增长 37%，首席执行官徐迅指出杂货业务的强劲增长是核心驱动力，并强调提供最佳端到端体验的执行力是未来竞争的关键。公司认为客户会根据订单交付的准确性来评价平台，这反映了外卖平台在向全品类即时配送转型过程中，通过提升服务质量和执行细节来获取市场份额的战略成效。",
-          "tags": [
-            "DoorDash",
-            "即时配送",
-            "电子商务"
-          ],
-          "url": "https://www.pymnts.com/news/delivery/2026/doordash-grocery-growth-fuels-37-marketplace-sales-jump/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-07T01:43:10+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了外卖平台通过多元化品类扩张实现高速增长的成功案例。",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "pymnts.com"
         }
       ],
       "raw_count": 7,
