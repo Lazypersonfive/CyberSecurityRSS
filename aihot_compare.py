@@ -12,6 +12,7 @@ import re
 from pathlib import Path
 from typing import Any
 
+import feedparser
 import httpx
 
 from digest_clock import digest_today
@@ -20,6 +21,7 @@ PROJECT_DIR = Path(__file__).parent
 DOCS_DIR = PROJECT_DIR / "docs"
 REPORTS_DIR = PROJECT_DIR / "reports"
 AIHOT_BASE_URL = "https://aihot.virxact.com"
+AIHOT_SELECTED_RSS_URL = f"{AIHOT_BASE_URL}/feed.xml"
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 Chrome/124 Safari/537.36"
@@ -34,14 +36,45 @@ def fetch_aihot_selected(*, take: int = 50, timeout: int = 20) -> list[dict[str,
     return list(data.get("items") or [])
 
 
+def fetch_aihot_rss_selected(*, timeout: int = 20) -> list[dict[str, Any]]:
+    with httpx.Client(timeout=timeout, headers={"User-Agent": USER_AGENT}) as client:
+        response = client.get(AIHOT_SELECTED_RSS_URL)
+        response.raise_for_status()
+    return parse_aihot_rss_items(response.text)
+
+
+def parse_aihot_rss_items(text: str) -> list[dict[str, Any]]:
+    parsed = feedparser.parse(text)
+    items: list[dict[str, Any]] = []
+    for entry in parsed.entries:
+        items.append(
+            {
+                "title": str(entry.get("title") or ""),
+                "url": str(entry.get("link") or ""),
+                "source": "AIHOT RSS",
+                "summary": _clean_html(str(entry.get("summary") or entry.get("description") or "")),
+                "publishedAt": str(entry.get("published") or entry.get("updated") or ""),
+            }
+        )
+    return items
+
+
 def build_aihot_compare(
     *,
     docs_dir: Path = DOCS_DIR,
     reports_dir: Path = REPORTS_DIR,
     take: int = 50,
+    source: str = "rss",
 ) -> Path:
     feed = json.loads((docs_dir / "feed.json").read_text(encoding="utf-8"))
-    comparison = compare_aihot_items(fetch_aihot_selected(take=take), feed)
+    if source == "api":
+        aihot_items = fetch_aihot_selected(take=take)
+    elif source == "rss":
+        aihot_items = fetch_aihot_rss_selected()[:take]
+    else:
+        raise SystemExit(f"unknown AIHOT compare source: {source}")
+    comparison = compare_aihot_items(aihot_items, feed)
+    comparison["source"] = source
     markdown = render_aihot_compare(comparison)
     reports_dir.mkdir(parents=True, exist_ok=True)
     out = reports_dir / "aihot_compare.md"
@@ -90,6 +123,7 @@ def render_aihot_compare(comparison: dict[str, Any]) -> str:
         "# AIHOT External Benchmark",
         "",
         f"- date: {comparison.get('date')}",
+        f"- source: {comparison.get('source', 'unknown')}",
         f"- AIHOT selected: {comparison.get('aihot_count')}",
         f"- Ours AI + AI Security: {comparison.get('ours_count')}",
         f"- Overlap: {len(matched)}",
@@ -205,11 +239,18 @@ def _clean(value: str) -> str:
     return value.replace("|", "\\|").replace("\n", " ").strip()
 
 
+def _clean_html(value: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", value)
+    text = text.replace("&nbsp;", " ")
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--take", type=int, default=50)
+    parser.add_argument("--source", choices=["rss", "api"], default="rss")
     args = parser.parse_args()
-    out = build_aihot_compare(take=args.take)
+    out = build_aihot_compare(take=args.take, source=args.source)
     print(f"AIHOT compare wrote {out}")
 
 

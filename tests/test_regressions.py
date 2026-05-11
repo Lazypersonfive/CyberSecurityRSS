@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 from digest_clock import digest_today
 from digest_postprocess import count_chinese_chars, summary_needs_repair
-from aihot_compare import compare_aihot_items, render_aihot_compare
+from aihot_compare import compare_aihot_items, parse_aihot_rss_items, render_aihot_compare
 from llm_backends.base import backend_name_from_env, get_backend
 from eval_strategy import build_offline_eval, render_offline_eval
 from digest_pipeline_gemini import (
@@ -1326,6 +1326,19 @@ class OfflineEvalTests(unittest.TestCase):
 
 
 class AIHotCompareTests(unittest.TestCase):
+    def test_parse_aihot_rss_items_normalizes_feed_entries(self) -> None:
+        rss = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>AI HOT — 精选</title>
+<item><title>OpenAI 发布新模型</title><link>https://openai.com/news/model</link><description>摘要内容</description><pubDate>Mon, 11 May 2026 01:22:36 GMT</pubDate><source>AIHOT</source></item>
+</channel></rss>"""
+
+        items = parse_aihot_rss_items(rss)
+
+        self.assertEqual(items[0]["title"], "OpenAI 发布新模型")
+        self.assertEqual(items[0]["url"], "https://openai.com/news/model")
+        self.assertEqual(items[0]["summary"], "摘要内容")
+        self.assertEqual(items[0]["publishedAt"], "Mon, 11 May 2026 01:22:36 GMT")
+
     def test_aihot_compare_matches_by_url_and_lists_missing_items(self) -> None:
         aihot_items = [
             {
@@ -1430,6 +1443,7 @@ class AIHotCompareTests(unittest.TestCase):
         markdown = render_aihot_compare(
             {
                 "date": "2026-05-11",
+                "source": "rss",
                 "aihot_count": 1,
                 "ours_count": 1,
                 "matched": [{"title": "OpenAI 发布新模型", "ours_title": "OpenAI 发布新模型"}],
