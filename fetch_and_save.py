@@ -89,7 +89,12 @@ def main() -> None:
     # Site refreshes should be idempotent within the same day: use previous
     # archive files for cross-day dedupe, but do not filter against URLs that
     # an earlier board wrote minutes ago in the same workflow.
-    seen_urls = set() if args.no_dedup else load_seen_urls(today_str, include_today=False)
+    dedup_lookback_days = int(bcfg.get("dedup_lookback_days", 7)) if args.board else 7
+    seen_urls = (
+        set()
+        if args.no_dedup
+        else load_seen_urls(today_str, lookback_days=dedup_lookback_days, include_today=False)
+    )
 
     logger.info("[%s] Fetching entries (last %dh)...", board_label, hours)
     entries, health = asyncio.run(

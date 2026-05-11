@@ -112,6 +112,9 @@ jobs:
       - name: Build source audit
         run: python source_audit.py
 
+      - name: Build offline eval
+        run: python eval_strategy.py
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"

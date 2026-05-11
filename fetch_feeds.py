@@ -52,6 +52,9 @@ def load_seen_urls(date_str: str, lookback_days: int = 7, include_today: bool = 
     keeps the dedup set bounded while covering same-story republication
     across consecutive cron runs.
     """
+    if lookback_days <= 0:
+        return set()
+
     target = _date.fromisoformat(date_str)
     seen: set[str] = set()
     start_offset = 0 if include_today else 1

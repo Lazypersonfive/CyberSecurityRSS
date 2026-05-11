@@ -9,7 +9,9 @@ from unittest.mock import patch
 
 from digest_clock import digest_today
 from digest_postprocess import count_chinese_chars, summary_needs_repair
+from aihot_compare import compare_aihot_items, render_aihot_compare
 from llm_backends.base import backend_name_from_env, get_backend
+from eval_strategy import build_offline_eval, render_offline_eval
 from digest_pipeline_gemini import (
     BOARD_SCORE_SYSTEM,
     _candidate_pool,
@@ -62,6 +64,18 @@ class FetchFeedsTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(merged, {"https://example.com/old", "https://example.com/new"})
         self.assertEqual(only_today, {"https://example.com/new"})
         self.assertEqual(previous_days, {"https://example.com/old"})
+
+    def test_load_seen_urls_allows_zero_lookback_for_quality_first_boards(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            archive = Path(tmpdir)
+            archive.joinpath("2026-04-27.json").write_text(
+                json.dumps({"urls": ["https://example.com/old"]}), encoding="utf-8"
+            )
+
+            with patch("fetch_feeds.ARCHIVE_DIR", archive):
+                seen = load_seen_urls("2026-04-29", lookback_days=0, include_today=False)
+
+        self.assertEqual(seen, set())
 
     def test_archive_urls_merges_with_existing(self) -> None:
         with TemporaryDirectory() as tmpdir:
@@ -423,6 +437,7 @@ class FetchAndSaveTests(unittest.TestCase):
                         "    display_name: Test",
                         "    opml: feeds/test.opml",
                         "    fetch_hours: 24",
+                        "    dedup_lookback_days: 0",
                     ]
                 ),
                 encoding="utf-8",
@@ -483,7 +498,7 @@ class FetchAndSaveTests(unittest.TestCase):
 
         self.assertEqual(payload["fetched_at"], "2026-04-28")
         self.assertEqual(payload["fetched_at_utc"], "2026-04-28T02:03:04Z")
-        seen_mock.assert_called_once_with("2026-04-28", include_today=False)
+        seen_mock.assert_called_once_with("2026-04-28", lookback_days=0, include_today=False)
 
 
 class CurationTests(unittest.TestCase):
@@ -570,6 +585,19 @@ class SourcePolicyTests(unittest.TestCase):
         self.assertTrue(profile.is_aggregator)
         self.assertFalse(profile.is_google_news)
         self.assertFalse(profile.is_direct)
+
+    def test_source_profile_ignores_generated_chinese_summary_for_language_mix(self) -> None:
+        profile = source_profile(
+            {
+                "title_zh": "OpenAI 发布模型更新",
+                "title_orig": "OpenAI ships a model update",
+                "summary": "这是一段由系统生成的中文摘要，不代表原始信源是中文。",
+                "url": "https://openai.com/news/model-update",
+                "source": "openai.com",
+            }
+        )
+
+        self.assertFalse(profile.is_chinese)
 
 
     def test_source_profile_uses_registry_for_official_domain(self) -> None:
@@ -1190,6 +1218,236 @@ class SourceAuditTests(unittest.TestCase):
         self.assertEqual(out, reports / "source_audit.md")
         self.assertIn("| finance | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |", body)
         self.assertIn("No unknown selected sources", body)
+
+
+class OfflineEvalTests(unittest.TestCase):
+    def test_offline_eval_reports_board_targets_and_misses(self) -> None:
+        feeds = [
+            {
+                "date": "2026-05-11",
+                "boards": {
+                    "security": {
+                        "items": [
+                            {
+                                "title_zh": "中文安全漏洞",
+                                "url": "https://xz.aliyun.com/a",
+                                "source_tier": "t2",
+                                "source_kind": "cn_expert",
+                            },
+                            {
+                                "title_zh": "Google 转述",
+                                "url": "https://news.google.com/rss/articles/1",
+                                "source_tier": "t2",
+                                "source_kind": "google_news",
+                            },
+                            {
+                                "title_zh": "未登记源",
+                                "url": "https://unknown.example/a",
+                                "source_tier": "unknown",
+                                "source_kind": "media",
+                            },
+                        ],
+                        "selection_stats": {
+                            "total": 3,
+                            "chinese": 1,
+                            "google_news": 1,
+                            "tier_unknown": 1,
+                            "tier_t2": 2,
+                            "kind_cn_expert": 1,
+                            "kind_google_news": 1,
+                        },
+                    }
+                },
+            }
+        ]
+        cfg = {
+            "boards": {
+                "security": {
+                    "display_name": "安全",
+                    "top_n": 15,
+                    "source_policy": {"min_chinese": 6, "max_google_news": 1},
+                }
+            }
+        }
+
+        markdown = render_offline_eval(feeds, cfg)
+
+        self.assertIn("| security | 安全 | 1 | 3.0 | 15 | 0/1 | 1.0 | 6 | 0/1 | 1.0 | 1 | 1 |", markdown)
+        self.assertIn("2026-05-11 security：selected 3/15，中文 1/6，unknown 1", markdown)
+
+    def test_build_offline_eval_writes_report_from_docs_feeds(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            docs = root / "docs"
+            reports = root / "reports"
+            docs.mkdir()
+            docs.joinpath("feed_2026-05-11.json").write_text(
+                json.dumps(
+                    {
+                        "date": "2026-05-11",
+                        "boards": {
+                            "ai": {
+                                "items": [
+                                    {
+                                        "title_zh": "OpenAI 发布",
+                                        "url": "https://openai.com/news/a",
+                                        "source_tier": "t1",
+                                        "source_kind": "official",
+                                    }
+                                ],
+                                "selection_stats": {
+                                    "total": 1,
+                                    "tier_t1": 1,
+                                    "kind_official": 1,
+                                },
+                            }
+                        },
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            cfg_path = root / "config.yaml"
+            cfg_path.write_text(
+                "boards:\n  ai:\n    display_name: AI 前沿\n    top_n: 15\n    source_policy:\n      min_chinese: 5\n",
+                encoding="utf-8",
+            )
+
+            out = build_offline_eval(
+                docs_dir=docs,
+                reports_dir=reports,
+                config_path=cfg_path,
+                lookback_days=7,
+            )
+            body = out.read_text(encoding="utf-8")
+
+        self.assertEqual(out, reports / "offline_eval.md")
+        self.assertIn("| ai | AI 前沿 | 1 | 1.0 | 15 | 0/1 |", body)
+
+
+class AIHotCompareTests(unittest.TestCase):
+    def test_aihot_compare_matches_by_url_and_lists_missing_items(self) -> None:
+        aihot_items = [
+            {
+                "title": "OpenAI 发布新模型",
+                "url": "https://openai.com/news/model",
+                "source": "OpenAI",
+                "summary": "OpenAI 发布新模型。",
+                "publishedAt": "2026-05-11T00:00:00Z",
+            },
+            {
+                "title": "Cerebras IPO 获超额认购",
+                "url": "https://example.com/cerebras",
+                "source": "IT之家",
+                "summary": "AI 芯片企业 IPO。",
+                "publishedAt": "2026-05-11T01:00:00Z",
+            },
+        ]
+        ours_feed = {
+            "date": "2026-05-11",
+            "boards": {
+                "ai": {
+                    "items": [
+                        {
+                            "title_zh": "OpenAI 发布新模型",
+                            "url": "https://openai.com/news/model",
+                            "source": "openai.com",
+                        }
+                    ]
+                },
+                "ai_security": {"items": []},
+            },
+        }
+
+        comparison = compare_aihot_items(aihot_items, ours_feed)
+
+        self.assertEqual(comparison["aihot_count"], 2)
+        self.assertEqual(comparison["ours_count"], 1)
+        self.assertEqual(len(comparison["matched"]), 1)
+        self.assertEqual(comparison["aihot_only"][0]["title"], "Cerebras IPO 获超额认购")
+
+    def test_aihot_compare_does_not_match_unrelated_chinese_ai_items(self) -> None:
+        aihot_items = [
+            {
+                "title": "Cerebras IPO 获超额认购",
+                "url": "https://example.com/cerebras",
+                "source": "IT之家",
+                "summary": "AI 芯片企业 IPO。",
+            }
+        ]
+        ours_feed = {
+            "date": "2026-05-11",
+            "boards": {
+                "ai": {
+                    "items": [
+                        {
+                            "title_zh": "xAI 与 Cursor 达成 100 亿美元合作协议",
+                            "url": "https://news.google.com/rss/articles/cursor",
+                            "source": "news.google.com",
+                            "summary": "AI 编程工具合作。",
+                        }
+                    ]
+                },
+                "ai_security": {"items": []},
+            },
+        }
+
+        comparison = compare_aihot_items(aihot_items, ours_feed)
+
+        self.assertEqual(comparison["matched"], [])
+        self.assertEqual(len(comparison["aihot_only"]), 1)
+        self.assertEqual(len(comparison["ours_only"]), 1)
+
+    def test_aihot_compare_requires_more_than_shared_product_name(self) -> None:
+        comparison = compare_aihot_items(
+            [
+                {
+                    "title": "Claude Code实践：HTML输出格式的卓越效果",
+                    "url": "https://example.com/claude-code-html",
+                    "summary": "Claude Code 在 HTML 输出上效果很好。",
+                }
+            ],
+            {
+                "date": "2026-05-11",
+                "boards": {
+                    "ai": {
+                        "items": [
+                            {
+                                "title_zh": "Claude Code 负责人称 AI 智能体正开启印刷术时刻",
+                                "url": "https://example.com/claude-code-lead",
+                                "summary": "Claude Code 负责人讨论编程普及。",
+                            }
+                        ]
+                    },
+                    "ai_security": {"items": []},
+                },
+            },
+        )
+
+        self.assertEqual(comparison["matched"], [])
+
+    def test_render_aihot_compare_outputs_markdown_summary(self) -> None:
+        markdown = render_aihot_compare(
+            {
+                "date": "2026-05-11",
+                "aihot_count": 1,
+                "ours_count": 1,
+                "matched": [{"title": "OpenAI 发布新模型", "ours_title": "OpenAI 发布新模型"}],
+                "aihot_only": [
+                    {
+                        "title": "Cerebras IPO 获超额认购",
+                        "source": "IT之家",
+                        "url": "https://example.com/cerebras",
+                        "summary": "AI 芯片企业 IPO。",
+                    }
+                ],
+                "ours_only": [],
+            }
+        )
+
+        self.assertIn("# AIHOT External Benchmark", markdown)
+        self.assertIn("Overlap: 1", markdown)
+        self.assertIn("Cerebras IPO 获超额认购", markdown)
 
 
 class DigestClockTests(unittest.TestCase):

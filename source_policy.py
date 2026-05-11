@@ -95,12 +95,15 @@ def source_profile(entry: Any) -> SourceProfile:
     )
     is_wechat = "wechat2rss" in feed_host or host == "mp.weixin.qq.com"
     source_key = feed_url if is_wechat and feed_url else (f"x:{x_handle.lower()}" if x_handle else host or feed_host)
-    text = " ".join(
+    # Only inspect original source text for language mix. Final digest items
+    # contain generated Chinese title/summary fields, which must not turn every
+    # translated English source into a "Chinese source" in reports and quotas.
+    original_text = " ".join(
         _get(entry, field)
-        for field in ("title", "title_orig", "feed_title", "summary")
+        for field in ("title", "title_orig", "feed_title", "source")
     )
     is_chinese = (
-        _has_cjk(text)
+        _has_cjk(original_text)
         or is_wechat
         or _host_matches(host, CHINESE_HOSTS)
         or _host_matches(feed_host, CHINESE_HOSTS)

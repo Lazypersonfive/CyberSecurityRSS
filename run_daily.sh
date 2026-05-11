@@ -48,4 +48,10 @@ echo "=========================================="
 "$PYTHON" source_audit.py
 
 echo ""
+echo "=========================================="
+echo "  Build offline eval"
+echo "=========================================="
+"$PYTHON" eval_strategy.py
+
+echo ""
 echo "Done. Open docs/index.html to preview."

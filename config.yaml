@@ -17,6 +17,7 @@ boards:
     display_name: "安全"
     opml: feeds/security.opml
     fetch_hours: 72       # 覆盖国内公众号/官方通告的前两日发布，避免中文漏洞分析错过候选池
+    dedup_lookback_days: 0 # 质量优先：72h 窗口内昨天抓过但未入选的中文技术文不能提前过滤
     max_entries: 120      # 安全板块中文源多且更新分散，需保留更大候选池
     llm_max_entries: 120
     top_n: 15
@@ -37,6 +38,7 @@ boards:
     display_name: "AI 安全"
     opml: feeds/ai_security.opml
     fetch_hours: 72
+    dedup_lookback_days: 0 # 稀疏板块不做跨日 raw 去重，避免候选池被 archive 吃空
     max_entries: 60
     llm_max_entries: 60
     top_n: 10
