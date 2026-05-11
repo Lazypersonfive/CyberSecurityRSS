@@ -1126,6 +1126,14 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(boards["ai"]["source_policy"]["min_chinese"], 5)
         self.assertEqual(boards["finance"]["top_n"], 10)
         self.assertEqual(boards["ai"]["source_policy"]["max_aggregator"], 7)
+        self.assertEqual(boards["ai"]["source_caps"]["arxiv.org"], 2)
+
+    def test_finance_opml_has_chinese_fintech_fallback(self) -> None:
+        body = Path("feeds/finance.opml").read_text(encoding="utf-8")
+
+        self.assertIn("Google News 中文金融科技", body)
+        self.assertIn("数字人民币", body)
+        self.assertIn("跨境支付", body)
 
     def test_gemini_prompts_encode_current_board_targets(self) -> None:
         self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["security"])

@@ -99,7 +99,7 @@ boards:
     llm_max_entries: 60
     top_n: 10
     score_threshold: 6
-    fill_score_floor: 5
+    fill_score_floor: 4  # 稀疏日允许低一档候选补足 10 条，但仍由 AI 安全 prompt 过滤泛 AI
     source_policy:
       min_chinese: 2
       min_direct: 4
@@ -128,7 +128,7 @@ boards:
       max_per_source: 4
       allow_cap_relaxation: true  # 稀疏日松开 max_per_source 把 top_n 填满
     source_caps:
-      arxiv.org: 8
+      arxiv.org: 2      # AI 前沿最多保留 2 条论文，避免日报被 arXiv 刷屏
       technologyreview.com: 4
       theverge.com: 4
       techcrunch.com: 3
