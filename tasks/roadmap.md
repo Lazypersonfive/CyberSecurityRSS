@@ -47,11 +47,30 @@
    - RSS/API/Skill 延后到质量架构稳定后。
    - 先保证静态站、搜索、日期窗口和 reports 的质量信号完整。
 
+7. **Human feedback loop**
+   - 先收集人工反馈，不直接让模型自我学习或自动改 prompt。
+   - 反馈对象包括：入选条目、未入选但用户认为应入选条目、低质误入选条目、标题/摘要质量问题。
+   - 反馈先落到仓库内结构化文件，进入 offline eval 和 source audit；人工确认后再调 `source_registry.yaml`、`config.scoring`、source caps 或 prompt。
+   - 详细设计见 `tasks/feedback_loop_plan.md`。
+
 ## Board Targets
 - `security`: 每日 15 条，候选足够时至少 6 条中文；漏洞摘要优先写原理、触发条件、影响范围和修复状态。
 - `ai_security`: 每日 10 条，宁缺毋滥，聚焦 AI 安全技术。
-- `ai`: 每日 15 条，约三分之一中文；XSignals 可占重要比例，但由 `final_score + source kind` 控制。
-- `finance`: 每日 10 条，优先官网、监管和机构源，Google News 只补覆盖。
+- `ai`: 每日 15 条，约三分之一中文；arXiv 最多 2 条；XSignals 可占重要比例，但由 `final_score + source kind` 控制。
+- `finance`: 每日 10 条，优先官网、监管和机构源，Google News 只补覆盖；当前中文 fallback 已接入，长期需要中文直采源。
+
+## Current Production Status (2026-05-11)
+- Backend: Gemini 主生产；DeepSeek 预留；Anthropic 已下线。
+- Source registry/final score/story clustering: v1 已上线。
+- Site search: 支持跨日期搜索。
+- Site ordering: 站点卡片按 `final_score` 优先展示，`source_tier/source_kind` 作为兜底排序。
+- GitHub Actions RSSHub: workflow 可启动临时 RSSHub 容器使用 `TWITTER_AUTH_TOKEN`，XSignals 以 Actions 结果为准。
+- Latest validated run: `daily-digest` run `25656509845` success。
+- Latest observed metrics:
+  - `security`: `15/15`, `chinese=6`, `x=1`。
+  - `ai_security`: `7/10`, `chinese=2`, `x=3`，仍需补源。
+  - `ai`: `15/15`, `chinese=3`, `arxiv=2`, `x=4`。
+  - `finance`: `10/10`, `chinese=3`。
 
 
 ## AIHOT Methodology Constraints
@@ -77,3 +96,4 @@
 - `tests/test_regressions.py`、`ruff check .`、`py_compile` 全通过。
 - dry-run 四板块仍生成 digest，站点 feed JSON 向后兼容。
 - reports 新增 `avg_final_score`、`source_tier/kind` 分布、事件聚类合并数量。
+- 人工反馈机制上线前必须只影响 reports/offline eval；任何自动调权都需要可回滚 diff 和 7-14 天回测。
