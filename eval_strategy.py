@@ -300,11 +300,7 @@ def _is_int(value: Any) -> bool:
 def _is_number(value: Any) -> bool:
     if isinstance(value, bool):
         return False
-    try:
-        float(value)
-        return True
-    except (TypeError, ValueError):
-        return False
+    return isinstance(value, int | float)
 
 
 def _format_optional_float(value: float | None) -> str:
