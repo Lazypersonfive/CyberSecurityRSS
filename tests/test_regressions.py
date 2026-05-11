@@ -25,6 +25,7 @@ from filter_entries import FilteredEntry, filter_and_dedup
 from rss_curation import curate_entries
 from source_policy import select_with_source_policy, source_mix_stats, source_profile
 from security_editorial import adjust_security_score
+from source_audit import build_source_audit, render_source_audit
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
 from site_builder import _build_feed_for_date, build
 
@@ -292,7 +293,12 @@ class SiteBuilderTests(unittest.TestCase):
                         "date": "2026-04-30",
                         "raw_count": 70,
                         "selected_count": 20,
-                        "selection_stats": {"total": 20, "direct": 20, "chinese": 2},
+                        "selection_stats": {
+                            "total": 20,
+                            "direct": 20,
+                            "chinese": 2,
+                            "above_threshold": 8,
+                        },
                         "generated_at": "2026-04-30T00:00:00Z",
                         "items": [{"title_zh": "测试", "url": "https://example.com"}],
                     },
@@ -306,7 +312,8 @@ class SiteBuilderTests(unittest.TestCase):
 
         block = feed["boards"]["security"]
         self.assertEqual(block["selected_count"], 20)
-        self.assertEqual(block["selection_stats"]["chinese"], 2)
+        self.assertEqual(block["selection_stats"]["above_threshold"], 8)
+        self.assertNotIn("chinese", block["selection_stats"])
 
 
     def test_feed_json_backfills_source_registry_metadata(self) -> None:
@@ -348,7 +355,7 @@ class SiteBuilderTests(unittest.TestCase):
                         "date": "2026-04-30",
                         "raw_count": 1,
                         "selected_count": 1,
-                        "selection_stats": {"total": 1},
+                        "selection_stats": {"total": 1, "tier_unknown": 1, "kind_media": 1},
                         "generated_at": "2026-04-30T00:00:00Z",
                         "items": [
                             {
@@ -375,6 +382,8 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertEqual(item["source_label"], "中文安全")
         self.assertEqual(block["selection_stats"]["tier_t2"], 1)
         self.assertEqual(block["selection_stats"]["kind_cn_expert"], 1)
+        self.assertNotIn("tier_unknown", block["selection_stats"])
+        self.assertNotIn("kind_media", block["selection_stats"])
 
     def test_daily_workflow_supports_single_board_dispatch(self) -> None:
         workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
@@ -1096,6 +1105,91 @@ class LLMBackendTests(unittest.TestCase):
         self.assertEqual(headers["Authorization"], "Bearer test-key")
         self.assertEqual(payload["model"], "deepseek-v4-flash")
         self.assertEqual(payload["messages"][0]["role"], "system")
+
+
+class SourceAuditTests(unittest.TestCase):
+    def test_source_audit_summarizes_coverage_and_unknown_sources(self) -> None:
+        feed = {
+            "date": "2026-05-11",
+            "boards": {
+                "security": {
+                    "items": [
+                        {
+                            "title_zh": "官方漏洞通告",
+                            "url": "https://cisa.gov/news",
+                            "source": "cisa.gov",
+                            "source_tier": "t1",
+                            "source_kind": "official",
+                            "source_label": "官方通告",
+                        },
+                        {
+                            "title_zh": "未登记安全文章",
+                            "url": "https://unknown.example/post",
+                            "source": "unknown.example",
+                            "source_tier": "unknown",
+                            "source_kind": "media",
+                            "source_label": "未登记源",
+                        },
+                    ]
+                },
+                "ai": {
+                    "items": [
+                        {
+                            "title_zh": "开发者 X 动态",
+                            "url": "https://x.com/OpenAIDevs/status/1",
+                            "source": "OpenAIDevs / X",
+                            "source_tier": "t1_5",
+                            "source_kind": "official_x",
+                            "source_label": "官方 X",
+                        }
+                    ]
+                },
+            },
+        }
+
+        markdown = render_source_audit([feed])
+
+        self.assertIn("| ai | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 |", markdown)
+        self.assertIn("| security | 2 | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 |", markdown)
+        self.assertIn("| `unknown.example` | 1 | security |", markdown)
+        self.assertIn("[未登记安全文章](https://unknown.example/post)", markdown)
+
+    def test_build_source_audit_writes_recent_feed_report(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            docs = root / "docs"
+            reports = root / "reports"
+            docs.mkdir()
+            docs.joinpath("feed_2026-05-10.json").write_text(
+                json.dumps(
+                    {
+                        "date": "2026-05-10",
+                        "boards": {
+                            "finance": {
+                                "items": [
+                                    {
+                                        "title_zh": "支付网络公告",
+                                        "url": "https://visa.com/a",
+                                        "source": "visa.com",
+                                        "source_tier": "t1",
+                                        "source_kind": "official",
+                                        "source_label": "官网",
+                                    }
+                                ]
+                            }
+                        },
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            out = build_source_audit(docs_dir=docs, reports_dir=reports, lookback_days=7)
+            body = out.read_text(encoding="utf-8")
+
+        self.assertEqual(out, reports / "source_audit.md")
+        self.assertIn("| finance | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |", body)
+        self.assertIn("No unknown selected sources", body)
 
 
 class DigestClockTests(unittest.TestCase):

@@ -42,4 +42,10 @@ echo "=========================================="
 "$PYTHON" site_builder.py
 
 echo ""
+echo "=========================================="
+echo "  Build source audit"
+echo "=========================================="
+"$PYTHON" source_audit.py
+
+echo ""
 echo "Done. Open docs/index.html to preview."

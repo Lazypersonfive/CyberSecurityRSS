@@ -109,6 +109,9 @@ jobs:
       - name: Build site
         run: python site_builder.py
 
+      - name: Build source audit
+        run: python source_audit.py
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"

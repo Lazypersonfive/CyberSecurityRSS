@@ -35,6 +35,15 @@ CONFIG_PATH = PROJECT_DIR / "config.yaml"
 DIGEST_DIR = PROJECT_DIR / "digest"
 DOCS_DIR = PROJECT_DIR / "docs"
 TEMPLATE_DIR = PROJECT_DIR / "templates"
+SOURCE_MIX_KEYS = {
+    "total",
+    "google_news",
+    "aggregator",
+    "chinese",
+    "direct",
+    "wechat",
+}
+SOURCE_MIX_PREFIXES = ("tier_", "kind_")
 
 
 def _load_digest(board: str, d: date) -> dict[str, Any] | None:
@@ -60,6 +69,7 @@ def _build_feed_for_date(boards: dict[str, dict], d: date) -> dict[str, Any] | N
         any_content = any_content or bool(digest.get("items"))
         items = [_with_source_metadata(item) for item in digest.get("items", [])]
         selection_stats = dict(digest.get("selection_stats") or {})
+        selection_stats = _without_stale_source_mix(selection_stats)
         selection_stats.update(source_mix_stats(items))
         out["boards"][board] = {
             "display_name": bcfg.get("display_name", board),
@@ -70,6 +80,15 @@ def _build_feed_for_date(boards: dict[str, dict], d: date) -> dict[str, Any] | N
             "generated_at": digest.get("generated_at", ""),
         }
     return out if any_content else None
+
+
+def _without_stale_source_mix(selection_stats: dict[str, Any]) -> dict[str, Any]:
+    """Drop stale source-mix counters before registry backfill recomputes them."""
+    return {
+        key: value
+        for key, value in selection_stats.items()
+        if key not in SOURCE_MIX_KEYS and not key.startswith(SOURCE_MIX_PREFIXES)
+    }
 
 
 
