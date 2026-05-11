@@ -1,17 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-05-11",
-  "fetched_at_utc": "2026-05-11T07:34:35.898673Z",
+  "fetched_at": "2026-05-12",
+  "fetched_at_utc": "2026-05-11T23:43:24.192163Z",
   "hours": 72,
   "total_feeds": 23,
   "raw_entry_count": 50,
-  "entry_count": 23,
+  "entry_count": 19,
   "filter_stats": {
     "input": 50,
-    "output": 50
+    "dropped_title_blacklist": 1,
+    "dedup_merged": 1,
+    "output": 48
   },
   "curation_stats": {
-    "dropped_source_cap": 27
+    "dropped_source_cap": 29
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -19,7 +21,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 4
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -61,14 +63,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 7
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -103,7 +105,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 0
     },
     "http://127.0.0.1:1200/twitter/user/EmbraceTheRed": {
       "feed_title": "X / Embrace The Red",
@@ -124,7 +126,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -145,14 +147,14 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 4
     },
     "http://127.0.0.1:1200/twitter/user/simonw": {
       "feed_title": "X / Simon Willison",
@@ -166,17 +168,43 @@
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 16
+      "raw_count": 21
     },
     "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans": {
       "feed_title": "Google News 中文 AI安全",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 14
+      "raw_count": 9
     }
   },
   "entries": [
+    {
+      "title": "Your AI Use Is Breaking My Brain",
+      "url": "https://simonwillison.net/2026/May/11/zombie-internet/#atom-everything",
+      "summary": "Your AI Use Is Breaking My Brain Excellent, angry piece by Jason Koebler on how AI writing online is becoming impossible to avoid, filtering it is mentally exhausting and it's even starting to distort regular human writing styles. I particularly liked his use of the term \"Zombie Internet\" to define a different, more insidious alternative to the \"Dead Internet\" (which is just bots talking to each o",
+      "category": "AISecurityLabs",
+      "published": "2026-05-11T19:21:27+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Using LLM in the shebang line of a script",
+      "url": "https://simonwillison.net/2026/May/11/llm-shebang/#atom-everything",
+      "summary": "TIL: Using LLM in the shebang line of a script Kim_Bruning on Hacker News : But seriously, you can put a shebang on an english text file now (if you're sufficiently brave) [...] This inspired me to look at patterns for doing exactly that with LLM . Here's the simplest, which takes advantage of LLM fragments : #!/usr/bin/env -S llm -f Generate an SVG of a pelican riding a bicycle But you can also i",
+      "category": "AISecurityLabs",
+      "published": "2026-05-11T18:48:57+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
     {
       "title": "RT Matthew Lam: Codex just released remote control!! 👀 If you’ve ever wanted to continue your codex session while touching grass, OpenAI is making...",
       "url": "https://x.com/rez0__/status/2053434331339665661",
@@ -191,17 +219,108 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "OpenAI Campus Network: Student club interest form",
-      "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
-      "summary": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
-      "category": "FirstParty",
-      "published": "2026-05-11T10:00:00+00:00",
+      "title": "AI Security Architecture: The Key to Verifiable AI - Security Boulevard",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQajB6cVJVSzVCOGQ4SmV3QVBVUkxHeU9hYlV3X0UxMmNQcV9YclNoaDIxV0tUb1QyTnlLTWFsMDA0SDlGOHJkS2QtTDRIV0tfZWxJaFA0d1dKblFONGpxZGFUSk5FaURoeTZLdkptR25GUEhnX0JKdktaNGFkZmF3NzExT1U1UzFmWnQtdWQwR3VNZw?oc=5",
+      "summary": "AI Security Architecture: The Key to Verifiable AI &nbsp;&nbsp; Security Boulevard",
+      "category": "CoverageFallback",
+      "published": "2026-05-11T23:37:30+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "My Mac had less available memory than I expected, turned out the \"claude\" Claude Code processes on this machine (running in various terminal windows) ...",
+      "url": "https://x.com/simonw/status/2053973809510916205",
+      "summary": "My Mac had less available memory than I expected, turned out the \"claude\" Claude Code processes on this machine (running in various terminal windows) were consuming ~30GB on their own! The largest one was using 4.9GB",
+      "category": "XSignals",
+      "published": "2026-05-11T23:01:31+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
+      "feed_title": "X / Simon Willison"
+    },
+    {
+      "title": "Inside AD CS Escalation: Unpacking Advanced Misuse Techniques and Tools",
+      "url": "https://unit42.paloaltonetworks.com/active-directory-certificate-services-exploitation/",
+      "summary": "Unit 42 analyzes AD CS exploitation through template misconfigurations and shadow credential misuse while offering behavioral detection for defenders. The post Inside AD CS Escalation: Unpacking Advanced Misuse Techniques and Tools appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-05-11T22:00:43+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "Quoting James Shore",
+      "url": "https://simonwillison.net/2026/May/11/james-shore/#atom-everything",
+      "summary": "Your AI coding agent, the one you use to write code, needs to reduce your maintenance costs. Not by a little bit, either. You write code twice as quick now? Better hope you’ve halved your maintenance costs. Three times as productive? One third the maintenance costs. Otherwise, you’re screwed. You’re trading a temporary speed boost for permanent indenture. [...] The math only works if the LLM decre",
+      "category": "AISecurityLabs",
+      "published": "2026-05-11T19:48:32+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Trump Trade: U.S. plans AI security order without required model tests - TipRanks",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbnhqOEx3dXAtaENZejA1a205ZTc5eUVub0t6c3RxbXo0dk96Vzc3a3lOcjJ1UTJib1JYc0xRenpCZi1JUTF3Zk9zSzFJVWNGaThsV0FyVEUwSnlaTmU2UDhlNEZYa2t2cW82eTJWcmlwTjMySnN6eHN1cVlOTEI5ZXJIMUIzYS1sb1ljSWRNZzhYejZsREI1V0ZYTHBjdFdDRVhYa3BqTmRzZU5GbndUSHEzQUQ5MW42NWc?oc=5",
+      "summary": "Trump Trade: U.S. plans AI security order without required model tests &nbsp;&nbsp; TipRanks",
+      "category": "CoverageFallback",
+      "published": "2026-05-11T19:33:33+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Wallarm Highlights AI Security Gaps and Launches Middle East Cloud Region - TipRanks",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0ZLLVBaemVWblR2dHZIbDA1bWY3ajBNZnZUMGxNOWRiR2NOU1JlX0s5SHVNNDlUNjFhMHVFNVY5QTBDMFB0bEhaNlJrQWVqRDVLbDhKakhfRjBEeXpMWWszZnFtZU1aQnRJSW15M3N5ZFNmTGFtQllNcmRQb3dGTTlnWmQ2UFdiOWhlNnluREF2N2VhcUNrdWU5dENQRWhTV01RV2tWMUF0WVRRZEJPcV9HTkZWeEpId2M0bmpR?oc=5",
+      "summary": "Wallarm Highlights AI Security Gaps and Launches Middle East Cloud Region &nbsp;&nbsp; TipRanks",
+      "category": "CoverageFallback",
+      "published": "2026-05-11T18:21:04+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Adobe expands bug bounty program to incentivize AI security research - Adobe",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPQ0FTOEVMeG9LQkl6eXV4UUhucC14ZzdsczZsb3hBa3dNb2lGTHRlaDU0NlNxX0N6WWRtSm90WVEwd1VqNEdXeTEtaEtJeFNTS1NCRmhGa1RGS0NOVjdpbk9zVzVCaUREeEFaZl9IeDlJM0VQZDZ1YWFmRHRnVjRZa1o4Tm1OU3BmT3h0UDVuajVyYTg1ZzFOLXV0cFpVVVphQUE?oc=5",
+      "summary": "Adobe expands bug bounty program to incentivize AI security research &nbsp;&nbsp; Adobe",
+      "category": "CoverageFallback",
+      "published": "2026-05-11T18:20:24+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "RT Harry Grieve: code is law in crypto, and as a consequence there was >$700m of exploits in the last couple of months. much of these stemmed from und...",
+      "url": "https://x.com/trailofbits/status/2053895208287510537",
+      "summary": "RT Harry Grieve code is law in crypto, and as a consequence there was &gt;$700m of exploits in the last couple of months. much of these stemmed from under (or un)audited smart contract code - particularly in relation to off-chain systems (1/3)",
+      "category": "XSignals",
+      "published": "2026-05-11T16:15:07+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
     },
     {
       "title": "How enterprises are scaling AI",
@@ -217,69 +336,43 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "以“安全”回应时代命题元知明启打造AI安全治理新范式-企业频道 - eastday.com",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPbUEtTTZhaHpBMkhEU3NkY1ZDME5UZmd1VDZnQWF3M3ZsN25pTkg5NzBObVN5SlVyU0p0c2JPZUJNZFBsVGlYM0E1SG5UY0d4cWtmY1NtOWV3RHU0V25YTmtlclBhRkExcG9oaGNxWF9qQWNlNkdvaklPLUZjZ0ZjXw?oc=5",
-      "summary": "以“安全”回应时代命题元知明启打造AI安全治理新范式-企业频道 &nbsp;&nbsp; eastday.com",
-      "category": "CoverageFallback",
-      "published": "2026-05-11T05:13:52+00:00",
+      "title": "OpenAI Campus Network: Student club interest form",
+      "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
+      "summary": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
+      "category": "FirstParty",
+      "published": "2026-05-11T10:00:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
     },
     {
-      "title": "Assessing F5 (FFIV) Valuation After Raised Guidance And Strong Quarter In AI Security And Multicloud - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTzdlUDMyVENyMnozQlVsazNja3daMnpGMWx4VUR0cjczNFMyNWxlT0R5a05qRVJ1b2Z1YXJGZmFRRFFCeXRyX3FLaThsaTlybEF5TXJOS3EwbVBaZTNjOFl1Z0kxMGFkOWVuN0NpVnVXbktfdUFiY3RBU1l2aVd1RG1kLVg2MFlDQ3VNdC1uSjRjZjBwUDFHVnBVbWxxQTdldzctb3NuSUQ4aUw1c0VKTmNfbFQ1bGl30gG-AUFVX3lxTFBZT0lsNXBsbUV0V05zNU5iR2V1ZDNrZm1VR1NNeFZEMkxKS24zc19ZSUhIWXRXcTRHQ01fbEp5cjFpZXV4TUNSLWtpOE1CWTdlekE5V3hvTURVR0Z5aFdINXZSYURKaGlNTGpCZDRIX1pqZWhLQ09JSlpyRXBxR29hMjNrbHE2YVozLXpFbHJLNG56YmFjZmJ6TVVrN3paV2VFQW1fcm5QYXF1X0xBcXM2ZzZ1RElkVnFyQzJTeWc?oc=5",
-      "summary": "Assessing F5 (FFIV) Valuation After Raised Guidance And Strong Quarter In AI Security And Multicloud &nbsp;&nbsp; simplywall.st",
-      "category": "CoverageFallback",
-      "published": "2026-05-11T01:22:00+00:00",
+      "title": "We're sponsoring @Offensive_Con in Berlin and sending a crew. If you're there for the AI bughunting training or the main conference, come say hi. http...",
+      "url": "https://x.com/trailofbits/status/2053773611031220454",
+      "summary": "We're sponsoring @Offensive_Con in Berlin and sending a crew. If you're there for the AI bughunting training or the main conference, come say hi. https://www.offensivecon.org/",
+      "category": "XSignals",
+      "published": "2026-05-11T09:46:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "China’s AI security market seen booming through 2030 - Tech in Asia",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFByNTdPeDhTRm9yOHM3Y21WRXNsWFY2N2VPeFhVc0FkNVJmaUdQSGRtMjhsUHJwaXBNTU5mUmRtclB5VmU4eXJ6VkVybjVKSUNUQmJZWndvUWNyS0VWa2JWWVNnUVV4MXE2R3JXSHlPTzM5aFBBakprMGRn?oc=5",
-      "summary": "China’s AI security market seen booming through 2030 &nbsp;&nbsp; Tech in Asia",
-      "category": "CoverageFallback",
-      "published": "2026-05-11T01:13:00+00:00",
+      "title": "OpenAI launches DeployCo to help businesses build around intelligence",
+      "url": "https://openai.com/index/openai-launches-the-deployment-company",
+      "summary": "OpenAI launches DeployCo, a new enterprise deployment company built to help organizations bring frontier AI into production and turn it into measurable business impact.",
+      "category": "FirstParty",
+      "published": "2026-05-11T06:00:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Raon Secure and KETI Strengthen AI Security Collaboration... Launching Demonstration of Physical AI Convergence Security - 아시아경제",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9zMmRSb1ZwV05GWjRXRFhNc0NBTzk3aVpnLWIxX0ZmZ2R1VWZNUGVyLVVJMzNjWmFKQ3pCYmpWdWVNZWUxM1RGSl96eDAxd0xfc0RyTEEwWkp5QkFQUlFOZlhScmcybC1OdlFnVU5URFhuWkxLbm5tMmxOaw?oc=5",
-      "summary": "Raon Secure and KETI Strengthen AI Security Collaboration... Launching Demonstration of Physical AI Convergence Security &nbsp;&nbsp; 아시아경제",
-      "category": "CoverageFallback",
-      "published": "2026-05-11T00:11:04+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Quoting New York Times Editors’ Note",
-      "url": "https://simonwillison.net/2026/May/10/new-york-times-editors-note/#atom-everything",
-      "summary": "This article was updated after The Times learned that a remark attributed to Pierre Poilievre, the Conservative leader, was in fact an A.I.-generated summary of his views about Canadian politics that A.I. rendered as a quotation. The reporter should have checked the accuracy of what the A.I. tool returned. The article now accurately quotes from a speech delivered by Mr. Poilievre in April. [...] H",
-      "category": "AISecurityLabs",
-      "published": "2026-05-10T23:58:49+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
     },
     {
       "title": "Shopify's River agent system lives in Slack and can only be used in public so that other employees can learn from what you do with it Reminds me of ho...",
@@ -295,82 +388,17 @@
       "feed_title": "X / Simon Willison"
     },
     {
-      "title": "Quoting Andrew Quinn",
-      "url": "https://simonwillison.net/2026/May/10/andrew-quinn/#atom-everything",
-      "summary": "One could say in the first quarter-century of my life, that while I was always fascinated by programming, I could never overcome the guilt of not really knowing whether the tool I am building right now isn’t already superceded by some much better implementation someone else has already written 30 or 40 years ago; I could write a TSV-aware search and replace, or I could find out about awk and solve",
-      "category": "AISecurityLabs",
-      "published": "2026-05-10T14:59:17+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "Quoting Luke Curley",
-      "url": "https://simonwillison.net/2026/May/9/luke-curley/#atom-everything",
-      "summary": "WebRTC is designed to degrade and drop my prompt during poor network conditions. wtf my dude WebRTC aggressively drops audio packets to keep latency low. If you’ve ever heard distorted audio on a conference call, that’s WebRTC baybee. The idea is that conference calls depend on rapid back-and-forth, so pausing to wait for audio is unacceptable. …but as a user, I would much rather wait an extra 200",
-      "category": "AISecurityLabs",
-      "published": "2026-05-09T01:03:58+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "Asking for HTML explanations of things is pretty neat, I tried it just now with the obfuscated Python POC for the new http://copy.fail Linux vulnerabi...",
-      "url": "https://x.com/simonw/status/2052864605853278715",
-      "summary": "Asking for HTML explanations of things is pretty neat, I tried it just now with the obfuscated Python POC for the new http://copy.fail Linux vulnerability: https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/#trying-this-out Thariq: http://x.com/i/article/2052796100608974848",
+      "title": "this is working decently well now. open to prs too of course",
+      "url": "https://x.com/rez0__/status/2053859108517019872",
+      "summary": "this is working decently well now. open to prs too of course Joseph Thacker: I made a /goal command for claude code: https://github.com/jthack/claude-goal",
       "category": "XSignals",
-      "published": "2026-05-08T21:33:57+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
-      "feed_title": "X / Simon Willison"
-    },
-    {
-      "title": "RT Fotis Chantzis: We’ve spent a lot of time on the framework underneath Codex, so it can move quickly on routine work while stopping for review when...",
-      "url": "https://x.com/wunderwuzzi23/status/2053069279776710767",
-      "summary": "RT Fotis Chantzis We’ve spent a lot of time on the framework underneath Codex, so it can move quickly on routine work while stopping for review when the risk changes. Here’s how we use sandboxing, approvals, network policy, and telemetry to run Codex safely @OpenAI: https://openai.com/index/running-codex-safely/",
-      "category": "XSignals",
-      "published": "2026-05-08T20:11:18+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "Running Codex safely at OpenAI",
-      "url": "https://openai.com/index/running-codex-safely",
-      "summary": "How OpenAI runs Codex securely with sandboxing, approvals, network policies, and agent-native telemetry to support safe and compliant coding agent adoption.",
-      "category": "FirstParty",
-      "published": "2026-05-08T12:30:00+00:00",
+      "published": "2026-05-11T15:25:44+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "HackTheBox AirTouch：一场从 SNMP 泄露打进 WPA2 无线内网的攻击链",
-      "url": "https://xz.aliyun.com/news/92102",
-      "summary": "本文记录 HackTheBox 靶机 AirTouch 的完整渗透过程。初始阶段仅发现 SSH 服务开放，但通过 UDP 扫描定位到 SNMP 服务，并利用默认 community string 读取到 consultant 账号密码。登录后发现目标处于 Docker 容器化无线实验环境中，进一步枚举虚拟无线网卡与网络拓扑。随后针对 AirTouch-Internet 执行监听、Deauth 攻击",
-      "category": "Chinese",
-      "published": "2026-05-08T10:15:01+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "RT Critical Thinking - Bug Bounty Podcast: What does the future hold for bug bounty? Episode 173, part 2! > Please share your thoughts here: https://f...",
@@ -397,84 +425,6 @@
       "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "yepppp i have my hacking agents output html summaries of basically everything these days.",
-      "url": "https://x.com/rez0__/status/2052835405637001714",
-      "summary": "yepppp i have my hacking agents output html summaries of basically everything these days. Thariq: http://x.com/i/article/2052796100608974848",
-      "category": "XSignals",
-      "published": "2026-05-08T19:37:55+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "gahhh mine stopped again before the goal was achieved. ima try and fix it again",
-      "url": "https://x.com/rez0__/status/2052806900224319921",
-      "summary": "gahhh mine stopped again before the goal was achieved. ima try and fix it again Joseph Thacker: I made a /goal command for claude code: https://github.com/jthack/claude-goal",
-      "category": "XSignals",
-      "published": "2026-05-08T17:44:38+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT HypernativeLabs: Good people, good cards, good conversations. Casino Night at Consensus Miami with @zeroshadow_io and @trailofbits.",
-      "url": "https://x.com/trailofbits/status/2052802059037270058",
-      "summary": "RT HypernativeLabs Good people, good cards, good conversations. Casino Night at Consensus Miami with @zeroshadow_io and @trailofbits.",
-      "category": "XSignals",
-      "published": "2026-05-08T13:00:15+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
-      "feed_title": "X / Trail of Bits"
-    },
-    {
-      "title": "Everyone has the same number of time tokens every day. Spend them wisely.",
-      "url": "https://x.com/rez0__/status/2052734893285614035",
-      "summary": "Everyone has the same number of time tokens every day. Spend them wisely.",
-      "category": "XSignals",
-      "published": "2026-05-08T12:58:31+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Java Attach API内存注入",
-      "url": "https://xz.aliyun.com/news/92103",
-      "summary": "通过 Java Attach API的底层Unix Domain Socket通信协议，结合Linux内核memfd_create系统调用实现纯内存态Agent注入。",
-      "category": "Chinese",
-      "published": "2026-05-08T11:15:26+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "AMSI对抗技术",
-      "url": "https://xz.aliyun.com/news/92105",
-      "summary": "AMSI对抗技术",
-      "category": "Chinese",
-      "published": "2026-05-08T15:53:30+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
     }
   ]
 }
