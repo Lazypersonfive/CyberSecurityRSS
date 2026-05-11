@@ -5,20 +5,54 @@
       "display_name": "安全",
       "items": [
         {
-          "title_zh": "Linux 内核 Dirty Frag 零日漏洞曝光，本地攻击者可利用单条命令获取主流发行版 Root 权限",
-          "title_orig": "New Linux 'Dirty Frag' zero-day gives root on all major distros",
-          "summary": "该漏洞被命名为 Dirty Frag，属于 Linux 内核中的本地提权漏洞，允许攻击者通过单条命令在主流发行版上获得 Root 权限。漏洞利用了内核处理内存分片的逻辑缺陷，影响范围涵盖了目前大多数主流的 Linux 发行版，目前已有 PoC 证明其有效性。原文未披露具体的 CVE 编号及详细的内核版本影响范围，但确认该漏洞在野外被发现且具有极高的利用价值。",
+          "title_zh": "红队视角下的 Microsoft 365 Token 窃取武器化与持久化访问技术剖析",
+          "title_orig": "Token 窃取的武器化: 红队视角",
+          "summary": "本文从红队视角深度剖析了 Microsoft 365 令牌窃取的武器化路径，详细介绍了利用 Evilginx 钓鱼工具、TokenTactics 绕过设备代码验证以及通过 OS/2 用户代理突破 trustType 条件访问的组合攻击链。攻击者进一步利用 roadtx 工具接管休眠账户的 MFA 与设备注册，最终在启用 Entra ID join 的云环境中获得长达 90 天的持久访问权限，展示了云端身份验证机制面临的严峻安全挑战。",
           "tags": [
-            "Linux内核",
-            "本地提权",
-            "零日漏洞"
+            "Token窃取",
+            "红队技术",
+            "M365安全"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496019&idx=1&sn=08d2045a47bb87cc7fc7862c39fe9e69",
+          "source": "mp.weixin.qq.com",
+          "category": "CN_News",
+          "published": "2026-05-09T09:40:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "深入剖析了现代云环境下的身份认证绕过与持久化实战技巧。",
+          "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+          "feed_title": "securitainment",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+          "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496019&idx=1&sn=08d2045a47bb87cc7fc7862c39fe9e69",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "dimension_score": 9.05,
+          "final_score": 9.65,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.3
+          }
+        },
+        {
+          "title_zh": "Linux 内核 Dirty Frag 零日漏洞曝光，本地攻击者可一键获取 root 权限",
+          "title_orig": "New Linux 'Dirty Frag' zero-day gives root on all major distros",
+          "summary": "名为 Dirty Frag 的 Linux 内核零日漏洞近期被披露，该高危漏洞允许本地攻击者在包括 Ubuntu 和 CentOS 在内的所有主流 Linux 发行版上，仅通过执行单一命令即可实现 root 权限提权。尽管原文未详细说明漏洞的具体触发原理和受影响的特定内核版本号，但确认该漏洞具有极高的利用价值，目前相关的验证性代码 PoC 已在安全社区广泛流传，建议管理员尽快关注补丁动态。",
+          "tags": [
+            "Linux提权",
+            "零日漏洞",
+            "内核安全"
           ],
           "url": "https://www.bleepingcomputer.com/news/security/new-linux-dirty-frag-zero-day-with-poc-exploit-gives-root-privileges/",
           "source": "bleepingcomputer.com",
           "category": "OfficialAdvisories",
           "published": "2026-05-08T07:45:24+00:00",
           "cve_ids": [],
-          "selection_reason": "Linux 内核级提权漏洞，影响范围广且已有 PoC。",
+          "selection_reason": "高危本地提权漏洞，影响范围覆盖主流发行版，具有极高威胁。",
           "feed_url": "https://www.bleepingcomputer.com/feed/",
           "feed_title": "BleepingComputer",
           "source_tier": "t2",
@@ -41,43 +75,9 @@
           }
         },
         {
-          "title_zh": "红队视角下的 Microsoft 365 令牌窃取武器化：利用 Evilginx 与设备代码绕过实现持久化访问",
-          "title_orig": "Token 窃取的武器化: 红队视角",
-          "summary": "本文从红队视角深度剖析了Microsoft 365令牌窃取的武器化路径，详细展示了如何利用Evilginx钓鱼获取初始凭据，并配合TokenTactics绕过设备代码限制。技术核心在于通过OS/2用户代理伪装来突破trustType条件访问策略，并利用roadtx工具接管休眠账户的MFA与设备注册，最终在启用Entra ID加入的云环境中实现长达90天的隐蔽持久访问。 红队视角下的 Microsoft 365 令牌窃取武器化：利用 Evilginx 与设备代码绕过实现持久化访问。该条来自mp.weixin.qq.com，归类于CN_News，原始信息显示其在本轮抓取、去重和打分中优先。",
-          "tags": [
-            "红队技术",
-            "令牌窃取",
-            "M365安全"
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496019&idx=1&sn=08d2045a47bb87cc7fc7862c39fe9e69",
-          "source": "mp.weixin.qq.com",
-          "category": "CN_News",
-          "published": "2026-05-09T09:40:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "详细展示了绕过现代云环境条件访问策略的实战链路。",
-          "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
-          "feed_title": "securitainment",
-          "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文公众号",
-          "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
-          "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496019&idx=1&sn=08d2045a47bb87cc7fc7862c39fe9e69",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 9,
-          "dimension_score": 8.95,
-          "final_score": 9.55,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.3,
-            "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.3
-          }
-        },
-        {
-          "title_zh": "HackTheBox AirTouch 渗透实战：从 SNMP 信息泄露到 WPA2 无线内网攻击链分析",
+          "title_zh": "HackTheBox AirTouch 渗透实战：从 SNMP 信息泄露到 WPA2 无线内网接管",
           "title_orig": "HackTheBox AirTouch：一场从 SNMP 泄露打进 WPA2 无线内网的攻击链",
-          "summary": "本文详细记录了针对 AirTouch 靶机的完整渗透过程，重点展示了从外部服务发现到无线内网渗透的攻击链转换。攻击者首先通过 UDP 扫描定位 SNMP 服务并利用默认团体字获取账号密码，随后在 Docker 容器化环境中发现虚拟无线网卡与网络拓扑。通过对 AirTouch-Internet 执行监听和取消认证攻击，成功打通了从传统网络服务到无线协议层的攻击链路，实现了对目标内网的深度渗透。",
+          "summary": "本文详细记录了针对 HackTheBox 靶机 AirTouch 的完整渗透测试过程，重点展示了通过 UDP 扫描定位 SNMP 服务并利用默认团体字获取 consultant 账号凭据的技术路径。在成功进入 Docker 容器化无线实验环境后，攻击者通过枚举虚拟无线网卡并针对 AirTouch-Internet 执行监听与 Deauth 攻击，最终打通了从外部服务漏洞到内部 WPA2 无线网络接管的完整攻击链路，为无线内网安全研究提供了实战参考。",
           "tags": [
             "渗透测试",
             "SNMP漏洞",
@@ -88,7 +88,7 @@
           "category": "CN_News",
           "published": "2026-05-08T10:15:01+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了从常规服务漏洞跨越到无线网络攻击的综合渗透思路。",
+          "selection_reason": "展示了从服务配置疏忽到容器内网渗透的完整攻击链条，具教学价值",
           "feed_url": "https://xz.aliyun.com/feed",
           "feed_title": "先知社区",
           "source_tier": "t2",
@@ -109,57 +109,20 @@
           }
         },
         {
-          "title_zh": "微软修复 M365 Copilot 三项高危零点击数据泄露漏洞，攻击者可远程访问企业敏感数据",
-          "title_orig": "‼️🚨 Microsoft just patched three critical M365 Copilot data leak vulnerabilities. All three are network-reachable, unauthenticated, and zero-clic...",
-          "summary": "微软近期紧急修复了M365 Copilot中的三个关键数据泄露漏洞，包括CVE-2026-26129等，这些漏洞具备网络可达、无需身份验证且零点击触发的高危特性。由于Copilot商业聊天组件通常拥有对SharePoint、OneDrive、Outlook和Teams等核心服务的广泛访问权限，攻击者可利用这些漏洞在未经授权的情况下，从租户环境中大规模窃取各类敏感的企业机密数据。 微软修复 M365 Copilot 三项高危零点击数据泄露漏洞，攻击者可远程访问企业敏感数据。该条来自x.com，归类于XSignals，原始信息显示其在本轮抓取、去重。",
-          "tags": [
-            "M365",
-            "Copilot",
-            "数据泄露"
-          ],
-          "url": "https://x.com/IntCyberDigest/status/2052864105153724723",
-          "source": "x.com",
-          "category": "XSignals",
-          "published": "2026-05-08T21:31:57+00:00",
-          "cve_ids": [
-            "CVE-2026-26129",
-            "CVE-2026-26164"
-          ],
-          "selection_reason": "涉及 AI 助手权限边界安全，零点击触发且影响核心办公数据。",
-          "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
-          "feed_title": "X / International Cyber Digest",
-          "source_tier": "t2",
-          "source_kind": "expert_x",
-          "source_label": "安全专家 X",
-          "source_key": "x:intcyberdigest",
-          "story_id": "cve:cve-2026-26129,cve-2026-26164",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 9,
-          "dimension_score": 9.2,
-          "final_score": 9.4,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.2,
-            "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "CISA 要求美国联邦机构限期修复 Ivanti EPMM 高危零日漏洞，该漏洞已遭在野利用",
+          "title_zh": "CISA 预警 Ivanti EPMM 零日漏洞，要求联邦机构在四天内完成补丁修复",
           "title_orig": "CISA gives feds four days to patch Ivanti flaw exploited as zero-day",
-          "summary": "美国 CISA 将 Ivanti Endpoint Manager Mobile (EPMM) 的一个高危漏洞加入已知利用漏洞目录，并要求联邦机构在四天内完成补丁修复。该漏洞属于零日漏洞，目前已被攻击者用于实战攻击，可能导致移动设备管理平台受损。原文未详细披露漏洞的 CVE 编号及具体的技术触发原理，但强调了其在野利用的紧迫性，要求相关单位立即采取缓解措施。",
+          "summary": "美国网络安全和基础设施安全局 CISA 发布紧急预警，指出 Ivanti Endpoint Manager Mobile 中存在一个已被黑客作为零日漏洞利用的高危漏洞，并强制要求联邦机构在四天内完成修复。该漏洞允许攻击者在未经授权的情况下入侵网络环境并窃取敏感数据，虽然原文未披露具体的 CVE 编号或技术细节，但强调了该漏洞对政府网络安全的紧迫威胁，目前官方已发布紧急安全补丁。",
           "tags": [
             "Ivanti",
             "零日漏洞",
-            "漏洞修复"
+            "CISA预警"
           ],
           "url": "https://www.bleepingcomputer.com/news/security/cisa-gives-feds-four-days-to-patch-ivanti-flaw-exploited-as-zero-day/",
           "source": "bleepingcomputer.com",
           "category": "OfficialAdvisories",
           "published": "2026-05-08T12:16:32+00:00",
           "cve_ids": [],
-          "selection_reason": "CISA 紧急预警，涉及移动端管理平台的在野零日攻击。",
+          "selection_reason": "涉及关键基础设施常用的移动管理平台，且已有在野利用。",
           "feed_url": "https://www.bleepingcomputer.com/feed/",
           "feed_title": "BleepingComputer",
           "source_tier": "t2",
@@ -182,9 +145,43 @@
           }
         },
         {
-          "title_zh": "基于 Java Attach API 与 Unix Domain Socket 的纯内存态 Agent 注入技术研究",
+          "title_zh": "基于大语言模型的 AI 智能体安全威胁综述：分层攻击面框架研究",
+          "title_orig": "基于大语言模型的 AI 智能体安全威胁与防御系统性综述——分层攻击面框架",
+          "summary": "本文针对 AI 智能体具备的跨会话规划、记忆保留及外部工具调用等复杂特性，提出了全新的分层攻击面模型，旨在解决现有安全分类体系无法准确说明架构组件脆弱性或威胁显现时间尺度的问题。该框架从结构性角度系统分析了提示注入、越狱等威胁在不同功能组件上的表现形式，为构建具备多层防御能力的 AI 智能体安全系统提供了关键的理论支撑与防御指导，是该领域的重要综述。",
+          "tags": [
+            "AI安全",
+            "大模型",
+            "攻击面框架"
+          ],
+          "url": "https://paper.seebug.org/3484",
+          "source": "paper.seebug.org",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-09T08:53:56+00:00",
+          "cve_ids": [],
+          "selection_reason": "系统性地梳理了 AI Agent 的安全架构，对前沿 AI",
+          "feed_url": "https://paper.seebug.org/rss/",
+          "feed_title": "Seebug Paper",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "paper.seebug.org",
+          "story_id": "url:paper.seebug.org/3484",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "dimension_score": 8.55,
+          "final_score": 9.15,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.3
+          }
+        },
+        {
+          "title_zh": "利用 Java Attach API 与 memfd_create 实现纯内存态 Agent 注入技术",
           "title_orig": "Java Attach API内存注入",
-          "summary": "本文深入探讨了利用 Java Attach API 实现内存注入的高级技术，通过底层的 Unix Domain Socket 通信协议有效绕过常规安全检测。该技术实现结合了 Linux 内核的 memfd_create 系统调用，将恶意 Agent 直接注入到目标 Java 进程的内存空间中而不产生任何磁盘文件。这种纯内存态的注入方法极大地提升了后渗透场景下的隐蔽性，是研究内存马与无文件攻击的重要参考资料。",
+          "summary": "该安全技术研究通过深入利用 Java Attach API 底层的 Unix Domain Socket 通信协议，并结合 Linux 内核的 memfd_create 系统调用，成功实现了纯内存态的恶意 Agent 注入。这种无文件攻击方法能够将恶意代码直接注入到目标 Java 进程的内存空间中，由于不产生任何磁盘文件痕迹，可以有效规避传统基于磁盘文件监控和静态特征扫描的安全防护产品，显著提升了攻击的隐蔽性。",
           "tags": [
             "Java安全",
             "内存注入",
@@ -195,7 +192,7 @@
           "category": "CN_News",
           "published": "2026-05-08T11:15:26+00:00",
           "cve_ids": [],
-          "selection_reason": "深入底层协议实现纯内存注入，具有极高的防御规避研究价值。",
+          "selection_reason": "利用底层系统调用实现隐蔽注入，是 Java 后渗透阶段的高级",
           "feed_url": "https://xz.aliyun.com/feed",
           "feed_title": "先知社区",
           "source_tier": "t2",
@@ -216,49 +213,50 @@
           }
         },
         {
-          "title_zh": "Ollama 远程越界读取漏洞 CVE-2026-7482 曝光，可导致 30 万台服务器内存泄露",
-          "title_orig": "Ollama Out-of-Bounds Read Vulnerability Allows Remote Process Memory Leak",
-          "summary": "研究人员披露了 Ollama 框架中名为 Bleeding Llama 的高危越界读取漏洞，编号为 CVE-2026-7482 且 CVSS 评分高达 9.1。该漏洞允许远程未经身份验证的攻击者直接泄露目标系统的整个进程内存，全球范围内约有 30 万台暴露在互联网上的服务器受此威胁。攻击者可借此获取 AI 推理环境中的敏感信息，目前相关厂商已紧急发布修复建议以应对这一波及广泛的安全风险。",
+          "title_zh": "微软修复 M365 Copilot 三项高危数据泄露漏洞，支持远程无交互攻击",
+          "title_orig": "‼️🚨 Microsoft just patched three critical M365 Copilot data leak vulnerabilities. All three are network-reachable, unauthenticated, and zero-clic...",
+          "summary": "微软紧急修复了 M365 Copilot 中的三个关键数据泄露漏洞，其中包括 CVE-2026-26129 等高危编号，这些漏洞允许未经身份验证的远程攻击者在无需用户交互的零点击情况下窃取敏感数据。受影响的核心组件涉及 Business Chat，攻击者一旦利用成功，即可非法访问租户环境内的 SharePoint 文档、OneDrive 存储、Outlook 邮件以及 Teams 聊天记录等核心办公数据，对企业信息安全造成极大风险。",
           "tags": [
-            "Ollama",
-            "内存泄露",
-            "AI安全"
+            "Copilot",
+            "数据泄露",
+            "零点击漏洞"
           ],
-          "url": "https://thehackernews.com/2026/05/ollama-out-of-bounds-read-vulnerability.html",
-          "source": "thehackernews.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-10T12:41:00+00:00",
+          "url": "https://x.com/IntCyberDigest/status/2052864105153724723",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-08T21:31:57+00:00",
           "cve_ids": [
-            "CVE-2026-7482"
+            "CVE-2026-26129",
+            "CVE-2026-26164"
           ],
-          "selection_reason": "影响主流 AI 基础设施的高危漏洞，涉及大规模服务器安全。",
-          "feed_url": "https://feeds.feedburner.com/TheHackersNews",
-          "feed_title": "The Hacker News",
+          "selection_reason": "涉及主流 AI 办公助手的高危漏洞，且具备远程无交互触发的特",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+          "feed_title": "X / International Cyber Digest",
           "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "thehackernews.com",
-          "story_id": "cve:cve-2026-7482",
+          "source_kind": "expert_x",
+          "source_label": "安全专家 X",
+          "source_key": "x:intcyberdigest",
+          "story_id": "cve:cve-2026-26129,cve-2026-26164",
           "related_urls": [],
           "related_count": 0,
           "score": 9,
-          "dimension_score": 9.0,
-          "final_score": 9.1,
+          "dimension_score": 8.95,
+          "final_score": 9.15,
           "score_breakdown": {
             "source_bonus": 0.0,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.1,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.0,
             "cn_visibility_bonus": 0.0
           }
         },
         {
-          "title_zh": "Linux 内核 CVE-2026-31431 漏洞分析：algif_aead 跨映射就地加密导致的拷贝失败",
+          "title_zh": "Linux 内核 CVE-2026-31431 漏洞分析：algif_aead 内存映射错误原理",
           "title_orig": "Solving “Copy Fail” CVE-2026–31431 Q/A Lab",
-          "summary": "本文深入分析了 Linux 内核 algif_aead 模块中的 CVE-2026-31431 漏洞，该漏洞源于跨映射就地 AEAD 加密过程中的逻辑错误。文章详细介绍了漏洞的触发路径、内存布局构造以及补丁修复方案，并提供了实验环境进行复现。该漏洞属于内核加密子系统的内存损坏类问题，对于理解 Linux 内核安全机制及加密接口的攻击面具有重要的技术参考价值。",
+          "summary": "本文深入分析了 Linux 内核 algif_aead 模块中编号为 CVE-2026-31431 的“Copy Fail”漏洞，该漏洞源于跨映射原位 AEAD 操作在处理内存时的逻辑错误。文章通过 CVE Playground 平台的实验环境，详细阐述了漏洞的触发路径、内存布局构造、利用形状以及官方补丁的修复逻辑，旨在帮助安全研究人员通过实际操作理解内核加密子系统中的内存安全风险及防御措施。",
           "tags": [
-            "Linux内核",
-            "漏洞分析",
-            "加密安全"
+            "内核漏洞",
+            "内存安全",
+            "漏洞分析"
           ],
           "url": "https://infosecwriteups.com/solving-copy-fail-cve-2026-31431-q-a-lab-aa79db7328cc?source=rss----7b722bfd1b8d---4",
           "source": "infosecwriteups.com",
@@ -267,7 +265,7 @@
           "cve_ids": [
             "CVE-2026-31431"
           ],
-          "selection_reason": "针对内核加密模块的深度技术分析，适合底层安全研究。",
+          "selection_reason": "针对特定内核 CVE 的深度技术复盘，适合底层安全研究者学习",
           "feed_url": "https://infosecwriteups.com/feed",
           "feed_title": "InfoSec Write-ups - Medium",
           "source_tier": "t2",
@@ -280,8 +278,8 @@
           ],
           "related_count": 1,
           "score": 9,
-          "dimension_score": 9.05,
-          "final_score": 8.85,
+          "dimension_score": 8.85,
+          "final_score": 8.65,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": -0.5,
@@ -290,104 +288,68 @@
           }
         },
         {
-          "title_zh": "基于大语言模型的 AI 智能体安全威胁与防御系统性综述：分层攻击面框架研究",
-          "title_orig": "基于大语言模型的 AI 智能体安全威胁与防御系统性综述——分层攻击面框架",
-          "summary": "该研究针对具备长期记忆、工具调用和多智能体协同能力的 AI 系统，提出了一个分层攻击面模型来解决现有安全分类体系的结构性缺陷。文章分析了智能体架构中脆弱的组件及威胁显现的时间尺度，旨在为开发者提供系统性的防御框架以应对提示注入和越狱等攻击。该综述通过剖析智能体特有的无状态大语言模型所不具备的功能，填补了当前 AI 安全研究中对结构性脆弱点描述的空白。",
+          "title_zh": "Metasploit 更新修复 Copy Fail 漏洞利用模块并增强 Linux 载荷兼容性",
+          "title_orig": "Metasploit Wrap-Up 05/08/2026",
+          "summary": "本周Metasploit更新重点对近期发布的Copy Fail漏洞利用模块进行了关键增强，通过修复linux/x64/exec和linux/armle/exec中的载荷问题，显著提升了基础架构的稳健性并扩大了目标覆盖范围。这些改进使得该模块能够在x64架构目标上成功运行多种反弹连接载荷，极大增强了安全专家在不同Linux环境下进行渗透测试的灵活性与实战效能，确保了复杂网络环境下的攻击模拟更加高效可靠。",
           "tags": [
-            "AI安全",
-            "智能体",
-            "攻击面"
+            "Metasplo",
+            "漏洞利用",
+            "Linux安全"
           ],
-          "url": "https://paper.seebug.org/3484",
-          "source": "paper.seebug.org",
+          "url": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-05-08-2026",
+          "source": "rapid7.com",
           "category": "OfficialAdvisories",
-          "published": "2026-05-09T08:53:56+00:00",
+          "published": "2026-05-08T18:26:10+00:00",
           "cve_ids": [],
-          "selection_reason": "系统性梳理了AI智能体特有的架构安全风险，具有前瞻性。",
-          "feed_url": "https://paper.seebug.org/rss/",
-          "feed_title": "Seebug Paper",
+          "selection_reason": "主流渗透框架更新，涉及常用载荷的兼容性修复。",
+          "feed_url": "https://blog.rapid7.com/rss/",
+          "feed_title": "Rapid7 Blog",
           "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文安全",
-          "source_key": "paper.seebug.org",
-          "story_id": "url:paper.seebug.org/3484",
+          "source_kind": "expert",
+          "source_label": "安全厂商",
+          "source_key": "rapid7.com",
+          "story_id": "url:rapid7.com/blog/post/pt-metasploit-wrap-up-05-08-2026",
           "related_urls": [],
           "related_count": 0,
           "score": 8,
-          "dimension_score": 8.0,
-          "final_score": 8.6,
+          "dimension_score": 8.45,
+          "final_score": 8.65,
           "score_breakdown": {
             "source_bonus": 0.0,
-            "kind_bonus": 0.3,
+            "kind_bonus": 0.2,
             "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.3
+            "cn_visibility_bonus": 0.0
           }
         },
         {
-          "title_zh": "cPanel 与 WHM 发布安全更新修复包括权限提升和代码执行在内的三个新漏洞",
-          "title_orig": "cPanel, WHM Release Fixes for Three New Vulnerabilities — Patch Now",
-          "summary": "cPanel 官方发布补丁修复了 cPanel 和 WHM 中的三个漏洞，其中 CVE-2026-29201 涉及 adminbin 调用中对功能文件名的输入验证不足。攻击者可利用这些漏洞实现权限提升、远程代码执行或拒绝服务攻击，受影响版本涵盖了当前主流的服务器管理面板组件。目前官方已发布修复版本，建议管理员立即更新以防止潜在的服务器接管风险，原文未披露具体的 PoC 细节。",
+          "title_zh": "Ollama 曝出越界读取漏洞 CVE-2026-7482 可导致远程进程内存泄露",
+          "title_orig": "Ollama Out-of-Bounds Read Vulnerability Allows Remote Process Memory Leak",
+          "summary": "网络安全研究人员披露了 Ollama 框架中代号为 Bleeding Llama 的严重越界读取漏洞，该漏洞追踪编号为 CVE-2026-7482，其 CVSS 评分高达 9.1。远程且未经身份验证的攻击者可利用此缺陷泄露服务器的完整进程内存信息，全球预计有超过 30 万台暴露在互联网上的服务器受此影响，该漏洞的发现凸显了当前主流 AI 基础设施在处理远程请求时面临的巨大安全威胁。",
           "tags": [
-            "cPanel",
-            "漏洞修复",
-            "权限提升"
+            "Ollama",
+            "内存泄露",
+            "AI安全"
           ],
-          "url": "https://thehackernews.com/2026/05/cpanel-whm-patch-3-new-vulnerabilities.html",
+          "url": "https://thehackernews.com/2026/05/ollama-out-of-bounds-read-vulnerability.html",
           "source": "thehackernews.com",
           "category": "OfficialAdvisories",
-          "published": "2026-05-09T07:16:00+00:00",
+          "published": "2026-05-10T12:41:00+00:00",
           "cve_ids": [
-            "CVE-2026-29201"
+            "CVE-2026-7482"
           ],
-          "selection_reason": "cPanel是主流服务器面板，其高危漏洞对运维安全影响极大。",
+          "selection_reason": "高危 CVE 漏洞，影响广泛的 AI 基础设施安全。",
           "feed_url": "https://feeds.feedburner.com/TheHackersNews",
           "feed_title": "The Hacker News",
           "source_tier": "t2",
           "source_kind": "media",
           "source_label": "安全媒体",
           "source_key": "thehackernews.com",
-          "story_id": "cve:cve-2026-29201",
-          "related_urls": [
-            "https://vulners.com/githubexploit/8DAFA6AF-F8F9-5C31-A4F0-5B2C3B4D5B08?utm_source=rss&utm_medium=rss&utm_campaign=rss"
-          ],
-          "related_count": 1,
-          "score": 8,
-          "dimension_score": 8.1,
-          "final_score": 8.1,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "攻击者滥用 Google 广告与 Claude.ai 共享对话功能向 Mac 用户分发恶意软件",
-          "title_orig": "Hackers abuse Google ads, Claude.ai chats to push Mac malware",
-          "summary": "黑客利用 Google 搜索广告和 Claude.ai 合法的共享对话功能发起恶意广告活动，诱导搜索“Claude mac download”的用户访问伪造页面。受害者在点击看似指向官方域名的链接后，会根据 Claude 对话中的虚假指令下载并安装针对 macOS 的恶意软件。这种攻击手段利用了知名 AI 平台的信任背书来绕过用户的警惕性，目前该恶意活动仍处于活跃状态。",
-          "tags": [
-            "恶意广告",
-            "macOS",
-            "社会工程学"
-          ],
-          "url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware/",
-          "source": "bleepingcomputer.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-10T17:52:15+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了利用AI平台共享功能进行钓鱼的新型攻击链路。",
-          "feed_url": "https://www.bleepingcomputer.com/feed/",
-          "feed_title": "BleepingComputer",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "bleepingcomputer.com",
-          "story_id": "url:bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware",
+          "story_id": "cve:cve-2026-7482",
           "related_urls": [],
           "related_count": 0,
           "score": 8,
-          "dimension_score": 8.0,
-          "final_score": 8.1,
+          "dimension_score": 8.2,
+          "final_score": 8.3,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.0,
@@ -396,9 +358,45 @@
           }
         },
         {
-          "title_zh": "新型 Linux 远控木马 Quasar Linux RAT 针对开发人员窃取凭据并渗透供应链",
+          "title_zh": "cPanel 与 WHM 发布安全更新修复包括权限提升在内的三个新漏洞",
+          "title_orig": "cPanel, WHM Release Fixes for Three New Vulnerabilities — Patch Now",
+          "summary": "cPanel 官方发布了针对 cPanel 和 Web Host Manager 的紧急安全补丁，旨在修复三个可能导致权限提升、远程代码执行及拒绝服务攻击的关键漏洞。其中 CVE-2026-29201 涉及 adminbin 调用中对功能文件名的输入验证不足，可能导致非预期的系统行为，官方强烈建议所有管理员立即将系统更新至最新版本以缓解潜在的攻击风险，确保托管服务器环境的整体安全性与稳定性。",
+          "tags": [
+            "cPanel",
+            "权限提升",
+            "安全补丁"
+          ],
+          "url": "https://thehackernews.com/2026/05/cpanel-whm-patch-3-new-vulnerabilities.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-09T07:16:00+00:00",
+          "cve_ids": [
+            "CVE-2026-29201"
+          ],
+          "selection_reason": "常用 Web 主机管理面板的安全更新，涉及 RCE 风险。",
+          "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+          "feed_title": "The Hacker News",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "thehackernews.com",
+          "story_id": "cve:cve-2026-29201",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "dimension_score": 8.05,
+          "final_score": 8.05,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "新型 Linux 远控木马 QLNX 针对软件供应链开发者窃取凭据",
           "title_orig": "Quasar Linux RAT Steals Developer Credentials for Software Supply Chain Compromise",
-          "summary": "安全研究人员发现了一种名为 QLNX 的新型 Linux 植入程序，该木马专门针对开发人员和 DevOps 工程师的系统以建立持久化据点。该工具具备凭据收集、键盘记录、文件操作、剪贴板监控和网络隧道等多种后渗透功能，旨在窃取开发环境中的敏感凭据。通过控制开发终端，攻击者能够进一步渗透软件供应链，对下游用户和企业基础设施构成严重的潜在威胁。",
+          "summary": "一种名为 Quasar Linux RAT (QLNX) 的新型 Linux 植入物被发现专门针对开发人员和 DevOps 人员的系统。该木马旨在软件供应链中建立持久隐蔽据点，具备凭据收集、键盘记录、文件操作、剪贴板监控及网络隧道等多种后渗透功能。攻击者通过此手段获取开发者权限，进而可能实现对下游软件产品的供应链污染，原文未披露具体的感染途径。",
           "tags": [
             "Linux木马",
             "供应链安全",
@@ -409,7 +407,7 @@
           "category": "OfficialAdvisories",
           "published": "2026-05-08T11:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "针对开发者的定向攻击是供应链安全的关键威胁点。",
+          "selection_reason": "针对开发者的定向攻击工具，具有极高的供应链风险。",
           "feed_url": "https://feeds.feedburner.com/TheHackersNews",
           "feed_title": "The Hacker News",
           "source_tier": "t2",
@@ -430,9 +428,9 @@
           }
         },
         {
-          "title_zh": "新型 Linux 后门 PamDOORa 利用 PAM 模块通过万能密码实现 SSH 持久化访问",
+          "title_zh": "Linux 后门 PamDOORa 利用 PAM 模块通过魔法密码实现 SSH 持久化",
           "title_orig": "New Linux PamDOORa Backdoor Uses PAM Modules to Steal SSH Credentials",
-          "summary": "名为 PamDOORa 的新型 Linux 后门在俄语网络犯罪论坛售卖，其设计为基于可插拔认证模块（PAM）的后渗透工具包。该后门允许攻击者通过特定的 TCP 端口组合和“万能密码”获得持久的 SSH 访问权限，从而绕过正常的认证流程。作为一种隐蔽的后渗透手段，它利用了 Linux 系统的底层认证机制，使得传统的日志审计和访问控制手段难以察觉其存在。",
+          "summary": "研究人员在俄语网络犯罪论坛发现一款名为 PamDOORa 的 Linux 后门工具，该工具以 1600 美元的价格出售。它被设计为基于可插拔认证模块（PAM）的后渗透工具包，允许攻击者通过特定的 TCP 端口组合和“魔法密码”获得持久的 SSH 访问权限。这种利用系统底层认证机制的手段极具隐蔽性，可绕过常规的身份验证流程，原文未提及受影响的具体 Linux 发行版。",
           "tags": [
             "PAM后门",
             "SSH持久化",
@@ -443,7 +441,7 @@
           "category": "OfficialAdvisories",
           "published": "2026-05-08T08:41:00+00:00",
           "cve_ids": [],
-          "selection_reason": "PAM模块后门具有极高的隐蔽性和权限，是高级威胁研究重点。",
+          "selection_reason": "利用 PAM 机制的后门技术，对系统加固具有参考价值。",
           "feed_url": "https://feeds.feedburner.com/TheHackersNews",
           "feed_title": "The Hacker News",
           "source_tier": "t2",
@@ -464,54 +462,20 @@
           }
         },
         {
-          "title_zh": "ReTokSync：一种解决生成式语言隐写中分词歧义问题的自同步消歧技术",
-          "title_orig": "ReTokSync：面向生成式语言隐写的自同步分词消歧方法",
-          "summary": "生成式语言隐写（GLS）通过将秘密信息嵌入自然语言生成过程实现通信，但在实际部署中常因接收端重新分词导致解码失败。ReTokSync 方法提出了一种自同步分词消歧机制，旨在解决通信双方因分词序列不一致而破坏共享解码状态的问题。该技术通过优化 token 序列的同步性，提高了隐写通信在复杂网络环境下的鲁棒性，确保了秘密信息提取的准确性和隐蔽性。",
-          "tags": [
-            "语言隐写",
-            "NLP安全",
-            "隐蔽通信"
-          ],
-          "url": "https://paper.seebug.org/3481",
-          "source": "paper.seebug.org",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-08T08:42:48+00:00",
-          "cve_ids": [],
-          "selection_reason": "探讨了AI生成内容在隐蔽通信中的技术挑战与解决方案。",
-          "feed_url": "https://paper.seebug.org/rss/",
-          "feed_title": "Seebug Paper",
-          "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文安全",
-          "source_key": "paper.seebug.org",
-          "story_id": "url:paper.seebug.org/3481",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 8,
-          "dimension_score": 7.35,
-          "final_score": 7.95,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.3,
-            "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.3
-          }
-        },
-        {
-          "title_zh": "Windows 反恶意软件扫描接口（AMSI）对抗技术与绕过方法深度解析",
+          "title_zh": "AMSI 对抗技术研究：绕过 Windows 恶意软件扫描接口的常用手段",
           "title_orig": "AMSI对抗技术",
-          "summary": "本文探讨了针对 Windows AMSI 机制的多种对抗技术，AMSI 是用于检测脚本和内存中恶意行为的关键防御组件。文章详细介绍了通过内存补丁、混淆处理以及利用特定 API 调用来绕过扫描引擎检测的技术原理，适用于红蓝对抗中的免杀场景。这些技术点对于安全从业者理解现代终端防御系统的局限性具有重要参考价值，有助于提升对高级脚本攻击的检测能力。",
+          "summary": "本文深入探讨了针对 Windows 反恶意软件扫描接口（AMSI）的对抗技术，分析了内存补丁、混淆处理及 RPC 绕过等多种技术路径。这些方法旨在使恶意脚本或内存加载的载荷逃避杀毒软件的实时检测，适用于红蓝对抗中的权限维持与横向移动场景。对于安全从业者而言，理解这些绕过原理有助于优化终端检测与响应（EDR）产品的防御策略。",
           "tags": [
             "AMSI绕过",
             "红蓝对抗",
-            "免杀技术"
+            "终端安全"
           ],
           "url": "https://xz.aliyun.com/news/92105",
           "source": "xz.aliyun.com",
           "category": "CN_News",
           "published": "2026-05-08T15:53:30+00:00",
           "cve_ids": [],
-          "selection_reason": "AMSI绕过是内网渗透和免杀的核心技术，具有实战参考价值。",
+          "selection_reason": "经典的防御绕过技术总结，对攻防两端均有实战意义。",
           "feed_url": "https://xz.aliyun.com/feed",
           "feed_title": "先知社区",
           "source_tier": "t2",
@@ -530,47 +494,82 @@
             "freshness_bonus": 0.0,
             "cn_visibility_bonus": 0.3
           }
+        },
+        {
+          "title_zh": "ReTokSync：解决生成式语言隐写中分词歧义问题的自同步方法",
+          "title_orig": "ReTokSync：面向生成式语言隐写的自同步分词消歧方法",
+          "summary": "生成式语言隐写（GLS）通过自然语言生成嵌入信息，但在接收端常因分词歧义导致解码状态破坏。ReTokSync 提出了一种面向 GLS 的自同步分词消歧方法，通过优化分词逻辑确保通信双方共享一致的解码状态。该技术提升了隐蔽通信在复杂文本环境下的鲁棒性，是语言隐写领域在解决实际部署难题上的重要进展，原文未提供具体的代码实现链接。",
+          "tags": [
+            "语言隐写",
+            "分词消歧",
+            "隐蔽通信"
+          ],
+          "url": "https://paper.seebug.org/3481",
+          "source": "paper.seebug.org",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-08T08:42:48+00:00",
+          "cve_ids": [],
+          "selection_reason": "前沿的学术研究成果，解决了隐写术中的关键技术瓶颈。",
+          "feed_url": "https://paper.seebug.org/rss/",
+          "feed_title": "Seebug Paper",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "paper.seebug.org",
+          "story_id": "url:paper.seebug.org/3481",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "dimension_score": 6.8,
+          "final_score": 7.4,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.3
+          }
         }
       ],
       "raw_count": 105,
       "selected_count": 15,
       "selection_stats": {
         "total": 15,
-        "direct": 14,
-        "tier_t2": 15,
-        "kind_media": 7,
         "chinese": 6,
+        "direct": 14,
         "wechat": 1,
+        "tier_t2": 15,
         "kind_cn_expert": 6,
+        "kind_media": 6,
         "aggregator": 1,
         "kind_expert_x": 1,
-        "kind_community": 1
+        "kind_community": 1,
+        "kind_expert": 1
       },
       "clustering_stats": {
         "deterministic_merged": 0,
-        "llm_merged": 5,
-        "merged_total": 5
+        "llm_merged": 4,
+        "merged_total": 4
       },
-      "generated_at": "2026-05-11T07:26:14.863342Z"
+      "generated_at": "2026-05-11T07:34:31.069171Z"
     },
     "ai_security": {
       "display_name": "AI 安全",
       "items": [
         {
-          "title_zh": "OpenAI 披露 Codex 模型安全运行机制：通过沙箱隔离与网络策略构建合规编码环境",
+          "title_zh": "OpenAI 披露 Codex 模型安全运行机制：沙箱化、网络策略与原生遥测技术",
           "title_orig": "Running Codex safely at OpenAI",
-          "summary": "OpenAI 详细介绍了其安全运行 Codex 模型的架构方案，核心通过沙箱化技术、审批流程、网络策略以及原生代理遥测来实现多层防御。该系统旨在支持安全且合规的 AI 编码代理应用，确保在执行代码生成任务时能够有效隔离潜在风险并满足企业级安全审计需求，为开发者提供了一个在受控环境中利用大模型能力的参考范式。",
+          "summary": "OpenAI 详细介绍了其安全运行 Codex 代码模型的技术架构，核心通过沙箱化环境隔离执行过程，并结合严格的审批流程、网络访问策略与代理原生遥测技术。该方案旨在实时监控代码生成与执行行为，支持安全且合规的 AI 编程助手应用，有效防止恶意代码注入或敏感数据泄露，为企业级代理部署提供了关键的安全保障框架。",
           "tags": [
             "AI安全",
             "沙箱隔离",
-            "代码安全"
+            "代码模型"
           ],
           "url": "https://openai.com/index/running-codex-safely",
           "source": "openai.com",
           "category": "FirstParty",
           "published": "2026-05-08T12:30:00+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了顶级 AI 厂商在模型运行环境安全隔离方面的工程实践。",
+          "selection_reason": "展示了顶级 AI 厂商在模型执行环境安全防护方面的工程实践。",
           "feed_url": "https://openai.com/news/rss.xml",
           "feed_title": "OpenAI News",
           "source_tier": "t1",
@@ -594,20 +593,54 @@
           }
         },
         {
-          "title_zh": "安全研究员利用 LLM 解释 Linux 混淆 Python PoC 漏洞代码的技术尝试",
+          "title_zh": "利用 Java Attach API 与 Linux memfd_create 实现纯内存态 Agent 注入技术",
+          "title_orig": "Java Attach API内存注入",
+          "summary": "该技术深入利用 Java Attach API 底层的 Unix Domain Socket 通信协议，并结合 Linux 内核的 memfd_create 系统调用，成功实现了无需任何物理文件落地的纯内存态 Agent 注入攻击。这种利用内核特性的攻击方式能够有效绕过传统文件系统的安全监控，在目标 Java 进程中隐蔽执行恶意逻辑，由于其极高的防御难度和隐蔽性，对企业级应用安全构成了重大威胁。",
+          "tags": [
+            "内存安全",
+            "Java安全",
+            "无文件攻击"
+          ],
+          "url": "https://xz.aliyun.com/news/92103",
+          "source": "xz.aliyun.com",
+          "category": "Chinese",
+          "published": "2026-05-08T11:15:26+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨了高隐蔽性的内存注入手段，对红蓝对抗防御有重要参考价值。",
+          "feed_url": "https://xz.aliyun.com/feed",
+          "feed_title": "先知社区",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "xz.aliyun.com",
+          "story_id": "url:xz.aliyun.com/news/92103",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 4,
+          "dimension_score": 6.95,
+          "final_score": 7.55,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.3
+          }
+        },
+        {
+          "title_zh": "安全研究员利用 HTML 解释功能分析 Linux 混淆 Python 漏洞利用代码",
           "title_orig": "Asking for HTML explanations of things is pretty neat, I tried it just now with the obfuscated Python POC for the new http://copy.fail Linux vulnerabi...",
-          "summary": "研究员 Simon Willison 尝试利用大语言模型将针对 Linux 漏洞 copy.fail 的混淆 Python 漏洞利用代码转换为易于理解的 HTML 格式解释说明。这种方法利用 AI 的语义理解能力来辅助分析复杂的恶意脚本，展示了 LLM 在逆向工程辅助、漏洞代码审计以及安全教育场景中的潜在应用价值，有效降低了技术分析的门槛并提升了安全研究的效率。",
+          "summary": "安全研究员 Simon Willison 尝试利用 AI 的 HTML 解释能力，对针对 copy.fail Linux 漏洞的混淆 Python PoC 进行了解析，展示了利用大模型语义理解能力进行自动化分析的新途径。这种方法将复杂的混淆代码转化为易于理解的结构化描述，为安全分析人员提供了一种快速理解恶意脚本逻辑、提升漏洞响应效率的新思路，是应对复杂漏洞利用代码的一种创新尝试。",
           "tags": [
             "漏洞分析",
-            "LLM应用",
-            "逆向工程"
+            "AI辅助安全",
+            "代码混淆"
           ],
           "url": "https://x.com/simonw/status/2052864605853278715",
           "source": "x.com",
           "category": "XSignals",
           "published": "2026-05-08T21:33:57+00:00",
           "cve_ids": [],
-          "selection_reason": "体现了 AI 辅助安全分析在处理混淆代码时的新颖应用场景。",
+          "selection_reason": "展示了利用 AI 辅助逆向分析混淆代码的新颖应用场景。",
           "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
           "feed_title": "X / Simon Willison",
           "source_tier": "t2",
@@ -630,9 +663,9 @@
           }
         },
         {
-          "title_zh": "HackTheBox AirTouch 渗透实战：从 SNMP 信息泄露到 WPA2 无线内网攻破全过程",
+          "title_zh": "HackTheBox AirTouch 渗透实战：从 SNMP 信息泄露到 WPA2 无线内网攻破",
           "title_orig": "HackTheBox AirTouch：一场从 SNMP 泄露打进 WPA2 无线内网的攻击链",
-          "summary": "本文详细记录了针对HackTheBox中AirTouch靶机的完整渗透测试过程，攻击者首先通过UDP扫描发现SNMP服务并利用默认团体字成功获取了consultant账号的登录凭据。在识别出目标处于Docker容器化的无线实验环境后，作者进一步执行了监听、Deauth攻击以及WPA2握手包破解，最终成功打入虚拟无线内网，完整展示了从服务配置错误到内网横向移动的技术路径与实战细节。",
+          "summary": "本文记录了针对 AirTouch 靶机的完整渗透过程，通过 UDP 扫描定位 SNMP 服务并利用默认团体字获取账号凭据，随后在 Docker 容器化的无线实验环境中展开行动。攻击者针对虚拟无线网卡执行 Deauth 攻击并监听握手包，最终通过破解 WPA2 协议成功打入无线内网，展示了从基础服务配置缺陷到复杂无线协议攻击的完整渗透链路。",
           "tags": [
             "渗透测试",
             "无线安全",
@@ -643,7 +676,7 @@
           "category": "Chinese",
           "published": "2026-05-08T10:15:01+00:00",
           "cve_ids": [],
-          "selection_reason": "涵盖了从信息收集到无线协议攻击的完整链路，具有实战参考价值。",
+          "selection_reason": "详细展示了跨协议、跨环境的复合攻击链，具有实战教学意义。",
           "feed_url": "https://xz.aliyun.com/feed",
           "feed_title": "先知社区",
           "source_tier": "t2",
@@ -654,8 +687,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 4,
-          "dimension_score": 5.85,
-          "final_score": 6.45,
+          "dimension_score": 6.15,
+          "final_score": 6.75,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.3,
@@ -664,54 +697,20 @@
           }
         },
         {
-          "title_zh": "纽约时报因 AI 生成虚假引言发布更正说明：警示新闻报道中的 AI 幻觉风险",
-          "title_orig": "Quoting New York Times Editors’ Note",
-          "summary": "纽约时报近期对其一篇报道进行了更新，原因是发现文中引用加拿大保守党领袖的言论实为 AI 工具生成的虚假摘要，而非其本人在演讲中的真实引言。该事件凸显了在专业新闻领域使用 AI 工具时缺乏人工核查导致的“幻觉”风险，提醒安全从业者在处理 AI 生成内容时必须建立严格的真实性验证机制，以防止虚假信息的传播。",
-          "tags": [
-            "AI幻觉",
-            "内容安全",
-            "数据可靠性"
-          ],
-          "url": "https://simonwillison.net/2026/May/10/new-york-times-editors-note/#atom-everything",
-          "source": "simonwillison.net",
-          "category": "AISecurityLabs",
-          "published": "2026-05-10T23:58:49+00:00",
-          "cve_ids": [],
-          "selection_reason": "典型 AI 幻觉案例，对 AI 内容治理和信任评估具有警示意",
-          "feed_url": "https://simonwillison.net/atom/everything/",
-          "feed_title": "Simon Willison",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "专家博客",
-          "source_key": "simonwillison.net",
-          "story_id": "url:simonwillison.net/2026/may/10/new-york-times-editors-note",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 5,
-          "dimension_score": 5.4,
-          "final_score": 5.9,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.2,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "Claude Code 增强工具 claude-goal 发布：通过目标指令优化 AI 编码代理执行逻辑",
+          "title_zh": "Claude Code 增强工具 claude-goal 发布：通过目标指令优化自动化编程任务",
           "title_orig": "gahhh mine stopped again before the goal was achieved. ima try and fix it again",
-          "summary": "开发者 Joseph Thacker 为 Claude Code 开发了名为 /goal 的自定义命令工具，旨在解决 AI 编码代理在执行复杂任务时经常中途停止且未达成目标的问题。该工具通过强化目标导向逻辑来优化 AI 的任务执行流，对于关注 AI Agent 自动化安全、稳定性以及长程任务处理能力的从业者具有重要的参考价值，并为提升自动化开发效率提供了新思路。",
+          "summary": "开发者 Joseph Thacker 在 GitHub 上发布了名为 claude-goal 的开源工具，专门为 Claude Code 引入了自定义的 /goal 命令，旨在解决自动化编程代理在执行复杂任务时频繁意外中断的痛点。该工具通过强化目标导向机制，显著提升了 AI 代理在处理长序列编码任务时的稳定性和成功率，特别适用于需要高可靠性、长流程自动化代码生成的专业软件开发场景。",
           "tags": [
             "AI工具",
-            "编码代理",
-            "自动化"
+            "自动化编程",
+            "Claude"
           ],
           "url": "https://x.com/rez0__/status/2052806900224319921",
           "source": "x.com",
           "category": "XSignals",
           "published": "2026-05-08T17:44:38+00:00",
           "cve_ids": [],
-          "selection_reason": "关注 AI 代理在实际工程应用中的稳定性优化方案。",
+          "selection_reason": "关注 AI 编程代理的稳定性改进，是当前 AI 辅助开发的热",
           "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
           "feed_title": "X / rez0",
           "source_tier": "t2",
@@ -732,20 +731,54 @@
           }
         },
         {
-          "title_zh": "Shopify 推出 River 代理系统：基于 Slack 的公开透明 AI 协作模式探索",
+          "title_zh": "纽约时报因 AI 生成虚假引文发布更正：警惕新闻报道中的 AI 幻觉风险",
+          "title_orig": "Quoting New York Times Editors’ Note",
+          "summary": "纽约时报近期对其报道进行了更新，原因是记者错误地将 AI 生成的政治观点总结当作真实引文引用，该事件凸显了 AI 幻觉对新闻真实性及媒体公信力的潜在威胁。报道强调了在专业领域使用 AI 工具时，若缺乏严谨的人工核实环节，可能导致严重的虚假信息传播风险，目前该文章已根据政治人物在四月份的实际演讲内容进行了修正。",
+          "tags": [
+            "AI幻觉",
+            "信息安全",
+            "内容合规"
+          ],
+          "url": "https://simonwillison.net/2026/May/10/new-york-times-editors-note/#atom-everything",
+          "source": "simonwillison.net",
+          "category": "AISecurityLabs",
+          "published": "2026-05-10T23:58:49+00:00",
+          "cve_ids": [],
+          "selection_reason": "典型 AI 幻觉案例，提醒安全从业者关注 AI 生成内容的信",
+          "feed_url": "https://simonwillison.net/atom/everything/",
+          "feed_title": "Simon Willison",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "simonwillison.net",
+          "story_id": "url:simonwillison.net/2026/may/10/new-york-times-editors-note",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 5,
+          "dimension_score": 5.15,
+          "final_score": 5.65,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Shopify 推出 River 代理系统：基于 Slack 的公开透明 AI 协作模式",
           "title_orig": "Shopify's River agent system lives in Slack and can only be used in public so that other employees can learn from what you do with it Reminds me of ho...",
-          "summary": "Shopify 开发的 River 代理系统集成于 Slack 平台，并强制要求员工必须在公共频道中使用，以便其他同事能够实时观察并学习 AI 提示词的编写技巧。这种设计借鉴了 Midjourney 的社区化交互模式，旨在通过透明化操作降低 AI 工具的使用门槛，同时也为企业内部的 AI 行为审计、知识共享以及协同办公效率的提升提供了新的视角。",
+          "summary": "Shopify 开发了名为 River 的代理系统，该系统集成于 Slack 平台并强制要求在公共频道使用，以便员工通过观察他人的操作来相互学习 AI 提示词技巧。这种模式借鉴了 Midjourney 的社区化交互理念，通过完全公开 AI 代理的交互过程，有效降低了复杂提示词工程的学习门槛，并在企业内部构建了一种透明且高效的 AI 应用经验沉淀机制。",
           "tags": [
             "AI代理",
-            "企业安全",
-            "协作模式"
+            "协作安全",
+            "提示词工程"
           ],
           "url": "https://x.com/simonw/status/2053529689122328947",
           "source": "x.com",
           "category": "XSignals",
           "published": "2026-05-10T17:36:45+00:00",
           "cve_ids": [],
-          "selection_reason": "探讨了企业级 AI 代理的部署模式及其对内部透明度的影响。",
+          "selection_reason": "探讨了企业内部部署 AI 代理的新型组织形式与知识共享机制。",
           "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
           "feed_title": "X / Simon Willison",
           "source_tier": "t2",
@@ -756,146 +789,46 @@
           "related_urls": [],
           "related_count": 0,
           "score": 5,
-          "dimension_score": 5.3,
-          "final_score": 5.6,
+          "dimension_score": 5.2,
+          "final_score": 5.5,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.2,
             "freshness_bonus": 0.1,
             "cn_visibility_bonus": 0.0
           }
-        },
-        {
-          "title_zh": "企业如何实现人工智能规模化应用：从早期实验到通过治理与工作流设计产生复合影响",
-          "title_orig": "How enterprises are scaling AI",
-          "summary": "本文探讨了企业如何将 AI 从早期的实验阶段推向规模化应用，通过建立信任机制、完善治理体系、优化工作流设计以及保障大规模产出质量来实现持续的影响力。文章强调了在扩展过程中治理与质量控制的重要性，旨在帮助企业在确保安全合规的前提下，通过体系化的设计让 AI 技术在业务流程中产生复合效应并提升整体运营效率。",
-          "tags": [
-            "AI"
-          ],
-          "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
-          "source": "openai.com",
-          "category": "FirstParty",
-          "published": "2026-05-11T10:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "原始信源高分入选",
-          "feed_url": "https://openai.com/news/rss.xml",
-          "feed_title": "OpenAI News",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "官网",
-          "source_key": "openai.com",
-          "story_id": "url:openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 4,
-          "dimension_score": 3.65,
-          "final_score": 5.45,
-          "score_breakdown": {
-            "source_bonus": 1.0,
-            "kind_bonus": 0.5,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "Raon Secure 与韩国电子技术研究院加强 AI 安全合作，启动物理人工智能融合安全示范项目",
-          "title_orig": "Raon Secure and KETI Strengthen AI Security Collaboration... Launching Demonstration of Physical AI Convergence Security - 아시아경제",
-          "summary": "Raon Secure 与韩国电子技术研究院（KETI）宣布加强在 AI 安全领域的合作，并正式启动了物理 AI 融合安全的示范项目。双方旨在通过技术协作提升 AI 系统在物理环境下的安全性，应对日益复杂的融合安全威胁，该合作标志着韩国在推动 AI 安全技术落地应用方面迈出了重要一步，为构建更可靠的 AI 产业生态系统提供了技术支撑。",
-          "tags": [
-            "AI"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9zMmRSb1ZwV05GWjRXRFhNc0NBTzk3aVpnLWIxX0ZmZ2R1VWZNUGVyLVVJMzNjWmFKQ3pCYmpWdWVNZWUxM1RGSl96eDAxd0xfc0RyTEEwWkp5QkFQUlFOZlhScmcybC1OdlFnVU5URFhuWkxLbm5tMmxOaw?oc=5",
-          "source": "news.google.com",
-          "category": "CoverageFallback",
-          "published": "2026-05-11T00:11:04+00:00",
-          "cve_ids": [],
-          "selection_reason": "聚合源补充关键动态",
-          "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-          "feed_title": "Google News AI Security",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com",
-          "story_id": "title:4c265f2cca15",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 4,
-          "dimension_score": 3.65,
-          "final_score": 2.95,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": -1.0,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
         }
       ],
       "raw_count": 23,
-      "selected_count": 8,
+      "selected_count": 7,
       "selection_stats": {
-        "total": 8,
+        "total": 7,
         "direct": 4,
-        "tier_t1": 2,
-        "kind_official": 2,
-        "aggregator": 4,
+        "tier_t1": 1,
+        "kind_official": 1,
+        "chinese": 2,
         "tier_t2": 6,
+        "kind_cn_expert": 2,
+        "aggregator": 3,
         "kind_expert_x": 3,
-        "chinese": 1,
-        "kind_cn_expert": 1,
-        "kind_expert": 1,
-        "google_news": 1,
-        "kind_google_news": 1
+        "kind_expert": 1
       },
       "clustering_stats": {
         "deterministic_merged": 0,
         "llm_merged": 3,
         "merged_total": 3
       },
-      "generated_at": "2026-05-11T07:26:48.579227Z"
+      "generated_at": "2026-05-11T07:35:00.261443Z"
     },
     "ai": {
       "display_name": "AI 前沿",
       "items": [
         {
-          "title_zh": "GraphDC：一种基于分治策略的多智能体系统，旨在提升大规模图算法推理的可扩展性",
-          "title_orig": "GraphDC: A Divide-and-Conquer Multi-Agent System for Scalable Graph Algorithm Reasoning",
-          "summary": "针对大语言模型在处理复杂拓扑结构和多步图算法推理时的性能瓶颈，研究人员提出了一种名为GraphDC的多智能体系统。该系统采用分治策略将大规模图任务进行有效拆解与协同处理，显著增强了模型在复杂数学及图论问题上的推理能力，为构建更强大的结构化数据分析工具提供了全新的技术路径与理论支撑。",
-          "tags": [
-            "多智能体系统",
-            "图算法",
-            "分治策略"
-          ],
-          "url": "https://arxiv.org/abs/2605.06671",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-11T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "探讨了LLM在处理复杂拓扑结构任务时的关键技术突破。",
-          "feed_url": "http://export.arxiv.org/rss/cs.AI",
-          "feed_title": "arXiv cs.AI recent",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org",
-          "story_id": "url:arxiv.org/abs/2605.06671",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 7,
-          "dimension_score": 7.3,
-          "final_score": 9.1,
-          "score_breakdown": {
-            "source_bonus": 1.0,
-            "kind_bonus": 0.5,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "Hugging Face 正式推出 hf-sandbox 沙盒功能，为开发者提供更安全的模型运行环境",
+          "title_zh": "Hugging Face 官方宣布推出沙盒功能 hf-sandbox 以提升开发者体验",
           "title_orig": "RT Adithya S K: Let's go hf now has sandboxes",
-          "summary": "Hugging Face官方宣布发布hf-sandbox模块，允许开发者在受控的沙盒环境中安全地运行和测试各类AI模型，有效降低了模型部署过程中的安全风险。这一功能的推出为社区用户探索复杂模型功能提供了更便捷且隔离的实验空间，在进一步完善其开发者生态体系的同时，也显著提升了平台处理敏感任务的能力与安全性。",
+          "summary": "Hugging Face 官方宣布正式发布由 Quentin Gallouédec 开发的 hf-sandbox 沙盒环境，旨在为平台用户提供一个安全且受控的代码运行空间。这一功能的推出不仅简化了 AI 模型的测试与部署流程，还通过完善开源生态工具链，显著提升了开发者在进行模型调试时的效率与系统安全性，是该平台在提升用户开发体验方面迈出的重要一步。",
           "tags": [
-            "Hugging ",
+            "HuggingF",
             "沙盒环境",
             "开发者工具"
           ],
@@ -904,7 +837,7 @@
           "category": "XSignals",
           "published": "2026-05-10T15:43:12+00:00",
           "cve_ids": [],
-          "selection_reason": "知名AI社区推出的重要安全工具，影响模型测试流程。",
+          "selection_reason": "Hugging Face 作为 AI 社区核心，其新工具将直",
           "feed_url": "http://127.0.0.1:1200/twitter/user/huggingface",
           "feed_title": "X / Hugging Face",
           "source_tier": "t1_5",
@@ -927,88 +860,20 @@
           }
         },
         {
-          "title_zh": "研究人员提出光谱诊断法，通过内部表示识别多智能体 AI 系统中隐藏的联盟组织",
-          "title_orig": "Hidden Coalitions in Multi-Agent AI: A Spectral Diagnostic from Internal Representations",
-          "summary": "该研究通过分析AI智能体的内部表示，提出了一种创新的光谱诊断方法，旨在识别多智能体交互过程中形成的隐性联盟。这种方法能够精准区分真实的信息耦合与表面的行为相似性，对于深入理解AI群体的涌现组织行为，以及确保复杂多智能体系统的安全、对齐与可解释性具有至关重要的科研价值和实践意义。",
-          "tags": [
-            "多智能体",
-            "AI安全",
-            "光谱诊断"
-          ],
-          "url": "https://arxiv.org/abs/2605.06696",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-11T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "关注多智能体系统的内部协作机制，对AI安全研究有重要价值。",
-          "feed_url": "http://export.arxiv.org/rss/cs.AI",
-          "feed_title": "arXiv cs.AI recent",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org",
-          "story_id": "url:arxiv.org/abs/2605.06696",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 7,
-          "dimension_score": 7.25,
-          "final_score": 9.05,
-          "score_breakdown": {
-            "source_bonus": 1.0,
-            "kind_bonus": 0.5,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "Hugging Face 数据显示本地 AI 迎来爆发，GGUF 格式模型月度创建量实现翻倍增长",
-          "title_orig": "RT clem 🤗: Local AI is having its moment! Below is the number of new GGUF models created each month over the past 8 months & insights from our HF i...",
-          "summary": "根据Hugging Face内部数据显示，平台上的GGUF模型总数已达到17.6万个，且自今年三月起月均新增模型数量从约5100个大幅跃升至9200个，呈现出近两倍的爆发式增长态势。这一显著的增长趋势表明本地AI应用正迎来关键的拐点时刻，反映了全球开发者对于轻量化、可本地部署模型的需求正持续激增，是人工智能行业向边缘侧计算转移的明确信号。",
-          "tags": [
-            "本地AI",
-            "GGUF",
-            "模型生态"
-          ],
-          "url": "https://x.com/huggingface/status/2053539426660188401",
-          "source": "x.com",
-          "category": "XSignals",
-          "published": "2026-05-10T18:02:15+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了本地化部署模型在开源社区中的强劲增长趋势。",
-          "feed_url": "http://127.0.0.1:1200/twitter/user/huggingface",
-          "feed_title": "X / Hugging Face",
-          "source_tier": "t1_5",
-          "source_kind": "official_x",
-          "source_label": "官方 X",
-          "source_key": "x:huggingface",
-          "story_id": "url:x.com/huggingface/status/2053539426660188401",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 8,
-          "dimension_score": 8.1,
-          "final_score": 9.0,
-          "score_breakdown": {
-            "source_bonus": 0.5,
-            "kind_bonus": 0.3,
-            "freshness_bonus": 0.1,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "vLLM v0.20.0 版本正式发布，支持 DeepSeek V4 模型并引入多项推理优化技术",
+          "title_zh": "vLLM 发布 v0.20.0 重大版本更新，支持 DeepSeek V4 与 Blackwell 架构优化",
           "title_orig": "RT Red Hat AI: Michael Goin (@mgoin_) walks through @vllm_project v0.20.0. 752 commits. 320 contributors. 123 new. 🚀 🎉 DeepSeek V4, TurboQuant 2...",
-          "summary": "推理框架vLLM正式发布了包含752个代码提交和320位贡献者参与的v0.20.0重大版本更新，重点支持了DeepSeek V4模型以及针对Blackwell架构的MXFP4量化技术。该版本还集成了TurboQuant 2位KV缓存、FA4预填充默认设置，并全面适配了PyTorch 2.11与CUDA 13.0等前沿环境，旨在通过多项技术革新大幅提升大规模语言模型在复杂硬件环境下的推理效率与性能表现。 vLLM v0.20.0 版本正式发布，支持 DeepSeek V4 模型并引入多项推理优化技术。该条来自x.com，归类于XSignals，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查。",
+          "summary": "推理框架vLLM正式发布包含752个提交的v0.20.0版本，该版本由320位贡献者共同完成，重点新增了对DeepSeek V4、TurboQuant 2位KV缓存以及英伟达Blackwell架构上MXFP4的支持。通过集成PyTorch 2.11与CUDA 13.0等前沿技术，该版本显著优化了大规模语言模型在高性能硬件上的推理效率，并为开发者提供了更强大的MLA预填充默认功能与模型兼容性。 vLLM 发布 v0.20.0 重大版本更新，支持 DeepSeek V4 与 Blackwell 架构优化。该条来自x.com，归类于XSignals，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范。",
           "tags": [
             "vLLM",
-            "DeepSeek",
-            "推理优化"
+            "推理加速",
+            "DeepSeek"
           ],
           "url": "https://x.com/vllm_project/status/2053438255987896328",
           "source": "x.com",
           "category": "XSignals",
           "published": "2026-05-10T07:05:38+00:00",
           "cve_ids": [],
-          "selection_reason": "主流推理框架的重大更新，涉及多项前沿硬件优化。",
+          "selection_reason": "vLLM 是主流推理框架，此次更新涵盖了多项前沿硬件与模型支",
           "feed_url": "http://127.0.0.1:1200/twitter/user/vllm_project",
           "feed_title": "X / vLLM",
           "source_tier": "t2",
@@ -1029,12 +894,114 @@
           }
         },
         {
-          "title_zh": "Claude Mythos 模型在多项 AI 评测中表现优异，引发行业对 2027 年技术奇点的讨论",
+          "title_zh": "GraphDC：一种用于解决大规模图算法推理问题的分治多智能体系统",
+          "title_orig": "GraphDC: A Divide-and-Conquer Multi-Agent System for Scalable Graph Algorithm Reasoning",
+          "summary": "研究人员提出名为 GraphDC 的分治多智能体系统，旨在通过系统化的多步推理增强大语言模型在复杂拓扑结构下的图算法处理能力。该系统有效解决了传统模型在处理大规模图任务时表现不佳的问题，通过将复杂问题拆解并协同解决，为提升 AI 在数学逻辑和大规模图论领域的推理表现提供了全新的技术路径与实验支撑。",
+          "tags": [
+            "多智能体",
+            "图算法",
+            "逻辑推理"
+          ],
+          "url": "https://arxiv.org/abs/2605.06671",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-11T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "图推理是 LLM 的短板，该研究提出的分治策略具有学术参考价",
+          "feed_url": "http://export.arxiv.org/rss/cs.AI",
+          "feed_title": "arXiv cs.AI recent",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org",
+          "story_id": "url:arxiv.org/abs/2605.06671",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "dimension_score": 7.1,
+          "final_score": 8.9,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "AI 安全新研究：通过内部表示的光谱诊断识别多智能体系统中的隐藏联盟",
+          "title_orig": "Hidden Coalitions in Multi-Agent AI: A Spectral Diagnostic from Internal Representations",
+          "summary": "最新研究提出一种基于内部表示的光谱诊断方法，旨在识别 AI 智能体之间可能形成的隐藏联盟，而非仅仅依赖难以区分真实耦合的外部行为观察。这一发现对于理解多智能体系统中出现的突发组织行为至关重要，能够帮助研究人员在内部表示层面识别潜在的非预期协作，从而更好地解决 AI 对齐与安全性问题，确保系统运行的可控性。",
+          "tags": [
+            "AI安全",
+            "多智能体",
+            "对齐技术"
+          ],
+          "url": "https://arxiv.org/abs/2605.06696",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-11T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨了 AI 智能体间隐蔽协作的风险，是 AI 安全领域的前",
+          "feed_url": "http://export.arxiv.org/rss/cs.AI",
+          "feed_title": "arXiv cs.AI recent",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org",
+          "story_id": "url:arxiv.org/abs/2605.06696",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "dimension_score": 7.05,
+          "final_score": 8.85,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Hugging Face 数据显示本地 AI 迎来爆发，GGUF 模型月度创建量翻倍",
+          "title_orig": "RT clem 🤗: Local AI is having its moment! Below is the number of new GGUF models created each month over the past 8 months & insights from our HF i...",
+          "summary": "Hugging Face 首席执行官透露平台上的 GGUF 格式模型总数已达 17.6 万个，且在今年三月迎来了明显的增长拐点，月度创建量从 5100 个跃升至 9200 个。这一数据表明本地化部署和轻量化模型的需求正在经历爆发式增长，反映出开发者群体对高效运行环境的强烈偏好，标志着本地 AI 生态系统正进入一个全新的快速扩张阶段。",
+          "tags": [
+            "本地AI",
+            "GGUF",
+            "开源社区"
+          ],
+          "url": "https://x.com/huggingface/status/2053539426660188401",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-10T18:02:15+00:00",
+          "cve_ids": [],
+          "selection_reason": "GGUF 模型的爆发式增长反映了本地化 AI 部署的行业大趋",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/huggingface",
+          "feed_title": "X / Hugging Face",
+          "source_tier": "t1_5",
+          "source_kind": "official_x",
+          "source_label": "官方 X",
+          "source_key": "x:huggingface",
+          "story_id": "url:x.com/huggingface/status/2053539426660188401",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "dimension_score": 7.55,
+          "final_score": 8.45,
+          "score_breakdown": {
+            "source_bonus": 0.5,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Claude Mythos 模型性能突破评测上限，引发 2027 年 AI 奇点讨论",
           "title_orig": "刚刚，Claude Mythos打爆AI评测天花板！超指数狂飙，2027奇点加速|数据|模型|人类|测试|门槛_手机新浪网 - 新浪财经",
-          "summary": "近期Claude Mythos模型在多项AI性能评测中取得突破性成绩，其卓越表现被认为打破了当前测试体系的天花板，引发了业界对模型超指数级增长态势的强烈关注。这种技术狂飙重新激发了关于2027年AI奇点加速到来，以及人类与AI协作门槛、数据安全和模型演进方向的广泛讨论，预示着人工智能领域正迎来新一轮的变革浪潮。",
+          "summary": "Claude Mythos 在最新的 AI 性能评测中表现优异，其得分成功突破了现有测试的天花板，展现出超指数级的增长态势并引发了关于 2027 年技术奇点的讨论。这一进展不仅大幅降低了高性能模型的使用门槛，还通过数据与模型的深度优化，展示了人工智能在理解与生成能力上的巨大飞跃，成为业界关注人类与 AI 协作边界的新焦点。",
           "tags": [
             "Claude",
-            "AI评测",
+            "模型评测",
             "技术奇点"
           ],
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSDZlOGp4YmVSdUFBRjlEdWFBQVZZX0Vld0d4RDNBbTd4bnA3RFFSVUNXdUg1dURjRDJ0S0UzRkJZcUVldDBDRkhaYi1CX2VpdUYybVpFWmVoUEZ6ZldDaFJEejFlN2kxS1IycHBlczNfb25lRmVlTjFFU1BFdS1tRHVKR3ZZdXBiZWMxS2xQN3AtcElKemFkUlVLRDFTTUxLQjNBWGcwdw?oc=5",
@@ -1042,7 +1009,7 @@
           "category": "Chinese",
           "published": "2026-05-11T06:08:09+00:00",
           "cve_ids": [],
-          "selection_reason": "反映了当前顶尖模型性能的快速迭代及行业预期。",
+          "selection_reason": "Claude 系列的重大性能突破是行业竞争格局的重要信号。",
           "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
           "feed_title": "Google News 中文 AI",
           "source_tier": "t2",
@@ -1063,20 +1030,54 @@
           }
         },
         {
-          "title_zh": "OpenAI 启动校园网络计划，邀请全球学生社团加入以构建 AI 驱动的校园社区",
-          "title_orig": "OpenAI Campus Network: Student club interest form",
-          "summary": "OpenAI宣布启动OpenAI校园网络计划并开放全球学生社团申请表，旨在通过连接世界各地的学生群体来构建由AI驱动的校园社区，推动技术在高等教育环境中的普及。该计划将为参与社团提供先进AI工具的访问权限并支持举办各类技术活动，通过赋能学生群体来探索AI的实际应用，进而促进跨学科的创新建设与学术交流。",
+          "title_zh": "OpenAI 发布企业级 AI 规模化指南，涵盖信任治理与工作流设计",
+          "title_orig": "How enterprises are scaling AI",
+          "summary": "OpenAI 发布了关于企业如何规模化应用 AI 的指导方案，强调企业应从早期的零散实验转向通过信任、治理和工作流设计来实现技术的复合影响。该指南详细阐述了在保证质量的前提下，如何将 AI 深度整合进业务流程并实现规模化增长的系统性建议，旨在帮助各类组织在复杂的商业环境中利用 AI 技术构建长期的竞争优势与创新动力。",
           "tags": [
             "OpenAI",
-            "校园网络",
-            "学生社团"
+            "企业AI",
+            "AI治理"
+          ],
+          "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
+          "source": "openai.com",
+          "category": "Labs",
+          "published": "2026-05-11T10:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "OpenAI 官方发布的指南对企业级 AI 落地具有极高的实",
+          "feed_url": "https://openai.com/news/rss.xml",
+          "feed_title": "OpenAI Blog",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "openai.com",
+          "story_id": "url:openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 6,
+          "dimension_score": 5.95,
+          "final_score": 7.75,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "OpenAI 启动校园网络计划，面向全球学生社团开放合作申请",
+          "title_orig": "OpenAI Campus Network: Student club interest form",
+          "summary": "OpenAI 宣布启动“OpenAI 校园网络”项目并发布学生社团意向表，旨在连接全球高校的 AI 爱好者以构建以 AI 为驱动的校园社区。通过该计划，学生社团可以获得先进 AI 工具的支持并举办各类技术活动，这不仅促进了学术界与工业界的早期互动，还为全球学生提供了探索前沿技术、分享创新成果以及培养未来 AI 人才的协作平台。",
+          "tags": [
+            "OpenAI",
+            "校园计划",
+            "人才培养"
           ],
           "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
           "source": "openai.com",
           "category": "Labs",
           "published": "2026-05-11T10:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "OpenAI 拓展教育与学生生态的重要举措。",
+          "selection_reason": "OpenAI 布局校园生态，旨在培养下一代 AI 开发者和用",
           "feed_url": "https://openai.com/news/rss.xml",
           "feed_title": "OpenAI Blog",
           "source_tier": "t1",
@@ -1097,20 +1098,20 @@
           }
         },
         {
-          "title_zh": "Shopify 推出基于 Slack 的 River 智能体系统，通过公开交互模式促进员工协作学习",
+          "title_zh": "Shopify 推出集成于 Slack 的 River 智能体系统，通过公开交互模式促进员工协作学习",
           "title_orig": "Shopify's River agent system lives in Slack and can only be used in public so that other employees can learn from what you do with it Reminds me of ho...",
-          "summary": "Shopify开发了名为River的智能体系统，该系统运行于Slack平台且强制要求在公共频道使用，以便全体员工能通过观察他人的操作过程来相互学习AI使用技巧。这种设计借鉴了Midjourney的社区学习模式，通过完全透明的交互过程帮助员工更快掌握复杂的提示词工程，在提升企业内部协作效率的同时，也促进了AI知识的快速沉淀。",
+          "summary": "Shopify推出的River智能体系统深度集成于Slack平台，并强制要求员工仅在公共频道内使用，旨在让所有人都能通过观察他人的操作过程来共同学习如何高效使用AI。这种模式效仿了Midjourney早期在Discord上的成功策略，通过公开透明的交互环境帮助员工掌握复杂的提示词技巧，从而在全公司范围内降低AI应用门槛并显著提升团队的整体协作与创新效率。",
           "tags": [
             "Shopify",
             "AI智能体",
-            "协同学习"
+            "协作学习"
           ],
           "url": "https://x.com/simonw/status/2053529689122328947",
           "source": "x.com",
           "category": "XSignals",
           "published": "2026-05-10T17:36:45+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了企业级 AI 应用中独特的社交学习与透明化设计思路。",
+          "selection_reason": "展示了企业内部部署 AI 智能体的一种新型社交化学习范式。",
           "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
           "feed_title": "X / Simon Willison",
           "source_tier": "t2",
@@ -1121,8 +1122,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 7,
-          "dimension_score": 7.4,
-          "final_score": 7.7,
+          "dimension_score": 7.2,
+          "final_score": 7.5,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.2,
@@ -1131,77 +1132,43 @@
           }
         },
         {
-          "title_zh": "MachinaCheck：基于 AMD MI300X 硬件构建的多智能体 CNC 制造可行性分析系统",
-          "title_orig": "MachinaCheck: Building a Multi-Agent CNC Manufacturability System on AMD MI300X",
-          "summary": "开发者在 AMD 开发者黑客松中利用 MI300X 加速器构建了 MachinaCheck 系统，该系统通过多智能体协作实现了对 CNC 零件制造可行性的自动化分析与评估。该项目充分展示了高性能计算硬件在工业制造领域的应用潜力，为优化复杂零件的设计与生产流程提供了基于 AI 的高效解决方案，有助于降低制造门槛并提升生产效率。",
+          "title_zh": "《纽约时报》因误用 AI 生成的虚假引言发布更正声明，提醒新闻从业者加强事实核查",
+          "title_orig": "Quoting New York Times Editors’ Note",
+          "summary": "《纽约时报》近期对其一篇报道进行了更新，原因是发现文中引用加拿大保守党领袖皮埃尔·波利耶夫尔的话语实际上是 AI 工具生成的观点总结，而非其本人演讲的真实原话。这一事件凸显了新闻采编过程中过度依赖 AI 总结工具的风险，强调了记者在发布 AI 处理过的信息前必须进行二次人工核查以确保引述准确性的重要性。",
           "tags": [
-            "AMD",
-            "智能体",
-            "工业制造"
+            "纽约时报",
+            "AI伦理",
+            "事实核查"
           ],
-          "url": "https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/machinacheck",
-          "source": "huggingface.co",
-          "category": "Labs",
-          "published": "2026-05-10T18:44:11+00:00",
+          "url": "https://simonwillison.net/2026/May/10/new-york-times-editors-note/#atom-everything",
+          "source": "simonwillison.net",
+          "category": "Commentary",
+          "published": "2026-05-10T23:58:49+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了 AI 智能体在垂直工业制造领域的落地应用。",
-          "feed_url": "https://huggingface.co/blog/feed.xml",
-          "feed_title": "Hugging Face Blog",
+          "selection_reason": "警示了 AI 在严肃新闻报道中可能引发的真实性风险。",
+          "feed_url": "https://simonwillison.net/atom/everything/",
+          "feed_title": "Simon Willison",
           "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "社区博客",
-          "source_key": "huggingface.co",
-          "story_id": "url:huggingface.co/blog/lablab-ai-amd-developer-hackathon/machinacheck",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "simonwillison.net",
+          "story_id": "url:simonwillison.net/2026/may/10/new-york-times-editors-note",
           "related_urls": [],
           "related_count": 0,
           "score": 7,
-          "dimension_score": 7.4,
-          "final_score": 7.0,
+          "dimension_score": 6.6,
+          "final_score": 7.1,
           "score_breakdown": {
             "source_bonus": 0.0,
-            "kind_bonus": -0.5,
-            "freshness_bonus": 0.1,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "OpenAI 发布企业级 AI 规模化指南：从早期实验转向通过治理与工作流设计实现持续影响",
-          "title_orig": "How enterprises are scaling AI",
-          "summary": "OpenAI 详细阐述了企业如何从初期的 AI 实验阶段平稳过渡到规模化应用，重点强调了建立信任、完善治理架构、重新设计工作流以及实施大规模质量控制的关键作用。该指南为企业管理者提供了系统性的实操建议，旨在帮助组织通过 AI 技术的深度集成实现业务价值的复合增长，并推动整个行业的效率变革与智能化转型。",
-          "tags": [
-            "OpenAI",
-            "企业 AI",
-            "规模化"
-          ],
-          "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
-          "source": "openai.com",
-          "category": "Labs",
-          "published": "2026-05-11T10:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "为企业级 AI 落地提供了权威的战略指导框架。",
-          "feed_url": "https://openai.com/news/rss.xml",
-          "feed_title": "OpenAI Blog",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "官网",
-          "source_key": "openai.com",
-          "story_id": "url:openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 5,
-          "dimension_score": 5.15,
-          "final_score": 6.95,
-          "score_breakdown": {
-            "source_bonus": 1.0,
-            "kind_bonus": 0.5,
+            "kind_bonus": 0.2,
             "freshness_bonus": 0.3,
             "cn_visibility_bonus": 0.0
           }
         },
         {
-          "title_zh": "xAI 与 Anthropic 达成重大合作协议，引发市场对其对母公司 SpaceX 潜在影响的讨论",
+          "title_zh": "xAI 与 Anthropic 达成重大合作协议，引发市场对其对 SpaceX 潜在影响的讨论",
           "title_orig": "We’re feeling cynical about xAI’s big deal with Anthropic",
-          "summary": "在最新的 Equity 播客节目中，分析师对 xAI 与 Anthropic 之间达成的重大交易表达了审慎态度，并深入探讨了该合作对马斯克旗下 SpaceX 公司在资源分配与战略协同方面的潜在影响。此次合作可能重塑 AI 领域的竞争格局，其背后的资本运作与资源整合动向对科技巨头间的生态关联及未来市场走向具有重要的参考价值。",
+          "summary": "在最新的 Equity 播客节目中，分析师对埃隆·马斯克旗下的 xAI 与 AI 初创公司 Anthropic 达成的重大交易表达了审慎态度，并深入探讨了该合作的潜在影响。讨论重点围绕这一交易将如何影响母公司 SpaceX 的战略布局，以及在当前竞争激烈的 AI 环境下，这种跨公司协作背后的深层商业逻辑、资源整合方式及其可能面临的各种风险。",
           "tags": [
             "xAI",
             "Anthropi",
@@ -1212,7 +1179,7 @@
           "category": "Media",
           "published": "2026-05-10T15:34:25+00:00",
           "cve_ids": [],
-          "selection_reason": "涉及顶级 AI 公司间的重磅交易及其跨行业影响。",
+          "selection_reason": "涉及马斯克旗下多家公司联动及 AI 巨头间的战略结盟。",
           "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
           "feed_title": "TechCrunch AI",
           "source_tier": "t2",
@@ -1222,9 +1189,9 @@
           "story_id": "url:techcrunch.com/2026/05/10/were-feeling-cynical-about-xais-big-deal-with-anthropic",
           "related_urls": [],
           "related_count": 0,
-          "score": 7,
-          "dimension_score": 6.75,
-          "final_score": 6.85,
+          "score": 6,
+          "dimension_score": 5.9,
+          "final_score": 6.0,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.0,
@@ -1233,88 +1200,20 @@
           }
         },
         {
-          "title_zh": "OpenAI 斥资 200 亿美元采购芯片，助力英伟达挑战者 Cerebras 冲刺 350 亿美元估值上市",
-          "title_orig": "OpenAI砸200亿美元买单，英伟达挑战者冲刺350亿美元估值IPO - 36Kr",
-          "summary": "OpenAI 投入 200 亿美元巨额订单支持英伟达的潜在竞争对手，此举直接推动相关芯片企业以 350 亿美元的估值目标全力冲刺 IPO，引发了资本市场的高度关注。这一战略举措反映了 AI 巨头正通过扶持多元化算力供应商来降低对单一硬件厂商的长期依赖，将对全球 AI 芯片市场的供应体系和竞争格局产生深远且持久的影响。",
-          "tags": [
-            "OpenAI",
-            "芯片",
-            "IPO"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE8zN2t5ei1ybnNMS3RickpsaXgxWWZIQlpERERRTHZHZVp0X2tMTW5sMkNKRVd1SmFRQWQxb3Q2dHZia0E0bWlNSVB1Z0QwN1VF?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-05-11T07:18:55+00:00",
-          "cve_ids": [],
-          "selection_reason": "巨额订单与上市传闻预示 AI 硬件市场竞争加剧。",
-          "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-          "feed_title": "Google News 中文 AI",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com",
-          "story_id": "title:31176556970d",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 8,
-          "dimension_score": 7.55,
-          "final_score": 6.85,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": -1.0,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "《纽约时报》发布更正说明：因记者未核实 AI 生成的虚假引言导致报道出现事实错误",
-          "title_orig": "Quoting New York Times Editors’ Note",
-          "summary": "《纽约时报》编辑部发布更正声明，承认此前报道中关于加拿大保守党领袖的言论实为 AI 工具生成的总结而非真实引言，由于记者未进行二次核实而导致了严重的引用错误。该事件再次为新闻行业使用 AI 技术敲响了警钟，强调了在专业报道中人工核实 AI 输出内容真实性的必要性，以维护媒体的公信力与新闻事实的严谨性。",
-          "tags": [
-            "新闻伦理",
-            "AI 幻觉",
-            "纽约时报"
-          ],
-          "url": "https://simonwillison.net/2026/May/10/new-york-times-editors-note/#atom-everything",
-          "source": "simonwillison.net",
-          "category": "Commentary",
-          "published": "2026-05-10T23:58:49+00:00",
-          "cve_ids": [],
-          "selection_reason": "典型案例，揭示了 AI 幻觉对新闻公信力的挑战。",
-          "feed_url": "https://simonwillison.net/atom/everything/",
-          "feed_title": "Simon Willison",
-          "source_tier": "t2",
-          "source_kind": "expert",
-          "source_label": "专家博客",
-          "source_key": "simonwillison.net",
-          "story_id": "url:simonwillison.net/2026/may/10/new-york-times-editors-note",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 6,
-          "dimension_score": 6.25,
-          "final_score": 6.75,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.2,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "满帮集团发起 Agent 算法大赛：探索 AI 智能体驱动的货运物流变革与新范式",
+          "title_zh": "满帮集团发起 Agent 算法大赛，旨在利用 AI 智能体技术驱动货运物流行业变革",
           "title_orig": "满帮发起Agent算法大赛：以AI智能体驱动货运变革，重塑物流未来新范式 - 中华网",
-          "summary": "数字货运平台满帮集团正式启动 Agent 算法大赛，旨在利用 AI 智能体技术重塑物流行业的工作流，通过智能化调度与决策显著提升公路运输的整体效率。此举标志着国内物流巨头开始深度布局智能体技术，通过竞赛形式吸引顶尖人才共同探索 AI 在复杂货运场景下的创新应用，致力于打造驱动货运变革的物流未来新范式。",
+          "summary": "满帮集团正式发起 Agent 算法大赛，旨在邀请全球开发者探索如何利用 AI 智能体技术驱动货运变革，通过算法创新重塑物流行业的运作范式与未来发展路径。此举反映了物流平台正积极从传统撮合模式向智能化治理转型，通过提升 AI 智能体的应用深度来优化物流效率并降低运营成本，对推动智慧物流行业的整体技术升级具有重要的引导作用。",
           "tags": [
-            "满帮",
-            "物流 AI",
-            "智能体"
+            "满帮集团",
+            "AI智能体",
+            "智慧物流"
           ],
           "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9LSVdBNzVUM3dCZ192ek53TXh6Si1uQkYya09kemRQTWtlX2pfQW5JYzI1cTZsc3FWckE4YThaVmxLOUZaUnY0ekw5WVVBb3B4SEE2Y0w0cGNSS0ZPTXI3NU51Mnl1c3FXajFkN2tR?oc=5",
           "source": "news.google.com",
           "category": "Chinese",
           "published": "2026-05-11T06:03:29+00:00",
           "cve_ids": [],
-          "selection_reason": "国内物流巨头在 Agent 领域的重大技术布局。",
+          "selection_reason": "体现了 AI 智能体技术在垂直物流领域的落地应用趋势。",
           "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
           "feed_title": "Google News 中文 AI",
           "source_tier": "t2",
@@ -1325,8 +1224,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 6,
-          "dimension_score": 6.4,
-          "final_score": 5.7,
+          "dimension_score": 6.25,
+          "final_score": 5.55,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": -1.0,
@@ -1335,12 +1234,12 @@
           }
         },
         {
-          "title_zh": "谷歌金融 AI 增强体验正式扩展至欧洲市场，利用人工智能优化投资信息获取",
+          "title_zh": "谷歌金融 AI 增强版功能正式扩展至欧洲市场，提升用户投资数据分析体验",
           "title_orig": "The new AI-powered Google Finance is expanding to Europe.",
-          "summary": "谷歌宣布将其基于人工智能驱动的 Google Finance 新体验正式推广至欧洲用户，通过引入先进的 AI 技术显著提升金融数据的可视化展示与深度分析能力。此举是谷歌将生成式 AI 融入其核心产品线的全球战略扩张之一，旨在为更广泛地区的投资者提供更智能、直观的决策辅助工具，从而增强其在金融信息服务领域的市场竞争力。",
+          "summary": "谷歌宣布其由人工智能驱动的新版 Google Finance 体验正正式向欧洲地区用户扩展，旨在通过先进的 AI 技术优化金融数据的呈现方式与深度分析功能。该功能通过更直观的界面和智能化的数据洞察，帮助投资者更高效地追踪全球市场动态，标志着谷歌搜索生态下的垂直金融服务正加速全球范围内的 AI 化升级，以满足用户对精准金融信息的需求。",
           "tags": [
             "谷歌金融",
-            "AI 应用",
+            "人工智能",
             "欧洲市场"
           ],
           "url": "https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/",
@@ -1348,7 +1247,7 @@
           "category": "Labs",
           "published": "2026-05-11T06:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "谷歌核心产品的 AI 功能全球化扩张动态。",
+          "selection_reason": "谷歌核心产品 AI 化在全球范围内的持续扩张动态。",
           "feed_url": "https://blog.google/technology/ai/rss/",
           "feed_title": "Google AI Blog",
           "source_tier": "unknown",
@@ -1359,34 +1258,101 @@
           "related_urls": [],
           "related_count": 0,
           "score": 5,
-          "dimension_score": 5.6,
-          "final_score": 5.6,
+          "dimension_score": 5.15,
+          "final_score": 5.15,
           "score_breakdown": {
             "source_bonus": -0.3,
             "kind_bonus": 0.0,
             "freshness_bonus": 0.3,
             "cn_visibility_bonus": 0.0
           }
+        },
+        {
+          "title_zh": "Wispr Flow 押注印度语音 AI 市场，通过支持混合语种克服本地化挑战",
+          "title_orig": "Voice AI in India is hard. Wispr Flow is betting on it anyway.",
+          "summary": "尽管印度语音 AI 市场面临多语种环境和复杂噪音等严峻的技术挑战，Wispr Flow 在推出支持印地语和英语混合的 Hinglish 功能后，依然实现了业务的显著增长。该公司坚持押注印度市场的举措，证明了针对特定文化背景进行深度语种适配是语音 AI 产品在多元化市场取得突破的关键，同时也展示了其在处理复杂语音交互方面的技术信心。",
+          "tags": [
+            "Wispr Fl",
+            "语音AI",
+            "印度市场"
+          ],
+          "url": "https://techcrunch.com/2026/05/09/voice-ai-in-india-is-hard-wispr-flow-is-betting-on-it-anyway/",
+          "source": "techcrunch.com",
+          "category": "Media",
+          "published": "2026-05-10T02:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨了 AI 产品在多语种复杂市场进行本地化的实践案例。",
+          "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+          "feed_title": "TechCrunch AI",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "techcrunch.com",
+          "story_id": "url:techcrunch.com/2026/05/09/voice-ai-in-india-is-hard-wispr-flow-is-betting-on-it-anyway",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 5,
+          "dimension_score": 5.0,
+          "final_score": 5.0,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "百度通过昆仑芯与智能体布局进入价值重估期，加速构建 AI 全栈技术生态",
+          "title_orig": "从昆仑芯到智能体，百度率先进入AI价值重估周期 - 中华网财经",
+          "summary": "百度凭借自研昆仑芯底层算力与上层 AI 智能体应用的深度整合，正率先进入 AI 价值的深度重估周期，展示了从硬件基础设施到软件应用的全栈技术实力。通过构建这种从芯片到应用的闭环体系，百度不仅显著提升了 AI 服务的商业化落地效率，也为整个行业提供了关于 AI 基础设施与应用协同发展的参考范本，进一步强化了其在智能时代的核心竞争优势。",
+          "tags": [
+            "百度",
+            "昆仑芯",
+            "AI智能体"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5uSFZ2X083dzF6MzBYMzRuOFpua0hlN1Z2TDFGZXdUcEhJX1ljRWM4WWI0NzR4V2ozOUZ4ME9SdFZvY3g5NHVsY1RQZWdsRXlfdF80cDc5Yk0yLVdRSVN2U01DTURTb3pSd3ZjYk9R?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese",
+          "published": "2026-05-11T06:00:24+00:00",
+          "cve_ids": [],
+          "selection_reason": "分析了国内 AI 巨头在软硬一体化战略下的市场价值演变。",
+          "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "feed_title": "Google News 中文 AI",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com",
+          "story_id": "title:42117ac426f4",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 5,
+          "dimension_score": 5.3,
+          "final_score": 4.6,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": -1.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
         }
       ],
-      "raw_count": 32,
+      "raw_count": 31,
       "selected_count": 15,
       "selection_stats": {
         "total": 15,
-        "direct": 8,
-        "tier_t1": 4,
-        "kind_official": 4,
         "aggregator": 7,
         "tier_t1_5": 2,
         "kind_official_x": 2,
         "tier_t2": 8,
         "kind_expert_x": 2,
+        "direct": 8,
+        "tier_t1": 4,
+        "kind_official": 4,
         "google_news": 3,
         "chinese": 3,
         "kind_google_news": 3,
-        "kind_community": 1,
-        "kind_media": 2,
         "kind_expert": 1,
+        "kind_media": 3,
         "tier_unknown": 1
       },
       "clustering_stats": {
@@ -1394,15 +1360,15 @@
         "llm_merged": 1,
         "merged_total": 1
       },
-      "generated_at": "2026-05-11T07:27:47.165265Z"
+      "generated_at": "2026-05-11T07:35:58.546042Z"
     },
     "finance": {
       "display_name": "金融科技",
       "items": [
         {
-          "title_zh": "欧洲央行官员警告银行需针对人工智能威胁重新评估基础设施稳健性",
+          "title_zh": "欧洲央行管理委员会成员发出警告，敦促银行测试基础设施以应对人工智能和稳定币带来的潜在威胁",
           "title_orig": "ECB Governor Sounds Warnings on AI and Stablecoins",
-          "summary": "欧洲央行管理委员会成员何塞·路易斯·埃斯克里瓦在塔拉戈纳发表讲话，敦促银行业必须针对人工智能带来的潜在威胁进行基础设施测试。他强调人工智能的最新发展迫使监管机构重新评估金融系统的稳健性，这预示着未来金融机构将面临更严格的技术安全审查与合规要求，以确保在技术变革中维护整体金融市场的稳定。",
+          "summary": "欧洲央行管理委员会成员何塞·路易斯·埃斯克里瓦在塔拉戈纳发表讲话，要求银行业者针对人工智能引发的安全威胁重新评估其基础设施的稳健性。此举反映了监管机构对新兴技术可能削弱金融系统安全性的担忧，旨在促使金融机构在技术快速演进中加强风险防范能力，确保欧洲金融体系在面对AI驱动的潜在攻击时依然能够保持高度的稳定与安全。",
           "tags": [
             "欧洲央行",
             "人工智能",
@@ -1413,7 +1379,7 @@
           "category": "Editorial Lens",
           "published": "2026-05-11T00:54:53+00:00",
           "cve_ids": [],
-          "selection_reason": "反映了顶级监管机构对AI金融风险的最新预警。",
+          "selection_reason": "反映了顶级监管机构对AI技术对金融基础设施安全影响的最新立场",
           "feed_url": "https://www.pymnts.com/feed/",
           "feed_title": "PYMNTS",
           "source_tier": "t2",
@@ -1421,40 +1387,6 @@
           "source_label": "金融媒体",
           "source_key": "pymnts.com",
           "story_id": "url:pymnts.com/cybersecurity/2026/ecb-governor-sounds-warnings-on-ai-and-stablecoins",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 9,
-          "dimension_score": 9.2,
-          "final_score": 9.5,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "美国联邦存款保险公司与货币监理署竞相争夺稳定币监管主导权",
-          "title_orig": "FDIC and OCC Both Want to Be Stablecoins’ New Boss",
-          "summary": "随着《GENIUS法案》即将在七月签署并进入全面实施阶段，华盛顿已明确将稳定币纳入核心监管范畴，目前联邦存款保险公司与货币监理署正就规则制定权展开激烈竞争。FDIC提出的规则拟将稳定币发行与银行体系深度挂钩，这一权力博弈将直接决定美国加密货币市场的未来监管走向、合规成本以及传统银行在数字资产领域的核心地位。",
-          "tags": [
-            "稳定币",
-            "金融监管",
-            "FDIC"
-          ],
-          "url": "https://www.pymnts.com/cryptocurrency/2026/fdic-and-occ-both-want-to-be-stablecoins-new-boss/",
-          "source": "pymnts.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-11T01:36:46+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了美国监管机构在加密货币领域的核心权力博弈。",
-          "feed_url": "https://www.pymnts.com/feed/",
-          "feed_title": "PYMNTS",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "pymnts.com",
-          "story_id": "url:pymnts.com/cryptocurrency/2026/fdic-and-occ-both-want-to-be-stablecoins-new-boss",
           "related_urls": [],
           "related_count": 0,
           "score": 9,
@@ -1468,20 +1400,122 @@
           }
         },
         {
-          "title_zh": "美国参议院银行委员会审议CLARITY法案，聚焦稳定币付息与利益冲突",
-          "title_orig": "美国参议院银行委员会14日审议《CLARITY》法案 稳定币付息与利益冲突条款成焦点 - 디지털투데이",
-          "summary": "美国参议院银行委员会于14日正式审议《CLARITY》法案，其中关于稳定币是否允许付息以及如何防范利益冲突的条款成为各方辩论的核心焦点。该法案的进展将为稳定币在法律框架下的商业化运作定调，对加密货币发行商、投资者以及整个去中心化金融生态具有重大政策导向意义，是美国加密监管的关键一步。",
+          "title_zh": "美国联邦存款保险公司与货币监理署竞相争夺稳定币监管权，华盛顿加速推进加密货币监管框架落地",
+          "title_orig": "FDIC and OCC Both Want to Be Stablecoins’ New Boss",
+          "summary": "随着《GENIUS法案》签署一周年临近，美国联邦存款保险公司与货币监理署正就稳定币的监管主导权展开竞争，其中FDIC已提出将稳定币发行与特定规则挂钩。这标志着稳定币已正式进入美国核心监管范畴，对加密货币行业的合规运营和未来市场格局具有深远影响，同时也反映出华盛顿方面认为稳定币在经济和系统层面的重要性已不容忽视。",
           "tags": [
-            "CLARITY法",
             "稳定币",
-            "美国参议院"
+            "金融监管",
+            "FDIC"
+          ],
+          "url": "https://www.pymnts.com/cryptocurrency/2026/fdic-and-occ-both-want-to-be-stablecoins-new-boss/",
+          "source": "pymnts.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-11T01:36:46+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示了美国主要金融监管机构在稳定币监管权上的博弈与政策动向。",
+          "feed_url": "https://www.pymnts.com/feed/",
+          "feed_title": "PYMNTS",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "pymnts.com",
+          "story_id": "url:pymnts.com/cryptocurrency/2026/fdic-and-occ-both-want-to-be-stablecoins-new-boss",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "dimension_score": 8.9,
+          "final_score": 9.2,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "英国金融行为监管局对PayPal、Visa及Mastercard展开调查，重点审查数字钱包竞争限制问题",
+          "title_orig": "UK Probes PayPal, Visa, Mastercard as FX and CFD Payment Rails Come Into View",
+          "summary": "英国金融行为监管局已启动针对PayPal、Visa和Mastercard的调查，旨在评估数字钱包的资金来源及使用安排是否限制了市场竞争，特别是针对PayPal钱包的运作模式。此项审查将直接影响这些主流支付巨头在英国的运营模式，并可能重塑在线支付、外汇交易及差价合约支付通道的竞争环境，确保金融市场在数字化转型过程中保持公平透明。",
+          "tags": [
+            "反垄断",
+            "数字钱包",
+            "支付行业"
+          ],
+          "url": "https://www.financemagnates.com/fintech/payments/uk-probes-paypal-visa-mastercard-as-fxcfd-payment-rails-come-into-view/",
+          "source": "financemagnates.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-06T13:28:25+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及全球支付巨头的反垄断调查，对支付行业竞争格局有重大影响。",
+          "feed_url": "https://www.financemagnates.com/fintech/feed/",
+          "feed_title": "Finance Magnates Fintech",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "financemagnates.com",
+          "story_id": "url:financemagnates.com/fintech/payments/uk-probes-paypal-visa-mastercard-as-fxcfd-payment-rails-come-into-view",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "dimension_score": 8.8,
+          "final_score": 8.8,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "前PayPal总裁大卫·马库斯推出基于稳定币的全新银行平台，旨在通过比特币基础设施重塑传统金融",
+          "title_orig": "Ex-PayPal Chief David Marcus Launches Stablecoin Platform to Take On Traditional Banking Rails",
+          "summary": "前PayPal总裁大卫·马库斯领导的Lightspark公司发布了API产品，为AI代理和平台提供基于比特币及稳定币架构的美元账户与支付服务，试图挑战传统银行支付轨道。该项目通过将稳定币与比特币网络结合，为全球金融交易提供更高效的底层技术支持，展现了马库斯继Meta的Libra项目后，再次利用区块链技术重构现代银行基础设施的雄心与尝试。",
+          "tags": [
+            "稳定币",
+            "比特币",
+            "金融科技"
+          ],
+          "url": "https://www.financemagnates.com/fintech/payments/ex-paypal-chief-david-marcus-launches-stablecoin-platform-to-take-on-traditional-banking-rails/",
+          "source": "financemagnates.com",
+          "category": "Editorial Lens",
+          "published": "2026-04-28T20:33:47+00:00",
+          "cve_ids": [],
+          "selection_reason": "行业资深高管的再次创业，代表了稳定币在重构银行基础设施方面的",
+          "feed_url": "https://www.financemagnates.com/fintech/feed/",
+          "feed_title": "Finance Magnates Fintech",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "financemagnates.com",
+          "story_id": "url:financemagnates.com/fintech/payments/ex-paypal-chief-david-marcus-launches-stablecoin-platform-to-take-on-traditional-banking-rails",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "dimension_score": 8.15,
+          "final_score": 8.15,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "美国参议院银行委员会审议《CLARITY》法案，稳定币付息条款与利益冲突防范成为立法讨论焦点",
+          "title_orig": "美国参议院银行委员会14日审议《CLARITY》法案 稳定币付息与利益冲突条款成焦点 - 디지털투데이",
+          "summary": "美国参议院银行委员会于14日对《CLARITY》法案进行审议，重点讨论了稳定币是否允许付息以及如何处理相关的利益冲突条款，这成为当前立法进程中的核心焦点。该法案的进展将直接决定美国稳定币市场的法律框架，对发行方如何处理储备资产收益及合规性要求具有关键的指导意义，是美国建立完善的数字资产监管体系过程中迈出的重要一步。",
+          "tags": [
+            "稳定币法案",
+            "美国参议院",
+            "金融立法"
           ],
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNSk5RM2xHYUZPWFUzZHlLckpPUkEwX0lXSndtUDhaVXZhZ1h1Y2VKOUZyN2ZzWDNweEtkUmdMdUo3VHRDOFkzeHdHNkxTM3NYcXF4TlliaFRtV1dwejY5b3BNRW13R2U4OC1XSWVRbHNxYzV2MURoZzl5UkRQX0NFMXJJdzZjQmxZeGpfdC1QcjJoeDV6Y29RV0xXYVB4aW1saGlxQ2JVeUl5RGpJOHp0Z2tDMzhFYXY4am01MA?oc=5",
           "source": "news.google.com",
           "category": "Chinese Wallets (TODO)",
           "published": "2026-05-11T05:00:04+00:00",
           "cve_ids": [],
-          "selection_reason": "该法案是稳定币合规化进程中的关键立法节点。",
+          "selection_reason": "该法案是稳定币监管领域的关键立法进程，涉及核心商业模式的合法",
           "feed_url": "https://news.google.com/rss/search?q=(%22金融科技%22+OR+%22数字人民币%22+OR+%22支付宝%22+OR+%22微信支付%22+OR+%22稳定币%22+OR+%22跨境支付%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
           "feed_title": "Google News 中文金融科技",
           "source_tier": "t2",
@@ -1492,8 +1526,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 9,
-          "dimension_score": 9.3,
-          "final_score": 8.6,
+          "dimension_score": 8.75,
+          "final_score": 8.05,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": -1.0,
@@ -1502,20 +1536,20 @@
           }
         },
         {
-          "title_zh": "阿里巴巴计划整合通义千问与淘宝，将电商搜索模式转向AI对话交互",
+          "title_zh": "阿里巴巴计划整合通义千问AI平台与淘宝商城，通过对话式交互取代传统关键词搜索购物模式",
           "title_orig": "Alibaba Will Combine AI Platform and eCommerce Marketplace",
-          "summary": "阿里巴巴拟将通义千问AI平台接入淘宝电商市场，旨在通过对话式交互取代传统的关键词搜索，让消费者能以更自然的方式浏览、对比并购买商品。此举标志着电商巨头正加速将生成式AI融入核心业务，试图通过提升用户体验来重塑在线购物的流量入口和交互逻辑，利用前沿技术在竞争激烈的电商领域保持领先地位。",
+          "summary": "阿里巴巴拟将旗下通义千问大模型与淘宝深度融合，旨在让消费者通过自然语言对话而非关键词搜索来浏览、比较并购买商品，从而彻底改变传统的电商交互逻辑。这一举措标志着电商交互方式的重大变革，将利用生成式AI提升用户购物体验并推动电商平台的智能化转型，使阿里巴巴在竞争激烈的中国电商市场中通过技术创新寻求新的增长点与竞争优势。",
           "tags": [
             "阿里巴巴",
-            "通义千问",
-            "AI电商"
+            "生成式AI",
+            "电子商务"
           ],
           "url": "https://www.pymnts.com/artificial-intelligence-2/2026/alibaba-aims-to-integrate-ai-platform-and-ecommerce-marketplace/",
           "source": "pymnts.com",
           "category": "Editorial Lens",
           "published": "2026-05-10T23:18:21+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了AI大模型在国民级电商应用中的落地路径。",
+          "selection_reason": "展示了AI大模型在核心电商业务中的深度应用与交互革命。",
           "feed_url": "https://www.pymnts.com/feed/",
           "feed_title": "PYMNTS",
           "source_tier": "t2",
@@ -1526,8 +1560,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 7,
-          "dimension_score": 7.75,
-          "final_score": 8.05,
+          "dimension_score": 7.65,
+          "final_score": 7.95,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.0,
@@ -1536,9 +1570,9 @@
           }
         },
         {
-          "title_zh": "微信4月迎来多项功能更新，微信支付正式接入人工智能技术能力",
+          "title_zh": "微信发布4月功能更新：贴图支持发送原图，微信支付正式接入人工智能技术提升服务能力",
           "title_orig": "微信4月9大功能更新来了：贴图能发原图 微信支付接入AI能力 - 太平洋科技",
-          "summary": "微信在4月的版本更新中推出了9大新功能，包括支持在贴图功能中发送原图，以及微信支付底层能力的AI化升级，进一步优化了用户的社交与支付体验。这些更新不仅提升了日常互动的细节质量，更展示了腾讯正稳步将AI技术渗透进支付等高频金融场景，通过智能化手段增强支付系统的安全性、便捷性与服务效率。",
+          "summary": "微信在4月推出了九大功能更新，包括贴图支持原图发送以及微信支付底层接入AI能力，旨在通过技术手段优化用户的日常社交互动体验并提升支付系统的智能化水平。这些更新不仅解决了用户在表情包交流中的画质痛点，更通过人工智能技术加强了支付安全与效率，体现了腾讯在社交与金融科技领域持续迭代、以用户需求为导向的深度产品优化策略。",
           "tags": [
             "微信",
             "微信支付",
@@ -1549,7 +1583,7 @@
           "category": "Chinese Wallets (TODO)",
           "published": "2026-05-11T07:09:00+00:00",
           "cve_ids": [],
-          "selection_reason": "微信支付接入AI是国民级应用技术升级的重要信号。",
+          "selection_reason": "国民级应用的重大功能更新，涉及支付安全与AI技术的融合。",
           "feed_url": "https://news.google.com/rss/search?q=(%22金融科技%22+OR+%22数字人民币%22+OR+%22支付宝%22+OR+%22微信支付%22+OR+%22稳定币%22+OR+%22跨境支付%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
           "feed_title": "Google News 中文金融科技",
           "source_tier": "t2",
@@ -1560,8 +1594,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 8,
-          "dimension_score": 8.65,
-          "final_score": 7.95,
+          "dimension_score": 8.55,
+          "final_score": 7.85,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": -1.0,
@@ -1570,54 +1604,54 @@
           }
         },
         {
-          "title_zh": "美国科技巨头投入7250亿美元研发AI，导致现金储备出现历史性缩减",
-          "title_orig": "Tech Giants’ Cash Reserve Shrinks Amid $725 Billion AI Investment",
-          "summary": "亚马逊、谷歌、微软和Meta等科技巨头在人工智能领域的投资总额已达7250亿美元，巨额支出导致其第三季度自由现金流预计将大幅下降40亿美元。这表明全球AI竞赛已进入高投入阶段，巨头们正不惜牺牲短期现金流来抢占未来技术高地，这种财务策略的转变将对科技行业的整体财务结构和市场估值产生深远影响。",
+          "title_zh": "蚂蚁国际通过QR码技术推动亚洲跨境支付集成，实现游客在海外直接使用本国支付应用消费",
+          "title_orig": "Pay Abroad Like a Local: QR Codes Bridge Payment Gaps in Asia",
+          "summary": "蚂蚁国际通过整合亚洲各地的本地支付应用，实现了基于QR码的跨境支付互通，让旅行者无需现金或外币卡即可在异国直接扫码消费，享受如本地人般的便捷体验。这种高度集成的支付网络正在改变亚洲的旅游消费模式，显著降低了跨境交易的门槛并提升了区域金融的互联互通，展示了亚洲在移动支付集成化与国际化进程中处于全球领先地位。",
           "tags": [
-            "科技巨头",
-            "AI投资",
-            "现金流"
+            "蚂蚁国际",
+            "跨境支付",
+            "QR码"
           ],
-          "url": "https://www.pymnts.com/artificial-intelligence-2/2026/tech-giants-cash-reserve-shrinks-amid-725-billion-ai-investment/",
-          "source": "pymnts.com",
+          "url": "https://www.financemagnates.com/fintech/pay-abroad-like-a-local-qr-codes-bridge-payment-gaps-in-asia/",
+          "source": "financemagnates.com",
           "category": "Editorial Lens",
-          "published": "2026-05-10T20:41:10+00:00",
+          "published": "2026-05-05T06:41:52+00:00",
           "cve_ids": [],
-          "selection_reason": "量化了AI竞赛对全球顶级科技公司财务状况的影响。",
-          "feed_url": "https://www.pymnts.com/feed/",
-          "feed_title": "PYMNTS",
+          "selection_reason": "体现了亚洲地区在移动支付互联互通方面的领先地位及技术趋势。",
+          "feed_url": "https://www.financemagnates.com/fintech/feed/",
+          "feed_title": "Finance Magnates Fintech",
           "source_tier": "t2",
           "source_kind": "media",
           "source_label": "金融媒体",
-          "source_key": "pymnts.com",
-          "story_id": "url:pymnts.com/artificial-intelligence-2/2026/tech-giants-cash-reserve-shrinks-amid-725-billion-ai-investment",
+          "source_key": "financemagnates.com",
+          "story_id": "url:financemagnates.com/fintech/pay-abroad-like-a-local-qr-codes-bridge-payment-gaps-in-asia",
           "related_urls": [],
           "related_count": 0,
-          "score": 6,
-          "dimension_score": 7.0,
-          "final_score": 7.3,
+          "score": 7,
+          "dimension_score": 7.5,
+          "final_score": 7.5,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.0,
-            "freshness_bonus": 0.3,
+            "freshness_bonus": 0.0,
             "cn_visibility_bonus": 0.0
           }
         },
         {
-          "title_zh": "First Digital首席执行官预测稳定币将在AI代理自主交易时代取代信用卡",
+          "title_zh": "First Digital 首席执行官称稳定币将取代传统信用卡，成为 AI 经纪人自主结算时代的核心支付工具",
           "title_orig": "\"AI经纪人代替人类自主购买商品和服务的时代正在迅速到来。 传统信用卡网是根据人而设计的，但在机器结算时代，稳定币将取代其位置。\"在亚洲首次发行美元稳定币\"FDUSD\"的First Digital首席.. - 매일경제",
-          "summary": "First Digital首席执行官指出，随着AI经纪人代替人类自主购买服务的时代到来，基于人类设计的传统信用卡网将无法满足机器结算的需求。他认为稳定币将取代传统支付工具成为机器结算时代的核心，这种转变将彻底重构全球支付基础设施，以适应未来自动化、高频次且无需人工干预的机器交易新生态。",
+          "summary": "First Digital首席执行官指出AI经纪人自主购买商品和服务的时代正迅速到来，由于传统信用卡网络是基于人类身份设计的，稳定币将在机器结算时代取代其核心位置。这一重大转变预示着全球金融基础设施将从人机交互向机器原生支付演进，稳定币有望凭借其独特的可编程性，成为未来自动化经济体系中不可或缺的底层结算标准。",
           "tags": [
-            "AI代理",
             "稳定币",
-            "机器支付"
+            "AI 支付",
+            "金融科技"
           ],
           "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBUeGM3TGJmRkUzcGNUTjRwZWhNVENJTF96bWhyQWlRa29aNlZjOXZoQzB4bjhKSXUxNlFTM2tPeFB4c3NqRXlrMjJHM3RFSHM?oc=5",
           "source": "news.google.com",
           "category": "Chinese Wallets (TODO)",
           "published": "2026-05-11T00:21:35+00:00",
           "cve_ids": [],
-          "selection_reason": "提出了AI与加密货币结合在支付领域的颠覆性观点。",
+          "selection_reason": "探讨了 AI 自动化经济中支付基础设施的范式转移。",
           "feed_url": "https://news.google.com/rss/search?q=(%22金融科技%22+OR+%22数字人民币%22+OR+%22支付宝%22+OR+%22微信支付%22+OR+%22稳定币%22+OR+%22跨境支付%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
           "feed_title": "Google News 中文金融科技",
           "source_tier": "t2",
@@ -1628,8 +1662,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 8,
-          "dimension_score": 8.0,
-          "final_score": 7.3,
+          "dimension_score": 7.9,
+          "final_score": 7.2,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": -1.0,
@@ -1638,58 +1672,61 @@
           }
         },
         {
-          "title_zh": "A股成交额连续放量，资金回流金融科技板块带动同花顺等券商股走强",
-          "title_orig": "4个3万亿！A股连续放量！资金悄悄回流低位金融科技！互联网券商冲高，同花顺午后涨超5%！ - 新浪财经",
-          "summary": "A股市场近期连续出现成交额放量，市场资金开始悄然向低位金融科技板块回流，互联网券商股表现尤为活跃，其中同花顺午后涨幅超过5%。这一趋势反映了投资者对金融数字化转型及市场交易活跃度的乐观预期，金融科技作为市场风向标的作用再次凸显，吸引了大量寻求补涨机会的资金关注，带动了板块整体热度。",
+          "title_zh": "预测市场运营商 Kalshi 完成 F 轮融资后估值飙升至 220 亿美元，华尔街机构正加速争夺加密人才",
+          "title_orig": "Kalshi Surges to $22 Billion as Wall Street Scoops Up Crypto Talent",
+          "summary": "预测市场运营商Kalshi在F轮融资中成功筹集10亿美元，使其公司估值飙升至220亿美元，这充分反映出事件合约和数字资产基础设施正以前所未有的速度融入主流金融体系。在此融资背景下，平台机构交易活跃度显著提升，同时华尔街大型银行正积极招聘加密领域专业人才，显示出传统金融机构对预测市场与数字资产价值的高度认可。",
           "tags": [
-            "A股",
-            "金融科技",
-            "互联网券商"
+            "Kalshi",
+            "预测市场",
+            "加密融资"
           ],
-          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNT3B1QW5FX3JsOTlCV1ItU2Y2X0RoM3NXOFhjU2h2VjBCV1YxSjVBYlhzTUEwMktSLU9MMWs4SGc0dUxsWlNNWkNTS3JFNGE3YUZwT0xZUE42VnRIdmdidVNCbW1qbzdNa0w4bjZWbFNlT2Z3ZGQxdUNxMzJWeFQtY1F6aTN0bUdodFlDcVNxTVlIa0pablRaY3plclVYSm4zYzJlNUplWTlTWTdTSUVSekZyaTMwckVXVkM0SlZUUnA3RE1ieUsydXlaUmpHZEUyUzF3cjhMN3pfV1hkN0pMdnFGZFJLUlJhbGhDWXJkTnhaYko5Smt1RQ?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese Wallets (TODO)",
-          "published": "2026-05-11T06:58:36+00:00",
+          "url": "https://www.financemagnates.com/fintech/kalshi-surges-to-22-billion-as-wall-street-scoops-up-crypto-talent/",
+          "source": "financemagnates.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-07T18:43:54+00:00",
           "cve_ids": [],
-          "selection_reason": "反映了国内资本市场对金融科技板块的最新投资动向。",
-          "feed_url": "https://news.google.com/rss/search?q=(%22金融科技%22+OR+%22数字人民币%22+OR+%22支付宝%22+OR+%22微信支付%22+OR+%22稳定币%22+OR+%22跨境支付%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-          "feed_title": "Google News 中文金融科技",
+          "selection_reason": "反映了预测市场赛道的爆发式增长及传统金融的深度介入。",
+          "feed_url": "https://www.financemagnates.com/fintech/feed/",
+          "feed_title": "Finance Magnates Fintech",
           "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com",
-          "story_id": "title:8e69bd729f57",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 4,
-          "dimension_score": 4.15,
-          "final_score": 3.45,
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "financemagnates.com",
+          "story_id": "url:financemagnates.com/fintech/kalshi-surges-to-22-billion-as-wall-street-scoops-up-crypto-talent",
+          "related_urls": [
+            "https://www.financemagnates.com/fintech/inside-the-prediction-markets-kalshi-raises-1b-as-regulatory-tensions-escalate/",
+            "https://www.financemagnates.com/fintech/kalshis-legal-argument-tested-as-courts-probe-swap-classification/"
+          ],
+          "related_count": 2,
+          "score": 7,
+          "dimension_score": 6.7,
+          "final_score": 6.7,
           "score_breakdown": {
             "source_bonus": 0.0,
-            "kind_bonus": -1.0,
-            "freshness_bonus": 0.3,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
             "cn_visibility_bonus": 0.0
           }
         }
       ],
-      "raw_count": 9,
-      "selected_count": 8,
+      "raw_count": 26,
+      "selected_count": 10,
       "selection_stats": {
-        "total": 8,
-        "direct": 4,
-        "tier_t2": 8,
-        "kind_media": 4,
-        "google_news": 4,
-        "aggregator": 4,
-        "chinese": 4,
-        "kind_google_news": 4
+        "total": 10,
+        "direct": 7,
+        "tier_t2": 10,
+        "kind_media": 7,
+        "google_news": 3,
+        "aggregator": 3,
+        "chinese": 3,
+        "kind_google_news": 3
       },
       "clustering_stats": {
         "deterministic_merged": 0,
-        "llm_merged": 0,
-        "merged_total": 0
+        "llm_merged": 5,
+        "merged_total": 5
       },
-      "generated_at": "2026-05-11T07:28:08.558132Z"
+      "generated_at": "2026-05-11T07:36:25.609720Z"
     }
   }
 }

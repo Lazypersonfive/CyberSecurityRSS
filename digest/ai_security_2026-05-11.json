@@ -2,22 +2,20 @@
   "board": "ai_security",
   "display_name": "AI 安全",
   "date": "2026-05-11",
-  "generated_at": "2026-05-11T07:26:48.579227Z",
+  "generated_at": "2026-05-11T07:35:00.261443Z",
   "raw_count": 23,
-  "selected_count": 8,
+  "selected_count": 7,
   "selection_stats": {
-    "total": 8,
+    "total": 7,
     "direct": 4,
-    "tier_t1": 2,
-    "kind_official": 2,
-    "aggregator": 4,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "chinese": 2,
     "tier_t2": 6,
+    "kind_cn_expert": 2,
+    "aggregator": 3,
     "kind_expert_x": 3,
-    "chinese": 1,
-    "kind_cn_expert": 1,
-    "kind_expert": 1,
-    "google_news": 1,
-    "kind_google_news": 1
+    "kind_expert": 1
   },
   "clustering_stats": {
     "deterministic_merged": 0,
@@ -26,20 +24,20 @@
   },
   "items": [
     {
-      "title_zh": "OpenAI 披露 Codex 模型安全运行机制：通过沙箱隔离与网络策略构建合规编码环境",
+      "title_zh": "OpenAI 披露 Codex 模型安全运行机制：沙箱化、网络策略与原生遥测技术",
       "title_orig": "Running Codex safely at OpenAI",
-      "summary": "OpenAI 详细介绍了其安全运行 Codex 模型的架构方案，核心通过沙箱化技术、审批流程、网络策略以及原生代理遥测来实现多层防御。该系统旨在支持安全且合规的 AI 编码代理应用，确保在执行代码生成任务时能够有效隔离潜在风险并满足企业级安全审计需求，为开发者提供了一个在受控环境中利用大模型能力的参考范式。",
+      "summary": "OpenAI 详细介绍了其安全运行 Codex 代码模型的技术架构，核心通过沙箱化环境隔离执行过程，并结合严格的审批流程、网络访问策略与代理原生遥测技术。该方案旨在实时监控代码生成与执行行为，支持安全且合规的 AI 编程助手应用，有效防止恶意代码注入或敏感数据泄露，为企业级代理部署提供了关键的安全保障框架。",
       "tags": [
         "AI安全",
         "沙箱隔离",
-        "代码安全"
+        "代码模型"
       ],
       "url": "https://openai.com/index/running-codex-safely",
       "source": "openai.com",
       "category": "FirstParty",
       "published": "2026-05-08T12:30:00+00:00",
       "cve_ids": [],
-      "selection_reason": "展示了顶级 AI 厂商在模型运行环境安全隔离方面的工程实践。",
+      "selection_reason": "展示了顶级 AI 厂商在模型执行环境安全防护方面的工程实践。",
       "feed_url": "https://openai.com/news/rss.xml",
       "feed_title": "OpenAI News",
       "source_tier": "t1",
@@ -63,20 +61,54 @@
       }
     },
     {
-      "title_zh": "安全研究员利用 LLM 解释 Linux 混淆 Python PoC 漏洞代码的技术尝试",
+      "title_zh": "利用 Java Attach API 与 Linux memfd_create 实现纯内存态 Agent 注入技术",
+      "title_orig": "Java Attach API内存注入",
+      "summary": "该技术深入利用 Java Attach API 底层的 Unix Domain Socket 通信协议，并结合 Linux 内核的 memfd_create 系统调用，成功实现了无需任何物理文件落地的纯内存态 Agent 注入攻击。这种利用内核特性的攻击方式能够有效绕过传统文件系统的安全监控，在目标 Java 进程中隐蔽执行恶意逻辑，由于其极高的防御难度和隐蔽性，对企业级应用安全构成了重大威胁。",
+      "tags": [
+        "内存安全",
+        "Java安全",
+        "无文件攻击"
+      ],
+      "url": "https://xz.aliyun.com/news/92103",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-05-08T11:15:26+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了高隐蔽性的内存注入手段，对红蓝对抗防御有重要参考价值。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92103",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 6.95,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全研究员利用 HTML 解释功能分析 Linux 混淆 Python 漏洞利用代码",
       "title_orig": "Asking for HTML explanations of things is pretty neat, I tried it just now with the obfuscated Python POC for the new http://copy.fail Linux vulnerabi...",
-      "summary": "研究员 Simon Willison 尝试利用大语言模型将针对 Linux 漏洞 copy.fail 的混淆 Python 漏洞利用代码转换为易于理解的 HTML 格式解释说明。这种方法利用 AI 的语义理解能力来辅助分析复杂的恶意脚本，展示了 LLM 在逆向工程辅助、漏洞代码审计以及安全教育场景中的潜在应用价值，有效降低了技术分析的门槛并提升了安全研究的效率。",
+      "summary": "安全研究员 Simon Willison 尝试利用 AI 的 HTML 解释能力，对针对 copy.fail Linux 漏洞的混淆 Python PoC 进行了解析，展示了利用大模型语义理解能力进行自动化分析的新途径。这种方法将复杂的混淆代码转化为易于理解的结构化描述，为安全分析人员提供了一种快速理解恶意脚本逻辑、提升漏洞响应效率的新思路，是应对复杂漏洞利用代码的一种创新尝试。",
       "tags": [
         "漏洞分析",
-        "LLM应用",
-        "逆向工程"
+        "AI辅助安全",
+        "代码混淆"
       ],
       "url": "https://x.com/simonw/status/2052864605853278715",
       "source": "x.com",
       "category": "XSignals",
       "published": "2026-05-08T21:33:57+00:00",
       "cve_ids": [],
-      "selection_reason": "体现了 AI 辅助安全分析在处理混淆代码时的新颖应用场景。",
+      "selection_reason": "展示了利用 AI 辅助逆向分析混淆代码的新颖应用场景。",
       "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
       "feed_title": "X / Simon Willison",
       "source_tier": "t2",
@@ -99,9 +131,9 @@
       }
     },
     {
-      "title_zh": "HackTheBox AirTouch 渗透实战：从 SNMP 信息泄露到 WPA2 无线内网攻破全过程",
+      "title_zh": "HackTheBox AirTouch 渗透实战：从 SNMP 信息泄露到 WPA2 无线内网攻破",
       "title_orig": "HackTheBox AirTouch：一场从 SNMP 泄露打进 WPA2 无线内网的攻击链",
-      "summary": "本文详细记录了针对HackTheBox中AirTouch靶机的完整渗透测试过程，攻击者首先通过UDP扫描发现SNMP服务并利用默认团体字成功获取了consultant账号的登录凭据。在识别出目标处于Docker容器化的无线实验环境后，作者进一步执行了监听、Deauth攻击以及WPA2握手包破解，最终成功打入虚拟无线内网，完整展示了从服务配置错误到内网横向移动的技术路径与实战细节。",
+      "summary": "本文记录了针对 AirTouch 靶机的完整渗透过程，通过 UDP 扫描定位 SNMP 服务并利用默认团体字获取账号凭据，随后在 Docker 容器化的无线实验环境中展开行动。攻击者针对虚拟无线网卡执行 Deauth 攻击并监听握手包，最终通过破解 WPA2 协议成功打入无线内网，展示了从基础服务配置缺陷到复杂无线协议攻击的完整渗透链路。",
       "tags": [
         "渗透测试",
         "无线安全",
@@ -112,7 +144,7 @@
       "category": "Chinese",
       "published": "2026-05-08T10:15:01+00:00",
       "cve_ids": [],
-      "selection_reason": "涵盖了从信息收集到无线协议攻击的完整链路，具有实战参考价值。",
+      "selection_reason": "详细展示了跨协议、跨环境的复合攻击链，具有实战教学意义。",
       "feed_url": "https://xz.aliyun.com/feed",
       "feed_title": "先知社区",
       "source_tier": "t2",
@@ -123,8 +155,8 @@
       "related_urls": [],
       "related_count": 0,
       "score": 4,
-      "dimension_score": 5.85,
-      "final_score": 6.45,
+      "dimension_score": 6.15,
+      "final_score": 6.75,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.3,
@@ -133,54 +165,20 @@
       }
     },
     {
-      "title_zh": "纽约时报因 AI 生成虚假引言发布更正说明：警示新闻报道中的 AI 幻觉风险",
-      "title_orig": "Quoting New York Times Editors’ Note",
-      "summary": "纽约时报近期对其一篇报道进行了更新，原因是发现文中引用加拿大保守党领袖的言论实为 AI 工具生成的虚假摘要，而非其本人在演讲中的真实引言。该事件凸显了在专业新闻领域使用 AI 工具时缺乏人工核查导致的“幻觉”风险，提醒安全从业者在处理 AI 生成内容时必须建立严格的真实性验证机制，以防止虚假信息的传播。",
-      "tags": [
-        "AI幻觉",
-        "内容安全",
-        "数据可靠性"
-      ],
-      "url": "https://simonwillison.net/2026/May/10/new-york-times-editors-note/#atom-everything",
-      "source": "simonwillison.net",
-      "category": "AISecurityLabs",
-      "published": "2026-05-10T23:58:49+00:00",
-      "cve_ids": [],
-      "selection_reason": "典型 AI 幻觉案例，对 AI 内容治理和信任评估具有警示意",
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison",
-      "source_tier": "t2",
-      "source_kind": "expert",
-      "source_label": "专家博客",
-      "source_key": "simonwillison.net",
-      "story_id": "url:simonwillison.net/2026/may/10/new-york-times-editors-note",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 5,
-      "dimension_score": 5.4,
-      "final_score": 5.9,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": 0.2,
-        "freshness_bonus": 0.3,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "Claude Code 增强工具 claude-goal 发布：通过目标指令优化 AI 编码代理执行逻辑",
+      "title_zh": "Claude Code 增强工具 claude-goal 发布：通过目标指令优化自动化编程任务",
       "title_orig": "gahhh mine stopped again before the goal was achieved. ima try and fix it again",
-      "summary": "开发者 Joseph Thacker 为 Claude Code 开发了名为 /goal 的自定义命令工具，旨在解决 AI 编码代理在执行复杂任务时经常中途停止且未达成目标的问题。该工具通过强化目标导向逻辑来优化 AI 的任务执行流，对于关注 AI Agent 自动化安全、稳定性以及长程任务处理能力的从业者具有重要的参考价值，并为提升自动化开发效率提供了新思路。",
+      "summary": "开发者 Joseph Thacker 在 GitHub 上发布了名为 claude-goal 的开源工具，专门为 Claude Code 引入了自定义的 /goal 命令，旨在解决自动化编程代理在执行复杂任务时频繁意外中断的痛点。该工具通过强化目标导向机制，显著提升了 AI 代理在处理长序列编码任务时的稳定性和成功率，特别适用于需要高可靠性、长流程自动化代码生成的专业软件开发场景。",
       "tags": [
         "AI工具",
-        "编码代理",
-        "自动化"
+        "自动化编程",
+        "Claude"
       ],
       "url": "https://x.com/rez0__/status/2052806900224319921",
       "source": "x.com",
       "category": "XSignals",
       "published": "2026-05-08T17:44:38+00:00",
       "cve_ids": [],
-      "selection_reason": "关注 AI 代理在实际工程应用中的稳定性优化方案。",
+      "selection_reason": "关注 AI 编程代理的稳定性改进，是当前 AI 辅助开发的热",
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0",
       "source_tier": "t2",
@@ -201,20 +199,54 @@
       }
     },
     {
-      "title_zh": "Shopify 推出 River 代理系统：基于 Slack 的公开透明 AI 协作模式探索",
+      "title_zh": "纽约时报因 AI 生成虚假引文发布更正：警惕新闻报道中的 AI 幻觉风险",
+      "title_orig": "Quoting New York Times Editors’ Note",
+      "summary": "纽约时报近期对其报道进行了更新，原因是记者错误地将 AI 生成的政治观点总结当作真实引文引用，该事件凸显了 AI 幻觉对新闻真实性及媒体公信力的潜在威胁。报道强调了在专业领域使用 AI 工具时，若缺乏严谨的人工核实环节，可能导致严重的虚假信息传播风险，目前该文章已根据政治人物在四月份的实际演讲内容进行了修正。",
+      "tags": [
+        "AI幻觉",
+        "信息安全",
+        "内容合规"
+      ],
+      "url": "https://simonwillison.net/2026/May/10/new-york-times-editors-note/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-05-10T23:58:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型 AI 幻觉案例，提醒安全从业者关注 AI 生成内容的信",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/may/10/new-york-times-editors-note",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 5.15,
+      "final_score": 5.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Shopify 推出 River 代理系统：基于 Slack 的公开透明 AI 协作模式",
       "title_orig": "Shopify's River agent system lives in Slack and can only be used in public so that other employees can learn from what you do with it Reminds me of ho...",
-      "summary": "Shopify 开发的 River 代理系统集成于 Slack 平台，并强制要求员工必须在公共频道中使用，以便其他同事能够实时观察并学习 AI 提示词的编写技巧。这种设计借鉴了 Midjourney 的社区化交互模式，旨在通过透明化操作降低 AI 工具的使用门槛，同时也为企业内部的 AI 行为审计、知识共享以及协同办公效率的提升提供了新的视角。",
+      "summary": "Shopify 开发了名为 River 的代理系统，该系统集成于 Slack 平台并强制要求在公共频道使用，以便员工通过观察他人的操作来相互学习 AI 提示词技巧。这种模式借鉴了 Midjourney 的社区化交互理念，通过完全公开 AI 代理的交互过程，有效降低了复杂提示词工程的学习门槛，并在企业内部构建了一种透明且高效的 AI 应用经验沉淀机制。",
       "tags": [
         "AI代理",
-        "企业安全",
-        "协作模式"
+        "协作安全",
+        "提示词工程"
       ],
       "url": "https://x.com/simonw/status/2053529689122328947",
       "source": "x.com",
       "category": "XSignals",
       "published": "2026-05-10T17:36:45+00:00",
       "cve_ids": [],
-      "selection_reason": "探讨了企业级 AI 代理的部署模式及其对内部透明度的影响。",
+      "selection_reason": "探讨了企业内部部署 AI 代理的新型组织形式与知识共享机制。",
       "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
       "feed_title": "X / Simon Willison",
       "source_tier": "t2",
@@ -225,76 +257,12 @@
       "related_urls": [],
       "related_count": 0,
       "score": 5,
-      "dimension_score": 5.3,
-      "final_score": 5.6,
+      "dimension_score": 5.2,
+      "final_score": 5.5,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.2,
         "freshness_bonus": 0.1,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "企业如何实现人工智能规模化应用：从早期实验到通过治理与工作流设计产生复合影响",
-      "title_orig": "How enterprises are scaling AI",
-      "summary": "本文探讨了企业如何将 AI 从早期的实验阶段推向规模化应用，通过建立信任机制、完善治理体系、优化工作流设计以及保障大规模产出质量来实现持续的影响力。文章强调了在扩展过程中治理与质量控制的重要性，旨在帮助企业在确保安全合规的前提下，通过体系化的设计让 AI 技术在业务流程中产生复合效应并提升整体运营效率。",
-      "tags": [
-        "AI"
-      ],
-      "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
-      "source": "openai.com",
-      "category": "FirstParty",
-      "published": "2026-05-11T10:00:00+00:00",
-      "cve_ids": [],
-      "selection_reason": "原始信源高分入选",
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News",
-      "source_tier": "t1",
-      "source_kind": "official",
-      "source_label": "官网",
-      "source_key": "openai.com",
-      "story_id": "url:openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 4,
-      "dimension_score": 3.65,
-      "final_score": 5.45,
-      "score_breakdown": {
-        "source_bonus": 1.0,
-        "kind_bonus": 0.5,
-        "freshness_bonus": 0.3,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "Raon Secure 与韩国电子技术研究院加强 AI 安全合作，启动物理人工智能融合安全示范项目",
-      "title_orig": "Raon Secure and KETI Strengthen AI Security Collaboration... Launching Demonstration of Physical AI Convergence Security - 아시아경제",
-      "summary": "Raon Secure 与韩国电子技术研究院（KETI）宣布加强在 AI 安全领域的合作，并正式启动了物理 AI 融合安全的示范项目。双方旨在通过技术协作提升 AI 系统在物理环境下的安全性，应对日益复杂的融合安全威胁，该合作标志着韩国在推动 AI 安全技术落地应用方面迈出了重要一步，为构建更可靠的 AI 产业生态系统提供了技术支撑。",
-      "tags": [
-        "AI"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9zMmRSb1ZwV05GWjRXRFhNc0NBTzk3aVpnLWIxX0ZmZ2R1VWZNUGVyLVVJMzNjWmFKQ3pCYmpWdWVNZWUxM1RGSl96eDAxd0xfc0RyTEEwWkp5QkFQUlFOZlhScmcybC1OdlFnVU5URFhuWkxLbm5tMmxOaw?oc=5",
-      "source": "news.google.com",
-      "category": "CoverageFallback",
-      "published": "2026-05-11T00:11:04+00:00",
-      "cve_ids": [],
-      "selection_reason": "聚合源补充关键动态",
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security",
-      "source_tier": "t2",
-      "source_kind": "google_news",
-      "source_label": "Google News",
-      "source_key": "news.google.com",
-      "story_id": "title:4c265f2cca15",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 4,
-      "dimension_score": 3.65,
-      "final_score": 2.95,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": -1.0,
-        "freshness_bonus": 0.3,
         "cn_visibility_bonus": 0.0
       }
     }
