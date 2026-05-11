@@ -2,46 +2,242 @@
   "board": "security",
   "display_name": "安全",
   "date": "2026-05-11",
-  "generated_at": "2026-05-10T23:37:47.766161Z",
-  "raw_count": 49,
+  "generated_at": "2026-05-11T07:26:14.863342Z",
+  "raw_count": 105,
   "selected_count": 15,
   "selection_stats": {
     "total": 15,
     "direct": 14,
-    "tier_unknown": 6,
-    "kind_media": 8,
-    "tier_t2": 9,
-    "kind_community": 6,
+    "tier_t2": 15,
+    "kind_media": 7,
+    "chinese": 6,
+    "wechat": 1,
+    "kind_cn_expert": 6,
     "aggregator": 1,
-    "kind_expert_x": 1
+    "kind_expert_x": 1,
+    "kind_community": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 5,
+    "merged_total": 5
   },
   "items": [
     {
-      "title_zh": "Linux 内核 algif_aead 模块跨映射就地 AEAD 漏洞 CVE-2026-31431 技术分析",
-      "title_orig": "Solving “Copy Fail” CVE-2026–31431 Q/A Lab",
-      "summary": "该漏洞存在于 Linux 内核的 algif_aead 模块中，被称为“Copy Fail”漏洞，涉及跨映射就地 AEAD 处理逻辑。研究人员通过 CVE Playground 平台详细分析了该漏洞的触发路径、内存布局构造以及补丁修复方案，揭示了加密接口在处理特定内存映射时的安全缺陷。目前该漏洞的原理、触发条件及修复代码均已公开，为内核安全研究提供了实战参考。",
+      "title_zh": "Linux 内核 Dirty Frag 零日漏洞曝光，本地攻击者可利用单条命令获取主流发行版 Root 权限",
+      "title_orig": "New Linux 'Dirty Frag' zero-day gives root on all major distros",
+      "summary": "该漏洞被命名为 Dirty Frag，属于 Linux 内核中的本地提权漏洞，允许攻击者通过单条命令在主流发行版上获得 Root 权限。漏洞利用了内核处理内存分片的逻辑缺陷，影响范围涵盖了目前大多数主流的 Linux 发行版，目前已有 PoC 证明其有效性。原文未披露具体的 CVE 编号及详细的内核版本影响范围，但确认该漏洞在野外被发现且具有极高的利用价值。",
       "tags": [
         "Linux内核",
-        "漏洞分析",
-        "内存安全"
+        "本地提权",
+        "零日漏洞"
       ],
-      "url": "https://infosecwriteups.com/solving-copy-fail-cve-2026-31431-q-a-lab-aa79db7328cc?source=rss----7b722bfd1b8d---4",
-      "source": "infosecwriteups.com",
-      "category": "WebSecurity",
-      "published": "2026-05-10T19:50:45+00:00",
-      "cve_ids": [
-        "CVE-2026-31431"
-      ],
-      "selection_reason": "深入分析了 Linux 内核加密子系统的实战漏洞及触发逻辑。",
-      "source_tier": "unknown",
+      "url": "https://www.bleepingcomputer.com/news/security/new-linux-dirty-frag-zero-day-with-poc-exploit-gives-root-privileges/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-08T07:45:24+00:00",
+      "cve_ids": [],
+      "selection_reason": "Linux 内核级提权漏洞，影响范围广且已有 PoC。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
       "source_kind": "media",
-      "source_label": "未登记源",
-      "source_key": "infosecwriteups.com"
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/new-linux-dirty-frag-zero-day-with-poc-exploit-gives-root-privileges",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/05/08/active-attack-dirty-frag-linux-vulnerability-expands-post-compromise-risk/"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.65,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
     },
     {
-      "title_zh": "Ollama 远程越界读取漏洞 CVE-2026-7482 可导致大规模服务器进程内存泄露",
+      "title_zh": "红队视角下的 Microsoft 365 令牌窃取武器化：利用 Evilginx 与设备代码绕过实现持久化访问",
+      "title_orig": "Token 窃取的武器化: 红队视角",
+      "summary": "本文从红队视角深度剖析了Microsoft 365令牌窃取的武器化路径，详细展示了如何利用Evilginx钓鱼获取初始凭据，并配合TokenTactics绕过设备代码限制。技术核心在于通过OS/2用户代理伪装来突破trustType条件访问策略，并利用roadtx工具接管休眠账户的MFA与设备注册，最终在启用Entra ID加入的云环境中实现长达90天的隐蔽持久访问。 红队视角下的 Microsoft 365 令牌窃取武器化：利用 Evilginx 与设备代码绕过实现持久化访问。该条来自mp.weixin.qq.com，归类于CN_News，原始信息显示其在本轮抓取、去重和打分中优先。",
+      "tags": [
+        "红队技术",
+        "令牌窃取",
+        "M365安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496019&idx=1&sn=08d2045a47bb87cc7fc7862c39fe9e69",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-09T09:40:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "详细展示了绕过现代云环境条件访问策略的实战链路。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496019&idx=1&sn=08d2045a47bb87cc7fc7862c39fe9e69",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "HackTheBox AirTouch 渗透实战：从 SNMP 信息泄露到 WPA2 无线内网攻击链分析",
+      "title_orig": "HackTheBox AirTouch：一场从 SNMP 泄露打进 WPA2 无线内网的攻击链",
+      "summary": "本文详细记录了针对 AirTouch 靶机的完整渗透过程，重点展示了从外部服务发现到无线内网渗透的攻击链转换。攻击者首先通过 UDP 扫描定位 SNMP 服务并利用默认团体字获取账号密码，随后在 Docker 容器化环境中发现虚拟无线网卡与网络拓扑。通过对 AirTouch-Internet 执行监听和取消认证攻击，成功打通了从传统网络服务到无线协议层的攻击链路，实现了对目标内网的深度渗透。",
+      "tags": [
+        "渗透测试",
+        "SNMP漏洞",
+        "无线安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92102",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-08T10:15:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了从常规服务漏洞跨越到无线网络攻击的综合渗透思路。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92102",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "微软修复 M365 Copilot 三项高危零点击数据泄露漏洞，攻击者可远程访问企业敏感数据",
+      "title_orig": "‼️🚨 Microsoft just patched three critical M365 Copilot data leak vulnerabilities. All three are network-reachable, unauthenticated, and zero-clic...",
+      "summary": "微软近期紧急修复了M365 Copilot中的三个关键数据泄露漏洞，包括CVE-2026-26129等，这些漏洞具备网络可达、无需身份验证且零点击触发的高危特性。由于Copilot商业聊天组件通常拥有对SharePoint、OneDrive、Outlook和Teams等核心服务的广泛访问权限，攻击者可利用这些漏洞在未经授权的情况下，从租户环境中大规模窃取各类敏感的企业机密数据。 微软修复 M365 Copilot 三项高危零点击数据泄露漏洞，攻击者可远程访问企业敏感数据。该条来自x.com，归类于XSignals，原始信息显示其在本轮抓取、去重。",
+      "tags": [
+        "M365",
+        "Copilot",
+        "数据泄露"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2052864105153724723",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-08T21:31:57+00:00",
+      "cve_ids": [
+        "CVE-2026-26129",
+        "CVE-2026-26164"
+      ],
+      "selection_reason": "涉及 AI 助手权限边界安全，零点击触发且影响核心办公数据。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "cve:cve-2026-26129,cve-2026-26164",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 要求美国联邦机构限期修复 Ivanti EPMM 高危零日漏洞，该漏洞已遭在野利用",
+      "title_orig": "CISA gives feds four days to patch Ivanti flaw exploited as zero-day",
+      "summary": "美国 CISA 将 Ivanti Endpoint Manager Mobile (EPMM) 的一个高危漏洞加入已知利用漏洞目录，并要求联邦机构在四天内完成补丁修复。该漏洞属于零日漏洞，目前已被攻击者用于实战攻击，可能导致移动设备管理平台受损。原文未详细披露漏洞的 CVE 编号及具体的技术触发原理，但强调了其在野利用的紧迫性，要求相关单位立即采取缓解措施。",
+      "tags": [
+        "Ivanti",
+        "零日漏洞",
+        "漏洞修复"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-gives-feds-four-days-to-patch-ivanti-flaw-exploited-as-zero-day/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-08T12:16:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "CISA 紧急预警，涉及移动端管理平台的在野零日攻击。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/cisa-gives-feds-four-days-to-patch-ivanti-flaw-exploited-as-zero-day",
+      "related_urls": [
+        "https://www.cisa.gov/news-events/alerts/2026/05/08/cisa-adds-one-known-exploited-vulnerability-catalog"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.3,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于 Java Attach API 与 Unix Domain Socket 的纯内存态 Agent 注入技术研究",
+      "title_orig": "Java Attach API内存注入",
+      "summary": "本文深入探讨了利用 Java Attach API 实现内存注入的高级技术，通过底层的 Unix Domain Socket 通信协议有效绕过常规安全检测。该技术实现结合了 Linux 内核的 memfd_create 系统调用，将恶意 Agent 直接注入到目标 Java 进程的内存空间中而不产生任何磁盘文件。这种纯内存态的注入方法极大地提升了后渗透场景下的隐蔽性，是研究内存马与无文件攻击的重要参考资料。",
+      "tags": [
+        "Java安全",
+        "内存注入",
+        "无文件攻击"
+      ],
+      "url": "https://xz.aliyun.com/news/92103",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-08T11:15:26+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入底层协议实现纯内存注入，具有极高的防御规避研究价值。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92103",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.55,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Ollama 远程越界读取漏洞 CVE-2026-7482 曝光，可导致 30 万台服务器内存泄露",
       "title_orig": "Ollama Out-of-Bounds Read Vulnerability Allows Remote Process Memory Leak",
-      "summary": "安全研究人员披露了Ollama框架中代号为Bleeding Llama的严重越界读取漏洞，该漏洞被追踪为CVE-2026-7482且CVSS评分高达9.1。远程且未经身份验证的攻击者可利用此缺陷泄露整个进程内存，全球估计有超过30万台服务器受此影响，对AI基础设施构成了巨大的安全威胁，目前相关机构已敦促用户关注此漏洞的修复进展以防范潜在的远程攻击。",
+      "summary": "研究人员披露了 Ollama 框架中名为 Bleeding Llama 的高危越界读取漏洞，编号为 CVE-2026-7482 且 CVSS 评分高达 9.1。该漏洞允许远程未经身份验证的攻击者直接泄露目标系统的整个进程内存，全球范围内约有 30 万台暴露在互联网上的服务器受此威胁。攻击者可借此获取 AI 推理环境中的敏感信息，目前相关厂商已紧急发布修复建议以应对这一波及广泛的安全风险。",
       "tags": [
         "Ollama",
         "内存泄露",
@@ -54,273 +250,305 @@
       "cve_ids": [
         "CVE-2026-7482"
       ],
-      "selection_reason": "该漏洞影响广泛的 AI 基础设施，具有极高的危害性和现实意义",
+      "selection_reason": "影响主流 AI 基础设施的高危漏洞，涉及大规模服务器安全。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
       "source_tier": "t2",
       "source_kind": "media",
       "source_label": "安全媒体",
-      "source_key": "thehackernews.com"
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-7482",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
     },
     {
-      "title_zh": "实战攻击链分析：利用逻辑配置错误绕过企业级 WAF 实现远程代码执行",
-      "title_orig": "You Don’t Need a 0-Day for RCE: A Real-World Kill Chain",
-      "summary": "本文通过真实案例展示了无需 0-day 漏洞即可实现远程代码执行（RCE）的攻击路径，重点在于逻辑配置错误的链式利用。作者详细描述了如何绕过企业级 Web 应用防火墙（WAF），通过一系列看似轻微的配置缺陷最终获取目标系统的控制权。该研究强调了逻辑漏洞在红蓝对抗中的重要性，提醒安全从业者关注系统架构层面的防御加固。",
+      "title_zh": "Linux 内核 CVE-2026-31431 漏洞分析：algif_aead 跨映射就地加密导致的拷贝失败",
+      "title_orig": "Solving “Copy Fail” CVE-2026–31431 Q/A Lab",
+      "summary": "本文深入分析了 Linux 内核 algif_aead 模块中的 CVE-2026-31431 漏洞，该漏洞源于跨映射就地 AEAD 加密过程中的逻辑错误。文章详细介绍了漏洞的触发路径、内存布局构造以及补丁修复方案，并提供了实验环境进行复现。该漏洞属于内核加密子系统的内存损坏类问题，对于理解 Linux 内核安全机制及加密接口的攻击面具有重要的技术参考价值。",
       "tags": [
-        "RCE",
-        "逻辑漏洞",
-        "红蓝对抗"
+        "Linux内核",
+        "漏洞分析",
+        "加密安全"
       ],
-      "url": "https://infosecwriteups.com/you-dont-need-a-0-day-for-rce-a-real-world-kill-chain-e7ec690ba9a4?source=rss----7b722bfd1b8d--bug_bounty",
+      "url": "https://infosecwriteups.com/solving-copy-fail-cve-2026-31431-q-a-lab-aa79db7328cc?source=rss----7b722bfd1b8d---4",
       "source": "infosecwriteups.com",
       "category": "WebSecurity",
-      "published": "2026-05-10T19:51:30+00:00",
+      "published": "2026-05-10T19:50:45+00:00",
+      "cve_ids": [
+        "CVE-2026-31431"
+      ],
+      "selection_reason": "针对内核加密模块的深度技术分析，适合底层安全研究。",
+      "feed_url": "https://infosecwriteups.com/feed",
+      "feed_title": "InfoSec Write-ups - Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "cve:cve-2026-31431",
+      "related_urls": [
+        "https://x.com/IntCyberDigest/status/2052859364751634587"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于大语言模型的 AI 智能体安全威胁与防御系统性综述：分层攻击面框架研究",
+      "title_orig": "基于大语言模型的 AI 智能体安全威胁与防御系统性综述——分层攻击面框架",
+      "summary": "该研究针对具备长期记忆、工具调用和多智能体协同能力的 AI 系统，提出了一个分层攻击面模型来解决现有安全分类体系的结构性缺陷。文章分析了智能体架构中脆弱的组件及威胁显现的时间尺度，旨在为开发者提供系统性的防御框架以应对提示注入和越狱等攻击。该综述通过剖析智能体特有的无状态大语言模型所不具备的功能，填补了当前 AI 安全研究中对结构性脆弱点描述的空白。",
+      "tags": [
+        "AI安全",
+        "智能体",
+        "攻击面"
+      ],
+      "url": "https://paper.seebug.org/3484",
+      "source": "paper.seebug.org",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-09T08:53:56+00:00",
       "cve_ids": [],
-      "selection_reason": "展示了非 0-day 漏洞的链式利用技巧，对实战渗透具有指导",
-      "source_tier": "unknown",
+      "selection_reason": "系统性梳理了AI智能体特有的架构安全风险，具有前瞻性。",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3484",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "cPanel 与 WHM 发布安全更新修复包括权限提升和代码执行在内的三个新漏洞",
+      "title_orig": "cPanel, WHM Release Fixes for Three New Vulnerabilities — Patch Now",
+      "summary": "cPanel 官方发布补丁修复了 cPanel 和 WHM 中的三个漏洞，其中 CVE-2026-29201 涉及 adminbin 调用中对功能文件名的输入验证不足。攻击者可利用这些漏洞实现权限提升、远程代码执行或拒绝服务攻击，受影响版本涵盖了当前主流的服务器管理面板组件。目前官方已发布修复版本，建议管理员立即更新以防止潜在的服务器接管风险，原文未披露具体的 PoC 细节。",
+      "tags": [
+        "cPanel",
+        "漏洞修复",
+        "权限提升"
+      ],
+      "url": "https://thehackernews.com/2026/05/cpanel-whm-patch-3-new-vulnerabilities.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-09T07:16:00+00:00",
+      "cve_ids": [
+        "CVE-2026-29201"
+      ],
+      "selection_reason": "cPanel是主流服务器面板，其高危漏洞对运维安全影响极大。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
       "source_kind": "media",
-      "source_label": "未登记源",
-      "source_key": "infosecwriteups.com"
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-29201",
+      "related_urls": [
+        "https://vulners.com/githubexploit/8DAFA6AF-F8F9-5C31-A4F0-5B2C3B4D5B08?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.1,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
     },
     {
       "title_zh": "攻击者滥用 Google 广告与 Claude.ai 共享对话功能向 Mac 用户分发恶意软件",
       "title_orig": "Hackers abuse Google ads, Claude.ai chats to push Mac malware",
-      "summary": "黑客正利用Google搜索广告和Claude.ai合法的共享对话功能发起恶意广告活动，旨在向Mac用户分发恶意软件。当用户搜索Claude客户端下载时，会被引导至伪装成官方页面的恶意链接，随后按指令安装木马程序；这种利用合法AI平台信任背书进行的社会工程学攻击显著提高了隐蔽性，攻击者通过滥用知名搜索平台和AI工具的信誉，使得普通用户极易在不知情下遭受系统感染。",
+      "summary": "黑客利用 Google 搜索广告和 Claude.ai 合法的共享对话功能发起恶意广告活动，诱导搜索“Claude mac download”的用户访问伪造页面。受害者在点击看似指向官方域名的链接后，会根据 Claude 对话中的虚假指令下载并安装针对 macOS 的恶意软件。这种攻击手段利用了知名 AI 平台的信任背书来绕过用户的警惕性，目前该恶意活动仍处于活跃状态。",
       "tags": [
-        "恶意软件",
-        "社会工程学",
-        "macOS"
+        "恶意广告",
+        "macOS",
+        "社会工程学"
       ],
       "url": "https://www.bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware/",
       "source": "bleepingcomputer.com",
       "category": "OfficialAdvisories",
       "published": "2026-05-10T17:52:15+00:00",
       "cve_ids": [],
-      "selection_reason": "揭示了利用 AI 平台共享功能进行恶意分发的新型攻击向量。",
+      "selection_reason": "揭示了利用AI平台共享功能进行钓鱼的新型攻击链路。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
       "source_tier": "t2",
       "source_kind": "media",
       "source_label": "安全媒体",
-      "source_key": "bleepingcomputer.com"
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/hackers-abuse-google-ads-claudeai-chats-to-push-mac-malware",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
     },
     {
-      "title_zh": "开源红队情报引擎 Cascavel v3.0 发布：集成 85 个安全插件的 Python 框架",
-      "title_orig": "[Release] Cascavel v3.0: A Python-based Quantum Security Framework with 85 Plugins for Red Teaming",
-      "summary": "Cascavel v3.0 是一款基于 Python 3.10 开发的模块化红队情报引擎，旨在统一侦察、扫描和漏洞利用流程。该框架集成了 14 个攻击类别的 85 个安全插件，涵盖了 XSS 多重编码、SSRF 探测等多种实战场景，解决了工具碎片化的问题。其高度可扩展的命令行界面和丰富的插件库，为安全从业者在执行渗透测试任务时提供了高效的自动化支撑。",
+      "title_zh": "新型 Linux 远控木马 Quasar Linux RAT 针对开发人员窃取凭据并渗透供应链",
+      "title_orig": "Quasar Linux RAT Steals Developer Credentials for Software Supply Chain Compromise",
+      "summary": "安全研究人员发现了一种名为 QLNX 的新型 Linux 植入程序，该木马专门针对开发人员和 DevOps 工程师的系统以建立持久化据点。该工具具备凭据收集、键盘记录、文件操作、剪贴板监控和网络隧道等多种后渗透功能，旨在窃取开发环境中的敏感凭据。通过控制开发终端，攻击者能够进一步渗透软件供应链，对下游用户和企业基础设施构成严重的潜在威胁。",
       "tags": [
-        "红队工具",
-        "自动化渗透",
-        "开源框架"
+        "Linux木马",
+        "供应链安全",
+        "凭据窃取"
       ],
-      "url": "https://www.reddit.com/r/redteamsec/comments/1t8w8i7/release_cascavel_v30_a_pythonbased_quantum/",
-      "source": "reddit.com",
-      "category": "RedTeam",
-      "published": "2026-05-10T04:00:50+00:00",
+      "url": "https://thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-08T11:00:00+00:00",
       "cve_ids": [],
-      "selection_reason": "集成了大量实战插件的红队框架，具有较高的工程实用价值。",
+      "selection_reason": "针对开发者的定向攻击是供应链安全的关键威胁点。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
       "source_tier": "t2",
-      "source_kind": "community",
-      "source_label": "社区",
-      "source_key": "reddit.com"
-    },
-    {
-      "title_zh": "Obsidian 插件遭滥用以部署 Phantom Pulse 远程访问木马",
-      "title_orig": "Obsidian plugin was abused to deploy a remote access trojan",
-      "summary": "研究人员发现攻击者正在滥用 Obsidian 笔记软件的插件机制，在受害者系统中部署名为 Phantom Pulse 的远程访问木马（RAT）。该攻击活动通过诱导用户安装恶意插件，利用笔记软件的扩展性实现持久化控制和数据窃取。目前相关攻击细节已在安全社区公开，提醒用户在安装第三方扩展组件时需严格审核来源及权限。",
-      "tags": [
-        "供应链攻击",
-        "木马",
-        "Obsidian"
-      ],
-      "url": "https://cyber.netsecops.io/articles/obsidian-plugin-abused-in-campaign-to-deploy-phantom-pulse-rat/",
-      "source": "cyber.netsecops.io",
-      "category": "AI",
-      "published": "2026-05-10T22:02:43+00:00",
-      "cve_ids": [],
-      "selection_reason": "关注笔记软件插件生态的安全风险，属于新型的客户端攻击路径。",
-      "source_tier": "unknown",
       "source_kind": "media",
-      "source_label": "未登记源",
-      "source_key": "cyber.netsecops.io"
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/quasar-linux-rat-steals-developer.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
     },
     {
-      "title_zh": "Open5GS 核心网组件 SMF 远程拒绝服务漏洞 CVE-2026-8251 预警",
-      "title_orig": "CVE-2026-8251",
-      "summary": "Open5GS 2.7.7及以下版本的SMF组件中存在一个远程拒绝服务漏洞，具体影响npcf-handler.c文件中的特定函数处理逻辑。攻击者通过远程操纵相关函数调用可导致系统崩溃并触发拒绝服务状态，目前该漏洞的利用代码已经公开，虽然项目方在早期就收到了相关问题报告，但原文并未明确提及官方补丁的发布状态，建议相关运营商和开发者密切关注该组件的更新动态以确保核心网安全。",
+      "title_zh": "新型 Linux 后门 PamDOORa 利用 PAM 模块通过万能密码实现 SSH 持久化访问",
+      "title_orig": "New Linux PamDOORa Backdoor Uses PAM Modules to Steal SSH Credentials",
+      "summary": "名为 PamDOORa 的新型 Linux 后门在俄语网络犯罪论坛售卖，其设计为基于可插拔认证模块（PAM）的后渗透工具包。该后门允许攻击者通过特定的 TCP 端口组合和“万能密码”获得持久的 SSH 访问权限，从而绕过正常的认证流程。作为一种隐蔽的后渗透手段，它利用了 Linux 系统的底层认证机制，使得传统的日志审计和访问控制手段难以察觉其存在。",
       "tags": [
-        "5G安全",
-        "拒绝服务",
-        "Open5GS"
+        "PAM后门",
+        "SSH持久化",
+        "Linux安全"
       ],
-      "url": "https://vulners.com/nvd/NVD:CVE-2026-8251?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "source": "vulners.com",
-      "category": "Synthesis",
-      "published": "2026-05-10T23:16:27+00:00",
-      "cve_ids": [
-        "CVE-2026-8251"
-      ],
-      "selection_reason": "涉及 5G 核心网开源实现的安全漏洞，且 Exploit 已",
-      "source_tier": "t2",
-      "source_kind": "community",
-      "source_label": "漏洞聚合",
-      "source_key": "vulners.com"
-    },
-    {
-      "title_zh": "Perl 模块 XML::LibXML 堆越界读取漏洞 CVE-2026-8177 技术细节",
-      "title_orig": "CVE-2026-8177",
-      "summary": "Perl语言的XML::LibXML 2.0210及以下版本在解析包含截断UTF-8字节序列的节点名称时，会触发严重的堆内存越界读取漏洞。当节点名称在多字节序列中间意外结束，解析器会读取超出输入字符串边界的相邻堆内存数据，导致任何将受控字符串传递给DOM节点名方法的Perl进程面临敏感信息泄露风险；该漏洞已被分配CVE-2026-8177编号，是处理不可信XML数据时必须重视的安全隐患。",
-      "tags": [
-        "Perl",
-        "XML解析",
-        "越界读取"
-      ],
-      "url": "https://vulners.com/nvd/NVD:CVE-2026-8177?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "source": "vulners.com",
-      "category": "Synthesis",
-      "published": "2026-05-10T21:16:30+00:00",
-      "cve_ids": [
-        "CVE-2026-8177"
-      ],
-      "selection_reason": "底层解析库的内存安全漏洞，影响大量依赖 Perl 的应用系统",
-      "source_tier": "t2",
-      "source_kind": "community",
-      "source_label": "漏洞聚合",
-      "source_key": "vulners.com"
-    },
-    {
-      "title_zh": "Perl 模块 Net::CIDR::Lite 存在输入验证漏洞可导致 IP 访问控制列表绕过",
-      "title_orig": "CVE-2026-45190",
-      "summary": "该漏洞源于0.24版本之前的Perl模块Net::CIDR::Lite未能正确验证IP地址和CIDR掩码输入，导致攻击者可能通过包含尾随换行符或非ASCII数字字符的恶意输入绕过基于IP的访问控制列表。由于解析器会将此类输入重新编码为与原始字符串不同的地址，进而使find和binfind函数出现匹配错误或遗漏，目前官方已发布0.24版本修复了该安全缺陷。",
-      "tags": [
-        "输入验证",
-        "ACL绕过",
-        "Perl"
-      ],
-      "url": "https://vulners.com/nvd/NVD:CVE-2026-45190?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "source": "vulners.com",
-      "category": "Synthesis",
-      "published": "2026-05-10T21:16:29+00:00",
-      "cve_ids": [
-        "CVE-2026-45190"
-      ],
-      "selection_reason": "涉及基础网络库的解析逻辑漏洞，对访问控制安全性有直接影响。",
-      "source_tier": "t2",
-      "source_kind": "community",
-      "source_label": "漏洞聚合",
-      "source_key": "vulners.com"
-    },
-    {
-      "title_zh": "安全研究揭示 Passkeys 在应对中间人代理钓鱼攻击时并非绝对安全",
-      "title_orig": "Passkeys Aren’t Nearly as Effective as We Thought",
-      "summary": "该研究探讨了针对 Passkeys 的中间人代理（AiTM）钓鱼技术，指出尽管 Passkeys 被认为具有较强的抗钓鱼能力，但在实际部署中仍存在被绕过的风险。作者发现目前红队和安全从业者对该特定攻击技术的实现和防御意识尚浅，并计划通过技术博客公开相关细节。文章强调了在 AiTM 场景下，现有的 Passkeys 实现可能无法如预期般有效阻断高级身份窃取攻击。",
-      "tags": [
-        "Passkeys",
-        "AiTM",
-        "身份认证"
-      ],
-      "url": "https://infosecwriteups.com/passkeys-arent-nearly-as-effective-as-we-thought-54eed4eecf4a?source=rss----7b722bfd1b8d---4",
-      "source": "infosecwriteups.com",
-      "category": "WebSecurity",
-      "published": "2026-05-10T19:51:16+00:00",
+      "url": "https://thehackernews.com/2026/05/new-linux-pamdoora-backdoor-uses-pam.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-08T08:41:00+00:00",
       "cve_ids": [],
-      "selection_reason": "挑战了主流身份认证技术的安全性认知，对红蓝对抗有参考价值。",
-      "source_tier": "unknown",
+      "selection_reason": "PAM模块后门具有极高的隐蔽性和权限，是高级威胁研究重点。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
       "source_kind": "media",
-      "source_label": "未登记源",
-      "source_key": "infosecwriteups.com"
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/new-linux-pamdoora-backdoor-uses-pam.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
     },
     {
-      "title_zh": "Perl 插件 Catalyst::Plugin::Statsd 存在会话 ID 泄露漏洞可导致身份冒用",
-      "title_orig": "CVE-2026-45180",
-      "summary": "在0.10.0及之前版本的Perl插件Catalyst::Plugin::Statsd中，如果与statsd守护进程的通信通道未采取加密措施，例如通过UDP协议向跨网络主机发送数据，则可能导致用户的敏感会话ID发生泄露。攻击者一旦截获这些会话ID，即可将其作为身份验证令牌冒充合法用户进行非法操作，建议相关用户立即检查通信链路安全性并关注官方发布的最新补丁状态。",
+      "title_zh": "ReTokSync：一种解决生成式语言隐写中分词歧义问题的自同步消歧技术",
+      "title_orig": "ReTokSync：面向生成式语言隐写的自同步分词消歧方法",
+      "summary": "生成式语言隐写（GLS）通过将秘密信息嵌入自然语言生成过程实现通信，但在实际部署中常因接收端重新分词导致解码失败。ReTokSync 方法提出了一种自同步分词消歧机制，旨在解决通信双方因分词序列不一致而破坏共享解码状态的问题。该技术通过优化 token 序列的同步性，提高了隐写通信在复杂网络环境下的鲁棒性，确保了秘密信息提取的准确性和隐蔽性。",
       "tags": [
-        "信息泄露",
-        "会话劫持",
-        "Perl"
+        "语言隐写",
+        "NLP安全",
+        "隐蔽通信"
       ],
-      "url": "https://vulners.com/nvd/NVD:CVE-2026-45180?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "source": "vulners.com",
-      "category": "Synthesis",
-      "published": "2026-05-10T21:16:29+00:00",
-      "cve_ids": [
-        "CVE-2026-45180"
-      ],
-      "selection_reason": "会话 ID 泄露是严重的身份认证风险，涉及 Web 框架插件",
+      "url": "https://paper.seebug.org/3481",
+      "source": "paper.seebug.org",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-08T08:42:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了AI生成内容在隐蔽通信中的技术挑战与解决方案。",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
       "source_tier": "t2",
-      "source_kind": "community",
-      "source_label": "漏洞聚合",
-      "source_key": "vulners.com"
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3481",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.35,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
     },
     {
-      "title_zh": "Perl 模块 Net::CIDR::Lite 0.24 之前版本存在 IP 地址验证漏洞，可能导致 IP 访问控制列表被绕过",
-      "title_orig": "EUVD-2026-28998",
-      "summary": "Perl模块Net::CIDR::Lite在0.24版本之前存在安全漏洞，其无法对IP地址及CIDR掩码输入进行有效验证，可能导致攻击者绕过关键的IP访问控制列表。由于包含尾随换行符或非ASCII数字的输入会被解析器错误地重新编码，导致find等函数在匹配地址时产生偏差，受影响的用户应尽快升级至官方发布的0.24修复版本以确保网络访问控制的准确性与安全性。",
+      "title_zh": "Windows 反恶意软件扫描接口（AMSI）对抗技术与绕过方法深度解析",
+      "title_orig": "AMSI对抗技术",
+      "summary": "本文探讨了针对 Windows AMSI 机制的多种对抗技术，AMSI 是用于检测脚本和内存中恶意行为的关键防御组件。文章详细介绍了通过内存补丁、混淆处理以及利用特定 API 调用来绕过扫描引擎检测的技术原理，适用于红蓝对抗中的免杀场景。这些技术点对于安全从业者理解现代终端防御系统的局限性具有重要参考价值，有助于提升对高级脚本攻击的检测能力。",
       "tags": [
-        "AI"
+        "AMSI绕过",
+        "红蓝对抗",
+        "免杀技术"
       ],
-      "url": "https://vulners.com/euvd/EUVD-2026-28998?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "source": "vulners.com",
-      "category": "Synthesis",
-      "published": "2026-05-10T21:30:23+00:00",
+      "url": "https://xz.aliyun.com/news/92105",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-08T15:53:30+00:00",
       "cve_ids": [],
-      "selection_reason": "原始信源高分入选",
+      "selection_reason": "AMSI绕过是内网渗透和免杀的核心技术，具有实战参考价值。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
       "source_tier": "t2",
-      "source_kind": "community",
-      "source_label": "漏洞聚合",
-      "source_key": "vulners.com"
-    },
-    {
-      "title_zh": "安全监测发现 Cobalt Strike Beacon 恶意通信，目标 IP 地址为 82.156.62.131",
-      "title_orig": "Cobalt Strike Beacon Detected – 82[.]156[.]62[.]131:80",
-      "summary": "安全监测系统近期检测到针对特定IP地址82.156.62.131在80端口上的Cobalt Strike Beacon通信活动，这通常预示着目标系统可能已遭到红队工具或恶意攻击者的远程控制。该警报提醒网络管理员需立即对相关流量进行深度溯源分析，识别受感染的内部主机并采取隔离措施，以防止攻击者利用该后门通道进行横向移动、数据窃取或进一步的渗透破坏行为。",
-      "tags": [
-        "资讯"
-      ],
-      "url": "https://www.redpacketsecurity.com/cobalt-strike-beacon-detected-82-156-62-131-port-80-4/",
-      "source": "redpacketsecurity.com",
-      "category": "Synthesis",
-      "published": "2026-05-10T23:14:25+00:00",
-      "cve_ids": [],
-      "selection_reason": "原始信源高分入选",
-      "source_tier": "unknown",
-      "source_kind": "media",
-      "source_label": "未登记源",
-      "source_key": "redpacketsecurity.com"
-    },
-    {
-      "title_zh": "Apple 与 Google 扩大硬件级完整性证明 API 在移动端与 Web 端的应用",
-      "title_orig": "RT GrapheneOS: Apple and Google are gradually expanding their use of hardware-based attestation. They're convincing a growing number of services to ad...",
-      "summary": "GrapheneOS指出苹果与谷歌正协同推广基于硬件的设备完整性证明技术，通过Google Play Integrity和Apple App Attest等API确保服务运行在未受篡改的环境中。苹果已利用Privacy Pass将该技术引入Web端，而谷歌也计划跟进并要求硬件级证明以实现强完整性级别，这种趋势正促使更多服务商采用硬件密钥来验证客户端安全性，从而提升整体生态的抗攻击能力。",
-      "tags": [
-        "硬件安全",
-        "设备证明",
-        "移动安全"
-      ],
-      "url": "https://x.com/IntCyberDigest/status/2053568349267792216",
-      "source": "x.com",
-      "category": "XSignals",
-      "published": "2026-05-10T16:09:41+00:00",
-      "cve_ids": [],
-      "selection_reason": "关注移动生态底层安全架构的演进，涉及硬件信任根的应用趋势。",
-      "source_tier": "t2",
-      "source_kind": "expert_x",
-      "source_label": "安全专家 X",
-      "source_key": "x:intcyberdigest"
-    },
-    {
-      "title_zh": "技术调查揭露 CoderLegion 欺诈行为：利用廉价服务器和免费脚本向用户收取高额月费并造假",
-      "title_orig": "They Charged $10/Month for a $5 Server, a Free Script, and Three Years of Lies. Here’s the Proof.",
-      "summary": "一份技术记录揭露了CoderLegion创始人Mehadi Hasan的欺诈行为，该平台被指控利用免费脚本和廉价服务器向用户收取高额月费，并维持了长达三年的虚假宣传。作者通过公开可复现的命令行工具和技术证据，详细记录了该服务在技术实现上的低廉成本与宣传承诺之间的巨大鸿沟，旨在提醒社区成员警惕此类缺乏透明度的商业陷阱，并呼吁用户通过实际操作验证服务真实性。",
-      "tags": [
-        "AI"
-      ],
-      "url": "https://infosecwriteups.com/they-charged-10-month-for-a-5-server-a-free-script-and-three-years-of-lies-heres-the-proof-b232637e4269?source=rss----7b722bfd1b8d---4",
-      "source": "infosecwriteups.com",
-      "category": "WebSecurity",
-      "published": "2026-05-10T19:49:55+00:00",
-      "cve_ids": [],
-      "selection_reason": "原始信源高分入选",
-      "source_tier": "unknown",
-      "source_kind": "media",
-      "source_label": "未登记源",
-      "source_key": "infosecwriteups.com"
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92105",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.3,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
     }
   ]
 }

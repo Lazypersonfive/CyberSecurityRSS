@@ -7,14 +7,16 @@
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 107 | 22 | 7 | 78 | 0 | 22 | 22 | 21 | 1 |
-| ai_security | 22 | 4 | 3 | 15 | 0 | 8 | 4 | 8 | 1 |
-| finance | 46 | 4 | 0 | 42 | 0 | 10 | 4 | 0 | 0 |
-| security | 114 | 9 | 0 | 105 | 0 | 0 | 9 | 3 | 16 |
+| ai | 110 | 26 | 7 | 76 | 1 | 21 | 26 | 20 | 1 |
+| ai_security | 28 | 6 | 3 | 19 | 0 | 7 | 6 | 11 | 2 |
+| finance | 49 | 4 | 0 | 45 | 0 | 13 | 4 | 0 | 0 |
+| security | 114 | 9 | 0 | 105 | 0 | 0 | 9 | 3 | 22 |
 
 ## Unknown Selected Sources
 
-No unknown selected sources in the audited window.
+| Source | Count | Boards | Latest Example |
+|---|---:|---|---|
+| `blog.google` | 1 | ai | [谷歌金融 AI 增强体验正式扩展至欧洲市场，利用人工智能优化投资信息获取](https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/) |
 
 ## Review Rule
 
