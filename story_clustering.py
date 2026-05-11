@@ -10,7 +10,7 @@ import hashlib
 import re
 from collections import defaultdict
 from typing import Any, Iterable
-from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
+from urllib.parse import parse_qsl, urlencode, urlparse
 
 from source_policy import source_priority, source_profile
 
@@ -124,7 +124,8 @@ def _shared_story_id(entries: list[dict[str, Any]]) -> str:
     cves = sorted({cve for entry in entries for cve in _extract_cves(entry)})
     if cves:
         return "cve:" + ",".join(cves)
-    return story_id_for_entry(entries[0])
+    first = min(entries, key=lambda entry: _stable_entry_key(entry))
+    return story_id_for_entry(first)
 
 
 def _extract_cves(entry: dict[str, Any]) -> list[str]:
@@ -147,7 +148,9 @@ def _canonical_url_key(url: str) -> str:
         for key, value in parse_qsl(parsed.query, keep_blank_values=False)
         if key.lower() not in TRACKING_PARAMS
     ])
-    return urlunparse(("", "", f"{host}{path}", "", query, ""))
+    if query:
+        return f"{host}{path}?{query}"
+    return f"{host}{path}"
 
 
 def _title_tokens(entry: dict[str, Any]) -> set[str]:
@@ -194,6 +197,13 @@ def _dedupe_preserve_order(values: Iterable[str]) -> list[str]:
         seen.add(value)
         result.append(value)
     return result
+
+
+def _stable_entry_key(entry: dict[str, Any]) -> str:
+    url_key = _canonical_url_key(str(entry.get("url") or ""))
+    if url_key:
+        return url_key
+    return " ".join(sorted(_title_tokens(entry)))
 
 
 class _UnionFind:

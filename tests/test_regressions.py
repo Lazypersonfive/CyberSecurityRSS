@@ -803,6 +803,14 @@ class StoryClusteringTests(unittest.TestCase):
 
         self.assertEqual(story_id_for_entry(entry), "cve:cve-2026-12345")
 
+    def test_story_id_uses_explicit_canonical_url_key(self) -> None:
+        entry = {
+            "title": "OpenAI model update",
+            "url": "https://www.example.com/path/?utm_source=x&b=2",
+        }
+
+        self.assertEqual(story_id_for_entry(entry), "url:example.com/path?b=2")
+
     def test_cluster_scored_candidates_merges_same_cve_and_keeps_authoritative_source(self) -> None:
         candidates = [
             (
@@ -842,6 +850,17 @@ class StoryClusteringTests(unittest.TestCase):
 
         self.assertEqual(len(clustered), 2)
         self.assertEqual(merged_urls, [])
+
+    def test_cluster_story_id_is_stable_for_title_cluster(self) -> None:
+        candidates = [
+            ({"title": "OpenAI releases model update for developers", "url": "https://z.example.com/story"}, 8),
+            ({"title": "OpenAI releases model update for developers", "url": "https://a.example.com/story"}, 8),
+        ]
+
+        clustered, _merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 1)
+        self.assertEqual(clustered[0][0]["story_id"], "url:a.example.com/story")
 
 
 class GeminiPipelineTests(unittest.TestCase):

@@ -298,6 +298,8 @@ def _is_int(value: Any) -> bool:
 
 
 def _is_number(value: Any) -> bool:
+    if isinstance(value, bool):
+        return False
     try:
         float(value)
         return True

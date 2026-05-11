@@ -15,6 +15,7 @@ Environment:
 from __future__ import annotations
 
 import argparse
+from copy import deepcopy
 import json
 import logging
 from datetime import date, datetime
@@ -647,7 +648,7 @@ def _llm_dedupe(
         ]
         merged_urls.extend(related_urls)
         if related_urls:
-            best_entry = dict(candidates[best][0])
+            best_entry = deepcopy(candidates[best][0])
             existing = [url for url in best_entry.get("related_urls") or [] if url]
             best_entry["related_urls"] = _dedupe_urls(existing + related_urls)
             best_entry["related_count"] = len(best_entry["related_urls"])
@@ -825,7 +826,10 @@ def _score_candidates_for_selection(
         scoring_entry = dict(entry)
         scoring_entry["score"] = legacy_score_by_url.get(entry.get("url", ""), int(fallback_score))
         breakdown = compute_final_score(board, scoring_entry, scoring_config)
-        scored.append((entry, breakdown["final_score"]))
+        selected_entry = dict(entry)
+        selected_entry["_legacy_score"] = scoring_entry["score"]
+        selected_entry["_score_breakdown"] = breakdown
+        scored.append((selected_entry, breakdown["final_score"]))
     return sort_scored_candidates(scored)
 
 
@@ -849,10 +853,13 @@ def _attach_final_scores(
             enriched.append(updated)
             continue
         entry, score = entry_score
-        scoring_entry = dict(entry)
-        scoring_entry["score"] = score
-        breakdown = compute_final_score(board, scoring_entry, scoring_config)
-        updated["score"] = score
+        breakdown = entry.get("_score_breakdown")
+        if not isinstance(breakdown, dict):
+            scoring_entry = dict(entry)
+            scoring_entry["score"] = score
+            breakdown = compute_final_score(board, scoring_entry, scoring_config)
+        legacy_score = int(entry.get("_legacy_score", score))
+        updated["score"] = legacy_score
         updated["dimension_score"] = breakdown["dimension_score"]
         updated["final_score"] = breakdown["final_score"]
         updated["score_breakdown"] = {
