@@ -19,6 +19,7 @@ from digest_pipeline_gemini import (
     _finalize_digest_item,
     _is_chinese_entry,
     _llm_dedupe,
+    _score_entries,
     _score_candidates_for_selection,
     _selection_reason,
 )
@@ -404,6 +405,68 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertNotIn("tier_unknown", block["selection_stats"])
         self.assertNotIn("kind_media", block["selection_stats"])
 
+    def test_feed_json_preserves_xsignals_as_aggregator(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            digest_dir = Path(tmpdir)
+            digest_dir.joinpath("ai_2026-05-11.json").write_text(
+                json.dumps(
+                    {
+                        "board": "ai",
+                        "display_name": "AI 前沿",
+                        "date": "2026-05-11",
+                        "raw_count": 1,
+                        "selected_count": 1,
+                        "selection_stats": {"total": 1, "aggregator": 1, "kind_expert_x": 1},
+                        "generated_at": "2026-05-11T00:00:00Z",
+                        "items": [
+                            {
+                                "title_zh": "开发者发布模型部署观察",
+                                "url": "https://x.com/dotey/status/2053438255987896328",
+                                "source_tier": "t2",
+                                "source_kind": "expert_x",
+                                "source_label": "专家 X",
+                                "source_key": "x:dotey",
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            with patch("site_builder.DIGEST_DIR", digest_dir):
+                feed = _build_feed_for_date({"ai": {"display_name": "AI 前沿"}}, date(2026, 5, 11))
+
+        block = feed["boards"]["ai"]
+        self.assertEqual(block["selection_stats"]["aggregator"], 1)
+        self.assertEqual(block["selection_stats"].get("direct", 0), 0)
+        self.assertEqual(block["selection_stats"]["kind_expert_x"], 1)
+
+    def test_feed_json_passes_clustering_stats_to_offline_eval(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            digest_dir = Path(tmpdir)
+            digest_dir.joinpath("security_2026-05-11.json").write_text(
+                json.dumps(
+                    {
+                        "board": "security",
+                        "display_name": "安全",
+                        "date": "2026-05-11",
+                        "raw_count": 2,
+                        "selected_count": 1,
+                        "clustering_stats": {"deterministic_merged": 1, "llm_merged": 1, "merged_total": 2},
+                        "generated_at": "2026-05-11T00:00:00Z",
+                        "items": [{"title_zh": "CVE 合并事件", "url": "https://cisa.gov/news-events/alerts/x"}],
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            with patch("site_builder.DIGEST_DIR", digest_dir):
+                feed = _build_feed_for_date({"security": {"display_name": "安全"}}, date(2026, 5, 11))
+
+        self.assertEqual(feed["boards"]["security"]["clustering_stats"]["merged_total"], 2)
+
     def test_daily_workflow_supports_single_board_dispatch(self) -> None:
         workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
 
@@ -411,6 +474,12 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertIn("board:", workflow)
         self.assertIn("BOARD_SELECTION", workflow)
         self.assertIn("security ai_security ai finance", workflow)
+
+    def test_daily_workflow_does_not_publish_partial_site_for_single_board_dispatch(self) -> None:
+        workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
+
+        self.assertIn("name: Build site", workflow)
+        self.assertIn("if: env.BOARD_SELECTION == 'all'", workflow)
 
     def test_daily_workflow_uses_pinned_requirements(self) -> None:
         workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
@@ -753,6 +822,26 @@ class ScoringPolicyTests(unittest.TestCase):
         self.assertEqual(official_score["source_bonus"], 1.0)
         self.assertEqual(google_score["kind_bonus"], -1.0)
 
+    def test_final_score_rewards_expert_sources_above_media(self) -> None:
+        now = datetime(2026, 5, 11, 12, tzinfo=timezone.utc)
+        expert = {
+            "title": "Simon Willison analyzes agent deployment",
+            "url": "https://simonwillison.net/2026/May/11/agents/",
+            "score": 7,
+            "published": "2026-05-11T11:00:00Z",
+        }
+        media = {
+            "title": "TechCrunch covers agent deployment",
+            "url": "https://techcrunch.com/2026/05/11/agents/",
+            "score": 7,
+            "published": "2026-05-11T11:00:00Z",
+        }
+
+        self.assertGreater(
+            compute_final_score("ai", expert, now=now)["final_score"],
+            compute_final_score("ai", media, now=now)["final_score"],
+        )
+
     def test_final_score_gives_cn_visibility_only_to_registered_cn_sources(self) -> None:
         now = datetime(2026, 5, 11, 12, tzinfo=timezone.utc)
         registered_cn = {
@@ -862,6 +951,32 @@ class StoryClusteringTests(unittest.TestCase):
         self.assertEqual(len(clustered), 1)
         self.assertEqual(clustered[0][0]["story_id"], "url:a.example.com/story")
 
+    def test_cluster_prefers_expert_blog_over_generic_media_when_scores_tie(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "OpenAI agent deployment analysis for developers",
+                    "url": "https://techcrunch.com/2026/05/11/openai-agent-deployment-analysis/",
+                },
+                7,
+            ),
+            (
+                {
+                    "title": "OpenAI agent deployment analysis for developers",
+                    "url": "https://simonwillison.net/2026/May/11/openai-agent-deployment-analysis/",
+                },
+                7,
+            ),
+        ]
+
+        clustered, _merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 1)
+        self.assertEqual(
+            clustered[0][0]["url"],
+            "https://simonwillison.net/2026/May/11/openai-agent-deployment-analysis/",
+        )
+
 
 class GeminiPipelineTests(unittest.TestCase):
     def test_selection_reason_falls_back_to_empty_string(self) -> None:
@@ -899,6 +1014,57 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(item["source_tier"], "t1")
         self.assertEqual(item["source_kind"], "official")
         self.assertEqual(item["source_label"], "官网")
+
+    def test_digest_item_preserves_feed_url_for_source_mix_rebuilds(self) -> None:
+        item = _finalize_digest_item(
+            {
+                "title": "OpenAI developer signal",
+                "summary": "OpenAI developer signal.",
+                "url": "https://x.com/OpenAIDevs/status/2053438255987896328",
+                "feed_url": "https://rsshub.app/twitter/user/OpenAIDevs",
+                "feed_title": "OpenAIDevs",
+            },
+            {
+                "title_zh": "OpenAI开发者发布新动态",
+                "summary": "OpenAI开发者账号发布新动态，涉及开发者生态和模型能力变化。这条资讯来自官方开发者渠道，适合关注 API、工具链和生态节奏的读者继续查看原文。",
+                "tags": ["开发者"],
+                "selection_reason": "官方开发者信号",
+            },
+        )
+
+        self.assertEqual(item["feed_url"], "https://rsshub.app/twitter/user/OpenAIDevs")
+        self.assertEqual(source_profile(item).source_kind, "official_x")
+        self.assertTrue(source_profile(item).is_aggregator)
+
+    def test_score_entries_attaches_multidimensional_scores(self) -> None:
+        class FakeBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summary"
+
+            def generate_json(self, model, system, user_prompt, max_output_tokens):
+                return json.dumps(
+                    [
+                        {
+                            "idx": 0,
+                            "score": 8,
+                            "score_dimensions": {
+                                "relevance": 9,
+                                "technical_depth": 8,
+                                "exploitability": 7,
+                                "impact_scope": 8,
+                                "actionability": 6,
+                            },
+                        }
+                    ]
+                )
+
+        entries = [{"title": "CVE analysis", "summary": "technical details", "url": "https://example.com/a"}]
+
+        scores = _score_entries(FakeBackend(), "security", entries)
+
+        self.assertEqual(scores, [8])
+        self.assertEqual(entries[0]["score_dimensions"]["technical_depth"], 8)
 
     def test_score_prompts_include_language_fairness(self) -> None:
         for prompt in BOARD_SCORE_SYSTEM.values():

@@ -63,6 +63,24 @@ CLAUDE_TOKEN = "cla" + "ude"
 
 SCORE_BATCH_SIZE = 40
 SUMMARIZE_BATCH_SIZE = 8
+SCORE_DIMENSIONS = {
+    "security": ["relevance", "technical_depth", "exploitability", "impact_scope", "actionability"],
+    "ai_security": [
+        "security_relevance",
+        "technical_depth",
+        "practical_risk",
+        "agent_model_relevance",
+        "actionability",
+    ],
+    "ai": ["relevance", "novelty", "entity_importance", "developer_relevance", "ecosystem_impact"],
+    "finance": [
+        "relevance",
+        "institution_importance",
+        "technology_depth",
+        "market_or_regulatory_impact",
+        "actionability",
+    ],
+}
 
 # Per-board scoring rubric
 BOARD_SCORE_SYSTEM = {
@@ -225,7 +243,7 @@ def _parse_llm_json(raw: str) -> Any:
 def _score_entries(
     backend: LLMBackend, board: str, entries: list[dict[str, Any]]
 ) -> list[int]:
-    system = BOARD_SCORE_SYSTEM[board]
+    system = _score_system_for_board(board)
     scores: list[int] = [0] * len(entries)
     for i in range(0, len(entries), SCORE_BATCH_SIZE):
         batch = entries[i : i + SCORE_BATCH_SIZE]
@@ -243,18 +261,57 @@ def _score_entries(
             f"条目：\n{json.dumps(items, ensure_ascii=False)}"
         )
         try:
-            text = backend.generate_json(backend.score_model, system, user_prompt, 2000)
+            text = backend.generate_json(backend.score_model, system, user_prompt, 4000)
             parsed = _parse_llm_json(text)
-            smap = {int(r["idx"]): int(r["score"]) for r in parsed}
+            smap: dict[int, int] = {}
+            dimension_map: dict[int, dict[str, float]] = {}
+            for r in parsed:
+                idx = int(r["idx"])
+                smap[idx] = int(r["score"])
+                dimensions = _score_dimensions_from_response(board, r)
+                if dimensions:
+                    dimension_map[idx] = dimensions
         except Exception as exc:
             logger.warning("score parse failed (batch %d): %s", i, exc)
             smap = {}
+            dimension_map = {}
         for j in range(len(batch)):
+            if j in dimension_map:
+                entries[i + j]["score_dimensions"] = dimension_map[j]
             score = smap.get(j, 5)
             if board == "security":
                 score = adjust_security_score(batch[j], score)
             scores[i + j] = score
     return scores
+
+
+def _score_system_for_board(board: str) -> str:
+    dimensions = SCORE_DIMENSIONS.get(board, [])
+    if not dimensions:
+        return BOARD_SCORE_SYSTEM[board]
+    example = {"idx": 0, "score": 8, "score_dimensions": {key: 8 for key in dimensions}}
+    return (
+        BOARD_SCORE_SYSTEM[board]
+        + "\n同时返回 score_dimensions，键必须是："
+        + "、".join(dimensions)
+        + "。每个维度也是 0-10 整数；score 是这些维度综合后的兼容总分。"
+        + f"\n输出格式：[{json.dumps(example, ensure_ascii=False)}]。"
+    )
+
+
+def _score_dimensions_from_response(board: str, row: dict[str, Any]) -> dict[str, float]:
+    allowed = set(SCORE_DIMENSIONS.get(board, []))
+    raw = row.get("score_dimensions") or row.get("dimensions") or {}
+    if not allowed or not isinstance(raw, dict):
+        return {}
+    dimensions: dict[str, float] = {}
+    for key in allowed:
+        value = raw.get(key)
+        try:
+            dimensions[key] = max(0.0, min(10.0, float(value)))
+        except (TypeError, ValueError):
+            continue
+    return dimensions
 
 
 def _summarize(
@@ -331,6 +388,10 @@ def _finalize_digest_item(entry: dict[str, Any], item: dict[str, Any]) -> dict[s
     finalized["source"] = _infer_source(finalized["url"])
     finalized["category"] = entry.get("category", finalized.get("category", ""))
     finalized["published"] = entry.get("published", finalized.get("published", ""))
+    if entry.get("feed_url"):
+        finalized["feed_url"] = entry.get("feed_url")
+    if entry.get("feed_title"):
+        finalized["feed_title"] = entry.get("feed_title")
     finalized["cve_ids"] = entry.get("cve_ids", finalized.get("cve_ids", [])) or []
     profile = source_profile(entry)
     finalized["source_tier"] = profile.source_tier

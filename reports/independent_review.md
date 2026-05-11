@@ -156,3 +156,23 @@ Gemini review completed in an independent non-interactive script. Findings were 
 
 ### Post-Adjudication Status
 No confirmed P0/P1 issues remain after the fixes above. Remaining items are bounded performance risk or pre-existing source-quality maintenance concerns.
+
+---
+
+## Round 2 Independent Audit (GPT-5.5 Medium)
+
+A clean-context GPT-5.5 medium explorer audited the Phase 3 changes after the Gemini review. Confirmed findings and disposition:
+
+| Severity | Finding | Disposition |
+|---|---|---|
+| P1 | RSSHub/XSignals entries lost `feed_url` after digest generation, so site rebuilds could count X as `direct` instead of `aggregator`. | Fixed. Digest items now preserve `feed_url`/`feed_title`; `source_profile` treats `x.com`/`twitter.com` item URLs as XSignals aggregators; regression added. |
+| P2 | `kind: expert` was registered but had no final-score bonus or clustering rank, so expert blogs could lose to generic media. | Fixed. `expert` now receives deterministic kind bonus and clustering rank; regression added. |
+| P2 | Multi-dimensional scoring config existed before full production schema adoption. | Tightened. Score prompt now asks Gemini/DeepSeek-compatible backends to return `score_dimensions`; parser attaches dimensions when present and keeps scalar fallback when absent. |
+| P3 | Manual single-board workflow dispatch could rebuild and publish a partial site feed. | Fixed. Site, source audit and offline eval only run for full-board daily builds. Single-board dispatch can refresh digest/output without overwriting homepage feeds. |
+| P3 | `clustering_stats` was written to digest but not passed through site feed, making offline `Merged` appear as zero. | Fixed. Site feed now includes `clustering_stats`; regression added. |
+
+Verification after fixes:
+
+- `/Users/dedsec/anaconda3/envs/work3124/bin/python tests/test_regressions.py`: 94 tests passed.
+- `/Users/dedsec/anaconda3/envs/work3124/bin/python -m ruff check .`: clean.
+- `/Users/dedsec/anaconda3/envs/work3124/bin/python -m py_compile scoring_policy.py story_clustering.py digest_pipeline_gemini.py eval_strategy.py site_builder.py tests/test_regressions.py`: clean.

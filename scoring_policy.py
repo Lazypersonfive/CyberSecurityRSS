@@ -24,6 +24,7 @@ DEFAULT_SCORING_CONFIG: dict[str, Any] = {
         "kind_bonus": {
             "official": 0.5,
             "official_x": 0.3,
+            "expert": 0.2,
             "expert_x": 0.2,
             "cn_official": 0.5,
             "cn_expert": 0.3,

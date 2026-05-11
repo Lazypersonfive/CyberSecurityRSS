@@ -77,6 +77,7 @@ def _build_feed_for_date(boards: dict[str, dict], d: date) -> dict[str, Any] | N
             "raw_count": digest.get("raw_count", 0),
             "selected_count": digest.get("selected_count", len(digest.get("items", []))),
             "selection_stats": selection_stats,
+            "clustering_stats": digest.get("clustering_stats") or {},
             "generated_at": digest.get("generated_at", ""),
         }
     return out if any_content else None

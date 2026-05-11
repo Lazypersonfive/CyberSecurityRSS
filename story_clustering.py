@@ -34,6 +34,7 @@ ANCHOR_TOKENS = {
 SOURCE_KIND_RANK = {
     "official": 70,
     "official_x": 60,
+    "expert": 50,
     "expert_x": 50,
     "cn_official": 45,
     "cn_expert": 40,

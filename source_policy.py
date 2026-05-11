@@ -87,7 +87,7 @@ def source_profile(entry: Any) -> SourceProfile:
 
     is_google_news = host == "news.google.com" or feed_host == "news.google.com"
     x_handle = x_handle_from_urls(url, feed_url)
-    is_rsshub_x_signal = feed_path.startswith("/twitter/")
+    is_rsshub_x_signal = feed_path.startswith("/twitter/") or (host in {"x.com", "twitter.com"} and bool(x_handle))
     is_aggregator = (
         _host_matches(host, AGGREGATOR_HOSTS)
         or _host_matches(feed_host, AGGREGATOR_HOSTS)
