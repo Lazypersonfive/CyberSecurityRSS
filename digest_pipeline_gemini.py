@@ -27,6 +27,7 @@ from digest_clock import digest_today
 from llm_backends import LLMBackend, get_backend
 from digest_postprocess import normalize_summary_text, summary_needs_repair
 from digest_postprocess import count_chinese_chars, SUMMARY_TARGET_MAX_CHARS, SUMMARY_TARGET_MIN_CHARS
+from scoring_policy import compute_final_score
 from source_policy import (
     select_with_source_policy,
     sort_scored_candidates,
@@ -724,6 +725,7 @@ def run(board: str, as_of: date | None = None) -> Path:
     )
 
     items = _summarize(backend, board, selected) if selected else []
+    items = _attach_final_scores(board, items, selected_scored, cfg.get("scoring"))
 
     DIGEST_DIR.mkdir(parents=True, exist_ok=True)
     as_of = as_of or digest_today()
@@ -769,6 +771,42 @@ def run(board: str, as_of: date | None = None) -> Path:
     refresh_latest_report(as_of, list((cfg.get("boards") or {}).keys()))
     refresh_weekly_report(as_of, list((cfg.get("boards") or {}).keys()))
     return out_path
+
+
+def _attach_final_scores(
+    board: str,
+    items: list[dict[str, Any]],
+    selected_scored: list[tuple[dict[str, Any], int]],
+    scoring_config: dict[str, Any] | None,
+) -> list[dict[str, Any]]:
+    """Add deterministic score metadata without changing item order or selection."""
+    by_url = {
+        str(entry.get("url") or ""): (entry, score)
+        for entry, score in selected_scored
+        if entry.get("url")
+    }
+    enriched: list[dict[str, Any]] = []
+    for item in items:
+        updated = dict(item)
+        entry_score = by_url.get(str(item.get("url") or ""))
+        if not entry_score:
+            enriched.append(updated)
+            continue
+        entry, score = entry_score
+        scoring_entry = dict(entry)
+        scoring_entry["score"] = score
+        breakdown = compute_final_score(board, scoring_entry, scoring_config)
+        updated["score"] = score
+        updated["dimension_score"] = breakdown["dimension_score"]
+        updated["final_score"] = breakdown["final_score"]
+        updated["score_breakdown"] = {
+            "source_bonus": breakdown["source_bonus"],
+            "kind_bonus": breakdown["kind_bonus"],
+            "freshness_bonus": breakdown["freshness_bonus"],
+            "cn_visibility_bonus": breakdown["cn_visibility_bonus"],
+        }
+        enriched.append(updated)
+    return enriched
 
 
 def _fallback_feed_stats(entries: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:

@@ -14,6 +14,7 @@ from llm_backends.base import backend_name_from_env, get_backend
 from eval_strategy import build_offline_eval, render_offline_eval
 from digest_pipeline_gemini import (
     BOARD_SCORE_SYSTEM,
+    _attach_final_scores,
     _candidate_pool,
     _finalize_digest_item,
     _is_chinese_entry,
@@ -26,6 +27,7 @@ from fetch_opml import fetch_opml, fetch_opml_metadata
 from filter_entries import FilteredEntry, filter_and_dedup
 from rss_curation import curate_entries
 from source_policy import select_with_source_policy, source_mix_stats, source_profile
+from scoring_policy import compute_dimension_score, compute_final_score
 from security_editorial import adjust_security_score
 from source_audit import build_source_audit, render_source_audit
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
@@ -700,6 +702,94 @@ class SourcePolicyTests(unittest.TestCase):
         self.assertIn("https://openai.com/news/direct", urls)
 
 
+class ScoringPolicyTests(unittest.TestCase):
+    def test_dimension_score_uses_board_weights(self) -> None:
+        entry = {
+            "score_dimensions": {
+                "relevance": 10,
+                "technical_depth": 8,
+                "exploitability": 6,
+                "impact_scope": 4,
+                "actionability": 2,
+            }
+        }
+
+        self.assertAlmostEqual(compute_dimension_score("security", entry), 6.7)
+
+    def test_dimension_score_falls_back_to_legacy_score_when_dimensions_missing(self) -> None:
+        self.assertEqual(compute_dimension_score("ai", {"score": 7}), 7.0)
+        self.assertEqual(compute_dimension_score("ai", {}), 5.0)
+
+    def test_final_score_prefers_official_source_over_google_news_rewrite(self) -> None:
+        now = datetime(2026, 5, 11, 12, tzinfo=timezone.utc)
+        dimensions = {
+            "relevance": 7,
+            "novelty": 7,
+            "entity_importance": 7,
+            "developer_relevance": 7,
+            "ecosystem_impact": 7,
+        }
+        official = {
+            "title": "OpenAI model update",
+            "url": "https://openai.com/news/model-update",
+            "published": "2026-05-11T06:00:00Z",
+            "score_dimensions": dimensions,
+        }
+        google = {
+            "title": "OpenAI model update",
+            "url": "https://news.google.com/rss/articles/model-update",
+            "feed_url": "https://news.google.com/rss/search?q=OpenAI",
+            "published": "2026-05-11T06:00:00Z",
+            "score_dimensions": dimensions,
+        }
+
+        official_score = compute_final_score("ai", official, now=now)
+        google_score = compute_final_score("ai", google, now=now)
+
+        self.assertGreater(official_score["final_score"], google_score["final_score"])
+        self.assertEqual(official_score["source_bonus"], 1.0)
+        self.assertEqual(google_score["kind_bonus"], -1.0)
+
+    def test_final_score_gives_cn_visibility_only_to_registered_cn_sources(self) -> None:
+        now = datetime(2026, 5, 11, 12, tzinfo=timezone.utc)
+        registered_cn = {
+            "title": "FreeBuf 发布漏洞分析",
+            "url": "https://www.freebuf.com/vuls/123",
+            "published": "2026-05-11T06:00:00Z",
+            "score": 6,
+        }
+        generated_cn_translation = {
+            "title_zh": "这是系统生成的中文标题",
+            "title_orig": "OpenAI model update",
+            "summary": "中文摘要不代表原始来源是中文。",
+            "url": "https://openai.com/news/model-update",
+            "published": "2026-05-11T06:00:00Z",
+            "score": 6,
+        }
+
+        cn_score = compute_final_score("security", registered_cn, now=now)
+        translated_score = compute_final_score("security", generated_cn_translation, now=now)
+
+        self.assertEqual(cn_score["cn_visibility_bonus"], 0.3)
+        self.assertEqual(translated_score["cn_visibility_bonus"], 0.0)
+
+    def test_final_score_clamps_to_zero_ten_range(self) -> None:
+        now = datetime(2026, 5, 11, 12, tzinfo=timezone.utc)
+        high = compute_final_score(
+            "ai",
+            {"title": "OpenAI", "url": "https://openai.com/news/a", "score": 10, "published": "2026-05-11T11:00:00Z"},
+            now=now,
+        )
+        low = compute_final_score(
+            "ai",
+            {"title": "Noise", "url": "https://news.google.com/rss/articles/noise", "score": -5},
+            now=now,
+        )
+
+        self.assertEqual(high["final_score"], 10.0)
+        self.assertEqual(low["final_score"], 0.0)
+
+
 class GeminiPipelineTests(unittest.TestCase):
     def test_selection_reason_falls_back_to_empty_string(self) -> None:
         self.assertEqual(_selection_reason({}), "")
@@ -814,6 +904,28 @@ class GeminiPipelineTests(unittest.TestCase):
         body = Path("digest_pipeline_gemini.py").read_text(encoding="utf-8")
         self.assertNotIn('choices=["security", "ai", "finance"]', body)
         self.assertIn('parser.add_argument("--board", required=True)', body)
+
+    def test_digest_items_receive_deterministic_final_score_metadata(self) -> None:
+        enriched = _attach_final_scores(
+            "ai",
+            [{"title_zh": "OpenAI 发布模型更新", "url": "https://openai.com/news/model-update"}],
+            [
+                (
+                    {
+                        "title": "OpenAI model update",
+                        "url": "https://openai.com/news/model-update",
+                        "published": "2026-05-11T06:00:00Z",
+                    },
+                    8,
+                )
+            ],
+            None,
+        )
+
+        item = enriched[0]
+        self.assertEqual(item["score"], 8)
+        self.assertGreater(item["final_score"], 8)
+        self.assertIn("source_bonus", item["score_breakdown"])
 
     def test_legacy_digest_entrypoint_delegates_to_current_pipeline(self) -> None:
         body = Path("digest_pipeline.py").read_text(encoding="utf-8")

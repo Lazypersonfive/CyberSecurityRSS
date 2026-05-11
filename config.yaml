@@ -9,6 +9,61 @@ fetch_timeout: 10
 max_per_category: 30
 use_opml_cache: true
 
+# --- Deterministic final-score policy ----------------------------------
+# LLM 给出内容价值分；source/kind/freshness 由代码重算 final_score，避免把所有编辑策略塞进 prompt。
+scoring:
+  default:
+    source_bonus:
+      t1: 1.0
+      t1_5: 0.5
+      t2: 0.0
+      unknown: -0.3
+    kind_bonus:
+      official: 0.5
+      official_x: 0.3
+      expert_x: 0.2
+      cn_official: 0.5
+      cn_expert: 0.3
+      google_news: -1.0
+      community: -0.5
+    freshness_bonus:
+      within_12h: 0.3
+      within_24h: 0.1
+    cn_visibility_bonus:
+      # 只奖励登记过的高质量中文源，不按生成的中文标题/摘要加分。
+      bonus: 0.3
+      kinds: [cn_official, cn_expert]
+      tiers: [t1, t1_5, t2]
+  boards:
+    security:
+      dimension_weights:
+        relevance: 0.25
+        technical_depth: 0.25
+        exploitability: 0.20
+        impact_scope: 0.20
+        actionability: 0.10
+    ai_security:
+      dimension_weights:
+        security_relevance: 0.30
+        technical_depth: 0.25
+        practical_risk: 0.20
+        agent_model_relevance: 0.15
+        actionability: 0.10
+    ai:
+      dimension_weights:
+        relevance: 0.20
+        novelty: 0.25
+        entity_importance: 0.20
+        developer_relevance: 0.20
+        ecosystem_impact: 0.15
+    finance:
+      dimension_weights:
+        relevance: 0.25
+        institution_importance: 0.25
+        technology_depth: 0.20
+        market_or_regulatory_impact: 0.20
+        actionability: 0.10
+
 # --- Multi-board config -------------------------------------------------
 # Each board maps to a local OPML file + fetch window + curated top_n.
 # display_name is what shows up in the site tabs.
