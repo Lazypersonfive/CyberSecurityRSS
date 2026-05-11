@@ -1134,6 +1134,14 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertIn("Google News 中文金融科技", body)
         self.assertIn("数字人民币", body)
         self.assertIn("跨境支付", body)
+        self.assertIn("Finextra Headlines", body)
+        self.assertIn("The Fintech Times", body)
+
+    def test_ai_security_opml_has_dedicated_ai_security_labs(self) -> None:
+        body = Path("feeds/ai_security.opml").read_text(encoding="utf-8")
+
+        self.assertIn("Protect AI", body)
+        self.assertIn("Prompt Security", body)
 
     def test_gemini_prompts_encode_current_board_targets(self) -> None:
         self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["security"])
