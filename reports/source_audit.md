@@ -1,21 +1,22 @@
 # Source Registry Audit
 
-- generated_for: 2026-05-12
-- dates: 2026-05-12, 2026-05-11, 2026-05-10, 2026-05-09, 2026-05-08, 2026-05-07, 2026-05-06
+- generated_for: 2026-05-13
+- dates: 2026-05-13, 2026-05-12, 2026-05-11, 2026-05-10, 2026-05-09, 2026-05-08, 2026-05-07
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 105 | 22 | 10 | 72 | 1 | 18 | 22 | 25 | 1 |
-| ai_security | 36 | 5 | 4 | 27 | 0 | 10 | 5 | 15 | 3 |
-| finance | 51 | 6 | 0 | 45 | 0 | 9 | 6 | 0 | 0 |
-| security | 109 | 8 | 0 | 101 | 0 | 0 | 8 | 3 | 26 |
+| ai | 100 | 18 | 13 | 68 | 1 | 16 | 18 | 30 | 1 |
+| ai_security | 46 | 7 | 4 | 35 | 0 | 10 | 7 | 18 | 6 |
+| finance | 56 | 6 | 0 | 50 | 0 | 10 | 6 | 0 | 0 |
+| security | 102 | 9 | 0 | 92 | 1 | 0 | 9 | 4 | 28 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
+| `blog.csdn.net` | 1 | security | [针对 ARM64 架构的 this_cpu_ops 优化研究：挑战内核页表与原子操作实现](https://blog.csdn.net/21cnbao/article/details/161028912) |
 | `blog.google` | 1 | ai | [谷歌金融 AI 增强版功能正式扩展至欧洲市场，提升用户投资数据分析体验](https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/) |
 
 ## Review Rule

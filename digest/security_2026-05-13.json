@@ -1,0 +1,499 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-13",
+  "generated_at": "2026-05-12T23:45:05.945297Z",
+  "raw_count": 120,
+  "selected_count": 13,
+  "selection_stats": {
+    "total": 13,
+    "chinese": 3,
+    "direct": 12,
+    "wechat": 2,
+    "tier_t2": 8,
+    "kind_cn_expert": 2,
+    "tier_t1": 4,
+    "kind_official": 4,
+    "kind_media": 4,
+    "aggregator": 1,
+    "kind_expert_x": 1,
+    "kind_community": 2,
+    "tier_unknown": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 17,
+    "merged_total": 17
+  },
+  "items": [
+    {
+      "title_zh": "Linux 内核高危本地提权漏洞 CVE-2026-31431 利用原理与 Copy Fail 漏洞深度分析",
+      "title_orig": "【天穹】内核暗渡：Linux Copy Fail 漏洞 CVE-2026-31431 利用分析",
+      "summary": "该漏洞源于 Linux 内核处理特定内存复制逻辑时的逻辑缺陷，攻击者可利用该漏洞实现内核空间的非法内存写入。在满足特定本地访问权限的条件下，低权限用户能够触发该漏洞绕过内核安全机制，最终获取系统的最高管理权限；目前相关受影响版本已发布修复补丁，建议用户及时更新内核以规避风险。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "漏洞分析"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTU4MjQ4Mg==&mid=2247489157&idx=1&sn=2db22b529494b5c90d8d21347b364bb2",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-11T08:57:00+00:00",
+      "cve_ids": [
+        "CVE-2026-31431"
+      ],
+      "selection_reason": "深入分析了Linux内核高危提权漏洞的底层原理与利用链。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77a8d89f12dcb0aa75a19731e474a63427089081.xml",
+      "feed_title": "奇安信技术研究院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77a8d89f12dcb0aa75a19731e474a63427089081.xml",
+      "story_id": "cve:cve-2026-31431",
+      "related_urls": [
+        "https://www.schneier.com/blog/archives/2026/05/copy-fail-linux-vulnerability.html"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.6,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "ABB AC500 V3 工业控制器加密消息语法组件存在栈缓冲区溢出漏洞可导致远程代码执行",
+      "title_orig": "ABB AC500 V3 Stack Buffer Overflow in Cryptographic Message Syntax",
+      "summary": "该漏洞存在于 ABB AC500 V3 系列控制器的加密消息语法处理逻辑中，属于典型的栈缓冲区溢出漏洞，受影响版本已由官方发布安全公告。远程攻击者通过发送精心构造的恶意数据包，可导致设备服务崩溃、拒绝服务，甚至在目标系统上执行任意代码，ABB 官方建议受影响用户尽快升级至最新版本以修复该高危安全隐患。",
+      "tags": [
+        "工控安全",
+        "缓冲区溢出",
+        "远程代码执行"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-132-05",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-12T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键工控基础设施的远程代码执行漏洞，影响范围广。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-132-05",
+      "related_urls": [
+        "https://www.cisa.gov/news-events/ics-advisories/icsa-26-132-03"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ABB WebPro SNMP 管理卡 PowerValue 存在多个安全漏洞可导致未经授权访问",
+      "title_orig": "ABB WebPro SNMP Card PowerValue Multiple Vulnerabilities",
+      "summary": "ABB 内部发现 WebPro SNMP 管理卡 PowerValue 存在多个安全漏洞，涉及会话过期机制不完善及访问控制缺陷，影响了官方公告中列出的特定产品版本。具有本地网络访问权限的攻击者若成功利用这些漏洞，可获取未经授权的访问权限，或因资源不可用引发拒绝服务攻击，目前官方已发布安全公告及缓解措施，建议管理员立即检查设备配置以防范潜在风险。",
+      "tags": [
+        "SNMP",
+        "访问控制",
+        "工控安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-132-06",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-12T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "工控网络管理组件的漏洞可能导致内网横向移动风险。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-132-06",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.35,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ABB Automation Builder Windows 网关默认配置缺陷导致 PLC 设备面临未授权搜索风险",
+      "title_orig": "ABB Automation Builder Gateway for Windows",
+      "summary": "该漏洞源于 ABB Automation Builder Windows 网关在默认状态下允许远程访问且缺乏身份验证校验，导致受影响版本的网关直接暴露在潜在的远程攻击风险中。未经身份验证的攻击者可以借此远程搜索网络中的 PLC 设备，虽然 PLC 的用户管理机制通常能阻止直接访问，但若该机制被禁用则会导致设备失控，官方建议用户必须检查网关配置并强化访问控制。",
+      "tags": [
+        "默认配置",
+        "PLC",
+        "身份验证"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-132-04",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-12T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "默认配置缺陷是工控安全中的常见且高风险的技术隐患。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-132-04",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.35,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "富士电机 Fuji Electric Tellus 软件存在权限提升漏洞可导致系统级文件操作",
+      "title_orig": "Fuji Electric Tellus",
+      "summary": "Fuji Electric Tellus 5.0.2 版本被曝存在高危权限提升漏洞，其 CVSS 评分达到 7.8，成功利用该漏洞的攻击者能够将权限从普通用户提升至系统级最高权限。这种权限跨越可能使攻击者实现对系统敏感文件的非法打开、删除操作，甚至导致设备出现临时性的拒绝服务，目前厂商已确认该漏洞并建议相关企业用户密切关注官方补丁发布情况，严格限制非授权用户的访问。",
+      "tags": [
+        "权限提升",
+        "富士电机",
+        "文件安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-132-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-12T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "高评分的权限提升漏洞直接威胁工控上位机软件的安全。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-132-01",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.35,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Fortinet 发布安全补丁修复 FortiSandbox 与 FortiAuthenticator 关键远程代码执行漏洞",
+      "title_orig": "Fortinet warns of critical RCE flaws in FortiSandbox and FortiAuthenticator",
+      "summary": "Fortinet 官方针对 FortiSandbox 和 FortiAuthenticator 产品中的两个关键级别远程代码执行漏洞发布了安全补丁，这些漏洞可能允许攻击者在受影响系统上运行非法命令。攻击者通过利用这些高危漏洞，可以在未经授权的情况下执行任意恶意代码并完全控制设备，目前官方强烈建议所有相关用户立即下载并安装针对性的安全更新，以确保企业网络环境的整体安全性。",
+      "tags": [
+        "Fortinet",
+        "RCE",
+        "安全补丁"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-rce-flaws-in-fortisandbox-and-fortiauthenticator/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-12T18:23:09+00:00",
+      "cve_ids": [],
+      "selection_reason": "核心网络安全设备的RCE漏洞具有极高的实战威胁价值。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/fortinet-warns-of-critical-rce-flaws-in-fortisandbox-and-fortiauthenticator",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软威胁情报中心预警 mistralai PyPI 软件包遭供应链污染并植入恶意二阶段载荷",
+      "title_orig": "RT Microsoft Threat Intelligence: Microsoft is investigating mistralai PyPI package v2.4.6 compromise. Attackers injected code in mistralai/client/__i...",
+      "summary": "微软正在调查 mistralai PyPI 软件包 v2.4.6 版本的供应链污染事件，攻击者在初始化文件中注入了恶意代码，该代码会在包被导入时自动执行并下载第二阶段载荷。该恶意载荷特意伪装成知名库文件名 transformers.pyz 以迷惑开发者，并在 Linux 系统上启动攻击，目前微软建议所有开发者立即检查项目依赖项，清理受污染的开发环境并停止使用受影响的特定版本。",
+      "tags": [
+        "供应链攻击",
+        "PyPI",
+        "恶意软件包"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2054141539295629505",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-12T03:30:23+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对AI开发生态的供应链攻击，反映了当前威胁趋势的新动向。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2054141539295629505",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/05/12/undermining-the-trust-boundary-investigating-a-stealthy-intrusion-through-third-party-compromise/",
+        "https://thehackernews.com/2026/05/rubygems-suspends-new-signups-after.html",
+        "https://x.com/IntCyberDigest/status/2054166749998661659",
+        "https://x.com/IntCyberDigest/status/2054294018536690109",
+        "https://x.com/IntCyberDigest/status/2053987134231474682"
+      ],
+      "related_count": 5,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "针对 WebAssembly 逆向工程中反控制流平坦化（CFF）的技术探索与 PoC 实现",
+      "title_orig": "针对wasm反CFF的尝试",
+      "summary": "本文深入探讨了针对 WebAssembly 字节码中控制流平坦化混淆技术的反制方案，并提供了相应的测试用例及 PoC 证明。文章详细介绍了如何通过技术手段还原被混淆的逻辑结构，旨在提升安全研究员对 Wasm 程序的逆向分析效率，该技术对于分析基于 Wasm 的恶意脚本或加密逻辑具有重要的实战参考价值与指导意义。",
+      "tags": [
+        "Wasm",
+        "反混淆",
+        "逆向工程"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUzMjQyMDE3Ng==&mid=2247489457&idx=1&sn=13cb0b9aa42a6461feacdd81cba009fe",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-11T16:01:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "Wasm逆向是前沿技术领域，反混淆方案对安全研究有较高参考价",
+      "feed_url": "https://wechat2rss.xlab.app/feed/373e03599246ef117e24c9ca900acfe168601a81.xml",
+      "feed_title": "青衣十三楼飞花堂",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/373e03599246ef117e24c9ca900acfe168601a81.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzUzMjQyMDE3Ng%3D%3D&mid=2247489457&idx=1&sn=13cb0b9aa42a6461feacdd81cba009fe",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.55,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Exim 邮件传输代理曝出 CVE-2026-45185 释放后重用漏洞，可导致远程代码执行",
+      "title_orig": "New Exim BDAT Vulnerability Exposes GnuTLS Builds to Potential Code Execution",
+      "summary": "开源邮件传输代理 Exim 修复了一个名为 Dead.Letter 的高危漏洞，该漏洞被追踪为 CVE-2026-45185，主要影响使用 GnuTLS 构建的特定配置版本。该漏洞属于释放后重用类型，攻击者可通过构造恶意的 BDAT 命令触发内存损坏，进而可能在受影响的 Unix-like 系统上实现远程代码执行，目前官方已发布安全更新并强烈建议管理员尽快完成升级以规避风险。",
+      "tags": [
+        "Exim",
+        "远程代码执行",
+        "内存安全"
+      ],
+      "url": "https://thehackernews.com/2026/05/new-exim-bdat-vulnerability-exposes.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-12T16:44:00+00:00",
+      "cve_ids": [
+        "CVE-2026-45185"
+      ],
+      "selection_reason": "Exim 是核心邮件基础设施，该漏洞涉及内存损坏且影响广泛。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-45185",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Microsoft Outlook 远程代码执行漏洞 CVE-2024-21413 的新型利用脚本发布",
+      "title_orig": "Exploit for Improper Input Validation in Microsoft",
+      "summary": "针对 Microsoft Outlook 中 Moniker Link 输入验证不当引发的 CVE-2024-21413 漏洞，最新的利用方法详细展示了攻击者如何绕过受保护视图并获取敏感信息。该过程涉及在路由器上建立 OpenVPN 隧道，并配合 Remmina 远程桌面工具与 Responder 框架，通过运行特定的 Python 脚本来替换占位符，从而在目标终端成功捕获用户的哈希值并实现漏洞触发，对企业邮件安全构成严重威胁。",
+      "tags": [
+        "CVE-2024",
+        "漏洞利用",
+        "Outlook"
+      ],
+      "url": "https://vulners.com/githubexploit/EB3F0D86-2642-5609-ABF8-9CD440584209?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-12T23:00:12+00:00",
+      "cve_ids": [
+        "CVE-2024-21413"
+      ],
+      "selection_reason": "提供了知名漏洞的实际利用步骤，对红蓝对抗实战有参考价值。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2024-21413",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/microsoft/microsoft-may-2026-patch-tuesday-fixes-120-flaws-no-zero-days/",
+        "https://vulners.com/nvd/NVD:CVE-2026-41901?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/nvd/NVD:CVE-2026-43680?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/nvd/NVD:CVE-2026-42288?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/nvd/NVD:CVE-2026-43685?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-windows-10-kb5087544-extended-security-update/",
+        "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5089549-and-kb5087420-cumulative-updates-released/",
+        "https://vulners.com/nvd/NVD:CVE-2026-44547?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/nvd/NVD:CVE-2026-44347?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/nvd/NVD:CVE-2026-44245?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 10,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "TrickMo 银行木马新变种利用 TON 区块链作为 C2 通道并构建 Android 网络跳板",
+      "title_orig": "New TrickMo Variant Uses TON C2 and SOCKS5 to Create Android Network Pivots",
+      "summary": "安全研究人员发现 TrickMo Android 银行木马的新变种，该变种利用 The Open Network (TON) 区块链进行指令控制（C2）通信。该木马通过运行时加载 APK 模块，并利用 SOCKS5 协议将受感染的移动设备转变为网络代理节点，从而在目标内网中进行横向渗透。目前该变种正活跃针对欧洲地区的银行和加密货币钱包用户，展现了利用去中心化网络规避检测的新趋势。",
+      "tags": [
+        "TrickMo",
+        "银行木马",
+        "区块链C2"
+      ],
+      "url": "https://thehackernews.com/2026/05/new-trickmo-variant-uses-ton-c2-and.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-12T12:50:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了移动端木马利用区块链技术进行隐蔽通信的新型演进方向。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/new-trickmo-variant-uses-ton-c2-and.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "DragonRx 行动攻击手册发布：针对部署实验室环境的逐阶段命令指南",
+      "title_orig": "Attack Playbook — Operation DragonRx",
+      "summary": "本文详细记录了名为 DragonRx 行动的攻击全过程，提供了一套针对特定实验室环境的逐阶段攻击指南。文章涵盖了从初始访问到权限提升的精确执行命令，旨在通过实战化的 Playbook 形式展示攻击者的战术、技术和过程（TTPs）。该内容对于安全从业者理解复杂攻击链条、复现威胁场景以及完善防御检测规则具有较高的实战参考价值。",
+      "tags": [
+        "红蓝对抗",
+        "攻击手册",
+        "渗透测试"
+      ],
+      "url": "https://infosecwriteups.com/attack-playbook-operation-dragonrx-91339316f0df?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-12T06:28:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了完整的攻击链路命令，适合安全研究员进行威胁建模。",
+      "feed_url": "https://infosecwriteups.com/feed",
+      "feed_title": "InfoSec Write-ups - Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "url:infosecwriteups.com/attack-playbook-operation-dragonrx-91339316f0df?source=rss----7b722bfd1b8d---4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "针对 ARM64 架构的 this_cpu_ops 优化研究：挑战内核页表与原子操作实现",
+      "title_orig": "LSF/MM/BPF系列：Yang Shi针对ARM64的this_cpu_ops优化",
+      "summary": "本文探讨了在 ARM64 架构下优化内核 percpu 操作的技术挑战，重点对比了 x86 架构利用段寄存器实现单指令原子操作的优势。研究指出 ARM64 在实现类似功能时，面临每个 CPU 需要独立内核页表以映射本地数据的难题，尽管大部分内容可共享，但 local mapping 的差异增加了复杂性。文章分析了通过关闭抢占或调整物理页面映射来优化 __per_cpu_local_off 的潜在方案。",
+      "tags": [
+        "ARM64",
+        "内核优化",
+        "系统安全"
+      ],
+      "url": "https://blog.csdn.net/21cnbao/article/details/161028912",
+      "source": "blog.csdn.net",
+      "category": "CN_News",
+      "published": "2026-05-12T10:08:18+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及底层架构的内核性能与安全优化，对系统级安全研究有深度启发",
+      "feed_url": "https://blog.csdn.net/21cnbao/rss/list",
+      "feed_title": "宋宝华",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "blog.csdn.net",
+      "story_id": "url:blog.csdn.net/21cnbao/article/details/161028912",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 7.75,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

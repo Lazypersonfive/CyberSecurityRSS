@@ -1,28 +1,30 @@
 # Offline Strategy Eval
 
-- generated_for: 2026-05-12
-- dates: 2026-05-12, 2026-05-11, 2026-05-10, 2026-05-09, 2026-05-08, 2026-05-07, 2026-05-06
+- generated_for: 2026-05-13
+- dates: 2026-05-13, 2026-05-12, 2026-05-11, 2026-05-10, 2026-05-09, 2026-05-08, 2026-05-07
 
 ## Board Health
 
 | Board | Name | Days | Avg Selected | Target | Full Days | Avg CN | Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | AI 前沿 | 7 | 15.0 | 15 | 6/7 | 3.7 | 5 | 1/7 | 2.6 | 3 | 1 | 7.6 | 6 |
-| ai_security | AI 安全 | 7 | 5.1 | 10 | 0/7 | 0.7 | 2 | 2/7 | 1.4 | 2 | 0 | 5.9 | 3 |
-| finance | 金融科技 | 7 | 7.3 | 10 | 3/7 | 0.6 | 1 | 2/7 | 1.3 | 4 | 0 | 7.8 | 9 |
-| security | 安全 | 7 | 15.6 | 15 | 6/7 | 3.7 | 6 | 2/7 | 0.0 | 1 | 0 | 8.7 | 8 |
+| ai | AI 前沿 | 7 | 14.3 | 15 | 6/7 | 3.7 | 5 | 1/7 | 2.3 | 3 | 1 | 7.6 | 9 |
+| ai_security | AI 安全 | 7 | 6.6 | 10 | 1/7 | 1.1 | 2 | 3/7 | 1.4 | 2 | 0 | 6.1 | 3 |
+| finance | 金融科技 | 7 | 8.0 | 10 | 4/7 | 0.9 | 1 | 3/7 | 1.4 | 4 | 0 | 7.5 | 10 |
+| security | 安全 | 7 | 14.6 | 15 | 5/7 | 4.1 | 6 | 2/7 | 0.0 | 1 | 1 | 8.9 | 25 |
 
 ## Source Mix
 
 | Board | T1 | T1.5 | T2 | Unknown | Official | X | Google News | CN Expert | Community |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 22 | 10 | 72 | 1 | 22 | 25 | 18 | 1 | 2 |
-| ai_security | 5 | 4 | 27 | 0 | 5 | 15 | 10 | 3 | 0 |
-| finance | 6 | 0 | 45 | 0 | 6 | 0 | 9 | 0 | 0 |
-| security | 8 | 0 | 101 | 0 | 8 | 3 | 0 | 26 | 27 |
+| ai | 18 | 13 | 68 | 1 | 18 | 30 | 16 | 1 | 2 |
+| ai_security | 7 | 4 | 35 | 0 | 7 | 18 | 10 | 6 | 0 |
+| finance | 6 | 0 | 50 | 0 | 6 | 0 | 10 | 0 | 0 |
+| security | 9 | 0 | 92 | 1 | 9 | 4 | 0 | 28 | 22 |
 
 ## Target Misses
 
+- 2026-05-13 security：selected 13/15，中文 3/6，unknown 1
+- 2026-05-13 ai：selected 15/15，中文 4/5
 - 2026-05-12 security：selected 15/15，中文 4/6
 - 2026-05-12 ai_security：selected 9/10，中文 0/2，Google News 4/2
 - 2026-05-12 ai：selected 15/15，中文 4/5
@@ -42,10 +44,6 @@
 - 2026-05-08 finance：selected 10/10，中文 0/1
 - 2026-05-07 ai_security：selected 6/10，中文 1/2
 - 2026-05-07 finance：selected 6/10，中文 0/1
-- 2026-05-06 security：selected 20/15，中文 0/6
-- 2026-05-06 ai_security：selected 0/10，中文 0/2
-- 2026-05-06 ai：selected 20/15，中文 4/5，Google News 4/3
-- 2026-05-06 finance：selected 5/10，中文 0/1
 
 ## Read This
 
