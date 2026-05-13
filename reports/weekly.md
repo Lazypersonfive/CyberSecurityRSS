@@ -1,4 +1,4 @@
-# 7 日源质量汇总 2026-05-07 至 2026-05-13
+# 7 日源质量汇总 2026-05-08 至 2026-05-14
 
 只聚合每日源质量报表中展开的有条目源；零条目源请看各日报尾部汇总。
 
@@ -6,67 +6,67 @@
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| The Hacker News | 6/6 | 46 | 6.8 | 16 | 4 |
-| Vulners.com RSS Feed | 7/7 | 149 | 6.6 | 15 | 8 |
-| BleepingComputer | 7/7 | 64 | 6.7 | 14 | 8 |
-| 先知社区 | 4/4 | 18 | 8.1 | 8 | 2 |
-| securitainment | 6/6 | 14 | 6.9 | 8 | 0 |
-| CISA Advisories | 5/5 | 12 | 8.2 | 7 | 3 |
-| Seebug Paper | 5/5 | 7 | 8.0 | 7 | 0 |
-| X / International Cyber Digest | 6/6 | 31 | 3.8 | 4 | 4 |
-| InfoSec Write-ups - Medium | 3/3 | 18 | 6.2 | 3 | 0 |
-| Hacker News Frontpage | 4/4 | 31 | 2.1 | 3 | 0 |
-| 安全行者老霍 | 5/5 | 11 | 5.1 | 2 | 0 |
-| Rapid7 Blog | 6/6 | 11 | 5.1 | 2 | 0 |
-| 奇安信技术研究院 | 2/2 | 2 | 10.0 | 1 | 0 |
+| The Hacker News | 6/6 | 45 | 7.0 | 17 | 4 |
+| Vulners.com RSS Feed | 7/7 | 165 | 6.5 | 17 | 8 |
+| BleepingComputer | 7/7 | 66 | 6.6 | 14 | 7 |
+| 先知社区 | 4/4 | 14 | 8.1 | 6 | 0 |
+| CISA Advisories | 4/4 | 11 | 8.1 | 6 | 3 |
+| Seebug Paper | 4/4 | 6 | 8.0 | 6 | 0 |
+| X / International Cyber Digest | 6/6 | 36 | 3.9 | 5 | 4 |
+| securitainment | 6/6 | 9 | 6.2 | 4 | 0 |
+| InfoSec Write-ups - Medium | 4/4 | 28 | 6.0 | 4 | 0 |
+| Rapid7 Blog | 6/6 | 12 | 5.3 | 3 | 1 |
+| Hacker News Frontpage | 3/3 | 24 | 2.2 | 3 | 0 |
+| 奇安信技术研究院 | 3/3 | 3 | 10.0 | 2 | 0 |
+| 宋宝华 | 6/6 | 6 | 5.2 | 2 | 0 |
+| Project Zero | 1/1 | 1 | 10.0 | 1 | 0 |
 | Fuzzing Labs | 1/1 | 1 | 9.0 | 1 | 0 |
 | Cloudflare Security | 1/1 | 1 | 8.0 | 1 | 0 |
-| 腾讯玄武实验室公众号 | 1/1 | 1 | 8.0 | 1 | 0 |
-| Microsoft Security Blog | 5/5 | 8 | 6.8 | 1 | 3 |
-| Schneier on Security | 5/5 | 6 | 5.0 | 1 | 1 |
-| ThunderJie | 4/4 | 4 | 4.8 | 1 | 0 |
+| Microsoft Security Blog | 5/5 | 8 | 7.0 | 1 | 3 |
+| ふるつき | 1/1 | 1 | 7.0 | 1 | 0 |
+| 安全行者老霍 | 5/5 | 10 | 5.3 | 1 | 0 |
+| ThunderJie | 5/5 | 5 | 5.0 | 1 | 0 |
 | Pentesting | 6/6 | 76 | 4.4 | 1 | 0 |
-| 宋宝华 | 6/6 | 7 | 4.3 | 1 | 0 |
 | RedPacket Security | 3/3 | 21 | 4.0 | 1 | 0 |
-| Ars Technica | 6/6 | 22 | 1.6 | 1 | 0 |
-| 青衣十三楼飞花堂 | 7/7 | 12 | 1.3 | 1 | 0 |
-| TechCrunch | 4/4 | 19 | 0.8 | 1 | 0 |
-| Les1ie | 1/1 | 1 | 8.0 | 0 | 0 |
+| X / rez0 | 6/6 | 41 | 2.5 | 1 | 0 |
+| 青衣十三楼飞花堂 | 7/7 | 11 | 1.8 | 1 | 0 |
+| Ars Technica | 6/6 | 32 | 1.2 | 1 | 0 |
+| TechCrunch | 3/3 | 17 | 0.9 | 1 | 0 |
 | XPN InfoSec Blog | 2/2 | 2 | 7.5 | 0 | 0 |
 | Exploit-DB.com RSS Feed | 1/1 | 6 | 7.3 | 0 | 0 |
-| Bug Bounty in InfoSec Write-ups on Medium | 3/3 | 3 | 7.0 | 0 | 0 |
+| Bug Bounty in InfoSec Write-ups on Medium | 4/4 | 4 | 7.2 | 0 | 0 |
+| Blog / Praetorian | 1/1 | 1 | 7.0 | 0 | 0 |
 | Mozilla Hacks – the Web developer blog | 1/1 | 1 | 7.0 | 0 | 0 |
-| Sandfly Security Blog RSS Feed | 1/1 | 1 | 7.0 | 0 | 0 |
 | Trail of Bits Blog | 1/1 | 1 | 7.0 | 0 | 0 |
-| VulDB Recent Entries | 2/2 | 26 | 6.0 | 0 | 0 |
-| Red Team Security | 6/6 | 18 | 6.0 | 0 | 0 |
-| Wallarm | 1/1 | 1 | 6.0 | 0 | 0 |
-| X / Project Zero | 2/2 | 2 | 5.5 | 0 | 0 |
+| Wallarm | 2/2 | 2 | 6.5 | 0 | 0 |
+| VulDB Recent Entries | 1/1 | 10 | 6.2 | 0 | 0 |
+| Red Team Security | 6/6 | 20 | 6.0 | 0 | 0 |
 | 美团技术团队 | 1/1 | 1 | 5.0 | 0 | 0 |
-| AWS Security Blog | 4/4 | 6 | 4.7 | 0 | 0 |
-| Krebs on Security | 2/2 | 3 | 4.5 | 0 | 0 |
-| Security Engineering Blog | 2/2 | 2 | 4.5 | 0 | 0 |
+| X / Project Zero | 3/3 | 3 | 4.7 | 0 | 0 |
+| AWS Security Blog | 4/4 | 9 | 4.6 | 0 | 0 |
+| Krebs on Security | 3/3 | 4 | 4.5 | 0 | 0 |
+| Security Engineering Blog | 3/3 | 3 | 4.5 | 0 | 0 |
+| Schneier on Security | 5/5 | 6 | 4.3 | 0 | 1 |
 | troyhunt.com | 2/2 | 3 | 4.3 | 0 | 0 |
-| 专注APT攻击与防御 | 4/4 | 4 | 4.2 | 0 | 0 |
+| 专注APT攻击与防御 | 5/5 | 5 | 4.2 | 0 | 0 |
 | Rob Zolkos | 2/2 | 2 | 4.0 | 0 | 0 |
-| defend.network | 1/1 | 1 | 4.0 | 0 | 0 |
+| PromptLayer | 1/1 | 1 | 4.0 | 0 | 0 |
 | SecurityWeek | 1/1 | 1 | 4.0 | 0 | 0 |
-| GuidePoint Security | 4/4 | 5 | 3.8 | 0 | 0 |
-| X / PortSwigger Research | 1/1 | 2 | 3.5 | 0 | 0 |
-| Intigriti | 2/2 | 3 | 3.0 | 0 | 0 |
-| 安全客 | 1/1 | 2 | 3.0 | 0 | 0 |
+| GuidePoint Security | 5/5 | 7 | 3.6 | 0 | 0 |
+| Intigriti | 3/3 | 5 | 3.2 | 0 | 0 |
+| 安全客 | 2/2 | 4 | 3.0 | 0 | 0 |
+| Adam Shostack & friends | 1/1 | 1 | 3.0 | 0 | 0 |
+| MIT Technology Review | 3/3 | 3 | 2.7 | 0 | 0 |
 | 美团技术团队公众号 | 1/1 | 3 | 2.3 | 0 | 0 |
 | Kali Linux Tutorials | 5/5 | 8 | 2.2 | 0 | 0 |
-| The Decoder | 5/5 | 9 | 2.0 | 0 | 0 |
-| Adam Shostack & friends | 2/2 | 3 | 2.0 | 0 | 0 |
-| X / rez0 | 6/6 | 44 | 1.9 | 0 | 0 |
+| 404 Media | 2/2 | 2 | 2.0 | 0 | 0 |
+| The Decoder | 6/6 | 13 | 1.9 | 0 | 0 |
 | Hugging Face Blog | 3/3 | 3 | 1.7 | 0 | 0 |
 | Simon Willison | 5/5 | 11 | 1.5 | 0 | 0 |
+| 字节跳动技术团队公众号 | 6/6 | 7 | 1.5 | 0 | 0 |
 | IEEE Spectrum | 1/1 | 2 | 1.5 | 0 | 0 |
-| MIT Technology Review | 2/2 | 2 | 1.5 | 0 | 0 |
-| 404 Media | 3/3 | 3 | 1.3 | 0 | 0 |
 | Daring Fireball | 4/4 | 13 | 1.3 | 0 | 0 |
-| 字节跳动技术团队公众号 | 6/6 | 6 | 1.2 | 0 | 0 |
+| r/MachineLearning | 7/7 | 26 | - | 0 | 0 |
 | SecWiki News | 7/7 | 21 | - | 0 | 0 |
 | unSafe.sh - 不安全 | 3/3 | 9 | - | 0 | 0 |
 | MaskRay | 3/3 | 3 | - | 0 | 0 |
@@ -74,18 +74,16 @@
 | Toooold | 3/3 | 3 | - | 0 | 0 |
 | Armin Ronacher's Thoughts and Writings | 2/2 | 2 | - | 0 | 0 |
 | OpenAI Blog | 1/1 | 2 | 1.0 | 0 | 0 |
-| ArthurChiao's Blog | 1/1 | 1 | 1.0 | 0 | 0 |
 | NVIDIA AI Blog | 1/1 | 1 | 1.0 | 0 | 0 |
-| susam.net | 1/1 | 1 | 1.0 | 0 | 0 |
+| X / Thomas Sottiaux | 7/7 | 25 | 0.9 | 0 | 0 |
+| Wired | 6/6 | 28 | 0.9 | 0 | 0 |
 | Product Hunt | 1/1 | 6 | 0.8 | 0 | 0 |
-| 量子位 QbitAI | 3/3 | 14 | 0.8 | 0 | 0 |
-| Wired | 6/6 | 31 | 0.7 | 0 | 0 |
-| Chybeta | 4/4 | 4 | 0.7 | 0 | 0 |
-| 0x727开源安全团队 | 3/3 | 3 | 0.7 | 0 | 0 |
-| The Verge | 3/3 | 9 | 0.5 | 0 | 0 |
-| X / Thomas Sottiaux | 7/7 | 19 | 0.5 | 0 | 0 |
-| r/MachineLearning | 7/7 | 25 | 0.0 | 0 | 0 |
-| 代码审计星球 | 3/3 | 3 | 0.0 | 0 | 0 |
+| 量子位 QbitAI | 2/2 | 11 | 0.8 | 0 | 0 |
+| The Verge | 2/2 | 7 | 0.7 | 0 | 0 |
+| Chybeta | 5/5 | 5 | 0.7 | 0 | 0 |
+| 0x727开源安全团队 | 4/4 | 4 | 0.7 | 0 | 0 |
+| susam.net | 2/2 | 2 | 0.5 | 0 | 0 |
+| 代码审计星球 | 4/4 | 4 | 0.0 | 0 | 0 |
 | ByteByteGo | 1/1 | 1 | 0.0 | 0 | 0 |
 | Google AI Blog | 1/1 | 1 | 0.0 | 0 | 0 |
 | text/plain | 1/1 | 1 | 0.0 | 0 | 0 |
@@ -94,60 +92,60 @@
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| Google News AI Security | 7/7 | 160 | 4.1 | 8 | 1 |
-| X / Simon Willison | 6/6 | 14 | 4.0 | 7 | 0 |
-| OpenAI News | 7/7 | 41 | 3.9 | 6 | 0 |
-| X / rez0 | 6/6 | 44 | 2.9 | 5 | 4 |
-| 先知社区 | 4/4 | 18 | 2.6 | 5 | 0 |
-| X / Trail of Bits | 5/5 | 9 | 3.2 | 3 | 0 |
-| Simon Willison | 6/6 | 31 | 2.7 | 3 | 1 |
-| X / Johann Rehberger | 4/4 | 5 | 4.8 | 2 | 1 |
-| Google News 中文 AI安全 | 7/7 | 50 | 4.3 | 2 | 0 |
-| Embrace The Red | 1/1 | 1 | 9.0 | 1 | 0 |
-| Trail of Bits | 1/1 | 1 | 7.0 | 1 | 0 |
-| X / PortSwigger Research | 1/1 | 2 | 4.0 | 1 | 0 |
-| 安全客 | 1/1 | 2 | 3.0 | 1 | 0 |
-| Unit 42 | 3/3 | 4 | 2.5 | 1 | 0 |
+| 先知社区 | 4/4 | 14 | 5.3 | 8 | 0 |
+| Google News AI Security | 7/7 | 159 | 4.4 | 8 | 1 |
+| OpenAI News | 7/7 | 41 | 4.3 | 8 | 0 |
+| X / Simon Willison | 6/6 | 11 | 4.5 | 7 | 0 |
+| X / rez0 | 6/6 | 42 | 3.8 | 5 | 3 |
+| X / Trail of Bits | 6/6 | 14 | 4.0 | 4 | 0 |
+| Simon Willison | 6/6 | 40 | 3.3 | 3 | 1 |
+| X / Johann Rehberger | 4/4 | 4 | 6.5 | 2 | 1 |
+| Trail of Bits | 2/2 | 2 | 6.0 | 1 | 0 |
+| Google Project Zero | 1/1 | 1 | 5.0 | 1 | 0 |
+| Google News 中文 AI安全 | 7/7 | 51 | 4.0 | 1 | 0 |
+| 安全客 | 2/2 | 4 | 4.0 | 1 | 0 |
+| Unit 42 | 3/3 | 3 | 4.0 | 1 | 0 |
 
 ## AI 前沿
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| arXiv cs.AI recent | 5/5 | 150 | 6.6 | 16 | 0 |
-| Google News 中文 AI | 7/7 | 209 | 5.8 | 14 | 3 |
-| X / dotey | 6/6 | 32 | 5.4 | 11 | 1 |
-| X / Hugging Face | 6/6 | 34 | 5.8 | 8 | 3 |
-| The Verge AI | 5/5 | 32 | 5.6 | 7 | 1 |
-| TechCrunch AI | 7/7 | 58 | 5.4 | 7 | 4 |
+| Google News 中文 AI | 7/7 | 209 | 5.7 | 14 | 1 |
+| arXiv cs.AI recent | 5/5 | 150 | 6.8 | 13 | 0 |
+| X / Hugging Face | 6/6 | 39 | 6.2 | 10 | 3 |
+| X / dotey | 6/6 | 31 | 5.2 | 10 | 0 |
+| TechCrunch AI | 7/7 | 55 | 5.5 | 9 | 3 |
+| The Verge AI | 5/5 | 31 | 5.9 | 8 | 2 |
 | Simon Willison | 6/6 | 20 | 5.2 | 7 | 0 |
-| Ars Technica AI | 6/6 | 19 | 6.0 | 5 | 2 |
-| X / OpenAI Developers | 6/6 | 17 | 7.0 | 3 | 10 |
-| X / vLLM | 3/3 | 4 | 7.8 | 2 | 1 |
-| Latent Space | 4/4 | 5 | 7.2 | 2 | 1 |
+| X / OpenAI Developers | 7/7 | 20 | 6.8 | 3 | 10 |
+| X / vLLM | 4/4 | 5 | 7.6 | 2 | 1 |
+| Latent Space | 4/4 | 5 | 7.4 | 2 | 1 |
 | Hugging Face Blog | 2/2 | 2 | 6.5 | 2 | 0 |
 | Interconnects | 2/2 | 2 | 6.5 | 2 | 0 |
+| Ars Technica AI | 6/6 | 17 | 5.6 | 2 | 3 |
 | OpenAI Blog | 1/1 | 2 | 5.5 | 2 | 0 |
-| X / swyx | 7/7 | 20 | 5.2 | 2 | 2 |
+| X / Boris Cherny | 5/5 | 19 | 4.8 | 2 | 2 |
+| X / swyx | 7/7 | 20 | 4.8 | 2 | 0 |
+| MIT Tech Review AI | 5/5 | 17 | 2.8 | 2 | 0 |
 | X / Google DeepMind | 1/1 | 1 | 9.0 | 1 | 0 |
-| X / OpenAI | 3/3 | 4 | 6.7 | 1 | 0 |
-| Anthropic Coverage (Google News) | 7/7 | 118 | 6.6 | 1 | 1 |
+| Anthropic Coverage (Google News) | 7/7 | 108 | 6.9 | 1 | 1 |
+| X / OpenAI | 4/4 | 5 | 6.0 | 1 | 0 |
 | Import AI | 1/1 | 1 | 6.0 | 1 | 0 |
 | 机器之心 | 1/1 | 1 | 6.0 | 1 | 0 |
-| X / Simon Willison | 6/6 | 6 | 5.3 | 1 | 1 |
-| Meta AI (Google News) | 7/7 | 18 | 5.0 | 1 | 0 |
+| X / Simon Willison | 5/5 | 5 | 5.4 | 1 | 1 |
+| Meta AI (Google News) | 7/7 | 24 | 5.0 | 1 | 0 |
 | Google AI Blog | 1/1 | 1 | 5.0 | 1 | 0 |
-| X / Boris Cherny | 5/5 | 16 | 3.9 | 1 | 3 |
-| MIT Tech Review AI | 5/5 | 15 | 2.7 | 1 | 0 |
+| X / Claude | 1/1 | 1 | 7.0 | 0 | 1 |
 | X / Google AI | 1/1 | 1 | 7.0 | 0 | 0 |
-| X / Anthropic | 3/3 | 4 | 6.5 | 0 | 1 |
-| X / xAI | 2/2 | 2 | 6.5 | 0 | 0 |
-| xAI (Google News) | 7/7 | 61 | 5.6 | 0 | 1 |
+| X / Ollama | 1/1 | 1 | 7.0 | 0 | 0 |
+| X / xAI | 1/1 | 1 | 7.0 | 0 | 0 |
+| X / LlamaIndex | 2/2 | 2 | 6.0 | 0 | 0 |
+| xAI (Google News) | 7/7 | 65 | 5.9 | 0 | 1 |
+| X / Anthropic | 2/2 | 3 | 5.7 | 0 | 0 |
 | NVIDIA Blog | 2/2 | 2 | 5.5 | 0 | 0 |
-| X / trq212 | 6/6 | 15 | 5.5 | 0 | 4 |
-| X / LlamaIndex | 3/3 | 5 | 5.4 | 0 | 0 |
-| X / Claude Developers | 2/2 | 5 | 5.0 | 0 | 3 |
-| X / Claude | 1/1 | 2 | 5.0 | 0 | 0 |
+| X / trq212 | 6/6 | 12 | 4.3 | 0 | 1 |
 | X / Andrej Karpathy | 1/1 | 1 | 4.0 | 0 | 0 |
+| X / Claude Developers | 1/1 | 2 | 3.5 | 0 | 1 |
 | Mistral (Google News) | 3/3 | 3 | - | 0 | 0 |
 | Anthropic + Claude (first-party) | 2/2 | 2 | - | 0 | 0 |
 | X / ChatGPT | 2/2 | 2 | - | 0 | 0 |
@@ -157,16 +155,16 @@
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| PYMNTS | 7/7 | 66 | 5.9 | 22 | 0 |
-| Payments Dive | 5/5 | 13 | 6.9 | 12 | 0 |
-| Google News 中文金融科技 | 3/3 | 90 | 7.4 | 6 | 4 |
-| Finance Magnates Fintech | 3/3 | 23 | 5.6 | 6 | 5 |
-| Visa Investor Press | 2/2 | 5 | 8.4 | 5 | 0 |
-| Alipay / Ant Group (Google News) | 6/6 | 8 | 7.2 | 3 | 1 |
-| WeChat Pay / Tenpay (Google News) | 2/2 | 4 | 8.0 | 1 | 1 |
+| PYMNTS | 7/7 | 66 | 6.1 | 23 | 0 |
+| Payments Dive | 5/5 | 12 | 6.8 | 11 | 0 |
+| Google News 中文金融科技 | 4/4 | 120 | 7.4 | 9 | 6 |
+| Finance Magnates Fintech | 4/4 | 25 | 5.6 | 7 | 5 |
+| Visa Investor Press | 3/3 | 6 | 7.7 | 6 | 0 |
+| Alipay / Ant Group (Google News) | 6/6 | 12 | 7.2 | 2 | 1 |
+| WeChat Pay / Tenpay (Google News) | 3/3 | 6 | 8.0 | 1 | 1 |
 | Mastercard Investor Press | 2/2 | 2 | 5.5 | 1 | 0 |
-| American Express Investor Press | 1/1 | 2 | 4.5 | 0 | 0 |
-| JCB (Google News) | 1/1 | 4 | - | 0 | 0 |
+| American Express Investor Press | 2/2 | 3 | 4.0 | 0 | 0 |
+| JCB (Google News) | 2/2 | 6 | - | 0 | 0 |
 
 ## ⚠️ 建议人工 review（不自动删）
 
@@ -186,16 +184,16 @@
 - [ai] X / LMArena：7 天 0 raw
 - [ai] X / Meta AI：7 天 0 raw
 - [ai] X / Mistral AI：7 天 0 raw
-- [ai] X / Ollama：7 天 0 raw
 - [ai] 新智元：7 天 0 raw
 - [ai] 量子位：7 天 0 raw
+- [ai_security] Embrace The Red：7 天 0 raw
 - [ai_security] FreeBuf AI安全：7 天 0 raw
-- [ai_security] Google Project Zero：7 天 0 raw
 - [ai_security] Google Security Blog：7 天 0 raw
 - [ai_security] PortSwigger Research：7 天 0 raw
 - [ai_security] X / Embrace The Red：7 天 0 raw
 - [ai_security] X / HiddenLayer：7 天 0 raw
 - [ai_security] X / Lakera：7 天 0 raw
+- [ai_security] X / PortSwigger Research：7 天 0 raw
 - [finance] PayPal Investor Press：7 天 0 raw
 - [security] 0xacb：7 天 0 raw
 - [security] 128 nops and counting：7 天 0 raw
@@ -217,6 +215,7 @@
 - [security] Andrea Cardaci：7 天 0 raw
 - [security] antirez.com：7 天 0 raw
 - [security] Appsecco - Medium：7 天 0 raw
+- [security] ArthurChiao's Blog：7 天 0 raw
 - [security] Attack and Defense Labs：7 天 0 raw
 - [security] Attify Blog - IoT Security, Pentesting and Exploitation：7 天 0 raw
 - [security] backlion：7 天 0 raw
@@ -228,7 +227,6 @@
 - [security] bernsteinbear.com：7 天 0 raw
 - [security] berthub.eu：7 天 0 raw
 - [security] Blackploit [PenTest]：7 天 0 raw
-- [security] Blog / Praetorian：7 天 0 raw
 - [security] blog.pixelmelt.dev：7 天 0 raw
 - [security] bogdanthegeek.github.io：7 天 0 raw
 - [security] borretti.me：7 天 0 raw
@@ -260,6 +258,7 @@
 - [security] danielchasehooper.com：7 天 0 raw
 - [security] DarkNavy：7 天 0 raw
 - [security] debugeeker：7 天 0 raw
+- [security] defend.network：7 天 0 raw
 - [security] Desync InfoSec：7 天 0 raw
 - [security] devblogs.microsoft.com/oldnewthing：7 天 0 raw
 - [security] DigiNinja：7 天 0 raw
@@ -323,6 +322,7 @@
 - [security] lcamtuf (Michal Zalewski)：7 天 0 raw
 - [security] lcamtuf's old blog：7 天 0 raw
 - [security] Legacyy：7 天 0 raw
+- [security] Les1ie：7 天 0 raw
 - [security] LFYSEC：7 天 0 raw
 - [security] Light Blue Touchpaper：7 天 0 raw
 - [security] Lil'Log：7 天 0 raw
@@ -373,8 +373,6 @@
 - [security] Posts on BananaMafia：7 天 0 raw
 - [security] Posts on 青鸟的博客：7 天 0 raw
 - [security] print()：7 天 0 raw
-- [security] Project Zero：7 天 0 raw
-- [security] PromptLayer：7 天 0 raw
 - [security] Publications / Outflank：7 天 0 raw
 - [security] PwnDefend：7 天 0 raw
 - [security] qz安全情报分析：7 天 0 raw
@@ -388,6 +386,7 @@
 - [security] Ruilin：7 天 0 raw
 - [security] rutk1t0r's blog：7 天 0 raw
 - [security] S3cur3Th1sSh1t：7 天 0 raw
+- [security] Sandfly Security Blog RSS Feed：7 天 0 raw
 - [security] Sebastian Raschka：7 天 0 raw
 - [security] Sec-News 安全文摘：7 天 0 raw
 - [security] Security Boulevard：7 天 0 raw
@@ -424,6 +423,7 @@
 - [security] virusdefender’s blog (＾－＾)V：7 天 0 raw
 - [security] vivo千镜安全实验室：7 天 0 raw
 - [security] worksonmymachine.substack.com：7 天 0 raw
+- [security] X / PortSwigger Research：7 天 0 raw
 - [security] X1r0z Blog：7 天 0 raw
 - [security] xania.org：7 天 0 raw
 - [security] XCTF联赛：7 天 0 raw
@@ -436,7 +436,6 @@
 - [security] Youssef Sammouda (sam0) personal blog：7 天 0 raw
 - [security] Zgao's blog：7 天 0 raw
 - [security] zSecurity：7 天 0 raw
-- [security] ふるつき：7 天 0 raw
 - [security] 丁爸情报分析师的工具箱：7 天 0 raw
 - [security] 不忘初心 方得始终：7 天 0 raw
 - [security] 专注安管平台：7 天 0 raw
@@ -564,6 +563,7 @@
 - [security] 腾讯安全应急响应中心：7 天 0 raw
 - [security] 腾讯安全玄武实验室：7 天 0 raw
 - [security] 腾讯玄武实验室：7 天 0 raw
+- [security] 腾讯玄武实验室公众号：7 天 0 raw
 - [security] 腾讯科恩实验室：7 天 0 raw
 - [security] 腾讯科恩实验室官方博客：7 天 0 raw
 - [security] 航行笔记：7 天 0 raw
@@ -596,23 +596,20 @@
 
 ### 持续低质源（avg_score < 3.0 且 raw ≥ 5）
 
-- [ai] MIT Tech Review AI：raw=15，avg=2.7，入选=1
-- [ai_security] 先知社区：raw=18，avg=2.6，入选=5
-- [ai_security] Simon Willison：raw=31，avg=2.7，入选=3
-- [ai_security] X / rez0：raw=44，avg=2.9，入选=5
-- [security] r/MachineLearning：raw=25，avg=0.0，入选=0
-- [security] X / Thomas Sottiaux：raw=19，avg=0.5，入选=0
-- [security] The Verge：raw=9，avg=0.6，入选=0
-- [security] Wired：raw=31，avg=0.7，入选=0
-- [security] 量子位 QbitAI：raw=14，avg=0.8，入选=0
+- [ai] MIT Tech Review AI：raw=17，avg=2.8，入选=2
+- [security] Chybeta：raw=5，avg=0.7，入选=0
+- [security] The Verge：raw=7，avg=0.7，入选=0
+- [security] 量子位 QbitAI：raw=11，avg=0.8，入选=0
 - [security] Product Hunt：raw=6，avg=0.8，入选=0
-- [security] TechCrunch：raw=19，avg=0.8，入选=1
-- [security] 字节跳动技术团队公众号：raw=6，avg=1.2，入选=0
-- [security] 青衣十三楼飞花堂：raw=12，avg=1.3，入选=1
+- [security] Wired：raw=28，avg=0.9，入选=0
+- [security] X / Thomas Sottiaux：raw=25，avg=0.9，入选=0
+- [security] TechCrunch：raw=17，avg=0.9，入选=1
+- [security] Ars Technica：raw=32，avg=1.2，入选=1
 - [security] Daring Fireball：raw=13，avg=1.3，入选=0
 - [security] Simon Willison：raw=11，avg=1.5，入选=0
-- [security] Ars Technica：raw=22，avg=1.6，入选=1
-- [security] X / rez0：raw=44，avg=1.9，入选=0
-- [security] The Decoder：raw=9，avg=2.0，入选=0
-- [security] Hacker News Frontpage：raw=31，avg=2.1，入选=3
+- [security] 字节跳动技术团队公众号：raw=7，avg=1.5，入选=0
+- [security] 青衣十三楼飞花堂：raw=11，avg=1.8，入选=1
+- [security] The Decoder：raw=13，avg=1.9，入选=0
+- [security] Hacker News Frontpage：raw=24，avg=2.2，入选=3
 - [security] Kali Linux Tutorials：raw=8，avg=2.2，入选=0
+- [security] X / rez0：raw=41，avg=2.5，入选=1

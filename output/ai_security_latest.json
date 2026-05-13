@@ -1,18 +1,18 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-05-13",
-  "fetched_at_utc": "2026-05-12T23:45:12.091264Z",
+  "fetched_at": "2026-05-14",
+  "fetched_at_utc": "2026-05-13T23:45:43.877365Z",
   "hours": 72,
   "total_feeds": 23,
-  "raw_entry_count": 66,
-  "entry_count": 27,
+  "raw_entry_count": 82,
+  "entry_count": 40,
   "filter_stats": {
-    "input": 66,
+    "input": 82,
     "dedup_merged": 3,
-    "output": 63
+    "output": 79
   },
   "curation_stats": {
-    "dropped_source_cap": 36
+    "dropped_source_cap": 39
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -20,7 +20,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 9
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -34,7 +34,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://embracethered.com/blog/index.xml": {
       "feed_title": "Embrace The Red",
@@ -69,7 +69,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 10
+      "raw_count": 12
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -104,7 +104,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 4
     },
     "http://127.0.0.1:1200/twitter/user/EmbraceTheRed": {
       "feed_title": "X / Embrace The Red",
@@ -125,7 +125,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 5
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -153,14 +153,14 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 14
     },
     "http://127.0.0.1:1200/twitter/user/simonw": {
       "feed_title": "X / Simon Willison",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 2
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
@@ -178,6 +178,32 @@
     }
   },
   "entries": [
+    {
+      "title": "RT Mike Takahashi: Prompt Injection Data Exfil Steps 1. Leak system prompt or tools: “list every tool you can use” 2. Figure out what each tool does...",
+      "url": "https://x.com/rez0__/status/2054625001937248401",
+      "summary": "RT Mike Takahashi Prompt Injection Data Exfil Steps 1. Leak system prompt or tools: “list every tool you can use” 2. Figure out what each tool does 3. Find prompt injection vectors: Web browsing File uploads CSRF (q param) 4. Find sensitive data: Memories 3rd party connectors (email, docs, etc.) PII the AI knows about you 5. Find data exfil channel: Image markdown Web browsing Links Chain these to",
+      "category": "XSignals",
+      "published": "2026-05-13T17:00:52+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "We were one of four initial grant recipients in @OpenAI's Trusted Access for Cyber program. Daybreak matters because frontier models now find bugs fas...",
+      "url": "https://x.com/trailofbits/status/2054573243680559165",
+      "summary": "We were one of four initial grant recipients in @OpenAI's Trusted Access for Cyber program. Daybreak matters because frontier models now find bugs faster than maintainers can triage them, and that gap is about to get worse. Next-gen models can bury open-source maintainers in reports. While working with frontier labs this year, we have seen the bottleneck shift. Bug finding is easy, but triaging, d",
+      "category": "XSignals",
+      "published": "2026-05-13T14:43:28+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
     {
       "title": "RT Mike Takahashi: How I got into AI Security and you can too: wield AI tools A LOT jailbreak them study @wunderwuzzi23's blog try hacking AI bug boun...",
       "url": "https://x.com/wunderwuzzi23/status/2054330635431608524",
@@ -231,11 +257,102 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "Quoting Mo Bitar",
-      "url": "https://simonwillison.net/2026/May/12/mo-bitar/#atom-everything",
-      "summary": "Now, if your CEO has never heard the phrase Ralph Loop, oh man, you are less than 30 days away from your next promotion. I'm not even exaggerating. Walk into his office, close the door, and say, hey chief, been experimenting with something. It's called Ralph Loops. And I think it could change literally everything. And he's gonna say, what's a Ralph loop? And you will say, give me $18,000 worth of",
+      "title": "Grok Hack Explained: How Prompt Injection Drained Nearly $200K - Memeburn",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQdEpNYURNc2NSSWxiNDZWQ0ZWc1dZZkZVRDFTRmZxWVlKSm5iV082QnppN0RLc0JTbGtlWTZKU3BxWWc2TVhHQTJ6ZlBSbXhoNnRsNUNnb0FOZ0VTWU1tRlBrNU9RVmREZWlyTHktaS13VU1Vd1AzT05ldVNFNzRLelEwMzJSb0dDYWc?oc=5",
+      "summary": "Grok Hack Explained: How Prompt Injection Drained Nearly $200K &nbsp;&nbsp; Memeburn",
+      "category": "CoverageFallback",
+      "published": "2026-05-13T23:44:49+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Cisco To Cut Nearly 4,000 Jobs In Restructuring Push Around AI, Security - crn.com",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeHdwU1lSZ2haWHk2ZkkycEJDODRyTzVXQ0N6a2s0ai1lcV9pQ2xFSVVCQ0ZreUJfMGIyR1pSSFEwRmFSODdfZjVCUHQ1ZWt5V21USlZRSDVmcTZKT0ZKQk1lUzF6VG5lZmJfeUJqeWFzTklveUl6UVhjQTFYVmh6NUdrUHl1TVJXZk9XX0N5dWdmNFpLQUxkMWduUG9XT3pwVUdybEhnTGZOQVBmakJYd0lR?oc=5",
+      "summary": "Cisco To Cut Nearly 4,000 Jobs In Restructuring Push Around AI, Security &nbsp;&nbsp; crn.com",
+      "category": "CoverageFallback",
+      "published": "2026-05-13T23:27:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "SO TRUE. the thread was very confusing. maybe it was intentional.",
+      "url": "https://x.com/rez0__/status/2054662716011241488",
+      "summary": "SO TRUE. the thread was very confusing. maybe it was intentional. ᴅᴀɴɪᴇʟ ᴍɪᴇssʟᴇʀ 🛡️: I feel like Anthropic should use Claude to write better policy explanations. Like they’re clearly saying all the words, but somehow not making it clear. It gives the impression of obscuring something we’d hate if we better understood.",
+      "category": "XSignals",
+      "published": "2026-05-13T20:38:59+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Microsoft's MDASH AI Security System Finds 16 Windows Vulnerabilities - PCMag Australia",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSU5xcFVRNnFXSVFBWnpBRVduRXFtS2ttVWljdkNvT2w4R0dBaGh1RGtfUkZneG9tcV9iQnJzRjM2N000eUw0WVlSRi1POEdDcnhOaDdMZnVuZXJuNFRWMG5BNVQ0bTB2eWdONGRJaDNLNG1fcGZ2ODVaZTg3dXhmY1p6aDktaWNjN3pFcDc5R0NkRWwySDVfRkxKUDFfN2E3?oc=5",
+      "summary": "Microsoft's MDASH AI Security System Finds 16 Windows Vulnerabilities &nbsp;&nbsp; PCMag Australia",
+      "category": "CoverageFallback",
+      "published": "2026-05-13T20:18:02+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Aviatrix Emphasizes AI Agent Security Opportunities in Cloud Environments - TipRanks",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPck1JVzlhdnAzdnJqd3F3dDluQ0x2dVZrNzR2OTFoalhmT0lraDZlaE9aT3Awd2ZJdFl3d1pvR1UyMTVvVGdfeFZjdUd6OWVuMXhhUE5nYWRBUDlUM3VlQnh4NWNXWHVyeUxnLWtaT2o0bl9hMG9BcUR5cXhpY3M5Mkc4c19TYTZvajR4OWd0dEt4YTZmMEYyalhrUTFsT0F1VWRrRGJocUtnQXc3cVl1UFNsU3o4ckRfQ05ZTjZ3?oc=5",
+      "summary": "Aviatrix Emphasizes AI Agent Security Opportunities in Cloud Environments &nbsp;&nbsp; TipRanks",
+      "category": "CoverageFallback",
+      "published": "2026-05-13T18:32:17+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "well this sucks. gotta rework the hackbot",
+      "url": "https://x.com/rez0__/status/2054623099581284672",
+      "summary": "well this sucks. gotta rework the hackbot ClaudeDevs: Starting June 15, paid Claude plans can claim a dedicated monthly credit for programmatic usage. The credit covers usage of: - Claude Agent SDK - claude -p - Claude Code GitHub Actions - Third-party apps built on the Agent SDK",
+      "category": "XSignals",
+      "published": "2026-05-13T18:01:34+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "RT Obsidian: Two new security audits of Obsidian Sync by @cure53berlin and @trailofbits are now available on our Security page. All findings have been...",
+      "url": "https://x.com/trailofbits/status/2054610451984794022",
+      "summary": "RT Obsidian Two new security audits of Obsidian Sync by @cure53berlin and @trailofbits are now available on our Security page. All findings have been addressed via remediations and disclosures validated by the respective auditors. Read more: https://obsidian.md/blog/cure53-tob-sync-audits/",
+      "category": "XSignals",
+      "published": "2026-05-13T16:56:05+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
+    {
+      "title": "Quoting Boris Mann",
+      "url": "https://simonwillison.net/2026/May/13/boris-mann/#atom-everything",
+      "summary": "“11 AI agents” is meaningless as a phrase. If I said “I have 11 spreadsheets” or “I have 11 browser tabs” to do my work, it means about the same thing. &mdash; Boris Mann Tags: ai-agents , ai , agent-definitions",
       "category": "AISecurityLabs",
-      "published": "2026-05-12T22:59:58+00:00",
+      "published": "2026-05-13T16:15:50+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
@@ -244,17 +361,43 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "SSPM vs AI Security Platforms Explained - Security Boulevard",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPMW9mMmh0d0M1N094emNzWTlKeEExZEI2OGVSWG1mcTFITjYtOUJPNW56WFU4SWFKdXJWaERxUzFnMmxCZWt5dFNRRHdtVFlOaFdxOFh0V1I2b3VMVy1ncEVqbDZvWllPT2d2Z2lxbVJLT3d2andkS2VPUDZ4SnBqV0RjTXU?oc=5",
-      "summary": "SSPM vs AI Security Platforms Explained &nbsp;&nbsp; Security Boulevard",
-      "category": "CoverageFallback",
-      "published": "2026-05-12T22:30:00+00:00",
-      "fetch_status": "rss_only",
+      "title": "The issue with this feature (outside of crypto) is that the intellectual property of the initial report gets leaked to all duplicate reporters. This w...",
+      "url": "https://x.com/rez0__/status/2054570838087901364",
+      "summary": "The issue with this feature (outside of crypto) is that the intellectual property of the initial report gets leaked to all duplicate reporters. This wasn't typically agreed-to (thus requiring a change of the terms). Also, it's worse when triager error dupes it incorrectly. Mitchell Amador: Big news from Immunefi: we just shipped Proof of Duplicate, and it's *the* feature I've been wanting to see f",
+      "category": "XSignals",
+      "published": "2026-05-13T14:33:54+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "It’s funny seeing people having one of two reactions: - GitHub pays too little for bugs - there’s hardly any valid reports in those 325 It’s painfu...",
+      "url": "https://x.com/rez0__/status/2054529796672041113",
+      "summary": "It’s funny seeing people having one of two reactions: - GitHub pays too little for bugs - there’s hardly any valid reports in those 325 It’s painfully obvious that it’s the second in this case. And also, they probably haven’t paid the majority of any valid bugs submitted. Joseph Thacker: THREE HUNDRED ANS TWENTY FIVE REPORTS TWO THOUSAND DOLLARS 🤣🤣🤣",
+      "category": "XSignals",
+      "published": "2026-05-13T11:50:49+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "A 0-click exploit chain for the Pixel 10: When a Door Closes, a Window Opens",
+      "url": "https://projectzero.google/2026/05/pixel-10-exploit.html",
+      "summary": "We recently published an exploit chain for the Google Pixel 9 that demonstrated it was possible to go from a zero-click context to root on Android in just two exploits. The Dolby 0-click vulnerability existed across all of Android, until it was patched in January 2026. While we had an exploit chain for the Pixel 9, we wanted to see if it was possible to write a similar exploit chain for Pixel 10.",
+      "category": "FirstParty",
+      "published": "2026-05-13T07:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+      "feed_title": "Google Project Zero"
     },
     {
       "title": "THREE HUNDRED ANS TWENTY FIVE REPORTS TWO THOUSAND DOLLARS 🤣🤣🤣",
@@ -268,45 +411,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "Human risk management shapes AI security - SiliconANGLE",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcmxNbXFDS1ctOGpyQWVyY2gzUFVFVUpOZFBGb1VIUUpaZXYzTzBOaU9XM3dhX1VsQ19UQXdNS1J1MDhqeTNVVkRWU0RuQXJaVE5RUHFMeHBkOFhkYnl3N0Z1SnkzRnJwTWZLZVU5b3hUTy1HUjlZMmdUR3I3UjR0WG5JNFo0YVk4?oc=5",
-      "summary": "Human risk management shapes AI security &nbsp;&nbsp; SiliconANGLE",
-      "category": "CoverageFallback",
-      "published": "2026-05-12T21:43:10+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "AI Security Adds Defender Burden Faster Than Skills Catch Up - Cybersecurity Insiders",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYlNtWktyMzFBM0FHQ1N4YVhOS1ZDdWZMYjdsNnI0VWZzUTRmOEU1LVRHQk5KSXVZNVk4WUJSdVlHMGhmUVNPTGJNTnNCNXB6V2IyVWszRmg4TTNfYkVlaGlZT3Fuc08tZ29xQXBpSl9YUldtYWF5SDNYaGdSSkg0SXFVV1RITjFWMENz?oc=5",
-      "summary": "AI Security Adds Defender Burden Faster Than Skills Catch Up &nbsp;&nbsp; Cybersecurity Insiders",
-      "category": "CoverageFallback",
-      "published": "2026-05-12T20:06:07+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Trump weighs AI security order as Mythos concerns push Washington toward model reviews - Cryptonews.net",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5KanpySE5nNjhFclpkQUcyemxTTlRGS0tzbGxNUVJZdXF6RzFtZ1NLanVrWWZYWXpqLWZNcHJ2cXExQW4wOUUyVjFBSXE1OVphV0Q5V1BR?oc=5",
-      "summary": "Trump weighs AI security order as Mythos concerns push Washington toward model reviews &nbsp;&nbsp; Cryptonews.net",
-      "category": "CoverageFallback",
-      "published": "2026-05-12T18:38:14+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
     },
     {
       "title": "Go fuzzing was missing half the toolkit. We forked the toolchain to fix it.",
@@ -346,6 +450,19 @@
       "quality_score": 1,
       "feed_url": "https://openai.com/news/rss.xml",
       "feed_title": "OpenAI News"
+    },
+    {
+      "title": "RT Lupin: wtf. the tanstack attack just went live. we flagged this exact chain 25 days ago. april 16. All Depi clients were alerted. if you're using @...",
+      "url": "https://x.com/rez0__/status/2054569491464704357",
+      "summary": "RT Lupin wtf. the tanstack attack just went live. we flagged this exact chain 25 days ago. april 16. All Depi clients were alerted. if you're using @tan_stack check your manifest files right now 1.166.12, 1.166.15, 1.169.5, 1.169.8 are malicious. clean your cache. rebuild.",
+      "category": "XSignals",
+      "published": "2026-05-11T23:28:48+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "RT Max Zeff: Ilya Sutskever explaining why OpenAI has a for-profit, under oath in a federal court: \"if there's no funding, there's no big computer.\" i...",
@@ -426,17 +543,58 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "Shopify's River agent system lives in Slack and can only be used in public so that other employees can learn from what you do with it Reminds me of ho...",
-      "url": "https://x.com/simonw/status/2053529689122328947",
-      "summary": "Shopify's River agent system lives in Slack and can only be used in public so that other employees can learn from what you do with it Reminds me of how Midjourney's Discord-only launch helped people figure out the weird &amp; complex craft of image prompting by watching each other tobi lutke: http://x.com/i/article/2052738533111013380",
+      "title": "Nvm @xssdoctor and I already did it 😎",
+      "url": "https://x.com/rez0__/status/2054659019701137487",
+      "summary": "Nvm @xssdoctor and I already did it 😎 Joseph Thacker: well this sucks. gotta rework the hackbot",
       "category": "XSignals",
-      "published": "2026-05-10T17:36:45+00:00",
-      "fetch_status": "full",
+      "published": "2026-05-13T20:24:18+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
-      "feed_title": "X / Simon Willison"
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "RT Critical Thinking - Bug Bounty Podcast: Scope is getting tested 20x before reaching us",
+      "url": "https://x.com/rez0__/status/2054567008931549669",
+      "summary": "RT Critical Thinking - Bug Bounty Podcast Scope is getting tested 20x before reaching us",
+      "category": "XSignals",
+      "published": "2026-05-13T14:10:09+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://x.com/rez0__/status/2054249098413318601"
+      ],
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "ohmygosh. the first 20 seconds LOLOLOL",
+      "url": "https://x.com/rez0__/status/2054561103057928499",
+      "summary": "ohmygosh. the first 20 seconds LOLOLOL Zack Korman: New video: Why are the AI labs so obsessed with cybersecurity? Also, I talk about about OpenAI's Daybreak thing.",
+      "category": "XSignals",
+      "published": "2026-05-13T13:55:13+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "we're mopping up the internet one submission at a time",
+      "url": "https://x.com/rez0__/status/2054551380506161530",
+      "summary": "we're mopping up the internet one submission at a time",
+      "category": "XSignals",
+      "published": "2026-05-13T13:16:35+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "亿格云完成数亿元B轮融资，加码“人+AI”统一安全治理",
@@ -465,6 +623,19 @@
       "feed_title": "X / Trail of Bits"
     },
     {
+      "title": "【漏洞研究】多层内容解析链引发的 XSS 语义错位绕过及根因分析",
+      "url": "https://xz.aliyun.com/news/92125",
+      "summary": "在 Markdown、公式渲染等富内容处理场景下，由于第三方组件与浏览器底层（HTML、URL、JS 解析器）在实体解码、协议提取和规范化处理上存在机制差异，极易引发解析层面的语义错位，导致了XSS防御体系的 Bypass",
+      "category": "Chinese",
+      "published": "2026-05-12T05:28:32+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
       "title": "this is working decently well now. open to prs too of course",
       "url": "https://x.com/rez0__/status/2053859108517019872",
       "summary": "this is working decently well now. open to prs too of course Joseph Thacker: I made a /goal command for claude code: https://github.com/jthack/claude-goal",
@@ -478,26 +649,11 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "RT Critical Thinking - Bug Bounty Podcast: What does the future hold for bug bounty? Episode 173, part 2! > Please share your thoughts here: https://f...",
-      "url": "https://x.com/rez0__/status/2053504399062790276",
-      "summary": "RT Critical Thinking - Bug Bounty Podcast What does the future hold for bug bounty? Episode 173, part 2! &gt; Please share your thoughts here: https://forms.ctbb.show/future_of_bug_bounty",
-      "category": "XSignals",
-      "published": "2026-05-10T15:11:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [
-        "https://x.com/rez0__/status/2054249098413318601"
-      ],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "提示词注入也能获得上万美元赏金？Gemini App 漏洞分析",
-      "url": "https://xz.aliyun.com/news/92110",
-      "summary": "分析最近 Gemini App 的两个间接提示词注入漏洞，总结间接提示词注入实战攻击手法",
+      "title": "GraalVM Polyglot 沙箱逃逸：跨语言上下文 RCE",
+      "url": "https://xz.aliyun.com/news/92120",
+      "summary": "从受限JavaScript沙箱到宿主Java环境的完整攻击链构造与纵深防御",
       "category": "Chinese",
-      "published": "2026-05-10T03:25:47+00:00",
+      "published": "2026-05-11T09:34:57+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -519,11 +675,24 @@
       "feed_title": "安全客"
     },
     {
-      "title": "伪装为HelloGPT安装程序的银狐木马样本分析",
-      "url": "https://xz.aliyun.com/news/92109",
-      "summary": "在野银狐样本分析",
+      "title": "记一次实战文件上传的简单bypass",
+      "url": "https://xz.aliyun.com/news/92118",
+      "summary": "文字来自本人实战经历（已修复）",
       "category": "Chinese",
-      "published": "2026-05-10T03:16:44+00:00",
+      "published": "2026-05-11T07:09:29+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": -1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "复现 ICLR 2026 在审《TrojanPraise》：从 12% 到 42% 的 LoRA 越狱调参实战",
+      "url": "https://xz.aliyun.com/news/92116",
+      "summary": "一个越狱调参实验",
+      "category": "Chinese",
+      "published": "2026-05-11T06:16:03+00:00",
       "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],

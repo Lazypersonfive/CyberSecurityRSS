@@ -1,0 +1,559 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-14",
+  "generated_at": "2026-05-13T23:45:38.446538Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 3,
+    "direct": 13,
+    "wechat": 1,
+    "tier_t2": 12,
+    "kind_cn_expert": 1,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "kind_media": 5,
+    "kind_community": 5,
+    "aggregator": 2,
+    "kind_expert_x": 2,
+    "kind_expert": 1,
+    "tier_unknown": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "Linux 内核高危本地提权漏洞 CVE-2026-31431 利用原理与技术分析",
+      "title_orig": "【天穹】内核暗渡：Linux Copy Fail 漏洞 CVE-2026-31431 利用分析",
+      "summary": "Linux内核近期被曝出名为Copy Fail的高危本地提权漏洞CVE-2026-31431，该漏洞源于内核在处理特定内存拷贝逻辑时存在安全缺陷，影响范围极广。攻击者能够通过构造特殊的系统调用触发该漏洞，从而在受影响的系统上实现从普通用户到root权限的非法提升，目前相关的技术细节与深度利用分析已在安全社区公开，引发了安全专家对内核内存管理机制安全性的广泛关注。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "漏洞分析"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTU4MjQ4Mg==&mid=2247489157&idx=1&sn=2db22b529494b5c90d8d21347b364bb2",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-11T08:57:00+00:00",
+      "cve_ids": [
+        "CVE-2026-31431"
+      ],
+      "selection_reason": "Linux内核提权漏洞具有极高的实战价值和底层研究意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77a8d89f12dcb0aa75a19731e474a63427089081.xml",
+      "feed_title": "奇安信技术研究院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77a8d89f12dcb0aa75a19731e474a63427089081.xml",
+      "story_id": "cve:cve-2026-31431",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.7,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Google Pixel 10 智能手机 0-click 远程 Root 漏洞利用链研究",
+      "title_orig": "A 0-click exploit chain for the Pixel 10: When a Door Closes, a Window Opens",
+      "summary": "安全研究员展示了针对Google Pixel 10的零点击漏洞利用链，该研究成功延续了此前在Pixel 9上实现的利用思路，再次证明了Android系统在特定媒体处理场景下的脆弱性。漏洞根源在于Dolby组件中长期存在的安全缺陷，允许远程攻击者在无需任何用户交互的情况下直接获取系统root权限，尽管相关漏洞已于2026年1月获得修复，但其复杂的构造过程对移动安全研究仍具有极高的参考价值。",
+      "tags": [
+        "Android安",
+        "0-click",
+        "漏洞利用链"
+      ],
+      "url": "https://projectzero.google/2026/05/pixel-10-exploit.html",
+      "source": "projectzero.google",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-13T07:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级研究团队展示的 0-click 利用链是移动安全研究的巅",
+      "feed_url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+      "feed_title": "Project Zero",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "研究团队",
+      "source_key": "projectzero.google",
+      "story_id": "url:projectzero.google/2026/05/pixel-10-exploit.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.7,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Exim 邮件传输代理远程代码执行漏洞预警",
+      "title_orig": "New critical Exim mailer flaw allows remote code execution",
+      "summary": "开源邮件传输代理Exim被曝存在严重的远程代码执行漏洞，允许未经身份验证的远程攻击者在特定配置环境下执行任意代码，对邮件服务器安全构成直接威胁。该漏洞涉及Exim的核心处理逻辑，攻击者仅需发送精心构造的邮件请求即可触发，官方已发布紧急预警，建议管理员立即检查配置并更新至安全版本以规避潜在风险。",
+      "tags": [
+        "Exim",
+        "远程代码执行",
+        "邮件安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-critical-exim-mailer-flaw-allows-remote-code-execution/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-13T20:23:50+00:00",
+      "cve_ids": [],
+      "selection_reason": "Exim 作为核心邮件组件，其 RCE 漏洞对互联网基础设施",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/new-critical-exim-mailer-flaw-allows-remote-code-execution",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Windows BitLocker 零日漏洞 PoC 公开，可绕过加密访问受保护驱动器",
+      "title_orig": "Windows BitLocker zero-day gives access to protected drives, PoC released",
+      "summary": "安全研究员公开了名为YellowKey和GreenPlasma的两个Windows未修复零日漏洞PoC，分别涉及BitLocker磁盘加密绕过以及关键的系统权限提升漏洞。这些漏洞允许拥有物理接触设备或特定低权限的攻击者直接绕过底层加密保护，进而非法访问受保护的数据驱动器并窃取敏感信息，由于微软目前尚未发布正式的安全补丁，广大用户需密切关注官方发布的临时缓解措施以防范潜在的数据泄露风险。",
+      "tags": [
+        "BitLocke",
+        "绕过漏洞",
+        "零日漏洞"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/windows-bitlocker-zero-day-gives-access-to-protected-drives-poc-released/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-13T16:37:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "BitLocker 绕过漏洞直接威胁数据静态加密的安全性。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/windows-bitlocker-zero-day-gives-access-to-protected-drives-poc-released",
+      "related_urls": [
+        "https://thehackernews.com/2026/05/microsoft-patches-138-vulnerabilities.html",
+        "https://www.rapid7.com/blog/post/em-patch-tuesday-may-2026"
+      ],
+      "related_count": 2,
+      "score": 10,
+      "dimension_score": 9.65,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OPNsense 防火墙 DHCP 配置组件远程代码执行漏洞 CVE-2026-45158",
+      "title_orig": "CVE-2026-45158",
+      "summary": "基于FreeBSD的开源防火墙平台OPNsense在26.1.8之前的版本中存在严重远程代码执行漏洞，主要原因是DHCP配置界面未能对用户输入的数据进行严格的过滤与清洗。攻击者提交的恶意输入会被直接传递给底层的shell脚本进行处理，从而允许攻击者在底层操作系统上以最高root权限执行任意命令，目前官方已在发布的26.1.8版本中彻底修复了此输入验证缺陷，建议所有受影响用户尽快完成升级。",
+      "tags": [
+        "OPNsense",
+        "命令注入",
+        "防火墙安全"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-45158?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-13T22:16:46+00:00",
+      "cve_ids": [
+        "CVE-2026-45158"
+      ],
+      "selection_reason": "防火墙组件的 RCE 漏洞可能导致整个网络边界防御失效。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-45158",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "TanStack 框架遭遇供应链攻击，多个恶意版本已被植入恶意代码",
+      "title_orig": "RT Lupin: wtf. the tanstack attack just went live. we flagged this exact chain 25 days ago. april 16. All Depi clients were alerted. if you're using @...",
+      "summary": "安全研究员发布紧急预警称TanStack框架的多个特定版本已被植入恶意代码，这是一起针对开发者的典型软件供应链投毒攻击，受影响的恶意版本包括1.166.12、1.166.15、1.169.5及1.169.8等。攻击者通过篡改清单文件实现恶意逻辑植入，相关开发者必须立即清理本地构建缓存并重新构建项目，同时需仔细检查manifest文件以确保开发环境安全，该威胁早在25天前就已被相关机构监测并预警。",
+      "tags": [
+        "供应链攻击",
+        "TanStack",
+        "恶意包"
+      ],
+      "url": "https://x.com/rez0__/status/2054569491464704357",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-11T23:28:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "前端流行框架投毒事件对开发者生态具有广泛影响。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2054569491464704357",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.65,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OPNsense 核心组件身份验证后远程代码执行漏洞 CVE-2026-44194",
+      "title_orig": "CVE-2026-44194",
+      "summary": "OPNsense防火墙在26.1.8版本之前存在一个身份验证后的远程代码执行漏洞，拥有用户管理权限的攻击者可以借此在底层系统中执行root级别的任意命令。漏洞利用的关键在于攻击者通过构造符合邮件地址格式的恶意载荷成功绕过了输入验证逻辑，目前官方已通过强化核心组件的校验机制，在最新版本中彻底修复了该安全隐患。",
+      "tags": [
+        "OPNsense",
+        "权限提升",
+        "RCE"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-44194?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-13T22:16:43+00:00",
+      "cve_ids": [
+        "CVE-2026-44194"
+      ],
+      "selection_reason": "分析如何利用合规格式绕过验证是 Web 安全研究的典型案例。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-44194",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "LangChain 框架 Tracer 组件凭据泄露与远程执行漏洞 CVE-2026-44843",
+      "title_orig": "CVE-2026-44843: One Chat Message Steals Your Credentials. Then It Gets Worse!",
+      "summary": "研究人员在LangChain框架的Tracer管道中发现严重漏洞，攻击者仅需发送一条简单的聊天消息，即可在未经身份验证的情况下实现远程凭据窃取。该漏洞的根源并非LLM模型或提示词本身，而是框架底层的管道处理机制存在设计缺陷，这一发现凸显了AI应用基础设施安全的重要性，提醒开发者需警惕框架层面的安全风险。",
+      "tags": [
+        "LangChai",
+        "AI安全",
+        "凭据泄露"
+      ],
+      "url": "https://infosecwriteups.com/cve-2026-44843-one-chat-message-steals-your-credentials-then-it-gets-worse-264146623aec?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-13T08:21:02+00:00",
+      "cve_ids": [
+        "CVE-2026-44843"
+      ],
+      "selection_reason": "揭示了 AI 框架而非模型本身的架构安全风险。",
+      "feed_url": "https://infosecwriteups.com/feed",
+      "feed_title": "InfoSec Write-ups - Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "cve:cve-2026-44843",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "攻击者利用虚假 IT 支持账户通过 Microsoft Teams 部署 ModeloRAT 并实现域控权限提升",
+      "title_orig": "When IT Support Calls: Dissecting a ModeloRAT Campaign from Teams to Domain Compromise",
+      "summary": "攻击者伪装成IT支持人员通过Microsoft Teams向员工发送钓鱼消息，诱导其下载并运行恶意软件，随后利用ModeloRAT在企业内网中实现持久化控制。该攻击链涵盖了凭据窃取、权限提升及恶意软件部署等多个环节，最终导致企业域环境被全面渗透，充分展示了社会工程学结合合法协作工具对企业安全构成的巨大威胁。",
+      "tags": [
+        "社会工程学",
+        "ModeloRA",
+        "内网渗透"
+      ],
+      "url": "https://www.rapid7.com/blog/post/tr-it-support-dissecting-modelorat-campaign-microsoft-teams-compromise",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-13T14:44:02+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了利用企业信任工具进行初始访问的典型攻击路径。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "url:rapid7.com/blog/post/tr-it-support-dissecting-modelorat-campaign-microsoft-teams-compromise",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "威胁猎人开源 Shai-Hulud NPM 蠕虫源代码，vx-underground 在仓库删除前完成镜像备份",
+      "title_orig": "🚨 A threat actor open sourced the Shai-Hulud NPM worm on GitHub today. The repo was deleted shortly after. Fortunately vx-underground mirrored it b...",
+      "summary": "一名威胁参与者在GitHub上公开了名为Shai-Hulud的NPM蠕虫源代码，虽然原始仓库在发布后不久即被删除，但安全组织vx-underground已在下架前及时完成镜像备份并提供下载。该蠕虫主要利用NPM生态系统进行自动化传播，其核心代码的公开可能导致针对软件供应链的自动化攻击技术被更广泛地滥用，引发了安全研究人员对开源包管理安全性的高度警惕与持续关注。",
+      "tags": [
+        "NPM 蠕虫",
+        "供应链安全",
+        "开源威胁"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2054294018536690109",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-12T20:13:55+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注供应链蠕虫自动化传播技术及其源代码泄露风险。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2054294018536690109",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Perl 模块 Web::Passwd 存在远程代码执行漏洞 CVE-2026-8500，用户参数未过滤导致命令注入",
+      "title_orig": "CVE-2026-8500",
+      "summary": "Perl语言的Web::Passwd模块在0.03及以下版本中存在严重的远程代码执行漏洞，该模块作为小型CGI应用程序主要用于管理htpasswd文件。由于程序未能对输入的user参数进行必要的验证或转义，攻击者可将其作为命令行参数注入恶意指令，从而在服务器上实现任意代码执行，此漏洞的发现再次提醒开发者需警惕CGI应用中因参数处理不当而引发的命令注入风险。",
+      "tags": [
+        "RCE 漏洞",
+        "命令注入",
+        "Perl 安全"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-8500?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-13T23:16:43+00:00",
+      "cve_ids": [
+        "CVE-2026-8500"
+      ],
+      "selection_reason": "典型的输入验证缺失导致的 RCE 漏洞，具有高风险。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-8500",
+      "related_urls": [
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-8500?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-8500?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GemStuffer 攻击活动滥用 150 多个 RubyGems 恶意包，利用包管理器作为数据外传通道",
+      "title_orig": "GemStuffer Abuses 150+ RubyGems to Exfiltrate Scraped U.K. Council Portal Data",
+      "summary": "研究人员发现名为GemStuffer的攻击活动，攻击者向RubyGems仓库上传了超过150个恶意包，旨在窃取英国地方议会门户网站的敏感数据。这些恶意包并非以大规模感染开发者为目的，而是巧妙地将官方注册表作为数据外传的隐蔽通道，利用重复的有效载荷实现特定目标的精准数据窃取，暴露了开源仓库被滥用的新风险。",
+      "tags": [
+        "RubyGems",
+        "数据外传",
+        "恶意包"
+      ],
+      "url": "https://thehackernews.com/2026/05/gemstuffer-abuses-150-rubygems-to.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-13T08:08:54+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了包管理器作为攻击基础设施而非单纯感染源的新趋势。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/gemstuffer-abuses-150-rubygems-to.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.7,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源 ERP 工具 ERPNext 修复 XXE 漏洞 CVE-2026-44445，可导致敏感配置文件泄露",
+      "title_orig": "CVE-2026-44445",
+      "summary": "开源ERP工具ERPNext在15.104.3和16.12.0之前的版本中，其EDI模块存在XML外部实体注入漏洞，导致经过身份验证的攻击者能够读取包括敏感配置文件在内的本地文件系统数据。目前官方已发布修复版本并建议用户尽快升级，该漏洞的修复对于保障企业资源规划系统的敏感信息安全至关重要，能有效防止因XXE漏洞引发的本地文件泄露风险及潜在的系统安全威胁。",
+      "tags": [
+        "XXE 漏洞",
+        "ERPNext",
+        "信息泄露"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-44445?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-13T22:16:45+00:00",
+      "cve_ids": [
+        "CVE-2026-44445"
+      ],
+      "selection_reason": "开源 ERP 系统的安全漏洞，直接威胁企业核心数据安全。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-44445",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.8,
+      "final_score": 7.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "针对 ARM64 架构的 this_cpu_ops 性能优化研究，通过独立页表解决 percpu 数据访问挑战",
+      "title_orig": "LSF/MM/BPF系列：Yang Shi针对ARM64的this_cpu_ops优化",
+      "summary": "针对ARM64架构下访问percpu数据的性能挑战，研究者提出为每个CPU设置独立内核页表的优化方案，旨在实现类似x86架构的单指令原子化操作。该方案通过local mapping映射特定数据，在无需关闭抢占的情况下利用硬件特性提升执行效率，解决了多核环境下内核页面共享与独立映射的平衡问题，对系统底层性能优化具有重要意义。",
+      "tags": [
+        "ARM64",
+        "内核优化",
+        "底层安全"
+      ],
+      "url": "https://blog.csdn.net/21cnbao/article/details/161028912",
+      "source": "blog.csdn.net",
+      "category": "CN_News",
+      "published": "2026-05-12T10:08:18+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及操作系统内核底层架构优化，对性能与隔离性有重要意义。",
+      "feed_url": "https://blog.csdn.net/21cnbao/rss/list",
+      "feed_title": "宋宝华",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "blog.csdn.net",
+      "story_id": "url:blog.csdn.net/21cnbao/article/details/161028912",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 7.6,
+      "final_score": 7.3,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Daily AlpacaHack 挑战赛解题视频系列发布，通过实战演示助力初学者掌握 CTF 技巧",
+      "title_orig": "Daily AlpacaHackに挑戦するつくよみちゃん",
+      "summary": "安全研究员针对Daily AlpacaHack每日初学者挑战赛制作了系列解题视频，通过画面录制与实时讲解详细展示了解决CTF题目时的思考逻辑与操作过程。该系列视频旨在通过直观的教学方式降低安全技术的入门门槛，在分享解题技巧的同时促进安全社区的学习氛围，为初学者提供了宝贵的实战参考资料，助力网络安全人才的培养。",
+      "tags": [
+        "CTF 竞赛",
+        "安全教学",
+        "AlpacaHa"
+      ],
+      "url": "https://furutsuki.hatenablog.com/entry/2026/05/14/002228",
+      "source": "furutsuki.hatenablog.com",
+      "category": "Pwn",
+      "published": "2026-05-13T15:22:28+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了高质量的 CTF 实战教学资源，有助于人才培养。",
+      "feed_url": "https://furutsuki.hatenablog.com/rss",
+      "feed_title": "ふるつき",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "furutsuki.hatenablog.com",
+      "story_id": "url:furutsuki.hatenablog.com/entry/2026/05/14/002228",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.75,
+      "final_score": 6.75,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
