@@ -1,18 +1,18 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-05-14",
-  "fetched_at_utc": "2026-05-13T23:45:43.877365Z",
+  "fetched_at": "2026-05-15",
+  "fetched_at_utc": "2026-05-14T23:40:02.203009Z",
   "hours": 72,
   "total_feeds": 23,
-  "raw_entry_count": 82,
-  "entry_count": 40,
+  "raw_entry_count": 81,
+  "entry_count": 42,
   "filter_stats": {
-    "input": 82,
-    "dedup_merged": 3,
+    "input": 81,
+    "dedup_merged": 2,
     "output": 79
   },
   "curation_stats": {
-    "dropped_source_cap": 39
+    "dropped_source_cap": 37
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -20,7 +20,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 9
+      "raw_count": 8
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -62,14 +62,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 12
+      "raw_count": 11
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -104,7 +104,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 3
     },
     "http://127.0.0.1:1200/twitter/user/EmbraceTheRed": {
       "feed_title": "X / Embrace The Red",
@@ -125,7 +125,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 4
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -146,14 +146,14 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 3
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 14
+      "raw_count": 16
     },
     "http://127.0.0.1:1200/twitter/user/simonw": {
       "feed_title": "X / Simon Willison",
@@ -218,6 +218,21 @@
       "feed_title": "X / Johann Rehberger"
     },
     {
+      "title": "copy failed 原理详解",
+      "url": "https://xz.aliyun.com/news/92128",
+      "summary": "Copy Fail (CVE-2026-31431) 是 Linux 内核身份验证加密模块中的一个逻辑错误。它允许**非特权用户向任意可读文件的页缓存中写入 4 字节的任意数据，并且支持多次写入**",
+      "category": "Chinese",
+      "published": "2026-05-12T14:34:18+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [
+        "CVE-2026-31431"
+      ],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
       "title": "What Parameter Golf taught us about AI-assisted research",
       "url": "https://openai.com/index/what-parameter-golf-taught-us",
       "summary": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
@@ -231,37 +246,65 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "Your AI Use Is Breaking My Brain",
-      "url": "https://simonwillison.net/2026/May/11/zombie-internet/#atom-everything",
-      "summary": "Your AI Use Is Breaking My Brain Excellent, angry piece by Jason Koebler on how AI writing online is becoming impossible to avoid, filtering it is mentally exhausting and it's even starting to distort regular human writing styles. I particularly liked his use of the term \"Zombie Internet\" to define a different, more insidious alternative to the \"Dead Internet\" (which is just bots talking to each o",
-      "category": "AISecurityLabs",
-      "published": "2026-05-11T19:21:27+00:00",
+      "title": "Here’s the sauce: - agent md file with lots of disclaimers about how it’s approved testing - a bunch of hacking skills - /goal find a crit on target...",
+      "url": "https://x.com/rez0__/status/2055067183168794953",
+      "summary": "Here’s the sauce: - agent md file with lots of disclaimers about how it’s approved testing - a bunch of hacking skills - /goal find a crit on target . com That’s literally 90% of the way there and enough to blow anyone’s mind who hasn’t been convinced yet. Joseph Thacker: okay im calling it officially. codex is cracked. if you're a bb hunter and you dont have a hackbot set up yet, i recommend code",
+      "category": "XSignals",
+      "published": "2026-05-14T23:26:12+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Not so locked in any more",
+      "url": "https://simonwillison.net/2026/May/14/not-so-locked-in/#atom-everything",
+      "summary": "This Mitchell Hashimoto quote about Bun migrating from Zig to Rust reminded me of a similar conversation I had at a conference last week. I was talking to someone who worked for a medium sized technology company with a pair of legacy/ legendary iPhone and Android apps. They told me they had just completed a coding-agent driven rewrite of both apps to React Native. I asked why they chose that, give",
+      "category": "AISecurityLabs",
+      "published": "2026-05-14T22:53:49+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
     },
     {
-      "title": "Using LLM in the shebang line of a script",
-      "url": "https://simonwillison.net/2026/May/11/llm-shebang/#atom-everything",
-      "summary": "TIL: Using LLM in the shebang line of a script Kim_Bruning on Hacker News : But seriously, you can put a shebang on an english text file now (if you're sufficiently brave) [...] This inspired me to look at patterns for doing exactly that with LLM . Here's the simplest, which takes advantage of LLM fragments : #!/usr/bin/env -S llm -f Generate an SVG of a pelican riding a bicycle But you can also i",
+      "title": "Quoting Mitchell Hashimoto",
+      "url": "https://simonwillison.net/2026/May/14/mitchell-hashimoto/#atom-everything",
+      "summary": "[...] On the interesting side is how fungible programming languages are nowadays. Programming languages used to be LOCK IN, and they're increasingly not so. You think the Bun rewrite in Rust is good for Rust? Bun has shown they can be in probably any language they want in roughly a week or two. Rust is expendable. Its useful until its not then it can be thrown out. That's interesting! &mdash; Mitc",
       "category": "AISecurityLabs",
-      "published": "2026-05-11T18:48:57+00:00",
+      "published": "2026-05-14T22:31:20+00:00",
       "fetch_status": "full",
       "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
+      "related_urls": [
+        "https://simonwillison.net/2026/May/12/mitchell-hashimoto/#atom-everything"
+      ],
+      "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
     },
     {
-      "title": "Grok Hack Explained: How Prompt Injection Drained Nearly $200K - Memeburn",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQdEpNYURNc2NSSWxiNDZWQ0ZWc1dZZkZVRDFTRmZxWVlKSm5iV082QnppN0RLc0JTbGtlWTZKU3BxWWc2TVhHQTJ6ZlBSbXhoNnRsNUNnb0FOZ0VTWU1tRlBrNU9RVmREZWlyTHktaS13VU1Vd1AzT05ldVNFNzRLelEwMzJSb0dDYWc?oc=5",
-      "summary": "Grok Hack Explained: How Prompt Injection Drained Nearly $200K &nbsp;&nbsp; Memeburn",
+      "title": "AI安全联盟加速扩围：Anthropic、OpenAI与Palo Alto Networks密集布局网络安全 - 디지털투데이",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNQ0h4blltQ3ZJVG9KQno3c3dMSU05OXZ6SE9fcVByWlhra0FBU1VWNjMtVE5qTmk2d3B0VXI0TzFvZkItaWtXNkJrcjNVT0R2QnVHdEpvcXczVW9lWjdLeVRvTVRaUWFOZmZYWHBzYWRlenRkaHJrZG9IaVJCaTdrWngzUjlIbm5yS2ZxeHVGVUpZSXJFQUVhVl9TSDZzY0VNeVJBbjF6Yw?oc=5",
+      "summary": "AI安全联盟加速扩围：Anthropic、OpenAI与Palo Alto Networks密集布局网络安全 &nbsp;&nbsp; 디지털투데이",
       "category": "CoverageFallback",
-      "published": "2026-05-13T23:44:49+00:00",
+      "published": "2026-05-14T22:30:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "AI Security Summit: Reflections and Insights - The Times of Israel",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPV1RXaUI2bDYzM2V5TE00eUQ1T0RXQnRiNTZNbjBweWJHdGFza3RRZ0x0d2VRUGw3Z3puRnN4VVlaYWZJM05DV0dEOEs3Qm8zVms0VFpDNE0wYnEyZmt5alItTEppVDhSU1dUeEZaa1ZEQnk0LXRxdTl5NmlOQXhSTXdn?oc=5",
+      "summary": "AI Security Summit: Reflections and Insights &nbsp;&nbsp; The Times of Israel",
+      "category": "CoverageFallback",
+      "published": "2026-05-14T18:19:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -270,17 +313,134 @@
       "feed_title": "Google News AI Security"
     },
     {
-      "title": "Cisco To Cut Nearly 4,000 Jobs In Restructuring Push Around AI, Security - crn.com",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeHdwU1lSZ2haWHk2ZkkycEJDODRyTzVXQ0N6a2s0ai1lcV9pQ2xFSVVCQ0ZreUJfMGIyR1pSSFEwRmFSODdfZjVCUHQ1ZWt5V21USlZRSDVmcTZKT0ZKQk1lUzF6VG5lZmJfeUJqeWFzTklveUl6UVhjQTFYVmh6NUdrUHl1TVJXZk9XX0N5dWdmNFpLQUxkMWduUG9XT3pwVUdybEhnTGZOQVBmakJYd0lR?oc=5",
-      "summary": "Cisco To Cut Nearly 4,000 Jobs In Restructuring Push Around AI, Security &nbsp;&nbsp; crn.com",
+      "title": "【Anthropic】AI安全机构报告称Mythos进化速度超预期 - 搜狐网",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOTlExLXBId2EzZlZkSUg5VHJjS3o5WlktUlBmVUF2RUxYV1ljbWFsam5VZEdzTlhJR2tYZ3FTSHdNUnlHUVNkeV85Z0J6a21taWpjRzFScjBaWVRKb0hCVzdOZmtRYndNVmJock1zRG14dXRvM3ExUHhqWXctN01jVzRFZFZiVk9Za2h2Vg?oc=5",
+      "summary": "【Anthropic】AI安全机构报告称Mythos进化速度超预期 &nbsp;&nbsp; 搜狐网",
       "category": "CoverageFallback",
-      "published": "2026-05-13T23:27:00+00:00",
+      "published": "2026-05-14T18:01:04+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "that we'll get to a point where they are actually smarter than most humans and continue to give tons of agency to them and at some point, a simple ali...",
+      "url": "https://x.com/rez0__/status/2054984092366881082",
+      "summary": "that we'll get to a point where they are actually smarter than most humans and continue to give tons of agency to them and at some point, a simple alignment issue will lead to bigger consequences. it's a small chance but it's possible i think. Pliny the Liberator 🐉󠅫󠄼󠄿󠅆󠄵󠄐󠅀󠄼󠄹󠄾󠅉󠅭: what’s your biggest fear with AI?",
+      "category": "XSignals",
+      "published": "2026-05-14T17:56:02+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "美中开启AI安全协议磋商：贝森特称两大超级大国将共建保障框架 英伟达H200出口成焦点 - 希望之声",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5qOXB3R3I5YjZvSkdXdlhMSjNEdkZLT3VNai1ibVJfaGFMOGJ4Q0lXcVNhZWhPYnBsblhxVjJObkVqUkpfSEM4VVlmbTUxWFY2?oc=5",
+      "summary": "美中开启AI安全协议磋商：贝森特称两大超级大国将共建保障框架 英伟达H200出口成焦点 &nbsp;&nbsp; 希望之声",
+      "category": "CoverageFallback",
+      "published": "2026-05-14T16:45:59+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "You could make cool stuff with dalle2. Here's some of old favorites.",
+      "url": "https://x.com/rez0__/status/2054911191131013423",
+      "summary": "You could make cool stuff with dalle2. Here's some of old favorites. snwy: before DALLE-2 was shut down this month, i generated around ~50,000 images from a diverse prompt corpus and did a full fine-tune of SD1.5 on it. the result feels nearly identical to DALLE-2 (left: base SD1.5, right: fine-tuned)",
+      "category": "XSignals",
+      "published": "2026-05-14T13:06:21+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "this is awesome. i really liked dalle2.",
+      "url": "https://x.com/rez0__/status/2054909546175340918",
+      "summary": "this is awesome. i really liked dalle2. snwy: before DALLE-2 was shut down this month, i generated around ~50,000 images from a diverse prompt corpus and did a full fine-tune of SD1.5 on it. the result feels nearly identical to DALLE-2 (left: base SD1.5, right: fine-tuned)",
+      "category": "XSignals",
+      "published": "2026-05-14T12:59:48+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Congrats Angelboy & co! 🎉 @scwuaptx You guys are on a roll today. Great work! 🙌",
+      "url": "https://x.com/wunderwuzzi23/status/2054887147635941859",
+      "summary": "Congrats Angelboy &amp; co! 🎉 @scwuaptx You guys are on a roll today. Great work! 🙌 TrendAI Zero Day Initiative: Nice work! Angelboy &amp; TwinkleStar03 (@scwuaptx &amp; @_twinklestar03) of DEVCORE Research Team + DEVCORE Internship Program was able to exploit Microsoft Windows 11! If confirmed, they win $30,000 and 3 Master of Pwn points. They're off to the disclosure room to explain how they did",
+      "category": "XSignals",
+      "published": "2026-05-14T11:30:48+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
+    {
+      "title": "Congrats Orange! @orange_8361 🔥🔥🔥",
+      "url": "https://x.com/wunderwuzzi23/status/2054886499305549854",
+      "summary": "Congrats Orange! @orange_8361 🔥🔥🔥 TrendAI Zero Day Initiative: Confirmed! Orange Tsai (@orange_8361) of DEVCORE Research Team (@d3vc0r3) chained 4 logic bugs to achieve a sandbox escape on Microsoft Edge, earning $175,000 and 17.5 Master of Pwn points. Full win! #Pwn2Own #P2OBerlin",
+      "category": "XSignals",
+      "published": "2026-05-14T11:28:14+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
+    {
+      "title": "Doing this is a great way to make a bonfire of your reputation",
+      "url": "https://x.com/simonw/status/2054782039841460302",
+      "summary": "Doing this is a great way to make a bonfire of your reputation Gergely Orosz: A person I know (and who is? was? a good professional al) left an AI-generated comment under my LinkedIn post. Full-on AI slop. I asked: why do this? He replied. It’s because of “engagement.” People are burning their profession al reputation, paying for AI tools, for nothing",
+      "category": "XSignals",
+      "published": "2026-05-14T04:33:08+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
+      "feed_title": "X / Simon Willison"
+    },
+    {
+      "title": "datasette-ip-rate-limit 0.1a0",
+      "url": "https://simonwillison.net/2026/May/14/datasette-ip-rate-limit/#atom-everything",
+      "summary": "Release: datasette-ip-rate-limit 0.1a0 The datasette.io site was being hammered by poorly-behaved crawlers, so I had Codex (GPT-5.5 xhigh) build a configurable rate limiting plugin to block IPs that were hammering specific areas of the site too quickly. Here's the production configuration I'm using on that site for the new plugin: datasette-ip-rate-limit : header : Fly-Client-IP max_keys : 10000 e",
+      "category": "AISecurityLabs",
+      "published": "2026-05-14T04:10:23+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "RT lisa: Trail of Bits is so OG, this is a cool collab to see!",
+      "url": "https://x.com/trailofbits/status/2054965868245950624",
+      "summary": "RT lisa Trail of Bits is so OG, this is a cool collab to see! Trail of Bits: We were one of four initial grant recipients in @OpenAI's Trusted Access for Cyber program. Daybreak matters because frontier models now find bugs faster than maintainers can triage them, and that gap is about to get worse.",
+      "category": "XSignals",
+      "published": "2026-05-13T21:47:02+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
     },
     {
       "title": "SO TRUE. the thread was very confusing. maybe it was intentional.",
@@ -294,32 +454,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "Microsoft's MDASH AI Security System Finds 16 Windows Vulnerabilities - PCMag Australia",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSU5xcFVRNnFXSVFBWnpBRVduRXFtS2ttVWljdkNvT2w4R0dBaGh1RGtfUkZneG9tcV9iQnJzRjM2N000eUw0WVlSRi1POEdDcnhOaDdMZnVuZXJuNFRWMG5BNVQ0bTB2eWdONGRJaDNLNG1fcGZ2ODVaZTg3dXhmY1p6aDktaWNjN3pFcDc5R0NkRWwySDVfRkxKUDFfN2E3?oc=5",
-      "summary": "Microsoft's MDASH AI Security System Finds 16 Windows Vulnerabilities &nbsp;&nbsp; PCMag Australia",
-      "category": "CoverageFallback",
-      "published": "2026-05-13T20:18:02+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Aviatrix Emphasizes AI Agent Security Opportunities in Cloud Environments - TipRanks",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPck1JVzlhdnAzdnJqd3F3dDluQ0x2dVZrNzR2OTFoalhmT0lraDZlaE9aT3Awd2ZJdFl3d1pvR1UyMTVvVGdfeFZjdUd6OWVuMXhhUE5nYWRBUDlUM3VlQnh4NWNXWHVyeUxnLWtaT2o0bl9hMG9BcUR5cXhpY3M5Mkc4c19TYTZvajR4OWd0dEt4YTZmMEYyalhrUTFsT0F1VWRrRGJocUtnQXc3cVl1UFNsU3o4ckRfQ05ZTjZ3?oc=5",
-      "summary": "Aviatrix Emphasizes AI Agent Security Opportunities in Cloud Environments &nbsp;&nbsp; TipRanks",
-      "category": "CoverageFallback",
-      "published": "2026-05-13T18:32:17+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
     },
     {
       "title": "well this sucks. gotta rework the hackbot",
@@ -348,19 +482,6 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "Quoting Boris Mann",
-      "url": "https://simonwillison.net/2026/May/13/boris-mann/#atom-everything",
-      "summary": "“11 AI agents” is meaningless as a phrase. If I said “I have 11 spreadsheets” or “I have 11 browser tabs” to do my work, it means about the same thing. &mdash; Boris Mann Tags: ai-agents , ai , agent-definitions",
-      "category": "AISecurityLabs",
-      "published": "2026-05-13T16:15:50+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
       "title": "The issue with this feature (outside of crypto) is that the intellectual property of the initial report gets leaked to all duplicate reporters. This w...",
       "url": "https://x.com/rez0__/status/2054570838087901364",
       "summary": "The issue with this feature (outside of crypto) is that the intellectual property of the initial report gets leaked to all duplicate reporters. This wasn't typically agreed-to (thus requiring a change of the terms). Also, it's worse when triager error dupes it incorrectly. Mitchell Amador: Big news from Immunefi: we just shipped Proof of Duplicate, and it's *the* feature I've been wanting to see f",
@@ -374,17 +495,17 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "It’s funny seeing people having one of two reactions: - GitHub pays too little for bugs - there’s hardly any valid reports in those 325 It’s painfu...",
-      "url": "https://x.com/rez0__/status/2054529796672041113",
-      "summary": "It’s funny seeing people having one of two reactions: - GitHub pays too little for bugs - there’s hardly any valid reports in those 325 It’s painfully obvious that it’s the second in this case. And also, they probably haven’t paid the majority of any valid bugs submitted. Joseph Thacker: THREE HUNDRED ANS TWENTY FIVE REPORTS TWO THOUSAND DOLLARS 🤣🤣🤣",
-      "category": "XSignals",
-      "published": "2026-05-13T11:50:49+00:00",
+      "title": "泛微e9分析思路",
+      "url": "https://xz.aliyun.com/news/92131",
+      "summary": "本文基于泛微e9（9.00.210804版本），系统阐述OA系统的安全审计方法。文章涵盖环境搭建、六大类路由（/weaver/、/api/、/services/*、/dwr/*等）的分析，详细剖析SecurityMain安全过滤机制、XssRequestWeblogic参数过滤、登录绕过等技术要点。通过FileDownloadLocation文件读取、browser.jsp SQL注入等实战案例，",
+      "category": "Chinese",
+      "published": "2026-05-13T12:53:11+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "A 0-click exploit chain for the Pixel 10: When a Door Closes, a Window Opens",
@@ -400,17 +521,17 @@
       "feed_title": "Google Project Zero"
     },
     {
-      "title": "THREE HUNDRED ANS TWENTY FIVE REPORTS TWO THOUSAND DOLLARS 🤣🤣🤣",
-      "url": "https://x.com/rez0__/status/2054323132878458982",
-      "summary": "THREE HUNDRED ANS TWENTY FIVE REPORTS TWO THOUSAND DOLLARS 🤣🤣🤣 GitHub Security: Here are our April bug bounty stats! ✅325 bounty reports submitted 👥226 hackers participated in our program 💰Awarded $2,367 in bounties Found a vulnerability? Submit it here: https://bounty.github.com.",
-      "category": "XSignals",
-      "published": "2026-05-12T22:09:37+00:00",
+      "title": "Our response to the TanStack npm supply chain attack",
+      "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack",
+      "summary": "OpenAI details its response to the TanStack “Mini Shai-Hulud” supply chain attack, outlines protections taken to secure systems and signing certificates, and explains why macOS users must update OpenAI apps by June 12, 2026. Learn what happened, what was affected, and how OpenAI is strengthening defenses against evolving software supply chain threats.",
+      "category": "FirstParty",
+      "published": "2026-05-13T00:00:00+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
     },
     {
       "title": "Go fuzzing was missing half the toolkit. We forked the toolchain to fix it.",
@@ -452,95 +573,56 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "RT Lupin: wtf. the tanstack attack just went live. we flagged this exact chain 25 days ago. april 16. All Depi clients were alerted. if you're using @...",
-      "url": "https://x.com/rez0__/status/2054569491464704357",
-      "summary": "RT Lupin wtf. the tanstack attack just went live. we flagged this exact chain 25 days ago. april 16. All Depi clients were alerted. if you're using @tan_stack check your manifest files right now 1.166.12, 1.166.15, 1.169.5, 1.169.8 are malicious. clean your cache. rebuild.",
+      "title": "okay im calling it officially. codex is cracked. if you're a bb hunter and you dont have a hackbot set up yet, i recommend codex with gpt5.5 over clau...",
+      "url": "https://x.com/rez0__/status/2054997505872367641",
+      "summary": "okay im calling it officially. codex is cracked. if you're a bb hunter and you dont have a hackbot set up yet, i recommend codex with gpt5.5 over claude code.",
       "category": "XSignals",
-      "published": "2026-05-11T23:28:48+00:00",
-      "fetch_status": "full",
+      "published": "2026-05-14T18:49:20+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     },
     {
-      "title": "RT Max Zeff: Ilya Sutskever explaining why OpenAI has a for-profit, under oath in a federal court: \"if there's no funding, there's no big computer.\" i...",
-      "url": "https://x.com/rez0__/status/2054287475313426495",
-      "summary": "RT Max Zeff Ilya Sutskever explaining why OpenAI has a for-profit, under oath in a federal court: \"if there's no funding, there's no big computer.\" in the running for quote of the year",
+      "title": "okay i feel a bit better",
+      "url": "https://x.com/rez0__/status/2054915738012369211",
+      "summary": "okay i feel a bit better Joseph Thacker: the dream would be to be mentioned by claude like this via pre training and not just look up.",
       "category": "XSignals",
-      "published": "2026-05-11T23:17:55+00:00",
+      "published": "2026-05-14T13:24:25+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     },
     {
-      "title": "My Mac had less available memory than I expected, turned out the \"claude\" Claude Code processes on this machine (running in various terminal windows) ...",
-      "url": "https://x.com/simonw/status/2053973809510916205",
-      "summary": "My Mac had less available memory than I expected, turned out the \"claude\" Claude Code processes on this machine (running in various terminal windows) were consuming ~30GB on their own! The largest one was using 4.9GB",
+      "title": "the dream would be to be mentioned by claude like this via pre training and not just look up.",
+      "url": "https://x.com/rez0__/status/2054915137543254261",
+      "summary": "the dream would be to be mentioned by claude like this via pre training and not just look up. Wyatt Walls: Opus 4.7 identifies the \"claude boys corner of twitter\" (web search and memory off)",
       "category": "XSignals",
-      "published": "2026-05-11T23:01:31+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
-      "feed_title": "X / Simon Willison"
-    },
-    {
-      "title": "Inside AD CS Escalation: Unpacking Advanced Misuse Techniques and Tools",
-      "url": "https://unit42.paloaltonetworks.com/active-directory-certificate-services-exploitation/",
-      "summary": "Unit 42 analyzes AD CS exploitation through template misconfigurations and shadow credential misuse while offering behavioral detection for defenders. The post Inside AD CS Escalation: Unpacking Advanced Misuse Techniques and Tools appeared first on Unit 42 .",
-      "category": "AISecurityLabs",
-      "published": "2026-05-11T22:00:43+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
-      "feed_title": "Unit 42"
-    },
-    {
-      "title": "RT Harry Grieve: code is law in crypto, and as a consequence there was >$700m of exploits in the last couple of months. much of these stemmed from und...",
-      "url": "https://x.com/trailofbits/status/2053895208287510537",
-      "summary": "RT Harry Grieve code is law in crypto, and as a consequence there was &gt;$700m of exploits in the last couple of months. much of these stemmed from under (or un)audited smart contract code - particularly in relation to off-chain systems (1/3)",
-      "category": "XSignals",
-      "published": "2026-05-11T16:15:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
-      "feed_title": "X / Trail of Bits"
-    },
-    {
-      "title": "How enterprises are scaling AI",
-      "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
-      "summary": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
-      "category": "FirstParty",
-      "published": "2026-05-11T10:00:00+00:00",
+      "published": "2026-05-14T13:22:01+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
-      "title": "We're sponsoring @Offensive_Con in Berlin and sending a crew. If you're there for the AI bughunting training or the main conference, come say hi. http...",
-      "url": "https://x.com/trailofbits/status/2053773611031220454",
-      "summary": "We're sponsoring @Offensive_Con in Berlin and sending a crew. If you're there for the AI bughunting training or the main conference, come say hi. https://www.offensivecon.org/",
+      "title": "about time i get another shipment of these. hackbot go brrr for redbulls",
+      "url": "https://x.com/rez0__/status/2054908529295643074",
+      "summary": "about time i get another shipment of these. hackbot go brrr for redbulls Joseph Thacker: Thanks @intigriti and @redbull",
       "category": "XSignals",
-      "published": "2026-05-11T09:46:00+00:00",
+      "published": "2026-05-14T12:55:46+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
-      "feed_title": "X / Trail of Bits"
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "Nvm @xssdoctor and I already did it 😎",
@@ -563,9 +645,7 @@
       "published": "2026-05-13T14:10:09+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
-      "related_urls": [
-        "https://x.com/rez0__/status/2054249098413318601"
-      ],
+      "related_urls": [],
       "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
@@ -636,32 +716,6 @@
       "feed_title": "先知社区"
     },
     {
-      "title": "this is working decently well now. open to prs too of course",
-      "url": "https://x.com/rez0__/status/2053859108517019872",
-      "summary": "this is working decently well now. open to prs too of course Joseph Thacker: I made a /goal command for claude code: https://github.com/jthack/claude-goal",
-      "category": "XSignals",
-      "published": "2026-05-11T15:25:44+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "GraalVM Polyglot 沙箱逃逸：跨语言上下文 RCE",
-      "url": "https://xz.aliyun.com/news/92120",
-      "summary": "从受限JavaScript沙箱到宿主Java环境的完整攻击链构造与纵深防御",
-      "category": "Chinese",
-      "published": "2026-05-11T09:34:57+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
       "title": "科技云报到：智算千亿赛道向何方？一文读懂信通院《2026智能算力服务研究报告》",
       "url": "https://www.anquanke.com/post/id/315489",
       "summary": "",
@@ -673,32 +727,6 @@
       "quality_score": -1,
       "feed_url": "https://api.anquanke.com/data/v1/rss",
       "feed_title": "安全客"
-    },
-    {
-      "title": "记一次实战文件上传的简单bypass",
-      "url": "https://xz.aliyun.com/news/92118",
-      "summary": "文字来自本人实战经历（已修复）",
-      "category": "Chinese",
-      "published": "2026-05-11T07:09:29+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "复现 ICLR 2026 在审《TrojanPraise》：从 12% 到 42% 的 LoRA 越狱调参实战",
-      "url": "https://xz.aliyun.com/news/92116",
-      "summary": "一个越狱调参实验",
-      "category": "Chinese",
-      "published": "2026-05-11T06:16:03+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
     }
   ]
 }
