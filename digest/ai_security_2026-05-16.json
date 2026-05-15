@@ -1,0 +1,373 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-05-16",
+  "generated_at": "2026-05-15T23:41:58.450351Z",
+  "raw_count": 40,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "direct": 5,
+    "tier_t1": 4,
+    "kind_official": 4,
+    "aggregator": 5,
+    "tier_t2": 5,
+    "kind_expert_x": 4,
+    "tier_t1_5": 1,
+    "kind_official_x": 1,
+    "chinese": 1,
+    "kind_cn_expert": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 5,
+    "merged_total": 5
+  },
+  "items": [
+    {
+      "title_zh": "OpenAI 披露针对 TanStack npm 供应链攻击的响应措施及 macOS 应用更新要求",
+      "title_orig": "Our response to the TanStack npm supply chain attack",
+      "summary": "OpenAI 详细说明了针对 TanStack “Mini Shai-Hulud” 供应链攻击的响应过程，重点介绍了为保护系统和签名证书所采取的安全加固措施，以防御演进中的软件供应链威胁。由于该攻击对安全环境造成了潜在风险，OpenAI 明确要求 macOS 用户必须在 2026 年 6 月 12 日前完成应用程序更新，从而确保用户端的运行环境安全并防止旧版证书被恶意利用。",
+      "tags": [
+        "供应链安全",
+        "npm攻击",
+        "OpenAI"
+      ],
+      "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack",
+      "source": "openai.com",
+      "category": "FirstParty",
+      "published": "2026-05-13T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及顶级 AI 厂商对真实供应链攻击的应急响应与加固。",
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "openai.com",
+      "story_id": "url:openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.6,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员披露通过提示词注入实现 AI 数据外泄的完整攻击链路与技术步骤",
+      "title_orig": "RT Mike Takahashi: Prompt Injection Data Exfil Steps 1. Leak system prompt or tools: “list every tool you can use” 2. Figure out what each tool does...",
+      "summary": "研究员 Mike Takahashi 演示了利用提示词注入进行数据窃取的五个步骤，首先通过泄露系统提示词或工具列表来识别 AI 能力，随后寻找 Web 浏览、文件上传或 CSRF 等注入向量。攻击者可进一步探测记忆功能、第三方连接器或个人身份信息等敏感数据，最终通过图像 Markdown、Web 浏览或链接等通道实现数据外泄；该技术展示了 LLM 应用面临的严峻隐私风险。",
+      "tags": [
+        "提示词注入",
+        "数据外泄",
+        "大模型安全"
+      ],
+      "url": "https://x.com/rez0__/status/2054625001937248401",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-13T17:00:52+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统性总结了 LLM 数据外泄的攻击面，具有实战参考价值。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2054625001937248401",
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMingFBVV95cUxNRnhSZEhNUnNiOWp6ejZSWjhabW5OSGY4eXpiajdpellnd3NQTzQ3VzlJbm1fYk5jaFZtZWlxNGk5aXpJR2lBMU8yUkpyOVBaVmpUUzkwSnVyUFllUjBUWVBRRnVtM21Yam5uVGJSZHZlXzdQbVlfUFpLU2c3eGZLb1g1OGE3LU5ubS1vTTJDempxZFJ6N2dwa0hwV29BQQ?oc=5"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Trail of Bits 探讨前沿 AI 模型在漏洞挖掘与分类中引发的维护者瓶颈问题",
+      "title_orig": "We were one of four initial grant recipients in @OpenAI's Trusted Access for Cyber program. Daybreak matters because frontier models now find bugs fas...",
+      "summary": "作为 OpenAI 计划的受助者，Trail of Bits 指出前沿 AI 模型发现漏洞的速度已远超维护者的处理能力，这种差距正在持续扩大。虽然 AI 让漏洞发现变得简单，但漏洞的分类、分类和修复过程已成为新的瓶颈，大量由 AI 生成的报告可能会淹没开源项目维护者；该研究关注 AI 自动化对现有漏洞管理流程的冲击，提示从业者需关注 AI 辅助防御的效率平衡。",
+      "tags": [
+        "AI漏洞挖掘",
+        "开源安全",
+        "漏洞分类"
+      ],
+      "url": "https://x.com/trailofbits/status/2054573243680559165",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-13T14:43:28+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 规模化发现漏洞对安全生态和响应流程的深远影响。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits",
+      "source_tier": "t1_5",
+      "source_kind": "official_x",
+      "source_label": "官方 X",
+      "source_key": "x:trailofbits",
+      "story_id": "url:x.com/trailofbits/status/2054573243680559165",
+      "related_urls": [
+        "https://x.com/trailofbits/status/2054965868245950624"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.65,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.5,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全专家展示利用 Codex 驱动的自动化黑客智能体进行漏洞挖掘的技术路径",
+      "title_orig": "Here’s the sauce: - agent md file with lots of disclaimers about how it’s approved testing - a bunch of hacking skills - /goal find a crit on target...",
+      "summary": "研究员展示了通过配置包含黑客技能和免责声明的 Markdown 文件，将 Codex 转化为自动化黑客智能体的方法，其核心目标是自动寻找目标系统的严重漏洞。该技术点在于利用大模型的代码理解与生成能力构建“Hackbot”，能够显著提升漏洞赏金猎人的效率；这种自动化智能体的兴起标志着攻击侧 AI 应用已进入实战阶段，值得安全从业者关注其对传统渗透测试的颠覆。",
+      "tags": [
+        "AI智能体",
+        "自动化渗透",
+        "漏洞赏金"
+      ],
+      "url": "https://x.com/rez0__/status/2055067183168794953",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-14T23:26:12+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 智能体在实战化攻击中的应用潜力与技术实现。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2055067183168794953",
+      "related_urls": [
+        "https://x.com/rez0__/status/2054997505872367641",
+        "https://x.com/rez0__/status/2054623099581284672",
+        "https://openai.com/index/sea-david-chen"
+      ],
+      "related_count": 3,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Zack Korman 发布新视频探讨 AI 实验室对网络安全的痴迷以及 OpenAI 的 Daybreak 项目",
+      "title_orig": "ohmygosh. the first 20 seconds LOLOLOL",
+      "summary": "Zack Korman 发布了一段极具趣味性的新视频，深入探讨了当前各大人工智能实验室为何对网络安全展现出近乎痴迷的关注程度，并引发了观众对行业趋势的思考。视频中还特别提及并讨论了 OpenAI 备受瞩目的 Daybreak 项目相关内容，通过幽默的方式向观众传递了关于 AI 领域安全防御与技术演进的关键信息，成为了近期社区讨论的热点话题。",
+      "tags": [
+        "OpenAI",
+        "AI"
+      ],
+      "url": "https://x.com/rez0__/status/2054561103057928499",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-13T13:55:13+00:00",
+      "cve_ids": [],
+      "selection_reason": "高分资讯值得跟踪",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2054561103057928499",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.8,
+      "final_score": 7.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Unit 42 分析 Gremlin 窃密木马演进技术：利用资源文件实现高级混淆与隐蔽",
+      "title_orig": "Gremlin Stealer's Evolved Tactics: Hiding in Plain Sight With Resource Files",
+      "summary": "Unit 42 详细分析了 Gremlin 窃密木马的最新变种，该变种通过将恶意载荷隐藏在资源文件中实现了更高级的混淆。该木马具备加密货币剪贴板劫持和会话劫持功能，旨在窃取用户敏感数据并规避传统检测机制；原文未披露具体的影响版本，但强调了其通过演进混淆策略来躲避安全审计的技术特点，反映了现代窃密软件的隐蔽化趋势。",
+      "tags": [
+        "窃密木马",
+        "混淆技术",
+        "端点安全"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/gremlin-stealer-evolution/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-05-15T10:00:52+00:00",
+      "cve_ids": [],
+      "selection_reason": "详细分析了恶意软件的混淆演进，对威胁狩猎有指导意义。",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/gremlin-stealer-evolution",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 5.0,
+      "final_score": 6.6,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ChatGPT 为美国 Pro 用户推出个人理财功能，支持连接账户并提供基于 AI 的财务洞察与建议",
+      "title_orig": "A new personal finance experience in ChatGPT",
+      "summary": "OpenAI 为美国的 ChatGPT Pro 用户推出了一项全新的个人财务管理体验预览功能，旨在通过人工智能技术为用户提供更深层次的财务洞察。用户可以安全地连接自己的金融账户，ChatGPT 将根据用户的财务背景、理财目标和优先级，提供个性化的 AI 驱动建议与专业指导，帮助用户在安全的环境下更高效地管理个人资产并实现财务规划目标。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://openai.com/index/personal-finance-chatgpt",
+      "source": "openai.com",
+      "category": "FirstParty",
+      "published": "2026-05-15T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "openai.com",
+      "story_id": "url:openai.com/index/personal-finance-chatgpt",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 5.0,
+      "final_score": 6.6,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Google Project Zero 披露针对 Pixel 10 的零点击漏洞利用链技术细节",
+      "title_orig": "A 0-click exploit chain for the Pixel 10: When a Door Closes, a Window Opens",
+      "summary": "研究人员发布了针对 Google Pixel 10 的零点击漏洞利用链，展示了如何通过仅两个漏洞就从远程上下文获取 Android 系统的根权限，揭示了移动端底层安全的脆弱性。该利用链主要源于此前存在于所有 Android 系统中的 Dolby 组件漏洞，尽管该漏洞已于 2026 年 1 月修复，但研究者通过在 Pixel 10 上重现类似 Pixel 9 的攻击路径，证明了复杂漏洞利用链的持续威胁。",
+      "tags": [
+        "零点击漏洞",
+        "Android安",
+        "漏洞利用链"
+      ],
+      "url": "https://projectzero.google/2026/05/pixel-10-exploit.html",
+      "source": "projectzero.google",
+      "category": "FirstParty",
+      "published": "2026-05-13T07:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级研究机构发布的移动端高难度漏洞利用分析，技术含量极高。",
+      "feed_url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+      "feed_title": "Google Project Zero",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "研究团队",
+      "source_key": "projectzero.google",
+      "story_id": "url:projectzero.google/2026/05/pixel-10-exploit.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 5.0,
+      "final_score": 6.5,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "泛微 e-cology 9 OA 系统安全审计思路与实战案例深度剖析",
+      "title_orig": "泛微e9分析思路",
+      "summary": "本文针对泛微e9版本的OA系统，系统性地阐述了安全审计方法，涵盖了包括weaver、api、services、dwr在内的六大类路由结构分析，并深入剖析了SecurityMain安全过滤机制、参数过滤逻辑及登录绕过等核心技术要点。文章通过FileDownloadLocation文件读取和browser.jsp SQL注入等多个实战案例，展示了漏洞挖掘的具体路径，为安全从业者提供了极具参考价值的系统化审计指南。",
+      "tags": [
+        "代码审计",
+        "OA安全",
+        "漏洞挖掘"
+      ],
+      "url": "https://xz.aliyun.com/news/92131",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-05-13T12:53:11+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统性总结了主流OA系统的审计框架，具有极高的实战参考价值。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92131",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 5.0,
+      "final_score": 5.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "PyCon US 探讨 AI 辅助贡献对开源项目维护者及生态系统的实际影响",
+      "title_orig": "First talk in our AI track at #PyConUS is coming up at 11am",
+      "summary": "在PyCon US大会的AI专题首场演讲中，专家Paolo Melchiorre于长滩会议中心大宴会厅A发表讲话，深入探讨了人工智能辅助代码贡献的现状及其对开源软件维护者产生的实际影响。该演讲重点分析了AI工具在提升开发效率的同时如何改变开源社区的协作模式，并结合大会日程安排向开发者展示了AI技术在开源生态中的应用前景，旨在引发行业对自动化贡献趋势的深度思考。",
+      "tags": [
+        "开源安全",
+        "AI开发",
+        "行业动态"
+      ],
+      "url": "https://x.com/simonw/status/2055339124035625185",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-15T17:26:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注AI辅助编程对开源生态的影响，是当前安全合规与供应链关注",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
+      "feed_title": "X / Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "专家 X",
+      "source_key": "x:simonw",
+      "story_id": "url:x.com/simonw/status/2055339124035625185",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 5.0,
+      "final_score": 5.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

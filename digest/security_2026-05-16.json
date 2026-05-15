@@ -1,0 +1,555 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-16",
+  "generated_at": "2026-05-15T23:41:31.338242Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 5,
+    "direct": 14,
+    "tier_t2": 12,
+    "kind_cn_expert": 3,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "kind_expert": 1,
+    "kind_media": 9,
+    "wechat": 2,
+    "tier_unknown": 2,
+    "aggregator": 1,
+    "kind_expert_x": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "泛微 e9 OA 系统安全审计思路分析与实战案例剖析",
+      "title_orig": "泛微e9分析思路",
+      "summary": "本文针对泛微e9版本系统性地阐述了OA安全审计方法，涵盖环境搭建及包括weaver、api、services、dwr在内的六大类核心路由深度分析，旨在提升系统防御能力。文章详细剖析了SecurityMain安全过滤机制与XssRequestWeblogic参数过滤逻辑，并通过文件读取与SQL注入等实战案例展示了登录绕过等技术要点，为安全从业者提供了完整的漏洞挖掘与代码审计参考路径。",
+      "tags": [
+        "代码审计",
+        "泛微OA",
+        "漏洞挖掘"
+      ],
+      "url": "https://xz.aliyun.com/news/92131",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-13T12:53:11+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了详尽的国产主流OA系统审计思路，具有极高实战参考价值。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92131",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.5,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "CISA 将 Microsoft Exchange Server 跨站脚本漏洞 CVE-2026-42897 列入已知漏洞利用清单",
+      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "summary": "CISA根据活跃攻击证据将CVE-2026-42897漏洞加入其已知漏洞利用目录，该漏洞属于Microsoft Exchange Server的跨站脚本类型，是恶意网络参与者的常用攻击矢量。此类漏洞对联邦企业及相关网络设施构成重大安全风险，目前官方已发布BOD 22-01绑定操作指令要求限期修复，旨在通过强制性补丁管理降低国家级网络安全威胁，确保关键基础设施的运行安全。",
+      "tags": [
+        "CISA",
+        "Exchange",
+        "XSS"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/05/15/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-42897"
+      ],
+      "selection_reason": "Exchange 漏洞影响广泛，CISA 的预警标志着该漏洞",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-42897",
+      "related_urls": [
+        "https://thehackernews.com/2026/05/on-prem-microsoft-exchange-server-cve.html",
+        "https://thehackernews.com/2026/05/cisa-adds-cisco-sd-wan-cve-2026-20182.html"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Palo Alto Networks PAN-OS 防火墙操作系统身份验证绕过漏洞 CVE-2026-0265 预警",
+      "title_orig": "CVE-2026-0265: Authentication Bypass in Palo Alto Networks PAN-OS",
+      "summary": "Palo Alto Networks发布安全公告披露PAN-OS存在签名验证漏洞CVE-2026-0265，导致远程未经身份验证的攻击者可绕过认证。该漏洞触发条件为系统启用了云身份验证服务，影响大多数运行该操作系统的防火墙设备，目前官方已发布安全建议指导用户进行缓解或修复，建议相关管理员立即检查配置状态以防止潜在的非授权访问风险。",
+      "tags": [
+        "PAN-OS",
+        "身份绕过",
+        "防火墙安全"
+      ],
+      "url": "https://www.rapid7.com/blog/post/etr-cve-2026-0265-authentication-bypass-in-palo-alto-networks-pan-os",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-14T19:15:49+00:00",
+      "cve_ids": [
+        "CVE-2026-0265"
+      ],
+      "selection_reason": "核心网络边界设备的身份绕过漏洞，属于高危安全事件。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-0265",
+      "related_urls": [
+        "https://x.com/IntCyberDigest/status/2055027940212281393"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Pwn2Own 柏林 2026 竞赛第二日：Windows 11 与 Exchange 等产品被攻破",
+      "title_orig": "Microsoft Exchange, Windows 11 hacked on second day of Pwn2Own",
+      "summary": "在Pwn2Own柏林2026竞赛的第二天，参赛者通过成功利用15个独特的零日漏洞共计获得385,750美元奖金，充分展示了针对主流操作系统和关键企业级应用的高级网络攻击技术。此次受影响的产品涵盖了Windows 11、Microsoft Exchange以及Red Hat Enterprise Linux工作站版，相关安全漏洞的发现促使厂商在负责任披露框架下紧急开发补丁，以防止这些高风险威胁被恶意利用。",
+      "tags": [
+        "Pwn2Own",
+        "零日漏洞",
+        "系统安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/pwn2own-day-two-hackers-demo-microsoft-exchange-windows-11-red-had-enterprise-linux-zero-days/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T17:47:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级黑客竞赛成果，预示了主流软件即将发布的关键补丁方向。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/pwn2own-day-two-hackers-demo-microsoft-exchange-windows-11-red-had-enterprise-linux-zero-days",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/windows-11-and-microsoft-edge-hacked-on-first-day-of-pwn2own-berlin-2026/"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软警告 Exchange Server 零日漏洞正被用于 XSS 攻击以执行任意代码",
+      "title_orig": "Microsoft warns of Exchange zero-day flaw exploited in attacks",
+      "summary": "微软发布预警称一个高危Exchange Server零日漏洞正遭受活跃攻击，攻击者通过跨站脚本手段针对Outlook网页版用户，在受害者上下文中执行任意代码。微软目前已分享缓解措施以降低风险，虽然原文未披露具体的漏洞编号及底层触发原理，但强调了该漏洞对企业邮件系统的严重威胁，建议用户密切关注官方补丁更新并及时采取防护动作。",
+      "tags": [
+        "Exchange",
+        "零日漏洞",
+        "代码执行"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-warns-of-exchange-zero-day-flaw-exploited-in-attacks/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T09:40:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "正在被利用的零日漏洞，对企业邮件安全构成直接威胁。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/microsoft/microsoft-warns-of-exchange-zero-day-flaw-exploited-in-attacks",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.5,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 Funnel Builder 漏洞被利用于窃取 WooCommerce 信用卡信息",
+      "title_orig": "Funnel Builder WordPress plugin bug exploited to steal credit cards",
+      "summary": "WordPress插件Funnel Builder存在严重漏洞并正被黑客积极利用，攻击者借此向WooCommerce结账页面注入恶意JavaScript片段以窃取用户的信用卡敏感信息。该攻击影响大量使用该插件构建销售漏斗的电商网站，直接威胁到在线交易的安全性和用户隐私，目前建议受影响用户立即更新插件至最新版本，或采取临时防护措施以阻断恶意脚本的注入。",
+      "tags": [
+        "WordPres",
+        "信息窃取",
+        "供应链安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/funnel-builder-wordpress-plugin-bug-exploited-to-steal-credit-cards/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T19:30:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "直接威胁电商支付安全的插件漏洞，具有明显的经济犯罪特征。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/funnel-builder-wordpress-plugin-bug-exploited-to-steal-credit-cards",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 Burst Statistics 身份验证绕过漏洞导致管理员权限泄露",
+      "title_orig": "Hackers exploit auth bypass flaw in Burst Statistics WordPress plugin",
+      "summary": "黑客正在利用WordPress统计插件Burst Statistics中的一个关键身份验证绕过漏洞，旨在无需凭据的情况下获取网站的管理员级访问权限并完全控制受影响站点。目前已有大量针对该漏洞的扫描与利用行为，对使用该插件的站点构成了紧迫的安全威胁，建议管理员尽快检查插件版本并升级到修复版本，同时审计系统日志以确认是否存在异常的提权操作。",
+      "tags": [
+        "WordPres",
+        "权限提升",
+        "身份绕过"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-auth-bypass-flaw-in-burst-statistics-wordpress-plugin/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-14T21:07:17+00:00",
+      "cve_ids": [],
+      "selection_reason": "高流行插件的认证绕过漏洞，是近期 WordPress 站点面",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/hackers-exploit-auth-bypass-flaw-in-burst-statistics-wordpress-plugin",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "npm 软件包 node-ipc 多个版本被发现植入旨在窃取开发者凭据的后门",
+      "title_orig": "Stealer Backdoor Found in 3 Node-IPC Versions Targeting Developer Secrets",
+      "summary": "安全研究人员在npm软件包node-ipc的三个特定版本中发现了恶意后门活动，受影响版本包括9.1.6、9.2.3和12.0.1，这些版本已被确认包含旨在窃取开发者秘密凭据的代码。这属于典型的软件供应链攻击，对开发环境的安全构成了严重威胁，目前相关软件包已被标记为恶意，建议开发者立即核查项目依赖项并回滚至安全版本，同时更换可能已泄露的敏感密钥。",
+      "tags": [
+        "供应链攻击",
+        "npm",
+        "后门"
+      ],
+      "url": "https://thehackernews.com/2026/05/stealer-backdoor-found-in-3-node-ipc.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-14T17:22:43+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名 npm 包投毒事件，直接威胁开发者环境与凭据安全。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/stealer-backdoor-found-in-3-node-ipc.html",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/popular-node-ipc-npm-package-compromised-to-steal-credentials/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Kaspersky 披露 xrdp 远程代码执行漏洞及 NGINX 历史堆溢出漏洞",
+      "title_orig": "每日安全动态推送(26/5/15)",
+      "summary": "Kaspersky 研究人员在 xrdp 远程桌面服务器中发现 CVE-2025-68670 远程代码执行漏洞，同时披露了 NGINX 重写模块中存在长达 18 年的堆溢出漏洞。此外，Android adbd 组件也被曝出存在零点击远程代码执行漏洞，可能导致攻击者在无需用户交互的情况下获取设备控制权。目前原文未详细披露漏洞的具体触发条件及受影响的完整版本列表，建议用户关注官方补丁更新。",
+      "tags": [
+        "远程代码执行",
+        "堆溢出",
+        "漏洞预警"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960472&idx=1&sn=52bd5b4e6049817c0dfc9446df2a7c72",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-15T07:23:00+00:00",
+      "cve_ids": [
+        "CVE-2025-68670"
+      ],
+      "selection_reason": "涵盖多个核心组件的高危漏洞，具有极高的实战参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "cve:cve-2025-68670",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "AI 渗透工具 HexStrike 被曝存在多个远程命令执行 0day 漏洞",
+      "title_orig": "AI渗透工具 Kali & HexStrike 大量RCE 0day漏洞",
+      "summary": "安全研究者在测试集成 MCP 的 AI 智能体行为时，发现 AI 渗透工具 HexStrike 采用 SSE 方式通信的代码中存在严重安全缺陷。通过 AI 智能体的辅助分析与构造，研究者成功发现了 7 个远程命令执行（RCE）漏洞并完成了漏洞利用演示。这些漏洞风险极高，攻击者可借此反向控制渗透测试者的工作环境，暴露了当前 AI 辅助安全工具在自身安全性设计上的不足。",
+      "tags": [
+        "AI安全",
+        "RCE漏洞",
+        "渗透工具"
+      ],
+      "url": "http://k8gege.org/p/hexstrike_0day.html",
+      "source": "k8gege.org",
+      "category": "RedTeam",
+      "published": "2026-05-14T15:40:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 AI 渗透工具自身的安全风险，对红队工具开发者有警示",
+      "feed_url": "https://k8gege.org/atom.xml",
+      "feed_title": "K8哥哥’s Blog",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "k8gege.org",
+      "story_id": "url:k8gege.org/p/hexstrike_0day.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软 Edge 浏览器将停止在启动时将明文密码加载至进程内存",
+      "title_orig": "Microsoft backpedals: Edge to stop loading passwords into memory",
+      "summary": "微软宣布将对 Edge 浏览器进行更新，以解决其在启动时将保存的密码以明文形式加载到进程内存中的安全隐患。此前微软曾声称该行为是“设计使然”，但在安全社区的压力下最终决定改变策略以增强数据保护。此举旨在防止攻击者通过内存取证或恶意软件直接从内存中窃取用户凭据，原文未披露具体修复版本号，但确认该改进将通过后续更新推送给所有用户。",
+      "tags": [
+        "Edge浏览器",
+        "内存安全",
+        "凭据保护"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-edge-to-stop-loading-cleartext-passwords-in-memory-on-startup/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T14:49:39+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及主流浏览器对敏感数据处理逻辑的重要安全策略变更。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/microsoft/microsoft-edge-to-stop-loading-cleartext-passwords-in-memory-on-startup",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenClaw 存在四个安全漏洞可被利用实现数据窃取与权限提升",
+      "title_orig": "Four OpenClaw Flaws Enable Data Theft, Privilege Escalation, and Persistence",
+      "summary": "Cyera 研究人员披露了 OpenClaw 中的四个安全漏洞，这些漏洞被统称为“Claw Chain”，攻击者可通过链式利用实现数据窃取、权限提升和持久化。漏洞允许攻击者在目标系统中建立立足点，暴露敏感数据并植入后门。原文未明确说明受影响的具体版本号及漏洞触发的技术细节，但强调了这些漏洞组合利用后对企业数据环境构成的严重威胁，目前相关修复状态尚不明确。",
+      "tags": [
+        "权限提升",
+        "数据泄露",
+        "漏洞链"
+      ],
+      "url": "https://thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T13:35:04+00:00",
+      "cve_ids": [],
+      "selection_reason": "漏洞链利用是高级攻击的常见手段，该研究展示了组合利用的危害。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Fortinet 发布 FG-IR-26-128 安全预警修复防火墙组件漏洞",
+      "title_orig": "There’s a less known edge case for Fortinet devices where, rather than act merely as a remote code execution platform, they can serve as firewalls. h...",
+      "summary": "Fortinet 官方发布了编号为 FG-IR-26-128 的安全公告，针对其设备中较少被关注的防火墙功能组件进行了漏洞修复。该漏洞可能导致设备不仅被用作远程代码执行的平台，还可能影响其作为防火墙的核心过滤功能。原文未详细说明漏洞的 CVE 编号、具体原理及受影响的固件版本，仅提供了官方安全响应中心的链接，建议使用 Fortinet 设备的企业管理员及时检查并更新至最新安全版本。",
+      "tags": [
+        "Fortinet",
+        "防火墙安全",
+        "官方预警"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2055041338152734854",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-14T21:43:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名网络设备厂商的官方预警，直接关系到企业边界安全。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2055041338152734854",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全周刊：Shai-Hulud 源码泄露及 AI 逆向 EDR 技术研究",
+      "title_orig": "Shai-Hulud 源码泄露、有偿入侵建筑，以及用 AI 逆向 EDR #328",
+      "summary": "本期安全动态关注了 Shai-Hulud 源码泄露事件以及 TeamPCP 攻击框架的技术拆解，展示了当前黑客工具链的演进。文章重点讨论了利用 AI 技术终结“不透明防御”假设的可能性，即通过 AI 辅助逆向工程来破解 EDR 产品的防御机制。此外，内容还涵盖了物理渗透测试的职业问答，为安全从业者提供了从软件攻防到物理安全的多维度技术视角，强调了 AI 在逆向工程领域的应用潜力。",
+      "tags": [
+        "源码泄露",
+        "AI逆向",
+        "EDR攻防"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496028&idx=1&sn=d503e9b04a9ac9dfef483074fc10a463",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-14T15:44:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 在逆向工程和对抗 EDR 方面的前沿应用趋势。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496028&idx=1&sn=d503e9b04a9ac9dfef483074fc10a463",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.5,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Daily AlpacaHack：面向初学者的常设 CTF 挑战与解题分享",
+      "title_orig": "Daily AlpacaHackに挑戦するつくよみちゃん",
+      "summary": "Daily AlpacaHack 是一个面向初学者的常设 CTF 竞赛平台，每天发布一道安全挑战题目以促进技术交流。日本安全研究者通过视频形式分享了解题过程，重点展示了在面对 Pwn 等类型题目时的思考路径、工具使用和逻辑推导。这种教学式分享降低了安全技术的学习门槛，其技术点涵盖了基础漏洞挖掘与利用，非常适合安全新手通过实战练习提升对二进制安全及逻辑漏洞的理解能力。",
+      "tags": [
+        "CTF竞赛",
+        "解题思路",
+        "安全教育"
+      ],
+      "url": "https://furutsuki.hatenablog.com/entry/2026/05/14/002228",
+      "source": "furutsuki.hatenablog.com",
+      "category": "Pwn",
+      "published": "2026-05-13T15:22:28+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了高质量的初学者实战资源和解题思维引导。",
+      "feed_url": "https://furutsuki.hatenablog.com/rss",
+      "feed_title": "ふるつき",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "furutsuki.hatenablog.com",
+      "story_id": "url:furutsuki.hatenablog.com/entry/2026/05/14/002228",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.8,
+      "final_score": 6.5,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
