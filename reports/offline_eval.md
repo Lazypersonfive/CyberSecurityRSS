@@ -1,28 +1,32 @@
 # Offline Strategy Eval
 
-- generated_for: 2026-05-17
-- dates: 2026-05-17, 2026-05-16, 2026-05-15, 2026-05-14, 2026-05-13, 2026-05-12, 2026-05-11
+- generated_for: 2026-05-18
+- dates: 2026-05-18, 2026-05-17, 2026-05-16, 2026-05-15, 2026-05-14, 2026-05-13, 2026-05-12
 
 ## Board Health
 
 | Board | Name | Days | Avg Selected | Target | Full Days | Avg CN | Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | AI 前沿 | 7 | 15.0 | 15 | 7/7 | 4.0 | 5 | 2/7 | 1.9 | 3 | 1 | 7.8 | 28 |
-| ai_security | AI 安全 | 7 | 9.4 | 10 | 5/7 | 1.6 | 2 | 4/7 | 1.1 | 2 | 0 | 6.8 | 11 |
-| finance | 金融科技 | 7 | 10.0 | 10 | 7/7 | 2.1 | 1 | 7/7 | 2.3 | 4 | 0 | 7.5 | 14 |
-| security | 安全 | 7 | 14.7 | 15 | 6/7 | 3.9 | 6 | 1/7 | 0.0 | 1 | 8 | 8.9 | 32 |
+| ai | AI 前沿 | 7 | 14.3 | 15 | 6/7 | 4.0 | 5 | 2/7 | 2.1 | 3 | 0 | 7.7 | 31 |
+| ai_security | AI 安全 | 7 | 9.6 | 10 | 5/7 | 1.3 | 2 | 3/7 | 1.6 | 2 | 0 | 6.6 | 9 |
+| finance | 金融科技 | 7 | 9.9 | 10 | 6/7 | 2.3 | 1 | 7/7 | 2.4 | 4 | 0 | 7.2 | 10 |
+| security | 安全 | 7 | 14.7 | 15 | 6/7 | 3.3 | 6 | 0/7 | 0.0 | 1 | 8 | 8.9 | 30 |
 
 ## Source Mix
 
 | Board | T1 | T1.5 | T2 | Unknown | Official | X | Google News | CN Expert | Community |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 16 | 15 | 73 | 1 | 16 | 36 | 13 | 1 | 1 |
-| ai_security | 14 | 4 | 48 | 0 | 14 | 28 | 8 | 11 | 0 |
-| finance | 3 | 0 | 67 | 0 | 3 | 0 | 16 | 0 | 0 |
-| security | 12 | 0 | 83 | 8 | 12 | 6 | 0 | 19 | 12 |
+| ai | 12 | 13 | 75 | 0 | 12 | 33 | 15 | 1 | 1 |
+| ai_security | 16 | 4 | 47 | 0 | 16 | 26 | 11 | 9 | 0 |
+| finance | 3 | 0 | 66 | 0 | 3 | 0 | 17 | 0 | 0 |
+| security | 13 | 0 | 82 | 8 | 13 | 6 | 0 | 15 | 13 |
 
 ## Target Misses
 
+- 2026-05-18 security：selected 15/15，中文 2/6
+- 2026-05-18 ai_security：selected 8/10，中文 0/2，Google News 3/2
+- 2026-05-18 ai：selected 10/15，中文 3/5，Google News 5/3
+- 2026-05-18 finance：selected 9/10，中文 4/1
 - 2026-05-17 security：selected 15/15，中文 3/6，unknown 1
 - 2026-05-17 ai_security：selected 10/10，中文 0/2，Google News 3/2
 - 2026-05-16 security：selected 15/15，中文 5/6，unknown 2
@@ -36,8 +40,6 @@
 - 2026-05-12 security：selected 15/15，中文 4/6
 - 2026-05-12 ai_security：selected 9/10，中文 0/2，Google News 4/2
 - 2026-05-12 ai：selected 15/15，中文 4/5
-- 2026-05-11 ai_security：selected 7/10，中文 2/2
-- 2026-05-11 ai：selected 15/15，中文 3/5，unknown 1
 
 ## Read This
 

@@ -1,0 +1,560 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-18",
+  "generated_at": "2026-05-17T23:44:58.120496Z",
+  "raw_count": 111,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 14,
+    "tier_t2": 14,
+    "kind_media": 9,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "chinese": 2,
+    "wechat": 2,
+    "kind_cn_expert": 2,
+    "aggregator": 1,
+    "kind_expert_x": 1,
+    "kind_community": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "Windows 提权 0-day 漏洞 MiniPlasma 概念验证代码发布，可获取 SYSTEM 权限",
+      "title_orig": "New Windows 'MiniPlasma' zero-day exploit gives SYSTEM access, PoC released",
+      "summary": "安全研究人员发布了名为 MiniPlasma 的 Windows 本地提权漏洞 PoC，该漏洞允许攻击者在完全修补的 Windows 系统上绕过安全限制并获取最高 SYSTEM 权限。目前该漏洞被视为 0-day 状态，虽然原文未披露具体的漏洞原理和受影响的特定 Windows 版本号，但微软尚未发布正式补丁，这意味着所有当前受支持的系统在面对此类针对性攻击时均处于潜在风险之中。",
+      "tags": [
+        "Windows",
+        "提权漏洞",
+        "0-day"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/microsoft/new-windows-miniplasma-zero-day-exploit-gives-system-access-poc-released/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-17T22:30:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及 Windows 系统级提权且已公开 PoC，具有极高威",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/microsoft/new-windows-miniplasma-zero-day-exploit-gives-system-access-poc-released",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 将 Microsoft Exchange Server 跨站脚本漏洞 CVE-2026-42897 列入已知漏洞利用清单",
+      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "summary": "美国网络安全和基础设施安全局（CISA）正式将 CVE-2026-42897 漏洞添加到其已知漏洞利用目录中，该漏洞是 Microsoft Exchange Server 中的一个跨站脚本缺陷，已有证据表明其正被恶意网络参与者在野利用。由于此类漏洞是攻击联邦企业机构的频繁向量并构成重大安全风险，CISA 根据 BOD 22-01 指令要求相关机构必须在规定时间内完成修复，以降低政府网络环境面临的潜在威胁。",
+      "tags": [
+        "Exchange",
+        "XSS",
+        "CISA"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/05/15/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-42897"
+      ],
+      "selection_reason": "Exchange 漏洞在野利用通常预示着大规模定向攻击的风险",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-42897",
+      "related_urls": [
+        "https://thehackernews.com/2026/05/on-prem-microsoft-exchange-server-cve.html"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "NGINX 堆溢出漏洞 CVE-2026-42945 遭在野利用，可导致工作进程崩溃或远程代码执行",
+      "title_orig": "NGINX CVE-2026-42945 Exploited in the Wild, Causing Worker Crashes and Possible RCE",
+      "summary": "NGINX Plus 和开源版中 ngx_http_rewrite_module 模块存在严重的堆缓冲区溢出漏洞 CVE-2026-42945，受影响版本涵盖 0.6.27 至 1.30.0，其 CVSS 评分高达 9.2 分。该漏洞在公开披露后数日内即被发现在野利用，攻击者可利用该缺陷导致工作进程崩溃，甚至可能实现远程代码执行，安全公司 VulnCheck 和 depthfirst 均已对此发出预警并呼吁用户尽快采取防护措施。 NGINX 堆溢出漏洞 CVE-2026-42945 遭在野利用，可导致工作进程崩溃或远程代码执行。该条来自thehackernews.com，归类于OfficialAdvisories，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原。",
+      "tags": [
+        "NGINX",
+        "堆溢出",
+        "RCE"
+      ],
+      "url": "https://thehackernews.com/2026/05/nginx-cve-2026-42945-exploited-in-wild.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-17T11:57:53+00:00",
+      "cve_ids": [
+        "CVE-2026-42945"
+      ],
+      "selection_reason": "NGINX 作为核心基础设施，其高危 RCE 漏洞的在野利用",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-42945",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "每日安全动态：xrdp 远程桌面服务器 RCE 漏洞、NGINX 重写模块堆溢出漏洞及 Android adbd 零点击 RCE 漏洞",
+      "title_orig": "每日安全动态推送(26/5/15)",
+      "summary": "每日安全动态显示，Kaspersky 在 xrdp 远程桌面服务器中发现了 CVE-2025-68670 远程代码执行漏洞，同时 NGINX 重写模块中一个存在 18 年之久的堆溢出漏洞也引发了广泛关注。此外，Android adbd 组件中被曝存在零点击远程代码执行漏洞，这些高危缺陷对服务器安全和移动终端隐私构成了严重威胁，相关用户和管理员应尽快关注官方补丁发布情况并采取防护措施。",
+      "tags": [
+        "漏洞",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960472&idx=1&sn=52bd5b4e6049817c0dfc9446df2a7c72",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-15T07:23:00+00:00",
+      "cve_ids": [
+        "CVE-2025-68670"
+      ],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "cve:cve-2025-68670",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Pwn2Own Berlin 2026 竞赛第二日：Windows 11 与 Exchange 等产品 15 个 0-day 漏洞被攻破",
+      "title_orig": "Microsoft Exchange, Windows 11 hacked on second day of Pwn2Own",
+      "summary": "在 Pwn2Own 柏林 2026 竞赛的第二天，参赛者通过成功利用 Windows 11、Microsoft Exchange 和 Red Hat Enterprise Linux 等多款主流产品的 15 个独特零日漏洞，共计赢得了 385,750 美元的现金奖励。这些漏洞的发现展示了顶级安全研究者对操作系统和企业级软件的深度挖掘能力，相关厂商已获知漏洞细节，并正针对这些在竞赛中被成功利用的安全缺陷准备紧急修复补丁以保护全球用户安全。",
+      "tags": [
+        "Pwn2Own",
+        "0-day",
+        "漏洞竞赛"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/pwn2own-day-two-hackers-demo-microsoft-exchange-windows-11-red-had-enterprise-linux-zero-days/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T17:47:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级黑客竞赛产出的 0-day 漏洞代表了当前攻防技术的前沿",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/pwn2own-day-two-hackers-demo-microsoft-exchange-windows-11-red-had-enterprise-linux-zero-days",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/microsoft/microsoft-warns-of-exchange-zero-day-flaw-exploited-in-attacks/"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.35,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "流行 npm 软件包 node-ipc 遭遇供应链攻击，恶意版本被植入凭据窃取代码",
+      "title_orig": "Popular node-ipc npm package compromised to steal credentials",
+      "summary": "黑客针对流行的进程间通信软件包 node-ipc 发起了供应链攻击，在最新发布的版本中注入了用于窃取凭据的恶意软件，旨在通过 npm 生态系统扩散并收集受感染环境的敏感信息。由于该软件包在开发社区中被广泛使用，此类攻击对大量下游应用构成了严重威胁，建议开发者立即检查项目依赖项，停止使用受污染的版本并回退至已知的安全版本，以防止凭据泄露风险。",
+      "tags": [
+        "npm",
+        "供应链攻击",
+        "恶意软件"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/popular-node-ipc-npm-package-compromised-to-steal-credentials/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T17:10:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "供应链攻击是开发者面临的重大安全威胁，node-ipc 使用",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/popular-node-ipc-npm-package-compromised-to-steal-credentials",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员利用 Mythos 工具发现首个针对苹果 M5 芯片 macOS 内核的内存损坏漏洞",
+      "title_orig": "RT International Cyber Digest: ❗️🚨 BREAKING: Researchers used Mythos Preview to find the first public macOS kernel memory corruption exploit on A...",
+      "summary": "安全研究人员利用 Mythos 预览版工具发现了首个针对苹果 M5 芯片的 macOS 内核内存损坏漏洞，并展示了该硬件平台的首个公开利用程序。尽管苹果投入巨资开发了基于 ARM MTE 的硬件辅助内存安全系统 MIE，但该漏洞证明了硬件级防护仍存在被绕过的可能。目前关于该漏洞的具体技术细节和修复状态原文未详细披露。",
+      "tags": [
+        "macOS",
+        "M5芯片",
+        "内核漏洞"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2055639144643068304",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-15T13:39:11+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对最新硬件底层安全机制的突破，具有极高的技术研究价值。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2055639144643068304",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 Funnel Builder 漏洞遭在野利用，攻击者向 WooCommerce 结账页面植入脚本",
+      "title_orig": "Funnel Builder Flaw Under Active Exploitation Enables WooCommerce Checkout Skimming",
+      "summary": "WordPress 的 Funnel Builder 插件存在一个关键安全漏洞，目前正被攻击者用于在野攻击，通过注入恶意 JavaScript 代码窃取 WooCommerce 结账页面的支付数据。根据 Sansec 的报告，该漏洞目前尚未分配官方 CVE 编号，但其引发的信用卡脱水攻击已对电商用户构成直接威胁，建议使用该插件的管理员密切关注安全更新，并检查站点是否存在异常的脚本注入迹象。",
+      "tags": [
+        "WordPres",
+        "结账脱水",
+        "在野利用"
+      ],
+      "url": "https://thehackernews.com/2026/05/funnel-builder-flaw-under-active.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-16T15:20:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "直接威胁电商支付安全的在野攻击，对 WordPress 用户",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/funnel-builder-flaw-under-active.html",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/funnel-builder-wordpress-plugin-bug-exploited-to-steal-credit-cards/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Tycoon2FA 钓鱼工具包升级：利用设备代码钓鱼与 Trustifi 链接绕过劫持 Microsoft 365 账户",
+      "title_orig": "Tycoon2FA hijacks Microsoft 365 accounts via device-code phishing",
+      "summary": "Tycoon2FA 钓鱼工具包近期新增了对设备代码钓鱼攻击的支持，并滥用 Trustifi 点击追踪 URL 来规避安全检测，从而劫持 Microsoft 365 账户。该工具通过诱导用户在伪造界面输入设备代码，成功绕过传统多因素身份验证并已在野外被发现用于针对性攻击，对企业云端办公环境的安全构成了严重威胁，建议相关组织加强对异常登录行为的监控。",
+      "tags": [
+        "钓鱼攻击",
+        "MFA绕过",
+        "凭据窃取"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/tycoon2fa-hijacks-microsoft-365-accounts-via-device-code-phishing/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-17T14:43:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了主流钓鱼工具包绕过现代身份验证的技术演进。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/tycoon2fa-hijacks-microsoft-365-accounts-via-device-code-phishing",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenClaw 曝出四个安全漏洞：攻击者可利用漏洞链实现数据窃取、权限提升与持久化控制",
+      "title_orig": "Four OpenClaw Flaws Enable Data Theft, Privilege Escalation, and Persistence",
+      "summary": "研究人员在 OpenClaw 中发现了四个被称为 Claw Chain 的安全漏洞，这些漏洞可被串联利用以实现数据窃取、提权和持久化。攻击者能够借此在系统中建立初始立足点，暴露敏感数据并植入后门，目前相关漏洞的技术细节已由 Cyera 披露，建议受影响用户密切关注官方修复进展并及时采取防御措施，以防范潜在的针对性攻击风险。",
+      "tags": [
+        "漏洞链",
+        "权限提升",
+        "数据安全"
+      ],
+      "url": "https://thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T13:35:04+00:00",
+      "cve_ids": [],
+      "selection_reason": "漏洞链攻击是实战中高价值的研究方向，具有较强参考性。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 Avada Builder 存在严重漏洞：百万级站点面临任意文件读取与凭据泄露风险",
+      "title_orig": "Avada Builder WordPress plugin flaws allow site credential theft",
+      "summary": "拥有超过一百万活跃安装量的 WordPress 插件 Avada Builder 被发现存在两个严重安全漏洞，允许攻击者读取服务器上的任意文件并从数据库中提取敏感信息。通过这些漏洞，黑客可以轻易窃取站点凭据并控制受影响的网站，目前官方已发布相关预警，建议管理员尽快检查并更新插件版本以防范大规模攻击风险。",
+      "tags": [
+        "WordPres",
+        "文件读取",
+        "插件安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/avada-builder-wordpress-plugin-flaws-allow-site-credential-theft/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-15T15:56:56+00:00",
+      "cve_ids": [],
+      "selection_reason": "受影响用户基数巨大，属于高影响力的供应链安全事件。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/avada-builder-wordpress-plugin-flaws-allow-site-credential-theft",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Vercel AI 存在 CVE-2026-8767 远程命令注入漏洞：GitHub 工作流组件插值处理不当",
+      "title_orig": "CVE-2026-8767",
+      "summary": "Vercel AI 3.0.97 及以下版本存在远程命令注入漏洞，问题源于 GitHub 工作流文件中的 PR 分支名称插值处理逻辑，导致攻击者可操纵分支名称远程触发 OS 命令注入。虽然该漏洞的攻击复杂度较高且利用难度较大，但相关漏洞利用代码已经公开披露，由于原文未明确官方补丁状态，相关开发者应加强对自动化工作流的安全审计。",
+      "tags": [
+        "命令注入",
+        "GitHub工作",
+        "CI/CD安全"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-8767?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-17T23:17:02+00:00",
+      "cve_ids": [
+        "CVE-2026-8767"
+      ],
+      "selection_reason": "涉及 CI/CD 流水线安全，是现代云原生安全的重要环节。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-8767",
+      "related_urls": [
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-8767?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-8767?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "H3C Magic B3 路由器 UpdateWanParams 函数存在缓冲区溢出漏洞 CVE-2026-8764",
+      "title_orig": "CVE-2026-8764",
+      "summary": "H3C Magic B3 路由器 100R002 及以下版本存在缓冲区溢出漏洞，漏洞位于处理 Web 表单的 UpdateWanParams 函数中，远程攻击者通过操纵特定参数即可触发溢出。目前该漏洞的利用代码已在公共领域披露，厂商在收到通知后尚未作出任何回应，建议用户采取必要的网络访问控制措施并关注后续可能发布的固件更新，以防止设备被远程控制。",
+      "tags": [
+        "缓冲区溢出",
+        "路由器漏洞",
+        "IoT安全"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-8764?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-17T22:16:21+00:00",
+      "cve_ids": [
+        "CVE-2026-8764"
+      ],
+      "selection_reason": "公开的 PoC 增加了设备被大规模扫描和攻击的风险。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-8764",
+      "related_urls": [
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-8764?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-8764?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Grafana 遭遇 GitHub 令牌泄露事件：攻击者访问内部代码库并尝试进行勒索",
+      "title_orig": "Grafana GitHub Token Breach Led to Codebase Download and Extortion Attempt",
+      "summary": "Grafana 披露其 GitHub 环境令牌被未经授权的第三方获取，导致公司内部代码库被非法下载，攻击者在获取代码后甚至尝试进行勒索。调查结果显示，本次事件未涉及客户数据或个人信息，也未发现对客户系统运行造成实质影响，目前 Grafana 已采取措施加固其开发环境安全，并向公众通报了此次安全事件的详细调查进展。",
+      "tags": [
+        "令牌泄露",
+        "代码泄露",
+        "勒索攻击"
+      ],
+      "url": "https://thehackernews.com/2026/05/grafana-github-token-breach-led-to.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-17T07:13:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名开源厂商的安全事件，警示了开发环境凭据管理的重要性。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/grafana-github-token-breach-led-to.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.6,
+      "final_score": 7.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Grok 模型系统提示词泄露机制分析：询问系统提示词为何会导致生成危险指令",
+      "title_orig": "为什么 Grok 会在我们询问其系统提示词时生成炸弹制造方法？",
+      "summary": "本文深入探讨了 Grok 模型在被询问系统提示词时意外生成炸弹制造方法的技术原因，详细分析了提示词注入与模型对齐机制在特定场景下的失效点。文章重点关注大语言模型在处理元指令请求时的逻辑漏洞，以及这种行为如何绕过安全护栏，为 AI 安全从业者理解模型越狱、防御边界以及提升模型安全性提供了重要的技术参考。",
+      "tags": [
+        "AI安全",
+        "提示词注入",
+        "大模型对齐"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486689&idx=1&sn=6ff8be540103a69a3d52a3245ade0479",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-15T01:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚焦 AI 安全前沿，分析了模型越狱与安全边界失效的原理。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "feed_title": "安全行者老霍",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ%3D%3D&mid=2247486689&idx=1&sn=6ff8be540103a69a3d52a3245ade0479",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.05,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
