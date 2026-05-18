@@ -28,10 +28,12 @@ import fetch_feeds
 from fetch_feeds import FeedEntry, archive_urls, fetch_all_entries, load_seen_urls
 from fetch_opml import fetch_opml, fetch_opml_metadata
 from filter_entries import FilteredEntry, filter_and_dedup
+from feedback_cli import add_feedback
+from feedback_eval import build_report, classify_feedback
 from rss_curation import curate_entries
 from source_policy import select_with_source_policy, source_mix_stats, source_profile
 from scoring_policy import compute_dimension_score, compute_final_score
-from security_editorial import adjust_security_score
+from security_editorial import adjust_ai_security_score, adjust_security_score
 from story_clustering import cluster_scored_candidates, story_id_for_entry
 from source_audit import build_source_audit, render_source_audit
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
@@ -147,7 +149,7 @@ class FetchOpmlTests(unittest.TestCase):
     def test_security_opml_includes_domestic_vulnerability_sources(self) -> None:
         body = Path("feeds/security.opml").read_text(encoding="utf-8")
 
-        for name in ("奇安信CERT", "绿盟科技CERT", "安全客", "先知社区"):
+        for name in ("奇安信CERT", "绿盟科技CERT", "安全客", "先知社区", "跳跳糖", "360 Netlab Blog"):
             self.assertIn(name, body)
 
     def test_security_opml_has_no_duplicate_wechat_feed_urls(self) -> None:
@@ -1157,6 +1159,19 @@ class GeminiPipelineTests(unittest.TestCase):
 
         self.assertEqual(adjust_security_score(entry, 9), 4)
 
+    def test_ai_security_editorial_caps_generic_ai_news(self) -> None:
+        generic = {
+            "title": "OpenAI expands ChatGPT Plus training program in Malta",
+            "summary": "The company announced broader access and education programs.",
+        }
+        technical = {
+            "title": "Prompt injection flaw leaks private agent memory",
+            "summary": "Researchers describe exploit steps and mitigation guidance.",
+        }
+
+        self.assertEqual(adjust_ai_security_score(generic, 8), 3)
+        self.assertEqual(adjust_ai_security_score(technical, 8), 8)
+
     def test_security_config_targets_chinese_technical_sources(self) -> None:
         import yaml
 
@@ -1169,6 +1184,8 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(security["source_policy"]["min_direct"], 12)
         self.assertLessEqual(security["source_policy"]["max_google_news"], 1)
         self.assertEqual(security["source_policy"]["max_aggregator"], 7)
+        self.assertLessEqual(security["source_caps"]["bleepingcomputer.com"], 3)
+        self.assertLessEqual(security["source_caps"]["thehackernews.com"], 3)
         self.assertNotIn("mp.weixin.qq.com", security.get("source_caps") or {})
 
     def test_ai_security_board_is_cost_bounded_and_direct_source_first(self) -> None:
@@ -1957,6 +1974,72 @@ class AIHotCompareTests(unittest.TestCase):
         self.assertIn("# AIHOT External Benchmark", markdown)
         self.assertIn("Overlap: 1", markdown)
         self.assertIn("Cerebras IPO 获超额认购", markdown)
+
+
+class FeedbackLoopTests(unittest.TestCase):
+    def test_feedback_cli_appends_jsonl_record(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            feedback_dir = Path(tmpdir) / "feedback"
+            with patch("feedback_cli.FEEDBACK_DIR", feedback_dir):
+                path = add_feedback(
+                    board="security",
+                    url="https://example.com/vuln",
+                    action="upvote",
+                    reason="漏洞原理清楚",
+                    feedback_date="2026-05-18",
+                    title_zh="示例漏洞分析",
+                )
+
+            record = json.loads(path.read_text(encoding="utf-8").strip())
+
+        self.assertEqual(record["board"], "security")
+        self.assertEqual(record["action"], "upvote")
+        self.assertEqual(record["source"], "example.com")
+
+    def test_feedback_eval_classifies_selected_and_fetched_items(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digest"
+            output_dir = root / "output"
+            digest_dir.mkdir()
+            output_dir.mkdir()
+            digest_dir.joinpath("security_2026-05-18.json").write_text(
+                json.dumps({"items": [{"url": "https://example.com/selected"}]}),
+                encoding="utf-8",
+            )
+            output_dir.joinpath("security_latest.json").write_text(
+                json.dumps({"entries": [{"url": "https://example.com/fetched"}]}),
+                encoding="utf-8",
+            )
+            with (
+                patch("feedback_eval.DIGEST_DIR", digest_dir),
+                patch("feedback_eval.OUTPUT_DIR", output_dir),
+            ):
+                selected = classify_feedback({"board": "security", "url": "https://example.com/selected"})
+                fetched = classify_feedback({"board": "security", "url": "https://example.com/fetched"})
+                missing = classify_feedback({"board": "security", "url": "https://example.com/missing"})
+
+        self.assertEqual(selected, "selected")
+        self.assertEqual(fetched, "fetched_not_selected")
+        self.assertEqual(missing, "not_found_recent_artifacts")
+
+    def test_feedback_report_recommends_repeated_source_feedback(self) -> None:
+        records = [
+            {
+                "date": "2026-05-18",
+                "board": "security",
+                "url": f"https://good.example/{idx}",
+                "source": "good.example",
+                "action": "upvote",
+                "reason": "好",
+            }
+            for idx in range(3)
+        ]
+
+        markdown = build_report(records)
+
+        self.assertIn("good.example", markdown)
+        self.assertIn("收到 3 次正反馈", markdown)
 
 
 class DigestClockTests(unittest.TestCase):

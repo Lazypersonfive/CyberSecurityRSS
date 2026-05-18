@@ -59,18 +59,20 @@
 - `ai`: 每日 15 条，约三分之一中文；arXiv 最多 2 条；XSignals 可占重要比例，但由 `final_score + source kind` 控制。
 - `finance`: 每日 10 条，优先官网、监管和机构源，Google News 只补覆盖；当前中文 fallback 已接入，长期需要中文直采源。
 
-## Current Production Status (2026-05-11)
+## Current Production Status (2026-05-18)
 - Backend: Gemini 主生产；DeepSeek 预留；Anthropic 已下线。
 - Source registry/final score/story clustering: v1 已上线。
 - Site search: 支持跨日期搜索。
 - Site ordering: 站点卡片按 `final_score` 优先展示，`source_tier/source_kind` 作为兜底排序。
 - GitHub Actions RSSHub: workflow 可启动临时 RSSHub 容器使用 `TWITTER_AUTH_TOKEN`，XSignals 以 Actions 结果为准。
-- Latest validated run: `daily-digest` run `25656509845` success。
-- Latest observed metrics:
-  - `security`: `15/15`, `chinese=6`, `x=1`。
-  - `ai_security`: `7/10`, `chinese=2`, `x=3`，仍需补源。
-  - `ai`: `15/15`, `chinese=3`, `arxiv=2`, `x=4`。
-  - `finance`: `10/10`, `chinese=3`。
+- 过去 7 天 daily workflow 全成功，产出 `archive/`、`digest/`、`docs/feed_*.json` 和 `reports/`。
+- 2026-05-12 至 2026-05-18 offline eval 结论：
+  - `security`: 平均 `14.7/15`，中文平均 `3.3/6`，中文目标 `0/7` 天达成；本轮已补中文安全源并下调英文高产源 caps。
+  - `ai_security`: 平均 `9.6/10`，有泛 AI 新闻误入；本轮已加入确定性 AI 安全信号过滤。
+  - `ai`: 平均 `14.3/15`，中文平均 `4.0`，arXiv 平均 `1.7`，论文 cap 生效。
+  - `finance`: 平均 `9.9/10`，基本稳定。
+- Feedback loop P1 已上线：`feedback_cli.py` 记录 JSONL，`feedback_eval.py` 生成只读建议报告，不自动调权。
+- 详细记录见 `tasks/week_2026-05-18.md`。
 
 
 ## AIHOT Methodology Constraints

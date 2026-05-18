@@ -78,15 +78,20 @@ boards:
     llm_max_entries: 120
     top_n: 15
     score_threshold: 6
-    fill_score_floor: 5
+    fill_score_floor: 4  # 质量优先但给中文漏洞/攻防技术源更多进入 reserve 的机会
     source_policy:
       # security editorial target: 15 条里至少 6 条中文技术源（候选足够时）
       min_chinese: 6
       min_direct: 12
       max_google_news: 1
       max_aggregator: 7   # XSignals 可占到约一半；Google News 仍单独压低
-      max_per_source: 5
+      max_per_source: 4
     source_caps:
+      bleepingcomputer.com: 3
+      thehackernews.com: 3
+      vulners.com: 3
+      infosecwriteups.com: 2
+      arstechnica.com: 1
       cisa.gov: 8
       simonwillison.net: 2
       reddit.com: 2
@@ -99,7 +104,7 @@ boards:
     llm_max_entries: 60
     top_n: 10
     score_threshold: 6
-    fill_score_floor: 4  # 稀疏日允许低一档候选补足 10 条，但仍由 AI 安全 prompt 过滤泛 AI
+    fill_score_floor: 5  # 宁缺毋滥；泛 AI 新闻即使来自 T1 也不靠低分补位
     source_policy:
       min_chinese: 2
       min_direct: 4

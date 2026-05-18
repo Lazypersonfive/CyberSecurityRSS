@@ -37,7 +37,7 @@ from source_policy import (
     source_profile,
 )
 from story_clustering import cluster_scored_candidates
-from security_editorial import adjust_security_score
+from security_editorial import adjust_ai_security_score, adjust_security_score
 from source_reports import (
     refresh_latest_report,
     refresh_weekly_report,
@@ -281,6 +281,8 @@ def _score_entries(
             score = smap.get(j, 5)
             if board == "security":
                 score = adjust_security_score(batch[j], score)
+            elif board == "ai_security":
+                score = adjust_ai_security_score(batch[j], score)
             scores[i + j] = score
     return scores
 
