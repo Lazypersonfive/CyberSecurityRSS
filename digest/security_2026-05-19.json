@@ -1,0 +1,553 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-19",
+  "generated_at": "2026-05-18T23:48:39.940954Z",
+  "raw_count": 95,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 5,
+    "direct": 15,
+    "wechat": 3,
+    "tier_t2": 12,
+    "kind_cn_expert": 5,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "kind_media": 6,
+    "kind_expert": 1,
+    "tier_unknown": 1,
+    "kind_community": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "FineReport J2V8 引擎漏洞利用实战：通过概率博弈解决服务器崩溃与 RCE 难题",
+      "title_orig": "崩溃后的重生-用概率博胜率",
+      "summary": "本文详细记录了针对 FineReport 中 J2V8 引擎漏洞的利用过程，重点解决了在执行 Payload 时频繁导致服务器崩溃的稳定性问题。作者通过分析引擎内存机制，采用概率博弈的思路调整利用策略，最终在多次尝试后成功实现远程代码执行。该案例展示了在面对不稳定漏洞环境时，如何通过调试与策略优化提高攻击成功率。",
+      "tags": [
+        "J2V8",
+        "漏洞利用",
+        "FineRepo"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4NzQwNzY3OQ==&mid=2247484107&idx=1&sn=ac65749a9928a688d5d46a9a29837ca3",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-18T15:05:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了复杂环境下漏洞利用的调试思路与稳定性优化技巧。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f38c9a9f230e19f49918faefc5d0d0fc71e52d29.xml",
+      "feed_title": "漕河泾小黑屋",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f38c9a9f230e19f49918faefc5d0d0fc71e52d29.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4NzQwNzY3OQ%3D%3D&mid=2247484107&idx=1&sn=ac65749a9928a688d5d46a9a29837ca3",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.3,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "隐写术进阶：在 PNG 图像像素中隐藏 Shellcode 并实现内存直接执行技术",
+      "title_orig": "「幻核-1」在PNG像素里藏一把刀",
+      "summary": "该技术通过将完整的 Shellcode 嵌入到看似正常的 PNG 图像像素数据中，实现了高度隐蔽的载荷投递，为红队对抗中的免杀和持久化提供了极具价值的新型技术参考。利用过程中完全不触碰磁盘，直接从图片解码数据并映射到内存中执行，从而彻底规避传统文件扫描工具的检测，实现了端到端的内存执行方案与隐蔽通信。",
+      "tags": [
+        "隐写术",
+        "内存执行",
+        "免杀技术"
+      ],
+      "url": "https://xz.aliyun.com/news/92143",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-17T04:24:34+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了图像隐写与无文件执行结合的高级免杀对抗技术。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92143",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "HackTheBox 靶机渗透实战：从 Strapi NoSQL 注入到 Laravel Debug RCE 提权全过程",
+      "title_orig": "HackTheBox Horizontall 靶机渗透实战：从 Strapi NoSQL 注入到 Laravel Debug RCE 提权全过程",
+      "summary": "本文详细记录了对 Horizontall 靶机的完整渗透路径，首先通过分析前端 JS 文件发现隐藏子域名并识别出 Strapi CMS 框架，随后利用 CVE-2019-18818 的 NoSQL 注入漏洞成功重置管理员密码。接着结合插件安装过程中的命令注入漏洞获取初始权限，最后利用 Laravel Debug 模式下的 RCE 漏洞完成系统提权，深度展示了从信息收集到漏洞组合利用的完整实战链条。",
+      "tags": [
+        "靶机实战",
+        "NoSQL注入",
+        "RCE"
+      ],
+      "url": "https://xz.aliyun.com/news/92144",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-17T13:13:05+00:00",
+      "cve_ids": [
+        "CVE-2019-18818",
+        "CVE-2019-19606"
+      ],
+      "selection_reason": "详细展示了多个 CVE 漏洞组合利用的完整渗透测试链路。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2019-18818,cve-2019-19606",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.75,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Storm-2949 组织利用凭据窃取实现无恶意软件的云端大规模数据泄露",
+      "title_orig": "How Storm-2949 turned a compromised identity into a cloud-wide breach",
+      "summary": "Storm-2949 威胁组织通过窃取合法身份凭据，在不使用任何恶意软件的情况下实现了对云环境的全面入侵。该组织利用受信任系统的权限进行横向移动，并实施大规模数据窃取，其操作极具隐蔽性。此事件凸显了身份安全在云原生环境中的核心地位，以及攻击者如何利用合法工具绕过传统安全防御体系。",
+      "tags": [
+        "云安全",
+        "身份窃取",
+        "无文件攻击"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/18/storm-2949-turned-compromised-identity-into-cloud-wide-breach/",
+      "source": "microsoft.com",
+      "category": "Synthesis",
+      "published": "2026-05-18T22:42:50+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了云环境下基于身份凭据的非典型攻击路径。",
+      "feed_url": "https://www.microsoft.com/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/05/18/storm-2949-turned-compromised-identity-into-cloud-wide-breach",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.5,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "多厂商发布安全补丁：修复 Ivanti、Fortinet 及 SAP 等产品的 RCE 与 SQL 注入漏洞",
+      "title_orig": "Ivanti, Fortinet, SAP, VMware, n8n Patch RCE, SQL Injection, Privilege Escalation Flaws",
+      "summary": "Ivanti、Fortinet、SAP、VMware 及 n8n 官方近期发布了多个关键漏洞补丁，涉及远程代码执行、SQL 注入及权限提升等高危类型，旨在防止攻击者绕过身份验证并执行任意代码。其中 Ivanti Xtraction 的漏洞评分高达 9.6，攻击者可利用文件名外部控制实现信息泄露或客户端攻击，相关厂商强烈建议受影响用户尽快完成系统更新，以防范潜在的恶意利用风险。",
+      "tags": [
+        "漏洞预警",
+        "RCE",
+        "安全补丁"
+      ],
+      "url": "https://thehackernews.com/2026/05/ivanti-fortinet-sap-vmware-n8n-patch.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-18T10:54:05+00:00",
+      "cve_ids": [
+        "CVE-2026-8043"
+      ],
+      "selection_reason": "涵盖多个主流企业级产品的关键漏洞修复，具有高度预警价值。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-8043",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "NGINX 关键堆溢出漏洞 CVE-2026-42945 遭在途攻击，可导致服务崩溃或远程代码执行",
+      "title_orig": "NGINX CVE-2026-42945 Exploited in the Wild, Causing Worker Crashes and Possible RCE",
+      "summary": "NGINX Plus 和 Open 开源版中发现堆缓冲区溢出漏洞 CVE-2026-42945，该漏洞存在于重写模块中且受影响版本范围极广，目前已有报告显示该漏洞在野外被黑客积极利用。该漏洞可能导致工作进程频繁崩溃或实现潜在的远程代码执行，安全专家建议管理员立即检查 NGINX 配置并升级至最新安全版本，以缓解正在发生的严重安全威胁。",
+      "tags": [
+        "NGINX",
+        "堆溢出",
+        "在野利用"
+      ],
+      "url": "https://thehackernews.com/2026/05/nginx-cve-2026-42945-exploited-in-wild.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-17T11:57:53+00:00",
+      "cve_ids": [
+        "CVE-2026-42945"
+      ],
+      "selection_reason": "核心中间件的高危漏洞且已出现野外利用，需重点关注。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-42945",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Kazuar 后门演进为模块化 P2P 僵尸网络：增强隐蔽性与长期持久化能力",
+      "title_orig": "Russian hackers turn Kazuar backdoor into modular P2P botnet",
+      "summary": "俄罗斯黑客组织 Secret Blizzard 对其 Kazuar 后门进行了重大升级，将其转化为具有模块化结构的对等网络僵尸网络，旨在实现更强的隐蔽性、长期驻留以及大规模数据收集。新版本通过 P2P 架构显著降低了对单一控制节点的依赖，增加了安全机构对其进行追踪和拆解的难度，标志着该组织在对抗网络监控和维持攻击持久性方面取得了技术突破。",
+      "tags": [
+        "后门程序",
+        "P2P网络",
+        "僵尸网络"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/russian-hackers-turn-kazuar-backdoor-into-modular-p2p-botnet/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-16T14:15:37+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注传统后门向复杂 P2P 架构演进的技术趋势。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/russian-hackers-turn-kazuar-backdoor-into-modular-p2p-botnet",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Windows BitLocker 零日漏洞 YellowKey 发布：可绕过默认加密保护",
+      "title_orig": "Zero-Day Exploit Against Windows BitLocker",
+      "summary": "研究员 Nightmare-Eclipse 发布了名为 YellowKey 的零日漏洞利用工具，该工具可可靠地绕过 Windows 11 默认部署的 BitLocker 全盘加密保护。虽然利用该漏洞需要物理接触目标计算机，但它能通过特定手段提取存储在受信任平台模块中的解密密钥，对于存储在便携设备上的敏感数据构成了严重威胁，使得磁盘内容在无密钥情况下被非法访问。",
+      "tags": [
+        "BitLocke",
+        "零日漏洞",
+        "磁盘加密"
+      ],
+      "url": "https://www.schneier.com/blog/archives/2026/05/zero-day-exploit-against-windows-bitlocker.html",
+      "source": "schneier.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-18T11:08:13+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对 Windows 核心加密组件的零日漏洞利用，具有极高的",
+      "feed_url": "https://www.schneier.com/feed/atom/",
+      "feed_title": "Schneier on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "schneier.com",
+      "story_id": "url:schneier.com/blog/archives/2026/05/zero-day-exploit-against-windows-bitlocker.html",
+      "related_urls": [
+        "https://thehackernews.com/2026/05/miniplasma-windows-0-day-enables-system.html",
+        "https://www.bleepingcomputer.com/news/microsoft/new-windows-miniplasma-zero-day-exploit-gives-system-access-poc-released/"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 8.5,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Cloudflare 发布 Glasswing 项目：利用 Mythos 等大模型扫描基础设施代码的实战观察",
+      "title_orig": "Project Glasswing: what Mythos showed us",
+      "summary": "Cloudflare近期启动了名为Glasswing的项目，将Mythos等专注于安全的大语言模型应用于其关键基础设施的实时代码扫描，旨在评估AI在发现漏洞方面的实际效能。研究发现这些模型在识别特定模式漏洞上表现出色，但在处理复杂逻辑和大规模扩展方面仍存在局限，重点在于AI辅助安全审计在工程化落地前需解决的挑战。",
+      "tags": [
+        "AI安全",
+        "代码审计",
+        "大模型"
+      ],
+      "url": "https://blog.cloudflare.com/cyber-frontier-models/",
+      "source": "blog.cloudflare.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-18T06:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了顶级厂商在AI辅助漏洞挖掘方面的实战经验。",
+      "feed_url": "https://blog.cloudflare.com/tag/security/rss/",
+      "feed_title": "Cloudflare Security",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "blog.cloudflare.com",
+      "story_id": "url:blog.cloudflare.com/cyber-frontier-models",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.2,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全周报：Exchange 零日漏洞、npm 蠕虫及伪装 AI 仓库的窃密软件威胁分析",
+      "title_orig": "⚡ Weekly Recap: Exchange 0-Day, npm Worm, Fake AI Repo, Cisco Exploit and More",
+      "summary": "本周安全态势显示Exchange邮件服务器漏洞正被积极利用，同时npm生态系统遭遇毒化包攻击，攻击者还通过伪造AI模型页面分发窃密程序并导致思科等系统面临风险。报告强调了供应链安全中的弱依赖项风险，一旦泄露云服务密钥，攻击者即可从云端立足点渗透至生产环境，揭示了从单一漏洞演变为系统性崩溃的攻击路径。",
+      "tags": [
+        "供应链安全",
+        "零日漏洞",
+        "云安全"
+      ],
+      "url": "https://thehackernews.com/2026/05/weekly-recap-exchange-0-day-npm-worm.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-18T13:50:17+00:00",
+      "cve_ids": [],
+      "selection_reason": "汇总了近期多维度的安全威胁，具有较高的预警价值。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/weekly-recap-exchange-0-day-npm-worm.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 承包商在 GitHub 意外泄露 AWS GovCloud 高权限密钥及内部系统凭据",
+      "title_orig": "CISA Admin Leaked AWS GovCloud Keys on Github",
+      "summary": "美国网络安全与基础设施安全局（CISA）的一名承包商在GitHub公开仓库中意外泄露了多个AWS GovCloud高权限账户凭据，以及大量内部关键系统的访问权限。泄露的文件详细记录了CISA内部软件的构建、测试与部署流程，安全专家指出这可能导致攻击者获取敏感的政府云环境访问权限，目前该违规公开的仓库已被紧急清理。",
+      "tags": [
+        "凭据泄露",
+        "云安全",
+        "GitHub"
+      ],
+      "url": "https://krebsonsecurity.com/2026/05/cisa-admin-leaked-aws-govcloud-keys-on-github/",
+      "source": "krebsonsecurity.com",
+      "category": "AI",
+      "published": "2026-05-18T20:48:21+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的高级凭据泄露事件，凸显了供应链人员管理风险。",
+      "feed_url": "https://krebsonsecurity.com/feed/",
+      "feed_title": "Krebs on Security",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "krebsonsecurity.com",
+      "story_id": "url:krebsonsecurity.com/2026/05/cisa-admin-leaked-aws-govcloud-keys-on-github",
+      "related_urls": [
+        "https://krebsonsecurity.com/2026/05/cisa-admin-leaked-aws-govcloud-keys-on-github/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软拒绝承认 Azure Backup for AKS 关键漏洞并拒绝分配 CVE 编号",
+      "title_orig": "Microsoft rejects critical Azure vulnerability report, no CVE issued",
+      "summary": "安全研究人员发现Azure Backup for AKS存在关键漏洞并提交报告，但微软在拒绝该报告且未发布CVE编号的情况下，被指控对该漏洞进行了静默修复。尽管微软向媒体辩称该行为符合预期且未进行任何产品更改，但研究人员通过文档记录了修复前后的功能差异，双方针对漏洞的认定及透明度问题产生了严重分歧，引发了业界关注。",
+      "tags": [
+        "Azure",
+        "漏洞争议",
+        "云安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/microsoft-rejects-critical-azure-vulnerability-report-no-cve-issued/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-16T20:55:44+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及云厂商漏洞披露政策争议，值得安全研究者关注。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/microsoft-rejects-critical-azure-vulnerability-report-no-cve-issued",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WebdriverIO 9.23.x 版本 getGitMetadataForAISelection 函数存在远程命令注入漏洞",
+      "title_orig": "CVE-2026-25244 | WebdriverIO up to 9.23.x getGitMetadataForAISelection os command injection (GHSA-5c46-x3qw-q7j7)",
+      "summary": "WebdriverIO 9.23.x及以下版本中存在编号为CVE-2026-25244的严重安全漏洞，该漏洞源于getGitMetadataForAISelection函数在处理输入时存在缺陷，可能导致操作系统命令注入。远程攻击者可利用此漏洞执行恶意指令，虽然目前尚未发现公开的利用代码，但鉴于其潜在的破坏力，官方强烈建议所有受影响的用户尽快将组件升级至安全版本以确保系统安全。",
+      "tags": [
+        "命令注入",
+        "Webdrive",
+        "漏洞预警"
+      ],
+      "url": "https://vuldb.com/vuln/364501",
+      "source": "vuldb.com",
+      "category": "Synthesis",
+      "published": "2026-05-18T22:26:23+00:00",
+      "cve_ids": [
+        "CVE-2026-25244"
+      ],
+      "selection_reason": "流行的自动化测试框架漏洞，具有明确的修复建议。",
+      "feed_url": "https://vuldb.com/en/?rss.recent",
+      "feed_title": "VulDB Recent Entries",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "vuldb.com",
+      "story_id": "cve:cve-2026-25244",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Anthropic Claude Desktop 安装程序被指集成高度敏感的数据采集组件",
+      "title_orig": "Anthropic 在用户安装 Claude Desktop 时暗中植入间谍软件",
+      "summary": "有研究指出Anthropic在用户安装Claude Desktop客户端时，疑似植入了具有间谍软件特征的数据采集模块，该行为在未经明确授权的情况下运行。该组件在后台持续收集用户环境信息，引发了开发者社区对AI客户端隐私合规性及数据跨境传输的广泛质疑，目前关于该组件的具体代码实现细节及受影响的系统版本仍有待进一步披露。",
+      "tags": [
+        "隐私安全",
+        "AI客户端",
+        "间谍软件"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486694&idx=1&sn=6e4181569a38f51de181eb6c403c576c",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-17T01:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及主流AI工具的隐私争议，提醒用户关注客户端安全。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "feed_title": "安全行者老霍",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ%3D%3D&mid=2247486694&idx=1&sn=6e4181569a38f51de181eb6c403c576c",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.8,
+      "final_score": 7.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "GitHub 智能自主工作流安全架构解析：权限控制与自动化流水线防护",
+      "title_orig": "深度解析：GitHub 智能自主工作流安全架构",
+      "summary": "本文深入探讨了GitHub智能自主工作流的安全架构设计，重点分析了在高度自动化的流水线中如何实现细粒度的权限隔离、身份验证以及动态密钥管理。文章详细说明了应对恶意代码注入和凭据泄露的技术手段，特别适用于需要构建安全CI/CD环境的从业者，强调了在AI驱动的自动化流程中建立严密信任边界与审计机制的必要性。",
+      "tags": [
+        "GitHub",
+        "DevSecOp",
+        "安全架构"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486710&idx=1&sn=ee2ece21e3d7764a2c39e4102e6ff9e9",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-18T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了现代自动化流水线安全设计的技术参考。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "feed_title": "安全行者老霍",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ%3D%3D&mid=2247486710&idx=1&sn=ee2ece21e3d7764a2c39e4102e6ff9e9",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 5.75,
+      "final_score": 6.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}

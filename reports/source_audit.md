@@ -1,24 +1,23 @@
 # Source Registry Audit
 
-- generated_for: 2026-05-18
-- dates: 2026-05-18, 2026-05-17, 2026-05-16, 2026-05-15, 2026-05-14, 2026-05-13, 2026-05-12
+- generated_for: 2026-05-19
+- dates: 2026-05-19, 2026-05-18, 2026-05-17, 2026-05-16, 2026-05-15, 2026-05-14, 2026-05-13
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 100 | 12 | 13 | 75 | 0 | 15 | 12 | 33 | 1 |
-| ai_security | 67 | 16 | 4 | 47 | 0 | 11 | 16 | 26 | 9 |
-| finance | 69 | 3 | 0 | 66 | 0 | 17 | 3 | 0 | 0 |
-| security | 103 | 13 | 0 | 82 | 8 | 0 | 13 | 6 | 15 |
+| ai | 100 | 11 | 14 | 73 | 2 | 15 | 11 | 34 | 1 |
+| ai_security | 60 | 16 | 3 | 41 | 0 | 9 | 16 | 22 | 9 |
+| finance | 69 | 1 | 0 | 68 | 0 | 19 | 1 | 0 | 0 |
+| security | 103 | 15 | 0 | 87 | 1 | 0 | 15 | 6 | 19 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `blog.csdn.net` | 3 | security | [ARM64 架构下 this_cpu_ops 性能优化探讨与内核页表挑战](https://blog.csdn.net/21cnbao/article/details/161028912) |
-| `k8gege.org` | 3 | security | [AI 渗透工具 Kali & HexStrike 被发现存在多个 SSE 导致的 RCE 漏洞](http://k8gege.org/p/hexstrike_0day.html) |
-| `furutsuki.hatenablog.com` | 2 | security | [Daily AlpacaHack：面向初学者的常设 CTF 挑战与解题分享](https://furutsuki.hatenablog.com/entry/2026/05/14/002228) |
+| `blogs.nvidia.com` | 2 | ai | [英伟达首款专为 AI 智能体设计的 Vera CPU 正式交付 OpenAI 与 Anthropic 等实验室](https://blogs.nvidia.com/blog/vera-cpu-delivery/) |
+| `krebsonsecurity.com` | 1 | security | [CISA 承包商在 GitHub 意外泄露 AWS GovCloud 高权限密钥及内部系统凭据](https://krebsonsecurity.com/2026/05/cisa-admin-leaked-aws-govcloud-keys-on-github/) |
 
 ## Review Rule
 

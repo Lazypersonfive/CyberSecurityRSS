@@ -349,6 +349,40 @@
           }
         },
         {
+          "title_zh": "AI 渗透工具 Kali & HexStrike 被曝存在多个高危远程命令执行漏洞",
+          "title_orig": "AI渗透工具 Kali & HexStrike 大量RCE 0day漏洞",
+          "summary": "研究人员在测试将MCP集成到AI Agent时，发现HexStrike采用的SSE通信方式存在严重缺陷，并利用AI智能体成功构造了攻击载荷。该工具被发现存在7个远程命令执行漏洞，攻击者可借此获取运行该AI渗透工具主机的控制权，目前处于风险极高状态且原文未提及官方补丁，用户需警惕此类AI驱动的渗透工具在自动化测试中可能引入的安全风险。",
+          "tags": [
+            "RCE漏洞",
+            "AI安全",
+            "渗透工具"
+          ],
+          "url": "http://k8gege.org/p/hexstrike_0day.html",
+          "source": "k8gege.org",
+          "category": "RedTeam",
+          "published": "2026-05-14T15:40:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示了安全工具自身的安全风险，以及利用 AI 发现漏洞的新趋",
+          "feed_url": "https://k8gege.org/atom.xml",
+          "feed_title": "K8哥哥’s Blog",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全博客",
+          "source_key": "k8gege.org",
+          "story_id": "url:k8gege.org/p/hexstrike_0day.html",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "dimension_score": 9.05,
+          "final_score": 9.05,
+          "score_breakdown": {
+            "source_bonus": -0.3,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
           "title_zh": "WordPress 插件 Burst Statistics 身份验证绕过漏洞遭黑客利用",
           "title_orig": "Hackers exploit auth bypass flaw in Burst Statistics WordPress plugin",
           "summary": "黑客正在利用 WordPress 统计插件 Burst Statistics 中的一个关键身份验证绕过漏洞，旨在获取受影响网站的管理员级访问权限并实现完全控制。该漏洞允许未经授权的攻击者提升权限，原文确认已有实际攻击发生，虽然未详细说明漏洞触发的具体代码位置，但强烈建议用户立即检查更新或采取缓解措施以保护站点免受非法入侵。",
@@ -377,40 +411,6 @@
           "final_score": 9.05,
           "score_breakdown": {
             "source_bonus": 0.0,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "AI 渗透工具 Kali & HexStrike 被曝存在多个高危远程命令执行漏洞",
-          "title_orig": "AI渗透工具 Kali & HexStrike 大量RCE 0day漏洞",
-          "summary": "研究人员在测试将MCP集成到AI Agent时，发现HexStrike采用的SSE通信方式存在严重缺陷，并利用AI智能体成功构造了攻击载荷。该工具被发现存在7个远程命令执行漏洞，攻击者可借此获取运行该AI渗透工具主机的控制权，目前处于风险极高状态且原文未提及官方补丁，用户需警惕此类AI驱动的渗透工具在自动化测试中可能引入的安全风险。",
-          "tags": [
-            "RCE漏洞",
-            "AI安全",
-            "渗透工具"
-          ],
-          "url": "http://k8gege.org/p/hexstrike_0day.html",
-          "source": "k8gege.org",
-          "category": "RedTeam",
-          "published": "2026-05-14T15:40:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了安全工具自身的安全风险，以及利用 AI 发现漏洞的新趋",
-          "feed_url": "https://k8gege.org/atom.xml",
-          "feed_title": "K8哥哥’s Blog",
-          "source_tier": "unknown",
-          "source_kind": "media",
-          "source_label": "未登记源",
-          "source_key": "k8gege.org",
-          "story_id": "url:k8gege.org/p/hexstrike_0day.html",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 9,
-          "dimension_score": 9.05,
-          "final_score": 9.05,
-          "score_breakdown": {
-            "source_bonus": -0.3,
             "kind_bonus": 0.0,
             "freshness_bonus": 0.3,
             "cn_visibility_bonus": 0.0
@@ -514,9 +514,9 @@
           "selection_reason": "涉及操作系统底层架构优化，对高性能计算和内核开发者有技术参考",
           "feed_url": "https://blog.csdn.net/21cnbao/rss/list",
           "feed_title": "宋宝华",
-          "source_tier": "unknown",
-          "source_kind": "media",
-          "source_label": "未登记源",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "技术社区",
           "source_key": "blog.csdn.net",
           "story_id": "url:blog.csdn.net/21cnbao/article/details/161028912",
           "related_urls": [],
@@ -539,12 +539,11 @@
         "direct": 15,
         "tier_t1": 5,
         "kind_official": 5,
-        "tier_t2": 8,
-        "kind_media": 8,
+        "tier_t2": 10,
+        "kind_media": 6,
         "chinese": 3,
-        "kind_cn_expert": 1,
-        "tier_unknown": 2,
-        "kind_community": 1
+        "kind_cn_expert": 2,
+        "kind_community": 2
       },
       "clustering_stats": {
         "deterministic_merged": 0,
