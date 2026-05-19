@@ -1,0 +1,552 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-20",
+  "generated_at": "2026-05-19T23:48:55.794890Z",
+  "raw_count": 106,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 8,
+    "direct": 14,
+    "wechat": 6,
+    "tier_t2": 12,
+    "kind_cn_expert": 8,
+    "tier_t1": 3,
+    "kind_official": 3,
+    "kind_media": 3,
+    "aggregator": 1,
+    "kind_expert_x": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "items": [
+    {
+      "title_zh": "TeamPCP 针对主流漏洞扫描器及 CI/CD 工具发起嵌套供应链攻击",
+      "title_orig": "为什么信任你的漏洞扫描器是个坏主意",
+      "summary": "自2026年3月起，攻击者TeamPCP针对Trivy、Checkmarx KICS及Bitwarden CLI等工具发起嵌套供应链攻击，利用CI/CD内存抓取、区块链C2和自动化蠕虫感染等复杂技术。该攻击导致Mercor公司4TB敏感数据失窃及MCP配置劫持，深刻揭示了过度信任漏洞扫描器的安全隐患，企业应构建零信任架构并强化对开发工具链的实时监控。 TeamPCP 针对主流漏洞扫描器及 CI/CD 工具发起嵌套供应链攻击。该条来自mp.weixin.qq.com，归类于CN_News，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本。",
+      "tags": [
+        "供应链攻击",
+        "CI/CD安全",
+        "零信任"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496104&idx=2&sn=a8d2770630d691127dd0e69648d6c739",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-18T13:11:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对安全工具本身的供应链攻击新趋势。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496104&idx=2&sn=a8d2770630d691127dd0e69648d6c739",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.45,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "ScadaBR 工业自动化软件存在多个高危漏洞可导致远程代码执行",
+      "title_orig": "ScadaBR",
+      "summary": "ScadaBR 1.2.0版本被曝存在CVE-2026-8602至8605等多个高危漏洞，涉及关键功能身份验证缺失及输入过滤不当等严重安全缺陷。未经身份验证的远程攻击者可利用这些漏洞在受影响的工业控制系统上执行任意代码，CVSS评分高达9.1，目前官方已发布安全预警并建议相关企业尽快评估其工控环境的安全风险并采取补救措施。",
+      "tags": [
+        "工控安全",
+        "RCE漏洞",
+        "身份验证绕过"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-139-03",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-19T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-8602",
+        "CVE-2026-8603",
+        "CVE-2026-8604",
+        "CVE-2026-8605"
+      ],
+      "selection_reason": "高评分工控系统漏洞，直接威胁工业生产安全。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-8602,cve-2026-8603,cve-2026-8604,cve-2026-8605",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.3,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux 内核本地提权漏洞 CVE-2026-31635 PoC 公开",
+      "title_orig": "DirtyDecrypt PoC Released for Linux Kernel CVE-2026-31635 LPE Vulnerability",
+      "summary": "研究团队Zellic和V12披露了名为DirtyDecrypt的Linux内核本地权限提升漏洞，该漏洞源于加密子系统的逻辑缺陷，允许低权限用户获取系统最高权限。目前针对该漏洞的验证代码已正式发布，尽管该漏洞曾被维护者误认为是重复报告，但其潜在威胁不容忽视，受影响的Linux系统管理员应立即检查内核补丁状态并完成必要的安全更新。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "PoC"
+      ],
+      "url": "https://thehackernews.com/2026/05/dirtydecrypt-poc-released-for-linux.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-19T14:56:26+00:00",
+      "cve_ids": [
+        "CVE-2026-31635"
+      ],
+      "selection_reason": "内核级提权漏洞且 PoC 已公开，具有极高实战影响。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-31635",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Windows 内核驱动整数溢出漏洞原理分析与 CVE-2025-21333 案例研究",
+      "title_orig": "理解 Windows 内核漏洞利用中的整数溢出",
+      "summary": "本文深入剖析了Windows内核驱动中加法、乘法及有符号整数溢出的技术原理，并结合CVE-2025-21333真实案例详细展示了漏洞从触发到利用的全过程。文章通过自定义易受攻击的驱动程序，演示了如何将整数溢出转化为内核态的内存破坏，为安全研究员理解内核漏洞利用机制提供了详实的实战参考，强调了内核驱动开发中边界检查的重要性。",
+      "tags": [
+        "Windows内",
+        "整数溢出",
+        "漏洞分析"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496198&idx=2&sn=4d6049de0c7368e4603043d7dce37042",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-19T03:11:00+00:00",
+      "cve_ids": [
+        "CVE-2025-21333"
+      ],
+      "selection_reason": "深入讲解内核漏洞底层原理，对驱动安全研究有指导意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "cve:cve-2025-21333",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "ABB CoreSense 系列产品存在路径遍历漏洞可导致系统完全受控",
+      "title_orig": "ABB CoreSense HM and CoreSense M10",
+      "summary": "ABB CoreSense HM和M10设备存在严重的路径遍历漏洞，允许未经身份验证的远程用户绕过权限限制访问系统受限目录。攻击者利用该漏洞不仅可以获取设备内的敏感信息，还可能导致整个工业控制系统的完全沦陷，目前官方已发布针对性的安全更新以修复此缺陷，建议所有受影响的用户立即将产品升级至最新版本，以防止潜在的非授权访问和数据泄露。",
+      "tags": [
+        "ABB",
+        "路径遍历",
+        "工控安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-139-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-19T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名工控厂商产品漏洞，涉及敏感目录访问及系统权限。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-139-01",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "FineReport J2V8 引擎漏洞利用实战：提升不稳定漏洞的成功率",
+      "title_orig": "崩溃后的重生-用概率博胜率",
+      "summary": "本文详细记录了针对FineReport J2V8引擎漏洞的复杂利用过程，重点探讨了在服务器频繁崩溃且需不断重启的极端环境下，如何通过概率博弈实现稳定的漏洞触发。作者通过无数次调试与Payload优化，展示了从系统崩溃到成功弹回Shell的技术细节，为安全从业者在面对不稳定性漏洞利用场景时提供了宝贵的实战思路与优化策略。",
+      "tags": [
+        "漏洞利用",
+        "J2V8",
+        "实战技巧"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4NzQwNzY3OQ==&mid=2247484107&idx=1&sn=ac65749a9928a688d5d46a9a29837ca3",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-18T15:05:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "分享了处理不稳定漏洞利用的实战经验，具有技术参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f38c9a9f230e19f49918faefc5d0d0fc71e52d29.xml",
+      "feed_title": "漕河泾小黑屋",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f38c9a9f230e19f49918faefc5d0d0fc71e52d29.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4NzQwNzY3OQ%3D%3D&mid=2247484107&idx=1&sn=ac65749a9928a688d5d46a9a29837ca3",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "HackTheBox 靶机渗透：从 Strapi NoSQL 注入到 Laravel RCE 提权",
+      "title_orig": "HackTheBox Horizontall 靶机渗透实战：从 Strapi NoSQL 注入到 Laravel Debug RCE 提权全过程",
+      "summary": "本文详细记录了Horizontall靶机的渗透全过程，涵盖了从前端JS文件提取隐藏子域名、识别Strapi CMS版本到利用NoSQL注入漏洞重置管理员密码的关键步骤。在获取初始权限后，作者进一步结合插件安装处的命令注入漏洞以及Laravel Debug模式下的RCE漏洞实现了最终的系统提权，完整展示了从信息搜集到多漏洞组合攻击的实战链路与技术细节。",
+      "tags": [
+        "渗透测试",
+        "NoSQL注入",
+        "RCE"
+      ],
+      "url": "https://xz.aliyun.com/news/92144",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-17T13:13:05+00:00",
+      "cve_ids": [
+        "CVE-2019-18818",
+        "CVE-2019-19606"
+      ],
+      "selection_reason": "完整的渗透测试链路展示，涵盖了从信息收集到提权的典型步骤。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2019-18818,cve-2019-19606",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "ChromaDB 向量数据库存在最高级别漏洞可导致服务器被接管",
+      "title_orig": "Max-severity flaw in ChromaDB for AI apps allows server hijacking",
+      "summary": "ChromaDB项目的Python FastAPI版本被发现存在一个最高严重等级的安全漏洞，该漏洞允许未经身份验证的远程攻击者在暴露的服务器上执行任意代码。由于该漏洞直接威胁到AI应用的基础设施安全，攻击者可借此实现服务器劫持并窃取核心数据，目前安全专家强烈建议开发者立即检查其部署环境，并将ChromaDB更新至已修复的安全版本以规避风险。",
+      "tags": [
+        "AI安全",
+        "ChromaDB",
+        "远程代码执行"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/max-severity-flaw-in-chromadb-for-ai-apps-allows-server-hijacking/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-19T22:25:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对 AI 基础设施的高危漏洞，对当前 AI 应用安全至关重",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/max-severity-flaw-in-chromadb-for-ai-apps-allows-server-hijacking",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "利用 Microsoft Deployment Toolkit (MDT) 部署共享提取域内高价值凭据的技术解析",
+      "title_orig": "红队金矿：从 MDT 部署共享中提取凭据",
+      "summary": "该技术深入探讨了红队行动中利用 Microsoft Deployment Toolkit 部署共享权限配置不当的风险，通过访问 Bootstrap.ini、CustomSettings.ini、ts.xml 及 unattend.xml 等关键配置文件提取敏感信息。攻击者可从中获取硬编码的域加入账户、本地管理员密码及脚本凭据，是快速收割域内权限的高价值路径，对企业内网安全构成了极具实战性的威胁，需引起安全运维人员的高度警惕。",
+      "tags": [
+        "红队渗透",
+        "凭据提取",
+        "MDT"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496198&idx=1&sn=3cd0aaba7a500e8c2aebda112fd58f52",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-19T03:11:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了企业内网部署工具中常见的配置疏忽及其利用价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496198&idx=1&sn=3cd0aaba7a500e8c2aebda112fd58f52",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.35,
+      "final_score": 9.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "基于 Rust 实现的 Cobalt Strike 用户自定义反射加载器 DoublePulsar 规避技术分析",
+      "title_orig": "DoublePulsar:Crystal Palace 与 Tradecraft Garden 时代的用户自定义反射加载器",
+      "summary": "DoublePulsar 是一款采用 Rust 编写的 Cobalt Strike 用户自定义反射加载器，集成了模块踩踏、基于 .pdata 的合成调用栈伪造以及 NtContinue 链睡眠混淆等多种高级规避手段。该工具通过堆隔离、IAT 挂钩和可选直接系统调用等技术深度隐藏 Beacon 行为，并配套提供 YARA 规则与 MITRE ATT&CK 映射，旨在帮助防御方研究并应对此类复杂的内存攻击威胁，提升整体安全防护水平。",
+      "tags": [
+        "CobaltSt",
+        "免杀技术",
+        "Rust"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496104&idx=1&sn=722652219aecc7b5c387ac9fa812e766",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-18T13:11:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了现代 C2 加载器在内存规避和调用栈伪造方面的进阶技术",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496104&idx=1&sn=722652219aecc7b5c387ac9fa812e766",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.3,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Kieback & Peter DDC 系列楼宇控制器存在 CVE-2026-4293 漏洞可导致浏览器接管",
+      "title_orig": "Kieback & Peter DDC Building Controllers",
+      "summary": "Kieback & Peter 旗下的 DDC4002、DDC4100、DDC4200、DDC4200-L 及 DDC4400 等多款楼宇控制器被曝存在 CVE-2026-4293 安全漏洞，受影响版本均在 1.12.14 及以下。成功利用该漏洞的攻击者可以接管受害者的浏览器并控制相关设备，目前 CSAF 摘要已正式发布，建议相关行业用户密切关注官方修复进度，以防范针对关键基础设施的潜在远程控制风险，确保楼宇自动化系统的运行安全。",
+      "tags": [
+        "工控安全",
+        "CVE-2026",
+        "楼宇自动化"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-139-05",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-19T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-4293"
+      ],
+      "selection_reason": "涉及关键基础设施控制器的安全预警，具有较高的行业影响。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-4293",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.1,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "隐写术实战：将 Shellcode 嵌入 PNG 像素实现无文件内存执行的技术研究",
+      "title_orig": "「幻核-1」在PNG像素里藏一把刀",
+      "summary": "该技术研究了如何将完整的 Shellcode 隐藏在看似正常的 PNG 图像像素数据中，实现极其隐蔽的恶意载荷投递与内存执行。攻击流程实现了从图片解码到内存执行的一步到位，全程不触碰磁盘，能有效规避基于文件扫描的安防产品，是红队对抗中典型的隐写术与无文件执行结合案例，对现有防御体系提出了挑战。",
+      "tags": [
+        "隐写术",
+        "Shellcod",
+        "无文件攻击"
+      ],
+      "url": "https://xz.aliyun.com/news/92143",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-05-17T04:24:34+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了利用图像载体进行免杀投递的技术细节，值得安全研究者关注",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92143",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "EvilTokens 平台利用 OAuth 授权流程绕过 Microsoft 365 多因素身份验证 (MFA)",
+      "title_orig": "The New Phishing Click: How OAuth Consent Bypasses MFA",
+      "summary": "EvilTokens 钓鱼服务平台通过诱导用户在官方设备登录页面输入短代码，利用 OAuth 授权机制成功绕过 MFA 保护，在上线短短五周内已导致五个国家的超过 340 个 Microsoft 365 组织受损。攻击者在用户完成正常的 MFA 挑战后即可获取访问令牌，从而在不掌握原始凭据的情况下接管账户，这种新型钓鱼手段对全球企业身份安全构成了极其严重的威胁，需引起安全团队高度警惕。",
+      "tags": [
+        "OAuth钓鱼",
+        "MFA绕过",
+        "身份安全"
+      ],
+      "url": "https://thehackernews.com/2026/05/the-new-phishing-click-how-oauth.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-19T11:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对企业云服务的新型钓鱼攻击模式及 MFA 的局限性。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/the-new-phishing-click-how-oauth.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.15,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "实时 AI 深度伪造技术突破：成功模拟人脸活体检测中的特定动作指令",
+      "title_orig": "🤯 This is scary good for something rendering in real time. Selfie-based liveness checks ask for a fixed set of motions: head turn, blink, close app...",
+      "summary": "一项最新的技术演示显示，实时生成的 AI 深度伪造面孔已能精准完成转头、眨眼及靠近摄像头等活体检测指令，其表现出的真实感令人震惊。该模型在皮肤微纹理和额头皱纹等细节上表现极佳，即使在近距离观察下也难以分辨真伪，若无对比几乎无法识别，这对目前主流的基于自拍的身份验证系统构成了严峻的安全挑战。",
+      "tags": [
+        "深度伪造",
+        "活体检测",
+        "生物识别"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2056710280818692188",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-19T12:15:17+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 伪造技术对现有生物识别防御体系的实质性威胁。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2056710280818692188",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.3,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GitHub 智能自主工作流安全架构深度解析与风险评估",
+      "title_orig": "深度解析：GitHub 智能自主工作流安全架构",
+      "summary": "本文对 GitHub 智能自主工作流的安全架构进行了深度解析，重点探讨了其在自动化集成过程中的权限控制、隔离机制以及如何应对潜在的供应链风险。文章详细分析了该架构在防御恶意代码注入方面的技术实现，为开发者和安全从业者提供了关于自动化工作流安全配置的重要参考，旨在提升 GitHub 生态下自动化工具的整体安全性。",
+      "tags": [
+        "GitHub",
+        "工作流安全",
+        "DevSecOp"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486710&idx=1&sn=ee2ece21e3d7764a2c39e4102e6ff9e9",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-18T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对主流开发平台的自动化安全架构分析，对供应链安全建设有参考",
+      "feed_url": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "feed_title": "安全行者老霍",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ%3D%3D&mid=2247486710&idx=1&sn=ee2ece21e3d7764a2c39e4102e6ff9e9",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.05,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
