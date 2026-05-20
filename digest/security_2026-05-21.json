@@ -1,0 +1,558 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-21",
+  "generated_at": "2026-05-20T23:57:05.209066Z",
+  "raw_count": 101,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 7,
+    "direct": 14,
+    "tier_t2": 12,
+    "kind_cn_expert": 7,
+    "tier_t1": 3,
+    "kind_official": 3,
+    "wechat": 6,
+    "kind_media": 1,
+    "kind_community": 3,
+    "aggregator": 1,
+    "kind_expert_x": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "NGINX 曝出存在 18 年之久的严重漏洞且已出现野外攻击，影响多个历史版本",
+      "title_orig": "NGINX惊爆18年老洞，野外攻击已开始",
+      "summary": "NGINX 被发现存在一个潜伏长达 18 年的安全漏洞，该漏洞源于核心代码中的逻辑缺陷，目前已有证据表明该漏洞正被用于野外攻击。攻击者可利用该漏洞在特定配置下实现远程代码执行或拒绝服务，受影响版本涵盖了从早期版本到近期发布的多个分支，原文未披露具体 CVE 编号。目前官方已发布相关补丁，建议管理员立即检查 NGINX 实例并升级至最新稳定版本以缓解风险。",
+      "tags": [
+        "NGINX",
+        "高危漏洞",
+        "野外利用"
+      ],
+      "url": "https://www.anquanke.com/post/id/315546",
+      "source": "anquanke.com",
+      "category": "CN_News",
+      "published": "2026-05-20T16:44:41+00:00",
+      "cve_ids": [],
+      "selection_reason": "NGINX 作为核心基础设施，其长周期漏洞及野外利用具有极高",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315546",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.5,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "蚂蚁金服 @antv npm 软件包遭供应链攻击，植入恶意载荷窃取 CI/CD 凭据",
+      "title_orig": "Mini Shai Hulud: Compromised @antv npm packages enable CI/CD credential theft",
+      "summary": "微软安全团队发现多个被篡改的@antv相关npm软件包植入了名为Mini Shai-Hulud的恶意载荷，该载荷专门针对基于Linux的自动化环境，旨在窃取CI/CD流程中存储的各类敏感凭据。该恶意软件在执行安装指令时会自动触发，广泛搜集包括GitHub、AWS、Kubernetes、Vault、npm及1Password等平台的密钥信息，开发者需立即检查环境并轮换所有可能泄露的凭据以防损失。 蚂蚁金服 @antv npm 软件包遭供应链攻击，植入恶意载荷窃取 CI/CD 凭据。该条来自microsoft.com，归类于OfficialAdvisories，原始信息显示其在本轮抓取、去重和打分中优先级。",
+      "tags": [
+        "供应链攻击",
+        "npm",
+        "凭据窃取"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/20/mini-shai-hulud-compromised-antv-npm-packages-enable-ci-cd-credential-theft/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-20T17:48:44+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名开源组件库遭投毒，直接威胁企业 CI/CD 环境安全。",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/05/20/mini-shai-hulud-compromised-antv-npm-packages-enable-ci-cd-credential-theft",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 将七个已被利用的历史漏洞加入 KEV 目录，涉及微软及 Adobe 多款产品",
+      "title_orig": "CISA Adds Seven Known Exploited Vulnerabilities to Catalog",
+      "summary": "美国网络安全与基础设施安全局CISA根据活跃攻击证据，将涉及Windows缓冲区溢出、DirectX空字节覆盖及Adobe Acrobat堆溢出等七个已知漏洞加入其KEV编目。尽管这些漏洞最早可追溯至2008年，但目前仍被攻击者利用于针对未修补系统的攻击，为此CISA要求联邦机构必须在规定期限内完成修复工作，以有效降低政府网络面临的安全风险并防止潜在的入侵行为。",
+      "tags": [
+        "CISA",
+        "漏洞管理",
+        "历史漏洞"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/05/20/cisa-adds-seven-known-exploited-vulnerabilities-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-20T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2008-4250",
+        "CVE-2009-1537",
+        "CVE-2009-3459",
+        "CVE-2010-0249"
+      ],
+      "selection_reason": "强调了旧漏洞在当前威胁环境中的持续危害，提醒基础加固的重要性",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2008-4250,cve-2009-1537,cve-2009-3459,cve-2010-0249",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.55,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "深入剖析微软 Device Code Flow 认证机制滥用风险与 Storm-2372 钓鱼手法",
+      "title_orig": "设计如此,却被攻击者滥用:深入剖析 Device Code Flow 攻击",
+      "summary": "本文详细分析了 Microsoft Device Code Flow 的设计原理及其在身份认证中被攻击者滥用的风险，特别是 Storm-2372 组织利用该机制进行的钓鱼攻击。文章探讨了条件访问配置缺陷、SSO 无缝登录带来的安全隐患，并提供了针对 PowerShell 攻击脚本的检测思路。该研究对于防御 Entra ID 环境下的凭据劫持具有重要参考价值，建议安全从业者关注认证协议的逻辑漏洞。",
+      "tags": [
+        "身份认证",
+        "钓鱼攻击",
+        "Entra ID"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496205&idx=2&sn=70fb5e6c8f848f99663704c60abed9ff",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-20T02:22:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入分析合法协议被滥用的技术细节，对云安全防御有指导意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496205&idx=2&sn=70fb5e6c8f848f99663704c60abed9ff",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.25,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "GitHub 官方调查内部代码库未经授权访问事件，目前正评估潜在影响范围",
+      "title_orig": "Investigating unauthorized access to GitHub’s internal repositories",
+      "summary": "GitHub 官方发布公告称正在调查一起涉及其内部存储库被未经授权访问的安全事件，目前调查工作仍在进行中。官方表示如果发现任何对客户产生影响的证据，将通过既定的事件响应和通知渠道告知受影响用户。原文未披露攻击者的具体入侵手段、受影响的代码库名称或泄露的数据规模，目前尚处于初步调查阶段，建议相关企业关注后续官方更新。",
+      "tags": [
+        "GitHub",
+        "内部泄露",
+        "安全调查"
+      ],
+      "url": "https://github.blog/security/investigating-unauthorized-access-to-githubs-internal-repositories/",
+      "source": "github.blog",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-20T21:07:38+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级代码托管平台的安全事件，可能涉及供应链上游风险。",
+      "feed_url": "https://github.blog/security/feed/",
+      "feed_title": "GitHub Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "github.blog",
+      "story_id": "url:github.blog/security/investigating-unauthorized-access-to-githubs-internal-repositories",
+      "related_urls": [
+        "https://x.com/IntCyberDigest/status/2057119523669442662"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Windows 内核驱动整数溢出漏洞原理分析及 CVE-2025-21333 案例研究",
+      "title_orig": "理解 Windows 内核漏洞利用中的整数溢出",
+      "summary": "本文深入探讨了 Windows 内核驱动程序中的整数溢出漏洞，通过自定义驱动程序演示了加法、乘法及有符号溢出等多种触发场景。文章重点分析了 CVE-2025-21333 这一真实案例，展示了攻击者如何利用溢出漏洞实现内核权限提升。该技术分析对于从事内核漏洞挖掘与利用研究的安全从业者具有较高的参考价值，揭示了底层内存管理中的常见安全缺陷。",
+      "tags": [
+        "Windows内",
+        "整数溢出",
+        "提权漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496198&idx=2&sn=4d6049de0c7368e4603043d7dce37042",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-19T03:11:00+00:00",
+      "cve_ids": [
+        "CVE-2025-21333"
+      ],
+      "selection_reason": "提供内核级漏洞的底层原理分析，技术深度较高。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "cve:cve-2025-21333",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "针对安全扫描工具的嵌套供应链攻击分析：从内存抓取到区块链 C2 通信",
+      "title_orig": "为什么信任你的漏洞扫描器是个坏主意",
+      "summary": "研究人员披露了 TeamPCP 组织针对 Aqua Security Trivy、Checkmarx KICS 等漏洞扫描器发起的复杂嵌套供应链攻击。攻击者利用 CI/CD 内存抓取技术获取敏感信息，并采用区块链技术构建 C2 通信链路，甚至实现了 CanisterWorm 自动感染。该事件导致大量数据失窃及配置劫持，暴露出安全工具自身的信任边界问题，强调了在开发流程中实施零信任架构的必要性。",
+      "tags": [
+        "供应链安全",
+        "扫描器攻击",
+        "零信任"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496104&idx=2&sn=a8d2770630d691127dd0e69648d6c739",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-18T13:11:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了“安全工具不安全”的极端攻击场景，技术手段极具启发性。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496104&idx=2&sn=a8d2770630d691127dd0e69648d6c739",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "FineReport J2V8 引擎漏洞利用实战：通过概率博弈实现不稳定环境下的 RCE",
+      "title_orig": "崩溃后的重生-用概率博胜率",
+      "summary": "本文记录了针对 FineReport 中 J2V8 引擎漏洞进行利用的实战过程，重点解决了在漏洞触发导致服务器频繁崩溃环境下的利用难题。作者详细描述了如何通过调整利用策略和概率博弈，在多次重启的循环中成功获取远程代码执行权限。该案例展示了在复杂、不稳定的真实业务环境中进行漏洞利用的技术细节，对于红蓝对抗中的 Payload 稳定性优化具有实战参考意义。",
+      "tags": [
+        "FineRepo",
+        "漏洞利用",
+        "RCE"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4NzQwNzY3OQ==&mid=2247484107&idx=1&sn=ac65749a9928a688d5d46a9a29837ca3",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-18T15:05:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "分享了在极端不稳定环境下的漏洞利用技巧，具备实战参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f38c9a9f230e19f49918faefc5d0d0fc71e52d29.xml",
+      "feed_title": "漕河泾小黑屋",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f38c9a9f230e19f49918faefc5d0d0fc71e52d29.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4NzQwNzY3OQ%3D%3D&mid=2247484107&idx=1&sn=ac65749a9928a688d5d46a9a29837ca3",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.7,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Arch Linux 提权漏洞 PinTheft 概念验证代码发布，本地攻击者可获取 root 权限",
+      "title_orig": "Exploit released for new PinTheft Arch Linux root escalation flaw",
+      "summary": "PinTheft 是一项近期已修复的 Linux 本地提权漏洞，目前针对 Arch Linux 系统的公开概念验证代码已正式发布，引发了安全社区的广泛关注。该漏洞允许具有本地访问权限的攻击者绕过系统安全限制，并成功将权限提升至 root 最高级别，原文虽未披露具体漏洞原理及受影响的组件版本，但目前官方已发布补丁，建议相关用户立即完成系统更新以防范潜在的攻击风险。",
+      "tags": [
+        "本地提权",
+        "Arch Lin",
+        "PoC"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/linux/exploit-released-for-new-pintheft-arch-linux-root-escalation-flaw/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-20T10:52:31+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及主流 Linux 发行版的提权漏洞及公开 PoC。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/linux/exploit-released-for-new-pintheft-arch-linux-root-escalation-flaw",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全动态汇总：GitHub Desktop 路径遍历与 Pixel 10 零点击漏洞链披露",
+      "title_orig": "每日安全动态推送(26/5/20)",
+      "summary": "本次安全动态涵盖了 GitHub Desktop macOS 版的路径遍历漏洞，以及 Perl 生态中因 rand 函数导致的可预测密钥生成缺陷，这些漏洞可能威胁开发者环境的安全。此外，Project Zero 披露了针对 Pixel 10 的零点击漏洞链，原文未详细说明各漏洞的 CVE 编号及具体触发条件，由于涉及移动端及开发工具的核心安全，建议相关用户密切关注官方更新以缓解潜在的远程利用风险。",
+      "tags": [
+        "漏洞汇总",
+        "零点击",
+        "路径遍历"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960475&idx=1&sn=12298632569d31a6a7148aa2f9d27bf4",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-20T03:53:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖多个高影响力平台的漏洞预警，具有综合参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960475&idx=1&sn=12298632569d31a6a7148aa2f9d27bf4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "authentik 身份认证绕过漏洞 CVE-2026-40165：SAML 注入导致标识符截断",
+      "title_orig": "CVE-2026-40165 authentik: SAML NameID XML Comment Injection Enables Authentication Bypass via Identifier Truncation",
+      "summary": "开源身份提供商 authentik 存在身份验证绕过漏洞，其原理是在提取 SAML 断言的 NameID 值时，未能正确处理 XML 注释注入导致标识符被截断。攻击者可通过注入注释诱导系统仅识别部分标识符，从而实现身份伪造并获取非法访问权限，该漏洞影响 2025.12.4 及以下版本和部分 2026.2.0 预发布版本，目前官方已发布修复建议，建议受影响的组织尽快升级以保护身份认证体系。",
+      "tags": [
+        "身份认证绕过",
+        "SAML",
+        "XML注入"
+      ],
+      "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-40165?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-20T23:35:18+00:00",
+      "cve_ids": [
+        "CVE-2026-40165"
+      ],
+      "selection_reason": "SAML 协议实现缺陷是身份认证安全中的经典且高危问题。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-40165",
+      "related_urls": [
+        "https://vulners.com/cve/CVE-2026-40165?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "中兴 H188A 路由器身份认证绕过漏洞 CVE-2026-34472：预登录向导路由缺陷",
+      "title_orig": "CVE-2026-34472: Router auth bypass from a pre-login wizard routing flaw in ZTE H188A",
+      "summary": "中兴 H188A V6 路由器被发现存在严重的身份认证绕过漏洞，该漏洞并非传统的弱口令或暴力破解问题，而是由预登录设置向导中的路由逻辑缺陷引起。攻击者可在未授权状态下直接访问敏感的设置向导数据，导致关键配置信息泄露并跨越认证边界控制设备，原文未明确提及具体的修复版本状态，建议用户在补丁发布前严格限制管理接口的物理或网络访问，以降低被远程劫持的风险。",
+      "tags": [
+        "路由器安全",
+        "认证绕过",
+        "信息泄露"
+      ],
+      "url": "https://www.reddit.com/r/Pentesting/comments/1tina91/cve202634472_router_auth_bypass_from_a_prelogin/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-05-20T14:25:14+00:00",
+      "cve_ids": [
+        "CVE-2026-34472"
+      ],
+      "selection_reason": "揭示了嵌入式设备中逻辑路由缺陷导致的认证绕过技术细节。",
+      "feed_url": "https://www.reddit.com/r/Pentesting/.rss",
+      "feed_title": "Pentesting",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "cve:cve-2026-34472",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Palo Alto Networks PAN-OS 严重漏洞：伪造 JWT 令牌可直接接入 VPN",
+      "title_orig": "RT Harsh Jaiswal: Re After configuring CAS on my instance, and trust me, this was the toughest part of the journey. Once done, Claude forged a JWT, PO...",
+      "summary": "安全研究员Harsh Jaiswal指出，在PAN-OS实例上配置CAS是极具挑战的过程，攻击者可利用该配置缺陷伪造JWT令牌并提交至特定的ACS接口。通过向该接口发送伪造请求，攻击者能够非法获取会话Cookie或令牌并直接连接VPN，导致原本受保护的私有网络完全暴露在公网中，目前强烈建议所有运行CAS模式的PAN-OS用户必须立即更新设备固件以封堵此项高危安全漏洞。",
+      "tags": [
+        "VPN安全",
+        "JWT伪造",
+        "PAN-OS"
+      ],
+      "url": "https://x.com/rez0__/status/2057171145175060907",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-20T15:47:45+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及企业级防火墙 VPN 的严重认证失效，实战威胁极高。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2057171145175060907",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.15,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "红队渗透技术：利用 Microsoft Deployment Toolkit 部署共享提取域凭据",
+      "title_orig": "红队金矿：从 MDT 部署共享中提取凭据",
+      "summary": "本文介绍了在红队行动中通过 Microsoft Deployment Toolkit 部署共享获取凭据的技术，该场景常因权限配置不当导致 Bootstrap.ini 及 ts.xml 等敏感文件暴露。攻击者可从这些配置文件中提取域加入账户、本地管理员密码及脚本硬编码凭据，是渗透测试中快速收割域内高价值资产的有效途径，企业应加强对 MDT 部署环境的访问控制与审计，防止此类关键运维信息被恶意利用。",
+      "tags": [
+        "红队技术",
+        "凭据提取",
+        "MDT"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496198&idx=1&sn=3cd0aaba7a500e8c2aebda112fd58f52",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-19T03:11:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对 Windows 部署工具的配置缺陷，提供了实用的内网渗",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496198&idx=1&sn=3cd0aaba7a500e8c2aebda112fd58f52",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Libsolv 堆缓冲区溢出漏洞 CVE-2026-9149：恶意 .solv 文件可致拒绝服务",
+      "title_orig": "CVE-2026-9149 Libsolv: heap buffer overflow in libsolv repo_add_solv via negative maxsize from crafted .solv file",
+      "summary": "Libsolv 库的 repo_add_solv 函数存在堆缓冲区溢出漏洞，其触发条件是受害者在处理包含负数大小值的恶意 .solv 文件时引发异常。该缺陷会导致系统进行不足额的内存分配，进而触发随后的越界写入操作，攻击者可利用此漏洞造成拒绝服务攻击甚至更严重的后果，原文未披露受影响的具体版本号及补丁进度，建议开发人员在集成该库时谨慎处理来源不明的文件，并关注上游的安全更新。",
+      "tags": [
+        "堆溢出",
+        "拒绝服务",
+        "内存安全"
+      ],
+      "url": "https://vulners.com/cve/CVE-2026-9149?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-20T23:34:56+00:00",
+      "cve_ids": [
+        "CVE-2026-9149"
+      ],
+      "selection_reason": "基础软件库的内存安全漏洞，对依赖该库的系统具有潜在影响。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-9149",
+      "related_urls": [
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-9149?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

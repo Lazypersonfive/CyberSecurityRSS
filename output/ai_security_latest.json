@@ -1,19 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-05-20",
-  "fetched_at_utc": "2026-05-19T23:49:01.756609Z",
+  "fetched_at": "2026-05-21",
+  "fetched_at_utc": "2026-05-20T23:57:10.589794Z",
   "hours": 72,
   "total_feeds": 23,
-  "raw_entry_count": 53,
-  "entry_count": 25,
+  "raw_entry_count": 74,
+  "entry_count": 37,
   "filter_stats": {
-    "input": 53,
+    "input": 74,
     "dropped_title_blacklist": 1,
     "dedup_merged": 3,
-    "output": 49
+    "output": 70
   },
   "curation_stats": {
-    "dropped_source_cap": 24
+    "dropped_source_cap": 33
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -21,7 +21,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 6
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -63,14 +63,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 2
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 10
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -98,14 +98,14 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 9
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 0
     },
     "http://127.0.0.1:1200/twitter/user/EmbraceTheRed": {
       "feed_title": "X / Embrace The Red",
@@ -147,21 +147,21 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 9
     },
     "http://127.0.0.1:1200/twitter/user/simonw": {
       "feed_title": "X / Simon Willison",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 4
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
@@ -180,20 +180,30 @@
   },
   "entries": [
     {
-      "title": "HackTheBox Horizontall 靶机渗透实战：从 Strapi NoSQL 注入到 Laravel Debug RCE 提权全过程",
-      "url": "https://xz.aliyun.com/news/92144",
-      "summary": "本文是 HackTheBox Horizontall 靶机的详细渗透测试记录。通过端口扫描发现 Web 服务，在前端 JS 文件中提取出隐藏子域名 api-prod.horizontall.htb，识别出 Strapi CMS（3.0.0-beta.17.4）。利用 CVE-2019-18818（NoSQL 注入重置管理员密码）获取管理员权限，再结合 CVE-2019-19606（插件安装命令注入",
+      "title": "从开源投毒到AI生成代码：供应链安全为何成为企业安全的主战场？",
+      "url": "https://www.anquanke.com/post/id/315334",
+      "summary": "",
       "category": "Chinese",
-      "published": "2026-05-17T13:13:05+00:00",
-      "fetch_status": "full",
-      "cve_ids": [
-        "CVE-2019-18818",
-        "CVE-2019-19606"
-      ],
+      "published": "2026-05-20T17:47:25+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
       "related_urls": [],
-      "quality_score": 3,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
+      "quality_score": 2,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "RT Luke Stephens (hakluke): Had a great chat with the founders of @Ethiack, @0xacb and @jbmonteiro about AI in offensive cybersecurity, Mythos, and al...",
+      "url": "https://x.com/rez0__/status/2056914383662411862",
+      "summary": "RT Luke Stephens (hakluke) Had a great chat with the founders of @Ethiack, @0xacb and @jbmonteiro about AI in offensive cybersecurity, Mythos, and all that good stuff. We did this for @Hacker0x01's \"Exposed\" video series. https://www.youtube.com/watch?v=SnnlZ3d5SSQ",
+      "category": "XSignals",
+      "published": "2026-05-20T00:30:31+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "The last six months in LLMs in five minutes",
@@ -209,11 +219,11 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "Why DLP, DSPM and AI Security Must Converge - BankInfoSecurity",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQT2xoaEw2NWtDMVEtdnY0ZWE0Uk56N1R4MWxLOE1uYm1SdUM5WTVLYjk4TEtxTWtsU1RqWFNGUmc1cmZRVmJhenZnaHlDc1ROSkNFb0pfMC1OZjQzWEx5RmVkZTVXVjdESmg1QmN6OUNTSDl0SGlhemFfeUJ6OVItNlY1V3pRX2tkaEZ6b0VIdGU?oc=5",
-      "summary": "Why DLP, DSPM and AI Security Must Converge &nbsp;&nbsp; BankInfoSecurity",
+      "title": "Zscaler Award Underscores AI Security Role As Shares Trade Below Targets - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVERXVmJ4bWZQMnhEUkZKeXFTLS1UTFRnTkFYSjZnNjdzN296eDlYRWh6TkxUaGdibkxJb1dBUFRYZUpGbHlrLWZxem9kaVdaQ0wySS1kQVZ0SE8xSU1MZ1VQQllueEdhTkhvMFozZzA0TWNmSW9TTTFrVVlIbXFVRGh1STBOZENGM3NOWkJ4Sm0yY1FXNVZvZF9kZTNIdzlqNXJ2R25Ic1E0LVVwMzVJOVF3YUt4V09uUkF4NXhoVXJsUdIBxwFBVV95cUxOdmROam40SXAxZHVDcTJpYkhrQ1ppbFpIQW55WHhVZDNIbElQVzAyNEMwY3BjejRHWTVDWXZERjZ5WUYyTV83cTB3dGRLOVRDTTRHOFVTdWRQanp4V1BHVHJRWmdiOTVZeGp3LUZBWF9sd00zczYxcksyMUI3SlFIX2t1a2hCM3pqNHBuRVo0Wml1bEZjb0dHc0wzZGZzM3JuWDlSV2tkSHZ3akRTOUNINm5GMU1pSzhBNXp5TENaa19INy1WZ1A4?oc=5",
+      "summary": "Zscaler Award Underscores AI Security Role As Shares Trade Below Targets &nbsp;&nbsp; simplywall.st",
       "category": "CoverageFallback",
-      "published": "2026-05-19T23:00:41+00:00",
+      "published": "2026-05-20T22:42:04+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -222,26 +232,24 @@
       "feed_title": "Google News AI Security"
     },
     {
-      "title": "Gemini 3.5 Flash: more expensive, but Google plan to use it for everything",
-      "url": "https://simonwillison.net/2026/May/19/gemini-35-flash/#atom-everything",
-      "summary": "Today at Google I/O, Google released Gemini 3.5 Flash . This one skipped the -preview modifier and went straight to general availability, and Google appear to be using it for a whole lot of their key products: 3.5 Flash is available today to billions of people globally: For everyone via the Gemini app and AI Mode in Google Search For developers in our agent-first development platform Google Antigr",
+      "title": "Quoting SpaceX S-1",
+      "url": "https://simonwillison.net/2026/May/20/spacex-s1/#atom-everything",
+      "summary": "We have the ability to use compute resources to support our proprietary AI applications (such as Grok 5, which is currently being trained at COLOSSUS II), while also providing access to select compute capacity to third-party customers. For example, in May 2026, we entered into Cloud Services Agreements with Anthropic PBC (“Anthropic”), an AI research and development public benefit corporation, wit",
       "category": "AISecurityLabs",
-      "published": "2026-05-19T22:40:25+00:00",
+      "published": "2026-05-20T22:26:36+00:00",
       "fetch_status": "full",
       "cve_ids": [],
-      "related_urls": [
-        "https://x.com/simonw/status/2056867815605625172"
-      ],
+      "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
     },
     {
       "title": "Treat AI like a user: The missing piece in your agentic strategy - The Business Times",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQSVVTcWNMQjRCYVVLUnMzQXVCb1BnQ1FTZ1dMLWJRZGNaNlhrWWRtX2p0Snd4OEtMVk5yUHhsQmZTVllBVzktQjdxb1NlRXVuUjFOdjJCOEQtVWlkZE5pbDJQRmlKWV9Tck91MEJwbS1zUl96WVVnYzFXVlFLYzQwYnZKQ09LcnBwRXNtVkcyRU13VWpWZVIzWVVGLTNNMkNHXzBFdVdCblM1cGpUQWVkZE1fWkFwbXhCZ1lLNm9CRkV4MzdjMk1J?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNdjZvT1NDdjR3VWdfRE9NckFoRUdRQ2VnNFZ0RG56VXpGdE9lNE9YYTdyaTNwTmlJVFZYakNaZFNfNVZVdi1ZN1BzaVhFSkNjcVhhcHJxdS1HS3VvSXByclBSc0pSM2MyeEM5LTF3cU4wSUt0cDJKVGJVWUNmSG1hejNPUzJLd1ZYdmFvU1lnV2ZfRHJSTWhzYXRrR2xQSjNlZTRyeWpsQm43aHU5Uk9VcGhQTk9jdzdVQnpVNXc4R2hzaHYwcHFIVlhEUXBLOWotZWFJYUVsaUhaZlhTZy0tSXEzdw?oc=5",
       "summary": "Treat AI like a user: The missing piece in your agentic strategy &nbsp;&nbsp; The Business Times",
       "category": "CoverageFallback",
-      "published": "2026-05-19T21:50:00+00:00",
+      "published": "2026-05-20T21:50:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -250,11 +258,11 @@
       "feed_title": "Google News AI Security"
     },
     {
-      "title": "Google expands CodeMender access to compete with Anthropic’s Mythos in AI security race - Crypto Briefing",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1YRHNXcHdyLW9oOTQ2d3dReGVEZlZBYmlrQnJ3cW9TeTBycXR6R2JVaXdKb1lxclc0c3gxWXp5Z2RYR29ISzFxMVpkRW5IVi1Pb25yUVhON2V0NEFxY1Z2RDZOcjNZTVd2V29BbElpVVVUdkE0Q0hfckF2Y0Z3V2s?oc=5",
-      "summary": "Google expands CodeMender access to compete with Anthropic’s Mythos in AI security race &nbsp;&nbsp; Crypto Briefing",
+      "title": "NDC Security 2026 - Hijacking Google's CI/CD Through Prompt Injection: The New Era Of Al-Based Exploits - Security Boulevard",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxObHNpSGx5TWk4X3pFN1MxVHdIcHNTYURiSzY2NVB2N2NrU3o2R1RPcU83enQwLV9ZaHVUdFh1OXVZMlhzSkNOMVFXdEVFZlFpRG9aQ051cHB0ZHdhbWFPbkctLXN6ZU1BdVJJVFNzaWRVeVo4UHlqc3VJTTJzaENrWlZhVHpQVzIyc1NqNjQ3THZBMmxYSWhxTFczQTBYTU9YcU5jZTJXaXRLT2JnTEVESjBHYTlGU0txZ25UVFYwbml1ZmJPdVRCbkpPVXl6UDhqaVlPTg?oc=5",
+      "summary": "NDC Security 2026 - Hijacking Google's CI/CD Through Prompt Injection: The New Era Of Al-Based Exploits &nbsp;&nbsp; Security Boulevard",
       "category": "CoverageFallback",
-      "published": "2026-05-19T21:41:21+00:00",
+      "published": "2026-05-20T21:39:09+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -263,17 +271,186 @@
       "feed_title": "Google News AI Security"
     },
     {
-      "title": "AI Agent Security: Automating Workflow Without Creating Prompt Injection or Data Leak Risks - Hackread",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOaGlHczVtdDItRnRTci1KdE5meVl4M1h1Mjc1TjJiOXpxczU1Nl9zalZPZEp6eUdfd0xhRGt5cFp3ODdmcFZ4SDVPYjJQdTBTMmJVcTRtZ19Pb1NkWUJ3Z3luRjdnbm9aQUtSeWZibTlndm45ekFlbE5FVngzLTdGQmJuWQ?oc=5",
-      "summary": "AI Agent Security: Automating Workflow Without Creating Prompt Injection or Data Leak Risks &nbsp;&nbsp; Hackread",
+      "title": "Meet Rampart and Clarity, Microsoft’s new red team combo AI agents - CyberScoop",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNWGNDaGw3cE9XdkV3RXlfQzdOX05GMS1uOTcyOUxhaHJ2S2hJWjZSUS16djlfZzZCRXhhbnBDbFhsQllqb2VJeEdhRENzQWRUa0FFQWlWNWpRcFpONHRkS3JQMDhqUVhWSENvR0VxWXloSFpacU1FZUQtTkZfQWFnOUxJei04NzdUQzNlNTlTcVY?oc=5",
+      "summary": "Meet Rampart and Clarity, Microsoft’s new red team combo AI agents &nbsp;&nbsp; CyberScoop",
       "category": "CoverageFallback",
-      "published": "2026-05-19T21:13:08+00:00",
+      "published": "2026-05-20T20:28:53+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "The npm Threat Landscape: Attack Surface and Mitigations (Updated May 20)",
+      "url": "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/",
+      "summary": "Unit 42 analyzes npm supply chain evolution post-Shai Hulud. Discover wormable malware, CI/CD persistence, multi-stage attacks and more. The post The npm Threat Landscape: Attack Surface and Mitigations (Updated May 20) appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-05-20T19:30:33+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "claude might have cost me like 3k in GCP charges by doing this \"oh i enabled 15 seats for this product without any confirmation!\" and then.... a few d...",
+      "url": "https://x.com/rez0__/status/2057157903694344488",
+      "summary": "claude might have cost me like 3k in GCP charges by doing this \"oh i enabled 15 seats for this product without any confirmation!\" and then.... a few days later.... Aituglo - Cassim: /goal find access control bugs on this SaaS. Claude: testing access control by purchasing a special 100€ access. OMG, it works without paying Me: No no no you used my card to pay, it wasn't free ... Claude: oops sorry,",
+      "category": "XSignals",
+      "published": "2026-05-20T17:53:59+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "国务院令第834号已落地：软件供应链安全，企业欠缺的不是工具，是这三件事",
+      "url": "https://www.anquanke.com/post/id/315352",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-05-20T17:22:05+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "RT Harsh Jaiswal: Re After configuring CAS on my instance, and trust me, this was the toughest part of the journey. Once done, Claude forged a JWT, PO...",
+      "url": "https://x.com/rez0__/status/2057171145175060907",
+      "summary": "RT Harsh Jaiswal Re After configuring CAS on my instance, and trust me, this was the toughest part of the journey. Once done, Claude forged a JWT, POSTs it to /SAML20/SP/ACS, and gets a session cookie/tokens which can be used to connect to the VPN. It was game over. Your private network was public. If you're running CAS-enabled PAN-OS, update the appliance immediately.",
+      "category": "XSignals",
+      "published": "2026-05-20T15:47:45+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "I don't have much to say about this year's Google I/O because I prefer to write about products that have shipped, not just \"coming soon\" announcements...",
+      "url": "https://x.com/simonw/status/2057124051815129583",
+      "summary": "I don't have much to say about this year's Google I/O because I prefer to write about products that have shipped, not just \"coming soon\" announcements - but here are some notes on Gemini Spark and Antigravity https://simonwillison.net/2026/May/20/google-io/",
+      "category": "XSignals",
+      "published": "2026-05-20T15:39:28+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
+      "feed_title": "X / Simon Willison"
+    },
+    {
+      "title": "Google I/O, Gemini Spark, Antigravity",
+      "url": "https://simonwillison.net/2026/May/20/google-io/#atom-everything",
+      "summary": "It's hard to find much to write about Google I/O this year because I have a policy of not writing about anything that I can't try out myself, and a lot of the big announcements are \"coming soon\". I actually prefer to write about things that are in general availability, because I've had instances in the past where the previews didn't match what was released to the general public later on. Aside fro",
+      "category": "AISecurityLabs",
+      "published": "2026-05-20T15:32:17+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Tracking TamperedChef Clusters via Certificate and Code Reuse",
+      "url": "https://unit42.paloaltonetworks.com/tracking-tampered-chef-clusters/",
+      "summary": "Unit 42 analyzes TamperedChef malware clusters that use trojanized productivity apps and malvertising to deliver stealthy payloads to targets. The post Tracking TamperedChef Clusters via Certificate and Code Reuse appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-05-20T10:00:46+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "RT Nathan Clark: it’s in gemini, just create it in ai studio. oh, that’s for your personal google one account. for workspace you need gemini busines...",
+      "url": "https://x.com/simonw/status/2057167756651577695",
+      "summary": "RT Nathan Clark it’s in gemini, just create it in ai studio. oh, that’s for your personal google one account. for workspace you need gemini business. no, not gemini advanced, that’s ai pro now. unless you need ai ultra. oh agents? you do that in spark actually. no, not gemini api managed agents, that’s different. for coding use jules. unless you mean the agentic ide, that’s antigravity. no, that’s",
+      "category": "XSignals",
+      "published": "2026-05-20T03:57:20+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
+      "feed_title": "X / Simon Willison"
+    },
+    {
+      "title": "Sometimes it seems security is drifting back towards a \"Prevent Breach\" mindset. Prevent breach was never enough. Patch faster, of course. But offensi...",
+      "url": "https://x.com/wunderwuzzi23/status/2056919381402435843",
+      "summary": "Sometimes it seems security is drifting back towards a \"Prevent Breach\" mindset. Prevent breach was never enough. Patch faster, of course. But offensive AI is about a lot more than finding bugs! Invest in Assume Breach! Grow an internal Red Team. Automate offensive AI. Learn with defenders what matters Exploit yourself before someone else does it for you. In the end, you will not patch your way ou",
+      "category": "XSignals",
+      "published": "2026-05-20T02:06:10+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
+    {
+      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
+      "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+      "category": "FirstParty",
+      "published": "2026-05-20T00:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "The next phase of OpenAI’s Education for Countries",
+      "url": "https://openai.com/index/the-next-phase-of-education-for-countries",
+      "summary": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
+      "category": "FirstParty",
+      "published": "2026-05-20T00:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "RT GitHub: We are investigating unauthorized access to GitHub’s internal repositories. While we currently have no evidence of impact to customer info...",
+      "url": "https://x.com/wunderwuzzi23/status/2056908001089622159",
+      "summary": "RT GitHub We are investigating unauthorized access to GitHub’s internal repositories. While we currently have no evidence of impact to customer information stored outside of GitHub’s internal repositories (such as our customers’ enterprises, organizations, and repositories), we are closely monitoring our infrastructure for follow-on activity.",
+      "category": "XSignals",
+      "published": "2026-05-19T23:48:43+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
+    {
+      "title": "Introducing OpenAI for Singapore",
+      "url": "https://openai.com/index/introducing-openai-for-singapore",
+      "summary": "OpenAI for Singapore launches a multi-year AI partnership to expand deployment, build local talent, and support businesses and public services with AI.",
+      "category": "FirstParty",
+      "published": "2026-05-19T20:30:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
     },
     {
       "title": "1) what",
@@ -302,19 +479,6 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "Advancing content provenance for a safer, more transparent AI ecosystem",
-      "url": "https://openai.com/index/advancing-content-provenance",
-      "summary": "OpenAI advances AI content provenance with Content Credentials, SynthID, and a verification tool to help people identify and trust AI-generated media.",
-      "category": "FirstParty",
-      "published": "2026-05-19T10:45:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
       "title": "RT Eugene Yan: Cloudflare on their vulnerabilty discovery harness • Recon: Read the codebase, return an architecture doc • Hunt: ~50 agents look for...",
       "url": "https://x.com/rez0__/status/2056790927981810040",
       "summary": "RT Eugene Yan Cloudflare on their vulnerabilty discovery harness • Recon: Read the codebase, return an architecture doc • Hunt: ~50 agents look for bugs concurrently • Validate: Independent agents try to disprove findings • Gapfill: Areas that need a 2nd pass are flagged • Dedup: Findings with the same root cause combined • Trace: Confirms if attacker input reaches the bug • Feedback: If reachable",
@@ -328,67 +492,54 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "Glaucous-winged Gull, Brown Pelican, Snowy Egret, Canada Goose",
-      "url": "https://simonwillison.net/2026/May/18/sighting-362781627/#atom-everything",
-      "summary": "Glaucous-winged Gull, Brown Pelican, Snowy Egret, Canada Goose, in Los Angeles River, CA, US I'm heading home from PyCon US today so I went on a last morning walk to try and spot a pelican. I saw one! Didn't get a great photo of that, but I did see some goslings down by the swan boat lake.",
-      "category": "AISecurityLabs",
-      "published": "2026-05-18T14:51:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments",
-      "url": "https://openai.com/index/dell-codex-enterprise-partnership",
-      "summary": "OpenAI and Dell partner to bring Codex to hybrid and on-premise environments, helping enterprises deploy AI coding agents securely across data and workflows.",
-      "category": "FirstParty",
-      "published": "2026-05-18T10:00:00+00:00",
+      "title": "RT Sheel Mohnot: Anthropic is paying $1.25B a month to SpaceX for compute",
+      "url": "https://x.com/rez0__/status/2057243482138230889",
+      "summary": "RT Sheel Mohnot Anthropic is paying $1.25B a month to SpaceX for compute",
+      "category": "XSignals",
+      "published": "2026-05-20T21:11:34+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "Stop explaining the bit. Also, I actually do think 5.5 is better than 4.7 at hacking",
-      "url": "https://x.com/rez0__/status/2056079110355464628",
-      "summary": "Stop explaining the bit. Also, I actually do think 5.5 is better than 4.7 at hacking Neil Chowdhury: we need to keep saying GPT-5.5 is better than Opus 4.7 so we can collectively ragebait Anthropic into releasing Mythos",
-      "category": "XSignals",
-      "published": "2026-05-17T18:27:14+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     },
     {
-      "title": "RT Simone Margaritelli: - Claude Code (opus@max effort) writes feature X. - /security-review (opus@max effort) finds no issues in X. - Claude Code (op...",
-      "url": "https://x.com/wunderwuzzi23/status/2056197999374766403",
-      "summary": "RT Simone Margaritelli - Claude Code (opus@max effort) writes feature X. - /security-review (opus@max effort) finds no issues in X. - Claude Code (opus@max effort), no initial context but my simple prompt, finds an authentication bypass. How does this make any sense?",
-      "category": "XSignals",
-      "published": "2026-05-17T14:50:06+00:00",
-      "fetch_status": "full",
+      "title": "灵境 AIDR 技术首发 | 以 AI 治理 AI，悬镜智能体安全卫士新品发布",
+      "url": "https://www.anquanke.com/post/id/315354",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-05-20T17:31:47+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
+      "quality_score": 0,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
     },
     {
-      "title": "Also a great example of positive contribution to open source by wanderingmeow - you don't need to contribute code to have a positive impact, just prov...",
-      "url": "https://x.com/simonw/status/2056022578528182369",
-      "summary": "Also a great example of positive contribution to open source by wanderingmeow - you don't need to contribute code to have a positive impact, just providing detailed feedback and confirmation that something like this works is enormously useful antirez: High quality interactions are still possible in the AI era.",
-      "category": "XSignals",
-      "published": "2026-05-17T14:42:36+00:00",
-      "fetch_status": "full",
+      "title": "科技云报到：AI Agent重塑客服战场，容联云用“1脑+多技能”重新定义客服Agent",
+      "url": "https://www.anquanke.com/post/id/315533",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-05-20T16:01:47+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "Re Top quality commentary on that pelican on Hacker News https://news.ycombinator.com/item?id=48196570#48198275",
+      "url": "https://x.com/simonw/status/2056907033639813463",
+      "summary": "Re Top quality commentary on that pelican on Hacker News https://news.ycombinator.com/item?id=48196570#48198275",
+      "category": "XSignals",
+      "published": "2026-05-20T01:17:06+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
       "feed_title": "X / Simon Willison"
     },
@@ -432,17 +583,43 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "「幻核-1」在PNG像素里藏一把刀",
-      "url": "https://xz.aliyun.com/news/92143",
-      "summary": "一张看起来人畜无害的PNG，像素里藏着完整的shellcode。不触磁盘，从图片解码到内存执行一步到位。",
+      "title": "基于 Hypervisor 的 Denuvo DRM 绕过与 \"社工闭环\" 威胁模型研究",
+      "url": "https://www.anquanke.com/post/id/315457",
+      "summary": "",
       "category": "Chinese",
-      "published": "2026-05-17T04:24:34+00:00",
-      "fetch_status": "rss_only",
+      "published": "2026-05-20T17:27:41+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
+      "quality_score": -1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "重大安全信号藏在这场国际会议的“行动指南”里",
+      "url": "https://www.anquanke.com/post/id/315481",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-05-20T17:06:54+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": -1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "NGINX惊爆18年老洞，野外攻击已开始",
+      "url": "https://www.anquanke.com/post/id/315546",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-05-20T16:44:41+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": -1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
     },
     {
       "title": "科技云报到：“联通星罗”Token服务平台正式发布，为OPC创业提供“最佳助攻”",
@@ -482,32 +659,6 @@
       "quality_score": -1,
       "feed_url": "https://api.anquanke.com/data/v1/rss",
       "feed_title": "安全客"
-    },
-    {
-      "title": "based",
-      "url": "https://x.com/rez0__/status/2056065713853346031",
-      "summary": "based Notion: 🤔💭🪩",
-      "category": "XSignals",
-      "published": "2026-05-17T17:34:00+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT bugcrowd:",
-      "url": "https://x.com/rez0__/status/2056322927079919902",
-      "summary": "RT bugcrowd",
-      "category": "XSignals",
-      "published": "2026-05-17T15:02:29+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
     }
   ]
 }
