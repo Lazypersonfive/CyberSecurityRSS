@@ -1,19 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-05-21",
-  "fetched_at_utc": "2026-05-20T23:57:10.589794Z",
+  "fetched_at": "2026-05-22",
+  "fetched_at_utc": "2026-05-21T23:44:31.818306Z",
   "hours": 72,
   "total_feeds": 23,
-  "raw_entry_count": 74,
-  "entry_count": 37,
+  "raw_entry_count": 81,
+  "entry_count": 40,
   "filter_stats": {
-    "input": 74,
+    "input": 81,
     "dropped_title_blacklist": 1,
-    "dedup_merged": 3,
-    "output": 70
+    "dedup_merged": 17,
+    "output": 63
   },
   "curation_stats": {
-    "dropped_source_cap": 33
+    "dropped_source_cap": 23
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -70,7 +70,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 10
+      "raw_count": 14
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -98,7 +98,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 9
+      "raw_count": 10
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
@@ -154,7 +154,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 9
+      "raw_count": 11
     },
     "http://127.0.0.1:1200/twitter/user/simonw": {
       "feed_title": "X / Simon Willison",
@@ -168,17 +168,50 @@
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 28
+      "raw_count": 27
     },
     "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans": {
       "feed_title": "Google News 中文 AI安全",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 3
     }
   },
   "entries": [
+    {
+      "title": "Datasette Agent",
+      "url": "https://simonwillison.net/2026/May/21/datasette-agent/#atom-everything",
+      "summary": "We just announced the first release of Datasette Agent , a new extensible AI assistant for Datasette. I've been working on my LLM Python library for just over three years now, and Datasette Agent represents the moment that LLM and Datasette finally come together. I'm really excited about it! Datasette Agent provides a conversational interface for asking questions of the data you have stored in Dat",
+      "category": "AISecurityLabs",
+      "published": "2026-05-21T19:52:19+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [
+        "https://simonwillison.net/2026/May/21/datasette-agent-sprites/#atom-everything",
+        "https://simonwillison.net/2026/May/21/datasette-agent-charts/#atom-everything",
+        "https://simonwillison.net/2026/May/21/datasette-agent-2/#atom-everything",
+        "https://simonwillison.net/2026/May/20/datasette-agent-charts/#atom-everything",
+        "https://simonwillison.net/2026/May/19/datasette-llm-accountant/#atom-everything",
+        "https://simonwillison.net/2026/May/19/datasette-llm/#atom-everything"
+      ],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Elon continues building useful things that actually grow the pie, and then prints money. Is SpaceX the only AI lab with a pure income stream? No circl...",
+      "url": "https://x.com/wunderwuzzi23/status/2057265216128520512",
+      "summary": "Elon continues building useful things that actually grow the pie, and then prints money. Is SpaceX the only AI lab with a pure income stream? No circle financing? Elon Musk: As the recently expanded partnership with @AnthropicAI demonstrates, @SpaceX is offering AI compute as a service at significant scale. We are in discussions with other companies to do the same. Over time, especially with orbit",
+      "category": "XSignals",
+      "published": "2026-05-21T01:00:24+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
     {
       "title": "从开源投毒到AI生成代码：供应链安全为何成为企业安全的主战场？",
       "url": "https://www.anquanke.com/post/id/315334",
@@ -219,17 +252,110 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "Zscaler Award Underscores AI Security Role As Shares Trade Below Targets - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVERXVmJ4bWZQMnhEUkZKeXFTLS1UTFRnTkFYSjZnNjdzN296eDlYRWh6TkxUaGdibkxJb1dBUFRYZUpGbHlrLWZxem9kaVdaQ0wySS1kQVZ0SE8xSU1MZ1VQQllueEdhTkhvMFozZzA0TWNmSW9TTTFrVVlIbXFVRGh1STBOZENGM3NOWkJ4Sm0yY1FXNVZvZF9kZTNIdzlqNXJ2R25Ic1E0LVVwMzVJOVF3YUt4V09uUkF4NXhoVXJsUdIBxwFBVV95cUxOdmROam40SXAxZHVDcTJpYkhrQ1ppbFpIQW55WHhVZDNIbElQVzAyNEMwY3BjejRHWTVDWXZERjZ5WUYyTV83cTB3dGRLOVRDTTRHOFVTdWRQanp4V1BHVHJRWmdiOTVZeGp3LUZBWF9sd00zczYxcksyMUI3SlFIX2t1a2hCM3pqNHBuRVo0Wml1bEZjb0dHc0wzZGZzM3JuWDlSV2tkSHZ3akRTOUNINm5GMU1pSzhBNXp5TENaa19INy1WZ1A4?oc=5",
-      "summary": "Zscaler Award Underscores AI Security Role As Shares Trade Below Targets &nbsp;&nbsp; simplywall.st",
+      "title": "Zscaler acquires Symmetry Systems to extend its AI agent security capabilities - SiliconANGLE",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbFFvUk9ZeEV2em1BUExxazUtWWxWQzZsSXFIYm1sdzhSYk9qTHp1MTRhQ2VfV3Y3eENmOVRFTXp5X2RGQlktZVNGdk1zVkt4WkJUYjZpYlpOOXJ1TG5DNmlBNUJ3VjhXUHdTYWE3aGNlTldUS3BQTVFwcURvM2ZPTlh0WXpHdk5pLU0zWnZfeHBmUm1fYVc0S3U5R2ZNVDRxXzdyY0ZLUFRyTXNq?oc=5",
+      "summary": "Zscaler acquires Symmetry Systems to extend its AI agent security capabilities &nbsp;&nbsp; SiliconANGLE",
       "category": "CoverageFallback",
-      "published": "2026-05-20T22:42:04+00:00",
+      "published": "2026-05-21T23:41:37+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxQeEdmbjR4T0pGMlB6SmxOczZmTDRMOF9sRVE4Yk9XUXdBdWlONko4UVVGS2s2ZDVWSExwbE1KU1k2a2dtVGt1VEVQLWNMMFNJc3lDblNuelFEOVJrNjJXV3JfOWJpY0hOSEpJRmV4MGxPMnlJSmdpRzRBZFNob2xHNFBkT1RnbXcxbHd0WEZ3?oc=5"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Why Check Point (CHKP) Is Leaning on Buybacks and AI Security After Its Reset - Insider Monkey",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQZmVhbGIyZGRiZkpfdTZDZHpwNENhbi1yTlZfam1rR0NRcjNPSWFPLXkyWWgwb2cxcU5uaWhPb3pyeUxpbm1XejRaMEl1d1BSSXA0NllwbW8wYmNCREdZcVBjczdzV1ZhcGU0b2Nud2pjVkxoXzM5WS1MbnBiME9fUzFFRURFbXpZOTcxdzY3ZVlmbW9vcE1QQUpLWFpvV1AwS2xvNkx2V01aSFNCSk9YVmxaVWwybTZ1Z0tr0gHDAUFVX3lxTE1GZnNOR0ZZT3BmV096bGFKU1VoNVlQVW44UVVWUmJ6RGc3TzB0VGo3SWFBY1RxNzdfcGxxb1h0ejFXRlp6a1dFemNjeGxYV0FnSS15cC1QMngwUG1Xc21DNnF1N2hRNDdhU0xVcWdqYmlRUkJJVlNyRUNVVTdicVpPd0FCcFpDZUJqZnZuMHFBYUphM2VvYjBfYnFZY1l5TGYyLWZZc0xJZ1pCazR6cVI3b0xZWnBHdG9TejVabGNFTVhsVQ?oc=5",
+      "summary": "Why Check Point (CHKP) Is Leaning on Buybacks and AI Security After Its Reset &nbsp;&nbsp; Insider Monkey",
+      "category": "CoverageFallback",
+      "published": "2026-05-21T21:16:59+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Uncovering live “Indirect Prompt Injection” attacks that targeting AI agents - Digital Journal",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNM0RrNkpaMGlDemJhUmFKY0hvLTFib25kNWJqTjF4QndWSmltZS10VEFHb3V5YU9ZNFJUcmh1dGVOcS1meVVKYy1VX0psMmx3Y1RQc3lULWhWWUpkYUJQeHVoc2hsNVU0MzhlTnR1WXVnZ0laZGNYVWRBLVRRX3JDbzUwcWxBOHl0MHl2ZWJOOUJwYVhiM3I3QjFxU3lVbnJJNnR2bWJ3X0h0cUhjWno1NUUycWlfTG9uQzA3ZENuZGFfbjdr?oc=5",
+      "summary": "Uncovering live “Indirect Prompt Injection” attacks that targeting AI agents &nbsp;&nbsp; Digital Journal",
+      "category": "CoverageFallback",
+      "published": "2026-05-21T21:04:19+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Palo Alto Networks customers show confidence in AI security strategy at Ignite On Tour event, Jefferies says - Proactive financial news",
+      "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPdVN0b1l4dGtobk4xeHB0aWtHb0NNbU1fM2JYTVFoMlVkYzBWZ1dadHRUeGdrZTJ4QUNLeG5pQ2hycXNzelhwa1hEaTJ0SUp4b1JyWUZvSlJDQW14X1F5THdJT2t5QTJCOUxSUTEwU2p1MUpVMVBOZEVZT0FOMzk0N2tPMzBKcG1HaGllN2oyRnlpdEQteWdhUGVWNEpkRHloOXVLQmgxZ0c4NGFtRG1IbGtCTXd4c3lEdkdUY3dBUVdOWHRMQnVQamEtTHlQeTJOTDYwbWFQREc3RjRyVUhOc2w4UVI2WE5QbE9WV0hjMzJnNW4zdnBVNmp6VzdtcUd0eERrcXBkSkUwZw?oc=5",
+      "summary": "Palo Alto Networks customers show confidence in AI security strategy at Ignite On Tour event, Jefferies says &nbsp;&nbsp; Proactive financial news",
+      "category": "CoverageFallback",
+      "published": "2026-05-21T19:17:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "this is actually genius",
+      "url": "https://x.com/rez0__/status/2057507805255315654",
+      "summary": "this is actually genius Simone Margaritelli: Talking to your personal AI agents via email is super convenient, and unlocks a level of parallelism that you don't have in a chat. But how do you give an inbox to an agent without creating a gmail account, host your MTA or use a paid service? You can use NOBOX!",
+      "category": "XSignals",
+      "published": "2026-05-21T17:04:22+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "The npm Threat Landscape: Attack Surface and Mitigations (Updated May 21)",
+      "url": "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/",
+      "summary": "Unit 42 analyzes npm supply chain evolution post-Shai Hulud. Discover wormable malware, CI/CD persistence, multi-stage attacks and more. The post The npm Threat Landscape: Attack Surface and Mitigations (Updated May 21) appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-05-21T15:30:33+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "RT Lupin: We just released a new article on how we made more than 50,000$ in #BugBounty by doing a really cool Software Supply Chain Attack🔥 🔗 h...",
+      "url": "https://x.com/rez0__/status/2057507600900542910",
+      "summary": "RT Lupin We just released a new article on how we made more than 50,000$ in #BugBounty by doing a really cool Software Supply Chain Attack🔥 🔗 https://www.landh.tech/blog/20260521-npx-used-confusion-and-its-super-effective",
+      "category": "XSignals",
+      "published": "2026-05-21T14:48:52+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "AdventHealth advances whole-person care with OpenAI",
+      "url": "https://openai.com/index/adventhealth",
+      "summary": "AdventHealth is using ChatGPT for Healthcare to streamline workflows, reduce administrative burden, and return more time to patient care.",
+      "category": "FirstParty",
+      "published": "2026-05-21T12:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
     },
     {
       "title": "Quoting SpaceX S-1",
@@ -243,58 +369,6 @@
       "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
-    },
-    {
-      "title": "Treat AI like a user: The missing piece in your agentic strategy - The Business Times",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNdjZvT1NDdjR3VWdfRE9NckFoRUdRQ2VnNFZ0RG56VXpGdE9lNE9YYTdyaTNwTmlJVFZYakNaZFNfNVZVdi1ZN1BzaVhFSkNjcVhhcHJxdS1HS3VvSXByclBSc0pSM2MyeEM5LTF3cU4wSUt0cDJKVGJVWUNmSG1hejNPUzJLd1ZYdmFvU1lnV2ZfRHJSTWhzYXRrR2xQSjNlZTRyeWpsQm43aHU5Uk9VcGhQTk9jdzdVQnpVNXc4R2hzaHYwcHFIVlhEUXBLOWotZWFJYUVsaUhaZlhTZy0tSXEzdw?oc=5",
-      "summary": "Treat AI like a user: The missing piece in your agentic strategy &nbsp;&nbsp; The Business Times",
-      "category": "CoverageFallback",
-      "published": "2026-05-20T21:50:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "NDC Security 2026 - Hijacking Google's CI/CD Through Prompt Injection: The New Era Of Al-Based Exploits - Security Boulevard",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxObHNpSGx5TWk4X3pFN1MxVHdIcHNTYURiSzY2NVB2N2NrU3o2R1RPcU83enQwLV9ZaHVUdFh1OXVZMlhzSkNOMVFXdEVFZlFpRG9aQ051cHB0ZHdhbWFPbkctLXN6ZU1BdVJJVFNzaWRVeVo4UHlqc3VJTTJzaENrWlZhVHpQVzIyc1NqNjQ3THZBMmxYSWhxTFczQTBYTU9YcU5jZTJXaXRLT2JnTEVESjBHYTlGU0txZ25UVFYwbml1ZmJPdVRCbkpPVXl6UDhqaVlPTg?oc=5",
-      "summary": "NDC Security 2026 - Hijacking Google's CI/CD Through Prompt Injection: The New Era Of Al-Based Exploits &nbsp;&nbsp; Security Boulevard",
-      "category": "CoverageFallback",
-      "published": "2026-05-20T21:39:09+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Meet Rampart and Clarity, Microsoft’s new red team combo AI agents - CyberScoop",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNWGNDaGw3cE9XdkV3RXlfQzdOX05GMS1uOTcyOUxhaHJ2S2hJWjZSUS16djlfZzZCRXhhbnBDbFhsQllqb2VJeEdhRENzQWRUa0FFQWlWNWpRcFpONHRkS3JQMDhqUVhWSENvR0VxWXloSFpacU1FZUQtTkZfQWFnOUxJei04NzdUQzNlNTlTcVY?oc=5",
-      "summary": "Meet Rampart and Clarity, Microsoft’s new red team combo AI agents &nbsp;&nbsp; CyberScoop",
-      "category": "CoverageFallback",
-      "published": "2026-05-20T20:28:53+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "The npm Threat Landscape: Attack Surface and Mitigations (Updated May 20)",
-      "url": "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/",
-      "summary": "Unit 42 analyzes npm supply chain evolution post-Shai Hulud. Discover wormable malware, CI/CD persistence, multi-stage attacks and more. The post The npm Threat Landscape: Attack Surface and Mitigations (Updated May 20) appeared first on Unit 42 .",
-      "category": "AISecurityLabs",
-      "published": "2026-05-20T19:30:33+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
-      "feed_title": "Unit 42"
     },
     {
       "title": "claude might have cost me like 3k in GCP charges by doing this \"oh i enabled 15 seats for this product without any confirmation!\" and then.... a few d...",
@@ -349,19 +423,6 @@
       "feed_title": "X / Simon Willison"
     },
     {
-      "title": "Google I/O, Gemini Spark, Antigravity",
-      "url": "https://simonwillison.net/2026/May/20/google-io/#atom-everything",
-      "summary": "It's hard to find much to write about Google I/O this year because I have a policy of not writing about anything that I can't try out myself, and a lot of the big announcements are \"coming soon\". I actually prefer to write about things that are in general availability, because I've had instances in the past where the previews didn't match what was released to the general public later on. Aside fro",
-      "category": "AISecurityLabs",
-      "published": "2026-05-20T15:32:17+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
       "title": "Tracking TamperedChef Clusters via Certificate and Code Reuse",
       "url": "https://unit42.paloaltonetworks.com/tracking-tampered-chef-clusters/",
       "summary": "Unit 42 analyzes TamperedChef malware clusters that use trojanized productivity apps and malvertising to deliver stealthy payloads to targets. The post Tracking TamperedChef Clusters via Certificate and Code Reuse appeared first on Unit 42 .",
@@ -388,22 +449,9 @@
       "feed_title": "X / Simon Willison"
     },
     {
-      "title": "Sometimes it seems security is drifting back towards a \"Prevent Breach\" mindset. Prevent breach was never enough. Patch faster, of course. But offensi...",
-      "url": "https://x.com/wunderwuzzi23/status/2056919381402435843",
-      "summary": "Sometimes it seems security is drifting back towards a \"Prevent Breach\" mindset. Prevent breach was never enough. Patch faster, of course. But offensive AI is about a lot more than finding bugs! Invest in Assume Breach! Grow an internal Red Team. Automate offensive AI. Learn with defenders what matters Exploit yourself before someone else does it for you. In the end, you will not patch your way ou",
-      "category": "XSignals",
-      "published": "2026-05-20T02:06:10+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
-      "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+      "title": "The next phase of OpenAI’s Education for Countries",
+      "url": "https://openai.com/index/the-next-phase-of-education-for-countries",
+      "summary": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
       "category": "FirstParty",
       "published": "2026-05-20T00:00:00+00:00",
       "fetch_status": "rss_only",
@@ -414,9 +462,9 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "The next phase of OpenAI’s Education for Countries",
-      "url": "https://openai.com/index/the-next-phase-of-education-for-countries",
-      "summary": "OpenAI advances Education for Countries, expanding AI adoption in schools with new partnerships, teacher training, and tools to improve global learning outcomes.",
+      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
+      "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
       "category": "FirstParty",
       "published": "2026-05-20T00:00:00+00:00",
       "fetch_status": "rss_only",
@@ -438,19 +486,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
       "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "Introducing OpenAI for Singapore",
-      "url": "https://openai.com/index/introducing-openai-for-singapore",
-      "summary": "OpenAI for Singapore launches a multi-year AI partnership to expand deployment, build local talent, and support businesses and public services with AI.",
-      "category": "FirstParty",
-      "published": "2026-05-19T20:30:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
     },
     {
       "title": "1) what",
@@ -479,15 +514,28 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "RT Eugene Yan: Cloudflare on their vulnerabilty discovery harness • Recon: Read the codebase, return an architecture doc • Hunt: ~50 agents look for...",
-      "url": "https://x.com/rez0__/status/2056790927981810040",
-      "summary": "RT Eugene Yan Cloudflare on their vulnerabilty discovery harness • Recon: Read the codebase, return an architecture doc • Hunt: ~50 agents look for bugs concurrently • Validate: Independent agents try to disprove findings • Gapfill: Areas that need a 2nd pass are flagged • Dedup: Findings with the same root cause combined • Trace: Confirms if attacker input reaches the bug • Feedback: If reachable",
+      "title": "this would actually work so well",
+      "url": "https://x.com/rez0__/status/2057566465121714293",
+      "summary": "this would actually work so well Simo: @rootpoint @UK_Daniel_Card Name all servers Honeypot Name all honeypots Server Checkmate hackers",
       "category": "XSignals",
-      "published": "2026-05-18T15:05:57+00:00",
-      "fetch_status": "full",
+      "published": "2026-05-21T20:57:27+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "RT Lupin: I managed to RCE Fortune 500 companies and made over $50,000 with this technique. A new npm supply chain technique we just disclosed. The tr...",
+      "url": "https://x.com/rez0__/status/2057504022509076694",
+      "summary": "RT Lupin I managed to RCE Fortune 500 companies and made over $50,000 with this technique. A new npm supply chain technique we just disclosed. The trick is dumb-simple. We call it npx Confusion. 🧵",
+      "category": "XSignals",
+      "published": "2026-05-21T14:40:35+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     },
@@ -570,17 +618,30 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "RT shubs: https://shubs.io/the-down-fall-of-bug-bounties/",
-      "url": "https://x.com/rez0__/status/2056376163665396127",
-      "summary": "RT shubs https://shubs.io/the-down-fall-of-bug-bounties/",
-      "category": "XSignals",
-      "published": "2026-05-18T12:42:20+00:00",
-      "fetch_status": "rss_only",
+      "title": "瑞数信息入选IDC《中国智能体威胁检测技术评估，2026》",
+      "url": "https://www.anquanke.com/post/id/315562",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-05-21T15:21:53+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
+      "quality_score": -1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "GitHub 被黑，3800个内部仓库外泄：从一枚恶意VS Code扩展说起",
+      "url": "https://www.anquanke.com/post/id/315560",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-05-21T10:11:45+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": -1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
     },
     {
       "title": "基于 Hypervisor 的 Denuvo DRM 绕过与 \"社工闭环\" 威胁模型研究",
@@ -646,19 +707,6 @@
       "quality_score": -1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "当攻击开始“自主决策”，安全体系如何应战？",
-      "url": "https://www.anquanke.com/post/id/315518",
-      "summary": "",
-      "category": "Chinese",
-      "published": "2026-05-18T16:30:56+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://api.anquanke.com/data/v1/rss",
-      "feed_title": "安全客"
     }
   ]
 }

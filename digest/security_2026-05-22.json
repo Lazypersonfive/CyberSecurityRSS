@@ -1,0 +1,551 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-22",
+  "generated_at": "2026-05-21T23:44:24.070376Z",
+  "raw_count": 110,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 7,
+    "direct": 14,
+    "wechat": 5,
+    "tier_t2": 11,
+    "kind_cn_expert": 7,
+    "tier_t1": 4,
+    "kind_official": 4,
+    "kind_expert": 1,
+    "kind_media": 1,
+    "kind_community": 1,
+    "aggregator": 1,
+    "kind_expert_x": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "Linux 关键漏洞链 NGINX Rift、Copy Fail 与 Dirty Frag 组合实现公网提权至 Root",
+      "title_orig": "三个 CVE 与 2026 年 5 月那条被无视的利用链",
+      "summary": "该研究深入剖析了2026年5月披露的NGINX Rift、Copy Fail与Dirty Frag三个Linux关键漏洞，并展示了如何将这些被忽视的漏洞串联成一条从公网访问直接获取系统root权限的完整杀伤链。文章不仅详细解释了漏洞组合的技术原理与潜在风险，还专门为管理员提供了针对性的NGINX配置扫描工具及安全缓解方案，旨在帮助企业识别并修复这些可能导致服务器被完全控制的利用路径。",
+      "tags": [
+        "漏洞利用链",
+        "Linux安全",
+        "提权"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496211&idx=1&sn=b686a583b8616bea4922b5a65e4495f5",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-21T08:08:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了多个中高危漏洞组合成高威胁利用链的技术路径。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496211&idx=1&sn=b686a583b8616bea4922b5a65e4495f5",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.8,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "利用 KProbes 绕过 Linux 内核 CR Pinning 机制实现 Shellcode 执行技术研究",
+      "title_orig": "重新审视\"两发\"内核 Shellcode 执行：从控制流劫持到绕过 CR Pinning",
+      "summary": "该技术研究通过利用KProbes在native_write_cr4函数的CR Pinning修正窗口中插入断点回调，成功在特定时间窗口内实现了对内核控制流的精准劫持与恶意代码执行。这种方法在不增加额外劫持次数的前提下，巧妙绕过了现代内核对控制寄存器的关键保护机制，其执行效率与2017年Project Zero的研究成果相当，再次证明了在复杂内核环境下实现稳定shellcode执行的可能性。",
+      "tags": [
+        "内核安全",
+        "漏洞利用",
+        "绕过技术"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496211&idx=2&sn=6359b190bb911a3464ce6135bf842957",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-21T08:08:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入探讨了内核保护机制的竞态窗口利用，具有极高技术深度。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496211&idx=2&sn=6359b190bb911a3464ce6135bf842957",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.3,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "NGINX 修复存在 18 年之久的严重漏洞，已有野外针对性攻击活动记录",
+      "title_orig": "NGINX惊爆18年老洞，野外攻击已开始",
+      "summary": "NGINX官方披露并修复了一个潜伏长达18年的严重安全漏洞，该漏洞广泛影响多个历史版本及当前主流版本，虽然原文未详细披露具体原理，但已监测到野外攻击迹象。由于攻击者可能借此实施恶意操作且漏洞存在已久，建议相关运维人员立即对服务器进行全面检查，并尽快升级至官方发布的最新安全版本以规避被入侵风险。",
+      "tags": [
+        "NGINX",
+        "高危漏洞",
+        "野外利用"
+      ],
+      "url": "https://www.anquanke.com/post/id/315546",
+      "source": "anquanke.com",
+      "category": "CN_News",
+      "published": "2026-05-20T16:44:41+00:00",
+      "cve_ids": [],
+      "selection_reason": "长生命周期基础组件漏洞，且已有野外攻击，预警价值极高。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315546",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "CISA 将 Langflow 来源验证与 Trend Micro 目录遍历漏洞加入已知利用漏洞目录",
+      "title_orig": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
+      "summary": "CISA正式将涉及Langflow来源验证错误的CVE-2025-34291与涉及趋势科技Apex One目录遍历的CVE-2026-34926加入已知利用漏洞目录，并确认这些漏洞已在野外被黑客活跃利用。由于此类漏洞是攻击者绕过安全限制或窃取敏感数据的常用手段，CISA明确要求联邦机构及相关组织必须在规定期限内完成补丁修复，以防范因这些高风险漏洞导致的潜在网络渗透与系统破坏。",
+      "tags": [
+        "CISA",
+        "漏洞预警",
+        "目录遍历"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/05/21/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-21T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2025-34291",
+        "CVE-2026-34926"
+      ],
+      "selection_reason": "权威机构确认的野外利用漏洞，是企业补丁管理的优先级参考。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2025-34291,cve-2026-34926",
+      "related_urls": [
+        "https://thehackernews.com/2026/05/microsoft-warns-of-two-actively.html"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Windows 内核驱动整数溢出漏洞原理剖析及 CVE-2025-21333 案例分析",
+      "title_orig": "理解 Windows 内核漏洞利用中的整数溢出",
+      "summary": "本文深入探讨了Windows内核驱动中常见的整数溢出漏洞，详细涵盖了加法、乘法及有符号溢出等多种触发场景，并分析了其在内核环境下的危害。通过自定义易受攻击的驱动程序进行实战演示，并结合CVE-2025-21333真实案例，文章全面解析了漏洞从产生到被利用的技术细节，为内核级漏洞的防御与审计提供了重要参考。",
+      "tags": [
+        "Windows内",
+        "整数溢出",
+        "驱动安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496198&idx=2&sn=4d6049de0c7368e4603043d7dce37042",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-19T03:11:00+00:00",
+      "cve_ids": [
+        "CVE-2025-21333"
+      ],
+      "selection_reason": "结合真实 CVE 案例系统性讲解内核漏洞原理，实战指导性强。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "cve:cve-2025-21333",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "研究人员利用 AI 模型辅助发现并利用 Apple M5 芯片 macOS 内核内存损坏漏洞",
+      "title_orig": "macOS Kernel Memory Corruption Exploit",
+      "summary": "研究团队利用Anthropic的Mythos AI模型辅助，在搭载Apple M5芯片的macOS系统中成功发现了一处内核内存损坏漏洞并实现了完整利用。该研究不仅展示了人工智能在自动化漏洞挖掘与利用代码生成方面的巨大潜力，也揭示了新一代硬件平台面临的安全挑战，尽管目前关于该漏洞的CVE编号及修复状态尚未在原文中明确披露。",
+      "tags": [
+        "macOS",
+        "AI安全",
+        "内存损坏"
+      ],
+      "url": "https://www.schneier.com/blog/archives/2026/05/macos-kernel-memory-corruption-exploit.html",
+      "source": "schneier.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-21T16:03:37+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 辅助漏洞挖掘的前沿趋势，关注新技术对攻防的影响",
+      "feed_url": "https://www.schneier.com/feed/atom/",
+      "feed_title": "Schneier on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "schneier.com",
+      "story_id": "url:schneier.com/blog/archives/2026/05/macos-kernel-memory-corruption-exploit.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.15,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "多项安全动态：GitHub Desktop 路径遍历与 Pixel 10 零点击漏洞链披露",
+      "title_orig": "每日安全动态推送(26/5/20)",
+      "summary": "最新的安全动态涵盖了GitHub Desktop macOS版的路径遍历漏洞，以及Perl生态中因rand函数随机性不足导致密钥可被预测的安全缺陷，这些漏洞可能导致本地文件泄露或加密机制失效。此外，Project Zero披露了针对Pixel 10设备的零点击漏洞利用链，揭示了移动端无需用户交互即可被远程控制的极端风险，相关报告详细说明了这些跨平台攻击矢量的技术细节与修复建议。",
+      "tags": [
+        "路径遍历",
+        "零点击",
+        "漏洞动态"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960475&idx=1&sn=12298632569d31a6a7148aa2f9d27bf4",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-20T03:53:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖了从桌面应用到移动端零点击漏洞的多个重要安全更新。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960475&idx=1&sn=12298632569d31a6a7148aa2f9d27bf4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Drupal 核心数据库 API 严重漏洞 CVE-2026-9082 威胁 PostgreSQL 站点安全",
+      "title_orig": "Highly Critical Drupal Core Flaw Exposes PostgreSQL Sites to RCE Attacks",
+      "summary": "Drupal官方针对CVE-2026-9082发布了极其关键的安全更新，该漏洞源于数据库抽象API的缺陷，主要影响使用PostgreSQL数据库的站点并可能导致严重的远程代码执行或权限提升。尽管该漏洞的CVSS评分为6.5，但其允许攻击者在未经授权的情况下完全接管受影响的服务器或泄露核心敏感数据，因此官方强烈敦促所有受影响的网站管理员立即部署补丁，以规避潜在的毁灭性攻击。",
+      "tags": [
+        "Drupal",
+        "RCE",
+        "数据库安全"
+      ],
+      "url": "https://thehackernews.com/2026/05/highly-critical-drupal-core-flaw.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-21T03:44:11+00:00",
+      "cve_ids": [
+        "CVE-2026-9082"
+      ],
+      "selection_reason": "主流 CMS 核心组件的高危漏洞，直接威胁大量 Web 站点",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-9082",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.9,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ABB Terra AC Wallbox 充电桩存在堆内存污染漏洞，可导致远程控制及固件篡改",
+      "title_orig": "ABB Terra AC Wallbox",
+      "summary": "ABB 官方发布安全预警，披露其 Terra AC Wallbox 充电桩产品存在严重的堆溢出安全漏洞，该漏洞已引起官方高度关注并确认了受影响的具体版本范围。攻击者若成功利用此漏洞，可导致堆内存污染并获取产品的远程控制权，进而通过向闪存执行写操作来篡改固件行为，建议相关用户密切关注官方后续发布的固件更新以修复该风险，防止充电设施被非法操控。",
+      "tags": [
+        "工业控制安全",
+        "堆内存污染",
+        "固件篡改"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-141-05",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-21T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施充电桩的远程代码执行风险。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-141-05",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.15,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ABB B&R Automation Runtime 存在会话劫持与浏览器上下文代码执行漏洞",
+      "title_orig": "ABB B&R Automation Runtime",
+      "summary": "B&R 内部安全分析发现 Automation Runtime 自动化运行时环境存在安全漏洞，目前官方已发布修复更新。攻击者利用该漏洞可以接管远程会话，或者在用户浏览器会话的上下文中执行恶意代码。受影响的产品版本已在公告中列出，建议相关企业用户尽快应用补丁以防止跨站脚本或会话劫持攻击，原文未提供具体漏洞原理。",
+      "tags": [
+        "工控系统",
+        "会话劫持",
+        "代码执行"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-141-04",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-21T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "工控运行时环境的会话安全直接影响生产控制安全。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-141-04",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.15,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ABB B&R 工业电脑存在多项高危漏洞，可触发远程代码执行与 DNS 缓存污染",
+      "title_orig": "ABB B&R PCs",
+      "summary": "ABB 针对其 B&R 工业电脑系列产品发布了关键安全更新，旨在修复一系列可能导致严重安全后果的漏洞，目前官方已明确受影响的版本范围并提供了相应的修复程序。网络攻击者可利用这些漏洞执行远程代码、发起拒绝服务攻击、进行 DNS 缓存投毒或提取敏感信息，鉴于该漏洞对工业控制系统安全构成的潜在威胁，建议受影响的用户立即部署官方提供的更新补丁以消除风险。",
+      "tags": [
+        "工业电脑",
+        "远程代码执行",
+        "DNS投毒"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-141-02",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-21T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖 RCE、DoS 及 DNS 投毒等多种高影响攻击向量。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-141-02",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.15,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "红队渗透技术：利用 Microsoft Deployment Toolkit (MDT) 部署共享提取域凭据",
+      "title_orig": "红队金矿：从 MDT 部署共享中提取凭据",
+      "summary": "在红队行动中，Microsoft Deployment Toolkit 部署共享常因权限配置不当而暴露敏感文件，成为攻击者从 Bootstrap.ini、CustomSettings.ini 及各类 XML 配置文件中快速收割域内凭据的高价值目标。这些文件中往往包含域加入账户、本地管理员密码及脚本硬编码凭据，安全从业者应重点关注此类部署工具的访问控制，防止因默认配置缺陷导致内网横向移动及域控权限丢失。",
+      "tags": [
+        "红队技术",
+        "凭据提取",
+        "内网渗透"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496198&idx=1&sn=3cd0aaba7a500e8c2aebda112fd58f52",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-19T03:11:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了企业内网部署工具中常见的配置疏忽及利用价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496198&idx=1&sn=3cd0aaba7a500e8c2aebda112fd58f52",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "恶意 VS Code 扩展导致 GitHub 内部仓库外泄，供应链攻击风险再次凸显",
+      "title_orig": "GitHub 被黑，3800个内部仓库外泄：从一枚恶意VS Code扩展说起",
+      "summary": "近期发生一起针对开发者的供应链攻击事件，攻击者通过发布恶意的 VS Code 扩展程序渗透开发环境。该攻击最终导致 GitHub 约 3800 个内部仓库泄露，展示了开发工具链作为攻击入口的巨大威力。原文强调了开发者在安装第三方插件时的安全审查必要性，但未详细披露该恶意扩展的具体名称及代码实现细节。",
+      "tags": [
+        "供应链攻击",
+        "VS Code",
+        "数据泄露"
+      ],
+      "url": "https://www.anquanke.com/post/id/315560",
+      "source": "anquanke.com",
+      "category": "CN_News",
+      "published": "2026-05-21T10:11:45+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型供应链攻击案例，对开发者环境安全具有警示意义。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315560",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.9,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Cockpit 359 版本远程代码执行漏洞 (RCE) 漏洞利用代码公开",
+      "title_orig": "[webapps] Cockpit 359 - RCE",
+      "summary": "Exploit-DB 近期公布了针对 Cockpit 359 版本的远程代码执行漏洞利用脚本，该工具作为流行的 Linux 服务器管理 Web 界面，其安全性直接关系到服务器的控制权。该漏洞允许攻击者在目标系统上远程执行任意指令，虽然原文未详述具体的触发原理和 CVE 编号，但 PoC 的公开意味着该版本面临极高的被攻击风险，建议所有使用该版本管理工具的用户立即采取升级措施以保障系统安全。",
+      "tags": [
+        "RCE",
+        "漏洞利用",
+        "服务器管理"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52572",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-05-21T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "运维工具的 RCE 漏洞 PoC 公开，具有极高的实战威胁。",
+      "feed_url": "https://www.exploit-db.com/rss.xml",
+      "feed_title": "Exploit-DB.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "exploit-db.com",
+      "story_id": "url:exploit-db.com/exploits/52572",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员通过 npx 混淆实现软件供应链攻击，斩获逾五万美元 Bug Bounty",
+      "title_orig": "RT Lupin: We just released a new article on how we made more than 50,000$ in #BugBounty by doing a really cool Software Supply Chain Attack🔥 🔗 h...",
+      "summary": "研究员 Lupin 分享了利用 npx 别名混淆实现软件供应链攻击的技术细节，并因此获得超过 50,000 美元的漏洞赏金。该攻击利用了开发者在使用 npx 执行命令时的名称识别逻辑缺陷，成功在多个大型项目中植入代码。此案例证明了包管理工具生态中的逻辑漏洞具有极高的商业价值和破坏力，值得安全研究员关注包管理器的解析机制。",
+      "tags": [
+        "供应链攻击",
+        "npx混淆",
+        "漏洞赏金"
+      ],
+      "url": "https://x.com/rez0__/status/2057507600900542910",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-21T14:48:52+00:00",
+      "cve_ids": [],
+      "selection_reason": "新型供应链攻击思路，具有极高的技术启发性和实战价值。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2057507600900542910",
+      "related_urls": [
+        "https://x.com/rez0__/status/2057504022509076694"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
