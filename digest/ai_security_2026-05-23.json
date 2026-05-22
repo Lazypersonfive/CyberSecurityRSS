@@ -1,0 +1,339 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-05-23",
+  "generated_at": "2026-05-22T23:50:38.189617Z",
+  "raw_count": 41,
+  "selected_count": 9,
+  "selection_stats": {
+    "total": 9,
+    "direct": 6,
+    "tier_t2": 9,
+    "kind_expert": 1,
+    "chinese": 5,
+    "kind_cn_expert": 5,
+    "aggregator": 3,
+    "kind_expert_x": 1,
+    "google_news": 2,
+    "kind_google_news": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "items": [
+    {
+      "title_zh": "Trail of Bits 强化 zizmor 静态分析器以检测 GitHub Actions 配置错误",
+      "title_orig": "We hardened zizmor's GitHub Actions static analyzer",
+      "summary": "针对 2026 年攻击者利用 GitHub Actions 配置错误窃取凭据并对 LiteLLM 软件包实施投毒的严重事件，Trail of Bits 对 zizmor 静态分析器进行了针对性加固。该工具专门用于在代码发布前识别工作流中的安全缺陷，通过静态分析技术帮助开发者规避因配置不当导致的组织和仓库机密泄露风险，从而在软件供应链源头构建起一道坚实的安全防线。",
+      "tags": [
+        "供应链安全",
+        "静态分析",
+        "GitHub"
+      ],
+      "url": "https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/",
+      "source": "blog.trailofbits.com",
+      "category": "AISecurityLabs",
+      "published": "2026-05-22T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对真实供应链攻击场景的防御工具加固，具有极高实战参考价值。",
+      "feed_url": "https://blog.trailofbits.com/index.xml",
+      "feed_title": "Trail of Bits",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.35,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GitHub 内部仓库泄露事件分析：恶意 VS Code 扩展成为攻击入口",
+      "title_orig": "GitHub 被黑，3800个内部仓库外泄：从一枚恶意VS Code扩展说起",
+      "summary": "攻击者通过在应用商店发布恶意的 VS Code 扩展程序成功渗透 GitHub 内部环境，导致约 3800 个内部仓库数据外泄，引发了行业对开发者工具链安全盲区的高度关注。该事件中攻击者利用扩展程序的权限获取了敏感访问令牌，进而实现对内部代码库的横向移动与大规模数据窃取，虽然原文未披露具体受影响的扩展名称，但其暴露出的供应链风险为企业安全管理敲响了警钟。",
+      "tags": [
+        "供应链攻击",
+        "VSCode",
+        "数据泄露"
+      ],
+      "url": "https://www.anquanke.com/post/id/315560",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-05-21T10:11:45+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对开发者环境的新型攻击向量，警示 IDE 插件安全。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315560",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.4,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "研究员通过 npx 依赖混淆漏洞实现软件供应链攻击并获 5 万美元赏金",
+      "title_orig": "RT Lupin: We just released a new article on how we made more than 50,000$ in #BugBounty by doing a really cool Software Supply Chain Attack🔥 🔗 h...",
+      "summary": "安全研究员 Lupin 披露了一种针对 npx 使用习惯的依赖混淆攻击技术，并借此在漏洞赏金计划中成功获得超过 5 万美元的奖励，引发了开发者对包管理机制安全性的热议。该技术巧妙利用了开发者在使用 npx 执行命令时对包名解析逻辑的盲目信任，通过在公共仓库上传同名恶意包实现远程代码执行，充分展示了软件供应链中包管理逻辑存在的严重风险以及攻击者获取高额收益的可能性。",
+      "tags": [
+        "依赖混淆",
+        "npx",
+        "漏洞赏金"
+      ],
+      "url": "https://x.com/rez0__/status/2057507600900542910",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-21T14:48:52+00:00",
+      "cve_ids": [],
+      "selection_reason": "高额赏金案例，展示了包管理器逻辑漏洞在供应链攻击中的威力。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2057507600900542910",
+      "related_urls": [
+        "https://x.com/rez0__/status/2057504022509076694"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.6,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "悬镜安全发布灵境 AIDR 技术及智能体安全卫士以应对 AI 治理挑战",
+      "title_orig": "灵境 AIDR 技术首发 | 以 AI 治理 AI，悬镜智能体安全卫士新品发布",
+      "summary": "悬镜安全正式发布灵境 AIDR 技术，旨在通过“以 AI 治理 AI”的前瞻理念解决大模型应用中的安全威胁，并同步推出了针对 AI 智能体安全防护的智能体安全卫士新品。该产品线主要针对 AI 智能体在交互和执行任务过程中可能出现的注入攻击、逻辑越权等新型风险提供防护，为企业在部署 AI 驱动的自动化流程时提供全方位的安全加固、实时监测能力以及可靠的合规保障。",
+      "tags": [
+        "AI 安全",
+        "智能体",
+        "安全治理"
+      ],
+      "url": "https://www.anquanke.com/post/id/315354",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-05-20T17:31:47+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 智能体这一新兴领域的安全防护技术落地。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315354",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.05,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "企业供应链安全现状分析：从开源投毒到 AI 生成代码的安全挑战",
+      "title_orig": "从开源投毒到AI生成代码：供应链安全为何成为企业安全的主战场？",
+      "summary": "文章深入探讨了企业供应链安全的演进过程，指出攻击手段已从传统的开源组件投毒扩展至 AI 生成代码带来的隐患，使得供应链安全成为当前企业防御体系中的核心战场。随着企业对第三方依赖和 AI 辅助开发的深度集成，企业必须高度关注代码溯源、自动化审计以及针对 AI 生成内容的安全性校验，以应对日益复杂的自动化攻击威胁并构建起覆盖全生命周期的供应链安全防护体系。",
+      "tags": [
+        "供应链安全",
+        "AI 代码安全",
+        "开源安全"
+      ],
+      "url": "https://www.anquanke.com/post/id/315334",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-05-20T17:47:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "综述了供应链安全从开源到 AI 时代的演进趋势。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315334",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 6.5,
+      "final_score": 7.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "瑞数信息入选 IDC 中国智能体威胁检测技术评估报告",
+      "title_orig": "瑞数信息入选IDC《中国智能体威胁检测技术评估，2026》",
+      "summary": "瑞数信息凭借其在智能体威胁检测领域的卓越表现，成功入选 IDC 发布的《中国智能体威胁检测技术评估，2026》报告，标志着其技术实力在权威评估中获得认可。该公司利用动态安全技术和 AI 行为分析，针对自动化工具和恶意智能体发起的攻击提供精准识别与拦截能力，这不仅反映了当前安全市场对高级自动化威胁的关注，也体现了瑞数信息在应对 AI 驱动型攻击技术方面的领先地位。",
+      "tags": [
+        "智能体检测",
+        "IDC 报告",
+        "自动化威胁"
+      ],
+      "url": "https://www.anquanke.com/post/id/315562",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-05-21T15:21:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了行业权威机构对智能体威胁检测技术趋势的认可。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315562",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 5.6,
+      "final_score": 6.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "国务院 834 号令背景下的软件供应链安全：企业管理与流程的缺失",
+      "title_orig": "国务院令第834号已落地：软件供应链安全，企业欠缺的不是工具，是这三件事",
+      "summary": "针对国务院第 834 号令的正式落地要求，文章指出企业在软件供应链安全方面不仅缺乏有效的技术工具，更在管理流程、合规审计和应急响应三个关键维度存在明显的短板。企业应当尽快建立完善的软件物料清单管理体系，并加强对供应商的安全准入评估与持续监控，通过制度化手段确保在满足国家监管要求的同时，从根本上提升整体防御韧性并降低因供应链漏洞导致的合规风险。",
+      "tags": [
+        "合规安全",
+        "供应链管理",
+        "SBOM"
+      ],
+      "url": "https://www.anquanke.com/post/id/315352",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-05-20T17:22:05+00:00",
+      "cve_ids": [],
+      "selection_reason": "结合法规政策探讨供应链安全的落地实践，具有合规指导意义。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315352",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 4.55,
+      "final_score": 5.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Zscaler 收购 Symmetry Systems 以增强 AI 驱动的数据安全能力",
+      "title_orig": "Zscaler acquires Symmetry Systems to enhance AI security | brief | SC Media - SC Media",
+      "summary": "云安全巨头 Zscaler 宣布收购 Symmetry Systems，旨在将其先进的数据安全平台深度集成到自身的 AI 安全架构中，以应对日益复杂的云端数据安全挑战。此次收购的重点在于提升对复杂云环境下敏感数据的自动发现与分类能力，利用 AI 技术实现更精准的威胁检测和细粒度访问控制，从而显著强化其在数据安全中心领域的市场竞争力，并为客户提供更全面的数据保护方案。",
+      "tags": [
+        "安全收购",
+        "数据安全",
+        "AI 安全"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOSTBDNGJvNjBmUzRoN2Ntam1iMV9LZk40aWlJbFh4VkZUclgtanhQLWVzYmRHNThMRHp1R2UxQWFKbGNVTUgzX2hxZGRGVk9tSUVlLUgyNmhablRQNHFSUWVROVVjRHVpSGJnbjI5N2lTWDdRYjNJUnVOTUdZb3YyOW1wcDh5MldEZGNSVFhVWQ?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-05-22T20:59:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "安全行业巨头布局 AI 数据安全的典型动作，预示技术整合方向",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:53578ff5fd5d",
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQRVR0X2luR3hTRm1xc1dYdl9veEtFQ3N1aEpFSFlLVjNGd2FwTzd1TTJnUzNmUHliTmNOTGR0NGJfVk1lSjRYMVVxYUR2SlA0eFRyR1lSNDBkWk84bF84VHZtTVV5LVozNVBWVHdfMjV2d2YtQzVrdXdoRVo5MVFkSFp4UEdNWmZSbnotNENRcnl5dTRDZWEtV29BZ1Uzd3QwRlRHR0JkTGZWbGtBcmFORGdNZ25rZzllX2JYMGpUQ1pYZ9IBxwFBVV95cUxNdmpyaEdTREI4SGc2a0pJVkhId0Q3N2VPUUpicjdjdUR3YTdid1pEZ3NDSXVqei15cU44aXRvUlBSNmFBVGEtbVNKUXNnVUI3ZFpUSDlZbHltZ3YtdWxSMTZhdFJwd2V2b1NwQXRQTmMwM0tkZzlTWWYyQ0IycFN2S0lRS21ZVmRfbXNmeDFxM19BUXhaT1ZoenlwX2Rsd2xqMFhzLVNuNHpEY3B4alhpd2VkcFRxRENxcnplVWxYRG1Ha0hlWnVB?oc=5",
+        "https://news.google.com/rss/articles/CBMinAFBVV95cUxNWHVUaEdKeDFBRExOSjFSS0NDM2pIa0RIXzV1bVJfdTF3cVk2Y1VVZmVjTkRnS0cyWjh2c3B3TmZLU0dtVmZsMklOWDNUaDlXTGtIbUxjdFRvam9VUUJLeFYtS256S0oxYnl1a3pkQzRkUFh6ZUxJaTJKczcxbWVZRjluS1EzekhjWjkyelB3NHhyam1LYVloSkJ3Rkw?oc=5",
+        "https://news.google.com/rss/articles/CBMia0FVX3lxTE9XVjFTYjZ5NzRvOUNEc3VJcEVBSGxweDRFaE0tYXp0dS0xWk4zS3ZwZVpXZ2RNSVBtR3ZtZk9wWjFhU1ZER0ZKdHl1aTF3Rm5nVVA4RUJ4M1FPbXlKanZBbnpuUlBFaXZzdUdn?oc=5"
+      ],
+      "related_count": 3,
+      "score": 5,
+      "dimension_score": 4.3,
+      "final_score": 3.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "美国白宫推迟发布关于人工智能安全与治理的行政命令，相关政策细节仍在审议中",
+      "title_orig": "The looming AI security executive order gets pushed back - FedScoop",
+      "summary": "美国政府原计划近期发布的一项关于人工智能安全的行政命令已被推迟，目前具体发布时间表尚未明确，相关部门仍在对草案内容进行最后的调整与审查。该命令旨在建立AI安全标准并加强对大模型开发的监管，尽管原文未披露导致推迟的具体技术争议或政策分歧细节，但此举反映出白宫在平衡技术创新与安全风险管控方面仍需审慎考量。",
+      "tags": [
+        "AI安全",
+        "行政命令",
+        "合规监管"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOd3I1NUoxRkw1MU8yeWlzRlZIa1BuRWo0bFFIQURJa1VKeXozRURlcWlzQzgyaXRDNWUyRkc5R3hEVkRmNE5iTjQzSG1oV1ljb2dvaGRWZmE5VVlkWEkxT1lLZXFjQWxvVU9ld2ZlNjFKOU1BSUlmNzFZNjEzaXRiWkJ3dXhyU0hQWUR3aQ?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-05-22T17:02:17+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注全球AI安全治理政策动向及其对技术合规的影响。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:efbf5e727612",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 4.05,
+      "final_score": 3.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
