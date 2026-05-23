@@ -1,0 +1,235 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-05-24",
+  "generated_at": "2026-05-23T23:46:01.215753Z",
+  "raw_count": 29,
+  "selected_count": 6,
+  "selection_stats": {
+    "total": 6,
+    "chinese": 3,
+    "direct": 4,
+    "tier_t2": 5,
+    "kind_cn_expert": 2,
+    "kind_expert": 1,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "aggregator": 2,
+    "kind_expert_x": 1,
+    "google_news": 1,
+    "kind_google_news": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "items": [
+    {
+      "title_zh": "恶意 VS Code 扩展导致 GitHub 内部 3800 个私有仓库泄露事件分析",
+      "title_orig": "GitHub 被黑，3800个内部仓库外泄：从一枚恶意VS Code扩展说起",
+      "summary": "攻击者通过在 VS Code 插件市场发布伪装成合法工具的恶意扩展，诱导 GitHub 员工下载并安装。该恶意插件利用开发者环境的权限，成功窃取了员工的身份验证凭据，导致 GitHub 内部约 3800 个私有代码仓库被非法访问和外泄，目前相关恶意插件已被清理。原文未披露具体的漏洞编号或受影响的插件名称，但强调了开发环境供应链攻击的严重性。",
+      "tags": [
+        "供应链安全",
+        "VS Code",
+        "凭据窃取"
+      ],
+      "url": "https://www.anquanke.com/post/id/315560",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-05-21T10:11:45+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对开发者工具链的新型攻击路径及实际危害。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315560",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.25,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Trail of Bits 强化 zizmor 静态分析器以检测 GitHub Actions 配置缺陷",
+      "title_orig": "We hardened zizmor's GitHub Actions static analyzer",
+      "summary": "针对此前因 pull_request_target 配置错误导致组织机密泄露并引发 LiteLLM 在 PyPI 上被植入后门的严重安全事件，Trail of Bits 对静态分析工具 zizmor 进行了针对性加固。该工具旨在帮助 GitHub Actions 用户在代码发布前精准识别并修复此类安全误配置，通过提升对复杂供应链攻击路径的覆盖能力，有效防止攻击者利用 CI/CD 流程窃取凭据，保障开发者的仓库与组织安全。",
+      "tags": [
+        "CI/CD安全",
+        "静态分析",
+        "GitHub"
+      ],
+      "url": "https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/",
+      "source": "blog.trailofbits.com",
+      "category": "AISecurityLabs",
+      "published": "2026-05-22T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了针对 GitHub Actions 供应链漏洞的防御工",
+      "feed_url": "https://blog.trailofbits.com/index.xml",
+      "feed_title": "Trail of Bits",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.65,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Unit 42 发布 npm 供应链威胁景观报告：涵盖蠕虫化恶意软件与持久化攻击",
+      "title_orig": "The npm Threat Landscape: Attack Surface and Mitigations (Updated May 21)",
+      "summary": "Unit 42 详细分析了 npm 生态系统中供应链攻击的演进，重点关注 Shai Hulud 事件后的技术趋势。研究发现，攻击者正利用具有蠕虫传播特性的恶意软件、在 CI/CD 环境中实现持久化以及实施多阶段攻击来扩大影响范围。报告还探讨了针对这些威胁的缓解措施，旨在帮助安全团队应对日益复杂的开源包管理系统风险。原文未披露特定漏洞的 CVE 编号，侧重于整体威胁建模。",
+      "tags": [
+        "npm",
+        "供应链攻击",
+        "恶意软件"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-05-21T15:30:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统性总结了 npm 生态的攻击面，对防御体系建设有参考价值",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 6.65,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员通过 npx 使用混淆实现软件供应链攻击并获 5 万美元赏金",
+      "title_orig": "RT Lupin: We just released a new article on how we made more than 50,000$ in #BugBounty by doing a really cool Software Supply Chain Attack🔥 🔗 h...",
+      "summary": "安全研究员 Lupin 发布文章展示了一种利用 npx 命令执行机制进行“使用混淆”的新型供应链攻击技术。该技术通过在 npm 仓库中发布特定名称的包，诱导开发者在执行 npx 指令时误触发恶意代码，从而实现对开发环境的控制。研究者凭借此发现成功在多个漏洞赏金计划中获得超过 5 万美元的奖励。该案例证明了包管理器命令行交互逻辑中存在的安全风险，值得安全从业者关注其利用原理。",
+      "tags": [
+        "npx",
+        "漏洞赏金",
+        "供应链安全"
+      ],
+      "url": "https://x.com/rez0__/status/2057507600900542910",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-21T14:48:52+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了极具创意的供应链攻击手法及其实战成果。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2057507600900542910",
+      "related_urls": [
+        "https://x.com/rez0__/status/2057504022509076694"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "dimension_score": 7.2,
+      "final_score": 7.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "瑞数信息入选 IDC 2026 年中国智能体威胁检测技术评估报告",
+      "title_orig": "瑞数信息入选IDC《中国智能体威胁检测技术评估，2026》",
+      "summary": "瑞数信息凭借其在自动化威胁抵御和智能体检测领域的技术积累，成功入选 IDC 发布的《中国智能体威胁检测技术评估，2026》报告。该评估关注企业在面对日益增长的 AI 驱动型攻击和自动化脚本威胁时的防护能力。原文未披露具体的技术细节或漏洞分析，主要侧重于市场地位与技术认可。此动态反映了国内安全厂商在智能安全检测领域的发展现状。",
+      "tags": [
+        "智能体检测",
+        "IDC报告",
+        "自动化威胁"
+      ],
+      "url": "https://www.anquanke.com/post/id/315562",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-05-21T15:21:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了国内安全厂商在 AI 威胁检测领域的市场动态。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315562",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 5.05,
+      "final_score": 5.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "因担忧技术竞争受阻，特朗普推迟签署前沿人工智能安全行政令",
+      "title_orig": "担忧掣肘技术竞争：特朗普推迟签署前沿AI安全行政令 - 安全内参",
+      "summary": "据相关报道，特朗普推迟了关于前沿人工智能安全的行政令签署，主要原因是担心严格的安全监管可能会限制美国在 AI 领域的技术竞争优势。该行政令原计划针对前沿 AI 模型的安全评估和风险管控制定标准。目前该政策处于搁置状态，反映了政策制定者在技术创新速度与安全合规监管之间的权衡。原文未涉及任何具体的技术漏洞或攻击细节。",
+      "tags": [
+        "AI政策",
+        "安全监管",
+        "人工智能"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE55OVlzY1Q5NG1OVi0weXJlVUFGQ0JVMWphQ0pkVnlfVlhDN2U4cU5iZHNuZkRDc0VnaXJ3YWNkZXhJSW45ZTlFb3hFR2UyQQ?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-05-23T06:32:11+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及 AI 安全监管政策的重大变动，影响行业合规走向。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:fdbb30b62fe8",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 3.85,
+      "final_score": 2.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

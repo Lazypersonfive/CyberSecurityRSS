@@ -1,0 +1,556 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-24",
+  "generated_at": "2026-05-23T23:45:31.034268Z",
+  "raw_count": 93,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 6,
+    "direct": 14,
+    "wechat": 4,
+    "tier_t2": 12,
+    "kind_cn_expert": 5,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "kind_media": 4,
+    "kind_community": 1,
+    "kind_expert": 2,
+    "aggregator": 1,
+    "kind_expert_x": 1,
+    "tier_unknown": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "Linux 关键漏洞链 NGINX Rift、Copy Fail 与 Dirty Frag 组合实现从公网到 root 权限提权",
+      "title_orig": "三个 CVE 与 2026 年 5 月那条被无视的利用链",
+      "summary": "该研究深入剖析了2026年5月披露的NGINX Rift、Copy Fail与Dirty Frag三个Linux关键漏洞，并详细展示了如何将这些曾被忽视的漏洞串联成一条完整的杀伤链。攻击者通过该利用链可实现从公网访问到获取系统root最高权限的跨越，文中还同步提供了针对NGINX配置的自动化扫描工具以及相应的安全缓解方案，旨在帮助系统管理员有效应对潜在的远程代码执行威胁。",
+      "tags": [
+        "Linux漏洞",
+        "漏洞链",
+        "权限提升"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496211&idx=1&sn=b686a583b8616bea4922b5a65e4495f5",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-21T08:08:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了多个高危漏洞的链式利用过程，具有极高的实战参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496211&idx=1&sn=b686a583b8616bea4922b5a65e4495f5",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 10.0,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "利用 KProbes 绕过 Linux 内核 CR Pinning 机制实现 Shellcode 执行的技术研究",
+      "title_orig": "重新审视\"两发\"内核 Shellcode 执行：从控制流劫持到绕过 CR Pinning",
+      "summary": "该技术研究通过在native_write_cr4函数的CR Pinning修正窗口中利用KProbes插入断点回调，成功在极低次数的控制流劫持下实现了内核级shellcode执行。这种方法重新审视并改进了2017年Project Zero的研究思路，证明了在现代内核防护机制下依然存在绕过路径，对深入理解内核安全防御、CR4寄存器保护机制以及高级漏洞利用技术具有重要的参考价值。",
+      "tags": [
+        "内核安全",
+        "CR Pinni",
+        "漏洞利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496211&idx=2&sn=6359b190bb911a3464ce6135bf842957",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-21T08:08:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入探讨内核底层防护绕过，对高级威胁研究有重要意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496211&idx=2&sn=6359b190bb911a3464ce6135bf842957",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.5,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "CISA 将 Drupal Core 存在被积极利用的 SQL 注入漏洞 CVE-2026-9082 列入已知漏洞清单",
+      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "summary": "美国 CISA 确认 Drupal Core 存在编号为 CVE-2026-9082 的 SQL 注入漏洞，并因发现其在野外被积极利用而将其正式加入已知漏洞利用目录。该漏洞作为恶意攻击者的常用矢量，对联邦企业及相关关键系统构成了严重的完整性风险，目前已根据 BOD 22-01 指令要求相关机构在规定期限内完成修复工作，以降低政府网络环境面临的显著安全威胁。",
+      "tags": [
+        "Drupal",
+        "SQL注入",
+        "CISA"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/05/22/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-22T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-9082"
+      ],
+      "selection_reason": "官方预警在野利用漏洞，提醒相关运维人员及时更新补丁。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-9082",
+      "related_urls": [
+        "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+        "https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型 Evilginx 前端面板通过 API 实时导入 Token 实现 M365 租户级权限滥用",
+      "title_orig": "新型 Evilginx 前端：降低 token 窃取与复用的门槛",
+      "summary": "安全研究人员近期发现一款仿冒Outlook的新型M365操作面板，该工具利用Evilginx Pro的API接口实时导入被盗取的身份令牌，大幅降低了攻击者窃取与复用凭据的门槛。攻击者通过集成Microsoft Graph API，能够一站式滥用受害者的邮件、文件、Teams通讯及MFA设置，甚至直接接管租户级管理员功能，展示了针对企业云端办公环境的高效凭据窃取与后续利用流程。",
+      "tags": [
+        "钓鱼攻击",
+        "Token窃取",
+        "M365安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496285&idx=2&sn=f65e2c310a5c6fcc9f601f0b30294e00",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-23T02:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了自动化钓鱼工具链的演进，对云办公安全防护有警示作用。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496285&idx=2&sn=f65e2c310a5c6fcc9f601f0b30294e00",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.15,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "利用 NASA CFITSIO 库扩展文件名语法构造文件拷贝与 SSRF 等攻击原语",
+      "title_orig": "当文件名成为攻击面：武器化 NASA 的 CFITSIO 扩展文件名语法",
+      "summary": "该研究将 NASA CFITSIO 库的扩展文件名语法视为一种隐藏在文件名中的小型脚本语言，并演示了如何武器化其文档化特性来构造高危攻击原语。通过巧妙利用 outfile 子句、HTTP 请求注入以及 root 驱动等特性，攻击者可以实现任意文件拷贝、SSRF、HTTP 头注入及敏感数据外传等操作，揭示了看似简单的文件名解析逻辑中潜藏的复杂攻击面与安全风险。",
+      "tags": [
+        "文件名注入",
+        "SSRF",
+        "协议利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496273&idx=1&sn=53de832c76f6b6ba84777141e2fabb8e",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-22T03:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "从冷门库的文档特性中挖掘攻击面，体现了极具创意的漏洞挖掘思路",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496273&idx=1&sn=53de832c76f6b6ba84777141e2fabb8e",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "LiteSpeed cPanel 插件高危漏洞 CVE-2026-48172 遭利用可实现 Root 权限执行脚本",
+      "title_orig": "LiteSpeed cPanel Plugin CVE-2026-48172 Exploited to Run Scripts as Root",
+      "summary": "LiteSpeed User-End cPanel插件被曝存在严重的权限分配错误漏洞，编号为CVE-2026-48172且CVSS评分达到满分10.0，目前已在野外发现针对该漏洞的积极攻击行为。任何cPanel普通用户或受损账户均可利用此缺陷，以root最高权限在服务器上执行任意脚本，从而实现对系统的完全控制，由于该漏洞影响范围广泛且危害极大，相关用户需立即更新插件以防范恶意利用。",
+      "tags": [
+        "权限提升",
+        "cPanel",
+        "在野利用"
+      ],
+      "url": "https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-23T07:35:13+00:00",
+      "cve_ids": [
+        "CVE-2026-48172"
+      ],
+      "selection_reason": "CVSS 满分漏洞且存在在野利用，是运维安全中的最高优先级事",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-48172",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.5,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "攻击者利用 F5 BIG-IP 边缘设备作为跳板对 Linux 企业内网进行多阶段渗透",
+      "title_orig": "From edge appliance to enterprise compromise: Multi-stage Linux intrusion via F5 and Confluence",
+      "summary": "一起针对 Linux 环境的多阶段攻击案例显示，攻击者首先利用暴露在公网的 F5 BIG-IP 边缘设备切入，随后横向移动至内部 Confluence 服务器进行凭据窃取与身份破坏。攻击过程中涉及 Kerberos 中继等复杂渗透手段，最终被 Microsoft Defender 成功捕获并揭示了从边缘设备到企业核心资产的完整入侵路径，强调了保护边缘设备与内部协作平台安全的重要性。",
+      "tags": [
+        "横向移动",
+        "F5",
+        "内网渗透"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/22/from-edge-appliance-to-enterprise-compromise-multi-stage-linux-intrusion-via-f5-and-confluence/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-22T16:53:39+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的企业级入侵案例分析，有助于理解多阶段攻击的防御重点。",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/05/22/from-edge-appliance-to-enterprise-compromise-multi-stage-linux-intrusion-via-f5-and-confluence",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Laravel Lang 本地化语言包遭遇供应链攻击被植入凭据窃取恶意软件",
+      "title_orig": "Laravel Lang packages hijacked to deploy credential-stealing malware",
+      "summary": "针对 Laravel Lang 本地化包的供应链攻击近期被曝光，攻击者通过滥用 GitHub 版本标签在 Composer 软件包中分发恶意代码，导致大量开发者面临风险。当开发者安装或更新受影响的语言包时，系统会被植入用于窃取敏感凭据的复杂恶意软件，该事件凸显了开源生态系统中版本控制与包管理机制的脆弱性，目前相关机构已对受影响版本发布了安全警示。",
+      "tags": [
+        "供应链攻击",
+        "Laravel",
+        "恶意包"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-23T20:48:23+00:00",
+      "cve_ids": [],
+      "selection_reason": "主流开发框架生态的供应链攻击，提醒开发者需加强对第三方包的审",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Apple iPadOS 内存缓冲区限制不当漏洞 CVE-2026-20700 概念验证发布",
+      "title_orig": "Exploit for Improper Restriction of Operations within the Bounds of a Memory Buffer in Apple Ipados",
+      "summary": "该漏洞源于Apple iPadOS中dyld的页面链入链接与链式修复机制存在内存缓冲区限制不当缺陷，涉及CVE-2026-20700安全漏洞，可能导致严重的硬件认证绕过风险。攻击者能够通过精心构造的Mach-O文件，在arm64e架构上诱导dyld将PAC有效指针写入特定插槽，从而将其转化为PAC签名原语，目前相关概念验证代码dyld-signing-oracle-poc已公开发布。 Apple iPadOS 内存缓冲区限制不当漏洞 CVE-2026-20700 概念验证发布。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响。",
+      "tags": [
+        "PAC绕过",
+        "内存安全",
+        "漏洞利用"
+      ],
+      "url": "https://vulners.com/githubexploit/19E5C0C2-0ADB-5CE5-9AD5-4D4B19A95247?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-23T20:25:02+00:00",
+      "cve_ids": [
+        "CVE-2026-20700"
+      ],
+      "selection_reason": "展示了针对 arm64e 硬件安全特性的高级绕过思路。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-20700",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Cisco 修复 Secure Workload 严重级别 REST API 漏洞 CVE-2026-20223",
+      "title_orig": "Cisco Patches CVSS 10.0 Secure Workload REST API Flaw Enabling Data Access",
+      "summary": "Cisco Secure Workload 存在一个 CVSS 评分为 10.0 的最高严重等级漏洞，其根源在于 REST API 端点在访问时缺乏充分的验证和身份认证。未经身份验证的远程攻击者可以通过向受影响系统的特定 API 发送精心构造的请求来触发该漏洞。成功利用此漏洞可导致攻击者获取敏感数据的访问权限，目前 Cisco 官方已发布安全更新修复了此安全隐患。",
+      "tags": [
+        "API安全",
+        "身份认证",
+        "Cisco"
+      ],
+      "url": "https://thehackernews.com/2026/05/cisco-patches-cvss-100-secure-workload.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-22T05:36:18+00:00",
+      "cve_ids": [
+        "CVE-2026-20223"
+      ],
+      "selection_reason": "CVSS 10.0 满分漏洞，涉及核心网络组件的数据泄露风险",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-20223",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "恶意 VS Code 扩展导致 GitHub 内部代码仓库外泄事件分析",
+      "title_orig": "GitHub 被黑，3800个内部仓库外泄：从一枚恶意VS Code扩展说起",
+      "summary": "该事件起因于一枚恶意的 VS Code 扩展程序，攻击者利用该扩展作为初始入侵矢量渗透了 GitHub 内部环境。通过该途径，攻击者成功获取了访问权限并导致约 3800 个内部私有仓库的数据外泄。原文未详细披露该恶意扩展的具体名称及利用的特定漏洞细节，但强调了开发工具链在供应链攻击中的脆弱性，目前相关泄露影响仍在评估中。",
+      "tags": [
+        "供应链攻击",
+        "VSCode",
+        "数据外泄"
+      ],
+      "url": "https://www.anquanke.com/post/id/315560",
+      "source": "anquanke.com",
+      "category": "CN_News",
+      "published": "2026-05-21T10:11:45+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的开发环境供应链攻击案例，对企业内控有警示意义。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315560",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Trail of Bits 强化 zizmor 工具以检测 GitHub Actions 静态配置缺陷",
+      "title_orig": "We hardened zizmor's GitHub Actions static analyzer",
+      "summary": "针对 2026 年 3 月发生的 pull_request_target 配置错误导致 LiteLLM 被植入后门的事件，Trail of Bits 对静态分析工具 zizmor 进行了强化。该工具旨在帮助 GitHub Actions 用户在代码上线前识别此类高危配置错误，防止组织和仓库凭据被非法提取。通过静态分析工作流文件，安全从业者可以有效降低因自动化脚本配置不当引发的软件供应链风险，提升整体开发环境的安全性。",
+      "tags": [
+        "静态分析",
+        "GitHubAc",
+        "供应链安全"
+      ],
+      "url": "https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/",
+      "source": "blog.trailofbits.com",
+      "category": "WebSecurity",
+      "published": "2026-05-22T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对真实供应链攻击事件的防御工具强化，具有实战参考价值。",
+      "feed_url": "https://blog.trailofbits.com/feed/",
+      "feed_title": "Trail of Bits Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.15,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 承包商公共仓库泄露 AWS GovCloud 凭据及内部系统信息",
+      "title_orig": "CISA Security Leak",
+      "summary": "美国网络安全和基础设施安全局（CISA）的一名承包商在 GitHub 上维护了一个公开仓库，导致多个高权限 AWS GovCloud 账户凭据泄露。该公开存档还包含了大量 CISA 内部系统的访问权限，以及详细说明 CISA 内部软件构建、测试和部署流程的文件。安全专家指出，这些敏感信息的暴露可能使攻击者掌握 CISA 内部基础设施的运作细节，目前相关仓库已被处理。",
+      "tags": [
+        "凭据泄露",
+        "云安全",
+        "配置错误"
+      ],
+      "url": "https://www.schneier.com/blog/archives/2026/05/cisa-security-leak.html",
+      "source": "schneier.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-22T13:58:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施监管机构的重大敏感信息泄露事件。",
+      "feed_url": "https://www.schneier.com/feed/atom/",
+      "feed_title": "Schneier on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "schneier.com",
+      "story_id": "url:schneier.com/blog/archives/2026/05/cisa-security-leak.html",
+      "related_urls": [
+        "https://krebsonsecurity.com/2026/05/lawmakers-demand-answers-as-cisa-tries-to-contain-data-leak/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员通过 npx 混淆实现软件供应链攻击并获 5 万美元赏金",
+      "title_orig": "RT Lupin: We just released a new article on how we made more than 50,000$ in #BugBounty by doing a really cool Software Supply Chain Attack🔥 🔗 h...",
+      "summary": "安全研究员 Lupin 发布文章分享了利用 npx 使用混淆（Used Confusion）实施软件供应链攻击的技术细节，并借此获得超过 5 万美元的漏洞赏金。该攻击方法利用了开发者在使用 npx 执行命令时的行为特性，通过诱导执行恶意包来实现对目标系统的渗透。这种新型的供应链攻击手段展示了包管理工具生态中的逻辑缺陷，为安全研究人员提供了针对 Node.js 环境的新研究方向。",
+      "tags": [
+        "供应链攻击",
+        "npx",
+        "漏洞赏金"
+      ],
+      "url": "https://x.com/rez0__/status/2057507600900542910",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-21T14:48:52+00:00",
+      "cve_ids": [],
+      "selection_reason": "披露了新型的包管理器利用技巧，具有较高的实战启发性。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2057507600900542910",
+      "related_urls": [
+        "https://x.com/rez0__/status/2057504022509076694"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux 环境下 ELF Shellcode 生成技术与无文件攻击实战指南",
+      "title_orig": "Linux ELF Shellcode 生成与 Fileless 实战",
+      "summary": "本文深入探讨了 Linux 平台下 ELF 格式 Shellcode 的生成原理，并结合无文件（Fileless）技术展示了实战利用场景。文章详细介绍了如何构造高效的 Shellcode 以及如何利用内存执行等手段规避传统文件系统的检测。对于安全从业者而言，该技术点有助于理解高级威胁在 Linux 环境中的持久化与隐蔽执行机制，是红蓝对抗中绕过端点防护的重要参考资料。",
+      "tags": [
+        "Shellcod",
+        "无文件攻击",
+        "Linux安全"
+      ],
+      "url": "https://guage.cool/linux-shellcode.html",
+      "source": "guage.cool",
+      "category": "WebSecurity",
+      "published": "2026-05-21T05:44:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "侧重底层原理与实战对抗，是提升渗透测试能力的优质技术文章。",
+      "feed_url": "https://guage.cool/atom.xml",
+      "feed_title": "半块西瓜皮",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "guage.cool",
+      "story_id": "url:guage.cool/linux-shellcode.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.85,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
