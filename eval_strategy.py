@@ -72,12 +72,23 @@ def render_offline_eval(feeds: list[dict[str, Any]], cfg: dict[str, Any]) -> str
     board_cfgs = cfg.get("boards") or {}
     evaluations, misses = _evaluate_boards(feeds, board_cfgs)
     dates = [str(feed.get("date") or "") for feed in feeds]
+    issues = _top_issues(evaluations, misses)
 
     lines = [
         "# Offline Strategy Eval",
         "",
         f"- generated_for: {digest_today().isoformat()}",
         f"- dates: {', '.join(dates) if dates else '-'}",
+        "",
+        "## Top Issues",
+        "",
+    ]
+    if issues:
+        lines.extend(f"- {issue}" for issue in issues)
+    else:
+        lines.append("No high-priority issues in the audited window.")
+
+    lines.extend([
         "",
         "## Board Health",
         "",
@@ -86,7 +97,7 @@ def render_offline_eval(feeds: list[dict[str, Any]], cfg: dict[str, Any]) -> str
             "Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |"
         ),
         "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
-    ]
+    ])
     for evaluation in evaluations:
         max_gn = "-" if evaluation.max_google_news is None else str(evaluation.max_google_news)
         lines.append(
@@ -240,6 +251,57 @@ def _evaluate_boards(
         )
 
     return evaluations, misses
+
+
+def _top_issues(evaluations: list[BoardEval], misses: list[EvalMiss], limit: int = 5) -> list[str]:
+    issues: list[tuple[int, str]] = []
+    for evaluation in evaluations:
+        if evaluation.days <= 0:
+            continue
+        missing_days = evaluation.days - evaluation.full_days
+        if missing_days:
+            total_short = round(
+                evaluation.target_top_n * evaluation.days
+                - evaluation.avg_selected * evaluation.days
+            )
+            issues.append(
+                (
+                    100 + int(total_short),
+                    f"[{evaluation.board}] {missing_days}/{evaluation.days} 天未满额，累计缺口约 {total_short} 条。",
+                )
+            )
+        if evaluation.min_chinese:
+            cn_miss_days = evaluation.days - evaluation.cn_ok_days
+            if cn_miss_days:
+                issues.append(
+                    (
+                        80 + cn_miss_days,
+                        f"[{evaluation.board}] 中文目标 {evaluation.cn_ok_days}/{evaluation.days} 天达成。",
+                    )
+                )
+        if evaluation.max_google_news is not None:
+            gn_over_days = sum(
+                1
+                for miss in misses
+                if miss.board == evaluation.board
+                and miss.max_google_news is not None
+                and miss.google_news > miss.max_google_news
+            )
+            if gn_over_days:
+                issues.append(
+                    (
+                        60 + gn_over_days,
+                        f"[{evaluation.board}] Google News 超限 {gn_over_days} 天。",
+                    )
+                )
+        if evaluation.unknown_items:
+            issues.append(
+                (
+                    40 + evaluation.unknown_items,
+                    f"[{evaluation.board}] 入选 unknown source {evaluation.unknown_items} 条，需登记或降权。",
+                )
+            )
+    return [text for _priority, text in sorted(issues, reverse=True)[:limit]]
 
 
 def _stats_for_block(block: dict[str, Any]) -> Counter[str]:

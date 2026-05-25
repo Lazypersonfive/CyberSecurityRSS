@@ -185,6 +185,7 @@ def select_with_source_policy(
     max_aggregator = _optional_int(policy.get("max_aggregator"), top_n)
     max_per_source = _optional_int(policy.get("max_per_source"), top_n)
     allow_cap_relaxation = bool(policy.get("allow_cap_relaxation", False))
+    relax_aggregate_caps = bool(policy.get("relax_aggregate_caps", allow_cap_relaxation))
 
     selected: list[tuple[dict[str, Any], int]] = []
     selected_ids: set[str] = set()
@@ -261,11 +262,15 @@ def select_with_source_policy(
         # Explicit opt-in for sparse boards. Keep hard caps by default: source
         # quality is more important than filling every slot.
         for item in ranked:
-            if can_add(item, enforce_aggregate_caps=False):
+            if can_add(item, enforce_aggregate_caps=not relax_aggregate_caps):
                 add(item)
 
         for item in ranked:
-            if can_add(item, enforce_source_cap=False, enforce_aggregate_caps=False):
+            if can_add(
+                item,
+                enforce_source_cap=False,
+                enforce_aggregate_caps=not relax_aggregate_caps,
+            ):
                 add(item)
 
     return sort_scored_candidates(selected)[:top_n]

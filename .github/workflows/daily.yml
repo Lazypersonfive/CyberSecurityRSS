@@ -28,7 +28,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 70
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -39,6 +39,7 @@ jobs:
       # TWITTER_AUTH_TOKEN. Empty means keep the OPML default (rsshub.app).
       RSSHUB_BASE_URL: ${{ vars.RSSHUB_BASE_URL }}
       BOARD_SELECTION: ${{ inputs.board || 'all' }}
+      GEMINI_REQUEST_TIMEOUT_SEC: ${{ vars.GEMINI_REQUEST_TIMEOUT_SEC || '90' }}
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
@@ -93,18 +94,32 @@ jobs:
 
       - name: Fetch + digest all boards
         run: |
+          set +e
           boards="security ai_security ai finance"
           if [ "$BOARD_SELECTION" != "all" ]; then
             boards="$BOARD_SELECTION"
           fi
+          failed=0
           for board in $boards; do
             echo "::group::Fetch $board"
-            python fetch_and_save.py --board "$board"
+            timeout 8m python fetch_and_save.py --board "$board"
+            fetch_status=$?
             echo "::endgroup::"
+            if [ "$fetch_status" -ne 0 ]; then
+              echo "::error::Fetch failed for $board with status $fetch_status"
+              failed=1
+              continue
+            fi
             echo "::group::Digest $board"
-            python digest_pipeline_gemini.py --board "$board"
+            timeout 15m python digest_pipeline_gemini.py --board "$board"
+            digest_status=$?
             echo "::endgroup::"
+            if [ "$digest_status" -ne 0 ]; then
+              echo "::error::Digest failed for $board with status $digest_status"
+              failed=1
+            fi
           done
+          echo "PIPELINE_FAILED=$failed" >> "$GITHUB_ENV"
 
       - name: Build site
         if: env.BOARD_SELECTION == 'all'
@@ -132,3 +147,7 @@ jobs:
             git commit -m "chore(daily): refresh digest for $DIGEST_DATE"
             git push
           fi
+
+      - name: Fail if any board failed
+        if: env.PIPELINE_FAILED == '1'
+        run: exit 1

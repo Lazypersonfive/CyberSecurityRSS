@@ -44,6 +44,8 @@ scoring:
         impact_scope: 0.20
         actionability: 0.10
     ai_security:
+      kind_bonus:
+        google_news: -1.2
       dimension_weights:
         security_relevance: 0.30
         technical_depth: 0.25
@@ -51,6 +53,10 @@ scoring:
         agent_model_relevance: 0.15
         actionability: 0.10
     ai:
+      kind_bonus:
+        google_news: -1.6
+        official_x: 0.4
+        expert_x: 0.3
       dimension_weights:
         relevance: 0.20
         novelty: 0.25
@@ -104,7 +110,7 @@ boards:
     llm_max_entries: 60
     top_n: 10
     score_threshold: 6
-    fill_score_floor: 5  # 宁缺毋滥；泛 AI 新闻即使来自 T1 也不靠低分补位
+    fill_score_floor: 4  # 泛 AI 已被确定性压到 3 分；4 分保留边界技术安全候选
     source_policy:
       min_chinese: 2
       min_direct: 4
@@ -119,7 +125,7 @@ boards:
   ai:
     display_name: "AI 前沿"
     opml: feeds/ai.opml
-    fetch_hours: 30  # 略超 24h 覆盖 cron 之间的抖动；避免跨日重复叙事
+    fetch_hours: 48  # AI 前沿源更新抖动大；48h 保证稀疏日仍能满额
     max_entries: 80
     llm_max_entries: 80
     top_n: 15
@@ -132,6 +138,7 @@ boards:
       max_aggregator: 7   # XSignals 最多约半数；Google News 仍单独压低
       max_per_source: 4
       allow_cap_relaxation: true  # 稀疏日松开 max_per_source 把 top_n 填满
+      relax_aggregate_caps: false # 仍保持 Google News / 聚合源上限，避免稀疏日反向刷屏
     source_caps:
       arxiv.org: 2      # AI 前沿最多保留 2 条论文，避免日报被 arXiv 刷屏
       technologyreview.com: 4

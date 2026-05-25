@@ -142,10 +142,15 @@ def compute_final_score(
     """Combine model score and deterministic source/freshness bonuses."""
     config = load_scoring_config(scoring_config)
     defaults = config.get("default") or {}
+    board_config = (config.get("boards") or {}).get(board, {})
     profile = source_profile(entry)
     dimension = compute_dimension_score(board, entry, config)
-    source_bonus = float((defaults.get("source_bonus") or {}).get(profile.source_tier, 0.0))
-    kind_bonus = float((defaults.get("kind_bonus") or {}).get(profile.source_kind, 0.0))
+    source_bonus = float(
+        _merged_bonus(defaults, board_config, "source_bonus").get(profile.source_tier, 0.0)
+    )
+    kind_bonus = float(
+        _merged_bonus(defaults, board_config, "kind_bonus").get(profile.source_kind, 0.0)
+    )
     freshness_bonus = _freshness_bonus(entry.get("published"), defaults.get("freshness_bonus") or {}, now)
     cn_visibility_bonus = _cn_visibility_bonus(profile, defaults.get("cn_visibility_bonus") or {})
 
@@ -166,6 +171,13 @@ def _deep_update(target: dict[str, Any], source: dict[str, Any]) -> None:
             _deep_update(target[key], value)
         else:
             target[key] = deepcopy(value)
+
+
+def _merged_bonus(defaults: dict[str, Any], board_config: dict[str, Any], key: str) -> dict[str, Any]:
+    return {
+        **(defaults.get(key) or {}),
+        **(board_config.get(key) or {}),
+    }
 
 
 def _coerce_float(value: Any) -> float | None:

@@ -188,6 +188,13 @@ class FetchOpmlTests(unittest.TestCase):
         self.assertIn("https://rsshub.app/twitter/user/IntCyberDigest", security_feeds["XSignals"])
         self.assertIn("https://rsshub.app/twitter/user/thsottiaux", security_feeds["XSignals"])
 
+    def test_ai_security_opml_includes_extra_direct_security_sources(self) -> None:
+        ai_security_feeds = fetch_opml("feeds/ai_security.opml")
+        flat = {url for urls in ai_security_feeds.values() for url in urls}
+
+        self.assertIn("https://www.hiddenlayer.com/feed", flat)
+        self.assertTrue(any("AI+supply+chain" in url for url in flat))
+
     def test_rsshub_base_url_can_be_overridden_for_private_instance(self) -> None:
         with patch.dict("os.environ", {"RSSHUB_BASE_URL": "https://rsshub.example.com/"}):
             feeds = fetch_opml("feeds/ai.opml")
@@ -845,6 +852,29 @@ class SourcePolicyTests(unittest.TestCase):
 
         self.assertIn("https://openai.com/news/direct", urls)
 
+    def test_cap_relaxation_can_keep_google_news_cap_hard(self) -> None:
+        candidates = [
+            ({"title": "Google 1", "url": "https://news.google.com/rss/articles/1"}, 10),
+            ({"title": "Google 2", "url": "https://news.google.com/rss/articles/2"}, 9),
+            ({"title": "Direct 1", "url": "https://openai.com/news/a"}, 8),
+            ({"title": "Direct 2", "url": "https://deepmind.google/blog/b"}, 7),
+        ]
+
+        selected = select_with_source_policy(
+            candidates,
+            top_n=4,
+            policy={
+                "max_google_news": 1,
+                "max_aggregator": 1,
+                "allow_cap_relaxation": True,
+                "relax_aggregate_caps": False,
+            },
+        )
+        urls = [entry["url"] for entry, _score in selected]
+
+        self.assertEqual(sum(1 for url in urls if "news.google.com" in url), 1)
+        self.assertEqual(len(urls), 3)
+
 
 class ScoringPolicyTests(unittest.TestCase):
     def test_dimension_score_uses_board_weights(self) -> None:
@@ -893,6 +923,21 @@ class ScoringPolicyTests(unittest.TestCase):
         self.assertGreater(official_score["final_score"], google_score["final_score"])
         self.assertEqual(official_score["source_bonus"], 1.0)
         self.assertEqual(google_score["kind_bonus"], -1.0)
+
+    def test_final_score_allows_board_specific_kind_bonus_override(self) -> None:
+        google = {
+            "title": "AI model news",
+            "url": "https://news.google.com/rss/articles/model-update",
+            "score": 7,
+        }
+
+        score = compute_final_score(
+            "ai",
+            google,
+            scoring_config={"boards": {"ai": {"kind_bonus": {"google_news": -1.6}}}},
+        )
+
+        self.assertEqual(score["kind_bonus"], -1.6)
 
     def test_final_score_rewards_expert_sources_above_media(self) -> None:
         now = datetime(2026, 5, 11, 12, tzinfo=timezone.utc)
@@ -1199,6 +1244,7 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertLessEqual(board["source_policy"]["max_google_news"], 2)
         self.assertGreaterEqual(board["source_policy"]["min_direct"], 4)
         self.assertEqual(board["source_policy"]["max_aggregator"], 5)
+        self.assertEqual(board["fill_score_floor"], 4)
         self.assertTrue(Path(board["opml"]).exists())
 
     def test_board_output_targets_match_current_editorial_policy(self) -> None:
@@ -1210,9 +1256,11 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(boards["security"]["source_policy"]["min_chinese"], 6)
         self.assertEqual(boards["ai_security"]["top_n"], 10)
         self.assertEqual(boards["ai"]["top_n"], 15)
+        self.assertGreaterEqual(boards["ai"]["fetch_hours"], 48)
         self.assertEqual(boards["ai"]["source_policy"]["min_chinese"], 5)
         self.assertEqual(boards["finance"]["top_n"], 10)
         self.assertEqual(boards["ai"]["source_policy"]["max_aggregator"], 7)
+        self.assertFalse(boards["ai"]["source_policy"]["relax_aggregate_caps"])
         self.assertEqual(boards["ai"]["source_caps"]["arxiv.org"], 2)
 
     def test_finance_opml_has_chinese_fintech_fallback(self) -> None:
@@ -1229,6 +1277,7 @@ class GeminiPipelineTests(unittest.TestCase):
 
         self.assertIn("Protect AI", body)
         self.assertIn("Prompt Security", body)
+        self.assertIn("HiddenLayer Blog", body)
 
     def test_gemini_prompts_encode_current_board_targets(self) -> None:
         self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["security"])
@@ -1569,6 +1618,9 @@ class SourceReportTests(unittest.TestCase):
         self.assertNotIn('LLM_BACKEND" = "' + "".join(["ant", "hropic"]) + '"', body)
         self.assertIn("DEEPSEEK_API_KEY", body)
         self.assertIn("deepseek-v4-flash", body)
+        self.assertIn("GEMINI_REQUEST_TIMEOUT_SEC", body)
+        self.assertIn("timeout 15m python digest_pipeline_gemini.py", body)
+        self.assertIn("Fail if any board failed", body)
 
 
 class LLMBackendTests(unittest.TestCase):
@@ -1641,6 +1693,30 @@ class LLMBackendTests(unittest.TestCase):
         self.assertEqual(headers["Authorization"], "Bearer test-key")
         self.assertEqual(payload["model"], "deepseek-v4-flash")
         self.assertEqual(payload["messages"][0]["role"], "system")
+
+    def test_gemini_backend_honors_request_timeout_env(self) -> None:
+        from llm_backends import gemini
+        from llm_backends.gemini import GeminiBackend
+
+        class FakeGenAI:
+            class Client:
+                def __init__(self, api_key: str, http_options: object) -> None:
+                    self.api_key = api_key
+                    self.http_options = http_options
+
+        with (
+            patch.object(gemini, "genai", FakeGenAI),
+            patch.object(gemini, "GOOGLE_GENAI_IMPORT_ERROR", None),
+            patch.dict(
+                "os.environ",
+                {"GEMINI_API_KEY": "test-key", "GEMINI_REQUEST_TIMEOUT_SEC": "12"},
+                clear=True,
+            ),
+        ):
+            backend = GeminiBackend.from_env()
+
+        self.assertEqual(backend.request_timeout_sec, 12)
+        self.assertEqual(backend.client.http_options.timeout, 12000)
 
 
 class SourceAuditTests(unittest.TestCase):
@@ -1784,6 +1860,8 @@ class OfflineEvalTests(unittest.TestCase):
 
         markdown = render_offline_eval(feeds, cfg)
 
+        self.assertIn("## Top Issues", markdown)
+        self.assertIn("[security] 1/1 天未满额", markdown)
         self.assertIn("| security | 安全 | 1 | 3.0 | 15 | 0/1 | 1.0 | 6 | 0/1 | 1.0 | 1 | 1 | 6.0 | 2 |", markdown)
         self.assertIn("2026-05-11 security：selected 3/15，中文 1/6，unknown 1", markdown)
 

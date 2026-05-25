@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 import time
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeoutError
 from dataclasses import dataclass
 
 try:
@@ -21,6 +22,7 @@ else:
 DEFAULT_GEMINI_MODEL = "gemini-3-flash-preview"
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 4
+DEFAULT_REQUEST_TIMEOUT_SEC = 90
 
 
 @dataclass(frozen=True)
@@ -31,6 +33,7 @@ class GeminiBackend:
     score_model: str = DEFAULT_GEMINI_MODEL
     summarize_model: str = DEFAULT_GEMINI_MODEL
     name: str = "gemini"
+    request_timeout_sec: int = DEFAULT_REQUEST_TIMEOUT_SEC
 
     @classmethod
     def from_env(cls) -> "GeminiBackend":
@@ -40,7 +43,18 @@ class GeminiBackend:
         if genai is None:
             raise SystemExit(f"google-genai is required to run Gemini backend: {GOOGLE_GENAI_IMPORT_ERROR}")
         model = os.environ.get("GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
-        return cls(client=genai.Client(api_key=api_key), score_model=model, summarize_model=model)
+        request_timeout_sec = int(
+            os.environ.get("GEMINI_REQUEST_TIMEOUT_SEC") or DEFAULT_REQUEST_TIMEOUT_SEC
+        )
+        return cls(
+            client=genai.Client(
+                api_key=api_key,
+                http_options=types.HttpOptions(timeout=request_timeout_sec * 1000),
+            ),
+            score_model=model,
+            summarize_model=model,
+            request_timeout_sec=request_timeout_sec,
+        )
 
     def generate_json(
         self,
@@ -59,11 +73,7 @@ class GeminiBackend:
         last_exc: Exception | None = None
         for attempt in range(MAX_RETRIES):
             try:
-                resp = self.client.models.generate_content(
-                    model=model,
-                    contents=user_prompt,
-                    config=cfg,
-                )
+                resp = self._generate_content_with_timeout(model, user_prompt, cfg)
                 text = resp.text or ""
                 if not text.strip():
                     raise RuntimeError("empty response text")
@@ -82,3 +92,21 @@ class GeminiBackend:
                 )
                 time.sleep(wait)
         raise RuntimeError(f"gemini call exhausted retries: {last_exc}")
+
+    def _generate_content_with_timeout(self, model: str, user_prompt: str, cfg: object) -> object:
+        executor = ThreadPoolExecutor(max_workers=1)
+        future = executor.submit(
+            self.client.models.generate_content,
+            model=model,
+            contents=user_prompt,
+            config=cfg,
+        )
+        try:
+            return future.result(timeout=self.request_timeout_sec)
+        except FutureTimeoutError as exc:
+            future.cancel()
+            raise RuntimeError(
+                f"gemini request timed out after {self.request_timeout_sec}s"
+            ) from exc
+        finally:
+            executor.shutdown(wait=False, cancel_futures=True)

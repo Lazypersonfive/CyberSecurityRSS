@@ -1,7 +1,15 @@
 # Offline Strategy Eval
 
-- generated_for: 2026-05-24
+- generated_for: 2026-05-25
 - dates: 2026-05-24, 2026-05-23, 2026-05-22, 2026-05-21, 2026-05-20, 2026-05-19, 2026-05-18
+
+## Top Issues
+
+- [ai_security] 5/7 天未满额，累计缺口约 22 条。
+- [ai] 3/7 天未满额，累计缺口约 10 条。
+- [finance] 1/7 天未满额，累计缺口约 1 条。
+- [ai] 中文目标 1/7 天达成。
+- [ai_security] 中文目标 4/7 天达成。
 
 ## Board Health
 
