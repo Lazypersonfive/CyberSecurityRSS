@@ -1,0 +1,550 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-26",
+  "generated_at": "2026-05-25T23:48:52.415205Z",
+  "raw_count": 68,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 6,
+    "direct": 13,
+    "wechat": 3,
+    "tier_t2": 14,
+    "kind_cn_expert": 4,
+    "kind_media": 6,
+    "aggregator": 2,
+    "kind_expert_x": 2,
+    "tier_unknown": 1,
+    "kind_community": 3
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "items": [
+    {
+      "title_zh": "利用 VS Code Dev Tunnels 协议实现红队持久化与横向移动的技术剖析",
+      "title_orig": "意外的 C2:借道 VS Code Dev Tunnels 实现远程访问",
+      "summary": "本文深入剖析了VS Code Dev Tunnels的REST、WebSocket、SSH及MsgPack RPC协议层，并揭示了通过Ouroboros工具滥用GitHub或Entra ID认证机制的攻击路径。该技术利用微软官方基础设施的信任背书，将合法的开发隧道转化为隐蔽的C2通道，从而实现绕过防火墙的初始访问、持久化控制及内网横向移动，对企业防御体系构成严重威胁。 利用 VS Code Dev Tunnels 协议实现红队持久化与横向移动的技术剖析。该条来自mp.weixin.qq.com，归类于CN_News，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本。",
+      "tags": [
+        "C2 通道",
+        "VS Code",
+        "红队技术"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496285&idx=1&sn=d5575bcc3f501eaa17f5517580f2b53b",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-23T02:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了利用合法云服务构建隐蔽通信通道的高级对抗思路。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496285&idx=1&sn=d5575bcc3f501eaa17f5517580f2b53b",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "LiteSpeed cPanel 插件高危漏洞 CVE-2026-48172 遭利用，攻击者可获 Root 权限",
+      "title_orig": "LiteSpeed cPanel Plugin CVE-2026-48172 Exploited to Run Scripts as Root",
+      "summary": "LiteSpeed 用户端 cPanel 插件被曝存在最高严重级别的权限分配错误漏洞 CVE-2026-48172，其 CVSS 评分高达 10.0 且已在野外被积极利用。任何 cPanel 用户（包括受损账户）均可触发该漏洞，在受影响的服务器上以 Root 权限执行任意脚本，从而导致服务器被完全接管。目前官方已发布紧急补丁，建议所有受影响版本的用户立即更新以防止潜在的攻击风险。",
+      "tags": [
+        "权限提升",
+        "cPanel",
+        "野外利用"
+      ],
+      "url": "https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-23T07:35:13+00:00",
+      "cve_ids": [
+        "CVE-2026-48172"
+      ],
+      "selection_reason": "CVSS 满分漏洞且已出现野外攻击，对主机安全威胁极大。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-48172",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于大模型激活自适应探测的多轮提示注入攻击检测研究",
+      "title_orig": "潜在对抗检测：基于大模型激活自适应探测的多轮攻击检测",
+      "summary": "该研究针对多轮提示注入攻击的隐蔽性，提出了一种基于模型残差流激活层特征的检测方法。研究发现多轮攻击在建立信任到恶意升级的过程中，会引发模型激活向量的显著偏移，其累积路径长度远超正常对话。这种基于模型内部状态而非文本内容的防御手段，为识别单轮看似无害的复杂诱导攻击提供了新的技术路径。",
+      "tags": [
+        "大模型安全",
+        "提示注入",
+        "异常检测"
+      ],
+      "url": "https://paper.seebug.org/3486",
+      "source": "paper.seebug.org",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-25T08:55:09+00:00",
+      "cve_ids": [],
+      "selection_reason": "从模型内部激活特征出发解决 LLM 安全问题，具有前瞻性。",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3486",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Ghost CMS SQL 注入漏洞 CVE-2026-26980 遭利用，数百个站点被植入恶意脚本",
+      "title_orig": "Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks",
+      "summary": "威胁猎人监测到 Ghost CMS 的 Content API 存在关键 SQL 注入漏洞 CVE-2026-26980，未经身份验证的攻击者可利用此漏洞读取数据库敏感信息。目前已有超过 700 个站点因此被注入恶意 JavaScript 代码以发起 ClickFix 攻击，受影响组件为核心内容接口。官方已发布修复版本，建议管理员尽快排查注入痕迹并升级系统，以防止站点被黑客持续控制或用于分发恶意软件。",
+      "tags": [
+        "SQL 注入",
+        "Ghost CM",
+        "供应链攻击"
+      ],
+      "url": "https://thehackernews.com/2026/05/ghost-cms-cve-2026-26980-exploited-to.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-25T12:02:46+00:00",
+      "cve_ids": [
+        "CVE-2026-26980"
+      ],
+      "selection_reason": "漏洞影响范围广且已导致大规模站点被黑，具有高预警价值。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-26980",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Drupal Core SQL 注入漏洞 CVE-2026-9082 遭野外利用并被列入 CISA KEV 目录",
+      "title_orig": "Drupal Core SQL Injection Bug Actively Exploited, Added to CISA KEV",
+      "summary": "美国 CISA 将 Drupal Core 的 SQL 注入漏洞 CVE-2026-9082 加入已知漏洞利用目录，确认该漏洞正被黑客积极滥用以执行非法数据库查询。该漏洞影响所有受支持的 Drupal Core 版本，虽然其 CVSS 评分为 6.5，但由于其位于核心组件且已有成熟的攻击案例，其潜在危害不容忽视。官方敦促全球用户立即应用已发布的关键安全补丁，并检查系统日志中是否存在异常的数据库访问记录。",
+      "tags": [
+        "Drupal",
+        "SQL 注入",
+        "CISA KEV"
+      ],
+      "url": "https://thehackernews.com/2026/05/drupal-core-sql-injection-bug-actively.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-23T07:23:48+00:00",
+      "cve_ids": [
+        "CVE-2026-9082"
+      ],
+      "selection_reason": "被列入 CISA KEV 意味着该漏洞是当前网络攻击的热点目",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-9082",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Laravel Lang 本地化包遭遇供应链攻击，开发者面临凭据窃取风险",
+      "title_orig": "Laravel Lang packages hijacked to deploy credential-stealing malware",
+      "summary": "攻击者通过劫持 GitHub 版本标签，向流行的 Laravel Lang 本地化包中植入恶意代码，利用 Composer 包管理系统进行大规模的供应链分发。该恶意软件专门针对开发环境，旨在窃取开发者的敏感凭据、系统信息及云服务密钥，对软件开发生命周期安全构成严重威胁。目前相关恶意版本已被识别，受影响的开发者需立即检查项目依赖项，清理受污染的目录并重置所有可能泄露的身份验证凭证。",
+      "tags": [
+        "供应链攻击",
+        "Laravel",
+        "恶意软件包"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-23T20:48:23+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对主流开发框架的供应链攻击，对开发者群体影响深远。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型 Evilginx 前端面板降低 Token 窃取门槛，实现 M365 租户一站式滥用",
+      "title_orig": "新型 Evilginx 前端：降低 token 窃取与复用的门槛",
+      "summary": "安全研究人员发现一款针对 Outlook 的新型 Evilginx 钓鱼前端，其通过 Pro feed API 实现了被盗 Token 的实时自动化导入与利用。攻击者借助 Microsoft Graph API，可直接在操作面板上接管受害者的邮件、Teams 通讯及租户管理员权限，极大地简化了 MFA 绕过后的二次攻击流程。这种一站式的滥用工具降低了网络犯罪门槛，使得非专业攻击者也能快速完成对企业级账号的深度渗透与资产控制。",
+      "tags": [
+        "钓鱼攻击",
+        "Evilginx",
+        "Token 窃取"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496285&idx=2&sn=f65e2c310a5c6fcc9f601f0b30294e00",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-23T02:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了钓鱼工具工程化的最新进展，增加了 MFA 绕过的威胁。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496285&idx=2&sn=f65e2c310a5c6fcc9f601f0b30294e00",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "FBI 警告 Kali365 钓鱼服务平台滥用 OAuth 设备码绕过 MFA 认证",
+      "title_orig": "FBI warns of Kali365 phishing service targeting Microsoft 365 accounts",
+      "summary": "FBI 发布预警称，名为 Kali365 的钓鱼服务平台正被广泛用于攻击 Microsoft 365 账户，其核心手段是滥用 OAuth 设备代码流认证机制。该平台通过诱导用户完成授权来窃取会话 Token，从而有效绕过多因素身份验证，且这种攻击方式不依赖于传统密码窃取。由于其利用了合法的身份验证协议漏洞，对企业云端资产安全构成了严重且隐蔽的威胁，建议组织加强对 OAuth 授权行为的监控与审计。",
+      "tags": [
+        "PhaaS",
+        "OAuth 滥用",
+        "MFA 绕过"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/fbi-warns-of-kali365-phishing-service-targeting-microsoft-365-accounts/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-25T12:45:54+00:00",
+      "cve_ids": [],
+      "selection_reason": "FBI 官方预警，揭示了针对企业云账户的新型协议级攻击手段。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/fbi-warns-of-kali365-phishing-service-targeting-microsoft-365-accounts",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "针对 MCP 相关仓库的恶意 PR 攻击：利用 postinstall 脚本窃取开发者凭据",
+      "title_orig": "RT osj: After seeing the same account submit PRs to MCP related repos, I figured I'd write up what I've found so far. Hidden README text, postinstall,...",
+      "summary": "研究人员发现针对MCP相关仓库的供应链攻击，攻击者通过提交包含恶意代码的PR，利用隐藏README文本、npx及postinstall钩子启动恶意进程，窃取本地敏感凭据并加密外传。该攻击通过GitHub Webhook或DNS隧道将数据发送至接收端，并已渗透至开发者及AI代理文件中，目前建议开发者必须严格审查第三方PR中的脚本逻辑以防范此类高风险渗透行为。",
+      "tags": [
+        "供应链攻击",
+        "凭据窃取",
+        "MCP"
+      ],
+      "url": "https://x.com/rez0__/status/2058350888327029136",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-23T19:01:29+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对新兴 AI 开发框架 MCP 的供应链攻击手法。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2058350888327029136",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "利用 GitHub Issues 投毒的提示注入攻击：诱导开发者运行恶意扫描脚本",
+      "title_orig": "Quote tweet is prompt injection attacks in the wild. This is the first REAL one I’ve seen. And it’s using GitHub issues which is the main way/channe...",
+      "summary": "安全研究员观测到首例利用 GitHub Issues 实施的真实提示注入攻击，攻击者伪造安全漏洞报告以诱导用户。该攻击通过虚假的安全发现描述，诱导开发者在本地运行名为 scan.js 的恶意脚本，该脚本旨在搜索并窃取用户主目录下的敏感信息。目前该攻击主要针对活跃在 GitHub 社区的开发者，利用其对安全反馈的信任进行分发。",
+      "tags": [
+        "提示注入",
+        "社会工程学",
+        "GitHub"
+      ],
+      "url": "https://x.com/rez0__/status/2058350854508286082",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-24T00:54:20+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了提示注入与传统社工结合在开发者社区的新型攻击路径。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2058350854508286082",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "npm 供應鏈攻擊深度解析：從 antv 與 axios 案例看前端生態安全防禦",
+      "title_orig": "npm 供應鏈攻擊從頭談起：原理、手法與防禦方式",
+      "summary": "本文系統性回顧了 antv、TanStack 及 axios 等熱門套件遭遇的供應鏈攻擊，分析了惡意代碼植入的技術原理。文章探討了攻擊者如何利用自動化腳本與憑據洩漏控制維護者帳號，並針對 npm、PyPI 等生態提出了多維度的防禦建議。技術人員應關注依賴鎖定、自動化審計工具以及 CI/CD 環境的權限隔離，以應對日益頻繁的套件投毒威脅。",
+      "tags": [
+        "npm 安全",
+        "供應鏈防禦",
+        "套件投毒"
+      ],
+      "url": "https://blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack/",
+      "source": "blog.huli.tw",
+      "category": "WebSecurity",
+      "published": "2026-05-25T03:17:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "系統性總結了近期重大供應鏈安全事件，具有極高的防禦參考價值。",
+      "feed_url": "https://blog.huli.tw/atom-ch.xml",
+      "feed_title": "Huli's blog",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "blog.huli.tw",
+      "story_id": "url:blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "中兴 ZXHN H168N 路由器设置向导漏洞 CVE-2021-21735：绕过认证暴露敏感配置",
+      "title_orig": "why router setup wizards pages are the trickiest vector",
+      "summary": "CVE-2021-21735揭示了中兴ZXHN H168N V3.5路由器在设置向导逻辑中的严重安全缺陷，攻击者无需通过身份验证即可利用特定的处理程序绕过登录界面。该漏洞导致PPPoE拨号凭据和WLAN配置信息等敏感数据直接暴露在非授权路由下，证明了设备初始化逻辑往往因过度信任而成为安全薄弱环节，目前建议用户应尽快更新固件或严格限制管理接口的访问权限。",
+      "tags": [
+        "路由器安全",
+        "认证绕过",
+        "CVE-2021"
+      ],
+      "url": "https://www.reddit.com/r/Pentesting/comments/1tnc5cg/why_router_setup_wizards_pages_are_the_trickiest/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-05-25T15:15:39+00:00",
+      "cve_ids": [
+        "CVE-2021-21735"
+      ],
+      "selection_reason": "深入分析了嵌入式设备初始化逻辑中的典型认证绕过漏洞。",
+      "feed_url": "https://www.reddit.com/r/Pentesting/.rss",
+      "feed_title": "Pentesting",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "cve:cve-2021-21735",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.85,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "合勤 Zyxel 固件漏洞 CVE-2021-35036：低权限账户可获取超级管理员及 TR-069 密钥",
+      "title_orig": "Zyxel low-priv account exposed super-admin and TR-069 secrets + password generator",
+      "summary": "CVE-2021-35036 涉及 Zyxel 受影响固件中的权限提升与信息泄露问题，攻击者利用低权限认证账户即可触发。通过访问后端的 DAL/CGI 逻辑，攻击者可以绕过 UI 屏蔽，直接获取超级管理员账户信息、FTPS 凭据以及用于远程管理的 TR-069 协议密钥。该漏洞反映了后端接口缺乏细粒度的权限校验，厂商已发布修复补丁，建议受影响用户立即升级。",
+      "tags": [
+        "权限提升",
+        "信息泄露",
+        "固件安全"
+      ],
+      "url": "https://www.reddit.com/r/Pentesting/comments/1tldvru/zyxel_lowpriv_account_exposed_superadmin_and/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-05-23T11:26:54+00:00",
+      "cve_ids": [
+        "CVE-2021-35036"
+      ],
+      "selection_reason": "详细解析了网络设备后端接口权限控制失效导致的高危信息泄露。",
+      "feed_url": "https://www.reddit.com/r/Pentesting/.rss",
+      "feed_title": "Pentesting",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "cve:cve-2021-35036",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于大模型技术的下一代病毒木马分析引擎：从云端鉴定到本地查杀演进",
+      "title_orig": "基于大模型的下一代杀毒引擎",
+      "summary": "该项目展示了利用大语言模型（LLM）构建病毒分析引擎的技术路径，旨在提升对未知恶意代码的识别能力。作者在 2025 年发布的云端鉴定 demo 基础上，进一步开发了具备深度分析能力的下一代杀毒引擎原型。该技术通过模型对文件行为和代码特征进行语义化理解，为安全从业者提供了一种自动化、智能化的恶意样本静态与动态分析新思路。",
+      "tags": [
+        "AI 安全",
+        "病毒查杀",
+        "大模型应用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyOTc0NDY2Nw==&mid=2247486252&idx=1&sn=8a7ed24b88b3aed80eddd37ff0309487",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-25T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 LLM 在恶意软件自动化分析领域的落地实践与技术演进",
+      "feed_url": "https://wechat2rss.xlab.app/feed/25499156ea68aa4ac597801e9be69707e31bba73.xml",
+      "feed_title": "冲鸭安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/25499156ea68aa4ac597801e9be69707e31bba73.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzkyOTc0NDY2Nw%3D%3D&mid=2247486252&idx=1&sn=8a7ed24b88b3aed80eddd37ff0309487",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 4.85,
+      "final_score": 5.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "“笑傲内核”社区发起：聚焦 Linux Kernel 代码审计、漏洞修复与补丁提交",
+      "title_orig": "有这么一群人，在一起啃 Linux kernel",
+      "summary": "“笑傲内核”是一个由 Linux 内核爱好者自发组织的社区，专注于内核代码路径分析、实验复现及补丁开发。成员通过深入研究内核底层逻辑，编写 changelog 并提交 patch，共同解决复杂的内核技术问题。该项目强调实战经验的分享，包括 patch 被拒的教训与成功经验，对于希望提升底层安全研究和内核开发能力的从业者具有重要的参考价值。",
+      "tags": [
+        "Linux 内核",
+        "代码审计",
+        "开源社区"
+      ],
+      "url": "https://blog.csdn.net/21cnbao/article/details/161371613",
+      "source": "blog.csdn.net",
+      "category": "CN_News",
+      "published": "2026-05-24T07:04:22+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注底层内核安全与开发实战，是提升技术深度的优质资源。",
+      "feed_url": "https://blog.csdn.net/21cnbao/rss/list",
+      "feed_title": "宋宝华",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "技术社区",
+      "source_key": "blog.csdn.net",
+      "story_id": "url:blog.csdn.net/21cnbao/article/details/161371613",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 4.45,
+      "final_score": 3.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

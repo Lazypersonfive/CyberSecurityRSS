@@ -1,0 +1,302 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-05-26",
+  "generated_at": "2026-05-25T23:49:22.502797Z",
+  "raw_count": 20,
+  "selected_count": 8,
+  "selection_stats": {
+    "total": 8,
+    "aggregator": 4,
+    "tier_t2": 7,
+    "kind_expert_x": 1,
+    "tier_t1_5": 1,
+    "kind_official_x": 1,
+    "direct": 4,
+    "kind_expert": 4,
+    "google_news": 2,
+    "kind_google_news": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "研究人员发现针对 MCP 相关仓库的恶意 PR 攻击，利用 postinstall 脚本窃取凭据",
+      "title_orig": "RT osj: After seeing the same account submit PRs to MCP related repos, I figured I'd write up what I've found so far. Hidden README text, postinstall,...",
+      "summary": "研究人员 osj 发现有恶意账户向 MCP 相关仓库提交包含隐藏文本和恶意脚本的 PR，该攻击手段涉及 postinstall 脚本、npx 调用及凭据扫描等复杂技术。该脚本在安装后会启动工作进程，通过 GitHub 原始链接及 DNS 等通道将本地敏感凭据发送至远程接收器，并尝试向开发者及 AI 代理文件传播，开发者需警惕此类针对 AI 生态系统的供应链投毒行为。",
+      "tags": [
+        "供应链攻击",
+        "凭据窃取",
+        "AI安全"
+      ],
+      "url": "https://x.com/rez0__/status/2058350888327029136",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-23T19:01:29+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对新兴 AI 代理协议（MCP）生态的供应链攻击手法",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2058350888327029136",
+      "related_urls": [
+        "https://x.com/rez0__/status/2058350854508286082"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.4,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员分享利用 Claude 结合 Trail of Bits 检查清单进行 C/C++ 代码审计的技巧",
+      "title_orig": "RT solst/ICE of Astarte: Re @trailofbits has markdown checklists for reviewing C and C++ codebases, and I’ve used those in conjunction with other Ski...",
+      "summary": "安全研究员 solst 分享了使用 Claude 进行代码审计的进阶方法，通过结合 Trail of Bits 提供的 Markdown 格式 C/C++ 安全检查清单，可以获得优于通用安全审查指令的结果。该方法利用结构化的专业知识库增强大模型的分析能力，适用于需要对底层代码进行深度漏洞挖掘的安全从业者。这种结合专家经验与 AI 能力的模式提升了自动化审计的准确性。",
+      "tags": [
+        "代码审计",
+        "AI辅助安全",
+        "C/C++安全"
+      ],
+      "url": "https://x.com/trailofbits/status/2058583041182777499",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-24T14:15:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了如何通过结构化知识库优化 AI 在专业安全审计中的表现",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits",
+      "source_tier": "t1_5",
+      "source_kind": "official_x",
+      "source_label": "官方 X",
+      "source_key": "x:trailofbits",
+      "story_id": "url:x.com/trailofbits/status/2058583041182777499",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.35,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": 0.5,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Laravel-Lang 流行软件包遭遇供应链攻击，200 多个版本被植入凭据窃取程序",
+      "title_orig": "Supply Chain Attack Targets Laravel-Lang Packages with Credential Stealer",
+      "summary": "攻击者在 200 多个版本的 Laravel-Lang 流行软件包中植入了恶意代码，旨在窃取受害者的云服务密钥、SSH 密钥、浏览器数据及加密货币钱包。该攻击通过供应链投毒影响了大量依赖这些包的 Web 应用，目前相关风险已被安全机构识别。建议开发者立即检查项目依赖项，并更新至已清理的安全版本，同时轮换可能已泄露的敏感密钥。",
+      "tags": [
+        "供应链攻击",
+        "Laravel",
+        "凭据窃取"
+      ],
+      "url": "https://www.aikido.dev/blog/supply-chain-attack-targets-laravel-lang-packages-with-credential-stealer",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-05-23T00:46:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "大规模流行框架扩展包受损，对 Web 开发者具有极高预警价值",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/supply-chain-attack-targets-laravel-lang-packages-with-credential-stealer",
+      "related_urls": [
+        "https://snyk.io/blog/laravel-lang-supply-chain-advisory/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.8,
+      "final_score": 8.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究人员呼吁 AI 安全防护重心应从单一模型转向整体系统架构",
+      "title_orig": "AI security needs a shift from models to systems, researchers argue - csoonline.com",
+      "summary": "多位安全研究人员在 CSO Online 的报道中指出，当前的 AI 安全研究过于关注模型本身的鲁棒性，而忽略了系统层面的风险。他们认为 AI 安全需要实现从模型到系统的范式转移，关注数据流、接口调用及集成环境的整体安全性。这种视角的转变对于构建可信的 AI 应用至关重要，能够更全面地应对复杂的网络威胁环境。",
+      "tags": [
+        "AI安全",
+        "防御策略",
+        "系统安全"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcHdQanBpREhTNW5WNUc3M2h4UUJsRzVhZlZkUHVabjVxNEdlaFBFZDNuU1RKSzVhX1NJcWlIdEk4eEo2TE1zY1JPUkpKQl9vYTF2bGFFWi1hcHJaUk4tQWlCQlVUNGkxNXNaSi1FY3hKZ3hIVXhWdllYNlgxSncyZnNCa1RPZDdIak9lUERhWFlCSjlUREhqUDZlV2RCYnRobUZtcEI0VGVLa1pFLVAxODFqdw?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-05-25T12:33:19+00:00",
+      "cve_ids": [],
+      "selection_reason": "提出了 AI 安全防御思路的重要转型，具有行业前瞻性。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:1813237a2357",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 6.35,
+      "final_score": 5.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Claude Mythos 1 泄露事件揭示人工智能安全策略发生危险转变",
+      "title_orig": "Claude Mythos 1 Leak Reveals Dangerous AI Security Shift - Techgenyz",
+      "summary": "根据 Techgenyz 的最新报道，Claude Mythos 1 的相关信息遭到泄露，这一事件揭示了人工智能安全领域正在发生的一种危险转变。此次泄露不仅引发了业界对 AI 模型安全性的广泛关注，也凸显了当前技术环境下保护核心算法与数据安全的紧迫性，相关安全专家正密切关注该事件对未来 AI 安全策略制定可能产生的深远影响。",
+      "tags": [
+        "Anthropic",
+        "AI"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBXemlKM3hQdFJfN2lTcFVqR3BhYU1IYjVHdDY3aEExekRXQU44aTd2el91QUpSTXhwaEhKa2Q0ZUlWUVcxSXJHLVR1LV81Nks4ZWxTUXBURm8wdWpTdzl6cnhXb3FEZEY3U3VDakxn?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-05-25T19:13:03+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚合源补充关键动态",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:8503894075c1",
+      "related_urls": [
+        "https://x.com/rez0__/status/2058522012700615111"
+      ],
+      "related_count": 1,
+      "score": 6,
+      "dimension_score": 5.8,
+      "final_score": 4.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Armin Ronacher 批评 AI 生成的错误报告导致开源项目维护负担加重",
+      "title_orig": "Quoting Armin Ronacher",
+      "summary": "知名开发者 Armin Ronacher 指出，目前开源社区出现大量由 AI 生成的虚假错误报告，这些报告往往缺乏用户真实声音且结论不准确。由于 AI 生成的内容通常表现出极强的“自信”，导致维护者需要花费大量精力去证伪这些看似专业实则混乱的信息。这种现象严重干扰了正常的开源协作流程，增加了维护者的心理负担和时间成本。",
+      "tags": [
+        "开源社区",
+        "AI副作用",
+        "项目维护"
+      ],
+      "url": "https://simonwillison.net/2026/May/24/armin-ronacher/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-05-24T18:46:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了 AI 工具在安全和开发领域滥用带来的协作信任危机。",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/may/24/armin-ronacher",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 4.05,
+      "final_score": 4.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Datasette 1.0a30 发布，新增可自定义的跳转菜单及插件钩子功能",
+      "title_orig": "datasette 1.0a30",
+      "summary": "Datasette 发布了 1.0a30 预览版，其核心更新是引入了全新的可自定义“跳转到”菜单，用户可以通过快捷键在最新演示站点上体验这一便捷的搜索功能。此外，该版本还新增了插件钩子，允许开发者通过编写 SQL 语句向搜索集合中添加自定义项，从而极大地增强了该工具的可扩展性，为用户在处理大规模数据集时提供了更灵活的导航与检索方式。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://simonwillison.net/2026/May/24/datasette/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-05-24T23:52:37+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/may/24/datasette",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 2.9,
+      "final_score": 3.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Datasette-fixtures 0.1a0 发布，利用新 API 简化插件测试数据库构建",
+      "title_orig": "datasette-fixtures 0.1a0",
+      "summary": "Datasette 家族推出了新插件 datasette-fixtures 0.1a0，该插件充分利用了 1.0a30 版本中新增的数据库填充辅助 API，旨在简化插件测试套件中固定数据库表的创建过程。开发者现在可以通过 uvx 工具在不预先安装 Datasette 的情况下直接试用此功能，这一改进显著提升了开发者的测试效率，并为 Datasette 插件生态系统的自动化测试提供了更标准化的支持。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://simonwillison.net/2026/May/24/datasette-fixtures/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-05-24T21:38:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/may/24/datasette-fixtures",
+      "related_urls": [
+        "https://simonwillison.net/2026/May/24/datasette-agent/#atom-everything"
+      ],
+      "related_count": 1,
+      "score": 6,
+      "dimension_score": 2.9,
+      "final_score": 3.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

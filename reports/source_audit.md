@@ -1,20 +1,22 @@
 # Source Registry Audit
 
-- generated_for: 2026-05-25
-- dates: 2026-05-25, 2026-05-24, 2026-05-23, 2026-05-22, 2026-05-21, 2026-05-20, 2026-05-19
+- generated_for: 2026-05-26
+- dates: 2026-05-26, 2026-05-25, 2026-05-24, 2026-05-23, 2026-05-22, 2026-05-21, 2026-05-20
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 100 | 15 | 20 | 65 | 0 | 13 | 15 | 39 | 0 |
-| ai_security | 50 | 7 | 2 | 41 | 0 | 14 | 7 | 8 | 15 |
-| finance | 70 | 3 | 0 | 67 | 0 | 13 | 3 | 0 | 0 |
-| security | 105 | 18 | 0 | 87 | 0 | 0 | 18 | 6 | 42 |
+| ai | 97 | 13 | 19 | 65 | 0 | 12 | 13 | 39 | 0 |
+| ai_security | 56 | 7 | 3 | 46 | 0 | 14 | 7 | 10 | 15 |
+| finance | 70 | 3 | 0 | 67 | 0 | 12 | 3 | 0 | 0 |
+| security | 105 | 16 | 0 | 88 | 1 | 0 | 16 | 8 | 41 |
 
 ## Unknown Selected Sources
 
-No unknown selected sources in the audited window.
+| Source | Count | Boards | Latest Example |
+|---|---:|---|---|
+| `blog.huli.tw` | 1 | security | [npm 供應鏈攻擊深度解析：從 antv 與 axios 案例看前端生態安全防禦](https://blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack/) |
 
 ## Review Rule
 
