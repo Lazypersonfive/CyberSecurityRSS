@@ -7,8 +7,8 @@
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 98 | 15 | 20 | 63 | 0 | 14 | 15 | 38 | 0 |
-| ai_security | 45 | 5 | 0 | 40 | 0 | 16 | 5 | 5 | 15 |
+| ai | 94 | 15 | 19 | 60 | 0 | 14 | 15 | 35 | 0 |
+| ai_security | 45 | 5 | 0 | 40 | 0 | 15 | 5 | 5 | 15 |
 | finance | 70 | 3 | 0 | 67 | 0 | 14 | 3 | 0 | 0 |
 | security | 105 | 18 | 0 | 86 | 1 | 0 | 18 | 6 | 42 |
 
@@ -16,7 +16,7 @@
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `micropoor.blogspot.com` | 1 | security | [资深渗透测试专家 Micropoor 开启系列技术博客分享实战经验](https://micropoor.blogspot.com/2017/12/blog-post.html) |
+| `qbitai.com` | 1 | security | [SaaS-Bench 评测显示 Claude 等大模型在全自动办公任务中通过率不足 4%](https://www.qbitai.com/2026/05/424277.html) |
 
 ## Review Rule
 

@@ -2,19 +2,19 @@
   "board": "ai_security",
   "display_name": "AI 安全",
   "date": "2026-05-25",
-  "generated_at": "2026-05-25T06:32:11.834560Z",
-  "raw_count": 24,
+  "generated_at": "2026-05-25T06:44:29.129892Z",
+  "raw_count": 26,
   "selected_count": 5,
   "selection_stats": {
     "total": 5,
-    "aggregator": 4,
+    "aggregator": 3,
     "tier_t2": 5,
     "kind_expert_x": 1,
-    "direct": 1,
-    "kind_expert": 1,
-    "google_news": 3,
+    "direct": 2,
+    "kind_expert": 2,
+    "google_news": 2,
     "chinese": 1,
-    "kind_google_news": 3
+    "kind_google_news": 2
   },
   "clustering_stats": {
     "deterministic_merged": 0,
@@ -23,20 +23,20 @@
   },
   "items": [
     {
-      "title_zh": "研究人员发现首个利用 GitHub Issues 投毒的真实提示词注入攻击案例",
+      "title_zh": "GitHub Issues 出现真实提示词注入攻击，利用虚假安全报告诱导用户执行本地恶意脚本",
       "title_orig": "Quote tweet is prompt injection attacks in the wild. This is the first REAL one I’ve seen. And it’s using GitHub issues which is the main way/channe...",
-      "summary": "安全研究员发现一种新型提示词注入攻击，攻击者利用GitHub Issues作为主要分发路径，通过伪造安全漏洞发现的描述语言诱导用户执行本地恶意脚本。该脚本scan.js旨在搜索并窃取用户主目录下的敏感信息，目前此类攻击已在针对OpenAI和Google产品的测试中被观测到，是首个在野发现的真实案例，反映出攻击者正利用主流开发渠道进行针对性渗透。",
+      "summary": "研究人员发现首个利用 GitHub Issues 传播的真实提示词注入攻击案例，攻击者通过伪造安全漏洞发现的专业语言，诱导用户在本地运行名为 scan.js 的恶意脚本。该脚本被设计用于搜索受害者计算机的主目录并窃取敏感信息，目前此类攻击已在针对 OpenAI 和 Google 产品的测试环境中被观测到，显示出 GitHub 已成为黑客实施注入攻击的新型交付路径。",
       "tags": [
         "提示词注入",
         "GitHub",
-        "供应链安全"
+        "社会工程学"
       ],
       "url": "https://x.com/rez0__/status/2058350854508286082",
       "source": "x.com",
       "category": "XSignals",
       "published": "2026-05-24T00:54:20+00:00",
       "cve_ids": [],
-      "selection_reason": "展示了提示词注入从理论走向真实环境攻击的演进过程。",
+      "selection_reason": "展示了提示词注入从理论走向真实野外攻击的演进。",
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0",
       "source_tier": "t2",
@@ -47,8 +47,8 @@
       "related_urls": [],
       "related_count": 0,
       "score": 10,
-      "dimension_score": 9.4,
-      "final_score": 9.6,
+      "dimension_score": 9.65,
+      "final_score": 9.85,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.2,
@@ -57,13 +57,13 @@
       }
     },
     {
-      "title_zh": "Trail of Bits 强化 zizmor 静态分析工具以防御 GitHub Actions 配置漏洞",
+      "title_zh": "Trail of Bits 强化 zizmor 静态分析器，旨在防御 GitHub Actions 供应链攻击",
       "title_orig": "We hardened zizmor's GitHub Actions static analyzer",
-      "summary": "针对此前攻击者利用pull_request_target配置错误窃取凭据，并向LiteLLM植入后门的严重安全事件，Trail of Bits对其静态分析工具zizmor进行了针对性加固。该工具专门用于在代码发布前检测GitHub Actions工作流中的各类安全缺陷，旨在通过自动化分析防止攻击者利用恶意PR篡改PyPI软件包，从而显著提升了CI/CD流程的整体安全性与防御能力。 Trail of Bits 强化 zizmor 静态分析工具以防御 GitHub Actions 配置漏洞。该条来自blog.trailofbits.com，归类于AISecurityLabs，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体。",
+      "summary": "针对此前攻击者利用pull_request_target配置错误入侵LiteLLM并植入后门的严重事件，Trail of Bits对其静态分析工具zizmor进行了针对性加固。该工具专门用于检测GitHub Actions工作流中的安全配置缺陷，旨在帮助开发者在代码发布前精准识别并修复可能导致组织及仓库机密泄露的风险点，从而通过技术手段有效防止类似供应链攻击的再次发生。",
       "tags": [
-        "静态分析",
         "GitHub A",
-        "CI/CD安全"
+        "静态分析",
+        "供应链安全"
       ],
       "url": "https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/",
       "source": "blog.trailofbits.com",
@@ -91,19 +91,56 @@
       }
     },
     {
-      "title_zh": "未成年人使用人工智能安全性如何？官方发布最新测试结果，关注AI应用安全风险",
-      "title_orig": "未成年人使用AI，安全吗？官方最新测试结果出炉→ - thepaper.cn",
-      "summary": "官方针对未成年人使用人工智能产品的安全性发布了最新测试结果，旨在评估AI技术在青少年群体应用过程中的潜在风险与保护机制。该报告深入探讨了未成年人在接触AI时可能面临的安全挑战，并提供了权威的测试数据支持，对于家长、教育机构以及相关监管部门了解AI产品的合规性具有重要参考价值，是当前社会关注未成年人网络安全保护的重要官方反馈。",
+      "title_zh": "Laravel-Lang 流行包遭遇供应链攻击，超过 200 个版本被植入凭据窃取程序",
+      "title_orig": "Supply Chain Attack Targets Laravel-Lang Packages with Credential Stealer",
+      "summary": "攻击者向超过 200 个版本的 Laravel-Lang 流行软件包中注入了凭据窃取恶意代码，旨在非法获取开发者的云服务密钥、SSH 密钥、浏览器存储数据及加密货币钱包等敏感资产。由于受影响的组件广泛应用于 PHP 开发生态系统，此次供应链攻击对大量项目构成了直接威胁，建议相关开发者立即对项目依赖项进行深度检查，并确保将软件包更新至已修复的安全版本。",
       "tags": [
-        "AI",
-        "中文源"
+        "供应链攻击",
+        "Laravel",
+        "凭据窃取"
+      ],
+      "url": "https://www.aikido.dev/blog/supply-chain-attack-targets-laravel-lang-packages-with-credential-stealer",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-05-23T00:46:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "大规模流行开发框架扩展包受损，具有极高的影响范围。",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/supply-chain-attack-targets-laravel-lang-packages-with-credential-stealer",
+      "related_urls": [
+        "https://snyk.io/blog/laravel-lang-supply-chain-advisory/"
+      ],
+      "related_count": 1,
+      "score": 4,
+      "dimension_score": 6.2,
+      "final_score": 6.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "官方发布未成年人使用人工智能安全测试结果，关注 AI 应用的内容合规与保护",
+      "title_orig": "未成年人使用AI，安全吗？官方最新测试结果出炉→ - thepaper.cn",
+      "summary": "相关机构针对未成年人使用 AI 产品的安全性发布了最新官方测试结果，重点评估了当前主流 AI 模型在与未成年人交互过程中的内容过滤机制与安全保护表现。虽然原文未披露具体的技术漏洞细节，但该报告深入探讨了 AI 应用在未成年人保护方面的合规性现状，并对潜在的社会化风险提出了预警，旨在提升公众对青少年使用人工智能技术时安全问题的关注度。",
+      "tags": [
+        "AI 安全",
+        "未成年人保护",
+        "合规测试"
       ],
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBpbXVGWHpHbTNHaHhpRXNIN0V3Y0VPbUt1a19NSUlDWExmYm1MeU5QQU0zbkh4Rm54WTlabjJXS0RHRWhseG5RdXUyVV9VMjNWQmU2ay01M1FrRkotZUFCZg?oc=5",
       "source": "news.google.com",
       "category": "CoverageFallback",
       "published": "2026-05-25T03:40:00+00:00",
       "cve_ids": [],
-      "selection_reason": "聚合源补充关键动态",
+      "selection_reason": "反映了监管机构对 AI 安全性评估的最新动态。",
       "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
       "feed_title": "Google News 中文 AI安全",
       "source_tier": "t2",
@@ -114,8 +151,8 @@
       "related_urls": [],
       "related_count": 0,
       "score": 5,
-      "dimension_score": 5.05,
-      "final_score": 4.15,
+      "dimension_score": 4.75,
+      "final_score": 3.85,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": -1.2,
@@ -124,50 +161,20 @@
       }
     },
     {
-      "title_zh": "IBM推出先进的人工智能安全功能，旨在应对由AI驱动的日益增长的网络安全威胁",
-      "title_orig": "IBM Intros Advanced AI Security Capabilities to Counter AI-Driven Cyber Threats - The Fast Mode",
-      "summary": "IBM公司近日推出了先进的人工智能安全功能，旨在应对日益增长的由AI驱动的网络威胁，通过技术创新提升企业级防御体系的智能化水平。这些新功能专注于识别和拦截复杂的自动化攻击手段，帮助组织在动态变化的威胁环境中保护核心数据资产，标志着IBM在利用AI对抗AI安全挑战方面迈出了关键一步，为全球企业提供了更具韧性的网络安全解决方案。",
-      "tags": [
-        "AI"
-      ],
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxORDdncDVrSjJfUkkybE9IazRUTmhybnBUYUJSUTN1X3JTempkTS0wQVhVRERUTWMtT0ZqdkFCY3V3eFNHR3AySFFFQTZ5cXBrUzN6eHlwYk9UVGRBY25vb095aG1DUk50UEVUeDM5cTJJTnZDQS14SjhrOTJXRUpsaEViVThrZExwMGdxUE13bnRRRWE5d1o1WkRDY29sQkh1NFpKcGZFQ1dMOGhFdTNmX0tLTHVVS3NmUjdRSHRmeExyRUV4LUVieV9YUEJoLUU?oc=5",
-      "source": "news.google.com",
-      "category": "CoverageFallback",
-      "published": "2026-05-25T01:47:23+00:00",
-      "cve_ids": [],
-      "selection_reason": "聚合源补充关键动态",
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security",
-      "source_tier": "t2",
-      "source_kind": "google_news",
-      "source_label": "Google News",
-      "source_key": "news.google.com",
-      "story_id": "title:680c9123802d",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 4,
-      "dimension_score": 3.85,
-      "final_score": 2.95,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": -1.2,
-        "freshness_bonus": 0.3,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "Fortinet深化与英伟达的集成合作，为企业提供可扩展的人工智能安全防护解决方案",
+      "title_zh": "Fortinet 扩展与 NVIDIA 的集成，旨在提供可扩展的企业级 AI 安全解决方案",
       "title_orig": "Fortinet Expands NVIDIA Integration to Deliver Scalable Enterprise AI Security - CXOToday.com",
-      "summary": "Fortinet宣布进一步扩大与NVIDIA的集成合作，旨在为企业提供可扩展的人工智能安全解决方案，以满足现代企业对高性能安全防护的迫切需求。通过结合双方的技术优势，该方案能够有效提升大规模网络环境下的威胁检测与响应效率，确保企业在部署AI应用时具备足够的安全保障，这一举措不仅强化了Fortinet的市场竞争力，也为行业提供了构建安全AI基础设施的新范式。",
+      "summary": "Fortinet 宣布进一步深化与 NVIDIA 的技术集成，通过结合双方在硬件加速计算与网络安全防护领域的优势，为企业级用户提供具备高度可扩展性的 AI 安全架构方案。该合作旨在显著提升企业在处理大规模 AI 工作负载时的防御效率与响应速度，尽管原文侧重于商业战略合作与架构扩展的描述，未披露具体的技术漏洞细节，但其展示了未来企业级 AI 安全防护的发展方向。",
       "tags": [
-        "AI"
+        "企业安全",
+        "AI 架构",
+        "硬件加速"
       ],
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNlllNkRVbHZZZXBlZDYtRFRCM1JzczJiZTBnb1UwMXRNRkFYYmlxQTRFSU1Fb05FaF9mZWJYZWxhS1NlRTNyZmdVZnl0WEF1UmZveWJmX29WaGJXd3JBX0pNVmpRN1ptM0FWMWdycWxGcEFKbnBZT1RlampmNVpDVGtqV2lrNC10ODV0N29abml3VkxueU03dmxnWWY5amVRWkJqYVBwc0RwZFcwVnJBLTRFeFk?oc=5",
       "source": "news.google.com",
       "category": "CoverageFallback",
       "published": "2026-05-25T06:14:24+00:00",
       "cve_ids": [],
-      "selection_reason": "聚合源补充关键动态",
+      "selection_reason": "涉及安全厂商与芯片巨头在 AI 安全基础设施上的合作。",
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Security",
       "source_tier": "t2",
