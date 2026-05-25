@@ -50,6 +50,41 @@ AI_SECURITY_TERMS = (
     "窃密",
 )
 
+AI_CONTEXT_TERMS = (
+    "ai",
+    "llm",
+    "agent",
+    "mcp",
+    "claude code",
+    "copilot",
+    "chatgpt",
+    "gemini",
+    "大模型",
+    "智能体",
+    "ai编程",
+)
+
+SECURITY_CONTEXT_TERMS = (
+    "security",
+    "vulnerability",
+    "exploit",
+    "prompt injection",
+    "jailbreak",
+    "supply chain",
+    "postinstall",
+    "credential",
+    "stealer",
+    "scanner",
+    "audit",
+    "安全",
+    "漏洞",
+    "攻击",
+    "供应链",
+    "凭据",
+    "窃取",
+    "审计",
+)
+
 
 def _get(entry: Any, key: str) -> str:
     if isinstance(entry, dict):
@@ -77,6 +112,10 @@ def adjust_ai_security_score(entry: Any, score: int) -> int:
         _get(entry, key).lower()
         for key in ("title", "summary", "title_orig", "category", "feed_title")
     )
+    if any(ai_term in text for ai_term in AI_CONTEXT_TERMS) and any(
+        security_term in text for security_term in SECURITY_CONTEXT_TERMS
+    ):
+        return max(score, 6)
     if not any(term in text for term in AI_SECURITY_TERMS):
         return min(score, 3)
     return score

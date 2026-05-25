@@ -127,11 +127,12 @@ boards:
     display_name: "AI 前沿"
     opml: feeds/ai.opml
     fetch_hours: 48  # AI 前沿源更新抖动大；48h 保证稀疏日仍能满额
+    dedup_lookback_days: 0 # 48h 质量窗口内不要被前日 archive 吃掉高价值 X/官网候选
     max_entries: 80
     llm_max_entries: 80
     top_n: 15
     score_threshold: 6
-    fill_score_floor: 5
+    fill_score_floor: 4
     source_policy:
       min_chinese: 5
       min_direct: 6

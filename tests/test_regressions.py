@@ -195,6 +195,7 @@ class FetchOpmlTests(unittest.TestCase):
         body = Path("feeds/security.opml").read_text(encoding="utf-8")
 
         self.assertNotIn("micropoor.blogspot.com", body)
+        self.assertNotIn("qbitai.com/feed", body)
 
     def test_opml_includes_rsshub_x_signal_feeds(self) -> None:
         ai_feeds = fetch_opml("feeds/ai.opml")
@@ -1252,6 +1253,14 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(adjust_ai_security_score(generic, 8), 3)
         self.assertEqual(adjust_ai_security_score(technical, 8), 8)
 
+    def test_ai_security_editorial_promotes_ai_coding_security_signals(self) -> None:
+        entry = {
+            "title": "MCP repository hides README text and postinstall payload",
+            "summary": "A Claude Code workflow can execute a supply chain attack.",
+        }
+
+        self.assertEqual(adjust_ai_security_score(entry, 4), 6)
+
     def test_security_config_targets_chinese_technical_sources(self) -> None:
         import yaml
 
@@ -1293,6 +1302,8 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(boards["ai_security"]["top_n"], 10)
         self.assertEqual(boards["ai"]["top_n"], 15)
         self.assertGreaterEqual(boards["ai"]["fetch_hours"], 48)
+        self.assertEqual(boards["ai"]["dedup_lookback_days"], 0)
+        self.assertEqual(boards["ai"]["fill_score_floor"], 4)
         self.assertEqual(boards["ai"]["source_policy"]["min_chinese"], 5)
         self.assertEqual(boards["finance"]["top_n"], 10)
         self.assertEqual(boards["ai"]["source_policy"]["max_aggregator"], 7)
