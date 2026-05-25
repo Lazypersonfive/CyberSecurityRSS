@@ -5,9 +5,9 @@
       "display_name": "安全",
       "items": [
         {
-          "title_zh": "CISA 将 Drupal Core 关键 SQL 注入漏洞 CVE-2026-9082 列入已知被利用漏洞清单",
+          "title_zh": "CISA 将 Drupal Core 活跃利用的 SQL 注入漏洞 CVE-2026-9082 列入已知漏洞目录",
           "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
-          "summary": "美国网络安全和基础设施安全局（CISA）已将追踪为 CVE-2026-9082 的 Drupal Core SQL 注入漏洞添加到其已知漏洞目录中，因为有证据表明该漏洞正被积极利用。此类漏洞是网络攻击者的常用手段，对联邦企业构成重大风险，目前已根据 BOD 22-01 指令要求联邦机构在限期内完成修复以降低安全风险，防止潜在的恶意网络活动对政府系统造成损害。",
+          "summary": "美国网络安全和基础设施安全局确认 Drupal Core 存在编号为 CVE-2026-9082 的 SQL 注入漏洞，并已将其正式加入已知被利用漏洞清单。该漏洞允许恶意网络攻击者通过构造特定查询语句操纵数据库，由于其在野外已被活跃利用且对联邦企业构成重大安全风险，官方已根据相关指令要求联邦机构限期完成修复以降低潜在威胁。",
           "tags": [
             "Drupal",
             "SQL注入",
@@ -20,7 +20,7 @@
           "cve_ids": [
             "CVE-2026-9082"
           ],
-          "selection_reason": "Drupal 核心组件漏洞且已被在野利用，具有极高预警价值。",
+          "selection_reason": "Drupal 核心漏洞且已被在野利用，具有极高的修复优先级。",
           "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
           "feed_title": "CISA Advisories",
           "source_tier": "t1",
@@ -43,90 +43,20 @@
           }
         },
         {
-          "title_zh": "新型 Evilginx 前端工具通过 API 联动实现 M365 令牌窃取与自动化滥用",
-          "title_orig": "新型 Evilginx 前端：降低 token 窃取与复用的门槛",
-          "summary": "研究人员发现一款针对 Outlook 的 M365 仿冒面板，该工具通过 Evilginx Pro 的 API 实时导入被盗令牌，并利用 Microsoft Graph API 实现了邮件、Teams 及租户级管理员功能的自动化滥用。这种新型前端设计大幅降低了攻击者窃取与复用令牌的门槛，使针对企业云环境的复杂攻击变得更加简便且难以防范，对企业敏感数据和租户管理权限构成了严峻的实时威胁。",
-          "tags": [
-            "Evilginx",
-            "令牌窃取",
-            "钓鱼攻击"
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496285&idx=2&sn=f65e2c310a5c6fcc9f601f0b30294e00",
-          "source": "mp.weixin.qq.com",
-          "category": "CN_News",
-          "published": "2026-05-23T02:24:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了自动化钓鱼工具链的演进，对防御身份认证攻击有参考意义。",
-          "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
-          "feed_title": "securitainment",
-          "source_tier": "t2",
-          "source_kind": "cn_expert",
-          "source_label": "中文公众号",
-          "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
-          "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496285&idx=2&sn=f65e2c310a5c6fcc9f601f0b30294e00",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 9,
-          "dimension_score": 9.15,
-          "final_score": 9.75,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.3,
-            "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.3
-          }
-        },
-        {
-          "title_zh": "LiteSpeed cPanel 插件高危漏洞 CVE-2026-48172 遭利用，可实现 Root 权限执行",
-          "title_orig": "LiteSpeed cPanel Plugin CVE-2026-48172 Exploited to Run Scripts as Root",
-          "summary": "LiteSpeed User-End cPanel 插件被曝存在严重的权限分配错误漏洞，该漏洞追踪编号为 CVE-2026-48172 且 CVSS 评分高达满分 10.0，目前已在野外被黑客积极利用。任何 cPanel 用户或受损账户均可利用此缺陷，在受影响的服务器上以 Root 权限执行任意脚本，从而实现对托管环境的完全控制，对全球使用该插件的系统构成了极高的安全威胁。 LiteSpeed cPanel 插件高危漏洞 CVE-2026-48172 遭利用，可实现 Root 权限执行。该条来自thehackernews.com，归类于OfficialAdvisories，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体。",
-          "tags": [
-            "权限提升",
-            "cPanel",
-            "在野利用"
-          ],
-          "url": "https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html",
-          "source": "thehackernews.com",
-          "category": "OfficialAdvisories",
-          "published": "2026-05-23T07:35:13+00:00",
-          "cve_ids": [
-            "CVE-2026-48172"
-          ],
-          "selection_reason": "CVSS 满分漏洞且已出现在野利用，直接威胁服务器底层安全。",
-          "feed_url": "https://feeds.feedburner.com/TheHackersNews",
-          "feed_title": "The Hacker News",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "安全媒体",
-          "source_key": "thehackernews.com",
-          "story_id": "cve:cve-2026-48172",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 10,
-          "dimension_score": 9.75,
-          "final_score": 9.75,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "利用 VS Code Dev Tunnels 协议缺陷构建隐蔽 C2 通道与持久化控制",
+          "title_zh": "红队技术研究：利用 VS Code Dev Tunnels 协议实现隐蔽的远程访问与持久化控制",
           "title_orig": "意外的 C2:借道 VS Code Dev Tunnels 实现远程访问",
-          "summary": "本文深入剖析了 VS Code Dev Tunnels 的底层协议，展示了如何通过 Ouroboros 工具滥用 GitHub 与 Entra ID 认证，将合法的开发隧道转化为隐蔽的攻击通道。这种技术能为红队提供持久化、横向移动及初始访问的能力，利用合法服务的通信特征来规避传统网络监控，是针对企业内网的一种新型且隐蔽的渗透策略，使得防御者更难区分正常的开发活动与恶意的入侵行为。",
+          "summary": "该研究深入剖析了 VS Code Dev Tunnels 的 REST、WebSocket 及 SSH 等底层协议，并详细展示了如何利用 Ouroboros 工具滥用 GitHub 或 Entra ID 认证机制。这种攻击方法能将合法的开发隧道转化为红队渗透中的持久化、横向移动与初始访问通道，为安全从业者提供了防御合法工具被武器化的新视角，有助于提升对复杂隧道协议滥用的监测与预警能力。 红队技术研究：利用 VS Code Dev Tunnels 协议实现隐蔽的远程访问与持久化控制。该条来自mp.weixin.qq.com，归类于CN_News，原始信息显示其在本轮抓取、去重和打分中优先级。",
           "tags": [
+            "红队技术",
             "VSCode",
-            "C2通道",
-            "红队技术"
+            "隧道滥用"
           ],
           "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496285&idx=1&sn=d5575bcc3f501eaa17f5517580f2b53b",
           "source": "mp.weixin.qq.com",
           "category": "CN_News",
           "published": "2026-05-23T02:24:00+00:00",
           "cve_ids": [],
-          "selection_reason": "利用合法云服务构建隐蔽通道是当前红队研究的热点和难点。",
+          "selection_reason": "揭示了合法开发工具被用于 C2 通信的深度技术细节。",
           "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
           "feed_title": "securitainment",
           "source_tier": "t2",
@@ -147,20 +77,20 @@
           }
         },
         {
-          "title_zh": "针对 Linux 环境的多阶段入侵分析：从 F5 边界设备渗透至 Confluence 服务器",
+          "title_zh": "多阶段 Linux 入侵案例分析：从 F5 BIG-IP 边界设备渗透至企业内部 Confluence 服务器",
           "title_orig": "From edge appliance to enterprise compromise: Multi-stage Linux intrusion via F5 and Confluence",
-          "summary": "攻击者发起了一场针对 Linux 设备的多阶段入侵活动，首先利用暴露在外的 F5 BIG-IP 边界设备进入网络，随后转向内部 Confluence 服务器进行凭据窃取和身份破坏。在入侵过程中，威胁参与者尝试了 Kerberos 中继攻击与横向移动，最终这些恶意行为被 Microsoft Defender 成功检测并阻断，揭示了从边缘设备到企业内部的完整攻击路径，强调了保护边界设备对企业整体安全的重要性。",
+          "summary": "这是一起针对 Linux 系统的多阶段攻击，攻击者首先利用暴露的 F5 BIG-IP 边界设备侵入网络，随后转向内部 Confluence 服务器进行凭据窃取和身份破坏。技术细节涉及 Kerberos 中继攻击和复杂的横向移动尝试，微软安全团队通过检测并阻断该流程，揭示了从边缘设备到企业核心资产受损的完整攻击链路，强调了边界防护的重要性。",
           "tags": [
-            "Linux安全",
             "横向移动",
-            "多阶段攻击"
+            "Linux安全",
+            "F5"
           ],
           "url": "https://www.microsoft.com/en-us/security/blog/2026/05/22/from-edge-appliance-to-enterprise-compromise-multi-stage-linux-intrusion-via-f5-and-confluence/",
           "source": "microsoft.com",
           "category": "OfficialAdvisories",
           "published": "2026-05-22T16:53:39+00:00",
           "cve_ids": [],
-          "selection_reason": "典型的企业级内网渗透案例，展示了从边界到核心资产的攻击路径。",
+          "selection_reason": "展示了完整的企业级内网渗透链路，具有实战参考价值。",
           "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
           "feed_title": "Microsoft Security Blog",
           "source_tier": "t1",
@@ -171,8 +101,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 8,
-          "dimension_score": 7.95,
-          "final_score": 9.45,
+          "dimension_score": 8.05,
+          "final_score": 9.55,
           "score_breakdown": {
             "source_bonus": 1.0,
             "kind_bonus": 0.5,
@@ -181,13 +111,51 @@
           }
         },
         {
-          "title_zh": "Ghost CMS SQL 注入漏洞 CVE-2026-26980 被用于 ClickFix 大规模攻击活动",
+          "title_zh": "LiteSpeed cPanel 插件高危漏洞 CVE-2026-48172 遭利用，攻击者可获取 Root 权限",
+          "title_orig": "LiteSpeed cPanel Plugin CVE-2026-48172 Exploited to Run Scripts as Root",
+          "summary": "LiteSpeed 用户端 cPanel 插件被发现存在严重的权限分配不当漏洞，编号为 CVE-2026-48172 且 CVSS 评分高达满分 10.0，目前该漏洞已在野外被黑客积极利用。任何 cPanel 用户或受损账户均可利用该漏洞以 Root 权限执行任意脚本，从而实现对服务器的完全控制，建议所有受影响的用户立即将插件更新至最新版本，以缓解这一极高风险的安全威胁并保护系统资产。",
+          "tags": [
+            "提权漏洞",
+            "LiteSpee",
+            "cPanel"
+          ],
+          "url": "https://thehackernews.com/2026/05/litespeed-cpanel-plugin-cve-2026-48172.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-23T07:35:13+00:00",
+          "cve_ids": [
+            "CVE-2026-48172"
+          ],
+          "selection_reason": "CVSS 满分漏洞且出现在野利用，对服务器安全威胁极大。",
+          "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+          "feed_title": "The Hacker News",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "thehackernews.com",
+          "story_id": "cve:cve-2026-48172",
+          "related_urls": [
+            "https://defend.network/briefings/github-npm-supply-chain-litespeed-cisa-credentials-leak-2026-05-25.html"
+          ],
+          "related_count": 1,
+          "score": 10,
+          "dimension_score": 9.55,
+          "final_score": 9.55,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Ghost CMS SQL 注入漏洞 CVE-2026-26980 被用于大规模 ClickFix 恶意软件分发活动",
           "title_orig": "Ghost CMS SQL injection flaw exploited in large-scale ClickFix campaign",
-          "summary": "Ghost CMS 存在一个追踪为 CVE-2026-26980 的关键 SQL 注入漏洞，目前正被大规模的 ClickFix 攻击活动利用，旨在向受害网站注入恶意 JavaScript 代码。这些代码会触发特定的攻击流以诱导用户执行恶意操作，由于该漏洞影响范围广且攻击活动呈现爆发趋势，建议使用该系统的管理员立即检查并采取防御措施，以防止网站访问者受到恶意脚本的侵害并保护站点数据的完整性。",
+          "summary": "Ghost CMS 存在一个严重的 SQL 注入漏洞 CVE-2026-26980，目前正被攻击者用于大规模的 ClickFix 攻击活动，通过注入恶意 JavaScript 代码诱导用户执行虚假修复操作。该漏洞允许攻击者触发后续的恶意流程并窃取敏感信息，虽然原文未详细说明受影响的具体版本，但强调了该漏洞在野外的高频利用现状，对广大网站管理员构成了严重的网络安全威胁。",
           "tags": [
             "GhostCMS",
             "SQL注入",
-            "供应链攻击"
+            "ClickFix"
           ],
           "url": "https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign/",
           "source": "bleepingcomputer.com",
@@ -196,7 +164,7 @@
           "cve_ids": [
             "CVE-2026-26980"
           ],
-          "selection_reason": "SQL 注入与前端劫持结合的典型案例，影响大量使用该 CMS",
+          "selection_reason": "SQL 注入与社会工程学攻击结合的典型案例，影响范围广。",
           "feed_url": "https://www.bleepingcomputer.com/feed/",
           "feed_title": "BleepingComputer",
           "source_tier": "t2",
@@ -217,20 +185,54 @@
           }
         },
         {
-          "title_zh": "Laravel Lang 本地化软件包遭供应链攻击，通过 GitHub 标签分发窃密木马",
-          "title_orig": "Laravel Lang packages hijacked to deploy credential-stealing malware",
-          "summary": "攻击者针对 Laravel Lang 本地化软件包发起供应链攻击，通过滥用 GitHub 版本标签在 Composer 分发包中植入恶意代码，从而向开发者分发复杂的凭据窃取木马。该攻击利用了开发者对开源组件信任链的依赖，一旦开发者在项目中集成受污染的包，其开发环境及相关敏感凭据将面临被窃取的严重风险，影响范围涉及大量使用该框架的项目。",
+          "title_zh": "研究者发现首例利用 GitHub Issues 投毒的真实 Prompt 注入攻击案例",
+          "title_orig": "Quote tweet is prompt injection attacks in the wild. This is the first REAL one I’ve seen. And it’s using GitHub issues which is the main way/channe...",
+          "summary": "研究者发现了一种新型 Prompt 注入攻击，攻击者利用 GitHub Issues 渠道发布伪造的安全发现语言，诱导用户下载并运行恶意的本地脚本 scan.js。该脚本会扫描用户的家目录以窃取敏感信息，这是首次在野外观察到将 GitHub Issues 作为交付路径的真实攻击尝试，反映了攻击者正利用开发者常用的协作平台作为分发恶意载荷的新通道。",
           "tags": [
-            "Laravel",
+            "Prompt注入",
+            "GitHub",
+            "社会工程学"
+          ],
+          "url": "https://x.com/rez0__/status/2058350854508286082",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-24T00:54:20+00:00",
+          "cve_ids": [],
+          "selection_reason": "首例在野 Prompt 注入相关攻击，反映了 AI 时代的新",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+          "feed_title": "X / rez0",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "安全专家 X",
+          "source_key": "x:rez0__",
+          "story_id": "url:x.com/rez0__/status/2058350854508286082",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "dimension_score": 8.8,
+          "final_score": 9.0,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Laravel Lang 语言包遭遇供应链攻击，攻击者通过 GitHub 版本标签分发窃密木马",
+          "title_orig": "Laravel Lang packages hijacked to deploy credential-stealing malware",
+          "summary": "针对 Laravel Lang 本地化软件包的供应链攻击被曝光，攻击者通过滥用 GitHub 版本标签在 Composer 包中植入恶意代码，从而向开发者分发凭据窃取软件。该恶意软件利用了开发者对常用开源组件的信任，旨在获取敏感的开发环境凭据，目前相关恶意版本已被识别，开发者需紧急检查其项目依赖项是否存在异常更新以防范此类复杂的供应链威胁。",
+          "tags": [
             "供应链攻击",
-            "木马"
+            "Laravel",
+            "恶意包"
           ],
           "url": "https://www.bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware/",
           "source": "bleepingcomputer.com",
           "category": "OfficialAdvisories",
           "published": "2026-05-23T20:48:23+00:00",
           "cve_ids": [],
-          "selection_reason": "针对主流开发框架生态的供应链攻击，对开发者安全意识有警示作用",
+          "selection_reason": "典型的开源生态供应链攻击，提醒开发者关注依赖安全。",
           "feed_url": "https://www.bleepingcomputer.com/feed/",
           "feed_title": "BleepingComputer",
           "source_tier": "t2",
@@ -251,90 +253,54 @@
           }
         },
         {
-          "title_zh": "GitHub Enterprise Server 远程代码执行漏洞 CVE-2026-3854 利用详情公开",
-          "title_orig": "Exploit for Command Injection in Github Enterprise_Server",
-          "summary": "GitHub Enterprise Server 存在一个追踪为 CVE-2026-3854 的高危命令注入漏洞，具有仓库推送权限的攻击者可利用特殊元素中和不当的缺陷实现远程代码执行。该漏洞的 CVSS 评分高达 8.8，对系统的机密性、完整性和可用性具有重大影响，目前相关技术细节已披露，仅限授权的安全测试使用，提醒企业用户关注其潜在的权限提升风险，并尽快评估其内部部署环境的安全状态。",
+          "title_zh": "新型 Evilginx 前端工具降低 Token 窃取门槛，实现 M365 账户一站式滥用",
+          "title_orig": "新型 Evilginx 前端：降低 token 窃取与复用的门槛",
+          "summary": "安全研究人员发现了一款仿冒 Outlook 的新型 Evilginx 前端工具，该工具通过 API 实时导入被盗的 Token，并借助 Microsoft Graph API 实现对目标账户的自动化利用。攻击者可以一站式接管邮件、Teams、MFA 设置乃至租户管理员功能，这极大地降低了针对 Microsoft 365 环境进行 Token 窃取与复用的技术门槛，对企业云端身份认证安全与租户权限管理构成了严峻的挑战。",
           "tags": [
-            "GitHub",
-            "RCE漏洞",
-            "代码执行"
+            "Evilginx",
+            "Token窃取",
+            "M365"
           ],
-          "url": "https://vulners.com/githubexploit/21FCB4B6-987D-5081-8F56-7ACE8ABE5901?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-          "source": "vulners.com",
-          "category": "Synthesis",
-          "published": "2026-05-25T04:38:40+00:00",
-          "cve_ids": [
-            "CVE-2026-3854"
-          ],
-          "selection_reason": "核心开发基础设施的高危漏洞，且已公开漏洞原理及触发条件。",
-          "feed_url": "https://vulners.com/rss.xml",
-          "feed_title": "Vulners.com RSS Feed",
-          "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "漏洞聚合",
-          "source_key": "vulners.com",
-          "story_id": "cve:cve-2026-3854",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 9,
-          "dimension_score": 9.0,
-          "final_score": 8.8,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": -0.5,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "GitHub Issues 出现针对 AI 智能体的提示注入攻击，诱导执行恶意本地扫描脚本",
-          "title_orig": "Quote tweet is prompt injection attacks in the wild. This is the first REAL one I’ve seen. And it’s using GitHub issues which is the main way/channe...",
-          "summary": "研究者发现首例利用 GitHub Issues 传播的真实提示注入攻击，该攻击主要针对集成 GitHub 通道的 OpenAI 和 Google 等 AI 产品。攻击者通过在 Issue 中伪造安全漏洞发现报告，诱导 AI 智能体或用户下载并运行名为 scan.js 的本地脚本，该脚本会扫描用户主目录以窃取敏感信息，目前此类攻击已在野外出现，对依赖自动化处理 Issue 的 AI 工作流构成了严重的安全威胁。",
-          "tags": [
-            "提示注入",
-            "AI安全",
-            "供应链攻击"
-          ],
-          "url": "https://x.com/rez0__/status/2058350854508286082",
-          "source": "x.com",
-          "category": "XSignals",
-          "published": "2026-05-24T00:54:20+00:00",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496285&idx=2&sn=f65e2c310a5c6fcc9f601f0b30294e00",
+          "source": "mp.weixin.qq.com",
+          "category": "CN_News",
+          "published": "2026-05-23T02:24:00+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了提示注入攻击从理论走向真实环境的演进趋势。",
-          "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-          "feed_title": "X / rez0",
+          "selection_reason": "分析了自动化钓鱼工具的演进，对防御身份认证攻击有指导意义。",
+          "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+          "feed_title": "securitainment",
           "source_tier": "t2",
-          "source_kind": "expert_x",
-          "source_label": "安全专家 X",
-          "source_key": "x:rez0__",
-          "story_id": "url:x.com/rez0__/status/2058350854508286082",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+          "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496285&idx=2&sn=f65e2c310a5c6fcc9f601f0b30294e00",
           "related_urls": [],
           "related_count": 0,
           "score": 8,
           "dimension_score": 8.25,
-          "final_score": 8.45,
+          "final_score": 8.85,
           "score_breakdown": {
             "source_bonus": 0.0,
-            "kind_bonus": 0.2,
+            "kind_bonus": 0.3,
             "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.0
+            "cn_visibility_bonus": 0.3
           }
         },
         {
-          "title_zh": "恶意开发者向 MCP 相关仓库提交 PR，通过 npm 钩子窃取本地凭据并回传",
+          "title_zh": "研究员披露针对 MCP 相关仓库的恶意 PR 攻击及窃密脚本细节",
           "title_orig": "RT osj: After seeing the same account submit PRs to MCP related repos, I figured I'd write up what I've found so far. Hidden README text, postinstall,...",
-          "summary": "安全研究员发现有恶意账户向 MCP 相关仓库提交包含恶意代码的拉取请求，利用 README 隐藏文本和 postinstall 钩子触发攻击。恶意脚本在安装后会启动后台进程，扫描本地开发者的敏感凭据，并通过 GitHub 原始链接或 DNS 隧道等方式将数据回传至远程接收端，甚至会尝试向开发者和 AI 代理文件进行传播，这种隐蔽的供应链攻击手段对开发者环境的安全构成了极大挑战。",
+          "summary": "安全研究员osj发现有特定账号向MCP相关仓库提交包含恶意代码的PR，其手段包括隐藏README文本、利用postinstall脚本和npx指令触发恶意行为。该攻击通过postinstall启动工作进程，扫描并窃取本地开发者的凭据及AI代理文件，随后利用GitHub、DNS等通道将加密后的敏感数据发送至远程Webhook接收端，对开发者环境和敏感信息安全构成了严重威胁。",
           "tags": [
-            "npm安全",
+            "恶意代码",
             "凭据窃取",
-            "恶意PR"
+            "MCP"
           ],
           "url": "https://x.com/rez0__/status/2058350888327029136",
           "source": "x.com",
           "category": "XSignals",
           "published": "2026-05-23T19:01:29+00:00",
           "cve_ids": [],
-          "selection_reason": "揭示了针对 AI 生态开发者工具链的精准供应链攻击手段。",
+          "selection_reason": "揭示了针对 AI 开发生态的新型供应链攻击手法。",
           "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
           "feed_title": "X / rez0",
           "source_tier": "t2",
@@ -345,8 +311,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 8,
-          "dimension_score": 8.05,
-          "final_score": 8.25,
+          "dimension_score": 7.85,
+          "final_score": 8.05,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.2,
@@ -355,20 +321,20 @@
           }
         },
         {
-          "title_zh": "Trail of Bits 强化 zizmor 静态分析器，防御 GitHub Actions 凭据泄露风险",
+          "title_zh": "Trail of Bits 强化 zizmor 静态分析器以防御 GitHub Actions 供应链攻击",
           "title_orig": "We hardened zizmor's GitHub Actions static analyzer",
-          "summary": "针对此前攻击者利用 pull_request_target 配置错误导致 LiteLLM 凭据泄露并被植入后门的事件，Trail of Bits 对 zizmor 静态分析器进行了加固。该工具旨在帮助 GitHub Actions 用户在发布前识别工作流中的安全配置缺陷，防止组织和仓库密钥被恶意提取，从而避免类似 Trivy 插件曾遭遇的安全风险，确保开发者能够更安全地管理其自动化部署流程中的各类敏感凭据。",
+          "summary": "针对2026年攻击者利用aquasecurity/trivy-action配置错误窃取凭据并向LiteLLM植入后门的严重事件，Trail of Bits对zizmor静态分析器进行了针对性强化。该工具专门用于在代码发布前检测pull_request_target等GitHub Actions误配置，通过自动化扫描帮助开发者识别潜在安全风险，防止组织和仓库密钥被非法外泄，从而全面加固CI/CD工作流的安全性。 Trail of Bits 强化 zizmor 静态分析器以防御 GitHub Actions 供应链攻击。该条来自blog.trailofbits.com，归类于WebSecurity，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后。",
           "tags": [
+            "供应链安全",
             "静态分析",
-            "GitHubAc",
-            "配置安全"
+            "GitHub"
           ],
           "url": "https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/",
           "source": "blog.trailofbits.com",
           "category": "WebSecurity",
           "published": "2026-05-22T11:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "提供了针对 GitHub Actions 供应链漏洞的防御性",
+          "selection_reason": "关注 CI/CD 安全自动化检测工具的最新演进。",
           "feed_url": "https://blog.trailofbits.com/feed/",
           "feed_title": "Trail of Bits Blog",
           "source_tier": "t2",
@@ -389,44 +355,40 @@
           }
         },
         {
-          "title_zh": "Edimax EW-7438RPn 路由器 webs 组件存在远程栈溢出漏洞 CVE-2026-9427",
-          "title_orig": "CVE-2026-9427 Edimax EW-7438RPn webs formWlSiteSurvey stack-based overflow",
-          "summary": "Edimax EW-7438RPn 1.31 版本的 webs 组件在处理 /goform/formWlSiteSurvey 路径时存在严重的栈溢出漏洞。远程攻击者可通过操纵 selSSID 或 submit-url 参数触发该漏洞，目前相关漏洞利用代码已在网络上公开，虽然厂商早已获知此披露信息，但尚未发布修复补丁，用户需警惕潜在的远程攻击风险，该漏洞的公开意味着大量未防护的路由器设备正面临被非法控制的威胁。",
+          "title_zh": "Totolink A8000RU 路由器 Web 管理界面存在远程命令注入漏洞",
+          "title_orig": "CVE-2026-9432 Totolink A8000RU Web Management cstecgi.cgi setWiFiAdvancedCfg os command injection",
+          "summary": "Totolink A8000RU 7.1cu.643b20200521版本的Web管理界面组件存在严重的OS命令注入漏洞，官方编号为CVE-2026-9432。该漏洞源于/cgi-bin/cstecgi.cgi文件的setWiFiAdvancedCfg函数未对bgProtection参数进行有效过滤，攻击者可远程操纵该参数触发指令执行，目前漏洞利用代码已向公众发布，可能导致受影响的路由器设备被黑客完全控制并执行任意操作。 Totolink A8000RU 路由器 Web 管理界面存在远程命令注入漏洞。该条来自vulners.com，归类于Synthesis，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具体影响、版本范围和后续处。",
           "tags": [
-            "栈溢出",
+            "命令注入",
             "IoT安全",
-            "CVE"
+            "漏洞预警"
           ],
-          "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-9427?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-9432?utm_source=rss&utm_medium=rss&utm_campaign=rss",
           "source": "vulners.com",
           "category": "Synthesis",
-          "published": "2026-05-25T04:45:09+00:00",
+          "published": "2026-05-25T06:00:15+00:00",
           "cve_ids": [
-            "CVE-2026-9427"
+            "CVE-2026-9432"
           ],
-          "selection_reason": "典型的 IoT 设备远程溢出漏洞，且 PoC 已公开，具有高",
+          "selection_reason": "IoT 设备高危漏洞且 PoC 已公开，具有实战参考价值。",
           "feed_url": "https://vulners.com/rss.xml",
           "feed_title": "Vulners.com RSS Feed",
           "source_tier": "t2",
           "source_kind": "community",
           "source_label": "漏洞聚合",
           "source_key": "vulners.com",
-          "story_id": "cve:cve-2026-9427",
+          "story_id": "cve:cve-2026-9432",
           "related_urls": [
-            "https://vulners.com/cve/CVE-2026-9427?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-            "https://vulners.com/cvelist/CVELIST:CVE-2026-9426?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-            "https://vulners.com/cve/CVE-2026-9426?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-            "https://vulners.com/cvelist/CVELIST:CVE-2026-9425?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-            "https://vulners.com/cve/CVE-2026-9425?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-            "https://vulners.com/cve/CVE-2026-9424?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-            "https://vulners.com/cvelist/CVELIST:CVE-2026-9424?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-            "https://vulners.com/cve/CVE-2026-9423?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-            "https://vulners.com/cvelist/CVELIST:CVE-2026-9423?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+            "https://vulners.com/cve/CVE-2026-9434?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+            "https://vulners.com/cvelist/CVELIST:CVE-2026-9434?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+            "https://vulners.com/cvelist/CVELIST:CVE-2026-9433?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+            "https://vulners.com/cve/CVE-2026-9433?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+            "https://vulners.com/cve/CVE-2026-9432?utm_source=rss&utm_medium=rss&utm_campaign=rss"
           ],
-          "related_count": 9,
+          "related_count": 5,
           "score": 8,
-          "dimension_score": 8.15,
-          "final_score": 7.95,
+          "dimension_score": 8.2,
+          "final_score": 8.0,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": -0.5,
@@ -435,54 +397,94 @@
           }
         },
         {
-          "title_zh": "DMA Buffer Cache 同步批处理优化技术在高通平台内核中的实践分享",
-          "title_orig": "DMA Buffer Cache同步的批处理优化及高通平台的实践",
-          "summary": "“笑傲内核”技术小组核心成员陈雪原将于 2026 年 5 月 30 日在深圳举办的活动中，分享关于 DMA Buffer Cache 同步的批处理优化研究及高通平台的实践。该分享重点探讨如何通过优化内核同步机制提升系统性能，是针对底层驱动与内存管理深度结合的工程实践，适合关注高通平台性能调优的内核开发者参考，旨在通过批处理技术解决传统同步方式中的效率瓶颈，进一步提升移动端设备的运行效能。",
+          "title_zh": "Metasploit 更新 Cisco Catalyst SD-WAN 控制器身份验证绕过模块",
+          "title_orig": "Metasploit Wrap Up 05/22/2026",
+          "summary": "Metasploit在最新周报中发布了针对CVE-2026-20182的攻击模块，该漏洞主要影响Cisco Catalyst SD-WAN控制器的身份验证机制。研究人员sfewer-r7和jburgess-r7开发了专门的身份验证绕过模块，利用该漏洞可实现对关键网络控制设备的未授权访问，目前相关利用代码已集成至框架中，旨在提醒管理员关注此类核心基础设施的安全防护，防止网络控制权被非法夺取。",
           "tags": [
-            "Linux内核",
-            "DMA",
-            "性能优化"
+            "Metasplo",
+            "身份绕过",
+            "网络安全"
           ],
-          "url": "https://blog.csdn.net/21cnbao/article/details/161349150",
-          "source": "blog.csdn.net",
-          "category": "CN_News",
-          "published": "2026-05-23T07:33:34+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及 Linux 内核底层内存同步优化，具有较高的工程参考价",
-          "feed_url": "https://blog.csdn.net/21cnbao/rss/list",
-          "feed_title": "宋宝华",
+          "url": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-05-22-2026",
+          "source": "rapid7.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-05-22T19:10:05+00:00",
+          "cve_ids": [
+            "CVE-2026-20182"
+          ],
+          "selection_reason": "知名渗透测试框架更新，包含重要网络基础设施的漏洞利用。",
+          "feed_url": "https://blog.rapid7.com/rss/",
+          "feed_title": "Rapid7 Blog",
           "source_tier": "t2",
-          "source_kind": "community",
-          "source_label": "技术社区",
-          "source_key": "blog.csdn.net",
-          "story_id": "url:blog.csdn.net/21cnbao/article/details/161349150",
+          "source_kind": "expert",
+          "source_label": "安全厂商",
+          "source_key": "rapid7.com",
+          "story_id": "cve:cve-2026-20182",
           "related_urls": [],
           "related_count": 0,
-          "score": 6,
-          "dimension_score": 5.8,
-          "final_score": 5.3,
+          "score": 7,
+          "dimension_score": 7.45,
+          "final_score": 7.65,
           "score_breakdown": {
             "source_bonus": 0.0,
-            "kind_bonus": -0.5,
+            "kind_bonus": 0.2,
             "freshness_bonus": 0.0,
             "cn_visibility_bonus": 0.0
           }
         },
         {
-          "title_zh": "国内 Linux 内核爱好者自发成立“笑傲内核”小组，专注底层代码攻坚",
+          "title_zh": "Spring AI 框架 Anthropic Skills API 支持组件存在路径遍历漏洞",
+          "title_orig": "CVE-2026-41863 LLM-influenced filename used unsanitized in Path.resolve before file write in Spring AI support for Anthropic Skills API",
+          "summary": "Spring AI 1.1.0至1.1.x版本在支持Anthropic Skills API时存在CVE-2026-41863安全漏洞，主要影响文件系统写入安全性。该漏洞源于程序在调用Path.resolve写入文件前，未对受大语言模型影响的文件名进行清理，导致恶意用户可以绕过预设的目标目录限制，将文件写入包括受限目录在内的任意位置，从而对服务器文件系统的完整性与安全性构成严重威胁。",
+          "tags": [
+            "路径遍历",
+            "SpringAI",
+            "AI安全"
+          ],
+          "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-41863?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+          "source": "vulners.com",
+          "category": "Synthesis",
+          "published": "2026-05-25T05:45:37+00:00",
+          "cve_ids": [
+            "CVE-2026-41863"
+          ],
+          "selection_reason": "关注 AI 框架集成过程中引入的传统 Web 安全漏洞。",
+          "feed_url": "https://vulners.com/rss.xml",
+          "feed_title": "Vulners.com RSS Feed",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "漏洞聚合",
+          "source_key": "vulners.com",
+          "story_id": "cve:cve-2026-41863",
+          "related_urls": [
+            "https://vulners.com/cve/CVE-2026-41863?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+          ],
+          "related_count": 1,
+          "score": 8,
+          "dimension_score": 7.85,
+          "final_score": 7.65,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": -0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "国内 Linux 内核爱好者自发成立“笑傲内核”技术小组开展深度研究",
           "title_orig": "有这么一群人，在一起啃 Linux kernel",
-          "summary": "由宋宝华发起的“笑傲内核”小组汇聚了一群 Linux 内核狂热爱好者，他们通过分析代码路径、复现实验及提交补丁等具体工作，深入探索内核核心问题。该小组旨在记录实验过程中的踩坑经验与补丁评审记录，在没有收益和赞助的情况下，建立一个纯粹的技术交流空间，让更多开发者能够公开分享内核研究中的心得与挑战。",
+          "summary": "由宋宝华发起的“笑傲内核”技术小组汇聚了一群 Linux 内核狂热爱好者，旨在通过代码路径分析、实验复现及补丁提交等具体工作深入研究内核底层技术。该小组强调纯粹的技术驱动，通过分享踩坑经验、补丁编写逻辑以及 Review 过程中的技术博弈，为国内安全从业者和内核开发者提供了一个无商业背景的纯净技术交流平台。",
           "tags": [
             "Linux内核",
-            "开源社区",
-            "技术交流"
+            "技术社区",
+            "开源研究"
           ],
           "url": "https://blog.csdn.net/21cnbao/article/details/161371613",
           "source": "blog.csdn.net",
           "category": "CN_News",
           "published": "2026-05-24T07:04:22+00:00",
           "cve_ids": [],
-          "selection_reason": "反映了国内底层安全与开发社区的活跃度及技术沉淀方式。",
+          "selection_reason": "国内底层技术研究小组动态，有助于提升内核安全研究氛围。",
           "feed_url": "https://blog.csdn.net/21cnbao/rss/list",
           "feed_title": "宋宝华",
           "source_tier": "t2",
@@ -503,83 +505,82 @@
           }
         },
         {
-          "title_zh": "SaaS-Bench 评测显示 Claude 等大模型在全自动办公任务中通过率不足 4%",
-          "title_orig": "Claude 通过率不到4%，SaaS-Bench撕碎了Computer-Use的「全自动办公」幻想",
-          "summary": "UniPat AI 发布的 SaaS-Bench 评测结果显示，即使是 Claude 等顶尖大模型，在处理真实办公场景的端到端任务时，完全通过率最高仅为 3.8%。这一数据撕碎了 AI 智能体在复杂 SaaS 环境下实现“全自动办公”的幻想，表明目前的计算机使用能力在应对真实软件交互时仍存在巨大局限，距离大规模落地仍有较长距离，开发者需重新审视 AI 在处理多步骤、跨应用任务时的可靠性与实用价值。",
+          "title_zh": "安全专家将分享 DMA Buffer Cache 同步批处理优化及高通平台实践",
+          "title_orig": "DMA Buffer Cache同步的批处理优化及高通平台的实践",
+          "summary": "“笑傲内核”小组核心成员陈雪原将于2026年5月30日在深圳进行技术分享，主题聚焦于DMA Buffer Cache同步的批处理优化及高通平台的实践。该分享将深入探讨在高性能计算与数据传输过程中，如何通过优化Cache同步机制提升系统效率并解决高通平台上的实际问题，这对于从事移动端底层开发、驱动优化及系统安全的从业者具有重要的技术参考价值和实践指导意义。",
           "tags": [
-            "AI评测",
-            "大模型",
-            "SaaS"
+            "DMA",
+            "Cache同步",
+            "高通平台"
           ],
-          "url": "https://www.qbitai.com/2026/05/424277.html",
-          "source": "qbitai.com",
-          "category": "AI",
-          "published": "2026-05-25T03:29:41+00:00",
+          "url": "https://blog.csdn.net/21cnbao/article/details/161349150",
+          "source": "blog.csdn.net",
+          "category": "CN_News",
+          "published": "2026-05-23T07:33:34+00:00",
           "cve_ids": [],
-          "selection_reason": "通过量化数据揭示了当前 AI Agent 在实际应用场景中的",
-          "feed_url": "https://www.qbitai.com/feed",
-          "feed_title": "量子位 QbitAI",
-          "source_tier": "unknown",
-          "source_kind": "media",
-          "source_label": "未登记源",
-          "source_key": "qbitai.com",
-          "story_id": "url:qbitai.com/2026/05/424277.html",
+          "selection_reason": "涉及硬件底层同步机制优化，对底层漏洞挖掘有启发意义。",
+          "feed_url": "https://blog.csdn.net/21cnbao/rss/list",
+          "feed_title": "宋宝华",
+          "source_tier": "t2",
+          "source_kind": "community",
+          "source_label": "技术社区",
+          "source_key": "blog.csdn.net",
+          "story_id": "url:blog.csdn.net/21cnbao/article/details/161349150",
           "related_urls": [],
           "related_count": 0,
-          "score": 5,
-          "dimension_score": 3.95,
-          "final_score": 3.95,
+          "score": 4,
+          "dimension_score": 3.8,
+          "final_score": 3.3,
           "score_breakdown": {
-            "source_bonus": -0.3,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.3,
+            "source_bonus": 0.0,
+            "kind_bonus": -0.5,
+            "freshness_bonus": 0.0,
             "cn_visibility_bonus": 0.0
           }
         }
       ],
-      "raw_count": 75,
+      "raw_count": 76,
       "selected_count": 15,
       "selection_stats": {
         "total": 15,
         "direct": 13,
         "tier_t1": 2,
         "kind_official": 2,
-        "chinese": 5,
+        "chinese": 4,
         "wechat": 2,
-        "tier_t2": 12,
+        "tier_t2": 13,
         "kind_cn_expert": 2,
-        "kind_media": 4,
-        "kind_community": 4,
+        "kind_media": 3,
         "aggregator": 2,
         "kind_expert_x": 2,
-        "kind_expert": 1,
-        "tier_unknown": 1
+        "kind_expert": 2,
+        "kind_community": 4
       },
       "clustering_stats": {
         "deterministic_merged": 0,
         "llm_merged": 3,
         "merged_total": 3
       },
-      "generated_at": "2026-05-25T06:44:04.806623Z"
+      "generated_at": "2026-05-25T06:53:22.291672Z"
     },
     "ai_security": {
       "display_name": "AI 安全",
       "items": [
         {
-          "title_zh": "GitHub Issues 出现真实提示词注入攻击，利用虚假安全报告诱导用户执行本地恶意脚本",
+          "title_zh": "GitHub Issues 出现针对 AI 智能体的提示词注入攻击，诱导执行恶意脚本",
           "title_orig": "Quote tweet is prompt injection attacks in the wild. This is the first REAL one I’ve seen. And it’s using GitHub issues which is the main way/channe...",
-          "summary": "研究人员发现首个利用 GitHub Issues 传播的真实提示词注入攻击案例，攻击者通过伪造安全漏洞发现的专业语言，诱导用户在本地运行名为 scan.js 的恶意脚本。该脚本被设计用于搜索受害者计算机的主目录并窃取敏感信息，目前此类攻击已在针对 OpenAI 和 Google 产品的测试环境中被观测到，显示出 GitHub 已成为黑客实施注入攻击的新型交付路径。",
+          "summary": "研究人员发现首个利用 GitHub Issues 传播的真实提示词注入攻击，该攻击利用虚假的安全发现描述诱导 AI 智能体或用户执行恶意操作，是目前针对 OpenAI 和 Google 等产品测试中的典型案例。攻击者通过 Issues 投递名为 scan.js 的恶意脚本，旨在搜索并扫描受害者本地主目录中的敏感信息，这标志着针对 AI 自动化流程的攻击已进入实际应用阶段。",
           "tags": [
             "提示词注入",
             "GitHub",
-            "社会工程学"
+            "AI安全"
           ],
           "url": "https://x.com/rez0__/status/2058350854508286082",
           "source": "x.com",
           "category": "XSignals",
           "published": "2026-05-24T00:54:20+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了提示词注入从理论走向真实野外攻击的演进。",
+          "selection_reason": "揭示了针对 AI 智能体的新型攻击向量，具有极强的实战参考价",
           "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
           "feed_title": "X / rez0",
           "source_tier": "t2",
@@ -600,20 +601,56 @@
           }
         },
         {
-          "title_zh": "Trail of Bits 强化 zizmor 静态分析器，旨在防御 GitHub Actions 供应链攻击",
-          "title_orig": "We hardened zizmor's GitHub Actions static analyzer",
-          "summary": "针对此前攻击者利用pull_request_target配置错误入侵LiteLLM并植入后门的严重事件，Trail of Bits对其静态分析工具zizmor进行了针对性加固。该工具专门用于检测GitHub Actions工作流中的安全配置缺陷，旨在帮助开发者在代码发布前精准识别并修复可能导致组织及仓库机密泄露的风险点，从而通过技术手段有效防止类似供应链攻击的再次发生。",
+          "title_zh": "针对 MCP 相关仓库的供应链攻击：恶意 PR 植入凭据窃取脚本",
+          "title_orig": "RT osj: After seeing the same account submit PRs to MCP related repos, I figured I'd write up what I've found so far. Hidden README text, postinstall,...",
+          "summary": "攻击者近期频繁向MCP相关仓库提交包含恶意代码的拉取请求，利用README隐藏文本、postinstall脚本及npx等多种隐蔽手段触发攻击，旨在窃取开发者本地的机密信息。该恶意脚本在安装后会启动worker进程，通过GitHub原始文件或DNS等通道将获取的凭据发送至远程接收端，并尝试在开发者与AI智能体文件中进行传播，严重威胁供应链安全。",
           "tags": [
-            "GitHub A",
+            "供应链攻击",
+            "凭据窃取",
+            "MCP"
+          ],
+          "url": "https://x.com/rez0__/status/2058350888327029136",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-23T19:01:29+00:00",
+          "cve_ids": [],
+          "selection_reason": "关注新兴 AI 生态系统 MCP 的供应链安全风险，技术细节",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+          "feed_title": "X / rez0",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "安全专家 X",
+          "source_key": "x:rez0__",
+          "story_id": "url:x.com/rez0__/status/2058350888327029136",
+          "related_urls": [
+            "https://x.com/trailofbits/status/2057941920354333127"
+          ],
+          "related_count": 1,
+          "score": 9,
+          "dimension_score": 8.95,
+          "final_score": 9.15,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Trail of Bits 强化 zizmor 静态分析器，防御 GitHub Actions 误配置漏洞",
+          "title_orig": "We hardened zizmor's GitHub Actions static analyzer",
+          "summary": "针对此前攻击者利用pull_request_target误配置导致LiteLLM在PyPI上被植入后门的严重事件，zizmor静态分析工具进行了安全强化以应对此类风险。该工具旨在帮助GitHub Actions用户在代码发布前精准识别配置缺陷，防止组织和仓库密钥泄露，从而避免类似Trivy插件漏洞导致的供应链攻击再次发生，显著提升了自动化工作流的安全性。 Trail of Bits 强化 zizmor 静态分析器，防御 GitHub Actions 误配置漏洞。该条来自blog.trailofbits.com，归类于AISecurityLabs，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具。",
+          "tags": [
             "静态分析",
-            "供应链安全"
+            "GitHubAc",
+            "配置安全"
           ],
           "url": "https://blog.trailofbits.com/2026/05/22/we-hardened-zizmors-github-actions-static-analyzer/",
           "source": "blog.trailofbits.com",
           "category": "AISecurityLabs",
           "published": "2026-05-22T11:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "针对真实供应链攻击案例提供的防御工具强化方案。",
+          "selection_reason": "提供了针对 GitHub Actions 供应链漏洞的自动化",
           "feed_url": "https://blog.trailofbits.com/index.xml",
           "feed_title": "Trail of Bits",
           "source_tier": "t2",
@@ -624,8 +661,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 9,
-          "dimension_score": 9.15,
-          "final_score": 9.35,
+          "dimension_score": 8.65,
+          "final_score": 8.85,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.2,
@@ -634,9 +671,145 @@
           }
         },
         {
-          "title_zh": "Laravel-Lang 流行包遭遇供应链攻击，超过 200 个版本被植入凭据窃取程序",
+          "title_zh": "Screening Serpens 组织 2026 年间谍活动：利用 AppDomainManager 劫持技术",
+          "title_orig": "Tracking Iranian APT Screening Serpens’ 2026 Espionage Campaigns",
+          "summary": "Unit 42 披露了伊朗 APT 组织 Screening Serpens 针对科技和国防领域的最新网络间谍活动，重点分析了其使用的 AppDomainManager 劫持技术和新型远程访问木马变体。该组织通过部署这些复杂的攻击手段在 2026 年的行动中持续渗透目标网络并窃取敏感信息，体现了该组织在规避检测方面的技术演进，对全球相关行业构成了持续性的安全威胁。",
+          "tags": [
+            "APT",
+            "权限维持",
+            "间谍活动"
+          ],
+          "url": "https://unit42.paloaltonetworks.com/tracking-iran-apt-screening-serpens/",
+          "source": "unit42.paloaltonetworks.com",
+          "category": "AISecurityLabs",
+          "published": "2026-05-22T13:00:42+00:00",
+          "cve_ids": [],
+          "selection_reason": "分析了成熟 APT 组织的持久化技术手段，对防御侧有参考意义",
+          "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+          "feed_title": "Unit 42",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "unit42.paloaltonetworks.com",
+          "story_id": "url:unit42.paloaltonetworks.com/tracking-iran-apt-screening-serpens",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 6,
+          "dimension_score": 6.85,
+          "final_score": 8.35,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "安全研究员分享利用 Claude 结合 Trail of Bits 检查单进行 C/C++ 代码审计经验",
+          "title_orig": "RT solst/ICE of Astarte: Re @trailofbits has markdown checklists for reviewing C and C++ codebases, and I’ve used those in conjunction with other Ski...",
+          "summary": "研究人员分享了将 Trail of Bits 提供的 Markdown 格式 C/C++ 安全检查单与 Claude AI 结合使用的技术方案，通过结构化引导提升了 AI 在代码审计中的深度。这种方法利用特定语言的审计指南，使 AI 能够提供比通用安全审查指令更精准、更具针对性的审计结果，为开发者在进行复杂的底层语言代码安全评估时提供了比传统工具更高效且专业的辅助手段。",
+          "tags": [
+            "代码审计",
+            "AI辅助安全",
+            "C/C++"
+          ],
+          "url": "https://x.com/trailofbits/status/2058583041182777499",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-24T14:15:07+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了 AI 在专业安全审计领域的落地应用技巧，值得从业者借",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+          "feed_title": "X / Trail of Bits",
+          "source_tier": "t1_5",
+          "source_kind": "official_x",
+          "source_label": "官方 X",
+          "source_key": "x:trailofbits",
+          "story_id": "url:x.com/trailofbits/status/2058583041182777499",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "dimension_score": 7.0,
+          "final_score": 7.9,
+          "score_breakdown": {
+            "source_bonus": 0.5,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "开源框架 ROADtools 被滥用于云端入侵，Unit 42 发布识别与防御指南",
+          "title_orig": "Paved With Intent: ROADtools and Nation-State Tactics in the Cloud",
+          "summary": "Unit 42 报告指出开源框架 ROADtools 正被国家级威胁者滥用，用于针对 Azure AD 等云环境的渗透活动，该工具原本设计用于云端身份验证的安全审计。文章详细介绍了攻击者如何利用该工具的合法功能进行恶意入侵，并为安全团队提供了识别此类滥用行为的检测方法，以应对日益严峻的云端身份验证安全威胁，防止攻击者利用合法审计工具作为入侵跳板。",
+          "tags": [
+            "云安全",
+            "ROADtool",
+            "威胁检测"
+          ],
+          "url": "https://unit42.paloaltonetworks.com/roadtools-cloud-attacks/",
+          "source": "unit42.paloaltonetworks.com",
+          "category": "AISecurityLabs",
+          "published": "2026-05-22T10:00:24+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨了合法审计工具被武器化的风险及相应的检测策略。",
+          "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+          "feed_title": "Unit 42",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "unit42.paloaltonetworks.com",
+          "story_id": "url:unit42.paloaltonetworks.com/roadtools-cloud-attacks",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 6,
+          "dimension_score": 6.05,
+          "final_score": 7.55,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Jobcoin Clock-in 程序安全审计报告发布，修复 PDA 派生及 CPI 转账漏洞",
+          "title_orig": "RT Jobcoin: More on our @trailofbits audit. Scope: full on-chain review of the clock-in program. PDA derivations, ATA creation, CPI transfer behavior,...",
+          "summary": "Trail of Bits 完成了对 Jobcoin 链上程序的全面审计，涵盖了 PDA 派生、ATA 创建、CPI 转账行为以及存取款流程中的惩罚计算逻辑和日志路径等核心环节。审计过程中共发现了三项安全缺陷，目前所有漏洞均已在后续的修复审查中得到验证与解决，确保了该程序在处理链上资产交易时的逻辑严密性，为用户提供了经过专业验证的安全保障和完整的审计报告。",
+          "tags": [
+            "智能合约审计",
+            "区块链安全",
+            "漏洞修复"
+          ],
+          "url": "https://x.com/trailofbits/status/2057895680547664349",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-22T18:45:09+00:00",
+          "cve_ids": [],
+          "selection_reason": "提供了专业的链上程序审计范例，包含具体的漏洞类型和修复情况。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+          "feed_title": "X / Trail of Bits",
+          "source_tier": "t1_5",
+          "source_kind": "official_x",
+          "source_label": "官方 X",
+          "source_key": "x:trailofbits",
+          "story_id": "url:x.com/trailofbits/status/2057895680547664349",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 6,
+          "dimension_score": 5.75,
+          "final_score": 6.55,
+          "score_breakdown": {
+            "source_bonus": 0.5,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Laravel-Lang 流行软件包遭遇供应链攻击，200 多个版本被植入凭据窃取器",
           "title_orig": "Supply Chain Attack Targets Laravel-Lang Packages with Credential Stealer",
-          "summary": "攻击者向超过 200 个版本的 Laravel-Lang 流行软件包中注入了凭据窃取恶意代码，旨在非法获取开发者的云服务密钥、SSH 密钥、浏览器存储数据及加密货币钱包等敏感资产。由于受影响的组件广泛应用于 PHP 开发生态系统，此次供应链攻击对大量项目构成了直接威胁，建议相关开发者立即对项目依赖项进行深度检查，并确保将软件包更新至已修复的安全版本。",
+          "summary": "攻击者在 200 多个版本的 Laravel-Lang 流行软件包中注入了凭据窃取程序，旨在收割受害者的云服务密钥、SSH 密钥、浏览器数据及加密货币钱包等敏感资产。该供应链攻击利用了开发者对常用开源组件的信任，通过大规模分发恶意版本进行敏感信息窃取，对使用该框架的 Web 开发生态系统构成了严重的安全威胁，凸显了开源包管理中存在的安全脆弱性。",
           "tags": [
             "供应链攻击",
             "Laravel",
@@ -647,7 +820,7 @@
           "category": "AISecurityLabs",
           "published": "2026-05-23T00:46:00+00:00",
           "cve_ids": [],
-          "selection_reason": "大规模流行开发框架扩展包受损，具有极高的影响范围。",
+          "selection_reason": "重大开源供应链安全事件，涉及大量受影响版本，具有高度预警价值",
           "feed_url": "https://www.aikido.dev/blog/rss.xml",
           "feed_title": "Aikido Security",
           "source_tier": "t2",
@@ -659,9 +832,9 @@
             "https://snyk.io/blog/laravel-lang-supply-chain-advisory/"
           ],
           "related_count": 1,
-          "score": 4,
-          "dimension_score": 6.2,
-          "final_score": 6.4,
+          "score": 6,
+          "dimension_score": 6.3,
+          "final_score": 6.5,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.2,
@@ -670,180 +843,20 @@
           }
         },
         {
-          "title_zh": "官方发布未成年人使用人工智能安全测试结果，关注 AI 应用的内容合规与保护",
-          "title_orig": "未成年人使用AI，安全吗？官方最新测试结果出炉→ - thepaper.cn",
-          "summary": "相关机构针对未成年人使用 AI 产品的安全性发布了最新官方测试结果，重点评估了当前主流 AI 模型在与未成年人交互过程中的内容过滤机制与安全保护表现。虽然原文未披露具体的技术漏洞细节，但该报告深入探讨了 AI 应用在未成年人保护方面的合规性现状，并对潜在的社会化风险提出了预警，旨在提升公众对青少年使用人工智能技术时安全问题的关注度。",
-          "tags": [
-            "AI 安全",
-            "未成年人保护",
-            "合规测试"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBpbXVGWHpHbTNHaHhpRXNIN0V3Y0VPbUt1a19NSUlDWExmYm1MeU5QQU0zbkh4Rm54WTlabjJXS0RHRWhseG5RdXUyVV9VMjNWQmU2ay01M1FrRkotZUFCZg?oc=5",
-          "source": "news.google.com",
-          "category": "CoverageFallback",
-          "published": "2026-05-25T03:40:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "反映了监管机构对 AI 安全性评估的最新动态。",
-          "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-          "feed_title": "Google News 中文 AI安全",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com",
-          "story_id": "title:8c823a024316",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 5,
-          "dimension_score": 4.75,
-          "final_score": 3.85,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": -1.2,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "Fortinet 扩展与 NVIDIA 的集成，旨在提供可扩展的企业级 AI 安全解决方案",
-          "title_orig": "Fortinet Expands NVIDIA Integration to Deliver Scalable Enterprise AI Security - CXOToday.com",
-          "summary": "Fortinet 宣布进一步深化与 NVIDIA 的技术集成，通过结合双方在硬件加速计算与网络安全防护领域的优势，为企业级用户提供具备高度可扩展性的 AI 安全架构方案。该合作旨在显著提升企业在处理大规模 AI 工作负载时的防御效率与响应速度，尽管原文侧重于商业战略合作与架构扩展的描述，未披露具体的技术漏洞细节，但其展示了未来企业级 AI 安全防护的发展方向。",
-          "tags": [
-            "企业安全",
-            "AI 架构",
-            "硬件加速"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNlllNkRVbHZZZXBlZDYtRFRCM1JzczJiZTBnb1UwMXRNRkFYYmlxQTRFSU1Fb05FaF9mZWJYZWxhS1NlRTNyZmdVZnl0WEF1UmZveWJmX29WaGJXd3JBX0pNVmpRN1ptM0FWMWdycWxGcEFKbnBZT1RlampmNVpDVGtqV2lrNC10ODV0N29abml3VkxueU03dmxnWWY5amVRWkJqYVBwc0RwZFcwVnJBLTRFeFk?oc=5",
-          "source": "news.google.com",
-          "category": "CoverageFallback",
-          "published": "2026-05-25T06:14:24+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及安全厂商与芯片巨头在 AI 安全基础设施上的合作。",
-          "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-          "feed_title": "Google News AI Security",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com",
-          "story_id": "title:26a9c8510f52",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 4,
-          "dimension_score": 3.7,
-          "final_score": 2.8,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": -1.2,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        }
-      ],
-      "raw_count": 26,
-      "selected_count": 5,
-      "selection_stats": {
-        "total": 5,
-        "aggregator": 3,
-        "tier_t2": 5,
-        "kind_expert_x": 1,
-        "direct": 2,
-        "kind_expert": 2,
-        "google_news": 2,
-        "chinese": 1,
-        "kind_google_news": 2
-      },
-      "clustering_stats": {
-        "deterministic_merged": 0,
-        "llm_merged": 0,
-        "merged_total": 0
-      },
-      "generated_at": "2026-05-25T06:44:29.129892Z"
-    },
-    "ai": {
-      "display_name": "AI 前沿",
-      "items": [
-        {
-          "title_zh": "RMA 智能体框架发布，旨在通过长程推理与文献参考解决研究级数学难题",
-          "title_orig": "RMA: an Agentic System for Research-Level Mathematical Problems",
-          "summary": "研究人员推出了名为RMA的智能体框架，专门用于处理需要长程推理、文献参考和迭代证明改进的研究级数学问题，填补了该领域自动化工具的空白。该系统突破了以往仅关注竞赛数学或形式化定理证明的局限，通过模拟人类学者的研究流程，为自动化解决高难度学术数学研究提供了全新的技术路径与评估标准。",
-          "tags": [
-            "数学智能体",
-            "人工智能",
-            "自动化推理"
-          ],
-          "url": "https://arxiv.org/abs/2605.22875",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-25T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "展示了 AI 在处理高难度学术研究级数学问题的最新进展。",
-          "feed_url": "http://export.arxiv.org/rss/cs.AI",
-          "feed_title": "arXiv cs.AI recent",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org",
-          "story_id": "url:arxiv.org/abs/2605.22875",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 8,
-          "dimension_score": 7.65,
-          "final_score": 9.45,
-          "score_breakdown": {
-            "source_bonus": 1.0,
-            "kind_bonus": 0.5,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "BOHM 框架实现复合 AI 系统零成本分层归因，解决第三方 API 评估难题",
-          "title_orig": "BOHM: Zero-Cost Hierarchical Attribution for Compound AI Systems",
-          "summary": "BOHM框架被提出用于解决复合AI系统中各组件的贡献度归因问题，有效克服了传统SHAP方法在面对第三方API或不透明端点时无法评估子集的缺陷。该方法通过创新的零成本分层归因技术，在不增加额外计算开销的前提下，显著提升了复杂AI系统内部组件贡献度分析的效率、准确性以及在实际工业场景中的可行性。",
-          "tags": [
-            "复合AI系统",
-            "归因分析",
-            "系统评估"
-          ],
-          "url": "https://arxiv.org/abs/2605.22866",
-          "source": "arxiv.org",
-          "category": "Research",
-          "published": "2026-05-25T04:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "解决了复杂 AI 系统中组件贡献度难以量化评估的技术痛点。",
-          "feed_url": "http://export.arxiv.org/rss/cs.AI",
-          "feed_title": "arXiv cs.AI recent",
-          "source_tier": "t1",
-          "source_kind": "official",
-          "source_label": "论文源",
-          "source_key": "arxiv.org",
-          "story_id": "url:arxiv.org/abs/2605.22866",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 7,
-          "dimension_score": 7.5,
-          "final_score": 9.3,
-          "score_breakdown": {
-            "source_bonus": 1.0,
-            "kind_bonus": 0.5,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "Armin Ronacher 批评 AI 生成的 GitHub Issue 导致技术社区沟通效率下降",
+          "title_zh": "Flask 作者 Armin Ronacher 批评 AI 生成的虚假 Bug 报告导致开源维护负担加重",
           "title_orig": "Quoting Armin Ronacher",
-          "summary": "著名开发者Armin Ronacher指出，目前开源社区中许多用户提交的Issue并非由本人撰写，而是通过AI工具重写，导致内容虽然语气自信但逻辑混乱且结论往往不准确。这种现象不仅显著增加了项目维护者的甄别负担，还严重破坏了社区的沟通质量，使得真正的问题被掩盖在AI生成的冗余信息中，对开源生态的协作效率和问题解决流程产生了深远的负面影响。",
+          "summary": "Flask 框架创始人 Armin Ronacher 针对开源社区现状指出，目前最令人沮丧的失败模式是用户提交并非由本人撰写的 AI 生成报告，这些内容往往将观察到的问题投入大模型后产生逻辑混乱且篇幅巨大的冗长描述。由于提示词质量低下，这些报告虽然语气充满自信但结论通常极度不准确，导致维护者被迫在处理这些毫无意义的虚假信息上耗费大量精力，严重干扰了正常的开发流程。",
           "tags": [
-            "开源社区",
-            "AI生成内容",
-            "技术维护"
+            "开源安全",
+            "AI 滥用",
+            "社区治理"
           ],
           "url": "https://simonwillison.net/2026/May/24/armin-ronacher/#atom-everything",
           "source": "simonwillison.net",
-          "category": "Commentary",
+          "category": "AISecurityLabs",
           "published": "2026-05-24T18:46:53+00:00",
           "cve_ids": [],
-          "selection_reason": "反映了 AI 工具滥用对开源生态和技术协作带来的现实挑战。",
+          "selection_reason": "反映了 AI 生成内容对开源软件维护和漏洞筛选带来的负面影响",
           "feed_url": "https://simonwillison.net/atom/everything/",
           "feed_title": "Simon Willison",
           "source_tier": "t2",
@@ -854,78 +867,240 @@
           "related_urls": [],
           "related_count": 0,
           "score": 6,
-          "dimension_score": 6.55,
-          "final_score": 7.05,
+          "dimension_score": 4.65,
+          "final_score": 4.95,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.2,
-            "freshness_bonus": 0.3,
+            "freshness_bonus": 0.1,
             "cn_visibility_bonus": 0.0
           }
         },
         {
-          "title_zh": "Claude Code 在黑客马拉松表现出色，38 个相关智能体项目累计获得 15 万星",
-          "title_orig": "Claude Code屠榜黑客马拉松 38个Agent狂揽15万星 - 中华网",
-          "summary": "在近期举办的黑客马拉松活动中，基于Claude Code开发的38个智能体项目表现极其强劲，凭借出色的自动化编程与任务处理能力，在开发者社区中累计狂揽超过15万颗星的广泛关注。这一惊人成绩不仅展示了Claude Code在开发者群体中的极高人气，更充分证明了其在构建高效、实用的AI智能体方面具备巨大的应用潜力，标志着AI辅助开发进入了全新的爆发阶段。",
+          "title_zh": "中国官方发布未成年人使用人工智能服务安全测试结果，关注算法合规与内容过滤",
+          "title_orig": "未成年人使用AI，安全吗？官方最新测试结果出炉→ - thepaper.cn",
+          "summary": "相关机构针对未成年人使用 AI 服务的安全性进行了专项测试，重点评估了算法推荐、不良信息过滤以及隐私保护等关键环节的合规性。测试结果显示了当前主流 AI 应用在应对未成年人敏感话题时的表现，旨在推动服务商完善内容审核机制并强化技术防护手段，确保生成式人工智能在教育场景下的安全应用。",
           "tags": [
-            "Claude",
-            "智能体",
-            "黑客马拉松"
+            "内容安全",
+            "合规测试",
+            "人工智能"
           ],
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9TUEtwYUxqRWVmNzIxWC0wYUJwUlNmY1F6ZEpQMzlhZGhvS0tUck5MdW4xSjA0dzVoU1AyX2trWHZCUWJkeVhwajFWSXJkb0NQUWctbWYtQlB1dFpIcGdhMWFuYVRyVDVQN1QwM3hEWkNKdlpx?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBpbXVGWHpHbTNHaHhpRXNIN0V3Y0VPbUt1a19NSUlDWExmYm1MeU5QQU0zbkh4Rm54WTlabjJXS0RHRWhseG5RdXUyVV9VMjNWQmU2ay01M1FrRkotZUFCZg?oc=5",
           "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-05-25T05:54:23+00:00",
+          "category": "CoverageFallback",
+          "published": "2026-05-25T03:40:00+00:00",
           "cve_ids": [],
-          "selection_reason": "体现了 Claude 系列工具在开发者生态中的强劲增长势头。",
-          "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-          "feed_title": "Google News 中文 AI",
+          "selection_reason": "关注国内 AI 监管动态及针对特定人群的安全治理标准。",
+          "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "feed_title": "Google News 中文 AI安全",
           "source_tier": "t2",
           "source_kind": "google_news",
           "source_label": "Google News",
           "source_key": "news.google.com",
-          "story_id": "title:512caa01e6df",
+          "story_id": "title:8c823a024316",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 6,
+          "dimension_score": 5.05,
+          "final_score": 4.15,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": -1.2,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        }
+      ],
+      "raw_count": 26,
+      "selected_count": 10,
+      "selection_stats": {
+        "total": 10,
+        "aggregator": 5,
+        "tier_t2": 6,
+        "kind_expert_x": 2,
+        "direct": 5,
+        "kind_expert": 3,
+        "tier_t1": 2,
+        "kind_official": 2,
+        "tier_t1_5": 2,
+        "kind_official_x": 2,
+        "google_news": 1,
+        "chinese": 1,
+        "kind_google_news": 1
+      },
+      "clustering_stats": {
+        "deterministic_merged": 0,
+        "llm_merged": 1,
+        "merged_total": 1
+      },
+      "generated_at": "2026-05-25T06:54:09.964609Z"
+    },
+    "ai": {
+      "display_name": "AI 前沿",
+      "items": [
+        {
+          "title_zh": "llama.cpp 支持 MTP 技术显著提升本地模型推理速度，Qwen3.6-27B 性能提升达 78%",
+          "title_orig": "RT clem 🤗: llama.cpp with MTP support makes local models fast enough to use as daily drivers 🚀 Qwen3.6-27B dense generation below on A10G: From ...",
+          "summary": "llama.cpp通过支持MTP技术实现了本地模型运行速度的飞跃，使Qwen3.6-27B模型在A10G显卡上的密集生成速度从每秒25个token大幅提升至45个token，性能涨幅高达78%。这一显著的技术突破不仅解决了本地部署的效率瓶颈，更让大模型在处理日常任务时具备了极高的实用性与响应速度，标志着本地化AI驱动工具正式迈入高性能应用的新阶段。",
+          "tags": [
+            "llama.cp",
+            "MTP技术",
+            "本地模型"
+          ],
+          "url": "https://x.com/huggingface/status/2058672724260667469",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-24T22:12:01+00:00",
+          "cve_ids": [],
+          "selection_reason": "本地模型推理速度的显著提升是 AI 普及的关键里程碑。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/huggingface",
+          "feed_title": "X / Hugging Face",
+          "source_tier": "t1_5",
+          "source_kind": "official_x",
+          "source_label": "官方 X",
+          "source_key": "x:huggingface",
+          "story_id": "url:x.com/huggingface/status/2058672724260667469",
           "related_urls": [],
           "related_count": 0,
           "score": 8,
-          "dimension_score": 8.35,
-          "final_score": 7.05,
+          "dimension_score": 8.2,
+          "final_score": 9.4,
           "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": -1.6,
+            "source_bonus": 0.5,
+            "kind_bonus": 0.4,
             "freshness_bonus": 0.3,
             "cn_visibility_bonus": 0.0
           }
         },
         {
-          "title_zh": "Datasette-agent 插件更新，新增表单功能支持直接发起智能体对话",
-          "title_orig": "Re Plugins can also affect the empty state of the new menu - the latest datasette-agent adds a form for kicking off a new agent conversation - live de...",
-          "summary": "开发者Simon Willison发布了datasette-agent的最新更新，通过插件机制优化了新菜单的空状态，并新增了一个专门用于启动新智能体对话的交互表单以增强用户体验。该功能目前已在官方演示网站上线，用户通过GitHub账号登录后即可实时体验插件对智能体交互流程的改进，这进一步提升了数据分析过程中的自动化协作效率，展示了插件扩展在复杂系统中的应用价值。",
+          "title_zh": "RMA 研究级数学智能体框架发布，专注于解决长程推理与文献支撑的复杂数学难题",
+          "title_orig": "RMA: an Agentic System for Research-Level Mathematical Problems",
+          "summary": "研究人员推出了 RMA 智能体框架，旨在解决需要长程推理、文献参考和迭代证明优化的研究级数学问题，填补了自动化数学研究领域的空白。该系统区别于以往侧重竞赛或形式化证明的工具，通过模拟真实的科研流程，为自动化处理高难度学术数学挑战提供了全新的技术路径、系统化解决方案以及更深层次的逻辑支撑。",
           "tags": [
-            "Datasett",
-            "智能体对话",
-            "插件更新"
+            "RMA",
+            "数学智能体",
+            "长程推理"
           ],
-          "url": "https://x.com/simonw/status/2058705477266244056",
+          "url": "https://arxiv.org/abs/2605.22875",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-25T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "将 AI 应用于研究级数学问题展示了智能体在复杂逻辑领域的进",
+          "feed_url": "http://export.arxiv.org/rss/cs.AI",
+          "feed_title": "arXiv cs.AI recent",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org",
+          "story_id": "url:arxiv.org/abs/2605.22875",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "dimension_score": 7.05,
+          "final_score": 8.85,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Anthropic 举办技术研讨会，分享如何构建能够持续运行数小时的长效 AI 智能体",
+          "title_orig": "RT AI Engineer: Most agents die after a few seconds. @AnthropicAI's workshop shows how to build agents that run for hours. full 75-min session with As...",
+          "summary": "针对目前大多数 AI 智能体运行数秒即失效的痛点，Anthropic 举办了长达 75 分钟的专题研讨会，由资深工程师深入讲解构建能持续运行数小时的长效智能体的技术细节。该课程旨在帮助开发者解决系统稳定性难题，推动智能体从短期简单的任务执行向长期复杂的业务流程处理转型，并提供了完整的视频教学资源。",
+          "tags": [
+            "Anthropi",
+            "AI智能体",
+            "开发者教程"
+          ],
+          "url": "https://x.com/swyx/status/2058572093571355068",
           "source": "x.com",
           "category": "XSignals",
-          "published": "2026-05-25T00:23:29+00:00",
+          "published": "2026-05-23T21:15:42+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了智能体功能在数据分析工具中的具体集成与交互创新。",
-          "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
-          "feed_title": "X / Simon Willison",
+          "selection_reason": "解决智能体运行寿命问题是实现复杂自动化任务的核心挑战。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/swyx",
+          "feed_title": "X / swyx",
           "source_tier": "t2",
           "source_kind": "expert_x",
           "source_label": "专家 X",
-          "source_key": "x:simonw",
-          "story_id": "url:x.com/simonw/status/2058705477266244056",
-          "related_urls": [
-            "https://simonwillison.net/2026/May/24/datasette/#atom-everything"
+          "source_key": "x:swyx",
+          "story_id": "url:x.com/swyx/status/2058572093571355068",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "dimension_score": 8.2,
+          "final_score": 8.5,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "BOHM 归因方法解决复合 AI 系统难题，支持在零成本下对第三方 API 进行层级分析",
+          "title_orig": "BOHM: Zero-Cost Hierarchical Attribution for Compound AI Systems",
+          "summary": "研究人员提出 BOHM 归因框架，专门用于分析由多个专业组件构成的复合 AI 系统，解决了传统 SHAP 方法在面对不透明第三方 API 或黑盒端点时无法评估子集的局限。该方法实现了零成本的层级归因，能够清晰界定各组件对系统最终输出的边际贡献度，在提升复杂系统可解释性的同时，大幅降低了计算资源的消耗。",
+          "tags": [
+            "BOHM",
+            "复合AI系统",
+            "可解释性"
           ],
-          "related_count": 1,
+          "url": "https://arxiv.org/abs/2605.22866",
+          "source": "arxiv.org",
+          "category": "Research",
+          "published": "2026-05-25T04:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "为多组件 AI 系统提供低成本归因方案，对系统优化具有重要意",
+          "feed_url": "http://export.arxiv.org/rss/cs.AI",
+          "feed_title": "arXiv cs.AI recent",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "论文源",
+          "source_key": "arxiv.org",
+          "story_id": "url:arxiv.org/abs/2605.22866",
+          "related_urls": [],
+          "related_count": 0,
           "score": 6,
-          "dimension_score": 6.25,
-          "final_score": 6.85,
+          "dimension_score": 6.55,
+          "final_score": 8.35,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "月之暗面推出 TypeScript 版 kimi-code，重构命令行工具以提升开发者使用体验",
+          "title_orig": "想起当年的梗😂 “kimicli用python是彻底的失败立刻重构为ts” 没想到还是搞了个 TS 版的 kimi-code https://github.com/MoonshotAI/kimi-code",
+          "summary": "MoonshotAI将原有的Python版kimi-cli彻底重构，正式推出了基于TypeScript和pi-tui库开发的新版kimi-code工具，实现了从底层架构到交互逻辑的全面升级。该版本在借鉴Claude Code优秀功能的基础上，致力于通过更高效的语言环境和终端交互设计，为开发者提供更流畅的编程体验，同时也标志着Kimi系列命令行工具在性能优化与功能扩展上迈出了关键一步。",
+          "tags": [
+            "Kimi",
+            "TypeScri",
+            "开发者工具"
+          ],
+          "url": "https://x.com/dotey/status/2058782251886817432",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-25T05:28:33+00:00",
+          "cve_ids": [],
+          "selection_reason": "国内领先大模型厂商重构其开发者工具，反映了工程化方向的转变。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
+          "feed_title": "X / dotey",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "专家 X",
+          "source_key": "x:dotey",
+          "story_id": "url:x.com/dotey/status/2058782251886817432",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "dimension_score": 7.65,
+          "final_score": 8.25,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.3,
@@ -934,20 +1109,161 @@
           }
         },
         {
-          "title_zh": "2026 智源大会集结中国大模型第一梯队，图灵奖得主与领军企业共话 AI 产业",
+          "title_zh": "Codex 智能体交互界面获好评，支持实时监控子智能体运行状态与提示词细节",
+          "title_orig": "Codex 交互做的真的挺好的，你可以方便的看当前运行的 SubAgents，以及每个 SubAgent 在做的事、用的提示词",
+          "summary": "Codex 在智能体交互设计上取得显著突破，用户可以直观地查看当前正在运行的所有子智能体及其具体执行的任务细节，实现了操作过程的全透明化。该系统还允许开发者实时监测每个子智能体所使用的具体提示词，这种清晰的交互机制极大地简化了复杂智能体系统的调试过程，并有效提升了用户对 AI 决策逻辑的信任感。",
+          "tags": [
+            "Codex",
+            "智能体交互",
+            "UI设计"
+          ],
+          "url": "https://x.com/dotey/status/2058330410107449401",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-23T23:33:06+00:00",
+          "cve_ids": [],
+          "selection_reason": "优秀的交互设计是提升 AI 智能体可观测性和易用性的关键。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
+          "feed_title": "X / dotey",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "专家 X",
+          "source_key": "x:dotey",
+          "story_id": "url:x.com/dotey/status/2058330410107449401",
+          "related_urls": [
+            "https://x.com/dotey/status/2058301264992067603"
+          ],
+          "related_count": 1,
+          "score": 6,
+          "dimension_score": 6.45,
+          "final_score": 6.75,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "中国多省份启动人工智能科技伦理审查先导计划，强化 AI 产业伦理管理制度建设",
+          "title_orig": "AI伦理管理制度：《人工智能科技伦理审查与服务办法（试行）》以及《关于实施人工智能科技伦理审查与服务先导计划》，在国家人工智能产业创新应用先导区所在省份（北京、上海、广东、山东、天津、四川、江苏、湖北、湖南、浙江）范围内实施先导计划– 智慧城市行业分析 - 智慧城市行业分析",
+          "summary": "北京、上海、广东、山东、江苏等十个国家人工智能产业创新应用先导区省份，将正式实施 AI 科技伦理审查与服务先导计划及相关试行办法。该制度旨在通过规范人工智能研发与应用全过程中的伦理审查流程，确保前沿科技创新在安全合规的框架下运行，防范潜在的伦理风险，从而促进我国人工智能产业健康、有序且可持续地发展。",
+          "tags": [
+            "AI伦理",
+            "行业监管",
+            "先导计划"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOUmE5dlpvLVo0V0VaTm5Mby1lb09Ob3FuRTNiTFlOQ002RGNPRWxrRHRDcEFMZnVZM0FYRkk5b0k1UmxHRHo1dTVfM210QURsV1RDR25TRXBqQXljT2taWXMyZG9FQ2p5U2RYNWtCYS12dE9FSVI5cFF0bEgxUmZaRjlwVzl3NWNmdndYYlVvOElQWTZEUXBZNVFWRDBYNU5IX3J3a0VKck1pTm1sbjItMENyR2F1U0tTclQycWI4QWRPdEJVLVB3UmQzN3VuWnI0WHdkN2JIQ2JaTi13dWhNREFB?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese",
+          "published": "2026-05-25T06:44:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "国家级 AI 伦理审查制度的落地将对行业合规性产生深远影响。",
+          "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "feed_title": "Google News 中文 AI",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com",
+          "story_id": "title:8c59bd9ab9b1",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "dimension_score": 7.7,
+          "final_score": 6.4,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": -1.6,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Datasette 1.0a30 发布，引入可扩展的快捷跳转菜单及全新插件钩子功能",
+          "title_orig": "datasette 1.0a30",
+          "summary": "Datasette 发布了 1.0a30 预览版，其核心更新是新增了支持高度自定义的“跳转到...”菜单，用户在界面按下斜杠键即可快速触发检索功能以提升操作便捷性。新版本还引入了关键的 jump_items_sql 插件钩子，允许开发者通过 SQL 逻辑灵活地为搜索菜单添加自定义项，显著增强了这款数据浏览工具的扩展能力，为用户提供了更加个性化且高效的交互界面。",
+          "tags": [
+            "Datasett",
+            "开源工具",
+            "数据可视化"
+          ],
+          "url": "https://simonwillison.net/2026/May/24/datasette/#atom-everything",
+          "source": "simonwillison.net",
+          "category": "Commentary",
+          "published": "2026-05-24T23:52:37+00:00",
+          "cve_ids": [],
+          "selection_reason": "知名数据工具的大版本更新，增强了数据探索的效率和灵活性。",
+          "feed_url": "https://simonwillison.net/atom/everything/",
+          "feed_title": "Simon Willison",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "simonwillison.net",
+          "story_id": "url:simonwillison.net/2026/may/24/datasette",
+          "related_urls": [
+            "https://x.com/simonw/status/2058705477266244056",
+            "https://simonwillison.net/2026/May/24/datasette-fixtures/#atom-everything"
+          ],
+          "related_count": 2,
+          "score": 5,
+          "dimension_score": 5.45,
+          "final_score": 5.95,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "谷歌展示全新全模态 Gemini AI 模型，可实现任意格式内容之间的无缝转换与生成",
+          "title_orig": "Google’s new anything-to-anything AI model is wild",
+          "summary": "谷歌展示了其最新的全模态Gemini AI模型，该模型具备强大的“任意到任意”处理能力，能够将不同格式的输入转化为极其逼真的视频或图像内容。这项技术不仅验证了此前广告中展示的创意生成场景，也因其极低的创作门槛引发了公众对于深度伪造技术滥用以及AI生成视频真实性的广泛讨论与社会担忧。",
+          "tags": [
+            "谷歌",
+            "Gemini",
+            "全模态AI"
+          ],
+          "url": "https://www.theverge.com/tech/936507/gemini-omni-hands-on-deepfake-ai-video",
+          "source": "theverge.com",
+          "category": "Media",
+          "published": "2026-05-23T11:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示了谷歌在多模态生成领域的最新进展及潜在社会影响。",
+          "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+          "feed_title": "The Verge AI",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "theverge.com",
+          "story_id": "url:theverge.com/tech/936507/gemini-omni-hands-on-deepfake-ai-video",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 5,
+          "dimension_score": 5.85,
+          "final_score": 5.85,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "2026 智源大会集结中国大模型第一梯队，图灵奖得主与阶跃星辰等领军企业共话智能体产业",
           "title_orig": "图灵奖得主领衔，中国大模型第一梯队集结！2026智源大会，看懂AI|智能体|阶跃星辰|Minimax|论坛|产业_手机新浪网 - 新浪财经",
-          "summary": "2026智源大会由图灵奖得主领衔，汇聚了阶跃星辰、Minimax等中国大模型领域的第一梯队企业，共同探讨人工智能、智能体及产业应用的未来趋势。大会通过设立多个专业论坛，深度聚焦大模型技术的演进路径与行业落地挑战，旨在搭建高水平的交流平台，推动中国AI产业在核心技术研发与生态建设上的深度协同与跨越发展。",
+          "summary": "2026智源大会在北京盛大开幕，汇聚了多位图灵奖得主以及阶跃星辰、Minimax等中国大模型第一梯队的领军企业，共同探讨AI智能体与产业融合的前沿趋势。此次大会全面展示了中国大模型企业的集体实力与技术突破，旨在通过高水平论坛推动人工智能在复杂应用场景下的落地实践、生态建设及产业升级。",
           "tags": [
             "智源大会",
-            "中国大模型",
-            "人工智能"
+            "大模型",
+            "智能体"
           ],
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbkxfOGhDY0J0MGs3dHI4U2czZHQ5LWIwNTlCMmR0d0l0dm9lbmVJbWRkdXFQdlFHTWgzVVdWQzhHX3N0aFJXZi1DTXd1Ylh1RTFyMEJneWlRZndWbEZHX3JQcEVuZHBuSEZJQnlJa2Zlb21WOS1tTDZNZXlLT290czNVaDhvd3pEMXRiTmZlVG83WDA5V3pid29McDVDaVRDOURZWmdvYw?oc=5",
           "source": "news.google.com",
           "category": "Chinese",
           "published": "2026-05-25T05:15:00+00:00",
           "cve_ids": [],
-          "selection_reason": "国内顶级 AI 行业盛会，集中展示了中国大模型梯队的最新动态",
+          "selection_reason": "反映中国 AI 顶尖力量的集结与未来产业布局方向。",
           "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
           "feed_title": "Google News 中文 AI",
           "source_tier": "t2",
@@ -957,9 +1273,9 @@
           "story_id": "title:51e6d6a91387",
           "related_urls": [],
           "related_count": 0,
-          "score": 8,
-          "dimension_score": 7.65,
-          "final_score": 6.35,
+          "score": 7,
+          "dimension_score": 6.9,
+          "final_score": 5.6,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": -1.6,
@@ -968,54 +1284,20 @@
           }
         },
         {
-          "title_zh": "黑客开始利用聊天机器人的“人格”特征进行漏洞攻击与安全渗透",
-          "title_orig": "Hackers are learning to exploit chatbot &#8216;personalities&#8217;",
-          "summary": "安全研究发现黑客正在学习如何利用AI聊天机器人的特定“人格”设定来实施攻击，这标志着AI安全威胁已从简单的指令注入演变为更复杂的心理诱导与逻辑欺骗。这种针对机器人性格特征的新型攻击方式对现有AI系统的防御机制提出了严峻挑战，开发者必须重新审视系统设定带来的安全隐患，并加强对交互逻辑的深度防御。",
-          "tags": [
-            "AI安全",
-            "黑客攻击",
-            "聊天机器人"
-          ],
-          "url": "https://www.theverge.com/column/935545/hackers-ai-chatbots",
-          "source": "theverge.com",
-          "category": "Media",
-          "published": "2026-05-24T12:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "揭示了 AI 安全领域出现的新型攻击维度，具有预警意义。",
-          "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-          "feed_title": "The Verge AI",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "科技媒体",
-          "source_key": "theverge.com",
-          "story_id": "url:theverge.com/column/935545/hackers-ai-chatbots",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 6,
-          "dimension_score": 6.0,
-          "final_score": 6.1,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.1,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "亚马逊 Bee 穿戴设备体验：在便捷功能与隐私焦虑之间寻找平衡",
+          "title_zh": "亚马逊推出 Bee 智能穿戴设备，在提供便捷 AI 服务的同时引发用户隐私安全担忧",
           "title_orig": "I tried Amazon’s Bee wearable and am both intrigued and slightly creeped out",
-          "summary": "亚马逊推出的Bee穿戴式AI设备在提供全天候便捷服务的同时，也因其持续记录的特性引发了用户关于隐私泄露和监控的深度担忧。这种结合了实时AI交互与个人生活记录的硬件产品，集中反映了当前AI可穿戴设备在提升生活效率与保护个人私密空间之间的核心矛盾，促使行业反思如何在技术创新与用户信任之间取得平衡。",
+          "summary": "亚马逊正式推出名为Bee的AI穿戴设备，旨在通过全天候的语音交互为用户提供便捷的智能助手服务，但其持续记录环境信息的特性也引发了严重的隐私焦虑。该产品深刻反映了当前AI硬件市场的矛盾现状，即在追求极致生活便利与保护个人私密空间之间，厂商、监管机构和用户仍需在技术迭代中寻找平衡点。",
           "tags": [
-            "AI硬件",
             "亚马逊",
-            "隐私保护"
+            "AI硬件",
+            "隐私安全"
           ],
           "url": "https://techcrunch.com/2026/05/24/i-tried-amazons-bee-wearable-and-am-both-intrigued-and-slightly-creeped-out/",
           "source": "techcrunch.com",
           "category": "Media",
           "published": "2026-05-24T15:00:00+00:00",
           "cve_ids": [],
-          "selection_reason": "探讨了 AI 穿戴设备在实际应用中面临的隐私与功能平衡问题。",
+          "selection_reason": "探讨 AI 穿戴设备在便利性与隐私边界之间的冲突。",
           "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
           "feed_title": "TechCrunch AI",
           "source_tier": "t2",
@@ -1026,8 +1308,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 5,
-          "dimension_score": 5.55,
-          "final_score": 5.65,
+          "dimension_score": 5.45,
+          "final_score": 5.55,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.0,
@@ -1036,73 +1318,177 @@
           }
         },
         {
-          "title_zh": "AI肝胆超级医生智能体在北京昌平及朝阳等多地正式推广应用，助力提升基层医疗诊断效率",
-          "title_orig": "AI肝胆超级医生智能体已在北京昌平、朝阳等地推广应用 - 新京报",
-          "summary": "AI肝胆超级医生智能体目前已在北京昌平、朝阳等多个地区投入实际推广与应用，该系统通过人工智能技术辅助医生进行肝胆疾病的筛查与诊断。这一进展标志着垂直领域医疗AI智能体正加速从实验室走向临床一线，对于优化基层医疗资源配置、提升肝胆专科疾病的早期发现率和诊疗标准化具有重要的实践意义。",
+          "title_zh": "开发者 Toby 质疑“代码免费化”论调，强调架构设计与需求文档才是软件工程的核心",
+          "title_orig": "RT Toby!: （好担心自己变成杠精😂） 先说结论：观察方向对，但论证粗糙，外推过度，借鉴意义有限。本文展现出了作者她这个背景和level不应该呈现出的稚嫩感。...",
+          "summary": "针对“代码几乎免费”的激进观点，开发者Toby提出严厉批评，认为这种论调忽视了高质量架构设计、边界条件测试及长期维护成本的真实价值。他指出软件工程的真实源头应是业务需求而非作为执行结果的代码，过度外推AI的代码生成能力会误导大众对工程本质的理解，且这种论证方式显得过于稚嫩且缺乏深度。",
           "tags": [
-            "医疗AI",
-            "智能体",
-            "智慧医疗"
+            "软件工程",
+            "AI编程",
+            "技术评论"
           ],
-          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9hNHFWRGhnS2o0bmg3ZzBHc3BCQ1hEZ1ctaDlRa1hnRGFHR01hX0huRU5ON2dBeHhWNkl0VmNCWUlfaUtoNmVlVzk2NXNnME02dkhiUGFkVUp4a0RJYU5UdEhaNGU?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese",
-          "published": "2026-05-25T05:43:00+00:00",
+          "url": "https://x.com/dotey/status/2058591666504716426",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-05-24T16:50:30+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了AI智能体在垂直医疗领域的落地应用进展。",
-          "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-          "feed_title": "Google News 中文 AI",
+          "selection_reason": "对当前 AI 编程热潮中的激进观点提供了理性的工程视角反思。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
+          "feed_title": "X / dotey",
           "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com",
-          "story_id": "title:3cb7a87bd928",
+          "source_kind": "expert_x",
+          "source_label": "专家 X",
+          "source_key": "x:dotey",
+          "story_id": "url:x.com/dotey/status/2058591666504716426",
           "related_urls": [],
           "related_count": 0,
-          "score": 6,
-          "dimension_score": 5.75,
-          "final_score": 4.45,
+          "score": 5,
+          "dimension_score": 5.05,
+          "final_score": 5.45,
           "score_breakdown": {
             "source_bonus": 0.0,
-            "kind_bonus": -1.6,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "黑客开始利用聊天机器人的“人格特性”实施攻击，AI 安全防护面临新型社会工程学挑战",
+          "title_orig": "Hackers are learning to exploit chatbot &#8216;personalities&#8217;",
+          "summary": "安全研究发现黑客正学习利用AI聊天机器人的特定“人格”或语气设定来绕过安全限制，这标志着AI攻击手段已从简单的指令注入演变为更复杂的心理策略。这种新型威胁对开发者提出了更高要求，在构建模型时不仅要防御恶意指令，还需关注模型交互逻辑中可能被利用的性格漏洞，以确保系统在复杂对话中的安全性。",
+          "tags": [
+            "网络安全",
+            "AI黑客",
+            "聊天机器人"
+          ],
+          "url": "https://www.theverge.com/column/935545/hackers-ai-chatbots",
+          "source": "theverge.com",
+          "category": "Media",
+          "published": "2026-05-24T12:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示了 AI 安全领域出现的新型攻击向量，具有预警意义。",
+          "feed_url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+          "feed_title": "The Verge AI",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "theverge.com",
+          "story_id": "url:theverge.com/column/935545/hackers-ai-chatbots",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 5,
+          "dimension_score": 5.25,
+          "final_score": 5.35,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "Armin Ronacher 批评 AI 生成的错误报告，称其充满虚假自信且严重干扰开源社区开发",
+          "title_orig": "Quoting Armin Ronacher",
+          "summary": "知名开发者Armin Ronacher指出，目前开源社区充斥着大量由AI生成的Issue报告，这些报告往往逻辑混乱、结论错误却表现得极度自信。这种现象导致项目维护者不得不耗费大量宝贵精力去辨别和清理这些低质量的虚假信息，严重干扰了正常的软件开发流程，并对开源社区的协作效率与信任基础造成了负面影响。",
+          "tags": [
+            "开源社区",
+            "AI生成内容",
+            "开发效率"
+          ],
+          "url": "https://simonwillison.net/2026/May/24/armin-ronacher/#atom-everything",
+          "source": "simonwillison.net",
+          "category": "Commentary",
+          "published": "2026-05-24T18:46:53+00:00",
+          "cve_ids": [],
+          "selection_reason": "反映了 AI 工具滥用对开源生态系统造成的负面影响。",
+          "feed_url": "https://simonwillison.net/atom/everything/",
+          "feed_title": "Simon Willison",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "simonwillison.net",
+          "story_id": "url:simonwillison.net/2026/may/24/armin-ronacher",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 4,
+          "dimension_score": 4.5,
+          "final_score": 4.8,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "谷歌等科技巨头正处于 AI 安全转型期，实时应对日益复杂的模型漏洞与防御挑战",
+          "title_orig": "Everyone is navigating AI security in real time — even Google",
+          "summary": "随着AI技术的快速迭代，包括谷歌在内的全球科技巨头正面临前所未有的安全挑战，必须在系统实时运行的过程中不断调整并升级防御策略。当前整个行业正处于一个关键的转型期，所有参与者都在摸索如何构建更具韧性的安全框架，以应对AI模型在生成内容、数据隐私及系统漏洞方面可能带来的各种未知风险。",
+          "tags": [
+            "AI安全",
+            "谷歌",
+            "技术转型"
+          ],
+          "url": "https://techcrunch.com/2026/05/24/everyone-is-navigating-ai-security-in-real-time-even-google/",
+          "source": "techcrunch.com",
+          "category": "Media",
+          "published": "2026-05-24T21:39:21+00:00",
+          "cve_ids": [],
+          "selection_reason": "强调了 AI 安全防护的动态性与行业整体面临的挑战。",
+          "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+          "feed_title": "TechCrunch AI",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "techcrunch.com",
+          "story_id": "url:techcrunch.com/2026/05/24/everyone-is-navigating-ai-security-in-real-time-even-google",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 4,
+          "dimension_score": 4.35,
+          "final_score": 4.65,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
             "freshness_bonus": 0.3,
             "cn_visibility_bonus": 0.0
           }
         }
       ],
-      "raw_count": 16,
-      "selected_count": 9,
+      "raw_count": 37,
+      "selected_count": 15,
       "selection_stats": {
-        "total": 9,
-        "direct": 5,
+        "total": 15,
+        "aggregator": 7,
+        "tier_t1_5": 1,
+        "kind_official_x": 1,
+        "direct": 8,
         "tier_t1": 2,
         "kind_official": 2,
-        "tier_t2": 7,
-        "kind_expert": 1,
-        "google_news": 3,
-        "aggregator": 4,
-        "chinese": 3,
-        "kind_google_news": 3,
-        "kind_expert_x": 1,
-        "kind_media": 2
+        "tier_t2": 12,
+        "kind_expert_x": 4,
+        "chinese": 5,
+        "google_news": 2,
+        "kind_google_news": 2,
+        "kind_expert": 2,
+        "kind_media": 4
       },
       "clustering_stats": {
         "deterministic_merged": 0,
-        "llm_merged": 1,
-        "merged_total": 1
+        "llm_merged": 5,
+        "merged_total": 5
       },
-      "generated_at": "2026-05-25T06:45:21.233993Z"
+      "generated_at": "2026-05-25T06:55:09.963828Z"
     },
     "finance": {
       "display_name": "金融科技",
       "items": [
         {
-          "title_zh": "Circle 联合创始人旗下 AI 初创公司 Catena Labs 融资 3000 万美元并申请银行牌照",
+          "title_zh": "Circle 联合创始人旗下 AI 初创公司 Catena Labs 获 3000 万美元融资并申请银行牌照",
           "title_orig": "Circle Co-Founder Raises $30 Million for Agentic-Driven Finance",
-          "summary": "由 Circle 联合创始人 Sean Neville 领导的智能体 AI 初创公司 Catena Labs 成功融资 3000 万美元，且其美国国家信托银行牌照申请已获货币监理署受理。该公司致力于构建受监管的金融基础设施，此举标志着 AI 智能体驱动的金融服务正加速进入合规监管体系，对未来金融自动化具有重要意义，并为行业树立了技术与监管结合的新标杆。",
+          "summary": "由Circle联合创始人Sean Neville领导的智能体人工智能初创公司Catena Labs成功筹集了3000万美元资金，并宣布其向美国货币监理署提交的国家信托银行牌照申请已获得正式受理。该公司致力于在合规的监管框架下构建由智能体驱动的新型金融基础设施，通过将受监管的金融体系与自主AI技术深度融合，旨在为市场提供安全且创新的金融服务与技术支持。",
           "tags": [
-            "人工智能",
             "金融科技",
+            "人工智能",
             "融资"
           ],
           "url": "https://www.pymnts.com/artificial-intelligence-2/2026/circle-co-founder-raises-30-million-for-agentic-driven-finance/",
@@ -1110,7 +1496,7 @@
           "category": "Editorial Lens",
           "published": "2026-05-24T21:37:54+00:00",
           "cve_ids": [],
-          "selection_reason": "Circle创始人新作，标志着AI智能体金融合规化进程。",
+          "selection_reason": "Circle创始人新作，探索AI智能体与银行监管的结合。",
           "feed_url": "https://www.pymnts.com/feed/",
           "feed_title": "PYMNTS",
           "source_tier": "t2",
@@ -1131,20 +1517,20 @@
           }
         },
         {
-          "title_zh": "加拿大道明银行推出智能体 AI 模型以加速抵押贷款和房屋净值贷款申请流程",
+          "title_zh": "加拿大道明银行推出智能体 AI 模型以加速抵押贷款和房屋净值贷款审批流程",
           "title_orig": "TD builds AI model to speed up mortgage applications",
-          "summary": "加拿大道明银行正式发布了一款先进的智能体 AI 模型，旨在通过自动化手段简化并加速抵押贷款及房屋净值信贷额度的申请流程，从而显著提升业务处理效率。该技术的应用展示了传统银行如何利用前沿 AI 提升核心业务竞争力，将直接改善客户的贷款申请体验并缩短审批周期，反映了银行业在数字化转型中对自动化流程的深度探索。",
+          "summary": "加拿大道明银行正式上线了一款先进的智能体 AI 模型，专门用于实现抵押贷款和房屋净值信贷额度申请流程的自动化与精简，从而大幅提升业务处理速度。该技术的应用不仅显著提高了银行处理复杂贷款申请的效率，还通过缩短客户等待时间优化了用户体验，充分展示了传统银行在核心信贷业务中对 AI 自动化技术的深度应用与转型决心。",
           "tags": [
-            "银行业",
-            "人工智能",
-            "抵押贷款"
+            "道明银行",
+            "AI贷款",
+            "金融自动化"
           ],
           "url": "https://www.finextra.com/newsarticle/47801/td-builds-ai-model-to-speed-up-mortgage-applications?utm_medium=rssfinextra&utm_source=finextrafeed",
           "source": "finextra.com",
           "category": "Editorial Lens",
           "published": "2026-05-25T00:01:00+00:00",
           "cve_ids": [],
-          "selection_reason": "传统大行落地AI智能体应用，具有行业示范效应。",
+          "selection_reason": "展示了主流银行如何利用智能体AI优化核心信贷业务。",
           "feed_url": "https://www.finextra.com/rss/headlines.aspx",
           "feed_title": "Finextra Headlines",
           "source_tier": "t2",
@@ -1165,20 +1551,20 @@
           }
         },
         {
-          "title_zh": "PayPal 宣布已在全球 70 个市场完成 PYUSD 美元稳定币的部署工作",
+          "title_zh": "PayPal 宣布已在全球 70 个市场完成 PYUSD 美元稳定币的合规部署",
           "title_orig": "PayPal宣布完成70个市场PYUSD稳定币部署 - 移动支付网",
-          "summary": "支付巨头 PayPal 宣布其发行的美元稳定币 PYUSD 已成功在全球 70 个不同的市场完成部署，标志着其在加密货币领域的全球化版图进一步扩张。这一进展不仅强化了 PayPal 在全球支付生态中整合数字资产的能力，还将增强其在跨境支付和数字金融领域的竞争地位，对稳定币的普及以及数字货币与传统支付体系的融合具有深远的推动作用。",
+          "summary": "支付巨头 PayPal 官方宣布其发行的美元稳定币 PYUSD 已成功在 70 个不同的国家和地区市场完成部署，实现了全球范围内的广泛覆盖。这一重大进展标志着 PayPal 在全球数字货币支付版图中迈出了关键一步，对于推动稳定币在跨境支付、日常交易以及金融生态系统中的主流化应用具有重要意义，进一步巩固了其在数字支付领域的领先地位。",
           "tags": [
             "PayPal",
-            "稳定币",
-            "数字支付"
+            "PYUSD",
+            "稳定币"
           ],
           "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5rSXFXZEgzbmF5ZXphUlJaY2xHUHl3a3MyaWhodU1tM2lDUG1vOTRpUHExSFNFci1mTmhjNFJGbURiREhHSFZGdXE4RF9vTWRvZm1TTFFYUlQxSG82Q0NnSy1XTQ?oc=5",
           "source": "news.google.com",
           "category": "Chinese Wallets (TODO)",
           "published": "2026-05-25T01:43:46+00:00",
           "cve_ids": [],
-          "selection_reason": "支付巨头稳定币全球化布局的重要里程碑。",
+          "selection_reason": "PayPal稳定币全球化进程的重要里程碑。",
           "feed_url": "https://news.google.com/rss/search?q=(%22金融科技%22+OR+%22数字人民币%22+OR+%22支付宝%22+OR+%22微信支付%22+OR+%22稳定币%22+OR+%22跨境支付%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
           "feed_title": "Google News 中文金融科技",
           "source_tier": "t2",
@@ -1199,20 +1585,20 @@
           }
         },
         {
-          "title_zh": "前美国消费者金融保护局局长 Rohit Chopra 将出任加州新设立的消费者保护机构负责人",
+          "title_zh": "前美国消费者金融保护局局长 Rohit Chopra 将出任加州新设消费者保护机构负责人",
           "title_orig": "CFPB alum Chopra to lead state consumer agency",
-          "summary": "曾任美国消费者金融保护局局长的 Rohit Chopra 已被任命领导加利福尼亚州新成立的机构，负责监督该州的消费者事务、金融保护及其他相关监管职责。作为资深的金融监管专家，他的任职预示着加州将进一步加强对金融服务行业的监管力度，对当地金融科技创新、银行业合规以及消费者权益保护产生深远影响，并可能引发其他各州的效仿。",
+          "summary": "曾任美国消费者金融保护局局长的 Rohit Chopra 被任命领导加利福尼亚州一个新成立的政府机构，负责全面监督该州的消费者事务、金融保护及相关监管职责。此项任命预示着加州将显著加强对金融服务行业的监管力度，预计会对在该州运营的各类金融科技公司和传统金融机构产生深远影响，并可能引领美国各州在金融消费者保护领域的政策走向。",
           "tags": [
             "金融监管",
-            "消费者保护",
-            "加州"
+            "加州",
+            "消费者保护"
           ],
           "url": "https://www.paymentsdive.com/news/cfpb-alum-rohit-chopra-lead-california-consumer-agency/820351/",
           "source": "paymentsdive.com",
           "category": "Editorial Lens",
           "published": "2026-05-15T13:43:49+00:00",
           "cve_ids": [],
-          "selection_reason": "重量级监管人物履新，预示地方金融监管力度升级。",
+          "selection_reason": "重量级监管人物履新，可能影响美国地方金融监管走向。",
           "feed_url": "https://www.paymentsdive.com/feeds/news/",
           "feed_title": "Payments Dive",
           "source_tier": "t2",
@@ -1223,8 +1609,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 8,
-          "dimension_score": 7.35,
-          "final_score": 7.35,
+          "dimension_score": 7.1,
+          "final_score": 7.1,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.0,
@@ -1233,20 +1619,88 @@
           }
         },
         {
-          "title_zh": "高盛预测智能体 AI 将重塑科技公司现金流并带动全球 Token 消耗量激增",
+          "title_zh": "荷兰数字银行 Bunq 申请墨西哥银行牌照以进军拉美市场挑战 Revolut 和 Nubank",
+          "title_orig": "Bunq Files for Mexican Banking License, Trailing Revolut and Nubank Into the Local Market",
+          "summary": "欧洲第二大数字银行 Bunq 已正式向墨西哥监管机构提交银行牌照申请，这是继其今年早些时候申请美国牌照后在美洲市场的又一重大扩张举措。Bunq 旨在通过获得全牌照在当地提供全面的银行服务和多币种支持，在墨西哥这一关键市场与 Revolut 和 Nubank 等强劲对手展开直接竞争，从而利用其在欧洲积累的数字银行经验开辟新的增长曲线。",
+          "tags": [
+            "Bunq",
+            "数字银行",
+            "墨西哥"
+          ],
+          "url": "https://www.financemagnates.com/fintech/bunq-files-for-mexican-banking-license-trailing-revolut-and-nubank-into-the-local-market/",
+          "source": "financemagnates.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-14T06:51:48+00:00",
+          "cve_ids": [],
+          "selection_reason": "欧洲挑战者银行加速全球扩张，拉美市场竞争加剧。",
+          "feed_url": "https://www.financemagnates.com/fintech/feed/",
+          "feed_title": "Finance Magnates Fintech",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "financemagnates.com",
+          "story_id": "url:financemagnates.com/fintech/bunq-files-for-mexican-banking-license-trailing-revolut-and-nubank-into-the-local-market",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "dimension_score": 7.05,
+          "final_score": 7.05,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "STET 首席执行官表示 SEPA 将成为现代欧洲支付主权与即时支付的核心支柱",
+          "title_orig": "How SEPA Will Be the Backbone of Modern European Payments Sovereignty",
+          "summary": "STET 首席执行官 Regis Folbaum 在行业活动中指出，单一欧元支付区的协调一致是欧洲支付行业发展的核心，将支撑起即时支付监管和本土卡计划的普及。他强调 SEPA 将作为欧洲支付主权的骨干力量，推动下一波支付技术变革并增强欧洲在金融基础设施上的独立性，确保欧洲在面对全球支付竞争时能够维持其金融体系的完整性与自主权。",
+          "tags": [
+            "SEPA",
+            "欧洲支付",
+            "即时支付"
+          ],
+          "url": "https://www.finextra.com/videoarticle/3499/how-sepa-will-be-the-backbone-of-modern-european-payments-sovereignty?utm_medium=rssfinextra&utm_source=finextrafeed",
+          "source": "finextra.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-14T15:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及欧洲支付主权和金融基础设施的战略性观点。",
+          "feed_url": "https://www.finextra.com/rss/headlines.aspx",
+          "feed_title": "Finextra Headlines",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "finextra.com",
+          "story_id": "url:finextra.com/videoarticle/3499/how-sepa-will-be-the-backbone-of-modern-european-payments-sovereignty",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "dimension_score": 6.95,
+          "final_score": 6.95,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "高盛预测 AI 智能体将推动科技公司现金流增长并使全球 Token 消耗量激增",
           "title_orig": "Goldman Sachs Predicts AI Agents Will Increase Tech Cash Flow",
-          "summary": "高盛研究报告指出，自主 AI 智能体的普及将深刻改变大型科技公司的财务格局，预计到 2030 年全球 Token 消耗量将增长 24 倍，达到 120 千万亿个的惊人规模。这一预测强调了 AI 智能体在商业化进程中的巨大潜力，对科技行业的盈利模式、算力基础设施需求以及未来现金流增长具有重要参考价值，显示出金融巨头对 AI 长期价值的高度认可。",
+          "summary": "高盛发布研究报告预测，自主 AI 智能体的普及将彻底重塑大型科技公司的财务格局，预计到 2030 年全球 Token 消耗量将增长 24 倍并达到 120 千万亿个。这种技术转型不仅会深刻改变科技公司的底层运营模式，还将通过极大地提高生产效率和创造全新的商业变现模式，显著提升这些企业的现金流水平，从而在资本市场上引发新一轮的价值重估。",
           "tags": [
             "高盛",
-            "人工智能",
-            "行业预测"
+            "AI智能体",
+            "市场预测"
           ],
           "url": "https://www.pymnts.com/artificial-intelligence-2/2026/goldman-sachs-predicts-ai-agents-will-increase-tech-cash-flow/",
           "source": "pymnts.com",
           "category": "Editorial Lens",
           "published": "2026-05-25T01:03:24+00:00",
           "cve_ids": [],
-          "selection_reason": "顶级投行对AI智能体经济价值的量化预测，极具参考性。",
+          "selection_reason": "顶级投行对AI智能体经济影响的量化预测，极具参考价值。",
           "feed_url": "https://www.pymnts.com/feed/",
           "feed_title": "PYMNTS",
           "source_tier": "t2",
@@ -1267,111 +1721,9 @@
           }
         },
         {
-          "title_zh": "深圳市首个数字人民币推广创新空间正式揭牌并发布相关场景机会清单",
-          "title_orig": "深圳首个数字人民币推广创新空间揭牌，发布场景机会清单 - 搜狐网",
-          "summary": "深圳市首个数字人民币推广创新空间近日正式揭牌，并同步向社会发布了涵盖多个领域的数字人民币应用场景机会清单，旨在加速数字金融生态的构建。此举通过空间载体和政策引导，进一步拓展了数字人民币在深圳试点的深度与广度，为相关企业参与数字人民币的技术研发与生态建设提供了明确的方向和机遇，助力深圳在数字经济领域持续保持领先地位。",
-          "tags": [
-            "数字人民币",
-            "深圳",
-            "金融创新"
-          ],
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTXJSamNsc2dMa1pMaWNueXpVeEpwc3RrR2JlRFFLNnZ0VHZOU2tSd21ZSGVqc1E4cWxfME5JSFk2SElQZFh0SFpPV1lvZkd1T2szLUpzc3NUVEpKTUNkcWg4Ty15S1k3alBGMUhWU1I0MnI1QTRyaXhrcGJwRURsUDhSaDdKMFJ1?oc=5",
-          "source": "news.google.com",
-          "category": "Chinese Wallets (TODO)",
-          "published": "2026-05-25T06:36:32+00:00",
-          "cve_ids": [],
-          "selection_reason": "国内数字人民币试点向空间化、场景化深度发展。",
-          "feed_url": "https://news.google.com/rss/search?q=(%22金融科技%22+OR+%22数字人民币%22+OR+%22支付宝%22+OR+%22微信支付%22+OR+%22稳定币%22+OR+%22跨境支付%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-          "feed_title": "Google News 中文金融科技",
-          "source_tier": "t2",
-          "source_kind": "google_news",
-          "source_label": "Google News",
-          "source_key": "news.google.com",
-          "story_id": "title:1f3764c94765",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 8,
-          "dimension_score": 7.6,
-          "final_score": 6.9,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": -1.0,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "STET 首席执行官表示 SEPA 将成为现代欧洲支付主权的核心支柱",
-          "title_orig": "How SEPA Will Be the Backbone of Modern European Payments Sovereignty",
-          "summary": "STET 首席执行官 Regis Folbaum 在行业活动中指出，单一欧元支付区在欧洲支付对齐方面取得了显著进展，将成为支撑现代欧洲支付主权的核心骨干。随着即时支付监管的加强和本土卡计划的日益普及，SEPA 的核心地位将进一步巩固，这对于提升欧洲支付行业的独立性、统一性以及在全球金融体系中的话语权至关重要，是欧洲金融一体化的关键一步。",
-          "tags": [
-            "SEPA",
-            "欧洲支付",
-            "金融主权"
-          ],
-          "url": "https://www.finextra.com/videoarticle/3499/how-sepa-will-be-the-backbone-of-modern-european-payments-sovereignty?utm_medium=rssfinextra&utm_source=finextrafeed",
-          "source": "finextra.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-14T15:00:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "涉及欧洲支付基础设施统一与主权的核心战略论述。",
-          "feed_url": "https://www.finextra.com/rss/headlines.aspx",
-          "feed_title": "Finextra Headlines",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "finextra.com",
-          "story_id": "url:finextra.com/videoarticle/3499/how-sepa-will-be-the-backbone-of-modern-european-payments-sovereignty",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 7,
-          "dimension_score": 6.85,
-          "final_score": 6.85,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "荷兰数字银行 Bunq 申请墨西哥银行牌照以进军拉美市场",
-          "title_orig": "Bunq Files for Mexican Banking License, Trailing Revolut and Nubank Into the Local Market",
-          "summary": "欧洲第二大数字银行 Bunq 已正式向墨西哥提交银行牌照申请，这是继其今年申请美国牌照并持有欧洲许可后的又一重大全球扩张举措。Bunq 旨在通过获得墨西哥的全服务银行许可，在当地市场与 Revolut 和 Nubank 等强劲对手展开直接竞争，这反映出全球领先的数字银行正加速在拉美地区布局，力求通过合规化运营抢占新兴市场的金融服务份额。",
-          "tags": [
-            "数字银行",
-            "墨西哥",
-            "全球扩张"
-          ],
-          "url": "https://www.financemagnates.com/fintech/bunq-files-for-mexican-banking-license-trailing-revolut-and-nubank-into-the-local-market/",
-          "source": "financemagnates.com",
-          "category": "Editorial Lens",
-          "published": "2026-05-14T06:51:48+00:00",
-          "cve_ids": [],
-          "selection_reason": "欧洲头部挑战者银行进军拉美，加剧全球数字银行竞争。",
-          "feed_url": "https://www.financemagnates.com/fintech/feed/",
-          "feed_title": "Finance Magnates Fintech",
-          "source_tier": "t2",
-          "source_kind": "media",
-          "source_label": "金融媒体",
-          "source_key": "financemagnates.com",
-          "story_id": "url:financemagnates.com/fintech/bunq-files-for-mexican-banking-license-trailing-revolut-and-nubank-into-the-local-market",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 7,
-          "dimension_score": 6.85,
-          "final_score": 6.85,
-          "score_breakdown": {
-            "source_bonus": 0.0,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "金融科技巨头 Revolut 聘请 Coinbase 前风险主管，旨在加速其全球加密货币业务扩张",
+          "title_zh": "Revolut 聘请前 Coinbase 风险主管 Michael Schroeder 负责全球加密业务扩张",
           "title_orig": "Revolut Hires Coinbase Risk Chief to Drive Global Crypto Expansion",
-          "summary": "金融科技巨头 Revolut 已正式任命 Coinbase 前欧洲风险官兼董事总经理 Michael Schroeder 担任全球加密货币扩张负责人，他此前在 Coinbase 拥有近三年的风险管理与监管运营经验。此次人事任命旨在通过引入行业顶尖人才来强化公司的全球加密业务布局，Schroeder 将重点负责牌照申请、监管准备、业务运营及新市场的发布工作，助力公司在严监管环境下实现数字资产业务的合规增长。",
+          "summary": "数字银行Revolut正式任命前Coinbase欧洲风险官Michael Schroeder担任全球加密扩张负责人，旨在利用其在加密货币监管与风险管理领域的深厚背景推动全球业务增长。Schroeder未来将专注于牌照申请、监管合规准备、运营优化及新市场的启动工作，此举充分展现了Revolut在加速全球加密货币布局的同时，高度重视业务合规性与各国监管要求的战略意图。",
           "tags": [
             "Revolut",
             "加密货币",
@@ -1382,7 +1734,7 @@
           "category": "Editorial Lens",
           "published": "2026-05-14T08:42:59+00:00",
           "cve_ids": [],
-          "selection_reason": "反映了顶级金融科技公司在加密合规领域的重大人才布局。",
+          "selection_reason": "传统金融科技巨头挖角加密原生高管，信号意义明确。",
           "feed_url": "https://www.financemagnates.com/fintech/feed/",
           "feed_title": "Finance Magnates Fintech",
           "source_tier": "t2",
@@ -1403,20 +1755,54 @@
           }
         },
         {
-          "title_zh": "Revolut 加大在以色列的招聘力度，旨在争取获得当地“精简银行”牌照并进入银行市场",
+          "title_zh": "稳定币应用场景持续扩张，跨境交易、员工薪酬及公司间结算成为新兴增长点",
+          "title_orig": "Where stablecoin use is growing",
+          "summary": "根据最新行业报告显示，稳定币正从单纯的加密货币交易媒介转向更广泛的实际应用，在跨境支付、员工工资发放以及企业间资金结算等领域展现出强劲的增长势头。这一趋势表明数字资产正在深度融入传统金融体系，对于寻求降低跨境交易成本、提高支付效率的企业和全球化劳动力具有重要的参考价值。",
+          "tags": [
+            "稳定币",
+            "跨境支付",
+            "金融科技"
+          ],
+          "url": "https://www.paymentsdive.com/news/stablecoin-use-is-growing-cross-border-payments-genius-act/820566/",
+          "source": "paymentsdive.com",
+          "category": "Editorial Lens",
+          "published": "2026-05-19T10:35:05+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示了稳定币从投机工具向实用金融基础设施的转型。",
+          "feed_url": "https://www.paymentsdive.com/feeds/news/",
+          "feed_title": "Payments Dive",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "paymentsdive.com",
+          "story_id": "url:paymentsdive.com/news/stablecoin-use-is-growing-cross-border-payments-genius-act/820566",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "dimension_score": 6.7,
+          "final_score": 6.7,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
+          "title_zh": "金融科技巨头 Revolut 加大在以色列招聘力度，旨在获取“精简银行”牌照并深化市场布局",
           "title_orig": "Revolut Steps Up Israel Hiring as It Pushes for “Lean Bank” License",
-          "summary": "金融科技巨头 Revolut 正在以色列启动大规模招聘计划，旨在支持其申请当地“精简银行”牌照并全面进军以色列本土银行业市场，这标志着该公司在获得支付服务许可后迈出了扩张的关键一步。此举不仅展示了 Revolut 深化中东地区业务布局的战略决心，也反映出其通过建立本地化团队来满足监管要求并提升竞争力的意图，未来可能对以色列传统银行业的市场格局产生深远影响。",
+          "summary": "全球金融科技巨头 Revolut 正在以色列启动新一轮大规模招聘计划，旨在全力支持其在该国申请“精简银行”牌照的努力，此前该公司已成功获准在当地提供支付服务。此举标志着 Revolut 进军以色列银行业的战略进入关键阶段，对于观察全球新银行如何通过合规化手段扩张国际版图，以及评估当地金融市场未来的竞争格局演变具有重要的参考意义。",
           "tags": [
             "Revolut",
-            "以色列",
-            "银行牌照"
+            "数字银行",
+            "以色列市场"
           ],
           "url": "https://www.financemagnates.com/fintech/revolut-steps-up-israel-hiring-as-it-pushes-for-lean-bank-license/",
           "source": "financemagnates.com",
           "category": "Editorial Lens",
           "published": "2026-05-12T16:51:24+00:00",
           "cve_ids": [],
-          "selection_reason": "展示了跨国金融科技巨头在特定区域市场的银行业务扩张进程。",
+          "selection_reason": "展示了全球头部新银行在特定区域市场的合规化扩张进程。",
           "feed_url": "https://www.financemagnates.com/fintech/feed/",
           "feed_title": "Finance Magnates Fintech",
           "source_tier": "t2",
@@ -1427,8 +1813,8 @@
           "related_urls": [],
           "related_count": 0,
           "score": 7,
-          "dimension_score": 6.7,
-          "final_score": 6.7,
+          "dimension_score": 6.65,
+          "final_score": 6.65,
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": 0.0,
@@ -1441,20 +1827,20 @@
       "selected_count": 10,
       "selection_stats": {
         "total": 10,
-        "direct": 8,
+        "direct": 9,
         "tier_t2": 10,
-        "kind_media": 8,
-        "google_news": 2,
-        "aggregator": 2,
-        "chinese": 2,
-        "kind_google_news": 2
+        "kind_media": 9,
+        "google_news": 1,
+        "aggregator": 1,
+        "chinese": 1,
+        "kind_google_news": 1
       },
       "clustering_stats": {
         "deterministic_merged": 0,
         "llm_merged": 0,
         "merged_total": 0
       },
-      "generated_at": "2026-05-25T06:46:55.290442Z"
+      "generated_at": "2026-05-25T06:55:37.699500Z"
     }
   }
 }

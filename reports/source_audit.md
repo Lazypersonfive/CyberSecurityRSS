@@ -7,16 +7,14 @@
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 94 | 15 | 19 | 60 | 0 | 14 | 15 | 35 | 0 |
-| ai_security | 45 | 5 | 0 | 40 | 0 | 15 | 5 | 5 | 15 |
-| finance | 70 | 3 | 0 | 67 | 0 | 14 | 3 | 0 | 0 |
-| security | 105 | 18 | 0 | 86 | 1 | 0 | 18 | 6 | 42 |
+| ai | 100 | 15 | 20 | 65 | 0 | 13 | 15 | 39 | 0 |
+| ai_security | 50 | 7 | 2 | 41 | 0 | 14 | 7 | 8 | 15 |
+| finance | 70 | 3 | 0 | 67 | 0 | 13 | 3 | 0 | 0 |
+| security | 105 | 18 | 0 | 87 | 0 | 0 | 18 | 6 | 42 |
 
 ## Unknown Selected Sources
 
-| Source | Count | Boards | Latest Example |
-|---|---:|---|---|
-| `qbitai.com` | 1 | security | [SaaS-Bench 评测显示 Claude 等大模型在全自动办公任务中通过率不足 4%](https://www.qbitai.com/2026/05/424277.html) |
+No unknown selected sources in the audited window.
 
 ## Review Rule
 
