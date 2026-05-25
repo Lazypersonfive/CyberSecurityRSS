@@ -131,6 +131,33 @@ class FetchFeedsTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual([entry.feed_url for entry in entries], ["feed-b", "feed-b"])
         self.assertEqual([entry.feed_title for entry in entries], ["Feed B", "Feed B"])
 
+    async def test_future_dated_feed_entries_are_ignored(self) -> None:
+        if fetch_feeds.httpx is None:
+            self.skipTest("httpx is not installed in this Python environment")
+
+        now = datetime.now(timezone.utc)
+        feeds = {"security": ["feed-a"]}
+        results = {
+            "feed-a": [
+                FeedEntry("valid", "https://a/valid", "summary text long enough", "", now),
+                FeedEntry(
+                    "future",
+                    "https://a/future",
+                    "summary text long enough",
+                    "",
+                    now + timedelta(days=365),
+                ),
+            ],
+        }
+
+        async def fake_fetch(_semaphore, _client, url):
+            return results[url]
+
+        with patch("fetch_feeds._fetch_one_bounded", side_effect=fake_fetch):
+            entries, _health = await fetch_all_entries(feeds, hours=24, max_per_category=10)
+
+        self.assertEqual([entry.url for entry in entries], ["https://a/valid"])
+
 
 class FetchOpmlTests(unittest.TestCase):
     def test_fetch_opml_metadata_preserves_feed_title(self) -> None:
@@ -164,6 +191,11 @@ class FetchOpmlTests(unittest.TestCase):
 
         self.assertEqual(len(urls), len(set(urls)))
 
+    def test_security_opml_excludes_future_dated_legacy_blog_source(self) -> None:
+        body = Path("feeds/security.opml").read_text(encoding="utf-8")
+
+        self.assertNotIn("micropoor.blogspot.com", body)
+
     def test_opml_includes_rsshub_x_signal_feeds(self) -> None:
         ai_feeds = fetch_opml("feeds/ai.opml")
         ai_security_feeds = fetch_opml("feeds/ai_security.opml")
@@ -193,6 +225,9 @@ class FetchOpmlTests(unittest.TestCase):
         flat = {url for urls in ai_security_feeds.values() for url in urls}
 
         self.assertIn("https://www.hiddenlayer.com/feed", flat)
+        self.assertIn("https://github.blog/security/vulnerability-research/feed/", flat)
+        self.assertIn("https://www.legitsecurity.com/blog/rss.xml", flat)
+        self.assertIn("https://www.endorlabs.com/learn/rss.xml", flat)
         self.assertTrue(any("AI+supply+chain" in url for url in flat))
 
     def test_rsshub_base_url_can_be_overridden_for_private_instance(self) -> None:
@@ -1240,10 +1275,11 @@ class GeminiPipelineTests(unittest.TestCase):
         board = boards["ai_security"]
 
         self.assertEqual(board["top_n"], 10)
-        self.assertLessEqual(board["llm_max_entries"], 60)
+        self.assertLessEqual(board["llm_max_entries"], 90)
         self.assertLessEqual(board["source_policy"]["max_google_news"], 2)
         self.assertGreaterEqual(board["source_policy"]["min_direct"], 4)
         self.assertEqual(board["source_policy"]["max_aggregator"], 5)
+        self.assertFalse(board["source_policy"]["relax_aggregate_caps"])
         self.assertEqual(board["fill_score_floor"], 4)
         self.assertTrue(Path(board["opml"]).exists())
 
@@ -1278,6 +1314,9 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertIn("Protect AI", body)
         self.assertIn("Prompt Security", body)
         self.assertIn("HiddenLayer Blog", body)
+        self.assertIn("GitHub Security Lab", body)
+        self.assertIn("Legit Security", body)
+        self.assertIn("Endor Labs", body)
 
     def test_gemini_prompts_encode_current_board_targets(self) -> None:
         self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["security"])

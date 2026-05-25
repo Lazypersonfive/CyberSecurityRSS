@@ -113,7 +113,9 @@ async def fetch_all_entries(
 
     seen_urls = seen_urls or set()
     feed_titles = feed_titles or {}
-    cutoff = datetime.now(timezone.utc).timestamp() - hours * 3600
+    now = datetime.now(timezone.utc)
+    cutoff = now.timestamp() - hours * 3600
+    future_cutoff = now + timedelta(hours=6)
 
     entries: list[FeedEntry] = []
     health: dict[str, int] = {}
@@ -146,6 +148,9 @@ async def fetch_all_entries(
             if entry.url in seen_urls:
                 continue
             if entry.published.timestamp() < cutoff:
+                continue
+            if entry.published > future_cutoff:
+                logger.debug("Skipping future-dated feed entry %s (%s)", entry.url, entry.published.isoformat())
                 continue
             entry.category = category
             entry.feed_url = url

@@ -106,8 +106,8 @@ boards:
     opml: feeds/ai_security.opml
     fetch_hours: 72
     dedup_lookback_days: 0 # 稀疏板块不做跨日 raw 去重，避免候选池被 archive 吃空
-    max_entries: 60
-    llm_max_entries: 60
+    max_entries: 90
+    llm_max_entries: 90
     top_n: 10
     score_threshold: 6
     fill_score_floor: 4  # 泛 AI 已被确定性压到 3 分；4 分保留边界技术安全候选
@@ -118,6 +118,7 @@ boards:
       max_aggregator: 5   # XSignals 最多约半数；Google News 仍单独压低
       max_per_source: 3
       allow_cap_relaxation: true
+      relax_aggregate_caps: false # 稀疏日可放开单源 cap，但不能突破 Google News / 聚合源上限
     source_caps:
       news.google.com: 4
       openai.com: 3
