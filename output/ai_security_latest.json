@@ -1,18 +1,18 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-05-26",
-  "fetched_at_utc": "2026-05-25T23:48:58.216293Z",
+  "fetched_at": "2026-05-27",
+  "fetched_at_utc": "2026-05-26T23:54:24.957821Z",
   "hours": 72,
   "total_feeds": 30,
-  "raw_entry_count": 51,
-  "entry_count": 20,
+  "raw_entry_count": 52,
+  "entry_count": 18,
   "filter_stats": {
-    "input": 51,
-    "dedup_merged": 7,
-    "output": 44
+    "input": 52,
+    "dedup_merged": 1,
+    "output": 51
   },
   "curation_stats": {
-    "dropped_source_cap": 24
+    "dropped_source_cap": 33
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -76,7 +76,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 11
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -118,7 +118,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://www.aikido.dev/blog/rss.xml": {
       "feed_title": "Aikido Security",
@@ -167,7 +167,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -195,102 +195,154 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 9
+      "raw_count": 4
     },
     "http://127.0.0.1:1200/twitter/user/simonw": {
       "feed_title": "X / Simon Willison",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 3
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 23
+      "raw_count": 22
     },
     "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans": {
       "feed_title": "Google News 中文 AI安全",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 7
+      "raw_count": 4
     },
     "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Supply Chain Security",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 4
     }
   },
   "entries": [
     {
-      "title": "RT osj: After seeing the same account submit PRs to MCP related repos, I figured I'd write up what I've found so far. Hidden README text, postinstall,...",
-      "url": "https://x.com/rez0__/status/2058350888327029136",
-      "summary": "RT osj After seeing the same account submit PRs to MCP related repos, I figured I'd write up what I've found so far. Hidden README text, postinstall, npx, credential scanning, encrypted reporting, and propagation into developer/AI-agent files. Write up below. osj: Spicy one. Postinstall kicks off a worker that steals local secrets and ships them to webhook style receivers via GitHub/raw GitHub/DNS",
-      "category": "XSignals",
-      "published": "2026-05-23T19:01:29+00:00",
+      "title": "Notes on Pope Leo XIV's encyclical on AI",
+      "url": "https://simonwillison.net/2026/May/25/encyclical-on-ai/#atom-everything",
+      "summary": "Dropped this morning by the Vatican: Magnifica Humanitas of His Holiness Pope Leo XIV on Safeguarding the Human Person in the Time of Artificial Intelligence . This is a very interesting document. It's some of the clearest writing I've seen on the ethics of integrating AI into modern society. Pope Leo XIV chose the name Leo in honor of Pope Leo XIII, who is known for his 1891 Rerum novarum encycli",
+      "category": "AISecurityLabs",
+      "published": "2026-05-25T23:58:17+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "The pressure",
+      "url": "https://simonwillison.net/2026/May/26/the-pressure/#atom-everything",
+      "summary": "The pressure Daniel Stenberg on the unprecedented level of pressure the curl team are facing right now thanks to the deluge of (credible) AI-assisted security issues being reported. The rate of incoming security reports is 4-5 times higher than it was in 2024 and double the speed of 2025 -- meaning that on average we now get more than one report per day . The quality is way higher than ever before",
+      "category": "AISecurityLabs",
+      "published": "2026-05-26T23:48:45+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "TeamPCP Compromised LiteLLM in AI Supply Chain Attack - eSecurity Planet",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNdGZuUzRfQk91cjZtUUNwTDB4clNmM09CRFdEVUY2SDVPdTAxUmFnUkNacjI5eElfRTA3R28yTDJfNXRvcDdhbGFJZ2ZtbDNyNFVnWEhBckZLeWx5MUNPSzZmRW5XS0cwOEtWMTI0VE1aU1NwZ3lxQTVxUEZIM05GY1YwMXJRa3pwU3Y4Zmh1RU5vM3lsN3FETk13?oc=5",
+      "summary": "TeamPCP Compromised LiteLLM in AI Supply Chain Attack &nbsp;&nbsp; eSecurity Planet",
+      "category": "CoverageFallback",
+      "published": "2026-05-26T21:54:24+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Supply Chain Security"
+    },
+    {
+      "title": "AI security debate emerges as “one of the most important issues” this session - NPR Illinois",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNRUd2NVB3MXBaSDdrdkxBb1lxT2ZXRUZwbTY2VnFKV19ZZHZfMEh3UU12SHZHc3JHeWE2T0NjVU1TS1B2c3Z2S3V2Wmt3cXFoMjg1R0RmTTRrSm1udnNxUXFBa01wSUlGSTlGYkxxWUE5ZklNVUNWaVZlbUNoc1dlRWZ4LVR5VnFxU29KZ3FDcUs2QmVkVU5wdVpFaHZuS0JXZEMxZVQ1R19tSVhUdHhQSEVlcEhUTDJEVzdPQ2d4b2gtN0VaWlFCY1BScw?oc=5",
+      "summary": "AI security debate emerges as “one of the most important issues” this session &nbsp;&nbsp; NPR Illinois",
+      "category": "CoverageFallback",
+      "published": "2026-05-26T21:51:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "ZS: Revenue up 26% year-over-year, net loss widened, and three acquisitions completed to boost AI security - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOT2hXUVhhRkE2RFNaYXVfdTFFSFZianY4MHJXNlhMbWF5TjNBOWxJODBSQ0VOdzNFaktJYnd5WlE2V1VMTnpKckFCVmIteEhoeVBWX2ZIMW5POFBPMjljSTR3Y19BRi1RQ3dpTW9INkRpLWdJWlpsN05PLXpTbXk3OTdKa1dDWDB5YXdmeG93b0FZTWtoZlFLSVpkTDFVYVZzQVQzNGh3QzVHM1FVbmpqTFk0X2NlV2VIZXN1WlpJNUN6RFVfZ0xKMjdfQzdQZW1Lb0gzZHo3cWlwMGdKOW1BWkFpdHotN19qQjVMSVpoX3gzaG4zZHZwRnZlN1lrMkVnTGUyZkUtQy1lbnd3RHQtSDhmRQ?oc=5",
+      "summary": "ZS: Revenue up 26% year-over-year, net loss widened, and three acquisitions completed to boost AI security &nbsp;&nbsp; TradingView",
+      "category": "CoverageFallback",
+      "published": "2026-05-26T20:13:35+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "NeuralTrust recognized as a Star in the MarketsandMarkets Agentic AI Security Quadrant - PR Newswire",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPV2RtMVg5dTNEVkZBY014WDBycTJpNzFUWTFKQXliLWpnZTRmNlBjc2VSSElteUxUaHI5a3U3STBhNzFsODVZUm9VZ213MDVOU1pqY3U0WXZDaGpYYl92T09zblBwLWsyU1JVdUVCOXpxX3Q4QWlWRDN6VFJOQkZlMmQ3MFo4UTJ4RVlqdzU1MzdYNTF1eS1fS0Y4NnlKZUZFYkJuT2l1TkREaUNjdS1FalJKNFhSZVhLQjE0ZFZiX25nR1lUVVo1VThfRzVhaDZVcmx6UlprQjlNQQ?oc=5",
+      "summary": "NeuralTrust recognized as a Star in the MarketsandMarkets Agentic AI Security Quadrant &nbsp;&nbsp; PR Newswire",
+      "category": "CoverageFallback",
+      "published": "2026-05-26T17:14:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Microsoft Copilot Cowork Exfiltrates Files",
+      "url": "https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/#atom-everything",
+      "summary": "Microsoft Copilot Cowork Exfiltrates Files The biggest challenge in designing agentic systems continues to be preventing them from enabling attackers to exfiltrate data. In this case Microsoft Copilot Cowork (yes, that's a real product name ) was allowing agents to send emails to the user's own inbox without approval... but those messages were then displayed in a way that could leak data to an att",
+      "category": "AISecurityLabs",
+      "published": "2026-05-26T15:36:48+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "RT Benjamin Samuels: PSA: If your project gets a ton of low quality vulnerability reports, you can filter those reports out with very little effort. A...",
+      "url": "https://x.com/trailofbits/status/2059268519062061089",
+      "summary": "RT Benjamin Samuels PSA: If your project gets a ton of low quality vulnerability reports, you can filter those reports out with very little effort. All you need to do is update your project’s claude/agents.md file to set your preferred quality threshold and criteria. Use the researcher’s own tokens to verify their work. - clearly state your project’s threat model - give examples of a high/medium s",
+      "category": "XSignals",
+      "published": "2026-05-26T00:00:48+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
+    {
+      "title": "RT Critical Thinking - Bug Bounty Podcast: A Wormable AI Exploit",
+      "url": "https://x.com/rez0__/status/2058948825155313937",
+      "summary": "RT Critical Thinking - Bug Bounty Podcast A Wormable AI Exploit",
+      "category": "XSignals",
+      "published": "2026-05-25T16:30:20+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "Great Britain: UK And Australia Pact On Fast-Moving AI Security Risks - The St Kitts Nevis Observer",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPcjU5cmkzMHplSGt1NGM0NXdPWjVwRzRwSW43b3ZMdUVoNUlWQXQxU3hTNHVDSnJITGRnaXc4cUpDZmJqWURXTzBlcFZxT2V6ZlNscG42WnBDdi1JaXYtVDR4b2poOG5YRU9KcVRHMXJlOHRER2FWSUVqczR3YnFGanQxYWZiUmplNDhxNEtRbVNQWUpWR3hpSE1EcTVrWlQ1blV1Zl9mVElCd0dmOWc?oc=5",
-      "summary": "Great Britain: UK And Australia Pact On Fast-Moving AI Security Risks &nbsp;&nbsp; The St Kitts Nevis Observer",
-      "category": "CoverageFallback",
-      "published": "2026-05-25T22:02:56+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Claude Mythos 1 Leak Reveals Dangerous AI Security Shift - Techgenyz",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBXemlKM3hQdFJfN2lTcFVqR3BhYU1IYjVHdDY3aEExekRXQU44aTd2el91QUpSTXhwaEhKa2Q0ZUlWUVcxSXJHLVR1LV81Nks4ZWxTUXBURm8wdWpTdzl6cnhXb3FEZEY3U3VDakxn?oc=5",
-      "summary": "Claude Mythos 1 Leak Reveals Dangerous AI Security Shift &nbsp;&nbsp; Techgenyz",
-      "category": "CoverageFallback",
-      "published": "2026-05-25T19:13:03+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "As Zscaler Doubles Down on AI Security, ZS Stock Still Needs More to Justify Its Steep Valuation - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPc2xUdDBHbHF6UG1KUFRZeWRXUnVFcTlzYTExeUxYTTBhdnhiNVhnbTQxMDZVWFEtTVpGRjVfRk1POGU1eC02MGE3UmRCdC1jNkJiY2tIcDRPOUxyRC1BRmY2aG01ZnRZRlRIeE1pMTU2QVc2WXAyZnJJOGpSREdRZS02VFE3YmJOVElTaEhtTUVla19Sa1NEWEtUa3Y1dw?oc=5",
-      "summary": "As Zscaler Doubles Down on AI Security, ZS Stock Still Needs More to Justify Its Steep Valuation &nbsp;&nbsp; Yahoo Finance",
-      "category": "CoverageFallback",
-      "published": "2026-05-25T14:00:02+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "AI security needs a shift from models to systems, researchers argue - csoonline.com",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcHdQanBpREhTNW5WNUc3M2h4UUJsRzVhZlZkUHVabjVxNEdlaFBFZDNuU1RKSzVhX1NJcWlIdEk4eEo2TE1zY1JPUkpKQl9vYTF2bGFFWi1hcHJaUk4tQWlCQlVUNGkxNXNaSi1FY3hKZ3hIVXhWdllYNlgxSncyZnNCa1RPZDdIak9lUERhWFlCSjlUREhqUDZlV2RCYnRobUZtcEI0VGVLa1pFLVAxODFqdw?oc=5",
-      "summary": "AI security needs a shift from models to systems, researchers argue &nbsp;&nbsp; csoonline.com",
-      "category": "CoverageFallback",
-      "published": "2026-05-25T12:33:19+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
     },
     {
       "title": "Given how much of the original \"bottle of water per generated email\" water estimate came from guesses at the architecture of GPT-4, it would be very m...",
@@ -299,6 +351,19 @@
       "category": "XSignals",
       "published": "2026-05-25T11:46:18+00:00",
       "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
+      "feed_title": "X / Simon Willison"
+    },
+    {
+      "title": "RT Paul Graham: Re I have never knowingly finished reading an email signed by a human but written by AI. It feels like being lied to, and who would st...",
+      "url": "https://x.com/simonw/status/2059287016094003578",
+      "summary": "RT Paul Graham Re I have never knowingly finished reading an email signed by a human but written by AI. It feels like being lied to, and who would stand for that?",
+      "category": "XSignals",
+      "published": "2026-05-25T10:20:53+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
@@ -330,47 +395,6 @@
       "quality_score": 1,
       "feed_url": "https://openai.com/news/rss.xml",
       "feed_title": "OpenAI News"
-    },
-    {
-      "title": "datasette 1.0a30",
-      "url": "https://simonwillison.net/2026/May/24/datasette/#atom-everything",
-      "summary": "Release: datasette 1.0a30 The big new feature in this alpha is a new customizable \"Jump to...\" menu, described in detail in The extensible \"Jump to\" menu in Datasette 1.0a30 on the Datasette blog. You can try it out by hitting / on latest.datasette.io - it looks like this: The new jump_items_sql() plugin hook allows plugins to add their own items to the set that's searched by the plugin. Tags: pro",
-      "category": "AISecurityLabs",
-      "published": "2026-05-24T23:52:37+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "datasette-fixtures 0.1a0",
-      "url": "https://simonwillison.net/2026/May/24/datasette-fixtures/#atom-everything",
-      "summary": "Release: datasette-fixtures 0.1a0 One of the smaller features in Datasette 1.0a30 is this: New documented datasette.fixtures.populate_fixture_database(conn) helper for creating the fixture database tables used by Datasette's own tests, intended for plugin test suites. This new plugin takes advantage of that API. You can try it out using uvx without even installing Datasette like this: uvx --prerel",
-      "category": "AISecurityLabs",
-      "published": "2026-05-24T21:38:32+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [
-        "https://simonwillison.net/2026/May/24/datasette-agent/#atom-everything"
-      ],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "Quoting Armin Ronacher",
-      "url": "https://simonwillison.net/2026/May/24/armin-ronacher/#atom-everything",
-      "summary": "The most frustrating failure mode right now is that people submit issues that are not in their own voice. They contain an observed problem somewhere, but it has been thrown into a clanker and the clanker reworded it and made a huge mess of it. Typically, it was prompted so badly that the conclusions produced are more often than not inaccurate but always full of confidence. The result is complete g",
-      "category": "AISecurityLabs",
-      "published": "2026-05-24T18:46:53+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
     },
     {
       "title": "RT solst/ICE of Astarte: Re @trailofbits has markdown checklists for reviewing C and C++ codebases, and I’ve used those in conjunction with other Ski...",
@@ -412,30 +436,15 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "These are legit some sick bugs from the last few weeks",
-      "url": "https://x.com/rez0__/status/2058227586963026416",
-      "summary": "These are legit some sick bugs from the last few weeks Critical Thinking - Bug Bounty Podcast: We're back to the roots and talking about some of our coolest findings of the last few weeks on episode 175! =) Episode 175 (part 1)",
-      "category": "XSignals",
-      "published": "2026-05-23T16:44:31+00:00",
-      "fetch_status": "full",
+      "title": "Why developer machines are now the number one target for supply chain attacks",
+      "url": "https://www.aikido.dev/blog/developer-machines-supply-chain-attacks",
+      "summary": "Teams at Omnea, Cognism, Glasswall, Raisin and the UK public sector reveal why EDR and MDM miss what's really happening on developer machines. Category: News",
+      "category": "AISecurityLabs",
+      "published": "2026-05-26T09:30:00+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Supply Chain Attack Targets Laravel-Lang Packages with Credential Stealer",
-      "url": "https://www.aikido.dev/blog/supply-chain-attack-targets-laravel-lang-packages-with-credential-stealer",
-      "summary": "Attackers injected a credential stealer into 200+ versions of popular Laravel-Lang packages, delivering a credential stealer targeting cloud keys, SSH keys, browsers, crypto wallets and more. Category: Vulnerabilities & Threats",
-      "category": "AISecurityLabs",
-      "published": "2026-05-23T00:46:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [
-        "https://snyk.io/blog/laravel-lang-supply-chain-advisory/"
-      ],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "https://www.aikido.dev/blog/rss.xml",
       "feed_title": "Aikido Security"
     },
@@ -445,47 +454,6 @@
       "summary": "Faav is a beastttttt. Keep going bro!! Faav: Been grinding out on HackerOne and I beat @rez0__ somehow, not sure how long this'll last though... 😅 (USA Leaderboard)",
       "category": "XSignals",
       "published": "2026-05-25T15:29:07+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Gosh it pisses me off that these fake release posts get so many impressions",
-      "url": "https://x.com/rez0__/status/2058256119336665483",
-      "summary": "Gosh it pisses me off that these fake release posts get so many impressions can: claude-opus-4.8 is on Google Vertex 👀",
-      "category": "XSignals",
-      "published": "2026-05-23T18:37:54+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT Critical Thinking - Bug Bounty Podcast: We're back to the roots and talking about some of our coolest findings of the last few weeks on episode 175...",
-      "url": "https://x.com/rez0__/status/2058227515378790771",
-      "summary": "RT Critical Thinking - Bug Bounty Podcast We're back to the roots and talking about some of our coolest findings of the last few weeks on episode 175! =) Episode 175 (part 1)",
-      "category": "XSignals",
-      "published": "2026-05-23T16:44:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [
-        "https://x.com/rez0__/status/2058948825155313937"
-      ],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT Satyam: Imagine being this early",
-      "url": "https://x.com/rez0__/status/2058334092987347318",
-      "summary": "RT Satyam Imagine being this early",
-      "category": "XSignals",
-      "published": "2026-05-23T15:46:02+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],

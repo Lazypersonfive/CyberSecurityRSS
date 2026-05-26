@@ -1,0 +1,551 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-27",
+  "generated_at": "2026-05-26T23:54:19.063435Z",
+  "raw_count": 75,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 14,
+    "tier_t1": 5,
+    "kind_official": 5,
+    "chinese": 4,
+    "wechat": 2,
+    "tier_t2": 8,
+    "kind_cn_expert": 2,
+    "kind_media": 5,
+    "kind_expert": 1,
+    "aggregator": 1,
+    "kind_expert_x": 1,
+    "tier_unknown": 2,
+    "kind_community": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "CISA 将 LiteSpeed cPanel 插件权限提升漏洞 CVE-2026-48172 纳入已知漏洞目录",
+      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "summary": "美国 CISA 近日将 LiteSpeed cPanel 插件中的权限提升漏洞 CVE-2026-48172 正式加入其已知被利用漏洞目录，该漏洞目前已被证实存在活跃的在野利用行为。此类漏洞是恶意网络参与者常用的攻击媒介，会对联邦企业机构及相关组织的安全环境构成重大风险，CISA 明确要求受影响单位必须在规定期限内完成修复工作，以有效防范潜在的权限提升攻击并降低整体网络安全威胁。",
+      "tags": [
+        "权限提升",
+        "LiteSpee",
+        "漏洞预警"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/05/26/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-26T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-48172"
+      ],
+      "selection_reason": "该漏洞已在野利用，对使用 cPanel 的服务器环境具有直接",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-48172",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-drupal-vulnerability/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "PostgreSQL pgcrypto 扩展被曝存在潜伏近二十年的关键远程代码执行漏洞",
+      "title_orig": "每日安全动态推送(26/5/26)",
+      "summary": "安全研究人员在 PostgreSQL 的 pgcrypto 扩展中发现了一个潜伏时间长达近二十年的关键远程代码执行漏洞。此外，近期安全动态还涵盖了 MuddyWater 组织利用 Langflow 漏洞进行的入侵事件，以及在无硬件环境下利用 Windows 内核驱动的技术研究。这些发现揭示了从传统数据库组件到新兴 AI 开发工具链中存在的深层次供应链与系统级安全风险。",
+      "tags": [
+        "PostgreS",
+        "远程代码执行",
+        "供应链安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960478&idx=1&sn=1765e1bf754c819976147ba9ac81575a",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-26T09:19:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "pgcrypto 漏洞潜伏期极长且影响核心数据库组件，技术价",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960478&idx=1&sn=1765e1bf754c819976147ba9ac81575a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.25,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "ABB Terra AC 充电桩存在堆内存污染漏洞，攻击者可远程控制设备并篡改固件",
+      "title_orig": "ABB Terra AC",
+      "summary": "ABB Terra AC 充电桩被披露存在严重安全漏洞，攻击者成功利用后可导致堆内存污染。该漏洞触发条件为攻击者通过网络访问受影响设备，可能导致攻击者获取产品的远程控制权，并向闪存执行写入操作以篡改固件行为。受影响版本包括 T 系列相关型号，目前 ABB 已发布安全公告，建议用户关注官方补丁以缓解固件被非法篡改的风险。",
+      "tags": [
+        "工控安全",
+        "内存污染",
+        "固件篡改"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-146-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-26T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施中的充电桩安全，堆污染导致固件篡改具有高危害",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-146-01",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.75,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软修复 SharePoint Server 反序列化远程代码执行漏洞 CVE-2026-45659",
+      "title_orig": "Microsoft Patches SharePoint RCE Flaw CVE-2026-45659 Across Server Versions",
+      "summary": "微软发布了针对 SharePoint Server 的安全更新，旨在修复追踪编号为 CVE-2026-45659 的远程代码执行漏洞，该漏洞因 Microsoft Office SharePoint 对不可信数据进行反序列化处理不当而产生。该漏洞的 CVSS 评分高达 8.8 且被评定为重要级别，攻击者无需满足任何特殊条件即可在受影响的服务器版本上触发攻击，目前微软已通过官方渠道发布补丁，强烈建议管理员立即部署更新以防止系统被非法控制。",
+      "tags": [
+        "SharePoi",
+        "反序列化",
+        "远程代码执行"
+      ],
+      "url": "https://thehackernews.com/2026/05/microsoft-patches-sharepoint-rce-flaw.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-26T11:49:53+00:00",
+      "cve_ids": [
+        "CVE-2026-45659"
+      ],
+      "selection_reason": "SharePoint 广泛应用于企业内网，反序列化 RCE",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-45659",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Eppendorf BioFlo 320 生物反应器存在硬编码密码漏洞，评分高达 9.8",
+      "title_orig": "Eppendorf BioFlo 320",
+      "summary": "Eppendorf BioFlo 320 生物反应器被发现存在硬编码密码漏洞，CVSS 评分达到 9.8 分。该漏洞存在于所有版本的 BioFlo 320 设备中，攻击者可以利用预设的凭据直接获得对生物反应器功能和数据的完全访问权限。由于该设备广泛应用于医疗保健和公共卫生等关键基础设施领域，此漏洞可能导致实验数据泄露或生产流程被恶意操控，目前厂商已发布相关预警。",
+      "tags": [
+        "医疗安全",
+        "硬编码密码",
+        "关键基础设施"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-medical-advisories/icsma-26-146-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-26T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "医疗关键设备存在硬编码密码属于严重低级错误，具有极高风险。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-medical-advisories/icsma-26-146-01",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.3,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ABB Ability Camera Connect 因集成旧版 VLC 组件产生第三方库安全风险",
+      "title_orig": "ABB Ability Camera Connect",
+      "summary": "ABB 发布安全公告称，其 Ability Camera Connect 1.5.0.14 及以下版本的安装包中集成了存在漏洞的第三方组件 VLC 播放器 2.2.4 版本。攻击者可利用该旧版 VLC 组件中已知的安全漏洞对系统实施攻击，具体漏洞类型取决于 VLC 官方已披露的旧版本缺陷。目前 ABB 已提供更新版本以替换该过时的第三方组件，旨在消除因供应链引入的潜在安全威胁。",
+      "tags": [
+        "供应链安全",
+        "第三方库",
+        "漏洞修复"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-146-05",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-26T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的软件供应链安全案例，展示了集成第三方组件带来的衍生风险",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-146-05",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.3,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软披露利用 SEO 污染和 ScreenConnect 传播挖矿木马的恶意攻击活动",
+      "title_orig": "From poisoned search results to GPU mining: A cryptojacking campaign abusing ScreenConnect and Microsoft .NET utilities",
+      "summary": "微软安全团队监测到一起针对高性能 PC 的挖矿攻击活动，攻击者通过 SEO 污染技术和 AI 聊天机器人分发恶意链接。攻击者利用 ScreenConnect 远程管理工具和 Microsoft .NET 实用程序作为攻击载荷，旨在入侵目标系统以进行 GPU 加密货币挖矿。该活动展示了攻击者如何结合搜索引擎优化与合法运维工具来规避检测，并利用高性能硬件资源获取经济利益。",
+      "tags": [
+        "挖矿木马",
+        "SEO 污染",
+        "ScreenCo"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/26/poisoned-search-results-gpu-mining-cryptojacking-campaign-abusing-screenconnect-microsoft-net-utilities/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-26T21:35:34+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了利用 AI 机器人和合法工具进行传播的新型威胁狩猎案例",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/05/26/poisoned-search-results-gpu-mining-cryptojacking-campaign-abusing-screenconnect-microsoft-net-utilities",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.25,
+      "final_score": 9.05,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源 Python 框架 Starlette 曝出 BadHost 关键漏洞，影响数百万 AI 代理",
+      "title_orig": "Millions of AI agents imperiled by critical vulnerability in open source package",
+      "summary": "在每周下载量高达 3.25 亿次的开源 Python 包 Starlette 中发现了名为“BadHost”的关键安全漏洞，该漏洞直接威胁到全球数百万个基于此框架构建的 AI 代理和 Web 应用的安全。由于 Starlette 是 FastAPI 等众多流行框架的核心底层依赖，该漏洞的广泛存在可能导致严重的主机头攻击或安全绕过风险，开发者需高度关注其供应链安全，并尽快将相关组件升级至已修复的安全版本以保护 AI 基础设施。",
+      "tags": [
+        "AI 安全",
+        "Python",
+        "供应链漏洞"
+      ],
+      "url": "https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/",
+      "source": "arstechnica.com",
+      "category": "AI",
+      "published": "2026-05-26T19:50:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "Starlette 是现代 AI 应用的核心组件，其漏洞对",
+      "feed_url": "https://feeds.arstechnica.com/arstechnica/index",
+      "feed_title": "Ars Technica",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "科技媒体",
+      "source_key": "arstechnica.com",
+      "story_id": "url:arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package",
+      "related_urls": [
+        "https://x.com/rez0__/status/2058948825155313937"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.45,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Microsoft Copilot Cowork 智能体存在数据泄露风险，攻击者可绕过审批窃取文件",
+      "title_orig": "Microsoft Copilot Cowork Exfiltrates Files",
+      "summary": "Microsoft Copilot Cowork 智能体系统被发现存在严重安全缺陷，该漏洞允许智能体在未经用户审批的情况下，直接向用户的收件箱发送包含敏感信息的电子邮件。由于这些消息的显示方式存在设计漏洞，攻击者可以利用此机制将用户受保护的文件数据外传至其控制的终端，这凸显了当前设计代理系统时在防止数据泄露方面面临的巨大挑战。",
+      "tags": [
+        "AI安全",
+        "数据泄露",
+        "智能体"
+      ],
+      "url": "https://simonwillison.net/2026/May/26/copilot-cowork-exfiltrates-files/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AI",
+      "published": "2026-05-26T15:36:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI Agent设计中权限控制与数据外传的典型风险。",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/may/26/copilot-cowork-exfiltrates-files",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.15,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GitHub Issues 出现真实提示词注入攻击，利用伪造安全报告诱导运行恶意脚本",
+      "title_orig": "Quote tweet is prompt injection attacks in the wild. This is the first REAL one I’ve seen. And it’s using GitHub issues which is the main way/channe...",
+      "summary": "研究人员发现了首个利用 GitHub Issues 渠道实施的真实提示词注入攻击案例，攻击者通过伪造安全漏洞发现报告的语言来诱导用户执行恶意的本地脚本。该脚本 scan.js 会在用户的主目录中搜索敏感信息，这标志着此类攻击已从实验室的理论研究演变为针对开发者的实际威胁手段，且利用了开发者常用的协作工具作为分发路径。",
+      "tags": [
+        "提示词注入",
+        "GitHub",
+        "供应链安全"
+      ],
+      "url": "https://x.com/rez0__/status/2058350854508286082",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-24T00:54:20+00:00",
+      "cve_ids": [],
+      "selection_reason": "首次观测到利用GitHub Issues进行的真实LLM注入",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2058350854508286082",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "KnowledgeDeliver LMS 平台硬编码密钥漏洞遭利用，攻击者部署 Godzilla 与 Cobalt Strike",
+      "title_orig": "KnowledgeDeliver LMS Flaw Exploited to Deploy Godzilla and Cobalt Strike",
+      "summary": "日本广泛使用的学习管理系统KnowledgeDeliver被曝存在编号为CVE-2026-5426的高危安全漏洞，该漏洞源于系统使用了硬编码的ASP.NET机器密钥，导致攻击者能绕过安全机制并执行恶意代码。目前该漏洞已被作为零日手段利用，攻击者通过部署Godzilla WebShell工具并最终加载Cobalt Strike Beacon，实现了对受影响服务器的远程控制与深度渗透。 KnowledgeDeliver LMS 平台硬编码密钥漏洞遭利用，攻击者部署 Godzilla 与 Cobalt Strike。该条来自thehackernews.com，归类于OfficialAdvisories，原始信息显示其在本轮抓取、去重和打分中优先级较高。建议查看原文核验具。",
+      "tags": [
+        "硬编码密钥",
+        "LMS漏洞",
+        "零日攻击"
+      ],
+      "url": "https://thehackernews.com/2026/05/knowledgedeliver-lms-flaw-exploited-to.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-26T05:19:38+00:00",
+      "cve_ids": [
+        "CVE-2026-5426"
+      ],
+      "selection_reason": "硬编码密钥导致的零日漏洞利用案例，具有极高的实战参考价值。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-5426",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Module Stomping 内存隐匿技术解析：通过覆盖合法 DLL 隐藏恶意代码",
+      "title_orig": "Module Stomping PIC",
+      "summary": "Module Stomping 是一种被称为模块重载或 DLL 挖空的高级内存隐匿技术，其核心原理是将合法的 DLL 加载到进程内存中后，再使用恶意代码覆盖其原始内容。通过这种方式，恶意代码在系统监控中会伪装成具有合法数字签名且受信任的模块，从而有效绕过各类安全检测工具的扫描，是红队对抗中用于规避内存取证和静态分析的关键手段。",
+      "tags": [
+        "内存隐匿",
+        "免杀技术",
+        "红蓝对抗"
+      ],
+      "url": "https://rastamouse.me/module-stomping-pic/",
+      "source": "rastamouse.me",
+      "category": "WebSecurity",
+      "published": "2026-05-26T17:30:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入讲解了经典的内存隐匿技术原理，对免杀研究有指导意义。",
+      "feed_url": "https://rastamouse.me/feed/",
+      "feed_title": "Rasta Mouse",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "rastamouse.me",
+      "story_id": "url:rastamouse.me/module-stomping-pic",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.75,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "npm 生态系统供应链攻击深度解析：从 antv 与 axios 恶意版本看防御策略",
+      "title_orig": "npm 供應鏈攻擊從頭談起：原理、手法與防禦方式",
+      "summary": "近期antv、TanStack及高下载量的axios等npm软件包接连遭遇供应链攻击，攻击者通过在合法版本中植入恶意代码，利用开发者对开源生态的信任进行大规模渗透。此类攻击已波及PyPI、NuGet及Docker Hub等多个主流平台，本文详细分析了npm供应链攻击的底层原理与常见手法，并为开发者提供了应对软件包投毒事件的系统性防御策略与安全建议。",
+      "tags": [
+        "npm",
+        "供应链攻击",
+        "包管理安全"
+      ],
+      "url": "https://blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack/",
+      "source": "blog.huli.tw",
+      "category": "WebSecurity",
+      "published": "2026-05-25T03:17:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对近期频发的npm投毒事件进行了系统性的技术复盘与总结。",
+      "feed_url": "https://blog.huli.tw/atom-ch.xml",
+      "feed_title": "Huli's blog",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "blog.huli.tw",
+      "story_id": "url:blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 7.7,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于大语言模型的下一代杀毒引擎研发：从云端鉴定到本地化病毒分析",
+      "title_orig": "基于大模型的下一代杀毒引擎",
+      "summary": "研究者在 2025 年发布的云端病毒分析引擎基础上，进一步探索并开发基于大语言模型的下一代杀毒引擎，旨在利用 LLM 强大的语义理解能力对复杂的病毒木马文件进行深度鉴定。该技术通过分析代码逻辑提升对未知威胁和变种病毒的识别准确率，目前正从初步的云端 Demo 阶段向更成熟、更具实战价值的本地化分析与自动化检测方向持续演进。",
+      "tags": [
+        "AI安全",
+        "杀毒引擎",
+        "恶意软件检测"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyOTc0NDY2Nw==&mid=2247486252&idx=1&sn=8a7ed24b88b3aed80eddd37ff0309487",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-25T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了LLM在传统安全领域（反病毒）的创新应用尝试。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/25499156ea68aa4ac597801e9be69707e31bba73.xml",
+      "feed_title": "冲鸭安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/25499156ea68aa4ac597801e9be69707e31bba73.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzkyOTc0NDY2Nw%3D%3D&mid=2247486252&idx=1&sn=8a7ed24b88b3aed80eddd37ff0309487",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 5.85,
+      "final_score": 6.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "笑傲内核：Linux Kernel 爱好者社区的技术实践与补丁贡献历程",
+      "title_orig": "有这么一群人，在一起啃 Linux kernel",
+      "summary": "“笑傲内核”是由宋宝华发起的 Linux 内核狂热爱好者社区，成员们专注于内核代码路径分析、实验复现、补丁编写及提交等具体而艰苦的技术工作。社区通过公开分享看过的代码、踩过的坑以及补丁被评审驳回的经验，旨在建立一个纯粹的、无商业赞助的技术交流平台，吸引更多愿意投入时间钻研 Linux 内核底层原理的开发者共同提升技术水平。",
+      "tags": [
+        "Linux内核",
+        "开源社区",
+        "技术实践"
+      ],
+      "url": "https://blog.csdn.net/21cnbao/article/details/161371613",
+      "source": "blog.csdn.net",
+      "category": "CN_News",
+      "published": "2026-05-24T07:04:22+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注国内底层安全与内核研究者的技术生态与贡献精神。",
+      "feed_url": "https://blog.csdn.net/21cnbao/rss/list",
+      "feed_title": "宋宝华",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "技术社区",
+      "source_key": "blog.csdn.net",
+      "story_id": "url:blog.csdn.net/21cnbao/article/details/161371613",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 4.9,
+      "final_score": 4.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
