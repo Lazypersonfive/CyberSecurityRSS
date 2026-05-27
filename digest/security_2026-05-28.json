@@ -1,0 +1,552 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-28",
+  "generated_at": "2026-05-27T23:50:47.948082Z",
+  "raw_count": 82,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t1": 4,
+    "kind_official": 4,
+    "chinese": 2,
+    "wechat": 1,
+    "tier_t2": 9,
+    "kind_cn_expert": 1,
+    "kind_community": 6,
+    "kind_media": 4,
+    "tier_unknown": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "CISA 将 Daemon Tools Lite 等三款软件的在途攻击漏洞加入已知漏洞目录",
+      "title_orig": "CISA Adds Three Known Exploited Vulnerabilities to Catalog",
+      "summary": "美国网络安全和基础设施安全局CISA近日将CVE-2026-8398、CVE-2026-45321和CVE-2026-48027三个漏洞正式加入其已知被利用漏洞目录，涉及Daemon Tools Lite、TanStack及Nx Console等知名软件产品。这些漏洞包含嵌入式恶意代码及未指明的安全缺陷，目前已有证据表明其正被黑客积极利用，CISA要求联邦机构及相关组织必须在规定时间内完成补丁修复，以防范潜在的网络攻击风险并确保关键系统安全。",
+      "tags": [
+        "CISA",
+        "漏洞预警",
+        "在途攻击"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/05/27/cisa-adds-three-known-exploited-vulnerabilities-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-27T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-45321",
+        "CVE-2026-48027",
+        "CVE-2026-8398"
+      ],
+      "selection_reason": "CISA KEV 目录是衡量漏洞实际威胁程度的重要风向标。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-45321,cve-2026-48027,cve-2026-8398",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "PostgreSQL 数据库 pgcrypto 扩展被曝存在潜伏近二十年的关键远程代码执行漏洞",
+      "title_orig": "每日安全动态推送(26/5/26)",
+      "summary": "安全研究发现 PostgreSQL 的 pgcrypto 扩展组件中存在一个潜伏近二十年的关键远程代码执行漏洞，可能导致数据库服务器被完全控制。此外，近期动态还涵盖了 MuddyWater 组织利用 Langflow 漏洞进行的入侵事件，以及在无硬件环境下利用 Windows 内核驱动的技术研究。原文未详细说明漏洞的具体 CVE 编号，但强调了这些高危风险对企业数据安全的严重威胁。",
+      "tags": [
+        "PostgreS",
+        "远程代码执行",
+        "内核驱动"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960478&idx=1&sn=1765e1bf754c819976147ba9ac81575a",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-26T09:19:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及主流数据库底层扩展的长期潜伏漏洞，具有极高研究价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960478&idx=1&sn=1765e1bf754c819976147ba9ac81575a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.25,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Eppendorf BioFlo 320 生物反应器存在硬编码密码漏洞可导致完全控制",
+      "title_orig": "Eppendorf BioFlo 320",
+      "summary": "Eppendorf BioFlo 320 生物反应器被发现存在硬编码密码漏洞，其 CVSS 评分高达 9.8，属于严重级别。攻击者可利用该漏洞绕过身份验证，获得对生物反应器功能和数据的完全访问权限，直接威胁医疗和关键基础设施行业的生产安全，该漏洞影响所有版本的 BioFlo 320 设备，官方已发布安全建议并提醒用户加强工业控制系统的凭据管理。",
+      "tags": [
+        "工业控制系统",
+        "硬编码密码",
+        "医疗安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-medical-advisories/icsma-26-146-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-26T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "医疗关键基础设施中的高危漏洞，硬编码凭据是典型的工控安全风险",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-medical-advisories/icsma-26-146-01",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ABB B&R Automation Runtime 系统诊断管理器存在拒绝服务漏洞",
+      "title_orig": "ABB B&R Automation Runtime DoS Vulnerability in System Diagnostics Manager (SDM)",
+      "summary": "ABB 旗下的 B&R Automation Runtime 系统诊断管理器被发现存在拒绝服务漏洞，该漏洞由其内部安全分析发现。攻击者若成功利用此漏洞，可导致受影响的自动化运行环境产品停止运行，进而造成工业生产流程中断，目前 ABB 官方已发布针对受影响版本的更新补丁，建议相关用户尽快完成系统升级以缓解潜在的停机风险，确保工业控制系统的持续稳定性。",
+      "tags": [
+        "ABB",
+        "拒绝服务",
+        "工控安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-146-04",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-26T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "工控系统可用性受损可能导致生产中断，补丁更新对运维至关重要。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-146-04",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.1,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux Kernel 6.8 版本本地提权漏洞利用代码在 Exploit-DB 公开",
+      "title_orig": "[local] Linux Kernel 6.8 - Local Privilege Escalation",
+      "summary": "Exploit-DB 平台公开了针对 Linux Kernel 6.8 版本的本地提权漏洞利用脚本，该漏洞允许具有低权限的本地用户通过特定的内核交互手段提升至 root 权限。此漏洞直接威胁 Linux 服务器及工作站的系统完整性与数据安全，虽然原文未详细描述具体成因及 CVE 编号，但提供了可运行的 PoC 代码，建议系统管理员密切关注内核版本更新并及时应用最新的安全补丁。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "PoC"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52573",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-05-26T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "主流内核版本的提权漏洞且附带利用代码，对系统加固具有实战意义",
+      "feed_url": "https://www.exploit-db.com/rss.xml",
+      "feed_title": "Exploit-DB.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "exploit-db.com",
+      "story_id": "url:exploit-db.com/exploits/52573",
+      "related_urls": [
+        "https://www.exploit-db.com/exploits/52585"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.25,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ABB Ability Camera Connect 捆绑旧版 VLC 播放器引入第三方组件漏洞",
+      "title_orig": "ABB Ability Camera Connect",
+      "summary": "ABB Ability Camera Connect 1.5.0.14及以下版本的安装包中捆绑了过时的第三方组件VLC媒体播放器2.2.4版本，该旧版组件存在已公开报道的安全漏洞。这些漏洞可能导致使用Camera Connect的工业监控环境面临被攻击的风险，ABB目前已发布更新版本以替换该有缺陷的第三方组件，并强调了及时更新供应链组件对维护工业软件整体安全环境的重要性。",
+      "tags": [
+        "供应链安全",
+        "第三方组件",
+        "ABB"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-146-05",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-26T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的软件供应链安全案例，展示了捆绑过时组件带来的衍生风险。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-146-05",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.1,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Gitea 漏洞允许未经身份验证的远程攻击者提取私有容器镜像",
+      "title_orig": "Gitea Vulnerability Exposes Private Container Images without Authentication",
+      "summary": "开源自托管平台 Gitea 被曝存在严重安全漏洞 CVE-2026-27771，允许未经身份验证的远程攻击者在无需账号密码的情况下，从部署中提取私有容器镜像。该漏洞影响 1.26.2 之前的所有 Gitea 版本，其核心问题在于身份验证逻辑缺陷导致私有仓库访问控制失效，目前官方已发布 1.26.2 版本进行修复，建议所有使用镜像仓库功能的用户立即执行升级操作。",
+      "tags": [
+        "Gitea",
+        "越权访问",
+        "容器安全"
+      ],
+      "url": "https://thehackernews.com/2026/05/gitea-vulnerability-exposes-private.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-27T10:06:32+00:00",
+      "cve_ids": [
+        "CVE-2026-27771"
+      ],
+      "selection_reason": "涉及私有代码和镜像泄露的严重漏洞，对自托管 DevOps 平",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-27771",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Glassworm 僵尸网络被摧毁：其利用区块链和 BitTorrent 构建韧性架构",
+      "title_orig": "Glassworm botnet disrupted after resilient C2 infrastructure takedown",
+      "summary": "研究人员成功摧毁了针对软件供应链开发者的 Glassworm 僵尸网络，该网络采用了极具韧性的命令与控制（C2）架构。该僵尸网络利用 Solana 区块链交易和 BitTorrent DHT 网络进行指令传输，增加了追踪和关停的难度。此次行动通过打击其分布式基础设施，有效中断了其针对开发者的攻击活动，展示了对抗新型去中心化 C2 技术的实战成果。",
+      "tags": [
+        "僵尸网络",
+        "区块链C2",
+        "供应链攻击"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/glassworm-botnet-disrupted-after-resilient-c2-infrastructure-takedown/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-27T13:28:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "该案例展示了利用区块链和 P2P 技术构建高韧性 C2 的新",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/glassworm-botnet-disrupted-after-resilient-c2-infrastructure-takedown",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "深入分析 npm 供应链攻击：从 antv 与 axios 遭植毒事件看前端生态安全防御",
+      "title_orig": "npm 供應鏈攻擊從頭談起：原理、手法與防禦方式",
+      "summary": "本文系统梳理了近期 antv、TanStack 和 axios 等热门 npm 库遭遇的供应链攻击事件，深入剖析了攻击者如何通过劫持高下载量组件植入恶意代码。文章详细讲解了针对 npm 生态的攻击原理与手法，并为开发者提供了从依赖锁定、权限管理到自动化审计的防御方案，旨在提升开发环节的安全性。原文未披露具体漏洞编号，但强调了跨平台包管理器的普遍风险。",
+      "tags": [
+        "供应链安全",
+        "npm",
+        "恶意包"
+      ],
+      "url": "https://blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack/",
+      "source": "blog.huli.tw",
+      "category": "WebSecurity",
+      "published": "2026-05-25T03:17:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统性总结了前端供应链攻击的实战案例与防御体系。",
+      "feed_url": "https://blog.huli.tw/atom-ch.xml",
+      "feed_title": "Huli's blog",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "blog.huli.tw",
+      "story_id": "url:blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack",
+      "related_urls": [
+        "https://thehackernews.com/2026/05/malicious-npm-package-stole-files-from.html"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CVE-2026-9739：Toolbox 组件因 SSE 处理器硬编码响应头导致 DNS 重绑定漏洞",
+      "title_orig": "CVE-2026-9739",
+      "summary": "该漏洞源于 Toolbox 在使用服务器发送事件（SSE）时，其初始化处理器中意外保留了硬编码的 Access-Control-Allow-Origin 响应头。尽管在测试阶段引入了允许源和主机的限制标志，但硬编码配置导致安全策略失效，使得攻击者可利用 DNS 重绑定手段绕过同源策略。目前该漏洞主要影响通过 SSE 连接 Toolbox 的特定用户，修复状态需参考官方最新补丁说明。",
+      "tags": [
+        "DNS重绑定",
+        "SSE",
+        "访问控制"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-9739?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-27T23:16:48+00:00",
+      "cve_ids": [
+        "CVE-2026-9739"
+      ],
+      "selection_reason": "涉及 DNS 重绑定这一经典且复杂的 Web 安全漏洞。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-9739",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "MeiG Smart FORGE_SLT711 硬件设备存在 OS 命令注入漏洞",
+      "title_orig": "[hardware] MeiG Smart FORGE_SLT711 - OS Command Injection",
+      "summary": "MeiG Smart 旗下的 FORGE_SLT711 硬件设备被发现存在操作系统命令注入漏洞，攻击者可利用该漏洞在目标系统上执行任意指令。该漏洞通常源于 Web 管理界面或后台服务对用户输入参数缺乏严格的过滤与校验，导致恶意构造的 shell 命令被传递至底层系统执行。原文未披露具体的影响版本范围及修复补丁状态，建议相关用户关注厂商安全更新。",
+      "tags": [
+        "命令注入",
+        "硬件安全",
+        "IoT漏洞"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52581",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-05-27T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "硬件设备命令注入是 IoT 安全中高风险的典型漏洞。",
+      "feed_url": "https://www.exploit-db.com/rss.xml",
+      "feed_title": "Exploit-DB.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "exploit-db.com",
+      "story_id": "url:exploit-db.com/exploits/52581",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Module Stomping PIC 技术：利用合法 DLL 内存覆盖实现恶意代码隐匿",
+      "title_orig": "Module Stomping PIC",
+      "summary": "Module Stomping（又称 DLL Hollowing）是一种将恶意代码隐藏在进程内存中的高级技术，通过加载合法的已签名 DLL 并覆盖其内容来规避检测。该技术利用了受信任模块在内存中的合法地位，使恶意代码看起来像是受信任的、有文件支撑的模块，从而有效对抗内存扫描工具。本文重点探讨了位置无关代码（PIC）在该场景下的应用，是红队研究内存隐匿与免杀技术的重要参考。",
+      "tags": [
+        "内存隐匿",
+        "免杀技术",
+        "红队工具"
+      ],
+      "url": "https://rastamouse.me/module-stomping-pic/",
+      "source": "rastamouse.me",
+      "category": "WebSecurity",
+      "published": "2026-05-26T17:30:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入探讨了内存取证对抗中的核心隐匿技术。",
+      "feed_url": "https://rastamouse.me/feed/",
+      "feed_title": "Rasta Mouse",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "rastamouse.me",
+      "story_id": "url:rastamouse.me/module-stomping-pic",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Apache HTTP Server 2.4.66 版本 mod_http2 模块双重释放拒绝服务漏洞",
+      "title_orig": "[webapps] Apache HTTP Server 2.4.66 - 'mod_http2' Double-Free Denial of Service",
+      "summary": "Apache HTTP Server 2.4.66 版本的 mod_http2 模块被发现存在严重的双重释放漏洞，该缺陷源于处理 HTTP/2 协议请求时内存管理逻辑不当，导致特定请求序列会触发同一内存块的二次释放。攻击者可利用此漏洞使服务器进程崩溃并引发拒绝服务攻击，严重威胁 Web 服务的稳定性与可用性，建议相关管理员立即将受影响组件升级至已修复该问题的更高版本以规避风险。",
+      "tags": [
+        "Apache",
+        "双重释放",
+        "拒绝服务"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52577",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-05-26T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "核心 Web 服务器组件的高危内存安全漏洞。",
+      "feed_url": "https://www.exploit-db.com/rss.xml",
+      "feed_title": "Exploit-DB.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "exploit-db.com",
+      "story_id": "url:exploit-db.com/exploits/52577",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress Temporary Login 插件身份验证绕过导致账户接管漏洞",
+      "title_orig": "[webapps] Wordpress Temporary Login Plugin  1.0.0 - 'temp-login-token' Authentication Bypass to Account Takeover",
+      "summary": "WordPress Temporary Login 插件 1.0.0 版本存在身份验证绕过漏洞，其核心原因在于插件对 temp-login-token 临时登录令牌的生成或校验逻辑存在设计缺陷，允许攻击者通过操纵参数伪造合法凭证。未经授权的用户可借此直接接管目标账户并获取访问权限，鉴于目前原文尚未披露官方发布的修复补丁，建议受影响用户立即停用该插件或寻找其他安全的替代方案以保障站点安全。",
+      "tags": [
+        "WordPres",
+        "身份绕过",
+        "账户接管"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52575",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-05-26T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "插件漏洞是 WordPress 站点被入侵的最常见途径。",
+      "feed_url": "https://www.exploit-db.com/rss.xml",
+      "feed_title": "Exploit-DB.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "exploit-db.com",
+      "story_id": "url:exploit-db.com/exploits/52575",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 7.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "中兴 ZXHN H168N 路由器设置向导页面暴露敏感凭据与配置边界绕过漏洞",
+      "title_orig": "why router setup wizards pages are the trickiest vector",
+      "summary": "针对中兴 ZXHN H168N V3.5 路由器的研究发现，其设置向导（wizard）处理程序存在严重逻辑缺陷，导致 PPPoE 拨号凭据和 WLAN 信息泄露。CVE-2021-21735 证明了攻击者无需通过主登录页面认证，即可通过特定的向导路径访问本应受限的配置边界。该案例警示渗透测试人员不应仅关注登录后的功能，路由器初始化逻辑往往是防御最薄弱的环节，原文未提及最新固件修复情况。",
+      "tags": [
+        "路由器安全",
+        "逻辑绕过",
+        "信息泄露"
+      ],
+      "url": "https://www.reddit.com/r/Pentesting/comments/1tnc5cg/why_router_setup_wizards_pages_are_the_trickiest/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-05-25T15:15:39+00:00",
+      "cve_ids": [
+        "CVE-2021-21735"
+      ],
+      "selection_reason": "揭示了路由器初始化向导这一常被忽视的攻击面。",
+      "feed_url": "https://www.reddit.com/r/Pentesting/.rss",
+      "feed_title": "Pentesting",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "cve:cve-2021-21735",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

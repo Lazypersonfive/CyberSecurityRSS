@@ -1,23 +1,23 @@
 # Source Registry Audit
 
-- generated_for: 2026-05-27
-- dates: 2026-05-27, 2026-05-26, 2026-05-25, 2026-05-24, 2026-05-23, 2026-05-22, 2026-05-21
+- generated_for: 2026-05-28
+- dates: 2026-05-28, 2026-05-27, 2026-05-26, 2026-05-25, 2026-05-24, 2026-05-23, 2026-05-22
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 101 | 14 | 20 | 67 | 0 | 12 | 14 | 41 | 0 |
-| ai_security | 62 | 7 | 5 | 50 | 0 | 12 | 7 | 14 | 15 |
-| finance | 70 | 1 | 0 | 69 | 0 | 11 | 1 | 0 | 0 |
-| security | 105 | 18 | 0 | 84 | 3 | 0 | 18 | 8 | 35 |
+| ai | 101 | 15 | 19 | 67 | 0 | 10 | 15 | 43 | 0 |
+| ai_security | 62 | 6 | 6 | 50 | 0 | 10 | 6 | 16 | 12 |
+| finance | 70 | 1 | 0 | 69 | 0 | 10 | 1 | 0 | 0 |
+| security | 105 | 19 | 0 | 81 | 5 | 0 | 19 | 7 | 29 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `blog.huli.tw` | 2 | security | [npm 生态系统供应链攻击深度解析：从 antv 与 axios 恶意版本看防御策略](https://blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack/) |
-| `rastamouse.me` | 1 | security | [Module Stomping 内存隐匿技术解析：通过覆盖合法 DLL 隐藏恶意代码](https://rastamouse.me/module-stomping-pic/) |
+| `blog.huli.tw` | 3 | security | [深入分析 npm 供应链攻击：从 antv 与 axios 遭植毒事件看前端生态安全防御](https://blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack/) |
+| `rastamouse.me` | 2 | security | [Module Stomping PIC 技术：利用合法 DLL 内存覆盖实现恶意代码隐匿](https://rastamouse.me/module-stomping-pic/) |
 
 ## Review Rule
 
