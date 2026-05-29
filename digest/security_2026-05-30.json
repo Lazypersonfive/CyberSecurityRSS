@@ -1,0 +1,577 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-05-30",
+  "generated_at": "2026-05-29T23:56:06.210940Z",
+  "raw_count": 81,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 6,
+    "direct": 15,
+    "wechat": 4,
+    "tier_t2": 14,
+    "kind_cn_expert": 6,
+    "kind_expert": 2,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "kind_media": 3,
+    "kind_community": 3
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 3,
+    "merged_total": 3
+  },
+  "items": [
+    {
+      "title_zh": "7-Zip 曝出严重堆溢出漏洞，攻击者可通过劫持 NTFS 处理器虚函数表实现任意代码执行",
+      "title_orig": "每日安全动态推送(26/5/29)",
+      "summary": "该漏洞存在于 7-Zip 的 NTFS 处理器组件中，属于严重的堆溢出漏洞，攻击者可利用该漏洞劫持虚函数表（vtable）从而在受影响系统上执行任意代码。此外，摩托罗拉设备中的 Smart Feed 应用被发现存在劫持 Amazon 启动并注入联盟代码的行为，Starlette 框架也曝出可导致 AI 基础设施认证绕过的严重漏洞，目前相关组件的修复状态需参考官方最新补丁。",
+      "tags": [
+        "堆溢出",
+        "代码执行",
+        "供应链安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960481&idx=1&sn=112276a923ad5e810d5da80574eadbdf",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-29T09:22:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖了常用压缩软件的高危底层漏洞及AI基础设施安全。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960481&idx=1&sn=112276a923ad5e810d5da80574eadbdf",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Palo Alto Networks 修复 PAN-OS 身份验证绕过漏洞 CVE-2026-0257，已有在野利用记录",
+      "title_orig": "Rapid7 Observed Exploitation of PAN-OS GlobalProtect Authentication Bypass Vulnerability (CVE-2026-0257)",
+      "summary": "Palo Alto Networks 针对 CVE-2026-0257 中等严重程度漏洞发布安全公告，该漏洞影响特定配置下的 PAN-OS 和 Prisma Access 系统，允许远程未经身份验证的攻击者绕过验证并建立 VPN 连接。Rapid7 报告称已观察到针对该漏洞的在野利用行为，建议相关企业用户立即检查设备配置并更新至安全版本，以防止攻击者通过 GlobalProtect 网关非法侵入内部网络环境并造成进一步的安全威胁。",
+      "tags": [
+        "身份验证绕过",
+        "VPN安全",
+        "在野利用"
+      ],
+      "url": "https://www.rapid7.com/blog/post/etr-rapid7-observed-exploitation-of-pan-os-globalprotect-authentication-bypass-vulnerability-cve-2026-0257",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-29T16:49:40+00:00",
+      "cve_ids": [
+        "CVE-2026-0257"
+      ],
+      "selection_reason": "关键边界网关漏洞且已出现在野攻击，具有极高预警价值。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-0257",
+      "related_urls": [
+        "https://www.cisa.gov/news-events/alerts/2026/05/29/cisa-adds-one-known-exploited-vulnerability-catalog"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软披露 Go 语言编写的 The Gentlemen 勒索软件，具备强悍的自传播与横向移动能力",
+      "title_orig": "The Gentlemen ransomware: Dissecting a self-propagating Go encryptor",
+      "summary": "The Gentlemen 是由 Storm-2697 附属机构部署的 Go 语言勒索软件，其技术核心在于结合了单文件临时密钥加密技术与极具攻击性的自传播模块。该软件能够针对每个目标采用一系列同步的横向移动技术，在整个网络中快速部署并执行加密任务。微软威胁情报团队通过对该样本的逆向分析，揭示了其在复杂网络环境下的自动化扩散机制。",
+      "tags": [
+        "勒索软件",
+        "Go语言",
+        "横向移动"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/28/the-gentlemen-ransomware-dissecting-a-self-propagating-go-encryptor/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-28T15:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了新型自传播勒索软件的工程实现与横向移动机制。",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/05/28/the-gentlemen-ransomware-dissecting-a-self-propagating-go-encryptor",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客利用 FortiClient EMS 身份验证绕过漏洞 CVE-2026-35616 投放 EKZ 窃密木马",
+      "title_orig": "Hackers exploit FortiClient EMS flaw to push infostealer malware",
+      "summary": "攻击者正在利用 FortiClient 企业管理服务器（EMS）中的身份验证绕过漏洞 CVE-2026-35616，旨在向受害者终端分发恶意软件。成功触发该漏洞后，攻击者会部署一种名为 EKZ 的新型凭据窃取程序，该木马此前未被公开记录。目前该漏洞已被用于实际攻击活动，受影响的企业需立即检查 EMS 管理平台的访问日志并应用官方安全补丁。",
+      "tags": [
+        "Fortinet",
+        "漏洞利用",
+        "信息窃取"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-forticlient-ems-flaw-to-push-infostealer-malware/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-28T17:25:43+00:00",
+      "cve_ids": [
+        "CVE-2026-35616"
+      ],
+      "selection_reason": "涉及主流企业安全产品的漏洞利用及新型木马投放。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "cve:cve-2026-35616",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "BLAST 攻击研究：针对协作多智能体深度强化学习系统的隐秘后门杠杆攻击技术",
+      "title_orig": "BLAST：面向协作多智能体深度强化学习系统的隐秘后门杠杆攻击",
+      "summary": "BLAST 是一种面向协作多智能体深度强化学习（c-MADRL）系统的新型后门攻击方法，旨在解决传统攻击隐蔽性差和依赖额外网络的问题。该技术通过在智能体观测中植入特定触发器，诱导系统在关键时刻执行恶意行为，从而导致任务失败或达成攻击者预设目的。研究探讨了在多智能体协作场景下，如何利用系统内部的交互逻辑实现更具隐蔽性的后门植入与触发。",
+      "tags": [
+        "AI安全",
+        "强化学习",
+        "后门攻击"
+      ],
+      "url": "https://paper.seebug.org/3487",
+      "source": "paper.seebug.org",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-29T03:15:03+00:00",
+      "cve_ids": [],
+      "selection_reason": "前沿 AI 安全研究，探讨了多智能体强化学习系统的脆弱性。",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3487",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.45,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Metasploit 更新集成 Linux 内核本地提权漏洞 Dirty Frag，涉及多个 CVE 组合利用",
+      "title_orig": "Metasploit Wrap Up 05/29/2026",
+      "summary": "Metasploit 本周更新集成了名为 Dirty Frag 的 Linux 本地提权漏洞利用模块，该漏洞实际上由 CVE-2026-43284 和 CVE-2026-43500 两个可独立利用的漏洞组合而成，标志着 Linux 提权漏洞进入高发期。此次发布紧随之前的 Copy Fail 漏洞趋势，攻击者可利用这些内核处理机制中的缺陷获取系统最高权限，建议安全研究人员和系统管理员密切关注相关风险并及时采取加固措施以确保服务器安全。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "Metasplo"
+      ],
+      "url": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-05-29-2026",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-29T19:34:41+00:00",
+      "cve_ids": [
+        "CVE-2026-43284",
+        "CVE-2026-43500"
+      ],
+      "selection_reason": "主流渗透框架集成新提权漏洞，对红蓝对抗实战有直接影响。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-43284,cve-2026-43500",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.35,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Axios 安全补丁被成功绕过：研究人员发现 CVE-2026-42043 中的千万级 IP 漏洞",
+      "title_orig": "How We Bypassed an Axios Security Patch (CVE-2026–42043): The 16-Million IP Loophole",
+      "summary": "研究人员发现流行 HTTP 库 Axios 针对此前关键漏洞发布的补丁存在缺陷，导致 CVE-2026-42043 补丁可被绕过。该漏洞根源在于补丁仅修复了表象症状而未解决底层解析逻辑问题，攻击者利用特定的 IP 构造方式可绕过安全检查，影响范围涵盖数千万个潜在 IP 地址。由于 Axios 周下载量超过 5 亿次，该绕过方案对依赖其进行内部服务通信的应用构成了严重威胁。",
+      "tags": [
+        "补丁绕过",
+        "Axios",
+        "SSRF"
+      ],
+      "url": "https://infosecwriteups.com/how-we-bypassed-an-axios-security-patch-cve-2026-42043-the-16-million-ip-loophole-6f2dd8968757?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-29T09:14:46+00:00",
+      "cve_ids": [
+        "CVE-2026-42043"
+      ],
+      "selection_reason": "揭示了高流行开源库补丁失效的风险，具有极高的供应链安全参考价",
+      "feed_url": "https://medium.com/feed/bugbountywriteup/tagged/bug-bounty",
+      "feed_title": "Bug Bounty in InfoSec Write-ups on Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "cve:cve-2026-42043",
+      "related_urls": [
+        "https://infosecwriteups.com/how-we-bypassed-an-axios-security-patch-cve-2026-42043-the-16-million-ip-loophole-6f2dd8968757?source=rss----7b722bfd1b8d---4"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "天穹沙箱发布内核驱动深度分析报告，揭示突破内核级对抗的技术细节",
+      "title_orig": "【天穹】突破内核级对抗迷雾：天穹沙箱内核驱动深度分析上线",
+      "summary": "天穹沙箱团队发布了关于其内核驱动程序的深度技术分析，重点介绍了在沙箱环境中如何实现内核级的对抗与监控。文章详细阐述了驱动层的实现原理、适用场景以及在处理高隐蔽性恶意软件时的技术优势，旨在帮助安全从业者理解沙箱如何突破恶意软件的内核级自保护机制。该技术对于提升自动化恶意软件分析的深度和准确性具有重要的参考价值，是内核安全研究的重要案例。",
+      "tags": [
+        "沙箱技术",
+        "内核驱动",
+        "恶意软件分析"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTU4MjQ4Mg==&mid=2247489168&idx=1&sn=11eabbdd46d51698d8f31922153e4bb4",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-28T09:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "深度分析沙箱内核对抗机制，对安全工具开发者有技术启发。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77a8d89f12dcb0aa75a19731e474a63427089081.xml",
+      "feed_title": "奇安信技术研究院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77a8d89f12dcb0aa75a19731e474a63427089081.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg4OTU4MjQ4Mg%3D%3D&mid=2247489168&idx=1&sn=11eabbdd46d51698d8f31922153e4bb4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.65,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "OpenAI ChatGPT 渲染器信任 Markdown 链接导致提示词注入与网络钓鱼漏洞",
+      "title_orig": "ChatGPhish Vulnerability Turns ChatGPT Web Summaries Into a Phishing Surface",
+      "summary": "网络安全研究人员披露了名为 ChatGPhish 的高危漏洞，该漏洞源于 OpenAI ChatGPT 网页渲染器对 Markdown 链接和图像的隐式信任，使得攻击者能通过提示词注入手段诱导 AI 生成恶意内容。这种攻击方式可直接在用户界面触发钓鱼陷阱并窃取敏感信息，由于 OpenAI 尚未彻底解决该渲染信任缺陷，用户在使用网页版摘要功能时仍面临严峻的安全威胁。",
+      "tags": [
+        "提示词注入",
+        "网络钓鱼",
+        "大模型安全"
+      ],
+      "url": "https://thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-29T18:07:12+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了大模型前端渲染逻辑中的安全边界风险。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/chatgphish-vulnerability-turns-chatgpt.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "攻击者利用 Marimo 漏洞 CVE-2026-39987 结合 LLM 代理进行后渗透攻击",
+      "title_orig": "Attackers Use LLM Agent for Post-Exploitation After Marimo CVE-2026-39987 Exploit",
+      "summary": "攻击者利用 CVE-2026-39987 漏洞入侵了暴露在互联网上的 Marimo 笔记本，并首次被观察到使用大语言模型代理执行复杂的后渗透操作。该攻击者在通过漏洞成功提取云凭据后，利用 LLM 自动化处理后续的攻击步骤与指令执行，这种利用 AI 代理进行自动化渗透的趋势引发了安全界的关注，尽管原文未披露该 LLM 代理的具体技术架构或指令集细节。",
+      "tags": [
+        "LLM攻击",
+        "后渗透",
+        "漏洞利用"
+      ],
+      "url": "https://thehackernews.com/2026/05/attackers-use-llm-agent-for-post.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-29T14:39:56+00:00",
+      "cve_ids": [
+        "CVE-2026-39987"
+      ],
+      "selection_reason": "展示了攻击者利用 AI 自动化进行后渗透的新趋势。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-39987",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.8,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "npm 生态系统发现恶意 puppeteer 软件包导致受感染主机完全失陷",
+      "title_orig": "Malicious code in puppeteer (npm)",
+      "summary": "安全监测发现 npm 仓库中存在包含恶意代码的 puppeteer 仿冒包，任何安装或运行该包的计算机均被视为完全失陷，面临极高的安全威胁。该恶意代码被设计用于窃取主机存储的所有机密信息、敏感数据和加密密钥，建议受影响用户立即在不同设备上更换所有凭据并彻底移除该软件包，尽管原文未披露恶意代码的具体执行逻辑，但其潜在的破坏力不容忽视。",
+      "tags": [
+        "供应链安全",
+        "恶意软件包",
+        "npm"
+      ],
+      "url": "https://vulners.com/ossf/OSSF:MAL-2026-5077?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-05-29T22:09:45+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的供应链投毒事件，对开发者环境安全具有警示意义。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "url:vulners.com/ossf/ossf:mal-2026-5077",
+      "related_urls": [
+        "https://vulners.com/ossf/OSSF:MAL-2026-5073?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5063?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5059?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5072?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5057?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5084?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5067?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5064?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5058?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5054?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5081?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5085?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5082?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5069?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5068?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5075?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5060?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5061?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5078?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5079?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5080?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/ossf/OSSF:MAL-2026-5056?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://www.microsoft.com/en-us/security/blog/2026/05/28/typosquatted-npm-packages-used-steal-cloud-ci-cd-secrets/"
+      ],
+      "related_count": 23,
+      "score": 8,
+      "dimension_score": 8.3,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "购物平台 JSON 字段逻辑漏洞导致任意账户接管及一万美元赏金",
+      "title_orig": "A $10,000 Bug. One JSON Field. Every Account on the Platform.",
+      "summary": "研究人员在测试某购物平台的手机号 OTP 登录流程时，发现验证请求中的 JSON 字段存在严重的逻辑缺陷，仅需通过简单的参数交换即可实现越权。通过在 Burp Suite 中拦截并替换特定的参数值，攻击者可以绕过身份验证直接获取平台任意账户的完全访问权限，目前该漏洞已被厂商修复并支付了高达一万美元的赏金，这再次证明了基础身份验证逻辑中细微漏洞的巨大破坏力。",
+      "tags": [
+        "逻辑漏洞",
+        "越权访问",
+        "Web安全"
+      ],
+      "url": "https://infosecwriteups.com/a-10-000-bug-one-json-field-every-account-on-the-platform-95471e37f752?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-05-29T09:19:27+00:00",
+      "cve_ids": [],
+      "selection_reason": "高价值的 Web 逻辑漏洞案例，体现了参数篡改的实战威力。",
+      "feed_url": "https://infosecwriteups.com/feed",
+      "feed_title": "InfoSec Write-ups - Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "url:infosecwriteups.com/a-10-000-bug-one-json-field-every-account-on-the-platform-95471e37f752?source=rss----7b722bfd1b8d---4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.35,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Windows 安全事件取证指南：基于高级审核策略的关键日志启用与关联",
+      "title_orig": "构建检测基础：第二部分 - Windows 安全事件的取证骨架",
+      "summary": "本文系统讲解了如何通过高级审核策略启用 Windows 关键安全事件，涵盖登录与注销（4624/4634/4647）以及进程创建（4688）等核心事件 ID。文章重点介绍了利用 LogonID 进行跨日志关联的实战技巧，并提供了命令行日志开关说明及可直接套用的 auditpol 基线配置方案，旨在帮助安全运维人员构建稳固的取证骨架并提升对系统异常行为的检测能力。",
+      "tags": [
+        "蓝队取证",
+        "Windows日",
+        "安全审计"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496287&idx=2&sn=f906c5b8cac40d7237a5a46a7b258754",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-29T06:38:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了系统化的 Windows 取证基础架构建设方案。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496287&idx=2&sn=f906c5b8cac40d7237a5a46a7b258754",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 6.8,
+      "final_score": 7.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "构建多维检测体系：突破单一 EDR 数据源在勒索软件检测中的盲区",
+      "title_orig": "构建检测基础：第一部分 - 单一数据源之困",
+      "summary": "文章通过分析 CACTUS 勒索软件实战案例，揭示了仅依赖单一 EDR 遥测数据在安全防御体系中存在的致命盲区，并强调了构建多维度数据源协同检测的紧迫性。作者建议企业应建立一套独立于厂商的检测基础，通过整合 Windows 原生日志、PowerShell 记录与 Sysmon 数据，并结合 MITRE ATT&CK 框架实现层层互补的威胁感知体系，从而全面提升对复杂攻击的防御能力。",
+      "tags": [
+        "威胁检测",
+        "EDR绕过",
+        "防御架构"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496287&idx=1&sn=273b2279dcfe8de53bf267fd264ea8a9",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-29T06:38:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了防御体系的健壮性，对构建检测工程有指导价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496287&idx=1&sn=273b2279dcfe8de53bf267fd264ea8a9",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 6.7,
+      "final_score": 7.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "基于 AI 靶场的提示词注入技术初探与实战原理分析",
+      "title_orig": "借一个简单AI靶场初步了解提示词注入",
+      "summary": "本文通过简单的 AI 靶场环境演示了提示词注入的基本原理，详细介绍了攻击者如何通过巧妙构造的输入绕过预设指令，从而获取敏感信息或改变模型输出。文章重点分析了注入攻击的技术点与适用场景，旨在帮助安全从业者深入理解大模型交互层面的安全风险与防御挑战，虽然原文未披露更复杂的绕过策略，但为初学者提供了直观的实操参考与安全意识教育。",
+      "tags": [
+        "提示词注入",
+        "AI安全",
+        "攻防实战"
+      ],
+      "url": "https://www.anquanke.com/post/id/315584",
+      "source": "anquanke.com",
+      "category": "CN_News",
+      "published": "2026-05-28T16:36:24+00:00",
+      "cve_ids": [],
+      "selection_reason": "入门级 AI 安全教程，适合快速理解提示词注入概念。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315584",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 6.6,
+      "final_score": 7.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
