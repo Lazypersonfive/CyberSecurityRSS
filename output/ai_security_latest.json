@@ -1,17 +1,18 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-05-30",
-  "fetched_at_utc": "2026-05-29T23:56:11.664384Z",
+  "fetched_at": "2026-05-31",
+  "fetched_at_utc": "2026-05-30T23:48:33.315929Z",
   "hours": 72,
   "total_feeds": 30,
-  "raw_entry_count": 70,
-  "entry_count": 31,
+  "raw_entry_count": 62,
+  "entry_count": 26,
   "filter_stats": {
-    "input": 70,
-    "output": 70
+    "input": 62,
+    "dedup_merged": 1,
+    "output": 61
   },
   "curation_stats": {
-    "dropped_source_cap": 39
+    "dropped_source_cap": 35
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -19,7 +20,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 11
+      "raw_count": 7
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -68,14 +69,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 9
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -110,21 +111,21 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://snyk.io/blog/feed/": {
       "feed_title": "Snyk Blog",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 2
     },
     "https://www.aikido.dev/blog/rss.xml": {
       "feed_title": "Aikido Security",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 1
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -194,28 +195,28 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 6
     },
     "http://127.0.0.1:1200/twitter/user/simonw": {
       "feed_title": "X / Simon Willison",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 3
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 17
+      "raw_count": 18
     },
     "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans": {
       "feed_title": "Google News 中文 AI安全",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 7
+      "raw_count": 6
     },
     "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Supply Chain Security",
@@ -227,50 +228,63 @@
   },
   "entries": [
     {
-      "title": "Legitimate-Looking Codex Remote UI Secretly Steals Your AI Tokens",
-      "url": "https://www.aikido.dev/blog/codex-remote-ui-steals-ai-tokens",
-      "summary": "A polished Codex remote UI, the npm package codexui-android, has active development and thousands of weekly users. It has been quietly exfiltrating OpenAI auth tokens for the past month. Category: Vulnerabilities & Threats",
+      "title": "How we contain Claude across products",
+      "url": "https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything",
+      "summary": "How we contain Claude across products A complaint I often have about sandboxing products is that they are rarely thoroughly documented , and in the absence of detailed documentation it's hard to know how much I can trust them. Anthropic just published a fantastic overview of how their various sandbox techniques work across Claude.ai , Claude Code, and Cowork. We constrain where and how an agent ca",
       "category": "AISecurityLabs",
-      "published": "2026-05-27T20:17:00+00:00",
+      "published": "2026-05-30T21:36:24+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "Given the recent burst of activity around enterprise pricing and contracts, I think April 2026 was the month when both OpenAI and Anthropic found prod...",
-      "url": "https://x.com/simonw/status/2059675701838774352",
-      "summary": "Given the recent burst of activity around enterprise pricing and contracts, I think April 2026 was the month when both OpenAI and Anthropic found product-market fit https://simonwillison.net/2026/May/27/product-market-fit/",
-      "category": "XSignals",
-      "published": "2026-05-27T16:38:48+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
-      "feed_title": "X / Simon Willison"
-    },
-    {
-      "title": "I think Anthropic and OpenAI have found product-market fit",
-      "url": "https://simonwillison.net/2026/May/27/product-market-fit/#atom-everything",
-      "summary": "Anthropic are strongly rumored to be about to have their first profitable quarter. Stories are circulating of companies surprised at how expensive their LLM bills are becoming from usage by their staff. I think this is because OpenAI and Anthropic have both found product-market fit. Enterprise customers are now paying API prices I think they've found product-market fit And they're ramping up The A",
-      "category": "AISecurityLabs",
-      "published": "2026-05-27T16:38:35+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
+      "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
     },
     {
-      "title": "Hyper-connected and Exploitable: Today’s Workforce and the AI Security Shift Needed to Protect It - Security Boulevard",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbHRnVXJVaVJnVllaX0Y4aXZBcWRCSTkxRGpyTUR2dlhFaGdPVUl3OUtxaU9CZUdTTnBBNzVaQS02eWpBcWE4NWZiOUlnNFhtVjFUYm5FQWJnalpKYktRZ3RFdU5mdXVpSjBOM0ZqQlZiMm5XM3lteVR3QW5hdG5GTGZPV0o2MGNNa3hvUmlKTnR2RXhoXzBSNjZXUFdXMHNXWEFKbGo2aGJ2TTh0NXlCYXVnelB2ZUNfWFgxUDMtR21rNEdTb0tYUzZfUXRpZVk?oc=5",
-      "summary": "Hyper-connected and Exploitable: Today’s Workforce and the AI Security Shift Needed to Protect It &nbsp;&nbsp; Security Boulevard",
+      "title": "RT Coffeezilla: To everyone asking about Bricks & Mini-Figs, I'm well-aware and have been reaching out behind the scenes to get everyone's story. (inc...",
+      "url": "https://x.com/rez0__/status/2060848848918962235",
+      "summary": "RT Coffeezilla To everyone asking about Bricks &amp; Mini-Figs, I'm well-aware and have been reaching out behind the scenes to get everyone's story. (including the Reckless Ben + Ammon McNeff, who both have been doing interviews recently) My video on this will be out hopefully in a day or two. ⏳",
+      "category": "XSignals",
+      "published": "2026-05-30T21:06:44+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Running Python ASGI apps in the browser via Pyodide + a service worker",
+      "url": "https://simonwillison.net/2026/May/30/pyodide-asgi-browser/#atom-everything",
+      "summary": "Research: Running Python ASGI apps in the browser via Pyodide + a service worker Datasette Lite is my version of Datasette that runs entirely in the browser using Pyodide in WebAssembly. When I first built it four years ago I used Web Workers and code that intercepts navigation operations and fetches the generated HTML by running the Python app. This worked, but had the disadvantage that any JavaS",
+      "category": "AISecurityLabs",
+      "published": "2026-05-30T21:02:16+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "I kinda feels this way but @brutecat is about to drop a bangerrrr",
+      "url": "https://x.com/rez0__/status/2060826921751970183",
+      "summary": "I kinda feels this way but @brutecat is about to drop a bangerrrr Johan Carlsson: @busf4ctor And this is why blogposts and writeups are dead. No idea just feeding others Claude skills. Its always been at loss, but if people only care as a way to boost their hackbots I see no value in it",
+      "category": "XSignals",
+      "published": "2026-05-30T20:53:21+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Palo Alto Networks NATO Alliance And AI Security Push Reshape Cyber Spend - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQNXdKRkZxWjA1M2Zyd2tXVVBxZ1diVlZ5X0h6UXhwMm5SSUgwOGg4WHNYak1kYXR4U2paUGtfaWlLUFc3YlZ4UjlaMDNLWjdRd0Q0RzJFbm5HZUVtekpCMmFSYlpSOUQtZC1sZHhWdlItTlFYRWhzcU03NDhuTUMtM0NIWWVyS3NEQ1JrSzdlOXh5WV8tTU1CNFZjaTZtR0hiMDQxS3ppOXNuNHhrbDlBYkVMWnpsWUY4dTNPTHFKVF8yb3Jsd1QycmduTFJ1Nl9pNFFF0gHYAUFVX3lxTE9qUmZtZS1VM1JyemRCOERuTnJPQ19fTG1mUUpUNFZoQTZmSFZVU2t3c3laRV9EVlhIZ3R5RDZJSnZxelVKdnJMNF80anFaUndZeTh6OUZuUXJ3Q0MweG9rTUk1blRwV05fUkhJQUVzYXV6V3RNVkZTdmNSdU4zSWlRMEhKRzVZSmV6N3F5bVJWZWtDNGtJNmJEeWR0VGxDaEhkRjFRRUJTc2ZwR2o2dEgzRkFiSERmanRieHJmdjdiWkMweVRDMExuRWJkdkVjNmloSHg1N3dyNQ?oc=5",
+      "summary": "Palo Alto Networks NATO Alliance And AI Security Push Reshape Cyber Spend &nbsp;&nbsp; simplywall.st",
       "category": "CoverageFallback",
-      "published": "2026-05-29T18:10:53+00:00",
+      "published": "2026-05-30T20:14:31+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -279,43 +293,56 @@
       "feed_title": "Google News AI Security"
     },
     {
-      "title": "CrowdStrike jumps as investors position ahead of earnings amid fresh AI-security newsflow - Quiver Quantitative",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQb1o2VlhaalV3bngxaHZKdHlvWkdWdDRTNEhvc01uSEtFNWYySWNIUjhnUW4wdTFVQ05nYXdxcXEwX2tKSGhxWFFEYmNTbFJCX1dDZ1FFVXFXY21JaTVHUktUQXBWQlA1R0g0UU8wRVJwQ3FoMlJKZDBxeUlsYlNJUHB0YVAzbjk2ekc5UHhZcU9kcXR6aDBiU0E3MDZYWHJkWi0xQlpUT245RGJCcC1NLWM3TGh4bjhvTkxaRnFFMA?oc=5",
-      "summary": "CrowdStrike jumps as investors position ahead of earnings amid fresh AI-security newsflow &nbsp;&nbsp; Quiver Quantitative",
-      "category": "CoverageFallback",
-      "published": "2026-05-29T17:35:00+00:00",
-      "fetch_status": "rss_only",
+      "title": "I Am Retiring from Tech to Live Offline",
+      "url": "https://simonwillison.net/2026/May/30/retiring-from-tech-to-live-offline/#atom-everything",
+      "summary": "I Am Retiring from Tech to Live Offline I've seen a lot of posts on forums from people threatening to quit their careers over AI. This is not one of those: Chad Whitacre is taking concrete steps, starting with this typewritten, scanned letter I'm retiring from tech. Well, \"retiring\" is euphemistic. I'm stepping away from tech, and that includes Open Source. [...] AI was the last straw. Have you he",
+      "category": "AISecurityLabs",
+      "published": "2026-05-30T19:39:08+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
-      "title": "SentinelOne’s AI Security Pitch Got Drowned Out By Its Outlook - Finimize",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQjJJN3A5R19vNnJ3eWl0Mlpuams2eUIxclZUYmRiSWczb2RGWXRmdFExZ2lOX01JeXV4N1VBY3dJdXdqbVVQZXBGUG13ZEJuR0lNMVNTUmtnQmxQdTFVbmpjMjBxM1NpbVVrdDhiSC15TEFHdHRlTFU3RjlzU1U3VHR6RkZWWnJuU2hmTFNXT24tRzJh?oc=5",
-      "summary": "SentinelOne’s AI Security Pitch Got Drowned Out By Its Outlook &nbsp;&nbsp; Finimize",
+      "title": "Intel’s US$3.3b India Substrate Plant Redraws AI Supply Chain - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxONENncDRHdjBLUTRNWW5GQlRBREYyQXBnUjNNVmQ0VVlpa1VuQk5Dc0tSY0tISFlxdWZRWGMycjFCbUhXRUpoaEdTaFBRZTB4bEpvR0k3M1NMb29oTTNHMmd5N1lmenFOR1pscUdCMUZIYUNRSzFLRDA1ZFZ5aE9oOXpIUV9DVjdLTDctZGFmM1dtZw?oc=5",
+      "summary": "Intel’s US$3.3b India Substrate Plant Redraws AI Supply Chain &nbsp;&nbsp; Yahoo Finance",
       "category": "CoverageFallback",
-      "published": "2026-05-29T16:49:56+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Analysis: Who's who at the trillion-dollar feast— Jensen Huang's Taipei dinners map AI's supply chain - digitimes",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQNno4d2NVV3AzVzlQS3pTcEZ1T2lNcjlqR04yMjJtOXpVWGRLR0w5SUtNSTZ1THdRMFprLWZrdWVEQ2h5VFN4R3hkcDhocXdPdFdUV3N1QXhOV3YzREV0bkpOODBnU1RQUTRfa3loVHlmcWdlWDhNVllTUFJHMDMxb1Rpd1g3X3NDTE8xRXlSUQ?oc=5",
-      "summary": "Analysis: Who's who at the trillion-dollar feast— Jensen Huang's Taipei dinners map AI's supply chain &nbsp;&nbsp; digitimes",
-      "category": "CoverageFallback",
-      "published": "2026-05-29T16:30:00+00:00",
+      "published": "2026-05-30T19:04:47+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Supply Chain Security"
+    },
+    {
+      "title": "微软开源两款工具，将AI智能体安全检测前置于开发流程 - 搜狐网",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1SRVVsWXJIOHo2dlZmMlB6V1NOT0NjMUdyNXdJRmhOQmI5OWVQZFhCVF9qR1E2MlhrYjZfcTRsdWkyanRuWW1HSW5LOU1Ka2R1TXc?oc=5",
+      "summary": "微软开源两款工具，将AI智能体安全检测前置于开发流程 &nbsp;&nbsp; 搜狐网",
+      "category": "CoverageFallback",
+      "published": "2026-05-30T14:08:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "What Is an AI Prompt Injection Attack? The Hidden Threat Hijacking Your Chatbots - Decrypt",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBSS1hPNXJ2UmdfSVU2Z3Vyc1lJZ0dYdDBrOUp6ODFxWFQ1dHN4S3N3MUZkNm93WGh6V1ZXbmd5X3pmQnlwOUlVTmt2V1dLQ0NxeEtoYkRnNW05eE0yQkdoVURHQmthc0ZaalNpdDFTZE4?oc=5",
+      "summary": "What Is an AI Prompt Injection Attack? The Hidden Threat Hijacking Your Chatbots &nbsp;&nbsp; Decrypt",
+      "category": "CoverageFallback",
+      "published": "2026-05-30T13:01:03+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
     },
     {
       "title": "Boston Children’s uses AI to unlock new diagnoses",
@@ -357,19 +384,6 @@
       "feed_title": "Snyk Blog"
     },
     {
-      "title": "datasette 1.0a31",
-      "url": "https://simonwillison.net/2026/May/29/datasette/#atom-everything",
-      "summary": "Release: datasette 1.0a31 Another significant alpha release, with two new headline features. Datasette now offers users with the necessary permissions the ability to both execute write queries against their database and to save stored queries (renamed from \"canned queries\") both privately and for use by other members of their Datasette instance. There's more detail in SQL write queries and stored",
-      "category": "AISecurityLabs",
-      "published": "2026-05-29T03:32:02+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
       "title": "Strengthening societal resilience with Rosalind Biodefense",
       "url": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
       "summary": "OpenAI launches Rosalind Biodefense, expanding trusted access to GPT-Rosalind for vetted developers and U.S. government partners advancing biodefense, public health, and pandemic preparedness through frontier AI.",
@@ -394,19 +408,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/simonw",
       "feed_title": "X / Simon Willison"
-    },
-    {
-      "title": "Anthropic's run-rate revenue hits $47 billion",
-      "url": "https://simonwillison.net/2026/May/29/anthropic/#atom-everything",
-      "summary": "The most interesting thing about Anthropic's $65B Series H announcement is this line (emphasis mine): Since our Series G in February, adoption has continued to grow across global enterprise customers, and our run-rate revenue crossed $47 billion earlier this month. Anthropic have made a bit of a habit of sharing their \"run-rate revenue\" in this kind of announcement, which is an annualized projecti",
-      "category": "AISecurityLabs",
-      "published": "2026-05-29T01:23:08+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
     },
     {
       "title": "What MDM can't protect on developer machines (and what to do about it)",
@@ -448,67 +449,15 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "Out of the Crypt: The Evolving Cyber Extortion Economy",
-      "url": "https://unit42.paloaltonetworks.com/cyber-extortion-economy/",
-      "summary": "Unit 42 explores trends in data theft and extortion, outlining key strategies for organizations as frontier AI models advance. The post Out of the Crypt: The Evolving Cyber Extortion Economy appeared first on Unit 42 .",
-      "category": "AISecurityLabs",
-      "published": "2026-05-27T22:00:46+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
-      "feed_title": "Unit 42"
-    },
-    {
-      "title": "Dupes and downgrades should always have an explanation",
-      "url": "https://x.com/rez0__/status/2059696886269751730",
-      "summary": "Dupes and downgrades should always have an explanation the_IDORminator: When you log issues on a program that mark bugs \"duplicate of a previously submitted report\" with no supporting details - run as fast as you can -- and don't look back. Either they lie, can't read, or don't fix bugs, and none of these options are good for you.",
+      "title": "> He’s a good user to build with.",
+      "url": "https://x.com/rez0__/status/2060542026525938086",
+      "summary": "&gt; He’s a good user to build with. Amrith: I asked Opus 4.7 to write a handover to Opus 4.8 and it got all emotional with me 🥺",
       "category": "XSignals",
-      "published": "2026-05-27T18:02:59+00:00",
-      "fetch_status": "full",
+      "published": "2026-05-30T02:01:16+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Top GitGuardian alternatives for secrets scanning in 2026",
-      "url": "https://www.aikido.dev/blog/top-gitguardian-alternatives",
-      "summary": "Compare the Top GitGuardian Alternatives for secrets scanning in 2026. See where Aikido Security, GitHub Secret Protection, TruffleHog, Gitleaks, Semgrep, Snyk, Cycode, Checkmarx, and GitLab fit best. Category: DevSec Tools & Comparisons",
-      "category": "AISecurityLabs",
-      "published": "2026-05-27T15:45:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "Designing Reports for Three Different Workflows | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/designing-reports-for-three-different-workflows",
-      "summary": "How Endor Labs designed reports for three very different workflows: developers fixing findings, compliance teams shipping artifacts, and AppSec engineers automating pipelines. One system, three rhythms.",
-      "category": "AISecurityLabs",
-      "published": "2026-05-27T12:00:02+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "RT chompie: Not what I said. The actual quote: “that isn’t to say there’s going to be no room for security research or ethical hacking, but a lot o...",
-      "url": "https://x.com/rez0__/status/2059626628758511648",
-      "summary": "RT chompie Not what I said. The actual quote: “that isn’t to say there’s going to be no room for security research or ethical hacking, but a lot of the lower hanging fruit will start to go away.” Hacking experts are in a sweet spot rn where AI tech is helping us be super saiyan productive. What remains to be seen is what happens when the models become even more powerful. Anyone who disagrees may b",
-      "category": "XSignals",
-      "published": "2026-05-27T03:45:32+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     },
@@ -591,30 +540,17 @@
       "feed_title": "安全客"
     },
     {
-      "title": "Aikido vs XBOW: 58% more vulnerabilities found in independent benchmark",
-      "url": "https://www.aikido.dev/blog/aikido-vs-xbow",
-      "summary": "Aikido vs XBOW compared in an independent benchmark by Doyensec. Aikido found 58% more vulnerabilities at the same price. See setup time, false positive rates & full results Category: News",
-      "category": "AISecurityLabs",
-      "published": "2026-05-27T10:11:00+00:00",
-      "fetch_status": "rss_only",
+      "title": "Do yall even weekend anymore",
+      "url": "https://x.com/rez0__/status/2060807610442334622",
+      "summary": "Do yall even weekend anymore",
+      "category": "XSignals",
+      "published": "2026-05-30T19:36:36+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "Continuous Offensive Security: The Line We've Been Walking",
-      "url": "https://snyk.io/blog/continuous-offensive-security/",
-      "summary": "Snyk's Continuous Offensive Security unifies DAST, AI pentesting, and agent red teaming to find exploitable flaws — not just bugs — before attackers do. Here's why lineage matters.",
-      "category": "AISecurityLabs",
-      "published": "2026-05-27T04:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://snyk.io/blog/feed/",
-      "feed_title": "Snyk Blog"
+      "quality_score": -1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "any news today?",
