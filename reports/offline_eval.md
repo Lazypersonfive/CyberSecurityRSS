@@ -5,7 +5,7 @@
 
 ## Top Issues
 
-- [ai_security] 3/7 天未满额，累计缺口约 8 条。
+- [ai_security] 3/7 天未满额，累计缺口约 5 条。
 - [ai] 1/7 天未满额，累计缺口约 3 条。
 - [security] 中文目标 3/7 天达成。
 - [ai] 中文目标 3/7 天达成。
@@ -15,24 +15,24 @@
 
 | Board | Name | Days | Avg Selected | Target | Full Days | Avg CN | Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | AI 前沿 | 7 | 14.6 | 15 | 6/7 | 3.7 | 5 | 3/7 | 1.0 | 3 | 0 | 8.1 | 30 |
-| ai_security | AI 安全 | 7 | 8.9 | 10 | 4/7 | 1.3 | 2 | 4/7 | 1.0 | 2 | 0 | 6.9 | 5 |
-| finance | 金融科技 | 7 | 10.0 | 10 | 7/7 | 0.9 | 1 | 5/7 | 1.3 | 4 | 0 | 7.6 | 17 |
-| security | 安全 | 7 | 15.0 | 15 | 7/7 | 4.4 | 6 | 3/7 | 0.0 | 1 | 1 | 8.5 | 22 |
+| ai | AI 前沿 | 7 | 14.6 | 15 | 6/7 | 3.7 | 5 | 3/7 | 1.0 | 3 | 0 | 8.1 | 31 |
+| ai_security | AI 安全 | 7 | 9.3 | 10 | 4/7 | 1.3 | 2 | 4/7 | 1.0 | 2 | 0 | 6.7 | 5 |
+| finance | 金融科技 | 7 | 10.0 | 10 | 7/7 | 0.9 | 1 | 5/7 | 1.3 | 4 | 0 | 7.6 | 16 |
+| security | 安全 | 7 | 15.0 | 15 | 7/7 | 4.6 | 6 | 3/7 | 0.0 | 1 | 0 | 8.5 | 16 |
 
 ## Source Mix
 
 | Board | T1 | T1.5 | T2 | Unknown | Official | X | Google News | CN Expert | Community |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 17 | 20 | 65 | 0 | 17 | 42 | 7 | 0 | 1 |
-| ai_security | 7 | 5 | 50 | 0 | 7 | 12 | 7 | 6 | 0 |
+| ai | 16 | 20 | 66 | 0 | 16 | 42 | 7 | 0 | 1 |
+| ai_security | 7 | 5 | 53 | 0 | 7 | 12 | 7 | 6 | 0 |
 | finance | 3 | 0 | 67 | 0 | 3 | 0 | 9 | 0 | 0 |
-| security | 17 | 0 | 87 | 1 | 17 | 5 | 0 | 28 | 22 |
+| security | 17 | 0 | 88 | 0 | 17 | 6 | 0 | 30 | 19 |
 
 ## Target Misses
 
-- 2026-06-01 security：selected 15/15，中文 3/6，unknown 1
-- 2026-06-01 ai_security：selected 5/10，中文 2/2
+- 2026-06-01 security：selected 15/15，中文 4/6
+- 2026-06-01 ai_security：selected 8/10，中文 2/2
 - 2026-05-31 security：selected 15/15，中文 4/6
 - 2026-05-31 ai：selected 15/15，中文 4/5
 - 2026-05-31 finance：selected 10/10，中文 0/1

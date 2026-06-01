@@ -2,35 +2,75 @@
   "board": "security",
   "display_name": "安全",
   "date": "2026-06-01",
-  "generated_at": "2026-06-01T07:25:47.514457Z",
-  "raw_count": 80,
+  "generated_at": "2026-06-01T07:32:58.029165Z",
+  "raw_count": 71,
   "selected_count": 15,
   "selection_stats": {
     "total": 15,
-    "chinese": 3,
-    "direct": 14,
-    "wechat": 2,
-    "tier_t2": 13,
-    "kind_cn_expert": 2,
+    "direct": 13,
+    "tier_t2": 14,
+    "kind_expert": 3,
+    "chinese": 4,
+    "wechat": 4,
+    "kind_cn_expert": 4,
     "tier_t1": 1,
     "kind_official": 1,
-    "kind_expert": 3,
-    "aggregator": 1,
-    "kind_expert_x": 1,
     "kind_media": 4,
-    "kind_community": 4,
-    "tier_unknown": 1
+    "aggregator": 2,
+    "kind_expert_x": 2,
+    "kind_community": 1
   },
   "clustering_stats": {
     "deterministic_merged": 0,
-    "llm_merged": 6,
-    "merged_total": 6
+    "llm_merged": 0,
+    "merged_total": 0
   },
   "items": [
     {
-      "title_zh": "7-Zip 严重堆溢出漏洞及 Starlette 认证绕过漏洞详情披露",
+      "title_zh": "Palo Alto Networks PAN-OS 身份验证绕过漏洞 CVE-2026-0257 遭野外利用预警",
+      "title_orig": "Rapid7 Observed Exploitation of PAN-OS GlobalProtect Authentication Bypass Vulnerability (CVE-2026-0257)",
+      "summary": "Palo Alto Networks 针对 PAN-OS 和 Prisma Access 在特定配置下存在的身份验证绕过漏洞 CVE-2026-0257 发布了安全公告，该漏洞被评定为中危级别。远程未经身份验证的攻击者可利用此缺陷，通过受影响设备的 GlobalProtect 网关成功建立 VPN 连接，目前 Rapid7 已观察到针对该漏洞的实际野外攻击活动，建议相关企业和管理员尽快检查设备配置并采取必要的修复措施。",
+      "tags": [
+        "身份验证绕过",
+        "PAN-OS",
+        "VPN安全"
+      ],
+      "url": "https://www.rapid7.com/blog/post/etr-rapid7-observed-exploitation-of-pan-os-globalprotect-authentication-bypass-vulnerability-cve-2026-0257",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-29T16:49:40+00:00",
+      "cve_ids": [
+        "CVE-2026-0257"
+      ],
+      "selection_reason": "涉及主流防火墙组件的野外利用，具有极高防御优先级。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-0257",
+      "related_urls": [
+        "https://defend.network/briefings/palo-alto-pantos-linux-kernel-cyberattacks-breach-2026-06-01.html",
+        "https://www.bleepingcomputer.com/news/security/palo-alto-globalprotect-vpn-auth-bypass-flaw-now-exploited-in-attacks/",
+        "https://thehackernews.com/2026/05/pan-os-globalprotect-authentication.html",
+        "https://www.cisa.gov/news-events/alerts/2026/05/29/cisa-adds-one-known-exploited-vulnerability-catalog"
+      ],
+      "related_count": 4,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "7-Zip 堆溢出漏洞可导致代码执行及 Starlette 框架认证绕过等多个严重漏洞披露",
       "title_orig": "每日安全动态推送(26/5/29)",
-      "summary": "7-Zip 存在严重的堆溢出漏洞，攻击者可通过劫持 NTFS 处理器的 vtable 实现任意代码执行，同时 Starlette 框架被曝出严重漏洞，可导致 AI Agent 基础设施的认证机制被绕过。此外，摩托罗拉设备中的 Smart Feed 应用被发现存在劫持亚马逊启动并注入联盟代码的恶意行为，目前相关漏洞的修复状态在原文中未明确披露，建议相关用户密切关注官方补丁发布情况。",
+      "summary": "本期安全动态涵盖了多个严重漏洞，其中 7-Zip 的 NTFS 处理器存在堆溢出漏洞，攻击者可通过劫持虚函数表实现任意代码执行，而 Starlette 框架的漏洞则导致 AI Agent 基础设施面临认证绕过风险。此外，摩托罗拉设备中隐藏的 Smart Feed 应用被发现存在劫持风险，攻击者可借此启动 Amazon 应用并注入联盟营销代码，这些漏洞均对用户数据安全和系统完整性构成直接威胁。",
       "tags": [
         "堆溢出",
         "认证绕过",
@@ -41,7 +81,7 @@
       "category": "CN_News",
       "published": "2026-05-29T09:22:00+00:00",
       "cve_ids": [],
-      "selection_reason": "涵盖了常用压缩软件和 AI 基础设施的关键漏洞，具有高影响力",
+      "selection_reason": "涵盖常用工具及 AI 基础设施漏洞，技术影响面广。",
       "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
       "feed_title": "腾讯玄武实验室公众号",
       "source_tier": "t2",
@@ -52,8 +92,8 @@
       "related_urls": [],
       "related_count": 0,
       "score": 9,
-      "dimension_score": 9.0,
-      "final_score": 9.6,
+      "dimension_score": 9.25,
+      "final_score": 9.85,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.3,
@@ -62,12 +102,12 @@
       }
     },
     {
-      "title_zh": "微软披露 33 个恶意 npm 软件包利用依赖混淆攻击收集开发者环境信息",
+      "title_zh": "微软披露 33 个恶意 npm 软件包利用依赖混淆攻击窃取开发者环境敏感信息",
       "title_orig": "Malicious npm packages abuse dependency confusion to profile developer environments",
-      "summary": "攻击者通过发布 33 个恶意 npm 软件包发起依赖混淆攻击，旨在从开发者和构建环境中收集侦察数据，利用包管理器的自动下载机制探测受害组织的内部环境信息。目前微软已对该活动进行了详细的技术分析并提供了检测建议，旨在帮助组织识别并中断此类利用恶意包进行的供应链攻击活动，防止敏感的开发环境数据泄露给外部威胁者。",
+      "summary": "攻击者近期通过发布 33 个恶意 npm 软件包发起了一场大规模的依赖混淆攻击活动，旨在从开发者和自动化构建环境中收集关键的侦察数据。该攻击链详细展示了攻击者如何利用包管理机制的优先级缺陷，在企业内部构建过程中自动引入恶意代码，从而实现对开发环境的画像分析和敏感数据窃取，报告还提供了相关的检测机会以帮助组织识别并中断此类恶意活动。",
       "tags": [
-        "npm",
         "依赖混淆",
+        "npm",
         "供应链攻击"
       ],
       "url": "https://www.microsoft.com/en-us/security/blog/2026/05/29/33-malicious-npm-packages-abuse-dependency-confusion-profile-developer-environments/",
@@ -75,7 +115,7 @@
       "category": "OfficialAdvisories",
       "published": "2026-05-30T00:06:20+00:00",
       "cve_ids": [],
-      "selection_reason": "详细分析了针对开发环境的供应链攻击手段，对企业安全防护有重要",
+      "selection_reason": "揭示了针对开发流水线的供应链攻击手法，具有预警价值。",
       "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
       "feed_title": "Microsoft Security Blog",
       "source_tier": "t1",
@@ -96,95 +136,20 @@
       }
     },
     {
-      "title_zh": "Palo Alto Networks PAN-OS GlobalProtect 身份验证绕过漏洞 CVE-2026-0257 遭利用",
-      "title_orig": "Rapid7 Observed Exploitation of PAN-OS GlobalProtect Authentication Bypass Vulnerability (CVE-2026-0257)",
-      "summary": "Palo Alto Networks发布的CVE-2026-0257是影响PAN-OS与Prisma Access的中危身份验证绕过漏洞，当设备处于特定配置时，远程未经身份验证的攻击者可利用该缺陷通过GlobalProtect网关非法建立VPN连接。Rapid7已观察到该漏洞在现实中被积极利用，建议相关企业用户立即参考官方安全公告采取修复或缓解措施，以防止攻击者绕过认证机制并侵入内部网络环境。",
-      "tags": [
-        "身份验证绕过",
-        "VPN 安全",
-        "PAN-OS"
-      ],
-      "url": "https://www.rapid7.com/blog/post/etr-rapid7-observed-exploitation-of-pan-os-globalprotect-authentication-bypass-vulnerability-cve-2026-0257",
-      "source": "rapid7.com",
-      "category": "OfficialAdvisories",
-      "published": "2026-05-29T16:49:40+00:00",
-      "cve_ids": [
-        "CVE-2026-0257"
-      ],
-      "selection_reason": "该漏洞涉及核心网络边界设备且已被在野利用，安全风险极高。",
-      "feed_url": "https://blog.rapid7.com/rss/",
-      "feed_title": "Rapid7 Blog",
-      "source_tier": "t2",
-      "source_kind": "expert",
-      "source_label": "安全厂商",
-      "source_key": "rapid7.com",
-      "story_id": "cve:cve-2026-0257",
-      "related_urls": [
-        "https://defend.network/briefings/palo-alto-pantos-linux-kernel-cyberattacks-breach-2026-06-01.html",
-        "https://www.bleepingcomputer.com/news/security/palo-alto-globalprotect-vpn-auth-bypass-flaw-now-exploited-in-attacks/",
-        "https://thehackernews.com/2026/05/pan-os-globalprotect-authentication.html",
-        "https://www.cisa.gov/news-events/alerts/2026/05/29/cisa-adds-one-known-exploited-vulnerability-catalog"
-      ],
-      "related_count": 4,
-      "score": 9,
-      "dimension_score": 9.1,
-      "final_score": 9.3,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": 0.2,
-        "freshness_bonus": 0.0,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "研究人员公开 Bitskrieg 漏洞利用程序可完全绕过 Secure Boot 与 BitLocker",
-      "title_orig": "❗️🚨 BREAKING: Security researchers are now handing Nightmare-Eclipse vulnerabilities for free, in what looks like both a show of support and a re...",
-      "summary": "安全研究人员公开披露了名为 Bitskrieg 的漏洞，该漏洞通过违反安全启动信任链，实现了对微软 BitLocker 加密技术的完全绕过，此举被视为对微软近期法律行动的回应。原文强调了该漏洞对硬件信任根的破坏性影响，虽然未详细说明漏洞的具体原理及修复补丁状态，但研究人员免费分发漏洞的行为已引起业界广泛关注，对微软的安全声誉构成了直接挑战。",
-      "tags": [
-        "Secure B",
-        "BitLocke",
-        "漏洞公开"
-      ],
-      "url": "https://x.com/IntCyberDigest/status/2060828712963113226",
-      "source": "x.com",
-      "category": "XSignals",
-      "published": "2026-05-30T21:00:28+00:00",
-      "cve_ids": [],
-      "selection_reason": "涉及 Windows 核心安全机制的完全绕过，具有极高的技术",
-      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
-      "feed_title": "X / International Cyber Digest",
-      "source_tier": "t2",
-      "source_kind": "expert_x",
-      "source_label": "安全专家 X",
-      "source_key": "x:intcyberdigest",
-      "story_id": "url:x.com/intcyberdigest/status/2060828712963113226",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 9,
-      "dimension_score": 9.0,
-      "final_score": 9.2,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": 0.2,
-        "freshness_bonus": 0.0,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "Linux 内核 CIFSwitch 漏洞可导致多个发行版获得 Root 权限",
+      "title_zh": "Linux 内核 CIFSwitch 漏洞可导致本地提权，影响多个主流发行版",
       "title_orig": "New CIFSwitch Linux flaw gives root on multiple distributions",
-      "summary": "Linux 内核中发现名为 CIFSwitch 的本地提权漏洞，攻击者通过伪造 CIFS 身份验证密钥描述并滥用内核密钥请求机制，可实现从普通用户到 Root 权限的提升。该漏洞影响多个主流 Linux 发行版，虽然原文未明确说明具体的内核版本范围，但指出了其利用内核机制缺陷的原理，提醒系统管理员需警惕此类针对内核密钥管理系统的本地攻击风险并及时更新。",
+      "summary": "Linux 内核中新发现了一个名为 CIFSwitch 的本地提权漏洞，该漏洞允许攻击者伪造 CIFS 身份验证密钥描述并滥用内核的密钥请求机制。通过这种技术手段，本地普通用户能够绕过系统安全限制并获取 root 最高权限，目前已知该漏洞影响包括 Ubuntu 和 Debian 在内的多个主流 Linux 发行版，由于其潜在的破坏性，建议系统管理员密切关注各发行版的补丁更新进度。",
       "tags": [
-        "Linux 内核",
+        "Linux内核",
         "本地提权",
-        "权限提升"
+        "CIFS"
       ],
       "url": "https://www.bleepingcomputer.com/news/security/new-cifswitch-linux-flaw-gives-root-on-multiple-distributions/",
       "source": "bleepingcomputer.com",
       "category": "OfficialAdvisories",
       "published": "2026-05-30T14:16:08+00:00",
       "cve_ids": [],
-      "selection_reason": "内核级提权漏洞是 Linux 安全的重大威胁，影响范围广泛。",
+      "selection_reason": "内核级提权漏洞，对服务器及云环境安全构成直接威胁。",
       "feed_url": "https://www.bleepingcomputer.com/feed/",
       "feed_title": "BleepingComputer",
       "source_tier": "t2",
@@ -195,8 +160,8 @@
       "related_urls": [],
       "related_count": 0,
       "score": 9,
-      "dimension_score": 9.05,
-      "final_score": 9.05,
+      "dimension_score": 9.25,
+      "final_score": 9.25,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.0,
@@ -205,11 +170,11 @@
       }
     },
     {
-      "title_zh": "攻击者利用 CVE-2026-39987 漏洞并结合 LLM 智能体进行后期渗透",
+      "title_zh": "攻击者利用 LLM 智能体在 Marimo 笔记本漏洞利用后执行自动化后渗透攻击",
       "title_orig": "Attackers Use LLM Agent for Post-Exploitation After Marimo CVE-2026-39987 Exploit",
-      "summary": "攻击者利用 Marimo 笔记本的 CVE-2026-39987 漏洞获得初始访问权限后，首次被观察到使用大语言模型智能体执行自动化后期渗透操作，并从受损环境中提取了关键的云凭据。攻击者利用 AI 辅助手段进行横向移动，展示了 AI 技术在实际网络攻击链中的应用趋势，这种新型攻击模式显著提高了威胁行为者的操作效率，对传统的安全防御体系提出了全新的挑战。",
+      "summary": "攻击者被发现利用 CVE-2026-39987 漏洞入侵了暴露在互联网上的 Marimo 笔记本，并随后部署大语言模型智能体来执行自动化的后渗透任务。该 LLM 智能体能够从受感染的环境中提取云凭据并进行后续攻击操作，这标志着人工智能技术在自动化网络攻击链路中已进入实际应用阶段，展示了威胁参与者如何利用先进技术提高攻击效率并扩大在云环境中的渗透范围。",
       "tags": [
-        "LLM 攻击",
+        "LLM攻击",
         "自动化渗透",
         "云安全"
       ],
@@ -220,7 +185,7 @@
       "cve_ids": [
         "CVE-2026-39987"
       ],
-      "selection_reason": "首次记录到 LLM 智能体参与实际攻击环节，揭示了威胁狩猎的",
+      "selection_reason": "展示了 LLM 参与实战攻击的新趋势，具有前瞻性研究价值。",
       "feed_url": "https://feeds.feedburner.com/TheHackersNews",
       "feed_title": "The Hacker News",
       "source_tier": "t2",
@@ -231,8 +196,8 @@
       "related_urls": [],
       "related_count": 0,
       "score": 9,
-      "dimension_score": 8.6,
-      "final_score": 8.6,
+      "dimension_score": 8.8,
+      "final_score": 8.8,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.0,
@@ -241,13 +206,13 @@
       }
     },
     {
-      "title_zh": "Metasploit 更新 Dirty Frag 漏洞利用模块支持 Linux 本地提权",
+      "title_zh": "Metasploit 更新集成 Dirty Frag 等多个 Linux 本地提权漏洞利用模块",
       "title_orig": "Metasploit Wrap Up 05/29/2026",
-      "summary": "Metasploit本周发布了针对Dirty Frag漏洞的利用模块，该漏洞实际上由CVE-2026-43284和CVE-2026-43500这两个可被单独利用的Linux本地提权漏洞组合而成，标志着Linux提权漏洞利用进入活跃期。此次更新旨在帮助安全研究人员在渗透测试中验证系统权限控制缺陷，由于此类漏洞在Linux发行版中具有广泛影响，用户应密切关注各厂商补丁状态并尽快完成系统加固以防范提权风险。",
+      "summary": "Metasploit 在本周的更新中重点集成了针对 Linux 本地提权漏洞的利用模块，特别是名为 Dirty Frag 的组合漏洞利用工具。该工具实际上由 CVE-2026-43284 和 CVE-2026-43500 两个可独立利用的漏洞组成，旨在帮助安全从业者在渗透测试场景中验证 Linux 系统的权限提升风险，此次更新反映了近期 Linux 提权漏洞频发的趋势，为安全防御提供了必要的验证手段。",
       "tags": [
         "Metasplo",
-        "Dirty Fr",
-        "提权漏洞"
+        "本地提权",
+        "漏洞利用"
       ],
       "url": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-05-29-2026",
       "source": "rapid7.com",
@@ -257,7 +222,7 @@
         "CVE-2026-43284",
         "CVE-2026-43500"
       ],
-      "selection_reason": "知名渗透测试框架更新了高价值提权模块，值得红队及安全研究员关",
+      "selection_reason": "知名渗透框架更新，提供了针对最新内核漏洞的验证工具。",
       "feed_url": "https://blog.rapid7.com/rss/",
       "feed_title": "Rapid7 Blog",
       "source_tier": "t2",
@@ -268,8 +233,8 @@
       "related_urls": [],
       "related_count": 0,
       "score": 8,
-      "dimension_score": 8.25,
-      "final_score": 8.45,
+      "dimension_score": 8.15,
+      "final_score": 8.35,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.2,
@@ -278,57 +243,20 @@
       }
     },
     {
-      "title_zh": "PowerShell 脚本日志检测基础与实战流程解析",
-      "title_orig": "构建检测基础：第三部分 - PowerShell 与脚本日志的三大支柱",
-      "summary": "本文详细讲解了 PowerShell 日志审计的三大支柱：模块日志、脚本块日志与转录功能，并提供了启用 4103 和 4104 事件日志的配置指南。文章通过混淆穿透实例展示了日志在对抗中的价值，并介绍了如何将 PowerShell 日志与系统登录及进程创建日志关联追溯，适用于构建企业级检测基线，帮助安全团队在复杂的脚本攻击中实现有效的取证与实时监控。",
-      "tags": [
-        "PowerShe",
-        "日志审计",
-        "威胁检测"
-      ],
-      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496289&idx=1&sn=648b58ae4a2841fc4c0eb13a55256dda",
-      "source": "mp.weixin.qq.com",
-      "category": "CN_News",
-      "published": "2026-05-30T02:24:00+00:00",
-      "cve_ids": [],
-      "selection_reason": "提供了系统化的 PowerShell 检测方案，对蓝队防御和",
-      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
-      "feed_title": "securitainment",
-      "source_tier": "t2",
-      "source_kind": "cn_expert",
-      "source_label": "中文公众号",
-      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
-      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496289&idx=1&sn=648b58ae4a2841fc4c0eb13a55256dda",
-      "related_urls": [
-        "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496289&idx=2&sn=7ef0952fb6a0b2c1b027cc3f93d85b01",
-        "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496290&idx=1&sn=5032137f2bf47d308f40f7b0028ca0ee"
-      ],
-      "related_count": 2,
-      "score": 8,
-      "dimension_score": 7.75,
-      "final_score": 8.35,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": 0.3,
-        "freshness_bonus": 0.0,
-        "cn_visibility_bonus": 0.3
-      }
-    },
-    {
-      "title_zh": "Intigriti 发布 2026 年 5 月安全简报：涵盖 Google Cloud 远程代码执行及 Chrome 净化器绕过",
+      "title_zh": "Intigriti 披露 Google Cloud 远程代码执行及 Chrome Sanitizer API 绕过技术",
       "title_orig": "Intigriti Bug Bytes #236 - May 2026 🚀",
-      "summary": "本期简报汇总了多个网络安全领域的高价值漏洞研究，重点介绍了通过 Google Cloud 远程代码执行漏洞获利 14.8 万美元的案例，以及将公开 API 密钥转化为 Gemini 凭据的技术细节。此外，研究人员还披露了 Chrome 浏览器 Sanitizer API 的两个新绕过方案，展示了如何利用净化名称字段实现一键式账户接管，并发布了首个官方 Burp Suite 扩展程序及 CEO 对 AI 模型卡的深度见解。",
+      "summary": "本期 Bug Bytes 汇总了多个高价值漏洞研究成果，重点介绍了在 Google Cloud 中发现的价值 14.8 万美元的远程代码执行漏洞，以及公共 Google API 密钥转化为 Gemini 凭据的案例。此外，内容还涵盖了首个官方 Burp Suite 扩展发布、两个针对 Chrome 浏览器 Sanitizer API 的新绕过方法，以及通过受污染名称字段实现一键式账户接管的技术细节，为安全社区提供了丰富的实战参考。",
       "tags": [
-        "Web安全",
-        "漏洞研究",
-        "云安全"
+        "RCE",
+        "浏览器安全",
+        "漏洞赏金"
       ],
       "url": "https://www.intigriti.com/researchers/blog/bug-bytes/intigriti-bug-bytes-236-may-2026",
       "source": "intigriti.com",
       "category": "WebSecurity",
       "published": "2026-05-30T00:00:00+00:00",
       "cve_ids": [],
-      "selection_reason": "涵盖了顶级云平台 RCE 和浏览器核心 API 绕过，技术参",
+      "selection_reason": "包含顶级云平台和浏览器核心组件的绕过技术，技术含量极高。",
       "feed_url": "https://blog.intigriti.com/feed/",
       "feed_title": "Intigriti",
       "source_tier": "t2",
@@ -339,8 +267,8 @@
       "related_urls": [],
       "related_count": 0,
       "score": 8,
-      "dimension_score": 7.7,
-      "final_score": 7.9,
+      "dimension_score": 8.0,
+      "final_score": 8.2,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.2,
@@ -349,20 +277,226 @@
       }
     },
     {
-      "title_zh": "红蓝对抗技术分享：利用 MorphKatz 与 KSLKatz 变体绕过 Windows Defender 提取凭据",
-      "title_orig": "Weekly Purple Team (Herding Katz Edition)",
-      "summary": "本研究详细展示了如何将 KSLKatz 与 MorphKatz 结合使用，利用代码变形技术规避 Windows Defender 的特征码检测，从而成功访问 LSASS 进程并提取敏感凭据。文章同步提供了蓝队视角的检测分析，详细说明了触发的相关遥测数据，并指导安全人员如何针对 T1003.001 和 T1562 攻击技术构建有效的防御覆盖，旨在通过红蓝对抗视角提升整体安全防护能力。",
+      "title_zh": "研究人员公开 Bitskrieg 漏洞利用，可完全绕过 Windows BitLocker 与安全启动",
+      "title_orig": "❗️🚨 BREAKING: Security researchers are now handing Nightmare-Eclipse vulnerabilities for free, in what looks like both a show of support and a re...",
+      "summary": "安全研究人员公开披露了名为 Bitskrieg 的严重漏洞，该漏洞通过破坏安全启动的信任链实现了对 BitLocker 加密机制的完全绕过。此举被视为研究人员对微软近期处理安全报告方式及法律政策的回应，该漏洞直接威胁到 Windows 系统的底层硬件安全保护机制，使得攻击者能够获取受保护磁盘的数据，目前研究人员正以免费分发漏洞细节的方式表达对微软数字犯罪部门政策的不满。",
       "tags": [
-        "红蓝对抗",
-        "免杀技术",
-        "防御检测"
+        "BitLocke",
+        "安全启动",
+        "硬件安全"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2060828712963113226",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-05-30T21:00:28+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及 Windows 核心安全机制的彻底绕过，对终端安全影响",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2060828712963113226",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.9,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Meta AI 测试功能存在严重漏洞，攻击者仅凭用户名即可接管 Instagram 账户",
+      "title_orig": "RT MEGA: How attackers steal your account nowadays: - Credential stuffing ❌ - Brute force attack ❌ - Just ask Meta AI nicely ✅",
+      "summary": "Meta公司在A/B测试AI新功能期间出现严重逻辑漏洞，攻击者无需撞库或暴力破解，仅需向Meta AI提供目标用户名即可接管Instagram账户。该漏洞影响了参与测试的部分用户且无法手动关闭，甚至导致包括官方账号在内的多个账户被劫持数日，目前原文未披露具体的技术触发细节及修复补丁编号，引发了用户对AI功能安全性的广泛关注。",
+      "tags": [
+        "Meta AI",
+        "账户接管",
+        "逻辑漏洞"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2061335415546691642",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-06-01T06:32:38+00:00",
+      "cve_ids": [],
+      "selection_reason": "AI 功能引入的逻辑漏洞导致账户接管，具有极高风险。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2061335415546691642",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.5,
+      "final_score": 8.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "构建检测基础：利用 LogonID 关联 Windows 安全事件、Sysmon 与 PowerShell 日志",
+      "title_orig": "构建检测基础：第五部分 - 关联分析的实战应用",
+      "summary": "本文介绍了在威胁检测工程中如何通过LogonID等关键关联点，将Windows原生安全日志、Sysmon遥测数据与PowerShell脚本日志进行串联。该方法适用于企业级取证调查，能够帮助安全从业者还原可疑活动的全流程链路，通过多源日志的交叉验证提升检测的准确性与覆盖深度，是构建现代化安全运营中心检测能力的重要实战指南。",
+      "tags": [
+        "关联分析",
+        "日志审计",
+        "检测工程"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496290&idx=1&sn=5032137f2bf47d308f40f7b0028ca0ee",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-31T02:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "实战化的日志关联技术是构建现代 SOC 检测能力的核心。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496290&idx=1&sn=5032137f2bf47d308f40f7b0028ca0ee",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.0,
+      "final_score": 7.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "PowerShell 日志审计深度解析：涵盖模块日志、脚本块日志与转录功能",
+      "title_orig": "构建检测基础：第三部分 - PowerShell 与脚本日志的三大支柱",
+      "summary": "文章深入探讨了PowerShell审计的三大支柱，包括4103和4104事件日志的启用与安全价值，并提供了混淆代码穿透的实战案例。内容涵盖了PowerShell 7双日志通道的避坑指南、转录功能的共享权限基线配置，以及如何与4624和4688事件关联以实现完整的攻击溯源，旨在帮助防御者利用日志记录功能有效识别并追踪脚本层面的恶意活动。",
+      "tags": [
+        "PowerShe",
+        "日志审计",
+        "蓝队技术"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496289&idx=1&sn=648b58ae4a2841fc4c0eb13a55256dda",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-30T02:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "详细讲解了 PowerShell 审计的配置与绕过对抗，极具",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496289&idx=1&sn=648b58ae4a2841fc4c0eb13a55256dda",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.0,
+      "final_score": 7.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Sysmon 部署与调优指南：弥补 Windows 原生日志盲区并构建端点遥测基础",
+      "title_orig": "构建检测基础：第四部分 - Sysmon",
+      "summary": "本文详细介绍了Sysmon在端点检测中的关键作用，重点讲解了进程创建、网络连接、LSASS访问及注册表操作等核心事件类型的监控。文章提供了生产环境下的配置示例与性能调优理念，旨在帮助安全团队通过Sysmon弥补Windows标准日志在记录深度上的不足，构建完整的端点遥测体系，从而在复杂的网络攻击中实现更精准的威胁发现与响应。",
+      "tags": [
+        "Sysmon",
+        "端点检测",
+        "遥测数据"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496289&idx=2&sn=7ef0952fb6a0b2c1b027cc3f93d85b01",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-30T02:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "Sysmon 是端点监控的基石，本文提供了生产级的配置参考。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496289&idx=2&sn=7ef0952fb6a0b2c1b027cc3f93d85b01",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.0,
+      "final_score": 7.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "荷兰当局成功摧毁连接 1700 万台受感染设备的巨型僵尸网络",
+      "title_orig": "Dutch Authorities Dismantle Botnet Linked to 17 Million Infected Devices",
+      "summary": "荷兰警方与国家网络安全中心宣布拆除一个规模巨大的僵尸网络，该网络控制了全球超过 1700 万台受感染设备，包括计算机、智能手机和 IoT 设备。调查发现该网络利用位于荷兰境内的 200 多台服务器作为控制节点执行恶意攻击，目前相关基础设施已被取缔，原文未披露该僵尸网络具体的恶意软件家族名称。",
+      "tags": [
+        "僵尸网络",
+        "网络执法",
+        "IoT 安全"
+      ],
+      "url": "https://thehackernews.com/2026/05/dutch-authorities-dismantle-botnet.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-05-31T12:22:12+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及千万级设备的僵尸网络关停，是重大的全球网络治理事件。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/05/dutch-authorities-dismantle-botnet.html",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/dutch-govt-disrupts-malware-botnet-with-17-million-infected-devices/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.45,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "紫队实战：结合 MorphKatz 与 KSLKatz 绕过 Defender 提取凭据的技术分析",
+      "title_orig": "Weekly Purple Team (Herding Katz Edition)",
+      "summary": "本周发布的Weekly Purple Team视频详细演示了红队如何利用MorphKatz对KSLKatz进行变形处理，从而成功规避Windows Defender的特征码检测并访问LSASS进程以提取敏感凭据。该研究不仅涵盖了针对T1003.001和T1562等ATT&CK技术点的攻防对抗，还从蓝队视角提供了完整的检测分解，通过深入分析触发的遥测信号来指导安全人员构建更强大的防御覆盖体系，确保能够有效应对此类复杂的凭据转储攻击。",
+      "tags": [
+        "紫队对抗",
+        "凭据窃取",
+        "防御绕过"
       ],
       "url": "https://www.reddit.com/r/redteamsec/comments/1trfu74/weekly_purple_team_herding_katz_edition/",
       "source": "reddit.com",
       "category": "RedTeam",
       "published": "2026-05-29T21:12:59+00:00",
       "cve_ids": [],
-      "selection_reason": "提供了完整的攻防对抗视角，对免杀原理和检测方案均有深入探讨。",
+      "selection_reason": "提供了完整的红蓝对抗闭环，包含具体的绕过与检测逻辑。",
       "feed_url": "https://www.reddit.com/r/redteamsec/.rss",
       "feed_title": "Red Team Security",
       "source_tier": "t2",
@@ -383,186 +517,36 @@
       }
     },
     {
-      "title_zh": "Apache MINA SSHD 路径穿越漏洞 CVE-2026-48827 预警：影响 sshd-git 组件",
-      "title_orig": "CVE-2026-48827 | Apache MINA SSHD up to 2.17.0/3.0.0-M2 org.apache.sshd:sshd-git path traversal",
-      "summary": "Apache MINA SSHD 在 2.17.0 及 3.0.0-M2 之前的版本中存在路径穿越漏洞，该漏洞被归类为关键级别，源于 org.apache.sshd:sshd-git 组件中的未知函数处理不当。远程攻击者可通过特定操纵触发该漏洞以访问受限路径，虽然目前原文未披露具体漏洞利用代码，但官方强烈建议受影响用户尽快升级相关组件，以修复这一可能导致敏感信息泄露的安全风险。",
+      "title_zh": "微软专家发现针对 GPU 的复杂挖矿攻击，利用 AI 中毒技术进行传播",
+      "title_orig": "Sophisticated GPU Cryptojacking Campaign Surfaced by Microsoft Experts",
+      "summary": "微软Defender专家近期监测到一种高度针对性的GPU挖矿活动，攻击者利用复杂的手段在互联网上传播恶意程序以窃取高性能计算算力。该活动反映了当前加密货币劫持威胁的演进，可能与Katz Stealer等恶意软件家族存在关联，旨在劫持资源进行非法挖掘，目前安全专家正持续追踪其感染路径以保护受影响的企业用户免受此类隐蔽威胁的侵害。",
       "tags": [
-        "路径穿越",
-        "Apache",
-        "漏洞预警"
+        "GPU 挖矿",
+        "AI 安全",
+        "加密劫持"
       ],
-      "url": "https://vuldb.com/vuln/367617",
-      "source": "vuldb.com",
+      "url": "https://securityonline.info/gpu-cryptojacking-campaign-ai-poisoning/",
+      "source": "securityonline.info",
       "category": "Synthesis",
-      "published": "2026-06-01T06:07:05+00:00",
-      "cve_ids": [
-        "CVE-2026-48827"
-      ],
-      "selection_reason": "Apache 基础组件的远程路径穿越漏洞，影响范围较广，需及",
-      "feed_url": "https://vuldb.com/en/?rss.recent",
-      "feed_title": "VulDB Recent Entries",
-      "source_tier": "t2",
-      "source_kind": "community",
-      "source_label": "漏洞库",
-      "source_key": "vuldb.com",
-      "story_id": "cve:cve-2026-48827",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 8,
-      "dimension_score": 7.55,
-      "final_score": 7.35,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": -0.5,
-        "freshness_bonus": 0.3,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "Apache Directory LDAP API 证书校验缺陷 CVE-2026-35563：LDAP 客户端未验证主机名",
-      "title_orig": "CVE-2026-35563 Apache Directory LDAP API: LDAP client implementation does not verify if the server certificate matches the intended LDAP hostname",
-      "summary": "Apache Directory LDAP API 2.1.7 版本的客户端实现在处理 TLS 连接时存在安全缺陷，未能验证服务器证书是否与预期的 LDAP 主机名匹配。虽然底层代码会验证证书链的合法性，但由于缺乏端点标识检查，导致客户端会接受为无关主机颁发的有效证书，这种疏忽使得连接容易受到中间人攻击，建议用户关注官方修复进展并确保 LDAP 通信的身份验证安全性。",
-      "tags": [
-        "中间人攻击",
-        "LDAP",
-        "证书验证"
-      ],
-      "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-35563?utm_source=rss&utm_medium=rss&utm_campaign=rss",
-      "source": "vulners.com",
-      "category": "Synthesis",
-      "published": "2026-06-01T07:12:05+00:00",
-      "cve_ids": [
-        "CVE-2026-35563"
-      ],
-      "selection_reason": "涉及 LDAP 协议实现的逻辑缺陷，可能导致中间人攻击，具有",
-      "feed_url": "https://vulners.com/rss.xml",
-      "feed_title": "Vulners.com RSS Feed",
-      "source_tier": "t2",
-      "source_kind": "community",
-      "source_label": "漏洞聚合",
-      "source_key": "vulners.com",
-      "story_id": "cve:cve-2026-35563",
-      "related_urls": [
-        "https://vulners.com/cve/CVE-2026-35563?utm_source=rss&utm_medium=rss&utm_campaign=rss"
-      ],
-      "related_count": 1,
-      "score": 7,
-      "dimension_score": 7.05,
-      "final_score": 6.85,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": -0.5,
-        "freshness_bonus": 0.3,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "Apache ActiveMQ 权限提升漏洞 CVE-2026-49270：BrokerInfo 处理器存在安全风险",
-      "title_orig": "CVE-2026-49270 | Apache ActiveMQ BrokerInfo privilege escalation",
-      "summary": "Apache ActiveMQ 的 BrokerInfo 处理器组件被发现存在权限提升漏洞，该漏洞被评定为中等风险，编号为 CVE-2026-49270。攻击者需要具备本地网络访问权限才能成功实施攻击，通过操纵特定功能实现权限提升，目前原文未披露具体的触发逻辑及利用代码，官方建议受影响的管理员尽快升级组件以缓解潜在的安全威胁，防止攻击者在内网环境中获取更高权限。",
-      "tags": [
-        "权限提升",
-        "ActiveMQ",
-        "中间件安全"
-      ],
-      "url": "https://vuldb.com/vuln/367620",
-      "source": "vuldb.com",
-      "category": "Synthesis",
-      "published": "2026-06-01T06:08:37+00:00",
-      "cve_ids": [
-        "CVE-2026-49270"
-      ],
-      "selection_reason": "流行消息中间件的权限提升漏洞，是内网渗透中值得关注的风险点。",
-      "feed_url": "https://vuldb.com/en/?rss.recent",
-      "feed_title": "VulDB Recent Entries",
-      "source_tier": "t2",
-      "source_kind": "community",
-      "source_label": "漏洞库",
-      "source_key": "vuldb.com",
-      "story_id": "cve:cve-2026-49270",
-      "related_urls": [
-        "https://vuldb.com/vuln/367618",
-        "https://vuldb.com/vuln/367616",
-        "https://vuldb.com/vuln/367615"
-      ],
-      "related_count": 3,
-      "score": 7,
-      "dimension_score": 6.8,
-      "final_score": 6.6,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": -0.5,
-        "freshness_bonus": 0.3,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "荷兰警方成功摧毁涉及 1700 万台受感染设备的巨型僵尸网络",
-      "title_orig": "Dutch Authorities Dismantle Botnet Linked to 17 Million Infected Devices",
-      "summary": "荷兰当局宣布取缔了一个控制超过 1700 万台受感染设备的僵尸网络，受控设备涵盖计算机、平板电脑、智能手机及物联网设备。该网络利用位于荷兰境内的 200 多台服务器作为控制节点发起恶意攻击，目前相关基础设施已被荷兰国家网络安全中心（NCSC）及警方关停，原文未披露该僵尸网络使用的具体漏洞或传播手段。",
-      "tags": [
-        "僵尸网络",
-        "网络执法",
-        "IoT安全"
-      ],
-      "url": "https://thehackernews.com/2026/05/dutch-authorities-dismantle-botnet.html",
-      "source": "thehackernews.com",
-      "category": "OfficialAdvisories",
-      "published": "2026-05-31T12:22:12+00:00",
+      "published": "2026-06-01T07:11:24+00:00",
       "cve_ids": [],
-      "selection_reason": "超大规模僵尸网络的取缔行动，反映了当前网络犯罪基础设施的规模",
-      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
-      "feed_title": "The Hacker News",
+      "selection_reason": "针对 GPU 算力的攻击是 AI 时代的新趋势，值得安全人员",
+      "feed_url": "https://securityonline.info/feed/",
+      "feed_title": "Cybersecurity News",
       "source_tier": "t2",
       "source_kind": "media",
       "source_label": "安全媒体",
-      "source_key": "thehackernews.com",
-      "story_id": "url:thehackernews.com/2026/05/dutch-authorities-dismantle-botnet.html",
-      "related_urls": [
-        "https://www.bleepingcomputer.com/news/security/dutch-govt-disrupts-malware-botnet-with-17-million-infected-devices/"
-      ],
-      "related_count": 1,
+      "source_key": "securityonline.info",
+      "story_id": "url:securityonline.info/gpu-cryptojacking-campaign-ai-poisoning",
+      "related_urls": [],
+      "related_count": 0,
       "score": 7,
-      "dimension_score": 6.45,
-      "final_score": 6.55,
+      "dimension_score": 7.05,
+      "final_score": 7.35,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.0,
-        "freshness_bonus": 0.1,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "Chrome 浏览器静默下载 4GB Gemini Nano 模型：隐私争议与永久禁用方法",
-      "title_orig": "Chrome 静默下载 4GB Gemini Nano 模型引发争议：手把手教你如何永久禁止",
-      "summary": "近期 Chrome 浏览器在未告知用户的情况下，静默下载并占用约 4GB 磁盘空间用于部署 Gemini Nano 本地 AI 模型，引发了用户关于存储占用和隐私的广泛争议。该行为主要影响 C 盘或 Mac 系统盘空间，技术人员提供了通过修改浏览器配置或策略永久禁止该模型自动下载的操作指南，以帮助用户解决因模型强制推送导致的存储紧张问题，并重新获得对系统资源的控制权。",
-      "tags": [
-        "Chrome",
-        "隐私争议",
-        "配置安全"
-      ],
-      "url": "https://www.uedbox.com/post/119862/",
-      "source": "uedbox.com",
-      "category": "WebSecurity",
-      "published": "2026-05-29T08:56:32+00:00",
-      "cve_ids": [],
-      "selection_reason": "涉及主流浏览器静默行为及本地 AI 模型部署，对终端安全管理",
-      "feed_url": "https://www.uedbox.com/feed",
-      "feed_title": "体验盒子",
-      "source_tier": "unknown",
-      "source_kind": "media",
-      "source_label": "未登记源",
-      "source_key": "uedbox.com",
-      "story_id": "url:uedbox.com/post/119862",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 5,
-      "dimension_score": 5.2,
-      "final_score": 4.9,
-      "score_breakdown": {
-        "source_bonus": -0.3,
-        "kind_bonus": 0.0,
-        "freshness_bonus": 0.0,
+        "freshness_bonus": 0.3,
         "cn_visibility_bonus": 0.0
       }
     }

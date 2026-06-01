@@ -2,16 +2,16 @@
   "board": "ai_security",
   "display_name": "AI 安全",
   "date": "2026-06-01",
-  "generated_at": "2026-06-01T07:26:13.265275Z",
-  "raw_count": 15,
-  "selected_count": 5,
+  "generated_at": "2026-06-01T07:33:32.401884Z",
+  "raw_count": 18,
+  "selected_count": 8,
   "selection_stats": {
-    "total": 5,
+    "total": 8,
     "aggregator": 4,
-    "tier_t2": 5,
+    "tier_t2": 8,
     "kind_expert_x": 2,
-    "direct": 1,
-    "kind_expert": 1,
+    "direct": 4,
+    "kind_expert": 4,
     "google_news": 2,
     "chinese": 2,
     "kind_google_news": 2
@@ -23,9 +23,9 @@
   },
   "items": [
     {
-      "title_zh": "安全研究员针对 CVE-2026-48710 漏洞开展互联网扫描分析，发现大量 API 密钥面临泄露风险",
+      "title_zh": "安全研究员披露 CVE-2026-48710 漏洞影响：全球 5 万个扫描主机中存在大量 API 密钥泄露风险",
       "title_orig": "RT Markus Vervier: The team did some data analysis on CVE-2026-48710 on a sample of 50.000 scanned hosts on the Internet. Spoiler: Lots of API keys ar...",
-      "summary": "安全研究员Markus Vervier及其团队针对CVE-2026-48710漏洞，对互联网上随机抽取的5万个扫描主机进行了深入的数据分析，旨在评估该漏洞在全球范围内的实际影响。研究结果显示，大量主机的API密钥处于极易泄露的危险状态，这可能导致企业敏感数据被非法访问，目前原文尚未披露该漏洞的具体触发机制及受影响的组件版本。",
+      "summary": "安全研究员 Markus Vervier 团队针对互联网上 5 万个扫描主机进行了 CVE-2026-48710 漏洞的数据分析，结果显示大量 API 密钥正面临严重的泄露风险。该研究证实了互联网中存在广泛的敏感凭据暴露问题，目前详细的漏洞原理及受影响主机的分布情况已在深度分析报告中披露，旨在提醒全球企业和管理员关注并及时修复此类关键的安全隐患。",
       "tags": [
         "漏洞分析",
         "API安全",
@@ -38,7 +38,7 @@
       "cve_ids": [
         "CVE-2026-48710"
       ],
-      "selection_reason": "关注漏洞在野实际影响及大规模扫描暴露出的凭据泄露风险。",
+      "selection_reason": "该漏洞涉及大规模主机的敏感信息泄露，具有较高的实战预警价值。",
       "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
       "feed_title": "X / Johann Rehberger",
       "source_tier": "t2",
@@ -59,20 +59,20 @@
       }
     },
     {
-      "title_zh": "Endor Labs 与 Cursor 达成合作，旨在为企业级工程组织构建 AI 代理编程的安全基础",
+      "title_zh": "Endor Labs 与 Cursor 达成合作：旨在为企业级工程组织构建 AI 代理编程的安全基础架构",
       "title_orig": "Endor Labs + Cursor: Building the security foundation for agentic coding | Blog | Endor Labs",
-      "summary": "Endor Labs与Cursor宣布正式建立战略合作伙伴关系，双方将共同致力于为企业级工程组织构建安全的AI代理编码工作流基础架构。该合作旨在通过技术整合，为日益普及的AI辅助编程环境提供必要的安全防护框架与治理标准，尽管目前原文并未详细说明具体的产品集成方案、技术实现细节或该安全框架的底层逻辑。",
+      "summary": "Endor Labs 与 AI 编辑器 Cursor 正式建立合作伙伴关系，共同致力于保障企业环境下的 AI 代理编程工作流安全，防止 AI 引入潜在的供应链漏洞。该合作重点解决 AI 自动生成代码过程中的安全合规与风险控制问题，通过集成先进的安全检测能力，为开发者提供更可靠的智能化编程环境，确保企业级工程组织的代码安全。",
       "tags": [
         "AI安全",
-        "供应链安全",
-        "开发安全"
+        "软件供应链",
+        "安全开发"
       ],
       "url": "https://www.endorlabs.com/learn/endor-labs-cursor-building-the-security-foundation-for-agentic-coding",
       "source": "endorlabs.com",
       "category": "AISecurityLabs",
       "published": "2026-05-29T16:11:12+00:00",
       "cve_ids": [],
-      "selection_reason": "探讨 AI 辅助编程（Agentic Coding）在企业应",
+      "selection_reason": "关注 AI 编程助手在企业级应用中的安全治理趋势。",
       "feed_url": "https://www.endorlabs.com/learn/rss.xml",
       "feed_title": "Endor Labs",
       "source_tier": "t2",
@@ -93,9 +93,9 @@
       }
     },
     {
-      "title_zh": "RedForest-Toolkit 发布 Invoke-WindowsSearch 工具，利用搜索功能进行内网凭据搜寻",
+      "title_zh": "RedForest-Toolkit 发布新工具：利用 Windows 搜索功能在内网渗透中自动化搜寻敏感凭据",
       "title_orig": "Nice!",
-      "summary": "安全研究员Fady Moheb受相关研究启发，开发了名为Invoke-WindowsSearch的脚本并将其集成至RedForest-Toolkit工具集中，为安全从业者提供了后渗透阶段的新思路。该工具主要应用于内网渗透测试场景，通过调用Windows系统的搜索功能在文件系统中自动化搜寻敏感凭据，从而实现高效的凭据收割与权限提升，目前相关代码及完整方法论已在GitHub和个人笔记平台公开。",
+      "summary": "安全研究员 Fady Moheb 发布了基于 PowerShell 的 Invoke-WindowsSearch 工具，该工具受相关研究启发，旨在利用 Windows 搜索索引机制在内网后渗透阶段自动化搜寻敏感凭据。该技术专门针对 Active Directory 环境下的凭据收割任务，为红队从业者提供了一种隐蔽且高效的敏感信息获取手段，目前其核心代码与完整的渗透测试方法论均已在 GitHub 及个人博客等平台公开供安全社区参考。",
       "tags": [
         "红蓝对抗",
         "凭据搜寻",
@@ -106,7 +106,7 @@
       "category": "XSignals",
       "published": "2026-06-01T00:57:43+00:00",
       "cve_ids": [],
-      "selection_reason": "介绍一种利用系统原生功能进行凭据搜寻的实用后渗透工具。",
+      "selection_reason": "介绍了一种利用系统原生功能进行凭据收割的实战化工具与方法论。",
       "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
       "feed_title": "X / Johann Rehberger",
       "source_tier": "t2",
@@ -117,8 +117,8 @@
       "related_urls": [],
       "related_count": 0,
       "score": 7,
-      "dimension_score": 7.15,
-      "final_score": 7.65,
+      "dimension_score": 6.95,
+      "final_score": 7.45,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.2,
@@ -127,20 +127,20 @@
       }
     },
     {
-      "title_zh": "韩国金融委员会组建民间技术顾问团，旨在应对高性能人工智能带来的金融安全风险",
+      "title_zh": "韩国金融委员会组建民间技术顾问团，旨在应对高性能人工智能带来的金融安全与合规风险",
       "title_orig": "韩国金融委组建民间技术顾问团，应对高性能AI安全风险 - 디지털투데이",
-      "summary": "韩国金融委员会近期正式组建了一个由民间专家构成的技术顾问团，旨在专门应对高性能人工智能技术在金融领域应用时所引发的各类复杂安全风险。该顾问团将负责研究潜在的技术威胁并制定相应的防御策略，以确保金融系统的稳定性，不过原文目前尚未披露具体的风险评估标准、已识别的威胁清单或顾问团的成员构成细节。",
+      "summary": "韩国金融委正式组建由民间专家组成的技术顾问团，专门应对高性能 AI 技术在金融领域应用时产生的安全风险，并从政策与技术双重维度评估潜在威胁。该举措明确了金融监管机构对 AI 安全治理的重视程度，旨在通过制度化手段应对 AI 带来的挑战，虽然原文未披露具体防御细节，但体现了韩国在金融 AI 监管方面的最新动态。",
       "tags": [
         "金融安全",
         "AI监管",
-        "风险管理"
+        "合规治理"
       ],
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQcXpaRXR0QnpJdkh4MGY1d1FsVHJCVm93M2F2WlFxRlctc0dUaXVfMzY3RncwZng0QWkzTzFtb3htSGI1SllDT0hCNlFjcUlIV05FdXNXTE15M0lpbTNINHRaSGp0Z3FxbTZYYWltYXdzZjlWR3RNVjM3X2libXJSUk1VS01OeDNoSEJMWkFzWXRYQ1Y4aTZLX1V3MkFmc01Uc1c5V0FOb215dGJYNll3S0tPZjc3djlESzBWV2gyWXpCZEwwMGpDb3Vfc1JPNzkxYjZZUFhpbWdpdw?oc=5",
       "source": "news.google.com",
       "category": "CoverageFallback",
       "published": "2026-06-01T06:51:49+00:00",
       "cve_ids": [],
-      "selection_reason": "反映国家级金融监管机构对高性能 AI 安全风险的关注与应对。",
+      "selection_reason": "反映了金融监管领域对高性能 AI 安全风险的制度化应对动态。",
       "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
       "feed_title": "Google News 中文 AI安全",
       "source_tier": "t2",
@@ -163,20 +163,20 @@
       }
     },
     {
-      "title_zh": "瑞数信息入选 Gartner 2026 年技术成熟度曲线报告，被评为 AI 网关领域代表厂商",
+      "title_zh": "瑞数信息入选 Gartner 2026 年技术成熟度曲线，被评为 AI 网关领域的代表性技术厂商",
       "title_orig": "瑞数信息跻身Gartner 2026年技术成熟度曲线，获评AI网关代表厂商 - 搜狐网",
-      "summary": "瑞数信息凭借其在人工智能安全防护领域的深厚技术积累，成功入选Gartner 2026年技术成熟度曲线报告，并被正式评为AI网关领域的代表性厂商。这一认可标志着AI网关作为一种新兴的安全组件，在企业数字化转型架构中的地位得到了显著提升，虽然原文并未进一步披露该厂商产品的具体技术架构、核心算法细节或市场应用案例。",
+      "summary": "瑞数信息凭借其在 AI 安全防护领域的卓越表现，成功跻身 Gartner 2026 年技术成熟度曲线报告，并被获评为 AI 网关领域的代表厂商。AI 网关作为监控和保护企业内部 AI 模型调用过程的新兴安全组件，在流量治理与威胁防护中占据重要地位，此次入选标志着瑞数信息在 AI 安全市场中的技术实力和领先地位得到了权威认可。",
       "tags": [
         "AI网关",
-        "行业报告",
-        "瑞数信息"
+        "技术成熟度",
+        "网络安全"
       ],
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRE1BRU9TTlp2YkNlaWE1Ml9ydmNmdUxqZUU1QURrVkNtYW1IU1VLT0hkR0Q1Q01GQnF2RGwtaERBMVlqa2gzS1hzRXFwVmZMck02X0FRMnFXTmFCdkJJLTBFTFQ1Z2lqTVFObTFiQVluWVh2RERHZldSY2E5bkdoSGpWVThfVHVB?oc=5",
       "source": "news.google.com",
       "category": "CoverageFallback",
       "published": "2026-06-01T05:58:24+00:00",
       "cve_ids": [],
-      "selection_reason": "AI 网关是当前 AI 安全领域的重要演进方向，具有行业参考",
+      "selection_reason": "AI 网关是当前 AI 安全防御体系中的关键技术节点。",
       "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
       "feed_title": "Google News 中文 AI安全",
       "source_tier": "t2",
@@ -187,11 +187,109 @@
       "related_urls": [],
       "related_count": 0,
       "score": 6,
-      "dimension_score": 3.9,
-      "final_score": 3.0,
+      "dimension_score": 4.2,
+      "final_score": 3.3,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "2026年5月赞助者通讯：AI成本上升与Anthropic表现出色，Datasette Agent项目取得进展",
+      "title_orig": "May 2026 newsletter",
+      "summary": "2026 年 5 月版的赞助者月度通讯已正式发布，重点讨论了 AI 运营成本上升、Anthropic 公司的强劲表现以及对近期模型发布效果不达预期的评价。该通讯还详细介绍了作者在 Datasette Agent 项目上的重大开发进展，并分享了当月个人使用的工具清单、相关会议播客信息及行业杂项，旨在为赞助者提供关于数据工具与 AI 行业动态的深度见解和项目最新动态。",
+      "tags": [
+        "Anthropic",
+        "AI"
+      ],
+      "url": "https://simonwillison.net/2026/Jun/1/may-newsletter/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-06-01T04:45:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/jun/1/may-newsletter",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 2.0,
+      "final_score": 2.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开发者反思AI订阅服务：过度依赖AI工具导致偏离初衷，构建了大量非计划内的冗余项目",
+      "title_orig": "The solution might be cancelling my AI subscription",
+      "summary": "作者在阅读 David Wilson 的文章后产生共鸣，探讨了因过度依赖 AI 工具而导致项目失控的问题，并考虑取消 AI 订阅以回归解决问题的本质。文中列举了多个因使用 Claude 编写脚本而演变成复杂工程的案例，指出 AI 辅助编程往往偏离初衷，不仅未能高效解决原始问题，反而增加了不必要的开发负担，引发了对 AI 工具实际效用的反思。",
+      "tags": [
+        "Anthropic",
+        "AI"
+      ],
+      "url": "https://simonwillison.net/2026/May/31/the-solution-might-be-cancelling-my-ai-subscription/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-05-31T16:31:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/may/31/the-solution-might-be-cancelling-my-ai-subscription",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 1.6,
+      "final_score": 1.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Datasette发布1.0a32版本：修复写入接口查询漏洞及Service Workers相关的基础URL问题",
+      "title_orig": "datasette 1.0a32",
+      "summary": "Datasette 发布了 1.0a32 预览版本，该版本主要是一个修复小错误的维护更新，重点解决了通过新写入接口执行查询时出现的特定漏洞。此外，本次更新还修复了一系列与基础 URL 相关的配置问题，这些问题是在近期进行 Service Workers 实验时发现的，旨在提升数据库操作的稳定性并优化开发者在处理复杂路径时的使用体验。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://simonwillison.net/2026/May/31/datasette/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-05-31T23:23:38+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/may/31/datasette",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 1.35,
+      "final_score": 1.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
         "freshness_bonus": 0.3,
         "cn_visibility_bonus": 0.0
       }
