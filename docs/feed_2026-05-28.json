@@ -301,9 +301,9 @@
           "selection_reason": "系统性总结了前端供应链攻击的实战案例与防御体系。",
           "feed_url": "https://blog.huli.tw/atom-ch.xml",
           "feed_title": "Huli's blog",
-          "source_tier": "unknown",
-          "source_kind": "media",
-          "source_label": "未登记源",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全博客",
           "source_key": "blog.huli.tw",
           "story_id": "url:blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack",
           "related_urls": [
@@ -391,6 +391,40 @@
           }
         },
         {
+          "title_zh": "Module Stomping PIC 技术：利用合法 DLL 内存覆盖实现恶意代码隐匿",
+          "title_orig": "Module Stomping PIC",
+          "summary": "Module Stomping（又称 DLL Hollowing）是一种将恶意代码隐藏在进程内存中的高级技术，通过加载合法的已签名 DLL 并覆盖其内容来规避检测。该技术利用了受信任模块在内存中的合法地位，使恶意代码看起来像是受信任的、有文件支撑的模块，从而有效对抗内存扫描工具。本文重点探讨了位置无关代码（PIC）在该场景下的应用，是红队研究内存隐匿与免杀技术的重要参考。",
+          "tags": [
+            "内存隐匿",
+            "免杀技术",
+            "红队工具"
+          ],
+          "url": "https://rastamouse.me/module-stomping-pic/",
+          "source": "rastamouse.me",
+          "category": "WebSecurity",
+          "published": "2026-05-26T17:30:32+00:00",
+          "cve_ids": [],
+          "selection_reason": "深入探讨了内存取证对抗中的核心隐匿技术。",
+          "feed_url": "https://rastamouse.me/feed/",
+          "feed_title": "Rasta Mouse",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "红队研究",
+          "source_key": "rastamouse.me",
+          "story_id": "url:rastamouse.me/module-stomping-pic",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "dimension_score": 8.05,
+          "final_score": 7.75,
+          "score_breakdown": {
+            "source_bonus": -0.3,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
           "title_zh": "Apache HTTP Server 2.4.66 版本 mod_http2 模块双重释放拒绝服务漏洞",
           "title_orig": "[webapps] Apache HTTP Server 2.4.66 - 'mod_http2' Double-Free Denial of Service",
           "summary": "Apache HTTP Server 2.4.66 版本的 mod_http2 模块被发现存在严重的双重释放漏洞，该缺陷源于处理 HTTP/2 协议请求时内存管理逻辑不当，导致特定请求序列会触发同一内存块的二次释放。攻击者可利用此漏洞使服务器进程崩溃并引发拒绝服务攻击，严重威胁 Web 服务的稳定性与可用性，建议相关管理员立即将受影响组件升级至已修复该问题的更高版本以规避风险。",
@@ -420,40 +454,6 @@
           "score_breakdown": {
             "source_bonus": 0.0,
             "kind_bonus": -0.5,
-            "freshness_bonus": 0.0,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "Module Stomping PIC 技术：利用合法 DLL 内存覆盖实现恶意代码隐匿",
-          "title_orig": "Module Stomping PIC",
-          "summary": "Module Stomping（又称 DLL Hollowing）是一种将恶意代码隐藏在进程内存中的高级技术，通过加载合法的已签名 DLL 并覆盖其内容来规避检测。该技术利用了受信任模块在内存中的合法地位，使恶意代码看起来像是受信任的、有文件支撑的模块，从而有效对抗内存扫描工具。本文重点探讨了位置无关代码（PIC）在该场景下的应用，是红队研究内存隐匿与免杀技术的重要参考。",
-          "tags": [
-            "内存隐匿",
-            "免杀技术",
-            "红队工具"
-          ],
-          "url": "https://rastamouse.me/module-stomping-pic/",
-          "source": "rastamouse.me",
-          "category": "WebSecurity",
-          "published": "2026-05-26T17:30:32+00:00",
-          "cve_ids": [],
-          "selection_reason": "深入探讨了内存取证对抗中的核心隐匿技术。",
-          "feed_url": "https://rastamouse.me/feed/",
-          "feed_title": "Rasta Mouse",
-          "source_tier": "unknown",
-          "source_kind": "media",
-          "source_label": "未登记源",
-          "source_key": "rastamouse.me",
-          "story_id": "url:rastamouse.me/module-stomping-pic",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 8,
-          "dimension_score": 8.05,
-          "final_score": 7.75,
-          "score_breakdown": {
-            "source_bonus": -0.3,
-            "kind_bonus": 0.0,
             "freshness_bonus": 0.0,
             "cn_visibility_bonus": 0.0
           }
@@ -538,11 +538,11 @@
         "kind_official": 4,
         "chinese": 2,
         "wechat": 1,
-        "tier_t2": 9,
-        "kind_cn_expert": 1,
+        "tier_t2": 11,
+        "kind_cn_expert": 2,
         "kind_community": 6,
-        "kind_media": 4,
-        "tier_unknown": 2
+        "kind_media": 2,
+        "kind_expert": 1
       },
       "clustering_stats": {
         "deterministic_merged": 0,

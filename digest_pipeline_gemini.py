@@ -441,13 +441,13 @@ def _limit_title(title: str) -> str:
 
 
 def _ensure_summary_length(summary: str, entry: dict[str, Any], title_zh: str) -> str:
-    summary = normalize_summary_text(summary)
-    if not summary_needs_repair(summary):
+    summary = _strip_repeated_title_suffix(normalize_summary_text(summary), title_zh)
+    if not summary_needs_repair(summary) and len(summary) <= 240:
         return summary
 
     fallback = _fallback_summary(entry, title_zh)
     if count_chinese_chars(summary) >= 40:
-        summary = normalize_summary_text(f"{summary} {fallback}")
+        summary = _strip_repeated_title_suffix(normalize_summary_text(f"{summary} {fallback}"), title_zh)
     else:
         summary = fallback
 
@@ -464,6 +464,19 @@ def _ensure_summary_length(summary: str, entry: dict[str, Any], title_zh: str) -
         )
     if count_chinese_chars(summary) > SUMMARY_TARGET_MAX_CHARS:
         summary = _truncate_chinese_chars(summary, SUMMARY_TARGET_MAX_CHARS)
+    return _strip_repeated_title_suffix(summary, title_zh)
+
+
+def _strip_repeated_title_suffix(summary: str, title_zh: str) -> str:
+    """Drop model/fallback artifacts where the title is appended after summary."""
+    summary = normalize_summary_text(summary)
+    title = normalize_summary_text(title_zh).rstrip("。！？!?")
+    if not summary or not title:
+        return summary
+    for suffix in (title, f"{title}。", f"{title}！", f"{title}？"):
+        if summary.endswith(suffix):
+            stripped = summary[: -len(suffix)].rstrip(" ，,；;：:、.。")
+            return stripped + ("。" if stripped and stripped[-1] not in "。！？!?" else "")
     return summary
 
 

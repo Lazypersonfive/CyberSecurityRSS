@@ -197,6 +197,23 @@ class FetchOpmlTests(unittest.TestCase):
         self.assertNotIn("micropoor.blogspot.com", body)
         self.assertNotIn("qbitai.com/feed", body)
 
+    def test_opml_excludes_weekly_low_quality_sources_from_wrong_boards(self) -> None:
+        security = Path("feeds/security.opml").read_text(encoding="utf-8")
+        ai_security = Path("feeds/ai_security.opml").read_text(encoding="utf-8")
+
+        for text in (
+            "Kali Linux Tutorials",
+            "Daring Fireball",
+            "Wired",
+            "The Decoder",
+            "PromptLayer",
+            "代码审计星球",
+            "美团技术团队",
+            "青衣十三楼飞花堂",
+        ):
+            self.assertNotIn(text, security)
+        self.assertNotIn("Simon Willison", ai_security)
+
     def test_opml_includes_rsshub_x_signal_feeds(self) -> None:
         ai_feeds = fetch_opml("feeds/ai.opml")
         ai_security_feeds = fetch_opml("feeds/ai_security.opml")
@@ -229,6 +246,8 @@ class FetchOpmlTests(unittest.TestCase):
         self.assertIn("https://github.blog/security/vulnerability-research/feed/", flat)
         self.assertIn("https://www.legitsecurity.com/blog/rss.xml", flat)
         self.assertIn("https://www.endorlabs.com/learn/rss.xml", flat)
+        self.assertIn("https://paper.seebug.org/rss/", flat)
+        self.assertIn("https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml", flat)
         self.assertTrue(any("AI+supply+chain" in url for url in flat))
 
     def test_rsshub_base_url_can_be_overridden_for_private_instance(self) -> None:
@@ -796,6 +815,17 @@ class SourcePolicyTests(unittest.TestCase):
         self.assertEqual(profile.source_kind, "official")
         self.assertEqual(profile.source_label, "官网")
 
+    def test_source_profile_counts_registry_cn_expert_as_chinese(self) -> None:
+        profile = source_profile(
+            {
+                "title": "npm supply chain deep dive",
+                "url": "https://blog.huli.tw/2026/05/25/dive-into-npm-supply-chain-attack/",
+            }
+        )
+
+        self.assertTrue(profile.is_chinese)
+        self.assertEqual(profile.source_kind, "cn_expert")
+
     def test_source_profile_uses_registry_for_rsshub_x_handle(self) -> None:
         profile = source_profile(
             {
@@ -1328,6 +1358,8 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertIn("GitHub Security Lab", body)
         self.assertIn("Legit Security", body)
         self.assertIn("Endor Labs", body)
+        self.assertIn("娜璋AI安全之家", body)
+        self.assertIn("Seebug Paper", body)
 
     def test_gemini_prompts_encode_current_board_targets(self) -> None:
         self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["security"])
@@ -1476,6 +1508,34 @@ class GeminiPipelineTests(unittest.TestCase):
         finalized = _finalize_digest_item(entry, item)
 
         self.assertEqual(finalized["title_zh"], title)
+
+    def test_finalize_digest_item_strips_repeated_title_from_summary_suffix(self) -> None:
+        title = "GitHub Copilot计费细节曝光"
+        summary = (
+            "GitHub Copilot 披露不同模型的 Token 消耗倍率，显示高性能模型在平台内会占用更多计算资源。"
+            "这对企业团队有实际影响，因为模型选择将直接关系到开发工具预算、调用策略和使用治理。"
+            f" {title}"
+        )
+        entry = {
+            "title": title,
+            "summary": "GitHub Copilot usage details.",
+            "url": "https://example.com/copilot",
+            "category": "Labs",
+            "published": "2026-06-01T00:00:00Z",
+        }
+
+        finalized = _finalize_digest_item(
+            entry,
+            {
+                "title_zh": title,
+                "summary": summary,
+                "tags": ["开发工具"],
+                "selection_reason": "计费变化影响开发团队",
+            },
+        )
+
+        self.assertFalse(finalized["summary"].endswith(title))
+        self.assertLessEqual(len(finalized["summary"]), 240)
 
     def test_candidate_pool_uses_fill_floor_to_backfill_below_threshold(self) -> None:
         scored = [

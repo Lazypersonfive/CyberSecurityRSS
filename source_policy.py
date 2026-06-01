@@ -102,6 +102,11 @@ def source_profile(entry: Any) -> SourceProfile:
         _get(entry, field)
         for field in ("title", "title_orig", "feed_title", "source")
     )
+    registry = registry_match(host=host, feed_host=feed_host, x_handle=x_handle)
+    source_kind = registry["kind"]
+    source_tier = registry["tier"]
+    source_label = registry["label"]
+
     is_chinese = (
         _has_cjk(original_text)
         or is_wechat
@@ -109,12 +114,9 @@ def source_profile(entry: Any) -> SourceProfile:
         or _host_matches(feed_host, CHINESE_HOSTS)
         or host.endswith(".cn")
         or feed_host.endswith(".cn")
+        or source_kind in {"cn_official", "cn_expert"}
     )
 
-    registry = registry_match(host=host, feed_host=feed_host, x_handle=x_handle)
-    source_kind = registry["kind"]
-    source_tier = registry["tier"]
-    source_label = registry["label"]
     if is_google_news:
         source_kind = "google_news"
         source_label = "Google News"
