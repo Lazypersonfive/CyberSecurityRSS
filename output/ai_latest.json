@@ -1,17 +1,19 @@
 {
   "board": "ai",
   "fetched_at": "2026-06-01",
-  "fetched_at_utc": "2026-05-31T23:49:10.006921Z",
+  "fetched_at_utc": "2026-06-01T07:26:31.158810Z",
   "hours": 48,
   "total_feeds": 56,
-  "raw_entry_count": 106,
-  "entry_count": 48,
+  "raw_entry_count": 136,
+  "entry_count": 55,
   "filter_stats": {
-    "input": 106,
-    "output": 106
+    "input": 136,
+    "dropped_title_blacklist": 2,
+    "dedup_merged": 3,
+    "output": 131
   },
   "curation_stats": {
-    "dropped_source_cap": 58
+    "dropped_source_cap": 76
   },
   "feed_stats": {
     "https://news.google.com/rss/search?q=(site:anthropic.com+OR+site:claude.com)&hl=en-US&gl=US&ceid=US:en": {
@@ -19,14 +21,14 @@
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 0
     },
     "https://news.google.com/rss/search?q=(%22Anthropic%22+OR+%22Claude+Opus%22+OR+%22Claude+Sonnet%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Anthropic Coverage (Google News)",
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 16
+      "raw_count": 15
     },
     "https://openai.com/news/rss.xml": {
       "feed_title": "OpenAI Blog",
@@ -54,49 +56,49 @@
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 6
     },
     "https://huggingface.co/blog/feed.xml": {
       "feed_title": "Hugging Face Blog",
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://news.google.com/rss/search?q=(%22Mistral+AI%22+OR+%22Le+Chat%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Mistral (Google News)",
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 0
     },
     "https://blogs.nvidia.com/feed/": {
       "feed_title": "NVIDIA Blog",
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 5
     },
     "https://news.google.com/rss/search?q=(%22xAI%22+OR+%22Grok%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "xAI (Google News)",
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 3
     },
     "https://news.google.com/rss/search?q=%22Cohere%22+(model+OR+AI+OR+enterprise)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Cohere (Google News)",
       "category": "Labs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "http://export.arxiv.org/rss/cs.AI": {
       "feed_title": "arXiv cs.AI recent",
       "category": "Research",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 30
     },
     "http://export.arxiv.org/rss/cs.CL": {
       "feed_title": "arXiv cs.CL recent",
@@ -138,14 +140,14 @@
       "category": "Commentary",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 7
+      "raw_count": 8
     },
     "https://www.latent.space/feed": {
       "feed_title": "Latent Space",
       "category": "Commentary",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://jack-clark.net/feed/": {
       "feed_title": "Import AI",
@@ -222,7 +224,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 5
     },
     "http://127.0.0.1:1200/twitter/user/ClaudeDevs": {
       "feed_title": "X / Claude Developers",
@@ -292,7 +294,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "http://127.0.0.1:1200/twitter/user/karpathy": {
       "feed_title": "X / Andrej Karpathy",
@@ -334,7 +336,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 3
     },
     "http://127.0.0.1:1200/twitter/user/ollama": {
       "feed_title": "X / Ollama",
@@ -355,7 +357,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 17
+      "raw_count": 12
     },
     "http://127.0.0.1:1200/twitter/user/trq212": {
       "feed_title": "X / trq212",
@@ -408,6 +410,112 @@
     }
   },
   "entries": [
+    {
+      "title": "🚀 Excited to partner with @NVIDIAAI on day-0 support for Cosmos 3 on vLLM-Omni! A unified Mixture-of-Transformers fusing an AR reasoner + diffusion...",
+      "url": "https://x.com/vllm_project/status/2061331388302016760",
+      "summary": "🚀 Excited to partner with @NVIDIAAI on day-0 support for Cosmos 3 on vLLM-Omni! A unified Mixture-of-Transformers fusing an AR reasoner + diffusion generator across text, image, video, audio &amp; robot action - all behind a single OpenAI-compatible API, with a ready-to-deploy Docker image! 📖Check out the detailed deployment guide👇 https://github.com/NVIDIA/cosmos#generator-with-vllm-omni NVIDIA A",
+      "category": "XSignals",
+      "published": "2026-06-01T06:17:55+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/vllm_project",
+      "feed_title": "X / vLLM"
+    },
+    {
+      "title": "NVIDIA AI Cloud Ecosystem Expands Worldwide to Meet Global AI Compute Demand",
+      "url": "https://blogs.nvidia.com/blog/ai-cloud-ecosystem/",
+      "summary": "The NVIDIA AI Cloud ecosystem is accelerating the global buildout of AI factory infrastructure. Partners are expanding capacity to meet growing demand from enterprises, startups, nations, AI labs and developers scaling agentic AI applications. NVIDIA AI Clouds are a growing ecosystem of purpose-built clouds serving the exploding token demand behind today’s most popular AI applications. [&#8230;]",
+      "category": "Labs",
+      "published": "2026-06-01T05:00:56+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://blogs.nvidia.com/feed/",
+      "feed_title": "NVIDIA Blog"
+    },
+    {
+      "title": "NVIDIA Factory Operations Blueprint Gives Factories a New AI Brain",
+      "url": "https://blogs.nvidia.com/blog/factory-operations-fox-blueprint-ai-brain/",
+      "summary": "As factories move from isolated automation to plant-wide intelligence, manufacturers need AI systems that can connect live machine signals, quality systems, work instructions and operational alerts into a unified decision layer. Today at GTC Taipei at COMPUTEX, NVIDIA announced the NVIDIA Factory Operations Blueprint (FOX) — a reference design for building an autonomous factory manager [&#8230;]",
+      "category": "Labs",
+      "published": "2026-06-01T05:00:47+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://blogs.nvidia.com/feed/",
+      "feed_title": "NVIDIA Blog"
+    },
+    {
+      "title": "Taiwan’s Industry Titans Turbocharge World’s AI Infrastructure Buildout With NVIDIA",
+      "url": "https://blogs.nvidia.com/blog/taiwan-ecosystem-ai-infrastructure/",
+      "summary": "Taiwan is home to more than 500 NVIDIA ecosystem partners. More than 1 million NVIDIA MGX rack components for NVIDIA Vera Rubin infrastructure come together in Taiwan, from across 25 factory sites. As Vera Rubin ramps into full production to power agentic AI factories worldwide, that ecosystem spans the full supply chain — from key [&#8230;]",
+      "category": "Labs",
+      "published": "2026-06-01T05:00:41+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://blogs.nvidia.com/feed/",
+      "feed_title": "NVIDIA Blog"
+    },
+    {
+      "title": "RT NVIDIA AI: Introducing Cosmos 3: Our latest frontier model for Physical AI Cosmos 3 is the world’s first fully open omnimodel with native vision r...",
+      "url": "https://x.com/huggingface/status/2061346254706094352",
+      "summary": "RT NVIDIA AI Introducing Cosmos 3: Our latest frontier model for Physical AI Cosmos 3 is the world’s first fully open omnimodel with native vision reasoning, world and action generation. Today we’re releasing Super (32B) and Nano (8B) variants.",
+      "category": "XSignals",
+      "published": "2026-06-01T04:46:42+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [
+        "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai"
+      ],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/huggingface",
+      "feed_title": "X / Hugging Face"
+    },
+    {
+      "title": "NVIDIA Levels Up Local AI Agents Across RTX PCs and DGX Spark",
+      "url": "https://blogs.nvidia.com/blog/rtx-ai-garage-computex-spark-local-agents/",
+      "summary": "Personal agents are exploding in popularity, with open source projects like OpenClaw and Hermes seeing rapid adoption by AI developer communities on GitHub. Built to adapt to individual preferences and workflows, these agents can interact with applications, generate content, automate repetitive processes and manage multi-step tasks — all while running locally on device. Today at [&#8230;]",
+      "category": "Labs",
+      "published": "2026-06-01T04:30:11+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://blogs.nvidia.com/feed/",
+      "feed_title": "NVIDIA Blog"
+    },
+    {
+      "title": "Physically Viable World Models: A Case for Query-Conditioned Embodied AI",
+      "url": "https://arxiv.org/abs/2605.30542",
+      "summary": "arXiv:2605.30542v1 Announce Type: new Abstract: World models for embodied AI must be physically viable: constructed to answer intervention queries by representing the physical structure governing action outcomes, rather than merely predicting future observations. Existing observation-predictive world models can produce visually plausible but physically wrong rollouts. This failure is structural; d",
+      "category": "Research",
+      "published": "2026-06-01T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
+    {
+      "title": "Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents",
+      "url": "https://arxiv.org/abs/2605.30621",
+      "summary": "arXiv:2605.30621v1 Announce Type: new Abstract: LLM agents are increasingly deployed as systems built around editable external harnesses, including prompts, skills, memories and tools, that shape task execution without changing model parameters. Harness self-evolution adapts such agents by updating these harnesses from execution evidence. Yet it remains unclear whether a model's base capability in",
+      "category": "Research",
+      "published": "2026-06-01T04:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://export.arxiv.org/rss/cs.AI",
+      "feed_title": "arXiv cs.AI recent"
+    },
     {
       "title": "The solution might be cancelling my AI subscription",
       "url": "https://simonwillison.net/2026/May/31/the-solution-might-be-cancelling-my-ai-subscription/#atom-everything",
@@ -500,11 +608,50 @@
       "feed_title": "X / dotey"
     },
     {
-      "title": "RT OpenAI Developers: 🧵 Our Voice Hack Night finalists are here. 4 projects. 6 hours. Realtime voice agents in real-world builds. Now it’s your tu...",
-      "url": "https://x.com/OpenAIDevs/status/2061152863699841353",
-      "summary": "RT OpenAI Developers 🧵 Our Voice Hack Night finalists are here. 4 projects. 6 hours. Realtime voice agents in real-world builds. Now it’s your turn to vote for your favorite. We’ll announce the winner on Monday. https://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery",
+      "title": "RT OpenAI Developers: Re 🤳 Agentic OS for a Phone A voice-first mobile OS. Users talk, agents answer, and they can take action across the phone. ht...",
+      "url": "https://x.com/OpenAIDevs/status/2061291768117858763",
+      "summary": "RT OpenAI Developers Re 🤳 Agentic OS for a Phone A voice-first mobile OS. Users talk, agents answer, and they can take action across the phone. https://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery?project=49",
       "category": "XSignals",
-      "published": "2026-05-30T17:01:06+00:00",
+      "published": "2026-05-30T17:02:46+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/OpenAIDevs",
+      "feed_title": "X / OpenAI Developers"
+    },
+    {
+      "title": "RT OpenAI Developers: Re 🗣️ Wagner A multi-agent virtual meeting room for infrastructure planning. Teams can talk through plans with agents in the...",
+      "url": "https://x.com/OpenAIDevs/status/2061291757909025180",
+      "summary": "RT OpenAI Developers Re 🗣️ Wagner A multi-agent virtual meeting room for infrastructure planning. Teams can talk through plans with agents in the room. https://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery?project=50",
+      "category": "XSignals",
+      "published": "2026-05-30T17:02:22+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/OpenAIDevs",
+      "feed_title": "X / OpenAI Developers"
+    },
+    {
+      "title": "RT OpenAI Developers: Re 🐻 Curo A one-on-one AI tutor that helps students talk through concepts step by step, with voice as the interface. https://...",
+      "url": "https://x.com/OpenAIDevs/status/2061291748245340529",
+      "summary": "RT OpenAI Developers Re 🐻 Curo A one-on-one AI tutor that helps students talk through concepts step by step, with voice as the interface. https://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery?project=54",
+      "category": "XSignals",
+      "published": "2026-05-30T17:01:58+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/OpenAIDevs",
+      "feed_title": "X / OpenAI Developers"
+    },
+    {
+      "title": "RT OpenAI Developers: Re @cerebral_valley 🩺 Surgical Triage A voice-first workflow for triage: transfer requests, patient details, images, and next...",
+      "url": "https://x.com/OpenAIDevs/status/2061291740058051012",
+      "summary": "RT OpenAI Developers Re @cerebral_valley 🩺 Surgical Triage A voice-first workflow for triage: transfer requests, patient details, images, and next steps in one place. https://cerebralvalley.ai/e/openai-voice-hack-night/hackathon/gallery?project=14",
+      "category": "XSignals",
+      "published": "2026-05-30T17:01:33+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
@@ -552,43 +699,121 @@
       "feed_title": "The Verge AI"
     },
     {
-      "title": "Q：我把数据库接入了 AI Agent，每次用手机发消息让它帮我查数据、导出文件，但 token 消耗特别大。我已经把工作流写进了 Agent 的 Memory 里，但它就是不按流程...",
-      "url": "https://x.com/dotey/status/2060538728011927954",
-      "summary": "Q：我把数据库接入了 AI Agent，每次用手机发消息让它帮我查数据、导出文件，但 token 消耗特别大。我已经把工作流写进了 Agent 的 Memory 里，但它就是不按流程走，该怎么办？ A：这是一个非常典型的问题。根本原因在于：Memory 只是“背景信息”，不是“执行指令”。Agent 每次对话都会重新理解意图、重新规划步骤，这个思考过程本身就是 token 消耗的大头。 解决方案：用 Agent Skill + Script 替代 Memory 里的工作流。 核心思路是把任务拆成两部分： - LLM 只做它擅长的事——把自然语言翻译成 SQL 查询语句 - 确定性的步骤全部用脚本——执行 SQL、格式化结果、上传文件，这些不需要 AI 思考，写成 Python/Shell 脚本直接跑 再进一步，在 Skill 里内嵌你的表结构说明和常用 SQL 模板，Agent 只需要填空",
-      "category": "XSignals",
-      "published": "2026-05-30T01:48:10+00:00",
+      "title": "耀客传媒等成立AI新公司 - 新浪财经",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOWDVLQ3JSOHhJMmdjV3FieXQ1LWtLY2tMdm9ZOXVVSjdQS3lBN01NUFhYY1FZR3MxcEVSVDlFek8yVi1RN2ExU2FHc0U3NU4taElCc2h0VUZUT3IwLWlOVFZBamVQb0k5ZHppWEUtSHRTblRxOXNqQ3k3aXpiNjZvTGtvWVZSNTZJMWpKdzBMdVJWdTNRem1sdTJzU2tQdVZkQWhSenZnMA?oc=5",
+      "summary": "耀客传媒等成立AI新公司 &nbsp;&nbsp; 新浪财经",
+      "category": "Chinese",
+      "published": "2026-06-01T07:21:50+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI"
+    },
+    {
+      "title": "NVIDIA 发布面向物理 AI 的开源智能体工具和技能集合 - NVIDIA",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZTIzaTA5SGM2WkVPRDRrVldodnpDR3M3b2FtQTA0Mjh4MlNid3kwWXZtNHBmd0I3alNETkxoVEpQSER6dEVOTUpZai1TZ0R2R1hIUVlvaFJMWXlEREh3VV9JZ0RJT0JnQldLQXIzTXZsU21BSEEwaDJZYjRqUGFJaDNVQzdEMnl5UllBeDl6RWdxZ3I4WW9sYzY1M2hkTFVtWk5qbGdjOVFIWUMybW00cDRLYmhVR3c?oc=5",
+      "summary": "NVIDIA 发布面向物理 AI 的开源智能体工具和技能集合 &nbsp;&nbsp; NVIDIA",
+      "category": "Chinese",
+      "published": "2026-06-01T07:16:06+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI"
+    },
+    {
+      "title": "模数共振驱动产业智能：深度智联推出行业大模型、AI智能原生平台及多场景智能体 - 新浪财经",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE8wWjhfMWtad3pBZlAyaDFpejFwY0ZrQmRMdWx5YVpOazM2Q2tXbU5MWkpWY1doVkdBYzJlZWlmYU5nZ3VJb3R3d2xtN0ZobzA5MFRxd3NQVGljVDhjLVVzaHlDcTBIM3RTc1JyOUY1MGdmbTJKMlZkN0pURWI?oc=5",
+      "summary": "模数共振驱动产业智能：深度智联推出行业大模型、AI智能原生平台及多场景智能体 &nbsp;&nbsp; 新浪财经",
+      "category": "Chinese",
+      "published": "2026-06-01T07:14:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI"
+    },
+    {
+      "title": "哈佛最年轻华人教授尹希，爆出入职OpenAI - 36kr.com",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1GTlMxYXdyZWE0TFQ1clpITEgwclJNUjNyYzNFbXVkdFNGUU5naktqQWZtMGtCUnh2Zm5GT3kybVFWOFdFN1JZVjB3Z3dWdw?oc=5",
+      "summary": "哈佛最年轻华人教授尹希，爆出入职OpenAI &nbsp;&nbsp; 36kr.com",
+      "category": "Chinese",
+      "published": "2026-06-01T07:10:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI"
+    },
+    {
+      "title": "解散6年后，OpenAI复活机器人团队！奥特曼目标：人手1台 - 搜狐网",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPX3lrZTNHQ2MxUld1OWlsRVZQcEdpTlRwTnFaSXY2dWlVbG1TaVBKWF9SVmdTT1JabzJ6SFBNODBsMWxQMTJ5a3NsajJock1uSlBDQTB6eDhBRVUzU3JqakFPTFZmVVJxb0x6WUVUam9xTDBtQjlMSXo1N0EyYjR6ODUyR09aLXBa?oc=5",
+      "summary": "解散6年后，OpenAI复活机器人团队！奥特曼目标：人手1台 &nbsp;&nbsp; 搜狐网",
+      "category": "Chinese",
+      "published": "2026-06-01T07:05:59+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI"
+    },
+    {
+      "title": "以Token为中心：华为星河AI网络筑牢智能体时代安全智联底座 - C114通信网",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAxZzhvVzJ1LUtidGZkNmVYenpQUzJFYldmVmNrTHNtcUFPcFEyOEFRUnZpbERlbWtlYmVsOVZ0Z2pUX2YwSlg5TUJMbVJrdXd5LW5sTWFTSWk2Zw?oc=5",
+      "summary": "以Token为中心：华为星河AI网络筑牢智能体时代安全智联底座 &nbsp;&nbsp; C114通信网",
+      "category": "Chinese",
+      "published": "2026-06-01T07:02:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI"
+    },
+    {
+      "title": "May 2026 newsletter",
+      "url": "https://simonwillison.net/2026/Jun/1/may-newsletter/#atom-everything",
+      "summary": "I just sent out the May edition of my sponsors-only monthly newsletter . If you are a sponsor (or if you start a sponsorship now) you can access it here . This month: Al got expensive, and Anthropic had a really good month The model releases were a little disappointing Conferences and podcasts I launched Datasette Agent and made a lot of progress on Datasette What I'm using, May 2026 edition Misce",
+      "category": "Commentary",
+      "published": "2026-06-01T04:45:00+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "自从 Claude Design 可以共享额度，可以用的次数多了很多，但 Token 消耗还是很厉害。不过做出来的东西真的很好，真的强烈建议你多用用，这是我近期用的最好的 A...",
+      "url": "https://x.com/dotey/status/2061297781864624210",
+      "summary": "自从 Claude Design 可以共享额度，可以用的次数多了很多，但 Token 消耗还是很厉害。不过做出来的东西真的很好，真的强烈建议你多用用，这是我近期用的最好的 Agent 产品之一。 一个技巧，你可以导入现成的 Design System，再让它设计，风格一致性会好很多，用一些成熟的 Design System，做出来的东西也更高端大气一些。 我个人推荐试试 Adobe 的 Spectrum 2 design system, 用下面的 URL 就可以导入，导入后就可以让它设计时基于 https://github.com/adobe/react-spectrum 这里可以找到更多的设计系统： https://github.com/alexpate/awesome-design-systems 宝玉: Claude Design 现在和 Claude AI 网站以及 Claude",
+      "category": "XSignals",
+      "published": "2026-06-01T04:04:22+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
       "feed_title": "X / dotey"
     },
     {
-      "title": "AI大模型周报 资本与技术齐飞 - 中华网",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE92dTEtMkVWNk4wRzhUZnhmZGYxWFFWeGdZaHA0ZjhzOUVTMnZnTFV0cXpfNmh3ZTMySXh4Y1RmZV9jeDNmWXduR2Y5NXE2eVF0SUl0aDlYZGJRbWpNV0o2dHNDYVFJQkdMTDJSRUgtTkQ?oc=5",
-      "summary": "AI大模型周报 资本与技术齐飞 &nbsp;&nbsp; 中华网",
-      "category": "Chinese",
-      "published": "2026-05-31T23:34:57+00:00",
-      "fetch_status": "rss_only",
+      "title": "我经常用 /goal ，主要用法： 1. 写一个 Checklist，让它一条条勾选 比如我逆向代码，会先用脚本做语法解析把完整的list整理成个json文件，让它分批去处理，每次...",
+      "url": "https://x.com/dotey/status/2061260768729809096",
+      "summary": "我经常用 /goal ，主要用法： 1. 写一个 Checklist，让它一条条勾选 比如我逆向代码，会先用脚本做语法解析把完整的list整理成个json文件，让它分批去处理，每次处理完一批就更新json文件 2. 写一个设计文档，分成几个阶段 跟AI一起写一份详细设计文档，设计好了后让 AI 划分好 Phases，设定好每个 Phase 的验收条件，一个 Phase 一个 Phase 的执行，每个 Turn 都让它自己 commit dontbesilent: 大家真的开始用 /goal 解决问题了吗 能否在评论区留下你用 /goal 的最佳实践？",
+      "category": "XSignals",
+      "published": "2026-06-01T01:37:18+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "14年来首个华人“统计学诺奖”得主！OpenAI再揽北大数学天才：苏炜杰官宣加入 - 新浪财经",
-      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQM01jQWxDcXJWVHJ6alhBUnUtdEtVQURXdWtJQUphSG9yai1xbTE2YmZiZGxhQldtYjF6eVNYSEVIU21mR3d0enA1Y0dTcGVMaG5yZXhRN05qblBBQjRqcHV3Y2dTbzNXWmE2VW1mY3MxM1UxTmZMYzJCNTFqd2p4c08yUzlzZExSLW9zdnl1bFhmU2hZRUNnVnpBME9IejVVMHdfaVZTTU50dGc0Z1VCYnhvb1UzbVR5RHRMUjBab0d3MHdfU0pjVEJjcUU5amRwRzJoWTZBV2pLV2ZUX3drUHNTZHhYdy1nbGxRWTdSYnd5VG54?oc=5",
-      "summary": "14年来首个华人“统计学诺奖”得主！OpenAI再揽北大数学天才：苏炜杰官宣加入 &nbsp;&nbsp; 新浪财经",
-      "category": "Chinese",
-      "published": "2026-05-31T23:31:30+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
+      "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
+      "feed_title": "X / dotey"
     },
     {
       "title": "datasette 1.0a32",
@@ -602,58 +827,6 @@
       "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
-    },
-    {
-      "title": "AI代理平台战争加剧：OpenAI发布全球AI监管框架，微软宣布Windows为代理操作系统，中国加速追赶美国半导体与基础设施 - 亚洲日报",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE02dHRXU09TVDBZZHlOcWRfNm1INXJrbkNHVzBvd3dKc3VHNHJnbmcwYjRKWFMxa29veXZsMENuWThpd1B4cEk4YkY4TXJiR1ZEcFRzOVdpTkNDX28?oc=5",
-      "summary": "AI代理平台战争加剧：OpenAI发布全球AI监管框架，微软宣布Windows为代理操作系统，中国加速追赶美国半导体与基础设施 &nbsp;&nbsp; 亚洲日报",
-      "category": "Chinese",
-      "published": "2026-05-31T23:18:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "盲目上线AI智能体？没有这项治理就是在埋炸弹 - 51CTO",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1CSGFPMUhSYVh0S0hxLUxMY3RjZ0U2MGFOYldYVkp2bktnd1BfRDN4WmJ2X3ZIazJxS1lvZWpPbHpmcnJUeldoRFdIeV9MYVMyd0Vv?oc=5",
-      "summary": "盲目上线AI智能体？没有这项治理就是在埋炸弹 &nbsp;&nbsp; 51CTO",
-      "category": "Chinese",
-      "published": "2026-05-31T23:02:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "何时才真正需要 RDF/OWL 来实现智能体 AI？ - 51CTO",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBPUlBzNnRtWHN4YVh3alNTQUtYSk1GOFZfNnppbE0zM29uUE05TzRtSXlkX0VWZS14UjJyM0tIeEtObHNsZTNsZnR3TnV3OTF0OEdj?oc=5",
-      "summary": "何时才真正需要 RDF/OWL 来实现智能体 AI？ &nbsp;&nbsp; 51CTO",
-      "category": "Chinese",
-      "published": "2026-05-31T23:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
-    },
-    {
-      "title": "Web3 尚无安全的人工智能。DMind AI 量化差距，KDD 2026 予以确认 - video.sina.com.cn",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxONjNiNHZNajZjMnBwQkZpVjRJYlFYbjZsQ1RpSUlfa3BwMGVMNzItbWVEODdJS1lsUW5jY3Z5eTVKLWFVaGZobHh2YmRhOGJSQkJWcFl3RFNKb2YtVHI5MzVMNEJDY01SZks4cjZxVkhGb21ZZ2xXdXhHT3VwLXVJand3?oc=5",
-      "summary": "Web3 尚无安全的人工智能。DMind AI 量化差距，KDD 2026 予以确认 &nbsp;&nbsp; video.sina.com.cn",
-      "category": "Chinese",
-      "published": "2026-05-31T22:19:02+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI"
     },
     {
       "title": "RT Philipp Spiess: Re @simonw Sorry about this! The button was unintentionally removed during some recent menu restructurings. It'll be back with the ...",
@@ -890,56 +1063,17 @@
       "feed_title": "The Verge AI"
     },
     {
-      "title": "RT Wang Shuyi: 我的新书《AI 高质量论文写作法》上市。刚拿到崭新样书，很兴奋。相对于3年前《学术写作五步法》，补充了我近几年尝试将 AI 深度融入知识生产工...",
-      "url": "https://x.com/dotey/status/2060805858481590780",
-      "summary": "RT Wang Shuyi 我的新书《AI 高质量论文写作法》上市。刚拿到崭新样书，很兴奋。相对于3年前《学术写作五步法》，补充了我近几年尝试将 AI 深度融入知识生产工作流的心得和经验，希望对你的研究推进和论文撰写能有实际帮助。感谢老麦和储殷老师的推荐，谢谢大家的支持😄🤝",
-      "category": "XSignals",
-      "published": "2026-05-30T07:01:48+00:00",
-      "fetch_status": "rss_only",
+      "title": "How Cosmos 3 Helps Physical AI Think Before It Acts",
+      "url": "https://blogs.nvidia.com/blog/cosmos-3-physical-ai-open-world-foundation-model/",
+      "summary": "",
+      "category": "Labs",
+      "published": "2026-06-01T04:45:07+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
-      "feed_title": "X / dotey"
-    },
-    {
-      "title": "我今天对群聊总结的 Skill 更新了个小功能，在群里 @bot，总结群聊记录的时候，就可以结合聊天记录的上下文，在总结的时候回复问题 具体参考：https://github.co...",
-      "url": "https://x.com/dotey/status/2060567807423607240",
-      "summary": "我今天对群聊总结的 Skill 更新了个小功能，在群里 @bot，总结群聊记录的时候，就可以结合聊天记录的上下文，在总结的时候回复问题 具体参考：https://github.com/JimLiu/baoyu-skills/commit/a85c81e8db8a19a633e30dda0823e8a9c686263d 宝玉: baoyu-skills 新加了一个 Skill： 微信群聊总结 Skill：https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-wechat-summary 依赖于 wx-cli：https://github.com/jackwener/wx-cli 如何配置使用 wx-cli 请看项目文档，无法提供帮助。另外目前只是借助其读取数据，其他没任何关系。 Claude Code + Claude O",
-      "category": "XSignals",
-      "published": "2026-05-30T03:43:43+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
-      "feed_title": "X / dotey"
-    },
-    {
-      "title": "Codex 现在可以自己管理自己的会话了。创建会话、搜索会话、整理归档、置顶重要的、还能为并行任务拉起独立的 worktree，全都可以通过对话指令完成。 Codex 开始...",
-      "url": "https://x.com/dotey/status/2060545640552104112",
-      "summary": "Codex 现在可以自己管理自己的会话了。创建会话、搜索会话、整理归档、置顶重要的、还能为并行任务拉起独立的 worktree，全都可以通过对话指令完成。 Codex 开始操作自己的界面了。 Guinness Chen: If you ever get tired of managing your Codex threads, just let Codex manage itself! Codex can now create threads, search them, organize them, pin the important ones, and spin up worktrees for parallel tasks.",
-      "category": "XSignals",
-      "published": "2026-05-30T02:15:38+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
-      "feed_title": "X / dotey"
-    },
-    {
-      "title": "[AINews] Founders and Forward Deployed Engineers",
-      "url": "https://www.latent.space/p/ainews-founders-and-forward-deployed",
-      "summary": "a quiet day lets us highlight the new AIE WF focuses",
-      "category": "Commentary",
-      "published": "2026-05-30T01:57:15+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.latent.space/feed",
-      "feed_title": "Latent Space"
+      "quality_score": 0,
+      "feed_url": "https://blogs.nvidia.com/feed/",
+      "feed_title": "NVIDIA Blog"
     },
     {
       "title": "every evals/analytics startup is going through a onetime generational upgrade into a continual learning platform in 2026 many will fail but as always ...",
@@ -992,45 +1126,6 @@
       "quality_score": 0,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
-    },
-    {
-      "title": "为啥 Codex App 上一个版本要隐藏上下文用量？！现在新版本加回来了，但是得主动去设置打开！",
-      "url": "https://x.com/dotey/status/2060558157521313962",
-      "summary": "为啥 Codex App 上一个版本要隐藏上下文用量？！现在新版本加回来了，但是得主动去设置打开！",
-      "category": "XSignals",
-      "published": "2026-05-30T03:05:22+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
-      "feed_title": "X / dotey"
-    },
-    {
-      "title": "冷知识：GitHub Copilot 里面的 Gemini 3.5 Flash Token 消耗按 14 倍算，与之相对的： - Claude Sonnet 4.6 (1x) - Claude Opus 4.8 (15x) - Gemini 3.1 Pro (1...",
-      "url": "https://x.com/dotey/status/2060541910570197016",
-      "summary": "冷知识：GitHub Copilot 里面的 Gemini 3.5 Flash Token 消耗按 14 倍算，与之相对的： - Claude Sonnet 4.6 (1x) - Claude Opus 4.8 (15x) - Gemini 3.1 Pro (1x) - GPT-5.5 (7.5x)",
-      "category": "XSignals",
-      "published": "2026-05-30T02:00:49+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
-      "feed_title": "X / dotey"
-    },
-    {
-      "title": "最新版 Codex 可以看到 Token 用量",
-      "url": "https://x.com/dotey/status/2060529208602833354",
-      "summary": "最新版 Codex 可以看到 Token 用量 jason: 10h 45m was codex picking the 5.5 party guests codex &gt; settings &gt; profile",
-      "category": "XSignals",
-      "published": "2026-05-30T01:10:20+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
-      "feed_title": "X / dotey"
     }
   ]
 }

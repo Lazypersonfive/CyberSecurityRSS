@@ -7,14 +7,16 @@
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 101 | 11 | 20 | 70 | 0 | 6 | 11 | 43 | 0 |
-| ai_security | 66 | 7 | 5 | 54 | 0 | 7 | 7 | 11 | 6 |
+| ai | 102 | 17 | 20 | 65 | 0 | 7 | 17 | 42 | 0 |
+| ai_security | 62 | 7 | 5 | 50 | 0 | 7 | 7 | 12 | 6 |
 | finance | 70 | 3 | 0 | 67 | 0 | 9 | 3 | 0 | 0 |
-| security | 105 | 17 | 0 | 88 | 0 | 0 | 17 | 6 | 29 |
+| security | 105 | 17 | 0 | 87 | 1 | 0 | 17 | 5 | 28 |
 
 ## Unknown Selected Sources
 
-No unknown selected sources in the audited window.
+| Source | Count | Boards | Latest Example |
+|---|---:|---|---|
+| `uedbox.com` | 1 | security | [Chrome 浏览器静默下载 4GB Gemini Nano 模型：隐私争议与永久禁用方法](https://www.uedbox.com/post/119862/) |
 
 ## Review Rule
 
