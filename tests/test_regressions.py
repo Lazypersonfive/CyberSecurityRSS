@@ -210,9 +210,11 @@ class FetchOpmlTests(unittest.TestCase):
             "代码审计星球",
             "美团技术团队",
             "青衣十三楼飞花堂",
+            "体验盒子",
         ):
             self.assertNotIn(text, security)
-        self.assertNotIn("Simon Willison", ai_security)
+        self.assertIn("Simon Willison", ai_security)
+        self.assertNotIn("X / Simon Willison", ai_security)
 
     def test_opml_includes_rsshub_x_signal_feeds(self) -> None:
         ai_feeds = fetch_opml("feeds/ai.opml")
