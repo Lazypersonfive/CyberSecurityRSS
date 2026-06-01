@@ -444,6 +444,8 @@ def _ensure_summary_length(summary: str, entry: dict[str, Any], title_zh: str) -
     summary = _strip_repeated_title_suffix(normalize_summary_text(summary), title_zh)
     if not summary_needs_repair(summary) and len(summary) <= 240:
         return summary
+    if not summary_needs_repair(summary):
+        return _limit_rendered_summary(summary)
 
     fallback = _fallback_summary(entry, title_zh)
     if count_chinese_chars(summary) >= 40:
@@ -464,7 +466,7 @@ def _ensure_summary_length(summary: str, entry: dict[str, Any], title_zh: str) -
         )
     if count_chinese_chars(summary) > SUMMARY_TARGET_MAX_CHARS:
         summary = _truncate_chinese_chars(summary, SUMMARY_TARGET_MAX_CHARS)
-    return _strip_repeated_title_suffix(summary, title_zh)
+    return _limit_rendered_summary(_strip_repeated_title_suffix(summary, title_zh))
 
 
 def _strip_repeated_title_suffix(summary: str, title_zh: str) -> str:
@@ -478,6 +480,16 @@ def _strip_repeated_title_suffix(summary: str, title_zh: str) -> str:
             stripped = summary[: -len(suffix)].rstrip(" ，,；;：:、.。")
             return stripped + ("。" if stripped and stripped[-1] not in "。！？!?" else "")
     return summary
+
+
+def _limit_rendered_summary(summary: str, max_chars: int = 220) -> str:
+    summary = normalize_summary_text(summary)
+    if len(summary) <= max_chars:
+        return summary
+    cut = max(summary.rfind(sep, 0, max_chars + 1) for sep in ("。", "！", "？", "；", ";"))
+    if cut >= 80:
+        return summary[: cut + 1].strip()
+    return summary[:max_chars].rstrip("，,；;：:、.。 ") + "。"
 
 
 def _fallback_summary(entry: dict[str, Any], title_zh: str) -> str:

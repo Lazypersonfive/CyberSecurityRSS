@@ -1539,6 +1539,35 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertFalse(finalized["summary"].endswith(title))
         self.assertLessEqual(len(finalized["summary"]), 240)
 
+    def test_finalize_digest_item_compacts_rendered_long_summary(self) -> None:
+        title = "Claude Design 推出额度共享功能"
+        summary = (
+            "Claude Design 现已支持额度共享并显著增加了使用频次，尽管 Token 消耗依然较高，"
+            "但其作为 Agent 产品在生成效果上获得了开发者的高度评价。"
+            "用户可以通过导入 Adobe Spectrum 2 等成熟设计系统的 URL，确保 AI 生成的界面在风格一致性与专业感上达到更高水准，"
+            "从而有效利用 GitHub 上的开源资源来大幅提升视觉设计的开发效率。"
+            f" {title}。该条来自x.com，归类于XSignals，原始信息显示其在本轮抓取、去重和打分中优先级较高。"
+        )
+        entry = {
+            "title": title,
+            "summary": "Claude Design update.",
+            "url": "https://x.com/example/status/1",
+            "category": "XSignals",
+            "published": "2026-06-01T00:00:00Z",
+        }
+
+        finalized = _finalize_digest_item(
+            entry,
+            {
+                "title_zh": title,
+                "summary": summary,
+                "tags": ["设计工具"],
+                "selection_reason": "开发者工具更新",
+            },
+        )
+
+        self.assertLessEqual(len(finalized["summary"]), 220)
+
     def test_candidate_pool_uses_fill_floor_to_backfill_below_threshold(self) -> None:
         scored = [
             ({"title": "A", "url": "https://a.example"}, 8),
