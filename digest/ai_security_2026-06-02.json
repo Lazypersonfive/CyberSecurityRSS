@@ -1,0 +1,331 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-06-02",
+  "generated_at": "2026-06-02T00:01:56.920829Z",
+  "raw_count": 21,
+  "selected_count": 9,
+  "selection_stats": {
+    "total": 9,
+    "direct": 6,
+    "tier_t2": 9,
+    "kind_expert": 6,
+    "aggregator": 3,
+    "kind_expert_x": 1,
+    "google_news": 2,
+    "kind_google_news": 2,
+    "chinese": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "items": [
+    {
+      "title_zh": "Meta AI 助手被曝存在逻辑漏洞，攻击者通过简单对话即可接管高权重 Instagram 账号",
+      "title_orig": "Hackers Simply Asked Meta AI to Give Them Access to High-Profile Instagram Accounts. It Worked",
+      "summary": "Meta 公司的 AI 支持机器人被发现存在严重的身份验证逻辑缺陷，攻击者只需通过简单的对话指令即可触发账号接管。在已证实的案例中，黑客通过向 AI 助手发送“将我的新邮箱链接到该用户名”的请求，成功绕过了传统的安全校验机制。目前原文未披露该漏洞的具体修复状态，但该事件揭示了 AI 自动化客服在处理敏感账户操作时的巨大安全风险。",
+      "tags": [
+        "AI 安全",
+        "账号接管",
+        "逻辑漏洞"
+      ],
+      "url": "https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-06-01T21:14:47+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 助手在权限控制方面的原生缺陷，具有极高的实战参",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/jun/1/hackers-simply-asked-meta-ai",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.9,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Red Hat 官方 npm 软件包遭供应链攻击，植入凭据窃取蠕虫以针对 CI/CD 流水线",
+      "title_orig": "Red Hat npm Packages Compromised to Spread a Credential-Stealing Worm",
+      "summary": "多个官方 @redhat-cloud-services npm 软件包被发现遭到篡改，植入了一种基于开源 Mini Shai-Hulud 恶意软件的凭据窃取蠕虫。该恶意软件专门针对云凭据和 CI/CD 流水线中的开发人员工具，旨在通过自动化构建环境进行横向移动和敏感数据窃取，目前受影响组件已被识别，该事件再次凸显了企业级供应链安全监控在现代软件开发生命周期中的极端重要性。",
+      "tags": [
+        "供应链攻击",
+        "npm",
+        "凭据窃取"
+      ],
+      "url": "https://www.aikido.dev/blog/red-hat-npm-packages-compromised-credential-stealing-worm",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-06-01T13:39:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及知名厂商官方包的供应链污染，对企业安全运维有重要警示意义",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/red-hat-npm-packages-compromised-credential-stealing-worm",
+      "related_urls": [
+        "https://snyk.io/blog/miasma-supply-chain-attack-malicious-code-redhat-cloud-services-npm-packages/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.7,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究指出 AppSec 自动化中模型框架的重要性已超越大语言模型本身性能",
+      "title_orig": "Move over, Mythos. Here comes... pretty much any other model with a good harness",
+      "summary": "最新的工程研究对比了 Mythos 等模型在漏洞利用链构建中的表现，发现虽然特定模型在复杂任务上有优势，但围绕模型构建的“框架（Harness）”对应用安全工作的效果影响更大。文章探讨了如何通过优化外部调用逻辑和上下文管理来提升 AI 发现漏洞的准确率。这为安全从业者在开发自动化审计工具时提供了从“追求模型参数”转向“优化工程框架”的新思路。",
+      "tags": [
+        "AppSec",
+        "AI 自动化",
+        "漏洞挖掘"
+      ],
+      "url": "https://www.aikido.dev/blog/mythos-vs-harness",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-06-01T18:39:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 安全工具开发的工程化方向，对自研安全工具的团队",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/mythos-vs-harness",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.85,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Endor Labs 与 Cursor 达成合作，旨在为企业级智能体编程构建安全防护基础",
+      "title_orig": "Endor Labs + Cursor: Building the security foundation for agentic coding | Blog | Endor Labs",
+      "summary": "Endor Labs 宣布与 AI 代码编辑器 Cursor 建立正式合作伙伴关系，共同致力于为企业工程组织提供安全的智能体编程工作流保障。双方将通过整合安全治理能力与 AI 开发环境，解决 AI 自动生成代码过程中可能引入的第三方依赖风险和合规性挑战，标志着安全防护已开始深度嵌入到 AI 驱动的软件开发生命周期前端，助力企业在提升效率的同时确保代码库的整体安全性。",
+      "tags": [
+        "智能体编程",
+        "开发安全",
+        "AI 治理"
+      ],
+      "url": "https://www.endorlabs.com/learn/endor-labs-cursor-building-the-security-foundation-for-agentic-coding",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-06-01T16:25:14+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 辅助编程领域的安全基建，反映了行业向左移安全发展",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/endor-labs-cursor-building-the-security-foundation-for-agentic-coding",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.8,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "RedForest 工具包更新：利用 Windows 搜索功能在内网渗透中自动化搜寻敏感凭据",
+      "title_orig": "Nice!",
+      "summary": "安全研究员 Fady Moheb 发布了基于 WindowsSearch 机制的凭据搜寻技术，并将其集成至 RedForest 工具包的 PowerShell 脚本中。该技术利用系统原生搜索功能的合法性，在 Active Directory 环境的后渗透阶段自动化检索系统索引中的敏感信息，为红队人员在内网横向移动时提供了一种极其隐蔽的凭据获取手段，有效规避了传统安全监控对异常行为的检测。",
+      "tags": [
+        "内网渗透",
+        "凭据搜寻",
+        "红队工具"
+      ],
+      "url": "https://x.com/wunderwuzzi23/status/2061250809137119416",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-06-01T00:57:43+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了具体的后渗透技术实现，对红蓝对抗实战具有直接的参考价值",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:wunderwuzzi23",
+      "story_id": "url:x.com/wunderwuzzi23/status/2061250809137119416",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.65,
+      "final_score": 6.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Anthropic发布AI安全框架被指仅是开端，但在实际交付与执行方面仍显不足",
+      "title_orig": "Anthropic AI Security Framework is a Start but Fails to Deliver - Security Boulevard",
+      "summary": "Security Boulevard 发表评论指出，Anthropic 公司近期发布的 AI 安全框架虽然在行业标准建设上迈出了第一步，但在实际交付和解决核心安全挑战方面仍显不足。该文章深入分析了该框架在应对复杂 AI 威胁时的局限性，认为其未能提供足够的具体执行细节来满足企业级安全需求，呼吁业界在构建 AI 安全标准时应更加注重实战化防护与深层次的技术漏洞治理。",
+      "tags": [
+        "Anthropic",
+        "AI"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxObzNRdUFtYW1QWHVpYkxscElDc3ZpTF96WG5JZ2xjYVNJMTVRdXl4dEdUbVBwTmhkTmZ1Rk1LRXBKRXpSanhUZlJEelZlMUtoVDJmaVhCQUxOT0pVTVFfM0dpQ3RQLTRLY3BLUzh4UUhoa0EzODJkNWc1YkR4ZERNZEFxMjktOXphQ2dqdlc1ZlhMMFR6aTFQTklaTnlBVkVqak9hNA?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-06-01T21:17:34+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚合源补充关键动态",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:087643f87b05",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.9,
+      "final_score": 6.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "汉高科技与艾尔科德达成战略合作，旨在提升人工智能安全性并构建可信AI工作环境",
+      "title_orig": "汉高科技与艾尔科德合作提升AI安全性，构建可信AI工作环境 - 亚洲日报",
+      "summary": "汉高科技宣布与艾尔科德达成战略合作，双方将共同致力于提升人工智能系统的安全性，旨在为企业级用户构建一个更加可信且合规的 AI 工作环境。根据《亚洲日报》报道，此次合作将整合两家公司在安全防护与 AI 技术领域的优势资源，通过技术创新解决当前 AI 应用中存在的数据泄露与算法风险问题，从而推动人工智能技术在各行业生产环境中的稳健落地与安全运行。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5EU282RmhUb1BOaVAxa1VoRWFLa3JWWkNaUHdmeGVLZGxHY2JERnJyNmYwZ1BkejVxRWJUdFd2cUdTbW9Db3hyTVl6aFZFREJDOUEyZjJsMWZpRDA?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-06-01T23:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚合源补充关键动态",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:db7f90661432",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 4.8,
+      "final_score": 3.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "用户反思AI订阅服务价值，认为取消订阅或是解决过度依赖及无效开发问题的方案",
+      "title_orig": "The solution might be cancelling my AI subscription",
+      "summary": "作者 David Wilson 在分享其使用 AI 工具的经历时指出，尽管 AI 辅助编程能快速启动项目，但往往会导致开发者陷入无意义的过度开发中，甚至偏离最初解决问题的初衷。他列举了超过 16 个由 AI 生成但并非其本意要构建的项目，认为这种失控的开发模式不仅未能高效解决核心痛点，反而增加了维护负担，因此提出取消 AI 订阅可能是回归理性开发并重新聚焦问题本质的一种有效解决方案。",
+      "tags": [
+        "Anthropic",
+        "AI"
+      ],
+      "url": "https://simonwillison.net/2026/May/31/the-solution-might-be-cancelling-my-ai-subscription/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-05-31T16:31:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/may/31/the-solution-might-be-cancelling-my-ai-subscription",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 1.8,
+      "final_score": 2.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Simon Willison 发布 2026 年 5 月技术简报：探讨 AI 成本上升、Anthropic 进展及 Datasette Agent 工具更新",
+      "title_orig": "May 2026 newsletter",
+      "summary": "该简报深入回顾了2026年5月AI领域的关键动态，重点分析了人工智能运行成本显著增加的趋势以及Anthropic公司在当月竞争中的优异表现，同时指出近期部分新模型发布的效果未达市场预期。作者还详细分享了个人项目Datasette Agent的开发进展与技术细节，并列举了当月在数据处理与自动化领域所使用的工具链更新，为赞助者提供了丰富的行业洞察与实践经验。",
+      "tags": [
+        "AI安全",
+        "开源工具",
+        "技术趋势"
+      ],
+      "url": "https://simonwillison.net/2026/Jun/1/may-newsletter/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-06-01T04:45:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 基础设施成本变化及数据自动化工具的最新实践。",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/jun/1/may-newsletter",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 1.6,
+      "final_score": 1.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
