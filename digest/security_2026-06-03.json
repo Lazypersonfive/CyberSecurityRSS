@@ -1,0 +1,563 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-03",
+  "generated_at": "2026-06-03T00:20:15.433943Z",
+  "raw_count": 83,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 14,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "chinese": 3,
+    "wechat": 3,
+    "tier_t2": 13,
+    "kind_cn_expert": 3,
+    "aggregator": 1,
+    "kind_expert_x": 1,
+    "kind_media": 2,
+    "kind_expert": 2,
+    "kind_community": 5
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 5,
+    "merged_total": 6
+  },
+  "items": [
+    {
+      "title_zh": "CISA 将 Linux 内核身份验证漏洞与 Android 整数溢出漏洞加入已知被利用漏洞目录",
+      "title_orig": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
+      "summary": "美国网络安全和基础设施安全局将Linux内核身份验证绕过漏洞CVE-2022-0492与Android框架整数溢出漏洞CVE-2025-48595正式加入已知被利用漏洞目录。由于这些漏洞已被证实在野外被恶意网络攻击者频繁利用，可能导致容器逃逸或系统权限受损，CISA要求联邦机构必须在规定期限内完成补丁修复，以有效降低政府网络面临的重大安全风险。",
+      "tags": [
+        "漏洞预警",
+        "Linux",
+        "Android"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/06/02/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-02T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2022-0492",
+        "CVE-2025-48595"
+      ],
+      "selection_reason": "CISA KEV 目录更新代表漏洞已在野外被利用，具有极高修",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2022-0492,cve-2025-48595",
+      "related_urls": [
+        "https://thehackernews.com/2026/06/google-june-2026-android-update-patches.html",
+        "https://thehackernews.com/2026/06/oracle-weblogic-cve-2024-21182-added-to.html"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenBMC 与 EDK II 固件安全漏洞预警：涉及 BMC 管理接口与 GPT 分区表测量缺陷",
+      "title_orig": "每日安全动态推送(26/6/2)",
+      "summary": "OpenBMC 的 bmcweb 组件被披露存在四个安全漏洞，可能影响服务器远程管理安全性。同时，EDK II 固件在处理 GPT 分区表测量时存在逻辑缺陷，该漏洞会导致 PCR[5] 的完整性度量失效，破坏可信启动链。此外，Cargo 软件包管理器的 Sparse Index 机制被发现存在凭证泄露风险及符号链接缓存覆盖攻击路径，原文未披露具体 CVE 编号，建议相关开发者关注固件与工具链更新。",
+      "tags": [
+        "固件安全",
+        "供应链安全",
+        "OpenBMC"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960484&idx=1&sn=d774558c37f345378bcbc4b6ccb68e9e",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-02T10:36:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖底层固件与开发工具链的关键漏洞，对基础设施安全至关重要。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960484&idx=1&sn=d774558c37f345378bcbc4b6ccb68e9e",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "红帽公司确认 npm 官方软件包遭遇供应链攻击：员工 GitHub 账号被盗导致恶意代码植入",
+      "title_orig": "🚨 UPDATE: Red Hat has now published RHSB-2026-006 confirming the supply chain compromise affecting multiple npm packages under the redhat-cloud-ser...",
+      "summary": "红帽公司发布RHSB-2026-006公告，确认其命名空间下超过30个官方npm软件包因供应链攻击遭到篡改，起因是一名员工的GitHub账号被黑客入侵。攻击者利用“孤儿提交”技术绕过正常的分支历史记录，将恶意代码直接推送到代码库中，目前红帽已识别受影响包并展开清理工作，此事件再次引发了业界对开发者账号权限管理及供应链安全防护机制的高度关注。",
+      "tags": [
+        "供应链攻击",
+        "npm",
+        "红帽"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2061830569302855952",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-06-02T15:21:29+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级厂商官方软件包遭入侵，展示了针对开发者账号的供应链攻击路",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2061830569302855952",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress Kirki 插件高危权限提升漏洞 CVE-2026-8206 被利用于接管管理员账户",
+      "title_orig": "Critical Kirki flaw exploited to hijack WordPress admin accounts",
+      "summary": "WordPress 的 Kirki 框架插件被发现存在编号为 CVE-2026-8206 的关键权限提升漏洞，目前已被黑客积极利用。该漏洞允许攻击者在无需预先认证的情况下，通过特定请求提升权限并接管包括管理员在内的任意用户账户。受影响的插件广泛应用于主题定制功能，目前官方已发布修复版本，建议所有使用该插件的站点立即更新以防止站点被完全控制。",
+      "tags": [
+        "WordPres",
+        "权限提升",
+        "在野利用"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/critical-kirki-flaw-exploited-to-hijack-wordpress-admin-accounts/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-02T22:12:57+00:00",
+      "cve_ids": [
+        "CVE-2026-8206"
+      ],
+      "selection_reason": "该漏洞已出现在野利用，且能直接导致网站管理员权限丢失，风险极",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "cve:cve-2026-8206",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客利用 Meta AI 支持机器人诱导重置密码并接管多个知名 Instagram 账号",
+      "title_orig": "Hackers Used Meta’s AI Support Bot to Seize Instagram Accounts",
+      "summary": "黑客通过 Telegram 传播的指令欺骗 Meta 的“AI 支持助手”机器人，成功绕过安全验证并重置了目标账户密码。受此影响，包括奥巴马白宫账号及美国太空军首席主军士长在内的多个知名 Instagram 账号被盗，并被发布亲伊朗的宣传信息。该攻击利用了 AI 逻辑漏洞而非传统代码漏洞，目前 Meta 已对该 AI 助手的交互逻辑进行了调整以拦截此类欺诈指令。",
+      "tags": [
+        "AI安全",
+        "社交工程",
+        "账号接管"
+      ],
+      "url": "https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts/",
+      "source": "krebsonsecurity.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-01T17:32:50+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用大模型逻辑缺陷进行自动化社工攻击的新型威胁模式。",
+      "feed_url": "https://krebsonsecurity.com/feed/",
+      "feed_title": "Krebs on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全媒体",
+      "source_key": "krebsonsecurity.com",
+      "story_id": "url:krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts",
+      "related_urls": [
+        "https://x.com/IntCyberDigest/status/2061802861881708663",
+        "https://x.com/IntCyberDigest/status/2061508271828038035",
+        "https://x.com/IntCyberDigest/status/2061403899009888580",
+        "https://x.com/IntCyberDigest/status/2061335415546691642"
+      ],
+      "related_count": 4,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Mozilla Firefox 浏览器 JIT 组件远程代码执行漏洞 CVE-2026-10702 预警",
+      "title_orig": "CVE-2026-10702 | Mozilla Firefox up to 151.0.2 JIT Remote Code Execution",
+      "summary": "Mozilla Firefox 浏览器在 151.0.2 及以下版本中存在一个被归类为严重的 JIT（即时编译）组件安全漏洞，编号为 CVE-2026-10702。该漏洞源于 JIT 组件对未知处理逻辑的实现缺陷，远程攻击者可通过诱导用户访问恶意网页触发该漏洞，从而在目标系统上执行任意代码。目前尚无公开的 PoC 漏洞利用代码，官方建议受影响用户尽快升级到最新版本浏览器。",
+      "tags": [
+        "浏览器安全",
+        "RCE",
+        "Firefox"
+      ],
+      "url": "https://vuldb.com/vuln/368076",
+      "source": "vuldb.com",
+      "category": "Synthesis",
+      "published": "2026-06-02T23:48:27+00:00",
+      "cve_ids": [
+        "CVE-2026-10702"
+      ],
+      "selection_reason": "JIT 漏洞是浏览器攻击的高级技术点，RCE 级别漏洞需重点",
+      "feed_url": "https://vuldb.com/en/?rss.recent",
+      "feed_title": "VulDB Recent Entries",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "vuldb.com",
+      "story_id": "cve:cve-2026-10702",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员披露 CVE-2026-24884 补丁绕过技术并实现任意文件写入",
+      "title_orig": "Uncovering the Blind Spot: Bypassing a Security Patch (CVE-2026–24884) to Achieve Arbitrary File…",
+      "summary": "安全研究员通过对已修复漏洞 CVE-2026-24884 的二次审计，发现开发人员在补丁中存在错误的逻辑假设，从而实现了补丁绕过。该技术点在于利用特定的文件路径处理缺陷，重新获得了在目标系统上执行任意文件写入的能力。这种绕过攻击适用于原本认为已安全的受影响组件，研究者强调了在漏洞修复过程中对边界条件进行彻底验证的重要性，原文未披露具体受影响的软件名称。",
+      "tags": [
+        "补丁绕过",
+        "文件写入",
+        "漏洞研究"
+      ],
+      "url": "https://infosecwriteups.com/uncovering-the-blind-spot-bypassing-a-security-patch-cve-2026-24884-to-achieve-arbitrary-file-bc385eaa73fa?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-06-02T05:05:56+00:00",
+      "cve_ids": [
+        "CVE-2026-24884"
+      ],
+      "selection_reason": "深入探讨了补丁绕过的思维方式，对漏洞挖掘和安全开发有很强的借",
+      "feed_url": "https://medium.com/feed/bugbountywriteup/tagged/bug-bounty",
+      "feed_title": "Bug Bounty in InfoSec Write-ups on Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "cve:cve-2026-24884",
+      "related_urls": [
+        "https://infosecwriteups.com/uncovering-the-blind-spot-bypassing-a-security-patch-cve-2026-24884-to-achieve-arbitrary-file-bc385eaa73fa?source=rss----7b722bfd1b8d---4"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 联合多部门发布预警：敦促加强自动油罐计量系统（ATG）安全加固",
+      "title_orig": "CISA and Partners Urge Hardening Automatic Tank Gauge Systems",
+      "summary": "CISA 联合 FBI、NSA 及能源部等多个部门发布安全指南，要求关键基础设施运营商加强自动油罐计量系统（ATG）的安全防护。ATG 系统常用于监测燃料库存，若防护不当可能导致物理设施受损或环境污染。指南建议通过关闭不必要的远程访问端口、实施强身份验证以及部署网络隔离措施来降低被攻击风险，原文未提及具体的 CVE 漏洞编号，重点在于系统配置加固。",
+      "tags": [
+        "工控安全",
+        "关键基础设施",
+        "ATG"
+      ],
+      "url": "https://www.cisa.gov/resources-tools/resources/cisa-and-partners-urge-hardening-automatic-tank-gauge-systems",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-02T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施的物理安全，反映了当前工控系统面临的严峻安全",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/resources-tools/resources/cisa-and-partners-urge-hardening-automatic-tank-gauge-systems",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.8,
+      "final_score": 8.4,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Gamaredon 组织利用 WinRAR 路径遍历漏洞 CVE-2025-8088 投放恶意软件",
+      "title_orig": "Gamaredon Exploits WinRAR to Deliver GammaWorm and GammaSteel Against Ukraine",
+      "summary": "俄罗斯黑客组织Gamaredon近期被发现利用WinRAR中的路径遍历漏洞CVE-2025-8088，通过武器化的HTML应用程序负载GammaPhish投放GammaWorm和GammaSteel等多种恶意软件。该攻击活动主要针对乌克兰境内目标进行数据窃取和恶意代码传播，目前原文尚未披露具体的修复补丁状态或受影响的详细版本号，相关机构需对该持续性的网络威胁保持高度警惕。",
+      "tags": [
+        "WinRAR",
+        "路径遍历",
+        "恶意软件"
+      ],
+      "url": "https://thehackernews.com/2026/06/gamaredon-exploits-winrar-to-deliver.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-02T18:21:49+00:00",
+      "cve_ids": [
+        "CVE-2025-8088"
+      ],
+      "selection_reason": "涉及知名软件的高危漏洞利用及实际攻击案例。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2025-8088",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Drupal Core 10.5.5 版本存在基于报错的 SQL 注入漏洞",
+      "title_orig": "[webapps] Drupal Core 10.5.5 - Error-Based SQL Injection",
+      "summary": "Drupal Core 10.5.5版本被披露存在一个基于报错的SQL注入漏洞，远程攻击者可能利用该漏洞获取数据库敏感信息并对Web应用造成严重安全风险。该漏洞直接影响Drupal的核心组件，目前原文仅提供了漏洞存在的基本信息，尚未详细说明具体的触发条件、技术细节及官方补丁的发布状态，建议管理员密切关注官方更新动态。",
+      "tags": [
+        "Drupal",
+        "SQL注入",
+        "Web安全"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52608",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-06-01T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "主流 CMS 核心组件的 SQL 注入漏洞具有高风险性。",
+      "feed_url": "https://www.exploit-db.com/rss.xml",
+      "feed_title": "Exploit-DB.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "exploit-db.com",
+      "story_id": "url:exploit-db.com/exploits/52608",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.45,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型后门 JSMonoGlyphRAT 通过伪造商务邮件针对美国企业进行持续攻击",
+      "title_orig": "JSMonoGlyphRAT: The Persistent Backdoor Targeting US Businesses",
+      "summary": "一种名为JSMonoGlyphRAT的新型后门程序正通过伪装成采购订单、报价单和商业提案的钓鱼邮件，精准攻击科技、电信、教育及MSSP等行业的企业。该后门具有极强的隐蔽性，大多数杀毒工具完全无法检测，一旦入侵成功，攻击者可部署勒索软件、窃取敏感数据并导致严重的业务中断，目前该威胁正处于活跃状态且危害巨大。",
+      "tags": [
+        "后门程序",
+        "网络钓鱼",
+        "免杀技术"
+      ],
+      "url": "https://www.reddit.com/r/redteamsec/comments/1tur35w/jsmonoglyphrat_the_persistent_backdoor_targeting/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-06-02T13:31:57+00:00",
+      "cve_ids": [],
+      "selection_reason": "新型 RAT 后门及其在野攻击活动对企业防御有参考价值。",
+      "feed_url": "https://www.reddit.com/r/redteamsec/.rss",
+      "feed_title": "Red Team Security",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "url:reddit.com/r/redteamsec/comments/1tur35w/jsmonoglyphrat_the_persistent_backdoor_targeting",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员发布可破解 BitLocker 的 Windows 漏洞引发微软法律威胁",
+      "title_orig": "Microsoft Threatening Security Researcher",
+      "summary": "匿名安全研究员Nightmare Eclipse发布了一系列针对Windows系统的重大漏洞利用程序，其中包括一个能够破解BitLocker加密的关键漏洞，引发了安全界的广泛关注。微软目前已对该研究员发出法律诉讼威胁，双方正处于激烈的法律与技术对峙中，原文未披露漏洞的具体技术细节或修复进展，反映了厂商与研究者之间的矛盾。",
+      "tags": [
+        "BitLocke",
+        "漏洞研究",
+        "法律纠纷"
+      ],
+      "url": "https://www.schneier.com/blog/archives/2026/06/microsoft-threatening-security-researcher.html",
+      "source": "schneier.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-02T11:00:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及核心加密功能破解及安全研究合规性争议。",
+      "feed_url": "https://www.schneier.com/feed/atom/",
+      "feed_title": "Schneier on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "schneier.com",
+      "story_id": "url:schneier.com/blog/archives/2026/06/microsoft-threatening-security-researcher.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.45,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 ARMember Premium 存在身份验证绕过漏洞 CVE-2026-5076",
+      "title_orig": "CVE-2026-5076 | ARMember Premium Plugin up to 7.3.1 on WordPress Password Reset arm_reset_password_key improper authentication",
+      "summary": "WordPress的ARMember Premium插件7.3.1及以下版本存在关键安全漏洞CVE-2026-5076，该漏洞主要影响密码重置处理组件中的arm_reset_password_key函数。由于身份验证机制不当，远程攻击者可以利用此缺陷进行非法操作，虽然目前尚未发现公开的漏洞利用代码，但鉴于其可能导致的严重安全风险，建议受影响用户及时关注官方更新并采取必要的防护措施。",
+      "tags": [
+        "WordPres",
+        "身份验证绕过",
+        "插件安全"
+      ],
+      "url": "https://vuldb.com/vuln/368059",
+      "source": "vuldb.com",
+      "category": "Synthesis",
+      "published": "2026-06-02T23:43:41+00:00",
+      "cve_ids": [
+        "CVE-2026-5076"
+      ],
+      "selection_reason": "高危身份验证绕过漏洞直接威胁网站账户安全。",
+      "feed_url": "https://vuldb.com/en/?rss.recent",
+      "feed_title": "VulDB Recent Entries",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "vuldb.com",
+      "story_id": "cve:cve-2026-5076",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.85,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "首届火山“AI 安全攻防”挑战赛正式开启报名",
+      "title_orig": "开启报名 | 首届火山「AI安全攻防」挑战赛邀你参赛",
+      "summary": "火山引擎正式开启首届“AI安全攻防”挑战赛报名，旨在通过竞赛形式深入探索人工智能领域的安全边界、防御技术以及模型本身的鲁棒性。该赛事主要面向安全从业者与AI开发者，重点关注AI模型安全、数据隐私保护及对抗样本等前沿技术点，是安全从业者了解AI攻防实战场景、提升对抗能力以及交流行业经验的重要机会。",
+      "tags": [
+        "AI安全",
+        "攻防竞赛",
+        "安全活动"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI1MzYzMjE0MQ==&mid=2247520184&idx=1&sn=664006f6a49a50f585121ff81a829ea7",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-02T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 安全这一新兴且重要的攻防领域。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/4025ea55575daf8bfd8227e68b28d9638b073267.xml",
+      "feed_title": "字节跳动技术团队公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/4025ea55575daf8bfd8227e68b28d9638b073267.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI1MzYzMjE0MQ%3D%3D&mid=2247520184&idx=1&sn=664006f6a49a50f585121ff81a829ea7",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.7,
+      "final_score": 7.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "检测工程实战：利用 LogonID 关联 Windows 安全日志与 Sysmon 进行取证",
+      "title_orig": "构建检测基础：第五部分 - 关联分析的实战应用",
+      "summary": "本文作为构建检测基础系列的第五部分，详细演示了如何利用LogonID等关键关联点，将Windows安全事件、Sysmon日志与PowerShell活动串联起来以实现全流程取证。该实战方案通过多源日志的关联分析来还原可疑活动路径，旨在帮助安全从业者在检测工程中有效提升识别威胁的精准度，是针对复杂网络环境下威胁狩猎与应急响应的重要技术参考。",
+      "tags": [
+        "检测工程",
+        "日志关联",
+        "蓝队技术"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496290&idx=1&sn=5032137f2bf47d308f40f7b0028ca0ee",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-05-31T02:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "实战化的检测工程方法论，对防御体系建设有指导意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496290&idx=1&sn=5032137f2bf47d308f40f7b0028ca0ee",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.75,
+      "final_score": 7.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
