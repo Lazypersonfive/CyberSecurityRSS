@@ -19,7 +19,7 @@ except ImportError as exc:  # allow importing pure helpers in lean test environm
 else:
     GOOGLE_GENAI_IMPORT_ERROR = None
 
-DEFAULT_GEMINI_MODEL = "gemini-3-flash-preview"
+DEFAULT_GEMINI_MODEL = "gemini-3.5-flash"
 MAX_RETRIES = 3
 RETRY_BACKOFF_SEC = 4
 DEFAULT_REQUEST_TIMEOUT_SEC = 90
