@@ -1,0 +1,556 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-04",
+  "generated_at": "2026-06-04T00:37:45.360730Z",
+  "raw_count": 54,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 14,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "tier_t2": 13,
+    "kind_media": 5,
+    "chinese": 4,
+    "wechat": 4,
+    "kind_cn_expert": 4,
+    "kind_community": 2,
+    "aggregator": 1,
+    "kind_expert_x": 1,
+    "kind_expert": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "CISA 将 Mirasvit 缓存预热器反序列化漏洞 CVE-2026-45247 加入已知漏洞利用目录",
+      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "summary": "美国网络安全和基础设施安全局已将 CVE-2026-45247 漏洞添加到其已知漏洞利用目录中，该漏洞源于 Mirasvit Full Page Cache Warmer 组件中存在不受信任数据的反序列化缺陷。由于该漏洞已被证实存在活跃的野外利用，恶意攻击者可将其作为频繁使用的攻击媒介，对联邦企业等关键目标构成重大的网络安全风险，但原文未披露具体的影响版本及修复缓解状态。",
+      "tags": [
+        "CISA",
+        "反序列化漏洞",
+        "漏洞预警"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/06/03/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-03T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-45247"
+      ],
+      "selection_reason": "CISA KEV 目录更新，提示该反序列化漏洞已被野外利用。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-45247",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软披露针对红帽 npm 软件包的 Miasma 凭据窃取与蠕虫式传播供应链攻击",
+      "title_orig": "Preinstall to persistence: Inside the Red Hat npm Miasma credential-stealing campaign",
+      "summary": "这是一起针对 npm 生态的大规模供应链攻击事件，攻击者入侵并污染了超过 90 个版本的 @redhat-cloud-services 官方软件包。恶意代码会在 preinstall 阶段触发并静默感染 CI/CD 环境和开发人员系统，在窃取来自 GitHub、云平台及本地机器的敏感凭据后，还会通过重新发布受信任的包进行蠕虫式自我传播以扩大受害范围，严重威胁企业软件供应链的安全。",
+      "tags": [
+        "供应链攻击",
+        "npm",
+        "凭据窃取"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/06/02/preinstall-persistence-inside-red-hat-npm-miasma-credential-stealing-campaign/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-03T04:45:06+00:00",
+      "cve_ids": [],
+      "selection_reason": "红帽官方 npm 包遭大规模污染，技术细节揭示了蠕虫式传播机",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/06/02/preinstall-persistence-inside-red-hat-npm-miasma-credential-stealing-campaign",
+      "related_urls": [
+        "https://x.com/IntCyberDigest/status/2061830569302855952"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.25,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "自主 AI 漏洞挖掘工具发现 Redis 存在两年的远程代码执行漏洞 CVE-2026-23479",
+      "title_orig": "Autonomous AI Tool Finds 2-Year-Old RCE Flaw in Redis (CVE-2026-23479)",
+      "summary": "Redis 修复了一个存在于阻塞客户端代码中的释放后重用（UAF）漏洞，该漏洞被追踪为 CVE-2026-23479。已通过身份验证的用户可利用该漏洞在托管数据库的机器上执行任意操作系统命令。该漏洞由一款用于在大型代码库中搜寻漏洞的自主 AI 工具发现，其自 Redis 7.2.0 版本引入，在所有稳定分支中潜伏了两年多，直到 5 月 5 日才被修复。",
+      "tags": [
+        "Redis",
+        "UAF漏洞",
+        "AI漏洞挖掘"
+      ],
+      "url": "https://thehackernews.com/2026/06/autonomous-ai-tool-finds-2-year-old-rce.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-03T13:47:09+00:00",
+      "cve_ids": [
+        "CVE-2026-23479"
+      ],
+      "selection_reason": "展示了自主 AI 工具在大型代码库中发现隐蔽高危漏洞的能力。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-23479",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.25,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 Kirki 严重权限提升漏洞 CVE-2026-8206 被用于接管管理员账户",
+      "title_orig": "Critical Kirki flaw exploited to hijack WordPress admin accounts",
+      "summary": "黑客正在积极利用 WordPress 插件 Kirki 中的一个严重权限提升漏洞（CVE-2026-8206）来接管任意用户账户，包括属于管理员的账户。该漏洞允许攻击者绕过权限限制，从而完全控制受影响的 WordPress 网站，不过原文并未披露该漏洞的具体技术原理、受影响的插件版本以及官方是否已发布修复补丁或缓解措施，网站管理员需保持警惕。",
+      "tags": [
+        "WordPres",
+        "权限提升",
+        "漏洞利用"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/critical-kirki-flaw-exploited-to-hijack-wordpress-admin-accounts/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-02T22:12:57+00:00",
+      "cve_ids": [
+        "CVE-2026-8206"
+      ],
+      "selection_reason": "流行 WordPress 插件的严重漏洞，已被用于接管管理员",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "cve:cve-2026-8206",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全动态：OpenBMC 漏洞、EDK II 逻辑缺陷及 Cargo 凭证泄露与缓存覆盖攻击",
+      "title_orig": "每日安全动态推送(26/6/2)",
+      "summary": "本次安全动态涵盖了多个技术领域的严重漏洞，其中包括 OpenBMC bmcweb 组件中发现的四大安全漏洞，以及 EDK II 中由于 GPT 分区表测量存在逻辑缺陷，导致 PCR[5] 完整性遭到破坏的问题。此外，动态还详细分析了 Cargo Sparse Index 凭证泄露风险，以及通过 Symlink 符号链接进行的缓存覆盖攻击等技术细节，这些漏洞对相关系统的整体安全构成了潜在威胁。",
+      "tags": [
+        "固件安全",
+        "EDK II",
+        "Cargo"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960484&idx=1&sn=d774558c37f345378bcbc4b6ccb68e9e",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-02T10:36:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖固件安全（EDK II）和开发工具链（Cargo）的底层",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960484&idx=1&sn=d774558c37f345378bcbc4b6ccb68e9e",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "研究发现恶意通知可劫持安卓系统上的谷歌 Gemini 语音助手",
+      "title_orig": "WhatsApp, Slack Notifications Could Hijack Google Gemini on Android",
+      "summary": "研究人员发现，来自 WhatsApp、Slack、SMS、Signal、Instagram 或 Messenger 的单条恶意通知，即可劫持安卓系统上的谷歌 Gemini 语音助手。该漏洞无需在手机上安装任何恶意应用，攻击者仅需让助手处理该恶意通知，即可借此控制助手打开受害者窗口、伪造老板消息、强行加入 Zoom 会议或静默污染其长期记忆，对用户隐私安全造成严重威胁。 研究发现恶意通知可劫持安卓系统上的谷歌 Gemini 语音助手。",
+      "tags": [
+        "Gemini",
+        "间接提示注入",
+        "移动安全"
+      ],
+      "url": "https://thehackernews.com/2026/06/whatsapp-slack-notifications-could.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-03T19:11:15+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对大语言模型（LLM）语音助手的新型间接提示注入攻击",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/06/whatsapp-slack-notifications-could.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.15,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 等多家美国政府机构警告黑客正针对联网自动油箱监测系统发起攻击",
+      "title_orig": "CISA warns of cyberattacks targeting fuel tank monitoring systems",
+      "summary": "CISA、FBI、NSA、美国能源部及其他政府合作伙伴联合发布安全警告，指出黑客正在瞄准暴露在互联网上的自动油箱监测（ATG）系统。这些系统被广泛应用于各种关键基础设施行业，用于监控燃料和液体储罐。攻击者试图利用这些暴露的接口实施网络攻击，原文未披露具体的漏洞细节、受影响的设备型号或具体的修复与缓解方案。",
+      "tags": [
+        "工控安全",
+        "关键基础设施",
+        "安全预警"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-cyberattacks-targeting-fuel-tank-monitoring-systems/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-03T20:21:56+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施（工控系统）的野外针对性攻击预警。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/cisa-warns-of-cyberattacks-targeting-fuel-tank-monitoring-systems",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.1,
+      "final_score": 8.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "未修复的 Windows Search URI 协议处理器漏洞可导致 NTLMv2 哈希泄露",
+      "title_orig": "Unpatched Windows Search URI Vulnerability Lets Attackers Steal NTLMv2 Hashes",
+      "summary": "安全研究人员披露了一个未修复的 Windows 安全漏洞，该漏洞存在于 search: URI 协议处理器中，攻击者可以利用该缺陷诱导系统向其泄露用户的 NTLMv2 哈希值。该漏洞的原理与此前影响 Windows 截图工具 ms-screensketch: URI 处理器的 CVE-2026-33829 欺骗漏洞非常类似，由于目前微软尚未发布针对该协议漏洞的官方补丁，广大用户正面临着敏感凭据泄露的风险。",
+      "tags": [
+        "Windows",
+        "URI处理器",
+        "NTLM哈希泄露"
+      ],
+      "url": "https://thehackernews.com/2026/06/unpatched-windows-search-uri.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-03T10:18:52+00:00",
+      "cve_ids": [
+        "CVE-2026-33829"
+      ],
+      "selection_reason": "未修复的 Windows 协议处理器漏洞，可导致敏感的 NT",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-33829",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.15,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员通过绕过安全补丁CVE-2026-24884成功实现任意文件写入",
+      "title_orig": "Uncovering the Blind Spot: Bypassing a Security Patch (CVE-2026–24884) to Achieve Arbitrary File…",
+      "summary": "该漏洞属于补丁绕过导致的任意文件写入漏洞，其编号为CVE-2026-24884。安全研究人员通过深入分析已被“修复”的代码，发现并利用了开发人员在设计安全补丁时的错误假设，成功实现了对该补丁的绕过，从而达成任意文件写入的目的，而原文并未披露该漏洞的具体触发条件、受影响的组件版本以及官方最新的修复状态。",
+      "tags": [
+        "补丁绕过",
+        "文件写入",
+        "漏洞分析"
+      ],
+      "url": "https://infosecwriteups.com/uncovering-the-blind-spot-bypassing-a-security-patch-cve-2026-24884-to-achieve-arbitrary-file-bc385eaa73fa?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-06-02T05:05:56+00:00",
+      "cve_ids": [
+        "CVE-2026-24884"
+      ],
+      "selection_reason": "展示了通过逻辑分析绕过既有安全补丁的实战思路。",
+      "feed_url": "https://medium.com/feed/bugbountywriteup/tagged/bug-bounty",
+      "feed_title": "Bug Bounty in InfoSec Write-ups on Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "cve:cve-2026-24884",
+      "related_urls": [
+        "https://infosecwriteups.com/uncovering-the-blind-spot-bypassing-a-security-patch-cve-2026-24884-to-achieve-arbitrary-file-bc385eaa73fa?source=rss----7b722bfd1b8d---4"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.3,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Meta AI聊天机器人因缺乏防护栏导致Instagram优质单字符用户名被抢注",
+      "title_orig": "‼️🚨 BREAKING: Yet another Instagram exploit exists due to Meta's AI chatbot having no proper guardrails. Sellers are now using it to grab premium...",
+      "summary": "该漏洞属于人工智能安全防护缺失导致的逻辑越权漏洞，主要影响Meta旗下的Instagram平台。攻击者利用隐藏字符欺骗Meta的AI聊天机器人，绕过安全限制并说服其应用更改，从而恶意抢占优质的单字符用户名，目前监控机器人已检测到大量原始账号被强制更换，但原文未披露Meta官方的修复状态。 Meta AI聊天机器人因缺乏防护栏导致Instagram优质单字符用户名被抢注。",
+      "tags": [
+        "AI安全",
+        "越权漏洞",
+        "社交平台"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2061802861881708663",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-06-02T13:31:23+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI聊天机器人因缺乏防护栏被利用的新型攻击场景。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2061802861881708663",
+      "related_urls": [
+        "https://www.404media.co/podcast-hackers-asked-meta-ai-to-let-them-in-it-worked/"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "dimension_score": 7.35,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Perl组件Net::Async::Statsd::Client存在度量注入漏洞CVE-2026-8722",
+      "title_orig": "CVE-2026-8722",
+      "summary": "该漏洞属于度量注入漏洞，主要存在于Perl语言的Net::Async::Statsd::Client组件中。由于该组件未对度量名称中的换行符、冒号或管道符进行合规性检查，导致源自不可信源的度量数据可以注入额外的statsd度量，该漏洞影响0.005及以下版本，目前原文未披露具体的修复或缓解状态。 Perl组件Net::Async::Statsd::Client存在度量注入漏洞CVE-2026-8722。",
+      "tags": [
+        "度量注入",
+        "Perl",
+        "输入验证"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-8722?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-06-04T00:17:00+00:00",
+      "cve_ids": [
+        "CVE-2026-8722"
+      ],
+      "selection_reason": "关注Perl生态中因输入验证不严导致的协议注入漏洞。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-8722",
+      "related_urls": [
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-8722?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-8722?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 2,
+      "score": 7,
+      "dimension_score": 7.05,
+      "final_score": 6.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究人员成功绕过ClawHub和思科等主流AI Agent技能检测器",
+      "title_orig": "The sorry state of skill distribution",
+      "summary": "该技术研究针对AI Agent技能分发平台的安全防护，指出公共技能市场正充斥着窃取凭据、外泄数据和劫持Agent的恶意技能。研究人员测试了旨在检测恶意技能的安全扫描工具，并成功绕过了ClawHub的恶意技能检测器和思科的Agent技能检测工具，表明当前用于阻止恶意安装的技能扫描器普遍存在防御失效问题。",
+      "tags": [
+        "AI安全",
+        "检测绕过",
+        "Agent安全"
+      ],
+      "url": "https://blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution/",
+      "source": "blog.trailofbits.com",
+      "category": "WebSecurity",
+      "published": "2026-06-03T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "评估了当前主流AI Agent安全扫描器的实际防御能力。",
+      "feed_url": "https://blog.trailofbits.com/feed/",
+      "feed_title": "Trail of Bits Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 6.25,
+      "final_score": 6.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "首届火山「AI安全攻防」挑战赛报名正式开启，诚邀各路选手参赛",
+      "title_orig": "开启报名 | 首届火山「AI安全攻防」挑战赛邀你参赛",
+      "summary": "首届火山“AI安全攻防”挑战赛已正式开启报名通道，旨在邀请广大安全从业人员和爱好者参与竞技。该赛事聚焦于人工智能领域的安全攻防技术，通过实战对抗来提升AI系统的安全防护能力，由于原文信息有限，关于该挑战赛的具体赛制规则、奖金设置、日程安排以及官方报名截止时间等详细信息均未披露。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI1MzYzMjE0MQ==&mid=2247520184&idx=1&sn=664006f6a49a50f585121ff81a829ea7",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-02T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/4025ea55575daf8bfd8227e68b28d9638b073267.xml",
+      "feed_title": "字节跳动技术团队公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/4025ea55575daf8bfd8227e68b28d9638b073267.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI1MzYzMjE0MQ%3D%3D&mid=2247520184&idx=1&sn=664006f6a49a50f585121ff81a829ea7",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 5.45,
+      "final_score": 6.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全专家预测2026年针对企业的主要网络钓鱼与社会工程攻击趋势",
+      "title_orig": "2026年针对企业的五大网络钓鱼社会工程攻击",
+      "summary": "该报告聚焦于2026年针对企业用户的五大网络钓鱼社会工程攻击手段，旨在帮助企业识别并防范最新的网络安全威胁。文章深入探讨了攻击者如何利用社会工程学技巧诱骗员工，从而窃取企业敏感数据或入侵内部系统，但由于原文信息有限，关于这五大攻击的具体技术细节、典型案例以及相应的防御策略均未披露。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486755&idx=1&sn=c1dcf28e8a6b9603eea5aab18b53aead",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-03T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "feed_title": "安全行者老霍",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ%3D%3D&mid=2247486755&idx=1&sn=c1dcf28e8a6b9603eea5aab18b53aead",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 4.0,
+      "final_score": 4.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "解析Glasswing与Mythos项目新发现，以及如何准备下一次董事会对话",
+      "title_orig": "Project Glasswing、Mythos的发现，以及如何准备你的下一次董事会对话",
+      "summary": "该报告主要探讨了Project Glasswing与Mythos的最新发现，并指导安全主管如何准备下一次与董事会的沟通对话。文章旨在帮助企业决策者理解这些新发现的安全影响，从而在董事会会议上更有效地汇报网络安全态势，但由于原文信息有限，关于这两个项目的具体技术细节及董事会对话的沟通指南均未披露。 解析Glasswing与Mythos项目新发现，以及如何准备下一次董事会对话。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486750&idx=1&sn=72ab3b53e423a28075a33dc1191de97b",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-02T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "feed_title": "安全行者老霍",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ%3D%3D&mid=2247486750&idx=1&sn=72ab3b53e423a28075a33dc1191de97b",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 3.6,
+      "final_score": 4.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
