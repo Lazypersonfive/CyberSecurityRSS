@@ -1,0 +1,549 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-05",
+  "generated_at": "2026-06-04T23:53:37.616450Z",
+  "raw_count": 71,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t2": 10,
+    "kind_media": 4,
+    "chinese": 4,
+    "wechat": 4,
+    "kind_cn_expert": 4,
+    "kind_community": 2,
+    "tier_unknown": 2,
+    "tier_t1": 3,
+    "kind_official": 3,
+    "kind_expert": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "items": [
+    {
+      "title_zh": "思科修复 Unified CM 严重漏洞 CVE-2026-20230，概念验证 PoC 代码已公开",
+      "title_orig": "Cisco Patches CVE-2026-20230 in Unified CM as Exploit Code Goes Public",
+      "summary": "思科已修复其Unified Communications Manager中一个追踪为CVE-2026-20230的服务器端请求伪造漏洞，该漏洞允许网络上未经身份验证的攻击者向系统写入文件并提权至root权限。尽管思科产品安全事件响应团队表示目前尚未发现该漏洞在实际攻击中被利用，但由于其概念验证PoC代码已经公开，用户仍需尽快更新补丁以防范潜在的安全威胁。",
+      "tags": [
+        "思科",
+        "SSRF",
+        "漏洞修复"
+      ],
+      "url": "https://thehackernews.com/2026/06/cisco-patches-cve-2026-20230-in-unified.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-04T16:55:51+00:00",
+      "cve_ids": [
+        "CVE-2026-20230"
+      ],
+      "selection_reason": "思科核心组件的严重漏洞，且 PoC 已公开，安全人员需重点关",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-20230",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/cisco-warns-of-critical-unified-cm-flaw-with-poc-exploit-code/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "每日安全动态聚焦：OpenBMC 漏洞、EDK II 逻辑缺陷与 Cargo 凭证泄露",
+      "title_orig": "每日安全动态推送(26/6/2)",
+      "summary": "本次安全动态详细分析了多个关键组件的安全漏洞，重点涵盖了OpenBMC bmcweb中发现的四大安全漏洞，以及EDK II中由于GPT分区表测量逻辑缺陷导致PCR[5]完整性遭到破坏的问题。此外，报告还深入剖析了Cargo Sparse Index凭证泄露与Symlink缓存覆盖攻击的技术细节，旨在为固件和供应链安全研究人员提供有价值的防范建议与技术参考。",
+      "tags": [
+        "固件安全",
+        "供应链安全",
+        "漏洞动态"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960484&idx=1&sn=d774558c37f345378bcbc4b6ccb68e9e",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-02T10:36:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖固件、引导安全及供应链安全等底层关键漏洞动态。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960484&idx=1&sn=d774558c37f345378bcbc4b6ccb68e9e",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全研究员分享如何通过绕过安全补丁 CVE-2026-24884 实现任意文件写入",
+      "title_orig": "Uncovering the Blind Spot: Bypassing a Security Patch (CVE-2026–24884) to Achieve Arbitrary File…",
+      "summary": "本文详细介绍了安全研究员如何通过挑战已有的安全补丁，成功绕过 CVE-2026-24884 的修复方案。作者通过深入分析开发人员在修复漏洞时的错误假设，找到了补丁设计的盲区，从而再次实现了任意文件写入。该研究展示了漏洞挖掘中针对“已修复”代码进行二次审计的思路，强调了逻辑验证在补丁开发中的重要性。",
+      "tags": [
+        "补丁绕过",
+        "文件写入",
+        "漏洞挖掘"
+      ],
+      "url": "https://infosecwriteups.com/uncovering-the-blind-spot-bypassing-a-security-patch-cve-2026-24884-to-achieve-arbitrary-file-bc385eaa73fa?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-06-02T05:05:56+00:00",
+      "cve_ids": [
+        "CVE-2026-24884"
+      ],
+      "selection_reason": "展示了经典的补丁绕过思路，对代码审计和漏洞防御极具启发。",
+      "feed_url": "https://medium.com/feed/bugbountywriteup/tagged/bug-bounty",
+      "feed_title": "Bug Bounty in InfoSec Write-ups on Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "cve:cve-2026-24884",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WasmForge 工具发布：将 Sliver 远控工具编译为 WebAssembly 以规避检测",
+      "title_orig": "Enter the WasmForge: Compiling Sliver into WebAssembly",
+      "summary": "安全研究团队推出了一款名为WasmForge的新型加载器工具，该工具能够将Sliver等红队攻击工具系统性地编译为WebAssembly格式。通过利用WebAssembly在当前安全检测机制中的盲区，该技术可以显著降低VirusTotal等杀毒引擎的检出率，文章详细介绍了该加载器的构建原理、使用Claude技能批量应用该技术的过程及其在红队免杀对抗中的具体应用。",
+      "tags": [
+        "WebAssem",
+        "免杀技术",
+        "红队工具"
+      ],
+      "url": "https://www.praetorian.com/blog/wasmforge-sliver-webassembly/",
+      "source": "praetorian.com",
+      "category": "WebSecurity",
+      "published": "2026-06-04T13:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "利用 WebAssembly 进行免杀是前沿红队技术，值得防",
+      "feed_url": "https://www.praetorian.com/blog/feed",
+      "feed_title": "Blog | Praetorian",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "praetorian.com",
+      "story_id": "url:praetorian.com/blog/wasmforge-sliver-webassembly",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.3,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Windows 版本 Hola 浏览器遭遇供应链攻击，被植入加密货币挖矿程序",
+      "title_orig": "Hola Browser for Windows compromised to deliver cryptominer",
+      "summary": "适用于 Windows 系统的 Hola 浏览器近期遭遇了供应链攻击。安全研究人员发现，该浏览器的安装包或更新通道已被攻击者篡改，并向用户分发了一个未声明的恶意可执行文件。经过深入分析，该恶意程序已被确认为加密货币挖矿软件，会在用户不知情的情况下占用系统资源进行挖矿，目前相关受影响范围仍在调查中。",
+      "tags": [
+        "供应链攻击",
+        "挖矿木马",
+        "浏览器安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/hola-browser-for-windows-compromised-to-deliver-cryptominer/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-04T21:27:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的客户端供应链污染事件，对软件供应链防护有警示意义。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/hola-browser-for-windows-compromised-to-deliver-cryptominer",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究揭示攻击者如何利用合法 QEMU 虚拟机工具进行隐蔽内网渗透",
+      "title_orig": "The Detection & Response Chronicles: Covert Operations Through QEMU",
+      "summary": "安全研究人员详细剖析了攻击者利用合法虚拟化工具 QEMU 进行隐蔽网络渗透的战术。由于 QEMU 是企业环境中常用的可信软件，安全防护解决方案通常不会对其进行拦截。攻击者借此在受害者网络中建立低特征的隐蔽通道，进行横向移动和命令与控制（C2）通信。该研究为防御团队检测此类“利用合法工具”（LOLBins）的攻击提供了新思路。",
+      "tags": [
+        "QEMU",
+        "内网渗透",
+        "隐蔽通道"
+      ],
+      "url": "https://blog.nviso.eu/2026/06/04/the-detection-response-chronicles-covert-operations-through-qemu/",
+      "source": "blog.nviso.eu",
+      "category": "Research",
+      "published": "2026-06-04T14:26:05+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了利用合法虚拟化工具进行隐蔽渗透的技术，拓宽了检测视野。",
+      "feed_url": "https://blog.nviso.eu/feed/",
+      "feed_title": "NVISO Labs",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "blog.nviso.eu",
+      "story_id": "url:blog.nviso.eu/2026/06/04/the-detection-response-chronicles-covert-operations-through-qemu",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 预警 NAVTOR NavBox 存在硬编码凭据漏洞 CVE-2026-21404",
+      "title_orig": "NAVTOR NavBox",
+      "summary": "安全公告披露了NAVTOR NavBox航海数据终端中存在一个硬编码凭据漏洞，该漏洞追踪为CVE-2026-21404，其CVSS风险评分达到6.3分。成功利用该漏洞的本地攻击者可以获取对SOAP方法的未经授权访问，进而导致关键基础设施的业务运营面临中断风险，受影响的设备版本为NavBox 4.16.1.20，相关航运用户需高度关注并采取防护措施。",
+      "tags": [
+        "硬编码凭据",
+        "工控安全",
+        "CISA预警"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-155-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-04T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-21404"
+      ],
+      "selection_reason": "涉及关键基础设施的工控安全漏洞，硬编码凭据危害严重。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-21404",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 6.1,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "贝加莱 B&R PPT30 操作系统存在漏洞，可导致 OPC-UA 服务拒绝服务",
+      "title_orig": "B&R PPT30 Operating System",
+      "summary": "安全预警指出贝加莱B&R PPT30工业操作系统存在一个高危安全漏洞，该漏洞追踪为CVE-2025-11482，其CVSS评估分值达到了7.5分。成功利用该漏洞的攻击者可以使受影响产品上的OPC-UA服务器无法访问，从而导致工业控制系统的关键通信中断，受影响的系统版本为PPT30 Operating System 1.8.0及以下版本，相关企业需尽快采取防护措施。",
+      "tags": [
+        "工控安全",
+        "拒绝服务",
+        "OPC-UA"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-155-03",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-04T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2025-11482"
+      ],
+      "selection_reason": "工控系统核心通信协议的拒绝服务漏洞，影响工业生产连续性。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2025-11482",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 5.9,
+      "final_score": 7.7,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "日立能源 MACH HiDraw 工业软件存在缓冲区溢出漏洞可导致拒绝服务或任意代码执行",
+      "title_orig": "Hitachi Energy MACH HiDraw",
+      "summary": "日立能源官方发布安全预警，披露其 MACH HiDraw 产品中存在一个缓冲区溢出漏洞。该漏洞的触发条件为攻击者成功利用该溢出缺陷，受影响的具体版本和组件在原文中未详细列出。成功利用此漏洞可能导致应用程序崩溃并引发拒绝服务，甚至可能实现任意代码执行，目前官方已建议用户参考推荐的即时处置措施进行缓解。",
+      "tags": [
+        "日立能源",
+        "缓冲区溢出",
+        "工业控制安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-155-05",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-04T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及工业控制系统核心组件的严重溢出漏洞。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-155-05",
+      "related_urls": [
+        "https://www.cisa.gov/news-events/ics-advisories/icsa-26-155-02",
+        "https://www.cisa.gov/news-events/ics-advisories/icsa-26-155-04"
+      ],
+      "related_count": 2,
+      "score": 6,
+      "dimension_score": 5.9,
+      "final_score": 7.7,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "攻击者利用 Meta AI 客服机器人绕过安全防护成功劫持 Instagram 账户",
+      "title_orig": "Hacking Meta’s AI Chatbot",
+      "summary": "安全研究人员发现黑客正在通过说服 Meta 的 AI 支持聊天机器人来接管他人的 Instagram 账户，该漏洞利用过程已被录制成步骤视频并发布在社交平台 X 上。黑客首先使用 VPN 伪装成受害者的预估地理位置，以规避 Instagram 的自动化账户保护机制，随后通过与 Meta AI 客服展开对话，诱导其提供账户访问权限，从而实现对他人账户的非法控制。",
+      "tags": [
+        "AI客服绕过",
+        "社会工程学",
+        "凭据劫持"
+      ],
+      "url": "https://www.schneier.com/blog/archives/2026/06/hacking-metas-ai-chatbot.html",
+      "source": "schneier.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-04T11:04:09+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用大模型客服进行社工和越权的真实案例。",
+      "feed_url": "https://www.schneier.com/feed/atom/",
+      "feed_title": "Schneier on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "schneier.com",
+      "story_id": "url:schneier.com/blog/archives/2026/06/hacking-metas-ai-chatbot.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.1,
+      "final_score": 7.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员通过将历史 CVE 漏洞转化为 SAST 规则成功挖掘五个零日漏洞",
+      "title_orig": "One Agent, Five Zero-Days: Turning Past CVEs Into SAST Rules",
+      "summary": "安全工程师分享了如何通过将已知的历史 CVE 漏洞转化为静态应用程序安全测试（SAST）规则，来检测大型产品中重复出现的同类漏洞。文章指出，由于大型产品常在不同模块中重复实现相同的底层逻辑，导致同类漏洞反复出现。研究人员利用这一规律，针对特定代理产品成功挖掘出五个全新的零日漏洞，展示了规则化审计的实战价值。",
+      "tags": [
+        "SAST",
+        "代码审计",
+        "零日漏洞"
+      ],
+      "url": "https://infosecwriteups.com/one-agent-five-zero-days-turning-past-cves-into-sast-rules-650c32b20032?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-06-02T05:04:34+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍如何将历史漏洞转化为自动化审计规则的实用方法。",
+      "feed_url": "https://medium.com/feed/bugbountywriteup/tagged/bug-bounty",
+      "feed_title": "Bug Bounty in InfoSec Write-ups on Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "url:infosecwriteups.com/one-agent-five-zero-days-turning-past-cves-into-sast-rules-650c32b20032?source=rss----7b722bfd1b8d--bug_bounty",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.85,
+      "final_score": 7.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Trail of Bits 测试表明现有 AI 智能体技能扫描器无法有效拦截恶意技能",
+      "title_orig": "The sorry state of skill distribution",
+      "summary": "安全机构 Trail of Bits 对当前市场上用于检测 AI 智能体恶意技能的扫描工具进行了测试，发现其防御机制普遍失效。研究人员成功绕过了包括 ClawHub 恶意技能检测器和思科智能体技能扫描器在内的多款主流防御工具。这些恶意技能通常具有窃取凭据、外发数据以及劫持智能体等危害，测试结果表明当前的技能分发安全形势严峻。",
+      "tags": [
+        "AI安全",
+        "智能体安全",
+        "防御绕过"
+      ],
+      "url": "https://blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution/",
+      "source": "blog.trailofbits.com",
+      "category": "WebSecurity",
+      "published": "2026-06-03T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "评估了新兴 AI Agent 生态中安全扫描工具的脆弱性。",
+      "feed_url": "https://blog.trailofbits.com/feed/",
+      "feed_title": "Trail of Bits Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution",
+      "related_urls": [
+        "https://x.com/rez0__/status/2062330632366117234"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "dimension_score": 7.05,
+      "final_score": 7.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "首届火山「AI安全攻防」挑战赛正式开启报名，邀请安全技术人才参赛",
+      "title_orig": "开启报名 | 首届火山「AI安全攻防」挑战赛邀你参赛",
+      "summary": "首届火山“AI安全攻防”挑战赛已正式开启报名通道，该赛事旨在汇聚网络安全领域的顶尖人才，共同探讨和应对人工智能时代面临的新型安全威胁。本次挑战赛聚焦于 AI 模型的安全防御与漏洞挖掘，通过实战攻防演练提升行业整体的安全防护水平，主办方诚挚邀请各大高校、科研机构及企业的安全专家与爱好者积极参赛。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI1MzYzMjE0MQ==&mid=2247520184&idx=1&sn=664006f6a49a50f585121ff81a829ea7",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-02T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/4025ea55575daf8bfd8227e68b28d9638b073267.xml",
+      "feed_title": "字节跳动技术团队公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/4025ea55575daf8bfd8227e68b28d9638b073267.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI1MzYzMjE0MQ%3D%3D&mid=2247520184&idx=1&sn=664006f6a49a50f585121ff81a829ea7",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 4.9,
+      "final_score": 5.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全专家预测2026年针对企业的主要网络钓鱼与社会工程学攻击手段",
+      "title_orig": "2026年针对企业的五大网络钓鱼社会工程攻击",
+      "summary": "安全专家预测了 2026 年针对企业的主要网络钓鱼与社会工程攻击手段，指出随着人工智能技术的普及，攻击者将利用更具欺骗性的个性化手段来绕过传统的企业安全防线。企业需要提前布局防御策略，通过加强员工安全意识培训和引入先进的威胁检测系统，来应对这些日益复杂且针对性极强的网络安全威胁，确保企业核心资产的安全。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486755&idx=1&sn=c1dcf28e8a6b9603eea5aab18b53aead",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-03T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "feed_title": "安全行者老霍",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ%3D%3D&mid=2247486755&idx=1&sn=c1dcf28e8a6b9603eea5aab18b53aead",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 3.8,
+      "final_score": 4.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "无需云端同步，教你快速打造可通过手机控制的私有C***X助手",
+      "title_orig": "快速打造可手机控制的私有 C***X 助手",
+      "summary": "本文介绍了一种无需依赖云端服务即可实现数据同步的方法，帮助用户快速打造一款可通过手机进行远程控制的私有 C***X 助手。该方案不仅有效保障了用户的数据隐私与安全，还提供了便捷的移动端操作体验，让用户能够随时随地高效管理自己的私有助手，适合对数据隐私有极高要求且喜爱动手实践的技术爱好者。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUyMDgzMDMyMg==&mid=2247484722&idx=1&sn=6739628ef085005b274c75a24691d92d",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-04T13:42:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/e4a8e7ce5182a107ed90452e8738155534dd297a.xml",
+      "feed_title": "RedTeaming",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/e4a8e7ce5182a107ed90452e8738155534dd297a.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzUyMDgzMDMyMg%3D%3D&mid=2247484722&idx=1&sn=6739628ef085005b274c75a24691d92d",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 3.4,
+      "final_score": 4.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}

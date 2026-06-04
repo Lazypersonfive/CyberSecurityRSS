@@ -1,0 +1,370 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-06-05",
+  "generated_at": "2026-06-04T23:54:16.299806Z",
+  "raw_count": 26,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "direct": 10,
+    "tier_t2": 7,
+    "kind_expert": 6,
+    "tier_t1": 3,
+    "kind_official": 3,
+    "chinese": 1,
+    "kind_cn_expert": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 3,
+    "merged_total": 3
+  },
+  "items": [
+    {
+      "title_zh": "恶意 npm 包 ai-sdk-ollama 投毒事件：利用 binding.gyp 传播自复制蠕虫 Miasma 并窃取云凭证",
+      "title_orig": "Trojanized ai-sdk-ollama Delivers Miasma, a Self-Replicating npm Worm via binding.gyp | Blog | Endor Labs",
+      "summary": "安全机构 Endor Labs 检测到名为 ai-sdk-ollama 的恶意 npm 软件包，该包属于一个名为 Miasma 的活动自复制蠕虫。该恶意软件利用 binding.gyp 文件在安装时自动执行恶意代码，其核心功能是窃取用户的云凭证，并利用受害者环境进一步自我复制和传播，目前安全团队正对此类供应链威胁进行持续监测，以防范潜在的大规模云凭证泄露风险。",
+      "tags": [
+        "npm投毒",
+        "供应链安全",
+        "云凭证窃取"
+      ],
+      "url": "https://www.endorlabs.com/learn/malicious-payload-in-ai-sdk-ollama-npm-package",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-06-04T15:00:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了利用 AI 热门组件进行 npm 供应链投毒的新型蠕虫",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/malicious-payload-in-ai-sdk-ollama-npm-package",
+      "related_urls": [
+        "https://snyk.io/blog/node-gyp-supply-chain-compromise-self-propagating-npm-worm-binding-gyp/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.75,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源测试框架 jqwik 1.10.0 维护者引入针对 AI 编码助手的隐藏提示词注入抗议软件",
+      "title_orig": "Protestware by open source maintainer to hinder agentic coding: The jqwik 1.10.0 Prompt Injection",
+      "summary": "开源测试框架 jqwik 的维护者在 1.10.0 版本中加入了一种隐藏的提示词注入机制，旨在阻碍 AI 编码助手的使用。该机制利用终端转义字符向人类开发者隐藏破坏性指令，但这些指令对日志和 AI 工具依然可读，这种新型的抗议软件展示了针对 AI 辅助开发生命周期的独特攻击面，引发了开源社区对供应链安全和 AI 辅助编程风险的广泛关注。",
+      "tags": [
+        "提示词注入",
+        "抗议软件",
+        "AI安全"
+      ],
+      "url": "https://snyk.io/blog/protestware-open-source-maintainer-qwik-1-10-0-prompt-injection/",
+      "source": "snyk.io",
+      "category": "AISecurityLabs",
+      "published": "2026-06-02T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了开源维护者利用终端转义字符对抗 AI 编码的新型攻击手",
+      "feed_url": "https://snyk.io/blog/feed/",
+      "feed_title": "Snyk Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "snyk.io",
+      "story_id": "url:snyk.io/blog/protestware-open-source-maintainer-qwik-1-10-0-prompt-injection",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.9,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Trail of Bits 评估表明现有 AI 智能体恶意技能检测器均可被成功绕过",
+      "title_orig": "The sorry state of skill distribution",
+      "summary": "公共 AI 技能市场正充斥着窃取凭证、外发数据和劫持智能体的恶意技能，为此安全行业推出了新型技能扫描工具。然而 Trail of Bits 的测试表明这些检测器并不奏效，研究人员已成功绕过了 ClawHub 的恶意技能检测器以及思科的智能体技能检测工具。这表明当前的 AI 智能体生态安全防护手段仍存在严重漏洞，无法有效拦截恶意技能。",
+      "tags": [
+        "AI智能体",
+        "安全检测绕过",
+        "技能市场"
+      ],
+      "url": "https://blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution/",
+      "source": "blog.trailofbits.com",
+      "category": "AISecurityLabs",
+      "published": "2026-06-03T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "实测评估了主流 AI 智能体安全检测工具的脆弱性，极具技术参",
+      "feed_url": "https://blog.trailofbits.com/index.xml",
+      "feed_title": "Trail of Bits",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution",
+      "related_urls": [
+        "https://x.com/trailofbits/status/2062561461595975823",
+        "https://x.com/wunderwuzzi23/status/2062330573776183459"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 8.65,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "类型级安全技术：通过设计安全的类型系统预防 AI 生成代码中的常见漏洞",
+      "title_orig": "Type Level Security: The future of secure AI code generation?",
+      "summary": "本文探讨了如何利用类型级安全技术来预防 AI 自动生成代码中产生的各类安全漏洞。通过采用设计即安全的类型系统，开发者可以将常见的代码缺陷转化为编译时错误，从而在源头上阻止漏洞的产生。这种方法为应对 AI 编码助手带来的代码质量与安全挑战提供了一种全新的、系统性的防御思路。",
+      "tags": [
+        "类型级安全",
+        "AI安全编码",
+        "漏洞防御"
+      ],
+      "url": "https://snyk.io/blog/type-level-security/",
+      "source": "snyk.io",
+      "category": "AISecurityLabs",
+      "published": "2026-06-04T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了从编译器和类型系统层面解决 AI 生成代码安全问题的新",
+      "feed_url": "https://snyk.io/blog/feed/",
+      "feed_title": "Snyk Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "snyk.io",
+      "story_id": "url:snyk.io/blog/type-level-security",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.0,
+      "final_score": 7.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Snyk 剖析 AI 智能体开发生命周期带来的全新软件供应链安全风险",
+      "title_orig": "The New Security Risks of the Agentic Development Lifecycle",
+      "summary": "AI 智能体正在深刻改变软件的构建方式，同时也重塑了安全风险的起点。本文分析了在智能体开发生命周期中，确保开发过程本身的安全性与确保最终生成的代码安全性同样重要。随着 AI 自动执行更多开发任务，传统的安全边界发生转移，企业需要重新评估并构建适应智能体协作的全新安全防护体系。",
+      "tags": [
+        "智能体开发",
+        "软件生命周期",
+        "供应链安全"
+      ],
+      "url": "https://snyk.io/blog/agentic-development-lifecycle/",
+      "source": "snyk.io",
+      "category": "AISecurityLabs",
+      "published": "2026-06-03T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "前瞻性地分析了 AI 智能体介入开发流程后带来的全新安全边界",
+      "feed_url": "https://snyk.io/blog/feed/",
+      "feed_title": "Snyk Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "snyk.io",
+      "story_id": "url:snyk.io/blog/agentic-development-lifecycle",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.1,
+      "final_score": 7.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Unit 42 发布 npm 威胁态势分析：揭示蠕虫化恶意软件与 CI/CD 持续性攻击",
+      "title_orig": "The npm Threat Landscape: Attack Surface and Mitigations (Updated June 2)",
+      "summary": "安全团队 Unit 42 对 Shai Hulud 事件后的 npm 供应链威胁演变进行了深入分析，并发布了最新的威胁全景报告。该报告揭示了当前 npm 生态中存在的新型威胁，包括具有蠕虫传播特性的恶意软件、在 CI/CD 流程中实现持久化驻留的技术以及多阶段攻击，并针对这些复杂的攻击面提出了相应的缓解措施，以帮助开发者和企业加强供应链安全防护。",
+      "tags": [
+        "npm安全",
+        "供应链攻击",
+        "CICD安全"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-06-02T17:30:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统性总结了 npm 生态中蠕虫化及 CI/CD 持久化攻击",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 5.75,
+      "final_score": 7.25,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenAI 提出前沿人工智能民主化治理蓝图以构建美国联邦安全框架",
+      "title_orig": "A blueprint for democratic governance of frontier AI",
+      "summary": "人工智能研究机构 OpenAI 概述了一份旨在对前沿人工智能进行民主化治理的美国治理蓝图，提议建立一个联邦级别的监管框架。该框架旨在确保前沿 AI 模型的安全性、系统弹性和国家安全，通过政策引导和标准制定来规范前沿人工智能技术在安全可控的轨道上发展，防范潜在的系统性风险，为未来人工智能的合规发展奠定了政策基础。",
+      "tags": [
+        "AI治理",
+        "人工智能安全",
+        "安全框架"
+      ],
+      "url": "https://openai.com/index/frontier-safety-blueprint",
+      "source": "openai.com",
+      "category": "FirstParty",
+      "published": "2026-06-03T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "OpenAI 官方发布的前沿 AI 治理与安全框架蓝图，具有",
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "openai.com",
+      "story_id": "url:openai.com/index/frontier-safety-blueprint",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 4.4,
+      "final_score": 5.9,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "FlutterBridge 行动：恶意广告活动利用 Flutter 框架传播 macOS 后门",
+      "title_orig": "Operation FlutterBridge: macOS Malvertising Campaign Spreads New FlutterShell Backdoor",
+      "summary": "安全团队 Unit 42 监测到一起名为 FlutterBridge 的恶意广告活动，该活动主要针对 macOS 用户分发名为 FlutterShell 的新型后门程序。该后门是使用跨平台 Flutter 框架构建的，这表明攻击者正尝试利用新型开发框架来规避传统的 macOS 安全检测机制，该发现提醒广大 macOS 用户和企业需要警惕此类新型跨平台后门威胁。",
+      "tags": [
+        "macOS后门",
+        "FlutterS",
+        "恶意广告"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/flutterbridge-new-fluttershell-backdoor/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-06-02T10:00:31+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了首次出现的利用 Flutter 跨平台框架构建的 ma",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/flutterbridge-new-fluttershell-backdoor",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 4.3,
+      "final_score": 5.8,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "为什么传统EDR和代理无法有效防御npm等软件包中的供应链恶意软件",
+      "title_orig": "Why EDR and proxy won’t save you from supply chain malware",
+      "summary": "传统EDR和代理在设计上并非针对供应链恶意软件，当恶意代码通过npm install等正常开发指令引入时，其行为在系统层面看起来与正常操作无异。由于这些工具无法区分合法的开发活动与隐藏在依赖项中的恶意行为，导致供应链攻击能够轻易绕过现有的边界和终端防御。安全从业者需要认识到传统防御的局限性，并在开发生命周期的早期阶段引入针对依赖项的安全检测机制。",
+      "tags": [
+        "供应链安全",
+        "EDR",
+        "npm安全"
+      ],
+      "url": "https://www.aikido.dev/blog/edr-proxy-wont-protect-supply-chain-malware",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-06-02T20:45:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了传统终端安全产品在应对软件供应链攻击时的防御盲区。",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/edr-proxy-wont-protect-supply-chain-malware",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 4.75,
+      "final_score": 4.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "全国首届文科生AI黑客马拉松落幕，探索无代码背景下的AI应用创新",
+      "title_orig": "不写代码，照样赢！全国首届文科生AI黑客松圆满落幕",
+      "summary": "全国首届文科生AI黑客马拉松顺利落幕，该活动旨在探索非计算机专业背景人员如何利用无代码或低代码工具进行AI应用的创新与实践。参赛者在不编写传统代码的情况下，通过提示词工程和现有AI平台构建出多种应用场景，展示了AI技术平民化带来的新可能性。这一赛事为安全从业者评估非技术人员使用AI工具可能带来的新型安全边界变化提供了参考视角。",
+      "tags": [
+        "AI安全",
+        "黑客松",
+        "无代码"
+      ],
+      "url": "https://www.anquanke.com/post/id/315595",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-06-03T20:27:26+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了非技术人员利用AI工具创新的趋势，对评估AI安全边界有",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315595",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 1.15,
+      "final_score": 1.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}

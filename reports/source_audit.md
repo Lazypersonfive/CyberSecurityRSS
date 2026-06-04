@@ -1,20 +1,23 @@
 # Source Registry Audit
 
-- generated_for: 2026-06-04
-- dates: 2026-06-04, 2026-06-03, 2026-06-02, 2026-06-01, 2026-05-31, 2026-05-30, 2026-05-29
+- generated_for: 2026-06-05
+- dates: 2026-06-05, 2026-06-04, 2026-06-03, 2026-06-02, 2026-06-01, 2026-05-31, 2026-05-30
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 105 | 15 | 20 | 70 | 0 | 10 | 15 | 39 | 0 |
-| ai_security | 67 | 10 | 1 | 56 | 0 | 6 | 10 | 6 | 7 |
-| finance | 70 | 2 | 0 | 68 | 0 | 12 | 2 | 0 | 0 |
-| security | 105 | 14 | 0 | 91 | 0 | 0 | 14 | 5 | 30 |
+| ai | 105 | 15 | 21 | 69 | 0 | 10 | 15 | 39 | 0 |
+| ai_security | 67 | 11 | 0 | 56 | 0 | 6 | 11 | 5 | 6 |
+| finance | 70 | 3 | 0 | 67 | 0 | 13 | 3 | 0 | 0 |
+| security | 105 | 12 | 0 | 91 | 2 | 0 | 12 | 5 | 28 |
 
 ## Unknown Selected Sources
 
-No unknown selected sources in the audited window.
+| Source | Count | Boards | Latest Example |
+|---|---:|---|---|
+| `blog.nviso.eu` | 1 | security | [安全研究揭示攻击者如何利用合法 QEMU 虚拟机工具进行隐蔽内网渗透](https://blog.nviso.eu/2026/06/04/the-detection-response-chronicles-covert-operations-through-qemu/) |
+| `praetorian.com` | 1 | security | [WasmForge 工具发布：将 Sliver 远控工具编译为 WebAssembly 以规避检测](https://www.praetorian.com/blog/wasmforge-sliver-webassembly/) |
 
 ## Review Rule
 
