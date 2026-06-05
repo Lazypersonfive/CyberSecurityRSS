@@ -1,0 +1,557 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-06",
+  "generated_at": "2026-06-05T23:52:59.419525Z",
+  "raw_count": 76,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t1": 3,
+    "kind_official": 3,
+    "tier_t2": 12,
+    "kind_media": 4,
+    "chinese": 6,
+    "kind_cn_expert": 6,
+    "wechat": 2,
+    "kind_expert": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "items": [
+    {
+      "title_zh": "CISA 将 SolarWinds Serv-U 资源消耗漏洞加入已知在野利用漏洞目录",
+      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "summary": "美国网络安全和基础设施安全局已将 SolarWinds Serv-U 中一个代号为 CVE-2026-28318 的不受控制的资源消耗漏洞添加到其已知被利用漏洞目录中。该漏洞是恶意网络行为者常用的攻击媒介，对联邦企业构成重大风险，目前该机构已要求联邦机构按照绑定运营指令的要求在限期内完成修复以降低安全风险，防止潜在的网络攻击。",
+      "tags": [
+        "SolarWin",
+        "漏洞利用",
+        "CISA"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/06/05/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-05T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-28318"
+      ],
+      "selection_reason": "涉及知名软件的在野利用漏洞，具有高修复优先级。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-28318",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软发现 Claude Code GitHub Action 提示词注入漏洞可泄露工作流凭据",
+      "title_orig": "Securing CI/CD in an agentic world: Claude Code Github action case",
+      "summary": "微软威胁情报团队在 Claude Code GitHub Action 中发现了一个提示词注入路径，攻击者在特定条件下可通过该路径获取工作流中的敏感凭据。目前 Anthropic 已针对该漏洞实施了相应的缓解措施，微软也发布了安全指南，以帮助用户保障由人工智能驱动的持续集成与持续交付工作流的安全并防范此类攻击，降低企业面临的风险。",
+      "tags": [
+        "提示词注入",
+        "AI安全",
+        "CI/CD"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/06/05/securing-ci-cd-in-agentic-world-claude-code-github-action-case/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-05T16:46:47+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 AI Agent 在 CI/CD 场景下的新型安全边",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/06/05/securing-ci-cd-in-agentic-world-claude-code-github-action-case",
+      "related_urls": [
+        "https://thehackernews.com/2026/06/claude-code-github-action-flaw-let-one.html"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.8,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "思科警告 Catalyst SD-WAN Manager 未补丁零日漏洞已被用于获取 Root 权限",
+      "title_orig": "Cisco warns of unpatched SD-WAN zero-day exploited in attacks",
+      "summary": "思科发布安全警告称，其 Catalyst SD-WAN Manager 中存在一个追踪为 CVE-2026-20245 的高危零日漏洞，且目前尚未发布修复补丁。攻击者正在积极利用该漏洞以在受影响的系统上实现 root 权限提升，由于该漏洞已被用于活跃的攻击中，思科建议用户密切关注后续的安全更新并采取防范措施，以保护受影响的系统安全。 思科警告 Catalyst SD-WAN Manager 未补丁零日漏洞已被用于获取 Root 权限。",
+      "tags": [
+        "思科",
+        "零日漏洞",
+        "提权"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-cisco-sd-wan-flaw-exploited-in-zero-day-attacks-to-gain-root/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-05T06:24:20+00:00",
+      "cve_ids": [
+        "CVE-2026-20245"
+      ],
+      "selection_reason": "关键网络基础设施的未补丁零日漏洞，且已被在野利用。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "cve:cve-2026-20245",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于执行追踪的可注入点与代码空洞自动化挖掘技术研究",
+      "title_orig": "更隐蔽的白利用：基于执行追踪的可注入点与代码空洞自动化挖掘",
+      "summary": "本研究聚焦于一种更隐蔽的“白利用”技术，详细介绍了如何基于执行追踪来实现可注入点与代码空洞的自动化挖掘。该技术适用于软件供应链安全审计与漏洞挖掘场景，能够帮助安全从业者自动化发现传统静态分析难以检测的深层逻辑漏洞与隐蔽注入通道，对于提升自动化漏洞发现能力具有重要参考价值。",
+      "tags": [
+        "白利用",
+        "执行追踪",
+        "自动化挖洞"
+      ],
+      "url": "https://xz.aliyun.com/news/92254",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-06-05T03:03:18+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了自动化漏洞挖掘的新思路，技术实用性强。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92254",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.5,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "思科修复 Unified CM 任意文件写入漏洞，公开 PoC 增加安全风险",
+      "title_orig": "Cisco Patches CVE-2026-20230 in Unified CM as Exploit Code Goes Public",
+      "summary": "思科修复了 Unified Communications Manager 中一个追踪为 CVE-2026-20230 的服务端请求伪造漏洞，该漏洞允许未经身份验证的攻击者向系统写入文件并提权至 root 权限。虽然思科表示尚未发现该漏洞在实际攻击中被利用，但由于概念验证漏洞利用代码已公开，用户应尽快应用补丁以防范潜在威胁，避免系统被攻击者控制。 思科修复 Unified CM 任意文件写入漏洞，公开 PoC 增加安全风险。",
+      "tags": [
+        "思科",
+        "SSRF",
+        "PoC"
+      ],
+      "url": "https://thehackernews.com/2026/06/cisco-patches-cve-2026-20230-in-unified.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-04T16:55:51+00:00",
+      "cve_ids": [
+        "CVE-2026-20230"
+      ],
+      "selection_reason": "漏洞 PoC 已公开，且可导致 Root 提权，需尽快关注。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-20230",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI Agent 信任边界探讨：从中转 API 到 Agent Tool Call 的供应链劫持",
+      "title_orig": "AI Agent 的信任边界：从中转 API 到 Agent Tool Call 的供应链劫持",
+      "summary": "在先知安全沙龙第十四场活动中，安全专家深入探讨了 AI 智能体的信任边界安全问题，重点分析了从中转 API 到智能体工具调用过程中可能面临的供应链劫持风险。该研究揭示了 AI 智能体在调用外部工具和接口时的安全脆弱性，适用于大语言模型应用开发与安全审计，对构建安全的 AI 架构具有指导意义。",
+      "tags": [
+        "AIAgent",
+        "供应链劫持",
+        "API安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92255",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-06-05T03:05:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚焦 AI 时代新兴的 Agent 供应链与工具调用安全问题",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92255",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "AGENT-MINER：针对通用 AI 智能体的自动化安全风险挖掘框架",
+      "title_orig": "AGENT-MINER：攻击通用 AI 智能体与自动化风险挖掘",
+      "summary": "在先知安全沙龙第十四场活动中，安全专家介绍了名为 AGENT-MINER 的安全研究成果，该技术专注于攻击通用 AI 智能体并进行自动化的安全风险挖掘。该框架适用于 AI 系统的红蓝对抗与自动化漏洞测试，展示了如何系统化地发现 AI 智能体在各层面的安全缺陷，是安全从业者研究 AI 攻防的重要参考，有助于提升人工智能系统的整体安全性。",
+      "tags": [
+        "AI智能体",
+        "自动化测试",
+        "漏洞挖掘"
+      ],
+      "url": "https://xz.aliyun.com/news/92253",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-06-05T03:00:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对 AI Agent 的自动化漏洞挖掘工具与方法论。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92253",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "甲方视角下的体系化 AI 渗透测试与协同作战安全实践",
+      "title_orig": "协同作战：甲方视角的体系化 AI 渗透实践",
+      "summary": "在先知安全沙龙第十四场活动中，安全专家从甲方安全团队的视角出发，分享了如何开展体系化的 AI 渗透测试实践与协同作战。文章详细阐述了在企业实际业务场景中，如何评估 AI 系统的安全风险并建立相应的防御检测机制，为企业安全建设人员落地 AI 安全防护提供了宝贵的实战经验与体系化建设思路。",
+      "tags": [
+        "甲方安全",
+        "AI渗透测试",
+        "协同作战"
+      ],
+      "url": "https://xz.aliyun.com/news/92252",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-06-05T02:57:55+00:00",
+      "cve_ids": [],
+      "selection_reason": "从甲方实战视角出发，具有极高的落地和借鉴价值。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92252",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "微软更新智能体AI系统失效模式分类法：红队实战总结的七种新威胁",
+      "title_orig": "Updating the taxonomy of failure modes in agentic AI systems: What a year of red teaming taught us",
+      "summary": "微软基于过去12个月的红队实战经验，更新了智能体AI系统的失效模式分类法。该更新引入了包括供应链劫持和目标劫持在内的七种全新失效模式，旨在应对针对智能体AI系统日益增加的真实世界攻击。文章不仅分析了这些新型威胁的运作机制，还为安全团队提供了急需的实用缓解措施，以提升AI系统的防御能力。",
+      "tags": [
+        "人工智能安全",
+        "红队对抗",
+        "智能体安全"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/06/04/updating-taxonomy-failure-modes-agentic-ai-systems-year-red-teaming-taught-us/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-04T19:14:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "微软官方总结的AI智能体新型威胁分类，极具前瞻性。",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/06/04/updating-taxonomy-failure-modes-agentic-ai-systems-year-red-teaming-taught-us",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.05,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客利用 Everest Forms Pro 插件高危漏洞接管 WordPress 网站",
+      "title_orig": "Hackers Exploit Critical Everest Forms Pro WordPress Plugin Flaw to Take Over Sites",
+      "summary": "黑客正积极利用WordPress插件Everest Forms Pro中一个评分为9.8的严重远程代码执行漏洞，该漏洞影响1.9.12及以下所有版本。攻击者可利用该漏洞在受影响网站上执行任意代码并完全控制网站，目前该插件在活跃网站中约有4000次安装，官方已针对此安全漏洞发布了修复补丁。 黑客利用 Everest Forms Pro 插件高危漏洞接管 WordPress 网站。",
+      "tags": [
+        "WordPres",
+        "漏洞利用",
+        "代码执行"
+      ],
+      "url": "https://thehackernews.com/2026/06/hackers-exploit-critical-everest-forms.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-05T08:38:59+00:00",
+      "cve_ids": [
+        "CVE-2026-3300"
+      ],
+      "selection_reason": "影响广泛的CMS插件高危在野利用漏洞，需及时关注。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-3300",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于结构化工作流与 MCP 集成构建智能体化恶意软件分析流水线",
+      "title_orig": "构建一条智能体化的恶意软件分析流水线",
+      "summary": "本文介绍了一种构建智能体化恶意软件分析流水线的方法，旨在突破大语言模型上下文窗口的限制。该方案通过引入结构化工作流、持久化案例状态，并结合 MCP 集成反汇编工具，实现了更深层次的样本还原。该技术适用于自动化恶意软件分析场景，展示了如何利用 AI 智能体提升逆向工程的效率和深度。",
+      "tags": [
+        "恶意软件分析",
+        "AI智能体",
+        "逆向工程"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496291&idx=1&sn=dd4fcde3b868ba4c76e5a672ae837af5",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-05T02:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI智能体与传统逆向分析工具结合的前沿实践。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496291&idx=1&sn=dd4fcde3b868ba4c76e5a672ae837af5",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.6,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Cobalt Strike 中的 BOF 鸡尾酒：在后渗透阶段融合规避技术",
+      "title_orig": "BOF Cocktails in Cobalt Strike",
+      "summary": "本文探讨了Cobalt Strike中被称为“BOF鸡尾酒”的执行模式，该模式旨在将规避战术直接融合到后渗透阶段的Beacon Object Files中。通过这种融合，这些文件在运行过程中无需再依赖外部代理或加载器来实施规避，文章详细阐述了该模式解决的具体问题并建议读者阅读前作以获得完整背景。 Cobalt Strike 中的 BOF 鸡尾酒：在后渗透阶段融合规避技术。",
+      "tags": [
+        "Cobalt S",
+        "BOF",
+        "免杀规避"
+      ],
+      "url": "https://rastamouse.me/bof-cocktails-in-cobalt-strike/",
+      "source": "rastamouse.me",
+      "category": "WebSecurity",
+      "published": "2026-06-05T12:03:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入探讨了红队后渗透阶段的高级规避与免杀技术。",
+      "feed_url": "https://rastamouse.me/feed/",
+      "feed_title": "Rasta Mouse",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "红队研究",
+      "source_key": "rastamouse.me",
+      "story_id": "url:rastamouse.me/bof-cocktails-in-cobalt-strike",
+      "related_urls": [
+        "https://www.redpacketsecurity.com/cobalt-strike-beacon-detected-47-109-198-8-port-6000-41/",
+        "https://www.redpacketsecurity.com/cobalt-strike-beacon-detected-43-139-170-200-port-80-2/",
+        "https://www.redpacketsecurity.com/cobalt-strike-beacon-detected-39-100-88-189-port-9001-2/",
+        "https://www.redpacketsecurity.com/cobalt-strike-beacon-detected-106-13-29-104-port-80-25/",
+        "https://www.redpacketsecurity.com/cobalt-strike-beacon-detected-168-222-97-93-port-80-2/",
+        "https://www.redpacketsecurity.com/cobalt-strike-beacon-detected-47-236-91-172-port-8000/",
+        "https://www.redpacketsecurity.com/cobalt-strike-beacon-detected-45-202-249-88-port-80/"
+      ],
+      "related_count": 7,
+      "score": 7,
+      "dimension_score": 7.3,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Trail of Bits 评估表明现有 AI 智能体恶意技能扫描器均可被绕过",
+      "title_orig": "The sorry state of skill distribution",
+      "summary": "公共技能市场正充斥着窃取凭据、外发数据和劫持智能体的恶意技能，而安全行业推出的新型技能扫描器被证实无法有效检测这些威胁。研究人员近期成功绕过了ClawHub和思科等机构推出的恶意技能检测工具，表明这些旨在安装前检测恶意技能的工具在实际应用中并不能发挥预期的防御作用。",
+      "tags": [
+        "AI安全",
+        "技能扫描器",
+        "绕过技术"
+      ],
+      "url": "https://blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution/",
+      "source": "blog.trailofbits.com",
+      "category": "WebSecurity",
+      "published": "2026-06-03T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了当前AI智能体生态安全防御工具的普遍脆弱性。",
+      "feed_url": "https://blog.trailofbits.com/feed/",
+      "feed_title": "Trail of Bits Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/06/03/the-sorry-state-of-skill-distribution",
+      "related_urls": [
+        "https://x.com/rez0__/status/2062330632366117234"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.5,
+      "final_score": 7.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "美国超 900 个加油站自动计量仪系统暴露于互联网并面临攻击威胁",
+      "title_orig": "Over 900 US gas station tank gauge systems exposed to attacks",
+      "summary": "研究发现，美国有超过 900 个用于监控关键基础设施行业燃料和化学品储罐的自动计量仪（ATG）系统暴露在互联网上。这些系统目前正面临持续的攻击威胁，攻击者可能利用暴露的接口干扰监控或篡改数据。原文未披露具体的漏洞编号或技术细节，但强调了关键基础设施资产暴露带来的严重安全风险。",
+      "tags": [
+        "工控安全",
+        "关键基础设施",
+        "资产暴露"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/over-900-us-gas-station-tank-gauge-systems-exposed-to-attacks/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-05T14:50:15+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施的重大安全隐患，具有行业警示意义。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/over-900-us-gas-station-tank-gauge-systems-exposed-to-attacks",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.2,
+      "final_score": 7.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "利用本地同步技术快速打造可通过手机控制的私有 C***X 助手",
+      "title_orig": "快速打造可手机控制的私有 C***X 助手",
+      "summary": "本文介绍了一种无需依赖云端服务即可实现数据同步的方案，用于快速构建可通过手机控制的私有 C***X 助手。该技术利用本地化部署和同步机制，保障了用户数据的私密性与安全性。文章详细阐述了该助手的搭建流程和控制原理，适合对个人隐私保护和私有化部署感兴趣的安全从业者及技术爱好者参考。",
+      "tags": [
+        "私有化部署",
+        "本地同步",
+        "安全助手"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUyMDgzMDMyMg==&mid=2247484722&idx=1&sn=6739628ef085005b274c75a24691d92d",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-04T13:42:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了实用的私有化安全工具构建方案，兼顾便利与隐私。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/e4a8e7ce5182a107ed90452e8738155534dd297a.xml",
+      "feed_title": "RedTeaming",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/e4a8e7ce5182a107ed90452e8738155534dd297a.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzUyMDgzMDMyMg%3D%3D&mid=2247484722&idx=1&sn=6739628ef085005b274c75a24691d92d",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 4.4,
+      "final_score": 5.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
