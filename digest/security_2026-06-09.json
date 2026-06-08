@@ -1,0 +1,552 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-09",
+  "generated_at": "2026-06-08T23:54:14.321039Z",
+  "raw_count": 56,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "tier_t2": 10,
+    "kind_media": 7,
+    "chinese": 4,
+    "kind_cn_expert": 2,
+    "kind_community": 3,
+    "kind_expert": 1,
+    "tier_unknown": 3,
+    "wechat": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 2,
+    "merged_total": 3
+  },
+  "items": [
+    {
+      "title_zh": "CISA 将 BerriAI LiteLLM 命令注入与 Check Point 身份验证绕过漏洞加入 KEV 目录",
+      "title_orig": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
+      "summary": "美国网络安全和基础设施安全局已将两个已被积极利用的漏洞加入其已知被利用漏洞目录，以应对活跃的网络威胁。其中，CVE-2026-42271 是存在于 BerriAI LiteLLM 中的命令注入漏洞，而 CVE-2026-50751 则是 Check Point 安全网关的身份验证不当漏洞，这些漏洞是恶意网络攻击者的常用攻击媒介，对组织构成重大安全风险，需要引起相关机构的高度重视。",
+      "tags": [
+        "CISA",
+        "KEV",
+        "漏洞预警"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/06/08/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-08T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-42271",
+        "CVE-2026-50751"
+      ],
+      "selection_reason": "涉及主流安全网关及 AI 基础设施的在野利用漏洞。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-42271,cve-2026-50751",
+      "related_urls": [
+        "https://www.rapid7.com/blog/post/etr-critical-check-point-vpn-zero-day-exploited-in-the-wild-cve-2026-50751"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux 内核单字符错误导致本地 Root 提权与容器逃逸漏洞 CVE-2026-23111 细节及 PoC 公开",
+      "title_orig": "One-Character Linux Kernel Flaw Enables Local Root Access, Exploits Now Public",
+      "summary": "安全研究人员公开了 Linux 内核释放后重用漏洞 CVE-2026-23111 的详细技术分析与可用漏洞利用程序，该漏洞源于内核的 nf_tables 数据包过滤代码。该漏洞允许无特权的本地用户提升至 root 权限并突破容器限制，虽然已于 2026 年 2 月 5 日在 upstream 完成修复，但 Exodus Intelligence 仍在 6 月 8 日发布了完整的技术细节，引发了安全领域的广泛关注。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "容器逃逸"
+      ],
+      "url": "https://thehackernews.com/2026/06/one-character-linux-kernel-flaw-enables.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-08T20:17:39+00:00",
+      "cve_ids": [
+        "CVE-2026-23111"
+      ],
+      "selection_reason": "高危害的内核级提权与容器逃逸漏洞，且已公开 PoC。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-23111",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Check Point 修复已被 Qilin 勒索软件组织用于零日攻击的 VPN 严重漏洞",
+      "title_orig": "Check Point links VPN zero-day attacks to Qilin ransomware gang",
+      "summary": "以色列网络安全公司 Check Point 发布了紧急安全更新，以修复一个影响其远程访问 VPN 和移动访问部署的严重漏洞。该漏洞此前已被 Qilin 勒索软件组织作为零日漏洞用于发起网络攻击，对企业网络安全构成严重威胁，官方目前已发布安全补丁，建议受影响的用户和组织尽快应用更新以阻止潜在的恶意入侵。",
+      "tags": [
+        "CheckPoi",
+        "VPN漏洞",
+        "勒索软件"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/check-point-links-vpn-zero-day-attacks-to-qilin-ransomware-gang/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-08T13:05:16+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及安全网关零日漏洞被勒索软件组织利用的真实案例。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/check-point-links-vpn-zero-day-attacks-to-qilin-ransomware-gang",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "学术研究揭示大语言模型后训练阶段的顺序数据投毒攻击威胁",
+      "title_orig": "大语言模型后训练中的顺序数据投毒",
+      "summary": "学术研究探讨了大语言模型后训练过程中的顺序数据投毒攻击，分析了跨多个训练阶段进行顺序投毒的潜在安全威胁与技术机制。大语言模型后训练包含监督微调以及随后的人类反馈强化学习或直接偏好优化等多阶段，各阶段数据源可能不可信，而现有研究多假设投毒发生于单一阶段，本文填补了这一多阶段投毒研究的空白。",
+      "tags": [
+        "大语言模型",
+        "数据投毒",
+        "AI安全"
+      ],
+      "url": "https://paper.seebug.org/3488",
+      "source": "paper.seebug.org",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-08T03:46:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 安全前沿，揭示了多阶段后训练的投毒风险。",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3488",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.75,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全研究员针对 Twig 模板引擎沙箱绕过漏洞 CVE-2026-46640 开发 Payload",
+      "title_orig": "CVE-2026-46640: Developing payloads for Twig sandbox bypass",
+      "summary": "安全研究员针对 Twig 模板引擎中被发现的沙箱绕过漏洞 CVE-2026-46640 进行了深入研究，并成功开发了漏洞利用 Payload。该研究源于 Glasswing 项目披露的多个沙箱绕过漏洞，其中该漏洞与另一个漏洞被认为具有通用可利用性，研究员详细记录了 Payload 的开发过程，并为其编写了相应的 SSTImap 模块，为安全社区提供了重要的参考资料。",
+      "tags": [
+        "Twig",
+        "沙箱绕过",
+        "SSTI"
+      ],
+      "url": "https://www.reddit.com/r/redteamsec/comments/1tyx0ss/cve202646640_developing_payloads_for_twig_sandbox/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-06-07T00:09:49+00:00",
+      "cve_ids": [
+        "CVE-2026-46633",
+        "CVE-2026-46640"
+      ],
+      "selection_reason": "展示了模板注入与沙箱绕过漏洞的实际 Payload 构造过程",
+      "feed_url": "https://www.reddit.com/r/redteamsec/.rss",
+      "feed_title": "Red Team Security",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "cve:cve-2026-46633,cve-2026-46640",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员利用 Claude AI 发现并修复加密货币 Zcash 严重隐私漏洞",
+      "title_orig": "Critical Zcash Vulnerability Found and Fixed",
+      "summary": "安全研究员 Taylor Hornby 在 Zcash Orchard 隐私池中发现了一个严重安全漏洞，目前该漏洞已被定位并完成修复。该研究员是受 Zcash 团队专门聘请进行安全审查的，并在 5 月 29 日借助 Claude Opus 4.8 快速发现了该问题，而 Orchard 隐私池是 Zcash 最新且最先进的屏蔽交易技术，该漏洞的发现对加密货币用户和整个生态系统至关重要。",
+      "tags": [
+        "Zcash",
+        "AI辅助安全",
+        "加密货币"
+      ],
+      "url": "https://www.schneier.com/blog/archives/2026/06/critical-zcash-vulnerability-found-and-fixed.html",
+      "source": "schneier.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-08T17:06:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用大语言模型辅助发现区块链底层严重漏洞的实例。",
+      "feed_url": "https://www.schneier.com/feed/atom/",
+      "feed_title": "Schneier on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "schneier.com",
+      "story_id": "url:schneier.com/blog/archives/2026/06/critical-zcash-vulnerability-found-and-fixed.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.85,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Shai-Hulud 供应链攻击通过 19 个科学计算类 PyPI 恶意包窃取开发者凭据",
+      "title_orig": "New Shai-Hulud attack trojanizes 19 science-focused PyPI packages",
+      "summary": "黑客发起了一场名为 Shai-Hulud 的新型供应链攻击，入侵并向 PyPI 官方仓库投毒了 19 个专注于科学计算的 Python 软件包。这些被篡改的恶意包已被累计下载数十万次，其内部植入了旨在窃取开发者敏感凭据的木马程序，目前相关恶意包已被安全研究人员识别，该事件揭示了针对开发者生态的供应链投毒具有极大危害性。",
+      "tags": [
+        "PyPI",
+        "供应链攻击",
+        "凭据窃取"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-shai-hulud-attack-trojanizes-19-science-focused-pypi-packages/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-08T20:41:35+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对特定开发者群体的 PyPI 供应链投毒事件，下载量巨大。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/new-shai-hulud-attack-trojanizes-19-science-focused-pypi-packages",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.9,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软紧急关闭 70 多个遭黑客入侵的 GitHub 仓库以阻止针对 AI 用户的恶意软件",
+      "title_orig": "Microsoft Hacked to Deliver Malware to Claude and Gemini Users",
+      "summary": "微软采取了极不寻常的紧急安全措施，关闭了其旗下的 70 多个官方 GitHub 代码仓库，以阻止恶意软件的进一步扩散。此举是因为黑客入侵了这些仓库并向其中植入了恶意软件，企图向使用 Claude 和 Gemini 等 AI 编程助手的用户分发该恶意程序，以窃取这些用户的敏感凭据，微软通过下线仓库阻断了分发渠道，从而保护了广大用户的安全。",
+      "tags": [
+        "GitHub",
+        "供应链安全",
+        "AI助手"
+      ],
+      "url": "https://www.404media.co/microsoft-hacked-to-deliver-malware-to-claude-and-gemini-users/",
+      "source": "404media.co",
+      "category": "AI",
+      "published": "2026-06-08T15:50:35+00:00",
+      "cve_ids": [],
+      "selection_reason": "微软官方仓库遭入侵并被用于针对 AI 开发者投毒，影响重大。",
+      "feed_url": "https://www.404media.co/rss",
+      "feed_title": "404 Media",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "404media.co",
+      "story_id": "url:404media.co/microsoft-hacked-to-deliver-malware-to-claude-and-gemini-users",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.9,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客窃取KubeConfig远程调用ApiServer创建特权容器获取Node节点权限应急排查",
+      "title_orig": "k8s KubeConfig泄露-黑客远程调用ApiServer创建特权容器获取Node节点权限应急排查",
+      "summary": "在近两年的应急响应案例中，云上内网被入侵后KubeConfig文件遭黑客窃取的k8s安全事件逐渐增多，对云上资产安全造成了严重威胁。黑客通过窃取的凭证远程调用ApiServer，在集群中创建特权容器，从而成功获取Node节点的控制权限，该文章详细梳理了针对此类入侵事件的应急排查流程、技术细节与防范对策，旨在帮助安全人员快速定位并解决此类安全隐患。",
+      "tags": [
+        "Kubernet",
+        "容器安全",
+        "应急响应"
+      ],
+      "url": "https://zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2-%e9%bb%91%e5%ae%a2%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8apiserver%e5%88%9b%e5%bb%ba%e7%89%b9%e6%9d%83%e5%ae%b9%e5%99%a8%e8%8e%b7%e5%8f%96node%e8%8a%82%e7%82%b9%e6%9d%83/",
+      "source": "zgao.top",
+      "category": "RedTeam",
+      "published": "2026-06-08T04:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了云原生环境下凭证泄露后的典型攻击路径与排查方法。",
+      "feed_url": "https://zgao.top/feed/",
+      "feed_title": "Zgao's blog",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "zgao.top",
+      "story_id": "url:zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2-%e9%bb%91%e5%ae%a2%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8apiserver%e5%88%9b%e5%bb%ba%e7%89%b9%e6%9d%83%e5%ae%b9%e5%99%a8%e8%8e%b7%e5%8f%96node%e8%8a%82%e7%82%b9%e6%9d%83",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Cloudflare 允许用户将 Cloudforce One 威胁情报直接转化为实时 WAF 规则",
+      "title_orig": "Turning Cloudflare’s threat indicators into real-time WAF rules",
+      "summary": "Cloudflare宣布其客户现在可以直接在WAF中，使用Cloudforce One威胁情报来阻断高风险流量，以提升整体防御能力。通过使用全新的cf.intel字段，安全团队能够实现自动化防御，实时对抗特定的威胁组织并保护针对性行业，该功能旨在将威胁指标快速转化为主动防御策略，帮助企业安全团队在面对针对性攻击时实现实时的自动化安全防护。",
+      "tags": [
+        "Cloudfla",
+        "WAF",
+        "威胁情报"
+      ],
+      "url": "https://blog.cloudflare.com/realtime-threat-intel-waf-rules/",
+      "source": "blog.cloudflare.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-08T13:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了威胁情报与WAF实时联动防御的最新工程实践。",
+      "feed_url": "https://blog.cloudflare.com/tag/security/rss/",
+      "feed_title": "Cloudflare Security",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "blog.cloudflare.com",
+      "story_id": "url:blog.cloudflare.com/realtime-threat-intel-waf-rules",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 5.7,
+      "final_score": 7.5,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "EtherLeak漏洞复现：通过以太网帧填充导致IP总长度越界读取漏洞",
+      "title_orig": "EtherLeak: IP Total Length Over-read via Ethernet Frame Padding | Netacoding",
+      "summary": "研究人员确认了企业网络基础设施中依然存在EtherLeak漏洞机制，该漏洞源于网络接口卡驱动程序在处理以太网帧填充时会泄露敏感的内核内存。攻击者可通过ICMP Echo提取相关信息，该类漏洞最早于2003年被记录，并在2021年被证实影响多款防火墙型号，2026年的最新研究证实其依然活跃，提醒企业必须重视并防范此类长效的安全威胁。",
+      "tags": [
+        "EtherLea",
+        "信息泄露",
+        "网络协议"
+      ],
+      "url": "https://www.reddit.com/r/redteamsec/comments/1tzh41w/etherleak_ip_total_length_overread_via_ethernet/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-06-07T16:43:45+00:00",
+      "cve_ids": [
+        "CVE-2003-0001",
+        "CVE-2021-3031"
+      ],
+      "selection_reason": "关注经典协议层漏洞在现代企业网络设备中的存活现状。",
+      "feed_url": "https://www.reddit.com/r/redteamsec/.rss",
+      "feed_title": "Red Team Security",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "cve:cve-2003-0001,cve-2021-3031",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.75,
+      "final_score": 7.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Meta 拦截 NSO Group 针对 WhatsApp 用户的网络钓鱼攻击并提起法庭诉讼",
+      "title_orig": "Meta Blocks NSO Group's New WhatsApp Phishing Attack, Files Contempt Order",
+      "summary": "Meta宣布检测并阻止了与以色列间谍软件厂商NSO Group相关的针对性鱼叉式网络钓鱼企图，黑客试图诱骗用户点击恶意链接以跳转至外部网站。对此，Meta已向联邦法院提起藐视法庭命令的申请，指控该组织违反了此前法院颁布的、禁止其针对WhatsApp及其用户进行任何攻击的永久禁令，此举旨在保护全球用户免受复杂的间谍软件攻击。",
+      "tags": [
+        "网络钓鱼",
+        "WhatsApp",
+        "移动安全"
+      ],
+      "url": "https://thehackernews.com/2026/06/meta-blocks-nso-groups-new-whatsapp.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-08T17:08:44+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了头部厂商与商业间谍软件组织之间的对抗动态。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/06/meta-blocks-nso-groups-new-whatsapp.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.45,
+      "final_score": 6.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Operation Desert Hydra：利用 AI 辅助构建从 MuddyWater 到 Kibana 的威胁情报管道",
+      "title_orig": "Operation Desert Hydra — AI-Assisted CTI Pipeline: MuddyWater to Kibana",
+      "summary": "该项目展示了如何利用AI辅助构建完整的网络威胁情报管道，将MuddyWater组织的研究转化为实际防御行动，解决传统威胁报告缺乏落地实操的痛点。文章通过公开源验证了11个检测规则，并利用OpenCTI图谱和单命令实验室进行部署，旨在帮助防守方将IoC直接转化为具体的安全防护措施，从而大幅提升企业应对高级威胁的防御效率。",
+      "tags": [
+        "威胁情报",
+        "AI安全",
+        "Kibana"
+      ],
+      "url": "https://infosecwriteups.com/operation-desert-hydra-ai-assisted-cti-pipeline-muddywater-to-kibana-34da7917acf0?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-06-08T04:31:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了AI如何加速威胁情报从分析到落地部署的自动化流程。",
+      "feed_url": "https://infosecwriteups.com/feed",
+      "feed_title": "InfoSec Write-ups - Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "url:infosecwriteups.com/operation-desert-hydra-ai-assisted-cti-pipeline-muddywater-to-kibana-34da7917acf0?source=rss----7b722bfd1b8d---4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.85,
+      "final_score": 6.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于 Agentic AI 赋能的 ARM Metis 系统推动软件安全漏洞检测技术升级",
+      "title_orig": "Agentic AI赋能的 ARM Metis 系统，推动软件安全漏洞检测技术升级",
+      "summary": "本文介绍了基于Agentic AI赋能的ARM Metis系统，该系统旨在推动软件安全漏洞检测技术的升级，利用智能体架构提升漏洞识别与分析的效率。由于原文未披露更多技术细节，其具体漏洞检测原理、支持的语言、实际应用案例、对安全行业的影响以及具体部署方式等详细信息目前暂未公开，需持续关注后续披露。",
+      "tags": [
+        "Agentic ",
+        "漏洞检测",
+        "ARM"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486767&idx=1&sn=0a2e19fb822c3ea77423c1e284e9d6f6",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-08T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注AI Agent在自动化漏洞挖掘领域的最新应用探索。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "feed_title": "安全行者老霍",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ%3D%3D&mid=2247486767&idx=1&sn=0a2e19fb822c3ea77423c1e284e9d6f6",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "dimension_score": 4.35,
+      "final_score": 5.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "PHPDoc 规范语法大全与常用标签结构整理指南",
+      "title_orig": "PHPDoc 语法大全",
+      "summary": "本文整理了一份完整的PHPDoc语法大全，详细介绍了该注释规范的基本结构，并重点列举了在PHP开发和代码审计中常用的标签。该指南旨在帮助开发者和安全研究人员规范代码注释，提升代码可读性与静态分析工具的识别效率，是进行PHP代码编写、维护和安全审计的重要参考资料，能有效帮助技术人员掌握规范的注释方法。",
+      "tags": [
+        "PHPDoc",
+        "代码规范",
+        "静态分析"
+      ],
+      "url": "https://www.yanglong.pro/phpdoc-%e8%af%ad%e6%b3%95%e5%a4%a7%e5%85%a8/",
+      "source": "yanglong.pro",
+      "category": "WebSecurity",
+      "published": "2026-06-08T01:23:39+00:00",
+      "cve_ids": [],
+      "selection_reason": "PHPDoc规范对安全研究员编写静态分析规则有辅助价值。",
+      "feed_url": "https://www.yanglong.pro/feed",
+      "feed_title": "杨龙",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "yanglong.pro",
+      "story_id": "url:yanglong.pro/phpdoc-%e8%af%ad%e6%b3%95%e5%a4%a7%e5%85%a8",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 2.9,
+      "final_score": 2.7,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
