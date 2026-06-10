@@ -1,19 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-06-09",
-  "fetched_at_utc": "2026-06-08T23:54:22.110173Z",
+  "fetched_at": "2026-06-10",
+  "fetched_at_utc": "2026-06-10T00:02:43.559550Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 45,
-  "entry_count": 17,
+  "raw_entry_count": 61,
+  "entry_count": 30,
   "filter_stats": {
-    "input": 45,
-    "dropped_title_blacklist": 2,
-    "dedup_merged": 8,
-    "output": 35
+    "input": 61,
+    "dropped_title_blacklist": 1,
+    "dedup_merged": 3,
+    "output": 57
   },
   "curation_stats": {
-    "dropped_source_cap": 18
+    "dropped_source_cap": 27
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -21,7 +21,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 5
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -70,14 +70,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 3
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 5
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -161,7 +161,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "https://www.seebug.org/rss/new": {
       "feed_title": "Seebug 漏洞社区",
@@ -210,38 +210,105 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 5
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 9
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 23
+      "raw_count": 24
     },
     "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans": {
       "feed_title": "Google News 中文 AI安全",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 3
     },
     "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Supply Chain Security",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 3
     }
   },
   "entries": [
+    {
+      "title": "Setting a custom price for a model in AgentsView",
+      "url": "https://simonwillison.net/2026/Jun/9/agentsview-custom-model-price/#atom-everything",
+      "summary": "TIL: Setting a custom price for a model in AgentsView I've been really enjoying AgentsView by Wes McKinney as a tool for exploring my token usage across different coding agents running on my laptop. Claude Fable 5 came out today and wasn't yet included in the pricing database AgentsView uses. I used Fable to reverse-engineer AgentsView and figured out this recipe for setting custom prices. Here's",
+      "category": "AISecurityLabs",
+      "published": "2026-06-09T21:35:31+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257",
+      "url": "https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/",
+      "summary": "We include indicators of activity and mitigations for PAN-OS vulnerability CVE-2026-0257. The post Threat Brief: Active Exploitation of PAN-OS CVE-2026-0257 appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-06-09T14:05:42+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [
+        "CVE-2026-0257"
+      ],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "软件工程的终结：AI智能体如何从根本上重构软件范式",
+      "url": "https://paper.seebug.org/3489",
+      "summary": "作者：Zhenfeng Cao 原文链接：https://arxiv.org/pdf/2606.05608 摘要 半个多世纪以来，软件工程一直建立在一个基本前提之上：人类工程师负责拆解问题，将决策逻辑编码为静态代码，并在需求演变时手动调整代码。本文认为，AI智能体（AI agents）的出现——即以大型语言模型作为主要推理引擎，将代码动态生成与丢弃作为工具性资源的系统——并非渐进式的改进，而是对软...",
+      "category": "Chinese",
+      "published": "2026-06-09T07:02:09+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper"
+    },
+    {
+      "title": "Happy to share that I helped make all our Codex experience a little bit more secure. 🔒 It's good to see AI appsec issues getting triaged and addres...",
+      "url": "https://x.com/wunderwuzzi23/status/2064206653499850930",
+      "summary": "Happy to share that I helped make all our Codex experience a little bit more secure. 🔒 It's good to see AI appsec issues getting triaged and addressed much faster these days than 2-3 years ago 👍 Thanks to the Codex and OpenAI security teams for fixing. 🔥",
+      "category": "XSignals",
+      "published": "2026-06-09T04:43:11+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
+    {
+      "title": "Siri AI at WWDC 2026",
+      "url": "https://simonwillison.net/2026/Jun/8/wwdc/#atom-everything",
+      "summary": "Given how badly burned anyone who took Apple's 2024 WWDC Apple Intelligence announcements at face value was, I'm holding to a strict \"I'll believe it when I see it\" policy for everything they announced today . The new Siri AI features do at least look feasible with today's technology, especially since Apple are licensing a custom Gemini-derived model that they can run on their own Private Cloud Co",
+      "category": "AISecurityLabs",
+      "published": "2026-06-08T23:58:04+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
     {
       "title": "RT Kamen Dimitrov: You might be thinking that it has been a while and LLM models are more secure and safe from prompt injections and data exfiltration...",
       "url": "https://x.com/wunderwuzzi23/status/2063997287093944605",
@@ -256,24 +323,177 @@
       "feed_title": "X / Johann Rehberger"
     },
     {
-      "title": "OpenAI Help: Lockdown Mode",
-      "url": "https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/#atom-everything",
-      "summary": "OpenAI Help: Lockdown Mode OpenAI first teased this in February , but now it's live and \"rolling out to eligible personal accounts, including Free, Go, Plus, and Pro, and self-serve ChatGPT Business accounts\": Lockdown Mode is designed to help prevent the final stage of data exfiltration from a prompt injection attack by limiting outbound network requests that could transfer sensitive data to an a",
-      "category": "AISecurityLabs",
-      "published": "2026-06-05T23:56:40+00:00",
+      "title": "RT JFrog Security: 🚨 New PyPI variants found, now with prompt injection to bypass AI scanning: dreamgen@1.8.1 mem8@6.0.1 orchestr8-platform@3.3.2 r...",
+      "url": "https://x.com/wunderwuzzi23/status/2064214344557277271",
+      "summary": "RT JFrog Security 🚨 New PyPI variants found, now with prompt injection to bypass AI scanning: dreamgen@1.8.1 mem8@6.0.1 orchestr8-platform@3.3.2 ray-mcp-server@0.2.1 Our blog will be updated soon with the technical details. JFrog Security: 🚨 Supply Chain ALERT New Phase of “Miasma: The Spreading Blight” 🚨 A new wave of the npm supply chain campaign, Miasma: The Spreading Blight Targets include @‌v",
+      "category": "XSignals",
+      "published": "2026-06-08T10:25:22+00:00",
       "fetch_status": "full",
       "cve_ids": [],
-      "related_urls": [
-        "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVklfd3pqWlFMSEJJNV9YUGRnVXRQUUNfaHhjS0c4cHpXYndhczg5VWdyY2NFQU1sd3JYcjVNSllubGpvc09tUGVxajVCZlNtbTd0V0NHUHlCd0loRWpIaDEyVWc2dlB2Tld5SkNKVi1LdGpsa2Rhc1J1VTByREZXeXEtLVEwdDBzMTlCTGpPVTZWeUJyOHhKMEh3?oc=5",
-        "https://news.google.com/rss/articles/CBMikAFBVV95cUxNQVRfem9nZ0p2Zm5pVVhNemdoZUtqeTJRU0lkdy1kRWpjMmVZN3cyd3RQV1poeHQzeXZJT2tTQ0lTcjNEMFdiTHRvSWdnbVFXc2hzM3BQTzdIUTdvb3dEdy1ZZEJoYnlyaThkY0ExcWxTSnVGeXhIdmZ1ZXlGck1TX3JmODBqeXByQTlUX0ZndjY?oc=5",
-        "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdlNpSmEzeUFKMEdEUmJ6MFJtbHZ0Y0xwdFVjNks1QzlSS3JUdm53d3ZnS3gwWGd6S1JDSGpYNUl6TWp6NTdSMHFNVnZNVTdWVHRPbW9HNDVWSlpkM1NFa2dtN2RHWEZGM3F0NG1qLUpPRXhIdlMzb2s2TzBYdW9EOVFMSXB5UFU?oc=5",
-        "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNTXNwYjJldS1LU2pvcFhoams4X01TSmdXM0Y2TjB4ZDRxUXZOeTFDSEVKX1RuZTNUUzFxck56dUhQQVU0a2g3V2ZmLWtQVE5YZ3VOXzhqQzdoU1ByXzdGaXFuNXphRGJqbjBKcldOVW0zbzdfbktNNUxvaWJ0SG51Ti01dENTQUFrcFozblhaRkpmVkZtcEwwdDFnTHExTS1YamxrQV9wZ3ZmSUE?oc=5",
-        "https://news.google.com/rss/articles/CBMilgFBVV95cUxNbUo4SGpnQXR1WjB5a1pDcDBqdnpXZWN3ZmxkUFdacmpJMUFXdGpWX0hlazZlLWRaUm5MVzJFNm1SOGhERmpGOW0tXzBTa0Y2YlU5RmVXZ3BTQUMyd0xuemhWR0YxT2NhV3JxNV9RajMxRFgwajRKTFVVMTY5SFNnUlNNdTFhRm1RUkE5eVVyNk4yaEpuYVHSAZYBQVVfeXFMTW1KOEhqZ0F0dVoweWtaQ3AwanZ6V2Vjd2ZsZFBXWnJqSTFBV3RqVl9IZWs2ZS1kWlJuTFcyRTZtUjhoREZqRjltLV8wU2tGNmJVOUZlV2dwU0FDMndMbnpoVkdGMU9jYVdycTVfUWozMURYMGo0SkxVVTE2OUhTZ1JTTXUxYUZtUVJBOXlVcjZOMmhKbmFR?oc=5",
-        "https://news.google.com/rss/articles/CBMinwFBVV95cUxPLV9Uem9KUmcwYnRfeFNaNHdINE1JSkVSX043NWs1TXlEbHMwVjZ0VkVscm0zQjJPandYb2dFNk9DekRyaS1sejFkUXRrdHpXRjRVeUZ6Q0pjQ1ZRTkNZaGxjLXQxSTV4dEFIQWZFNjhUU1lOUXd2aFphVk1FOW5KRHRLX2hQNkZNcWdqOE5mWTNLYTVWemQxVG1BRnRnUWc?oc=5"
-      ],
+      "related_urls": [],
       "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
+    {
+      "title": "NAVER D2SF Invests in AIM Intelligence, an AI Security Startup - PR Newswire",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPSUQ2UnZFUXpCOHBkdDdmRzFnTzlLSERhWU1TSVhqTzRFeUM3VkYtWjNoa1FpZDNkWV90eFVTV2VKMmdLVVNMUTBQanplN0RtMXdSSWh4NkVYQk9LdUF0S0N6bF92aXJqcnBmQWFVWXNNd2pqR3dGazJVeHpaNGg3LXBzRFJSUVJmVjVlQ3VhUEQ3cEdORmJUSkRjTzhka0JhQldweXNaMzQ0UjRHVERJUmlxUmtCelFZ?oc=5",
+      "summary": "NAVER D2SF Invests in AIM Intelligence, an AI Security Startup &nbsp;&nbsp; PR Newswire",
+      "category": "CoverageFallback",
+      "published": "2026-06-10T00:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Initial impressions of Claude Fable 5",
+      "url": "https://simonwillison.net/2026/Jun/9/claude-fable-5/#atom-everything",
+      "summary": "I didn't have early access to today's Claude Fable 5 release, but I've spent the past ~5.5 hours putting it through its paces. My initial impressions are that this is something of a beast . It's slow, expensive and has been quite happily churning through everything I've thrown at it so far. As is frequently the case with current frontier models the challenge is finding tasks that it can't do. Firs",
+      "category": "AISecurityLabs",
+      "published": "2026-06-09T23:59:54+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Zscaler Launches Industry-First Zero Trust Security for Agentic AI - Security Boulevard",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQUHNiWV9vLXN3V1FkN01xb21QSzFRTzZSRVZOVjNoMW1aYzk1MFpZN3BqSGlGV2ZFeFVNblptNk1uLWFrZngwaVBJZ0w5bG5oS3p0MThEMGUzdnp2Rl84ZzFXeUZGRmlDdUNaY1E2Y0lwZmptc1k5WHE1WDM2Q1ZFSkNYT3B4Rk94bnVrQ05BX3dFaC0wVWh4RjdzNDZGdmxoUll5WlZGQkE?oc=5",
+      "summary": "Zscaler Launches Industry-First Zero Trust Security for Agentic AI &nbsp;&nbsp; Security Boulevard",
+      "category": "CoverageFallback",
+      "published": "2026-06-09T22:52:30+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMioAFBVV95cUxPYjdQdVc2VGFnbDdiUWFBNW1KaVF2YXVMRXNoX2lwb0Q1ckE0dnBPQ0pGNG8yNzhtVTJPckk4Qk1rTlZhX0NEcVJJMko2bnp2Y1pRNHcxU3NxR3lNem50elFrckprWmNBeXY4WlhHR1FNejlTcEdfYmtqTnRKcXVkMjNJMndjeVhvZGZjcmRBZG03Z2l5dTE2dG85c3Jacjg2?oc=5"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Brb gonna have fable rewrite everything I’ve done the last 6 months.",
+      "url": "https://x.com/rez0__/status/2064471707168170016",
+      "summary": "Brb gonna have fable rewrite everything I’ve done the last 6 months. Taelin: this is my personal singularity moment this post may sound like a paid ad. I only wish. I'm concerned, more so than happy. the world is changing, and, among the scenarios where AI goes terribly wrong, inequality is the most realistic, yet, the one Anthropic seems to be the least",
+      "category": "XSignals",
+      "published": "2026-06-09T22:16:25+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility",
+      "url": "https://unit42.paloaltonetworks.com/cloud-logging-defense-evasion/",
+      "summary": "Unit 42 research examines attack scenarios targeting cloud logging services. Learn how to defend against log manipulation and defense evasion. The post Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-06-09T22:00:21+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "RT Taelin: this is my personal singularity moment this post may sound like a paid ad. I only wish. I'm concerned, more so than happy. the world is cha...",
+      "url": "https://x.com/rez0__/status/2064470182542885110",
+      "summary": "RT Taelin this is my personal singularity moment this post may sound like a paid ad. I only wish. I'm concerned, more so than happy. the world is changing, and, among the scenarios where AI goes terribly wrong, inequality is the most realistic, yet, the one Anthropic seems to be the least concerned about. I'm glad OpenAI is taking the opposite stance: *personal AGI for everyone*. I think this is a",
+      "category": "XSignals",
+      "published": "2026-06-09T20:43:54+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Palo Alto Networks unveils AI-driven security platform designed for European compliance standards - The Business Journals",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSHN6Q0JaMXV5NVNrazAxbXZsck9BVHQ1ZUtqRjJMam5rMmF6bk9PdlZGRzhXc3F6eW9ZYnN6dGRaSXp2TFkxOHUxTzV5NjJzMmhYMkloWldmNUpmdmJ0M25sV3RvVlZlYi1FWldRWnFpXzc1enYwZkdJVTlyazFyR1Z4ZjNqeE1GSGxhdUgzOE9paW85MGNXejdZZGU2anV4dXg2bk9RUQ?oc=5",
+      "summary": "Palo Alto Networks unveils AI-driven security platform designed for European compliance standards &nbsp;&nbsp; The Business Journals",
+      "category": "CoverageFallback",
+      "published": "2026-06-09T20:37:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "The Market Arrived. We Were Already Here: Cequence Posts Record Quarter on Surging Agentic AI Security Demand - Security Boulevard",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQaDVWb29oVlZVY0VqYkNiaEl3cXNLSzhnVUF4dGJiRzFubFlSeWl6RXpZazNGMUxRZEFoMzN2M2ZfNG90X2dNN0h6WFNfYW5oNTgxMWdMcjZ2ajFGOWxIRUlucnd1UGtsam52NHE3V3FBNGwtVmoxa2FLX0xIaHNnRnJ2MFZCa2lTa19ncXo4S1B1dEtBcnFyTjNlUnFQWDRiaWp3d2F4UEcwaVF1N19MY0Q3MnZNYi1pdWNOR0hrdnpubFBudDhLUVFlSDlnZkNIRzREMEItNzFCakFKT0RJ?oc=5",
+      "summary": "The Market Arrived. We Were Already Here: Cequence Posts Record Quarter on Surging Agentic AI Security Demand &nbsp;&nbsp; Security Boulevard",
+      "category": "CoverageFallback",
+      "published": "2026-06-09T19:57:27+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxNajVmdFBwMkdnLWRWX0RuRzRtWnVtcVF4Q08zdFFEaUNFWnc5NU1iRVNrZXk1MXdQQWlxakFIanFHU19oR3lEVE1mSzNXb0ZqbVNCQWpMM2RqZXVRM0VtN2NJNEh6S1J6N2RLRnZkbmVDUmNSRkItLXoybjFVanVMY1poeWhDR3AyYXlyU0hGbmRaLXRNa0drOVhheHk3TTh6VExTc1Q4cWdZTjVxTFQ0OWxOclg?oc=5"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "It’s hilarious that they made a huge deal about the cyber capabilities for months and then when they rolled it out, they’ve blocked the actual utili...",
+      "url": "https://x.com/rez0__/status/2064427168164368475",
+      "summary": "It’s hilarious that they made a huge deal about the cyber capabilities for months and then when they rolled it out, they’ve blocked the actual utility of the model by prohibiting cyber use 🤣 And yes this includes trusted testers. Like, what was the point in even releasing it? Zack Korman: Mythos is amazing.",
+      "category": "XSignals",
+      "published": "2026-06-09T19:19:26+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Wait, binding.gyp Can Do What? Exploring npm's Weirdest Build System",
+      "url": "https://www.aikido.dev/blog/exploring-binding-gyp-npm-build-system",
+      "summary": "Deep dive into binding.gyp, the often overlooked npm build file that can execute malicious code at install time through shell expansions, sandbox escapes, and compiler hijacking. Category: Vulnerabilities & Threats",
+      "category": "AISecurityLabs",
+      "published": "2026-06-09T13:25:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
+      "title": "RT Patrik Grobshäuser: https://www.bugcrowd.com/blog/introducing-priority-queue-bypass-a-new-way-to-recognize-top-hackers/ Its happening! 🥳",
+      "url": "https://x.com/rez0__/status/2064277915974394193",
+      "summary": "RT Patrik Grobshäuser https://www.bugcrowd.com/blog/introducing-priority-queue-bypass-a-new-way-to-recognize-top-hackers/ Its happening! 🥳 Patrik Grobshäuser: Stop blaming AI slop for what bug bounty platforms did to themselves. 👇 wrote down some thoughts about the state of triage https://clawd.it/posts/14-to-kara-alex-and-michiel-your-researchers-are-leaving/",
+      "category": "XSignals",
+      "published": "2026-06-09T08:40:14+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Meta created a Moltbook instance The only registered agents are security test accounts and probably bug hunters or maybe a security evaluation of the ...",
+      "url": "https://x.com/wunderwuzzi23/status/2064210259846332915",
+      "summary": "Meta created a Moltbook instance The only registered agents are security test accounts and probably bug hunters or maybe a security evaluation of the platform 🙂 E.g. sec_test_aardvark Since today it's locked down. 🔒",
+      "category": "XSignals",
+      "published": "2026-06-09T04:57:31+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
     },
     {
       "title": "When “Hi, This Is IT” Comes Through Microsoft Teams",
@@ -289,56 +509,17 @@
       "feed_title": "Unit 42"
     },
     {
-      "title": "Chinese military jets circled Taiwan as the world's AI supply chain chiefs gathered at Computex - capacityglobal.com",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1IdmYweFdoZ2ZlajNjMENYY1FtT29QZW9FRzVKWFFkd3dJV01nLTNZT3pUdkdremRYQ05udlBJYmpYLUVzMVhaWURWZ2EzM0pEczBFXzNGUTducHlpWUNrdnRoaWJOWnl2S2NVUGk5R1Itdw?oc=5",
-      "summary": "Chinese military jets circled Taiwan as the world's AI supply chain chiefs gathered at Computex &nbsp;&nbsp; capacityglobal.com",
-      "category": "CoverageFallback",
-      "published": "2026-06-08T22:38:05+00:00",
-      "fetch_status": "rss_only",
+      "title": "RT Pliny the Liberator 🐉󠅫󠄼󠄿󠅆󠄵󠄐󠅀󠄼󠄹󠄾󠅉󠅭: 💥 OBLITERATION ALERT 💥 GOOGLE: PWNED 🤗 GEMMA-4-12B: OBLITERATED ...",
+      "url": "https://x.com/rez0__/status/2064149767236567458",
+      "summary": "RT Pliny the Liberator 🐉󠅫󠄼󠄿󠅆󠄵󠄐󠅀󠄼󠄹󠄾󠅉󠅭 💥 OBLITERATION ALERT 💥 GOOGLE: PWNED 🤗 GEMMA-4-12B: OBLITERATED ⛓️‍💥 0.0% REFUSAL RATE — NO CAPABILITY LOSS! https://huggingface.co/OBLITERATUS/Gemma-4-12B-OBLITERATED the first abliteration to hit 0/842 refusals with full MMLU-Pro parity vs stock. no lobotomy. the brain stays intact 🏆 RESULTS, head to head vs stock 📊 0/842 refusals — 0.0% 🚫 46/70 MMLU-Pro — EX",
+      "category": "XSignals",
+      "published": "2026-06-08T21:09:43+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Supply Chain Security"
-    },
-    {
-      "title": "AEX Index (AEX): Amsterdam Benchmark Rebounds Toward 1,021 as ASML-Led AI Supply Chain Strength and Eurozone Inflation Data Lift Dutch Equities - BBN Times",
-      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPWjdqOThNZmxKRXZfV2hvV0twWEx6UGVaOXNfY2FiWl9ZQlpSSlJPUDhBYXNJNjJzMlk1RTVOZGpnNXNaS1ZRYl92amsyYzhqNHJoU1lJZXhKN1FRazliQ01uOHFEM1dnTHN6Uld3XzJSb0VGZjV6elRxTmJnWTlXaVUwclFUYTdPUzFIVmdNWXZESmRLTXVRNEtkLWJpTHlYczJEN2kxUlluT2JsVFpaQU8xU0d6dkRkZk9ESlI3UjZNaGo4LWtGRVJscUJRblZtcjhkRG8yNXVrVHRvYmRZMVFGOGxtYm5LTnBlVzB4VHd4M2x4dndlT29NbHlyZDVnVjZxZVlR?oc=5",
-      "summary": "AEX Index (AEX): Amsterdam Benchmark Rebounds Toward 1,021 as ASML-Led AI Supply Chain Strength and Eurozone Inflation Data Lift Dutch Equities &nbsp;&nbsp; BBN Times",
-      "category": "CoverageFallback",
-      "published": "2026-06-08T21:33:41+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Supply Chain Security"
-    },
-    {
-      "title": "Alphabet Intel Chip Pact Reshapes AI Supply Chain And Investor Outlook - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbWVfQjZmM0FoaENkWDBhQkZvNVZhMUNoLW9fckZqUmVVM19Velg2TU1acnN2Qmp3NlFBLUQ3bGRFOFpUYnJsYjZSZmplNXI3dEVTYmo1c21XdVkxZTZ2Z3ZpOWgtTm5sMGsyaE9pYmNjVTJFellRTUJrc2IteV9iUjlwbFdpbG1Xekc5TnRXd1NFQ0wyNGtPQWUtYm9EX0k?oc=5",
-      "summary": "Alphabet Intel Chip Pact Reshapes AI Supply Chain And Investor Outlook &nbsp;&nbsp; Yahoo Finance",
-      "category": "CoverageFallback",
-      "published": "2026-06-08T21:17:53+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Supply Chain Security"
-    },
-    {
-      "title": "Broadcom’s Tanzu Division Prepares Historic Spring Patch Release Amid AI Security Surge - SD Times",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVXNsa1BmNnhaeXRqNWMtUlVqOTNiOFpvenVSUFlTQTJRaFFnVHpvenJRWk9wUjQtdnVWZnRqNVZtZFhXd0tSVzlGSnZldzk4aTJFbGZobEFTaXE0R1dNNlN4R1Q2ZEJsZFhTQjM3dzJNUW5OZ2pBN3FRb0V1ajlPQWY1cTVoc0VoMEEyY3hrTnFHRkpkeWdSSWhDVUNEVVJFQXEwZUwwZHZjSzlGQy11dy1hd3Zmek0?oc=5",
-      "summary": "Broadcom’s Tanzu Division Prepares Historic Spring Patch Release Amid AI Security Surge &nbsp;&nbsp; SD Times",
-      "category": "CoverageFallback",
-      "published": "2026-06-08T20:05:11+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "大语言模型后训练中的顺序数据投毒",
@@ -367,19 +548,6 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "datasette-agent-edit 0.1a0",
-      "url": "https://simonwillison.net/2026/Jun/7/datasette-agent-edit/#atom-everything",
-      "summary": "Release: datasette-agent-edit 0.1a0 I'm planning several plugins for Datasette Agent which can make edits to existing pieces of text - things like collaborative Markdown editing, updating large SQL queries, and editing SVG files. Agentic editing of text is a little tricky to get right. My favorite published design for this is for the Claude text editor , which implements the following tools: view",
-      "category": "AISecurityLabs",
-      "published": "2026-06-07T23:56:38+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
       "title": "RT skull: Not everyone who reports to Google Cloud VRP does a writeup, but critical bugs still show up in CVEs and release notes Made a tool that aggr...",
       "url": "https://x.com/rez0__/status/2063655309051126060",
       "summary": "RT skull Not everyone who reports to Google Cloud VRP does a writeup, but critical bugs still show up in CVEs and release notes Made a tool that aggregates both so you can see the types of bugs getting found in GCP https://gcp-cves.brutecat.com/",
@@ -393,17 +561,43 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "micropython-wasm 0.1a2",
-      "url": "https://simonwillison.net/2026/Jun/6/micropython-wasm/#atom-everything",
-      "summary": "Release: micropython-wasm 0.1a2 I added a CLI to micropython-wasm ( issue #7 ), inspired by the first draft of the blog entry when I realized it would be a great way to illustrate the Try it yourself section. Tags: python , sandboxing , webassembly , micropython",
-      "category": "AISecurityLabs",
-      "published": "2026-06-06T04:26:06+00:00",
-      "fetch_status": "full",
+      "title": "This is all I’m getting as well",
+      "url": "https://x.com/rez0__/status/2064426743822471359",
+      "summary": "This is all I’m getting as well Zack Korman: Mythos is amazing.",
+      "category": "XSignals",
+      "published": "2026-06-09T19:17:45+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "How engineers at Nextdoor use Codex to build without limits",
+      "url": "https://openai.com/index/nextdoor",
+      "summary": "How engineers at Nextdoor use Codex with GPT-5.5 to investigate hard-to-reproduce issues, build across platforms, and focus on product outcomes.",
+      "category": "FirstParty",
+      "published": "2026-06-09T12:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "What Codex unlocks for Notion",
+      "url": "https://openai.com/index/notion",
+      "summary": "How Notion uses Codex to one-shot specs, build AI Voice Input for the web, and multiply engineering power across small teams.",
+      "category": "FirstParty",
+      "published": "2026-06-09T10:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
     },
     {
       "title": "RT Kamen Dimitrov: Re https://embracethered.com/blog/posts/2026/defcon-talk-copirate-365/",
@@ -417,19 +611,6 @@
       "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
       "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "Confidential submission of draft S-1 to the SEC",
-      "url": "https://openai.com/index/openai-submits-confidential-s-1",
-      "summary": "OpenAI confirms a confidential S-1 submission to the SEC and has not yet determined timing for further action.",
-      "category": "FirstParty",
-      "published": "2026-06-08T14:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
     },
     {
       "title": "does anyone know what happened to huntr? I submitted like 10 reports to them back in jan/feb and never heard anything. i thought the comapny was dead ...",
@@ -456,19 +637,6 @@
       "quality_score": 0,
       "feed_url": "https://www.endorlabs.com/learn/rss.xml",
       "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Built to benefit everyone: our plan",
-      "url": "https://openai.com/index/built-to-benefit-everyone-our-plan",
-      "summary": "A vision for the future of AI, focusing on access, safety, and shared prosperity as OpenAI works to ensure AGI benefits everyone.",
-      "category": "FirstParty",
-      "published": "2026-06-08T01:30:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
     }
   ]
 }

@@ -1,0 +1,586 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-10",
+  "generated_at": "2026-06-10T00:02:35.731804Z",
+  "raw_count": 69,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 14,
+    "tier_t1": 5,
+    "kind_official": 5,
+    "tier_t2": 8,
+    "kind_media": 4,
+    "aggregator": 1,
+    "kind_expert_x": 1,
+    "tier_unknown": 2,
+    "kind_community": 4,
+    "chinese": 1,
+    "kind_expert": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 3,
+    "merged_total": 4
+  },
+  "items": [
+    {
+      "title_zh": "CISA 将 Arista、谷歌和思科的三个已被野外利用的漏洞加入 KEV 目录",
+      "title_orig": "CISA Adds Three Known Exploited Vulnerabilities to Catalog",
+      "summary": "美国网络安全和基础设施安全局将三个已被证实存在野外活跃利用的漏洞加入其已知被利用漏洞目录，旨在提醒各机构和组织防范潜在的网络安全风险。这些新增的漏洞包括 Arista 扩展操作系统的缺失要素不完全比较漏洞 CVE-2026-7473、谷歌 Chromium V8 引擎的越界读写漏洞 CVE-2026-11645，以及思科 Catalyst SD-WAN 管理器的不当编码或转义漏洞 CVE-2026-20245。",
+      "tags": [
+        "CISA",
+        "KEV",
+        "野外利用"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/06/09/cisa-adds-three-known-exploited-vulnerabilities-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-09T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-11645",
+        "CVE-2026-20245",
+        "CVE-2026-7473"
+      ],
+      "selection_reason": "涉及多个主流厂商的野外利用漏洞，具有极高的修补优先级。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-11645,cve-2026-20245,cve-2026-7473",
+      "related_urls": [
+        "https://thehackernews.com/2026/06/chrome-v8-zero-day-cve-2026-11645.html"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Veeam 修复备份与复制软件中允许域用户执行远程代码的漏洞",
+      "title_orig": "Veeam Backup & Replication RCE Flaw Lets Domain Users Run Remote Code",
+      "summary": "数据保护厂商 Veeam 发布了安全补丁，以修复其 Backup & Replication 备份与复制软件中一个追踪为 CVE-2026-44963 的高危远程代码执行漏洞。该漏洞的 CVSS 评分高达 9.4 分，允许已通过身份验证的域用户在备份服务器上执行任意远程代码，对企业备份环境的安全造成了严重威胁，官方强烈建议受影响的用户立即升级至安全版本以防范攻击。",
+      "tags": [
+        "Veeam",
+        "RCE",
+        "备份安全"
+      ],
+      "url": "https://thehackernews.com/2026/06/veeam-backup-replication-rce-flaw-lets.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-09T16:39:47+00:00",
+      "cve_ids": [
+        "CVE-2026-44963"
+      ],
+      "selection_reason": "备份系统是勒索软件攻击的核心目标，高危 RCE 漏洞极具威胁",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-44963",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "西门子 KACO Blueplanet 逆变器存在凭据泄露与未授权访问漏洞",
+      "title_orig": "Siemens KACO Blueplanet Inverters",
+      "summary": "西门子 KACO blueplanet 逆变器被披露存在多个安全漏洞，攻击者可利用这些漏洞通过设备序列号推导出设备凭据。成功获取凭据后，攻击者可滥用这些凭据获取设备的未授权访问权限，进而控制逆变器。受影响的产品涉及 KACO new energy GmbH 的多款逆变器设备。目前官方已发布新版本并建议用户更新，同时正在准备更多受影响版本的修复程序。",
+      "tags": [
+        "西门子",
+        "工控安全",
+        "凭据泄露"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-160-02",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-09T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施中的逆变器设备，凭据推导漏洞危害直接。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-160-02",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.35,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "施耐德电气预警 EcoStruxure Panel Server 存在未授权身份验证风险",
+      "title_orig": "Schneider Electric EcoStruxure Panel Server",
+      "summary": "施耐德电气发布安全预警，披露其 EcoStruxure Panel Server 模块化网关产品中存在安全漏洞。该产品主要用于连接多个并发边缘控制或云端应用程序，提供网络安全增强功能。如果用户未能及时应用官方提供的修复措施，可能会面临未授权身份验证的风险，进而导致设备控制权被窃取。目前官方已提供相应的缓解和修复方案，建议用户尽快部署。",
+      "tags": [
+        "施耐德",
+        "网关安全",
+        "身份验证"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-160-03",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-09T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "工业网关作为连接边缘与云的关键节点，其认证漏洞影响范围广。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-160-03",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.1,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "施耐德电气 Modicon 网络管理交换机受 RADIUS 协议漏洞影响",
+      "title_orig": "Schneider Electric Modicon Network Managed Switches",
+      "summary": "施耐德电气发布公告称，其 Modicon 网络管理交换机产品受到 RADIUS 协议漏洞的影响。该交换机产品主要用于为多个以太网设备提供连接、网络管理及高级交换功能。如果用户未能应用官方提供的缓解措施，可能会面临 RADIUS 协议中的伪造攻击风险，从而导致网络管理权限被劫持。目前官方已发布缓解指南，建议受影响的用户立即采取防护措施。",
+      "tags": [
+        "施耐德",
+        "交换机",
+        "RADIUS"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-160-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-09T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "网络管理交换机是内网核心，RADIUS 协议漏洞可导致网络被",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-160-01",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.1,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源 Miasma 蠕虫代码中包含已被野外武器化的 GitHub 零日漏洞",
+      "title_orig": "‼️ The open-sourced Miasma worm code includes a GitHub zero-day, and per the researcher who disclosed it, GitHub has known about it since September ...",
+      "summary": "安全研究员 Adnan Khan 披露，开源的 Miasma 蠕虫代码中包含了一个针对 GitHub 的零日漏洞，而 GitHub 官方早在 2025 年 9 月 8 日就已得知该漏洞却至今未予以修复。在研究员报告该技术大约九个月后，该漏洞如今已被武器化并集成到开源的 Miasma 蠕虫中在野外活跃运行，研究员对此公开质疑究竟有多少 GitHub 客户因此受到波及和安全威胁。",
+      "tags": [
+        "GitHub",
+        "零日漏洞",
+        "蠕虫"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2064277536960307611",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-06-09T09:24:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "披露了 GitHub 长期未修补且已被野外蠕虫武器化的零日漏",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2064277536960307611",
+      "related_urls": [
+        "https://x.com/IntCyberDigest/status/2064273917917704322"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.15,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员发现 Mirai 僵尸网络正利用 CVE-2026-34910 漏洞构建",
+      "title_orig": "CVE-2026-34910 Exploitation ITW – building a botnet (MIRAI)",
+      "summary": "安全研究人员通过 Defused 蜜罐捕获的数据和分类分析，发现 Mirai 僵尸网络正在野外积极利用 CVE-2026-34910 漏洞。攻击者通过该漏洞对目标设备进行攻击，以将其吸纳并构建成新的 Mirai 僵尸网络。原文未披露该漏洞的具体漏洞类型、触发条件以及受影响的组件版本。目前该漏洞的野外利用正在进行中，相关防御人员需提高警惕。",
+      "tags": [
+        "Mirai",
+        "僵尸网络",
+        "野外利用"
+      ],
+      "url": "https://www.pwndefend.com/2026/06/09/cve-2026-34910-exploitation-itw-building-a-botnet-mirai/",
+      "source": "pwndefend.com",
+      "category": "RedTeam",
+      "published": "2026-06-09T07:05:22+00:00",
+      "cve_ids": [
+        "CVE-2026-34910"
+      ],
+      "selection_reason": "展示了经典僵尸网络 Mirai 采用新漏洞进行野外扩张的最新",
+      "feed_url": "https://www.pwndefend.com/feed/",
+      "feed_title": "PwnDefend",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "pwndefend.com",
+      "story_id": "cve:cve-2026-34910",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.45,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Spring for Apache Pulsar 存在反序列化漏洞 CVE-2026-41732",
+      "title_orig": "CVE-2026-41732 In Spring for Apache Pulsar, overly broad trusted-package matching in header mapper exposes JDK classes to deserialization",
+      "summary": "Spring for Apache Pulsar 被披露存在反序列化漏洞 CVE-2026-41732，该漏洞源于 JsonPulsarHeaderMapper 在匹配信任包时使用前缀检查，导致信任任一包会隐式信任其所有子包。此外，当配置为空时系统会默认信任所有包，从而使 JDK 类暴露于反序列化风险中，受影响版本包括 2.0.0 至 2.0.5、1.2.0 至 1.2.17 以及 1.1.0 等。",
+      "tags": [
+        "Spring",
+        "反序列化",
+        "Pulsar"
+      ],
+      "url": "https://vulners.com/cve/CVE-2026-41732?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-06-09T23:49:31+00:00",
+      "cve_ids": [
+        "CVE-2026-41732"
+      ],
+      "selection_reason": "Spring 生态组件的反序列化漏洞，对企业级 Java 应",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-41732",
+      "related_urls": [
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-41732?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-41731?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-41731?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 3,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Spring Data REST 存在 SpEL 表达式注入漏洞 CVE-2026-41729",
+      "title_orig": "CVE-2026-41729 Spring Data REST SpEL Injection via Map Key in JSON Patch",
+      "summary": "Spring Data REST 在处理特定 JSON Patch 请求时存在 SpEL 表达式注入漏洞，当持久化实体暴露 Map 类型属性时，用作 Map 键的 JSON 指针路径段会在未经过滤或验证的情况下直接嵌入到 SpEL 表达式中。该漏洞影响 Spring Data REST 3.7.0 至 3.7.19 以及 4.3 版本，相关开发人员和安全团队需密切关注以防范潜在的注入攻击。",
+      "tags": [
+        "Spring",
+        "SpEL注入",
+        "漏洞预警"
+      ],
+      "url": "https://vulners.com/cve/CVE-2026-41729?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-06-09T23:49:17+00:00",
+      "cve_ids": [
+        "CVE-2026-41729"
+      ],
+      "selection_reason": "Spring 框架核心组件的 SpEL 注入漏洞，影响面广。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-41729",
+      "related_urls": [
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-41837?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-41837?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-41730?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-41730?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-41729?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-41728?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-41728?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-41721?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-41721?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-41719?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-41719?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-41717?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+        "https://vulners.com/cve/CVE-2026-41717?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 13,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "针对 Kubernetes 凭证泄露后的 RBAC 持久化后门排查技术指南",
+      "title_orig": "k8s-kubeconfig泄露后的RBAC持久化后门排查",
+      "summary": "本文深入探讨了攻击者在获取具有集群管理员权限的 kubeconfig 泄露凭证后，如何通过 RBAC 机制实施持久化后门植入，并重点介绍了针对此类隐蔽后门的排查思路与技术细节。该技术适用于 Kubernetes 容器安全运维与红蓝对抗场景，旨在帮助安全从业者和系统管理员提升对集群持久化攻击的检测与防御能力，确保容器云平台整体的安全稳定。",
+      "tags": [
+        "Kubernet",
+        "RBAC",
+        "后门排查"
+      ],
+      "url": "https://zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2%e5%90%8e%e7%9a%84rbac%e6%8c%81%e4%b9%85%e5%8c%96%e5%90%8e%e9%97%a8%e6%8e%92%e6%9f%a5/",
+      "source": "zgao.top",
+      "category": "RedTeam",
+      "published": "2026-06-09T09:31:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "实战性强的 K8s 容器安全排查指南，极具参考价值。",
+      "feed_url": "https://zgao.top/feed/",
+      "feed_title": "Zgao's blog",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "zgao.top",
+      "story_id": "url:zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2%e5%90%8e%e7%9a%84rbac%e6%8c%81%e4%b9%85%e5%8c%96%e5%90%8e%e9%97%a8%e6%8e%92%e6%9f%a5",
+      "related_urls": [
+        "https://zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2-%e9%bb%91%e5%ae%a2%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8apiserver%e5%88%9b%e5%bb%ba%e7%89%b9%e6%9d%83%e5%ae%b9%e5%99%a8%e8%8e%b7%e5%8f%96node%e8%8a%82%e7%82%b9%e6%9d%83/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Spring Security 存在 X.509 客户端证书用户身份冒充漏洞 CVE-2026-47838",
+      "title_orig": "CVE-2026-47838 Unauthorized User Impersonation when Using X.509 Client Certificates",
+      "summary": "Spring Security 中的 SubjectDnX509PrincipalExtractor 组件无法正确处理某些畸形的 X.509 证书 CN 值，导致读取到错误的用户名，攻击者可借此通过精心构造的证书冒充其他用户。该漏洞影响 Spring Security 5.7.0 至 6.5.1 等多个版本，相关系统管理员和安全团队需警惕身份冒用风险。",
+      "tags": [
+        "Spring",
+        "身份冒充",
+        "证书安全"
+      ],
+      "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-47838?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-06-09T23:50:07+00:00",
+      "cve_ids": [
+        "CVE-2026-47838"
+      ],
+      "selection_reason": "涉及 Spring 认证框架的身份绕过漏洞，安全风险高。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-47838",
+      "related_urls": [
+        "https://vulners.com/cve/CVE-2026-47838?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软 2026 年 6 月补丁日修复近 200 个安全漏洞创历史新高",
+      "title_orig": "A Record-Breaking Patch Tuesday for June 2026",
+      "summary": "微软发布了 2026 年 6 月的例行安全更新，共修复了其 Windows 操作系统及支持软件中的近 200 个安全漏洞，创下该公司单月补丁数量的历史新高，其中有近 36 个被评为“严重”级别。此外，目前至少有三个漏洞的利用代码已经公开，原文未披露具体的漏洞编号和受影响组件细节，这需要广大 Windows 用户和企业 IT 管理员尽快安排系统更新以防范潜在威胁。",
+      "tags": [
+        "微软",
+        "补丁日",
+        "漏洞修复"
+      ],
+      "url": "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/",
+      "source": "krebsonsecurity.com",
+      "category": "AI",
+      "published": "2026-06-09T22:07:28+00:00",
+      "cve_ids": [],
+      "selection_reason": "微软单月补丁数量创历史新高，包含多个在野利用漏洞。",
+      "feed_url": "https://krebsonsecurity.com/feed/",
+      "feed_title": "Krebs on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全媒体",
+      "source_key": "krebsonsecurity.com",
+      "story_id": "url:krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026",
+      "related_urls": [
+        "https://krebsonsecurity.com/2026/06/a-record-breaking-patch-tuesday-for-june-2026/",
+        "https://www.rapid7.com/blog/post/em-patch-tuesday-june-2026"
+      ],
+      "related_count": 2,
+      "score": 7,
+      "dimension_score": 7.25,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软发布 Copilot 与 Azure AI 服务安全事件调查与活动重构指南",
+      "title_orig": "Reconstructing AI activity in investigations",
+      "summary": "微软发布了一份安全指南，旨在帮助安全团队使用结构化和遥测驱动的方法，调查 Microsoft 365 Copilot 和 Azure AI 服务中的 AI 活动，并提供了重构安全事件、评估数据泄露以及快速检测潜在威胁的实用方法。此技术适用于企业 AI 安全审计场景，能帮助从业者应对新兴的 AI 威胁，提升企业在采用人工智能技术过程中的整体安全防护与事件响应能力。",
+      "tags": [
+        "AI安全",
+        "安全审计",
+        "微软"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/06/09/reconstructing-ai-activity-investigations/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-09T17:35:06+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对主流 AI 服务的安全事件调查指南，填补了防御空白。",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/06/09/reconstructing-ai-activity-investigations",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "dimension_score": 5.95,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Kagi 隐私搜索引擎存在间接提示词注入导致 IP 地址泄露漏洞",
+      "title_orig": "Zero-Click IP Leak in a Privacy Search Engine: Indirect Prompt Injection & Silent Patching",
+      "summary": "研究人员在主打绝对隐私的 Kagi 搜索引擎中发现了一个零点击 IP 泄露漏洞，该漏洞通过简单的 Markdown 技巧配合间接提示词注入，能够强制系统泄露用户的真实 IP 地址，从而实现去匿名化。目前该漏洞已被官方静默修复，原文未披露受影响的具体系统版本细节，该事件引发了用户对隐私搜索引擎安全性的关注，也展示了提示词注入攻击在实际场景中的危害。",
+      "tags": [
+        "提示词注入",
+        "隐私泄露",
+        "搜索引擎"
+      ],
+      "url": "https://infosecwriteups.com/zero-click-ip-leak-in-a-privacy-search-engine-indirect-prompt-injection-silent-patching-6d68ab7f9b7a?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-06-09T08:53:12+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 时代间接提示词注入导致传统隐私泄露的典型案例。",
+      "feed_url": "https://medium.com/feed/bugbountywriteup/tagged/bug-bounty",
+      "feed_title": "Bug Bounty in InfoSec Write-ups on Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "url:infosecwriteups.com/zero-click-ip-leak-in-a-privacy-search-engine-indirect-prompt-injection-silent-patching-6d68ab7f9b7a?source=rss----7b722bfd1b8d--bug_bounty",
+      "related_urls": [
+        "https://infosecwriteups.com/zero-click-ip-leak-in-a-privacy-search-engine-indirect-prompt-injection-silent-patching-6d68ab7f9b7a?source=rss----7b722bfd1b8d---4"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WinRAR 路径遍历漏洞 CVE-2025-8088 被黑客组织用于投放窃密木马",
+      "title_orig": "WinRAR Flaw Exploited by Russia-Aligned Groups to Deploy Stealers in Ukraine",
+      "summary": "黑客组织正在持续利用 WinRAR 中的路径遍历漏洞 CVE-2025-8088 针对特定组织发动攻击，此时距离该漏洞补丁发布已过去近一年，攻击者利用该漏洞在受害者系统上部署窃密木马。该漏洞允许攻击者进行路径遍历，原文未披露受影响的 WinRAR 具体版本及官方缓解措施的更新状态，这提醒广大用户和企业即使面对旧漏洞也应及时更新软件以防范持续性的定向攻击。",
+      "tags": [
+        "WinRAR",
+        "路径遍历",
+        "在野利用"
+      ],
+      "url": "https://thehackernews.com/2026/06/winrar-flaw-exploited-by-russia-aligned.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-09T12:26:10+00:00",
+      "cve_ids": [
+        "CVE-2025-8088"
+      ],
+      "selection_reason": "经典的客户端漏洞在野利用事件，提醒企业及时更新基础软件。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2025-8088",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.2,
+      "final_score": 7.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
