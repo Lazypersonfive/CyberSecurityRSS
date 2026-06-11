@@ -286,6 +286,49 @@ Success criteria:
 | `tasks/aihot_alignment.md` | AIHOT 方法论对齐 |
 | `tasks/feedback_loop_plan.md` | 人工反馈机制设计 |
 
+## 2026-06-11 PM Execution Log
+
+当日完成两轮迭代（commit `ca5b76c` + `0f861b2`），验证 run 27325184268 / 27326615284 均成功。
+
+### Root cause 修复：中文安全源 7 天 0 raw（P0-1）
+
+不是源死了：奇安信CERT/看雪/安全客/CNVD/CNNVD/火绒/深信服等 feed 全部存活且有当日文章。
+真实原因是 fetch 层 `max_per_category` 一直用硬编码默认 30（`fetch_and_save` 从未从 config 传入），
+security 的 Synthesis 分类 190+ feed 在 72h 窗口共享 30 个"最新优先"名额，北京白天发布的
+公众号文章被贴近 UTC 抓取时间的英文文章挤光。
+
+- `fetch_feeds`：新增 `max_per_feed`（先于分类 cap，按最新截断），防 Vulners 这类 firehose 独占分类。
+- 各板块显式配置 `max_per_category` / `max_per_feed`（security 150/6，ai_security 60/8，ai 60/10，finance 40/10）。
+- 验证：security cn 从 7 日均值 4.43 → 当日 cn=7、cn=8（两轮 run），目标 ≥6 首次稳定达成。
+
+### AI 安全边界收紧（P0-2 / Direction 2）
+
+`adjust_ai_security_score` 旧版用子串匹配，`"ai"` 命中 "supply ch**AI**n"/"em**AI**l"，
+任何供应链新闻都自动通过 AI 语境检查并被强拉到 6 分。重写为 ASCII lookaround 匹配
+（Python `\b` 在 CJK 与 ASCII 之间不成立，需 `(?<![A-Za-z0-9])`），三档语义：
+非 AI → cap 3；AI 无安全机制 → cap 4；强信号（提示词注入/投毒/沙箱逃逸/供应链攻击）→ floor 6。
+影子评估：当日 10 条里 5 条泛安全内容（PAN-OS CVE、Teams 钓鱼、npm/Rust 供应链）正确压回 security 板块。
+注意：收紧后 ai_security 当日 above_threshold 仅 3，fill 占 7 条——观察一周，宁缺毋滥可考虑减量输出。
+
+### 其他落地
+
+- 漏洞摘要（Direction 3）：`digest_postprocess` 新增四要素检查（类型/触发/范围/修复），
+  security 板块对 <2 要素的漏洞摘要做一次定向重写，仅当重写严格更优才接受。
+  当日 repair 触发 2 条、0 改进——repair prompt 效果待观察。
+- source registry +9：praetorian/nviso/pwndefend/zgao.top/404media/yanglong.pro/oneusefulthing/qbitai/jiqizhixin。
+- ai 中文源：机器之心/量子位 wechat2rss feed 已 stale（hash 未变，代理停采）。量子位换官网 RSS，
+  机器之心加自托管 RSSHub 路由对冲。
+- `_candidate_pool` 中文配额：纯分数截断会让 6-7 分中文在 reserve 之前就被 8-9 分英文挤出 pool
+  （filtered 7 条中文 → selected 1 条）。pool 现在为中文候选预留名额。验证：ai cn 1 → 3。
+
+### 遗留观察项（明日 cron 后检查）
+
+1. security cn 是否稳定 ≥6（连续 3 天）。
+2. ai cn 是否随量子位官网源进入候选继续回升（目标 5）。
+3. ai_security fill 占比与质量；above_threshold 持续 <5 则考虑减量输出。
+4. 漏洞摘要 repair 接受率为 0 的原因（prompt 或 length gate）。
+5. cap 修复后大量"假死"中文源会复活，一周后再做真死源清理（避免误删）。
+
 ## Non-Goals For Now
 
 - 不把 AIHOT 当主数据源。
