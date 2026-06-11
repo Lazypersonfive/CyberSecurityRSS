@@ -7,16 +7,17 @@
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 99 | 13 | 14 | 72 | 0 | 9 | 13 | 34 | 0 |
-| ai_security | 69 | 12 | 0 | 57 | 0 | 7 | 12 | 8 | 14 |
+| ai | 96 | 12 | 16 | 68 | 0 | 8 | 12 | 35 | 0 |
+| ai_security | 69 | 11 | 0 | 58 | 0 | 8 | 11 | 8 | 14 |
 | finance | 70 | 4 | 0 | 66 | 0 | 16 | 4 | 0 | 0 |
-| security | 105 | 18 | 0 | 86 | 1 | 0 | 18 | 2 | 31 |
+| security | 105 | 17 | 0 | 86 | 2 | 0 | 17 | 2 | 32 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `cyberkendra.com` | 1 | security | [研究人员发布Windows Defender本地提权零日漏洞RoguePlanet的PoC](https://www.cyberkendra.com/2026/06/microsoft-defender-zero-day-poc-gives.html) |
+| `cyberkendra.com` | 1 | security | [Windows Defender零日漏洞PoC发布可在已打补丁系统获取SYSTEM权限](https://www.cyberkendra.com/2026/06/microsoft-defender-zero-day-poc-gives.html) |
+| `securityweek.com` | 1 | security | [Windows Defender零日漏洞RoguePlanet被披露可实现本地提权](https://www.securityweek.com/new-windows-zero-day-exploit-rogueplanet-released/) |
 
 ## Review Rule
 
