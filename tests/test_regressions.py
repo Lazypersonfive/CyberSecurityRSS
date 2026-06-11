@@ -1728,6 +1728,39 @@ class GeminiPipelineTests(unittest.TestCase):
 
         self.assertEqual([entry["title"] for entry, _score in pool], ["A", "B", "C"])
 
+    def test_candidate_pool_reserves_chinese_quota_slots(self) -> None:
+        # 6 high-scored English items fill a pool of 4 (top_n=2 -> pool 4);
+        # Chinese items score lower and sit outside the score cut. With
+        # min_chinese=2 the pool must swap them in over the English tail.
+        scored = [
+            ({"title": f"EN {i}", "url": f"https://en.example/{i}"}, 9 - i)
+            for i in range(4)
+        ] + [
+            ({"title": "中文安全分析一", "url": "https://cn.example/1"}, 5),
+            ({"title": "中文安全分析二", "url": "https://cn.example/2"}, 4),
+        ]
+
+        pool = _candidate_pool(scored, top_n=2, fill_score_floor=4, min_chinese=2)
+
+        titles = [entry["title"] for entry, _score in pool]
+        self.assertIn("中文安全分析一", titles)
+        self.assertIn("中文安全分析二", titles)
+        # Highest-scored English items stay; only the tail was swapped.
+        self.assertIn("EN 0", titles)
+        self.assertIn("EN 1", titles)
+        self.assertEqual(len(pool), 4)
+
+    def test_candidate_pool_chinese_quota_noop_when_satisfied(self) -> None:
+        scored = [
+            ({"title": "中文头条", "url": "https://cn.example/top"}, 9),
+            ({"title": "EN A", "url": "https://en.example/a"}, 8),
+            ({"title": "EN B", "url": "https://en.example/b"}, 7),
+        ]
+
+        pool = _candidate_pool(scored, top_n=2, fill_score_floor=4, min_chinese=1)
+
+        self.assertEqual([entry["title"] for entry, _score in pool], ["中文头条", "EN A", "EN B"])
+
     def test_llm_dedupe_preserves_related_urls_on_primary_item(self) -> None:
         class FakeBackend:
             name = "fake"

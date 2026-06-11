@@ -850,10 +850,44 @@ def _candidate_pool(
     *,
     top_n: int,
     fill_score_floor: int,
+    min_chinese: int = 0,
 ) -> list[tuple[dict[str, Any], int]]:
-    """Build the LLM dedupe pool from high-value items plus acceptable fillers."""
+    """Build the LLM dedupe pool from high-value items plus acceptable fillers.
+
+    The pool reserves slots for top-scored Chinese candidates: a pure
+    score-ordered cut lets a wall of 8-9 point English items push every
+    6-7 point Chinese item out *before* the min_chinese reserve in
+    select_with_source_policy ever sees them (observed on the ai board:
+    7 Chinese entries in the filtered set, 1 in the final selection).
+    """
     pool_size = min(top_n * DEDUPE_POOL_MULTIPLIER, DEDUPE_MAX_CANDIDATES)
-    return [(entry, score) for entry, score in scored if score >= fill_score_floor][:pool_size]
+    eligible = [(entry, score) for entry, score in scored if score >= fill_score_floor]
+    pool = eligible[:pool_size]
+    if min_chinese <= 0 or len(eligible) <= pool_size:
+        return pool
+
+    cn_in_pool = sum(1 for entry, _score in pool if _is_chinese_entry(entry))
+    if cn_in_pool >= min_chinese:
+        return pool
+
+    outside_cn = [
+        (entry, score) for entry, score in eligible[pool_size:] if _is_chinese_entry(entry)
+    ]
+    need = min(min_chinese - cn_in_pool, len(outside_cn))
+    if need <= 0:
+        return pool
+
+    pool = list(pool)
+    replaced = 0
+    for i in range(len(pool) - 1, -1, -1):
+        if replaced >= need:
+            break
+        if not _is_chinese_entry(pool[i][0]):
+            pool[i] = outside_cn[replaced]
+            replaced += 1
+    if replaced:
+        logger.info("candidate pool: swapped in %d Chinese candidates for quota", replaced)
+    return sort_scored_candidates(pool)
 
 
 def _infer_source(url: str) -> str:
@@ -900,7 +934,13 @@ def run(board: str, as_of: date | None = None) -> Path:
         scored = sort_scored_candidates(zip(entries, scores))
 
     above_threshold = [(e, sc) for e, sc in scored if sc >= threshold]
-    pool = _candidate_pool(scored, top_n=top_n, fill_score_floor=fill_score_floor)
+    source_policy = dict(bcfg.get("source_policy") or {})
+    pool = _candidate_pool(
+        scored,
+        top_n=top_n,
+        fill_score_floor=fill_score_floor,
+        min_chinese=int(source_policy.get("min_chinese", 0) or 0),
+    )
     clustered, deterministic_merged_urls = cluster_scored_candidates(pool) if pool else ([], [])
     if deterministic_merged_urls:
         logger.info(
@@ -910,7 +950,6 @@ def run(board: str, as_of: date | None = None) -> Path:
         )
     deduped, llm_merged_urls = _llm_dedupe(backend, clustered) if clustered else ([], [])
     merged_urls = deterministic_merged_urls + llm_merged_urls
-    source_policy = dict(bcfg.get("source_policy") or {})
     legacy_score_by_url = {entry.get("url", ""): score for entry, score in scored if entry.get("url")}
     final_scored = _score_candidates_for_selection(board, deduped, legacy_score_by_url, cfg.get("scoring"))
     selected_scored = select_with_source_policy(final_scored, top_n, source_policy)
