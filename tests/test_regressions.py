@@ -2039,8 +2039,8 @@ class LLMBackendTests(unittest.TestCase):
 
         self.assertEqual(backend.request_timeout_sec, 12)
         self.assertEqual(backend.client.http_options.timeout, 12000)
-        self.assertEqual(backend.score_model, "gemini-3.5-flash")
-        self.assertEqual(backend.summarize_model, "gemini-3.5-flash")
+        self.assertEqual(backend.score_model, "gemini-3-flash-preview")
+        self.assertEqual(backend.summarize_model, "gemini-3-flash-preview")
 
 
 class SourceAuditTests(unittest.TestCase):

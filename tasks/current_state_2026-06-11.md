@@ -101,8 +101,8 @@
     - 但还没有面向用户展示 source tier、related count、source mix、为什么入选等质量信号。
 
 12. **成本暂时不是首要瓶颈，但需要保留约束意识**
-    - 当前已切到 `gemini-3.5-flash`，价格约为旧 `gemini-3-flash-preview` 的 3 倍。
-    - 以历史日均消耗估算仍在每月 10 USD 目标内，但后续加 prefetch、eval、AIHOT compare 时要避免无意义重复调用。
+    - 曾短暂切到 `gemini-3.5-flash`，但因成本高于预期已回退到 `gemini-3-flash-preview`。
+    - 后续加 prefetch、eval、AIHOT compare 时仍要避免无意义重复调用，保持每月 10 USD 内的目标。
 
 ## Changes Already Made
 
@@ -112,7 +112,7 @@
 - 保留 Gemini 作为生产 backend，默认 `LLM_BACKEND=gemini`。
 - 预留 DeepSeek backend，后续可通过 `LLM_BACKEND=deepseek` 和 `DEEPSEEK_API_KEY` 切换。
 - 引入 `llm_backends/` adapter 思路，避免 pipeline 直接绑定单一 SDK。
-- 默认 Gemini 模型已改为 `gemini-3.5-flash`。
+- 默认 Gemini 模型已回退到 `gemini-3-flash-preview`。
 
 ### Scoring And Selection
 
@@ -289,6 +289,7 @@ Success criteria:
 ## 2026-06-11 PM Execution Log
 
 当日完成两轮迭代（commit `ca5b76c` + `0f861b2`），验证 run 27325184268 / 27326615284 均成功。
+本轮测试从 114 增至 121，`ruff check .` clean，两次 GitHub Actions 验证 run 全绿。
 
 ### Root cause 修复：中文安全源 7 天 0 raw（P0-1）
 
@@ -321,6 +322,20 @@ security 的 Synthesis 分类 190+ feed 在 72h 窗口共享 30 个"最新优先
 - `_candidate_pool` 中文配额：纯分数截断会让 6-7 分中文在 reserve 之前就被 8-9 分英文挤出 pool
   （filtered 7 条中文 → selected 1 条）。pool 现在为中文候选预留名额。验证：ai cn 1 → 3。
 
+### 方法论收获
+
+1. **`0 raw` 不等于源死了**
+   - 本地 probe 全活、CI 全空时，问题通常在中间管道。
+   - 本次根因是分类 cap 截断；此前也出现过 hash 旋转导致 feed 失效，两类问题不能混为一谈。
+
+2. **中英混排文本里的子串匹配非常危险**
+   - `"ai" in text` 会误伤 `supply chain` / `email` 这类词。
+   - Python `\b` 在 CJK 与 ASCII 边界不可靠，安全相关规则应使用显式 lookaround 或 tokenization。
+
+3. **配额机制必须检查整条管道**
+   - 下游 reserve 写对不代表最终有效。
+   - 如果上游 pool 截断先把中文候选、官方候选或低频高质源挤掉，selection policy 再正确也无能为力。
+
 ### 遗留观察项（明日 cron 后检查）
 
 1. security cn 是否稳定 ≥6（连续 3 天）。
@@ -337,4 +352,3 @@ security 的 Synthesis 分类 190+ feed 在 72h 窗口共享 30 个"最新优先
 - 不恢复 Anthropic backend。
 - 不为了满额牺牲板块相关性。
 - 不优先做 RSS/API/Skill，除非精选质量稳定。
-
