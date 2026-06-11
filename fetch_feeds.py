@@ -94,6 +94,7 @@ async def fetch_all_entries(
     seen_urls: set[str] | None = None,
     max_per_category: int = 30,
     feed_titles: dict[str, str] | None = None,
+    max_per_feed: int = 0,
 ) -> tuple[list[FeedEntry], dict[str, int]]:
     """Fetch all feeds concurrently and return recent entries.
 
@@ -104,6 +105,9 @@ async def fetch_all_entries(
         seen_urls: URLs already delivered; these will be skipped.
         max_per_category: Cap entries per category to limit API cost.
         feed_titles: Optional feed URL -> feed label mapping from OPML.
+        max_per_feed: Cap entries per individual feed (0 = unlimited). Applied
+            before the category cap so one prolific feed (e.g. a vuln firehose)
+            cannot crowd out low-frequency sources sharing its category.
 
     Returns:
         Tuple of (entry list, health dict mapping url -> error_count).
@@ -144,7 +148,8 @@ async def fetch_all_entries(
             health[url] = health.get(url, 0) + 1
             continue
 
-        for entry in result:
+        kept_for_feed = 0
+        for entry in sorted(result, key=lambda e: e.published, reverse=True):
             if entry.url in seen_urls:
                 continue
             if entry.published.timestamp() < cutoff:
@@ -152,17 +157,22 @@ async def fetch_all_entries(
             if entry.published > future_cutoff:
                 logger.debug("Skipping future-dated feed entry %s (%s)", entry.url, entry.published.isoformat())
                 continue
+            if max_per_feed > 0 and kept_for_feed >= max_per_feed:
+                break
             entry.category = category
             entry.feed_url = url
             entry.feed_title = feed_titles.get(url, url)
             category_entries.setdefault(category, []).append(entry)
+            kept_for_feed += 1
 
     for category in feeds:
-        ranked = sorted(
-            category_entries.get(category, []),
-            key=lambda entry: entry.published,
-            reverse=True,
-        )
+        candidates = category_entries.get(category, [])
+        if len(candidates) > max_per_category:
+            logger.info(
+                "category %s: %d entries exceed cap %d, truncating newest-first",
+                category, len(candidates), max_per_category,
+            )
+        ranked = sorted(candidates, key=lambda entry: entry.published, reverse=True)
         entries.extend(ranked[:max_per_category])
 
     entries.sort(key=lambda e: e.published, reverse=True)

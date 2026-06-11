@@ -18,6 +18,7 @@ import argparse
 from copy import deepcopy
 import json
 import logging
+import re
 from datetime import date, datetime
 from pathlib import Path
 from typing import Any
@@ -28,6 +29,7 @@ from digest_clock import digest_today
 from llm_backends import LLMBackend, get_backend
 from digest_postprocess import normalize_summary_text, summary_needs_repair
 from digest_postprocess import count_chinese_chars, SUMMARY_TARGET_MAX_CHARS, SUMMARY_TARGET_MIN_CHARS
+from digest_postprocess import vuln_summary_needs_repair, vuln_tech_element_count
 from scoring_policy import compute_final_score
 from source_policy import (
     select_with_source_policy,
@@ -151,6 +153,16 @@ SECURITY_SUMMARIZE_SYSTEM = """你是一位偏技术的安全日报编辑。你�
 9. tags 给 1-3 个中文关键词，每个不超过 6 字；selection_reason 不得为空，用不超过 30 个中文字符说明技术价值。
 10. 严格按 JSON 数组返回，不要解释、不要 Markdown 包裹。
 输出格式：[{"idx":0,"title_zh":"...","summary":"...","tags":["..."],"selection_reason":"..."}]"""
+
+
+VULN_REPAIR_SYSTEM = """你要重写一条漏洞资讯的中文摘要，让它覆盖技术要素。
+严格规则：
+1. 只依据给定原文信息改写，不得补充外部知识、不得编造技术细节。
+2. 摘要必须是 120-180 个汉字，2 句，简体中文。
+3. 优先覆盖：漏洞类型/原理、触发条件、影响版本或组件、修复/缓解状态。
+4. 原文未披露的要素，明确写"原文未披露XX"，不要省略也不要编造。
+5. 不要写"影响重大、建议关注"这类空话。
+输出格式：[{"idx":0,"summary":"..."}]"""
 
 
 REPAIR_SUMMARIZE_SYSTEM = """你要修正新闻摘要的长度问题。
@@ -348,6 +360,8 @@ def _summarize(
                 logger.warning("summarize parse failed (batch %d, retry %d): %s", i, retry, exc)
 
         repaired_summaries = _repair_summaries(backend, batch, smap)
+        if board == "security":
+            repaired_summaries = _repair_vuln_summaries(backend, batch, repaired_summaries)
         repaired_titles = _repair_titles(backend, batch, smap)
 
         for j, e in enumerate(batch):
@@ -626,6 +640,71 @@ def _repair_summaries(
         except Exception as exc:
             logger.warning("summary repair parse failed: %s", exc)
             break
+    return repaired
+
+
+def _is_vuln_entry(entry: dict[str, Any]) -> bool:
+    if entry.get("cve_ids"):
+        return True
+    text = f"{entry.get('title', '')} {entry.get('summary', '')[:200]}"
+    return bool(re.search(r"CVE-\d{4}-\d+|漏洞|0day|零日|vulnerabilit|exploit", text, re.IGNORECASE))
+
+
+def _repair_vuln_summaries(
+    backend: LLMBackend,
+    batch: list[dict[str, Any]],
+    summaries: dict[int, str],
+) -> dict[int, str]:
+    """One targeted rewrite for vuln summaries missing technical elements.
+
+    Direction 3 (tasks/current_state_2026-06-11.md): vuln summaries must cover
+    type/trigger/scope/remediation. The rewrite is only accepted when it
+    covers strictly more elements than the draft, so a bad LLM response can
+    never make a summary worse.
+    """
+    to_fix = []
+    for idx, entry in enumerate(batch):
+        draft = summaries.get(idx, "")
+        if not draft or not _is_vuln_entry(entry):
+            continue
+        if vuln_summary_needs_repair(draft):
+            to_fix.append(
+                {
+                    "idx": idx,
+                    "title": entry.get("title", ""),
+                    "source_summary": (entry.get("summary") or "")[:1200],
+                    "draft_summary": draft,
+                }
+            )
+    if not to_fix:
+        return summaries
+
+    user_prompt = (
+        "以下漏洞摘要缺少技术要素，请逐条重写。\n"
+        f"输入：\n{json.dumps(to_fix, ensure_ascii=False)}"
+    )
+    try:
+        text = backend.generate_json(backend.summarize_model, VULN_REPAIR_SYSTEM, user_prompt, 4000)
+        parsed = _parse_llm_json(text)
+    except Exception as exc:
+        logger.warning("vuln summary repair failed: %s", exc)
+        return summaries
+
+    repaired = dict(summaries)
+    for row in parsed:
+        try:
+            idx = int(row["idx"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        candidate = normalize_summary_text(row.get("summary") or "")
+        current = repaired.get(idx, "")
+        if not candidate or summary_needs_repair(candidate):
+            continue
+        if vuln_tech_element_count(candidate) > vuln_tech_element_count(current):
+            repaired[idx] = candidate
+    fixed = sum(1 for row in to_fix if repaired.get(row["idx"]) != row["draft_summary"])
+    if to_fix:
+        logger.info("vuln summary repair: %d candidates, %d improved", len(to_fix), fixed)
     return repaired
 
 

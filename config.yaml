@@ -82,6 +82,10 @@ boards:
     dedup_lookback_days: 0 # 质量优先：72h 窗口内昨天抓过但未入选的中文技术文不能提前过滤
     max_entries: 120      # 安全板块中文源多且更新分散，需保留更大候选池
     llm_max_entries: 120
+    # Synthesis 分类有 190+ feed 共享一个 cap；30（旧默认）会让北京白天发布的
+    # 公众号文章被贴近 UTC 抓取时间的英文文章按时间序挤光 → 中文 7 天 0 raw。
+    max_per_category: 150
+    max_per_feed: 6       # 防 Vulners/Pentesting 这类 firehose 单源吃掉整个分类 cap
     top_n: 15
     score_threshold: 6
     fill_score_floor: 4  # 质量优先但给中文漏洞/攻防技术源更多进入 reserve 的机会
@@ -108,6 +112,8 @@ boards:
     dedup_lookback_days: 0 # 稀疏板块不做跨日 raw 去重，避免候选池被 archive 吃空
     max_entries: 90
     llm_max_entries: 90
+    max_per_category: 60
+    max_per_feed: 8       # Google News AI Security 周产 160+，截最新 8 条足够
     top_n: 10
     score_threshold: 6
     fill_score_floor: 4  # 泛 AI 已被确定性压到 3 分；4 分保留边界技术安全候选
@@ -130,6 +136,8 @@ boards:
     dedup_lookback_days: 0 # 48h 质量窗口内不要被前日 archive 吃掉高价值 X/官网候选
     max_entries: 80
     llm_max_entries: 80
+    max_per_category: 60
+    max_per_feed: 10      # arXiv cs.AI 周产 180+，X 高频账号 40+；截最新 10 条
     top_n: 15
     score_threshold: 6
     fill_score_floor: 4
@@ -153,6 +161,8 @@ boards:
     fetch_hours: 336  # 官方 IR 低频（Visa ~1.5 周、MC 月更、Amex 季更），14 天窗口保证 Card Networks 有量
     max_entries: 30
     llm_max_entries: 30
+    max_per_category: 40
+    max_per_feed: 10      # 14 天窗口下 Google News 金融 query 周产 200+，必须截
     top_n: 10
     score_threshold: 5
     fill_score_floor: 4

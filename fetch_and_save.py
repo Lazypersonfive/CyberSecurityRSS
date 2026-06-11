@@ -96,6 +96,13 @@ def main() -> None:
         else load_seen_urls(today_str, lookback_days=dedup_lookback_days, include_today=False)
     )
 
+    # Per-category cap: 30 was the legacy hardcoded default. Large mixed
+    # categories (security Synthesis has 190+ feeds over a 72h window) need a
+    # far higher cap, or daytime-CST Chinese posts get crowded out by feeds
+    # publishing closer to the UTC-night fetch time.
+    max_per_category = int(bcfg.get("max_per_category", 30)) if args.board else 30
+    max_per_feed = int(bcfg.get("max_per_feed", 0)) if args.board else 0
+
     logger.info("[%s] Fetching entries (last %dh)...", board_label, hours)
     entries, health = asyncio.run(
         fetch_all_entries(
@@ -104,6 +111,8 @@ def main() -> None:
             timeout=25,
             seen_urls=seen_urls,
             feed_titles=feed_titles,
+            max_per_category=max_per_category,
+            max_per_feed=max_per_feed,
         )
     )
     logger.info("[%s] Got %d raw entries (%d feeds errored)", board_label, len(entries), len(health))

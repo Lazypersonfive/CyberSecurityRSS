@@ -131,6 +131,41 @@ class FetchFeedsTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual([entry.feed_url for entry in entries], ["feed-b", "feed-b"])
         self.assertEqual([entry.feed_title for entry in entries], ["Feed B", "Feed B"])
 
+    async def test_max_per_feed_prevents_firehose_crowding_out_category(self) -> None:
+        if fetch_feeds.httpx is None:
+            self.skipTest("httpx is not installed in this Python environment")
+
+        # firehose posts 4 newest entries; quiet feed posted 2 older ones.
+        # Without per-feed cap, category cap 4 newest-first would select only
+        # firehose entries. With max_per_feed=2 the quiet feed survives.
+        feeds = {"security": ["firehose", "quiet"]}
+        base = datetime(2026, 4, 22, tzinfo=timezone.utc)
+        results = {
+            "firehose": [
+                FeedEntry(f"fh-{i}", f"https://fh/{i}", "summary text long enough", "", base.replace(hour=10 + i))
+                for i in range(4)
+            ],
+            "quiet": [
+                FeedEntry("q-1", "https://q/1", "summary text long enough", "", base.replace(hour=1)),
+                FeedEntry("q-2", "https://q/2", "summary text long enough", "", base.replace(hour=2)),
+            ],
+        }
+
+        async def fake_fetch(_semaphore, _client, url):
+            return results[url]
+
+        with patch("fetch_feeds._fetch_one_bounded", side_effect=fake_fetch):
+            entries, _health = await fetch_all_entries(
+                feeds,
+                hours=9999,
+                max_per_category=4,
+                max_per_feed=2,
+            )
+
+        titles = {entry.title for entry in entries}
+        # firehose keeps its 2 newest; quiet keeps both of its entries
+        self.assertEqual(titles, {"fh-3", "fh-2", "q-1", "q-2"})
+
     async def test_future_dated_feed_entries_are_ignored(self) -> None:
         if fetch_feeds.httpx is None:
             self.skipTest("httpx is not installed in this Python environment")
@@ -1256,6 +1291,87 @@ class GeminiPipelineTests(unittest.TestCase):
             self.assertRegex(prompt, r"评分只看(新闻|技术)价值")
             self.assertIn("不因语言", prompt)
 
+    def test_vuln_tech_element_detection(self) -> None:
+        from digest_postprocess import vuln_summary_needs_repair, vuln_tech_element_count
+
+        vague = "该漏洞影响重大，攻击者可能利用它造成严重后果，相关用户应当保持关注并留意后续进展。"
+        technical = (
+            "Langflow 存在路径遍历漏洞，未经身份验证的远程攻击者可构造恶意请求读取任意文件，"
+            "影响 1.0 至 1.4 版本，官方尚未发布补丁，建议临时限制网络访问。"
+        )
+
+        self.assertLess(vuln_tech_element_count(vague), 2)
+        self.assertTrue(vuln_summary_needs_repair(vague))
+        self.assertGreaterEqual(vuln_tech_element_count(technical), 3)
+        self.assertFalse(vuln_summary_needs_repair(technical))
+
+    def test_repair_vuln_summaries_only_accepts_improvements(self) -> None:
+        from digest_pipeline_gemini import _repair_vuln_summaries
+
+        good_rewrite = (
+            "UpdraftPlus 备份插件存在反序列化漏洞，经过身份验证的攻击者可构造恶意备份文件触发远程代码执行，"
+            "进而完全接管站点并窃取数据库中的敏感数据，影响 1.25 之前的全部版本，波及大量在线站点。"
+            "官方已发布修复补丁并更新到插件市场，建议站长立即升级到最新版本，同时排查近期备份任务是否存在异常记录。"
+        )
+        worse_rewrite = (
+            "该漏洞威胁很大，攻击者可能借机发起攻击，给网站运营带来不小的风险，大家务必提高警惕并小心防范，"
+            "请站长和管理员持续关注官方网站的后续公告与相关说明，及时了解事件最新进展，避免遭受不必要的经济损失，"
+            "同时也提醒广大互联网用户注意保护好自己的账号和个人数据安全，遇到可疑情况请及时联系平台处理。"
+        )
+
+        class FakeBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summary"
+
+            def generate_json(self, model, system, user_prompt, max_output_tokens):
+                return json.dumps(
+                    [
+                        {"idx": 0, "summary": good_rewrite},
+                        {"idx": 1, "summary": worse_rewrite},
+                    ],
+                    ensure_ascii=False,
+                )
+
+        vague_draft = (
+            "这个插件漏洞影响广泛，攻击者可能借此发起攻击，对网站运营造成风险，"
+            "管理员应当持续关注官方动态并保持警惕，避免遭受不必要的损失和数据问题。"
+        )
+        batch = [
+            {"title": "UpdraftPlus CVE-2026-1111 flaw", "summary": "deserialization detail", "cve_ids": ["CVE-2026-1111"]},
+            {"title": "Plugin CVE-2026-2222 issue", "summary": "vague text", "cve_ids": ["CVE-2026-2222"]},
+        ]
+        summaries = {0: vague_draft, 1: vague_draft}
+
+        repaired = _repair_vuln_summaries(FakeBackend(), batch, summaries)
+
+        # idx 0: rewrite covers more tech elements -> accepted
+        self.assertEqual(repaired[0], good_rewrite)
+        # idx 1: rewrite is vaguer than draft -> rejected, draft kept
+        self.assertEqual(repaired[1], vague_draft)
+
+    def test_repair_vuln_summaries_skips_non_vuln_entries(self) -> None:
+        from digest_pipeline_gemini import _repair_vuln_summaries
+
+        calls = []
+
+        class FakeBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summary"
+
+            def generate_json(self, *args):
+                calls.append(args)
+                return "[]"
+
+        batch = [{"title": "Security conference announces lineup", "summary": "talks and dates"}]
+        summaries = {0: "大会公布了议程安排，多位研究者将分享议题，时间和地点已经确认，欢迎从业者关注并报名参加，议程覆盖多个方向。"}
+
+        repaired = _repair_vuln_summaries(FakeBackend(), batch, summaries)
+
+        self.assertEqual(repaired, summaries)
+        self.assertEqual(calls, [])
+
     def test_security_prompt_prioritizes_cn_vuln_mechanics_and_deprioritizes_geo_attribution(self) -> None:
         prompt = BOARD_SCORE_SYSTEM["security"]
 
@@ -1273,7 +1389,11 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(adjust_security_score(entry, 9), 4)
 
     def test_ai_security_editorial_caps_generic_ai_news(self) -> None:
-        generic = {
+        not_ai = {
+            "title": "Cisco patches critical router authentication bypass",
+            "summary": "The flaw allows remote attackers to take over devices.",
+        }
+        generic_ai = {
             "title": "OpenAI expands ChatGPT Plus training program in Malta",
             "summary": "The company announced broader access and education programs.",
         }
@@ -1282,8 +1402,36 @@ class GeminiPipelineTests(unittest.TestCase):
             "summary": "Researchers describe exploit steps and mitigation guidance.",
         }
 
-        self.assertEqual(adjust_ai_security_score(generic, 8), 3)
+        # No AI context at all -> belongs on security board, cap 3
+        self.assertEqual(adjust_ai_security_score(not_ai, 8), 3)
+        # AI context but no concrete security mechanism -> cap 4
+        self.assertEqual(adjust_ai_security_score(generic_ai, 8), 4)
         self.assertEqual(adjust_ai_security_score(technical, 8), 8)
+
+    def test_ai_security_editorial_not_fooled_by_substring_matches(self) -> None:
+        # Regression: "ai" used to match inside "supply chAIn" / "emAIl",
+        # letting generic supply-chain stories flood the AI-security board
+        # with a guaranteed floor-6 score.
+        supply_chain = {
+            "title": "Geopolitical supply chain attack tensions hit chipmakers",
+            "summary": "Trade limits reshape email and domain infrastructure markets.",
+        }
+
+        self.assertEqual(adjust_ai_security_score(supply_chain, 8), 3)
+
+    def test_security_editorial_geo_cap_requires_word_boundary(self) -> None:
+        # Regression: "apt" used to match inside "adapt"/"chapter"/"laptop".
+        benign = {
+            "title": "Adaptive fuzzing chapter: laptop kernel exploitation deep dive",
+            "summary": "A technical walkthrough of adaptive coverage-guided fuzzing.",
+        }
+        apt_numbered = {
+            "title": "APT41 campaign targets telecom providers",
+            "summary": "Attribution report on state-sponsored activity.",
+        }
+
+        self.assertEqual(adjust_security_score(benign, 9), 9)
+        self.assertEqual(adjust_security_score(apt_numbered, 9), 4)
 
     def test_ai_security_editorial_promotes_ai_coding_security_signals(self) -> None:
         entry = {
