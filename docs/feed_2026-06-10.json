@@ -237,9 +237,9 @@
           "selection_reason": "展示了经典僵尸网络 Mirai 采用新漏洞进行野外扩张的最新",
           "feed_url": "https://www.pwndefend.com/feed/",
           "feed_title": "PwnDefend",
-          "source_tier": "unknown",
-          "source_kind": "media",
-          "source_label": "未登记源",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "安全博客",
           "source_key": "pwndefend.com",
           "story_id": "cve:cve-2026-34910",
           "related_urls": [],
@@ -345,6 +345,42 @@
           }
         },
         {
+          "title_zh": "针对 Kubernetes 凭证泄露后的 RBAC 持久化后门排查技术指南",
+          "title_orig": "k8s-kubeconfig泄露后的RBAC持久化后门排查",
+          "summary": "本文深入探讨了攻击者在获取具有集群管理员权限的 kubeconfig 泄露凭证后，如何通过 RBAC 机制实施持久化后门植入，并重点介绍了针对此类隐蔽后门的排查思路与技术细节。该技术适用于 Kubernetes 容器安全运维与红蓝对抗场景，旨在帮助安全从业者和系统管理员提升对集群持久化攻击的检测与防御能力，确保容器云平台整体的安全稳定。",
+          "tags": [
+            "Kubernet",
+            "RBAC",
+            "后门排查"
+          ],
+          "url": "https://zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2%e5%90%8e%e7%9a%84rbac%e6%8c%81%e4%b9%85%e5%8c%96%e5%90%8e%e9%97%a8%e6%8e%92%e6%9f%a5/",
+          "source": "zgao.top",
+          "category": "RedTeam",
+          "published": "2026-06-09T09:31:25+00:00",
+          "cve_ids": [],
+          "selection_reason": "实战性强的 K8s 容器安全排查指南，极具参考价值。",
+          "feed_url": "https://zgao.top/feed/",
+          "feed_title": "Zgao's blog",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "zgao.top",
+          "story_id": "url:zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2%e5%90%8e%e7%9a%84rbac%e6%8c%81%e4%b9%85%e5%8c%96%e5%90%8e%e9%97%a8%e6%8e%92%e6%9f%a5",
+          "related_urls": [
+            "https://zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2-%e9%bb%91%e5%ae%a2%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8apiserver%e5%88%9b%e5%bb%ba%e7%89%b9%e6%9d%83%e5%ae%b9%e5%99%a8%e8%8e%b7%e5%8f%96node%e8%8a%82%e7%82%b9%e6%9d%83/"
+          ],
+          "related_count": 1,
+          "score": 8,
+          "dimension_score": 8.05,
+          "final_score": 7.85,
+          "score_breakdown": {
+            "source_bonus": -0.3,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
           "title_zh": "Spring Security 存在 X.509 客户端证书用户身份冒充漏洞 CVE-2026-47838",
           "title_orig": "CVE-2026-47838 Unauthorized User Impersonation when Using X.509 Client Certificates",
           "summary": "Spring Security 中的 SubjectDnX509PrincipalExtractor 组件无法正确处理某些畸形的 X.509 证书 CN 值，导致读取到错误的用户名，攻击者可借此通过精心构造的证书冒充其他用户。该漏洞影响 Spring Security 5.7.0 至 6.5.1 等多个版本，相关系统管理员和安全团队需警惕身份冒用风险。",
@@ -379,42 +415,6 @@
             "source_bonus": 0.0,
             "kind_bonus": -0.5,
             "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
-          "title_zh": "针对 Kubernetes 凭证泄露后的 RBAC 持久化后门排查技术指南",
-          "title_orig": "k8s-kubeconfig泄露后的RBAC持久化后门排查",
-          "summary": "本文深入探讨了攻击者在获取具有集群管理员权限的 kubeconfig 泄露凭证后，如何通过 RBAC 机制实施持久化后门植入，并重点介绍了针对此类隐蔽后门的排查思路与技术细节。该技术适用于 Kubernetes 容器安全运维与红蓝对抗场景，旨在帮助安全从业者和系统管理员提升对集群持久化攻击的检测与防御能力，确保容器云平台整体的安全稳定。",
-          "tags": [
-            "Kubernet",
-            "RBAC",
-            "后门排查"
-          ],
-          "url": "https://zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2%e5%90%8e%e7%9a%84rbac%e6%8c%81%e4%b9%85%e5%8c%96%e5%90%8e%e9%97%a8%e6%8e%92%e6%9f%a5/",
-          "source": "zgao.top",
-          "category": "RedTeam",
-          "published": "2026-06-09T09:31:25+00:00",
-          "cve_ids": [],
-          "selection_reason": "实战性强的 K8s 容器安全排查指南，极具参考价值。",
-          "feed_url": "https://zgao.top/feed/",
-          "feed_title": "Zgao's blog",
-          "source_tier": "unknown",
-          "source_kind": "media",
-          "source_label": "未登记源",
-          "source_key": "zgao.top",
-          "story_id": "url:zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2%e5%90%8e%e7%9a%84rbac%e6%8c%81%e4%b9%85%e5%8c%96%e5%90%8e%e9%97%a8%e6%8e%92%e6%9f%a5",
-          "related_urls": [
-            "https://zgao.top/k8s-kubeconfig%e6%b3%84%e9%9c%b2-%e9%bb%91%e5%ae%a2%e8%bf%9c%e7%a8%8b%e8%b0%83%e7%94%a8apiserver%e5%88%9b%e5%bb%ba%e7%89%b9%e6%9d%83%e5%ae%b9%e5%99%a8%e8%8e%b7%e5%8f%96node%e8%8a%82%e7%82%b9%e6%9d%83/"
-          ],
-          "related_count": 1,
-          "score": 8,
-          "dimension_score": 8.05,
-          "final_score": 7.85,
-          "score_breakdown": {
-            "source_bonus": -0.3,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.1,
             "cn_visibility_bonus": 0.0
           }
         },
@@ -569,14 +569,14 @@
         "direct": 14,
         "tier_t1": 5,
         "kind_official": 5,
-        "tier_t2": 8,
-        "kind_media": 4,
+        "tier_t2": 10,
+        "kind_media": 2,
         "aggregator": 1,
         "kind_expert_x": 1,
-        "tier_unknown": 2,
+        "kind_expert": 2,
         "kind_community": 4,
         "chinese": 1,
-        "kind_expert": 1
+        "kind_cn_expert": 1
       },
       "clustering_stats": {
         "deterministic_merged": 1,

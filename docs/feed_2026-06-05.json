@@ -113,6 +113,40 @@
           }
         },
         {
+          "title_zh": "WasmForge 工具发布：将 Sliver 远控工具编译为 WebAssembly 以规避检测",
+          "title_orig": "Enter the WasmForge: Compiling Sliver into WebAssembly",
+          "summary": "安全研究团队推出了一款名为WasmForge的新型加载器工具，该工具能够将Sliver等红队攻击工具系统性地编译为WebAssembly格式。通过利用WebAssembly在当前安全检测机制中的盲区，该技术可以显著降低VirusTotal等杀毒引擎的检出率，文章详细介绍了该加载器的构建原理、使用Claude技能批量应用该技术的过程及其在红队免杀对抗中的具体应用。",
+          "tags": [
+            "WebAssem",
+            "免杀技术",
+            "红队工具"
+          ],
+          "url": "https://www.praetorian.com/blog/wasmforge-sliver-webassembly/",
+          "source": "praetorian.com",
+          "category": "WebSecurity",
+          "published": "2026-06-04T13:30:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "利用 WebAssembly 进行免杀是前沿红队技术，值得防",
+          "feed_url": "https://www.praetorian.com/blog/feed",
+          "feed_title": "Blog | Praetorian",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "安全研究",
+          "source_key": "praetorian.com",
+          "story_id": "url:praetorian.com/blog/wasmforge-sliver-webassembly",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "dimension_score": 8.3,
+          "final_score": 8.3,
+          "score_breakdown": {
+            "source_bonus": -0.3,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0
+          }
+        },
+        {
           "title_zh": "Windows 版本 Hola 浏览器遭遇供应链攻击，被植入加密货币挖矿程序",
           "title_orig": "Hola Browser for Windows compromised to deliver cryptominer",
           "summary": "适用于 Windows 系统的 Hola 浏览器近期遭遇了供应链攻击。安全研究人员发现，该浏览器的安装包或更新通道已被攻击者篡改，并向用户分发了一个未声明的恶意可执行文件。经过深入分析，该恶意程序已被确认为加密货币挖矿软件，会在用户不知情的情况下占用系统资源进行挖矿，目前相关受影响范围仍在调查中。",
@@ -147,40 +181,6 @@
           }
         },
         {
-          "title_zh": "WasmForge 工具发布：将 Sliver 远控工具编译为 WebAssembly 以规避检测",
-          "title_orig": "Enter the WasmForge: Compiling Sliver into WebAssembly",
-          "summary": "安全研究团队推出了一款名为WasmForge的新型加载器工具，该工具能够将Sliver等红队攻击工具系统性地编译为WebAssembly格式。通过利用WebAssembly在当前安全检测机制中的盲区，该技术可以显著降低VirusTotal等杀毒引擎的检出率，文章详细介绍了该加载器的构建原理、使用Claude技能批量应用该技术的过程及其在红队免杀对抗中的具体应用。",
-          "tags": [
-            "WebAssem",
-            "免杀技术",
-            "红队工具"
-          ],
-          "url": "https://www.praetorian.com/blog/wasmforge-sliver-webassembly/",
-          "source": "praetorian.com",
-          "category": "WebSecurity",
-          "published": "2026-06-04T13:30:00+00:00",
-          "cve_ids": [],
-          "selection_reason": "利用 WebAssembly 进行免杀是前沿红队技术，值得防",
-          "feed_url": "https://www.praetorian.com/blog/feed",
-          "feed_title": "Blog | Praetorian",
-          "source_tier": "unknown",
-          "source_kind": "media",
-          "source_label": "未登记源",
-          "source_key": "praetorian.com",
-          "story_id": "url:praetorian.com/blog/wasmforge-sliver-webassembly",
-          "related_urls": [],
-          "related_count": 0,
-          "score": 8,
-          "dimension_score": 8.3,
-          "final_score": 8.3,
-          "score_breakdown": {
-            "source_bonus": -0.3,
-            "kind_bonus": 0.0,
-            "freshness_bonus": 0.3,
-            "cn_visibility_bonus": 0.0
-          }
-        },
-        {
           "title_zh": "安全研究揭示攻击者如何利用合法 QEMU 虚拟机工具进行隐蔽内网渗透",
           "title_orig": "The Detection & Response Chronicles: Covert Operations Through QEMU",
           "summary": "安全研究人员详细剖析了攻击者利用合法虚拟化工具 QEMU 进行隐蔽网络渗透的战术。由于 QEMU 是企业环境中常用的可信软件，安全防护解决方案通常不会对其进行拦截。攻击者借此在受害者网络中建立低特征的隐蔽通道，进行横向移动和命令与控制（C2）通信。该研究为防御团队检测此类“利用合法工具”（LOLBins）的攻击提供了新思路。",
@@ -197,9 +197,9 @@
           "selection_reason": "分析了利用合法虚拟化工具进行隐蔽渗透的技术，拓宽了检测视野。",
           "feed_url": "https://blog.nviso.eu/feed/",
           "feed_title": "NVISO Labs",
-          "source_tier": "unknown",
-          "source_kind": "media",
-          "source_label": "未登记源",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "安全研究",
           "source_key": "blog.nviso.eu",
           "story_id": "url:blog.nviso.eu/2026/06/04/the-detection-response-chronicles-covert-operations-through-qemu",
           "related_urls": [],
@@ -530,16 +530,15 @@
       "selection_stats": {
         "total": 15,
         "direct": 15,
-        "tier_t2": 10,
-        "kind_media": 4,
+        "tier_t2": 12,
+        "kind_media": 2,
         "chinese": 4,
         "wechat": 4,
         "kind_cn_expert": 4,
         "kind_community": 2,
-        "tier_unknown": 2,
+        "kind_expert": 4,
         "tier_t1": 3,
-        "kind_official": 3,
-        "kind_expert": 2
+        "kind_official": 3
       },
       "clustering_stats": {
         "deterministic_merged": 0,
