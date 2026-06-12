@@ -354,16 +354,40 @@ class SiteBuilderTests(unittest.TestCase):
     def test_template_uses_distinctive_editorial_visual_direction(self) -> None:
         template = Path("templates/index.html.j2").read_text(encoding="utf-8")
 
-        self.assertIn("oai-shell", template)
-        self.assertIn("oai-search", template)
-        self.assertIn("Docs / Daily intelligence", template)
+        self.assertIn("ic-shell", template)
+        self.assertIn("ic-search", template)
         self.assertIn("--surface", template)
-        self.assertIn("OpenAI-inspired interface", template)
         self.assertNotIn("lg:text-8xl", template)
         self.assertNotIn("sm:text-7xl", template)
         self.assertIn("grid lg:grid-cols-[220px_minmax(0,1fr)]", template)
         self.assertNotIn("font-sans", template)
 
+    def test_template_drops_borrowed_openai_identity(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertNotIn("OpenAI-inspired interface", template)
+        self.assertNotIn("Docs / Daily intelligence", template)
+        self.assertNotIn("oai-shell", template)
+        self.assertNotIn("https://openai.com/", template)
+        # Self-owned identity: inline favicon + wordmark mark.
+        self.assertIn('rel="icon"', template)
+        self.assertIn("ic-mark", template)
+
+    def test_template_renders_score_driven_hierarchy(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("renderHeroCard", template)
+        self.assertIn("final_score", template)
+        self.assertIn("ic-hero", template)
+        self.assertIn("scoreBadge", template)
+
+    def test_template_exposes_cluster_and_reason_signals(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("related_urls", template)
+        self.assertIn("related_count", template)
+        self.assertIn("relatedToggle", template)
+        self.assertIn("selection_reason", template)
 
     def test_template_renders_source_tier_badge(self) -> None:
         template = Path("templates/index.html.j2").read_text(encoding="utf-8")
