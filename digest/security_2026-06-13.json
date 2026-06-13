@@ -1,0 +1,560 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-13",
+  "generated_at": "2026-06-13T00:08:55.087114Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 13,
+    "tier_t2": 10,
+    "kind_expert": 3,
+    "aggregator": 2,
+    "kind_expert_x": 2,
+    "chinese": 6,
+    "wechat": 5,
+    "kind_cn_expert": 5,
+    "tier_unknown": 1,
+    "kind_media": 1,
+    "tier_t1": 4,
+    "kind_official": 4
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 5,
+    "merged_total": 5
+  },
+  "items": [
+    {
+      "title_zh": "Oracle 发布 PeopleSoft 零日漏洞 CVE-2026-35273 紧急补丁并警告其正遭积极利用",
+      "title_orig": "Active Exploitation of Oracle PeopleSoft Zero-Day (CVE-2026-35273)",
+      "summary": "Oracle公司于2026年6月10日针对PeopleSoft Enterprise PeopleTools更新环境管理组件中的CVE-2026-35273关键漏洞发布了紧急安全警报，该漏洞CVSS评分高达9.8且允许未经身份验证的攻击者远程执行代码。由于该零日漏洞正遭受黑客积极利用，官方已同步发布带外补丁并强烈敦促所有受影响的企业用户立即完成修复，以防范针对核心业务系统的潜在安全威胁并确保数据环境安全。",
+      "tags": [
+        "Oracle",
+        "零日漏洞",
+        "远程执行"
+      ],
+      "url": "https://www.rapid7.com/blog/post/etr-active-exploitation-of-oracle-peoplesoft-zero-day-cve-2026-35273",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-12T13:43:04+00:00",
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
+      "selection_reason": "涉及高评分零日漏洞的积极利用，具有极高的补救优先级。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-35273",
+      "related_urls": [
+        "https://www.cisa.gov/news-events/alerts/2026/06/12/cisa-adds-one-known-exploited-vulnerability-catalog",
+        "https://www.cisa.gov/news-events/alerts/2026/06/11/cisa-adds-one-known-exploited-vulnerability-catalog"
+      ],
+      "related_count": 2,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员 Nightmare Eclipse 发布针对 BitLocker 绕过漏洞 GreatXML 的概念验证代码",
+      "title_orig": "‼️🚨 BREAKING: Nightmare Eclipse just dropped GreatXML, a new BitLocker bypass 0-day vulnerability PoC. He has a new GitHub account. Check it out ...",
+      "summary": "安全研究员Nightmare Eclipse在其新开设的GitHub账户中公开发布了名为GreatXML的零日漏洞概念验证代码，该工具专门用于绕过Windows系统的BitLocker磁盘加密保护。由于此类绕过技术具有极高的安全风险，相关PoC代码在社交媒体和代码托管平台迅速传播，研究人员提醒用户在项目可能被删除前关注其技术动向以评估潜在的防护威胁。",
+      "tags": [
+        "BitLocke",
+        "漏洞PoC",
+        "权限绕过"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2065320909951422927",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-06-12T06:30:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "BitLocker 绕过技术对终端安全具有重大威胁，值得关注",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2065320909951422927",
+      "related_urls": [
+        "https://www.cyberkendra.com/2026/06/bitlocker-bypass-greatxml-using.html"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "TeamPCP 组织通过“投毒即服务”模式横扫 npm 与 PyPI 等主流开源生态系统",
+      "title_orig": "投毒即服务：TeamPCP如何引爆AI时代供应链危机",
+      "summary": "黑客组织TeamPCP在短短三个月内横扫了npm、PyPI、GitHub Actions及Docker Hub等主流开源生态系统，通过全链路投毒手段引发了严重的AI时代供应链安全危机。该组织利用高度自动化的攻击技战法渗透开发者环境与生产流水线，本文通过解剖其从恶意包构造到持久化控制的完整攻击链条，为企业防御此类复杂的供应链渗透提供了针对性的应对策略。",
+      "tags": [
+        "供应链攻击",
+        "开源安全",
+        "投毒攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU3ODAyMjg4OQ==&mid=2247497745&idx=1&sn=32375fa478f66b9da979ad9f95ace2c0",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-12T12:56:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了新型自动化供应链攻击模式，对防御体系建设有参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d762fbf5f8f256afb63bcfe9a362184072338819.xml",
+      "feed_title": "云鼎实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d762fbf5f8f256afb63bcfe9a362184072338819.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU3ODAyMjg4OQ%3D%3D&mid=2247497745&idx=1&sn=32375fa478f66b9da979ad9f95ace2c0",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "微软正式修补已被积极利用的 Exchange Server 零日漏洞 CVE-2026-42897",
+      "title_orig": "Microsoft 修补遭利用的 Exchange Server 漏洞",
+      "summary": "微软在最新的周二补丁日中修复了 Exchange Server 中一个被积极利用的零日漏洞，该漏洞此前已由 CISA 加入已知被利用漏洞目录。攻击者可利用该漏洞在未经授权的情况下对服务器实施攻击，微软曾于 5 月发布临时缓解措施以应对早期的野外利用。目前官方已提供正式补丁，建议所有受影响版本的用户立即完成更新以消除安全风险。",
+      "tags": [
+        "Exchange",
+        "微软补丁",
+        "零日攻击"
+      ],
+      "url": "http://0.0.0.0:8080/post/64333",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-12T02:37:00+00:00",
+      "cve_ids": [
+        "CVE-2026-42897"
+      ],
+      "selection_reason": "Exchange 漏洞影响范围广且已有野外利用，是运维安全重",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "cve:cve-2026-42897",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 预警 Naxclow IoT 平台存在多项漏洞可导致设备冒充与大规模凭据窃取",
+      "title_orig": "Naxclow IoT Platform",
+      "summary": "Naxclow IoT 平台旗下的智能门铃 X3、X Smart Home 及 V720 等多款组件被发现存在严重安全漏洞。攻击者可利用这些漏洞冒充合法设备、拦截并篡改通信数据，甚至大规模收集敏感登录凭据。受影响的版本涵盖了上述产品的多个发行版，成功利用后将导致攻击者获得未经授权的访问权限。原文未披露具体的 CVE 编号及修复状态。",
+      "tags": [
+        "物联网安全",
+        "凭据窃取",
+        "CISA预警"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-162-02",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-11T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及多款流行智能家居设备的底层平台安全，影响面较广。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-162-02",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.85,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "SQL Server 2025 新增 AI 功能被指可被滥用于数据外传及构建原生 C2 通道",
+      "title_orig": "哎呀，我把数据库武器化了：滥用 SQL Server 2025 中的 AI 功能",
+      "summary": "安全研究发现 SQL Server 2025 中集成的原生 AI 功能存在被武器化的风险，攻击者可借此实现隐蔽的数据外传。通过滥用相关 AI 组件，攻击者能够强制执行 NTLM 认证以获取凭据，甚至利用数据库原生功能构建命令与控制（C2）通信隧道。这种攻击方式利用了合法功能的逻辑缺陷，为红队渗透和高级威胁防御提供了新的视角。",
+      "tags": [
+        "SQLServe",
+        "AI安全",
+        "C2通道"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496342&idx=1&sn=22b5d0280ec6e909f5866bd6a4b8aafe",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-06-11T08:04:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了数据库新特性带来的新型攻击面，具有前瞻性技术价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496342&idx=1&sn=22b5d0280ec6e909f5866bd6a4b8aafe",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.7,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Ivanti Sentry 曝出多个关键漏洞，其中 CVE-2026-10520 可导致 OS 命令注入",
+      "title_orig": "CVE-2026-10520, CVE-2026-10523 - Multiple critical vulnerabilities affecting Ivanti Sentry",
+      "summary": "Ivanti Sentry（原 MobileIron Sentry）网关被发现存在两个关键安全漏洞，影响其加密和保护企业后端流量的功能。其中最严重的 CVE-2026-10520 是一个操作系统命令注入漏洞，允许攻击者在目标系统上执行任意指令。该组件作为移动设备与企业系统间的内联网关，其漏洞可能导致整个企业流量的安全防线崩溃。目前官方已发布安全公告。",
+      "tags": [
+        "Ivanti",
+        "命令注入",
+        "网关安全"
+      ],
+      "url": "https://www.rapid7.com/blog/post/etr-cve-2026-10520-cve-2026-10523-multiple-critical-vulnerabilities-affecting-ivanti-sentry",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-10T10:21:07+00:00",
+      "cve_ids": [
+        "CVE-2026-10520",
+        "CVE-2026-10523"
+      ],
+      "selection_reason": "关键企业基础设施组件的命令注入漏洞，具有极高的实战威胁。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-10520,cve-2026-10523",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519069&idx=1&sn=e0d7cce4fcd7ab8676edbc5239a49eba",
+        "https://www.securityweek.com/ivanti-sentry-exploitation-attempts-hitting-honeypots/"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Yarbo 移动应用及云基础设施存在硬编码凭据漏洞，可导致机器人集群受控",
+      "title_orig": "Yarbo Android/iOS Mobile Application and Cloud Infrastructure",
+      "summary": "Yarbo 旗下的 Android/iOS 移动应用程序及云端 MQTT 基础设施被曝存在严重漏洞，涉及所有当前版本。攻击者通过利用这些漏洞可以获取硬编码的敏感凭据，进而访问遥测数据并向机器人集群发送操作指令。这种安全缺陷不仅威胁到用户隐私，还可能导致物理设备被远程非法操控。目前 CISA 已发布相关 ICS 安全公告，原文未明确修复补丁发布情况。",
+      "tags": [
+        "移动安全",
+        "硬编码凭据",
+        "机器人安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-162-01",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-11T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "硬编码凭据导致的物理设备控制风险，是典型的 IoT 安全案例",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-162-01",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.65,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Brickcom 摄像头存在严重漏洞，远程攻击者可获取实时视频流及设备管理权限",
+      "title_orig": "Brickcom Cameras",
+      "summary": "Brickcom 旗下 Cube、Dome 及 Bullet 系列摄像头的 3.2.3.5.6 版本存在安全漏洞，其具体漏洞类型和原理在原文中未明确披露。远程未经身份验证的攻击者可利用这些漏洞绕过权限控制，直接访问受影响场所的实时视频监控画面，并进一步获取设备的管理员控制权。目前官方已发布安全公告，建议受影响用户关注相关固件更新以缓解潜在的安全风险。",
+      "tags": [
+        "物联网安全",
+        "摄像头漏洞",
+        "权限绕过"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-162-03",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-11T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施监控设备的远程未授权访问风险。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-162-03",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.65,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Anthropic 发生两次源码泄露事件，涉及 Claude Mythos 模型及 Claude Code 核心代码",
+      "title_orig": "【AI复盘】Claude 源码两次泄露事件",
+      "summary": "Anthropic 在一周内因配置失误导致两次重大泄露，首先是 CMS 配置错误暴露了 3000 份内部文件及未发布的 Mythos 模型，随后在发布 npm 包时因遗漏 source map 过滤导致 51.2 万行源码泄露。该事件揭示了即使是顶尖 AI 公司，在复杂的发布流程中也存在基础安全配置风险。泄露的代码展示了其多 Agent 编排和权限门控等先进架构设计，但发布流程的疏忽使核心资产面临被逆向风险。",
+      "tags": [
+        "源码泄露",
+        "AI安全",
+        "供应链安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487601&idx=1&sn=011928b1f6c7606868480cefe2308584",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-11T22:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级AI公司源码泄露，对研究AI架构安全及发布流程有警示意义",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ%3D%3D&mid=2247487601&idx=1&sn=011928b1f6c7606868480cefe2308584",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.3,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "研究人员利用 AI 驱动的模糊测试流水线成功发现谷歌严重漏洞并获 50 万美元赏金",
+      "title_orig": "50万美元赏金：不到3个月，利用AI 驱动的模糊测试流水线黑掉谷歌",
+      "summary": "安全研究员利用AI驱动的模糊测试流水线在谷歌系统中发现严重漏洞，该技术通过AI自动化生成并筛选测试用例，实现了高度可扩展的漏洞发现引擎。原文未披露具体的漏洞类型、触发条件及受影响的组件版本，仅强调了AI在复杂系统自动化安全审计中的效率提升。目前，该研究已获得谷歌50万美元赏金，但原文未披露漏洞的具体修复状态或技术细节。",
+      "tags": [
+        "AI安全测试",
+        "模糊测试",
+        "漏洞挖掘"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw==&mid=2247526269&idx=1&sn=9970da71246801444dddb384e0d366d3",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-12T08:15:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI在自动化漏洞挖掘领域的实战突破和高额回报。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "feed_title": "代码卫士",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw%3D%3D&mid=2247526269&idx=1&sn=9970da71246801444dddb384e0d366d3",
+      "related_urls": [
+        "https://www.cyberkendra.com/2026/06/researcher-used-ai-to-find-500000-worth.html",
+        "https://x.com/GoogleVRP/status/2065452384692605227"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Haskell 库 crypton-x509-validation 存在漏洞，未能强制执行 X.509 名称约束",
+      "title_orig": "VU#862559: crypton-x509-validation Haskell libraries do not enforce X.509 NameConstraints",
+      "summary": "Haskell TLS软件栈中的crypton-x509-validation库存在安全漏洞，其未能强制执行RFC 5280定义的NameConstraints安全特性。该缺陷导致受影响版本的库在验证X.509证书时，无法限制证书颁发机构可签名的域名范围，可能允许攻击者绕过域名约束。原文未披露具体的漏洞触发条件、受影响的版本号及修复状态，仅明确了该库在证书验证逻辑上的实现缺失。",
+      "tags": [
+        "协议实现漏洞",
+        "Haskell",
+        "证书验证"
+      ],
+      "url": "https://kb.cert.org/vuls/id/862559",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-06-11T14:30:20+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及底层加密库对RFC标准的实现缺陷，影响证书信任链安全。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/862559",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.4,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Trail of Bits 发现 RSA 私钥生成缺陷，利用多项式算法可快速分解数百个弱密钥",
+      "title_orig": "Factoring \"short-sleeve\" RSA keys with polynomials",
+      "summary": "研究人员发现部分 RSA 私钥在生成时存在严重偏差，其比特位倾向于 0 而非随机分布，导致公钥中也携带了可检测的特征。通过与 badkeys 项目合作，研究人员利用多项式算法成功识别并快速分解了数百个在互联网中实际使用的唯一弱密钥。该研究揭示了特定软件实现中的随机数生成漏洞，强调了在密码学实践中确保密钥随机性的重要性，并提供了检测此类弱密钥的技术手段。",
+      "tags": [
+        "密码学安全",
+        "RSA分解",
+        "弱密钥检测"
+      ],
+      "url": "https://blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials/",
+      "source": "blog.trailofbits.com",
+      "category": "WebSecurity",
+      "published": "2026-06-12T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "密码学实战研究，展示了如何通过数学手段破解非随机生成的RSA",
+      "feed_url": "https://blog.trailofbits.com/feed/",
+      "feed_title": "Trail of Bits Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.55,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Arch Linux AUR 仓库遭大规模供应链攻击，近 900 个软件包被植入后门和木马",
+      "title_orig": "‼️ UPDATE: It just doesn't stop: Almost 900 Arch Linux packages infected now. https://lists.archlinux.org/archives/list/aur-general@lists.archlinux....",
+      "summary": "Arch Linux 用户软件仓库（AUR）近期遭受严重供应链攻击，攻击者通过接管无人维护的软件包并冒充受信任维护者，向近 900 个软件包中植入了信息窃取木马和 Rootkit。受影响的包数量从最初发现的 400 个迅速攀升，攻击者利用了 AUR 社区维护机制的漏洞进行恶意代码分发。目前相关恶意软件包正在被清理，建议所有 Arch Linux 用户立即检查其 AUR 软件安装情况并审视维护者信誉。",
+      "tags": [
+        "供应链攻击",
+        "Linux安全",
+        "恶意软件包"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2065480567534080397",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-06-12T17:05:16+00:00",
+      "cve_ids": [],
+      "selection_reason": "大规模Linux社区供应链污染事件，对开源生态安全具有极高预",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2065480567534080397",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型 AI 辅助勒索软件具备蠕虫式自我复制能力，已导致 478 个组织受害",
+      "title_orig": "比病毒更可怕！这款勒索软件能“蠕虫式”自我复制，478个组织已沦陷",
+      "summary": "一款利用 AI 辅助开发的新型勒索软件近期活跃，该软件具备类似蠕虫的自我复制和自动传播能力，能够跨网络快速渗透。该勒索软件通过 90% 的高额分账诱饵吸引合作伙伴，目前已导致全球 478 个组织机构沦陷。其技术核心在于利用 AI 优化传播路径和免杀能力，使得传统防御手段难以快速拦截，目前相关安全机构正在追踪其传播节点并发布预警。",
+      "tags": [
+        "勒索软件",
+        "蠕虫病毒",
+        "AI攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458616524&idx=3&sn=6acb6dde67b77411ed369888c40e9ec8",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-12T09:59:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注AI辅助下的勒索软件进化趋势及其蠕虫化传播特征。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458616524&idx=3&sn=6acb6dde67b77411ed369888c40e9ec8",
+      "related_urls": [
+        "http://0.0.0.0:8080/post/64337"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "dimension_score": 7.2,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
