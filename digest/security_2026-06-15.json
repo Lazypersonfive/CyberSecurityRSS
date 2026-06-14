@@ -1,0 +1,551 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-15",
+  "generated_at": "2026-06-14T23:53:14.747924Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t2": 12,
+    "kind_expert": 2,
+    "chinese": 9,
+    "wechat": 7,
+    "kind_cn_expert": 7,
+    "tier_unknown": 3,
+    "kind_media": 6
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 3,
+    "merged_total": 3
+  },
+  "items": [
+    {
+      "title_zh": "Oracle PeopleSoft 曝出高危零日漏洞 CVE-2026-35273 并遭积极利用",
+      "title_orig": "Active Exploitation of Oracle PeopleSoft Zero-Day (CVE-2026-35273)",
+      "summary": "Oracle针对PeopleSoft Enterprise PeopleTools更新环境管理组件中的CVE-2026-35273漏洞发布了紧急带外补丁，该漏洞CVSS评分高达9.8且正遭受活跃攻击。由于未经身份验证的远程攻击者可无需任何权限触发代码执行，官方强烈建议受影响版本用户立即完成安全更新，以防范日益严峻的系统性安全风险并确保企业核心业务环境的整体安全性。",
+      "tags": [
+        "Oracle",
+        "零日漏洞",
+        "RCE"
+      ],
+      "url": "https://www.rapid7.com/blog/post/etr-active-exploitation-of-oracle-peoplesoft-zero-day-cve-2026-35273",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-12T13:43:04+00:00",
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
+      "selection_reason": "PeopleSoft 核心组件的 9.8 分零日漏洞，且已有",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-35273",
+      "related_urls": [
+        "https://www.cisa.gov/news-events/alerts/2026/06/12/cisa-adds-one-known-exploited-vulnerability-catalog",
+        "https://defend.network/briefings/oracle-peoplesoft-windows-bitlocker-gentlemen-ransomwar-2026-06-12.html"
+      ],
+      "related_count": 2,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "海莲花组织 OceanLotus 利用越南金融软件发起供应链攻击",
+      "title_orig": "海莲花黑客组织利用越南金融软件进行供应链攻击",
+      "summary": "安全团队追踪发现海莲花组织在 2024 至 2026 年间将运营重心转向供应链渗透，通过入侵越南金融软件供应商植入后门。该攻击旨在通过合法软件的分发渠道感染下游金融机构，体现了该组织在持久化潜伏和目标定向打击方面的技术演进。原文未披露具体受影响的软件名称及详细恶意代码特征。",
+      "tags": [
+        "海莲花",
+        "供应链攻击",
+        "金融安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187038&idx=1&sn=16bd27e31d83cfdc64c4f635d7fe46f8",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-14T14:31:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名 APT 组织在供应链攻击领域的最新活动动态。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187038&idx=1&sn=16bd27e31d83cfdc64c4f635d7fe46f8",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.7,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "TeamPCP 团伙横扫主流开源生态系统提供“投毒即服务”",
+      "title_orig": "投毒即服务：TeamPCP如何引爆AI时代供应链危机",
+      "summary": "TeamPCP攻击团伙在短短三个月内横扫了npm、PyPI、GitHub Actions及Docker Hub等主流开源生态，通过自动化脚本大规模发布恶意包实施全链路投毒。这种“投毒即服务”的新型模式利用开发者对开源组件的信任实现快速感染，显著降低了供应链攻击的门槛，对现代软件开发生命周期的安全防护体系以及全球开源供应链安全提出了极其严峻的挑战。",
+      "tags": [
+        "开源安全",
+        "投毒攻击",
+        "TeamPCP"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU3ODAyMjg4OQ==&mid=2247497745&idx=1&sn=32375fa478f66b9da979ad9f95ace2c0",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-12T12:56:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了当前开源生态面临的规模化、服务化投毒威胁。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d762fbf5f8f256afb63bcfe9a362184072338819.xml",
+      "feed_title": "云鼎实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d762fbf5f8f256afb63bcfe9a362184072338819.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU3ODAyMjg4OQ%3D%3D&mid=2247497745&idx=1&sn=32375fa478f66b9da979ad9f95ace2c0",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzI0MTE4ODY3Nw==&mid=2247492944&idx=1&sn=8c6e632ee5384847be174290f4d81ae0"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "微软修复正在被积极利用的 Exchange Server 零日漏洞 CVE-2026-42897",
+      "title_orig": "Microsoft 修补遭利用的 Exchange Server 漏洞",
+      "summary": "微软在五月补丁日正式修复了Exchange Server中编号为CVE-2026-42897的零日漏洞，该漏洞此前已被CISA列入已知被利用漏洞目录。攻击者可利用此漏洞绕过关键安全限制，微软曾于五月中旬发布预警并提供临时缓解措施，现阶段要求所有受影响用户必须尽快安装正式补丁以取代临时方案，从而彻底阻断正在发生的在野攻击。",
+      "tags": [
+        "Exchange",
+        "微软补丁",
+        "零日漏洞"
+      ],
+      "url": "http://0.0.0.0:8080/post/64333",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-12T02:37:00+00:00",
+      "cve_ids": [
+        "CVE-2026-42897"
+      ],
+      "selection_reason": "Exchange Server 关键漏洞修复，涉及在野利用及",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "cve:cve-2026-42897",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员利用 AI 驱动的模糊测试流水线获得谷歌 50 万美元赏金",
+      "title_orig": "50万美元赏金：不到3个月，利用AI 驱动的模糊测试流水线黑掉谷歌",
+      "summary": "研究人员利用大语言模型构建了自动化模糊测试流水线，通过AI生成目标代码的模糊测试用例并自动修复编译错误，成功在谷歌开源项目中发现多处严重漏洞。该技术利用AI的可扩展性实现了对复杂代码库的深度审计，原文未披露具体漏洞的CVE编号、漏洞类型及受影响的特定组件版本。目前，相关漏洞已通过谷歌漏洞奖励计划获得50万美元赏金，原文未披露具体的修复补丁状态。",
+      "tags": [
+        "AI安全",
+        "模糊测试",
+        "漏洞挖掘"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw==&mid=2247526269&idx=1&sn=9970da71246801444dddb384e0d366d3",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-12T08:15:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 驱动自动化漏洞挖掘在顶级互联网公司环境下的实战",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "feed_title": "代码卫士",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw%3D%3D&mid=2247526269&idx=1&sn=9970da71246801444dddb384e0d366d3",
+      "related_urls": [
+        "https://x.com/GoogleVRP/status/2065452384692605227"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.65,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "恶意软件 Mini-Shai-Hulud 利用违禁文本对抗大模型安全扫描",
+      "title_orig": "恶意软件植入核武器文本骗过大模型安全扫描",
+      "summary": "恶意软件Mini-Shai-Hulud采用了一种新型对抗性策略，通过在代码注释中嵌入涉及生物武器与核装置制备的虚假违禁文本，专门针对依赖大模型进行初筛的安全研判流程。这种设计利用了AI的安全对齐拦截机制，诱导自动化分析工具因触发敏感词过滤而直接丢弃样本，从而巧妙地绕过安全扫描，而非直接干扰Node或Bun等程序的实际运行逻辑。",
+      "tags": [
+        "对抗性攻击",
+        "恶意软件",
+        "AI防御绕过"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187020&idx=1&sn=6d187a96894114a53e9b34284cf18925",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-13T15:41:16+00:00",
+      "cve_ids": [],
+      "selection_reason": "一种新型的利用 AI 安全对齐机制来规避安全检测的攻击思路。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187020&idx=1&sn=6d187a96894114a53e9b34284cf18925",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.5,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Splunk Enterprise 修复可导致未经身份验证远程执行代码的漏洞",
+      "title_orig": "Critical Splunk Enterprise Flaw Lets Attackers Run Code Without Authentication",
+      "summary": "Splunk发布了针对CVE-2026-20253漏洞的关键安全更新，该高危漏洞影响10.2.4和10.0.7以下版本的Splunk Enterprise，其CVSS评分达到9.8。未经身份验证的远程攻击者可利用该漏洞执行任意文件创建或截断操作，甚至在目标服务器上实现远程代码执行，官方敦促相关企业用户必须立即升级至最新安全版本，以避免核心业务系统权限被非法接管或数据遭到破坏。",
+      "tags": [
+        "Splunk",
+        "RCE",
+        "身份验证绕过"
+      ],
+      "url": "https://thehackernews.com/2026/06/critical-splunk-enterprise-flaw-lets.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-13T13:23:03+00:00",
+      "cve_ids": [
+        "CVE-2026-20253"
+      ],
+      "selection_reason": "Splunk 核心产品的严重漏洞，具有极高的远程利用风险。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-20253",
+      "related_urls": [
+        "https://defend.network/briefings/splunk-rce-arch-linux-supply-chain-velvet-ant-backdoor-2026-06-14.html",
+        "https://defend.network/briefings/arch-linux-supply-chain-velvet-ant-linux-backdoor-2026-06-13.html"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "SimpleHelp 远程管理软件身份验证绕过漏洞遭利用劫持终端",
+      "title_orig": "SimpleHelp Authentication Bypass Exploited to Hijack Remote Endpoints",
+      "summary": "远程管理软件SimpleHelp被发现存在一个最高严重级别的身份验证绕过漏洞，攻击者无需凭据即可绕过安全验证并接管受控的远程终端。该漏洞已被观察到在野利用，主要影响SimpleHelp的远程运维场景，原文未披露受影响的具体版本号、漏洞触发的技术原理及CVE编号。目前，原文未披露官方是否已发布正式的修复补丁或缓解措施，建议相关用户排查内网环境。",
+      "tags": [
+        "SimpleHe",
+        "身份验证绕过",
+        "终端安全"
+      ],
+      "url": "https://securityonline.info/simplehelp-authentication-bypass/",
+      "source": "securityonline.info",
+      "category": "Synthesis",
+      "published": "2026-06-13T03:55:21+00:00",
+      "cve_ids": [],
+      "selection_reason": "远程管理工具的身份验证绕过漏洞，直接威胁企业内网终端安全。",
+      "feed_url": "https://securityonline.info/feed/",
+      "feed_title": "Cybersecurity News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityonline.info",
+      "story_id": "url:securityonline.info/simplehelp-authentication-bypass",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Ivanti Sentry 关键 OS 命令注入漏洞遭到在野利用，蜜罐捕获到针对该漏洞的攻击尝试",
+      "title_orig": "Ivanti Sentry Exploitation Attempts Hitting Honeypots",
+      "summary": "该漏洞属于关键级别的OS命令注入漏洞，允许未经身份验证的远程攻击者在受影响的Ivanti Sentry系统上以root权限执行任意代码，对企业内网安全构成严重威胁。目前安全研究机构的蜜罐已捕获到活跃的在野利用尝试，虽然原文未披露具体受影响版本及补丁状态，但建议管理员必须立即检查系统日志并采取必要的缓解措施以防范潜在攻击。",
+      "tags": [
+        "命令注入",
+        "Ivanti",
+        "在野利用"
+      ],
+      "url": "https://www.securityweek.com/ivanti-sentry-exploitation-attempts-hitting-honeypots/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-06-12T09:44:16+00:00",
+      "cve_ids": [],
+      "selection_reason": "Ivanti 漏洞近期频发且危害极大，蜜罐捕获利用信号具有预",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/ivanti-sentry-exploitation-attempts-hitting-honeypots",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员利用多项式分解技术成功破解存在比特偏差的“短袖”RSA 私钥",
+      "title_orig": "Factoring \"short-sleeve\" RSA keys with polynomials",
+      "summary": "Trail of Bits 研究人员发现当 RSA 私钥生成逻辑存在缺陷导致比特位偏向 0 而非随机生成时，公钥会表现出可检测的偏差特征。通过与 badkeys 项目合作，研究人员利用多项式分解技术在野外发现了数百个可被快速分解的唯一密钥，并定位了导致该生成缺陷的底层代码漏洞，原文未详细说明具体受影响的软件库名称。",
+      "tags": [
+        "RSA加密",
+        "密码学",
+        "漏洞研究"
+      ],
+      "url": "https://blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials/",
+      "source": "blog.trailofbits.com",
+      "category": "WebSecurity",
+      "published": "2026-06-12T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了密码学实现缺陷如何导致密钥被快速破解，具有极高技术深度",
+      "feed_url": "https://blog.trailofbits.com/feed/",
+      "feed_title": "Trail of Bits Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.35,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全热点周报：谷歌发布紧急更新以修复今年发现的第五个 Chrome 浏览器零日漏洞",
+      "title_orig": "安全热点周报：谷歌紧急修复今年以来的第五个 Chrome 零日漏洞",
+      "summary": "谷歌公司近期紧急发布了安全更新，旨在修复今年以来在Chrome浏览器中发现的第五个零日漏洞，该漏洞的活跃利用情况已引起网络安全界的广泛关注。由于零日漏洞通常在官方补丁发布前就已被黑客掌握，建议所有Chrome用户及企业管理员尽快完成版本升级，以防止攻击者利用该安全漏洞窃取敏感数据或控制用户终端设备。",
+      "tags": [
+        "漏洞",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506256&idx=1&sn=c224a12564404e714621129fe659e1fa",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-12T10:04:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ%3D%3D&mid=2247506256&idx=1&sn=c224a12564404e714621129fe659e1fa",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.7,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "新型 Agentjacking 攻击利用 Sentry 伪造错误报告诱导 AI 编程助手执行恶意代码",
+      "title_orig": "Agentjacking Attack Tricks AI Coding Agents Into Running Malicious Code",
+      "summary": "Tenet Security研究人员披露了一种名为Agentjacking的新型攻击，该攻击通过Sentry错误跟踪平台构造伪造的错误报告，专门针对AI编程助手发起恶意诱导。当AI代理在处理这些包含恶意指令的报告时，会被欺骗并在开发者的本地机器上执行任意代码，这种攻击利用了AI对外部输入数据的信任缺陷，目前开发者社区尚缺乏有效的自动化防御手段。",
+      "tags": [
+        "AI安全",
+        "供应链攻击",
+        "代码注入"
+      ],
+      "url": "https://thehackernews.com/2026/06/agentjacking-attack-tricks-ai-coding.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-12T12:04:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 AI 编程助手在处理外部反馈数据时的安全边界脆弱性。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/06/agentjacking-attack-tricks-ai-coding.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型勒索软件利用 AI 辅助开发并具备蠕虫式自我复制能力，已导致 478 个组织受害",
+      "title_orig": "比病毒更可怕！这款勒索软件能“蠕虫式”自我复制，478个组织已沦陷",
+      "summary": "这款新型勒索软件利用AI辅助开发并具备强大的蠕虫式自我复制能力，目前已导致全球范围内至少478个组织沦陷，其传播速度和破坏力远超传统计算机病毒。该恶意软件通过高达90%的利润分账作为诱饵吸引合作者，形成规模化的犯罪链条，企业需警惕这种结合了人工智能技术与社交工程手段的进化型威胁，并加强内部网络的安全隔离与防护。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458616524&idx=3&sn=6acb6dde67b77411ed369888c40e9ec8",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-12T09:59:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458616524&idx=3&sn=6acb6dde67b77411ed369888c40e9ec8",
+      "related_urls": [
+        "http://0.0.0.0:8080/post/64337"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "dimension_score": 7.35,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "本田思域车载系统被曝存在“邪恶女佣”漏洞，攻击者可通过 USB 接口刷入任意固件",
+      "title_orig": "本田思域容易遭到“邪恶女佣攻击”",
+      "summary": "研究人员发现本田思域车载 Android 系统使用了公开的 AOSP 测试密钥进行签名，导致系统信任机制失效。具有物理访问权限的攻击者可通过汽车 USB 接口刷入任意软件包并执行代码，实现对车辆系统的持久化控制，这种“邪恶女佣”攻击利用了供应链中签名密钥管理的严重疏忽，原文未提及本田官方的修复计划。",
+      "tags": [
+        "车联网安全",
+        "固件签名",
+        "物理攻击"
+      ],
+      "url": "https://www.solidot.org/story?sid=84576",
+      "source": "solidot.org",
+      "category": "Synthesis",
+      "published": "2026-06-14T16:15:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的供应链签名密钥管理失误案例，对车载系统安全具有警示意义",
+      "feed_url": "https://www.solidot.org/index.rss",
+      "feed_title": "奇客Solidot–传递最新科技情报",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "solidot.org",
+      "story_id": "url:solidot.org/story?sid=84576",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "技术手段揭示影子 API 供应链风险，呼吁加强 AI 大模型中转站的透明度与审计问责",
+      "title_orig": "花钱买旗舰，到手是开源：三把技术利器揭穿影子API (AI中转站) 的真实面目",
+      "summary": "针对市场上部分AI中转站存在的“挂羊头卖狗肉”现象，技术专家推出了三把技术利器，旨在揭穿那些打着旗舰大模型旗号实则使用开源模型填充的影子API真实面目。该研究强调大模型不应成为不可审计的黑盒，供应链的每一个环节都应当接受透明度与问责制的监督，通过技术手段确保用户能够获得与其付费标准相符的真实服务，维护AI产业的诚信生态。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA==&mid=2651141657&idx=1&sn=404cf7ee19311d71f4ad4daf1621960d",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-12T03:28:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "feed_title": "安全牛",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA%3D%3D&mid=2651141657&idx=1&sn=404cf7ee19311d71f4ad4daf1621960d",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.3,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
