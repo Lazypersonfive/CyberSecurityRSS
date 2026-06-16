@@ -1,0 +1,560 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-16",
+  "generated_at": "2026-06-16T00:20:53.098883Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "chinese": 6,
+    "tier_unknown": 7,
+    "kind_media": 10,
+    "tier_t2": 7,
+    "kind_cn_expert": 3,
+    "wechat": 2,
+    "kind_expert": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 3,
+    "llm_merged": 3,
+    "merged_total": 6
+  },
+  "items": [
+    {
+      "title_zh": "CISA 将 Cisco SD-WAN Manager 及 LiteSpeed 插件漏洞加入已知漏洞目录",
+      "title_orig": "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
+      "summary": "美国网络安全和基础设施安全局CISA将Cisco Catalyst SD-WAN Manager的目录遍历漏洞以及LiteSpeed cPanel插件的符号链接跟踪漏洞正式加入已知利用漏洞目录。这些漏洞已被证实存在活跃的在野利用行为，是恶意网络攻击者常用的攻击矢量，可能导致非法访问或权限提升，建议受影响用户立即参考厂商指南完成修复以防范潜在威胁。",
+      "tags": [
+        "CISA",
+        "漏洞预警",
+        "在野利用"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/06/15/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-15T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-20262",
+        "CVE-2026-54420"
+      ],
+      "selection_reason": "CISA KEV 目录更新是企业漏洞优先级修复的重要参考指标",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2025-11749,cve-2026-20262,cve-2026-54420",
+      "related_urls": [
+        "https://securityonline.info/litespeed-cpanel-privilege-escalation-cve-2026-54420/",
+        "https://www.bleepingcomputer.com/news/security/cisco-fixes-sd-wan-vmanage-flaw-exploited-in-zero-day-attacks/"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux 内核 Fragnesia 权限提升漏洞 CVE-2026-46300 已被成功复现",
+      "title_orig": "【已复现】Linux内核Fragnesia权限提升漏洞（CVE-2026-46300）",
+      "summary": "通告显示Linux内核中存在代号为Fragnesia的权限提升漏洞，编号为CVE-2026-46300，研究人员已在特定环境下成功复现了该漏洞的攻击过程。攻击者可利用此漏洞绕过系统安全限制并获取最高管理权限，虽然原文未披露具体的触发原理及受影响的内核版本细节，但鉴于其潜在的危害性，建议相关管理员密切关注后续官方补丁的发布情况。",
+      "tags": [
+        "Linux内核",
+        "提权漏洞",
+        "漏洞复现"
+      ],
+      "url": "https://blog.nsfocus.net/%e3%80%90%e5%b7%b2%e5%a4%8d%e7%8e%b0%e3%80%91linux%e5%86%85%e6%a0%b8fragnesia%e6%9d%83%e9%99%90%e6%8f%90%e5%8d%87%e6%bc%8f%e6%b4%9e%ef%bc%88cve-2026-46300%ef%bc%89-2/",
+      "source": "blog.nsfocus.net",
+      "category": "Synthesis",
+      "published": "2026-06-15T02:53:58+00:00",
+      "cve_ids": [
+        "CVE-2026-46300"
+      ],
+      "selection_reason": "Linux 内核提权漏洞对服务器安全具有极高的潜在威胁。",
+      "feed_url": "http://blog.nsfocus.net/feed/",
+      "feed_title": "绿盟科技技术博客",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "blog.nsfocus.net",
+      "story_id": "cve:cve-2026-46300",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.8,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Nginx 远程代码执行漏洞 CVE-2026-42945 预警及技术通告",
+      "title_orig": "【漏洞通告】Nginx远程代码执行漏洞（CVE-2026-42945）",
+      "summary": "Nginx被披露存在编号为CVE-2026-42945的远程代码执行漏洞，该漏洞主要涉及ngx_http_rewrite模块，攻击者可通过构造特定的恶意请求触发漏洞。一旦漏洞被成功利用，攻击者将能在目标服务器上执行任意代码，目前该漏洞的技术细节尚未完全公开，建议系统管理员及时关注官方安全更新，并采取必要措施防范潜在的远程攻击风险。",
+      "tags": [
+        "Nginx",
+        "远程代码执行",
+        "Web安全"
+      ],
+      "url": "https://blog.nsfocus.net/%e3%80%90%e6%bc%8f%e6%b4%9e%e9%80%9a%e5%91%8a%e3%80%91nginx%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%a0%81%e6%89%a7%e8%a1%8c%e6%bc%8f%e6%b4%9e%ef%bc%88cve-2026-42945%ef%bc%89-2/",
+      "source": "blog.nsfocus.net",
+      "category": "Synthesis",
+      "published": "2026-06-15T02:57:28+00:00",
+      "cve_ids": [
+        "CVE-2026-42945"
+      ],
+      "selection_reason": "Nginx 作为核心基础设施，其 RCE 漏洞具有极高的风险",
+      "feed_url": "http://blog.nsfocus.net/feed/",
+      "feed_title": "绿盟科技技术博客",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "blog.nsfocus.net",
+      "story_id": "cve:cve-2026-42945",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "PolarCTF 2026 夏季赛 Web 方向全解：涵盖 JS 泄露与 CSRF 漏洞利用",
+      "title_orig": "PolarCTF2026夏季赛web方向全解",
+      "summary": "该漏洞集涉及PolarCTF 2026 Web赛题中的多个安全缺陷。其中“偷吃蟠桃”题目存在前端JS源码泄露，攻击者可通过控制台调用函数或手动构造数据包绕过分值校验；“你会渗透吗”题目中，社工字典生成工具存在越权访问漏洞，且密码重置功能未校验请求来源，存在CSRF漏洞。原文未披露具体的组件版本号，目前这些漏洞主要用于竞赛环境的技能演示。",
+      "tags": [
+        "CTF",
+        "Web安全",
+        "漏洞利用"
+      ],
+      "url": "https://xz.aliyun.com/news/92303",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-06-14T12:17:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供完整的 CTF 解题思路，有助于安全人员学习复合漏洞利用",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92303",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92303"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Jenkins 关键远程代码执行漏洞 CVE-2026-53435 出现活跃在野利用",
+      "title_orig": "Jenkins RCE Vulnerability CVE-2026-53435 Now Under Active Exploitation",
+      "summary": "Jenkins持续集成工具中编号为CVE-2026-53435的关键远程代码执行漏洞目前正遭受活跃的在野利用，攻击者已开始滥用该漏洞对相关服务器发起实际攻击。该漏洞允许远程攻击者在未经授权的情况下执行任意指令，严重威胁CI/CD流水线的整体安全，尽管原文未详细说明触发原理，但强调了其紧迫性，建议用户立即检查系统环境并更新相关补丁。",
+      "tags": [
+        "Jenkins",
+        "RCE",
+        "供应链安全"
+      ],
+      "url": "https://securityonline.info/jenkins-rce-vulnerability-cve-2026-53435/",
+      "source": "securityonline.info",
+      "category": "Synthesis",
+      "published": "2026-06-15T09:26:47+00:00",
+      "cve_ids": [
+        "CVE-2025-30023",
+        "CVE-2026-53435"
+      ],
+      "selection_reason": "CI/CD 工具的在野 RCE 利用是企业供应链安全的重大威",
+      "feed_url": "https://securityonline.info/feed/",
+      "feed_title": "Cybersecurity News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityonline.info",
+      "story_id": "cve:cve-2025-30023,cve-2026-53435",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "phpBB 论坛修复潜伏十年的身份验证绕过漏洞，支持一键接管管理员账号",
+      "title_orig": "phpBB 论坛修复潜伏十年的认证绕过漏洞",
+      "summary": "phpBB论坛软件修复了一个潜伏长达十年的身份验证绕过漏洞，该漏洞影响4.0.0-a2及3.3.16以下版本，允许攻击者仅通过一次简单的HTTP请求便以管理员等任意用户身份登录。此漏洞由Aikido研究人员通过HackerOne计划报告，利用方式极其简单且危害巨大，目前官方已紧急发布修复版本，建议所有使用该系统的站长立即完成升级以保障账户安全。",
+      "tags": [
+        "phpBB",
+        "身份绕过",
+        "逻辑漏洞"
+      ],
+      "url": "http://0.0.0.0:8080/post/64340",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-15T03:13:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "潜伏十年的高危逻辑漏洞，利用门槛极低，影响范围广泛。",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "url:0.0.0.0/post/64340",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "LiteLLM AI 网关漏洞链可导致低权限用户接管服务器并窃取模型密钥",
+      "title_orig": "LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers",
+      "summary": "开源AI网关LiteLLM被披露存在一个由三个漏洞组成的利用链，允许拥有默认低权限账户的攻击者实现权限提升。该漏洞链触发条件为攻击者需具备初始访问权限，通过串联利用可最终在服务器上执行任意代码并接管系统，导致其代理的百余个模型提供商API密钥泄露。原文未披露具体的CVE编号及受影响版本，但强调了该漏洞对AI基础设施的严重威胁，修复状态原文未明确说明。",
+      "tags": [
+        "AI安全",
+        "漏洞链",
+        "权限提升"
+      ],
+      "url": "https://thehackernews.com/2026/06/litellm-vulnerability-chain-lets-low.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-15T16:39:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对 AI 基础设施的漏洞利用链，揭示了新兴 AI 网关的安",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/06/litellm-vulnerability-chain-lets-low.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.3,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "SimpleHelp 远程管理软件漏洞允许攻击者创建非法特权技术员账户",
+      "title_orig": "SimpleHelp bug lets hackers create rogue remote support accounts",
+      "summary": "SimpleHelp 远程管理软件被曝存在安全漏洞，未经身份验证的攻击者可利用该漏洞在服务器上创建具有特权的账户。该漏洞与 OpenID Connect (OIDC) 身份验证协议的实现有关，可能导致远程管理服务器被完全控制。目前已知该漏洞可被黑客用于建立持久化访问通道，建议使用该软件的企业尽快检查账户列表并应用补丁。",
+      "tags": [
+        "SimpleHe",
+        "身份验证绕过",
+        "远程管理"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/simplehelp-bug-lets-hackers-create-rogue-remote-support-accounts/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-15T20:06:52+00:00",
+      "cve_ids": [],
+      "selection_reason": "远程管理软件的账户创建漏洞是黑客进行内网渗透的常用入口。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/simplehelp-bug-lets-hackers-create-rogue-remote-support-accounts",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.3,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "海莲花APT组织最新网络攻击活动技术细节深度分析",
+      "title_orig": "海莲花APT组织最新攻击活动详细分析",
+      "summary": "该研究详细分析了海莲花（OceanLotus）APT组织近期发起的定向攻击活动，揭示了其利用定制化恶意软件载荷、多级跳板架构以及针对特定目标的社会工程学手段。虽然原文未披露具体的漏洞CVE编号，但重点展示了该组织在规避检测和持久化驻留方面的技术演进，反映出其针对敏感机构进行长期渗透的极高专业性与隐蔽能力。",
+      "tags": [
+        "海莲花",
+        "APT攻击",
+        "恶意软件"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247496812&idx=1&sn=ea2c629093e7ed02031a8c89681afea9",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-14T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "海莲花是活跃的APT组织，其技术演进对威胁情报研究有重要价值",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247496812&idx=1&sn=ea2c629093e7ed02031a8c89681afea9",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187038&idx=1&sn=16bd27e31d83cfdc64c4f635d7fe46f8"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "恶意软件利用违禁核武文本对抗大模型安全扫描机制",
+      "title_orig": "恶意软件植入核武器文本骗过大模型安全扫描",
+      "summary": "恶意样本Mini-Shai-Hulud通过在JS代码注释中嵌入核武器与生物武器制备的违禁文本，利用大模型安全对齐机制实现防御绕过。当安全研判流程依赖大模型进行初筛时，这些敏感文本会触发模型的拒绝回答或拦截机制，导致模型无法输出对后续真实恶意代码的分析结果。这种针对AI自动化审计流程的“投毒”攻击，展示了新型的对抗样本利用思路。",
+      "tags": [
+        "AI安全",
+        "对抗攻击",
+        "恶意软件"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187020&idx=1&sn=6d187a96894114a53e9b34284cf18925",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-13T15:41:16+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对AI辅助安全审计流程的新型绕过技术，具有前瞻性。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187020&idx=1&sn=6d187a96894114a53e9b34284cf18925",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Arch Linux 供应链遭蠕虫攻击及 Velvet Ant 组织植入 Linux 后门",
+      "title_orig": "Arch Linux supply-chain worm, Velvet Ant backdoor, Gemini phishing-as-a-service",
+      "summary": "近期安全界发现超过400个Arch Linux AUR软件包遭供应链蠕虫感染，其内置的凭据窃取器和eBPF Rootkit严重威胁用户数据安全，同时与中国相关的Velvet Ant组织被曝已利用Linux身份验证后门潜伏长达十年之久。此外，谷歌正式起诉了一家利用Gemini AI技术构建自动化钓鱼服务平台的中国组织，这些事件共同揭示了供应链漏洞、长期隐蔽渗透以及人工智能黑产化对全球网络防御体系构成的严峻挑战。",
+      "tags": [
+        "供应链安全",
+        "Rootkit",
+        "Linux安全"
+      ],
+      "url": "https://defend.network/briefings/arch-linux-supply-chain-velvet-ant-linux-backdoor-2026-06-13.html",
+      "source": "defend.network",
+      "category": "Synthesis",
+      "published": "2026-06-13T06:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖了大规模供应链污染和长期潜伏的后门，技术影响范围极广。",
+      "feed_url": "https://defend.network/feed.xml",
+      "feed_title": "defend.network",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "defend.network",
+      "story_id": "url:defend.network/briefings/arch-linux-supply-chain-velvet-ant-linux-backdoor-2026-06-13.html",
+      "related_urls": [
+        "http://0.0.0.0:8080/post/64342",
+        "https://defend.network/briefings/splunk-rce-arch-linux-supply-chain-velvet-ant-backdoor-2026-06-14.html",
+        "https://mp.weixin.qq.com/s?__biz=MzkzMDE5MDI5Mg==&mid=2247511320&idx=1&sn=f893556b4771c3b91423c567ee880779",
+        "https://www.solidot.org/story?sid=84587"
+      ],
+      "related_count": 4,
+      "score": 9,
+      "dimension_score": 8.7,
+      "final_score": 8.4,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Metasploit 更新增加 Kerberos 与证书追踪调试功能",
+      "title_orig": "Weekly Metasploit Update: New Kerberos/Certificate tracing options, and multiple new modules",
+      "summary": "Metasploit发布每周更新，重点引入了源自Google编程之夏项目的KerberosTicketTrace和CertificateTrace两个新调试选项，旨在显著提升安全研究员在执行模块或编写插件时的协议交互透明度。此外，本次更新还集成了多个针对最新漏洞的渗透测试模块，通过增强框架的实战覆盖能力和调试效率，帮助用户更有效地识别并验证复杂的网络安全风险。",
+      "tags": [
+        "Metasplo",
+        "渗透测试",
+        "Kerberos"
+      ],
+      "url": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-13-06-2026",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-13T00:22:18+00:00",
+      "cve_ids": [],
+      "selection_reason": "Metasploit是核心安全工具，其调试功能的增强直接提升",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "url:rapid7.com/blog/post/pt-metasploit-wrap-up-13-06-2026",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.15,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 流行插件遭劫持导致 120 万个站点被植入后门",
+      "title_orig": "Attackers Hijack Popular WordPress Plugins to Deploy Backdoors",
+      "summary": "攻击者通过劫持OptinMonster及其关联的流行WordPress插件，利用插件更新机制在超过120万个活跃网站中植入了隐藏后门，从而实现对受影响站点的远程控制。该大规模供应链攻击对全球大量网站的安全构成严重威胁，目前相关插件已紧急发布安全修复版本，专家强烈建议管理员立即检查系统环境并更新至最新版本，以彻底消除潜在的持久化驻留风险。",
+      "tags": [
+        "WordPres",
+        "供应链攻击",
+        "插件安全"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/wordpress-plugin-supply-chain/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-06-15T17:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "影响超过百万量级的站点，是典型的CMS生态供应链安全事件。",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/wordpress-plugin-supply-chain",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Windows Defender 竞争条件漏洞可导致本地权限提升",
+      "title_orig": "Windows Defender (MsMpEng.exe) Race Condition -> LPE / SYSTEM / Use-After-Free -> Crash",
+      "summary": "Windows Defender核心进程MsMpEng.exe被发现存在严重的竞争条件漏洞，攻击者可利用该缺陷触发释放后使用错误，进而在受影响的系统上实现本地权限提升并获得最高SYSTEM权限。该漏洞风险评级为中等，可能导致系统服务崩溃或被恶意利用进行提权操作，虽然原文未明确提及补丁编号，但建议广大Windows用户密切关注微软官方安全更新以防范潜在攻击。",
+      "tags": [
+        "Windows",
+        "权限提升",
+        "竞争条件"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026060013",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-06-15T15:31:20+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及Windows原生安全组件的权限提升漏洞，具有较高的实战",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "url:cxsecurity.com/issue/wlb-2026060013",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenEMR 7.0.2 版本存在高危任意文件读取漏洞",
+      "title_orig": "OpenEMR 7.0.2 Arbitrary File Read",
+      "summary": "开源医疗管理系统OpenEMR 7.0.2版本被曝存在高风险的任意文件读取漏洞，攻击者可以通过构造特定的Payload绕过访问控制，直接读取服务器上的敏感配置文件或系统关键数据。由于该漏洞影响范围涵盖所有运行此版本的医疗机构设施且已有PoC公开，安全专家建议受影响用户必须尽快应用官方补丁，并严格限制登录接口的访问权限以防止医疗敏感信息泄露。",
+      "tags": [
+        "OpenEMR",
+        "文件读取",
+        "漏洞利用"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026060009",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-06-15T15:30:12+00:00",
+      "cve_ids": [],
+      "selection_reason": "医疗系统漏洞直接威胁敏感数据安全，且已有PoC流出，需重点关",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "url:cxsecurity.com/issue/wlb-2026060009",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.75,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

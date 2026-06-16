@@ -1,17 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-06-15",
-  "fetched_at_utc": "2026-06-14T23:53:21.085960Z",
+  "fetched_at": "2026-06-16",
+  "fetched_at_utc": "2026-06-16T00:21:01.280551Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 43,
-  "entry_count": 21,
+  "raw_entry_count": 52,
+  "entry_count": 27,
   "filter_stats": {
-    "input": 43,
-    "output": 43
+    "input": 52,
+    "dropped_title_blacklist": 1,
+    "dedup_merged": 4,
+    "output": 47
   },
   "curation_stats": {
-    "dropped_source_cap": 22
+    "dropped_source_cap": 20
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -19,7 +21,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -54,7 +56,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://github.blog/security/vulnerability-research/feed/": {
       "feed_title": "GitHub Security Lab",
@@ -75,7 +77,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 8
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -103,21 +105,21 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://www.endorlabs.com/learn/rss.xml": {
       "feed_title": "Endor Labs",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://snyk.io/blog/feed/": {
       "feed_title": "Snyk Blog",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "https://www.aikido.dev/blog/rss.xml": {
       "feed_title": "Aikido Security",
@@ -145,7 +147,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 6
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -187,7 +189,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 3
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -208,14 +210,14 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 5
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
@@ -241,6 +243,19 @@
   },
   "entries": [
     {
+      "title": "Why AI hasn’t replaced software engineers, and won’t",
+      "url": "https://simonwillison.net/2026/Jun/14/why-ai-hasnt-replaced-software-engineers/#atom-everything",
+      "summary": "Why AI hasn’t replaced software engineers, and won’t Arvind Narayanan and Sayash Kappor take on the question of AI job losses through the lens of a profession that is uniquely suited to AI disruption - software engineering. In this essay, we argue that there is enough evidence to reject the narrative that once AI capabilities reach a certain threshold, it will cause mass layoffs. Given that this i",
+      "category": "AISecurityLabs",
+      "published": "2026-06-14T23:54:11+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
       "title": "When a Government Pulls an AI Model: What the Fable 5 and Mythos 5 Suspension Means for Security Teams",
       "url": "https://snyk.io/blog/fable-mythos-suspension-security-takeaways/",
       "summary": "On June 12, 2026, a US export-control directive led Anthropic to disable Claude Fable 5 and Mythos 5 worldwide over a reported jailbreak. The reported trigger was a code-analysis capability that defenders use routinely. Here is what happened, how the security community read it, and what security teams can take from it.",
@@ -254,69 +269,162 @@
       "feed_title": "Snyk Blog"
     },
     {
-      "title": "OpenAI WebRTC Audio Session, now with document context",
-      "url": "https://simonwillison.net/2026/Jun/12/openai-webrtc/#atom-everything",
-      "summary": "OpenAI WebRTC Audio Session, now with document context I built the first version of this tool in December 2024 to try out the then-new OpenAI WebRTC API for interacting with their realtime audio models. Last month OpenAI introduced a brand new model to that API called GPT‑Realtime‑2 , which they promoted as \"our first voice model with GPT‑5‑class reasoning\" - with a Sep 30, 2024 knowledge cut-off.",
+      "title": "SailPoint acquires AI agent security startup Entro for reported $200M - SiliconANGLE",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWWRiQm53NGZhcU96VC1MWGpMeWNZUV8xS251YkhtaHVQRHN0RTloMUNMQ1BQQWpvbGFWcXd6RUtUUWw3T2g2dEs1Rml2YTQ0MHp0MGRuUmU4N3VLWE1zYjJZdmF3QjNyclhkVHRKRk9zRmN1Q252MFZMWW9EcUp3SGNIdTJ1U09xMWlnTWNPRHo0X09FbUl1ZmM3X0FCM2s0TzNZ?oc=5",
+      "summary": "SailPoint acquires AI agent security startup Entro for reported $200M &nbsp;&nbsp; SiliconANGLE",
+      "category": "CoverageFallback",
+      "published": "2026-06-15T23:27:40+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Inside the Modern SOC: The 72-Minute Race",
+      "url": "https://unit42.paloaltonetworks.com/soc-72-minute-race/",
+      "summary": "Attackers can move from access to exfiltration in 72 minutes. Learn how modern SOC teams close the speed gap with Unit 42's AI-driven automation, threat hunting, MDR and Managed XSIAM. The post Inside the Modern SOC: The 72-Minute Race appeared first on Unit 42 .",
       "category": "AISecurityLabs",
-      "published": "2026-06-12T23:53:04+00:00",
+      "published": "2026-06-15T23:00:19+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "1Password acquires Apono to bolster AI security | brief | SC Media - SC Media",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQTFEzQS0zeTFnZnpGOER2MHdtNS13M05pNUd2LWZmRnQ0bENQdmpuUjRNYWtLTnhXRmJqcHdUTTFXR0RJcHVqTkR1cFJUbFdhTy1BaVZfck9iak9vWVVoU2NuZzdVY1EwVUp3VEstQlJmcTcwdnJEb0tYMnVaNkF6Sk11aw?oc=5",
+      "summary": "1Password acquires Apono to bolster AI security | brief | SC Media &nbsp;&nbsp; SC Media",
+      "category": "CoverageFallback",
+      "published": "2026-06-15T22:31:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "A Mythos audit of Symfony found 19 vulnerabilities. One of our engineers pointed our internal skills at the same code.",
+      "url": "https://x.com/trailofbits/status/2066607280699953219",
+      "summary": "A Mythos audit of Symfony found 19 vulnerabilities. One of our engineers pointed our internal skills at the same code. Scott Arciszewski: Last month, the @Symfony blog posted about some results from Claude Mythos. https://symfony.com/blog/claude-mythos-audited-symfony-and-found-19-vulnerabilities",
+      "category": "XSignals",
+      "published": "2026-06-15T19:42:26+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
+    {
+      "title": "Anthropic’s Claude Fable 5 withdrawal highlights geopolitical risk in legal AI supply chain - Legal IT Insider",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRGR2VWJnT1pVbFdVWjJLSGZwcGRHYWFyWldkUll3ZUpVcXJTRUswMWxwemh0RzN5bnZLR3RPVHotSUZrRGdVWTNxVEFWdFlhMXhoUEt2ZDNBaUdTTVdqYzd0N25zd0U2NHY0N2F3bm0yMWJHUzNYRmJHNk8zeS0yNlQ4SkhzTW5uY0VjVExkamJDWUZtVWhrOGFPSXg1VWJPTVhhVTBLUTRUQjYwY3pVSGlYVDhFazllOUF3?oc=5",
+      "summary": "Anthropic’s Claude Fable 5 withdrawal highlights geopolitical risk in legal AI supply chain &nbsp;&nbsp; Legal IT Insider",
+      "category": "CoverageFallback",
+      "published": "2026-06-15T18:07:54+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Supply Chain Security"
+    },
+    {
+      "title": "datasette-agent 0.3a0",
+      "url": "https://simonwillison.net/2026/Jun/15/datasette-agent/#atom-everything",
+      "summary": "Release: datasette-agent 0.3a0 New tool, execute_write_sql , which requests user approval and then writes to a database - taking user permissions into account. #27 I added a mechanism for asking user approval in datasette agent 0.2a0 . The new execute_write_sql tool can now prompt the user for all kinds of useful operations. Here's an example where I add some pelican sightings to my pelican_sighti",
+      "category": "AISecurityLabs",
+      "published": "2026-06-15T17:19:27+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
     },
     {
-      "title": "AI Agent Security Hits Its Reckoning: Prompt Injection May Be a Permanent Flaw, Not a Patchable Bug - Tech Times",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNbjdsMDhNNmJDMjVZTGFQcXRVSEF6MmwtM29zaXRnRlRoZlFub2dIaF9QeE5ZRlhRRll3a3hsSTE5Skg5dzBRU05XNkpFTkppWmtRR1lYcDNwNHZaMTJET1BaRU11d0Z1ZDJpdW5ITW10UFVFWXY4X3JENVdXZUR4YmNfcTJOZVJaaXdpT09hc3dVa0MteVRjTGNrTF9ZOXBmOTRsVVg1YjBpLW5OZENqMGJUajNwWjVodnBkSThVSUk3bHhQMGlfQ2E2V0NSUU1odGVKWlROVm5ENDdtRUE?oc=5",
-      "summary": "AI Agent Security Hits Its Reckoning: Prompt Injection May Be a Permanent Flaw, Not a Patchable Bug &nbsp;&nbsp; Tech Times",
+      "title": "Palantir Rises 5%, Cloudflare Pops 3% as Investors Pile Into AI Security Plays - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQlVRSWdNM0tad0Q4ZE5tOTgxMm9Ea05mTHNYcEQ4VDlqbDVMSGVORlBEQkFwaHZWa0o5Sk1vMDJpMlhad2tmYVRPazZmZjEzeVpUUXBEU2FkRFc2U0ZndEsxb0FITlAyUUNncGlLeUhHeFpReklYTHNnWUV3M3JUZzh6MmNfWnVoQmFxcG52QkI1cDFtN2piWGd6UDF4QQ?oc=5",
+      "summary": "Palantir Rises 5%, Cloudflare Pops 3% as Investors Pile Into AI Security Plays &nbsp;&nbsp; Yahoo Finance",
       "category": "CoverageFallback",
-      "published": "2026-06-14T21:51:37+00:00",
+      "published": "2026-06-15T17:03:51+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
-      "related_urls": [],
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPclAyN0duYXJQcXFQaC01TDROS2JscDh5dG4zVTNmU1RzSVVVdjhVMzVDYmVhTjFTWmhEelVDcUQ5dkJwQ3JHU0prRUZIYk1sMVlSenZqOHhiNDI5M2duSWJSY1U2RDVXTTJwN1R2dTBzeGJKVjRJRzhxOW9ITjUxd3FWNzZMa2E0amlQWTBHeEJxWmdQRFVxNFVxVk5MUWdvY3NjZWNROFJPR2VsU1pXWkVheVVMRWsxYVVN?oc=5"
+      ],
       "quality_score": 1,
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Security"
     },
     {
-      "title": "When the Frontier Blinks: What the Mythos and Fable Controversy Reveals About AI Security - Security Boulevard",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdTFvM1dST1diSnNob0FRdDdlOGh1anV2SUd4ZXhObHMwOUhIV2E3dFRnWXkwZjR2TXVWMXpKbTJFdmZVVmpHcHlOSmNld05FODd5TGsydDJuWFZlZi1EX3RSM3FsWHVWYXIzc09BakZnNC1KT2dYZ1pibXVBXy1xUGFCX0dzVWFVNWRLUEwwYUpxQUpnT2tWX3VNUHA0WUltR3N3a3VYMlZVZFQ4WGlUbk12WlVaZjdJMV9JMlBZYml1X3FmSXc?oc=5",
-      "summary": "When the Frontier Blinks: What the Mythos and Fable Controversy Reveals About AI Security &nbsp;&nbsp; Security Boulevard",
-      "category": "CoverageFallback",
-      "published": "2026-06-14T16:17:29+00:00",
-      "fetch_status": "rss_only",
+      "title": "RT Inco ☁️: Re we launched Lightning on @base Sepolia testnet in April 2025. since then we've been iterating on the developer experience, optimizing...",
+      "url": "https://x.com/trailofbits/status/2066549260099940666",
+      "summary": "RT Inco ☁️ Re we launched Lightning on @base Sepolia testnet in April 2025. since then we've been iterating on the developer experience, optimizing performance, and completing extensive audits by @trailofbits today it's production-ready",
+      "category": "XSignals",
+      "published": "2026-06-15T15:33:30+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "A crypto token’s wipeout makes AI security an investor problem - Startup Fortune",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNLTVfZGV0M3o1eFY5X2VESVhvbndUTnZBUk1LVUVabzVoTlRHZHEwVXRZR2RRX3JJUmVmMTBpNFNTZC1aQkdJSkZLNndLR0V2UVhJc2swSVpmV2dydk5sUE9JUjBaazktN0Fja2NqNk1NV05EeUhlNTdxYkdaZnprbmpoMlJZVWRlRkRMVzhtWURSc1E?oc=5",
-      "summary": "A crypto token’s wipeout makes AI security an investor problem &nbsp;&nbsp; Startup Fortune",
-      "category": "CoverageFallback",
-      "published": "2026-06-14T14:54:49+00:00",
-      "fetch_status": "rss_only",
+      "title": "\"They screwed us\": Personality clashes sent Anthropic's models offline",
+      "url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/#atom-everything",
+      "summary": "&quot;They screwed us&quot;: Personality clashes sent Anthropic&#x27;s models offline Lots of \"source familiar with the administration's thinking\" and \"source close to Anthropic\" in this Axios piece, which is the best collection of behind-the-scenes gossip I've seen about the US government export control Mythos/Fable story so far. Logan Graham ( I lead the Frontier Red Team at Anthropic ), Dave Or",
+      "category": "AISecurityLabs",
+      "published": "2026-06-15T14:57:33+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
-      "title": "America Turns Airports into AI Security Fortresses Leaving Europe and Asia Behind in Travel Tech Race - Travel And Tour World",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFB0TEtpNmlIbEw0a2MzYkRuQ2tYdEpuTkpsSkEtbkFlWWRpZHlTa1kxVmVtQVpPOThQdFhSUWF0dU93OHlISFo1ZUZNblR1QlhIQUZYbmxGcFBDX3Z5Rjk5dXFQcG1NNGg5WE5xOTVR?oc=5",
-      "summary": "America Turns Airports into AI Security Fortresses Leaving Europe and Asia Behind in Travel Tech Race &nbsp;&nbsp; Travel And Tour World",
-      "category": "CoverageFallback",
-      "published": "2026-06-14T10:22:02+00:00",
+      "title": "The Government Just Banned an AI Model. An Engineer's Perspective.",
+      "url": "https://snyk.io/blog/government-ban-ai-model-engineer-perspective/",
+      "summary": "A government order abruptly took down a powerful AI model, exposing a new kind of supply chain risk for engineering teams. Security leaders need contingency plans before the next model disappears.",
+      "category": "AISecurityLabs",
+      "published": "2026-06-15T00:00:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "https://snyk.io/blog/feed/",
+      "feed_title": "Snyk Blog"
+    },
+    {
+      "title": "Introducing the OpenAI Partner Network",
+      "url": "https://openai.com/index/introducing-openai-partner-network",
+      "summary": "OpenAI launches the Partner Network, investing $150M to help global partners accelerate enterprise AI adoption, deployment, and transformation.",
+      "category": "FirstParty",
+      "published": "2026-06-14T17:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "PolarCTF2026夏季赛web方向全解",
+      "url": "https://xz.aliyun.com/news/92303",
+      "summary": "偷吃蟠桃上手先玩了一把，第一关很好过，第二关没法过（需要100000分）前端泄露了JS源码方法一：利用浏览器控制台调用函数方法二：手动发包你会渗透吗test账号登录进去有一张图片，一个社会工程学字典生成器（显示没有权限访问）这里有squirtle的一些信息，直接访问工具的路径就能下载，用社工字典生成器生成密码爆破密码是PolarDN138可以给管理员发送消息和重置密码，重置密码存在CSRF漏洞：没",
+      "category": "Chinese",
+      "published": "2026-06-14T12:17:30+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "This isn’t a hot take. It’s objectively true",
@@ -330,32 +438,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "Publishing WASM wheels to PyPI for use with Pyodide",
-      "url": "https://simonwillison.net/2026/Jun/13/publishing-wasm-wheels/#atom-everything",
-      "summary": "The Pyodide 314.0 release announcement (via Hacker News ) includes news I've been looking forward to for a long time: You can now publish Python packages built for Pyodide (or any Python runtime compatible with the PyEmscripten platform defined in PEP 783 ) directly to PyPI and install them at runtime. Previously, the Pyodide maintainers had to maintain, build, and host over 300 packages ourselves",
-      "category": "AISecurityLabs",
-      "published": "2026-06-13T23:55:18+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "Mapping SQLite result columns back to their source `table.column`",
-      "url": "https://simonwillison.net/2026/Jun/13/sqlite-column-provenance/#atom-everything",
-      "summary": "Research: Mapping SQLite result columns back to their source `table.column` It would be neat if arbitrary SQL queries in Datasette could be rendered with additional information based on which columns from which tables were included in the results. To build that, we would need to be able to look at a SQL query like select users.name, orders.total from users join orders on orders.user_id = users.id",
-      "category": "AISecurityLabs",
-      "published": "2026-06-13T23:05:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
     },
     {
       "title": "As a person who has done a ton of red teaming and finding jailbreaks in oai and anthropic models, my guess is that Anthropic is actually correct about...",
@@ -384,82 +466,95 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "Tracing Digital Intent: New MacOS Tahoe 26 Artifact Discovered",
-      "url": "https://unit42.paloaltonetworks.com/new-macos-artifact-discovered/",
-      "summary": "Unit 42 has discovered a new macOS Tahoe 26 forensic artifact that tracks user menu selections across the operating system. Learn more here. The post Tracing Digital Intent: New MacOS Tahoe 26 Artifact Discovered appeared first on Unit 42 .",
+      "title": "The agent control plane needs a security layer | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/the-agent-control-plane-needs-a-security-layer",
+      "summary": "Security has to be embedded across the agent harness, orchestrator, and control plane if your organization wants to run software agents at scale.",
       "category": "AISecurityLabs",
-      "published": "2026-06-12T22:00:14+00:00",
-      "fetch_status": "full",
+      "published": "2026-06-15T22:23:58+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
-      "feed_title": "Unit 42"
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
     },
     {
-      "title": "RSA private keys biased toward 0 bits can be factored by swapping a hard math problem for an easy one: integer factorization becomes polynomial factor...",
-      "url": "https://x.com/trailofbits/status/2065392441566400615",
-      "summary": "RSA private keys biased toward 0 bits can be factored by swapping a hard math problem for an easy one: integer factorization becomes polynomial factorization. We found hundreds of real-world keys vulnerable to this. Many traced to a type mismatch in CompleteFTP (now patched): each 32-bit limb got only 8 bits of randomness. We recovered 603 RSA and 74 DSA private keys. https://blog.trailofbits.com/",
-      "category": "XSignals",
-      "published": "2026-06-12T11:15:05+00:00",
-      "fetch_status": "full",
+      "title": "The Government Just Made Our Case: Stop Fixing Everything, Fix What Matters.",
+      "url": "https://www.legitsecurity.com/blog/the-government-just-made-our-case-stop-fixing-everything-fix-what-matters",
+      "summary": "CISA made risk-based prioritization federal policy. That’s the problem we’ve been working on for years.",
+      "category": "AISecurityLabs",
+      "published": "2026-06-15T18:06:09+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
+      "feed_url": "https://www.legitsecurity.com/blog/rss.xml",
+      "feed_title": "Legit Security"
+    },
+    {
+      "title": "RT Zero Knowledge Podcast: Keegan Ryan at @trailofbits fed an invalid quantum circuit into the simulator, and the simulator accepted it.",
+      "url": "https://x.com/trailofbits/status/2066601582473703532",
+      "summary": "RT Zero Knowledge Podcast Keegan Ryan at @trailofbits fed an invalid quantum circuit into the simulator, and the simulator accepted it.",
+      "category": "XSignals",
+      "published": "2026-06-15T14:03:16+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "Factoring \"short-sleeve\" RSA keys with polynomials",
-      "url": "https://blog.trailofbits.com/2026/06/12/factoring-short-sleeve-rsa-keys-with-polynomials/",
-      "summary": "What happens when the bits of an RSA private key are heavily biased toward 0 instead of being randomly generated? The public key’s bits could be biased enough for us to detect these incorrectly generated keys in the wild. Together with Hanno Böck of the badkeys project, we found hundreds of unique keys that not only have this property, but can be quickly factored. We also found the bug that led to",
-      "category": "AISecurityLabs",
-      "published": "2026-06-12T11:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://blog.trailofbits.com/index.xml",
-      "feed_title": "Trail of Bits"
-    },
-    {
-      "title": "New OpenAI Academy courses for the next era of work",
-      "url": "https://openai.com/index/academy-courses-applying-ai-at-work",
-      "summary": "OpenAI introduces three Academy courses that help people build practical AI skills, create repeatable workflows, and apply agents in everyday work.",
-      "category": "FirstParty",
-      "published": "2026-06-12T10:00:00+00:00",
+      "title": "🤣🤣🤣",
+      "url": "https://x.com/rez0__/status/2066496116418285655",
+      "summary": "🤣🤣🤣 Simon Willison: I'm just glad nobody at the US government thought to try that Fable 5 \"jailbreak\" against Opus 4.x or GPT 5.x, or I wouldn't be getting anything useful done this weekend at all",
+      "category": "XSignals",
+      "published": "2026-06-15T12:20:42+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "RT shubs: https://www.bugcrowd.com/blog/savant-bugcrowds-ai-strategy-for-preemptive-security/ so the bug bounty community freaked out a few weeks ago ...",
-      "url": "https://x.com/rez0__/status/2065270311684075910",
-      "summary": "RT shubs https://www.bugcrowd.com/blog/savant-bugcrowds-ai-strategy-for-preemptive-security/ so the bug bounty community freaked out a few weeks ago when hackerone had a single slide that talked about using AI agents for testing based off our reports. bugcrowd's new strategy sounds even more brazen, sly and egregious. submit reports -&gt; your \"signals\" (aka creative thought process and work) feed",
-      "category": "XSignals",
-      "published": "2026-06-12T00:44:28+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     },
     {
-      "title": "How Preply combines AI and human tutors to personalize learning",
-      "url": "https://openai.com/index/preply",
-      "summary": "Preply uses OpenAI to launch AI-generated lesson summaries, providing personalised feedback and language learning exercises.",
-      "category": "FirstParty",
-      "published": "2026-06-12T00:00:00+00:00",
+      "title": "2026polarctf夏季赛Escape, escape!特辑",
+      "url": "https://xz.aliyun.com/news/92310",
+      "summary": "2026polarctf夏季赛Escape, escape!特辑",
+      "category": "Chinese",
+      "published": "2026-06-15T08:45:37+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "PolarCTF网络安全2026夏季个人挑战赛web方向全解",
+      "url": "https://xz.aliyun.com/news/92309",
+      "summary": "PolarCTF网络安全2026夏季个人挑战赛web方向全解，比赛很好，学到了很多，适合手搓",
+      "category": "Chinese",
+      "published": "2026-06-15T08:43:41+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "基于BU的提示词注入自动化方案",
+      "url": "https://xz.aliyun.com/news/92301",
+      "summary": "通过自然语言实现浏览器自动化的Claude Code skill，由浏览器使用驱动，可进一步应用于提示词注入场景",
+      "category": "Chinese",
+      "published": "2026-06-13T13:08:48+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "Full Fathom Five: The context of Anthropic’s Mythos-class public release",
@@ -475,30 +570,17 @@
       "feed_title": "Aikido Security"
     },
     {
-      "title": "Kekwwww",
-      "url": "https://x.com/rez0__/status/2065410044900856144",
-      "summary": "Kekwwww Lisan al Gaib: Fable 5 refused 200 out of 200 ProgramBench tasks lmao",
-      "category": "XSignals",
-      "published": "2026-06-12T12:25:02+00:00",
+      "title": "第四届黄河流域挑战赛web方向部分wp",
+      "url": "https://xz.aliyun.com/news/92300",
+      "summary": "第四届黄河流域挑战赛web方向部分wp，包含原型链污染，ECDSA 签名漏洞，yaml， Thymeleaf SSTI",
+      "category": "Chinese",
+      "published": "2026-06-13T01:24:17+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT Halvar Flake: The fact that I can't touch my academic research from 18 years ago with Fable without triggering a model downgrade due to \"cyber\" is ...",
-      "url": "https://x.com/wunderwuzzi23/status/2065492674589982805",
-      "summary": "RT Halvar Flake The fact that I can't touch my academic research from 18 years ago with Fable without triggering a model downgrade due to \"cyber\" is ... baffling.",
-      "category": "XSignals",
-      "published": "2026-06-12T09:35:52+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "As it was foretold.",
