@@ -1,0 +1,565 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-17",
+  "generated_at": "2026-06-17T00:08:01.282916Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 7,
+    "direct": 15,
+    "tier_t2": 9,
+    "kind_cn_expert": 5,
+    "tier_t1": 4,
+    "kind_official": 4,
+    "wechat": 3,
+    "tier_unknown": 2,
+    "kind_media": 5,
+    "kind_community": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "items": [
+    {
+      "title_zh": "实战案例：通过AI接口SSRF漏洞渗透内网并获取K8s集群凭证",
+      "title_orig": "实战｜从AI API SSRF到K8s集群凭证泄露——一次大模型服务的内网渗透全记录",
+      "summary": "该实战案例详细记录了针对AI客服系统的渗透过程，攻击者首先利用泄露的调试接口获取K8s内网地址，随后通过模型参数构造SSRF攻击并深入探测内网环境。通过成功获取集群Secrets中的敏感凭证，攻击者在两小时内实现了从外部API调用到完全接管K8s集群控制权的重大突破，充分揭示了大模型服务在内网配置与权限隔离方面的严重安全风险。",
+      "tags": [
+        "SSRF",
+        "K8s安全",
+        "AI安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92312",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-06-15T13:42:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI应用中常见的SSRF漏洞如何演变为严重的云原生环境",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92312",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92312"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.7,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "CISA将Joomla内容编辑器组件权限控制不当漏洞列入已知利用漏洞目录",
+      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "summary": "CVE-2026-48907是Widget Factory Joomla内容编辑器中存在的访问控制不当漏洞，已有证据表明该漏洞正被活跃利用。该漏洞源于组件对访问权限的控制存在缺陷，原文未披露具体的触发条件、受影响的软件版本以及官方修复或缓解措施的技术细节。CISA已将其列入已知利用漏洞目录，要求相关机构在规定时间内完成加固，以应对恶意行为者利用该漏洞发起的攻击。",
+      "tags": [
+        "Joomla",
+        "权限控制",
+        "CISA"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/06/16/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-16T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-48907"
+      ],
+      "selection_reason": "CISA KEV目录具有极高的修复优先级参考价值，反映了当前",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-48907",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Splunk Enterprise未授权文件操作漏洞CVE-2026-20253安全风险预警",
+      "title_orig": "【已复现】Splunk Enterprise 未授权文件操作漏洞(CVE-2026-20253)安全风险通告",
+      "summary": "Splunk Enterprise近期被披露存在编号为CVE-2026-20253的未授权文件操作漏洞，目前已有安全机构成功完成漏洞复现并发布风险通告。该高危漏洞允许远程攻击者在未经身份验证的情况下，直接对受影响系统内的特定文件进行非法操作，严重威胁企业级用户的数据完整性，官方已紧急发布安全补丁及针对性的修复方案。",
+      "tags": [
+        "Splunk",
+        "文件操作",
+        "漏洞预警"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506286&idx=1&sn=21b031051ce202a9df71b97127810281",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-16T07:25:00+00:00",
+      "cve_ids": [
+        "CVE-2026-20253"
+      ],
+      "selection_reason": "Splunk作为主流日志分析平台，其未授权漏洞对企业数据安全",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "cve:cve-2026-20253",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "开源AI网关LiteLLM漏洞链可致服务器远程代码执行及全面接管",
+      "title_orig": "AI网关LiteLLM遭漏洞链攻击，默认账户致全面接管风险",
+      "summary": "开源AI网关LiteLLM被披露存在一组极具威胁的漏洞链，攻击者仅需通过默认的低权限账户即可发起攻击，最终实现服务器端的任意代码执行。该漏洞链的CVSS综合评分高达9.9，可能导致AI网关被攻击者全面接管并造成核心业务中断，安全专家强烈建议所有用户立即检查系统默认配置，并尽快更新至已修复的安全版本。",
+      "tags": [
+        "LiteLLM",
+        "RCE",
+        "漏洞链"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519104&idx=1&sn=52df3a70d32c3b6abe3418a28ad8b110",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-16T02:34:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "AI基础设施的默认配置风险是当前大模型落地过程中的重要安全隐",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247519104&idx=1&sn=52df3a70d32c3b6abe3418a28ad8b110",
+      "related_urls": [
+        "http://0.0.0.0:8080/post/64344"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.9,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux内核Fragnesia权限提升漏洞CVE-2026-46300已实现复现",
+      "title_orig": "【已复现】Linux内核Fragnesia权限提升漏洞（CVE-2026-46300）",
+      "summary": "Linux内核中发现了一个名为Fragnesia的本地权限提升漏洞，官方编号为CVE-2026-46300，相关安全团队已在多个主流发行版上完成利用复现。该漏洞源于内核特定机制在处理异常时的逻辑缺陷，允许普通本地用户绕过安全限制并获取系统的最高管理权限，受影响范围广泛，建议广大Linux系统管理员及时部署最新的内核补丁。",
+      "tags": [
+        "Linux内核",
+        "提权漏洞",
+        "Fragnesi"
+      ],
+      "url": "https://blog.nsfocus.net/%e3%80%90%e5%b7%b2%e5%a4%8d%e7%8e%b0%e3%80%91linux%e5%86%85%e6%a0%b8fragnesia%e6%9d%83%e9%99%90%e6%8f%90%e5%8d%87%e6%bc%8f%e6%b4%9e%ef%bc%88cve-2026-46300%ef%bc%89-2/",
+      "source": "blog.nsfocus.net",
+      "category": "Synthesis",
+      "published": "2026-06-15T02:53:58+00:00",
+      "cve_ids": [
+        "CVE-2026-46300"
+      ],
+      "selection_reason": "内核级提权漏洞是操作系统安全的重大威胁，复现成功意味着风险极",
+      "feed_url": "http://blog.nsfocus.net/feed/",
+      "feed_title": "绿盟科技技术博客",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "blog.nsfocus.net",
+      "story_id": "cve:cve-2026-46300",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.8,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "罗克韦尔自动化FLEX I/O适配器存在身份验证绕过与账户接管漏洞",
+      "title_orig": "Rockwell Automation FLEX I/O EtherNet/IP Adapters",
+      "summary": "罗克韦尔自动化发布的ICS安全建议指出，其FLEX I/O EtherNet/IP适配器存在CVE-2026-0646和CVE-2026-0647两项高危漏洞，受影响型号涵盖1794-AENTR及1794-AENTRXT的V2.012版本。攻击者若成功利用这些漏洞，不仅能获得未经授权的访问权限并实现账户接管，还会导致工业生产环境的可用性彻底丧失，相关企业必须高度警惕此类工控风险并及时采取补救措施。",
+      "tags": [
+        "工业控制系统",
+        "罗克韦尔",
+        "账户接管"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-167-05",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-16T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-0646",
+        "CVE-2026-0647"
+      ],
+      "selection_reason": "工控系统漏洞直接关系到关键基础设施的可用性与物理安全。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-0646,cve-2026-0647",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.75,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Fortinet FortiSandbox多个漏洞遭在野利用，包含高危路径遍历漏洞",
+      "title_orig": "Attackers Exploit Three Fortinet FortiSandbox Flaws, One Patched Last Week",
+      "summary": "威胁情报机构Defused Cyber监测到Fortinet FortiSandbox的三个安全漏洞正遭到黑客团伙的积极利用，其中包括CVSS评分高达9.1的路径遍历漏洞CVE-2026-39813。攻击者利用JRPC API中的缺陷以及CVE-2026-39808和CVE-2026-25089等漏洞，能够非法访问系统敏感文件并造成严重破坏，建议受影响用户立即参考官方指南进行安全加固以抵御正在发生的网络攻击。",
+      "tags": [
+        "Fortinet",
+        "路径遍历",
+        "在野利用"
+      ],
+      "url": "https://thehackernews.com/2026/06/attackers-exploit-three-fortinet.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-16T10:30:41+00:00",
+      "cve_ids": [
+        "CVE-2026-25089",
+        "CVE-2026-39808",
+        "CVE-2026-39813"
+      ],
+      "selection_reason": "安全网关类产品的在野利用漏洞通常是APT攻击或大规模入侵的前",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-25089,cve-2026-39808,cve-2026-39813",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Nginx远程代码执行漏洞CVE-2026-42945风险通告及复现分析",
+      "title_orig": "【漏洞通告】Nginx远程代码执行漏洞（CVE-2026-42945）",
+      "summary": "Nginx官方及安全机构发布了关于CVE-2026-42945远程代码执行漏洞的紧急通告，该漏洞主要存在于核心的ngx_http_rewrite模块中，具有极高的安全威胁。攻击者能够通过精心构造的恶意HTTP请求触发漏洞逻辑，从而在目标服务器上以Nginx进程权限执行任意指令，受影响范围涵盖了目前互联网广泛使用的多个主流版本，建议相关运维人员尽快完成版本升级或应用安全补丁。",
+      "tags": [
+        "Nginx",
+        "RCE",
+        "Web安全"
+      ],
+      "url": "https://blog.nsfocus.net/%e3%80%90%e6%bc%8f%e6%b4%9e%e9%80%9a%e5%91%8a%e3%80%91nginx%e8%bf%9c%e7%a8%8b%e4%bb%a3%e7%a0%81%e6%89%a7%e8%a1%8c%e6%bc%8f%e6%b4%9e%ef%bc%88cve-2026-42945%ef%bc%89-2/",
+      "source": "blog.nsfocus.net",
+      "category": "Synthesis",
+      "published": "2026-06-15T02:57:28+00:00",
+      "cve_ids": [
+        "CVE-2026-42945"
+      ],
+      "selection_reason": "Nginx作为全球广泛使用的Web服务器，其RCE漏洞具有极",
+      "feed_url": "http://blog.nsfocus.net/feed/",
+      "feed_title": "绿盟科技技术博客",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "blog.nsfocus.net",
+      "story_id": "cve:cve-2026-42945",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Rockwell Automation Logix 系列控制器存在 CIP 协议拒绝服务漏洞可导致不可恢复故障",
+      "title_orig": "Rockwell Automation Logix 5370 & 5570 Controllers Vulnerable To Denial of Service Via CIP",
+      "summary": "Rockwell Automation旗下的Logix 5370与5570系列控制器在处理CIP协议请求时存在严重安全缺陷，攻击者利用该漏洞可触发拒绝服务条件并导致设备出现重大的不可恢复故障。受影响的组件具体包括版本号在34.016及以下的CompactLogix 5370，以及版本号在35.015及以下的Compact GuardLogix 5370，目前官方已针对CVE-2026-11317发布了安全预警以提醒用户防范潜在风险。",
+      "tags": [
+        "工控安全",
+        "拒绝服务",
+        "PLC"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-167-03",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-16T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-11317"
+      ],
+      "selection_reason": "涉及关键基础设施 PLC 控制器的严重可用性漏洞。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-11317",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.55,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Google Vertex AI SDK 存在存储桶劫持漏洞，攻击者可在云端基础设施执行恶意代码",
+      "title_orig": "Google Vertex AI SDK Flaw Let Attackers Hijack Model Uploads via Bucket Squatting",
+      "summary": "Palo Alto Networks Unit 42团队在Google Cloud Vertex AI的Python SDK中发现了一个名为“Pickle in the Middle”的严重漏洞，攻击者利用存储桶抢占技术即可劫持机器学习模型的上传过程。该漏洞允许没有任何项目访问权限的攻击者在Google的模型服务基础设施内部运行恶意代码，虽然目前尚未发现野外利用迹象，但Google已通过漏洞赏金计划接收报告并完成了修复工作。",
+      "tags": [
+        "人工智能安全",
+        "云安全",
+        "代码执行"
+      ],
+      "url": "https://thehackernews.com/2026/06/google-vertex-ai-sdk-flaw-let-attackers.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-16T19:05:41+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 AI 供应链中模型上传环节的创新攻击向量。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/06/google-vertex-ai-sdk-flaw-let-attackers.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GhostTree 攻击利用 Windows 递归连接机制绕过安全扫描并隐藏恶意软件",
+      "title_orig": "GhostTree Attack Abused Recursive Windows Junctions to Hide Malware",
+      "summary": "GhostTree攻击技术通过利用NTFS递归连接生成海量的有效Windows文件路径，从而干扰安全软件的正常工作并导致Microsoft Defender等工具的文件夹扫描任务陷入无限循环。这种方法会使扫描任务永远无法完成，进而使恶意软件处于未检测状态，Varonis详细解释了该技术如何滥用Windows Junctions来隐藏恶意程序，目前原文中尚未披露具体的修复补丁信息。",
+      "tags": [
+        "防御绕过",
+        "文件系统",
+        "恶意软件"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/ghosttree-attack-abused-recursive-windows-junctions-to-hide-malware/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-16T14:17:27+00:00",
+      "cve_ids": [],
+      "selection_reason": "利用操作系统底层特性实现扫描绕过，具有较高的实战参考价值。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/ghosttree-attack-abused-recursive-windows-junctions-to-hide-malware",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.6,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Arch Linux 用户社区仓库 AUR 遭遇大规模投毒攻击，供应链安全防线面临严峻挑战",
+      "title_orig": "快讯：Arch Linux AUR 遭遇史上最大规模投毒攻击，供应链安全防线告急",
+      "summary": "Arch Linux用户社区近期通报了一起重大的供应链安全事件，该社区仓库（AUR）遭遇了史上最大规模的恶意投毒攻击，导致供应链安全防线告急。目前原文仅通报了安全预警的快讯状态，关于具体的恶意软件包名称、投毒手段及受影响用户范围等详细技术细节在当前信息中尚未明确披露，该事件引发了社区对AUR安全性的高度关注，用户需警惕潜在的恶意代码风险。",
+      "tags": [
+        "供应链安全",
+        "Linux",
+        "投毒攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkzMDE5MDI5Mg==&mid=2247511320&idx=1&sn=f893556b4771c3b91423c567ee880779",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-15T07:01:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "主流 Linux 发行版社区仓库的大规模投毒，属于重大安全事",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b15a925f83a4b108b957f8dd0e8030b6caa7da5e.xml",
+      "feed_title": "数说安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b15a925f83a4b108b957f8dd0e8030b6caa7da5e.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzkzMDE5MDI5Mg%3D%3D&mid=2247511320&idx=1&sn=f893556b4771c3b91423c567ee880779",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Rockwell Automation RSLinx Classic 存在第三方组件漏洞可导致应用程序拒绝服务",
+      "title_orig": "Rockwell Automation RSLinx",
+      "summary": "Rockwell Automation的RSLinx Classic软件被曝存在CVE-2020-13573第三方组件漏洞，该漏洞的CVSS评分高达7.5分，主要影响4.50.00及以下的所有版本。攻击者通过成功利用此漏洞可以发起拒绝服务攻击，导致受影响的应用程序陷入无响应状态且无法自行恢复正常运行，目前官方已发布CSAF摘要及安全建议，明确了该第三方设备漏洞对工业控制系统环境的潜在威胁。",
+      "tags": [
+        "工控安全",
+        "拒绝服务",
+        "第三方组件"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-167-02",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-16T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2020-13573"
+      ],
+      "selection_reason": "工控上位机软件的拒绝服务漏洞，影响工业生产连续性。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2020-13573",
+      "related_urls": [
+        "https://www.cisa.gov/news-events/ics-advisories/icsa-26-167-04"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "dimension_score": 7.1,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员披露 AI 驱动 SOC 平台的完整攻击链，可接管所有租户敏感数据",
+      "title_orig": "I Found 3 Critical Vulnerabilities in an AI-Powered SOC Platform — Full Attack Chain",
+      "summary": "该AI驱动的SOC平台存在三个关键漏洞，攻击者通过泄露的Supabase项目标识符和API密钥，利用平台在多租户隔离机制上的缺陷，成功实现了接管所有租户的完整攻击链。原文未披露具体的漏洞CVE编号、受影响的组件版本号以及官方修复补丁的发布状态，仅说明该渗透测试过程已获得开发团队授权，旨在通过披露敏感信息保护方面的风险来提升平台的整体防御能力。",
+      "tags": [
+        "渗透测试",
+        "AI安全",
+        "多租户安全"
+      ],
+      "url": "https://infosecwriteups.com/i-found-3-critical-vulnerabilities-in-an-ai-powered-soc-platform-full-attack-chain-e37a5733002e?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-06-16T06:48:56+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对新兴 AI 安全平台的实战化攻击路径分析。",
+      "feed_url": "https://medium.com/feed/bugbountywriteup/tagged/bug-bounty",
+      "feed_title": "Bug Bounty in InfoSec Write-ups on Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "url:infosecwriteups.com/i-found-3-critical-vulnerabilities-in-an-ai-powered-soc-platform-full-attack-chain-e37a5733002e?source=rss----7b722bfd1b8d--bug_bounty",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "先知安全沙龙探讨内核漏洞深度剖析，涵盖最新案例与 AI 辅助 0day 发现技术",
+      "title_orig": "内核漏洞深度剖析：从最新案例到 AI辅助的0day发现之路",
+      "summary": "本次内核安全沙龙探讨了内核漏洞的深度剖析方法，重点分析了利用人工智能技术辅助发现0day漏洞的技术路径，并结合了最新的内核实战案例进行讲解。原文未披露具体漏洞的CVE编号、漏洞产生的技术原理、受影响的内核版本或组件信息，也未提及相关漏洞的修复状态，内容侧重于展示AI在自动化漏洞挖掘领域的应用前景与内核防护的前沿视角。",
+      "tags": [
+        "内核安全",
+        "漏洞挖掘",
+        "AI安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92319",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-06-16T07:51:04+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注内核安全与 AI 结合的自动化漏洞挖掘前沿趋势。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92319",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92319"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.75,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
