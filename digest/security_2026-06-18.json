@@ -1,0 +1,569 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-18",
+  "generated_at": "2026-06-18T00:06:29.953777Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t2": 11,
+    "kind_media": 4,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "chinese": 10,
+    "kind_cn_expert": 8,
+    "wechat": 5,
+    "kind_expert": 1,
+    "tier_unknown": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 3,
+    "merged_total": 4
+  },
+  "items": [
+    {
+      "title_zh": "微软确认 Microsoft Defender 存在 RoguePlanet 提权 0-day 漏洞并正在开发补丁",
+      "title_orig": "Microsoft Confirms RoguePlanet Defender Zero-Day, Says Patch is in Development",
+      "summary": "微软正式披露了 Microsoft Defender 中代号为 RoguePlanet 的提权漏洞，该漏洞已被分配编号 CVE-2026-50656 且 CVSS 评分高达 7.8。该缺陷源于恶意软件保护引擎中的权限提升漏洞，允许攻击者在受影响系统上获取更高权限，目前微软已确认该零日漏洞的存在并正全力开发安全补丁，虽然原文尚未披露具体的触发条件和受影响版本，但已引起安全领域广泛关注。",
+      "tags": [
+        "Defender",
+        "提权漏洞",
+        "0-day"
+      ],
+      "url": "https://thehackernews.com/2026/06/microsoft-confirms-rogueplanet-defender_02022423645.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-17T17:36:28+00:00",
+      "cve_ids": [
+        "CVE-2026-50656"
+      ],
+      "selection_reason": "微软核心安全组件的 0-day 漏洞，具有极高的防御优先级。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-50656",
+      "related_urls": [
+        "https://www.securityweek.com/microsoft-working-on-patch-for-rogueplanet-zero-day/"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 将 Joomla 内容编辑器插件 Widget Factory 访问控制漏洞加入已知漏洞目录",
+      "title_orig": "CISA Adds One Known Exploited Vulnerability to Catalog",
+      "summary": "CISA将Joomla内容编辑器插件Widget Factory中的CVE-2026-48907不当访问控制漏洞加入已知漏洞利用目录，该漏洞已被证实在野利用。原文未披露该漏洞的具体技术原理、受影响的软件版本及具体的修复缓解措施，仅明确其属于不当访问控制类型，并指出此类漏洞是攻击者的频繁攻击矢量，要求相关机构根据指令限期完成处置。",
+      "tags": [
+        "CISA",
+        "Joomla",
+        "漏洞利用"
+      ],
+      "url": "https://www.cisa.gov/news-events/alerts/2026/06/16/cisa-adds-one-known-exploited-vulnerability-catalog",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-16T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-48907"
+      ],
+      "selection_reason": "CISA KEV 目录更新代表该漏洞已在野外被大规模利用。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-48907",
+      "related_urls": [
+        "https://x.com/IntCyberDigest/status/2067318788014653857"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.6,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于 CVE-2024-21626 的 runc 文件描述符泄漏导致 Docker 容器逃逸技术复盘",
+      "title_orig": "实战｜从CVE-2024-21626看Docker容器逃逸——runc文件描述符泄漏的四种攻击变体",
+      "summary": "CVE-2024-21626是runc组件中因文件描述符泄漏导致的高危容器逃逸漏洞，其CVSS评分为8.6，攻击者可利用未关闭的fd从容器环境渗透至宿主机。该研究详细复现了四种攻击变体，并提供了生产级防御方案，但原文未明确披露受影响的具体runc版本号及官方补丁的发布状态，重点在于展示fd泄漏对容器运行时隔离机制的破坏过程。",
+      "tags": [
+        "容器逃逸",
+        "runc",
+        "文件描述符"
+      ],
+      "url": "https://xz.aliyun.com/news/92322",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-06-16T12:15:32+00:00",
+      "cve_ids": [
+        "CVE-2024-21626"
+      ],
+      "selection_reason": "详细的漏洞变体复现对云原生安全研究和红蓝对抗有极高价值。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2024-21626",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92322"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.3,
+      "final_score": 9.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "探讨基于 BYOVD 技术的 Windows 内核态任意写免杀方案与防御提升",
+      "title_orig": "基于 BYOVD 的 Windows 内核态任意写（Arbitrary Write）免杀技术探讨",
+      "summary": "本文研究了利用自带易受攻击驱动程序（BYOVD）实现 Windows 内核态任意写的免杀技术，旨在提升合法安全研究与防御能力。技术点涵盖了将机器码与加载器分离以规避静态分析，以及通过内核级操作绕过传统安全软件的检测。该方法相比初级注入技术具有更强的隐蔽性，是安全从业者研究高级威胁检测与内核防护时必须关注的重点领域。",
+      "tags": [
+        "BYOVD",
+        "内核免杀",
+        "驱动安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92321",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-06-16T10:12:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "BYOVD 是当前对抗 EDR 的主流技术，具有很强的实战研",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92321",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92321"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.3,
+      "final_score": 9.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Splunk Enterprise 存在预认证远程代码执行高危漏洞 CVE-2026-20253",
+      "title_orig": "【漏洞通告】Splunk Enterprise 预认证远程代码执行漏洞(CVE-2026-20253)",
+      "summary": "深瞳漏洞实验室监测到 Splunk Enterprise 组件中存在一个编号为 CVE-2026-20253 的远程代码执行漏洞，威胁等级被评定为高危。该漏洞允许攻击者在未经身份验证的情况下远程执行恶意代码，严重威胁企业日志审计系统的安全。原文未披露漏洞的具体触发原理、影响版本及修复补丁状态，建议相关用户密切关注官方更新。",
+      "tags": [
+        "Splunk",
+        "远程代码执行",
+        "预认证"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247525926&idx=1&sn=e45c9ee8a56851cca66b2a7e8cb55a92",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-17T09:07:00+00:00",
+      "cve_ids": [
+        "CVE-2026-20253"
+      ],
+      "selection_reason": "Splunk 作为核心日志平台，其预认证 RCE 漏洞影响范",
+      "feed_url": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "feed_title": "深信服千里目安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "story_id": "cve:cve-2026-20253",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506286&idx=1&sn=21b031051ce202a9df71b97127810281",
+        "https://securityonline.info/splunk-ai-toolkit-vulnerabilities/"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "AI 智能体框架 Mastra 遭受供应链投毒，涉及近 140 个 NPM 恶意组件",
+      "title_orig": "紧急AI安全情报 | 热门AI智能体开发框架Mastra近140个NPM组件遭受供应链投毒",
+      "summary": "热门 AI 智能体开发框架 Mastra AI 遭遇严重的供应链投毒攻击，涉及近 140 个 NPM 组件。受影响的组件中包含多个周下载量超过百万次的流行项目，攻击者通过在依赖项中植入恶意代码进行渗透。由于 AI 开发框架在当前技术栈中处于核心地位，此类投毒事件可能导致大量下游 AI 应用被感染，开发者需立即排查相关依赖项。",
+      "tags": [
+        "AI 安全",
+        "供应链投毒",
+        "NPM"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3NzE2ODk1Mg==&mid=2647799818&idx=1&sn=da90283ca847f298a8cfd3774122d0ab",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-17T07:12:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "AI 基础设施的供应链安全是当前新兴且极具破坏性的威胁领域。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/59c134d2e41c3a0724d89cc6fa359bc1abedbc26.xml",
+      "feed_title": "悬镜安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/59c134d2e41c3a0724d89cc6fa359bc1abedbc26.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA3NzE2ODk1Mg%3D%3D&mid=2647799818&idx=1&sn=da90283ca847f298a8cfd3774122d0ab",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "分析 Arch Linux AUR 与恶意 NPM 包关联的供应链投毒及 eBPF 隐身技术",
+      "title_orig": "威胁情报｜Arch Linux AUR 供应链投毒关联恶意 npm 包分析",
+      "summary": "该研究深入分析了 Arch Linux AUR 供应链投毒事件，揭示了攻击者如何通过篡改构建脚本来诱导下载恶意的 NPM 软件包。核心攻击载荷为 ELF 格式，具备采集敏感凭据、通过 Tor 匿名网络连接 C2 控制端以及利用 eBPF 技术实现进程隐身的高级能力，这种结合了 Linux 社区源与跨平台包管理器的复合攻击手段，充分展示了攻击者在实现持久化潜伏和逃避安全检测方面的技术演进与威胁。",
+      "tags": [
+        "AUR",
+        "eBPF",
+        "供应链攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU4ODQ3NTM2OA==&mid=2247505220&idx=1&sn=1774b88eb9daff2dad7fb7f498b14ce7",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-17T10:20:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "结合 eBPF 隐身技术的供应链攻击展示了极高的技术复杂度。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/9e9c3c70e598266a1ac993e50458a10a6d853eb7.xml",
+      "feed_title": "慢雾科技",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/9e9c3c70e598266a1ac993e50458a10a6d853eb7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU4ODQ3NTM2OA%3D%3D&mid=2247505220&idx=1&sn=1774b88eb9daff2dad7fb7f498b14ce7",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 Gravity SMTP 关键漏洞在野外遭到积极利用",
+      "title_orig": "Active Gravity SMTP Vulnerability Exploited in the Wild",
+      "summary": "WordPress 站点的 Gravity SMTP 插件目前正面临严重的在野漏洞利用攻击，威胁等级极高。该漏洞允许攻击者针对安装了该插件的站点进行破坏，可能导致管理员权限被接管或敏感数据泄露。官方已发出紧急预警，要求管理员立即检查并更新插件以缓解风险，原文未披露该漏洞的具体 CVE 编号、技术原理及受影响的确切版本号。",
+      "tags": [
+        "WordPres",
+        "插件漏洞",
+        "在野利用"
+      ],
+      "url": "https://securityonline.info/gravity-smtp-vulnerability-active-exploits/",
+      "source": "securityonline.info",
+      "category": "Synthesis",
+      "published": "2026-06-17T19:15:08+00:00",
+      "cve_ids": [
+        "CVE-2025-4322",
+        "CVE-2025-4601"
+      ],
+      "selection_reason": "WordPress 插件漏洞是 Web 安全中最常见的实战攻",
+      "feed_url": "https://securityonline.info/feed/",
+      "feed_title": "Cybersecurity News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityonline.info",
+      "story_id": "cve:cve-2025-4322,cve-2025-4601",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Praetorian 研究员利用 Claude LLM 自动化发现并利用 FreeBSD 内核漏洞",
+      "title_orig": "FreeBSoD: Leveraging Language Models to Find and Exploit Kernel Bugs (Part 1 of 2)",
+      "summary": "Praetorian研究人员利用Claude Code及Opus模型对FreeBSD内核进行审计，旨在通过大语言模型辅助Constantine引擎发现零日漏洞。该研究展示了LLM在识别内核安全缺陷及生成漏洞利用代码方面的能力，但原文未披露具体漏洞的CVE编号、漏洞原理、受影响的内核版本以及具体的修复状态。该过程侧重于验证自动化漏洞挖掘技术在复杂系统内核审计中的可行性。",
+      "tags": [
+        "内核安全",
+        "AI安全",
+        "漏洞挖掘"
+      ],
+      "url": "https://www.praetorian.com/blog/ai-vulnerability-research-freebsd-kernel/",
+      "source": "praetorian.com",
+      "category": "WebSecurity",
+      "published": "2026-06-17T19:15:57+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 LLM 在内核级漏洞自动化挖掘与利用中的前沿应用。",
+      "feed_url": "https://www.praetorian.com/blog/feed",
+      "feed_title": "Blog | Praetorian",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "praetorian.com",
+      "story_id": "url:praetorian.com/blog/ai-vulnerability-research-freebsd-kernel",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.75,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "罗克韦尔自动化 FLEX I/O EtherNet/IP 适配器存在高危漏洞可导致设备接管",
+      "title_orig": "Rockwell Automation FLEX I/O EtherNet/IP Adapters",
+      "summary": "罗克韦尔自动化旗下的FLEX I/O EtherNet/IP适配器1794-AENTR及1794-AENTRXT的V2.012版本被曝存在CVE-2026-0646和CVE-2026-0647安全漏洞。攻击者若成功利用这些高危漏洞，将能够实现未经授权的访问、接管用户账户，并导致关键工业控制设备的可用性完全丧失，严重威胁相关工业网络环境的运行安全与稳定性，建议相关企业及时关注设备固件更新以防范潜在的攻击风险。",
+      "tags": [
+        "工控安全",
+        "漏洞预警",
+        "设备接管"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-167-05",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-16T12:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-0646",
+        "CVE-2026-0647"
+      ],
+      "selection_reason": "涉及关键基础设施组件的高危漏洞，具有极高的工业安全影响。",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "cve:cve-2026-0646,cve-2026-0647",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.75,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Google Vertex AI SDK 存在 Pickle 注入漏洞允许攻击者劫持模型上传并执行代码",
+      "title_orig": "Google Vertex AI SDK 漏洞允许攻击者通过存储桶抢占劫持模型上传",
+      "summary": "Google Cloud Vertex AI Python SDK存在名为“Pickle in the Middle”的安全漏洞，允许攻击者在无需访问受害者项目的情况下，通过存储桶抢占手段劫持机器学习模型上传。该漏洞利用了模型上传过程中的安全缺陷，使攻击者能在Google服务基础设施内执行恶意代码，原文未披露受影响的具体SDK版本号及修复补丁编号。目前该漏洞已通过Google漏洞赏金计划报告并处理。",
+      "tags": [
+        "云安全",
+        "供应链攻击",
+        "代码执行"
+      ],
+      "url": "http://0.0.0.0:8080/post/64351",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-17T02:50:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了机器学习供应链中的新型攻击向量，对云服务安全有重要参考",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "url:0.0.0.0/post/64351",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077453&idx=3&sn=8609933c2ae9419836b855460349c8ce"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Steam 创意工坊恶意墙纸针对中俄用户传播，利用 Wallpaper Engine 植入后门",
+      "title_orig": "恶意墙纸瞄准中俄 Steam 用户窃取其账号",
+      "summary": "卡巴斯基监测到恶意程序正通过 Steam 创意工坊的 Wallpaper Engine 墙纸包快速扩散，主要针对中国（占比 89.4%）和俄罗斯玩家。攻击者利用分享功能漏洞将恶意代码隐藏在墙纸中，用户运行后会导致 Steam 账号被盗、系统被植入后门或被用于加密货币挖矿。目前 Steam 已移除数十款被感染的恶意墙纸，这些墙纸此前已被下载数万次，具有极强的针对性和欺骗性。",
+      "tags": [
+        "社交工程",
+        "账号窃取",
+        "恶意软件"
+      ],
+      "url": "https://www.solidot.org/story?sid=84609",
+      "source": "solidot.org",
+      "category": "Synthesis",
+      "published": "2026-06-17T11:01:13+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的利用流行软件生态进行大规模供应链投毒的案例，影响范围极",
+      "feed_url": "https://www.solidot.org/index.rss",
+      "feed_title": "奇客Solidot–传递最新科技情报",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "solidot.org",
+      "story_id": "url:solidot.org/story?sid=84609",
+      "related_urls": [
+        "http://0.0.0.0:8080/post/64355"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "UniAttack：面向多种防御策略的大语言模型自动化黑盒越狱攻击框架",
+      "title_orig": "面向多种防御策略的自动化越狱攻击",
+      "summary": "安全研究人员提出了 UniAttack 框架，这是一种从防御视角设计的对抗性测试工具，旨在系统性地构建针对大语言模型（LLM）的黑盒越狱提示。该框架突破了以往依赖静态模板的局限，能够针对多种防御策略自动化生成有效的对抗性输入，以评估 LLM 的安全性。该技术对于安全从业者理解 LLM 的脆弱性边界以及开发更具鲁棒性的防御机制具有重要的参考价值。",
+      "tags": [
+        "LLM安全",
+        "越狱攻击",
+        "对抗性测试"
+      ],
+      "url": "https://paper.seebug.org/3491",
+      "source": "paper.seebug.org",
+      "category": "Synthesis",
+      "published": "2026-06-16T09:00:29+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了系统化的 LLM 安全评估框架，对 AI 安全防御研究",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3491",
+      "related_urls": [
+        "https://paper.seebug.org/3491"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "APT-C-48 组织近期利用个人简历伪装载荷针对特定目标开展钓鱼攻击",
+      "title_orig": "APT-C-48（CNC）组织近期钓鱼攻击活动分析报告",
+      "summary": "360 安全大脑监测到 APT-C-48（CNC）组织近期活跃的定向钓鱼活动，该组织采用经典的社会工程学手段进行渗透。攻击者将恶意载荷伪装成个人简历文件，诱导目标用户下载并运行，从而建立初始访问权限。报告详细分析了其攻击链路，显示该组织在载荷伪装和投递渠道上保持了较高的隐蔽性，原文未披露具体的受害者行业分布或更深层的技术变动。",
+      "tags": [
+        "APT攻击",
+        "网络钓鱼",
+        "社工攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUyMjk4NzExMA==&mid=2247508669&idx=1&sn=045cca89facb1bc6be4e565bc6fa09d8",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-17T09:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "追踪活跃 APT 组织的最新动向，有助于企业更新威胁情报和防",
+      "feed_url": "https://wechat2rss.xlab.app/feed/920f171e3dae0c8eeb4c97b366b229ba19807732.xml",
+      "feed_title": "360威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/920f171e3dae0c8eeb4c97b366b229ba19807732.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzUyMjk4NzExMA%3D%3D&mid=2247508669&idx=1&sn=045cca89facb1bc6be4e565bc6fa09d8",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Weaxor 勒索软件家族出现 Linux 平台变种，增强跨平台渗透与适应能力",
+      "title_orig": "Weaxor勒索软件又添Linux平台变种",
+      "summary": "根据 360 安全大脑的监测，Weaxor 勒索软件家族在 2024 年 10 月进入国内后，近期已演化出针对 Linux 平台的变种版本。该变种展现了极强的渗透能力和环境适应性，旨在扩大其在企业级服务器和云环境中的攻击范围。目前该家族持续活跃，其跨平台特性的增强意味着防御方需要同时关注 Windows 和 Linux 终端的勒索防护，原文未披露具体的加密算法细节。",
+      "tags": [
+        "勒索软件",
+        "Linux安全",
+        "变种分析"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA==&mid=2649790094&idx=1&sn=e06d67c3804a4211060e273061b1f30e",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-17T08:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "勒索软件跨平台化是当前重要趋势，该情报对 Linux 环境防",
+      "feed_url": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA%3D%3D&mid=2649790094&idx=1&sn=e06d67c3804a4211060e273061b1f30e",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
