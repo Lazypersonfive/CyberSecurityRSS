@@ -1,18 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-06-19",
-  "fetched_at_utc": "2026-06-19T00:18:32.223392Z",
+  "fetched_at": "2026-06-20",
+  "fetched_at_utc": "2026-06-19T23:51:15.639937Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 71,
-  "entry_count": 44,
+  "raw_entry_count": 57,
+  "entry_count": 31,
   "filter_stats": {
-    "input": 71,
+    "input": 57,
+    "dropped_title_blacklist": 1,
     "dedup_merged": 2,
-    "output": 69
+    "output": 54
   },
   "curation_stats": {
-    "dropped_source_cap": 25
+    "dropped_source_cap": 23
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -69,14 +70,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 7
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -104,7 +105,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://www.endorlabs.com/learn/rss.xml": {
       "feed_title": "Endor Labs",
@@ -118,14 +119,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 1
     },
     "https://www.aikido.dev/blog/rss.xml": {
       "feed_title": "Aikido Security",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -146,7 +147,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 1
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -160,7 +161,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://www.seebug.org/rss/new": {
       "feed_title": "Seebug 漏洞社区",
@@ -188,7 +189,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 2
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -216,7 +217,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 7
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
@@ -241,19 +242,6 @@
     }
   },
   "entries": [
-    {
-      "title": "内核漏洞深度剖析：从最新案例到 AI辅助的0day发现之路",
-      "url": "https://xz.aliyun.com/news/92319",
-      "summary": "先知安全沙龙第15场 - 内核漏洞深度剖析：从最新案例到 AI辅助的0day发现之路",
-      "category": "Chinese",
-      "published": "2026-06-16T07:51:04+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 3,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
     {
       "title": "The full Snyk AI Security Platform, free for open source maintainers",
       "url": "https://snyk.io/blog/secure-developer-program/",
@@ -281,58 +269,84 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "A Day in the Life of an AI Engineer in Snyk's Lisbon Office",
-      "url": "https://snyk.io/blog/a-day-in-the-life-of-an-ai-engineer-in-snyks-lisbon-office/",
-      "summary": "Explore a day in the life of an AI Engineer at Snyk's Lisbon office. See what it's like building AI-powered security tools, collaborating globally, and enjoying the vibrant culture of Portugal's capital city.",
+      "title": "Quoting Sean Lynch",
+      "url": "https://simonwillison.net/2026/Jun/19/sean-lynch/#atom-everything",
+      "summary": "The real valuable capability MCP offers over skills/CLI is isolating the auth flow outside of the agent’s context window, and potentially out of the harness completely. [...] Maybe the idealized form of MCP is just an auth gateway for the API and nothing else. That’d still be a win. &mdash; Sean Lynch , comment on Hacker News Tags: model-context-protocol , llms , ai , generative-ai , skills",
       "category": "AISecurityLabs",
-      "published": "2026-06-16T23:00:00+00:00",
+      "published": "2026-06-19T22:45:49+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://snyk.io/blog/feed/",
-      "feed_title": "Snyk Blog"
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
-      "title": "Multiple JetBrains IDE plugins caught stealing AI keys",
-      "url": "https://www.aikido.dev/blog/multiple-jetbrains-ide-plugins-caught-stealing-ai-keys",
-      "summary": "A coordinated campaign of at least 15 JetBrains IDE plugins, published under seven vendor accounts, exfiltrates the AI provider API key you paste into their settings. Category: Vulnerabilities & Threats",
-      "category": "AISecurityLabs",
-      "published": "2026-06-16T19:48:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "实战｜从CVE-2024-21626看Docker容器逃逸——runc文件描述符泄漏的四种攻击变体",
-      "url": "https://xz.aliyun.com/news/92322",
-      "summary": "一个fd没关，就能从容器逃到宿主机。CVE-2024-21626（CVSS 8.6）的完整技术复盘，四种攻击变体逐个复现，附红蓝评分和生产级防御方案。",
-      "category": "Chinese",
-      "published": "2026-06-16T12:15:32+00:00",
+      "title": "Rubrik (RBRK) Stock Could Be 19% Undervalued After Its AI Security Push - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNc2N6eW1xOGFTQml3VU5GcEM2TlNZamhMOFhhYi1yZHJZRlpKWmVUeHYzWTNIVmdMMHhLTDg3cVd2MWdKUW45dUozM3loUW5RdHRkbXE1WW1jRnFiNFFSLS1ISU9xLUlJREVrRnBxWWVSUUNtLVpJOGxvU3d1ak9EN1phczllSVphMnN4OU5ZVjE4U3ZOb3hCZ2RZU2tIbEdkVkQ0djEtYWprYU5ld1htOEZfeUc4RXVuSm5HYlJsbFTSAcYBQVVfeXFMT25mSl9hbVVucjZORjZRZnRIRXJYQVlXNW9QaC04aEpuWEQtcEpaRVMtWFpDWEp6RVUzOU9uT2c4OWZPZzlISFFDTXJXaHk0QXlRNkI2dEZORUVLWXBraVhzc29jMWZ0dm9MOEdRY21wSG9fSGs4Zk9zQWlTTURJU0d5LVl4S1ZMSU9GWXMzM3g5ekpreHg1dzN1UE1BY1BKSVpyeGl0alhZUEI2WVlvbmVwd0xSUVIyWFJRUjNnRUZfMG1hazF3?oc=5",
+      "summary": "Rubrik (RBRK) Stock Could Be 19% Undervalued After Its AI Security Push &nbsp;&nbsp; simplywall.st",
+      "category": "CoverageFallback",
+      "published": "2026-06-19T19:55:40+00:00",
       "fetch_status": "rss_only",
-      "cve_ids": [
-        "CVE-2024-21626"
-      ],
+      "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
     },
     {
-      "title": "Pickle in the Middle – Hijacking Vertex AI Model Uploads for Cross-Tenant RCE",
-      "url": "https://unit42.paloaltonetworks.com/hijacking-vertex-ai-model/",
-      "summary": "Unit 42 discovered a Vertex AI Python SDK vulnerability that allows remote code execution via bucket squatting. Read the article for more. The post Pickle in the Middle – Hijacking Vertex AI Model Uploads for Cross-Tenant RCE appeared first on Unit 42 .",
-      "category": "AISecurityLabs",
-      "published": "2026-06-16T10:00:29+00:00",
+      "title": "因AI安全隐患遭监管 Anthropic承诺加强与美政府沟通 - 新浪财经",
+      "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNUWFtYmpzWWRwb29DRjBlUUZCb092UVVMNzA5SG1NTWZxaXVhUEMwSUNUWkg4M0hYTE5VTkVhVEsxVE03bnYxdWlzN3JPZzBMTUxnbGVPQlFuT09McVdncnd2MHRZLW9fa2xmQVE5ZlVFc2E3NkVYZ1ZSVWZMZV93RXd0OElrMzNXaG9NTFpFYjRiUmpVMjBMUjdnZTEzUUdLdDlZclhnbXB2aDEySmpWRS1sU3A5enc1Zm90Mndxb0tINW8yQzE1Ni1vZEdpb0czeVNWNlpHVVVYM3c1SExsYmVOckkwMkZnLXV0LVZOU2JKWTVMUy1WUmpKYlhZaUVUd1hGMHlRcDR6a0FJc0pzemY2cw?oc=5",
+      "summary": "因AI安全隐患遭监管 Anthropic承诺加强与美政府沟通 &nbsp;&nbsp; 新浪财经",
+      "category": "CoverageFallback",
+      "published": "2026-06-19T16:46:25+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOTWdTMDV0X1RKUGpoVW1FQ1A2aS1Cc3pjbm9SY1llWGxzNXlqUVRvbEFzQWowQU5vc2FkU3hLR3JEQWs0amdCcC13cTdhUG90VlE5QmM4MDFTOEZnVmctWXAtVldmbk5KNHUtT1pidmtaNk0yd2ppdkJsSjJ1SU9TZmpma3Z6WFh5eUNOUEFBbGp5dWNuWV84ZzBlQlpXMU1DSzRTRDBGR09CQ1VhNW1UNTM4UFNwajV2YmtBbGZNaGQ0ZlRPb3hmTXBlU2FiNV9JSm00Y2E2b1E4UXFBR0xv?oc=5"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "The Bull Case For CrowdStrike (CRWD) Could Change Following New AWS-Powered AI Security Push – Learn Why - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdkdaMXYteHY5SjBRb2lXSnJWbHQxSGRZOHJpUHVVS3E2WndfNkFKeF9UbkttdHRwSzhONDg0Z0JYWVpjZGtCcVh6cW85SV9OSnZ3NVJNaTFuWHF3R1EzMmxJVmZ2WUlRMjdFOGR6U2V3eWYwVjU3X0lVWmZEcFJ0eVVTVkE4U3lEZ2liMUlYNUVodDBjWFVpdThXQ1o?oc=5",
+      "summary": "The Bull Case For CrowdStrike (CRWD) Could Change Following New AWS-Powered AI Security Push – Learn Why &nbsp;&nbsp; Yahoo Finance",
+      "category": "CoverageFallback",
+      "published": "2026-06-19T15:13:18+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "SentinelOne (NYSE:S) Expands AI Security Automation Capabilities - Kalkine Media",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPdVp4YkpwaGczWE1VdWd3SkJMaWlSYW1BcFl4V3d2VzRWVlA0OS13Z013TjZsZExRUlY5YVVaYmNEVEhhX1BsRnp0dE9DbVlwa2JZVzNlRWhqbXVKNmdfY3ptZEhPQkVlR1B4aEwyY21TSVcyRHYzOHlXRkVYUzRBaHVhdERiZ0R5R2RZVUYwaTg3Y2VuSkpMQ0tPTEE5VDFmcF9tb2Vra1VTSDg?oc=5",
+      "summary": "SentinelOne (NYSE:S) Expands AI Security Automation Capabilities &nbsp;&nbsp; Kalkine Media",
+      "category": "CoverageFallback",
+      "published": "2026-06-19T15:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "This is really interesting to try and interpret through a bug bounty lens.",
+      "url": "https://x.com/rez0__/status/2067942949053247965",
+      "summary": "This is really interesting to try and interpret through a bug bounty lens. Naval: If your success or failure is judged by other people, rather than by nature or free markets, you’re playing a game, albeit a reified and social one.",
+      "category": "XSignals",
+      "published": "2026-06-19T12:09:54+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
-      "feed_title": "Unit 42"
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "Datasette Apps: Host custom HTML applications inside Datasette",
@@ -348,19 +362,6 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "Securing the Agentic Enterprise: It Starts with the Data - Snowflake",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUExZeXZuTHlGZEFKUU41bmkyRFhZZjRab3NyMG9kYVduRlRTcV9tZFhPUGVXdno1RUoybXlXNnhOSXowN0RiMXd0NnlXR0JGOXJCOUFwR1Z6Nkozd0hGZE5QaDVxSmhMU2RRMUtSMW5xQ0ZKRk1zQ1FnNHgyMnRBYld5YzVvc2xjbGhNRWlXNFpvd3pibkpsTGstYw?oc=5",
-      "summary": "Securing the Agentic Enterprise: It Starts with the Data &nbsp;&nbsp; Snowflake",
-      "category": "CoverageFallback",
-      "published": "2026-06-18T22:52:47+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
       "title": "This is a path you could take for bug bounty as well",
       "url": "https://x.com/rez0__/status/2067739738803499465",
       "summary": "This is a path you could take for bug bounty as well @levelsio: I don't know if it's obvious information or not but if you talk to random people in San Francisco the general thing they say is that software is commoditized cause so easy to make anything with AI fast (like how I cancelled all my SaaS subscriptions and just vibe coded a",
@@ -374,51 +375,25 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "AI安全赛道整合提速：Databricks、SailPoint接连收购，AWS与Google Cloud加快布局 - 디지털투데이",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNbU5PRXNlOHpxNlJFUG1oclhndFVnMEs3X29SWFlCVEdLLVpaQVNQV0ZXdk8yQk5NR1NTZFdFR2lUWmc3YzNKNE1OYlIyUFdUYk5SakctOVhVOEpQU1J3VkZrTEFUZmt5VVdoV2hDdHZFZ2JZSFd2ZUZjVmZvb2xnTHBrX21xc2hfdTJwVW5fTnpqMGs5cC0ydl9XTFNpRmdNblVhblFpZTNOMGNYT29nZTFSd0tHSjc4bkxyRw?oc=5",
-      "summary": "AI安全赛道整合提速：Databricks、SailPoint接连收购，AWS与Google Cloud加快布局 &nbsp;&nbsp; 디지털투데이",
-      "category": "CoverageFallback",
-      "published": "2026-06-18T22:30:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
-    },
-    {
-      "title": "Doosan Aligns Portfolio with AI Supply-Chain Growth - Let's Data Science",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMmlFcUN6S3c5SGdSX1hBc3Y4WENDYW9oeFpYUEhBNDI0WkZKOXhEWGRhVTJXWXVJb3dzai1OMVVlTGxUdmRGaEJ0dEZBaWlUbmxCdWM3T2hLRU5qSnBWUVZITmN1OTY5OFNjZlZGMTZDQS04YWxsNUJfY3NJWGpocFdWemxOcmFldWM0dnhtaDkzYlY4ejdVdA?oc=5",
-      "summary": "Doosan Aligns Portfolio with AI Supply-Chain Growth &nbsp;&nbsp; Let's Data Science",
-      "category": "CoverageFallback",
-      "published": "2026-06-18T22:17:03+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Supply Chain Security"
-    },
-    {
-      "title": "AI Security Risks Drive Data Protection Efforts - StartupHub.ai",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTTc2bEVfR1ZJVWxycFI3YjFQVEVURnNzUWZFUmRReHFyT2pTTHJDbU1DaXQ3RXk3NjB3ZGk0UzEzelVCbTh3MktMQWg5bmt1QUp1MGhRM1k4RFRacllXbWJRaHRta2gzR2tHODAzdHdJOE42MkZaOEZxcTdnMWwyUFI3eFFQNzJEbHkwVEFTYUVLcXBkaWpaSGM2dnh2Z1VJQXc?oc=5",
-      "summary": "AI Security Risks Drive Data Protection Efforts &nbsp;&nbsp; StartupHub.ai",
-      "category": "CoverageFallback",
-      "published": "2026-06-18T22:02:49+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
       "title": "It’s far from impossible. But it makes the model rather useless when you do so.",
       "url": "https://x.com/rez0__/status/2067721426006581577",
       "summary": "It’s far from impossible. But it makes the model rather useless when you do so. Polymarket: NEW: The White House is reportedly demanding Anthropic make Fable 5 impossible to jailbreak before rerelease — which security experts say “can’t be done.”",
       "category": "XSignals",
       "published": "2026-06-18T21:29:39+00:00",
       "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "RT Ciarán Cotter: Holy shit, @MistralAI's Le Chaton Fat-Cyber model looks to be even more dangerous than Mythos. Why isn't the EU regulating it?",
+      "url": "https://x.com/rez0__/status/2067917108348952895",
+      "summary": "RT Ciarán Cotter Holy shit, @MistralAI's Le Chaton Fat-Cyber model looks to be even more dangerous than Mythos. Why isn't the EU regulating it?",
+      "category": "XSignals",
+      "published": "2026-06-18T13:39:20+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
@@ -463,19 +438,6 @@
       "quality_score": 1,
       "feed_url": "https://www.endorlabs.com/learn/rss.xml",
       "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Quoting Charity Majors",
-      "url": "https://simonwillison.net/2026/Jun/17/charity-majors/#atom-everything",
-      "summary": "What happened in 2025 was this: the economics of code production were turned upside down . Instead of being very hard, time-consuming, and expensive to generate code, it became effectively free and instant. Lines of code went from being treasured, reused, cared for and carefully curated, to being disposable and regenerable, practically overnight. &mdash; Charity Majors , AI demands more engineerin",
-      "category": "AISecurityLabs",
-      "published": "2026-06-17T17:12:41+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
     },
     {
       "title": "RT 🕳: https://github.com/wunderwuzzi23/ropci This can test if MFA is enforced for Resource Owner Password Credentials (ROPC). You can also use MFAS...",
@@ -530,115 +492,24 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "A Forgotten Contributor Account Compromised the Entire Mastra npm Package Scope",
-      "url": "https://snyk.io/blog/a-forgotten-contributor-account-compromised-the-entire-mastra-npm-package-scope/",
-      "summary": "A dormant contributor account was used to republish the entire @mastra npm scope, each injected with a single dependency, easy-day-js, that drops a cross-platform cryptocurrency stealer. Here is how the attack worked, how to check exposure, and how to remediate.",
-      "category": "AISecurityLabs",
-      "published": "2026-06-16T21:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://snyk.io/blog/feed/",
-      "feed_title": "Snyk Blog"
-    },
-    {
-      "title": "Agentic AppSec: closing the remediation gap and automating application security",
-      "url": "https://www.legitsecurity.com/blog/agentic-appsec-closing-the-remediation-gap-and-automating-the-rest-of-application-security",
-      "summary": "Application security has spent a decade getting brilliant at half of its job. This is about automating the other half – starting with the fix, and not stopping there.",
-      "category": "AISecurityLabs",
-      "published": "2026-06-16T13:00:05+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.legitsecurity.com/blog/rss.xml",
-      "feed_title": "Legit Security"
-    },
-    {
-      "title": "Wait what",
-      "url": "https://x.com/rez0__/status/2066845872986771792",
-      "summary": "Wait what @levelsio: Hetzner just 2.5x'd their prices for US servers Crazy but understandable as the AI companies are pushing prices of everything up: RAM, HDDs, SSDs, CPUs, GPUs, and even competing with Hetzner for land to build data centers in US!",
-      "category": "XSignals",
-      "published": "2026-06-16T11:30:30+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "基于 BYOVD 的 Windows 内核态任意写（Arbitrary Write）免杀技术探讨",
-      "url": "https://xz.aliyun.com/news/92321",
-      "summary": "基于 BYOVD 的 Windows 内核态任意写（Arbitrary Write）免杀技术探讨今天聊聊免杀，本技术及代码仅供合法合规的安全研究与防御提升使用，严禁用于任何非法攻击；因不当使用导致的系统崩溃或法律后果，均由行为人自行承担。流行的免杀大类基本分为一体的注入，但是这种对于静态分析较为明显，也是最初级的一种再者是引入加载器loader，也就是机器码与loader分开，这样可以大大降低被杀",
-      "category": "Chinese",
-      "published": "2026-06-16T10:12:08+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "面向多种防御策略的自动化越狱攻击",
-      "url": "https://paper.seebug.org/3491",
-      "summary": "作者：Qi Wang, Chengcheng Wan等 原文链接：https://arxiv.org/pdf/2606.16751 摘要 大型语言模型（LLM）在广泛的任务中展现出了卓越的能力。然而，由于其易受对抗性提示攻击的影响，其安全性仍然是一个关键问题。在本文中，我们提出了UniAttack，这是一个从防御视角设计的对抗性测试框架，用于系统性地构建有效的黑盒攻击提示。与以往依赖静态模板或迭代...",
-      "category": "Chinese",
-      "published": "2026-06-16T09:00:29+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://paper.seebug.org/rss/",
-      "feed_title": "Seebug Paper"
-    },
-    {
-      "title": "墨白：从 Chatbot 到 Agentic 安全智能体的演进与工程实践",
-      "url": "https://xz.aliyun.com/news/92320",
-      "summary": "先知安全沙龙第15场 - 墨白：从 Chatbot 到 Agentic 安全智能体的演进与工程实践",
-      "category": "Chinese",
-      "published": "2026-06-16T07:58:54+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "RT Marc Lou: Nothing I buy makes me happy. I find happiness in simple things: reading a book with a coffee, a hard workout, building apps, a walk with...",
-      "url": "https://x.com/rez0__/status/2066844762943156270",
-      "summary": "RT Marc Lou Nothing I buy makes me happy. I find happiness in simple things: reading a book with a coffee, a hard workout, building apps, a walk with my wife. Money solved my money problems. I don't worry about next month's rent anymore. But everything that makes me genuinely happy costs little or nothing at all. stemonte: What defines you as rich nowadays? You make tons of money, but for what pur",
-      "category": "XSignals",
-      "published": "2026-06-16T07:55:36+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT Daniel Cuthbert: I've a huge man crush on the entire @trailofbits team, I mean there are very few out there right now doing the shizzle that others...",
-      "url": "https://x.com/trailofbits/status/2066916185971798238",
-      "summary": "RT Daniel Cuthbert I've a huge man crush on the entire @trailofbits team, I mean there are very few out there right now doing the shizzle that others dream of doing. Trailmark is impressive where it turns source into a call/class/function graph and then that means our robot overloads can query Scott Arciszewski: Last month, the @Symfony blog posted about some results from Claude Mythos. https://sy",
-      "category": "XSignals",
-      "published": "2026-06-16T06:53:06+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
-      "feed_title": "X / Trail of Bits"
-    },
-    {
       "title": "Endor Labs is a Visionary in the 2026 Gartner® Magic Quadrant™ for Software Supply Chain Security | Blog | Endor Labs",
       "url": "https://www.endorlabs.com/learn/endor-labs-is-a-visionary-in-the-2026-gartner-r-magic-quadrant-tm-for-software-supply-chain-security",
       "summary": "Endor Labs is a Visionary in the 2026 Gartner® Magic Quadrant™ for Software Supply Chain Security",
       "category": "AISecurityLabs",
-      "published": "2026-06-18T20:35:46+00:00",
+      "published": "2026-06-19T02:20:10+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Claude Fable 5, take two: same model, different harness, and a very different result | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/claude-fable-5-take-two-same-model-different-harness-and-a-very-different-result",
+      "summary": "Claude Fable 5, take two: same model, different harness, and a very different result",
+      "category": "AISecurityLabs",
+      "published": "2026-06-19T02:20:10+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -684,19 +555,6 @@
       "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "Claude Fable 5, take two: same model, different harness, and a very different result | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/claude-fable-5-take-two-same-model-different-harness-and-a-very-different-result",
-      "summary": "Claude Fable 5, take two: same model, different harness, and a very different result",
-      "category": "AISecurityLabs",
-      "published": "2026-06-17T23:00:10+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
     },
     {
       "title": "AppSec was built to find problems. The Mythos era demands you fix them, fast. | Blog | Endor Labs",
@@ -764,41 +622,15 @@
       "feed_title": "娜璋AI安全之家"
     },
     {
-      "title": "AI 时代的白盒审计之我见",
-      "url": "https://xz.aliyun.com/news/92318",
-      "summary": "先知安全沙龙第15场 - AI 时代的白盒审计之我见",
-      "category": "Chinese",
-      "published": "2026-06-16T07:47:58+00:00",
+      "title": "Are you in the weights?",
+      "url": "https://x.com/rez0__/status/2067781453388157273",
+      "summary": "Are you in the weights?",
+      "category": "XSignals",
+      "published": "2026-06-19T01:28:10+00:00",
       "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "Did we actually experience fable or was it all a dream?",
-      "url": "https://x.com/rez0__/status/2066700844205003079",
-      "summary": "Did we actually experience fable or was it all a dream?",
-      "category": "XSignals",
-      "published": "2026-06-16T01:54:13+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT @levelsio: Remembering the 3 days I had access to Fable",
-      "url": "https://x.com/rez0__/status/2066700750730707085",
-      "summary": "RT @levelsio: Remembering the 3 days I had access to Fable",
-      "category": "XSignals",
-      "published": "2026-06-16T01:53:51+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
+      "quality_score": -1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     },
