@@ -1,0 +1,564 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-19",
+  "generated_at": "2026-06-19T00:18:24.850204Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 8,
+    "direct": 15,
+    "wechat": 6,
+    "tier_t2": 11,
+    "kind_cn_expert": 7,
+    "tier_t1": 3,
+    "kind_official": 3,
+    "kind_media": 3,
+    "tier_unknown": 1,
+    "kind_community": 1,
+    "kind_expert": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 6,
+    "merged_total": 6
+  },
+  "items": [
+    {
+      "title_zh": "微软承认 Windows Defender 存在 RoguePlanet 零日漏洞，攻击者无需交互即可提权至 SYSTEM",
+      "title_orig": "无需交互即可提权至SYSTEM！微软承认Defender曝“RoguePlanet”高危零日漏洞",
+      "summary": "微软承认Windows Defender中存在名为RoguePlanet的高危零日漏洞，该漏洞源于引擎处理特定逻辑时的缺陷，允许低权限用户在无需任何受害者交互的情况下直接获取系统最高权限。该本地权限提升漏洞已确认影响Windows 10和Windows 11全系列版本，目前微软正紧急推进修复工作，建议广大用户密切关注官方补丁更新以防范潜在的系统接管风险。",
+      "tags": [
+        "提权漏洞",
+        "零日漏洞",
+        "Defender"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458616781&idx=2&sn=cdffb0e31362c473f09b0712e981f34c",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-18T09:59:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及核心安全组件的零日漏洞，且无需交互即可提权，风险极高。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458616781&idx=2&sn=cdffb0e31362c473f09b0712e981f34c",
+      "related_urls": [
+        "https://defend.network/briefings/microsoft-defender-zero-day-fortinet-credential-leak-gi-2026-06-18.html"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.5,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "深入分析 CVE-2024-21626 runc 文件描述符泄漏漏洞，实现 Docker 容器逃逸的四种攻击变体",
+      "title_orig": "实战｜从CVE-2024-21626看Docker容器逃逸——runc文件描述符泄漏的四种攻击变体",
+      "summary": "该漏洞源于 runc 在初始化容器进程时未正确关闭内部文件描述符，导致宿主机目录句柄泄露至容器环境，攻击者可通过工作目录切换或恶意二进制文件触发逃逸。文章详细复现了通过 /proc/self/fd 访问宿主机文件系统的四种变体路径，适用于容器安全研究与红蓝对抗场景，并提供了生产环境下的防御加固建议。",
+      "tags": [
+        "容器逃逸",
+        "runc",
+        "文件描述符"
+      ],
+      "url": "https://xz.aliyun.com/news/92322",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-06-16T12:15:32+00:00",
+      "cve_ids": [
+        "CVE-2024-21626"
+      ],
+      "selection_reason": "提供了深度的技术复现和变体分析，对云原生安全研究有极高参考价",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2024-21626",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.8,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "多家厂商签名的 UEFI 应用程序存在安全启动绕过漏洞，允许在系统启动前执行任意代码",
+      "title_orig": "VU#457458: Vendor-signed UEFI applications found vulnerable to Secure Boot bypass",
+      "summary": "该漏洞涉及多个受信任厂商签名的 UEFI 应用程序，攻击者可利用类似“自带漏洞驱动”的攻击方式，在操作系统初始化前的预启动阶段绕过安全启动校验。如果目标系统信任受影响厂商的证书，攻击者即可执行任意代码并持久化驻留，目前建议系统管理员通过更新撤销列表或固件补丁进行缓解，原文未披露具体受影响厂商名单。",
+      "tags": [
+        "UEFI",
+        "安全启动",
+        "固件安全"
+      ],
+      "url": "https://kb.cert.org/vuls/id/457458",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-06-18T19:41:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及底层固件信任链的结构性风险，是高级持续性威胁的重要手段。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/457458",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Microsoft 365 Copilot 曝出 SearchLeak 严重漏洞链，攻击者可窃取企业级敏感数据",
+      "title_orig": "一键即破防：M365 Copilot \"SearchLeak\" 漏洞链全解析（CVE-2026-42824）",
+      "summary": "Varonis威胁实验室于2026年6月15日公开披露了针对Microsoft 365 Copilot Enterprise的三级漏洞利用链SearchLeak，该漏洞编号为CVE-2026-42824并被微软官方评定为最高严重级别。攻击者可利用搜索增强生成过程中的逻辑缺陷跨越权限边界，从而非法获取企业内部的各类敏感数据，目前官方已发布相关安全预警及修复方案，建议企业用户立即采取防护措施以规避潜在风险。",
+      "tags": [
+        "AI安全",
+        "Copilot",
+        "数据泄露"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519109&idx=1&sn=bc5290290f3794a240ff0edc0f95942f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-17T09:21:00+00:00",
+      "cve_ids": [
+        "CVE-2026-42824"
+      ],
+      "selection_reason": "针对主流 AI 办公助手的严重漏洞，揭示了 LLM 应用集成",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "cve:cve-2026-42824",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.15,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Arch Linux AUR 供应链投毒事件分析：恶意 npm 包配合 eBPF 技术实现凭据采集与隐身",
+      "title_orig": "威胁情报｜Arch Linux AUR 供应链投毒关联恶意 npm 包分析",
+      "summary": "本次Arch Linux AUR供应链攻击通过篡改构建脚本触发恶意npm包下载，其核心ELF载荷具备采集系统凭据并利用Tor网络进行C2通信的能力，旨在长期潜伏于Linux开发环境。该载荷的技术亮点在于尝试使用eBPF技术实现进程与网络行为的深度隐身，此事件提醒开发者在安装第三方社区包时必须严格审计构建脚本，以防范此类具有高度隐蔽性的供应链投毒威胁。",
+      "tags": [
+        "供应链攻击",
+        "eBPF",
+        "Linux安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU4ODQ3NTM2OA==&mid=2247505220&idx=1&sn=1774b88eb9daff2dad7fb7f498b14ce7",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-17T10:20:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 eBPF 等高级技术在供应链投毒中的实战应用，具有较",
+      "feed_url": "https://wechat2rss.xlab.app/feed/9e9c3c70e598266a1ac993e50458a10a6d853eb7.xml",
+      "feed_title": "慢雾科技",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/9e9c3c70e598266a1ac993e50458a10a6d853eb7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU4ODQ3NTM2OA%3D%3D&mid=2247505220&idx=1&sn=1774b88eb9daff2dad7fb7f498b14ce7",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Splunk 修复 CVSS 9.8 极高危远程代码执行漏洞，CISA 确认该漏洞已被野外利用",
+      "title_orig": "Splunk CVE-2026-20253: CVSS 9.8 RCE Exploited in the Wild",
+      "summary": "Splunk平台被曝出存在编号为CVE-2026-20253的远程代码执行漏洞，其CVSS评分高达9.8分，允许未经身份验证的攻击者在目标服务器上直接执行任意指令。CISA已确认该漏洞正遭受活跃的野外利用且影响多个主流版本，安全专家建议所有使用Splunk的企业管理员立即检查系统日志，并迅速更新至最新安全版本，以应对这一紧迫且极具破坏性的网络安全威胁。",
+      "tags": [
+        "RCE",
+        "Splunk",
+        "野外利用"
+      ],
+      "url": "https://securityonline.info/splunk-cve-2026-20253-rce-exploited/",
+      "source": "securityonline.info",
+      "category": "Synthesis",
+      "published": "2026-06-18T18:02:33+00:00",
+      "cve_ids": [
+        "CVE-2026-20253"
+      ],
+      "selection_reason": "高评分 RCE 且已被 CISA 证实存在野外攻击，属于必须",
+      "feed_url": "https://securityonline.info/feed/",
+      "feed_title": "Cybersecurity News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityonline.info",
+      "story_id": "cve:cve-2026-20253",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247525926&idx=1&sn=e45c9ee8a56851cca66b2a7e8cb55a92",
+        "https://mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA==&mid=2649790099&idx=1&sn=17ef8b65a5934d609189271357051b6a"
+      ],
+      "related_count": 2,
+      "score": 10,
+      "dimension_score": 9.3,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux 内核 net/sched 组件曝出权限提升漏洞，CVE-2026-46331 威胁等级评定为高危",
+      "title_orig": "【漏洞通告】Linux Kernel net/sched act_pedit 权限提升漏洞(CVE-2026-46331)",
+      "summary": "深瞳漏洞实验室监测到Linux内核net/sched act_pedit组件存在高危权限提升漏洞，编号为CVE-2026-46331，该漏洞源于组件在处理数据包编辑时的逻辑错误。攻击者可借此漏洞在本地获取更高系统权限，受影响范围涵盖了多个主流Linux发行版的内核版本，目前相关安全补丁正在分发过程中，建议广大Linux用户及时关注并安装内核安全更新以规避提权风险。",
+      "tags": [
+        "Linux内核",
+        "提权漏洞",
+        "网络子系统"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247525944&idx=1&sn=0068a85063edf376b9e29d4bdf0baf00",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-18T09:19:00+00:00",
+      "cve_ids": [
+        "CVE-2026-46331"
+      ],
+      "selection_reason": "内核级提权漏洞，影响范围广，是 Linux 服务器加固的重点",
+      "feed_url": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "feed_title": "深信服千里目安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "story_id": "cve:cve-2026-46331",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "LiteLLM 曝出多个高危漏洞链，攻击者可从低权限 Key 逐步接管 AI Gateway 控制面",
+      "title_orig": "从低权限 Key 到 AI Gateway 接管：LiteLLM 漏洞链完整剖析",
+      "summary": "LiteLLM被披露存在由4个安全风险构成的漏洞链，攻击者可利用低权限凭据逐步渗透，最终实现对AI网关控制平面的完全接管。该漏洞链的实际影响范围极广，包括模型API Key泄露、MCP工具凭据被窃取以及下游Agent工作流遭篡改等严重后果，官方已在v1.83.14-stable版本中完成修复，建议所有受影响的开发者与企业用户立即执行版本升级以确保AI基础设施安全。",
+      "tags": [
+        "AI网关",
+        "漏洞链",
+        "LiteLLM"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU3ODAyMjg4OQ==&mid=2247497782&idx=1&sn=26de363234b141e682c1fc30321013a1",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-18T09:32:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对 AI 基础设施的权限提升路径分析，对构建安全的 AI",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d762fbf5f8f256afb63bcfe9a362184072338819.xml",
+      "feed_title": "云鼎实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d762fbf5f8f256afb63bcfe9a362184072338819.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU3ODAyMjg4OQ%3D%3D&mid=2247497782&idx=1&sn=26de363234b141e682c1fc30321013a1",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "F5 修复 NGINX 开源版两个关键漏洞，远程攻击者可利用 UAF 漏洞执行任意代码",
+      "title_orig": "F5 Patches Two Critical NGINX Open Source Flaws Enabling Remote Code Execution",
+      "summary": "F5公司发布安全更新修复了NGINX开源版中两个关键漏洞，其中CVE-2026-42530是位于ngx_http_v3_module模块中的释放后使用漏洞，其CVSS评分高达9.2分。远程未经身份验证的攻击者在特定配置下可触发该漏洞，从而在受影响的系统上实现远程代码执行，官方强烈建议受影响版本的用户尽快完成升级以缓解潜在的攻击风险，确保服务器环境的整体安全性。",
+      "tags": [
+        "NGINX",
+        "远程代码执行",
+        "漏洞修复"
+      ],
+      "url": "https://thehackernews.com/2026/06/f5-patches-two-critical-nginx-open.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-18T17:32:14+00:00",
+      "cve_ids": [
+        "CVE-2026-42530"
+      ],
+      "selection_reason": "NGINX 作为核心基础设施，其 RCE 漏洞具有极高的安全",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-42530",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "三菱电机 MELSEC iQ-F 系列以太网模块存在拒绝服务漏洞，可导致内部异常检测失效",
+      "title_orig": "Mitsubishi Electric Co.'s MELSEC iQ-F Series FX5-ENET/IP Ethernet Module",
+      "summary": "三菱电机 MELSEC iQ-F 系列 FX5-ENET/IP 以太网模块存在安全漏洞，远程攻击者可通过在短时间内向以太网端口发送大量通信数据包来触发该漏洞。此行为会显著增加产品的处理负载并导致拒绝服务状态，进而阻止内部异常检测处理的正常运行，目前 CSAF 摘要已披露该风险，建议相关工控环境管理员密切关注官方发布的缓解措施以确保系统稳定。",
+      "tags": [
+        "工控安全",
+        "拒绝服务",
+        "三菱电机"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-06",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-18T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "工控组件的 DoS 漏洞可能直接影响生产线的稳定性与安全监控",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-169-06",
+      "related_urls": [
+        "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-05"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.8,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "施耐德电气 PowerChute Serial Shutdown 等多款能源管理产品存在安全漏洞预警",
+      "title_orig": "Schneider Electric Easergy, EcoStruxture, PowerLogic, and Saitel Products",
+      "summary": "施耐德电气披露其PowerChute Serial Shutdown UPS管理软件存在安全漏洞，该软件用于桌面及服务器的系统关机与能源管理。原文未披露漏洞的具体类型、触发条件及受影响的具体版本号，仅指出若未应用补救措施可能导致系统管理功能受损。目前官方已发布CSAF摘要并提供修复补丁，建议用户针对Easergy、EcoStruxture、PowerLogic及Saitel等相关受影响组件进行安全加固。",
+      "tags": [
+        "施耐德电气",
+        "UPS管理",
+        "供应链安全"
+      ],
+      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-07",
+      "source": "cisa.gov",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-18T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "能源管理软件的漏洞可能导致关键基础设施在电力异常时无法正常关",
+      "feed_url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "feed_title": "CISA Advisories",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "cisa.gov",
+      "story_id": "url:cisa.gov/news-events/ics-advisories/icsa-26-169-07",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.8,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "热门 AI 智能体框架 Mastra 遭受供应链投毒，近 140 个 NPM 组件受影响",
+      "title_orig": "紧急AI安全情报 | 热门AI智能体开发框架Mastra近140个NPM组件遭受供应链投毒",
+      "summary": "热门 AI 智能体开发框架 Mastra AI 遭遇大规模供应链投毒攻击，涉及近 140 个 NPM 组件且波及多个周下载量超过百万次的关联项目。攻击者通过在 NPM 生态中植入恶意代码试图渗透开发者环境，安全研究人员提醒使用该框架的 AI 开发者立即排查依赖库，防止恶意组件在自动化构建流程中造成进一步损害，此次事件凸显了 AI 开发生态中供应链安全的严峻性。",
+      "tags": [
+        "AI安全",
+        "供应链投毒",
+        "NPM"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3NzE2ODk1Mg==&mid=2647799818&idx=1&sn=da90283ca847f298a8cfd3774122d0ab",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-17T07:12:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "AI 框架供应链安全是当前新兴热点，百万级下载量意味着影响范",
+      "feed_url": "https://wechat2rss.xlab.app/feed/59c134d2e41c3a0724d89cc6fa359bc1abedbc26.xml",
+      "feed_title": "悬镜安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/59c134d2e41c3a0724d89cc6fa359bc1abedbc26.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA3NzE2ODk1Mg%3D%3D&mid=2647799818&idx=1&sn=da90283ca847f298a8cfd3774122d0ab",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.55,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "FortiBleed 事件导致全球逾 7 万台 Fortinet VPN 设备明文凭证泄露",
+      "title_orig": "FortiBleed 泄露事件暴露 73,000 台设备的 Fortinet VPN 凭证",
+      "summary": "安全研究员发现名为 FortiBleed 的大规模数据泄露事件，暴露了全球组织中 73,932 个 Fortinet 及 FortiGate VPN 的防火墙 URL 及凭证集合。泄露的数据包含有效的用户名、电子邮件地址以及明文密码，这些信息存储在一台服务器上，该事件直接威胁到大量企业的边界安全，攻击者可利用这些凭证绕过 VPN 防护进入内网，造成严重的敏感数据泄露风险。",
+      "tags": [
+        "凭证泄露",
+        "Fortinet",
+        "VPN安全"
+      ],
+      "url": "http://0.0.0.0:8080/post/64359",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-18T02:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "大规模 VPN 凭证泄露是企业内网渗透的直接跳板，具有极高实",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "url:0.0.0.0/post/64359",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077470&idx=3&sn=d9993512bb783a74569e8df09225a9d5",
+        "https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure",
+        "https://defend.network/briefings/fortinet-rokarolla-google-vertex-ai-exploits-2026-06-17.html"
+      ],
+      "related_count": 3,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "7-Zip RAR5 备用数据流处理漏洞 PoC 发布，可绕过 Windows MotW 安全机制",
+      "title_orig": "7zip-rar5-motw-chain-poc",
+      "summary": "研究人员发布了针对Windows平台7-Zip 26.01版本的全链条PoC，展示了RAR5格式备用数据流处理缺陷，该漏洞涉及构造包含特定STM服务记录的压缩包。攻击者通过修改提取文件的最终字节并篡改Zone.Identifier标识，能够有效绕过Windows的Web标记安全警告，在用户不知情的情况下执行恶意代码，对系统安全构成严重威胁并可能导致敏感数据泄露。",
+      "tags": [
+        "7-Zip",
+        "MotW绕过",
+        "PoC"
+      ],
+      "url": "https://vulners.com/githubexploit/5C5DB428-781D-5678-9C4D-C252B4D64046?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-06-18T23:58:21+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用压缩格式特性绕过系统安全防御的技巧，对红队研究有启",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "url:vulners.com/githubexploit/5c5db428-781d-5678-9c4d-c252b4d64046",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "FreeBSoD 项目利用大语言模型辅助发现并利用 FreeBSD 内核 0-day 漏洞",
+      "title_orig": "FreeBSoD: Leveraging Language Models to Find and Exploit Kernel Bugs (Part 1 of 2)",
+      "summary": "Praetorian团队利用Claude Code大语言模型对FreeBSD内核进行自动化审计，旨在发现并利用内核层级的安全漏洞。该研究通过AI模型分析内核源码逻辑，成功定位了潜在的0-day缺陷，但原文未披露具体漏洞的CVE编号、技术原理及受影响的内核版本。目前该研究处于技术验证阶段，原文未披露针对发现漏洞的官方修复状态，重点展示了AI辅助生成内核漏洞利用代码的技术潜力。",
+      "tags": [
+        "AI漏洞挖掘",
+        "FreeBSD",
+        "内核安全"
+      ],
+      "url": "https://www.praetorian.com/blog/ai-vulnerability-research-freebsd-kernel/",
+      "source": "praetorian.com",
+      "category": "WebSecurity",
+      "published": "2026-06-17T19:15:57+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 辅助漏洞挖掘的前沿工程化实践，是安全研究员关注",
+      "feed_url": "https://www.praetorian.com/blog/feed",
+      "feed_title": "Blog | Praetorian",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "praetorian.com",
+      "story_id": "url:praetorian.com/blog/ai-vulnerability-research-freebsd-kernel",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92319"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.5,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
