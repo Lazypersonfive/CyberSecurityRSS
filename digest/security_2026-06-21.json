@@ -1,0 +1,554 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-21",
+  "generated_at": "2026-06-20T23:53:28.017246Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 8,
+    "direct": 15,
+    "wechat": 5,
+    "tier_t2": 10,
+    "kind_cn_expert": 5,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "kind_media": 6,
+    "tier_unknown": 3,
+    "kind_expert": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 4,
+    "merged_total": 4
+  },
+  "items": [
+    {
+      "title_zh": "微软确认 Microsoft Defender 存在 RoguePlanet 高危零日漏洞，攻击者无需交互即可提权至 SYSTEM",
+      "title_orig": "无需交互即可提权至SYSTEM！微软承认Defender曝“RoguePlanet”高危零日漏洞",
+      "summary": "微软承认Defender中存在名为RoguePlanet的高危零日漏洞，该漏洞属于本地提权漏洞，允许攻击者在无需任何用户交互的情况下，直接将权限提升至最高级别的SYSTEM权限。该漏洞广泛影响Windows 10和Windows 11全系操作系统，由于其零日属性且目前原文未详细披露修复补丁的具体状态，建议相关用户密切关注微软官方的安全更新动态以防范潜在风险。",
+      "tags": [
+        "Defender",
+        "零日漏洞",
+        "本地提权"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458616781&idx=2&sn=cdffb0e31362c473f09b0712e981f34c",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-18T09:59:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及核心安全组件的零日漏洞，提权风险极高。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458616781&idx=2&sn=cdffb0e31362c473f09b0712e981f34c",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "多厂商签名 UEFI 应用程序存在安全启动绕过漏洞，攻击者可在操作系统启动前执行任意代码",
+      "title_orig": "VU#457458: Vendor-signed UEFI applications found vulnerable to Secure Boot bypass",
+      "summary": "漏洞编号为VU#457458的安全缺陷利用了受信任厂商签名的UEFI应用程序，通过类似于“自带漏洞驱动”的攻击方式，成功绕过系统的安全启动机制。如果目标系统信任受影响厂商的证书，攻击者便能在操作系统初始化前的预启动阶段执行任意恶意代码，目前安全专家建议系统管理员通过更新撤销列表来缓解该风险，以确保底层引导链的安全性。",
+      "tags": [
+        "UEFI",
+        "安全启动",
+        "固件安全"
+      ],
+      "url": "https://kb.cert.org/vuls/id/457458",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-06-18T19:41:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "底层固件漏洞可绕过安全启动，对系统信任链构成威胁。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/457458",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Sapphire Sleet 组织通过恶意 npm 包 Mastra 实施供应链攻击，利用安装后脚本投毒百余项目",
+      "title_orig": "From package to postinstall payload: Inside the Mastra npm supply chain compromise by Sapphire Sleet",
+      "summary": "攻击者通过向知名npm包Mastra注入恶意代码，利用postinstall安装后脚本触发隐藏负载，目前已导致全球超过140个项目受到供应链感染。该攻击链由Sapphire Sleet发起，完整展示了从包管理分发到执行恶意负载的过程，微软建议用户利用Defender和威胁情报进行主动检测与防御，目前相关恶意包已被安全社区披露并采取了初步处置措施。",
+      "tags": [
+        "npm",
+        "供应链攻击",
+        "恶意负载"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/",
+      "source": "microsoft.com",
+      "category": "Synthesis",
+      "published": "2026-06-18T03:43:04+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的 npm 供应链投毒案例，具有较强的实战防御参考价值。",
+      "feed_url": "https://www.microsoft.com/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/",
+        "https://www.bleepingcomputer.com/news/security/microsoft-links-mastra-ai-supply-chain-attack-to-north-korean-hackers/"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "苹果 A12 与 A13 芯片 SecureROM 曝出不可修复漏洞 usbliter8，可实现引导链任意代码执行",
+      "title_orig": "Unpatchable 'usbliter8' Exploit Breaks Apple A12 and A13 SecureROM Boot Chain",
+      "summary": "研究人员发布了名为usbliter8的漏洞利用程序，该漏洞存在于苹果A12和A13芯片的SecureROM中，由于相关代码在制造时已固化在硅片上，导致任何软件更新都无法对其进行修复。虽然该漏洞并非远程攻击且需要物理接触设备或特定连接条件，但受影响的苹果设备在整个使用周期内都将面临引导链被破坏的风险，属于无法通过常规手段修补的硬件级安全缺陷。",
+      "tags": [
+        "SecureRO",
+        "硬件漏洞",
+        "苹果芯片"
+      ],
+      "url": "https://thehackernews.com/2026/06/unpatchable-usbliter8-exploit-breaks.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-19T18:37:41+00:00",
+      "cve_ids": [],
+      "selection_reason": "不可修复的硬件级漏洞，对特定型号设备具有永久性影响。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/06/unpatchable-usbliter8-exploit-breaks.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.7,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux 内核组件 net/sched act_pedit 模块存在高危权限提升漏洞 CVE-2026-46331",
+      "title_orig": "【漏洞通告】Linux Kernel net/sched act_pedit 权限提升漏洞(CVE-2026-46331)",
+      "summary": "深瞳漏洞实验室监测到Linux内核流量控制子系统的net/sched act_pedit模块存在高危权限提升漏洞，官方编号为CVE-2026-46331。该漏洞允许本地攻击者在特定条件下绕过安全限制并提升操作权限，由于原文未详细披露受影响的具体内核版本及修复补丁的发布状态，建议广大Linux系统管理员和开发者持续关注官方内核社区的更新公告，以便第一时间应用安全补丁。",
+      "tags": [
+        "Linux内核",
+        "权限提升",
+        "CVE"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247525944&idx=1&sn=0068a85063edf376b9e29d4bdf0baf00",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-18T09:19:00+00:00",
+      "cve_ids": [
+        "CVE-2026-46331"
+      ],
+      "selection_reason": "Linux 内核权限提升漏洞，影响范围广泛，需及时关注补丁。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "feed_title": "深信服千里目安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "story_id": "cve:cve-2026-46331",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Splunk AI Toolkit 曝出远程命令执行漏洞 CVE-2026-20266，CVSS 评分高达 9.1",
+      "title_orig": "Splunk AI Toolkit曝高危漏洞：CVSS 9.1，可远程执行任意系统命令",
+      "summary": "Splunk AI Toolkit组件被曝存在编号为CVE-2026-20266的高危安全漏洞，其CVSS评分高达9.1分，主要原因是系统对用户输入验证不当。远程攻击者可利用此漏洞在目标系统上执行任意系统命令，受影响范围涵盖5.7.4之前的所有版本，目前官方已经紧急发布了修复版本，建议所有受影响的用户尽快完成插件升级工作，以消除远程代码执行带来的严重安全威胁。",
+      "tags": [
+        "Splunk",
+        "远程代码执行",
+        "漏洞预警"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA==&mid=2649790099&idx=1&sn=17ef8b65a5934d609189271357051b6a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-18T11:36:00+00:00",
+      "cve_ids": [
+        "CVE-2026-20266"
+      ],
+      "selection_reason": "高评分 RCE 漏洞，直接威胁服务器系统安全。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "story_id": "cve:cve-2026-20266",
+      "related_urls": [
+        "https://www.anquanke.com/post/id/315618",
+        "https://www.anquanke.com/post/id/315618"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Oracle 发布 PeopleSoft 零日漏洞缓解措施，防止攻击者利用该漏洞进行数据窃取",
+      "title_orig": "安全热点周报：Oracle 缓解了 PeopleSoft 零日漏洞在数据窃取攻击中的利用",
+      "summary": "Oracle公司针对PeopleSoft系统中被积极利用的零日漏洞发布了紧急缓解方案，该漏洞此前已被发现用于非法数据窃取攻击，对企业敏感信息安全构成严重威胁。虽然原文并未公开该漏洞的具体技术原理、触发机制或CVE编号，但重点强调了该漏洞的危害性，并强烈提醒相关用户必须立即应用官方提供的安全缓解措施，以保护其核心业务数据免受未经授权的非法访问。",
+      "tags": [
+        "Oracle",
+        "PeopleSo",
+        "零日漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506344&idx=1&sn=b8e44ad34114d803657ae973a30f0161",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-18T09:50:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及企业级应用零日漏洞的在途攻击，具有预警意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ%3D%3D&mid=2247506344&idx=1&sn=b8e44ad34114d803657ae973a30f0161",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "CISA 警告 Joomla JCE 扩展存在满分漏洞 CVE-2026-48907，已被用于执行 PHP 代码",
+      "title_orig": "CISA 警告存在正在被积极利用的 Joomla JCE 漏洞，可导致 PHP 代码执行",
+      "summary": "美国网络安全和基础设施安全局CISA近日发出紧急警告，将Widget Factory Joomla Content Editor扩展中一个编号为CVE-2026-48907的最高严重性漏洞列入已知被利用漏洞目录。该漏洞因访问控制不当导致CVSS评分高达满分10.0，攻击者可借此在受影响服务器上远程执行任意PHP代码，鉴于该漏洞正被积极利用且风险极大，官方敦促所有管理员立即更新组件以防系统遭完全控制。",
+      "tags": [
+        "Joomla",
+        "代码执行",
+        "CISA"
+      ],
+      "url": "http://0.0.0.0:8080/post/64361",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-18T02:06:00+00:00",
+      "cve_ids": [
+        "CVE-2026-48907"
+      ],
+      "selection_reason": "CVSS 10.0 且存在野外利用，属于最高优先级修复漏洞。",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "cve:cve-2026-48907",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Esri 发布安全预警：ArcGIS 账户恢复配置缺陷正遭受针对性攻击",
+      "title_orig": "Critical ArcGIS Account Recovery Targeted in Active Attacks",
+      "summary": "网络攻击者正积极利用 ArcGIS 账户恢复功能中的配置缺陷，试图渗透客户受保护的环境，Esri 官方已确认这些针对性攻击尝试。为了防止未经授权的访问，官方敦促管理员立即检查账户恢复设置并加强安全配置，尽管目前原文尚未披露具体的漏洞技术原理及受影响的软件版本，但该风险已对全球客户环境构成实质性威胁。",
+      "tags": [
+        "ArcGIS",
+        "账户恢复",
+        "配置缺陷"
+      ],
+      "url": "https://securityonline.info/arcgis-account-recovery-flaw-security-bulletin/",
+      "source": "securityonline.info",
+      "category": "Synthesis",
+      "published": "2026-06-20T17:23:20+00:00",
+      "cve_ids": [],
+      "selection_reason": "ArcGIS 广泛应用于地理信息系统，其账户恢复机制的利用风",
+      "feed_url": "https://securityonline.info/feed/",
+      "feed_title": "Cybersecurity News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityonline.info",
+      "story_id": "url:securityonline.info/arcgis-account-recovery-flaw-security-bulletin",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软研究员披露 AutoJack 攻击链：利用恶意网页实现 AI 代理主机代码执行",
+      "title_orig": "AutoJack Attack Lets One Web Page Hijack AI Agent for Host Code Execution",
+      "summary": "微软研究人员详细介绍了一种名为 AutoJack 的攻击链，该技术通过引导 AI 浏览代理加载恶意网页，利用 JavaScript 访问本地特权服务并在主机上生成进程。该漏洞无需任何凭据、登录界面或进一步的用户交互即可触发，成功将 AI 代理转化为远程代码执行的载体，虽然原文未明确受影响的具体版本，但其自动化攻击能力极具威胁。",
+      "tags": [
+        "AI 安全",
+        "代码执行",
+        "AutoJack"
+      ],
+      "url": "https://thehackernews.com/2026/06/autojack-attack-lets-one-web-page.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-19T15:30:47+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 AI 代理在浏览网页时可能引入的新型攻击面和 RCE",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/06/autojack-attack-lets-one-web-page.html",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/06/18/autojack-single-page-rce-host-running-ai-agent/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.15,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "罗克韦尔自动化修复 Logix 控制器及 FactoryTalk 软件中的多个关键漏洞",
+      "title_orig": "Rockwell Automation 修复 ICS 控制器和软件中的漏洞",
+      "summary": "罗克韦尔自动化近日为其 Logix 和 CompactLogix 控制器、Flex I/O 适配器、RSLinx 工业软件及 FactoryTalk 自动化套件等核心组件发布了安全补丁，旨在修复多个高危及关键级别的安全漏洞。其中 FactoryTalk Historian Site Edition 修复的三个漏洞可被远程利用，可能导致工业控制系统遭受严重攻击并影响生产环境稳定，官方强烈建议受影响用户尽快完成更新以规避潜在的安全风险。",
+      "tags": [
+        "工业控制系统",
+        "罗克韦尔",
+        "漏洞修复"
+      ],
+      "url": "http://0.0.0.0:8080/post/64357",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-18T02:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施的 ICS 漏洞修复，对工业安全从业者至关重",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "url:0.0.0.0/post/64357",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "供应链投毒新路径：利用仿冒 PyPI 库实现对 AI 助手的定向误导攻击",
+      "title_orig": "供应链投毒——利用仿冒PyPI实现AI助手定向误导",
+      "summary": "该研究探讨了通过在 PyPI 仓库中上传仿冒恶意包，利用 AI 助手在自动获取依赖或提供代码建议时的信任机制进行供应链投毒。这种定向误导攻击可导致 AI 生成带有后门的代码，是针对开发者工作流和 AI 辅助编程场景的新型威胁，攻击者通过操纵 AI 的输出结果，能够隐蔽地将恶意逻辑植入到开发者的软件项目之中。",
+      "tags": [
+        "供应链安全",
+        "PyPI 投毒",
+        "AI 助手"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyODYzNTU2OA==&mid=2247500004&idx=1&sn=3ffecb7ed784c2ead09472ad7965f49a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-18T08:54:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了 AI 辅助编程背景下的供应链投毒新趋势，具有前瞻性。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/21b46d78e363b85d6927970267ecea4904f06bc8.xml",
+      "feed_title": "绿盟科技研究通讯",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/21b46d78e363b85d6927970267ecea4904f06bc8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIyODYzNTU2OA%3D%3D&mid=2247500004&idx=1&sn=3ffecb7ed784c2ead09472ad7965f49a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.15,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "FortiBleed 事件导致超过 7 万台 Fortinet VPN 设备凭证泄露",
+      "title_orig": "FortiBleed 泄露事件暴露 73,000 台设备的 Fortinet VPN 凭证",
+      "summary": "安全研究员发现了一台名为 FortiBleed 的暴露服务器，其中包含全球组织中 73,932 个 Fortinet 和 FortiGate VPN 的有效登录凭证，涉及大量防火墙 URL 的敏感访问权限。泄露的数据涵盖了详细的用户名、电子邮件地址以及明文密码，这使得全球数万个组织面临极其严重的网络渗透与数据泄露风险，安全专家敦促相关受影响用户必须立即更改密码并加强身份验证保护。",
+      "tags": [
+        "凭证泄露",
+        "Fortinet",
+        "VPN 安全"
+      ],
+      "url": "http://0.0.0.0:8080/post/64359",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-18T02:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "大规模 VPN 凭证泄露是企业内网渗透的重大风险源，需引起高",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "url:0.0.0.0/post/64359",
+      "related_urls": [
+        "https://doublepulsar.com/an-update-on-fortibleed-whats-happening-with-victim-orgs-c0671a50e7f4?source=rss-7db6d2df42a6------2"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WasmForge 工具利用 WebAssembly 技术重构 C# 工具以规避 EDR 检测",
+      "title_orig": "GhostPack Necromancy: Reforging C# Tools with WasmForge",
+      "summary": "WasmForge 是一种将 C# 或 Go 编写的安全工具编译为 WebAssembly 字节码的加载器，旨在通过非传统二进制结构绕过基于特征码的 EDR 监控，从而实现更隐蔽的攻击载荷投送。该技术利用 Wasm 的跨平台特性，使 GhostPack 等已被高度标记的经典渗透工具能够以逃避现代安全防御检测的新方式在目标机器上执行，为红队操作提供了一种重塑旧工具并提升操作安全性的有效途径。",
+      "tags": [
+        "防御规避",
+        "WebAssem",
+        "EDR 绕过"
+      ],
+      "url": "https://www.praetorian.com/blog/wasmforge-csharp-ghostpack-edr-evasion/",
+      "source": "praetorian.com",
+      "category": "WebSecurity",
+      "published": "2026-06-19T01:55:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用 Wasm 技术进行免杀和防御规避的新颖红队技术路",
+      "feed_url": "https://www.praetorian.com/blog/feed",
+      "feed_title": "Blog | Praetorian",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "praetorian.com",
+      "story_id": "url:praetorian.com/blog/wasmforge-csharp-ghostpack-edr-evasion",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.3,
+      "final_score": 8.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Metasploit 更新：集成 Paperclip AI 远程代码执行链与 NTLM 中继提权模块",
+      "title_orig": "Weekly Metasploit Update: NTLM Relay Priv Esc, MCP Server Integration, Paperclip AI RCE Chain, and more",
+      "summary": "Metasploit 本周更新引入了五个新模块，其中包括针对 Paperclip AI 的未经身份验证远程代码执行链，以及一种利用 VS Code 扩展实现持久化的新技术。此外还新增了 NTLM 中继模块，该模块通过强制本地机器账户认证并中继至域控 LDAP 服务，利用资源基于约束的委派实现权限提升，显著增强了渗透测试框架在 AI 环境和域环境中的攻击能力。",
+      "tags": [
+        "Metasplo",
+        "RCE 漏洞",
+        "权限提升"
+      ],
+      "url": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-19-06-2026",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-19T17:08:23+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖了主流渗透框架的最新模块更新，包含 AI 漏洞利用和域渗",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "url:rapid7.com/blog/post/pt-metasploit-wrap-up-19-06-2026",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
