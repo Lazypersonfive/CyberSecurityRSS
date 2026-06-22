@@ -1,17 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-06-21",
-  "fetched_at_utc": "2026-06-20T23:53:36.312396Z",
+  "fetched_at": "2026-06-22",
+  "fetched_at_utc": "2026-06-22T00:00:17.864402Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 41,
-  "entry_count": 24,
+  "raw_entry_count": 28,
+  "entry_count": 17,
   "filter_stats": {
-    "input": 41,
-    "output": 41
+    "input": 28,
+    "dropped_title_blacklist": 1,
+    "dedup_merged": 1,
+    "output": 26
   },
   "curation_stats": {
-    "dropped_source_cap": 17
+    "dropped_source_cap": 9
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -19,7 +21,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 1
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -117,14 +119,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://www.aikido.dev/blog/rss.xml": {
       "feed_title": "Aikido Security",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -138,7 +140,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
@@ -215,7 +217,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 6
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
@@ -229,42 +231,83 @@
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 3
     },
     "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Supply Chain Security",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 3
     }
   },
   "entries": [
     {
-      "title": "The full Snyk AI Security Platform, free for open source maintainers",
-      "url": "https://snyk.io/blog/secure-developer-program/",
-      "summary": "Open source maintainers are drowning in real vulnerability reports and need help prioritizing, fixing, and shipping remediation faster. Snyk’s Secure Developer Program gives qualifying projects free access to the Snyk AI Security Platform.",
+      "title": "Temporary Cloudflare Accounts for AI agents",
+      "url": "https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything",
+      "summary": "Temporary Cloudflare Accounts for AI agents The announcement says this is \"for AI agents\" but (as is pretty common these days) the AI hook isn't really necessary, this is an interesting feature for everyone else as well. Short version: you can now create a Cloudflare Workers project and run this, without even creating a Cloudflare account: npx wrangler deploy --temporary Cloudflare will deploy the",
       "category": "AISecurityLabs",
-      "published": "2026-06-18T04:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://snyk.io/blog/feed/",
-      "feed_title": "Snyk Blog"
-    },
-    {
-      "title": "GLM-5.2 is probably the most powerful text-only open weights LLM",
-      "url": "https://simonwillison.net/2026/Jun/17/glm-52/#atom-everything",
-      "summary": "Chinese AI lab Z.ai released GLM-5.2 to their coding plan subscribers on June 13th, and then yesterday (June 16th) released the full open weights under an MIT license. Similar in size to their previous GLM-5 and GLM-5.1 releases, this is 753B parameter, 1.51TB monster - with 40 active parameters (Mixture of Experts). GLM-5.2 is a text input only model - Z.ai have a separate vision family most rece",
-      "category": "AISecurityLabs",
-      "published": "2026-06-17T23:58:39+00:00",
+      "published": "2026-06-21T22:01:04+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 2,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
+    },
+    {
+      "title": "sqlite-utils 4.0rc1 adds migrations and nested transactions",
+      "url": "https://simonwillison.net/2026/Jun/21/sqlite-utils-40rc1/#atom-everything",
+      "summary": "sqlite-utils is my combined Python library and CLI tool for working with SQLite databases. It provides an extensive set of higher-level operations on top of Python's default sqlite3 package , including support for complex table transformations , automatic table creation from JSON data and a whole lot more. I released sqlite-utils 4.0rc1 , the first release candidate for sqlite-utils v4. The major",
+      "category": "AISecurityLabs",
+      "published": "2026-06-21T23:35:47+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [
+        "https://simonwillison.net/2026/Jun/21/sqlite-utils/#atom-everything"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "A10 Networks Acquires Troy AI to Strengthen Sovereign AI Security Strategy - thelec.net",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBZVzlVRThzN3BGbkVrVG5IV2xTOUMyUzJpWUFaRGpKdDBlTkc5WXZKb1N1Q0EteG1Tb01JckFEakN0SUo5dVVjMnRZc1QyNTZjaGI4TWFUaFFzQlZBWXM4M0NmMEJvLW8?oc=5",
+      "summary": "A10 Networks Acquires Troy AI to Strengthen Sovereign AI Security Strategy &nbsp;&nbsp; thelec.net",
+      "category": "CoverageFallback",
+      "published": "2026-06-21T23:33:52+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "银行业AI安全开发应用指导意见出炉 - 新浪财经",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBxLWlVNHNzSE1EQjg0Wk15UWxWTjlEbi1LN2l3SS0yUU5oMTg4Yk9xbVR0dHpKUkQ1dXQzZkFrQ0hDbmhHTjIzczhKaElhQlJ1WWp4S0ZoWEFmR3dqc2FjSzB0b2FFUlpxbjZQbUNhbjV6MjZ2VVlCRg?oc=5",
+      "summary": "银行业AI安全开发应用指导意见出炉 &nbsp;&nbsp; 新浪财经",
+      "category": "CoverageFallback",
+      "published": "2026-06-21T15:58:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "SK Telecom launches Aleph to train Korea’s AI security and network talent - CHOSUNBIZ - Chosunbiz",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ST3FmRnRURXhxc0p5X2M2NmRFSG9JUlB0UjhNMzBEQ3dNOTd4VUZ0YVg0Y1kzTnBtUUZLMFNSeDFUM0FDc0hpb29adF9hSWI3clR5S3kxakJTM0hzTXVlRXg2SUJvWkVlbm5pVkxoNGZhX25Sam5MTE1B0gGOAUFVX3lxTFBwWnV5eVNCZlF6Y2JzNG9xdWZmTzRZcEJyMzJzNzdYS1czTXk2QkloTmlPX2JzUjRJcndvdV9hQWp3ajhkZXhlRWlNYzZLUFlXZEpPdmF1Q1NYc2w0cDlnUnlQdGtUSy1LMDJKQ3NCcnFfM2E1ZHEzbFh4TWR5TDFqVFJudU1LVjhsZkNTWVE?oc=5",
+      "summary": "SK Telecom launches Aleph to train Korea’s AI security and network talent - CHOSUNBIZ &nbsp;&nbsp; Chosunbiz",
+      "category": "CoverageFallback",
+      "published": "2026-06-21T06:10:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
     },
     {
       "title": "韩国与OpenAI合作，加入全球AI安全俱乐部 - VOI.id",
@@ -278,45 +321,6 @@
       "quality_score": 1,
       "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
       "feed_title": "Google News 中文 AI安全"
-    },
-    {
-      "title": "Is IBM’s New AI Security Push Recasting Its Hybrid Cloud Narrative Or Just Refining It (IBM)? - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOaVRzUFlGZ0JjVTdxM25CV1YwYW5rN0kyN1ZsdlJEN3pzYVc0NkJnYlBPWnJEaDNfUlRlVDRCQ1dUV2hHRFBSN25lTF8zQzV5MXBXZE9tWnJRN0U0SWlqTVRaLTdTMkE5S2YzLU1iV19ERF9oTXNZanlJMm5QdDNmeFhXb2pXZFB1NzR2TDl0RldnbHJSN18zdDJhbXJOaEJCS0sxRl91SjF3ZzhXdnpaR2xLa0o2d25JMzVpajBuUl9vR3hZS0FnZ0trLTliQlRRNEs3ZEl5LWlibHpjN2F5RdIB5gFBVV95cUxQWGM3Zk0tR19YQnNTZUZseWo4VFdraFd4ZzlDR015Z05PT2hCSk0tWnprUjFZc244SW5SQm9DUkl2ZmZNQW4tZllDRm01bkpJNFdzbEJfU2tlTjBKajE3STN4ZERMQmhDamZVNHRpMWh6TWJOelgxcHBNUGNlTlN3YkZHQ0ItczB3clUzeVo4akl4Sk02RWVtdFU4em1GUXNZaUhsY25nZWFCc3hyZ3NqbVNyRHhqTTFMaUJnYnJUR0R3cDZaZnoxdmJTUEJPVnlFWmpxVjRodzZaZXRueXVQVWFQeE5DUQ?oc=5",
-      "summary": "Is IBM’s New AI Security Push Recasting Its Hybrid Cloud Narrative Or Just Refining It (IBM)? &nbsp;&nbsp; simplywall.st",
-      "category": "CoverageFallback",
-      "published": "2026-06-20T14:26:33+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Microsoft links Mastra AI supply chain attack to North Korean hackers - BleepingComputer",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSU1FMDN6WE9wazBDNERTZmo4YUVOb3NZbG9GSkVfeHBaeEFqVVotMVBfY21fcHVXaExsZlFSX18ycVViY25GWXhWMHJTSzJtYlNrVHlRZ01WLTJoT3BsTHd2eVg2bHVYNjlLZWRBanl3UXU0dnZFWW93aFZieWRULUl6QWNkdjVrS3Zuc19FQkdEcEt1ajZKdzBuajJiVGJYbV94cTlKVTNPbFYtb1dJTlpYRUo1el9R0gG-AUFVX3lxTE9na0xfTU50N1VRelE2U1hfRjFkUi1feVZlVU9FT216YWUxQ1VtcjRPa1hCcXJwbng1dTNvNXhlbzg5b2FlMURSZ3dJeXI4RXhIOXFNUmh5ZDV2anFLRXJldWxPeFczLXBXaEFwQXFWMGw1MFlPOHlBWmhfM1B0NFRiN0hNdlRQVUZOVFVjRmJveUtucEVVOEtUd0YyNUtDQzhVaklVaU1fMjBId3NWaUx4aldfVE1xbWNNY2hsTXc?oc=5",
-      "summary": "Microsoft links Mastra AI supply chain attack to North Korean hackers &nbsp;&nbsp; BleepingComputer",
-      "category": "CoverageFallback",
-      "published": "2026-06-20T14:09:19+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Supply Chain Security"
-    },
-    {
-      "title": "AI security startup Gray Swan raises $40M Series A with plans to grow its team - Technical.ly",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5fQmVRZGVvRlg4bWE1QW8waXgtZk9fbXRNTHZ6cFUtYWJMaFo1aV9RRGpGTEtsOVI2TTNFTmJLYWhjdXRUTC1jQ0gxT28ybHZqcUtiMzRocnhIVnowS2dhVVpxb18wdlAxLUdZaEZGTlI2anVORlJOX0pLMm5MQQ?oc=5",
-      "summary": "AI security startup Gray Swan raises $40M Series A with plans to grow its team &nbsp;&nbsp; Technical.ly",
-      "category": "CoverageFallback",
-      "published": "2026-06-20T09:56:41+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
     },
     {
       "title": "Wow. This just blew my mind lolllll",
@@ -384,69 +388,30 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "Datasette Apps: Host custom HTML applications inside Datasette",
-      "url": "https://simonwillison.net/2026/Jun/18/datasette-apps/#atom-everything",
-      "summary": "Today we launched a new plugin for Datasette, datasette-apps , with this launch announcement post on the Datasette project blog. That post has the what , but I'm going to expand on that a little bit here to provide the why . The TL;DR Datasette Apps are self-contained HTML+JavaScript applications that run in a tightly constrained &lt;iframe&gt; sandbox hosted on your Datasette application. They ca",
-      "category": "AISecurityLabs",
-      "published": "2026-06-18T23:58:38+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "This is a path you could take for bug bounty as well",
-      "url": "https://x.com/rez0__/status/2067739738803499465",
-      "summary": "This is a path you could take for bug bounty as well @levelsio: I don't know if it's obvious information or not but if you talk to random people in San Francisco the general thing they say is that software is commoditized cause so easy to make anything with AI fast (like how I cancelled all my SaaS subscriptions and just vibe coded a",
-      "category": "XSignals",
-      "published": "2026-06-18T22:42:25+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "It’s far from impossible. But it makes the model rather useless when you do so.",
-      "url": "https://x.com/rez0__/status/2067721426006581577",
-      "summary": "It’s far from impossible. But it makes the model rather useless when you do so. Polymarket: NEW: The White House is reportedly demanding Anthropic make Fable 5 impossible to jailbreak before rerelease — which security experts say “can’t be done.”",
-      "category": "XSignals",
-      "published": "2026-06-18T21:29:39+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT Ciarán Cotter: Holy shit, @MistralAI's Le Chaton Fat-Cyber model looks to be even more dangerous than Mythos. Why isn't the EU regulating it?",
-      "url": "https://x.com/rez0__/status/2067917108348952895",
-      "summary": "RT Ciarán Cotter Holy shit, @MistralAI's Le Chaton Fat-Cyber model looks to be even more dangerous than Mythos. Why isn't the EU regulating it?",
-      "category": "XSignals",
-      "published": "2026-06-18T13:39:20+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Using AI to help physicians diagnose rare genetic diseases affecting children",
-      "url": "https://openai.com/index/diagnose-rare-childhood-diseases",
-      "summary": "Researchers used an OpenAI reasoning model to help diagnose rare diseases, identifying 18 new diagnoses in previously unsolved cases.",
+      "title": "Samsung Electronics brings ChatGPT and Codex to employees",
+      "url": "https://openai.com/index/samsung-electronics-chatgpt-codex-deployment",
+      "summary": "Samsung Electronics deploys ChatGPT Enterprise and Codex to employees worldwide, marking one of OpenAI’s largest enterprise AI rollouts.",
       "category": "FirstParty",
-      "published": "2026-06-18T08:00:00+00:00",
+      "published": "2026-06-21T23:00:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "https://openai.com/news/rss.xml",
       "feed_title": "OpenAI News"
+    },
+    {
+      "title": "I love soccer because the odds of winning go up significantly when you score. Not true with sports like basketball.",
+      "url": "https://x.com/rez0__/status/2068486750851289573",
+      "summary": "I love soccer because the odds of winning go up significantly when you score. Not true with sports like basketball.",
+      "category": "XSignals",
+      "published": "2026-06-21T00:10:46+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "RT Skylar Romines: Re @yoamomonstruos Americans truly believe they have a chance at anything. That’s a feature not a bug",
@@ -486,58 +451,6 @@
       "quality_score": 0,
       "feed_url": "https://www.endorlabs.com/learn/rss.xml",
       "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Splunk AI Toolkit曝高危漏洞：CVSS 9.1，可远程执行任意系统命令",
-      "url": "https://www.anquanke.com/post/id/315618",
-      "summary": "",
-      "category": "Chinese",
-      "published": "2026-06-18T20:00:10+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://api.anquanke.com/data/v1/rss",
-      "feed_title": "安全客"
-    },
-    {
-      "title": "New usage analytics and updated spend controls for enterprises",
-      "url": "https://openai.com/index/chatgpt-enterprise-spend-controls",
-      "summary": "OpenAI introduces new spend controls and usage analytics for ChatGPT Enterprise, helping organizations manage costs and scale AI with confidence.",
-      "category": "FirstParty",
-      "published": "2026-06-18T17:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "Aikido x OWASP: 200 free credits for individual members",
-      "url": "https://www.aikido.dev/blog/aikido-x-owasp-200-free-credits-for-individual-members",
-      "summary": "OWASP individual members get 200 free Aikido credits to run Code Audit. Here is who qualifies and how to claim yours in two steps. Category: Product & Company Updates",
-      "category": "AISecurityLabs",
-      "published": "2026-06-18T13:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "Improving health intelligence in ChatGPT",
-      "url": "https://openai.com/index/improving-health-intelligence-in-chatgpt",
-      "summary": "Learn how GPT-5.5 Instant improves ChatGPT’s health and wellness responses with stronger reasoning, better context, clearer communication, and physician-informed evaluations.",
-      "category": "FirstParty",
-      "published": "2026-06-18T11:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
     },
     {
       "title": "Are you in the weights?",

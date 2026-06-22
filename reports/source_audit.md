@@ -1,29 +1,28 @@
 # Source Registry Audit
 
-- generated_for: 2026-06-21
-- dates: 2026-06-21, 2026-06-20, 2026-06-19, 2026-06-18, 2026-06-17, 2026-06-16, 2026-06-15
+- generated_for: 2026-06-22
+- dates: 2026-06-22, 2026-06-21, 2026-06-20, 2026-06-19, 2026-06-18, 2026-06-17, 2026-06-16
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 105 | 21 | 16 | 68 | 0 | 4 | 21 | 39 | 19 |
-| ai_security | 62 | 9 | 4 | 49 | 0 | 4 | 9 | 11 | 17 |
+| ai | 105 | 22 | 14 | 69 | 0 | 5 | 22 | 38 | 18 |
+| ai_security | 64 | 10 | 4 | 50 | 0 | 5 | 10 | 9 | 17 |
 | finance | 70 | 2 | 0 | 67 | 1 | 10 | 2 | 0 | 0 |
-| security | 105 | 15 | 0 | 70 | 20 | 0 | 15 | 0 | 41 |
+| security | 105 | 15 | 0 | 73 | 17 | 0 | 15 | 0 | 41 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `0.0.0.0:8080` | 8 | security | [CISA 警告 Joomla JCE 扩展存在满分漏洞 CVE-2026-48907，已被用于执行 PHP 代码](http://0.0.0.0:8080/post/64361) |
+| `0.0.0.0:8080` | 7 | security | [CISA 警告 Joomla JCE 扩展存在满分漏洞 CVE-2026-48907，已被用于执行 PHP 代码](http://0.0.0.0:8080/post/64361) |
 | `blog.nsfocus.net` | 4 | security | [Linux内核Fragnesia权限提升漏洞CVE-2026-46300已实现复现](https://blog.nsfocus.net/%e3%80%90%e5%b7%b2%e5%a4%8d%e7%8e%b0%e3%80%91linux%e5%86%85%e6%a0%b8fragnesia%e6%9d%83%e9%99%90%e6%8f%90%e5%8d%87%e6%bc%8f%e6%b4%9e%ef%bc%88cve-2026-46300%ef%bc%89-2/) |
 | `cxsecurity.com` | 2 | security | [Windows Defender 竞争条件漏洞可导致本地权限提升](https://cxsecurity.com/issue/WLB-2026060013) |
 | `defend.network` | 2 | security | [NGINX 修复远程代码执行漏洞：CVE-2026-42530 影响多版本组件](https://defend.network/briefings/nginx-rce-windows-clipper-salesforce-ransomware-2026-06-19.html) |
-| `solidot.org` | 2 | security | [Steam 创意工坊恶意墙纸针对中俄用户传播，利用 Wallpaper Engine 植入后门](https://www.solidot.org/story?sid=84609) |
 | `infosecurity-magazine.com` | 1 | security | [WordPress 流行插件遭劫持导致 120 万个站点被植入后门](https://www.infosecurity-magazine.com/news/wordpress-plugin-supply-chain/) |
 | `ir.americanexpress.com` | 1 | finance | [美国运通宣布拟收购欧洲领先的餐厅预订平台 TheFork 以扩展生活服务生态](https://ir.americanexpress.com/news/investor-relations-news/investor-relations-news-details/2026/American-Express-Announces-Proposed-Acquisition-of-TheFork-a-Leading-European-Restaurant-Booking-Platform/default.aspx) |
-| `securityweek.com` | 1 | security | [Ivanti Sentry 关键 OS 命令注入漏洞遭到在野利用，蜜罐捕获到针对该漏洞的攻击尝试](https://www.securityweek.com/ivanti-sentry-exploitation-attempts-hitting-honeypots/) |
+| `solidot.org` | 1 | security | [Steam 创意工坊恶意墙纸针对中俄用户传播，利用 Wallpaper Engine 植入后门](https://www.solidot.org/story?sid=84609) |
 
 ## Review Rule
 
