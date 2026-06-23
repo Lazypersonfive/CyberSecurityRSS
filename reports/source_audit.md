@@ -1,27 +1,28 @@
 # Source Registry Audit
 
-- generated_for: 2026-06-23
-- dates: 2026-06-23, 2026-06-22, 2026-06-21, 2026-06-20, 2026-06-19, 2026-06-18, 2026-06-17
+- generated_for: 2026-06-24
+- dates: 2026-06-24, 2026-06-23, 2026-06-22, 2026-06-21, 2026-06-20, 2026-06-19, 2026-06-18
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 105 | 23 | 13 | 69 | 0 | 5 | 23 | 35 | 17 |
-| ai_security | 60 | 10 | 4 | 46 | 0 | 6 | 10 | 7 | 16 |
-| finance | 70 | 2 | 0 | 68 | 0 | 11 | 2 | 0 | 0 |
-| security | 105 | 15 | 0 | 75 | 15 | 0 | 15 | 0 | 43 |
+| ai | 105 | 23 | 14 | 67 | 1 | 5 | 23 | 35 | 17 |
+| ai_security | 60 | 10 | 5 | 45 | 0 | 8 | 10 | 8 | 14 |
+| finance | 70 | 2 | 0 | 68 | 0 | 12 | 2 | 0 | 0 |
+| security | 105 | 13 | 0 | 72 | 20 | 0 | 13 | 0 | 42 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `0.0.0.0:8080` | 7 | security | [Splunk Enterprise 关键漏洞 CVE-2026-20253 披露数日后即遭野外利用](http://0.0.0.0:8080/post/64364) |
-| `blog.nsfocus.net` | 2 | security | [Linux内核Fragnesia权限提升漏洞CVE-2026-46300已实现复现](https://blog.nsfocus.net/%e3%80%90%e5%b7%b2%e5%a4%8d%e7%8e%b0%e3%80%91linux%e5%86%85%e6%a0%b8fragnesia%e6%9d%83%e9%99%90%e6%8f%90%e5%8d%87%e6%bc%8f%e6%b4%9e%ef%bc%88cve-2026-46300%ef%bc%89-2/) |
-| `securityweek.com` | 2 | security | [Usbliter8 漏洞利用工具发布，可绕过数百万部 iPhone 的苹果启动防御机制](https://www.securityweek.com/new-exploit-bypasses-apples-boot-defenses-affects-millions-of-iphones/) |
+| `0.0.0.0:8080` | 10 | security | [iPhone 曝出 Usbliter8 BootROM 漏洞可绕过安全启动链且无法通过软件修复](http://0.0.0.0:8080/post/64374) |
+| `securityweek.com` | 3 | security | [三星 KNOX 安全框架存在长达八年的释放后使用漏洞可导致内核级攻击](https://www.securityweek.com/eight-year-old-samsung-knox-flaw-exposed-millions-of-galaxy-devices-to-kernel-attacks/) |
+| `cxsecurity.com` | 2 | security | [思源笔记 SiYuan 3.5.9 及以下版本存在恶意集市包远程代码执行漏洞](https://cxsecurity.com/issue/WLB-2026060014) |
+| `defend.network` | 2 | security | [微软披露 AutoJack 漏洞可劫持 AI 代理实现远程代码执行](https://defend.network/briefings/autojack-ai-exploit-socgholish-disrupted-klue-salesforc-2026-06-22.html) |
 | `solidot.org` | 2 | security | [Linux 7.2 内核彻底移除危险函数 strncpy 以消除内存信息泄露隐患](https://www.solidot.org/story?sid=84644) |
-| `cxsecurity.com` | 1 | security | [思源笔记 SiYuan 3.5.9 及以下版本存在恶意集市包远程代码执行漏洞](https://cxsecurity.com/issue/WLB-2026060014) |
-| `defend.network` | 1 | security | [NGINX 修复远程代码执行漏洞：CVE-2026-42530 影响多版本组件](https://defend.network/briefings/nginx-rce-windows-clipper-salesforce-ransomware-2026-06-19.html) |
+| `cyberkendra.com` | 1 | security | [libssh2 开源库曝出高危漏洞 CVE-2026-55200 允许远程攻击者实现零认证代码执行](https://www.cyberkendra.com/2026/06/cve-2026-55200-critical-libssh2-flaw.html) |
+| `machinelearning.apple.com` | 1 | ai | [苹果研究揭示 LLM 评审团存在相关性误差，九名评委的实际投票效力仅相当于两票](https://machinelearning.apple.com/research/correlated-llm-evaluation-panels) |
 
 ## Review Rule
 
