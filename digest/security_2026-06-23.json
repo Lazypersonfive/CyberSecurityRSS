@@ -1,0 +1,548 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-23",
+  "generated_at": "2026-06-22T23:58:02.028961Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 7,
+    "direct": 15,
+    "wechat": 5,
+    "tier_t2": 9,
+    "kind_cn_expert": 5,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "tier_unknown": 5,
+    "kind_media": 9
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 6,
+    "merged_total": 6
+  },
+  "items": [
+    {
+      "title_zh": "FreeBSD 内核 KTLS 模块本地权限提升漏洞 CVE-2026-45257 风险通告",
+      "title_orig": "【已复现】FreeBSD KTLS 本地权限提升漏洞(CVE-2026-45257)安全风险通告",
+      "summary": "该漏洞源于 FreeBSD 内核中 KTLS 模块对内存处理不当，允许具有本地访问权限的攻击者通过特定系统调用触发内核崩溃或执行任意代码，从而实现本地权限提升。目前该漏洞已实现技术复现并影响多个主流 FreeBSD 版本，官方已发布安全补丁并建议所有企业级用户尽快完成系统升级，以规避潜在的安全风险并确保系统底层运行环境的稳定性。",
+      "tags": [
+        "FreeBSD",
+        "权限提升",
+        "内核漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506369&idx=1&sn=f3e34e1a2ecddc21e1dc2066270eb1cd",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-22T08:06:00+00:00",
+      "cve_ids": [
+        "CVE-2026-45257"
+      ],
+      "selection_reason": "FreeBSD内核级高危漏洞，且已有复现，具高技术影响。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "cve:cve-2026-45257",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.35,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Microsoft WinRE 恢复环境存在缺陷可绕过 UEFI/BIOS 固件密码强制执行",
+      "title_orig": "VU#226679: Microsoft WinRE allows for bypass of UEFI/BIOS password enforcement",
+      "summary": "Windows 恢复环境 WinRE 在特定平台实现中存在逻辑缺陷，允许拥有物理接触或管理员权限的攻击者通过该环境绕过固件安全控制，进而直接访问底层系统设置。此漏洞可导致攻击者无视管理员配置的 UEFI 或 BIOS 密码强制执行，目前相关缓解措施高度取决于硬件厂商的固件更新状态，建议用户密切关注设备制造商发布的最新安全公告与补丁。",
+      "tags": [
+        "WinRE",
+        "固件安全",
+        "密码绕过"
+      ],
+      "url": "https://kb.cert.org/vuls/id/226679",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-06-22T16:16:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及操作系统与固件交互的安全边界突破，影响系统底层信任链。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/226679",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "JetBrains 插件市场遭遇供应链攻击，15 款恶意插件协同窃取 AI 服务 API 密钥",
+      "title_orig": "AI安全案例分析 | JetBrains插件供应链攻击窃取AI密钥事件",
+      "summary": "安全团队 Aikido 监测到 JetBrains 插件市场中存在 15 款协同运作的恶意插件，这些插件会在用户保存 AI 服务商 API 密钥的瞬间将其静默外泄至攻击者服务器。受影响插件累计安装量已接近 7 万次，攻击者利用开发者对 IDE 扩展的信任进行精准的凭据窃取，目前相关恶意插件已被识别并清理，该事件揭示了 AI 供应链中插件安全防护的紧迫性。",
+      "tags": [
+        "供应链攻击",
+        "JetBrain",
+        "AI安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMTI0NjA3OA==&mid=2247495240&idx=1&sn=cd0b410dcaa96cc1b95014372b28944f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-22T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对开发者工具的供应链攻击，反映了 AI 资产保护的新威胁。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/059ae07ca76f11c6e9f9fad7698ab205b3b039c8.xml",
+      "feed_title": "M01NTeam",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/059ae07ca76f11c6e9f9fad7698ab205b3b039c8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzkyMTI0NjA3OA%3D%3D&mid=2247495240&idx=1&sn=cd0b410dcaa96cc1b95014372b28944f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Usbliter8 漏洞利用工具发布，可绕过数百万部 iPhone 的苹果启动防御机制",
+      "title_orig": "New Exploit Bypasses Apple’s Boot Defenses, Affects Millions of iPhones",
+      "summary": "研究人员发布了名为 Usbliter8 的 PoC 漏洞利用代码，该漏洞针对苹果设备的启动防御机制，属于硬件层面的不可修复缺陷，影响数百万部 iPhone 设备。攻击者可利用该漏洞绕过安全启动链并执行未授权代码，由于涉及底层硬件逻辑，苹果无法通过常规软件更新彻底修复该漏洞，这使得受影响设备在整个生命周期内都面临着被越狱或恶意攻击的持久风险。",
+      "tags": [
+        "iPhone",
+        "硬件漏洞",
+        "Bootrom"
+      ],
+      "url": "https://www.securityweek.com/new-exploit-bypasses-apples-boot-defenses-affects-millions-of-iphones/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-06-22T10:03:06+00:00",
+      "cve_ids": [],
+      "selection_reason": "不可修复的硬件级漏洞利用，对移动设备安全具有长期影响。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/new-exploit-bypasses-apples-boot-defenses-affects-millions-of-iphones",
+      "related_urls": [
+        "https://defend.network/briefings/apple-a12-a13-fortinet-gentlemen-ransomware-2026-06-20.html",
+        "https://www.infosecurity-magazine.com/news/apple-bootrom-exploit-a12-a13/"
+      ],
+      "related_count": 2,
+      "score": 10,
+      "dimension_score": 9.65,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "FortiBleed 攻击活动利用定制嗅探器从 FortiGate 防火墙窃取认证凭据",
+      "title_orig": "FortiBleed campaign used custom FortiGate sniffer to steal credentials",
+      "summary": "在名为 FortiBleed 的大规模攻击活动中，攻击者利用定制的嗅探工具针对已受损的 Fortinet FortiGate 设备进行监控，旨在从防火墙内存或流量中提取认证密钥和登录凭据。该工具专门设计用于维持持久化访问并进一步渗透企业内网，目前相关威胁指标已公开，安全机构建议使用该品牌防火墙的企业立即排查异常流量并更新防护策略以防止凭据泄露。",
+      "tags": [
+        "Fortinet",
+        "凭据窃取",
+        "防火墙安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/fortibleed-campaign-used-custom-fortigate-sniffer-to-steal-credentials/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-22T20:01:02+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对核心网络基础设施的定制化攻击工具分析，具有实战参考价值。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/fortibleed-campaign-used-custom-fortigate-sniffer-to-steal-credentials",
+      "related_urls": [
+        "https://www.securityweek.com/fortinet-responds-to-fortibleed-campaign/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Splunk Enterprise 关键漏洞 CVE-2026-20253 披露数日后即遭野外利用",
+      "title_orig": "Splunk Enterprise 漏洞在披露数日后即遭攻击利用",
+      "summary": "Splunk Enterprise 的 PostgreSQL sidecar 服务端点存在权限校验缺失漏洞，编号为 CVE-2026-20253，未认证的远程攻击者可借此在服务器上创建或截断任意文件。该关键漏洞在官方披露后仅数日便出现了实际的攻击利用尝试，Splunk 官方已在安全公告中敦促所有受影响的组织立即安装补丁，以防止攻击者利用该端点破坏系统完整性并造成数据损失。",
+      "tags": [
+        "Splunk",
+        "任意文件操作",
+        "野外利用"
+      ],
+      "url": "http://0.0.0.0:8080/post/64364",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-22T06:40:00+00:00",
+      "cve_ids": [
+        "CVE-2026-20253"
+      ],
+      "selection_reason": "关键基础设施组件漏洞，且从披露到利用的转化速度极快。",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "cve:cve-2026-20253",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.3,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "INC 勒索软件技术演进分析：采用 Rust 语言重写 Windows 与 Linux 双平台加密器",
+      "title_orig": "INC勒索软件Rust双平台加密器技术演进与攻击链解构",
+      "summary": "INC 勒索软件团伙近期对其攻击链进行了重大更新，其 Windows 和 Linux/ESXi 平台的加密器已完全使用 Rust 语言重写，旨在增强跨平台感染能力和对抗安全软件的分析。该团伙采用 RaaS 模式运作，自 2023 年中旬现身以来已造成超过 800 个组织受害，其技术迭代显示出攻击效率的显著提升，对企业虚拟化环境和服务器安全构成了严峻挑战。",
+      "tags": [
+        "勒索软件",
+        "Rust",
+        "跨平台"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519179&idx=1&sn=f6e0f543ac0020f57a10d244a7dbfc2a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-22T06:12:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了勒索软件从 C++ 向 Rust 迁移的技术趋势及双平",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247519179&idx=1&sn=f6e0f543ac0020f57a10d244a7dbfc2a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Squidbleed 漏洞曝光：Squid 代理服务器存在数十年之久的数据泄露风险",
+      "title_orig": "Decades-Old Squid Proxy Flaw ‘Squidbleed’ Can Expose User Data",
+      "summary": "研究人员利用 AI 工具发现了名为 Squidbleed 的高危漏洞，该漏洞存在于广泛使用的 Squid 代理服务器中且已潜伏数十年，其影响范围覆盖了大量历史版本。该漏洞的原理类似于 Heartbleed，允许攻击者通过构造特定请求非法读取服务器内存数据并导致用户敏感信息泄露，目前相关修复补丁正在推进中，建议管理员及时关注软件更新以保护代理流量中的用户隐私。",
+      "tags": [
+        "Squid",
+        "内存泄漏",
+        "Squidble"
+      ],
+      "url": "https://www.securityweek.com/decades-old-squid-proxy-flaw-squidbleed-can-expose-user-data/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-06-22T13:22:31+00:00",
+      "cve_ids": [],
+      "selection_reason": "老牌开源软件中的长效漏洞，利用 AI 辅助发现是其技术亮点。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/decades-old-squid-proxy-flaw-squidbleed-can-expose-user-data",
+      "related_urls": [
+        "https://www.cyberkendra.com/2026/06/squidbleed-1997-squid-proxy-bug-leaks.html"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.9,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "FFmpeg 修复 PixelSmash 漏洞，可导致 Jellyfin 远程代码执行及多种应用拒绝服务",
+      "title_orig": "FFmpeg fixes PixelSmash flaw in widely used video decoder",
+      "summary": "FFmpeg 修复了名为 PixelSmash 的严重安全漏洞，该漏洞存在于其广泛使用的视频解码器组件中，可能对多种多媒体应用造成严重威胁。在特定条件下，攻击者可利用此漏洞在 Jellyfin 服务器上实现远程代码执行，并导致 Kodi、Emby、Nextcloud、PhotoPrism 及 OBS Studio 等知名应用触发拒绝服务状态，目前官方已发布补丁，建议相关开发者与用户尽快完成组件更新以规避潜在的安全风险。",
+      "tags": [
+        "FFmpeg",
+        "远程代码执行",
+        "拒绝服务"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/ffmpeg-fixes-pixelsmash-flaw-in-widely-used-video-decoder/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-22T21:05:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "FFmpeg作为底层多媒体框架，其漏洞影响范围极广。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/ffmpeg-fixes-pixelsmash-flaw-in-widely-used-video-decoder",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.45,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "DarkHotel APT 组织最新网络攻击活动深度技术分析报告",
+      "title_orig": "DarkHotel APT组织最新攻击活动深度分析",
+      "summary": "安全研究人员对 DarkHotel APT 组织的最新攻击活动进行了深度剖析，重点关注其演进的攻击链和战术手段。该组织持续利用针对性的钓鱼攻击和复杂的恶意软件载荷进行渗透，原文侧重于对其基础设施和样本行为的关联分析。由于原文未披露具体利用的新漏洞细节，分析主要集中在恶意代码的执行流程与持久化机制上，反映了该组织在隐蔽通信和对抗检测方面的技术特征。",
+      "tags": [
+        "DarkHote",
+        "APT攻击",
+        "恶意软件"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247496831&idx=1&sn=b7a4b03c62f033c2ac4dc43d188f4d8d",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-20T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了活跃APT组织的最新战术演进，具有情报参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247496831&idx=1&sn=b7a4b03c62f033c2ac4dc43d188f4d8d",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux 7.2 内核彻底移除危险函数 strncpy 以消除内存信息泄露隐患",
+      "title_orig": "Linux 7.2 内核完全移除 strncpy 函数",
+      "summary": "经过 6 年 362 个补丁的努力，Linux 7.2 内核已完全移除被标记为“极度危险”的 strncpy() 函数。该函数因无法保证字符串以 NUL 结尾且易导致缓冲区外字节泄露，是内核内存错误和敏感信息泄露的主要根源。目前该函数已被 strscpy()、strscpy_pad() 等五个功能更明确、安全性更高的函数取代，旨在从底层编程规范上杜绝此类内存安全漏洞的发生。",
+      "tags": [
+        "Linux内核",
+        "内存安全",
+        "代码审计"
+      ],
+      "url": "https://www.solidot.org/story?sid=84644",
+      "source": "solidot.org",
+      "category": "Synthesis",
+      "published": "2026-06-22T10:55:05+00:00",
+      "cve_ids": [],
+      "selection_reason": "内核底层函数的更迭是提升系统安全性的重大工程实践。",
+      "feed_url": "https://www.solidot.org/index.rss",
+      "feed_title": "奇客Solidot–传递最新科技情报",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "solidot.org",
+      "story_id": "url:solidot.org/story?sid=84644",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.75,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源 AI 工作流平台 Dify 曝出 DifyTap 漏洞，可导致跨租户窃取对话记录",
+      "title_orig": "Researchers Detail DifyTap Flaws in Dify That Could Expose AI Chats Across Tenants",
+      "summary": "安全研究人员在开源 AI 工作流平台 Dify 中发现了四个统称为 DifyTap 的漏洞，影响该平台在 GitHub 上的多个版本。这些漏洞允许攻击者在无需身份验证的情况下，隐蔽地读取其他客户应用程序中的 AI 对话内容，造成严重的跨租户数据泄露。目前 Zafran Security 已披露相关细节，漏洞主要涉及权限校验逻辑缺陷，建议使用该开源平台的企业立即检查并更新至安全版本。",
+      "tags": [
+        "Dify",
+        "AI安全",
+        "越权访问"
+      ],
+      "url": "https://thehackernews.com/2026/06/researchers-detail-difytap-flaws-in.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-22T16:13:28+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对流行AI框架的漏洞，直接威胁到大模型应用的数据隐私。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/06/researchers-detail-difytap-flaws-in.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件商 ShapedPlugin 遭遇供应链攻击，Pro 版插件被植入后门",
+      "title_orig": "ShapedPlugin WordPress Pro Plugins Backdoored in Supply Chain Attack",
+      "summary": "WordPress 插件开发商 ShapedPlugin 的官方发布渠道遭到攻击者篡改，导致其多款 Pro 版付费插件被植入后门代码。攻击者通过劫持供应商的构建和分发管道，向通过官方授权更新通道分发的插件版本中注入恶意代码。Wordfence 分析指出，这属于典型的供应链攻击，受影响的用户在进行常规插件更新时会无意中引入后门，建议所有使用该厂商插件的站点立即进行安全排查。",
+      "tags": [
+        "WordPres",
+        "供应链攻击",
+        "后门"
+      ],
+      "url": "https://thehackernews.com/2026/06/shapedplugin-wordpress-pro-plugins.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-22T18:00:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "供应链攻击是目前高价值目标面临的最隐蔽且严重的威胁之一。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/06/shapedplugin-wordpress-pro-plugins.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "全球流行勒索病毒家族加解密算法及加密逻辑深度技术详解",
+      "title_orig": "全球流行勒索病毒家族加解密算法详解",
+      "summary": "本研究对全球范围内流行的多个勒索病毒家族所采用的加解密算法进行了详细拆解。文章重点分析了病毒如何利用对称加密算法加密文件数据，并结合非对称加密算法保护密钥的逻辑流程。通过对加密细节的还原，旨在帮助安全从业者理解不同家族的技术差异，为勒索软件的逆向分析、应急响应以及潜在的数据恢复方案提供理论依据和技术参考，原文未提及特定家族的通用解密工具。",
+      "tags": [
+        "勒索病毒",
+        "加密算法",
+        "逆向工程"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247496838&idx=1&sn=f93f9c99bdd4b45776a685cfe6f57d94",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-21T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入分析勒索软件核心逻辑，对防御和取证有指导意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247496838&idx=1&sn=f93f9c99bdd4b45776a685cfe6f57d94",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.65,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "思源笔记 SiYuan 3.5.9 及以下版本存在恶意集市包远程代码执行漏洞",
+      "title_orig": "SiYuan < = 3.5.9 Remote Code Execution via Malicious Bazaar Package",
+      "summary": "思源笔记（SiYuan）3.5.9 及以下版本被发现存在远程代码执行漏洞，风险等级被评为低。该漏洞触发条件是用户安装并运行了来自其“集市（Bazaar）”的恶意插件包。攻击者可以通过构造包含恶意脚本的插件包，在受害者环境中执行任意代码。目前已有针对该漏洞的 Python 验证脚本公开，建议用户谨慎下载非官方认证的集市资源，并尽快升级到修复后的最新版本。",
+      "tags": [
+        "思源笔记",
+        "远程代码执行",
+        "插件安全"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026060014",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-06-22T20:05:58+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了笔记软件生态中插件机制可能带来的安全风险。",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "url:cxsecurity.com/issue/wlb-2026060014",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

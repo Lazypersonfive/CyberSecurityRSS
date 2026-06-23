@@ -1,19 +1,18 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-06-22",
-  "fetched_at_utc": "2026-06-22T00:00:17.864402Z",
+  "fetched_at": "2026-06-23",
+  "fetched_at_utc": "2026-06-22T23:58:09.927592Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 28,
-  "entry_count": 17,
+  "raw_entry_count": 43,
+  "entry_count": 21,
   "filter_stats": {
-    "input": 28,
-    "dropped_title_blacklist": 1,
+    "input": 43,
     "dedup_merged": 1,
-    "output": 26
+    "output": 42
   },
   "curation_stats": {
-    "dropped_source_cap": 9
+    "dropped_source_cap": 21
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -21,7 +20,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 4
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -56,7 +55,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://github.blog/security/vulnerability-research/feed/": {
       "feed_title": "GitHub Security Lab",
@@ -70,7 +69,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
@@ -112,7 +111,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 0
     },
     "https://snyk.io/blog/feed/": {
       "feed_title": "Snyk Blog",
@@ -140,7 +139,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 2
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
@@ -189,7 +188,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 2
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -217,7 +216,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 4
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
@@ -231,17 +230,30 @@
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 8
     },
     "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Supply Chain Security",
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 8
     }
   },
   "entries": [
+    {
+      "title": "RT WIRED: Exclusive: Amid concerns about AI models’ cybersecurity capabilities, OpenAI has revealed an improved version of GPT-5.5-Cyber and its “Pa...",
+      "url": "https://x.com/trailofbits/status/2069143921029230871",
+      "summary": "RT WIRED Exclusive: Amid concerns about AI models’ cybersecurity capabilities, OpenAI has revealed an improved version of GPT-5.5-Cyber and its “Patch the Planet” initiative to fix open-source software bugs. https://www.wired.com/story/openai-launches-full-scale-effort-to-patch-open-source-bugs-as-it-takes-on-anthropics-mythos/",
+      "category": "XSignals",
+      "published": "2026-06-22T18:36:58+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
     {
       "title": "Temporary Cloudflare Accounts for AI agents",
       "url": "https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything",
@@ -254,6 +266,110 @@
       "quality_score": 2,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Porting the Moebius 0.2B image inpainting model to run in the browser with Claude Code",
+      "url": "https://simonwillison.net/2026/Jun/22/porting-moebius/#atom-everything",
+      "summary": "This morning on Hacker News I saw Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance , describing a small but effective inpainting model - a model where you can mark regions of an image to remove and the model imagines what should fill the space. The released model required PyTorch and NVIDIA CUDA , but since it described itself as 0.2B I decided to try and get it runn",
+      "category": "AISecurityLabs",
+      "published": "2026-06-22T23:43:51+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "The Global Namespace Risk: Universal Bucket Hijacking Technique for Cloud Data Exfiltration",
+      "url": "https://unit42.paloaltonetworks.com/cloud-bucket-hijacking-risks/",
+      "summary": "Unit 42 research details how attackers could exploit global name uniqueness in bucket hijacking to redirect cloud data streams across major CSPs. The post The Global Namespace Risk: Universal Bucket Hijacking Technique for Cloud Data Exfiltration appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-06-22T22:00:04+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "F5收购SurePassAI，加码AI流量可视化与安全策略执行 - 디지털투데이",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOWlhJS0tEYjNwTS10bU1XZTNTNDExTXc2UFdZMnhQbXUyVEt6LWxPVTZKb0FIME5hWFFySTVHY1IxQkhraF9fSGxPdjhyZTA0ZFdqR0cyWWtsWlZ3TnZGeVZrbXlBSHNwVTVrMUVNeDNubGtEc2tPbHB4YXhDQmFVS0cyVE44OVlRaTNobWtEOHVHNFk3RlhUNWpBZHNSaHZWZFZERA?oc=5",
+      "summary": "F5收购SurePassAI，加码AI流量可视化与安全策略执行 &nbsp;&nbsp; 디지털투데이",
+      "category": "CoverageFallback",
+      "published": "2026-06-22T21:25:40+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "SentinelOne S与亚马逊云科技Bedrock AgentCore集成 标志AI安全领域竞争升温 - video.sina.com.cn",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPc25aa0JSVTJGTm1lLWVrd3NCR1F1ZDFTLTNQd1JPM3Npd0x1ZFZRaUgwSlBfbjZ5X3VWTzBEYUVxWE5iMGQtS3JCVjJNcUtmWHpsSXZVVzdxcjRTNVBtclVJWTRUR1Q5VU1yWktkYVhfOXdfN2JDb0VZc0d5bmlqanJB?oc=5",
+      "summary": "SentinelOne S与亚马逊云科技Bedrock AgentCore集成 标志AI安全领域竞争升温 &nbsp;&nbsp; video.sina.com.cn",
+      "category": "CoverageFallback",
+      "published": "2026-06-22T21:12:56+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "F5 Launches AI Security Platform to Put Security Leaders in Control of Enterprise AI Risk - Investing News Network",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPLXU3cS1Nb3hKV1NacnBxRS11dzRoNWdyT1h2SWZfVlplTmlTTjhwZDM3LWd6QTU4TFVma1lTNm9EWWg5Y184T2JxT2xqNFpaSUVEdGtzV3NHdXBpY3dXV3dOakRoLTFDbFNtdHVfVnhmbWIyZHVwYmkwa0NWYlJfT3piaVZ0V2l4dVJ5cFBtbEZIN0F4SURaMU8tOV9Bb3U2Y18xWndDazNqc3piMDVJMVlhLWRrQ1k?oc=5",
+      "summary": "F5 Launches AI Security Platform to Put Security Leaders in Control of Enterprise AI Risk &nbsp;&nbsp; Investing News Network",
+      "category": "CoverageFallback",
+      "published": "2026-06-22T20:50:47+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Cisco Bets On WideField Security Acquisition To Tackle Agentic AI Security Gap - crn.com",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQamVpdXNveVRPb2tzU0s1UmloU0hEUTNXM0ZVbzBiLWhaU3pUdkRyTDZKTldaUXc4d0NEZE9zOHJ1cm43cXpVM0VBOXFjVnBOQlVJeV8xN09uUE5ZWHN5cnZveXM0SHFFNURqeHRwTkpIdVlZVEE3ckpnRHF3aGZUZ3NLSHdMQnpra1RfZV9qd2hDYjBfcEF1TzBacnhScEtFclhFOEZhUVZtUHFIMFhiQXNTNC1pR21G?oc=5",
+      "summary": "Cisco Bets On WideField Security Acquisition To Tackle Agentic AI Security Gap &nbsp;&nbsp; crn.com",
+      "category": "CoverageFallback",
+      "published": "2026-06-22T20:29:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Introducing Patch the Planet",
+      "url": "https://blog.trailofbits.com/2026/06/22/introducing-patch-the-planet/",
+      "summary": "What happens when you clear dozens of Trail of Bits engineers’ schedules, pair them with every open-source maintainer they can contact, and unleash the latest frontier models like GPT-5.5-Cyber on critical open-source targets? Thanks to our partnership with OpenAI and its Daybreak initiative, we can report that the impact is hundreds of discovered bugs, 64 pull requests, and 51 issues filed across",
+      "category": "AISecurityLabs",
+      "published": "2026-06-22T16:50:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://blog.trailofbits.com/index.xml",
+      "feed_title": "Trail of Bits"
+    },
+    {
+      "title": "Weaxor勒索软件又添Linux平台变种",
+      "url": "https://www.anquanke.com/post/id/315628",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-06-22T15:11:07+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
     },
     {
       "title": "sqlite-utils 4.0rc1 adds migrations and nested transactions",
@@ -269,58 +385,6 @@
       "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
-    },
-    {
-      "title": "A10 Networks Acquires Troy AI to Strengthen Sovereign AI Security Strategy - thelec.net",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBZVzlVRThzN3BGbkVrVG5IV2xTOUMyUzJpWUFaRGpKdDBlTkc5WXZKb1N1Q0EteG1Tb01JckFEakN0SUo5dVVjMnRZc1QyNTZjaGI4TWFUaFFzQlZBWXM4M0NmMEJvLW8?oc=5",
-      "summary": "A10 Networks Acquires Troy AI to Strengthen Sovereign AI Security Strategy &nbsp;&nbsp; thelec.net",
-      "category": "CoverageFallback",
-      "published": "2026-06-21T23:33:52+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "银行业AI安全开发应用指导意见出炉 - 新浪财经",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBxLWlVNHNzSE1EQjg0Wk15UWxWTjlEbi1LN2l3SS0yUU5oMTg4Yk9xbVR0dHpKUkQ1dXQzZkFrQ0hDbmhHTjIzczhKaElhQlJ1WWp4S0ZoWEFmR3dqc2FjSzB0b2FFUlpxbjZQbUNhbjV6MjZ2VVlCRg?oc=5",
-      "summary": "银行业AI安全开发应用指导意见出炉 &nbsp;&nbsp; 新浪财经",
-      "category": "CoverageFallback",
-      "published": "2026-06-21T15:58:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
-    },
-    {
-      "title": "SK Telecom launches Aleph to train Korea’s AI security and network talent - CHOSUNBIZ - Chosunbiz",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ST3FmRnRURXhxc0p5X2M2NmRFSG9JUlB0UjhNMzBEQ3dNOTd4VUZ0YVg0Y1kzTnBtUUZLMFNSeDFUM0FDc0hpb29adF9hSWI3clR5S3kxakJTM0hzTXVlRXg2SUJvWkVlbm5pVkxoNGZhX25Sam5MTE1B0gGOAUFVX3lxTFBwWnV5eVNCZlF6Y2JzNG9xdWZmTzRZcEJyMzJzNzdYS1czTXk2QkloTmlPX2JzUjRJcndvdV9hQWp3ajhkZXhlRWlNYzZLUFlXZEpPdmF1Q1NYc2w0cDlnUnlQdGtUSy1LMDJKQ3NCcnFfM2E1ZHEzbFh4TWR5TDFqVFJudU1LVjhsZkNTWVE?oc=5",
-      "summary": "SK Telecom launches Aleph to train Korea’s AI security and network talent - CHOSUNBIZ &nbsp;&nbsp; Chosunbiz",
-      "category": "CoverageFallback",
-      "published": "2026-06-21T06:10:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "韩国与OpenAI合作，加入全球AI安全俱乐部 - VOI.id",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5vYl9kb1o2eEpEWThtdTlkSFJEUGJCUHkyZko4a1BfNDFiWkYzYnUweUYtUTlqdDZYcXlZTnFmdC05YU9feThlMDlhUXVFZVXSAUJBVV95cUxQUTZVWllJTXdhZlJkcGVmeEtkV3UyZWtyWDVSaDBZQ1RKV0ZSSGowV1N6ZzdXS0dORERfeVN1MGt3T3c?oc=5",
-      "summary": "韩国与OpenAI合作，加入全球AI安全俱乐部 &nbsp;&nbsp; VOI.id",
-      "category": "CoverageFallback",
-      "published": "2026-06-20T16:59:32+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
     },
     {
       "title": "Wow. This just blew my mind lolllll",
@@ -362,37 +426,63 @@
       "feed_title": "Unit 42"
     },
     {
-      "title": "Quoting Sean Lynch",
-      "url": "https://simonwillison.net/2026/Jun/19/sean-lynch/#atom-everything",
-      "summary": "The real valuable capability MCP offers over skills/CLI is isolating the auth flow outside of the agent’s context window, and potentially out of the harness completely. [...] Maybe the idealized form of MCP is just an auth gateway for the API and nothing else. That’d still be a win. &mdash; Sean Lynch , comment on Hacker News Tags: model-context-protocol , llms , ai , generative-ai , skills",
-      "category": "AISecurityLabs",
-      "published": "2026-06-19T22:45:49+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "This is really interesting to try and interpret through a bug bounty lens.",
-      "url": "https://x.com/rez0__/status/2067942949053247965",
-      "summary": "This is really interesting to try and interpret through a bug bounty lens. Naval: If your success or failure is judged by other people, rather than by nature or free markets, you’re playing a game, albeit a reified and social one.",
+      "title": "RT The Verge: Read this before you vibe-code another app https://www.theverge.com/ai-artificial-intelligence/950844/vibe-coding-security-risks-apps",
+      "url": "https://x.com/trailofbits/status/2069163259924504696",
+      "summary": "RT The Verge Read this before you vibe-code another app https://www.theverge.com/ai-artificial-intelligence/950844/vibe-coding-security-risks-apps",
       "category": "XSignals",
-      "published": "2026-06-19T12:09:54+00:00",
-      "fetch_status": "full",
+      "published": "2026-06-22T11:05:16+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "Samsung Electronics brings ChatGPT and Codex to employees",
-      "url": "https://openai.com/index/samsung-electronics-chatgpt-codex-deployment",
-      "summary": "Samsung Electronics deploys ChatGPT Enterprise and Codex to employees worldwide, marking one of OpenAI’s largest enterprise AI rollouts.",
+      "title": "「文科生AI黑客松」专访：社会工作专业范心怡，和她那个会夸人的电子穿搭闺蜜",
+      "url": "https://www.anquanke.com/post/id/315622",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-06-22T10:05:30+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "Daybreak: Tools for securing every organization in the world",
+      "url": "https://openai.com/index/daybreak-securing-the-world",
+      "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
       "category": "FirstParty",
-      "published": "2026-06-21T23:00:00+00:00",
+      "published": "2026-06-22T10:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
+      "url": "https://openai.com/index/patch-the-planet",
+      "summary": "OpenAI introduces Patch the Planet, a Daybreak initiative helping open-source maintainers find, validate, and fix vulnerabilities with AI and expert review.",
+      "category": "FirstParty",
+      "published": "2026-06-22T10:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "Codex-maxxing for long-running work",
+      "url": "https://openai.com/index/codex-maxxing-long-running-work",
+      "summary": "Learn how Jason Liu uses Codex to preserve context, manage complex projects, and help work continue beyond a single prompt.",
+      "category": "FirstParty",
+      "published": "2026-06-22T00:00:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -423,45 +513,6 @@
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Endor Labs is a Visionary in the 2026 Gartner® Magic Quadrant™ for Software Supply Chain Security | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/endor-labs-is-a-visionary-in-the-2026-gartner-r-magic-quadrant-tm-for-software-supply-chain-security",
-      "summary": "Endor Labs is a Visionary in the 2026 Gartner® Magic Quadrant™ for Software Supply Chain Security",
-      "category": "AISecurityLabs",
-      "published": "2026-06-19T02:20:10+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Claude Fable 5, take two: same model, different harness, and a very different result | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/claude-fable-5-take-two-same-model-different-harness-and-a-very-different-result",
-      "summary": "Claude Fable 5, take two: same model, different harness, and a very different result",
-      "category": "AISecurityLabs",
-      "published": "2026-06-19T02:20:10+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Are you in the weights?",
-      "url": "https://x.com/rez0__/status/2067781453388157273",
-      "summary": "Are you in the weights?",
-      "category": "XSignals",
-      "published": "2026-06-19T01:28:10+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     }
