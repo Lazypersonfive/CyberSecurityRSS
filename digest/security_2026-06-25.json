@@ -1,0 +1,552 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-25",
+  "generated_at": "2026-06-24T23:53:07.280994Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t2": 8,
+    "kind_media": 8,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "chinese": 6,
+    "wechat": 4,
+    "kind_cn_expert": 5,
+    "tier_unknown": 5
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 3,
+    "merged_total": 4
+  },
+  "items": [
+    {
+      "title_zh": "Mandiant 披露攻击者利用 Cisco SD-WAN 零日漏洞 CVE-2026-20245 获取 Root 权限细节",
+      "title_orig": "Mandiant reveals how Cisco SD-WAN zero-day attacks gained root access",
+      "summary": "Mandiant 披露了 Cisco Catalyst SD-WAN 解决方案中 CVE-2026-20245 零日漏洞的攻击细节，黑客利用该漏洞在受影响设备上成功创建了伪造的 Root 账户。攻击者通过该漏洞绕过安全限制并获得系统的最高控制权限，目前相关技术细节已由安全研究机构公开，旨在提醒用户关注此类针对关键网络基础设施的深度渗透威胁，防止攻击者利用该漏洞对企业网络环境造成持久性的非法控制。",
+      "tags": [
+        "Cisco",
+        "零日漏洞",
+        "提权"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/mandiant-reveals-how-cisco-sd-wan-zero-day-attacks-gained-root-access/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-24T21:29:10+00:00",
+      "cve_ids": [
+        "CVE-2026-20245"
+      ],
+      "selection_reason": "披露了关键网络基础设施零日漏洞的实战利用细节。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "cve:cve-2026-20245",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.8,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "FastStone Image Viewer 8.3.0.0 存在多个文件解析漏洞可导致远程代码执行",
+      "title_orig": "VU#936962: Multiple file parsing vulnerabilities in FastStone Image Viewer 8.3.0.0",
+      "summary": "FastStone Image Viewer 8.3.0.0 版本中的 JPEG 2000 (JP2) 和 PSD 文件解析组件存在编号为 VU#936962 的多项安全漏洞，可能导致远程代码执行或控制流破坏。远程攻击者可通过诱导用户处理特制的恶意图像文件，触发内存损坏并获取目标系统的控制权，目前官方尚未披露具体的修复补丁状态，用户在处理来源不明的图像文件时需保持高度警惕，以防范潜在的恶意代码植入风险。",
+      "tags": [
+        "文件解析",
+        "远程代码执行",
+        "内存损坏"
+      ],
+      "url": "https://kb.cert.org/vuls/id/936962",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-06-22T18:41:47+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及常用图像查看器的 RCE 漏洞，具有较高的用户影响面。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/936962",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Joomla 组件 JCE Editor 与 SP Page Builder 存在高危任意文件上传漏洞",
+      "title_orig": "【漏洞通告】Joomla JCE Editor 与 SP Page Builder 文件上传漏洞(CVE-2026-48907/CVE-2026-48908)",
+      "summary": "深瞳漏洞实验室监测到 Joomla 的 JCE Editor 和 SP Page Builder 组件存在高危任意文件上传漏洞，漏洞编号分别为 CVE-2026-48907 和 CVE-2026-48908。攻击者可利用此缺陷上传恶意脚本文件，从而获取服务器的 WebShell 或执行任意代码，该漏洞对使用相关组件的网站构成严重安全威胁，目前原文尚未披露具体的官方修复版本信息，建议相关管理员密切关注官方更新并限制文件上传权限。",
+      "tags": [
+        "Joomla",
+        "文件上传",
+        "Web安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247525956&idx=1&sn=c39c853322d0a417d4b054ed9c794974",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T10:51:00+00:00",
+      "cve_ids": [
+        "CVE-2026-48907",
+        "CVE-2026-48908"
+      ],
+      "selection_reason": "流行 CMS 插件的高危漏洞，直接威胁网站服务器安全。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "feed_title": "深信服千里目安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "story_id": "cve:cve-2026-48907,cve-2026-48908",
+      "related_urls": [
+        "https://vulners.com/githubexploit/0452174E-CA14-5E07-832F-D7B7BBD5B889?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Windows 恢复环境 WinRE 存在安全缺陷可绕过 UEFI/BIOS 固件密码强制执行",
+      "title_orig": "VU#226679: Microsoft WinRE allows for bypass of UEFI/BIOS password enforcement",
+      "summary": "编号为 VU#226679 的漏洞显示，Microsoft Windows 恢复环境 (WinRE) 在特定平台实现中存在逻辑缺陷，可能导致固件安全控制失效。具有物理访问权限或管理权限的攻击者可以利用 WinRE 机制绕过管理员配置的 UEFI 或 BIOS 密码，从而在无需授权的情况下访问底层硬件设置，这显著增加了设备被非法篡改的风险，目前尚无明确的缓解措施，用户需加强对终端设备的物理安全管控。",
+      "tags": [
+        "WinRE",
+        "固件安全",
+        "权限绕过"
+      ],
+      "url": "https://kb.cert.org/vuls/id/226679",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-06-22T16:16:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及操作系统底层恢复机制对硬件安全锁的绕过风险。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/226679",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Nebula Security 演示 Android 17 首个全链浏览器至内核 Root 漏洞利用链",
+      "title_orig": "One Malicious Link, Full Root Access — Nebula Security Demos the World's First Android 17 Exploit Chain",
+      "summary": "该漏洞链IonStack通过串联两个此前未公开的漏洞，实现了从浏览器到内核的完整攻击路径，允许攻击者在用户点击恶意URL后无需进一步交互即可获取Android 17系统的最高Root权限。原文未披露漏洞的具体CVE编号、技术原理及触发代码细节，目前已知该利用链针对已完全更新的Android 17设备，相关修复或缓解状态在原文中也未明确说明。",
+      "tags": [
+        "Android",
+        "漏洞利用链",
+        "内核提权"
+      ],
+      "url": "https://www.cyberkendra.com/2026/06/one-malicious-link-full-root-access.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T17:37:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "全球首个针对 Android 17 的全链 RCE 到 Ro",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/06/one-malicious-link-full-root-access.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.35,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Cisco Unified CM 关键漏洞 CVE-2026-20230 在 PoC 公开后遭到在途攻击利用",
+      "title_orig": "Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root",
+      "summary": "Cisco Unified Communications Manager 及其会话管理版存在编号为 CVE-2026-20230 的输入验证不当漏洞，其 CVSS 评分高达 8.6 分。在 PoC 证明了可以通过特定 HTTP 请求实现 Root 权限文件写入后，威胁者已开始利用该漏洞进行活跃攻击，未经身份验证的远程攻击者可借此完全控制受影响的通信系统，建议相关企业用户尽快采取防御措施并关注官方发布的补丁更新，以防范关键通信链路被切断。",
+      "tags": [
+        "Cisco",
+        "在途攻击",
+        "文件写入"
+      ],
+      "url": "https://thehackernews.com/2026/06/cisco-unified-cm-flaw-exploited-after.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-24T06:50:38+00:00",
+      "cve_ids": [
+        "CVE-2026-20230"
+      ],
+      "selection_reason": "PoC 公开后引发的在途攻击，提醒企业紧急修复协作系统。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-20230",
+      "related_urls": [
+        "http://0.0.0.0:8080/post/64380"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 警告 Lantronix EDS5000 系列关键代码注入漏洞 CVE-2025-67038 正被利用",
+      "title_orig": "CISA Warns Critical Lantronix EDS5000 Flaw Is Being Actively Exploited",
+      "summary": "美国 CISA 警告 Lantronix EDS5000 系列设备存在编号为 CVE-2025-67038 的关键代码注入漏洞，其 CVSS 评分高达 9.8 且正被积极利用。远程攻击者可利用此缺陷在受影响的工业设备上执行任意代码，CISA 已要求联邦民事行政部门机构在 2026 年 6 月 26 日前完成修复，以防止关键基础设施因该高危漏洞遭受进一步的攻击破坏，该指令强调了修复此类暴露在公网的工业控制设备的紧迫性。",
+      "tags": [
+        "Lantroni",
+        "代码注入",
+        "CISA预警"
+      ],
+      "url": "https://thehackernews.com/2026/06/cisa-warns-critical-lantronix-eds5000.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-24T17:19:18+00:00",
+      "cve_ids": [
+        "CVE-2025-67038"
+      ],
+      "selection_reason": "工业联网设备的关键漏洞，且已被证实存在活跃利用。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2025-67038",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Ubiquiti 设备存在关键安全漏洞可导致远程攻击者执行命令并修改系统配置",
+      "title_orig": "Critical Ubiquiti Vulnerabilities in Attackers’ Crosshairs",
+      "summary": "Ubiquiti 网络设备被披露存在多个关键安全漏洞，成为攻击者关注的重点目标，这些漏洞允许未经身份验证的远程攻击者对系统进行非法更改。攻击者可以利用这些缺陷访问底层账户并注入恶意命令，从而实现对受影响网络基础设施的完全控制，虽然原文未披露具体的 CVE 编号或受影响固件范围，但强调了该风险的严重性以及潜在的被攻击可能性。",
+      "tags": [
+        "Ubiquiti",
+        "命令注入",
+        "网络设备"
+      ],
+      "url": "https://www.securityweek.com/critical-ubiquiti-vulnerabilities-in-attackers-crosshairs/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T12:32:17+00:00",
+      "cve_ids": [],
+      "selection_reason": "关键网络基础设施品牌受影响，存在大规模设备接管风险。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/critical-ubiquiti-vulnerabilities-in-attackers-crosshairs",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "供应链漏洞“冬虫夏草”影响数千家组织机构代码仓库",
+      "title_orig": "“冬虫夏草”供应链漏洞影响数千家组织机构的代码仓库",
+      "summary": "该供应链漏洞源于攻击者在开源组件中植入恶意代码，利用开发者对上游依赖的信任，使恶意代码渗透进数以百万计的代码仓库，目前已波及数千家组织机构。原文未披露具体的漏洞原理、触发条件、受影响的特定组件版本及修复状态，仅指出攻击者通过此手段实现了大规模的持久化访问与潜在的数据窃取。",
+      "tags": [
+        "供应链安全",
+        "代码仓库",
+        "恶意植入"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw==&mid=2247526367&idx=2&sn=873a39cf55d45ffab906c2a6ab004056",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T09:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了开源供应链污染的规模化影响，对企业代码审计有警示意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "feed_title": "代码卫士",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw%3D%3D&mid=2247526367&idx=2&sn=873a39cf55d45ffab906c2a6ab004056",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux Scales eBPF Rootkit 针对 Arch 用户仓库实施供应链攻击",
+      "title_orig": "Linux Scales eBPF Rootkit Detection and Analysis",
+      "summary": "研究人员近期发现名为 Scales 的 Linux rootkit 针对 Arch User Repository 供应链实施了名为 Atomic Arch 的攻击，已导致超过 1500 个软件包受到波及并集成了一个基于 eBPF 的隐形后门。该恶意软件利用内核特性实现深度进程隐藏和网络流量拦截，目前主要针对 Linux 桌面及服务器环境进行持久化渗透，其高度的隐蔽性与广泛的感染范围为系统安全防御带来了极大挑战。",
+      "tags": [
+        "eBPF",
+        "Rootkit",
+        "Linux安全"
+      ],
+      "url": "https://sandflysecurity.com/blog/linux-scales-ebpf-rootkit-detection-and-analysis",
+      "source": "sandflysecurity.com",
+      "category": "RedTeam",
+      "published": "2026-06-24T18:36:24+00:00",
+      "cve_ids": [],
+      "selection_reason": "eBPF 技术在 Rootkit 中的应用是当前 Linux",
+      "feed_url": "https://www.sandflysecurity.com/feed/",
+      "feed_title": "Sandfly Security Blog RSS Feed",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "sandflysecurity.com",
+      "story_id": "url:sandflysecurity.com/blog/linux-scales-ebpf-rootkit-detection-and-analysis",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.75,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件后门与 Dify AI 平台跨租户数据泄露漏洞预警",
+      "title_orig": "WordPress, AI Platform, Proxy Supply-Chain Compromises: Backdoors and Cross-Tenant Leaks",
+      "summary": "ShapedPlugin 旗下的 WordPress Pro 插件因构建流水线遭入侵而被植入恶意后门，与此同时 Dify AI 平台也被曝存在四个严重的跨租户数据暴露漏洞，允许攻击者绕过隔离机制获取敏感信息。这些安全缺陷可能导致大规模的敏感数据泄露，目前官方已发布紧急更新并要求受影响用户立即部署补丁，以缓解潜在的风险并防止攻击者利用这些漏洞进行更深层次的渗透活动。",
+      "tags": [
+        "WordPres",
+        "AI安全",
+        "跨租户泄露"
+      ],
+      "url": "https://defend.network/briefings/shapedplugin-dify-squidbleed-supply-chain-exposure-2026-06-23.html",
+      "source": "defend.network",
+      "category": "Synthesis",
+      "published": "2026-06-23T06:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖了主流 CMS 插件供应链安全及新兴 AI 平台的租户隔",
+      "feed_url": "https://defend.network/feed.xml",
+      "feed_title": "defend.network",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "defend.network",
+      "story_id": "url:defend.network/briefings/shapedplugin-dify-squidbleed-supply-chain-exposure-2026-06-23.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "以色列公司 Bright Data 通过 SDK 将数亿智能设备转化为 AI 爬虫代理",
+      "title_orig": "【AI复盘】智能电视被转售为AI爬虫代理事件",
+      "summary": "研究报告揭露 Bright Data 公司通过在移动应用和智能电视中植入 SDK，将全球数亿台设备转化为住宅代理节点，为 AI 公司提供爬虫流量中转服务。这种行为利用合法商业外壳绕过企业 VPN 和防火墙防护，导致用户在不知情的情况下成为网络基础设施的一部分，不仅侵犯了用户隐私，也显著增加了企业进行设备层面流量审计的难度。",
+      "tags": [
+        "住宅代理",
+        "SDK安全",
+        "流量审计"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487677&idx=1&sn=dccea5001955f449289e9b3cec55ef8a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-23T22:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了影子网络基础设施的形成方式，对企业边界防护思路有重要启",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ%3D%3D&mid=2247487677&idx=1&sn=dccea5001955f449289e9b3cec55ef8a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "基于 LangGraph 工作流的主流企业防火墙 0day 漏洞挖掘研究",
+      "title_orig": "【重磅上线】系统0day安全——主流企业防火墙漏洞挖掘（覆盖10+厂商、30+高危CVE）",
+      "summary": "该研究利用自研的LangGraph漏洞挖掘工作流，针对10多家主流企业防火墙厂商进行深度测试，成功发现并覆盖了30多个高危CVE漏洞。原文未披露这些漏洞的具体类型、触发条件、受影响的厂商名称及固件版本，也未明确说明相关漏洞的修复或缓解状态，重点展示了自动化工作流在复杂固件漏洞挖掘中的应用。",
+      "tags": [
+        "防火墙漏洞",
+        "自动化挖洞",
+        "0day"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458616937&idx=1&sn=dca56c624bc3cea8fc248b38a91b560f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T10:09:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 工作流在自动化漏洞挖掘领域的应用，具有较高的技",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458616937&idx=1&sn=dca56c624bc3cea8fc248b38a91b560f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.4,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "从攻击视角重新审视 DNS 协议运原理、攻击手法与防御方案",
+      "title_orig": "從攻擊手法開始重新認識網路 - DNS 篇",
+      "summary": "本文通过攻击者视角深入探讨了 DNS 协议的运作机制，重点分析了 DNS 劫持、缓存污染及放大攻击等典型技术手段，旨在通过问题导向的方式引导读者理解网络安全。文章详细阐述了这些攻击如何利用协议缺陷实现流量重定向，并针对性地提出了相应的安全加固与防御策略，非常适合安全从业者系统性地学习并重构对网络基础安全的认知。",
+      "tags": [
+        "DNS安全",
+        "网络协议",
+        "防御方案"
+      ],
+      "url": "https://blog.huli.tw/2026/06/23/learn-network-from-attack-dns/",
+      "source": "blog.huli.tw",
+      "category": "WebSecurity",
+      "published": "2026-06-23T03:11:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "以攻促防的教学方式有助于深入理解基础协议的安全性，适合技能提",
+      "feed_url": "https://blog.huli.tw/atom-ch.xml",
+      "feed_title": "Huli's blog",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全博客",
+      "source_key": "blog.huli.tw",
+      "story_id": "url:blog.huli.tw/2026/06/23/learn-network-from-attack-dns",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.5,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "FortiBleed 行动针对全球 43 万台 FortiGate 防火墙窃取凭证",
+      "title_orig": "FortiBleed 在 1.1 亿凭证窃取行动中针对 FortiGate 防火墙",
+      "summary": "名为 FortiBleed 的大规模攻击行动自 2026 年 2 月起活跃，通过暴力破解和利用暴露服务针对全球超过 43 万台 FortiGate 设备，其幕后黑手被指为俄语背景的初始访问经纪人。攻击者在受感染的防火墙上部署定制嗅探器，从流量中实时提取并窃取了约 1.1 亿条登录凭证，这种以经济利益为驱动的持久化渗透对全球网络安全构成了严峻考验。",
+      "tags": [
+        "FortiGat",
+        "凭证窃取",
+        "流量嗅探"
+      ],
+      "url": "http://0.0.0.0:8080/post/64376",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-24T06:58:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对核心网络边界设备的规模化攻击，对企业运维和 SOC 预警",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "url:0.0.0.0/post/64376",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzUyMDQ4OTkyMg==&mid=2247553832&idx=1&sn=fbd0e71c5495b3267683d26ab127162f"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.1,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

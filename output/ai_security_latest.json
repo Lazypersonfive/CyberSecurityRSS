@@ -1,15 +1,15 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-06-24",
-  "fetched_at_utc": "2026-06-23T23:44:30.045530Z",
+  "fetched_at": "2026-06-25",
+  "fetched_at_utc": "2026-06-24T23:53:16.677343Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 55,
-  "entry_count": 27,
+  "raw_entry_count": 61,
+  "entry_count": 35,
   "filter_stats": {
-    "input": 55,
-    "dedup_merged": 3,
-    "output": 52
+    "input": 61,
+    "dropped_title_blacklist": 1,
+    "output": 60
   },
   "curation_stats": {
     "dropped_source_cap": 25
@@ -76,7 +76,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 7
+      "raw_count": 5
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -118,14 +118,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 5
     },
     "https://www.aikido.dev/blog/rss.xml": {
       "feed_title": "Aikido Security",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -146,7 +146,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 2
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -160,7 +160,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://www.seebug.org/rss/new": {
       "feed_title": "Seebug 漏洞社区",
@@ -188,7 +188,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 8
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -216,7 +216,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
@@ -242,6 +242,19 @@
   },
   "entries": [
     {
+      "title": "NRT-Bench：面向安全关键控制室中 LLM 智能体的多轮红队测试基准",
+      "url": "https://paper.seebug.org/3492",
+      "summary": "作者：Hanwool Lee, Dasol Choi, Bokyeong Kim等 原文链接：https://arxiv.org/pdf/2606.20408 摘要 大型语言模型（LLM）智能体越来越多地被提议作为安全关键系统的监督组件，但它们在持续、自适应对抗压力下的鲁棒性仍然缺乏充分表征。本文提出NRT-Bench，一个用于对担任安全关键系统操作员的LLM智能体进行多轮红队测试的基准，具体实例...",
+      "category": "Chinese",
+      "published": "2026-06-24T08:46:33+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper"
+    },
+    {
       "title": "OpenClaw’s Skill Marketplace and the Emerging AI Supply Chain Threat",
       "url": "https://unit42.paloaltonetworks.com/openclaw-ai-supply-chain-risk/",
       "summary": "Unit 42's analysis of ClawHub revealed evasive malicious skills bypassing automated scanners to deploy infostealers and execute agentic financial fraud. The post OpenClaw’s Skill Marketplace and the Emerging AI Supply Chain Threat appeared first on Unit 42 .",
@@ -249,12 +262,36 @@
       "published": "2026-06-23T22:00:51+00:00",
       "fetch_status": "full",
       "cve_ids": [],
-      "related_urls": [
-        "https://news.google.com/rss/articles/CBMidEFVX3lxTFBHQmllMHJVbC1pVG1xTzJlX2hEU0Z5bWo4Ykt6dGdHQWxxSnd4ZXFieENpX3l2NGdyZGJZZFJyQUlFMHNyc0RTQjE2czVvdktTdm1xdjF2czVhYno2NXNJNVdwY3ZXcXctOHNJMWJwMFZndG5h?oc=5"
-      ],
+      "related_urls": [],
       "quality_score": 2,
       "feed_url": "https://unit42.paloaltonetworks.com/feed/",
       "feed_title": "Unit 42"
+    },
+    {
+      "title": "RT Engadget: OpenAI has launched Patch the Planet, a new initiative part of its Daybreak cybersecurity program. https://www.engadget.com/2199569/opena...",
+      "url": "https://x.com/trailofbits/status/2069817649475772660",
+      "summary": "RT Engadget OpenAI has launched Patch the Planet, a new initiative part of its Daybreak cybersecurity program. https://www.engadget.com/2199569/openai-new-daybreak-initiative-open-source-projects-bugs/?utm_term=Autofeed&amp;utm_campaign=Echobox-Engadget&amp;utm_medium=Social-Distribution&amp;utm_source=Twitter#Echobox=1782206337",
+      "category": "XSignals",
+      "published": "2026-06-23T09:19:17+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
+    {
+      "title": "RT TechCrunch: OpenAI launches new initiative to help find and patch open-source bugs https://techcrunch.com/2026/06/22/openai-launches-new-initiative...",
+      "url": "https://x.com/trailofbits/status/2069815678937469345",
+      "summary": "RT TechCrunch OpenAI launches new initiative to help find and patch open-source bugs https://techcrunch.com/2026/06/22/openai-launches-new-initiative-to-help-find-and-patch-open-source-bugs/?utm_source=dlvr.it&amp;utm_medium=twitter",
+      "category": "XSignals",
+      "published": "2026-06-23T00:13:14+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
     },
     {
       "title": "Prompt Injection as Role Confusion",
@@ -283,35 +320,126 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "Temporary Cloudflare Accounts for AI agents",
-      "url": "https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything",
-      "summary": "Temporary Cloudflare Accounts for AI agents The announcement says this is \"for AI agents\" but (as is pretty common these days) the AI hook isn't really necessary, this is an interesting feature for everyone else as well. Short version: you can now create a Cloudflare Workers project and run this, without even creating a Cloudflare account: npx wrangler deploy --temporary Cloudflare will deploy the",
-      "category": "AISecurityLabs",
-      "published": "2026-06-21T22:01:04+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "360发布AI安全报告：漏洞挖掘从模型能力涌现走向智能体工程实战|网络安全|系统|生态|攻防|体协_手机新浪网 - 新浪财经",
-      "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxNa3p3ZlM5OHdhWTFybW15UmJreHdkSElnY01yS084ZFp6TkZWSVRrTG9iYnREQUQ3SmZHUU5aeHhkXzFZelRROUdITTltM3VjVWdYRGx6U2Jad3JCMkJ6akxha0pEckVSdlBSZDJrMkU0NEQ4RmV4OHF1c1FKZFltcVNsM1lfaTZLY19XVzgxRnN5VGxybklpRlE5YmpkSGZ1MjV4OTBHODBvaDRfS0htOTgtbVl0dlViMk1EekpsWVhsZDRCZWhQYXN3SDk0N2V1YjF4TW1TTjFib2ZJcVhQRXVfZE1xbVdqYWF2YTF6YmdVWEpSdjI0Tno5SWhvNE5BRHgwUjVlcXYyNEY0S3NtSW9BRnpFNi1sSjBtZ2Fpbw?oc=5",
-      "summary": "360发布AI安全报告：漏洞挖掘从模型能力涌现走向智能体工程实战|网络安全|系统|生态|攻防|体协_手机新浪网 &nbsp;&nbsp; 新浪财经",
+      "title": "IBM’s Twin Bets: AI Security Spend and Quantum Mandate Drive $12.5B Backlog and Analyst Upgrade - Ad-hoc-news.de",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPaDl4ZTAtY3FEQ2hoZ2JVZUFJbmxpVjBhbzJLLXBkWTh1ejQ4Tm5qbVVKSUpYR3ktN3NqM011dkRuNGxJUXBhalNFWWFieVRKcDg3am9lT0E3TkFpeGdaRjB5VUFQSFhtVndHa2FXY3pxN2x0WDRPX0k2TEhVQUpHX05xTmNzTHFZOUk5aUZWZnNXOEVrb2dXUjN2OE1QTXhLUFkySkR5UWJkMEkwakNadzNwNnN4XzBWX1FlVktBZmdEZw?oc=5",
+      "summary": "IBM’s Twin Bets: AI Security Spend and Quantum Mandate Drive $12.5B Backlog and Analyst Upgrade &nbsp;&nbsp; Ad-hoc-news.de",
       "category": "CoverageFallback",
-      "published": "2026-06-23T21:49:22+00:00",
+      "published": "2026-06-24T22:50:49+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Compromised GitHub action codfish/semantic-release-action steals CI/CD secrets",
+      "url": "https://www.aikido.dev/blog/compromised-github-action-codfish-steals-secrets",
+      "summary": "codfish/semantic-release-action was compromised on June 24, 2026. Attackers repointed v2–v5 tags to a Miasma credential-stealing payload targeting CI/CD secrets. Here's what happened and how to check if you're affected. Category: Vulnerabilities & Threats",
+      "category": "AISecurityLabs",
+      "published": "2026-06-24T21:06:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
+      "title": "RT Zoo: \"For one of the vulnerabilities we developed an exploit to demonstrate its impact internally.\" Read more about our latest @trailofbits audit a...",
+      "url": "https://x.com/trailofbits/status/2069888536225190024",
+      "summary": "RT Zoo \"For one of the vulnerabilities we developed an exploit to demonstrate its impact internally.\" Read more about our latest @trailofbits audit and the security findings that shaped our defenses: https://zoo.dev/blog/security-trail-of-bits",
+      "category": "XSignals",
+      "published": "2026-06-24T20:46:27+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
+    {
+      "title": "Robot dogs patrol stadium as Mexico deploys AI security at 2026 World Cup - Yahoo News UK",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE04U0tpZ2V5TkRQaHQ1VmMwdThpSDJFYlZuWVBXd1J4ZVlfLWU2aU5EVUp5Yi1FX3ctallDN1BMT203d0hFOW1VLUJXQlItVl83NmtHV01ScDBXMkVoSjVTdms5TlZjNlBZUkhnOWN4aS01SzFZbWkyM3NmNl9Sdw?oc=5",
+      "summary": "Robot dogs patrol stadium as Mexico deploys AI security at 2026 World Cup &nbsp;&nbsp; Yahoo News UK",
+      "category": "CoverageFallback",
+      "published": "2026-06-24T19:02:34+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Visa showcases Project Glasswing’s AI security insights at VB Transform 2026 - Crypto Briefing",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPWDB0dXNVZHplbnNIUWFJWExEWmRselh3eXpsemJCWHR3MDJKZENvMW9Sd3hkenBaOURuemhrNWtRYXJJeUNmcV9DRklUclg3bmFyYjNQTk4xRHR0RHRvVG8tWFVfTlpSUkY0NHI5RFJvTmpUaFBoYkdyOVJhM0Frc3E3WDJVZGs?oc=5",
+      "summary": "Visa showcases Project Glasswing’s AI security insights at VB Transform 2026 &nbsp;&nbsp; Crypto Briefing",
+      "category": "CoverageFallback",
+      "published": "2026-06-24T18:27:24+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Quoting Tom MacWright",
+      "url": "https://simonwillison.net/2026/Jun/24/tom-macwright/#atom-everything",
+      "summary": "In the last few months, I've started to see [job applications] that were clearly cowritten by an LLM, link to an LLM-generated portfolio site, which then links to LLM-generated GitHub projects, with purely LLM-generated commit messages. [...] My other reaction is that I don't know anything about these people . They haven't put themselves out there. They haven't said anything true. [...] The perfec",
+      "category": "AISecurityLabs",
+      "published": "2026-06-24T18:13:51+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Kinaxis (TSX:KXS) AI Supply Chain Push Gains Attention - Kalkine Media",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOaTczTWhOV1JnS0pxbkhPSWtDSU9XbFZseFV5dEZyS25XX3B6NXBBWk9Pc1lGZU1aMHJlQ2JoOWNQR29tUTA4N1QtTHZLMzJRUmhrckFYY1ZYWWIxUzl6VFZUZjNua05nZDJqUlNHRUZIOEpZcDRQUF9VdlBpVVByM3RFX3N4Qk5CVl9jYkR1OW9tOFVjVXkwOFZaNG4zQQ?oc=5",
+      "summary": "Kinaxis (TSX:KXS) AI Supply Chain Push Gains Attention &nbsp;&nbsp; Kalkine Media",
+      "category": "CoverageFallback",
+      "published": "2026-06-24T16:09:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Supply Chain Security"
+    },
+    {
+      "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
+      "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+      "summary": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
+      "category": "FirstParty",
+      "published": "2026-06-24T06:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "RT SecurityWeek: OpenAI Refocuses Cybersecurity Efforts on Patching Over Discovery https://www.securityweek.com/openai-refocuses-cybersecurity-efforts...",
+      "url": "https://x.com/trailofbits/status/2069817784909881795",
+      "summary": "RT SecurityWeek OpenAI Refocuses Cybersecurity Efforts on Patching Over Discovery https://www.securityweek.com/openai-refocuses-cybersecurity-efforts-on-patching-over-discovery/",
+      "category": "XSignals",
+      "published": "2026-06-24T02:08:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
     },
     {
       "title": "datasette 1.0a35",
       "url": "https://simonwillison.net/2026/Jun/23/datasette/#atom-everything",
-      "summary": "Release: datasette 1.0a35 I'll write more about this one tomorrow, but it's a big release. Three highlights from the release notes: New \"Create table\" interface in the database actions menu, backed by the /&lt;database&gt;/-/create JSON API . It can define columns, primary keys, custom column types, NOT NULL constraints, literal defaults, expression defaults and single-column foreign keys. ( #2787",
+      "summary": "Release: datasette 1.0a35 I'll write more about this one soon, but it's a big release. Three highlights from the release notes: New \"Create table\" interface in the database actions menu, backed by the /&lt;database&gt;/-/create JSON API . It can define columns, primary keys, custom column types, NOT NULL constraints, literal defaults, expression defaults and single-column foreign keys. ( #2787 ) N",
       "category": "AISecurityLabs",
       "published": "2026-06-23T21:34:37+00:00",
       "fetch_status": "full",
@@ -320,45 +448,6 @@
       "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
-    },
-    {
-      "title": "Is Rigetti (RGTI) Becoming a Strategic Pillar of U.S. Quantum and AI Security Policy? - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTnEtNmRhSHM1T1V1Qjlxb0ZYQkFvWGZHcjlFaGVXZHFXUzBPYXhIZGhfczRTRjUyMG0xXzVWV2ZRVmRDZU5JLUE0d1ZuYndTUTFEVkZYTzlOa1dJMGpOMW9KUUQ2Q1BOZEpnMDdnSXdCbzRZQkg0Mi1HMU84MzNFdUFkSkdDM0lVTzNtbm5UOUlTYThvMVJYbS1ibW1ZTnVUUGc5cg?oc=5",
-      "summary": "Is Rigetti (RGTI) Becoming a Strategic Pillar of U.S. Quantum and AI Security Policy? &nbsp;&nbsp; Yahoo Finance",
-      "category": "CoverageFallback",
-      "published": "2026-06-23T21:17:16+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Visa showcases Project Glasswing’s findings on AI security risks at VB Transform 2026 - Crypto Briefing",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8yVVV4YWx6bF9POVU4SjdZTjhCTzNlU1BiRThUWGw4dzFJWFJlY0xwT3libDh6Q0ZFM2kzcmJhUjEwZG53NndnN0JKOWNlZktUM05XWVFXdkdIRWJFNjB4eHowT2t0Q0VOTmo4TTNkdlR6WEo0bWdR?oc=5",
-      "summary": "Visa showcases Project Glasswing’s findings on AI security risks at VB Transform 2026 &nbsp;&nbsp; Crypto Briefing",
-      "category": "CoverageFallback",
-      "published": "2026-06-23T20:30:31+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Trump installs AI security cameras at reflecting pool - The Telegraph",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPLWNfa2RubS1Hc3lpeFM2MmtrZVU1d0wtUFJQd3EwS0phbnlNeXdxOEs0Tk1vOFJfU2w4d2J3TTIwd3BFM2lCWGlPVVdfbkhNNmRrVUNXVS0wbEM0RTRLSHQ2Y0JaUWZySThGU0NLRlpOUmdwcm9KZEJUeFB0cE50WjREX0tYaVVHRzZKNTVUeHh1VWZVTnY3LU9YcHJNRmdsZ3Qw?oc=5",
-      "summary": "Trump installs AI security cameras at reflecting pool &nbsp;&nbsp; The Telegraph",
-      "category": "CoverageFallback",
-      "published": "2026-06-23T19:59:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
     },
     {
       "title": "RT Python Software Foundation: The Python Security Response Team patched an authentication bypass in the http://python.org release management API in u...",
@@ -400,12 +489,12 @@
       "feed_title": "Aikido Security"
     },
     {
-      "title": "Announcing Agentic Development Security (ADS)",
-      "url": "https://snyk.io/blog/agentic-development-security-ads/",
-      "summary": "Announcing Snyk Agentic Development Security, a new Evo solution that helps organizations securely adopt AI-driven development with visibility, governance, and control.",
+      "title": "What nearly 10,000 developer environments reveal about agentic development risk",
+      "url": "https://snyk.io/blog/agentic-development-security-ai-coding-risk/",
+      "summary": "AI coding agents are adding a new layer to the software supply chain. Learn what Snyk found in nearly 10,000 developer environments and how to secure the tools, instructions, and permissions behind agentic development.",
       "category": "AISecurityLabs",
       "published": "2026-06-23T04:00:00+00:00",
-      "fetch_status": "rss_only",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
@@ -413,12 +502,12 @@
       "feed_title": "Snyk Blog"
     },
     {
-      "title": "What nearly 10,000 developer environments reveal about agentic development risk",
-      "url": "https://snyk.io/blog/agentic-development-security-ai-coding-risk/",
-      "summary": "AI coding agents are adding a new layer to the software supply chain. Learn what Snyk found in nearly 10,000 developer environments and how to secure the tools, instructions, and permissions behind agentic development.",
+      "title": "Announcing Agentic Development Security (ADS)",
+      "url": "https://snyk.io/blog/agentic-development-security-ads/",
+      "summary": "Announcing Snyk Agentic Development Security, a new Evo solution that helps organizations securely adopt AI-driven development with visibility, governance, and control.",
       "category": "AISecurityLabs",
       "published": "2026-06-23T04:00:00+00:00",
-      "fetch_status": "full",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
@@ -478,6 +567,19 @@
       "feed_title": "安全客"
     },
     {
+      "title": "A Note to Our Customers and Partners",
+      "url": "https://snyk.io/blog/a-note-to-our-customers-and-partners/",
+      "summary": "A note to our customers and partners about Snyk's AI transformation and organizational changes.",
+      "category": "AISecurityLabs",
+      "published": "2026-06-24T13:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://snyk.io/blog/feed/",
+      "feed_title": "Snyk Blog"
+    },
+    {
       "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
       "url": "https://openai.com/index/gpt-5-immunology-mystery",
       "summary": "GPT-5 Pro helped solve a 3-year-old immunology mystery, offering insights into T cell behavior. The breakthrough could support cancer and autoimmune research.",
@@ -530,19 +632,6 @@
       "feed_title": "Snyk Blog"
     },
     {
-      "title": "How Omio is building the future of conversational travel",
-      "url": "https://openai.com/index/omio",
-      "summary": "Discover how Omio uses OpenAI to power conversational travel experiences, accelerate product development, and transform into an AI-native company.",
-      "category": "FirstParty",
-      "published": "2026-06-23T00:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
       "title": "RT Dan Guido: Re @clintgibler @steipete I open-sourced the internal @trailofbits guidance on using Codex to help project maintainers secure their code...",
       "url": "https://x.com/trailofbits/status/2069495064448102762",
       "summary": "RT Dan Guido Re @clintgibler @steipete I open-sourced the internal @trailofbits guidance on using Codex to help project maintainers secure their code: https://github.com/trailofbits/codex-config",
@@ -554,6 +643,32 @@
       "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
       "feed_title": "X / Trail of Bits"
+    },
+    {
+      "title": "深度分析｜AI编码工具的隐式信任链——当CLAUDE.md成为新的攻击面",
+      "url": "https://xz.aliyun.com/news/92350",
+      "summary": "AI编码工具中指令文件的隐式信任链攻击面分析",
+      "category": "Chinese",
+      "published": "2026-06-22T15:45:09+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "对Synaptics类病毒的行为分析",
+      "url": "https://xz.aliyun.com/news/92347",
+      "summary": "对htoeer-Signed.exe进行行为分析与二进制逆向分析解构鉴定",
+      "category": "Chinese",
+      "published": "2026-06-22T11:18:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "RT The Verge: Read this before you vibe-code another app https://www.theverge.com/ai-artificial-intelligence/950844/vibe-coding-security-risks-apps",
@@ -580,19 +695,6 @@
       "quality_score": 0,
       "feed_url": "https://api.anquanke.com/data/v1/rss",
       "feed_title": "安全客"
-    },
-    {
-      "title": "I love soccer because the odds of winning go up significantly when you score. Not true with sports like basketball.",
-      "url": "https://x.com/rez0__/status/2068486750851289573",
-      "summary": "I love soccer because the odds of winning go up significantly when you score. Not true with sports like basketball.",
-      "category": "XSignals",
-      "published": "2026-06-21T00:10:46+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
     }
   ]
 }
