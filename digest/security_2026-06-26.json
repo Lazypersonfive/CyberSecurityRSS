@@ -1,0 +1,573 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-26",
+  "generated_at": "2026-06-26T00:01:25.479243Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 10,
+    "direct": 15,
+    "wechat": 5,
+    "tier_t2": 10,
+    "kind_cn_expert": 9,
+    "kind_media": 4,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "tier_unknown": 3
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "items": [
+    {
+      "title_zh": "Gogs 组织名称路径遍历导致 Git hooks 远程代码执行漏洞 CVE-2026-52813 风险预警",
+      "title_orig": "【已复现】Gogs 组织名称路径遍历导致 Git hooks 远程代码执行漏洞（CVE-2026-52813）",
+      "summary": "该漏洞源于 Gogs 在处理组织名称时存在路径遍历缺陷，攻击者可通过精心构造的组织名绕过限制。在特定条件下，攻击者可利用该漏洞修改或创建 Git hooks 脚本，从而在服务器上实现远程代码执行。目前该漏洞已实现技术复现，影响版本及具体触发条件的完整细节原文未完全披露，建议用户及时关注官方补丁更新状态。",
+      "tags": [
+        "路径遍历",
+        "远程代码执行",
+        "Gogs"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIwMDk1MjMyMg==&mid=2247493232&idx=1&sn=af7a21ab113b9f220345289c75ef5b3c",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-25T08:15:00+00:00",
+      "cve_ids": [
+        "CVE-2026-52813"
+      ],
+      "selection_reason": "Gogs 是常用 Git 服务，RCE 漏洞对代码托管安全影",
+      "feed_url": "https://wechat2rss.xlab.app/feed/ae5cf9ab99ae03269527af0f7a6c05ff14d5863c.xml",
+      "feed_title": "长亭安全课堂",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/ae5cf9ab99ae03269527af0f7a6c05ff14d5863c.xml",
+      "story_id": "cve:cve-2026-52813",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Ingress-Nginx 配置注入漏洞 CVE-2026-3288 深度剖析：双引号引发的集群权限突破",
+      "title_orig": "一个双引号打入 K8s 集群：CVE-2026-3288 ingress-nginx 配置注入深度剖析",
+      "summary": "该漏洞属于配置注入类型，根源在于 Ingress 的 path 字段处理逻辑中使用了 fmt.Sprintf 直接拼接用户输入，导致攻击者通过输入单个双引号即可注入任意 Nginx 指令。这是该组件四年内第四次出现同类漏洞，反映出底层代码审计中对输入过滤的根因修复仍未彻底解决。该漏洞可导致攻击者获取 K8s 集群内部敏感信息或实现更深层次的渗透。",
+      "tags": [
+        "K8s 安全",
+        "配置注入",
+        "代码审计"
+      ],
+      "url": "https://xz.aliyun.com/news/92366",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T15:31:45+00:00",
+      "cve_ids": [
+        "CVE-2026-3288"
+      ],
+      "selection_reason": "揭示了知名云原生组件中长期存在的重复性安全设计缺陷。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-3288",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92366"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.7,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Cisco Catalyst SD-WAN 高危漏洞 CVE-2026-20245 遭 0-day 攻击利用获取 Root 权限",
+      "title_orig": "Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access",
+      "summary": "高危漏洞CVE-2026-20245影响Cisco Catalyst SD-WAN设备，该漏洞CVSS评分为7.8，允许经过身份验证的本地攻击者通过特定手段提升权限，从而以Root身份在受影响系统上执行任意命令。根据谷歌旗下Mandiant的最新调查显示，在官方正式公开披露该漏洞前至少两个月，已有未知威胁者将其作为零日漏洞进行在野利用，目前思科已发布相关补丁以应对此安全威胁。",
+      "tags": [
+        "0-day",
+        "权限提升",
+        "思科"
+      ],
+      "url": "https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-25T05:46:54+00:00",
+      "cve_ids": [
+        "CVE-2026-20245"
+      ],
+      "selection_reason": "涉及主流网络设备厂商的 0-day 在野利用，具有高预警价值",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-20245",
+      "related_urls": [
+        "http://0.0.0.0:8080/post/64387"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于 LangGraph 工作流的主流企业级防火墙 0-day 漏洞挖掘技术研究",
+      "title_orig": "【重磅上线】系统0day安全——主流企业防火墙漏洞挖掘（覆盖10+厂商、30+高危CVE）",
+      "summary": "该研究利用自研LangGraph工作流对10余家厂商的企业防火墙进行审计，通过自动化手段在复杂固件分析与协议栈探测中发现并提交了30多个高危CVE漏洞。原文未披露具体的漏洞类型原理、触发条件及受影响的组件版本，仅说明该工作流利用AI辅助实现了大规模自动化挖掘，目前相关漏洞的修复与缓解状态在文中也未明确交代。",
+      "tags": [
+        "漏洞挖掘",
+        "防火墙安全",
+        "AI安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458616937&idx=1&sn=dca56c624bc3cea8fc248b38a91b560f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T10:09:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 工作流在自动化漏洞挖掘领域的实战成果与技术趋势",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458616937&idx=1&sn=dca56c624bc3cea8fc248b38a91b560f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.15,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "“冬虫夏草”供应链漏洞威胁数千家组织机构代码仓库安全",
+      "title_orig": "“冬虫夏草”供应链漏洞影响数千家组织机构的代码仓库",
+      "summary": "该研究揭示了一类被称为“冬虫夏草”的供应链安全漏洞，其影响范围波及数千家组织机构的私有或公有代码仓库。该漏洞通过在供应链环节中悄悄植入恶意逻辑，可能导致数以百万计的仓库受到潜在威胁。原文未详细披露具体的漏洞触发原理和受影响的代码库清单，但强调了此类隐蔽植入对软件供应链完整性的长期危害，提醒开发者加强仓库审计。",
+      "tags": [
+        "供应链安全",
+        "代码仓库",
+        "安全审计"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw==&mid=2247526367&idx=2&sn=873a39cf55d45ffab906c2a6ab004056",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T09:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "供应链攻击是当前高对抗环境下的核心威胁，影响面极广。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "feed_title": "代码卫士",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw%3D%3D&mid=2247526367&idx=2&sn=873a39cf55d45ffab906c2a6ab004056",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "针对酒店行业的 Node.js 植入物攻击活动分析：利用照片主题 ZIP 绕过检测",
+      "title_orig": "Photo ZIP campaign targeting hospitality industry delivers Node.js implant for persistent access",
+      "summary": "微软威胁情报团队监测到一起针对欧洲和亚洲酒店业的多阶段入侵活动。攻击者利用照片主题的 ZIP 压缩包和伪装成图像的快捷方式文件作为诱饵，诱导目标下载并运行。最终在受害者系统中部署一个具有持久化能力的 Node.js 植入物，以实现长期访问并规避传统安全软件的检测。该活动展示了攻击者在社会工程学诱饵与跨平台脚本语言利用上的结合。",
+      "tags": [
+        "Node.js",
+        "持久化",
+        "钓鱼攻击"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/06/25/photo-zip-campaign-targeting-hospitality-industry-delivers-node-js-implant-persistent-access/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-25T22:30:29+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了针对特定行业的定制化木马投递技术与持久化手段。",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/06/25/photo-zip-campaign-targeting-hospitality-industry-delivers-node-js-implant-persistent-access",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.75,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "StealC 与 Amadey 窃密木马基础设施技术拆解与打击行动综述",
+      "title_orig": "StealC and Amadey: Breaking down infostealers and the cybercrime services that deliver them",
+      "summary": "微软数字犯罪部门（DCU）近期对 StealC 和 Amadey 窃密木马的关键基础设施实施了打击，封锁了大量核心域名。技术分析显示，这两类木马通过网络犯罪服务进行分发，具备高效的信息窃取和指令执行能力。文章深入剖析了木马的通信协议、插件化架构以及其背后的网络犯罪服务链条，为安全研究人员提供了识别和防御此类流行窃密软件的技术特征与背景信息。",
+      "tags": [
+        "窃密木马",
+        "基础设施",
+        "僵尸网络"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them/",
+      "source": "microsoft.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T12:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了流行恶意软件家族的底层技术细节与对抗治理经验。",
+      "feed_url": "https://www.microsoft.com/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them/",
+        "http://0.0.0.0:8080/post/64383"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 Tainacan REST API 子查询 SQL 注入漏洞 CVE-2026-42740 复现",
+      "title_orig": "CVE-2026-42740 漏洞复现：Tainacan REST API 子查询 SQL 注入",
+      "summary": "Tainacan 插件在 1.0.3 及以下版本中存在高危 SQL 注入漏洞，CVSS 评分最高达 9.3。漏洞核心成因在于其 REST API 路由中一个未注册的参数 current_query 未经过滤直接进入数据库查询。攻击者可通过构造特定的子查询请求，在无需高权限的情况下窃取数据库敏感信息。目前该漏洞已公开复现过程，受影响的文化遗产机构及相关用户应尽快升级至安全版本。",
+      "tags": [
+        "SQL注入",
+        "WordPres",
+        "API安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92368",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-06-25T03:52:25+00:00",
+      "cve_ids": [
+        "CVE-2026-42740"
+      ],
+      "selection_reason": "典型的 REST API 参数处理不当导致的注入漏洞，具有教",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-42740",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92368"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "SPIP CMS 认证绕过漏洞 CVE-2026-22205：PHP 类型混淆导致高危风险",
+      "title_orig": "CVE-2026-22205 漏洞复现：SPIP PHP 类型混淆认证绕过",
+      "summary": "该漏洞源于 SPIP 内容管理系统的认证模块在处理安全校验时，错误地使用 PHP 松散比较符代替了常量时间比较函数。攻击者可利用 PHP 类型混淆特性绕过身份验证，影响版本为 SPIP 4.4.10 之前的所有版本。目前官方已发布安全更新，建议受影响的政府、高校及新闻出版行业用户尽快升级至最新版本以修复此高危漏洞。",
+      "tags": [
+        "类型混淆",
+        "认证绕过",
+        "SPIP"
+      ],
+      "url": "https://xz.aliyun.com/news/92367",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T16:46:07+00:00",
+      "cve_ids": [
+        "CVE-2026-22205"
+      ],
+      "selection_reason": "展示了经典 PHP 松散比较在现代 CMS 认证逻辑中的安全",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-22205",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92367"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 GEO my WordPress 严重 SQL 注入漏洞 CVE-2026-52715 预警",
+      "title_orig": "CVE-2026-52715 漏洞复现：GEO my WordPress 未授权 SQL 注入",
+      "summary": "拥有超过六万安装量的WordPress地理位置插件GEO my WordPress被披露存在严重的未授权SQL注入漏洞，受影响版本为4.5.5及以下，其CVSS评分高达9.3。该漏洞源于插件内部函数未对用户控制的URL参数进行充分过滤，导致攻击者可直接实施未授权攻击，建议管理员立即排查版本并限制敏感参数输入，以防范潜在的数据泄露风险并确保地理位置搜索功能的安全性。",
+      "tags": [
+        "SQL注入",
+        "WordPres",
+        "插件安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92363",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T12:53:51+00:00",
+      "cve_ids": [
+        "CVE-2026-52715"
+      ],
+      "selection_reason": "高安装量插件的严重 SQL 注入，具有极高的实际攻击影响面。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-52715",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92363"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Nebula Security 演示 Android 17 首个全链漏洞 IonStack：单链接获取 Root 权限",
+      "title_orig": "One Malicious Link, Full Root Access — Nebula Security Demos the World's First Android 17 Exploit Chain",
+      "summary": "安全初创公司Nebula Security发布了名为IonStack的全链漏洞利用工具，该攻击通过串联两个此前未公开的漏洞，实现了从浏览器到内核的完整攻击路径。在用户仅点击一个恶意链接且无其他交互的触发条件下，该工具可获取已完全更新的Android 17设备的Root权限；原文未披露漏洞的具体CVE编号、技术原理及修复状态，仅展示了针对该系统版本的首个全链利用演示。",
+      "tags": [
+        "Android",
+        "全链利用",
+        "Root"
+      ],
+      "url": "https://www.cyberkendra.com/2026/06/one-malicious-link-full-root-access.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T17:37:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对最新 Android 系统的首个全链利用，代表了移动安全",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/06/one-malicious-link-full-root-access.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.7,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Joomla 组件 JCE Editor 与 SP Page Builder 存在任意文件上传高危漏洞",
+      "title_orig": "【漏洞通告】Joomla JCE Editor 与 SP Page Builder 文件上传漏洞(CVE-2026-48907/CVE-2026-48908)",
+      "summary": "深瞳漏洞实验室于2026年6月24日监测到Joomla的两款流行组件JCE Editor与SP Page Builder存在高危任意文件上传漏洞，对应编号为CVE-2026-48907和CVE-2026-48908。攻击者可利用该漏洞上传恶意脚本并在服务器上执行任意代码，虽然目前具体触发条件尚未完全公开，但建议广大Joomla用户必须密切关注官方补丁发布动态，并及时完成安全更新以规避服务器被控风险。",
+      "tags": [
+        "文件上传",
+        "Joomla",
+        "代码执行"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247525956&idx=1&sn=c39c853322d0a417d4b054ed9c794974",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-24T10:51:00+00:00",
+      "cve_ids": [
+        "CVE-2026-48907",
+        "CVE-2026-48908"
+      ],
+      "selection_reason": "Joomla 流行组件的 RCE 风险漏洞，是 Web 安全",
+      "feed_url": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "feed_title": "深信服千里目安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "story_id": "cve:cve-2026-48907,cve-2026-48908",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506403&idx=1&sn=e72f2cbcf9ff253a62fd1185c69ab148",
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506396&idx=1&sn=f2944ec10c12c99d08a4096f655bfe26",
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506396&idx=2&sn=80f6859f375007d69da3de179a84d43a"
+      ],
+      "related_count": 3,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "macOS 攻击链可静默禁用 EDR 与 MDM：滥用 XPC 连接与 NIB 文件注入",
+      "title_orig": "macOS 弱点被串联利用，静默禁用端点安全代理",
+      "summary": "安全公司 XM Cyber 演示了一种针对 macOS 的新型攻击技术，允许非管理用户静默禁用企业级端点安全工具。该技术通过串联滥用弱验证的 XPC 连接以及向应用程序的 Interface Builder 文件注入恶意载荷，实现了无需内核漏洞即可绕过安全代理的效果。尽管 Apple 此前已部分解决相关原语，但该研究引入的新型攻击链证明了现有防御机制仍存在被静默绕过的风险。",
+      "tags": [
+        "macOS",
+        "EDR绕过",
+        "权限提升"
+      ],
+      "url": "http://0.0.0.0:8080/post/64384",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-25T02:55:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 macOS 逻辑漏洞串联利用的新思路，对端点安全防御",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "url:0.0.0.0/post/64384",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077548&idx=3&sn=cfd8c8ffbd41b9e916a1ff4589c500a2"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Cisco Unified Communications Manager 存在高危 SSRF 漏洞 CVE-2026-20230",
+      "title_orig": "【漏洞通告】Cisco Unified Communications Manager WebDialer 服务器端伪造请求漏洞(CVE-2026-20230)",
+      "summary": "思科统一通信管理器的 WebDialer 组件被发现存在服务器端请求伪造（SSRF）漏洞，漏洞编号为 CVE-2026-20230。该漏洞允许远程攻击者通过受影响的服务器发送构造的请求，可能导致内网信息泄露或进一步的内网渗透。目前该漏洞威胁等级被评定为高危，原文未披露具体的影响版本及修复状态，建议相关企业用户及时关注思科官方安全通告。",
+      "tags": [
+        "SSRF",
+        "Cisco",
+        "通信安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247525981&idx=2&sn=2bc0ce71e97816891cf1068afa06d4e7",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-25T09:59:00+00:00",
+      "cve_ids": [
+        "CVE-2026-20230"
+      ],
+      "selection_reason": "企业级通信组件的 SSRF 漏洞，可能成为进入企业内网的突破",
+      "feed_url": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "feed_title": "深信服千里目安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "story_id": "cve:cve-2026-20230",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux Scales eBPF Rootkit 检测分析：针对 Arch 供应链的隐蔽攻击",
+      "title_orig": "Linux Scales eBPF Rootkit Detection and Analysis",
+      "summary": "近期发现的Linux Rootkit“Scales”针对Arch用户软件仓库供应链发起攻击，已导致超过1500个软件包受到影响，其利用eBPF技术实现了极高的隐蔽性与数据窃取能力。该恶意软件通过复杂的内核级操作逃避传统检测，文章深入分析了其技术特征与防御手段，为研究Linux内核安全、eBPF滥用及供应链防护的安全从业者提供了关键的实战参考依据。",
+      "tags": [
+        "eBPF",
+        "Rootkit",
+        "供应链安全"
+      ],
+      "url": "https://sandflysecurity.com/blog/linux-scales-ebpf-rootkit-detection-and-analysis",
+      "source": "sandflysecurity.com",
+      "category": "RedTeam",
+      "published": "2026-06-24T18:36:24+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了利用 eBPF 这一前沿技术的 Rootkit，对 L",
+      "feed_url": "https://www.sandflysecurity.com/feed/",
+      "feed_title": "Sandfly Security Blog RSS Feed",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "sandflysecurity.com",
+      "story_id": "url:sandflysecurity.com/blog/linux-scales-ebpf-rootkit-detection-and-analysis",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
