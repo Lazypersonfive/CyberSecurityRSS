@@ -1,0 +1,564 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-06-27",
+  "generated_at": "2026-06-26T23:50:17.670551Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 8,
+    "direct": 15,
+    "wechat": 2,
+    "tier_t2": 11,
+    "kind_cn_expert": 7,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "kind_media": 4,
+    "kind_expert": 2,
+    "tier_unknown": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "Microsoft Exchange Server 服务器端请求伪造漏洞 CVE-2026-45504 风险预警",
+      "title_orig": "【已复现】Microsoft Exchange Server 服务器端请求伪造漏洞(CVE-2026-45504)安全风险通告",
+      "summary": "该漏洞属于服务器端请求伪造类型，允许攻击者在未经授权的情况下向服务器发送恶意构造的请求，目前该漏洞已被安全团队成功复现。漏洞影响Microsoft Exchange Server的多个主流版本，可能导致敏感信息泄露或内网探测等严重后果，官方已发布相关安全补丁，建议受影响的企业级用户尽快完成更新以缓解潜在的攻击风险。",
+      "tags": [
+        "Exchange",
+        "SSRF",
+        "漏洞预警"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506403&idx=1&sn=e72f2cbcf9ff253a62fd1185c69ab148",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-25T04:20:00+00:00",
+      "cve_ids": [
+        "CVE-2026-45504"
+      ],
+      "selection_reason": "Exchange 关键组件的 SSRF 漏洞，具有高影响力和",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "cve:cve-2026-45504",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA==&mid=2247486133&idx=1&sn=ef5d18c0757439c59d128b6f0a72dc8e"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Kubernetes Ingress-Nginx 配置注入漏洞 CVE-2026-3288 深度剖析",
+      "title_orig": "一个双引号打入 K8s 集群：CVE-2026-3288 ingress-nginx 配置注入深度剖析",
+      "summary": "CVE-2026-3288是ingress-nginx组件中因path字段未对双引号进行转义导致的配置注入漏洞，攻击者可通过在path中构造双引号注入任意Nginx指令。该漏洞根源在于源码中使用fmt.Sprintf函数将用户输入直接拼接进配置文件，原文未披露具体受影响的版本范围，但指出该组件四年内已发生四次同类漏洞且根因未彻底解决，目前已有深度技术剖析披露其原理。",
+      "tags": [
+        "K8s",
+        "配置注入",
+        "源码审计"
+      ],
+      "url": "https://xz.aliyun.com/news/92366",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-06-24T15:31:45+00:00",
+      "cve_ids": [
+        "CVE-2026-3288"
+      ],
+      "selection_reason": "揭示了云原生核心组件中长期存在的代码级安全缺陷，具技术深度。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-3288",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.7,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "微软打击 StealC 与 Amadey 信息窃取木马基础设施及技术分析",
+      "title_orig": "StealC and Amadey: Breaking down infostealers and the cybercrime services that deliver them",
+      "summary": "微软数字犯罪部门（DCU）于 2026 年 6 月成功关停并封锁了 StealC 和 Amadey 信息窃取木马的核心基础设施域名。StealC 是一种高度模块化的窃密程序，而 Amadey 常作为分发器用于部署其他恶意软件。技术分析揭示了这些工具的通信协议、数据外传机制以及它们在网络犯罪生态系统中的协作模式，旨在帮助防御者识别相关威胁指标。",
+      "tags": [
+        "窃密木马",
+        "基础设施打击",
+        "技术分析"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them/",
+      "source": "microsoft.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-24T12:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "微软官方对主流窃密木马的技术拆解，对威胁情报研究有重要参考价",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/06/24/stealc-and-amadey-breaking-down-infostealers-and-the-cybercrime-services-that-deliver-them",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.7,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "大模型时代下的 SSRF 攻击：利用自然语言提示词诱导 AI 发起外网访问",
+      "title_orig": "大模型时代的SSRF：当 AI 开始替你\"访问外网\"",
+      "summary": "文章探讨了传统 SSRF 漏洞在 AI 大模型场景下的演变，攻击者通过自然语言提示词（Prompt）而非 HTTP 参数来诱导 AI 访问内网资源。这种新型攻击面将 SSRF 的利用链放大，使得原本受限的请求变得更加隐蔽且难以通过传统规则过滤。内容涵盖了底层机理、真实利用链构造、可复现的漏洞环境搭建以及针对 AI 应用的防御策略。",
+      "tags": [
+        "AI安全",
+        "SSRF",
+        "提示词攻击"
+      ],
+      "url": "https://xz.aliyun.com/news/92369",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-06-25T08:09:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了传统漏洞在 AI 新场景下的变体，是安全研究的前沿方向",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92369",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92369"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "ShinyHunters 利用 CVE-2026-35273 漏洞对全球教育机构实施 RCE 攻击",
+      "title_orig": "【AI复盘】ShinyHunters攻击教育机构事件",
+      "summary": "勒索团伙ShinyHunters利用无需认证的SSRF转RCE漏洞攻击了约100家组织，其中高等教育机构占比高达68%，攻击者通过部署伪装成Azure服务的远控代理并利用SSH凭证喷洒进行横向移动。诺丁汉大学等机构已确认数据泄露，此事件充分验证了CAASM持续监测暴露面以及外部情报订阅在零日漏洞攻防中的关键价值，提醒组织必须严格管控不应暴露在互联网上的服务端口。",
+      "tags": [
+        "RCE",
+        "勒索攻击",
+        "漏洞利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487695&idx=1&sn=7ddda616ada6512448e95215bd8742e9",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-06-25T22:06:00+00:00",
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
+      "selection_reason": "高危漏洞实战利用案例，完整展示了从入口点到横向移动的攻击链。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "cve:cve-2026-35273",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "CISA 发布紧急公告要求修复已被利用的 Cisco 统一通信管理器漏洞",
+      "title_orig": "CISA sets urgent deadline to fix Cisco flaw exploited in attacks",
+      "summary": "Cisco Unified Communications Manager Server中存在一个正被在野利用的安全漏洞，CISA已要求联邦机构在限期内完成补丁修复。原文未披露该漏洞的具体漏洞类型、触发原理、受影响的软件版本号以及具体的修复方案细节，仅强调该漏洞正处于积极攻击状态且对关键通信基础设施构成威胁，要求相关单位必须立即采取行动以防止潜在的进一步侵害。",
+      "tags": [
+        "Cisco",
+        "在野利用",
+        "CISA"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-sets-urgent-deadline-to-fix-cisco-flaw-exploited-in-attacks/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-26T19:43:06+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施的在野攻击预警，具有极高的修复优先级。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/cisa-sets-urgent-deadline-to-fix-cisco-flaw-exploited-in-attacks",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077560&idx=2&sn=974f33634010c57a66f4e6023b1e159f"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.3,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "针对酒店行业的 Node.js 植入物攻击：利用照片主题压缩包实现持久化",
+      "title_orig": "Photo ZIP campaign targeting hospitality industry delivers Node.js implant for persistent access",
+      "summary": "微软威胁情报团队监测到一起针对欧洲和亚洲酒店业的入侵活动，攻击者通过发送包含恶意快捷方式的照片主题 ZIP 压缩包进行诱导。一旦触发，系统将下载并运行一个持久化的 Node.js 植入物，该插件具备规避检测的能力。该活动采用多阶段入侵策略，旨在长期潜伏于目标网络中，目前相关技术细节和威胁指标已被公开以供防御参考。",
+      "tags": [
+        "Node.js",
+        "持久化",
+        "钓鱼攻击"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/06/25/photo-zip-campaign-targeting-hospitality-industry-delivers-node-js-implant-persistent-access/",
+      "source": "microsoft.com",
+      "category": "Synthesis",
+      "published": "2026-06-25T22:30:29+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对特定行业的定向攻击分析，展示了基于 Node.js 的新",
+      "feed_url": "https://www.microsoft.com/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/06/25/photo-zip-campaign-targeting-hospitality-industry-delivers-node-js-implant-persistent-access",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/06/25/photo-zip-campaign-targeting-hospitality-industry-delivers-node-js-implant-persistent-access/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Intigriti 发布 2026 年 6 月漏洞简报：涵盖 phpBB 十年 RCE 与 AI 漏洞",
+      "title_orig": "Intigriti Bug Bytes #237 - June 2026 🚀",
+      "summary": "本期简报汇总了多个顶级安全研究成果，包括phpBB中存在十年的预认证远程代码执行漏洞，以及通过AI漏洞获取Google五十万美元高额奖励的典型案例。此外还披露了DOMPurify的新绕过方法、Salesforce营销云的邮件读取漏洞和S3存储桶的大规模利用技术，这些研究展示了从传统Web漏洞到现代云原生及AI安全领域的广泛技术跨度。",
+      "tags": [
+        "漏洞汇总",
+        "RCE",
+        "AI安全"
+      ],
+      "url": "https://www.intigriti.com/researchers/blog/bug-bytes/intigriti-bug-bytes-237-june-2026",
+      "source": "intigriti.com",
+      "category": "WebSecurity",
+      "published": "2026-06-26T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚合了多个高质量的安全研究点，是了解每月技术趋势的重要窗口。",
+      "feed_url": "https://blog.intigriti.com/feed/",
+      "feed_title": "Intigriti",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "漏洞研究",
+      "source_key": "intigriti.com",
+      "story_id": "url:intigriti.com/researchers/blog/bug-bytes/intigriti-bug-bytes-237-june-2026",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux 内核流量控制子系统 pedit COW 漏洞可导致本地非特权用户获取 Root 权限",
+      "title_orig": "New Linux pedit COW Exploit Enables Root Access by Poisoning Cached Binaries",
+      "summary": "该漏洞编号为 CVE-2026-46331，其核心原理是 Linux 内核流量控制子系统中的数据包编辑操作存在越界写入缺陷，进而导致共享页面缓存内存被破坏。本地非特权用户可借此触发漏洞并毒化缓存的二进制文件以实现 Root 提权，目前已有公开可用的 Exploit 释出且红帽已对其进行评级，受影响版本涉及多个主流 Linux 发行版，安全风险极高。",
+      "tags": [
+        "Linux内核",
+        "提权漏洞",
+        "写时复制"
+      ],
+      "url": "https://thehackernews.com/2026/06/new-linux-pedit-cow-exploit-enables.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-06-26T13:57:55+00:00",
+      "cve_ids": [
+        "CVE-2026-46331"
+      ],
+      "selection_reason": "内核级提权漏洞且已有公开PoC，对Linux服务器安全威胁极",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-46331",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.9,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Amazon Q 存在安全漏洞可导致攻击者通过恶意存储库窃取云端凭据",
+      "title_orig": "Amazon Q Flaw Enabled Cloud Credential Theft via Malicious Repositories",
+      "summary": "该漏洞存在于 AWS 的 Amazon Q 服务中，允许攻击者利用恶意存储库环境实施攻击，进而导致云端敏感凭据被非法窃取。虽然原文未披露漏洞的具体技术原理和影响版本，但明确指出该漏洞具有严重的安全风险，目前 AWS 官方已经发布了相关补丁并更新了安全公告以告知受影响客户，建议相关用户及时关注并修复。",
+      "tags": [
+        "AWS",
+        "凭据窃取",
+        "云安全"
+      ],
+      "url": "https://www.securityweek.com/amazon-q-flaw-enabled-cloud-credential-theft-via-malicious-repositories/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-06-26T15:23:46+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及主流云服务商的凭据泄露风险，具有较高的云安全研究价值。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/amazon-q-flaw-enabled-cloud-credential-theft-via-malicious-repositories",
+      "related_urls": [
+        "https://thehackernews.com/2026/06/amazon-q-developer-flaw-could-let.html"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 Tainacan REST API 存在子查询 SQL 注入高危漏洞",
+      "title_orig": "CVE-2026-42740 漏洞复现：Tainacan REST API 子查询 SQL 注入",
+      "summary": "该漏洞编号为 CVE-2026-42740，成因是 Tainacan 插件的 REST API 路由中一个未注册参数在处理子查询时缺乏严格过滤，导致高危 SQL 注入风险。受影响组件为安装量超 6 万的 WordPress 插件 1.0.3 及以下版本，攻击者可利用此漏洞执行非法指令，目前该漏洞已被公开复现，对广泛使用该插件的博物馆及图书馆等文化遗产机构的元数据管理构成严重威胁。",
+      "tags": [
+        "WordPres",
+        "SQL注入",
+        "插件安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92368",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-06-25T03:52:25+00:00",
+      "cve_ids": [
+        "CVE-2026-42740"
+      ],
+      "selection_reason": "该漏洞成因具有教学意义，且受影响插件在文化遗产机构应用广泛。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-42740",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "开源内容管理系统 SPIP 认证模块存在 PHP 类型混淆漏洞可导致权限绕过",
+      "title_orig": "CVE-2026-22205 漏洞复现：SPIP PHP 类型混淆认证绕过",
+      "summary": "该漏洞编号为 CVE-2026-22205，其核心原理是 SPIP 认证模块在进行安全校验时使用了 PHP 松散比较符进行判断，而非恒等比较，导致存在类型混淆缺陷。受影响版本为 SPIP 4.4.10 之前的版本，攻击者可利用此特性绕过身份验证，由于该开源 CMS 广泛应用于法语区政府、高校及新闻出版行业，其技术细节的公开使得大量关键基础设施面临被非法访问的风险。",
+      "tags": [
+        "SPIP",
+        "类型混淆",
+        "认证绕过"
+      ],
+      "url": "https://xz.aliyun.com/news/92367",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-06-24T16:46:07+00:00",
+      "cve_ids": [
+        "CVE-2026-22205"
+      ],
+      "selection_reason": "典型的PHP松散比较导致的逻辑漏洞，对Web安全开发有警示作",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-22205",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Lantronix 串口转以太网转换器存在命令注入漏洞并已在野外遭到攻击利用",
+      "title_orig": "Lantronix 串口转以太网转换器漏洞在 OT 威胁警告后遭攻击利用",
+      "summary": "该漏洞编号为 CVE-2025-67038，影响 Lantronix EDS5000 串口转以太网设备服务器，其原理是用户名参数未经过滤导致未经身份验证的远程攻击者可注入任意 OS 命令。攻击者能借此以 Root 权限执行指令，CISA 警告称该漏洞正被用于攻击运营技术系统，由于这些设备常用于远程管理工业串行设备，其在野利用可能对全球工业控制环境造成严重的破坏性影响。",
+      "tags": [
+        "OT安全",
+        "命令注入",
+        "在野利用"
+      ],
+      "url": "http://0.0.0.0:8080/post/64390",
+      "source": "0.0.0.0:8080",
+      "category": "Synthesis",
+      "published": "2026-06-26T04:49:00+00:00",
+      "cve_ids": [
+        "CVE-2025-67038"
+      ],
+      "selection_reason": "涉及关键基础设施的OT设备漏洞，且已被在野利用，风险等级极高",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "0.0.0.0",
+      "story_id": "cve:cve-2025-67038",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.75,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Web 缓存污染漏洞利用技术详解：从原理分析到攻击面枚举与实战测试",
+      "title_orig": "Exploiting web cache poisoning vulnerabilities",
+      "summary": "Web缓存污染漏洞源于HTTP缓存机制实现不当，当缓存服务器错误地将包含恶意输入的非键值请求头存储并分发给其他用户时即可触发。该漏洞利用缓存优化机制作为攻击面，通过枚举特定请求头来识别配置错误，原文未披露受影响的具体组件版本或软件名称。目前该漏洞的修复与缓解状态在原文中未明确说明，主要侧重于漏洞产生机理、探测方法及利用过程的技术分析。",
+      "tags": [
+        "缓存污染",
+        "Web安全",
+        "渗透测试"
+      ],
+      "url": "https://www.intigriti.com/researchers/blog/hacking-tools/exploiting-web-cache-poisoning-vulnerabilities",
+      "source": "intigriti.com",
+      "category": "WebSecurity",
+      "published": "2026-06-24T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统性总结了Web缓存污染的利用链，是Web安全进阶学习的优",
+      "feed_url": "https://blog.intigriti.com/feed/",
+      "feed_title": "Intigriti",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "漏洞研究",
+      "source_key": "intigriti.com",
+      "story_id": "url:intigriti.com/researchers/blog/hacking-tools/exploiting-web-cache-poisoning-vulnerabilities",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "学术研究揭示联邦语言模型微调中的隐私后门风险可导致敏感数据泄露",
+      "title_orig": "从效率到泄露——联邦语言模型微调中的隐私后门",
+      "summary": "该研究探讨了联邦学习环境下微调大语言模型时存在的隐私后门问题，分析了攻击者如何在不接触原始数据的情况下，利用协作微调机制植入恶意逻辑。这种技术点在于利用联邦学习的分布式特性，在模型更新过程中诱导隐私泄露，研究成果对于关注 AI 安全、联邦学习隐私保护以及大模型微调安全性的从业者和研究人员具有重要的学术参考价值。",
+      "tags": [
+        "联邦学习",
+        "AI安全",
+        "隐私保护"
+      ],
+      "url": "https://paper.seebug.org/3493",
+      "source": "paper.seebug.org",
+      "category": "Synthesis",
+      "published": "2026-06-26T08:11:13+00:00",
+      "cve_ids": [],
+      "selection_reason": "前沿的AI安全研究，揭示了分布式模型训练中潜在的隐私攻击路径",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3493",
+      "related_urls": [
+        "https://paper.seebug.org/3493"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "dimension_score": 7.25,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
