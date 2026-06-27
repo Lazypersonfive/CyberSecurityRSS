@@ -1,18 +1,18 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-06-27",
-  "fetched_at_utc": "2026-06-26T23:50:25.043046Z",
+  "fetched_at": "2026-06-28",
+  "fetched_at_utc": "2026-06-27T23:44:13.548528Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 64,
-  "entry_count": 39,
+  "raw_entry_count": 58,
+  "entry_count": 33,
   "filter_stats": {
-    "input": 64,
-    "dedup_merged": 3,
-    "output": 61
+    "input": 58,
+    "dedup_merged": 2,
+    "output": 56
   },
   "curation_stats": {
-    "dropped_source_cap": 22
+    "dropped_source_cap": 23
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -20,7 +20,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 2
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -118,14 +118,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://www.aikido.dev/blog/rss.xml": {
       "feed_title": "Aikido Security",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 4
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -146,7 +146,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 2
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -160,7 +160,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://www.seebug.org/rss/new": {
       "feed_title": "Seebug 漏洞社区",
@@ -188,7 +188,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 1
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -216,7 +216,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 7
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
@@ -250,36 +250,6 @@
       "fetch_status": "full",
       "cve_ids": [
         "CVE-2026-42740"
-      ],
-      "related_urls": [],
-      "quality_score": 3,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "CVE-2026-22205 漏洞复现：SPIP PHP 类型混淆认证绕过",
-      "url": "https://xz.aliyun.com/news/92367",
-      "summary": "SPIP 是一款开源的法语内容管理系统（CMS），广泛部署于法国及法语区国家的政府机构、高校、研究所以及新闻出版行业，拥有超过 30 年的发展历史[1]。2026 年 2 月，SPIP < 4.4.10 版本被披露存在一个 CVSS 8.7 的高危漏洞（CVE-2026-22205），其认证模块 `verifier_low_sec()` 使用 PHP 松散比较符 `==` 代替常量时间比较函数 `",
-      "category": "Chinese",
-      "published": "2026-06-24T16:46:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [
-        "CVE-2026-22205"
-      ],
-      "related_urls": [],
-      "quality_score": 3,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "CVE-2026-52715 漏洞复现：GEO my WordPress 未授权 SQL 注入",
-      "url": "https://xz.aliyun.com/news/92363",
-      "summary": "GEO my WordPress 是一款拥有 60,000+ 安装量的 WordPress 地理位置插件，支持按地理位置搜索、筛选和展示文章/用户。2026 年 6 月，该插件 ≤ 4.5.5 版本被披露存在一个 CVSS 9.3 的严重漏洞（CVE-2026-52715），其 `gmw_get_locations_within_boundaries_sql()` 函数将用户控制的 URL 参数直",
-      "category": "Chinese",
-      "published": "2026-06-24T12:53:51+00:00",
-      "fetch_status": "full",
-      "cve_ids": [
-        "CVE-2026-52715"
       ],
       "related_urls": [],
       "quality_score": 3,
@@ -339,45 +309,69 @@
       "feed_title": "Snyk Blog"
     },
     {
-      "title": "一个双引号打入 K8s 集群：CVE-2026-3288 ingress-nginx 配置注入深度剖析",
-      "url": "https://xz.aliyun.com/news/92366",
-      "summary": "Ingress 的 path 字段写一个双引号，就能注入任意 nginx 指令。这已经是 ingress-nginx 四年内的第四次同类漏洞。源码审计发现根因从未解决：fmt.Sprintf 直接把用户输入拼进配置，四年了。",
-      "category": "Chinese",
-      "published": "2026-06-24T15:31:45+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [
-        "CVE-2026-3288"
-      ],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "NRT-Bench：面向安全关键控制室中 LLM 智能体的多轮红队测试基准",
-      "url": "https://paper.seebug.org/3492",
-      "summary": "作者：Hanwool Lee, Dasol Choi, Bokyeong Kim等 原文链接：https://arxiv.org/pdf/2606.20408 摘要 大型语言模型（LLM）智能体越来越多地被提议作为安全关键系统的监督组件，但它们在持续、自适应对抗压力下的鲁棒性仍然缺乏充分表征。本文提出NRT-Bench，一个用于对担任安全关键系统操作员的LLM智能体进行多轮红队测试的基准，具体实例...",
-      "category": "Chinese",
-      "published": "2026-06-24T08:46:33+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://paper.seebug.org/rss/",
-      "feed_title": "Seebug Paper"
-    },
-    {
-      "title": "Is Jack Henry & Associates (JKHY) Undervalued Following Its Google Cloud AI Security Deal? - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQbUlmU2c5NDdfelFlNnVLM1hnTXpyblhReFlqcGNaUkVkT3l0RWRsNE5UNnhKY1BJYUx4a3hTb004WlF4OUtkZ1BVYnZDRWtQVzEtN2QwMm9yTWVVdGFwT0hlYlNUUjA5eDZlZGZnYlBWekRkWUJSUmJvd1FMWUZCRkZ3Yk5WOFhLdW9mYTJiZVB2aG12TnJsNkFSRWVGaVJOZ2VmODc0SU9mSnpGNXRCT2xxWTJCQzNOYUZfNTYyYVNHNFBzTzB4eEV4cVk5Sy1XRUhZQ0ZaMU8tZUZiY2VhY3lxMHBSTkk5bEHSAe8BQVVfeXFMUFZVYWpSM21tNS11X3pJamVITTlCZEpKQjJQS3V1U280cjlVVVdFdXRxRFlocjhMN0pjSG9BaXhuSVVmRFVsTGg4NWZqRVpLZU9nMVdXa3FlQWJXcTJweGJlQjFGcXdRNkFqUjdhS3F6UEtYRUxnZUJwSm8yTTA3ZjF2bG1WdXVoVndzYTdaZFpvZmdvbmtkMTJWVG5TSVc2aWwxMk8xY0JuQzl4ZnN4bXlibUhoaTRJQXowODFBMTdJemlVV3RTbHJPdHlLSnpDNjF0WmxIcVc4YUt4dF8zdldJNEJXd0hud0RsYVFJUXc?oc=5",
-      "summary": "Is Jack Henry & Associates (JKHY) Undervalued Following Its Google Cloud AI Security Deal? &nbsp;&nbsp; simplywall.st",
+      "title": "How Hackers Trick AI Models (Prompt Injection Explained) Nesil Caliskan (TDGK4u0UYz) - Fathom Journal",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1ROXhuWmlvT0RPUkNhYjZqRy1TamR5elRNUGdZUWlFcndrbzdGQzR1cVdnNUtudi1QY3hXdlplWUtnUkU2WmpuSW1yTHgyajlzMlAxcjZPZUFfUnZ1b3l5andUalI?oc=5",
+      "summary": "How Hackers Trick AI Models (Prompt Injection Explained) Nesil Caliskan (TDGK4u0UYz) &nbsp;&nbsp; Fathom Journal",
       "category": "CoverageFallback",
-      "published": "2026-06-26T21:41:19+00:00",
+      "published": "2026-06-27T20:18:19+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "North Korea macOS Malware Targets AI Analyst Tools: Gaslight Embeds 38 Fake Error Messages - Tech Times",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPbUJKOGF2ZC1tVGk5OXN3Y2lqTXpGX1p0NGI1QzRtZ19hR2p2aW5PZndEZEo5UU9GZWcxaHZkaG9tNndKRWhwb0lvbDROTUNDaEc2Uk9LejVnX3FMbDZTcy1ybUNZMklub3VNNDNiQjlxZ1VMWC1tam93cjF1V1pmTGtkOU9HYkRib0VldVF5SXk3dGo5NkY4ZVFQTlU1Qy1Vb05GTmRzdE9zUWdVNk1NQkg5aUxnSk1vMXJXTGVPLTljT3F1c01CT291V0Vhamh4TVlOT0E2Qm93UnE1?oc=5",
+      "summary": "North Korea macOS Malware Targets AI Analyst Tools: Gaslight Embeds 38 Fake Error Messages &nbsp;&nbsp; Tech Times",
+      "category": "CoverageFallback",
+      "published": "2026-06-27T16:02:13+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "aright. im gonna start shipping small, high value, and polished saas products basically like @levelsio recommends. i should probably join the @jackfri...",
+      "url": "https://x.com/rez0__/status/2070888396226969686",
+      "summary": "aright. im gonna start shipping small, high value, and polished saas products basically like @levelsio recommends. i should probably join the @jackfriks and @marclou group. honestly really excited about it haha.",
+      "category": "XSignals",
+      "published": "2026-06-27T15:14:03+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "From the dot-com boom to AI security: F5 at 30, with CEO François Locoh-Donou - GeekWire",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOakIzTnJ3aHBoWEowaUh5RnFpcXBmQm41V3ZJX2QwMERoenR0ZjNlQjUtUlJyVUJLdFNXSmxpOU9PTkVKT3ZlV3p4Y29YcG9jM3RESlBWVkhIWGctUllzQVdwR0JXSXNrM3ZDUS1wUkRSY2x1OU5jak9pWVZtVS0xQ1VJMlNXYklpQ1BFd0xJNDRSUWQ3QUxXYUZQcnhZT0MtTVRTcTkxNXMyZw?oc=5",
+      "summary": "From the dot-com boom to AI security: F5 at 30, with CEO François Locoh-Donou &nbsp;&nbsp; GeekWire",
+      "category": "CoverageFallback",
+      "published": "2026-06-27T14:45:06+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Japan’s Nikkei Defies Global Gravity: How a Broadening AI Supply Chain Is Powering the World’s Hottest Stock Rally - Tekedia",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQWEZ3X2NCNndncWtxN0RFTGh0SkRwQzlSN0Z1bHdxOEkxMGhWVWlSRDNCSGlCM1RYdDhYdXRNdktqLWxoakRzT00takhlSmlNTzMxNkdhc3ZKN0llQ05OZm9OeFh4dVdrUkdCN2JKTm9XdElvNGwwbnR3c3JaOHE1RTBkOVpieHJxcVMxMUNHZzZjWnB5Rmo2T2dnS3lpMVFqTFllRHJDWExLRHZTeXE0Z1loUUZHLXBJbm5TQlNoYVVhbkdvQjdFNG84TDZxMVZpZkE?oc=5",
+      "summary": "Japan’s Nikkei Defies Global Gravity: How a Broadening AI Supply Chain Is Powering the World’s Hottest Stock Rally &nbsp;&nbsp; Tekedia",
+      "category": "CoverageFallback",
+      "published": "2026-06-27T13:03:46+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Supply Chain Security"
     },
     {
       "title": "i do actually think this mythos story isn't true BUT my hackbot that I run with @xssdoctor DID find multiple criticals (fully automated) on a major ba...",
@@ -393,34 +387,6 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "AI安全審查上路 GPT-5.6暫不全面開放 - 新唐人電視台",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBpN3ZvdUszNEF4OHd2Q1gwV081ajNrbURwOG1tM0c0T1FXaEpVX0RrdzB3OS0xQ2Z1dHl0M1F3THdQbmplYUxlTGlXTU9zUWgzQlNLNWJlRzl2eXBnVzBXSdIBZkFVX3lxTE5MR0ZOZDBRMHE4emllZ0ZZYjhtQl9TNnk3dVdBMnlQNndEQ2dadzhSYzNXc2FSaGFpWDJjcGRRYm1XbXRnVjl1Xzl4Zl9rZG9sbXI4UG04YkZHa1E2cDJWeFVlQXdtUQ?oc=5",
-      "summary": "AI安全審查上路 GPT-5.6暫不全面開放 &nbsp;&nbsp; 新唐人電視台",
-      "category": "CoverageFallback",
-      "published": "2026-06-26T20:55:38+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
-    },
-    {
-      "title": "Privacy concerns arise over AI security cameras considered by city of Missoula - KPAX News",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOOUFLa2N5Yy1xNVdlMzFYcGk0V2pKNWNKOWdDN1NVSTR1SUl5Qm1nVThVNjR3M0FxMW5nSE9PSHBweU1aeGxzbXBUa0x3QTh4U0w0Z09wSl9iazZHRFlwTzdfbE1ZSWhiZXRfQXMxekNWOHl1aWpZemZjTk04OUxwZ25rblJ4MEdJcl8zTVVXc3hUOEJiRkpHZ3oxVmhNSHZUMElZMWVPaw?oc=5",
-      "summary": "Privacy concerns arise over AI security cameras considered by city of Missoula &nbsp;&nbsp; KPAX News",
-      "category": "CoverageFallback",
-      "published": "2026-06-26T20:17:54+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [
-        "https://news.google.com/rss/articles/CBMisAFBVV95cUxNT2xZbEttb3RQZ0hXcFpoS3JaTnVGTHliNlI4SFhseU5KWHhxeDBURVBLVzJNaVlxcmZXaExRejNZaUxtRTNfRDd1NDVaT2RUN2d5OGZTaFdibEtRdHdmMElaTXFIR3A3d1o2S3AzN2h5Sy1mWFJ6MFZsc1REMGlIZnp6UWp1VXV4VGtfTkNOdmxXc1pwUW5JS1VIQW9KTjNwSW5oeVN0N3JjSnZZeGhvVg?oc=5"
-      ],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
       "title": "Threat Brief: Mitigating Large-Scale Credential Attacks",
       "url": "https://unit42.paloaltonetworks.com/large-scale-credential-attacks/",
       "summary": "We provide guidance for preparing for and mitigating large-scale credential attacks, focusing on recent campaigns targeting security vendors' devices. The post Threat Brief: Mitigating Large-Scale Credential Attacks appeared first on Unit 42 .",
@@ -432,19 +398,6 @@
       "quality_score": 1,
       "feed_url": "https://unit42.paloaltonetworks.com/feed/",
       "feed_title": "Unit 42"
-    },
-    {
-      "title": "Will SK Hynix’s HBM Re‑Prioritization Shift Change Photronics’ (PLAB) AI Supply Chain Narrative? - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNVmI2RTNhVVc2bVk5V2FKWHpBb1k0MFZSaWpLV01zMlBoOUVKNnYzbGpDcEV4VVd1VkpWVjBzNUpic01JRGR4RV9oblQ1cTFySVZxMmt4a2VVVUR2Sld1Z2MyaTYtdEh2RGc1WHkyakYtTDB1ZktxdkhKRDVmRHB3N2JMNy0zQmZYSWJaNjJrQjJ5djVEc2pOMXRfSGV3cGR6OW5MMzlyaGg5b3NpNGx4dzEzd0NIeWJYelhrMnFXeG83SzZFREE0ekVCS1BJUUXSAdQBQVVfeXFMT3N2MWQxZk8zY0pTN1R6QmJROWJwVHBMTXpaR29WdE9fTTFNYjhxVnNsaVozeHJ4bzNaLURQXzExRUo1Ym5IX2pkMEVSQlo4QkpqQ3p2eTlVMmZ4MWRZVUY0dDhDTG9GOEptQlhwUkNvN25GMFEycElyVDNZdjVwTjhzMnU3elVueGNQWjBXT09mV013a3ZqLWdOSDQxRzE0bUFyb2dSZEVRXzBRSEZWRXliRGctbUJHZDQwMGN1dVhybV9aemVQZ3oxbjJMNi1laEQ3aUw?oc=5",
-      "summary": "Will SK Hynix’s HBM Re‑Prioritization Shift Change Photronics’ (PLAB) AI Supply Chain Narrative? &nbsp;&nbsp; simplywall.st",
-      "category": "CoverageFallback",
-      "published": "2026-06-26T18:24:30+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Supply Chain Security"
     },
     {
       "title": "从效率到泄露——联邦语言模型微调中的隐私后门",
@@ -512,56 +465,17 @@
       "feed_title": "先知社区"
     },
     {
-      "title": "Compromised GitHub action codfish/semantic-release-action steals CI/CD secrets",
-      "url": "https://www.aikido.dev/blog/compromised-github-action-codfish-steals-secrets",
-      "summary": "codfish/semantic-release-action was compromised on June 24, 2026. Attackers repointed v2–v5 tags to a Miasma credential-stealing payload targeting CI/CD secrets. Here's what happened and how to check if you're affected. Category: Vulnerabilities & Threats",
+      "title": "npm now freezes high-impact accounts after risky account changes",
+      "url": "https://www.aikido.dev/blog/npm-cooldown-account-changes-announcement",
+      "summary": "A look at npm's new 72-hour account freeze, what triggers it, what it blocks, and how it works alongside trusted and staged publishing. Category: News",
       "category": "AISecurityLabs",
-      "published": "2026-06-24T21:06:00+00:00",
-      "fetch_status": "full",
+      "published": "2026-06-26T19:35:00+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "https://www.aikido.dev/blog/rss.xml",
       "feed_title": "Aikido Security"
-    },
-    {
-      "title": "RT Zoo: \"For one of the vulnerabilities we developed an exploit to demonstrate its impact internally.\" Read more about our latest @trailofbits audit a...",
-      "url": "https://x.com/trailofbits/status/2069888536225190024",
-      "summary": "RT Zoo \"For one of the vulnerabilities we developed an exploit to demonstrate its impact internally.\" Read more about our latest @trailofbits audit and the security findings that shaped our defenses: https://zoo.dev/blog/security-trail-of-bits",
-      "category": "XSignals",
-      "published": "2026-06-24T20:46:27+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
-      "feed_title": "X / Trail of Bits"
-    },
-    {
-      "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
-      "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
-      "summary": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
-      "category": "FirstParty",
-      "published": "2026-06-24T06:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "RT SecurityWeek: OpenAI Refocuses Cybersecurity Efforts on Patching Over Discovery https://www.securityweek.com/openai-refocuses-cybersecurity-efforts...",
-      "url": "https://x.com/trailofbits/status/2069817784909881795",
-      "summary": "RT SecurityWeek OpenAI Refocuses Cybersecurity Efforts on Patching Over Discovery https://www.securityweek.com/openai-refocuses-cybersecurity-efforts-on-patching-over-discovery/",
-      "category": "XSignals",
-      "published": "2026-06-24T02:08:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
-      "feed_title": "X / Trail of Bits"
     },
     {
       "title": "Open source carries the world. Patching it at Mythos-scale can't fall to maintainers alone. | Blog | Endor Labs",
@@ -707,6 +621,19 @@
       "feed_title": "X / rez0"
     },
     {
+      "title": "Everybody's shipping code they can't read",
+      "url": "https://www.aikido.dev/blog/shipping-code-they-cant-read",
+      "summary": "With AI, everyone's a developer now, and a lot of code gets shipped without a careful review from trained eyes. Category: News",
+      "category": "AISecurityLabs",
+      "published": "2026-06-25T03:32:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
       "title": "How agents are transforming work",
       "url": "https://openai.com/index/how-agents-are-transforming-work",
       "summary": "A new OpenAI research paper shows how AI agents are transforming work, enabling longer, more complex tasks and expanding productivity across roles.",
@@ -718,19 +645,6 @@
       "quality_score": 0,
       "feed_url": "https://openai.com/news/rss.xml",
       "feed_title": "OpenAI News"
-    },
-    {
-      "title": "A Note to Our Customers and Partners",
-      "url": "https://snyk.io/blog/a-note-to-our-customers-and-partners/",
-      "summary": "A note to our customers and partners about Snyk's AI transformation and organizational changes.",
-      "category": "AISecurityLabs",
-      "published": "2026-06-24T13:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://snyk.io/blog/feed/",
-      "feed_title": "Snyk Blog"
     },
     {
       "title": "[智能体攻防实战] 三.基于精调大模型的网络威胁知识自动抽取与分析（CodeBuddy+千帆）",

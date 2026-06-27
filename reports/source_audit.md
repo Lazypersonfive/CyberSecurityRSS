@@ -1,26 +1,26 @@
 # Source Registry Audit
 
-- generated_for: 2026-06-27
-- dates: 2026-06-27, 2026-06-26, 2026-06-25, 2026-06-24, 2026-06-23, 2026-06-22, 2026-06-21
+- generated_for: 2026-06-28
+- dates: 2026-06-28, 2026-06-27, 2026-06-26, 2026-06-25, 2026-06-24, 2026-06-23, 2026-06-22
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 105 | 21 | 19 | 64 | 1 | 1 | 21 | 40 | 17 |
-| ai_security | 59 | 10 | 5 | 44 | 0 | 9 | 10 | 6 | 15 |
-| finance | 70 | 1 | 0 | 68 | 1 | 12 | 1 | 0 | 0 |
-| security | 105 | 11 | 0 | 69 | 25 | 0 | 11 | 0 | 42 |
+| ai | 105 | 21 | 20 | 63 | 1 | 1 | 21 | 42 | 18 |
+| ai_security | 61 | 11 | 5 | 45 | 0 | 8 | 11 | 6 | 18 |
+| finance | 70 | 1 | 0 | 68 | 1 | 13 | 1 | 0 | 0 |
+| security | 105 | 9 | 0 | 71 | 25 | 0 | 9 | 0 | 48 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `0.0.0.0:8080` | 10 | security | [Lantronix 串口转以太网转换器存在命令注入漏洞并已在野外遭到攻击利用](http://0.0.0.0:8080/post/64390) |
+| `0.0.0.0:8080` | 9 | security | [Lantronix 串口转以太网设备曝出 root 权限命令注入漏洞并遭在野利用](http://0.0.0.0:8080/post/64390) |
 | `securityweek.com` | 5 | security | [Amazon Q 存在安全漏洞可导致攻击者通过恶意存储库窃取云端凭据](https://www.securityweek.com/amazon-q-flaw-enabled-cloud-credential-theft-via-malicious-repositories/) |
 | `cyberkendra.com` | 3 | security | [Nebula Security 演示 Android 17 首个全链漏洞 IonStack：单链接获取 Root 权限](https://www.cyberkendra.com/2026/06/one-malicious-link-full-root-access.html) |
+| `defend.network` | 3 | security | [Signal 备份密钥遭钓鱼攻击及 Linux 内核与 AWS 凭证窃取漏洞预警](https://defend.network/briefings/signal-phishing-linux-kernel-aws-credential-theft-2026-06-27.html) |
 | `cxsecurity.com` | 2 | security | [思源笔记 SiYuan 3.5.9 及以下版本存在恶意集市包远程代码执行漏洞](https://cxsecurity.com/issue/WLB-2026060014) |
-| `defend.network` | 2 | security | [WordPress 插件后门与 Dify AI 平台跨租户数据泄露漏洞预警](https://defend.network/briefings/shapedplugin-dify-squidbleed-supply-chain-exposure-2026-06-23.html) |
 | `sandflysecurity.com` | 2 | security | [Linux Scales eBPF Rootkit 检测分析：针对 Arch 供应链的隐蔽攻击](https://sandflysecurity.com/blog/linux-scales-ebpf-rootkit-detection-and-analysis) |
 | `ir.americanexpress.com` | 1 | finance | [美国运通发布2026年多德-弗兰克法案压力测试结果，披露公司在假设经济衰退情景下的财务韧性](https://ir.americanexpress.com/news/investor-relations-news/investor-relations-news-details/2026/American-Express-Releases-2026-Dodd-Frank-Act-Stress-Test-Results/default.aspx) |
 | `machinelearning.apple.com` | 1 | ai | [苹果研究揭示 LLM 评审团存在相关性误差，九名评委的实际投票效力仅相当于两票](https://machinelearning.apple.com/research/correlated-llm-evaluation-panels) |
