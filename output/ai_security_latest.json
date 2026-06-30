@@ -1,18 +1,18 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-06-30",
-  "fetched_at_utc": "2026-06-29T23:43:48.442728Z",
+  "fetched_at": "2026-07-01",
+  "fetched_at_utc": "2026-06-30T23:53:10.183891Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 40,
-  "entry_count": 19,
+  "raw_entry_count": 54,
+  "entry_count": 26,
   "filter_stats": {
-    "input": 40,
-    "dedup_merged": 2,
-    "output": 38
+    "input": 54,
+    "dropped_title_blacklist": 1,
+    "output": 53
   },
   "curation_stats": {
-    "dropped_source_cap": 19
+    "dropped_source_cap": 27
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -20,7 +20,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 6
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -55,7 +55,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://github.blog/security/vulnerability-research/feed/": {
       "feed_title": "GitHub Security Lab",
@@ -76,7 +76,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 8
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -111,7 +111,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 2
     },
     "https://snyk.io/blog/feed/": {
       "feed_title": "Snyk Blog",
@@ -125,7 +125,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -216,7 +216,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 7
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
@@ -242,6 +242,34 @@
   },
   "entries": [
     {
+      "title": "Endor Labs’ AI SAST Finds Zero Day Memory-Amplification DoS in Anthropic’s buffa library | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa",
+      "summary": "We identified an unbounded-allocation data flow in buffa's protobuf decoder that I developed into a ~22x memory-amplification denial of service for CVE-2026-55407",
+      "category": "AISecurityLabs",
+      "published": "2026-06-30T21:15:01+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [
+        "CVE-2026-55407"
+      ],
+      "related_urls": [],
+      "quality_score": 3,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "The AI Compass",
+      "url": "https://simonwillison.net/2026/Jun/30/the-ai-compass/#atom-everything",
+      "summary": "The AI Compass This political compass style quiz by bambamramfan is pretty neat - answer 29 questions about AI and AI ethics to see which of the 30 archetypes you best fit. I'm impressed that my answers on my first time through the quiz categorized me as \"The Garage Tinkerer\", patron saint myself! It's implemented as a single page React app using the &lt;script type=\"text/babel\"&gt; trick to avoid",
+      "category": "AISecurityLabs",
+      "published": "2026-06-30T17:39:23+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
       "title": "Ornith-1.0: Self-Scaffolding LLMs for Agentic Coding",
       "url": "https://simonwillison.net/2026/Jun/29/ornith/#atom-everything",
       "summary": "Ornith-1.0: Self-Scaffolding LLMs for Agentic Coding This is an interesting new open weights (MIT licensed) model, the first model release from DeepReinforce. [...] with variants including 9B Dense, 31B Dense, 35B MoE, and 397B MoE. Built on top of pretrained Gemma 4 and Qwen 3.5, it achieves state-of-the-art performance among open-source models of comparable size on coding benchmarks. As far as I",
@@ -255,11 +283,63 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "Security researchers tricked LLMs into giving them cocaine recipes by abusing role models for prompt injection - The Register",
-      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQNlVJUkpoRTZyRFY4OE1hdGxoVE9Na2t3NnNzSjIzQVk1RDFrREVNRV9GZGNISzIyOVVFSHdTdldHSnNNb2lTclNOeHFneDktNkNudG9FY0ZIYmFGeC04TVB6YmpzRlBGdERXc2lSRzVMWDBLWUYzZXlpSFpzcWt5OGNyamxSWlBxX2dOSkFTVDFKWUhUTnFVSGtqUk9GcTFHSTdKY0ctc2dERVhhTXZBN1lXY0dybEpjZmZqUHhkWXBJYkVsdnhFb1lONTJWRmNFS2dibVVxUmIxdUtwc2xPcm53d1pvTEl1V1lBZmVWQkZmTkVVNktXTnl6UQ?oc=5",
-      "summary": "Security researchers tricked LLMs into giving them cocaine recipes by abusing role models for prompt injection &nbsp;&nbsp; The Register",
+      "title": "AI自动化fscan二开",
+      "url": "https://xz.aliyun.com/news/92390",
+      "summary": "本文以学习记录为主，参考网上文章，针对fscan二开流程：利用AI去除fscan敏感特征---->使用garble混淆编译----->利用加载器落地，进行了较为完整的AI闭环。 记录在利用AI实现过程中遇到的一些问题，以及解决思路。 创新点：利用对AI的执行闭环，让Ai自动化fscan二开、不止对fscan进行二开，对加载器也进行二开和规避特征，达到了一定的免杀效果 项目地址：https://gi",
+      "category": "Chinese",
+      "published": "2026-06-28T05:36:41+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "Oracle (ORCL) Launches AI Supply Chain Agents To Automate Planning And Inventory - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPcjVTMnVOa2htSExpRDcxVTlvc28yZ1I4eG9iczZxdjJCcjY3Z3JQZ3pmQWVqd0Q1cHNYY3FQSW5FX1kxX0VJenBDNEZUTWZZTVNyRFVjVndWTDBYVjN4UWtHcVdoUmg5N3BTbXRvY1VJQ25GMDhoS2pQbDlwb0hDa0RrRW50QnZPMENxajlzalo4WFhHbjJLREt0clU2cHZteE1qU1hFbkhkT3ZOXzViVTZ5M3Vyb1dMNDV5VXg4Um3SAcYBQVVfeXFMTUMzSmZ5WmtnN0hJcDQzQlh2TlM2d0VKLXZzNFlEYVhGSktNNkExcmZfb0VHLXJtNWt3b3gxc3p0WEkxVkZHZ0lteTJZNDFVeVZTX004VHZkQlJNSVhKY2VOZ1hBTjYtOVVLbERpY0thWmt1b3gzRFpBb3dUVmtQRVFoQkxTVmlxM04wVlVjLU16LTJXRzlPVTZkUnFKdDY2WjVZQTdEdFZ2MnJodkhKUElYTC12SE5LV2xzdzktcmZLZ1ZMeTFR?oc=5",
+      "summary": "Oracle (ORCL) Launches AI Supply Chain Agents To Automate Planning And Inventory &nbsp;&nbsp; simplywall.st",
       "category": "CoverageFallback",
-      "published": "2026-06-29T23:33:09+00:00",
+      "published": "2026-06-30T23:22:45+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Supply Chain Security"
+    },
+    {
+      "title": "Nano Banana 2 Lite",
+      "url": "https://simonwillison.net/2026/Jun/30/nano-banana-2-lite/#atom-everything",
+      "summary": "Nano Banana 2 Lite Also known as Gemini 3.1 Flash Lite Image ( gemini-3.1-flash-lite-image in their API ), this is the \"fastest and cheapest Gemini image model, engineered for velocity and scale\". I used AI studio to run this prompt: Do a where's Waldo style image but it's where is the raccoon holding a ham radio I like that one better than the results I got from the other Nano Banana models when",
+      "category": "AISecurityLabs",
+      "published": "2026-06-30T22:15:35+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Benchmarking Endor Labs AI SAST: 2.6x more real vulnerabilities found than frontier models | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/ai-sast-benchmark-2x-more-real-vulnerabilities",
+      "summary": "Endor Labs AI SAST found 192 real vulnerabilities and the most vulnerabilities no other tool found. Coverage is why. Here's what each tool actually caught.",
+      "category": "AISecurityLabs",
+      "published": "2026-06-30T22:11:47+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "State of Mexico Deploys Black Hawk, AI Security Command Center - Mexico Business News",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRkRqRGp3RU5mWVlNbE9ya1U0RTJrY1VDRlZnVkd5SXlfRWlIWi1TNXNMcG05cmhfZFFJXzdpNkNZVVU4NVhiWG5WQ21NVDVoUF9fajVGZXFzTTVwbElJT1NEWEltZFdoNEE0OTZIaGR2cXhxeHdiT0VTX2lZb0Y1d3FGdTExS1BGNkJyU0ItanQwS202WFI1LTdDS25NSTgtdk9Z?oc=5",
+      "summary": "State of Mexico Deploys Black Hawk, AI Security Command Center &nbsp;&nbsp; Mexico Business News",
+      "category": "CoverageFallback",
+      "published": "2026-06-30T21:38:57+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -268,17 +348,95 @@
       "feed_title": "Google News AI Security"
     },
     {
-      "title": "CrowdStrike Holdings (CRWD) After Its AI Security Push Looks Fully Valued - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQUEZOMG91amJ5bmtjdHlVMHlwbUp3dFUxS3pxUHRBOUk4UVloS3hHSmdLMFBQTG5aSFVWcXpSQy1ndjdlTlN5d2ZMdHJnNmU3SFBjUC1QZjJpOWowTC1ibjBra3lKUkNyVTdEWTREM3ZUZG55MjZGSm02enJFSDhpQzd6MWVuc09HcmdLY0Vlb1FNYlp0X3BFeUdYeTJ6Mmk2NTJ3a2FLR2o5UGZKUWt2RVhTdXhGVkU5T25KM0VHQ19WSnB0NnRCTy1lTWZ0cEhWNGFsX3ZR0gHbAUFVX3lxTE1LVVQ0cWVnTW1uc2tEdElaaTBYRnJ2QVRhOVRTSkk1NmpHRldWZkNGbnczMTJ2S2REaEd1MEQ0MHQ5WDRzQ1Q0ZDE2cVRzOXRnc1l5d2pPQmk2UHNidUFaczltQzFSTERuX1ZRaUtDTkE4NVdKaWdJZzhpZjhEUmVIYzJZdTA2UTZmcDlBVDYtam02OFhEaWV4Q2NOTDF0d25VNTdDbjZPWld5SEpBYU5FUUJ4TzUtSFVPeXNXOWlQR0ZyRlBtM3RldUlpcXVzQ2RjSHhjVTFLTUoxSQ?oc=5",
-      "summary": "CrowdStrike Holdings (CRWD) After Its AI Security Push Looks Fully Valued &nbsp;&nbsp; simplywall.st",
+      "title": "Is F5 (FFIV) Fully Valued As Its AI Security Push Gains Traction? - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbFRJYjdrSjRWUzlUaEE1U1JRZW5yQkh5LXAwaXVQM1pDZ0N2U3ZVZGRfV2dOcEI5TzVfclN4VVNJdVF3YmotYUg1UmRMY2FVR3pySUtyb2haRDVHa2lqWmNsejBlOGVqQjZBTGFGby1sU3hZQURqN2FhWGFYeHd2encxQUVxaXd6WUFuMTl1aWpWeVNjUTFSYzdTTGJac054VzRNV0trcEFaQ1otaWlaaXUxVFdjV0Iy0gG-AUFVX3lxTE5nbGFrOTBCTU1sejdnZ3dILUFOT25ubmdOR0t0clJIWVRJOTRIMUpYRDJwWU5BVFVZQUw3cVVtWUo3WmlJRVAyb0RsbDEzRVNMZTBaNDhBcGU1eW9pSVc3d2theFRFX0ZnUEdDVFFRWlVCT2NRTWRWeDZVZVFtNjc1TmlndF9Xbng1M3JIV2hoQVRwRTdta1Q1RzNWQ21xWFlDRWhNaS1fMGx0LWtsdEtzc1J5amljSWRlbkxIYmc?oc=5",
+      "summary": "Is F5 (FFIV) Fully Valued As Its AI Security Push Gains Traction? &nbsp;&nbsp; simplywall.st",
       "category": "CoverageFallback",
-      "published": "2026-06-29T23:17:31+00:00",
+      "published": "2026-06-30T21:25:21+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Palo Alto Networks (PANW) Gains Momentum in AI Security and Observability - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQN0c3UExDUkVBRHlaaTJna0tQZDdMYkJ5MUVYVHlZZEliYk9tZjI4dlZPQTEwaGpzZDlYUUVYN3FVNWNDRVEwRjFZVGk5VTBETXNKanI2dXVMTUZDV3RTWFlkSDVKUHpILW5RbnQ4SndPYW1XUDdkWUpsMTQ2U1JVZlkweE51RHNQcFVtVjh1ZVB1WDJ6alVUag?oc=5",
+      "summary": "Palo Alto Networks (PANW) Gains Momentum in AI Security and Observability &nbsp;&nbsp; Yahoo Finance",
+      "category": "CoverageFallback",
+      "published": "2026-06-30T20:58:16+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "i think it shoudl be required to have an explanation",
+      "url": "https://x.com/rez0__/status/2072046676546666843",
+      "summary": "i think it shoudl be required to have an explanation Jenish Sojitra: It's sad that bug bounty platforms offers little to no protection when program abruptly lowers severity and bounty without proper explanation",
+      "category": "XSignals",
+      "published": "2026-06-30T19:56:39+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "i will say, this is not going to be crazy deep technical content like most of what I (and the podcast) put out. but im sure we all know dozens of frie...",
+      "url": "https://x.com/rez0__/status/2072016849877803088",
+      "summary": "i will say, this is not going to be crazy deep technical content like most of what I (and the podcast) put out. but im sure we all know dozens of friends/family/etc that would massively benefit from this type of information Joseph Thacker: ALRIGHT, LAUNCH ONE!🚀 https://aisafetyforparents.com As a father of 3 kids who works in AI and Security, I'm always getting tons of questions about AI from othe",
+      "category": "XSignals",
+      "published": "2026-06-30T17:58:07+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Aikido acquires Root to secure the supply chain",
+      "url": "https://www.aikido.dev/blog/aikido-acquires-root",
+      "summary": "Aikido has acquired Root to secure the software supply chain, fixing open source vulnerabilities in the version you already run, no upgrade required. Critical fixes go back to the community, free. Category: Product & Company Updates",
+      "category": "AISecurityLabs",
+      "published": "2026-06-30T14:23:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
+      "title": "Why AI Browsers Create an Unavoidable Enterprise Security Risk",
+      "url": "https://prompt.security/blog/why-ai-browsers-create-a-new-unavoidable-security-risk",
+      "summary": "AI browsers introduce structural security risks driven by prompt injection and autonomous actions. Learn why enterprises can't fully secure AI browsers, for now",
+      "category": "AISecurityLabs",
+      "published": "2026-06-30T12:54:53+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://prompt.security/blog/rss.xml",
+      "feed_title": "Prompt Security"
+    },
+    {
+      "title": "Shipping post-quantum cryptography to Python",
+      "url": "https://blog.trailofbits.com/2026/06/30/shipping-post-quantum-cryptography-to-python/",
+      "summary": "Post-quantum cryptography is now one pip-install away for the entire Python ecosystem. With funding from the Sovereign Tech Agency , we implemented support for ML-KEM, the NIST-standard key-establishment primitive, and ML-DSA, the NIST-standard digital-signature primitive, in pyca/cryptography . On June 22, 2026, the White House ordered the U.S. government to accelerate its transition to post-quan",
+      "category": "AISecurityLabs",
+      "published": "2026-06-30T11:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://blog.trailofbits.com/index.xml",
+      "feed_title": "Trail of Bits"
     },
     {
       "title": "This is astute",
@@ -292,45 +450,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "Is SentinelOne (S) Undervalued After Its New AI Security Launches? - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQXZNSkllVUJVVkRVc2ZaSTVNaEgxTTFDa1dIMkdLOFA1QVgtZkk2VVNMT0t3T1pKWDNxWGxxNXZ4ZEZnZ3FTdjBMemJjSGc1SGk5Ny1Jc3pLY19nOF9kVnYwZm84dkxwd1RGb2N3cWEtSHBqckRpTkhLMno5UHhNbTFrOVNfOUN4SEtoME56dHdwenBRQkV5NWJBNXM0R3pBZnhSbkFDcFBLV0MwUmVOeXNXRWlrTVR2RjZucTdXU2ZQakHSAcgBQVVfeXFMUHRqcmhyTzlFWGxOMUhTVlNnQ0xJbkctZGZDSUljSmFJWWwyTktRRlpwM216MlM4RDF2SjJrbnVDaHdQRjBwc3Q3QWhhRE53QV8tM25TQ2lUTF9odWNGR2pFY0VFZF9yaXF0bnZVdzFldm5SeDV2Z1JwNHljOTRtY2pFRVRFa0dkRzUtc1VRTkhZMUotOGhLMmF4LWFJX2pCemJwQmNiWTd5ZFl4R0JSWXlWWWpTMk1mQ3pYcDVENUFBSm92YlFEYkI?oc=5",
-      "summary": "Is SentinelOne (S) Undervalued After Its New AI Security Launches? &nbsp;&nbsp; simplywall.st",
-      "category": "CoverageFallback",
-      "published": "2026-06-29T22:26:55+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Why AI Browsers Create an Unavoidable Enterprise Security Risk",
-      "url": "https://prompt.security/blog/why-ai-browsers-create-a-new-unavoidable-security-risk",
-      "summary": "AI browsers introduce structural security risks driven by prompt injection and autonomous actions. Learn why enterprises can't fully secure AI browsers, for now",
-      "category": "AISecurityLabs",
-      "published": "2026-06-29T18:56:26+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://prompt.security/blog/rss.xml",
-      "feed_title": "Prompt Security"
-    },
-    {
-      "title": "Mozilla Warns GitHub Repos Can Trick AI Tools Into Hacking Your PC - HotHardware",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPN1V2UTd1eVNmTDJJNFZiZHh1TkNZSFlJaVJCQm5iUnlNLUgwWWtsT1ZOYzRkVEN5MEVWVE1oUXJwY19TZjRscExYaDU5TEU1RE1IWmFSbl8zZm4xZmw4eGp3RXY1QTVLVnZEOGlwakhVNDBoNkJqWk5WdTFDNG5hdWQtQ1VjYkprekxWczU2dUV0LW9uRDZIUXJYWQ?oc=5",
-      "summary": "Mozilla Warns GitHub Repos Can Trick AI Tools Into Hacking Your PC &nbsp;&nbsp; HotHardware",
-      "category": "CoverageFallback",
-      "published": "2026-06-29T18:42:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
     },
     {
       "title": "Mapping Europe’s AI Workforce Opportunity",
@@ -359,32 +478,6 @@
       "feed_title": "Snyk Blog"
     },
     {
-      "title": "Quoting Jon Udell",
-      "url": "https://simonwillison.net/2026/Jun/28/jon-udell/#atom-everything",
-      "summary": "Human Agent in the loop I dislike the phrase “human in the loop” because it cedes authority to the machines. Let’s flip the narrative. It’s our loop, we work the same way we always have, now we recruit agents to join the team. An agent-assisted process need not be a black box that takes in prompts and emits features. [...] Let’s do agentic software development like that. Not as a loop we’ve been e",
-      "category": "AISecurityLabs",
-      "published": "2026-06-28T21:57:41+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "Hack Your Summer",
-      "url": "https://simonwillison.net/2026/Jun/28/hack-your-summer/#atom-everything",
-      "summary": "Hack Your Summer I learned about this initiative from DJ Patil this morning: It’s a 4-week, high-velocity production sprint for undergraduate students, graduate students, and recent graduates who want to build something real this summer. You’ll learn how to identify a project, make steady progress, get support from mentors and peers, and create tangible, public-facing work you can actually show fu",
-      "category": "AISecurityLabs",
-      "published": "2026-06-28T19:26:11+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
       "title": "HP Inc. launches Frontier strategic partnership with OpenAI",
       "url": "https://openai.com/index/hp-frontier-partnership",
       "summary": "HP Inc. scales its OpenAI Frontier partnership to deploy AI across customer experiences, software development, and enterprise operations.",
@@ -398,43 +491,30 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "从XKCD到AI Agent：当\"Nerd Sniping\"成为攻击向量",
-      "url": "https://xz.aliyun.com/news/92389",
-      "summary": "Nerd Sniping 从 XKCD 漫画的概念演变为 AI Agent 安全攻击向量——攻击者通过构造\"看似可解、实则无底\"的问题，诱导 Agent 陷入递归思考和无限推理，消耗 token、泄露系统指令、触发工具滥用。防御的核心是让 Agent 学会\"思考更少\"——给它的思考能力装上刹车。",
-      "category": "Chinese",
-      "published": "2026-06-27T15:26:38+00:00",
+      "title": "RT Critical Thinking - Bug Bounty Podcast: Is Justin a FUGITIVE?",
+      "url": "https://x.com/rez0__/status/2071995214118506653",
+      "summary": "RT Critical Thinking - Bug Bounty Podcast Is Justin a FUGITIVE?",
+      "category": "XSignals",
+      "published": "2026-06-30T16:30:39+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "aright. im gonna start shipping small, high value, and polished saas products basically like @levelsio recommends. i should probably join the @jackfri...",
-      "url": "https://x.com/rez0__/status/2070888396226969686",
-      "summary": "aright. im gonna start shipping small, high value, and polished saas products basically like @levelsio recommends. i should probably join the @jackfriks and @marclou group. honestly really excited about it haha.",
-      "category": "XSignals",
-      "published": "2026-06-27T15:14:03+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     },
     {
-      "title": "VulnHuntr 深度拆解：当 LLM 学会\"一把梭\"挖 RCE",
-      "url": "https://xz.aliyun.com/news/92382",
-      "summary": "VulnHuntr 深度拆解,从源码切入分析工具优缺点及改进方案",
-      "category": "Chinese",
-      "published": "2026-06-27T02:21:59+00:00",
+      "title": "How ChatGPT adoption has expanded",
+      "url": "https://openai.com/index/how-chatgpt-adoption-has-expanded",
+      "summary": "New OpenAI Signals data shows how ChatGPT adoption is growing globally, with users increasing usage, exploring more capabilities, and driving growth across regions and languages.",
+      "category": "FirstParty",
+      "published": "2026-06-30T09:00:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
+      "quality_score": 0,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
     },
     {
       "title": "ChatGPT Security Guide: Risks, Incidents & Guidance",
@@ -487,6 +567,19 @@
       "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
+    },
+    {
+      "title": "一次关于ToDesk版本升级后密码继承问题的发现",
+      "url": "https://xz.aliyun.com/news/92392",
+      "summary": "内网横向移动-todesk-新型攻击手法",
+      "category": "Chinese",
+      "published": "2026-06-28T13:01:22+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": -1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     }
   ]
 }
