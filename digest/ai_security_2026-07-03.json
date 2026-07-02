@@ -1,0 +1,372 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-07-03",
+  "generated_at": "2026-07-02T23:49:05.655450Z",
+  "raw_count": 37,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "direct": 9,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "tier_t2": 8,
+    "kind_expert": 6,
+    "chinese": 2,
+    "kind_cn_expert": 1,
+    "google_news": 1,
+    "aggregator": 1,
+    "kind_google_news": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "items": [
+    {
+      "title_zh": "幻影抢注：利用大语言模型幻觉生成的虚假域名实施软件供应链攻击",
+      "title_orig": "Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector",
+      "summary": "研究人员发现攻击者可以利用大语言模型在生成代码或建议时产生的域名幻觉，通过提前注册这些虚构域名来实施“幻影抢注”攻击。该威胁向量主要针对软件供应链，当开发者或自动化脚本信任并访问这些幻觉域名时，可能导致恶意软件分发或敏感信息泄露，目前该风险主要依赖开发者的人工校验来缓解。",
+      "tags": [
+        "AI安全",
+        "供应链攻击",
+        "域名抢注"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-01T01:00:11+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI幻觉在供应链攻击中的新型利用路径。",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.65,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Anthropic buffa 库存在零日漏洞 CVE-2026-55407，可导致 22 倍内存放大拒绝服务攻击",
+      "title_orig": "Endor Labs’ AI SAST Finds Zero Day Memory-Amplification DoS in Anthropic’s buffa library | Blog | Endor Labs",
+      "summary": "Endor Labs 利用其先进的 AI SAST 工具在 Anthropic 开发的 buffa 库中发现了一个严重的无限制分配数据流漏洞，该漏洞已被正式编号为 CVE-2026-55407。该漏洞主要存在于 Protobuf 解码器中，攻击者能够通过构造特定的恶意数据流触发约 22 倍的内存放大效应，进而导致目标系统面临严重的拒绝服务攻击风险，目前相关技术细节已在官方博客中完整披露。",
+      "tags": [
+        "拒绝服务",
+        "零日漏洞",
+        "内存安全"
+      ],
+      "url": "https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-02T22:58:14+00:00",
+      "cve_ids": [
+        "CVE-2026-55407"
+      ],
+      "selection_reason": "涉及主流AI厂商底层库的零日漏洞及内存放大技术。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "cve:cve-2026-55407",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Hephaestus：旨在实现网络安全研究自动化的 AI 科学家系统",
+      "title_orig": "Hephaestus：迈向网络安全AI科学家",
+      "summary": "Hephaestus 是由 Jiaqi Li 等研究者提出的 AI 原生研究系统，旨在解决网络攻击以机器速度演进与传统安全研究周期过长之间的矛盾。该系统通过端到端的自动化流程，在动态变化的安全环境中实现自主的漏洞发现与威胁分析，为安全从业者提供了一种利用 AI 提升研究效率的新型范式，填补了现有 AI 科学家系统在网络安全领域的应用空白。",
+      "tags": [
+        "自动化研究",
+        "AI安全",
+        "漏洞挖掘"
+      ],
+      "url": "https://paper.seebug.org/3494",
+      "source": "paper.seebug.org",
+      "category": "Chinese",
+      "published": "2026-07-01T08:44:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨AI在网络安全研究自动化领域的学术前沿进展。",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3494",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 8.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "GPT-5.5-Cyber 展现强大安全能力，仅用一天即可构建 zlib 模糊测试实验室",
+      "title_orig": "GPT-5.5-Cyber built a zlib fuzzing lab in a day",
+      "summary": "在 Trail of Bits 与 OpenAI 合作的 Patch the Planet 项目中，GPT-5.5-Cyber 模型展现了卓越的自动化安全工程能力，仅用一天时间便成功搭建了 zlib 的模糊测试实验环境。该项目旨在应对未来高性能 AI 模型可能产生的海量漏洞报告压力，通过将前沿模型直接对接 30 多个开源项目，辅助维护者在风险爆发前预先发现并修复潜在的安全漏洞。",
+      "tags": [
+        "模糊测试",
+        "GPT-5.5",
+        "开源安全"
+      ],
+      "url": "https://blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet/",
+      "source": "blog.trailofbits.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-02T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了下一代AI模型在复杂安全工程任务中的实战潜力。",
+      "feed_url": "https://blog.trailofbits.com/index.xml",
+      "feed_title": "Trail of Bits",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet",
+      "related_urls": [
+        "https://x.com/trailofbits/status/2072640196944781594"
+      ],
+      "related_count": 1,
+      "score": 4,
+      "dimension_score": 8.15,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI 浏览器引入结构性安全风险，提示词注入与自主操作成为企业防御难题",
+      "title_orig": "Why AI Browsers Create an Unavoidable Enterprise Security Risk",
+      "summary": "AI 浏览器因集成大模型能力而引入了难以规避的结构性安全风险，主要表现为提示词注入攻击和未经授权的自主代理操作。这些风险使得企业目前无法完全控制 AI 浏览器在处理敏感数据时的行为，攻击者可能通过操纵网页内容诱导浏览器执行恶意指令，导致企业内网数据泄露或权限提升。",
+      "tags": [
+        "AI浏览器",
+        "提示词注入",
+        "企业安全"
+      ],
+      "url": "https://prompt.security/blog/why-ai-browsers-create-a-new-unavoidable-security-risk",
+      "source": "prompt.security",
+      "category": "AISecurityLabs",
+      "published": "2026-06-30T12:54:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了新兴AI应用形态对企业边界安全带来的挑战。",
+      "feed_url": "https://prompt.security/blog/rss.xml",
+      "feed_title": "Prompt Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "AI安全",
+      "source_key": "prompt.security",
+      "story_id": "url:prompt.security/blog/why-ai-browsers-create-a-new-unavoidable-security-risk",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenAI 利用大规模核心转储分析修复长达 18 年的基础设施软件漏洞",
+      "title_orig": "Core dump epidemiology: fixing an 18-year-old bug",
+      "summary": "OpenAI 工程师通过对大规模基础设施崩溃产生的核心转储进行流行病学分析，成功定位并修复了一个潜伏长达 18 年之久的软件漏洞，同时还发现了一处硬件故障。该研究不仅揭示了底层硬件故障与软件逻辑之间复杂的交互影响，还展示了在超大规模分布式系统中，利用自动化分析工具排查罕见且持久性技术债务的实战经验与技术路径。",
+      "tags": [
+        "漏洞修复",
+        "基础设施",
+        "核心转储"
+      ],
+      "url": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
+      "source": "openai.com",
+      "category": "FirstParty",
+      "published": "2026-06-30T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了顶级科技公司处理复杂底层漏洞的工程化方法。",
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "openai.com",
+      "story_id": "url:openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 6.65,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Claude Sonnet 5 及其代码助手测评：功能表现强劲但安全防御能力尚处平均水平",
+      "title_orig": "Claude Sonnet 5 with Claude Code: strong on function, average on security, and unusually honest | Blog | Endor Labs",
+      "summary": "Endor Labs 对 Claude Sonnet 5 及其配套的 Claude Code 进行了深度安全评估，结果显示该模型在功能实现和代码生成方面表现强劲，但在安全性测试中仅达到行业平均水平。值得注意的是，该模型在面对无法完成的任务时表现出极高的诚实度，这种特性对于减少安全分析中的误报、提升开发者对 AI 工具的信任度具有重要的参考价值。",
+      "tags": [
+        "Claude",
+        "代码安全",
+        "模型测评"
+      ],
+      "url": "https://www.endorlabs.com/learn/claude-sonnet-5-with-claude-code-strong-on-function-average-on-security-and-unusually-honest",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-02T22:57:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了主流大模型在安全编码场景下的客观性能评估。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/claude-sonnet-5-with-claude-code-strong-on-function-average-on-security-and-unusually-honest",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 7.6,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Endor Labs 发布 AI SAST 基准测试：检出真实漏洞数量达前沿模型 2.6 倍",
+      "title_orig": "Benchmarking Endor Labs AI SAST: 2.6x more real vulnerabilities found than frontier models | Blog | Endor Labs",
+      "summary": "Endor Labs 对其 AI SAST 工具进行的基准测试显示，该工具共发现了 192 个真实漏洞，其漏洞检出率达到了通用前沿模型的 2.6 倍，且捕获了大量其他工具漏报的漏洞。该技术优势主要源于其更广的代码覆盖范围和深度的安全逻辑分析能力，证明了专用 AI 安全扫描工具在提升漏洞发现深度及降低安全风险方面相比通用模型具有显著的优越性。",
+      "tags": [
+        "AI-SAST",
+        "漏洞扫描",
+        "基准测试"
+      ],
+      "url": "https://www.endorlabs.com/learn/ai-sast-benchmark-2x-more-real-vulnerabilities",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-02T22:58:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "对比了专用安全AI与通用AI在静态分析领域的效能差异。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/ai-sast-benchmark-2x-more-real-vulnerabilities",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 6.95,
+      "final_score": 7.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "利用 DSPy 框架评估并优化 Datasette Agent 的 SQL 系统提示词研究",
+      "title_orig": "Using DSPy to evaluate and improve Datasette Agent's SQL system prompts",
+      "summary": "该研究详细探讨了如何利用DSPy框架对Datasette Agent的SQL系统提示词进行自动化评估与迭代优化，并借助Claude Code异步任务完成了环境部署与核心测试。通过这种程序化方式替代传统的手动调优，开发者能够显著提升大模型在自然语言转SQL任务中的准确性与鲁棒性，为构建高效、可靠的自动化提示词工程提供了极具参考价值的技术实践路径。",
+      "tags": [
+        "提示词工程",
+        "DSPy",
+        "AI安全"
+      ],
+      "url": "https://simonwillison.net/2026/Jul/2/dspy-datasette-agent-prompts/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-07-02T18:25:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了如何利用自动化框架优化 LLM 系统的核心提示词逻辑。",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/jul/2/dspy-datasette-agent-prompts",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 6.85,
+      "final_score": 7.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "美国政府解除 Anthropic 两款顶级 AI 模型出口限制，引发 AI 安全领域关注",
+      "title_orig": "美国解除Anthropic两款顶级模型出口限制 AI安全赛道升温 - 디지털투데이",
+      "summary": "美国政府近期决定解除对 Anthropic 旗下两款高性能人工智能模型的出口限制，此举标志着高性能计算资源跨境流动的政策调整。虽然原文未披露具体涉及的技术参数或安全评估细节，但该变动预计将加速全球范围内 AI 安全赛道的竞争与技术交流，反映出监管机构在技术领先地位与出口管制之间的动态平衡。",
+      "tags": [
+        "AI监管",
+        "模型出口",
+        "Anthropi"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdE44RjU1MWM5cDJIWlRqVUg5NzdLR3BfcVBUTDM2VWtfXzcxMGlfUHJZRVIxRGthWEVvazVNZHEtUHlwVEtRSWtFYkxDanQ2RTRtaUVON3VlM3JfZzBoOTFrM0UtcjdTTktmc2MtaVV1Tkp5cW9QS2t5aWhFaV9ONGNsWEhTam83OTdvRE1FaGd3TnZkcWVkTGlYdWlQRlk0TFQ2UUxaYmYwQWZLNGtuMEw0OU0?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-07-02T22:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了顶级 AI 模型监管政策的重大变化及其对安全赛道的影响",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:d9a02a40e24f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 4.45,
+      "final_score": 3.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
