@@ -25,6 +25,8 @@ except ImportError as exc:
 else:
     HTTPX_IMPORT_ERROR = None
 
+from url_hygiene import repair_entry_url
+
 logger = logging.getLogger(__name__)
 
 ARCHIVE_DIR = Path(__file__).parent / "archive"
@@ -196,7 +198,7 @@ async def _fetch_one(client: httpx.AsyncClient, url: str) -> list[FeedEntry]:
 
     entries: list[FeedEntry] = []
     for item in parsed.entries:
-        link = item.get("link", "")
+        link = repair_entry_url(item.get("link", ""), url)
         if not link:
             continue
         title = item.get("title", "(no title)").strip()

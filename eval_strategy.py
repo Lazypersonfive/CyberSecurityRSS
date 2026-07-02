@@ -29,6 +29,7 @@ class BoardEval:
     full_days: int
     avg_chinese: float
     min_chinese: int
+    observed_min_chinese: int
     cn_ok_days: int
     avg_google_news: float
     max_google_news: int | None
@@ -94,9 +95,9 @@ def render_offline_eval(feeds: list[dict[str, Any]], cfg: dict[str, Any]) -> str
         "",
         (
             "| Board | Name | Days | Avg Selected | Target | Full Days | Avg CN | "
-            "Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |"
+            "CN Target | Obs Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |"
         ),
-        "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ])
     for evaluation in evaluations:
         max_gn = "-" if evaluation.max_google_news is None else str(evaluation.max_google_news)
@@ -105,7 +106,8 @@ def render_offline_eval(feeds: list[dict[str, Any]], cfg: dict[str, Any]) -> str
             f"{evaluation.board} | {evaluation.display_name} | {evaluation.days} | "
             f"{evaluation.avg_selected:.1f} | {evaluation.target_top_n} | "
             f"{evaluation.full_days}/{evaluation.days} | {evaluation.avg_chinese:.1f} | "
-            f"{evaluation.min_chinese} | {evaluation.cn_ok_days}/{evaluation.days} | "
+            f"{evaluation.min_chinese} | {evaluation.observed_min_chinese} | "
+            f"{evaluation.cn_ok_days}/{evaluation.days} | "
             f"{evaluation.avg_google_news:.1f} | {max_gn} | {evaluation.unknown_items} | "
             f"{_format_optional_float(evaluation.avg_final_score)} | {evaluation.merged_total} |"
         )
@@ -235,6 +237,10 @@ def _evaluate_boards(
                 full_days=sum(1 for _date, _stats, selected, _avg_final, _merged in rows if selected >= target_top_n),
                 avg_chinese=total_chinese / days if days else 0.0,
                 min_chinese=min_chinese,
+                observed_min_chinese=min(
+                    (stats["chinese"] for _date, stats, _selected, _avg_final, _merged in rows),
+                    default=0,
+                ),
                 cn_ok_days=sum(
                     1
                     for _date, stats, _selected, _avg_final, _merged in rows

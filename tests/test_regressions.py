@@ -297,6 +297,73 @@ class FetchOpmlTests(unittest.TestCase):
         )
 
 
+class UrlHygieneTests(unittest.TestCase):
+    def test_is_public_http_url_rejects_local_addresses(self) -> None:
+        from url_hygiene import is_public_http_url
+
+        bad = [
+            "http://0.0.0.0:8080/post/64413",
+            "http://127.0.0.1/x",
+            "http://localhost:3000/a",
+            "http://10.1.2.3/internal",
+            "http://172.16.0.9/x",
+            "http://172.31.255.1/x",
+            "http://192.168.1.5/router",
+            "http://100.64.0.1/cgnat",
+            "http://169.254.1.1/link-local",
+            "http://224.0.0.1/multicast",
+            "http://[::1]/v6",
+            "ftp://example.com/file",
+            "",
+        ]
+        for url in bad:
+            self.assertFalse(is_public_http_url(url), url)
+
+        good = [
+            "https://hackernews.cc/post/64413",
+            "http://example.com/a?b=1",
+            "https://172.32.0.1/not-private",
+        ]
+        for url in good:
+            self.assertTrue(is_public_http_url(url), url)
+
+    def test_repair_entry_url_rewrites_nonroutable_to_feed_host(self) -> None:
+        from url_hygiene import repair_entry_url
+
+        fixed = repair_entry_url("http://0.0.0.0:8080/post/64413", "http://hackernews.cc/feed")
+        self.assertEqual(fixed, "https://hackernews.cc/post/64413")
+
+        # Public link untouched.
+        self.assertEqual(
+            repair_entry_url("https://example.com/a", "http://hackernews.cc/feed"),
+            "https://example.com/a",
+        )
+        # Feed host itself non-public: no rewrite possible.
+        self.assertEqual(
+            repair_entry_url("http://0.0.0.0:8080/x", "http://127.0.0.1/feed"),
+            "http://0.0.0.0:8080/x",
+        )
+        # Query string preserved.
+        self.assertEqual(
+            repair_entry_url("http://0.0.0.0:8080/p?id=7", "https://hackernews.cc/feed"),
+            "https://hackernews.cc/p?id=7",
+        )
+
+    def test_filter_drops_nonpublic_urls(self) -> None:
+        entry = FeedEntry(
+            title="CVE-2026-9999 broken link entry",
+            url="http://0.0.0.0:8080/post/1",
+            summary="A" * 80,
+            category="security",
+            published=datetime(2026, 7, 1, 1, tzinfo=timezone.utc),
+        )
+
+        kept, stats = filter_and_dedup([entry])
+
+        self.assertEqual(kept, [])
+        self.assertEqual(stats.get("dropped_nonpublic_url"), 1)
+
+
 class FilterEntriesTests(unittest.TestCase):
     def test_kept_entries_sort_by_score_then_newest(self) -> None:
         older = FeedEntry(
@@ -2210,7 +2277,10 @@ class OfflineEvalTests(unittest.TestCase):
 
         self.assertIn("## Top Issues", markdown)
         self.assertIn("[security] 1/1 天未满额", markdown)
-        self.assertIn("| security | 安全 | 1 | 3.0 | 15 | 0/1 | 1.0 | 6 | 0/1 | 1.0 | 1 | 1 | 6.0 | 2 |", markdown)
+        # CN Target = config target (6); Obs Min CN = observed minimum (1).
+        self.assertIn("CN Target | Obs Min CN", markdown)
+        self.assertNotIn("| Min CN |", markdown)
+        self.assertIn("| security | 安全 | 1 | 3.0 | 15 | 0/1 | 1.0 | 6 | 1 | 0/1 | 1.0 | 1 | 1 | 6.0 | 2 |", markdown)
         self.assertIn("2026-05-11 security：selected 3/15，中文 1/6，unknown 1", markdown)
 
     def test_build_offline_eval_writes_report_from_docs_feeds(self) -> None:

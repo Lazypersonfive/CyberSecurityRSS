@@ -10,6 +10,7 @@ from dataclasses import dataclass
 from typing import Iterable
 
 from fetch_feeds import FeedEntry
+from url_hygiene import is_public_http_url
 
 # --- WAF / verification-page markers ------------------------------------
 
@@ -388,6 +389,10 @@ def filter_and_dedup(entries: Iterable[FeedEntry]) -> tuple[list[FilteredEntry],
         stats["input"] += 1
         title = (e.title or "").strip()
         summary = (e.summary or "").strip()
+
+        if not is_public_http_url(e.url):
+            stats["dropped_nonpublic_url"] += 1
+            continue
 
         if _matches_source_blacklist(e.url):
             stats["dropped_source_blacklist"] += 1
