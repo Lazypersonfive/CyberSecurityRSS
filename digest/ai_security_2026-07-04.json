@@ -1,0 +1,373 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-07-04",
+  "generated_at": "2026-07-03T23:46:04.973915Z",
+  "raw_count": 34,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "direct": 9,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "chinese": 2,
+    "tier_t2": 9,
+    "kind_cn_expert": 2,
+    "kind_expert": 6,
+    "aggregator": 1,
+    "kind_expert_x": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "items": [
+    {
+      "title_zh": "幻觉域名抢注：利用大语言模型生成的虚假域名实施软件供应链攻击的新型向量",
+      "title_orig": "Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector",
+      "summary": "研究人员发现攻击者可以利用大语言模型在生成代码或文档时产生的域名幻觉，通过抢注这些虚假域名来渗透软件供应链，这种攻击向量被称为幻觉域名抢注。该攻击利用了开发者对AI生成内容的信任，通过在幻觉域名上托管恶意包或脚本实现对下游用户的自动化攻击，目前相关防御机制仍在探索中，对供应链安全构成了新型威胁。",
+      "tags": [
+        "AI安全",
+        "供应链攻击",
+        "域名抢注"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-01T01:00:11+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI幻觉在供应链安全中的实战化威胁向量。",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "利用 Claude Code 全自动逆向加密验证码系统并实现多漏洞联合利用的渗透测试实践",
+      "title_orig": "一句话跑了三小时：用 Claude Code Loop 全自动逆向一个加密验证码系统",
+      "summary": "安全研究者通过 Claude Code 实现了对目标网站的自动化渗透，在三小时内仅凭一句话指令便完成了从信息收集到漏洞利用的全过程，充分展示了 AI 在复杂逆向工程中的巨大潜力。该工具自主完成了 ECDH 密钥交换逆向、AES-GCM 加密还原及基于 NCC 的图像识别算法开发，最终生成了能绕过验证码并批量注册账号的全自动化脚本，且整个过程无需人工干预聊天窗口。",
+      "tags": [
+        "自动化渗透",
+        "逆向工程",
+        "AI工具"
+      ],
+      "url": "https://xz.aliyun.com/news/92420",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-07-03T03:41:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI Agent在闭环自动化逆向与漏洞利用中的极高效率",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92420",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Anthropic buffa 库存在 CVE-2026-55407 内存放大拒绝服务漏洞",
+      "title_orig": "Endor Labs’ AI SAST Finds Zero Day Memory-Amplification DoS in Anthropic’s buffa library | Blog | Endor Labs",
+      "summary": "Endor Labs 通过 AI SAST 工具在 Anthropic 的 buffa 库中发现了一个严重的零日内存放大拒绝服务漏洞，该漏洞已被正式分配编号为 CVE-2026-55407。该漏洞源于 Protobuf 解码器中存在的无限制分配数据流缺陷，攻击者可利用此漏洞实现约 22 倍的内存放大效果并导致系统资源耗尽，这一发现凸显了专用安全扫描工具在识别复杂逻辑缺陷方面的显著优势。",
+      "tags": [
+        "拒绝服务",
+        "内存漏洞",
+        "AI审计"
+      ],
+      "url": "https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-02T22:58:14+00:00",
+      "cve_ids": [
+        "CVE-2026-55407"
+      ],
+      "selection_reason": "AI SAST 发现知名 AI 基础设施组件的 0-day",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "cve:cve-2026-55407",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "phpBB 默认配置存在 CVE-2026-48611 身份验证绕过漏洞可导致任意账户登录",
+      "title_orig": "Authentication Bypass in the default configuration phpBB",
+      "summary": "AI 渗透测试 Agent 在 phpBB 的默认配置中发现了一个编号为 CVE-2026-48611 的严重身份验证绕过漏洞，该漏洞允许攻击者通过单一请求登录任意账户。未经身份验证的攻击者只需发送一个特定请求即可实现权限提升和数据泄露，目前官方已发布修复方案，建议受影响版本用户立即更新以防范此类利用 AI 发现的自动化攻击风险。",
+      "tags": [
+        "身份验证绕过",
+        "phpBB",
+        "高危漏洞"
+      ],
+      "url": "https://www.aikido.dev/blog/authentication-bypass-phpbb-technical-writeup",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-07-03T23:45:00+00:00",
+      "cve_ids": [
+        "CVE-2026-48611"
+      ],
+      "selection_reason": "典型的高危身份绕过漏洞，且由 AI 渗透工具自主发现。",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "cve:cve-2026-48611",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.1,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Trail of Bits 联合 OpenAI 利用 GPT-5.5-Cyber 开展开源项目自动化漏洞挖掘计划",
+      "title_orig": "GPT-5.5-Cyber built a zlib fuzzing lab in a day",
+      "summary": "Trail of Bits 与 OpenAI 合作启动了 Patch the Planet 项目，旨在利用 GPT-5.5-Cyber 模型为 30 多个开源项目提供安全支持，该模型在一天内即成功构建了 zlib 模糊测试实验室。其核心目标是应对未来 AI 可能生成的如“消防栓”般密集的漏洞报告，通过前置化的自动化审计来减轻开源维护者的负担，解决目前维护者精力被严重分散且人手不足的严峻挑战。",
+      "tags": [
+        "自动化审计",
+        "开源安全",
+        "GPT-5.5"
+      ],
+      "url": "https://blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet/",
+      "source": "blog.trailofbits.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-02T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了顶级安全机构利用下一代 AI 模型重塑漏洞挖掘流程的趋",
+      "feed_url": "https://blog.trailofbits.com/index.xml",
+      "feed_title": "Trail of Bits",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet",
+      "related_urls": [
+        "https://x.com/trailofbits/status/2072640196944781594"
+      ],
+      "related_count": 1,
+      "score": 4,
+      "dimension_score": 7.85,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Claude Sonnet 5 与 Claude Code 安全能力评测：功能强劲但安全防御表现平庸",
+      "title_orig": "Claude Sonnet 5 with Claude Code: strong on function, average on security, and unusually honest | Blog | Endor Labs",
+      "summary": "Endor Labs 对 Claude Sonnet 5 及其配套工具 Claude Code 进行了深度测评，结果显示其在代码实现和功能逻辑上表现出色，但在安全性维度上表现仅为平均水平。尽管该模型在交互中表现出异常的诚实度，但在识别复杂安全缺陷和防御性编程方面仍有提升空间，因此目前更适合作为辅助开发工具而非完全替代人工进行安全审计。",
+      "tags": [
+        "模型评测",
+        "代码安全",
+        "Claude"
+      ],
+      "url": "https://www.endorlabs.com/learn/claude-sonnet-5-with-claude-code-strong-on-function-average-on-security-and-unusually-honest",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-02T22:57:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了针对最新大模型在安全工程领域能力的客观评价。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/claude-sonnet-5-with-claude-code-strong-on-function-average-on-security-and-unusually-honest",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 7.85,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Hephaestus：旨在实现端到端网络安全研究自动化的 AI 科学家系统",
+      "title_orig": "Hephaestus：迈向网络安全AI科学家",
+      "summary": "研究人员提出了 Hephaestus 系统，旨在将 AI 科学家架构引入网络安全领域，以应对日益增长的机器速度攻击威胁，推动网络安全研究从手动向自动化转型。该系统针对网络安全领域的高动态性和对抗性特征进行了优化，试图实现从漏洞发现到防御策略生成的全流程自动化研究，为构建 AI 原生的网络安全防御体系提供了全新的理论和技术框架。",
+      "tags": [
+        "AI科学家",
+        "自动化研究",
+        "学术论文"
+      ],
+      "url": "https://paper.seebug.org/3494",
+      "source": "paper.seebug.org",
+      "category": "Chinese",
+      "published": "2026-07-01T08:44:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 在网络安全科研层面的端到端自动化可能性。",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3494",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 7.15,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Endor Labs 发布 AI SAST 基准测试报告：漏洞检出率显著超越通用前沿模型",
+      "title_orig": "Benchmarking Endor Labs AI SAST: 2.6x more real vulnerabilities found than frontier models | Blog | Endor Labs",
+      "summary": "Endor Labs 发布了其 AI SAST 工具的基准测试数据，显示其在发现真实漏洞方面的效率是通用前沿模型的 2.6 倍，成功识别了 192 个真实漏洞并覆盖了其他工具的盲区。报告强调了专用安全语料库和上下文感知能力在提升 AI 静态扫描准确性方面的关键作用，证明了针对特定安全场景优化的模型在降低误报率和提高覆盖率上具有显著优势。",
+      "tags": [
+        "SAST",
+        "基准测试",
+        "漏洞检测"
+      ],
+      "url": "https://www.endorlabs.com/learn/ai-sast-benchmark-2x-more-real-vulnerabilities",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-02T22:58:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "通过量化数据对比了专用安全 AI 与通用 AI 在代码审计上",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/ai-sast-benchmark-2x-more-real-vulnerabilities",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.1,
+      "final_score": 7.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "利用 DSPy 框架评估并优化 Datasette Agent 的 SQL 系统提示词以提升自然语言转查询的准确性",
+      "title_orig": "Using DSPy to evaluate and improve Datasette Agent's SQL system prompts",
+      "summary": "该研究探索使用 DSPy 框架对 Datasette Agent 的 SQL 系统提示词进行自动化评估与优化，旨在解决自然语言转 SQL 过程中的准确性挑战。通过在 Claude 环境中部署最新的 Datasette Alpha 版本，研究者利用 DSPy 的编程化方法替代手动提示词工程，实现了对复杂数据库查询逻辑的精细化控制与性能迭代，为 LLM 驱动的数据分析工具提供了系统化的优化思路。",
+      "tags": [
+        "提示词工程",
+        "DSPy",
+        "LLM安全"
+      ],
+      "url": "https://simonwillison.net/2026/Jul/2/dspy-datasette-agent-prompts/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-07-02T18:25:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了如何利用自动化框架系统性地优化 AI 代理的提示词质量",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/jul/2/dspy-datasette-agent-prompts",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 5.85,
+      "final_score": 6.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Anthropic 修复 Claude 模型分类器误报问题，安全研究员账号被误判为威胁的限制已解除",
+      "title_orig": "It seems they fixed the classifier. 🙌 I'm not considered a threat anymore by Claude and can finally use it",
+      "summary": "知名安全研究员反馈 Anthropic 已修复其 Claude 模型的安全分类器算法，此前该研究员因从事安全测试相关活动被系统误判定为潜在威胁并限制使用。目前相关误报已被纠正，研究员已恢复对该 AI 模型的正常访问权限，原文未披露该分类器具体的触发逻辑、误报原因或后端修复的技术细节，仅确认了访问受限状态的终结。",
+      "tags": [
+        "AI安全合规",
+        "分类器误报",
+        "访问控制"
+      ],
+      "url": "https://x.com/wunderwuzzi23/status/2072408920405213337",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-01T19:56:04+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了 AI 厂商安全风控策略对合法安全研究活动的影响及动态",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:wunderwuzzi23",
+      "story_id": "url:x.com/wunderwuzzi23/status/2072408920405213337",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "dimension_score": 5.1,
+      "final_score": 5.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

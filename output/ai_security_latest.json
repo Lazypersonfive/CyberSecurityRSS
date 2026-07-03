@@ -1,18 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-07-03",
-  "fetched_at_utc": "2026-07-02T23:48:23.379093Z",
+  "fetched_at": "2026-07-04",
+  "fetched_at_utc": "2026-07-03T23:45:32.352565Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 64,
-  "entry_count": 37,
+  "raw_entry_count": 60,
+  "entry_count": 34,
   "filter_stats": {
-    "input": 64,
+    "input": 60,
+    "dropped_title_blacklist": 1,
     "dedup_merged": 1,
-    "output": 63
+    "output": 58
   },
   "curation_stats": {
-    "dropped_source_cap": 26
+    "dropped_source_cap": 24
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -20,7 +21,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 0
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -55,7 +56,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://github.blog/security/vulnerability-research/feed/": {
       "feed_title": "GitHub Security Lab",
@@ -90,7 +91,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://www.hiddenlayer.com/feed": {
       "feed_title": "HiddenLayer Blog",
@@ -146,7 +147,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 6
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -257,6 +258,62 @@
       "feed_title": "Endor Labs"
     },
     {
+      "title": "CVE-2026-54415 漏洞复现：Azuriom CMS 越权服务器管理导致账号接管",
+      "url": "https://xz.aliyun.com/news/92416",
+      "summary": "Azuriom 是一款基于 Laravel 的开源游戏社区管理系统，在 Minecraft、Steam 等游戏服务器社区中被广泛使用。2026 年 6 月，该 CMS v1.2.11 之前版本被披露存在一个 CVSS 8.1 的高危漏洞（CVE-2026-54415），其后台 /admin/servers 路由缺少 can:admin.servers 权限中间件，导致仅有基础后台访问权限的用户即可",
+      "category": "Chinese",
+      "published": "2026-07-02T15:37:22+00:00",
+      "fetch_status": "full",
+      "cve_ids": [
+        "CVE-2026-54415"
+      ],
+      "related_urls": [],
+      "quality_score": 3,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "Authentication Bypass in the default configuration phpBB",
+      "url": "https://www.aikido.dev/blog/authentication-bypass-phpbb-technical-writeup",
+      "summary": "Our AI pentest agents found a critical phpBB auth bypass (CVE-2026-48611): one unauthenticated request logs you into any account. See the exploit and the fix. Category: Vulnerabilities & Threats",
+      "category": "AISecurityLabs",
+      "published": "2026-07-03T23:45:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [
+        "CVE-2026-48611"
+      ],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
+      "title": "Open Source AI Gap Map",
+      "url": "https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map/#atom-everything",
+      "summary": "Open Source AI Gap Map Current AI is \"a global partnership building a public option for AI\", founded as a non-profit at the AI Action Summit in Paris in February 2025 and backed by serious capital ($400m already committed). They launched their Gap Map a couple of days ago - an attempt at indexing the current state of open source AI: The Gap Map v0.1 details 421 products in depth: 266 software tool",
+      "category": "AISecurityLabs",
+      "published": "2026-07-03T22:04:31+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "I wrote about what we should do to secure critical US infrastructure before open source AI models are highly competent at hacking https://josephthacke...",
+      "url": "https://x.com/rez0__/status/2073053387348754659",
+      "summary": "I wrote about what we should do to secure critical US infrastructure before open source AI models are highly competent at hacking https://josephthacker.com/hacking/2026/07/01/operation-floodlight.html",
+      "category": "XSignals",
+      "published": "2026-07-03T14:36:57+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
       "title": "Using DSPy to evaluate and improve Datasette Agent's SQL system prompts",
       "url": "https://simonwillison.net/2026/Jul/2/dspy-datasette-agent-prompts/#atom-everything",
       "summary": "Research: Using DSPy to evaluate and improve Datasette Agent&#x27;s SQL system prompts One of this morning's AIE keynotes covered dspy , which reminded me I've been meaning to see if it could help me improve the system prompt used by Datasette Agent - so I fired off an asynchronous research task in Claude Code for web using Claude Fable 5: Pip install the latest Datasette alpha and datasette-agent",
@@ -296,24 +353,63 @@
       "feed_title": "Unit 42"
     },
     {
-      "title": "The AI Compass",
-      "url": "https://simonwillison.net/2026/Jun/30/the-ai-compass/#atom-everything",
-      "summary": "The AI Compass This political compass style quiz by bambamramfan is pretty neat - answer 29 questions about AI and AI ethics to see which of the 30 archetypes you best fit. I'm impressed that my answers on my first time through the quiz categorized me as \"The Garage Tinkerer\", patron saint myself! It's implemented as a single page React app using the &lt;script type=\"text/babel\"&gt; trick to avoid",
+      "title": "America's Increasing AI Security Integration: Palantir's ImmigrationOS and Maven Smart System - Modern Diplomacy",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSmJvRy04UktlRHdNZkU5X2RJbllkU005UEtUM0ctUzVsZGdzdHhtejdQS3ctdjlNTUZKeFJST2h0S3NRNWczejY1b2M0WXBKUHdmanZLcmYtMUx4RkZ3YUJZdUhkZHBPZzBUNlUtU00xaTlwaXAxanhtZEYxSlI5V0xzZHRock5WZi0zTWQtakZtcFZSWFJKem8yMG1rTVRpc3JXeFVTSU9mUzF1QU5aaGFCNzFyZW1yQnRuNmQzSmxpcG4wVk1iQg?oc=5",
+      "summary": "America's Increasing AI Security Integration: Palantir's ImmigrationOS and Maven Smart System &nbsp;&nbsp; Modern Diplomacy",
+      "category": "CoverageFallback",
+      "published": "2026-07-03T22:00:59+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Quoting Josh W. Comeau",
+      "url": "https://simonwillison.net/2026/Jul/3/josh-w-comeau/#atom-everything",
+      "summary": "I just launched my third course, Whimsical Animations, and so far, it’s on track to sell roughly ⅓ as many copies as a typical course launch. It’s a similar story with my two existing courses. Sales are down significantly from last year. There are likely a lot of reasons for this, but I think the biggest is AI. There’s sort of a double whammy with AI: Many people are wondering whether developer jo",
       "category": "AISecurityLabs",
-      "published": "2026-06-30T17:39:23+00:00",
+      "published": "2026-07-03T21:25:52+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
+      "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
     },
     {
-      "title": "Why F5 (FFIV) Is Up 5.7% After New AI Security Push And Board Expansion – And What's Next - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVmVLdTVTSWpLN2hRbkNoRS1seGZPMElmX1pLQjRQSVlIY1N5MnViU1hvVzZCVms1dnpmVFdmMFVFdVFQQ1hZSU1rWXpQdTV4R0E1Y1JPcFpDMHJVTjI5MjBhX2p6eVhNMmxnNldHMWdQNTNvc1dlTTl6SUM2SU5RT0VKNkJFWHU5dkZqVGFlSzVfT1pGSHlqdi1LcEg3SXI5eEpjdkpabl84bUhCWS05NVNQVl9jRTQ30gG-AUFVX3lxTE5haS1yNjJyMEx0ek84emtJTk1fZnd2eXVHQzJzeWVSQ3N3dUItNVQ3cjhCVXRJOFZtQVVIU2RqWFVMUnlTcHl4XzBwZmF0QWFPTDJUNS1EWnFyTk9pTmRkQldhcWlYUFVPV2NvZGRUZTdNZDVxbWhhY1YwOE5melJxcUxwbnpiR2l6cngxYkJGbERhRURiRGx5YWw1b1pEMW4tSVM2M1Rncl81YldWZ3NZR3RYLUJYdlRjQUwwMVE?oc=5",
-      "summary": "Why F5 (FFIV) Is Up 5.7% After New AI Security Push And Board Expansion – And What's Next &nbsp;&nbsp; simplywall.st",
+      "title": "How Investors May Respond To Fortinet (FTNT) Losing Russell Defensive Status Amid AI Security Spotlight - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSk5UWDlLTUV1dzhZLUNEMTNCaXo5azFWdjRaZDdKUXl4T2xHU3NLV1h3amFnTm0wTTVSR1FlY3h3X3FUU0Vha2dRbERuRlRYdmt5T3c4N29oZlJ5Um1NbzZYVktNWmptemI1dmh0NG5jZ29xN2UxamFqcGhyUFl0VTVKVzFwWHR5RUhVWjJQLUcxNzctWDhDX19GRUt1RENaMkE?oc=5",
+      "summary": "How Investors May Respond To Fortinet (FTNT) Losing Russell Defensive Status Amid AI Security Spotlight &nbsp;&nbsp; Yahoo Finance",
       "category": "CoverageFallback",
-      "published": "2026-07-02T23:06:40+00:00",
+      "published": "2026-07-03T18:10:37+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "JADEPUFFER ransomware attack AI - Security Affairs",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbjFfZzNSUm1ZYXp6c1l2RzFMVGFEZFEwUGNZSGw1bG9NQ3l2c2FpdkE4MG04STQtRUZZbHUxQ0dKQVF6LU5ycHdmdVdsblk2YzJIeG5YWUFHejUyWVVXSU5sUl9weE9fOUZZR0xtS3hZYi1OVDU0S3JXMFdqeW04SFdBdlVMQlM3Y1dsTk95bFB5WU9MbzFOUGRrcktLMkpCRkw5V2wzNUhaa0o0QVA0UnNUNk1vZUc0VEFLRi1aNVg?oc=5",
+      "summary": "JADEPUFFER ransomware attack AI &nbsp;&nbsp; Security Affairs",
+      "category": "CoverageFallback",
+      "published": "2026-07-03T17:14:01+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Horizon Launches AI Rapid Response Fellowship to Strengthen U.S. Government AI Security Capacity - Apply By 22 July 2026 - Global South Opportunities",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE84dDctT29mbUJIVTRIQXdlcHdhdkRldjRVZVJpN2hGeTlxcDRkWW0yMnhaVkpOeVZHRjg1Qk1nRGxETUE3enE4RXBkQW5MWXRxalhtNF8tNExBNTlLTFR3bmNVcTJ6ZVhnVzd0UnlTRHBEaW9XbkE?oc=5",
+      "summary": "Horizon Launches AI Rapid Response Fellowship to Strengthen U.S. Government AI Security Capacity - Apply By 22 July 2026 &nbsp;&nbsp; Global South Opportunities",
+      "category": "CoverageFallback",
+      "published": "2026-07-03T16:57:39+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -335,19 +431,6 @@
       "feed_title": "Endor Labs"
     },
     {
-      "title": "美国解除Anthropic两款顶级模型出口限制 AI安全赛道升温 - 디지털투데이",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdE44RjU1MWM5cDJIWlRqVUg5NzdLR3BfcVBUTDM2VWtfXzcxMGlfUHJZRVIxRGthWEVvazVNZHEtUHlwVEtRSWtFYkxDanQ2RTRtaUVON3VlM3JfZzBoOTFrM0UtcjdTTktmc2MtaVV1Tkp5cW9QS2t5aWhFaV9ONGNsWEhTam83OTdvRE1FaGd3TnZkcWVkTGlYdWlQRlk0TFQ2UUxaYmYwQWZLNGtuMEw0OU0?oc=5",
-      "summary": "美国解除Anthropic两款顶级模型出口限制 AI安全赛道升温 &nbsp;&nbsp; 디지털투데이",
-      "category": "CoverageFallback",
-      "published": "2026-07-02T22:30:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
-    },
-    {
       "title": "How We Added WebAuthn to a Browser-Based RDP Client",
       "url": "https://unit42.paloaltonetworks.com/webauthn-added-to-browser-based-rdp/",
       "summary": "A look inside the reverse-engineering journey of building the first RDP client outside of Windows to support WebAuthn redirection. The post How We Added WebAuthn to a Browser-Based RDP Client appeared first on Unit 42 .",
@@ -359,45 +442,6 @@
       "quality_score": 1,
       "feed_url": "https://unit42.paloaltonetworks.com/feed/",
       "feed_title": "Unit 42"
-    },
-    {
-      "title": "联合国报告全球2000万儿童使用AI，安全保障存隐忧 - video.sina.com.cn",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMTJadnJ4MF9fRzZsdU5WSVJ3M0huU3NrYnRUcjZzWEdGN1c5bHI1QVpiMVJoRDZOQnZOX1J1MkJDeFYtbkhFNjIySmNnUFRSaWNuUVZqWkRMN0ZFRlltSmxkM0dTMC13a1hQMFJFOV9XZG5CUjBqeHdEYnk5TkRJOEZB?oc=5",
-      "summary": "联合国报告全球2000万儿童使用AI，安全保障存隐忧 &nbsp;&nbsp; video.sina.com.cn",
-      "category": "CoverageFallback",
-      "published": "2026-07-02T20:34:35+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
-    },
-    {
-      "title": "llm-coding-agent 0.1a0",
-      "url": "https://simonwillison.net/2026/Jul/2/llm-coding-agent/#atom-everything",
-      "summary": "Release: llm-coding-agent 0.1a0 Another Fable 5 experiment. Now that my LLM library has evolved into more of an agent framework it's time to see what a simple coding agent would look like built on it. I started a new Python library using my python-lib-template-repository GitHub template repository, then ran these two prompts (here's the Claude Code for web transcript ): Write a spec.md for this pr",
-      "category": "AISecurityLabs",
-      "published": "2026-07-02T19:33:12+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "IBM (NYSE:IBM) Alliance Puts AI Security In Focus - Kalkine Media",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPNl9hbUZTTE9jUk8tNHMtNmFSVTVKakhIS2dqQzgzUlgzX2NFT3RiaUdJRHEzOW1rUEFUWFhRMXloRGt0Z3d6ek1QN2M1cTUybTNJVmJuMFAtcXdObXBhYVBteWVhUVRZSHpRYzRDRGFvZTZyZmw0cHIxY2UzbzlwVVJNb2hNWnJmdkhDVVE5eE1hMkcxX2hJ?oc=5",
-      "summary": "IBM (NYSE:IBM) Alliance Puts AI Security In Focus &nbsp;&nbsp; Kalkine Media",
-      "category": "CoverageFallback",
-      "published": "2026-07-02T19:10:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
     },
     {
       "title": "AI Pentesting for Compliance",
@@ -480,95 +524,56 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "RT Matt Shumer: So uh, Fable will be useless? Apparently coding work will fall back to Opus.",
-      "url": "https://x.com/rez0__/status/2072279660092706873",
-      "summary": "RT Matt Shumer So uh, Fable will be useless? Apparently coding work will fall back to Opus. Anthropic: Claude Fable 5 will be available again globally tomorrow. After a series of productive conversations with the US government, we're redeploying the model with a new set of classifiers to target and block more cybersecurity tasks. In the near term, some routine tasks like coding",
+      "title": "Oh my gosh this stuff is freaking amazing",
+      "url": "https://x.com/rez0__/status/2073059343403041037",
+      "summary": "Oh my gosh this stuff is freaking amazing",
       "category": "XSignals",
-      "published": "2026-07-01T04:13:43+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "i think it shoudl be required to have an explanation",
-      "url": "https://x.com/rez0__/status/2072046676546666843",
-      "summary": "i think it shoudl be required to have an explanation Jenish Sojitra: It's sad that bug bounty platforms offers little to no protection when program abruptly lowers severity and bounty without proper explanation",
-      "category": "XSignals",
-      "published": "2026-06-30T19:56:39+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "i will say, this is not going to be crazy deep technical content like most of what I (and the podcast) put out. but im sure we all know dozens of frie...",
-      "url": "https://x.com/rez0__/status/2072016849877803088",
-      "summary": "i will say, this is not going to be crazy deep technical content like most of what I (and the podcast) put out. but im sure we all know dozens of friends/family/etc that would massively benefit from this type of information Joseph Thacker: ALRIGHT, LAUNCH ONE!🚀 https://aisafetyforparents.com As a father of 3 kids who works in AI and Security, I'm always getting tons of questions about AI from othe",
-      "category": "XSignals",
-      "published": "2026-06-30T17:58:07+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Aikido acquires Root to secure the supply chain",
-      "url": "https://www.aikido.dev/blog/aikido-acquires-root",
-      "summary": "Aikido has acquired Root to secure the software supply chain, fixing open source vulnerabilities in the version you already run, no upgrade required. Critical fixes go back to the community, free. Category: Product & Company Updates",
-      "category": "AISecurityLabs",
-      "published": "2026-06-30T14:23:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "Why AI Browsers Create an Unavoidable Enterprise Security Risk",
-      "url": "https://prompt.security/blog/why-ai-browsers-create-a-new-unavoidable-security-risk",
-      "summary": "AI browsers introduce structural security risks driven by prompt injection and autonomous actions. Learn why enterprises can't fully secure AI browsers, for now",
-      "category": "AISecurityLabs",
-      "published": "2026-06-30T12:54:53+00:00",
+      "published": "2026-07-03T15:00:37+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://prompt.security/blog/rss.xml",
-      "feed_title": "Prompt Security"
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
-      "title": "Shipping post-quantum cryptography to Python",
-      "url": "https://blog.trailofbits.com/2026/06/30/shipping-post-quantum-cryptography-to-python/",
-      "summary": "Post-quantum cryptography is now one pip-install away for the entire Python ecosystem. With funding from the Sovereign Tech Agency , we implemented support for ML-KEM, the NIST-standard key-establishment primitive, and ML-DSA, the NIST-standard digital-signature primitive, in pyca/cryptography . On June 22, 2026, the White House ordered the U.S. government to accelerate its transition to post-quan",
-      "category": "AISecurityLabs",
-      "published": "2026-06-30T11:00:00+00:00",
-      "fetch_status": "full",
+      "title": "been getting this alot. not sure why.",
+      "url": "https://x.com/rez0__/status/2073039431460585744",
+      "summary": "been getting this alot. not sure why.",
+      "category": "XSignals",
+      "published": "2026-07-03T13:41:30+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://blog.trailofbits.com/index.xml",
-      "feed_title": "Trail of Bits"
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
-      "title": "SDPCSEC纳新赛misc部分",
-      "url": "https://xz.aliyun.com/news/92397",
-      "summary": "题目都比较基础，适合新手熟悉一下题型和做题流程Saber附件名称是LSB.png 也就是PNG中的LSB隐写PNG - CTF Wiki我们用stegsolve分析一下这三个通道左上角有异常，分析可以提取出flagez_zipflag.zip被损坏了，用010看一下发现文件头缺了504B03,直接补上再次打开提示需要密码，看一下zip的本地文件头签名，14000900伪加密，直接用winrar修复",
+      "title": "一句话跑了三小时：用 Claude Code Loop 全自动逆向一个加密验证码系统",
+      "url": "https://xz.aliyun.com/news/92420",
+      "summary": "我给了 Claude Code 一句话：\"全面信息收集渗透测试这个网站\"。三个多小时后，它交给我多个漏洞联合一个完整的纯 API 验证码绕过方案（批量跑敏感信息）——包含 ECDH 密钥交换逆向、AES-GCM 加密还原、NCC 图像识别算法、以及一个能批量注册账号的全自动化脚本。中间我一次都没有打开聊天窗口。",
       "category": "Chinese",
-      "published": "2026-06-30T02:42:55+00:00",
-      "fetch_status": "full",
+      "published": "2026-07-03T03:41:08+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "https://xz.aliyun.com/feed",
       "feed_title": "先知社区"
+    },
+    {
+      "title": "fable downgrading to opus 4.8 on a fresh box with no hacking context when asked to code up something with no hacking or cyber or bio reference is MADD...",
+      "url": "https://x.com/rez0__/status/2072867486966440165",
+      "summary": "fable downgrading to opus 4.8 on a fresh box with no hacking context when asked to code up something with no hacking or cyber or bio reference is MADDENING",
+      "category": "XSignals",
+      "published": "2026-07-03T02:18:15+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "Claude Sonnet 5 with Claude Code: strong on function, average on security, and unusually honest | Blog | Endor Labs",
@@ -649,69 +654,30 @@
       "feed_title": "Aikido Security"
     },
     {
-      "title": "RT Critical Thinking - Bug Bounty Podcast: Is Justin a FUGITIVE?",
-      "url": "https://x.com/rez0__/status/2071995214118506653",
-      "summary": "RT Critical Thinking - Bug Bounty Podcast Is Justin a FUGITIVE?",
-      "category": "XSignals",
-      "published": "2026-06-30T16:30:39+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "HackTheBox Spooktrol 渗透实战：从任意文件读取到接管 C2",
-      "url": "https://xz.aliyun.com/news/92400",
-      "summary": "本文记录了 HackTheBox Spooktrol 靶机的一次完整渗透过程。攻击从 Web 服务中的目录穿越漏洞开始，通过任意文件读取获取 implant 可执行文件，并结合流量分析、Caido 代理劫持、Match & Replace 自动替换、Ghidra 静态逆向与 GDB 动态调试，逐步还原 implant 与 C2 Server 之间的任务通信机制。随后，利用文件上传能力写入 SSH",
+      "title": "SDPCSEC热身赛re方向wp",
+      "url": "https://xz.aliyun.com/news/92422",
+      "summary": "题目比较基础，新手友好",
       "category": "Chinese",
-      "published": "2026-06-30T13:35:32+00:00",
-      "fetch_status": "rss_only",
+      "published": "2026-07-03T07:21:42+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 0,
+      "quality_score": -1,
       "feed_url": "https://xz.aliyun.com/feed",
       "feed_title": "先知社区"
     },
     {
-      "title": "How ChatGPT adoption has expanded",
-      "url": "https://openai.com/index/how-chatgpt-adoption-has-expanded",
-      "summary": "New OpenAI Signals data shows how ChatGPT adoption is growing globally, with users increasing usage, exploring more capabilities, and driving growth across regions and languages.",
-      "category": "FirstParty",
-      "published": "2026-06-30T09:00:00+00:00",
-      "fetch_status": "rss_only",
+      "title": "Linux 权限维持技术总结",
+      "url": "https://xz.aliyun.com/news/92421",
+      "summary": "主要包含一些 Linux权限的方法",
+      "category": "Chinese",
+      "published": "2026-07-03T06:44:47+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "Introducing GeneBench-Pro",
-      "url": "https://openai.com/index/introducing-genebench-pro",
-      "summary": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
-      "category": "FirstParty",
-      "published": "2026-06-30T00:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "Core dump epidemiology: fixing an 18-year-old bug",
-      "url": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
-      "summary": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug.",
-      "category": "FirstParty",
-      "published": "2026-06-30T00:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
+      "quality_score": -1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "SSTI进阶——多种模版引擎特征及应用",
