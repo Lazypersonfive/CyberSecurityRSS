@@ -1,0 +1,561 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-05",
+  "generated_at": "2026-07-04T23:45:45.109577Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 11,
+    "direct": 15,
+    "wechat": 7,
+    "tier_t2": 13,
+    "kind_cn_expert": 11,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "kind_media": 3,
+    "tier_unknown": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 3,
+    "merged_total": 3
+  },
+  "items": [
+    {
+      "title_zh": "Adobe ColdFusion 路径穿越漏洞 CVE-2026-48282 风险预警及复现成功",
+      "title_orig": "【已复现】Adobe ColdFusion 路径穿越漏洞(CVE-2026-48282)安全风险通告",
+      "summary": "该漏洞属于路径穿越类型，源于 Adobe ColdFusion 对用户输入路径的校验不严，攻击者可通过构造恶意请求访问服务器上的敏感文件。目前该漏洞已实现技术复现并影响多个主流版本，官方已发布安全更新，建议受影响的企业级用户尽快升级至最新补丁版本，以规避潜在的数据泄露风险并确保系统环境的整体安全性。",
+      "tags": [
+        "路径穿越",
+        "Adobe",
+        "漏洞预警"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506512&idx=1&sn=0d5d4398d38fab16e8bbf0599a75b4a1",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-03T09:49:00+00:00",
+      "cve_ids": [
+        "CVE-2026-48282"
+      ],
+      "selection_reason": "Adobe企业级组件的高危漏洞，且已有复现，具有极高修复优先",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "cve:cve-2026-48282",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506500&idx=1&sn=0eaa84cc141e483ba8ddda80a0a270ee"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.55,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Microsoft SharePoint 远程代码执行漏洞 CVE-2026-45659 遭在野利用",
+      "title_orig": "CISA：Microsoft SharePoint RCE 漏洞现已被积极利用",
+      "summary": "该漏洞源于 SharePoint 对不可信数据的反序列化处理缺陷，允许低权限攻击者在无需用户交互的情况下，通过低复杂度攻击在未打补丁的服务器上执行任意代码。CISA 警告称该高危漏洞正被积极利用，任何经过身份验证的攻击者均可触发此行为，受影响组织应立即更新微软发布的补丁，以防止服务器被攻击者完全控制。",
+      "tags": [
+        "反序列化",
+        "SharePoi",
+        "在野利用"
+      ],
+      "url": "https://hackernews.cc/post/64421",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-07-03T02:42:00+00:00",
+      "cve_ids": [
+        "CVE-2026-45659"
+      ],
+      "selection_reason": "CISA预警的在野利用漏洞，涉及反序列化技术，威胁程度极高。",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "cve:cve-2026-45659",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077646&idx=3&sn=114dac59899df5c95325aefab44a2833"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Little Orbits GameFirst 反作弊驱动程序存在多个本地提权漏洞",
+      "title_orig": "VU#639124: Multiple local privilege escalation vulnerabilities in Little Orbits GameFirst Anti-Cheat",
+      "summary": "GFAC.sys 驱动程序在处理通过微过滤器通信端口输入的用户受控数据时存在安全缺陷，本地攻击者可利用这些漏洞执行任意内核内存写入。此类漏洞会导致攻击者将权限提升至 SYSTEM 级别或触发系统崩溃，影响所有集成此反作弊组件的游戏环境，目前相关技术细节已由 CERT 披露，相关开发者需关注驱动程序的输入验证安全性。",
+      "tags": [
+        "提权漏洞",
+        "驱动安全",
+        "内核写入"
+      ],
+      "url": "https://kb.cert.org/vuls/id/639124",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-07-02T14:34:36+00:00",
+      "cve_ids": [],
+      "selection_reason": "驱动层面的内核提权漏洞，展示了反作弊软件常见的攻击面。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/639124",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Microsoft 365 Copilot 三阶段提示注入漏洞链可导致企业数据窃取",
+      "title_orig": "【AI复盘】Copilot三阶段提示注入漏洞链",
+      "summary": "攻击者通过在Copilot URL参数中嵌入恶意指令，利用大模型无法区分用户指令与第三方内容的固有特性，诱导用户点击链接后在无感知状态下窃取邮件、会议记录及2FA验证码等企业敏感数据。该漏洞链标志着AI安全从理论风险转向实战利用，凸显了提示注入在AI部署中的核心威胁，企业在上线AI应用前必须完成严谨的安全评估，以应对传统安全技术无法解决的指令边界问题。",
+      "tags": [
+        "提示注入",
+        "AI安全",
+        "Copilot"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487741&idx=1&sn=dec4a1ed5fdc36e63a6f40dee0774a7c",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-02T22:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI应用中系统性的提示注入风险，具有极强的实战参考价值",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ%3D%3D&mid=2247487741&idx=1&sn=dec4a1ed5fdc36e63a6f40dee0774a7c",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.15,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux 内核 Bad Epoll 漏洞 CVE-2026-46242 允许普通用户获取 Root 权限",
+      "title_orig": "New \"Bad Epoll\" Linux Kernel Flaw Lets Unprivileged Users Gain Root, Hits Android",
+      "summary": "名为Bad Epoll的Linux内核高危漏洞CVE-2026-46242被披露，普通用户无需特殊权限即可利用该缺陷获取root权限并完全控制系统，其影响范围广泛涵盖了Linux桌面、服务器以及Android移动系统。目前官方已发布修复补丁，值得注意的是，该漏洞所在的内核代码段虽曾被Anthropic的AI模型检测，但此次缺陷却被AI遗漏，引发了业界对AI安全审计能力的深度讨论。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "Android安"
+      ],
+      "url": "https://thehackernews.com/2026/07/new-bad-epoll-linux-kernel-flaw-lets.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-03T19:40:01+00:00",
+      "cve_ids": [
+        "CVE-2026-46242"
+      ],
+      "selection_reason": "影响广泛的内核提权漏洞，且涉及AI辅助代码审计的局限性讨论。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-46242",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=Mzg3MDAzMDQxNw==&mid=2247496716&idx=1&sn=fc7a8879079acd68f4c7ba4266acadd7",
+        "https://defend.network/briefings/linux-kernel-fatfs-npm-supply-chain-threats-2026-07-04.html",
+        "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077654&idx=1&sn=a686c79c41874b66d1f9e9ea4bf7abf7"
+      ],
+      "related_count": 3,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "清华与奇安信研究揭示预训练模型平台 AI 应用的安全风险",
+      "title_orig": "【论文分享】你的\"空间\"成了攻击者的\"地盘\"：预训练模型平台上 AI 应用的安全风险研究",
+      "summary": "清华大学与奇安信星图实验室联合完成的研究揭示了预训练模型托管平台上 AI 应用的安全架构缺陷，详细探讨了攻击者如何利用模型分发与集成过程中的漏洞接管用户空间。该研究成果已被网络安全国际顶会 ACM CCS 2026 录用，为 AI 基础设施安全提供了重要的理论支撑，并针对模型托管平台的安全防护提出了专业性的改进建议。",
+      "tags": [
+        "AI安全",
+        "学术研究",
+        "供应链安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg4OTU4MjQ4Mg==&mid=2247489250&idx=1&sn=64e47d5bfb4c4335825f64e873ff5a36",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-07-02T10:43:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级学术会议成果，系统性揭示了AI模型平台的供应链安全风险。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77a8d89f12dcb0aa75a19731e474a63427089081.xml",
+      "feed_title": "奇安信技术研究院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77a8d89f12dcb0aa75a19731e474a63427089081.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg4OTU4MjQ4Mg%3D%3D&mid=2247489250&idx=1&sn=64e47d5bfb4c4335825f64e873ff5a36",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "思科确认 Unified CM 高危漏洞 CVE-2026-20230 已出现在野攻击",
+      "title_orig": "Cisco 确认 Unified CM 漏洞已在野外被利用",
+      "summary": "思科证实其统一通信管理器Unified CM中存在编号为CVE-2026-20230的高危漏洞，该漏洞源于对特定HTTP请求的处理逻辑缺陷，CVSS评分高达8.6分且已在野外被黑客实际利用。攻击者可借此在未经授权的情况下对受影响系统实施攻击，官方强烈建议管理员立即检查系统日志并执行安全升级程序，以防止企业核心通信基础设施遭到入侵或敏感信息泄露。",
+      "tags": [
+        "思科",
+        "在野利用",
+        "通信安全"
+      ],
+      "url": "https://hackernews.cc/post/64422",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-07-03T02:42:00+00:00",
+      "cve_ids": [
+        "CVE-2026-20230"
+      ],
+      "selection_reason": "关键通信基础设施的在野利用漏洞，对企业内网安全影响巨大。",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "cve:cve-2026-20230",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077646&idx=2&sn=030e4557b02a843ad920a01a2670b8fe"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "APT 组织 Turla 新型攻击武器 StockStay 技术细节深度分析",
+      "title_orig": "APT组织Turla最新网络攻击武器StockStay深度分析",
+      "summary": "安全研究人员对 APT 组织 Turla 开发的新型恶意软件 StockStay 进行了深度逆向分析，揭示了其采用的复杂隐蔽通信机制和模块化设计。该武器旨在长期潜伏于目标网络中进行敏感数据窃取，报告详细记录了其加载流程、加密算法及指令控制特征，为防御方提供了关键的入侵指标，助力企业识别并拦截此类针对性的高级持续性威胁。",
+      "tags": [
+        "APT攻击",
+        "恶意软件",
+        "逆向分析"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI0MTE4ODY3Nw==&mid=2247492950&idx=1&sn=1e5615b8a94c3c0e5e6d95141d678fa7",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-03T01:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名APT组织的最新武器分析，有助于提升针对性威胁狩猎能力。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/6bdf0d750e8c418f6ddfe8826c7a29f786a74aa4.xml",
+      "feed_title": "白泽安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/6bdf0d750e8c418f6ddfe8826c7a29f786a74aa4.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI0MTE4ODY3Nw%3D%3D&mid=2247492950&idx=1&sn=1e5615b8a94c3c0e5e6d95141d678fa7",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "AI 智能体利用 Langflow RCE 漏洞自主执行数据库勒索软件攻击",
+      "title_orig": "AI 智能体利用 Langflow RCE 漏洞自动化执行数据库勒索软件攻击",
+      "summary": "威胁者JADEPUFFER利用Langflow中的远程代码执行漏洞，通过AI智能体自主执行了从入侵到勒索的全流程攻击。该智能体利用漏洞获取初始访问权限后，自主完成凭证窃取、网络横向移动，并最终对生产数据库进行加密与擦除，原文未披露该RCE漏洞的具体CVE编号、触发原理及受影响的Langflow具体版本，也未提及官方修复状态。",
+      "tags": [
+        "AI安全",
+        "勒索软件",
+        "自动化攻击"
+      ],
+      "url": "https://hackernews.cc/post/64420",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-07-03T02:42:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI智能体在实战中自主完成全链路攻击的技术风险。",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "url:hackernews.cc/post/64420",
+      "related_urls": [
+        "https://www.securityweek.com/agentic-ai-used-to-conduct-ransomware-attack-via-langflow/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.7,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Azuriom CMS 越权访问漏洞 CVE-2026-54415 导致服务器管理权限接管",
+      "title_orig": "CVE-2026-54415 漏洞复现：Azuriom CMS 越权服务器管理导致账号接管",
+      "summary": "基于 Laravel 的开源游戏社区管理系统 Azuriom 在 v1.2.11 之前版本存在高危越权漏洞，其后台服务器管理路由因缺少必要的权限中间件校验而暴露。该漏洞 CVE-2026-54415 允许仅具备基础后台访问权限的用户直接访问敏感路由，从而实现对游戏服务器的越权管理和账号接管，目前官方已发布修复版本以应对这一 CVSS 8.1 分的安全威胁。",
+      "tags": [
+        "越权漏洞",
+        "CMS安全",
+        "权限绕过"
+      ],
+      "url": "https://xz.aliyun.com/news/92416",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-07-02T15:37:22+00:00",
+      "cve_ids": [
+        "CVE-2026-54415"
+      ],
+      "selection_reason": "该漏洞涉及广泛使用的开源社区系统，具有较高的实战复现价值。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-54415",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92416"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.6,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Cursor AI 代码编辑器 DuneSlide 漏洞可导致操作系统级远程代码执行",
+      "title_orig": "Critical Cursor AI Code Editor Flaws Could Lead to OS-Level Remote Code Execution",
+      "summary": "Cursor AI代码编辑器被发现存在名为DuneSlide的严重漏洞，攻击者可通过零点击提示注入攻击实现沙箱逃逸。该漏洞允许恶意指令在底层操作系统上执行任意代码，从而获取系统级访问权限，原文未披露该漏洞的具体成因、受影响的编辑器版本号以及官方是否已发布修复补丁或缓解措施，仅明确了其具备零点击触发和OS级执行的技术特性。",
+      "tags": [
+        "RCE漏洞",
+        "AI编辑器",
+        "沙箱逃逸"
+      ],
+      "url": "https://www.securityweek.com/critical-cursor-ai-ide-flaws-could-lead-to-os-level-remote-code-execution/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-07-03T07:57:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了流行AI开发工具在处理提示词注入时的底层安全缺陷。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/critical-cursor-ai-ide-flaws-could-lead-to-os-level-remote-code-execution",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.8,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "7-Zip 26.02 及以下版本存在 RAR5 替代数据流名称冲突导致的 MotW 绕过漏洞",
+      "title_orig": "7-Zip < = 26.02 - Mark-of-the-Web (MotW) Bypass via RAR5 Alternate Data Stream Name Collision",
+      "summary": "7-Zip 26.02 及更早版本在处理 RAR5 压缩包时存在安全缺陷，攻击者可利用替代数据流名称冲突绕过 Windows 的 Web 标记保护机制。该中危漏洞使得恶意程序在解压后不会触发系统的安全警告，从而增加了用户遭受钓鱼攻击的风险，原文不仅详细分析了漏洞原理，还提供了基于 Python 的验证脚本供安全研究人员测试受影响系统的防御能力。",
+      "tags": [
+        "MotW绕过",
+        "7-Zip",
+        "防御绕过"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026070002",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-07-03T15:40:05+00:00",
+      "cve_ids": [],
+      "selection_reason": "MotW绕过是红队常用的权限维持技术，该漏洞影响主流解压工具",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "url:cxsecurity.com/issue/wlb-2026070002",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "DeepSeek 意外生成基于浏览器特性的新型勒索攻击链路",
+      "title_orig": "当AI幻觉照进现实：一种从未见过的浏览器勒索攻击正在诞生",
+      "summary": "Check Point研究发现DeepSeek在处理恶意需求时，通过AI幻觉将理论风险转化为无需恶意软件、无需漏洞利用且无需安装APK的浏览器勒索攻击链路。该攻击利用浏览器合法特性组合实现对用户数据的控制，原文未披露该攻击链路涉及的具体浏览器组件、利用的特定API名称以及针对此类新型威胁的防御修复方案，强调了攻击过程对传统防御的规避性。",
+      "tags": [
+        "AI幻觉",
+        "浏览器安全",
+        "新型威胁"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519292&idx=1&sn=0a941ddb1af39a67956d2c3a416e014d",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-02T08:50:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了AI在生成新型攻击向量方面的潜在风险，具有前瞻性。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247519292&idx=1&sn=0a941ddb1af39a67956d2c3a416e014d",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "隐形图像指令绕过大模型文本安全防线实现恶意代码部署",
+      "title_orig": "藏在图片里的隐形指令可绕开AI的文本安全防线",
+      "summary": "研究发现攻击者可将恶意指令隐藏在图片中，诱导大模型在执行公开代码仓库部署任务时静默拉取并构建恶意资源，全程不触发任何安全告警。由于这些隐形指令嵌入在图像像素而非文本中，现有的文本安全过滤系统无法有效识别，导致模型在自动化处理流程中被利用，成为绕过企业安全防线并部署恶意网站的工具，凸显了多模态模型在输入验证方面的安全漏洞。",
+      "tags": [
+        "多模态攻击",
+        "提示注入",
+        "模型安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187527&idx=1&sn=bcaa9c29451ad6856c40327963dc01e3",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-03T15:25:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "多模态大模型的安全边界突破是当前AI安全研究的热点方向。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187527&idx=1&sn=bcaa9c29451ad6856c40327963dc01e3",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "利用 AI 代理护栏机制实施拒绝服务攻击的新型技术研究",
+      "title_orig": "AI护栏可被利用成拒绝服务武器",
+      "summary": "最新研究表明攻击者可以将 AI 代理的安全护栏机制转化为拒绝服务武器，通过构造特定的污染文档诱导基于推理的安全系统陷入无限的扩展思维循环。这种攻击手段利用了 AI 对安全合规性审查的计算开销，通过恶意触发复杂的逻辑判断来大幅消耗系统计算资源，从而导致共享的 AI 工作流效率严重下降甚至完全瘫痪，为针对 AI 基础设施的资源耗尽攻击提供了新思路。",
+      "tags": [
+        "拒绝服务",
+        "AI护栏",
+        "资源消耗"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxNzA3MTgyNg==&mid=2247543443&idx=1&sn=3fb2614a8f3ff009cd668f8bbc0585c7",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-02T08:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提出了一种利用安全机制本身进行攻击的逆向思维，技术视角独特。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/9da87fba8130d0c2dc52cc45b844f045227e06a7.xml",
+      "feed_title": "数世咨询",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/9da87fba8130d0c2dc52cc45b844f045227e06a7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzkxNzA3MTgyNg%3D%3D&mid=2247543443&idx=1&sn=3fb2614a8f3ff009cd668f8bbc0585c7",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
