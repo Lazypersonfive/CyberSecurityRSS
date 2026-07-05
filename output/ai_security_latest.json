@@ -1,19 +1,17 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-07-05",
-  "fetched_at_utc": "2026-07-04T23:45:50.257249Z",
+  "fetched_at": "2026-07-06",
+  "fetched_at_utc": "2026-07-05T23:47:48.273837Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 53,
-  "entry_count": 27,
+  "raw_entry_count": 42,
+  "entry_count": 19,
   "filter_stats": {
-    "input": 53,
-    "dropped_title_blacklist": 1,
-    "dedup_merged": 1,
-    "output": 51
+    "input": 42,
+    "output": 42
   },
   "curation_stats": {
-    "dropped_source_cap": 24
+    "dropped_source_cap": 23
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -56,7 +54,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://github.blog/security/vulnerability-research/feed/": {
       "feed_title": "GitHub Security Lab",
@@ -70,7 +68,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
@@ -112,7 +110,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 0
     },
     "https://snyk.io/blog/feed/": {
       "feed_title": "Snyk Blog",
@@ -126,7 +124,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -147,7 +145,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 3
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -189,7 +187,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -231,7 +229,7 @@
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 6
     },
     "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Supply Chain Security",
@@ -242,36 +240,6 @@
     }
   },
   "entries": [
-    {
-      "title": "Endor Labs’ AI SAST Finds Zero Day Memory-Amplification DoS in Anthropic’s buffa library | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa",
-      "summary": "We identified an unbounded-allocation data flow in buffa's protobuf decoder that I developed into a ~22x memory-amplification denial of service for CVE-2026-55407",
-      "category": "AISecurityLabs",
-      "published": "2026-07-02T22:58:14+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [
-        "CVE-2026-55407"
-      ],
-      "related_urls": [],
-      "quality_score": 3,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "CVE-2026-54415 漏洞复现：Azuriom CMS 越权服务器管理导致账号接管",
-      "url": "https://xz.aliyun.com/news/92416",
-      "summary": "Azuriom 是一款基于 Laravel 的开源游戏社区管理系统，在 Minecraft、Steam 等游戏服务器社区中被广泛使用。2026 年 6 月，该 CMS v1.2.11 之前版本被披露存在一个 CVSS 8.1 的高危漏洞（CVE-2026-54415），其后台 /admin/servers 路由缺少 can:admin.servers 权限中间件，导致仅有基础后台访问权限的用户即可",
-      "category": "Chinese",
-      "published": "2026-07-02T15:37:22+00:00",
-      "fetch_status": "full",
-      "cve_ids": [
-        "CVE-2026-54415"
-      ],
-      "related_urls": [],
-      "quality_score": 3,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
     {
       "title": "Authentication Bypass in the default configuration phpBB",
       "url": "https://www.aikido.dev/blog/authentication-bypass-phpbb-technical-writeup",
@@ -314,17 +282,56 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "Using DSPy to evaluate and improve Datasette Agent's SQL system prompts",
-      "url": "https://simonwillison.net/2026/Jul/2/dspy-datasette-agent-prompts/#atom-everything",
-      "summary": "Research: Using DSPy to evaluate and improve Datasette Agent&#x27;s SQL system prompts One of this morning's AIE keynotes covered dspy , which reminded me I've been meaning to see if it could help me improve the system prompt used by Datasette Agent - so I fired off an asynchronous research task in Claude Code for web using Claude Fable 5: Pip install the latest Datasette alpha and datasette-agent",
+      "title": "Google cuts operational emissions 2% as AI supply chain emissions rise 25% - PPC Land",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQR3J6cFpHcG5HTkF1U2c5YllQbllsMlV4b3dxcFVVSTV4RFlSVXRDOVlGUVpmYWNpMEhodVpHa1F5bXVxUmhXdGhSeFV6QnpJeWNrLXZkTU1VZThDZldMS09JVkVfVktTc1NVb1psRXMzdHI2STBLUDFYOGNlTzNyazUzSU5aQmNHdi1PWmtJOTU2elkx?oc=5",
+      "summary": "Google cuts operational emissions 2% as AI supply chain emissions rise 25% &nbsp;&nbsp; PPC Land",
+      "category": "CoverageFallback",
+      "published": "2026-07-05T19:22:30+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Supply Chain Security"
+    },
+    {
+      "title": "The Booz Allen Hamilton AI Security Assessment - Bringing defense-grade scrutiny to enterprise model - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRmNJU25wclp6M25oRFVjUFhpTE15Vmx6SDRnZHU5T2x0d0tISHBFRFg4b0diUU9ia3AwMjRERDlqTDBULXhnU1R5S3dDeFU0Wml3SEZMNG9QbmhCWGhJQzU1djdIc0otamd0bVVwLVRiQ2xKc3MyQldnVXdEd2x3ZE03anZhaVpBcUpJejBxZ1V3WXFpd3diQlRwSDhxaWxPc1M2SWR4MnZCNGJxejI5bjlVXzdWTFU1UlozLWRWNm1venRybEs0?oc=5",
+      "summary": "The Booz Allen Hamilton AI Security Assessment - Bringing defense-grade scrutiny to enterprise model &nbsp;&nbsp; AD HOC NEWS",
+      "category": "CoverageFallback",
+      "published": "2026-07-05T03:07:07+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "sqlite-utils 4.0rc2, mostly written by Claude Fable (for about $149.25)",
+      "url": "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-everything",
+      "summary": "I wrote about the sqlite-utils 4.0rc1 release a couple of weeks ago. Since we only have Claude Fable on our Max subscriptions for a few more days, I decided to see if it could help me get to a 4.0 stable release that I felt truly comfortable about, since I try to keep to SemVer and like my incompatible major versions to be as rare as possible. I started with this prompt, in Claude Code for web on",
       "category": "AISecurityLabs",
-      "published": "2026-07-02T18:25:00+00:00",
+      "published": "2026-07-05T01:00:48+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
+      "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
+    },
+    {
+      "title": "360与中国惠普达成战略合作 推动AI安全与终端生态融合 - 东方财富",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5Ma2xlU0JQZUpvOFVhM3drM2xFVjJvbGVHWmF2Ty0zU3U1aERqZnR1d1FoV0thTWJETUJ0eFBYd29yOHlNMUZIVnI5bXVJQzNBa0puVFVPUnQ2M3d4YjBxTw?oc=5",
+      "summary": "360与中国惠普达成战略合作 推动AI安全与终端生态融合 &nbsp;&nbsp; 东方财富",
+      "category": "CoverageFallback",
+      "published": "2026-07-05T01:00:19+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
     },
     {
       "title": "Building a World Map with only 500 bytes",
@@ -353,45 +360,6 @@
       "feed_title": "Google News AI Supply Chain Security"
     },
     {
-      "title": "AI security questions loom over NATO summit - Politico",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9HUDRUeTFWZUxRRk96eWdGQVJsZjI5bC14YmFMRldxYlRSVHQyYllzX1VCczhyeGFqYV80M3RYZ0duV0l3dHlsY0dhbkJ0N1lPajk4NWdJZ3VEZm56Z25qa1ZJaUJGWVdTMXdoZkoxNkJPaUZMVmo3UVNrWmNmUQ?oc=5",
-      "summary": "AI security questions loom over NATO summit &nbsp;&nbsp; Politico",
-      "category": "CoverageFallback",
-      "published": "2026-07-04T20:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Did Radware’s (RDWR) Dataiku AI Security Integration Just Reframe Its Enterprise Investment Narrative? - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNYXZ2WXdCcUxmZVVlV1JkMjBENzkwRTZpNHUwN2ZGVHhKNzZHVmkxOWxJT3R6YTY1QVdSRUIzR2RNWWRnOWVUTE1xdzdQUnFtV1dFXy01VTdpaUVLRVlkLUNSQURrSDBWampReElwSndsc2g3d2xGRDFjRm9YWFJNX3JLWjRIMGctZWU0S2F6SXA2amJTakJuNkthcjhESFVBbTlEU3dFNHF5WjU4R2RrV2hFYk1PdXpoWWdQMmc4Nnh3bU9W0gHKAUFVX3lxTFBGbkNzODZTZzhTZzVQcXc2VGZDRG13VDRaUjl4ZnJWT0Y0cW9FUTdWNFBnSURSNUN1UmRyTFJsVVgwanAzRGl1VGdnbEx5Z0tfUWk3WWJhM3RQVm1RTXdtMExYNzR2cUZPOGgteVhiRXh1OTBtN2ZmaXpIclVLVVQ5MTFjd0ZyQnotNERSanlqRnRBVTZZRUVtODcwT2tQRkxYdG9ZbjhWb1dlc2xubWV6ZzlMeXRuRENFa3VaZ3BfTERyTGZtYTR3ZXc?oc=5",
-      "summary": "Did Radware’s (RDWR) Dataiku AI Security Integration Just Reframe Its Enterprise Investment Narrative? &nbsp;&nbsp; simplywall.st",
-      "category": "CoverageFallback",
-      "published": "2026-07-04T15:37:45+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "What the Anthropic Decision Reveals About the Future of AI Security - Security Boulevard",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOTnRMem9Wd3N3RFBVbzVxSUE3dVJ4UFZfdXF6WFlEVHB5b2RldGRHd3lNN010cHBiUk9JZGRZRmRDeEdwRElrd2JFMW51eUdaZkFMLTVOTGJiRm1acFRJeUxuYjk1MnlnU2JLM1R4aGVHOVh0Vlk4MWxjbjZ3MlVzd2o3MmY2MXhhbnNpNmowV0FQZEVlX3FQRmJYWnFVbkJ5LWlIak91YmNDdw?oc=5",
-      "summary": "What the Anthropic Decision Reveals About the Future of AI Security &nbsp;&nbsp; Security Boulevard",
-      "category": "CoverageFallback",
-      "published": "2026-07-04T15:00:43+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
       "title": "Proof that we’ve improved fitness and medicine and food quality and player care by a large margin",
       "url": "https://x.com/rez0__/status/2073207293722640892",
       "summary": "Proof that we’ve improved fitness and medicine and food quality and player care by a large margin Nate Silver: Between Messi, LeBron, Brady, Djokovic, we might need to recalibrate the aging curves a bit in sports models.",
@@ -416,60 +384,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "Benchmarking Endor Labs AI SAST: 2.6x more real vulnerabilities found than frontier models | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/ai-sast-benchmark-2x-more-real-vulnerabilities",
-      "summary": "Endor Labs AI SAST found 192 real vulnerabilities and the most vulnerabilities no other tool found. Coverage is why. Here's what each tool actually caught.",
-      "category": "AISecurityLabs",
-      "published": "2026-07-02T22:58:08+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "How We Added WebAuthn to a Browser-Based RDP Client",
-      "url": "https://unit42.paloaltonetworks.com/webauthn-added-to-browser-based-rdp/",
-      "summary": "A look inside the reverse-engineering journey of building the first RDP client outside of Windows to support WebAuthn redirection. The post How We Added WebAuthn to a Browser-Based RDP Client appeared first on Unit 42 .",
-      "category": "AISecurityLabs",
-      "published": "2026-07-02T22:00:39+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
-      "feed_title": "Unit 42"
-    },
-    {
-      "title": "AI Pentesting for Compliance",
-      "url": "https://www.aikido.dev/blog/ai-pentesting-for-compliance",
-      "summary": "Learn which compliance frameworks accept AI pentesting Category: Compliance",
-      "category": "AISecurityLabs",
-      "published": "2026-07-02T14:27:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "GPT-5.5-Cyber built a zlib fuzzing lab in a day",
-      "url": "https://blog.trailofbits.com/2026/07/02/field-reports-from-patch-the-planet/",
-      "summary": "We’re running Patch the Planet , an ongoing collaboration with OpenAI that pairs Trail of Bits engineers directly with more than 30 open-source projects. Its goal is to front-run a serious problem facing open-source maintainers: highly capable models like GPT-5.5-Cyber will soon create a firehose of bug reports, and OSS maintainers are already spread thin. Our plan is to point OpenAI’s latest mode",
-      "category": "AISecurityLabs",
-      "published": "2026-07-02T11:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [
-        "https://x.com/trailofbits/status/2072640196944781594"
-      ],
-      "quality_score": 1,
-      "feed_url": "https://blog.trailofbits.com/index.xml",
-      "feed_title": "Trail of Bits"
     },
     {
       "title": "RT Critical Thinking - Bug Bounty Podcast: Does a medium found by hand feel better than a critical found by your hackbot? Episode 181, part 1",
@@ -537,19 +451,6 @@
       "feed_title": "先知社区"
     },
     {
-      "title": "Claude Sonnet 5 with Claude Code: strong on function, average on security, and unusually honest | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/claude-sonnet-5-with-claude-code-strong-on-function-average-on-security-and-unusually-honest",
-      "summary": "Claude Sonnet 5 with Claude Code: strong on function, average on security, and unusually honest",
-      "category": "AISecurityLabs",
-      "published": "2026-07-02T22:57:10+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
       "title": "Murrrica!!",
       "url": "https://x.com/rez0__/status/2073231905781125574",
       "summary": "Murrrica!!",
@@ -581,19 +482,6 @@
       "summary": "主要包含一些 Linux权限的方法",
       "category": "Chinese",
       "published": "2026-07-03T06:44:47+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "SSTI进阶——多种模版引擎特征及应用",
-      "url": "https://xz.aliyun.com/news/92412",
-      "summary": "详细总结了多种模板引擎",
-      "category": "Chinese",
-      "published": "2026-07-02T01:32:21+00:00",
       "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
