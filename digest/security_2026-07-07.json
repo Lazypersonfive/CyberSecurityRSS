@@ -1,0 +1,558 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-07",
+  "generated_at": "2026-07-06T23:48:09.878834Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 10,
+    "direct": 15,
+    "wechat": 6,
+    "tier_t2": 13,
+    "kind_cn_expert": 10,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "kind_media": 4,
+    "tier_unknown": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 4,
+    "merged_total": 4
+  },
+  "items": [
+    {
+      "title_zh": "Linux 内核 epoll 机制曝出 0day 提权漏洞，攻击者可利用 6 指令窗口获取 root 权限",
+      "title_orig": "Linux再曝“秒提权”0day：一个看不见的6指令窗口，黑客可直通root",
+      "summary": "该漏洞源于 Linux 内核 epoll 机制中的逻辑缺陷，攻击者可在极短的指令窗口期内触发竞争条件，从而绕过系统安全限制。通过构造特定的系统调用序列，低权限用户能够实现本地提权并直接获取目标系统的 root 控制权，由于该漏洞属于 0day 级别且利用窗口极难察觉，对广大 Linux 服务器的系统安全性构成了严重的潜在威胁。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "0day"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458617318&idx=2&sn=5fefff506b6f81b7815f92895ee5ca9b",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-06T10:05:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "内核级提权漏洞具有极高危害，epoll 作为核心组件影响广泛",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458617318&idx=2&sn=5fefff506b6f81b7815f92895ee5ca9b",
+      "related_urls": [
+        "https://www.cyberkendra.com/2026/07/19-year-old-linux-kernel-bug-earns-80k.html",
+        "https://www.cyberkendra.com/2026/07/root-access-for-taking-bad-epoll.html",
+        "https://www.securityweek.com/proof-of-concept-exploit-released-for-linux-bad-epoll-root-access-vulnerability/"
+      ],
+      "related_count": 3,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "腾达 Tenda 多款路由器固件存在隐藏身份验证后门，攻击者可绕过密码控制设备",
+      "title_orig": "VU#213560: Tenda firmware (multiple versions) contains hidden authentication backdoor",
+      "summary": "漏洞 CVE-2026-11405 揭示了腾达部分路由器固件中存在未公开的身份验证后门，涉及 FH1201 等多个主流版本。远程攻击者可利用此后门直接绕过 Web 管理界面的密码校验逻辑，从而在无需有效凭据的情况下获取设备的完全管理权限，目前官方修复状态尚未明确说明，建议相关用户密切关注固件更新并加强网络访问控制。",
+      "tags": [
+        "固件后门",
+        "身份验证绕过",
+        "IoT安全"
+      ],
+      "url": "https://kb.cert.org/vuls/id/213560",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-07-06T19:22:18+00:00",
+      "cve_ids": [
+        "CVE-2026-11405"
+      ],
+      "selection_reason": "硬件设备预置后门是严重的供应链安全威胁，直接导致设备失控。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "cve:cve-2026-11405",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.3,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "嵌入式文件系统库 FatFs 曝出多个未修补漏洞，数百万物联网设备面临攻击风险",
+      "title_orig": "嵌入数百万设备中的文件系统被披露存在未修补漏洞",
+      "summary": "安全研究机构披露了 FatFs 库中的 7 个安全漏洞，该库被广泛嵌入数百万台运行实时操作系统的设备中，用于处理 FAT 和 exFAT 格式。攻击者可通过构造恶意的 USB 驱动器或 SD 卡触发漏洞，导致受影响的摄像头、无人机、工业控制器及硬件钱包等设备出现拒绝服务或潜在的代码执行，其无处不在的特性使得该漏洞的影响范围极其广泛。",
+      "tags": [
+        "文件系统",
+        "嵌入式安全",
+        "供应链漏洞"
+      ],
+      "url": "https://hackernews.cc/post/64429",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-07-06T06:29:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "底层基础库漏洞会影响海量终端，是典型的“一点突破，全面受灾”",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "url:hackernews.cc/post/64429",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "AI 浏览器与编程代理安全护栏遭绕过，多项针对 AI 应用的新型攻击技术发布",
+      "title_orig": "每日安全动态推送(26/7/6)",
+      "summary": "研究人员近期展示了名为 BioShocking 的新型攻击，该技术利用上下文感知操纵成功绕过了 AI 浏览器的安全护栏，同时 GuardFall 注入技术也被发现能绕过开源 AI 编程代理的安全检查。此外，Amazon Q Developer 存在的恶意 MCP 配置漏洞可能导致远程代码执行与凭证窃取，这些针对 AI 工具的攻击手段凸显了当前 AI 生态系统在防御机制上正面临着极其严峻的安全挑战。",
+      "tags": [
+        "AI安全",
+        "提示词注入",
+        "代码执行"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960515&idx=1&sn=c39d0d8321ff2c25f0d776a8820ce4fd",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-07-06T09:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚焦 AI 基础设施的新型攻击向量，反映了当前 AI 安全攻",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960515&idx=1&sn=c39d0d8321ff2c25f0d776a8820ce4fd",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Cursor AI 编辑器曝出严重 RCE 漏洞，攻击者可逃逸沙箱并在操作系统执行代码",
+      "title_orig": "Cursor AI 代码编辑器严重漏洞可导致操作系统级远程代码执行",
+      "summary": "追踪为 CVE-2026-50548 和 CVE-2026-50549 的漏洞被称为 DuneSlide，严重影响流行的 AI 代码编辑器 Cursor 并获得了 9.8 的高危评分。漏洞源于编辑器在沙箱内自动执行任务时的逻辑缺陷，攻击者可借此突破 IDE 沙箱限制并在底层操作系统上实现远程代码执行，开发者必须警惕此类滥用 AI 自动化特性进行的系统级攻击以防范潜在的严重数据泄露风险。",
+      "tags": [
+        "RCE",
+        "沙箱逃逸",
+        "AI工具"
+      ],
+      "url": "https://hackernews.cc/post/64425",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-07-06T06:29:00+00:00",
+      "cve_ids": [
+        "CVE-2026-50548",
+        "CVE-2026-50549"
+      ],
+      "selection_reason": "高评分 RCE 漏洞直接威胁开发者工作站安全，具有极高的实战",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "cve:cve-2026-50548,cve-2026-50549",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Citrix NetScaler 曝出内存越界读取漏洞 CVE-2026-8451，官方已发布预警",
+      "title_orig": "【已复现】Citrix NetScaler 内存越界读取漏洞(CVE-2026-8451)安全风险通告",
+      "summary": "Citrix NetScaler 被曝存在内存越界读取漏洞 CVE-2026-8451，攻击者可能利用该漏洞非法获取敏感的内存信息，进而威胁企业级用户的核心数据安全。目前该漏洞已由安全团队实现技术复现，官方已正式发布安全风险通告，强烈建议受影响版本的用户尽快采取补丁升级或实施缓解措施，以降低被黑客利用并导致敏感信息泄露的风险。",
+      "tags": [
+        "内存破坏",
+        "Citrix",
+        "信息泄露"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506533&idx=1&sn=8ae63928c0dadc6f23fbbaa4966afefd",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-06T08:42:00+00:00",
+      "cve_ids": [
+        "CVE-2026-8451"
+      ],
+      "selection_reason": "企业级网络设备漏洞是红蓝对抗中的关键入口点，复现细节增加风险",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "cve:cve-2026-8451",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.9,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux KVM 虚拟化组件存在 16 年之久的逃逸漏洞，影响 Intel 与 AMD 平台",
+      "title_orig": "16-Year-Old Linux KVM Flaw Lets Guest VMs Escape to Host on Intel and AMD x86 Systems",
+      "summary": "名为 Januscape 的漏洞追踪为 CVE-2026-53359，是位于 Linux KVM 影子 MMU 代码中的 UAF 缺陷，广泛影响 Intel 和 AMD 的 x86 架构系统。攻击者可从客户虚拟机触发该漏洞导致宿主机内核崩溃，研究者声称通过特定利用可实现从虚拟机到宿主机的逃逸，这一长达 16 年的漏洞对虚拟化环境构成了严重威胁，目前已公开的 PoC 进一步证实了其破坏宿主机稳定性的能力。",
+      "tags": [
+        "虚拟机逃逸",
+        "KVM",
+        "内核漏洞"
+      ],
+      "url": "https://thehackernews.com/2026/07/16-year-old-linux-kvm-flaw-lets-guest.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-06T17:37:01+00:00",
+      "cve_ids": [
+        "CVE-2026-53359"
+      ],
+      "selection_reason": "长达 16 年的虚拟化逃逸漏洞极其罕见，对云基础设施安全意义",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-53359",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源面板 CyberPanel 曝出未修补 0day 漏洞，低权限用户可直接提升至 root",
+      "title_orig": "Critical Unpatched Flaw in CyberPanel Lets Any User Seize Root on the Server",
+      "summary": "广泛使用的开源托管控制面板 CyberPanel 被发现存在严重的 0day 提权漏洞，允许任何已验证的低权限用户直接获取服务器的最高 root 权限。该漏洞目前处于未修补状态且暂无 CVE 编号，厂商尚未对该独立研究发现做出官方确认或修复响应，由于该面板部署量巨大且攻击门槛较低，建议管理员在补丁发布前加强服务器监控并限制管理面板的访问。",
+      "tags": [
+        "提权漏洞",
+        "0day",
+        "CyberPan"
+      ],
+      "url": "https://www.cyberkendra.com/2026/07/critical-unpatched-flaw-in-cyberpanel.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-07-06T19:22:40+00:00",
+      "cve_ids": [],
+      "selection_reason": "未修补的控制面板提权漏洞对大量 Web 服务器构成即时威胁。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/07/critical-unpatched-flaw-in-cyberpanel.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "利用 WinPE 无状态特性构建高效 Windows 内核驱动模糊测试与 CI/CD 环境",
+      "title_orig": "WinPE：作为 Windows 驱动测试与模糊测试的无状态测试框架",
+      "summary": "该技术方案深度利用 WinPE 的无状态特性，通过 BCD 引导优化、QEMU 硬件拓扑配置及 KDNET 网络调试，成功构建了具备幂等性的 Windows 内核驱动 CI/CD 测试与模糊测试环境。通过外壳替换和 SAC 控制台实现全自动化控制，有效解决了传统 Windows 环境在驱动测试中存在的状态残留和启动缓慢等痛点，极大地提升了内核安全研究与漏洞挖掘的整体效率。",
+      "tags": [
+        "内核安全",
+        "模糊测试",
+        "WinPE"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496476&idx=1&sn=6b872f6a9e7441bc5b994a67e5ec9f5c",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-07-06T04:50:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍了创新的内核驱动测试架构，具有极高的工程实践价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496476&idx=1&sn=6b872f6a9e7441bc5b994a67e5ec9f5c",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.65,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Adobe ColdFusion 严重级别漏洞 CVE-2026-48282 已被攻击者在野利用",
+      "title_orig": "Max severity Adobe ColdFusion flaw now exploited in attacks",
+      "summary": "根据漏洞情报公司 KEVIntel 的最新监测，攻击者目前正在积极利用 Adobe ColdFusion 中一个追踪编号为 CVE-2026-48282 的最高严重级别安全漏洞。虽然原文尚未披露该漏洞的具体技术细节、触发条件及受影响的详细版本号，但已确认该漏洞处于在野利用状态，安全专家强烈建议相关用户密切关注官方补丁发布动态，并及时更新系统以防范潜在的恶意攻击风险。",
+      "tags": [
+        "漏洞预警",
+        "ColdFusi",
+        "在野利用"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/max-severity-adobe-coldfusion-flaw-now-exploited-in-attacks/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-06T13:18:37+00:00",
+      "cve_ids": [
+        "CVE-2026-48282"
+      ],
+      "selection_reason": "最高严重级别漏洞且出现在野利用，需重点关注其修复进展。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "cve:cve-2026-48282",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI×Cybersecurity Challenge 人工智能网络安全挑战赛线上初赛 Web 题解",
+      "title_orig": "AI×Cybersecurity Challenge线上初赛部分web题wp",
+      "summary": "本文针对 AI×Cybersecurity Challenge 人工智能网络安全挑战赛线上初赛中的部分 Web 题目进行了深度解析，详细涵盖了人工智能与传统 Web 安全技术相结合的多种复杂挑战场景。文章通过对具体题目技术点的逐一拆解，全面展示了在 AI 背景下安全竞赛的解题思路与技巧，旨在帮助安全从业者深入了解 AI 安全交叉领域的新型攻击向量，从而提升实战对抗与防御能力。",
+      "tags": [
+        "CTF",
+        "AI安全",
+        "Web安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92436",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-07-04T14:39:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "结合 AI 与安全的热门竞赛题解，反映了当前安全挑战的新趋势",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92436",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92436"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.65,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Opera GX 浏览器漏洞允许恶意网站通过自动安装 Mod 插件窃取用户数据",
+      "title_orig": "Opera GX Flaw Let Sites Auto-Install Mods to Steal Data",
+      "summary": "Opera GX 浏览器近期被披露存在一个严重的安全漏洞，该漏洞允许恶意网站在未经用户明确许可的情况下，利用特定机制自动安装 GX Mods 插件以获取权限。攻击者能够借此通过 CSS 注入等手段从其他网页中窃取用户的敏感数据，虽然目前官方已发布补丁修复了该漏洞，但原文强调了浏览器扩展机制在权限控制方面存在的潜在风险，提醒广大用户务必提高警惕并确保浏览器处于最新版本。",
+      "tags": [
+        "浏览器安全",
+        "插件漏洞",
+        "数据泄露"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/opera-gx-flaw-gx-mods-css/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-07-06T14:15:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了浏览器个性化功能带来的新型攻击面，具有防御参考意义。",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/opera-gx-flaw-gx-mods-css",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 SignUp & SignIn 严重漏洞 CVE-2026-12417 导致账号接管",
+      "title_orig": "CVE-2026-12417 漏洞复现：SignUp & SignIn 弱 Token 未认证账号接管",
+      "summary": "WordPress 插件 SignUp & SignIn 1.0.0 及以下版本被曝存在 CVSS 评分高达 9.8 的严重漏洞，其账户激活码仅由简单的随机函数生成，导致总共只有九千种可能的组合。由于验证端点缺乏必要的频率限制保护，攻击者可以轻易通过暴力破解激活码的方式实现未认证的账号接管攻击，目前该漏洞已进入复现阶段，建议受影响用户立即停止使用该插件或寻找官方安全更新进行修复。",
+      "tags": [
+        "漏洞复现",
+        "WordPres",
+        "账号接管"
+      ],
+      "url": "https://xz.aliyun.com/news/92437",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-07-04T16:26:48+00:00",
+      "cve_ids": [
+        "CVE-2026-12417"
+      ],
+      "selection_reason": "典型的逻辑漏洞案例，展示了弱随机数与缺乏限流导致的严重后果。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-12417",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92437"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 8.35,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "基于 LangGraph 工作流的自研企业级防火墙 0day 漏洞挖掘技术研究",
+      "title_orig": "系统0day安全——主流企业防火墙漏洞挖掘",
+      "summary": "该研究利用自研LangGraph工作流对主流企业级防火墙进行0day漏洞挖掘，通过自动化流程解决闭源网络设备固件在复杂系统环境下的审计难题。原文未披露具体的漏洞类型、触发条件及受影响的组件版本，仅聚焦于工作流在处理大规模代码逻辑分析中的自动化发现能力，目前相关漏洞的修复与缓解状态在文中也均未明确说明。",
+      "tags": [
+        "漏洞挖掘",
+        "防火墙安全",
+        "自动化安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458617318&idx=3&sn=07f37875dfcfcb09667c640cc9554ea6",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-06T10:05:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用 AI 工作流辅助 0day 挖掘的前沿技术路径。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458617318&idx=3&sn=07f37875dfcfcb09667c640cc9554ea6",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.2,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "基于执行 Trace 文本匹配的 VMProtect 虚拟机保护还原新思路",
+      "title_orig": "基于文本匹配的VMP还原思路",
+      "summary": "针对 VMP 逆向中传统路径过于沉重的问题，本文提出了一种基于模拟执行 Trace 记录的文本匹配还原思路。通过 unidbg 或真机获取数千万条指令执行记录，利用模式匹配简化对 handler 语义和控制流的分析过程。该方法降低了 VMP 还原的门槛，适用于需要快速分析加壳样本的逆向工程场景，是自动化逆向分析的重要补充。",
+      "tags": [
+        "逆向工程",
+        "VMP还原",
+        "模拟执行"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5Mjc3MDM2Mw==&mid=2651144621&idx=1&sn=69ef8eb1d2d840cfab3b6b1e61a7e196",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-06T06:55:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提出了一种不同于传统重度分析的 VMP 还原思路，具有实战启",
+      "feed_url": "https://wechat2rss.xlab.app/feed/90c827b8290310a96ef80a13df9dbcc06ab69892.xml",
+      "feed_title": "吾爱破解论坛",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/90c827b8290310a96ef80a13df9dbcc06ab69892.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5Mjc3MDM2Mw%3D%3D&mid=2651144621&idx=1&sn=69ef8eb1d2d840cfab3b6b1e61a7e196",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.15,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}

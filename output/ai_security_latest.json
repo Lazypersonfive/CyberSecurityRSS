@@ -1,17 +1,18 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-07-06",
-  "fetched_at_utc": "2026-07-05T23:47:48.273837Z",
+  "fetched_at": "2026-07-07",
+  "fetched_at_utc": "2026-07-06T23:48:19.589130Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 42,
-  "entry_count": 19,
+  "raw_entry_count": 46,
+  "entry_count": 25,
   "filter_stats": {
-    "input": 42,
-    "output": 42
+    "input": 46,
+    "dedup_merged": 2,
+    "output": 44
   },
   "curation_stats": {
-    "dropped_source_cap": 23
+    "dropped_source_cap": 19
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -75,7 +76,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 5
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -89,7 +90,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://www.hiddenlayer.com/feed": {
       "feed_title": "HiddenLayer Blog",
@@ -110,7 +111,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 3
     },
     "https://snyk.io/blog/feed/": {
       "feed_title": "Snyk Blog",
@@ -138,14 +139,14 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 4
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -229,7 +230,7 @@
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 7
     },
     "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Supply Chain Security",
@@ -241,71 +242,168 @@
   },
   "entries": [
     {
-      "title": "Authentication Bypass in the default configuration phpBB",
-      "url": "https://www.aikido.dev/blog/authentication-bypass-phpbb-technical-writeup",
-      "summary": "Our AI pentest agents found a critical phpBB auth bypass (CVE-2026-48611): one unauthenticated request logs you into any account. See the exploit and the fix. Category: Vulnerabilities & Threats",
+      "title": "Endor Labs’ AI SAST Finds Zero Day Memory-Amplification DoS in Anthropic’s buffa library | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa",
+      "summary": "We identified an unbounded-allocation data flow in buffa's protobuf decoder that I developed into a ~22x memory-amplification denial of service for CVE-2026-55407",
       "category": "AISecurityLabs",
-      "published": "2026-07-03T23:45:00+00:00",
+      "published": "2026-07-06T20:11:18+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [
-        "CVE-2026-48611"
+        "CVE-2026-55407"
       ],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
+      "quality_score": 3,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
     },
     {
-      "title": "Open Source AI Gap Map",
-      "url": "https://simonwillison.net/2026/Jul/3/open-source-ai-gap-map/#atom-everything",
-      "summary": "Open Source AI Gap Map Current AI is \"a global partnership building a public option for AI\", founded as a non-profit at the AI Action Summit in Paris in February 2025 and backed by serious capital ($400m already committed). They launched their Gap Map a couple of days ago - an attempt at indexing the current state of open source AI: The Gap Map v0.1 details 421 products in depth: 266 software tool",
-      "category": "AISecurityLabs",
-      "published": "2026-07-03T22:04:31+00:00",
+      "title": "CVE-2026-12417 漏洞复现：SignUp & SignIn 弱 Token 未认证账号接管",
+      "url": "https://xz.aliyun.com/news/92437",
+      "summary": "SignUp & SignIn 是一款 WordPress 用户注册/登录插件，提供 AJAX 注册、邮箱验证、密码重置等功能。2026 年该插件 ≤ 1.0.0 版本被披露存在 CVSS 9.8 的严重漏洞（CVE-2026-12417）——其账户激活码由 rand(1000, 9999) 生成，仅 9,000 种可能，且验证端点 wp_ajax_nopriv_pravel_check_acti",
+      "category": "Chinese",
+      "published": "2026-07-04T16:26:48+00:00",
       "fetch_status": "full",
-      "cve_ids": [],
+      "cve_ids": [
+        "CVE-2026-12417"
+      ],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
+      "quality_score": 3,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
-      "title": "I wrote about what we should do to secure critical US infrastructure before open source AI models are highly competent at hacking https://josephthacke...",
-      "url": "https://x.com/rez0__/status/2073053387348754659",
-      "summary": "I wrote about what we should do to secure critical US infrastructure before open source AI models are highly competent at hacking https://josephthacker.com/hacking/2026/07/01/operation-floodlight.html",
-      "category": "XSignals",
-      "published": "2026-07-03T14:36:57+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Google cuts operational emissions 2% as AI supply chain emissions rise 25% - PPC Land",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQR3J6cFpHcG5HTkF1U2c5YllQbllsMlV4b3dxcFVVSTV4RFlSVXRDOVlGUVpmYWNpMEhodVpHa1F5bXVxUmhXdGhSeFV6QnpJeWNrLXZkTU1VZThDZldMS09JVkVfVktTc1NVb1psRXMzdHI2STBLUDFYOGNlTzNyazUzSU5aQmNHdi1PWmtJOTU2elkx?oc=5",
-      "summary": "Google cuts operational emissions 2% as AI supply chain emissions rise 25% &nbsp;&nbsp; PPC Land",
+      "title": "Huatai Securities: The strong growth in South Korea's exports indicates that the global AI supply chain trade remains on an upward trajectory, and the Asian AI supply chain is expected to continue benefiting. - Bitget",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5ValBtUUc5Y3lDSGZFY2dsN3p6Zm1uVEFidTI0anhjaWhBYVgyVlNvU001WmVqNWFWSnhGYnlVbXVrdEtkOWlvVjBTcUtxR0w4dHlWbFNGQUE2alNyQzNOUFhqTTbSAWpBVV95cUxOSlhHUTdQMXJuVlpSQ2pxV0ctLU9qWFFZczJWM2owdFp4NURDZHhTS1VfTndTZ3FQQWdsam1LV2VoWl9FMnZUWkFFbjRvY2FaR0lJMHRWdFRCRVZHeGo5MXgzNnBEWk82UTlB?oc=5",
+      "summary": "Huatai Securities: The strong growth in South Korea's exports indicates that the global AI supply chain trade remains on an upward trajectory, and the Asian AI supply chain is expected to continue benefiting. &nbsp;&nbsp; Bitget",
       "category": "CoverageFallback",
-      "published": "2026-07-05T19:22:30+00:00",
-      "fetch_status": "rss_only",
+      "published": "2026-07-05T16:44:05+00:00",
+      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 2,
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Supply Chain Security"
     },
     {
-      "title": "The Booz Allen Hamilton AI Security Assessment - Bringing defense-grade scrutiny to enterprise model - AD HOC NEWS",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRmNJU25wclp6M25oRFVjUFhpTE15Vmx6SDRnZHU5T2x0d0tISHBFRFg4b0diUU9ia3AwMjRERDlqTDBULXhnU1R5S3dDeFU0Wml3SEZMNG9QbmhCWGhJQzU1djdIc0otamd0bVVwLVRiQ2xKc3MyQldnVXdEd2x3ZE03anZhaVpBcUpJejBxZ1V3WXFpd3diQlRwSDhxaWxPc1M2SWR4MnZCNGJxejI5bjlVXzdWTFU1UlozLWRWNm1venRybEs0?oc=5",
-      "summary": "The Booz Allen Hamilton AI Security Assessment - Bringing defense-grade scrutiny to enterprise model &nbsp;&nbsp; AD HOC NEWS",
+      "title": "The Guardrail Trap: Why Existing AI Security Strategies Aren't Enough - BankInfoSecurity",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPY29FbzlOWVA3TWNDVUNsMzVaWnBJWGs5SlhFYkxWOTJEOFVZREs3bWxzWkhXTnN5WkZ6V3hGaDZFM0pEVlAtTW9FaGY5elVwUENKUkpEenRneEFaSVU5OW5QTm14SHJGbHFrdzBFUU9GNkpPR2hkdUxpanpxWVlDMDRYcWpsOGx1SzdCdGxqNTVrYkhWTWtYUnhQSlNmeElN?oc=5",
+      "summary": "The Guardrail Trap: Why Existing AI Security Strategies Aren't Enough &nbsp;&nbsp; BankInfoSecurity",
       "category": "CoverageFallback",
-      "published": "2026-07-05T03:07:07+00:00",
+      "published": "2026-07-06T23:45:10+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Benchmarking Endor Labs AI SAST: 2.6x more real vulnerabilities found than frontier models | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/ai-sast-benchmark-2x-more-real-vulnerabilities",
+      "summary": "Endor Labs AI SAST found 192 real vulnerabilities and the most vulnerabilities no other tool found. Coverage is why. Here's what each tool actually caught.",
+      "category": "AISecurityLabs",
+      "published": "2026-07-06T20:11:18+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Zscaler researchers identify prompt injection attacks targeting AI agents for crypto payments - Crypto Briefing",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1XbS1zc0JEOWVUWGsyUVdEMEk3bnpnM1g4S3o5dzY3WERNOWc3UnFFa1hPNW1RSUk1SmMyTkZ6cGtpX2pvNjFtU3FRcTJfQkVqOEZQTVhiaHVhZnJ0RXZwUTFodFkwWjJjOC1hUUlHY2VTV1JiOHVaSA?oc=5",
+      "summary": "Zscaler researchers identify prompt injection attacks targeting AI agents for crypto payments &nbsp;&nbsp; Crypto Briefing",
+      "category": "CoverageFallback",
+      "published": "2026-07-06T19:54:42+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Palo Alto Networks (PANW) Stock Surges to New Peak as AI Security Concerns Drive Growth - Blockonomi",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQYTN4VERYM2NHVkcxWkEwMkQ1MlZ4OWdYNFg0NU5kWGZHUWROalVZc1lOMnMtS2x6dUhUNm1hQWM4emZmTThsR3RUajRURHZscWpkcVNOcktJQ2M1Q1I3TXJUZjc5dTBLcHo4RjhjRWVKT0xIQmZpaGwzSUt4V3c4aEZBWkVGUE9PLXc3S3FWUWViVktpRzlGbVdBUUQ0MloyMldWRU1FRlFqN0hob1E?oc=5",
+      "summary": "Palo Alto Networks (PANW) Stock Surges to New Peak as AI Security Concerns Drive Growth &nbsp;&nbsp; Blockonomi",
+      "category": "CoverageFallback",
+      "published": "2026-07-06T17:05:34+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPbC1jMTJaRlprLXpjNnRmZVlmODVldFAxLUR2ZFl1X0pzeHF5UlUyVVVIQ1hfTXZnQVF6RDdRT0hFYkJvR1A5MUwzdUtDS240aWxVTTFEbjNGMDlLNGhSVW1ON2M3ZThMWGQ5Y1hvSzUtNVV3SzBFaFRpUU1lcW5NX1A3UlVhUG5wX3hIZjMwX2RkV3VlZU1DeTV2UXM3MlBkd0hNNVdsODNsTFhuYzVqektDTHhYS2FHcVl0YktjWk9pTncxR2RRU1c4NERYNUZXWlRJVQ?oc=5"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "RT Pietro Schirano: Fable is extremely good at writing original NES games in assembly. Here it designed an original game graphics, soundtrack, everyth...",
+      "url": "https://x.com/rez0__/status/2074160188265845172",
+      "summary": "RT Pietro Schirano Fable is extremely good at writing original NES games in assembly. Here it designed an original game graphics, soundtrack, everything from scratch, and it'd actually run within the constraints of a real cartridge. Wild.",
+      "category": "XSignals",
+      "published": "2026-07-06T15:48:36+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "It says \"Sold Out\" on here, but if you're a bug bounty hunter in the US, click it and join the waitlist. We'll probably have plenty of people back out...",
+      "url": "https://x.com/rez0__/status/2074146988841378032",
+      "summary": "It says \"Sold Out\" on here, but if you're a bug bounty hunter in the US, click it and join the waitlist. We'll probably have plenty of people back out 😊 https://h1.community/events/details/hackerone-us-south-hackerone-club-presents-us-south-summer-sessions-hack-the-heat/",
+      "category": "XSignals",
+      "published": "2026-07-06T15:02:32+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "RT cje: we've been shipping pretty hard on http://disclose.io. https://lookup.disclose.io resolves any asset - domain, ip, package, repo, container, h...",
+      "url": "https://x.com/rez0__/status/2074161385592725797",
+      "summary": "RT cje we've been shipping pretty hard on http://disclose.io. https://lookup.disclose.io resolves any asset - domain, ip, package, repo, container, hardware, browser extension - to its real (or best) security contact, vdp, or bug bounty program. and now it drops straight into your recon workflow: a lookup cli tool, caido and burp plugins, a json api, and a hosted mcp server. meanwhile https://dire",
+      "category": "XSignals",
+      "published": "2026-07-06T13:31:04+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "不给钱就社死，勒索软件又有新套路",
+      "url": "https://www.anquanke.com/post/id/315688",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-07-06T10:18:58+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "sqlite-utils 4.0rc3",
+      "url": "https://simonwillison.net/2026/Jul/6/sqlite-utils/#atom-everything",
+      "summary": "Release: sqlite-utils 4.0rc3 I hoped to release sqlite-utils 4.0 stable this weekend, but as I worked through the backlog of issues and PRs with a combination of Claude Fable 5 and GPT-5.5 the changelog since rc2 kept getting bigger . The biggest new feature is support for introspecting and creating compound foreign keys - a feature that involves a subtle breaking change to table.foreign_keys and",
+      "category": "AISecurityLabs",
+      "published": "2026-07-06T05:40:08+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [
+        "https://simonwillison.net/2026/Jul/5/sqlite-utils/#atom-everything"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
       "title": "sqlite-utils 4.0rc2, mostly written by Claude Fable (for about $149.25)",
@@ -321,19 +419,6 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "360与中国惠普达成战略合作 推动AI安全与终端生态融合 - 东方财富",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5Ma2xlU0JQZUpvOFVhM3drM2xFVjJvbGVHWmF2Ty0zU3U1aERqZnR1d1FoV0thTWJETUJ0eFBYd29yOHlNMUZIVnI5bXVJQzNBa0puVFVPUnQ2M3d4YjBxTw?oc=5",
-      "summary": "360与中国惠普达成战略合作 推动AI安全与终端生态融合 &nbsp;&nbsp; 东方财富",
-      "category": "CoverageFallback",
-      "published": "2026-07-05T01:00:19+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
-    },
-    {
       "title": "Building a World Map with only 500 bytes",
       "url": "https://simonwillison.net/2026/Jul/4/building-a-world-map-with-only-500-bytes/#atom-everything",
       "summary": "Building a World Map with only 500 bytes Iwo Kadziela (assisted by Codex) figured out a way to generate a credible ASCII world map using 445 bytes of data: The key trick is to use deflate compression, which is then wired together using this neat snippet of JavaScript. I didn't know you could use fetch() with data: URIs like this: fetch('data:;base64,1ZpLsgIxCEXnrM...==').then( r =&gt; r.body.pipeT",
@@ -347,41 +432,80 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "McKinsey Names Electronics America's Most Dangerous Import — And It's the Entire AI Supply Chain - FourWeekMBA",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNbTFwcGRZWFFIQ0owUU45R01pZ1hwbUVLa2dXdW9QMGZRRV96LW1ZakQ0czR0MEctSm0yTFRucDZKSFRXQU15Y3ZWY1RMby15bUZOOXBaNFNSM25vbndJbGZxSWNYS1JOaVpBdWRkMGRrQ0hfdVhkTnhqOEVpNDZjRWwzSEl1ZldzOVFXeS13RVpCZw?oc=5",
-      "summary": "McKinsey Names Electronics America's Most Dangerous Import — And It's the Entire AI Supply Chain &nbsp;&nbsp; FourWeekMBA",
-      "category": "CoverageFallback",
-      "published": "2026-07-04T20:59:12+00:00",
+      "title": "AI×Cybersecurity Challenge线上初赛部分web题wp",
+      "url": "https://xz.aliyun.com/news/92436",
+      "summary": "AI×Cybersecurity Challenge人工智能网络安全挑战赛线上初赛部分web题wp",
+      "category": "Chinese",
+      "published": "2026-07-04T14:39:30+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Supply Chain Security"
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
-      "title": "Proof that we’ve improved fitness and medicine and food quality and player care by a large margin",
-      "url": "https://x.com/rez0__/status/2073207293722640892",
-      "summary": "Proof that we’ve improved fitness and medicine and food quality and player care by a large margin Nate Silver: Between Messi, LeBron, Brady, Djokovic, we might need to recalibrate the aging curves a bit in sports models.",
-      "category": "XSignals",
-      "published": "2026-07-04T00:48:31+00:00",
-      "fetch_status": "full",
+      "title": "Claude Sonnet 5 with Claude Code: strong on function, average on security, and unusually honest | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/claude-sonnet-5-with-claude-code-strong-on-function-average-on-security-and-unusually-honest",
+      "summary": "Claude Sonnet 5 with Claude Code: strong on function, average on security, and unusually honest",
+      "category": "AISecurityLabs",
+      "published": "2026-07-06T20:11:18+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "ChatGPT Security Guide: Risks, Incidents & Guidance",
+      "url": "https://prompt.security/blog/chatgpt-security-guide-enterprise-risks-incidents-and-practitioner-guidance",
+      "summary": "What security teams actually need to know about ChatGPT: data handling, documented incidents, CISO guidance, and API risks.",
+      "category": "AISecurityLabs",
+      "published": "2026-07-06T17:01:16+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://prompt.security/blog/rss.xml",
+      "feed_title": "Prompt Security"
+    },
+    {
+      "title": "Predicting MongoDB ObjectId() continuously in Rocket.Chat",
+      "url": "https://www.aikido.dev/blog/predicting-mongodb-objectid-rocket-chat",
+      "summary": "Aikido's AI pentester found this file-access flaw in Rocket.Chat. A closer look at MongoDB's ObjectId() showed the weak randomness that makes it exploitable. Category: Vulnerabilities & Threats",
+      "category": "AISecurityLabs",
+      "published": "2026-07-06T17:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
+      "title": "Fable thinks the ambiguous duel meaning tweets should be called Janus bait which I think is hilarious give @repligate’s name on here.",
+      "url": "https://x.com/rez0__/status/2073944115880874409",
+      "summary": "Fable thinks the ambiguous duel meaning tweets should be called Janus bait which I think is hilarious give @repligate’s name on here.",
+      "category": "XSignals",
+      "published": "2026-07-06T01:36:23+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     },
     {
-      "title": "Surely you’d do this days in advance lol",
-      "url": "https://x.com/rez0__/status/2073206998997352922",
-      "summary": "Surely you’d do this days in advance lol Hater Report: THIS IS CRAZY! 😂😂 Egypt’s coach played Real Madrid highlights before penalty kicks to study the Australian goalkeeper. Egypt then scored EVERY SINGLE penalty to win their first ever knockout stage match.",
+      "title": "🤣🤣🤣",
+      "url": "https://x.com/rez0__/status/2073932644539068646",
+      "summary": "🤣🤣🤣 🌧️: I’m crying they gave Neymar a make a wish penalty",
       "category": "XSignals",
-      "published": "2026-07-04T00:47:21+00:00",
-      "fetch_status": "full",
+      "published": "2026-07-06T00:50:48+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
     },
@@ -399,6 +523,19 @@
       "feed_title": "X / rez0"
     },
     {
+      "title": "哥斯拉流量分析",
+      "url": "https://xz.aliyun.com/news/92434",
+      "summary": "因为护网要开始了，重新分析了一遍哥斯拉的整个通信原理和对消息加解密进行了分析，以及一些常见的特征。",
+      "category": "Chinese",
+      "published": "2026-07-04T09:25:20+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
       "title": "LOLLLLL",
       "url": "https://x.com/rez0__/status/2073323487133888587",
       "summary": "LOLLLLL Nikita Bier: @decentchandan @jeetusp You're right. He accidentally clicked download ...And accidentally clicked upload ...And accidentally clicked post Every day for 4 years.",
@@ -412,50 +549,11 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "Oh my gosh this stuff is freaking amazing",
-      "url": "https://x.com/rez0__/status/2073059343403041037",
-      "summary": "Oh my gosh this stuff is freaking amazing",
+      "title": "I made zucchini bread today",
+      "url": "https://x.com/rez0__/status/2073968754174591038",
+      "summary": "I made zucchini bread today",
       "category": "XSignals",
-      "published": "2026-07-03T15:00:37+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "been getting this alot. not sure why.",
-      "url": "https://x.com/rez0__/status/2073039431460585744",
-      "summary": "been getting this alot. not sure why.",
-      "category": "XSignals",
-      "published": "2026-07-03T13:41:30+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "一句话跑了三小时：用 Claude Code Loop 全自动逆向一个加密验证码系统",
-      "url": "https://xz.aliyun.com/news/92420",
-      "summary": "我给了 Claude Code 一句话：\"全面信息收集渗透测试这个网站\"。三个多小时后，它交给我多个漏洞联合一个完整的纯 API 验证码绕过方案（批量跑敏感信息）——包含 ECDH 密钥交换逆向、AES-GCM 加密还原、NCC 图像识别算法、以及一个能批量注册账号的全自动化脚本。中间我一次都没有打开聊天窗口。",
-      "category": "Chinese",
-      "published": "2026-07-03T03:41:08+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "Murrrica!!",
-      "url": "https://x.com/rez0__/status/2073231905781125574",
-      "summary": "Murrrica!!",
-      "category": "XSignals",
-      "published": "2026-07-04T02:26:19+00:00",
+      "published": "2026-07-06T03:14:18+00:00",
       "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
@@ -464,24 +562,11 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "SDPCSEC热身赛re方向wp",
-      "url": "https://xz.aliyun.com/news/92422",
-      "summary": "题目比较基础，新手友好",
+      "title": "从零打造一款Go语言C2框架：架构、坑与实战细节",
+      "url": "https://xz.aliyun.com/news/92431",
+      "summary": "Go语言C2框架打造实录",
       "category": "Chinese",
-      "published": "2026-07-03T07:21:42+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "Linux 权限维持技术总结",
-      "url": "https://xz.aliyun.com/news/92421",
-      "summary": "主要包含一些 Linux权限的方法",
-      "category": "Chinese",
-      "published": "2026-07-03T06:44:47+00:00",
+      "published": "2026-07-04T07:02:12+00:00",
       "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
