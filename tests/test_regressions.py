@@ -458,6 +458,38 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertIn("relatedToggle", template)
         self.assertIn("selection_reason", template)
 
+    def test_template_renders_timeline_layout(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("ic-tl-time", template)
+        self.assertIn("ic-tl-rail", template)
+        self.assertIn("ic-tl-dot", template)
+        self.assertIn("renderTimelineItem", template)
+        # Non-hero items sort chronologically inside the single-date view.
+        self.assertIn("sortByPublishedDesc", template)
+
+    def test_template_tiers_scores(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("scoreTier", template)
+        self.assertIn("data-tier", template)
+        self.assertIn('score-chip[data-tier="high"]', template)
+        self.assertIn('score-chip[data-tier="mid"]', template)
+
+    def test_template_supports_local_star(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("starButton", template)
+        self.assertIn("localStorage", template)
+        self.assertIn("starredOnly", template)
+        self.assertIn("starKey", template)
+
+    def test_template_reason_uses_labeled_divider(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("ic-reason-label", template)
+        self.assertIn("入选理由", template)
+
     def test_template_renders_source_tier_badge(self) -> None:
         template = Path("templates/index.html.j2").read_text(encoding="utf-8")
 

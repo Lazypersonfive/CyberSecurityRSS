@@ -107,7 +107,9 @@
       color: var(--bg);
     }
     .score-chip { border: 1px solid var(--line); background: var(--surface-soft); color: var(--fg); }
-    .score-chip[data-top="1"] { border-color: var(--fg); }
+    .score-chip[data-tier="high"] { background: var(--fg); color: var(--bg); border-color: var(--fg); font-weight: 700; }
+    .score-chip[data-tier="mid"] { border-color: var(--fg); font-weight: 600; }
+    .score-chip[data-tier="low"] { color: var(--muted); }
     .tag { border: 1px solid var(--line); background: var(--surface-soft); color: var(--muted); }
     .tag:hover { border-color: var(--line-strong); color: var(--fg); }
     /* Source badge: monochrome dot + label; restrained, not traffic-light. */
@@ -121,10 +123,8 @@
     .source-badge[data-kind="google_news"] .source-dot,
     .source-badge[data-kind="aggregator"] .source-dot,
     .source-badge[data-kind="community"] .source-dot { background: transparent; border-style: dashed; }
-    .reason {
-      border-left: 2px solid var(--line-strong);
-      color: var(--muted);
-    }
+    .reason { color: var(--muted); border-top: 1px solid var(--line); }
+    .ic-reason-label { color: var(--fg); font-weight: 600; }
     .related-list a { color: var(--muted); }
     .related-list a:hover { color: var(--fg); }
     .date-rule { border-top: 1px solid var(--line); }
@@ -132,8 +132,35 @@
     details > summary::-webkit-details-marker { display: none; }
     details[open] .chev { transform: rotate(90deg); }
     .chev { transition: transform .15s ease; display: inline-block; }
+    /* Timeline: [HH:MM | rail+dot | card] rows, AIHOT-inspired, monochrome. */
+    .ic-tl { display: grid; grid-template-columns: 3.2rem 1.1rem minmax(0, 1fr); column-gap: 0.9rem; }
+    .ic-tl-time {
+      padding-top: 1.55rem; text-align: right;
+      color: var(--muted); font-variant-numeric: tabular-nums;
+    }
+    .ic-tl-rail { position: relative; }
+    .ic-tl-rail::before {
+      content: ""; position: absolute; top: 0; bottom: 0; left: 50%;
+      width: 1px; background: var(--line); transform: translateX(-50%);
+    }
+    .ic-tl-item:first-child .ic-tl-rail::before { top: 1.7rem; }
+    .ic-tl-item:last-child .ic-tl-rail::before { bottom: calc(100% - 1.9rem); }
+    .ic-tl-dot {
+      position: absolute; top: 1.62rem; left: 50%; transform: translateX(-50%);
+      width: 9px; height: 9px; border-radius: 999px;
+      background: var(--bg); border: 1.5px solid var(--fg);
+    }
+    .ic-tl-item { display: contents; }
+    .ic-tl-card-cell { padding-bottom: 1rem; min-width: 0; }
+    .star-btn { color: var(--faint); transition: color .15s ease, transform .12s ease; }
+    .star-btn:hover { color: var(--fg); transform: scale(1.08); }
+    .star-btn[aria-pressed="true"] { color: var(--fg); }
+    .star-btn[aria-pressed="true"] svg { fill: currentColor; }
+    #star-filter.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
     @media (max-width: 720px) {
       .ic-title { letter-spacing: -0.025em; }
+      .ic-tl { grid-template-columns: minmax(0, 1fr); }
+      .ic-tl-time, .ic-tl-rail { display: none; }
     }
   </style>
 </head>
@@ -185,6 +212,7 @@
     <div class="grid lg:grid-cols-[220px_minmax(0,1fr)] gap-6 lg:gap-10 items-start">
       <aside class="lg:sticky lg:top-20 space-y-4">
         <nav class="flex lg:flex-col gap-2 overflow-x-auto" id="tabs"></nav>
+        <button id="star-filter" type="button" class="control rounded-full px-4 py-2 text-sm w-full text-left hidden lg:block">★ 只看收藏</button>
         <p id="meta" class="mono text-xs leading-relaxed text-[color:var(--muted)]"></p>
       </aside>
       <section id="feed-body" class="grid gap-4"></section>
@@ -207,6 +235,7 @@ let currentDate = DATES[0];
 let feed = null;
 let allFeeds = {};
 let searchQuery = '';
+let starredOnly = false;
 
 function fmtDate(iso) { return (iso || '').replace(/-/g, '/'); }
 function fmtTime(iso) {
@@ -242,7 +271,10 @@ function itemsForBoard(boardKey) {
   const dateKeys = searchQuery ? DATES : [currentDate];
   return dateKeys.flatMap(dateKey => {
     const block = boardBlock(boardKey, dateKey);
-    return (block?.items || []).filter(it => matchesQuery(it, searchQuery)).map(it => ({ ...it, _date: dateKey, _block: block }));
+    return (block?.items || [])
+      .filter(it => matchesQuery(it, searchQuery))
+      .filter(it => !starredOnly || starred.has(starKey(it)))
+      .map(it => ({ ...it, _date: dateKey, _block: block }));
   });
 }
 function totalForBoard(boardKey) {
@@ -296,6 +328,12 @@ function sourceBadge(item) {
   badge.title = `source_tier=${tier} · source_kind=${kind}`;
   return badge;
 }
+function scoreTier(val) {
+  if (!Number.isFinite(val)) return 'low';
+  if (val >= 9) return 'high';
+  if (val >= 7.5) return 'mid';
+  return 'low';
+}
 function scoreBadge(item) {
   const raw = item.final_score;
   if (raw === undefined || raw === null || raw === '') return null;
@@ -303,8 +341,43 @@ function scoreBadge(item) {
   const text = Number.isFinite(val) ? val.toFixed(1) : String(raw);
   const chip = el('span', 'score-chip mono text-[11px] px-2 py-0.5 rounded-full', text);
   chip.title = `final_score=${text}` + (item.score !== undefined ? ` · llm=${item.score}` : '');
-  if (Number.isFinite(val) && val >= 9.5) chip.dataset.top = '1';
+  chip.dataset.tier = scoreTier(val);
   return chip;
+}
+const STAR_KEY = 'ic-starred';
+function loadStarred() {
+  try { return new Set(JSON.parse(localStorage.getItem(STAR_KEY) || '[]')); }
+  catch (e) { return new Set(); }
+}
+let starred = loadStarred();
+function starKey(item) { return item.story_id || item.url || (item.title_zh || item.title_orig || ''); }
+function saveStarred() {
+  try { localStorage.setItem(STAR_KEY, JSON.stringify([...starred])); } catch (e) {}
+}
+function starButton(item) {
+  const key = starKey(item);
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'star-btn shrink-0';
+  btn.setAttribute('aria-label', '收藏');
+  btn.setAttribute('aria-pressed', starred.has(key) ? 'true' : 'false');
+  btn.innerHTML = '';
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('width', '16'); svg.setAttribute('height', '16');
+  svg.setAttribute('viewBox', '0 0 24 24'); svg.setAttribute('fill', 'none');
+  svg.setAttribute('stroke', 'currentColor'); svg.setAttribute('stroke-width', '1.8');
+  svg.setAttribute('stroke-linejoin', 'round');
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', 'M12 17.3l-6.16 3.7 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.48 4.73 1.64 7.03z');
+  svg.appendChild(path);
+  btn.appendChild(svg);
+  btn.addEventListener('click', () => {
+    if (starred.has(key)) { starred.delete(key); btn.setAttribute('aria-pressed', 'false'); }
+    else { starred.add(key); btn.setAttribute('aria-pressed', 'true'); }
+    saveStarred();
+    if (starredOnly) renderAll();
+  });
+  return btn;
 }
 function makeTagPill(text) {
   const pill = el('span', 'tag mono text-[11px] px-2 py-1 rounded-full cursor-pointer', text);
@@ -343,8 +416,10 @@ function renderCard(item, opts) {
   top.append(sourceBadge(item));
   top.append(el('span', '', item.source || ''));
   top.append(el('span', '', fmtTime(item.published)));
+  const spacer = el('span', 'flex-1'); top.append(spacer);
   const score = scoreBadge(item);
-  if (score) { const spacer = el('span', 'flex-1'); top.append(spacer); top.append(score); }
+  if (score) top.append(score);
+  top.append(starButton(item));
   card.append(top);
 
   const headingSize = hero ? 'text-2xl sm:text-3xl' : 'text-xl sm:text-2xl';
@@ -363,12 +438,32 @@ function renderCard(item, opts) {
   card.append(el('p', `mt-4 ${summarySize} text-[color:var(--fg)]`, item.summary || ''));
 
   if (item.selection_reason) {
-    const reason = el('p', 'reason mt-4 pl-3 text-[13px] leading-6', `入选理由：${item.selection_reason}`);
+    const reason = el('p', 'reason mt-4 pt-4 text-[13px] leading-6');
+    reason.append(el('span', 'ic-reason-label', '入选理由：'));
+    reason.append(document.createTextNode(item.selection_reason));
     card.append(reason);
   }
   const related = relatedToggle(item);
   if (related) card.append(related);
   return card;
+}
+function sortByPublishedDesc(items) {
+  return items.slice().sort((a, b) => {
+    const ta = Date.parse(a.published || '') || 0;
+    const tb = Date.parse(b.published || '') || 0;
+    return tb - ta;
+  });
+}
+function renderTimelineItem(container, item) {
+  const row = el('div', 'ic-tl-item');
+  row.append(el('div', 'ic-tl-time mono text-[11px]', fmtTime(item.published).replace(/^\d{2}\/\d{2}\s*/, '') || '—'));
+  const rail = el('div', 'ic-tl-rail');
+  rail.append(el('span', 'ic-tl-dot'));
+  row.append(rail);
+  const cell = el('div', 'ic-tl-card-cell');
+  cell.append(renderCard(item));
+  row.append(cell);
+  container.append(row);
 }
 function renderBody() {
   const body = document.getElementById('feed-body');
@@ -394,8 +489,15 @@ function renderBody() {
       body.append(renderCard(item));
     });
   } else {
-    // Single-date browse: top item (highest final_score) gets hero treatment.
-    items.forEach((item, idx) => body.append(renderHeroCard(item, idx === 0)));
+    // Single-date browse: highest-scored item is the hero; the rest form a
+    // chronological timeline (AIHOT-inspired) with HH:MM anchors + rail.
+    body.append(renderHeroCard(items[0], true));
+    const rest = sortByPublishedDesc(items.slice(1));
+    if (rest.length) {
+      const tl = el('div', 'ic-tl mt-4');
+      rest.forEach(item => renderTimelineItem(tl, item));
+      body.append(tl);
+    }
   }
   const currentBlock = boardBlock(currentBoard, currentDate);
   meta.textContent = searchQuery
@@ -447,6 +549,14 @@ function applySearch(value) {
 }
 searchInput.addEventListener('input', e => applySearch(e.target.value));
 searchClear.addEventListener('click', () => applySearch(''));
+
+const starFilterBtn = document.getElementById('star-filter');
+starFilterBtn.addEventListener('click', () => {
+  starredOnly = !starredOnly;
+  starFilterBtn.classList.toggle('active', starredOnly);
+  starFilterBtn.textContent = starredOnly ? '★ 只看收藏（开）' : '★ 只看收藏';
+  renderAll();
+});
 
 renderDateSelect();
 loadAllFeeds().catch(err => {
