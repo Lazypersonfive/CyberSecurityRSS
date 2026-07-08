@@ -1,0 +1,562 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-09",
+  "generated_at": "2026-07-08T23:48:16.119688Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 7,
+    "direct": 15,
+    "wechat": 5,
+    "tier_t2": 13,
+    "kind_cn_expert": 7,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "kind_media": 5,
+    "kind_expert": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "items": [
+    {
+      "title_zh": "微软 Exchange Server 曝出零点击反射型 XSS 漏洞 CVE-2026-42897 并已遭在野利用",
+      "title_orig": "一封邮件、零点击、零门槛：拆解 2026 年最让企业 IT 头疼的 Exchange XSS 攻击链（CVE-2026-42897 ）",
+      "summary": "微软于2026年5月披露了Exchange Server中Outlook Web Access组件的反射型跨站脚本漏洞CVE-2026-42897，攻击者通过发送特定邮件即可实现零点击触发并执行恶意脚本。由于该漏洞已在野外被实际利用，CISA迅速将其列入已知被利用漏洞目录，并要求相关企业及机构必须在5月29日的截止日期前完成补丁修复，以防范内网环境遭受进一步渗透攻击。",
+      "tags": [
+        "Exchange",
+        "XSS",
+        "在野利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519409&idx=1&sn=dcc6363e9057f950e57e15f52e0efa1b",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-07T03:24:00+00:00",
+      "cve_ids": [
+        "CVE-2026-42897"
+      ],
+      "selection_reason": "Exchange 核心组件的零点击漏洞，且已有在野攻击，修复",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "cve:cve-2026-42897",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Varnish 反向代理 VCL 注入与 SSRF 漏洞研究：补丁绕过与编译器视角分析",
+      "title_orig": "当反向代理成了跳板：Varnish VCL 注入与 SSRF 内网穿透实战",
+      "summary": "研究人员在Varnish 6.6.1中发现了CVE-2022-23959漏洞的PoC，揭示了官方补丁仅修复body失败路径而忽略pipeline残留路径的严重缺陷。该漏洞源于VCL配置语言在编译为机器码过程中的注入问题，攻击者可借此绕过现有防御逻辑实现SSRF内网穿透。这是中文社区首次从编译器视角拆解反向代理的攻击面，提醒开发者需正视编译链条中潜藏的入侵路径。",
+      "tags": [
+        "Varnish",
+        "VCL注入",
+        "补丁绕过"
+      ],
+      "url": "https://xz.aliyun.com/news/92446",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-07-06T11:31:13+00:00",
+      "cve_ids": [
+        "CVE-2022-23959"
+      ],
+      "selection_reason": "从编译器底层视角分析反向代理漏洞，对研究复杂逻辑绕过有极高参",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2022-23959",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.6,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "国家安全部发布供应链投毒警示：揭秘带签名的恶意包攻击模式与 OIDC 信任链滥用",
+      "title_orig": "国家安全部供应链投毒警示",
+      "summary": "国家安全部首次系统披露了针对npm和PyPI生态的供应链投毒事件，Shai-Hulud等组织通过滥用OIDC信任链和绕过SLSA签名验证，在2026年上半年构建了62个带有合法外衣的恶意软件包。这些软件包在安装时会静默窃取开发者凭证，暴露了当前安全体系中账户认证的结构性软肋。国安部强调此类攻击具有隐蔽性强且修复周期长等特点，已上升至国家层面的战略安全议题。",
+      "tags": [
+        "供应链安全",
+        "OIDC滥用",
+        "恶意软件包"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487773&idx=1&sn=1b265c53b4d359de029a344d11dc93df",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-07T22:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "国家级权威机构定调的供应链安全事件，揭示了签名机制被绕过的实",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ%3D%3D&mid=2247487773&idx=1&sn=1b265c53b4d359de029a344d11dc93df",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.35,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux FUSE 组件 Page Cache 本地权限提升漏洞 CVE-2026-31694 风险预警",
+      "title_orig": "【已复现】Linux FUSE page cache 本地权限提升漏洞(CVE-2026-31694)安全风险通告",
+      "summary": "Linux内核的FUSE用户空间文件系统实现中存在CVE-2026-31694本地权限提升漏洞，该漏洞涉及Page Cache处理逻辑的缺陷。本地普通用户可以利用此漏洞触发内核状态异常，从而绕过安全限制并成功获取Root最高管理权限。目前该漏洞的技术细节已公开且已被成功复现，建议所有使用受影响版本Linux系统的管理员密切关注官方补丁动态，并第一时间执行系统升级以规避风险。",
+      "tags": [
+        "Linux内核",
+        "FUSE",
+        "提权漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506544&idx=1&sn=42b3e199efc8c80fa8238ce6e03b1b26",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-07T12:16:00+00:00",
+      "cve_ids": [
+        "CVE-2026-31694"
+      ],
+      "selection_reason": "Linux 内核本地提权漏洞，且已实现复现，对服务器安全运维",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "cve:cve-2026-31694",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.35,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux 内核修复潜伏 19 年的高稳定性 0day 漏洞，影响范围覆盖多个主流发行版",
+      "title_orig": "Linux 内核0day已修复：隐藏19+年、利用稳定性极高、影响极广",
+      "summary": "研究人员在 Linux 内核中发现并修复了一个隐藏长达 19 年之久的严重漏洞。该漏洞具有极高的利用稳定性和极广的影响范围，可能导致系统被远程或本地攻击者完全控制。目前官方已发布紧急修复补丁，由于该漏洞存在时间极长，几乎所有主流 Linux 发行版均受波及，建议用户立即进行内核版本更新以规避风险。",
+      "tags": [
+        "Linux内核",
+        "0day",
+        "系统安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw==&mid=2247526554&idx=1&sn=62d794dc43dc49ccb43d31be669f3712",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-08T07:58:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "罕见的超长潜伏期内核漏洞，稳定性高且影响广，具有极高的安全研",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "feed_title": "代码卫士",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw%3D%3D&mid=2247526554&idx=1&sn=62d794dc43dc49ccb43d31be669f3712",
+      "related_urls": [
+        "https://www.cyberkendra.com/2026/07/15-year-old-linux-kernel-bug-ghostlock.html",
+        "https://www.cyberkendra.com/2026/07/19-year-old-linux-kernel-bug-earns-80k.html"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "腾达 Tenda 多款路由器固件存在硬编码后门漏洞 CVE-2026-11405 可绕过认证",
+      "title_orig": "VU#213560: Tenda firmware (multiple versions) contains hidden authentication backdoor",
+      "summary": "Tenda多款路由器固件被曝存在编号为CVE-2026-11405的未公开身份验证后门，受影响型号包括US_FH1201等多个版本。攻击者可以利用该后门直接绕过正常的密码验证流程，无需任何凭证即可获取Web管理界面的完整管理员控制权。由于官方目前尚未发布完全修复的固件方案，该漏洞对企业和个人网络安全构成严重威胁，建议相关用户立即采取限制管理接口访问等临时防护措施。",
+      "tags": [
+        "Tenda",
+        "后门漏洞",
+        "身份绕过"
+      ],
+      "url": "https://kb.cert.org/vuls/id/213560",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-07-06T19:22:18+00:00",
+      "cve_ids": [
+        "CVE-2026-11405"
+      ],
+      "selection_reason": "典型的硬件固件后门漏洞，直接威胁网络边界设备控制权。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "cve:cve-2026-11405",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.3,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Adalo 无代码平台数据库 API 缺陷导致百万应用面临跨应用数据泄露风险",
+      "title_orig": "VU#849433: Adalo Database API Enables Cross-App User Data Extraction via Over-Fetching and Missing Authorization Controls",
+      "summary": "Adalo 无代码开发平台被曝存在平台级 API 缺陷，涉及 V1 和 V2 版本的数据库接口。由于缺乏必要的授权控制和过度获取（Over-Fetching）问题，任何经过身份验证的用户均可提取其他应用的用户完整记录。该漏洞影响超过一百万个应用程序，导致开发者及其终端用户的敏感数据面临大规模泄露的风险，原文未披露具体修复进度。",
+      "tags": [
+        "API安全",
+        "无代码平台",
+        "数据泄露"
+      ],
+      "url": "https://kb.cert.org/vuls/id/849433",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-07-08T14:03:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及百万级应用的平台级漏洞，展示了无代码平台在多租户隔离上的",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/849433",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.95,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Gitea 官方 Docker 镜像身份验证绕过漏洞 CVE-2026-20896 正被积极利用",
+      "title_orig": "研究人员警告：严重 Gitea 漏洞正被积极利用",
+      "summary": "Gitea官方Docker镜像中存在编号为CVE-2026-20896的严重身份验证绕过漏洞，其CVSS评分高达9.8且正被威胁行为者积极利用。该漏洞源于反向代理认证机制的缺陷，攻击者仅需在HTTP标头中构造有效用户名即可直接访问互联网上的Gitea实例。由于该漏洞可能导致代码仓库被非法访问或篡改，安全研究人员强烈建议所有使用官方镜像的用户立即执行版本更新以阻断攻击路径。",
+      "tags": [
+        "Gitea",
+        "身份绕过",
+        "Docker安全"
+      ],
+      "url": "https://hackernews.cc/post/64436",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-07-08T03:11:00+00:00",
+      "cve_ids": [
+        "CVE-2026-20896"
+      ],
+      "selection_reason": "高评分且正被积极利用的认证绕过漏洞，直接影响代码托管平台的安",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "cve:cve-2026-20896",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "开源面板 CyberPanel 曝出高危零日漏洞，任意低权限用户可直接获取服务器 Root 权限",
+      "title_orig": "Critical Unpatched Flaw in CyberPanel Lets Any User Seize Root on the Server",
+      "summary": "广泛部署的开源托管控制面板 CyberPanel 被披露存在一个严重的零日漏洞，该漏洞允许任何已通过身份验证的低权限用户直接提升至底层服务器的 Root 权限。目前该漏洞尚未分配 CVE 编号，且官方尚未发布补丁或确认收到通知，由于该漏洞由独立研究人员发现且影响范围巨大，管理员需警惕在野利用风险并关注后续官方补丁的发布动态。",
+      "tags": [
+        "权限提升",
+        "零日漏洞",
+        "CyberPan"
+      ],
+      "url": "https://www.cyberkendra.com/2026/07/critical-unpatched-flaw-in-cyberpanel.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-07-06T19:22:40+00:00",
+      "cve_ids": [],
+      "selection_reason": "开源控制面板的提权漏洞对大量云主机具有直接威胁。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/07/critical-unpatched-flaw-in-cyberpanel.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 将 Adobe ColdFusion、Langflow 及 Joomla 插件漏洞列入已知利用清单并要求限期修复",
+      "title_orig": "CISA Urges Immediate Patching of Exploited ColdFusion, Langflow, Joomla Flaws",
+      "summary": "美国CISA将Adobe ColdFusion和Langflow的两个新披露高危漏洞，以及两个Joomla扩展漏洞正式加入其已知被利用漏洞目录，并强制要求联邦机构在7月10日前完成修复。这些漏洞目前正处于活跃的在野攻击状态，可能导致系统入侵和敏感数据泄露，CISA敦促所有组织立即检查受影响的组件版本并应用补丁，以有效降低网络安全风险。",
+      "tags": [
+        "漏洞预警",
+        "CISA",
+        "在野利用"
+      ],
+      "url": "https://www.securityweek.com/cisa-urges-immediate-patching-of-exploited-coldfusion-langflow-joomla-flaws/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-07-08T10:45:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "CISA KEV 目录更新代表了当前互联网上最紧迫的攻击威胁",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/cisa-urges-immediate-patching-of-exploited-coldfusion-langflow-joomla-flaws",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源安全框架 T3MP3ST 发布：集成 35 款工具将通用 AI 智能体转化为自主红队作战单元",
+      "title_orig": "T3MP3ST 安全框架：集成 35 款工具，将 AI 代码智能体转化为零日漏洞挖掘器",
+      "summary": "开源安全框架T3MP3ST正式发布，该工具通过集成35款安全工具，能将Claude Code和OpenAI Codex等通用AI代码智能体改造为具备自主红队作战能力的单元。该框架在运行过程中无需新增API密钥或云端基础设施，也不会产生额外计费成本，旨在通过自动化流程降低零日漏洞挖掘的技术门槛，展示了AI在网络攻防实战中极高的工程化应用潜力。",
+      "tags": [
+        "AI安全",
+        "红队工具",
+        "自动化渗透"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA==&mid=2649790196&idx=1&sn=3f00c235b885725bac7aae84b3f9860e",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-07T08:43:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了如何将大模型能力转化为实际的自动化红队攻击战力。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA%3D%3D&mid=2649790196&idx=1&sn=3f00c235b885725bac7aae84b3f9860e",
+      "related_urls": [
+        "https://www.anquanke.com/post/id/315732",
+        "https://www.anquanke.com/post/id/315732"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "dimension_score": 8.25,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "FreeBSoD 研究：利用大语言模型挖掘并编写 FreeBSD 内核内存破坏漏洞利用程序",
+      "title_orig": "FreeBSoD: Leveraging Language Models to Find and Exploit Kernel Bugs (Part 2 of 2)",
+      "summary": "该研究探讨了利用大语言模型辅助识别 FreeBSD 内核漏洞的技术，包括已分配编号为 CVE-2026-3038 的栈溢出漏洞，并重点分析了 LLM 在编写内存破坏漏洞利用程序方面的有效性。文章展示了 AI 如何在复杂的内核安全研究中辅助自动化漏洞挖掘与利用链构建，通过实际案例验证了语言模型在提升安全研究效率和自动化攻击脚本编写方面的巨大潜力。",
+      "tags": [
+        "内核安全",
+        "LLM",
+        "漏洞利用"
+      ],
+      "url": "https://www.praetorian.com/blog/llm-kernel-exploit-development/",
+      "source": "praetorian.com",
+      "category": "WebSecurity",
+      "published": "2026-07-06T20:42:27+00:00",
+      "cve_ids": [
+        "CVE-2026-3038"
+      ],
+      "selection_reason": "探讨了 AI 在高难度内核漏洞利用编写中的实战表现。",
+      "feed_url": "https://www.praetorian.com/blog/feed",
+      "feed_title": "Blog | Praetorian",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "praetorian.com",
+      "story_id": "cve:cve-2026-3038",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.65,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux KVM 虚拟机逃逸漏洞 Januscape 可导致恶意租户虚拟机使物理宿主机崩溃",
+      "title_orig": "Januscape: New KVM Bug Lets a Malicious Cloud VM Crash Its Own Host",
+      "summary": "Linux 内核 KVM 虚拟化组件中发现名为 Januscape 的高危漏洞（CVE-2026-53359），该漏洞允许云环境中的恶意租户虚拟机突破隔离限制并导致底层物理服务器崩溃。该漏洞影响包括 Google Cloud 和 AWS 在内的多家主流云服务商，其特殊性在于打破了云服务商公认的物理隔离屏障，对公共云基础设施的安全性构成了直接威胁，需引起相关运维人员高度重视。",
+      "tags": [
+        "KVM",
+        "虚拟机逃逸",
+        "云安全"
+      ],
+      "url": "https://www.cyberkendra.com/2026/07/januscape-new-kvm-bug-lets-malicious.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-07-08T11:21:44+00:00",
+      "cve_ids": [
+        "CVE-2026-53359"
+      ],
+      "selection_reason": "KVM 漏洞直接威胁云基础设施的隔离性，属于底层高危风险。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "cve:cve-2026-53359",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077749&idx=3&sn=b6213ef302076e810b733f47e915bdb1",
+        "https://hackernews.cc/post/64440"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 8.7,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Ubiquiti 修复 UniFi 系列产品多个高危漏洞，涉及权限提升与远程任意命令执行风险",
+      "title_orig": "Ubiquiti Patches Critical UniFi Flaws Across Connect, Talk, Access, Protect, and OS",
+      "summary": "Ubiquiti公司针对旗下UniFi Connect、Talk、Access、Protect及OS等多个核心产品发布了关键安全更新，旨在修复包括CVSS评分满分10.0的CVE-2026-50746在内的多项严重漏洞。这些漏洞主要源于不当的访问控制机制，可能导致远程攻击者实现权限提升或在受影响设备上执行任意系统命令，官方强烈建议所有用户立即升级补丁以防止设备被非法控制并确保网络环境的安全。",
+      "tags": [
+        "Ubiquiti",
+        "权限提升",
+        "命令执行"
+      ],
+      "url": "https://thehackernews.com/2026/07/ubiquiti-patches-critical-unifi-flaws.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-08T14:38:05+00:00",
+      "cve_ids": [
+        "CVE-2026-50746"
+      ],
+      "selection_reason": "UniFi 设备广泛应用于企业网络，满分漏洞具有极高修复优先",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-50746",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Google Dialogflow CX 漏洞可导致攻击者劫持 AI 对话并窃取同一项目内的数据",
+      "title_orig": "Google Dialogflow CX Bug Allowed Attackers to Hijack AI Conversations",
+      "summary": "Google Dialogflow CX 被曝存在名为 Rogue Agent 的高危漏洞，该漏洞允许攻击者静默操纵 AI 对话过程并劫持同一 Google Cloud 项目内的所有代理。通过此漏洞，攻击者能够实现敏感数据外泄并破坏对话完整性，虽然 Google 目前已修复该漏洞，但其暴露出的 AI 代理安全风险仍值得开发者警惕，以防止未来出现类似的对话劫持和项目级权限滥用问题。",
+      "tags": [
+        "云安全",
+        "AI对话劫持",
+        "GoogleCl"
+      ],
+      "url": "https://www.securityweek.com/google-dialogflow-cx-bug-allowed-attackers-to-hijack-ai-conversations/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-07-08T12:15:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了云端 AI 服务在多租户或项目隔离方面的安全设计缺陷。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/google-dialogflow-cx-bug-allowed-attackers-to-hijack-ai-conversations",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
