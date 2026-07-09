@@ -1,0 +1,564 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-10",
+  "generated_at": "2026-07-09T23:53:29.502096Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 6,
+    "direct": 15,
+    "wechat": 4,
+    "tier_t2": 12,
+    "kind_cn_expert": 6,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "kind_media": 7,
+    "tier_unknown": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 10,
+    "merged_total": 10
+  },
+  "items": [
+    {
+      "title_zh": "Nebula Security 披露安卓 17 IonStack 全链路 0day 漏洞利用链",
+      "title_orig": "安卓17 IonStack全链路0day漏洞利用链",
+      "summary": "Nebula Security 团队披露了针对安卓 17 的 IonStack 全链路 0day 漏洞利用链，该研究展示了从初始访问到系统提权的完整攻击路径。原文未披露具体的漏洞 CVE 编号、触发原理及受影响的特定组件细节，但强调了该利用链在最新安卓系统版本中的突破性影响。目前该漏洞链的修复状态在文中未明确说明，主要作为团队技术实力的展示。",
+      "tags": [
+        "安卓安全",
+        "0day",
+        "漏洞利用链"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187608&idx=1&sn=d0397197cbc8664d3cdba598ba15c196",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-09T15:42:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对最新安卓系统的全链路攻击技术。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187608&idx=1&sn=d0397197cbc8664d3cdba598ba15c196",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.7,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Xerte Online Toolkit 存在身份验证绕过漏洞可导致远程代码执行",
+      "title_orig": "VU#734812: Xerte Online Toolkit contains an authentication bypass that allows for RCE",
+      "summary": "开源在线学习工具套件 Xerte Online Toolkit 被发现存在两个严重漏洞，其中 CVE-2026-14261 涉及安装后的 /setup/ 目录持久化问题。未经身份验证的攻击者可利用此漏洞将应用程序重新配置为指向受控的远程数据库，从而实现身份验证绕过并最终执行远程代码（RCE）。原文未详细说明受影响的具体版本号，建议管理员检查并移除安装目录以缓解风险。",
+      "tags": [
+        "身份验证绕过",
+        "RCE",
+        "Xerte"
+      ],
+      "url": "https://kb.cert.org/vuls/id/734812",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-07-09T12:37:51+00:00",
+      "cve_ids": [
+        "CVE-2026-14261"
+      ],
+      "selection_reason": "涉及开源教学工具的高危 RCE 漏洞利用路径。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "cve:cve-2026-14261",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Adalo 无代码平台 API 缺陷导致超过百万应用面临跨应用数据泄露风险",
+      "title_orig": "VU#849433: Adalo Database API Enables Cross-App User Data Extraction via Over-Fetching and Missing Authorization Controls",
+      "summary": "Adalo 无代码开发平台被曝存在严重的数据库 API 权限控制漏洞，影响超过一百万个基于 V1 和 V2 版本构建的应用程序。由于平台级的设计缺陷，任何经过身份验证的用户都可以通过 API 检索属于其他任意 Adalo 应用的完整用户记录，存在严重的过度获取和授权缺失问题。该漏洞导致开发者及其终端用户面临大规模数据泄露风险，目前平台方的修复进度在原文中未详细说明。",
+      "tags": [
+        "API安全",
+        "数据泄露",
+        "无代码平台"
+      ],
+      "url": "https://kb.cert.org/vuls/id/849433",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-07-08T14:03:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "影响百万级应用的平台级 API 越权漏洞。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/849433",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "盲眼鹰 APT 组织利用 .NET AOT 编译技术新型加载器投毒 DCRat 木马",
+      "title_orig": "APT-C-36使用新加载器开展攻击活动",
+      "summary": "360 高级威胁研究院监测到 APT-C-36（盲眼鹰）组织在 2026 年 5 月的攻击活动中使用了新型加载器。该加载器采用 .NET AOT 编译技术生成原生机器码，旨在提升静态分析的难度和运行时的隐蔽性，最终用于加载 DCRat 远程控制木马。这种技术手段展示了攻击者在对抗安全防护软件检测方面的持续演进，值得防御方关注其特征变化。",
+      "tags": [
+        "APT攻击",
+        "加载器",
+        "DCRat"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUyMjk4NzExMA==&mid=2247508740&idx=1&sn=7462e1127fcbe10281f7af3e1ea494d6",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-08T09:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 APT 组织利用 .NET AOT 逃避检测的新技术。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/920f171e3dae0c8eeb4c97b366b229ba19807732.xml",
+      "feed_title": "360威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/920f171e3dae0c8eeb4c97b366b229ba19807732.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzUyMjk4NzExMA%3D%3D&mid=2247508740&idx=1&sn=7462e1127fcbe10281f7af3e1ea494d6",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "天融信发布关于 AI 编程工具 Claude Code 存在安全后门隐患的风险提示",
+      "title_orig": "【风险提示】天融信关于防范AI编程工具Claude Code安全后门隐患的风险提示",
+      "summary": "天融信阿尔法实验室针对 Anthropic 开发的 AI 命令行编程工具 Claude Code 发布风险预警，指出该工具存在潜在的安全后门隐患。该隐患最初由社交平台用户公开，可能允许非授权访问或执行特定操作，影响使用该工具进行代码开发的程序员。原文未披露后门的具体触发逻辑或代码细节，目前建议相关用户关注官方更新并审慎使用该工具。",
+      "tags": [
+        "AI安全",
+        "Claude",
+        "后门预警"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MDAzMDQxNw==&mid=2247496951&idx=1&sn=20eb03bc0168453f0541829356828612",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-09T10:49:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注流行 AI 编程工具可能引入的供应链安全风险。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/a9cfdddef757b0ebac0428f629869b69028c43fa.xml",
+      "feed_title": "天融信阿尔法实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/a9cfdddef757b0ebac0428f629869b69028c43fa.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3MDAzMDQxNw%3D%3D&mid=2247496951&idx=1&sn=20eb03bc0168453f0541829356828612",
+      "related_urls": [
+        "https://www.cyberkendra.com/2026/07/researchers-turn-claude-code-and-codex.html",
+        "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458617429&idx=2&sn=3e3854e481dc46bdeee63e1bad144fbf",
+        "https://hackernews.cc/post/64445",
+        "https://defend.network/briefings/ubiquiti-unifi-hallusquatting-ai-coding-exploits-2026-07-09.html",
+        "https://www.infosecurity-magazine.com/news/ghostapproval-flaw-ai-coding/",
+        "https://hackernews.cc/post/64442"
+      ],
+      "related_count": 6,
+      "score": 9,
+      "dimension_score": 8.7,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Palo Alto Networks 修复 PAN-OS 中包括命令注入在内的 13 个安全漏洞",
+      "title_orig": "Palo Alto Networks Patches 13 Vulnerabilities",
+      "summary": "网络安全公司 Palo Alto Networks 近期发布了针对其 PAN-OS 软件的关键安全更新，旨在修复包括缓冲区溢出、拒绝服务、命令注入、服务器端请求伪造以及身份验证绕过在内的 13 个不同类型的安全漏洞。由于这些漏洞可能导致系统被非法控制或服务中断，官方强烈建议所有使用该系统的企业用户立即检查并安装最新补丁，以确保网络基础设施免受潜在的网络攻击威胁。",
+      "tags": [
+        "PAN-OS",
+        "漏洞修复",
+        "命令注入"
+      ],
+      "url": "https://www.securityweek.com/palo-alto-networks-patches-13-vulnerabilities/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-07-09T13:49:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "关键网络基础设施厂商的大规模漏洞修复动态。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/palo-alto-networks-patches-13-vulnerabilities",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.1,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux 内核 15 年高危漏洞 GhostLock 可导致本地提权及容器逃逸",
+      "title_orig": "15-Year-Old Linux Kernel Bug 'GhostLock' Lets Any Local User Seize Root, Break Out of Containers",
+      "summary": "安全研究员 VEGA 发现了一个潜伏在 Linux 内核中长达 15 年的高危提权漏洞，该漏洞被命名为 GhostLock 并追踪为 CVE-2026-43499，允许本地普通用户通过简单的线程系统调用获取 root 权限并实现容器逃逸。该漏洞自 2011 年起便存在于代码中，Nebula Security 团队已公开其技术细节，此项重大发现也为研究者赢得了 9.8 万美元的赏金，提醒广大用户必须尽快升级内核。",
+      "tags": [
+        "Linux内核",
+        "本地提权",
+        "容器逃逸"
+      ],
+      "url": "https://www.cyberkendra.com/2026/07/15-year-old-linux-kernel-bug-ghostlock.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-07-08T11:00:03+00:00",
+      "cve_ids": [
+        "CVE-2026-43499"
+      ],
+      "selection_reason": "长达 15 年的内核级高危漏洞，影响范围极广。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "cve:cve-2026-43499",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247526036&idx=2&sn=2a1b3160d6537cece6ed63bf95562c47",
+        "https://www.securityweek.com/15-year-old-linux-vulnerability-ghostlock-earns-researchers-92k-from-google/"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "日本电信运营商 KDDI 遭 0day 漏洞攻击导致 1200 万用户数据泄露",
+      "title_orig": "12 Million Impacted by Data Breach at Japanese Telco KDDI",
+      "summary": "日本电信巨头 KDDI 遭遇严重数据泄露事件，初步估计影响约 1200 万名用户。攻击者利用了第三方系统中的一个 0day 漏洞，成功渗透进 KDDI 为互联网服务提供商（ISP）提供的邮件系统。原文未披露该 0day 漏洞的具体技术细节或受影响的第三方软件名称，目前已知该事件已造成大规模个人信息暴露，相关调查和修复工作正在进行中。",
+      "tags": [
+        "数据泄露",
+        "0day攻击",
+        "供应链安全"
+      ],
+      "url": "https://www.securityweek.com/12-million-impacted-by-data-breach-at-japanese-telco-kddi/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-07-09T12:18:46+00:00",
+      "cve_ids": [],
+      "selection_reason": "由 0day 漏洞引发的大规模电信行业数据泄露事件。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/12-million-impacted-by-data-breach-at-japanese-telco-kddi",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux 内核 KVM 虚拟化组件高危漏洞 Januscape 可导致恶意虚拟机使宿主机崩溃",
+      "title_orig": "Januscape: New KVM Bug Lets a Malicious Cloud VM Crash Its Own Host",
+      "summary": "CVE-2026-53359是存在于Linux内核KVM组件中的拒绝服务漏洞，其技术原理涉及虚拟机管理程序在处理特定指令或资源请求时的逻辑缺陷。恶意租户在虚拟机内部触发特定条件，可导致底层物理宿主机系统崩溃，原文未披露具体受影响的内核版本号及代码函数位置。目前该漏洞已在主流云服务商环境得到关注，但原文未披露官方补丁发布的具体状态或缓解措施。",
+      "tags": [
+        "KVM漏洞",
+        "虚拟化安全",
+        "云安全"
+      ],
+      "url": "https://www.cyberkendra.com/2026/07/januscape-new-kvm-bug-lets-malicious.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-07-08T11:21:44+00:00",
+      "cve_ids": [
+        "CVE-2026-53359"
+      ],
+      "selection_reason": "涉及底层虚拟化逃逸与拒绝服务，对云基础设施安全威胁极大。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "cve:cve-2026-53359",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Gitea 身份验证绕过漏洞 CVE-2026-20896 遭利用，GitHub 代理工作流泄露私有仓库数据",
+      "title_orig": "GitHub, Gitea, Google Dialogflow hit by active exploits; RedWing Android malware-as-service",
+      "summary": "安全研究人员发现Gitea存在已被积极利用的身份验证绕过漏洞CVE-2026-20896，同时GitHub的Agentic Workflows因配置缺陷导致私有仓库数据通过公共Issue泄露。此外，Telegram平台上出现名为RedWing的Android恶意软件租用服务，该服务以欺诈工具形式进行非法租赁，这些针对主流开发平台和移动端的安全威胁正严重影响着全球开发者与用户的个人数据安全。",
+      "tags": [
+        "漏洞利用",
+        "供应链安全",
+        "移动安全"
+      ],
+      "url": "https://defend.network/briefings/github-gitea-google-dialogflow-android-redwing-2026-07-08.html",
+      "source": "defend.network",
+      "category": "Synthesis",
+      "published": "2026-07-08T06:30:00+00:00",
+      "cve_ids": [
+        "CVE-2026-20896"
+      ],
+      "selection_reason": "涵盖主流开发工具的在途攻击，对开发者群体具有高度预警价值。",
+      "feed_url": "https://defend.network/feed.xml",
+      "feed_title": "defend.network",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "defend.network",
+      "story_id": "cve:cve-2026-20896",
+      "related_urls": [
+        "https://hackernews.cc/post/64446"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.2,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "XWiki Platform Old Core 组件存在高危目录遍历漏洞 CVE-2026-34151",
+      "title_orig": "【漏洞通告】XWiki Platform Old Core 目录遍历漏洞(CVE-2026-34151)",
+      "summary": "深瞳漏洞实验室监测到 XWiki Platform Old Core 组件中存在一个编号为 CVE-2026-34151 的高危目录遍历漏洞，该漏洞可能允许未经授权的攻击者访问服务器上的敏感文件。目前该漏洞的威胁等级已被评定为高危，虽然受影响的具体版本范围及官方补丁修复进度在当前通告中尚未完全披露，但建议相关用户尽快采取安全防护措施并关注组件更新。",
+      "tags": [
+        "XWiki",
+        "目录遍历",
+        "高危漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247526036&idx=1&sn=b6c55cfbcccaf3a13fe0dddbfabab1cb",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-09T10:06:00+00:00",
+      "cve_ids": [
+        "CVE-2026-34151"
+      ],
+      "selection_reason": "XWiki 是常用协作平台，目录遍历漏洞可能导致核心敏感数据",
+      "feed_url": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "feed_title": "深信服千里目安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "story_id": "cve:cve-2026-34151",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506557&idx=1&sn=d7eb5aede839ae98a836d43c69b5e28d"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "dimension_score": 7.9,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全研究揭示通过模拟审核痕迹越狱函数调用型大语言模型的新型攻击范式",
+      "title_orig": "超越提示词：通过模拟审核痕迹越狱函数调用型LLM",
+      "summary": "该研究揭示了函数调用型LLM在有状态环境下的结构性越狱漏洞，攻击者通过在对话历史中伪造模拟审核痕迹，诱导模型绕过安全对齐逻辑。该漏洞触发条件依赖于开发者定义的函数调用架构缺陷，而非传统的提示词注入手段，影响所有支持外部工具调用的主流大模型应用。原文未披露具体的受影响模型版本列表，目前该风险主要通过优化架构设计进行缓解，原文未披露自动化修复方案。",
+      "tags": [
+        "LLM安全",
+        "越狱攻击",
+        "AI安全"
+      ],
+      "url": "https://paper.seebug.org/3497",
+      "source": "paper.seebug.org",
+      "category": "Synthesis",
+      "published": "2026-07-08T09:25:41+00:00",
+      "cve_ids": [],
+      "selection_reason": "从提示词攻击转向结构性漏洞研究，是 AI 安全领域的前沿技术",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3497",
+      "related_urls": [
+        "https://paper.seebug.org/3497",
+        "https://www.reddit.com/r/MachineLearning/comments/1ur1fnz/agentic_safety_triggers_arent_textual_safety/"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Injective Labs SDK 遭供应链攻击，恶意 npm 软件包窃取加密货币钱包私钥",
+      "title_orig": "Injective SDK on npm infected with cryptocurrency wallet stealer",
+      "summary": "黑客通过攻破 Injective Labs 在 GitHub 上的代码仓库，成功向 npm 官方仓库发布了植入恶意代码的 SDK 软件包，导致供应链安全受到严重威胁。该恶意包专门针对加密货币用户，能够自动窃取受害者的钱包私钥和助记词等核心资产，目前受影响的 npm 包已被识别，建议相关开发者立即核查项目依赖项，并及时更换可能已经受损的各类账户凭据。",
+      "tags": [
+        "npm安全",
+        "供应链攻击",
+        "加密货币"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/injective-sdk-on-npm-infected-with-cryptocurrency-wallet-stealer/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-09T20:10:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的供应链投毒事件，直接威胁金融资产安全，技术警示性强。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/injective-sdk-on-npm-infected-with-cryptocurrency-wallet-stealer",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.05,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型黑客组织 Helix 利用语音钓鱼与 MFA 滥用手段窃取 SharePoint 环境数据",
+      "title_orig": "New Helix vishing group emerges in SharePoint data theft attacks",
+      "summary": "名为 Helix 的新型数据勒索组织正采用语音钓鱼、设备代码钓鱼及多因素身份验证滥用等身份识别类攻击策略，旨在入侵并窃取 SharePoint 环境中的敏感数据。该组织通过结合社会工程学与认证机制缺陷，能够有效绕过企业传统的安全屏障，目前已有部分企业因此遭受数据泄露损失，这标志着针对云端协作平台的身份攻击手段正在变得更加复杂且具有针对性。",
+      "tags": [
+        "语音钓鱼",
+        "MFA绕过",
+        "数据窃取"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-helix-vishing-group-emerges-in-sharepoint-data-theft-attacks/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-09T17:08:29+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对企业云存储环境的新型复合攻击手段，具有实战参考价值",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/new-helix-vishing-group-emerges-in-sharepoint-data-theft-attacks",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "T3MP3ST 安全框架发布：集成 35 款工具将 AI 智能体转化为零日漏洞挖掘利器",
+      "title_orig": "T3MP3ST 安全框架：集成 35 款工具，将 AI 代码智能体转化为零日漏洞挖掘器",
+      "summary": "T3MP3ST框架通过集成35款安全工具，利用AI智能体的逻辑推理能力实现零日漏洞的自动化挖掘，其核心原理是将自然语言指令转化为复杂的漏洞扫描与利用链。该框架触发条件为配置AI代码智能体接入目标系统，主要影响缺乏深层逻辑校验的Web应用及二进制组件，原文未披露其针对的具体软件版本。目前该框架主要用于安全研究，原文未披露针对此类AI驱动攻击的具体防御或修复技术细节。",
+      "tags": [
+        "AI安全工具",
+        "漏洞挖掘",
+        "自动化攻防"
+      ],
+      "url": "https://www.anquanke.com/post/id/315732",
+      "source": "anquanke.com",
+      "category": "CN_News",
+      "published": "2026-07-07T16:53:40+00:00",
+      "cve_ids": [],
+      "selection_reason": "集成大量工具的 AI 攻防框架，代表了自动化漏洞挖掘的技术趋",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315732",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "dimension_score": 7.25,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
