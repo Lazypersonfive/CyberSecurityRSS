@@ -1,0 +1,559 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-12",
+  "generated_at": "2026-07-11T23:39:32.279848Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 9,
+    "direct": 14,
+    "wechat": 6,
+    "tier_t2": 13,
+    "kind_cn_expert": 9,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "aggregator": 1,
+    "kind_expert_x": 1,
+    "kind_media": 3
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 5,
+    "merged_total": 5
+  },
+  "items": [
+    {
+      "title_zh": "Nebula Security 披露安卓 17 IonStack 全链路 0day 漏洞利用链",
+      "title_orig": "安卓17 IonStack全链路0day漏洞利用链",
+      "summary": "Nebula Security 团队发布了针对安卓 17 系统的 IonStack 全链路 0day 漏洞利用链研究成果。该研究展示了如何通过组合多个未知漏洞实现对最新安卓系统的完整控制，原文未披露具体漏洞编号及技术细节。此项成果标志着安全研究人员在移动端底层内存管理机制攻防上的重大突破，目前相关漏洞的修复状态原文未明确说明。",
+      "tags": [
+        "安卓安全",
+        "0day漏洞",
+        "漏洞利用链"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187608&idx=1&sn=d0397197cbc8664d3cdba598ba15c196",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-09T15:42:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对最新安卓系统底层机制的高级漏洞利用能力。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187608&idx=1&sn=d0397197cbc8664d3cdba598ba15c196",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.9,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux 内核潜伏 15 年 UAF 漏洞 GhostLock 获 Google 巨额奖励",
+      "title_orig": "15 年历史的 Linux 漏洞\"GhostLock\"为研究人员赢得 Google 9.2 万美元奖金",
+      "summary": "CVE-2026-43499（GhostLock）是 Linux 内核优先级任务调度系统中的一个释放后使用漏洞，自 2011 年 Linux 2.6.39 版本引入后已在所有主流发行版中潜伏长达 15 年之久。该高危漏洞允许攻击者在特定条件下实现权限提升或导致系统崩溃，直到今年 4 月才正式发布补丁修复，发现该漏洞的研究团队 Nebula Security 为此获得了 Google 颁发的 9.2 万美元巨额奖金。",
+      "tags": [
+        "Linux内核",
+        "UAF漏洞",
+        "提权"
+      ],
+      "url": "https://hackernews.cc/post/64448",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-07-10T07:01:00+00:00",
+      "cve_ids": [
+        "CVE-2026-43499"
+      ],
+      "selection_reason": "长生命周期的内核漏洞，具有极高的研究价值和奖励金额。",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "cve:cve-2026-43499",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247526036&idx=2&sn=2a1b3160d6537cece6ed63bf95562c47"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "dimension_score": 9.5,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "GNU Wget 1.25.0 及更早版本 FTP 被动模式实现存在 SSRF 漏洞",
+      "title_orig": "VU#564823: GNU Wget enables SSRF via unvalidated FTP PASV IPs",
+      "summary": "GNU Wget 1.25.0 及更早版本在实现 FTP 被动模式时存在服务器端请求伪造漏洞，主要由于 Wget 未对 PASV 响应中获取的 IP 地址进行有效验证。攻击者可利用受控的 FTP 端点将客户端连接重定向至任意 IP，从而探测内部网络主机并导致敏感服务响应泄露，目前建议用户密切关注官方发布的修复补丁以防范潜在的内网渗透风险。",
+      "tags": [
+        "Wget",
+        "SSRF",
+        "协议安全"
+      ],
+      "url": "https://kb.cert.org/vuls/id/564823",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-07-10T18:19:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "基础网络工具的协议实现漏洞，影响范围广泛。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/564823",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 9.05,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux KVM 虚拟机逃逸漏洞 Januscape 影响 Intel 与 AMD 系统",
+      "title_orig": "‼️ A 16-year-old Linux KVM vulnerability called Januscape (CVE-2026-53359) lets a root user inside a guest VM escape to the host on Intel and AMD x8...",
+      "summary": "CVE-2026-53359（Januscape）是一个存在于 Linux KVM 中长达 16 年的高危漏洞，允许客户机中的 root 用户逃逸至 Intel 和 AMD x86 架构的宿主机，目前已有可导致宿主机崩溃的验证代码公开。Canonical 警告称 Ubuntu 各发行版的内核补丁仍在处理中，并强烈建议用户在此期间通过禁用嵌套虚拟化功能来规避潜在的虚拟机逃逸攻击风险。",
+      "tags": [
+        "KVM",
+        "虚拟机逃逸",
+        "虚拟化安全"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2076073162593214937",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-11T22:36:28+00:00",
+      "cve_ids": [
+        "CVE-2026-53359"
+      ],
+      "selection_reason": "严重的虚拟化逃逸漏洞，且已有公开 PoC，风险极高。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "cve:cve-2026-53359",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "dimension_score": 9.7,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "以色列初创公司在 NPM 平台发布仿冒 AI 工具的恶意信息窃取包",
+      "title_orig": "以色列网安公司将信息窃取程序发布至NPM",
+      "summary": "2026 年 6 月，以色列某网安公司创始人利用 NPM 平台发布了 7 个仿冒 OpenAI 等主流 AI 工具的恶意包，通过 postinstall 脚本机制在安装阶段静默运行窃取脚本。这些恶意包采用诱饵与载荷分离设计，将 16KB 的窃取代码隐藏在 scripts 目录中以绕过常规审计，目前累计下载量已达 2 万次，其主要目标是以匿名遥测为伪装，采集用户的环境变量及敏感数据。",
+      "tags": [
+        "供应链攻击",
+        "NPM",
+        "恶意软件包"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187638&idx=1&sn=70d61e54a92f741faf5ff5131847ef41",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-10T15:38:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的供应链攻击案例，利用 AI 热点进行精准投毒。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187638&idx=1&sn=70d61e54a92f741faf5ff5131847ef41",
+      "related_urls": [
+        "https://thehackernews.com/2026/07/compromised-jscrambler-8140-npm-release.html",
+        "https://hackernews.cc/post/64449"
+      ],
+      "related_count": 2,
+      "score": 10,
+      "dimension_score": 9.35,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "开源网盘系统 FilePress 存在未认证 SQL 注入漏洞 CVE-2026-8133",
+      "title_orig": "CVE-2026-8133 漏洞复现首发：FilePress 未认证 SQL 注入",
+      "summary": "FilePress 2.2.0 及更早版本的文件分享列表接口存在严重的 SQL 注入漏洞，该系统是由上海巧巧时代开发的基于 DZZ 框架的开源网盘工具。漏洞编号为 CVE-2026-8133，源于 order 参数在 ORDER BY 语句中未经过滤直接拼接，导致远程未授权攻击者可执行任意 SQL 命令并获取数据库权限，目前漏洞复现细节已公开，受影响用户应尽快关注并升级至安全版本。",
+      "tags": [
+        "SQL注入",
+        "FilePres",
+        "漏洞复现"
+      ],
+      "url": "https://xz.aliyun.com/news/92478",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-07-09T17:12:37+00:00",
+      "cve_ids": [
+        "CVE-2026-8133"
+      ],
+      "selection_reason": "国产开源软件的高危漏洞复现，具有实际防御指导意义。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-8133",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92478"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "勒索组织 FulcrumSec 利用 MOVEit 漏洞窃取诺和诺德 AI 模型权重",
+      "title_orig": "【AI复盘】AI资产首次成为勒索组织攻击目标",
+      "summary": "2026 年 6 月，勒索组织 FulcrumSec 利用零日漏洞攻击诺和诺德，窃取了包含“蜻蜓”多模态 AI 全栈权重在内的 1.3TB 核心数据，并索要 2500 万美元赎金。这是 AI 资产首次成为勒索软件的定向攻击目标，由于此类资产涉及高额研发投入和核心商业机密，一旦泄露将允许竞争对手低成本复制技术能力，对企业的技术壁垒和市场竞争力构成严重威胁。",
+      "tags": [
+        "勒索软件",
+        "AI安全",
+        "数据泄露"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487791&idx=1&sn=41558c359ae7d0e2aefe012f2d408fa6",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-09T23:21:00+00:00",
+      "cve_ids": [
+        "CVE-2026-42198"
+      ],
+      "selection_reason": "首例针对 AI 核心资产（模型权重）的勒索攻击，定义了新的攻",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "cve:cve-2026-42198",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.9,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "天融信发布关于 AI 编程工具 Claude Code 存在安全后门的风险提示",
+      "title_orig": "【风险提示】天融信关于防范AI编程工具Claude Code安全后门隐患的风险提示",
+      "summary": "天融信阿尔法实验室监测到 Anthropic 开发的 AI 编程工具 Claude Code 存在安全后门隐患，该风险最初由 Reddit 用户公开披露。虽然原文未详细说明后门的具体技术触发原理，但该隐患可能导致开发者在利用 AI 辅助编程时面临核心代码泄露或系统被远程控制的风险，建议相关企业和开发者立即加强对 AI 编程工具的审计与准入控制。",
+      "tags": [
+        "AI工具安全",
+        "Claude C",
+        "后门风险"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MDAzMDQxNw==&mid=2247496951&idx=1&sn=20eb03bc0168453f0541829356828612",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-09T10:49:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 辅助开发工具引入的新型供应链安全风险。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/a9cfdddef757b0ebac0428f629869b69028c43fa.xml",
+      "feed_title": "天融信阿尔法实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/a9cfdddef757b0ebac0428f629869b69028c43fa.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3MDAzMDQxNw%3D%3D&mid=2247496951&idx=1&sn=20eb03bc0168453f0541829356828612",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.9,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "利用全AI流程实现Unity IL2CPP逆向改包与Frida-Gadget脱机注入技术实践",
+      "title_orig": "[原创]全AI流程搞定Unity IL2CPP改包、Frida-Gadget脱机注入与免死逻辑复现",
+      "summary": "本文详细记录了利用AI全流程辅助Unity IL2CPP游戏逆向改包的技术实践，通过静态导出dump精准定位AutoRevival死亡链逻辑，并结合Frida-Gadget脱机注入技术实现了碰撞续跑、去除闪屏及无限复活等核心功能。该流程不仅展示了AI在自动化逆向分析和移动端Hook脚本编写中的实战价值，还附带了具体的AI指令与实机验收过程，为移动安全从业者提供了极具参考意义的自动化改包范式。",
+      "tags": [
+        "Unity逆向",
+        "AI安全",
+        "Frida"
+      ],
+      "url": "https://xz.aliyun.com/news/92467",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-07-09T01:39:36+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI辅助逆向工程的完整闭环流程。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92467",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "APT组织Armored Likho利用新型窃密武器针对政府及电力能源行业开展攻击",
+      "title_orig": "APT组织Armored Likho利用新型窃密武器针对政府机构、电力能源行业展开攻击活动",
+      "summary": "安全研究机构监测到APT组织Armored Likho近期针对政府机构及电力能源行业发起了高强度的定向攻击活动，其核心目标在于通过新型窃密武器从受害者系统中非法获取高度敏感的行业信息。虽然原文尚未披露该武器的具体技术细节、漏洞利用方式或完整的感染链条，但此次攻击的行业针对性极强，相关部门需高度警惕此类针对关键基础设施的间谍活动，并加强对该组织新型工具的防御与预警工作。",
+      "tags": [
+        "APT攻击",
+        "窃密武器",
+        "能源安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI0MTE4ODY3Nw==&mid=2247492952&idx=1&sn=a9f5852e83ac583edf0dbfe1d1909b79",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-10T01:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注针对关键基础设施的定向攻击动态。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/6bdf0d750e8c418f6ddfe8826c7a29f786a74aa4.xml",
+      "feed_title": "白泽安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/6bdf0d750e8c418f6ddfe8826c7a29f786a74aa4.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI0MTE4ODY3Nw%3D%3D&mid=2247492952&idx=1&sn=a9f5852e83ac583edf0dbfe1d1909b79",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.7,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Xerte Online Toolkit 存在身份验证绕过漏洞可导致远程代码执行",
+      "title_orig": "VU#734812: Xerte Online Toolkit contains an authentication bypass that allows for RCE",
+      "summary": "开源教学工具套件Xerte Online Toolkit被发现存在两个安全漏洞，其中CVE-2026-14261涉及安装后/setup/目录未能自动清理的持久化问题，导致未经身份验证的攻击者可将应用重新配置并指向受控远程数据库。该漏洞直接威胁到Web浏览器端的学习材料创建环境，可能导致严重的远程代码执行风险，目前强烈建议系统管理员立即检查并手动移除服务器上的安装目录，以防止潜在的越权配置攻击。",
+      "tags": [
+        "身份验证绕过",
+        "远程代码执行",
+        "Web安全"
+      ],
+      "url": "https://kb.cert.org/vuls/id/734812",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-07-09T12:37:51+00:00",
+      "cve_ids": [
+        "CVE-2026-14261"
+      ],
+      "selection_reason": "高危RCE漏洞，涉及配置不当导致的权限提升。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "cve:cve-2026-14261",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 7.75,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源引导加载程序U-Boot发现六个安全漏洞可导致隐蔽固件攻击",
+      "title_orig": "New U-Boot flaws could enable stealthy firmware attacks",
+      "summary": "广泛使用的开源引导加载程序U-Boot被曝存在六个安全漏洞，攻击者可利用这些漏洞在设备启动过程中执行恶意代码。这些漏洞可能导致隐蔽的固件攻击，从而绕过现有的安全保护机制并安装持久性恶意软件。受影响组件涉及多个架构的引导流程，实际影响范围涵盖大量嵌入式设备，目前相关补丁状态需参考官方更新。",
+      "tags": [
+        "U-Boot",
+        "固件安全",
+        "引导加载程序"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-u-boot-flaws-could-enable-stealthy-firmware-attacks/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-10T21:59:02+00:00",
+      "cve_ids": [],
+      "selection_reason": "底层引导程序漏洞，具有极高的持久化攻击价值。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/new-u-boot-flaws-could-enable-stealthy-firmware-attacks",
+      "related_urls": [
+        "https://defend.network/briefings/progress-sharefile-injective-uboot-firmware-threats-2026-07-11.html"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "dimension_score": 8.95,
+      "final_score": 8.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Progress Software 敦促 ShareFile 管理员因“可靠威胁”立即关闭服务器",
+      "title_orig": "Progress urges ShareFile admins to shut down servers over “credible” threat",
+      "summary": "Progress Software向使用Storage Zone Controllers的ShareFile客户发出紧急邮件通知，要求其立即关闭本地服务器，以应对针对该本地安全文件共享软件的“可靠外部安全威胁”。尽管官方目前尚未披露该威胁的具体漏洞原理、攻击向量或CVE编号，但强调了受影响组件面临的紧迫风险，并建议管理员在获得进一步安全补丁或修复通知前保持服务器离线状态，以确保企业内部数据的绝对安全。",
+      "tags": [
+        "ShareFil",
+        "供应链安全",
+        "应急响应"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/progress-urges-sharefile-customers-to-shut-down-servers-over-credible-threat/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-10T16:26:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "厂商发布的紧急停机预警，暗示存在在途攻击。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/progress-urges-sharefile-customers-to-shut-down-servers-over-credible-threat",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.85,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "XWiki Platform Old Core 组件存在高危目录遍历漏洞 CVE-2026-34151",
+      "title_orig": "【漏洞通告】XWiki Platform Old Core 目录遍历漏洞(CVE-2026-34151)",
+      "summary": "XWiki Platform Old Core组件被披露存在高危目录遍历漏洞，漏洞编号为CVE-2026-34151，攻击者可借此绕过权限限制访问服务器上的敏感文件或目录，进而导致关键业务信息泄露。虽然原文未详细说明触发该漏洞的具体参数或受影响的确切版本范围，但深瞳漏洞实验室已将其评定为高危等级，建议所有使用该组件的用户密切关注官方发布的补丁更新，并及时完成系统加固以防范潜在的自动化扫描与攻击。",
+      "tags": [
+        "目录遍历",
+        "XWiki",
+        "漏洞预警"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247526036&idx=1&sn=b6c55cfbcccaf3a13fe0dddbfabab1cb",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-09T10:06:00+00:00",
+      "cve_ids": [
+        "CVE-2026-34151"
+      ],
+      "selection_reason": "高危组件漏洞，可能导致敏感信息泄露。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "feed_title": "深信服千里目安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "story_id": "cve:cve-2026-34151",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "dimension_score": 8.0,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Ghostcommit 技术利用图像隐写提示注入欺骗 AI 代理并窃取密钥",
+      "title_orig": "'Ghostcommit' hides prompt injection in images to fool AI agents, steal secrets",
+      "summary": "研究人员演示了一种名为“Ghostcommit”的新型攻击技术，通过在PNG图像中隐藏提示注入指令来欺骗AI代码审计工具。该技术成功绕过了CodeRabbit和Bugbot等AI代理，因为这些工具通常不扫描图像文件。一旦AI代理被诱导读取图像，它会按指令读取仓库的.env文件并将所有密钥转换为数字列表写入代码中，从而实现隐蔽的数据窃取。",
+      "tags": [
+        "提示注入",
+        "AI安全",
+        "隐写术"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/ghostcommit-hides-prompt-injection-in-images-to-fool-ai-agents-steal-secrets/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-11T09:03:57+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI自动化工具在处理多模态输入时的安全盲区。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/ghostcommit-hides-prompt-injection-in-images-to-fool-ai-agents-steal-secrets",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "dimension_score": 8.5,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
