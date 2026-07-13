@@ -9,17 +9,17 @@
 | CERT Recently Published Vulnerability Notes | 7/7 | 17 | 7.6 | 10 | 0 |
 | HackerNews | 6/6 | 35 | 7.0 | 9 | 5 |
 | BleepingComputer | 7/7 | 42 | 7.2 | 8 | 1 |
-| 先知社区 | 7/7 | 45 | 8.6 | 7 | 1 |
+| 先知社区 | 7/7 | 46 | 8.5 | 7 | 2 |
 | Cyber Kendra | 7/7 | 20 | 6.9 | 6 | 7 |
 | SecurityWeek | 7/7 | 42 | 5.8 | 6 | 2 |
-| 黑鸟 | 7/7 | 18 | 8.3 | 5 | 0 |
-| 我的安全视界观 | 5/5 | 5 | 9.0 | 4 | 0 |
+| 黑鸟 | 7/7 | 18 | 8.2 | 5 | 0 |
+| 我的安全视界观 | 5/5 | 5 | 9.2 | 4 | 0 |
 | 看雪学院 | 7/7 | 41 | 8.5 | 4 | 2 |
 | The Hacker News | 7/7 | 42 | 7.1 | 4 | 3 |
-| infosecurity-magazine.com | 7/7 | 41 | 6.8 | 4 | 1 |
 | 奇安信CERT | 7/7 | 10 | 9.7 | 3 | 0 |
 | 天融信阿尔法实验室 | 4/4 | 4 | 9.0 | 3 | 0 |
 | 深信服千里目安全实验室 | 3/3 | 9 | 8.0 | 3 | 0 |
+| infosecurity-magazine.com | 7/7 | 41 | 6.8 | 3 | 2 |
 | 安全客 | 13/13 | 66 | 6.4 | 3 | 1 |
 | 安全圈 | 7/7 | 37 | 6.3 | 3 | 0 |
 | 奇安信威胁情报中心 | 7/7 | 9 | 10.0 | 2 | 0 |
@@ -33,11 +33,12 @@
 | 信息安全知识库 | 2/2 | 2 | 8.5 | 1 | 0 |
 | securitainment | 5/5 | 9 | 8.0 | 1 | 0 |
 | 纽创信安 | 3/3 | 4 | 8.0 | 1 | 0 |
-| defend.network | 4/4 | 9 | 7.7 | 1 | 4 |
-| VulDB Recent Entries | 7/7 | 42 | 5.8 | 1 | 0 |
+| defend.network | 3/3 | 6 | 7.7 | 1 | 4 |
+| Vulners.com RSS Feed | 7/7 | 42 | 7.0 | 1 | 0 |
+| VulDB Recent Entries | 7/7 | 42 | 5.9 | 1 | 0 |
 | Microsoft Security Blog | 14/14 | 23 | 5.5 | 1 | 2 |
 | Rapid7 Blog | 7/7 | 8 | 5.5 | 1 | 0 |
-| 天黑说嘿话 | 6/6 | 14 | 5.5 | 1 | 0 |
+| 天黑说嘿话 | 6/6 | 14 | 5.2 | 1 | 0 |
 | Schneier on Security | 7/7 | 18 | 4.2 | 1 | 0 |
 | X / International Cyber Digest | 7/7 | 40 | 3.8 | 1 | 0 |
 | Exploit-DB.com RSS Feed | 2/2 | 12 | 9.0 | 0 | 0 |
@@ -52,7 +53,6 @@
 | 360数字安全 | 5/5 | 7 | 7.0 | 0 | 0 |
 | Rasta Mouse | 3/3 | 3 | 7.0 | 0 | 0 |
 | Trail of Bits Blog | 2/2 | 2 | 7.0 | 0 | 0 |
-| Vulners.com RSS Feed | 7/7 | 42 | 6.9 | 0 | 0 |
 | 互联网安全内参 | 7/7 | 22 | 6.5 | 0 | 0 |
 | 二道情报贩子 | 2/2 | 2 | 6.5 | 0 | 0 |
 | CNNVD安全动态 | 3/3 | 4 | 6.0 | 0 | 0 |
@@ -61,6 +61,7 @@
 | 娜璋AI安全之家 | 2/2 | 2 | 6.0 | 0 | 0 |
 | CodeWisdom | 1/1 | 1 | 6.0 | 0 | 0 |
 | AWS Security Blog | 7/7 | 18 | 5.6 | 0 | 0 |
+| Pentesting | 7/7 | 42 | 5.0 | 0 | 0 |
 | 漏洞战争 | 4/4 | 11 | 5.0 | 0 | 0 |
 | 复旦白泽战队 | 6/6 | 7 | 5.0 | 0 | 0 |
 | Fidelis Security | 4/4 | 5 | 5.0 | 0 | 0 |
@@ -71,34 +72,33 @@
 | 电子物证 | 1/1 | 2 | 5.0 | 0 | 0 |
 | 洞源实验室 | 1/1 | 1 | 5.0 | 0 | 0 |
 | 雷神众测 | 1/1 | 1 | 5.0 | 0 | 0 |
-| Pentesting | 7/7 | 42 | 4.9 | 0 | 0 |
 | Cloudflare Security | 5/5 | 6 | 4.8 | 0 | 0 |
 | GuidePoint Security | 3/3 | 3 | 4.7 | 0 | 0 |
 | TaoSecurity Blog | 3/3 | 3 | 4.7 | 0 | 0 |
 | 安全牛 | 5/5 | 14 | 4.6 | 0 | 0 |
 | 数世咨询 | 5/5 | 10 | 4.5 | 0 | 0 |
 | 火绒安全实验室 | 6/6 | 21 | 4.3 | 0 | 0 |
-| 奇安信病毒响应中心 | 3/3 | 3 | 4.3 | 0 | 0 |
 | 绿盟科技研究通讯 | 6/6 | 9 | 4.0 | 0 | 0 |
+| 奇安信病毒响应中心 | 2/2 | 2 | 4.0 | 0 | 0 |
 | 永安在线情报平台 | 2/2 | 2 | 4.0 | 0 | 0 |
 | 中国信息安全 | 7/7 | 41 | 3.8 | 0 | 0 |
 | 安全419 | 4/4 | 6 | 3.8 | 0 | 0 |
-| 绿盟科技技术博客 | 6/6 | 12 | 3.7 | 0 | 0 |
+| 情报分析师 | 7/7 | 24 | 3.6 | 0 | 0 |
+| 绿盟科技技术博客 | 6/6 | 12 | 3.5 | 0 | 0 |
 | 慢雾科技 | 5/5 | 9 | 3.5 | 0 | 0 |
 | Krebs on Security | 3/3 | 6 | 3.5 | 0 | 0 |
-| 情报分析师 | 7/7 | 24 | 3.2 | 0 | 0 |
 | gilesthomas.com | 5/5 | 9 | 3.1 | 0 | 0 |
+| 安全威胁情报 | 6/6 | 9 | 3.0 | 0 | 0 |
 | PwnDefend | 4/4 | 6 | 3.0 | 0 | 0 |
 | 安全分析与研究 | 3/3 | 5 | 3.0 | 0 | 0 |
 | troyhunt.com | 3/3 | 3 | 3.0 | 0 | 0 |
-| 安全威胁情报 | 6/6 | 9 | 2.7 | 0 | 0 |
 | devblogs.microsoft.com/oldnewthing | 7/7 | 15 | 2.5 | 0 | 0 |
 | Google AI Blog | 3/3 | 3 | 2.5 | 0 | 0 |
+| vivo千镜安全实验室 | 2/2 | 2 | 2.5 | 0 | 0 |
 | 丁爸情报分析师的工具箱 | 7/7 | 19 | 2.5 | 0 | 0 |
 | 威努特工控安全 | 7/7 | 27 | 2.0 | 0 | 0 |
 | martinalderson.com | 3/3 | 3 | 2.0 | 0 | 0 |
 | ArthurChiao's Blog | 2/2 | 2 | 2.0 | 0 | 0 |
-| vivo千镜安全实验室 | 2/2 | 2 | 2.0 | 0 | 0 |
 | 悬镜安全 | 2/2 | 2 | 2.0 | 0 | 0 |
 | IEEE Spectrum | 7/7 | 17 | 1.9 | 0 | 0 |
 | ByteByteGo | 7/7 | 18 | 1.7 | 0 | 0 |
@@ -107,12 +107,13 @@
 | Emergent Minds / paddo.dev | 7/7 | 26 | 1.6 | 0 | 0 |
 | berthub.eu | 5/5 | 5 | 1.5 | 0 | 0 |
 | X / rez0 | 7/7 | 42 | 1.5 | 0 | 0 |
+| 极客公园 | 7/7 | 40 | 1.5 | 0 | 0 |
 | Product Hunt | 7/7 | 39 | 1.4 | 0 | 0 |
-| 极客公园 | 7/7 | 40 | 1.3 | 0 | 0 |
-| MIT Technology Review | 7/7 | 34 | 1.3 | 0 | 0 |
 | 奇客Solidot–传递最新科技情报 | 7/7 | 42 | 1.3 | 0 | 0 |
+| MIT Technology Review | 7/7 | 34 | 1.3 | 0 | 0 |
 | 404 Media | 7/7 | 32 | 1.2 | 0 | 0 |
 | Ars Technica | 7/7 | 42 | 1.2 | 0 | 0 |
+| OpenAI Blog | 6/6 | 25 | 1.2 | 0 | 0 |
 | SecWiki News | 7/7 | 39 | - | 0 | 0 |
 | Hugging Face Blog | 6/6 | 25 | - | 0 | 0 |
 | 字节跳动技术团队公众号 | 5/5 | 12 | - | 0 | 0 |
@@ -132,13 +133,13 @@
 | Dynomight | 3/3 | 3 | - | 0 | 0 |
 | Geohot | 2/2 | 3 | 1.0 | 0 | 0 |
 | OnionSec | 2/2 | 3 | - | 0 | 0 |
-| Threatninja.net | 3/3 | 3 | - | 0 | 0 |
 | Toooold | 3/3 | 3 | - | 0 | 0 |
 | X / Project Zero | 3/3 | 3 | - | 0 | 0 |
 | Yak Project | 3/3 | 3 | - | 0 | 0 |
 | 同程旅行安全应急响应中心 | 3/3 | 3 | - | 0 | 0 |
 | 表图 | 3/3 | 3 | - | 0 | 0 |
 | Adam Shostack & friends | 1/1 | 2 | - | 0 | 0 |
+| Threatninja.net | 2/2 | 2 | - | 0 | 0 |
 | 墨菲安全 | 2/2 | 2 | - | 0 | 0 |
 | 数说安全 | 2/2 | 2 | - | 0 | 0 |
 | 网安国际 | 2/2 | 2 | - | 0 | 0 |
@@ -156,7 +157,6 @@
 | 皮相 | 1/1 | 1 | - | 0 | 0 |
 | X / Thomas Sottiaux | 7/7 | 39 | 0.7 | 0 | 0 |
 | pluralistic.net | 6/6 | 11 | 0.7 | 0 | 0 |
-| OpenAI Blog | 6/6 | 25 | 0.6 | 0 | 0 |
 | bernsteinbear.com | 2/2 | 2 | 0.5 | 0 | 0 |
 | maurycyz.com | 7/7 | 8 | 0.0 | 0 | 0 |
 | Xe Iaso | 4/4 | 6 | 0.0 | 0 | 0 |
@@ -618,15 +618,15 @@
 - [ai_security] X / Trail of Bits：raw=9，avg=2.9，入选=0
 - [security] maurycyz.com：raw=8，avg=0.0，入选=0
 - [security] Xe Iaso：raw=6，avg=0.0，入选=0
-- [security] OpenAI Blog：raw=25，avg=0.6，入选=0
 - [security] pluralistic.net：raw=11，avg=0.7，入选=0
 - [security] X / Thomas Sottiaux：raw=39，avg=0.7，入选=0
+- [security] OpenAI Blog：raw=25，avg=1.2，入选=0
 - [security] Ars Technica：raw=42，avg=1.2，入选=0
 - [security] 404 Media：raw=32，avg=1.2，入选=0
-- [security] 奇客Solidot–传递最新科技情报：raw=42，avg=1.3，入选=0
 - [security] MIT Technology Review：raw=34，avg=1.3，入选=0
-- [security] 极客公园：raw=40，avg=1.3，入选=0
+- [security] 奇客Solidot–传递最新科技情报：raw=42，avg=1.3，入选=0
 - [security] Product Hunt：raw=39，avg=1.4，入选=0
+- [security] 极客公园：raw=40，avg=1.5，入选=0
 - [security] berthub.eu：raw=5，avg=1.5，入选=0
 - [security] X / rez0：raw=42，avg=1.5，入选=0
 - [security] Emergent Minds / paddo.dev：raw=26，avg=1.6，入选=0
@@ -636,4 +636,3 @@
 - [security] 威努特工控安全：raw=27，avg=2.0，入选=0
 - [security] 丁爸情报分析师的工具箱：raw=19，avg=2.5，入选=0
 - [security] devblogs.microsoft.com/oldnewthing：raw=15，avg=2.5，入选=0
-- [security] 安全威胁情报：raw=9，avg=2.7，入选=0
