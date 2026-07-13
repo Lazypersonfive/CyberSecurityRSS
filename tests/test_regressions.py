@@ -1618,12 +1618,20 @@ class GeminiPipelineTests(unittest.TestCase):
             "title": "Prompt injection flaw leaks private agent memory",
             "summary": "Researchers describe exploit steps and mitigation guidance.",
         }
+        security_analysis = {
+            "title": "New zero-trust framework for LLM security risks",
+            "summary": "The analysis covers defense gates and deployment tradeoffs.",
+        }
 
         # No AI context at all -> belongs on security board, cap 3
         self.assertEqual(adjust_ai_security_score(not_ai, 8), 3)
         # AI context but no concrete security mechanism -> cap 4
         self.assertEqual(adjust_ai_security_score(generic_ai, 8), 4)
         self.assertEqual(adjust_ai_security_score(technical, 8), 8)
+        # Broad but genuine AI-security analysis keeps the LLM score; only a
+        # concrete mechanism can promote a low score to the floor.
+        self.assertEqual(adjust_ai_security_score(security_analysis, 7), 7)
+        self.assertEqual(adjust_ai_security_score(security_analysis, 4), 4)
 
     def test_ai_security_editorial_not_fooled_by_substring_matches(self) -> None:
         # Regression: "ai" used to match inside "supply chAIn" / "emAIl",

@@ -58,6 +58,19 @@ AI_SEC_MECHANISM_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Broader editorial fit: legitimate AI-security analysis may describe a risk,
+# defence framework or incident before a concrete exploit primitive is known.
+# This decides whether the LLM score may stand; only the stronger mechanism
+# regex below is allowed to raise a low score to the selection floor.
+AI_SEC_CONTEXT_RE = re.compile(
+    _ascii_terms(
+        r"security", r"safety", r"risk\w*", r"privacy", r"threat\w*", r"attack\w*",
+        r"defen[cs]e", r"protect\w*", r"misuse", r"abuse", r"incident", r"data\s+loss",
+    )
+    + r"|安全|风险|隐私|威胁|攻击|防御|防护|滥用|事故|数据丢失|文件删除|治理",
+    re.IGNORECASE,
+)
+
 # Strong AI-security signals that justify flooring the score at selection
 # threshold even when the LLM underrates them (often terse technical posts).
 AI_SEC_STRONG_RE = re.compile(
@@ -143,7 +156,7 @@ def adjust_ai_security_score(entry: Any, score: int) -> int:
         return min(score, 3)
     if AI_SEC_LOW_VALUE_RE.search(text):
         return min(score, 4)
-    if not AI_SEC_MECHANISM_RE.search(text):
+    if not AI_SEC_CONTEXT_RE.search(text) and not AI_SEC_MECHANISM_RE.search(text):
         return min(score, 4)
     if AI_SEC_STRONG_RE.search(text):
         return max(score, 6)
