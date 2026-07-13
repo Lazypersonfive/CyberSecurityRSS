@@ -2,16 +2,19 @@
   "board": "ai_security",
   "display_name": "AI 安全",
   "date": "2026-07-13",
-  "generated_at": "2026-07-13T06:09:12.806784Z",
+  "generated_at": "2026-07-13T06:15:12.108423Z",
   "raw_count": 28,
-  "selected_count": 2,
+  "selected_count": 3,
   "selection_stats": {
-    "total": 2,
+    "total": 3,
     "aggregator": 2,
-    "tier_t2": 2,
+    "tier_t2": 3,
     "kind_expert_x": 1,
     "google_news": 1,
-    "kind_google_news": 1
+    "kind_google_news": 1,
+    "chinese": 1,
+    "direct": 1,
+    "kind_cn_expert": 1
   },
   "clustering_stats": {
     "deterministic_merged": 0,
@@ -25,20 +28,20 @@
   },
   "items": [
     {
-      "title_zh": "安全研究员利用 Emoji 编码与 Ghost Font 字体实现大语言模型提示词绕过",
+      "title_zh": "安全研究员利用 Emoji 编码 QR 码及 Ghost Font 字体实现大模型提示词绕过",
       "title_orig": "the differential between what humans and bots understand is almost zero now. one i used last year for an exploit was emoji squares to make a QR code. ...",
-      "summary": "安全研究员 rez0 分享了利用 Emoji 方块构建 QR 码的攻击技术，该方法能让 LLM 仅识别为随机字符，而人类可直观理解其含义。此外，研究员 Eric Lu 开发了名为 Ghost Font 的特殊字体，经测试在 GPT 等主流模型中均无法被正确解析，这种利用人类与机器视觉理解差异的技术可用于隐藏恶意指令或绕过内容审查。原文未披露具体的漏洞编号，但展示了多模态模型在处理非标准字符编码时的防御局限性。",
+      "summary": "安全研究员 rez0 分享了利用 Emoji 方块拼接成 QR 码的攻击技术，该方法能让 LLM 仅识别为随机符号而人类可直观理解。此外，Eric Lu 开发的 Ghost Font 字体在 Fable 和 GPT 5.6 等模型测试中表现出极强的抗识别性，仅人类可读。这些技术揭示了多模态模型在处理非标准字符编码和视觉混淆时的认知缺陷，可被用于绕过安全审查或执行隐蔽指令。",
       "tags": [
-        "提示词注入",
         "大模型安全",
-        "对抗性攻击"
+        "提示词注入",
+        "对抗样本"
       ],
       "url": "https://x.com/rez0__/status/2076288186586661368",
       "source": "x.com",
       "category": "XSignals",
       "published": "2026-07-12T12:50:53+00:00",
       "cve_ids": [],
-      "selection_reason": "展示了利用视觉编码差异绕过大模型安全对齐的新型攻击思路。",
+      "selection_reason": "展示了利用视觉编码差异绕过LLM安全对齐的新型攻击路径。",
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0",
       "source_tier": "t2",
@@ -50,14 +53,14 @@
       "related_count": 0,
       "score": 8,
       "score_dimensions": {
-        "technical_depth": 7.0,
         "agent_model_relevance": 9.0,
         "practical_risk": 8.0,
-        "actionability": 7.0,
+        "actionability": 6.0,
+        "technical_depth": 7.0,
         "security_relevance": 9.0
       },
-      "dimension_score": 8.1,
-      "final_score": 8.4,
+      "dimension_score": 8.0,
+      "final_score": 8.3,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.2,
@@ -66,11 +69,11 @@
       }
     },
     {
-      "title_zh": "GhostCommit 攻击通过在 PNG 图片中隐藏提示词注入脚本窃取开发者凭据",
+      "title_zh": "GhostCommit 攻击通过 PNG 图片隐藏提示词注入脚本以窃取开发者敏感凭据",
       "title_orig": "GhostCommit Attack Hides Prompt Injection in PNG to Steal Developer Secrets - cyberpress.org",
-      "summary": "GhostCommit 是一种新型攻击手段，攻击者将恶意提示词注入脚本隐藏在 PNG 图像文件中，旨在利用自动化开发工具的解析漏洞。该攻击针对开发者环境，通过诱导集成 AI 插件的 IDE 解析恶意图片，从而触发指令执行并窃取敏感的开发者密钥或代码仓库访问凭据。目前原文未详细披露受影响的具体插件版本或补丁状态，但强调了在开发流程中对多媒体资源进行安全审计的重要性。",
+      "summary": "GhostCommit 攻击利用隐写术将恶意提示词注入脚本隐藏在 PNG 图像文件中，旨在针对开发者的自动化工作流进行渗透。当开发者在集成 AI 辅助工具的环境中处理这些恶意图像时，隐藏的指令可能被触发并导致本地密钥、令牌等敏感信息泄露。目前原文未详细披露受影响的具体 AI 插件版本，建议开发者在处理外部提交的媒体资源时保持警惕并限制 AI 工具的执行权限。",
       "tags": [
-        "提示词注入",
+        "隐写术",
         "供应链安全",
         "凭据窃取"
       ],
@@ -79,7 +82,7 @@
       "category": "CoverageFallback",
       "published": "2026-07-13T05:41:08+00:00",
       "cve_ids": [],
-      "selection_reason": "揭示了针对开发者工具链中 AI 插件的隐蔽攻击向量。",
+      "selection_reason": "关注AI辅助开发场景下的新型隐蔽攻击手段及数据泄露风险。",
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Security",
       "source_tier": "t2",
@@ -91,10 +94,10 @@
       "related_count": 0,
       "score": 9,
       "score_dimensions": {
-        "technical_depth": 8.0,
         "agent_model_relevance": 9.0,
         "practical_risk": 9.0,
         "actionability": 8.0,
+        "technical_depth": 8.0,
         "security_relevance": 10.0
       },
       "dimension_score": 8.95,
@@ -104,6 +107,47 @@
         "kind_bonus": -1.2,
         "freshness_bonus": 0.3,
         "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全专家总结智能体面临的十大安全风险，涵盖提示词注入与供应链漏洞等维度",
+      "title_orig": "智能体面临的十大安全风险问题",
+      "summary": "该研究系统性地梳理了智能体（Agent）在当前技术环境下存在的十大核心安全挑战，重点分析了提示词注入、不安全的输出处理以及第三方插件带来的供应链风险。文章指出智能体因具备自主决策和工具调用能力，其面临的拒绝服务攻击和敏感信息泄露风险较传统模型更为严重。这为安全从业者在构建基于 LLM 的自动化应用时提供了关键的风险评估框架和防御参考建议。",
+      "tags": [
+        "智能体安全",
+        "风险评估",
+        "LLM应用"
+      ],
+      "url": "https://www.anquanke.com/post/id/315781",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-07-10T20:48:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统性总结了AI Agent的安全威胁，具有较高的工程参考价",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315781",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "agent_model_relevance": 10.0,
+        "practical_risk": 6.0,
+        "actionability": 4.0,
+        "technical_depth": 4.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 6.8,
+      "final_score": 7.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
       }
     }
   ]
