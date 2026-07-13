@@ -7,17 +7,16 @@
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 97 | 12 | 20 | 65 | 0 | 4 | 12 | 41 | 15 |
-| ai_security | 68 | 1 | 0 | 67 | 0 | 7 | 1 | 5 | 25 |
-| finance | 70 | 2 | 0 | 68 | 0 | 12 | 2 | 0 | 0 |
-| security | 105 | 12 | 0 | 90 | 3 | 0 | 12 | 2 | 59 |
+| ai | 97 | 14 | 20 | 63 | 0 | 2 | 14 | 43 | 14 |
+| ai_security | 61 | 1 | 0 | 60 | 0 | 6 | 1 | 4 | 23 |
+| finance | 70 | 10 | 0 | 60 | 0 | 12 | 10 | 0 | 0 |
+| security | 105 | 11 | 0 | 93 | 1 | 0 | 11 | 1 | 62 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `infosecurity-magazine.com` | 2 | security | [GodDamn 勒索软件利用恶意内核驱动程序 PoisonX 强制关闭系统安全防护软件](https://www.infosecurity-magazine.com/news/ransomware-removes-cybersecurity/) |
-| `defend.network` | 1 | security | [Gitea 身份验证绕过漏洞 CVE-2026-20896 遭利用，GitHub 代理工作流泄露私有仓库数据](https://defend.network/briefings/github-gitea-google-dialogflow-android-redwing-2026-07-08.html) |
+| `vipread.com` | 1 | security | [WgpSec 发布 Alkaid 智能体框架，探索 AI 在全自主攻防场景的工程化落地](https://vipread.com/library/topic/4153) |
 
 ## Review Rule
 
