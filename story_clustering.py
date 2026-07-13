@@ -66,6 +66,11 @@ def probable_same_story(left: dict[str, Any], right: dict[str, Any]) -> bool:
         return True
     shared = left_tokens & right_tokens
     union = left_tokens | right_tokens
+    # LLM-proposed cross-language pairs often retain only the entity and one
+    # product/release token (for example Claude + Fable). That is enough as a
+    # validation gate, but not enough for deterministic clustering on its own.
+    if shared & ANCHOR_TOKENS and shared - ANCHOR_TOKENS:
+        return True
     return len(shared) >= 5 and bool(union) and len(shared) / len(union) >= 0.70
 
 

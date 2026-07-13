@@ -81,8 +81,11 @@ AI_SEC_STRONG_RE = re.compile(
 )
 
 AI_SEC_LOW_VALUE_RE = re.compile(
-    _ascii_terms(r"gartner", r"representative\s+vendor", r"market\s+guide", r"funding", r"lawsuit", r"sues?")
-    + r"|入选.{0,12}(报告|厂商|榜单)|融资|起诉|商业纠纷",
+    _ascii_terms(
+        r"gartner", r"forrester", r"representative\s+vendor", r"market\s+guide",
+        r"funding", r"lawsuit", r"sues?",
+    )
+    + r"|入选.{0,12}(报告|厂商|榜单|景观)|景观报告|融资|起诉|商业纠纷",
     re.IGNORECASE,
 )
 

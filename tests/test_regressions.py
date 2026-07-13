@@ -36,7 +36,7 @@ from rss_curation import curate_entries
 from source_policy import select_with_source_policy, source_mix_stats, source_profile
 from scoring_policy import compute_dimension_score, compute_final_score
 from security_editorial import adjust_ai_security_score, adjust_finance_score, adjust_security_score
-from story_clustering import cluster_scored_candidates, story_id_for_entry
+from story_clustering import cluster_scored_candidates, probable_same_story, story_id_for_entry
 from source_audit import build_source_audit, render_source_audit
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
 from site_builder import _build_feed_for_date, build
@@ -1267,6 +1267,18 @@ class ScoringPolicyTests(unittest.TestCase):
 
 
 class StoryClusteringTests(unittest.TestCase):
+    def test_llm_duplicate_gate_accepts_cross_language_entity_product_pair(self) -> None:
+        official = {
+            "title": "We're extending Claude Fable 5 access on all paid plans through July 19",
+            "url": "https://x.com/ClaudeDevs/status/1",
+        }
+        chinese = {
+            "title": "Claude 延长 Fable 5 付费用户访问权限至 7 月 19 日",
+            "url": "https://x.com/dotey/status/2",
+        }
+
+        self.assertTrue(probable_same_story(official, chinese))
+
     def test_story_id_prefers_cve_key(self) -> None:
         entry = {
             "title": "Exploit for CVE-2026-12345 released",
@@ -1675,9 +1687,14 @@ class GeminiPipelineTests(unittest.TestCase):
             "title": "AI security startup sues competitor over hallucinated report",
             "summary": "The dispute concerns commercial claims between two vendors.",
         }
+        forrester = {
+            "title": "Endor Labs named in Forrester agentic security tools landscape",
+            "summary": "The vendor announced inclusion in an industry report.",
+        }
 
         self.assertEqual(adjust_ai_security_score(marketing, 8), 3)
         self.assertEqual(adjust_ai_security_score(lawsuit, 8), 3)
+        self.assertEqual(adjust_ai_security_score(forrester, 8), 3)
 
     def test_finance_editorial_requires_financial_context(self) -> None:
         generic_ai = {
