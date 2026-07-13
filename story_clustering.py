@@ -16,7 +16,7 @@ from source_policy import source_priority, source_profile
 
 
 CVE_RE = re.compile(r"CVE[-–—]\d{4}[-–—]\d{4,7}", re.IGNORECASE)
-TOKEN_RE = re.compile(r"[a-zA-Z][a-zA-Z0-9_+-]{2,}|\d{4,7}|[\u3400-\u9fff]{2,}")
+TOKEN_RE = re.compile(r"[a-zA-Z][a-zA-Z0-9_+-]{2,}|\d{1,7}|[\u3400-\u9fff]{2,}")
 TRACKING_PARAMS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid", "gclid"}
 TITLE_SUFFIX_RE = re.compile(r"\s[-–—|]\s[^-–—|]+$")
 STOPWORDS = {
@@ -26,7 +26,7 @@ STOPWORDS = {
     "security", "cybersecurity", "vulnerability", "vulnerabilities",
 }
 ANCHOR_TOKENS = {
-    "openai", "chatgpt", "gpt", "anthropic", "claude", "google", "gemini",
+    "openai", "chatgpt", "gpt", "codex", "anthropic", "claude", "google", "gemini",
     "deepseek", "microsoft", "windows", "apple", "linux", "kernel",
     "cisco", "fortinet", "ivanti", "palo", "zscaler", "sap", "github",
     "visa", "mastercard", "stripe", "paypal", "alipay", "wechat",
@@ -60,8 +60,8 @@ def probable_same_story(left: dict[str, Any], right: dict[str, Any]) -> bool:
     """Conservative gate for an LLM-proposed duplicate pair."""
     if set(_static_story_keys(left)) & set(_static_story_keys(right)):
         return True
-    left_tokens = _title_tokens(left)
-    right_tokens = _title_tokens(right)
+    left_tokens = _llm_validation_tokens(left)
+    right_tokens = _llm_validation_tokens(right)
     if _same_title_story(left_tokens, right_tokens):
         return True
     shared = left_tokens & right_tokens
@@ -175,8 +175,27 @@ def _canonical_url_key(url: str) -> str:
 def _title_tokens(entry: dict[str, Any]) -> set[str]:
     title = str(entry.get("title") or entry.get("title_orig") or "")
     title = TITLE_SUFFIX_RE.sub("", title).lower()
-    tokens = {token for token in TOKEN_RE.findall(title) if token not in STOPWORDS}
+    tokens = _tokens_from_text(title)
     tokens.update(_extract_cves(entry))
+    return tokens
+
+
+def _llm_validation_tokens(entry: dict[str, Any]) -> set[str]:
+    """Use the RSS excerpt only to validate an LLM-proposed story group."""
+    tokens = _title_tokens(entry)
+    tokens.update(_tokens_from_text(str(entry.get("summary") or "")[:600].lower()))
+    return tokens
+
+
+def _tokens_from_text(text: str) -> set[str]:
+    tokens: set[str] = set()
+    for token in TOKEN_RE.findall(text):
+        if token in STOPWORDS:
+            continue
+        if re.fullmatch(r"[\u3400-\u9fff]+", token):
+            tokens.update(token[idx:idx + 2] for idx in range(len(token) - 1))
+        else:
+            tokens.add(token)
     return tokens
 
 
@@ -191,8 +210,13 @@ def _same_title_story(left: set[str], right: set[str]) -> bool:
         return False
     left_without_anchor = left - shared_anchors
     right_without_anchor = right - shared_anchors
-    if len(left_without_anchor & right_without_anchor) < 2:
+    shared_without_anchor = left_without_anchor & right_without_anchor
+    if len(shared_without_anchor) < 2:
         return False
+    if len(shared_without_anchor) >= 4:
+        return True
+    if len(shared_without_anchor) >= 3 and any(token.isdigit() for token in shared_without_anchor):
+        return True
     union = left | right
     return len(shared) / len(union) >= 0.45
 

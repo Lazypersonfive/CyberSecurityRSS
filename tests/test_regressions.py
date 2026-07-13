@@ -1279,6 +1279,40 @@ class StoryClusteringTests(unittest.TestCase):
 
         self.assertTrue(probable_same_story(official, chinese))
 
+    def test_llm_duplicate_gate_uses_excerpt_for_short_commentary_title(self) -> None:
+        official = {
+            "title": "We're extending Claude Fable 5 access through July 19",
+            "summary": "Claude Fable 5 remains available on paid plans through July 19.",
+        }
+        commentary = {
+            "title": "Fable gets another bump",
+            "summary": "Anthropic bumped the date that Claude Fable 5 stops being available through July 19.",
+        }
+
+        self.assertTrue(probable_same_story(official, commentary))
+
+    def test_cluster_merges_bilingual_codex_limit_announcement(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "全球开发者狂喜！Codex移除5小时限制，Fable 5订阅再延7天",
+                    "url": "https://example.cn/codex-limit",
+                },
+                8,
+            ),
+            (
+                {
+                    "title": "给 Codex 点赞，暂时移除5小时使用限制，GPT 5.6 Sol更省token",
+                    "url": "https://x.com/expert/status/1",
+                },
+                8,
+            ),
+        ]
+
+        clustered, _merged = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 1)
+
     def test_story_id_prefers_cve_key(self) -> None:
         entry = {
             "title": "Exploit for CVE-2026-12345 released",

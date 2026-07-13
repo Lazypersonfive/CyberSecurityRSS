@@ -809,6 +809,7 @@ def _llm_dedupe(
         {
             "idx": i,
             "title": e.get("title", ""),
+            "summary": str(e.get("summary") or "")[:500],
             "source": _infer_source(e.get("url", "")),
             "published": (e.get("published") or "")[:10],
         }
