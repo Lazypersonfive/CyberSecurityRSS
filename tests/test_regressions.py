@@ -1738,8 +1738,8 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertGreaterEqual(board["source_policy"]["min_direct"], 4)
         self.assertEqual(board["source_policy"]["max_aggregator"], 5)
         self.assertFalse(board["source_policy"]["relax_aggregate_caps"])
-        self.assertEqual(board["fill_score_floor"], 6)
-        self.assertEqual(board["source_policy"]["min_final_score"], 6.0)
+        self.assertEqual(board["fill_score_floor"], 5)
+        self.assertEqual(board["source_policy"]["min_final_score"], 5.0)
         self.assertTrue(Path(board["opml"]).exists())
 
     def test_board_output_targets_match_current_editorial_policy(self) -> None:
