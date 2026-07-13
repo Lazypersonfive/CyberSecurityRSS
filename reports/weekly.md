@@ -634,3 +634,10 @@
 - [security] berthub.eu：raw=5，avg=2.0，入选=0
 - [security] IEEE Spectrum：raw=17，avg=2.1，入选=0
 - [security] 丁爸情报分析师的工具箱：raw=19，avg=2.6，入选=0
+
+
+<!-- feedback-summary:start -->
+## 人工反馈（最近 14 天）
+
+- 暂无反馈；可在站点点击“有用 / 不想看 / 摘要有问题”后导出 JSONL。
+<!-- feedback-summary:end -->

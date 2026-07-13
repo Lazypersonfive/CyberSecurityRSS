@@ -16,6 +16,8 @@ FEEDBACK_DIR = PROJECT_DIR / "feedback"
 DIGEST_DIR = PROJECT_DIR / "digest"
 OUTPUT_DIR = PROJECT_DIR / "output"
 REPORTS_DIR = PROJECT_DIR / "reports"
+WEEKLY_START = "<!-- feedback-summary:start -->"
+WEEKLY_END = "<!-- feedback-summary:end -->"
 
 
 def load_feedback(days: int = 14) -> list[dict[str, Any]]:
@@ -109,8 +111,35 @@ def build_report(records: list[dict[str, Any]]) -> str:
 def write_report(days: int = 14) -> Path:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     path = REPORTS_DIR / "feedback_eval.md"
-    path.write_text(build_report(load_feedback(days)), encoding="utf-8")
+    records = load_feedback(days)
+    path.write_text(build_report(records), encoding="utf-8")
+    sync_weekly_feedback(records, REPORTS_DIR / "weekly.md")
     return path
+
+
+def sync_weekly_feedback(records: list[dict[str, Any]], weekly_path: Path) -> None:
+    if not weekly_path.exists():
+        return
+    body = weekly_path.read_text(encoding="utf-8")
+    if WEEKLY_START in body:
+        body = body.split(WEEKLY_START, 1)[0].rstrip()
+    actions = Counter(str(record.get("action") or "invalid") for record in records)
+    boards = Counter(str(record.get("board") or "unknown") for record in records)
+    lines = [
+        body,
+        "",
+        WEEKLY_START,
+        "## 人工反馈（最近 14 天）",
+        "",
+    ]
+    if not records:
+        lines.append("- 暂无反馈；可在站点点击“有用 / 不想看 / 摘要有问题”后导出 JSONL。")
+    else:
+        lines.append(f"- 总计：{len(records)} 条")
+        lines.append("- 动作：" + "，".join(f"{key}={value}" for key, value in sorted(actions.items())))
+        lines.append("- 板块：" + "，".join(f"{key}={value}" for key, value in sorted(boards.items())))
+    lines.extend([WEEKLY_END, ""])
+    weekly_path.write_text("\n".join(lines), encoding="utf-8")
 
 
 def _url_in_digest(board: str, url: str) -> bool:

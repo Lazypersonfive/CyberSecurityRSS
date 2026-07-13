@@ -133,6 +133,10 @@ jobs:
         if: env.BOARD_SELECTION == 'all'
         run: python eval_strategy.py
 
+      - name: Build feedback eval
+        if: env.BOARD_SELECTION == 'all'
+        run: python feedback_eval.py --days 14
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"

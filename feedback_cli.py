@@ -46,6 +46,31 @@ def add_feedback(
     return path
 
 
+def import_feedback_file(path: Path) -> tuple[int, int]:
+    """Import site-exported JSONL into the append-only feedback store."""
+    imported = 0
+    skipped = 0
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        try:
+            record = json.loads(line)
+            add_feedback(
+                board=str(record["board"]),
+                url=str(record["url"]),
+                action=str(record["action"]),
+                reason=str(record.get("reason") or "站点快捷反馈"),
+                feedback_date=str(record["date"]),
+                source=str(record.get("source") or ""),
+                title_zh=str(record.get("title_zh") or ""),
+            )
+        except (KeyError, TypeError, ValueError, json.JSONDecodeError):
+            skipped += 1
+            continue
+        imported += 1
+    return imported, skipped
+
+
 def _host(url: str) -> str:
     return (urlparse(url).hostname or "").removeprefix("www.")
 
@@ -61,6 +86,8 @@ def main() -> None:
     add.add_argument("--date", default=None)
     add.add_argument("--source", default="")
     add.add_argument("--title-zh", default="")
+    import_cmd = sub.add_parser("import")
+    import_cmd.add_argument("--file", required=True, type=Path)
     args = parser.parse_args()
 
     if args.command == "add":
@@ -74,6 +101,9 @@ def main() -> None:
             title_zh=args.title_zh,
         )
         print(path)
+    elif args.command == "import":
+        imported, skipped = import_feedback_file(args.file)
+        print(f"imported={imported} skipped={skipped}")
 
 
 if __name__ == "__main__":

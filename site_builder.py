@@ -88,7 +88,7 @@ def _build_feed_for_date(boards: dict[str, dict], d: date) -> dict[str, Any] | N
         selection_stats = dict(digest.get("selection_stats") or {})
         selection_stats = _without_stale_source_mix(selection_stats)
         selection_stats.update(source_mix_stats(items))
-        out["boards"][board] = {
+        board_payload = {
             "display_name": bcfg.get("display_name", board),
             "items": items,
             "raw_count": digest.get("raw_count", 0),
@@ -97,6 +97,9 @@ def _build_feed_for_date(boards: dict[str, dict], d: date) -> dict[str, Any] | N
             "clustering_stats": digest.get("clustering_stats") or {},
             "generated_at": digest.get("generated_at", ""),
         }
+        if digest.get("delivered_filter_stats"):
+            board_payload["delivered_filter_stats"] = digest["delivered_filter_stats"]
+        out["boards"][board] = board_payload
     return out if any_content else None
 
 

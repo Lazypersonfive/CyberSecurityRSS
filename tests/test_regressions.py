@@ -30,8 +30,8 @@ import fetch_feeds
 from fetch_feeds import FeedEntry, archive_urls, fetch_all_entries, load_seen_urls
 from fetch_opml import fetch_opml, fetch_opml_metadata
 from filter_entries import FilteredEntry, filter_and_dedup
-from feedback_cli import add_feedback
-from feedback_eval import build_report, classify_feedback
+from feedback_cli import add_feedback, import_feedback_file
+from feedback_eval import build_report, classify_feedback, sync_weekly_feedback
 from rss_curation import curate_entries
 from source_policy import select_with_source_policy, source_mix_stats, source_profile
 from scoring_policy import compute_dimension_score, compute_final_score
@@ -458,6 +458,14 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertIn("relatedToggle", template)
         self.assertIn("selection_reason", template)
 
+    def test_template_supports_local_quality_feedback_export(self) -> None:
+        template = Path("templates/index.html.j2").read_text(encoding="utf-8")
+
+        self.assertIn("feedbackButton", template)
+        self.assertIn("feedback-export", template)
+        self.assertIn("application/x-ndjson", template)
+        self.assertIn("bad_summary", template)
+
     def test_template_renders_timeline_layout(self) -> None:
         template = Path("templates/index.html.j2").read_text(encoding="utf-8")
 
@@ -545,6 +553,7 @@ class SiteBuilderTests(unittest.TestCase):
                             "chinese": 2,
                             "above_threshold": 8,
                         },
+                        "delivered_filter_stats": {"input": 28, "kept": 20, "filtered": 8},
                         "generated_at": "2026-04-30T00:00:00Z",
                         "items": [{"title_zh": "测试", "url": "https://example.com"}],
                     },
@@ -559,6 +568,7 @@ class SiteBuilderTests(unittest.TestCase):
         block = feed["boards"]["security"]
         self.assertEqual(block["selected_count"], 20)
         self.assertEqual(block["selection_stats"]["above_threshold"], 8)
+        self.assertEqual(block["delivered_filter_stats"]["filtered"], 8)
         self.assertNotIn("chinese", block["selection_stats"])
 
 
@@ -2764,6 +2774,49 @@ class FeedbackLoopTests(unittest.TestCase):
         self.assertEqual(selected, "selected")
         self.assertEqual(fetched, "fetched_not_selected")
         self.assertEqual(missing, "not_found_recent_artifacts")
+
+    def test_feedback_cli_imports_site_jsonl_export(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            exported = root / "site.jsonl"
+            exported.write_text(
+                json.dumps(
+                    {
+                        "date": "2026-07-13",
+                        "board": "ai_security",
+                        "url": "https://example.com/agent",
+                        "action": "downvote",
+                        "reason": "站点快捷反馈",
+                        "title_zh": "泛营销内容",
+                    },
+                    ensure_ascii=False,
+                )
+                + "\nnot-json\n",
+                encoding="utf-8",
+            )
+            with patch("feedback_cli.FEEDBACK_DIR", root / "feedback"):
+                imported, skipped = import_feedback_file(exported)
+                records = (root / "feedback" / "2026-07-13.jsonl").read_text(encoding="utf-8")
+
+        self.assertEqual((imported, skipped), (1, 1))
+        self.assertIn("ai_security", records)
+
+    def test_feedback_summary_is_written_into_weekly_report(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            weekly = Path(tmpdir) / "weekly.md"
+            weekly.write_text("# Weekly\n", encoding="utf-8")
+            records = [
+                {"board": "security", "action": "upvote"},
+                {"board": "ai_security", "action": "downvote"},
+            ]
+
+            sync_weekly_feedback(records, weekly)
+            sync_weekly_feedback(records, weekly)
+            body = weekly.read_text(encoding="utf-8")
+
+        self.assertEqual(body.count("## 人工反馈（最近 14 天）"), 1)
+        self.assertIn("upvote=1", body)
+        self.assertIn("ai_security=1", body)
 
     def test_feedback_report_recommends_repeated_source_feedback(self) -> None:
         records = [

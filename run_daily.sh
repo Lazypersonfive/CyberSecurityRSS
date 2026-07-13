@@ -54,4 +54,10 @@ echo "=========================================="
 "$PYTHON" eval_strategy.py
 
 echo ""
+echo "=========================================="
+echo "  Build feedback eval"
+echo "=========================================="
+"$PYTHON" feedback_eval.py --days 14
+
+echo ""
 echo "Done. Open docs/index.html to preview."
