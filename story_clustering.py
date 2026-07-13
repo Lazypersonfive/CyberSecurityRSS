@@ -44,6 +44,10 @@ SOURCE_KIND_RANK = {
 }
 NARROW_PRODUCT_TOKENS = {"u-boot"}
 VULNERABILITY_TOPIC_TOKENS = {"漏洞", "flaw", "flaws", "cve", "zero-day", "0day"}
+DYNAMIC_ANCHOR_STOPWORDS = {
+    "attackers", "developers", "framework", "malicious", "malware",
+    "ransomware", "researchers", "software", "technology",
+}
 
 
 def story_id_for_entry(entry: dict[str, Any]) -> str:
@@ -71,7 +75,8 @@ def probable_same_story(left: dict[str, Any], right: dict[str, Any]) -> bool:
     # LLM-proposed cross-language pairs often retain only the entity and one
     # product/release token (for example Claude + Fable). That is enough as a
     # validation gate, but not enough for deterministic clustering on its own.
-    if shared & ANCHOR_TOKENS and shared - ANCHOR_TOKENS:
+    shared_anchors = _shared_anchor_tokens(shared)
+    if shared_anchors and shared - shared_anchors:
         return True
     return len(shared) >= 5 and bool(union) and len(shared) / len(union) >= 0.70
 
@@ -207,7 +212,7 @@ def _same_title_story(left: set[str], right: set[str]) -> bool:
     shared = left & right
     if len(shared) < 3:
         return bool(shared & NARROW_PRODUCT_TOKENS and shared & VULNERABILITY_TOPIC_TOKENS)
-    shared_anchors = shared & ANCHOR_TOKENS
+    shared_anchors = _shared_anchor_tokens(shared)
     if not shared_anchors:
         return False
     left_without_anchor = left - shared_anchors
@@ -217,12 +222,26 @@ def _same_title_story(left: set[str], right: set[str]) -> bool:
         if shared_anchors & NARROW_PRODUCT_TOKENS and shared & VULNERABILITY_TOPIC_TOKENS:
             return True
         return False
+    if shared_anchors - ANCHOR_TOKENS:
+        return True
     if len(shared_without_anchor) >= 4:
         return True
     if len(shared_without_anchor) >= 3 and any(token.isdigit() for token in shared_without_anchor):
         return True
     union = left | right
     return len(shared) / len(union) >= 0.45
+
+
+def _shared_anchor_tokens(shared: set[str]) -> set[str]:
+    dynamic = {
+        token
+        for token in shared
+        if token.isascii()
+        and token.replace("-", "").isalnum()
+        and len(token) >= 8
+        and token not in DYNAMIC_ANCHOR_STOPWORDS
+    }
+    return (shared & ANCHOR_TOKENS) | dynamic
 
 
 def _primary_rank(item: tuple[dict[str, Any], float]) -> tuple[int, float, int]:

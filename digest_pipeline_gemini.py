@@ -397,7 +397,7 @@ def _finalize_digest_item(entry: dict[str, Any], item: dict[str, Any]) -> dict[s
     title = normalize_summary_text(finalized.get("title_zh") or "")
     if _title_needs_repair(title):
         title = _fallback_title(entry)
-    finalized["title_zh"] = _limit_title(title)
+    finalized["title_zh"] = _limit_title(_sanitize_vulnerability_claims(entry, title))
     finalized["title_orig"] = entry.get("title", finalized.get("title_orig", ""))
 
     summary = normalize_summary_text(finalized.get("summary") or "")
@@ -434,7 +434,11 @@ def _sanitize_vulnerability_claims(entry: dict[str, Any], summary: str) -> str:
     is_xss = bool(re.search(r"\bXSS\b|cross[- ]site scripting|跨站脚本|存储型跨站", source_text, re.IGNORECASE))
     source_claims_rce = bool(re.search(r"\bRCE\b|remote code execution|远程代码执行", source_text, re.IGNORECASE))
     if is_xss and not source_claims_rce:
-        return summary.replace("任意代码执行", "浏览器会话内脚本执行")
+        return (
+            summary
+            .replace("任意代码执行", "浏览器会话内脚本执行")
+            .replace("执行任意代码", "执行恶意脚本")
+        )
     return summary
 
 

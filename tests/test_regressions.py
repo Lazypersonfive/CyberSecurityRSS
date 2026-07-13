@@ -1335,6 +1335,22 @@ class StoryClusteringTests(unittest.TestCase):
 
         self.assertEqual(len(clustered), 1)
 
+    def test_cluster_uses_shared_rare_product_name_as_dynamic_anchor(self) -> None:
+        candidates = [
+            (
+                {"title": "New GigaWiper malware combines a backdoor and destructive wiping", "url": "https://a.example/1"},
+                8,
+            ),
+            (
+                {"title": "Microsoft warns GigaWiper malware enables covert monitoring and data wiping", "url": "https://b.example/2"},
+                8,
+            ),
+        ]
+
+        clustered, _merged = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 1)
+
     def test_story_id_prefers_cve_key(self) -> None:
         entry = {
             "title": "Exploit for CVE-2026-12345 released",
@@ -1912,6 +1928,18 @@ class GeminiPipelineTests(unittest.TestCase):
 
         self.assertNotIn("任意代码执行", sanitized)
         self.assertIn("浏览器会话内脚本执行", sanitized)
+
+        item = _finalize_digest_item(
+            entry,
+            {
+                "title_zh": "Zimbra 存储型 XSS 漏洞可执行任意代码",
+                "summary": draft,
+                "tags": ["XSS"],
+                "selection_reason": "影响用户会话",
+            },
+        )
+        self.assertNotIn("执行任意代码", item["title_zh"])
+        self.assertIn("执行恶意脚本", item["title_zh"])
 
     def test_selection_scoring_uses_final_score_not_raw_llm_score(self) -> None:
         final_scored = _score_candidates_for_selection(
