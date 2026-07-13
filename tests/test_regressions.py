@@ -8,6 +8,7 @@ from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
 from digest_clock import digest_today
+from delivered_history import DeliveredHistory, filter_delivered_candidates, load_delivered_history
 from digest_postprocess import count_chinese_chars, summary_needs_repair
 from aihot_compare import compare_aihot_items, parse_aihot_rss_items, render_aihot_compare
 from llm_backends.base import backend_name_from_env, get_backend
@@ -22,6 +23,7 @@ from digest_pipeline_gemini import (
     _score_entries,
     _score_candidates_for_selection,
     _selection_reason,
+    _sanitize_vulnerability_claims,
 )
 import fetch_and_save
 import fetch_feeds
@@ -33,7 +35,7 @@ from feedback_eval import build_report, classify_feedback
 from rss_curation import curate_entries
 from source_policy import select_with_source_policy, source_mix_stats, source_profile
 from scoring_policy import compute_dimension_score, compute_final_score
-from security_editorial import adjust_ai_security_score, adjust_security_score
+from security_editorial import adjust_ai_security_score, adjust_finance_score, adjust_security_score
 from story_clustering import cluster_scored_candidates, story_id_for_entry
 from source_audit import build_source_audit, render_source_audit
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
@@ -1046,6 +1048,35 @@ class SourcePolicyTests(unittest.TestCase):
 
         self.assertIn("https://openai.com/news/direct", urls)
 
+    def test_selection_policy_enforces_minimum_final_score(self) -> None:
+        candidates = [
+            ({"title": "Strong", "url": "https://example.com/strong"}, 8.0),
+            ({"title": "Weak", "url": "https://example.com/weak"}, 5.9),
+        ]
+
+        selected = select_with_source_policy(
+            candidates,
+            top_n=2,
+            policy={"min_final_score": 6.0, "allow_cap_relaxation": True},
+        )
+
+        self.assertEqual([entry["title"] for entry, _score in selected], ["Strong"])
+
+    def test_selection_policy_reserves_official_sources(self) -> None:
+        candidates = [
+            ({"title": "Media A", "url": "https://www.finextra.com/news/a"}, 9.0),
+            ({"title": "Media B", "url": "https://www.pymnts.com/news/b"}, 8.0),
+            ({"title": "Federal Reserve", "url": "https://www.federalreserve.gov/newsevents/c.htm"}, 7.0),
+        ]
+
+        selected = select_with_source_policy(
+            candidates,
+            top_n=2,
+            policy={"min_official": 1},
+        )
+
+        self.assertIn("https://www.federalreserve.gov/newsevents/c.htm", [entry["url"] for entry, _ in selected])
+
     def test_cap_relaxation_can_keep_google_news_cap_hard(self) -> None:
         candidates = [
             ({"title": "Google 1", "url": "https://news.google.com/rss/articles/1"}, 10),
@@ -1287,6 +1318,59 @@ class StoryClusteringTests(unittest.TestCase):
             clustered[0][0]["url"],
             "https://simonwillison.net/2026/May/11/openai-agent-deployment-analysis/",
         )
+
+
+class DeliveredHistoryTests(unittest.TestCase):
+    def test_load_history_reads_previous_digest_items_and_related_urls(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            digest_dir = Path(tmpdir)
+            digest_dir.joinpath("security_2026-07-12.json").write_text(
+                json.dumps(
+                    {
+                        "items": [
+                            {
+                                "url": "https://example.com/primary",
+                                "story_id": "cve:cve-2026-12345",
+                                "related_urls": ["https://example.net/rewrite"],
+                            }
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            history = load_delivered_history(
+                "security",
+                date(2026, 7, 13),
+                lookback_days=7,
+                digest_dir=digest_dir,
+            )
+
+        self.assertEqual(
+            history.urls,
+            {"https://example.com/primary", "https://example.net/rewrite"},
+        )
+        self.assertEqual(history.story_ids, {"cve:cve-2026-12345"})
+
+    def test_filter_history_drops_delivered_url_and_cve_but_keeps_unselected_candidate(self) -> None:
+        history = DeliveredHistory(
+            urls={"https://example.com/already-shown"},
+            story_ids={"cve:cve-2026-12345"},
+        )
+        candidates = [
+            {"url": "https://example.com/already-shown", "title": "Shown yesterday"},
+            {
+                "url": "https://other.example/new-report",
+                "title": "Fresh report for CVE-2026-12345",
+                "cve_ids": ["CVE-2026-12345"],
+            },
+            {"url": "https://example.com/not-selected-yesterday", "title": "Still eligible"},
+        ]
+
+        kept, stats = filter_delivered_candidates(candidates, history)
+
+        self.assertEqual([item["url"] for item in kept], ["https://example.com/not-selected-yesterday"])
+        self.assertEqual(stats, {"url": 1, "story": 1, "total": 2})
 
 
 class GeminiPipelineTests(unittest.TestCase):
@@ -1532,6 +1616,50 @@ class GeminiPipelineTests(unittest.TestCase):
 
         self.assertEqual(adjust_ai_security_score(entry, 4), 6)
 
+    def test_ai_security_editorial_caps_vendor_marketing_and_lawsuits(self) -> None:
+        marketing = {
+            "title": "Vendor named Gartner representative for agentic application security testing",
+            "summary": "The company announced recognition in a market report.",
+        }
+        lawsuit = {
+            "title": "AI security startup sues competitor over hallucinated report",
+            "summary": "The dispute concerns commercial claims between two vendors.",
+        }
+
+        self.assertEqual(adjust_ai_security_score(marketing, 8), 4)
+        self.assertEqual(adjust_ai_security_score(lawsuit, 8), 4)
+
+    def test_finance_editorial_requires_financial_context(self) -> None:
+        generic_ai = {
+            "title": "OpenAI security leader leaves company",
+            "summary": "The research organization is restructuring its team.",
+        }
+        generic_regulation = {
+            "title": "EU expands social media safety regulation",
+            "summary": "The proposal covers consumer protection on online platforms.",
+        }
+        fintech = {
+            "title": "Visa deploys AI fraud controls for card payments",
+            "summary": "The payment network is applying models to transaction risk scoring.",
+        }
+
+        self.assertEqual(adjust_finance_score(generic_ai, 8), 3)
+        self.assertEqual(adjust_finance_score(generic_regulation, 8), 3)
+        self.assertEqual(adjust_finance_score(fintech, 8), 8)
+
+    def test_security_editorial_caps_vulnerability_without_mechanism(self) -> None:
+        vague = {
+            "title": "Critical U-Boot vulnerability threatens millions of devices",
+            "summary": "Researchers disclosed a serious issue and urged users to monitor updates.",
+        }
+        technical = {
+            "title": "U-Boot buffer overflow vulnerability",
+            "summary": "A crafted packet triggers an out-of-bounds write in the network parser.",
+        }
+
+        self.assertEqual(adjust_security_score(vague, 10), 8)
+        self.assertEqual(adjust_security_score(technical, 10), 10)
+
     def test_security_config_targets_chinese_technical_sources(self) -> None:
         import yaml
 
@@ -1560,7 +1688,8 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertGreaterEqual(board["source_policy"]["min_direct"], 4)
         self.assertEqual(board["source_policy"]["max_aggregator"], 5)
         self.assertFalse(board["source_policy"]["relax_aggregate_caps"])
-        self.assertEqual(board["fill_score_floor"], 4)
+        self.assertEqual(board["fill_score_floor"], 6)
+        self.assertEqual(board["source_policy"]["min_final_score"], 6.0)
         self.assertTrue(Path(board["opml"]).exists())
 
     def test_board_output_targets_match_current_editorial_policy(self) -> None:
@@ -1629,6 +1758,13 @@ class GeminiPipelineTests(unittest.TestCase):
                         "title": "OpenAI model update",
                         "url": "https://openai.com/news/model-update",
                         "published": "2026-05-11T06:00:00Z",
+                        "score_dimensions": {
+                            "relevance": 9,
+                            "novelty": 8,
+                            "entity_importance": 9,
+                            "developer_relevance": 8,
+                            "ecosystem_impact": 8,
+                        },
                     },
                     8,
                 )
@@ -1640,6 +1776,19 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(item["score"], 8)
         self.assertGreater(item["final_score"], 8)
         self.assertIn("source_bonus", item["score_breakdown"])
+        self.assertEqual(item["score_dimensions"]["novelty"], 8)
+
+    def test_xss_summary_does_not_claim_system_level_arbitrary_code_execution(self) -> None:
+        entry = {
+            "title": "Critical stored XSS lets crafted email run scripts in user sessions",
+            "summary": "A stored cross-site scripting flaw executes JavaScript in the victim browser.",
+        }
+        draft = "攻击者发送恶意邮件后可在用户浏览器会话中执行脚本，进而实现任意代码执行并窃取会话数据。"
+
+        sanitized = _sanitize_vulnerability_claims(entry, draft)
+
+        self.assertNotIn("任意代码执行", sanitized)
+        self.assertIn("浏览器会话内脚本执行", sanitized)
 
     def test_selection_scoring_uses_final_score_not_raw_llm_score(self) -> None:
         final_scored = _score_candidates_for_selection(
@@ -1864,8 +2013,8 @@ class GeminiPipelineTests(unittest.TestCase):
         deduped, merged_urls = _llm_dedupe(
             FakeBackend(),
             [
-                ({"title": "OpenAI official", "url": "https://openai.com/news/a"}, 8),
-                ({"title": "OpenAI rewrite", "url": "https://example.com/rewrite"}, 7),
+                ({"title": "OpenAI launches GPT-6 coding agent for developers", "url": "https://openai.com/news/a"}, 8),
+                ({"title": "OpenAI launches GPT-6 coding agent for software developers", "url": "https://example.com/rewrite"}, 7),
             ],
         )
 
@@ -1873,6 +2022,71 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(merged_urls, ["https://example.com/rewrite"])
         self.assertEqual(deduped[0][0]["related_urls"], ["https://example.com/rewrite"])
         self.assertEqual(deduped[0][0]["related_count"], 1)
+
+    def test_llm_dedupe_rejects_unrelated_items_grouped_by_model(self) -> None:
+        class FakeBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summarize"
+
+            def generate_json(self, *_args: object) -> str:
+                return "[[0,1,2]]"
+
+        candidates = [
+            ({"title": "OpenAI launches GPT-6 model", "url": "https://a.example/model"}, 9),
+            ({"title": "OpenAI acquires a database startup", "url": "https://b.example/deal"}, 8),
+            ({"title": "OpenAI changes API billing terms", "url": "https://c.example/billing"}, 7),
+        ]
+
+        deduped, merged_urls = _llm_dedupe(FakeBackend(), candidates)
+
+        self.assertEqual(len(deduped), 3)
+        self.assertEqual(merged_urls, [])
+
+    def test_llm_dedupe_rejects_suspicious_mass_collapse(self) -> None:
+        class FakeBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summarize"
+
+            def generate_json(self, *_args: object) -> str:
+                return json.dumps(
+                    [*[list(range(idx, idx + 2)) for idx in range(0, 24, 2)],
+                     *[[idx] for idx in range(24, 30)]]
+                )
+
+        candidates = []
+        for pair in range(12):
+            candidates.extend(
+                [
+                    (
+                        {
+                            "title": f"OpenAI launches Model{pair} coding agent for developers",
+                            "url": f"https://official.example/{pair}",
+                        },
+                        9,
+                    ),
+                    (
+                        {
+                            "title": f"OpenAI launches Model{pair} coding agent for software developers",
+                            "url": f"https://media.example/{pair}",
+                        },
+                        8,
+                    ),
+                ]
+            )
+        candidates.extend(
+            (
+                {"title": f"Independent vendor update {idx}", "url": f"https://example.com/{idx}"},
+                7,
+            )
+            for idx in range(24, 30)
+        )
+
+        deduped, merged_urls = _llm_dedupe(FakeBackend(), candidates)
+
+        self.assertEqual(len(deduped), 30)
+        self.assertEqual(merged_urls, [])
 
 
 class SourceReportTests(unittest.TestCase):

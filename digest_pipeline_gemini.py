@@ -26,6 +26,7 @@ from typing import Any
 import yaml
 
 from digest_clock import digest_today
+from delivered_history import filter_delivered_candidates, load_delivered_history
 from llm_backends import LLMBackend, get_backend
 from digest_postprocess import normalize_summary_text, summary_needs_repair
 from digest_postprocess import count_chinese_chars, SUMMARY_TARGET_MAX_CHARS, SUMMARY_TARGET_MIN_CHARS
@@ -38,8 +39,8 @@ from source_policy import (
     source_priority,
     source_profile,
 )
-from story_clustering import cluster_scored_candidates
-from security_editorial import adjust_ai_security_score, adjust_security_score
+from story_clustering import cluster_scored_candidates, probable_same_story
+from security_editorial import adjust_ai_security_score, adjust_finance_score, adjust_security_score
 from source_reports import (
     refresh_latest_report,
     refresh_weekly_report,
@@ -189,6 +190,7 @@ DEDUPE_SYSTEM = """你要对新闻条目做去重聚类。
 
 DEDUPE_POOL_MULTIPLIER = 2
 DEDUPE_MAX_CANDIDATES = 80
+LLM_DEDUPE_MAX_MERGE_RATIO = 0.35
 
 def _is_chinese_entry(entry: dict[str, Any]) -> bool:
     """Backward-compatible wrapper around the centralized source profiler."""
@@ -295,6 +297,8 @@ def _score_entries(
                 score = adjust_security_score(batch[j], score)
             elif board == "ai_security":
                 score = adjust_ai_security_score(batch[j], score)
+            elif board == "finance":
+                score = adjust_finance_score(batch[j], score)
             scores[i + j] = score
     return scores
 
@@ -397,6 +401,7 @@ def _finalize_digest_item(entry: dict[str, Any], item: dict[str, Any]) -> dict[s
     finalized["title_orig"] = entry.get("title", finalized.get("title_orig", ""))
 
     summary = normalize_summary_text(finalized.get("summary") or "")
+    summary = _sanitize_vulnerability_claims(entry, summary)
     finalized["summary"] = _ensure_summary_length(summary, entry, finalized["title_zh"])
     finalized["tags"] = _normalize_tags(finalized.get("tags"), entry)
     finalized["selection_reason"] = _selection_reason(finalized) or _fallback_selection_reason(entry)
@@ -418,6 +423,19 @@ def _finalize_digest_item(entry: dict[str, Any], item: dict[str, Any]) -> dict[s
     finalized["related_urls"] = entry.get("related_urls", finalized.get("related_urls", [])) or []
     finalized["related_count"] = len(finalized["related_urls"])
     return finalized
+
+
+def _sanitize_vulnerability_claims(entry: dict[str, Any], summary: str) -> str:
+    """Downgrade a common XSS-to-RCE overstatement without inventing details."""
+    source_text = " ".join(
+        str(entry.get(key) or "")
+        for key in ("title", "title_orig", "summary")
+    )
+    is_xss = bool(re.search(r"\bXSS\b|cross[- ]site scripting|跨站脚本|存储型跨站", source_text, re.IGNORECASE))
+    source_claims_rce = bool(re.search(r"\bRCE\b|remote code execution|远程代码执行", source_text, re.IGNORECASE))
+    if is_xss and not source_claims_rce:
+        return summary.replace("任意代码执行", "浏览器会话内脚本执行")
+    return summary
 
 
 def _fallback_title(entry: dict[str, Any]) -> str:
@@ -691,20 +709,33 @@ def _repair_vuln_summaries(
         return summaries
 
     repaired = dict(summaries)
+    rejected = {"invalid_idx": 0, "empty": 0, "length": 0, "not_improved": 0}
     for row in parsed:
         try:
             idx = int(row["idx"])
         except (KeyError, TypeError, ValueError):
+            rejected["invalid_idx"] += 1
             continue
         candidate = normalize_summary_text(row.get("summary") or "")
         current = repaired.get(idx, "")
-        if not candidate or summary_needs_repair(candidate):
+        if not candidate:
+            rejected["empty"] += 1
+            continue
+        if summary_needs_repair(candidate):
+            rejected["length"] += 1
             continue
         if vuln_tech_element_count(candidate) > vuln_tech_element_count(current):
             repaired[idx] = candidate
+        else:
+            rejected["not_improved"] += 1
     fixed = sum(1 for row in to_fix if repaired.get(row["idx"]) != row["draft_summary"])
     if to_fix:
-        logger.info("vuln summary repair: %d candidates, %d improved", len(to_fix), fixed)
+        logger.info(
+            "vuln summary repair: %d candidates, %d improved, rejected=%s",
+            len(to_fix),
+            fixed,
+            rejected,
+        )
     return repaired
 
 
@@ -800,6 +831,16 @@ def _llm_dedupe(
     if not clusters:
         return candidates, []
 
+    clusters = _validate_llm_clusters(candidates, clusters)
+    proposed_merges = sum(max(0, len(group) - 1) for group in clusters)
+    if len(candidates) >= 10 and proposed_merges / len(candidates) > LLM_DEDUPE_MAX_MERGE_RATIO:
+        logger.warning(
+            "llm dedupe rejected suspicious collapse: %d candidates, %d proposed merges",
+            len(candidates),
+            proposed_merges,
+        )
+        return candidates, []
+
     seen: set[int] = set()
     result: list[tuple[dict[str, Any], int]] = []
     merged_urls: list[str] = []
@@ -832,6 +873,29 @@ def _llm_dedupe(
     result = sort_scored_candidates(result)
     logger.info("llm dedupe: %d candidates -> %d unique stories", len(candidates), len(result))
     return result, merged_urls
+
+
+def _validate_llm_clusters(
+    candidates: list[tuple[dict[str, Any], int]],
+    clusters: list[list[int]],
+) -> list[list[int]]:
+    """Split LLM groups unless titles/URLs contain corroborating evidence."""
+    validated: list[list[int]] = []
+    included: set[int] = set()
+    for raw_group in clusters:
+        members = [idx for idx in raw_group if 0 <= idx < len(candidates) and idx not in included]
+        components: list[list[int]] = []
+        for idx in members:
+            for component in components:
+                if any(probable_same_story(candidates[idx][0], candidates[other][0]) for other in component):
+                    component.append(idx)
+                    break
+            else:
+                components.append([idx])
+        validated.extend(components)
+        included.update(members)
+    validated.extend([[idx] for idx in range(len(candidates)) if idx not in included])
+    return validated
 
 
 def _dedupe_urls(urls: list[str]) -> list[str]:
@@ -909,9 +973,27 @@ def run(board: str, as_of: date | None = None) -> Path:
     threshold = int(bcfg.get("score_threshold", 6))
     fill_score_floor = int(bcfg.get("fill_score_floor", max(0, threshold - 1)))
     top_n = int(bcfg.get("top_n", 20))
+    as_of = as_of or digest_today()
 
     data = _load_input(board)
     entries = data.get("entries", [])
+    delivered_lookback_days = int(bcfg.get("delivered_lookback_days", 7) or 0)
+    delivered_history = load_delivered_history(
+        board,
+        as_of,
+        lookback_days=delivered_lookback_days,
+        digest_dir=DIGEST_DIR,
+    )
+    entries, delivered_filter_stats = filter_delivered_candidates(entries, delivered_history)
+    if delivered_filter_stats["total"]:
+        logger.info(
+            "[%s] delivered history filtered %d entries (url=%d story=%d, lookback=%dd)",
+            board,
+            delivered_filter_stats["total"],
+            delivered_filter_stats["url"],
+            delivered_filter_stats["story"],
+            delivered_lookback_days,
+        )
     max_llm_entries = int(bcfg.get("llm_max_entries", 0) or 0)
     if max_llm_entries > 0 and len(entries) > max_llm_entries:
         logger.info("[%s] trim LLM scoring set: %d -> %d", board, len(entries), max_llm_entries)
@@ -971,7 +1053,6 @@ def run(board: str, as_of: date | None = None) -> Path:
     items = _attach_final_scores(board, items, selected_legacy_scored, cfg.get("scoring"))
 
     DIGEST_DIR.mkdir(parents=True, exist_ok=True)
-    as_of = as_of or digest_today()
     from datetime import timezone as _tz
     out_path = DIGEST_DIR / f"{board}_{as_of.isoformat()}.json"
     payload = {
@@ -987,6 +1068,7 @@ def run(board: str, as_of: date | None = None) -> Path:
             "llm_merged": len(llm_merged_urls),
             "merged_total": len(merged_urls),
         },
+        "delivered_filter_stats": delivered_filter_stats,
         "items": items,
     }
     out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
@@ -1066,6 +1148,7 @@ def _attach_final_scores(
             breakdown = compute_final_score(board, scoring_entry, scoring_config)
         legacy_score = int(entry.get("_legacy_score", score))
         updated["score"] = legacy_score
+        updated["score_dimensions"] = dict(entry.get("score_dimensions") or {})
         updated["dimension_score"] = breakdown["dimension_score"]
         updated["final_score"] = breakdown["final_score"]
         updated["score_breakdown"] = {

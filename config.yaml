@@ -80,6 +80,7 @@ boards:
     opml: feeds/security.opml
     fetch_hours: 72       # 覆盖国内公众号/官方通告的前两日发布，避免中文漏洞分析错过候选池
     dedup_lookback_days: 0 # 质量优先：72h 窗口内昨天抓过但未入选的中文技术文不能提前过滤
+    delivered_lookback_days: 7 # 已展示条目单独去重；不影响昨日未入选候选继续参选
     max_entries: 120      # 安全板块中文源多且更新分散，需保留更大候选池
     llm_max_entries: 120
     # Synthesis 分类有 190+ feed 共享一个 cap；30（旧默认）会让北京白天发布的
@@ -110,19 +111,21 @@ boards:
     opml: feeds/ai_security.opml
     fetch_hours: 72
     dedup_lookback_days: 0 # 稀疏板块不做跨日 raw 去重，避免候选池被 archive 吃空
+    delivered_lookback_days: 7
     max_entries: 90
     llm_max_entries: 90
     max_per_category: 60
     max_per_feed: 8       # Google News AI Security 周产 160+，截最新 8 条足够
     top_n: 10
     score_threshold: 6
-    fill_score_floor: 4  # 泛 AI 已被确定性压到 3 分；4 分保留边界技术安全候选
+    fill_score_floor: 6  # 宁缺毋滥：不再用 4-5 分营销/泛安全内容补足 10 条
     source_policy:
       min_chinese: 2
       min_direct: 4
       max_google_news: 2
       max_aggregator: 5   # XSignals 最多约半数；Google News 仍单独压低
       max_per_source: 3
+      min_final_score: 6.0
       allow_cap_relaxation: true
       relax_aggregate_caps: false # 稀疏日可放开单源 cap，但不能突破 Google News / 聚合源上限
     source_caps:
@@ -134,6 +137,7 @@ boards:
     opml: feeds/ai.opml
     fetch_hours: 48  # AI 前沿源更新抖动大；48h 保证稀疏日仍能满额
     dedup_lookback_days: 0 # 48h 质量窗口内不要被前日 archive 吃掉高价值 X/官网候选
+    delivered_lookback_days: 7
     max_entries: 80
     llm_max_entries: 80
     max_per_category: 60
@@ -159,6 +163,7 @@ boards:
     display_name: "金融科技"
     opml: feeds/finance.opml
     fetch_hours: 336  # 官方 IR 低频（Visa ~1.5 周、MC 月更、Amex 季更），14 天窗口保证 Card Networks 有量
+    delivered_lookback_days: 14
     max_entries: 30
     llm_max_entries: 30
     max_per_category: 40
@@ -169,12 +174,14 @@ boards:
     source_policy:
       min_chinese: 1
       min_direct: 7
+      min_official: 2
       max_google_news: 4
       max_aggregator: 4
       max_per_source: 4
       allow_cap_relaxation: true
     source_caps:
-      pymnts.com: 4
+      pymnts.com: 3
+      finextra.com: 3
       bankingdive.com: 4
       paymentsdive.com: 4
       news.google.com: 5

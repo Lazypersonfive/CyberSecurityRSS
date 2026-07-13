@@ -44,7 +44,7 @@ VULN_TECH_ELEMENT_RES = {
     ),
 }
 
-VULN_MIN_TECH_ELEMENTS = 2
+VULN_MIN_TECH_ELEMENTS = 3
 
 
 def vuln_tech_element_count(text: str) -> int:

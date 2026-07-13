@@ -56,6 +56,19 @@ def story_id_for_entry(entry: dict[str, Any]) -> str:
     return f"title:{digest}"
 
 
+def probable_same_story(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    """Conservative gate for an LLM-proposed duplicate pair."""
+    if set(_static_story_keys(left)) & set(_static_story_keys(right)):
+        return True
+    left_tokens = _title_tokens(left)
+    right_tokens = _title_tokens(right)
+    if _same_title_story(left_tokens, right_tokens):
+        return True
+    shared = left_tokens & right_tokens
+    union = left_tokens | right_tokens
+    return len(shared) >= 5 and bool(union) and len(shared) / len(union) >= 0.70
+
+
 def cluster_scored_candidates(
     candidates: Iterable[tuple[dict[str, Any], float]],
 ) -> tuple[list[tuple[dict[str, Any], float]], list[str]]:

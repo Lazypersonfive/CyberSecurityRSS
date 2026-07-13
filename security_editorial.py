@@ -67,6 +67,41 @@ AI_SEC_STRONG_RE = re.compile(
     re.IGNORECASE,
 )
 
+AI_SEC_LOW_VALUE_RE = re.compile(
+    _ascii_terms(r"gartner", r"representative\s+vendor", r"market\s+guide", r"funding", r"lawsuit", r"sues?")
+    + r"|入选.{0,12}(报告|厂商|榜单)|融资|起诉|商业纠纷",
+    re.IGNORECASE,
+)
+
+VULN_CONTEXT_RE = re.compile(
+    _ascii_terms(r"cve-\d{4}-\d+", r"vulnerabilit\w*", r"zero[-\s]?day", r"0day")
+    + r"|漏洞|零日|提权|绕过",
+    re.IGNORECASE,
+)
+
+VULN_MECHANISM_RE = re.compile(
+    _ascii_terms(
+        r"use[-\s]after[-\s]free", r"uaf", r"buffer\s+overflow", r"out[-\s]of[-\s]bounds",
+        r"sql\s+injection", r"command\s+injection", r"path\s+traversal", r"deseriali[sz]ation",
+        r"race\s+condition", r"authentication\s+bypass", r"memory\s+corruption", r"ssrf", r"xss",
+    )
+    + r"|释放后使用|缓冲区溢出|越界|注入|路径穿越|路径遍历|反序列化|条件竞争|认证绕过"
+    + r"|身份验证绕过|内存损坏|跨站脚本|逻辑缺陷|硬编码|权限校验",
+    re.IGNORECASE,
+)
+
+FINANCE_CONTEXT_RE = re.compile(
+    _ascii_terms(
+        r"fintech", r"financial", r"finance", r"bank\w*", r"payments?", r"card\s+network",
+        r"visa", r"mastercard", r"paypal", r"stripe", r"stablecoin", r"cbdc", r"digital\s+currenc\w*",
+        r"clearing", r"settlement", r"remittance", r"lending", r"credit", r"anti[-\s]money\s+laundering",
+        r"aml", r"kyc", r"wallet", r"tokeni[sz]ation", r"mica", r"securities", r"insurance",
+    )
+    + r"|金融科技|金融机构|银行|支付|卡组织|稳定币|数字人民币|数字货币|央行|清算|结算|跨境"
+    + r"|信贷|贷款|信用卡|风控|反洗钱|钱包|证券|保险|代币化",
+    re.IGNORECASE,
+)
+
 
 def _get(entry: Any, key: str) -> str:
     if isinstance(entry, dict):
@@ -85,6 +120,8 @@ def adjust_security_score(entry: Any, score: int) -> int:
     text = " ".join(_get(entry, key) for key in ("title", "summary", "title_orig"))
     if GEO_ATTRIBUTION_RE.search(text):
         return min(score, 4)
+    if VULN_CONTEXT_RE.search(text) and not VULN_MECHANISM_RE.search(text):
+        return min(score, 8)
     return score
 
 
@@ -104,8 +141,21 @@ def adjust_ai_security_score(entry: Any, score: int) -> int:
     )
     if not AI_CONTEXT_RE.search(text):
         return min(score, 3)
+    if AI_SEC_LOW_VALUE_RE.search(text):
+        return min(score, 4)
     if not AI_SEC_MECHANISM_RE.search(text):
         return min(score, 4)
     if AI_SEC_STRONG_RE.search(text):
         return max(score, 6)
+    return score
+
+
+def adjust_finance_score(entry: Any, score: int) -> int:
+    """Keep generic AI, personnel and platform-policy news out of fintech."""
+    text = " ".join(
+        _get(entry, key)
+        for key in ("title", "summary", "title_orig", "category", "feed_title")
+    )
+    if not FINANCE_CONTEXT_RE.search(text):
+        return min(score, 3)
     return score

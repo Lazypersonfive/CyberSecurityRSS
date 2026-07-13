@@ -166,7 +166,7 @@ def sort_scored_candidates(
 
 
 def select_with_source_policy(
-    candidates: Iterable[tuple[dict[str, Any], int]],
+    candidates: Iterable[tuple[dict[str, Any], int | float]],
     top_n: int,
     policy: dict[str, Any] | None = None,
 ) -> list[tuple[dict[str, Any], int]]:
@@ -178,11 +178,15 @@ def select_with_source_policy(
     """
     policy = policy or {}
     ranked = sort_scored_candidates(candidates)
+    min_final_score = _optional_float(policy.get("min_final_score"))
+    if min_final_score is not None:
+        ranked = [item for item in ranked if float(item[1]) >= min_final_score]
     if top_n <= 0 or not ranked:
         return []
 
     min_chinese = max(0, int(policy.get("min_chinese", 0)))
     min_direct = max(0, int(policy.get("min_direct", 0)))
+    min_official = max(0, int(policy.get("min_official", 0)))
     max_google_news = _optional_int(policy.get("max_google_news"), top_n)
     max_aggregator = _optional_int(policy.get("max_aggregator"), top_n)
     max_per_source = _optional_int(policy.get("max_per_source"), top_n)
@@ -254,6 +258,7 @@ def select_with_source_policy(
                 current += 1
 
     reserve(lambda profile: profile.is_chinese, min_chinese)
+    reserve(lambda profile: profile.source_kind in {"official", "official_x", "cn_official"}, min_official)
     reserve(lambda profile: profile.is_direct, min_direct)
 
     for item in ranked:
@@ -276,6 +281,12 @@ def select_with_source_policy(
                 add(item)
 
     return sort_scored_candidates(selected)[:top_n]
+
+
+def _optional_float(value: Any) -> float | None:
+    if value is None or value == "":
+        return None
+    return float(value)
 
 
 def source_mix_stats(entries: Iterable[dict[str, Any]]) -> dict[str, int]:
