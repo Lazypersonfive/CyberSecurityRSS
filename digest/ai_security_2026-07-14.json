@@ -1,0 +1,238 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-07-14",
+  "generated_at": "2026-07-13T23:39:04.503570Z",
+  "raw_count": 38,
+  "selected_count": 5,
+  "selection_stats": {
+    "total": 5,
+    "chinese": 4,
+    "direct": 4,
+    "tier_t2": 5,
+    "kind_cn_expert": 4,
+    "wechat": 1,
+    "google_news": 1,
+    "aggregator": 1,
+    "kind_google_news": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 4,
+    "story": 0,
+    "total": 4
+  },
+  "items": [
+    {
+      "title_zh": "Ghostcommit 攻击：利用图片隐写恶意提示词劫持 AI Agent 实施数据窃取",
+      "title_orig": "Ghostcommit 攻击：恶意提示藏入图片，劫持Agent实施窃取",
+      "summary": "该研究揭示了一种名为 Ghostcommit 的新型攻击手段，攻击者通过在图片中嵌入隐蔽的恶意指令，诱导 AI Agent 在处理图像时执行非预期操作。当 Agent 解析此类图片后，可能导致其身份凭证被劫持或敏感数据被非法外传，虽然原文未披露具体受影响的框架版本，但强调了多模态输入带来的安全风险，提醒开发者警惕图像处理中的指令注入威胁。",
+      "tags": [
+        "AI安全",
+        "提示词注入",
+        "隐写术"
+      ],
+      "url": "https://www.anquanke.com/post/id/315788",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-07-13T15:14:37+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了多模态 AI 模型在处理视觉输入时的安全边界脆弱性。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315788",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 8.0,
+        "practical_risk": 9.0,
+        "agent_model_relevance": 10.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 9.1,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Crawl4AI 框架 CVE-2026-57573 未授权 SSRF 漏洞分析与风险预警",
+      "title_orig": "Crawl4AI CVE-2026-57573 未授权 SSRF 漏洞分析",
+      "summary": "开源爬虫框架 Crawl4AI 的流式爬取端点存在未授权 SSRF 漏洞，原因在于该端点在处理 URL 时缺失了必要的校验逻辑，导致攻击者可绕过限制探测内网资源。该项目在 GitHub 拥有超过 40k star 并支持 Docker 一键部署，此漏洞严重威胁到使用其 API 服务进行远程抓取的用户环境，建议相关开发者立即检查代码并关注官方发布的补丁更新。",
+      "tags": [
+        "SSRF",
+        "AI工具安全",
+        "漏洞分析"
+      ],
+      "url": "https://xz.aliyun.com/news/92502",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-07-11T13:58:04+00:00",
+      "cve_ids": [
+        "CVE-2026-57573"
+      ],
+      "selection_reason": "高星开源 AI 项目漏洞，涉及内网渗透风险，具有高实战价值。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-57573",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "actionability": 9.0,
+        "practical_risk": 9.0,
+        "agent_model_relevance": 8.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 9.15,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "面向渗透测试 AI Agent 的任务失效化蜜罐技术探索与防御机制研究",
+      "title_orig": "【AI赋能安全】面向渗透 Agent 的任务失效化蜜罐探索",
+      "summary": "本文探讨了一种针对渗透类 AI Agent 的任务失效化蜜罐防御策略，旨在通过构建受控环境使 Agent 的任务闭环发生持续偏航并最终失去有效方向。该技术不追求单次欺骗，而是通过消耗 Agent 的计算资源并引导其进入无效的执行路径，从而彻底瓦解自动化攻击任务的有效性，为应对日益增长的 AI 自动化渗透威胁提供了全新的防御思路与技术参考。",
+      "tags": [
+        "AI蜜罐",
+        "反渗透",
+        "主动防御"
+      ],
+      "url": "https://xz.aliyun.com/news/92504",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-07-12T07:36:16+00:00",
+      "cve_ids": [],
+      "selection_reason": "创新性地提出了针对 AI 攻击者的防御范式，具有前瞻性。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92504",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 7.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 10.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "基于启发式优化算法的入侵检测系统特征选择与性能优化研究",
+      "title_orig": "[AI安全论文] (51)ESWA25 基于启发式优化器的入侵检测系统",
+      "summary": "该研究聚焦于入侵检测系统中的特征选择难题，提出利用启发式优化器来提升检测模型的准确率与效率，从而有效应对大规模网络流量监控中的安全挑战。文章详细介绍了如何通过算法优化减少冗余数据对系统的干扰，并探讨了在不同安全场景下构建高性能自动化威胁检测平台的实现路径，为网络安全防御体系的智能化升级提供了关键的算法支撑。",
+      "tags": [
+        "入侵检测",
+        "启发式算法",
+        "特征工程"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg5MTM5ODU2Mg==&mid=2247503025&idx=1&sn=ab56d76c1e64d5c36d076eaa9a16e29b",
+      "source": "mp.weixin.qq.com",
+      "category": "Chinese",
+      "published": "2026-07-13T02:57:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 算法在提升传统安全组件性能方面的具体应用路径。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml",
+      "feed_title": "娜璋AI安全之家",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg5MTM5ODU2Mg%3D%3D&mid=2247503025&idx=1&sn=ab56d76c1e64d5c36d076eaa9a16e29b",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 4.0,
+        "practical_risk": 4.0,
+        "agent_model_relevance": 2.0,
+        "security_relevance": 7.0
+      },
+      "dimension_score": 5.1,
+      "final_score": 5.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "AI Agent 安全治理：身份认证、访问控制与数据保护的技术研讨",
+      "title_orig": "AI Agent Security: Navigating Identity, Access, and Data Protection for AI AgentsWebinar. - GovInfoSecurity",
+      "summary": "该研讨会深入探讨了 AI Agent 在企业级应用中的安全挑战，重点围绕 Agent 的身份识别、权限管理及数据隐私保护方案展开了详细讨论。会议强调在复杂的 Agent 工作流中建立严格访问控制机制是防止数据泄露的关键，虽然未提供具体的技术实现代码，但为企业在安全架构设计与合规性治理方面提供了宏观指导，助力构建更安全的自动化办公环境。",
+      "tags": [
+        "Agent安全",
+        "身份管理",
+        "数据保护"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSUZ3NmtXSmZrWUI4QllhcGt0Q0NoWFRiVUo3aE1lZG52ZVhrdHNLZWJUbWhfZnpwaTFDQU1HSEdFa3l0N0xvQTBsdmhjel8wcG9aMDdyb1Jzay1MdHRNVllvZXNIWktMT1ljNmoyaU4tVzA0R1MyLWd6Sm5nN2EzZ2ZCQTFhQkl4a29JNG54WjVubDRHSW53WVROMjhmTmVVUGNwZ0dpNnhOWnpUQlBVZndUVkgzZw?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-07-13T19:06:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI Agent 落地过程中的合规与架构安全，具行业参",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:90dd9c738bde",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "technical_depth": 3.0,
+        "actionability": 3.0,
+        "practical_risk": 5.0,
+        "agent_model_relevance": 8.0,
+        "security_relevance": 7.0
+      },
+      "dimension_score": 5.35,
+      "final_score": 4.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

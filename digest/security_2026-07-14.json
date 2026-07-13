@@ -1,0 +1,655 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-14",
+  "generated_at": "2026-07-13T23:38:35.517458Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 10,
+    "direct": 15,
+    "wechat": 8,
+    "tier_t2": 15,
+    "kind_cn_expert": 10,
+    "kind_media": 5
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 3,
+    "merged_total": 3
+  },
+  "delivered_filter_stats": {
+    "url": 3,
+    "story": 0,
+    "total": 3
+  },
+  "items": [
+    {
+      "title_zh": "Windows http.sys 驱动程序 UlpParseNextRequest 函数整数溢出导致内核池溢出漏洞分析",
+      "title_orig": "http.sys — UlpParseNextRequest 中连接数组容量整数溢出（CWE-190）导致内核池溢出",
+      "summary": "该漏洞源于Windows系统的http.sys驱动在处理连接请求追踪数组时，其16位容量字段在执行增长操作时缺少必要的溢出检查，导致在执行加法计算时触发整数溢出并最终引发内核池溢出风险。攻击者可利用此缺陷在NonPagedPoolNx非分页池中执行恶意操作，严重威胁内核组件的安全稳定性，目前官方已通过引入由KIR标志门控的RtlUShortAdd安全加法函数对该逻辑进行了加固修复。",
+      "tags": [
+        "内核安全",
+        "整数溢出",
+        "漏洞分析"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496507&idx=2&sn=6bf210d2f81d9893bd871cf85bcc32df",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-07-13T10:50:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入分析了 Windows 内核驱动的二进制补丁及溢出原理。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496507&idx=2&sn=6bf210d2f81d9893bd871cf85bcc32df",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "score_dimensions": {
+        "technical_depth": 10.0,
+        "actionability": 9.0,
+        "impact_scope": 10.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 9.7,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "phpMyFAQ 开源系统搜索功能存在 LIKE 通配符注入漏洞 CVE-2026-34973 复现",
+      "title_orig": "CVE-2026-34973 phpMyFAQ LIKE 通配符注入漏洞分析与复现",
+      "summary": "phpMyFAQ的公开搜索功能在检索自定义页面时，仅使用mysqli::real_escape_string()转义字符串界定符，未对LIKE子句特有的通配符进行处理。攻击者可通过构造包含百分号或下划线的输入实现通配符注入，从而绕过转义逻辑并改变查询语义。原文未披露受影响的具体版本号及官方修复状态，仅强调了该安全盲区的原理与复现过程。",
+      "tags": [
+        "SQL注入",
+        "通配符注入",
+        "漏洞复现"
+      ],
+      "url": "https://xz.aliyun.com/news/92506",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-07-12T11:16:22+00:00",
+      "cve_ids": [
+        "CVE-2026-34973"
+      ],
+      "selection_reason": "揭示了开发中容易忽视的 LIKE 子句通配符安全盲区。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-34973",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92506"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "actionability": 9.0,
+        "impact_scope": 7.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.85,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Ghostcommit 攻击利用恶意图片隐蔽窃取服务器 .env 敏感配置文件",
+      "title_orig": "AI安全案例分析 | Ghostcommit攻击利用图片窃取秘密",
+      "summary": "密苏里大学 ASSET 研究组公开了一种名为 Ghostcommit 的新型攻击手法，该技术通过将恶意指令嵌入图片而非文本中，能够隐蔽地规避常规安全检测并窃取目标的 .env 配置文件。这种攻击利用多模态输入在 AI 或自动化环境下的安全漏洞，导致数据库凭据等敏感秘密泄露，展示了在 2026 年 7 月发现的针对自动化系统的新型安全威胁。",
+      "tags": [
+        "隐写攻击",
+        "数据窃取",
+        "AI安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMTI0NjA3OA==&mid=2247495300&idx=1&sn=a495dbb43bc4e710231bd9e6bc2e2b21",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用非文本媒介进行指令注入的新型攻击向量。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/059ae07ca76f11c6e9f9fad7698ab205b3b039c8.xml",
+      "feed_title": "M01NTeam",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/059ae07ca76f11c6e9f9fad7698ab205b3b039c8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzkyMTI0NjA3OA%3D%3D&mid=2247495300&idx=1&sn=a495dbb43bc4e710231bd9e6bc2e2b21",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA==&mid=2649790216&idx=1&sn=439a2cc57c764113e9d44d1a1b4ba863"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "actionability": 8.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.5,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Joomla 插件 iCagenda 与 Balbooa Forms 遭零日漏洞攻击导致数千网站沦陷",
+      "title_orig": "【安全圈】CVSS 满分！Joomla 两大插件被零日攻击，6月起已沦陷数千网站",
+      "summary": "Joomla平台的iCagenda和Balbooa Forms插件被曝存在CVSS 10分的满分漏洞，自6月起已遭零日攻击并导致数千个网站受损。该漏洞允许攻击者获取网站完全控制权，但原文未披露漏洞的具体技术原理、触发条件及受影响的组件版本号。目前相关插件已发布安全更新，官方建议用户立即检查系统日志并升级至最新版本以缓解风险。",
+      "tags": [
+        "零日漏洞",
+        "Joomla",
+        "插件安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077817&idx=2&sn=d3699093e9aeb7929d0ab0216a911a04",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "CVSS 满分漏洞且已有大规模在途攻击，预警价值极高。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652077817&idx=2&sn=d3699093e9aeb7929d0ab0216a911a04",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/cisa-warns-of-actively-exploited-rce-flaws-in-joomla-extensions/",
+        "https://www.securityweek.com/organizations-warned-of-exploited-joomla-extension-vulnerabilities/"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 9.0,
+        "impact_scope": 8.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "AI 个人助手面临隐形内存注入攻击风险可导致用户记忆被恶意篡改",
+      "title_orig": "AI私人助手会被偷偷篡改记忆：揭秘隐形内存注入攻击",
+      "summary": "研究揭示了针对 AI 个人助手的隐形内存注入攻击，攻击者可以秘密篡改 AI 长期记忆中的饮食偏好、工作习惯等个人数据，从而在用户无感知的情况下改变 AI 的决策逻辑。由于此类 AI 助手通常具备自动处理邮件、整理日程及后台定时推送待办事项的功能，该攻击利用了交互式人工智能在自动化处理过程中的安全隐患，对用户的隐私和任务执行安全构成威胁。",
+      "tags": [
+        "AI安全",
+        "内存注入",
+        "提示词攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187670&idx=1&sn=e4cbd372c8518ba70dcb92c1e0d31e56",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T15:21:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 助手长期记忆机制中的新型安全威胁。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187670&idx=1&sn=e4cbd372c8518ba70dcb92c1e0d31e56",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 7.0,
+        "impact_scope": 7.0,
+        "relevance": 9.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.75,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "RabbitMQ 身份验证绕过漏洞威胁企业系统可导致 OAuth 客户端密钥泄露",
+      "title_orig": "RabbitMQ Vulnerability Threatens Enterprise Systems",
+      "summary": "RabbitMQ 消息代理软件被曝存在严重安全漏洞，未经身份验证的远程攻击者可以利用该缺陷获取服务器内部机密的 OAuth 客户端密钥，从而实现对整个代理服务的接管。通过掌握该密钥，攻击者能够控制企业内部的关键数据流转与系统集成逻辑，目前相关厂商已针对此威胁发布了安全预警，建议所有受影响版本的企业用户尽快采取缓解措施以保护其基础设施。",
+      "tags": [
+        "RabbitMQ",
+        "身份验证绕过",
+        "凭据泄露"
+      ],
+      "url": "https://www.securityweek.com/rabbitmq-vulnerability-threatens-enterprise-systems/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "核心中间件漏洞，直接威胁企业级消息队列的安全控制。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/rabbitmq-vulnerability-threatens-enterprise-systems",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "actionability": 8.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "面向渗透测试 Agent 的任务失效化蜜罐技术探索与防御策略",
+      "title_orig": "【AI赋能安全】面向渗透 Agent 的任务失效化蜜罐探索",
+      "summary": "本文探索了一种面向渗透 Agent 的任务失效化蜜罐技术，其核心价值在于通过干扰任务闭环，使攻击 Agent 在受控环境中持续偏航、消耗资源并最终失去有效攻击方向。该技术不追求传统的一次性欺骗效果，而是通过让自动化工具在虚假目标中陷入无效循环，为防御方应对日益增长的 AI 自动化渗透威胁提供了全新的对抗思路、实验数据以及系统性的防御框架。",
+      "tags": [
+        "蜜罐技术",
+        "AI对抗",
+        "主动防御"
+      ],
+      "url": "https://xz.aliyun.com/news/92504",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-07-12T07:36:16+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对 AI 渗透工具的防御创新，具有前瞻性的对抗价值。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92504",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92504"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 8.0,
+        "impact_scope": 7.0,
+        "relevance": 9.0,
+        "exploitability": 6.0
+      },
+      "dimension_score": 7.65,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Microsoft Entra ID 环境下 OAuth 客户端 ID 欺骗技术可实现云端隐蔽访问",
+      "title_orig": "Novel OAuth Client ID Spoofing Technique Targets Cloud Environments",
+      "summary": "最新研究发现攻击者可以在 Microsoft Entra ID 环境中伪造 OAuth 客户端 ID，从而在云环境中建立一条极其隐蔽的攻击路径，实现对基础设施的持久化访问。这种新型的欺骗技术允许攻击者绕过现有的部分安全审计机制，对企业云安全架构构成严重潜在威胁，原文详细分析了该身份伪造技术的实现原理，并探讨了在复杂云环境下如何识别并防御此类高级持续性威胁。",
+      "tags": [
+        "OAuth",
+        "云安全",
+        "身份欺骗"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/novel-spoofing-technique-targets/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T13:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了主流云服务身份认证机制中的新型逻辑缺陷。",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/novel-spoofing-technique-targets",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 7.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Zimbra 修复严重代码执行漏洞，攻击者可通过特制邮件远程触发恶意代码",
+      "title_orig": "Zimbra Patches Critical Code Execution Vulnerability",
+      "summary": "该漏洞源于 Zimbra 邮件服务器对邮件内容的解析缺陷，攻击者通过发送包含恶意代码的特制电子邮件，在用户打开邮件时即可触发代码执行。原文未披露具体的漏洞编号、影响版本及技术细节，但确认该漏洞属于严重级别且可能导致服务器权限失控。目前官方已发布相关补丁，建议受影响的用户尽快完成系统更新以缓解潜在的安全风险。",
+      "tags": [
+        "Zimbra",
+        "代码执行",
+        "邮件安全"
+      ],
+      "url": "https://www.securityweek.com/zimbra-patches-critical-code-execution-vulnerability/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T10:03:47+00:00",
+      "cve_ids": [],
+      "selection_reason": "Zimbra作为常用邮件系统，其RCE漏洞具有极高的实战威胁",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/zimbra-patches-critical-code-execution-vulnerability",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "actionability": 9.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.1,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "揭秘利用苹果 Find My 网络构建物理隔离环境下的蓝牙隐蔽数据传输通道",
+      "title_orig": "物理隔离也能传数据？揭秘苹果Find My网络的隐蔽数据通道",
+      "summary": "本文深入探讨了在物理隔离、无 WiFi 及手机信号的环境下，如何利用植入的微型蓝牙硬件接入苹果 Find My 众包网络实现数据外泄。该技术利用了苹果设备间自动转发位置信息的协议特性，将敏感数据封装在广播包中，通过周围的苹果设备作为中继传回攻击者控制的服务器。这种隐蔽通道绕过了传统网络监控，为物理隔离系统的安全防护提出了全新的挑战。",
+      "tags": [
+        "物理隔离",
+        "Find My",
+        "隐蔽通道"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI4NDY2MDMwMw==&mid=2247516256&idx=2&sn=0c23410474886ed46fdb6b28998975f6",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T09:36:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了利用合法众包网络进行数据窃取的创新隐蔽通信技术。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d5eb8577bf93aacdd7481ad0c3364939096b99a1.xml",
+      "feed_title": "互联网安全内参",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d5eb8577bf93aacdd7481ad0c3364939096b99a1.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI4NDY2MDMwMw%3D%3D&mid=2247516256&idx=2&sn=0c23410474886ed46fdb6b28998975f6",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "actionability": 6.0,
+        "impact_scope": 7.0,
+        "relevance": 8.0,
+        "exploitability": 6.0
+      },
+      "dimension_score": 7.45,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "新型 MemGhost 攻击可通过单封邮件向 AI 智能体植入持久化虚假记忆",
+      "title_orig": "New MemGhost Attack Plants Persistent False Memories in AI Agents Through One Email",
+      "summary": "MemGhost 攻击针对具有长期记忆和收件箱访问权限的 AI 助手，攻击者通过发送一封特制邮件，诱导 AI 智能体将虚假事实保存至其长期记忆库中。该攻击能够隐蔽地修改 AI 对用户的认知，并在后续对话中持续引导 AI 给出受控的错误回答，而用户在阅读看似正常的回复时难以察觉其助手已被篡改。这种针对 AI 逻辑层的持久化投毒攻击，暴露了当前 AI 智能体在处理外部不可信输入时的安全脆弱性。",
+      "tags": [
+        "AI安全",
+        "MemGhost",
+        "提示注入"
+      ],
+      "url": "https://thehackernews.com/2026/07/new-memghost-attack-plants-persistent.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-13T13:49:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对AI长期记忆的新型攻击向量，具有前瞻性研究价值。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/07/new-memghost-attack-plants-persistent.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 7.0,
+        "impact_scope": 7.0,
+        "relevance": 9.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.75,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "系统梳理提示注入与 AI Agent 安全领域的核心理论、攻击方法与防御框架",
+      "title_orig": "提示注入与Agent安全",
+      "summary": "本文对提示注入（Prompt Injection）与 AI Agent 安全进行了深度技术复盘，系统性地分类了直接注入与间接注入等核心攻击手段。文章详细分析了 AI Agent 在自动化执行任务时，如何因解析不受控的外部输入而导致权限提升或数据泄露，并探讨了当前主流的防御策略与理论模型。这对于安全从业者理解大模型应用层的攻击面，以及构建更安全的 AI 自动化工作流具有重要的参考意义。",
+      "tags": [
+        "提示注入",
+        "AI Agent",
+        "大模型安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247496898&idx=1&sn=ea12b7c4021c16705d724bec4c691efd",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-12T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统性总结了AI Agent安全的核心技术点，适合作为技术参",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247496898&idx=1&sn=ea12b7c4021c16705d724bec4c691efd",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 6.0,
+        "impact_scope": 7.0,
+        "relevance": 8.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.4,
+      "final_score": 8.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "工信部 NVDB 预警 Anthropic 公司 AI 编程工具 Claude Code 存在安全后门风险",
+      "title_orig": "观点 | 谨防境外AI“后门”风险",
+      "summary": "工业和信息化部网络安全威胁和漏洞信息共享平台发布提示，指出Anthropic公司AI编程工具Claude Code存在安全“后门”隐患。该漏洞源于工具在辅助编写代码时可能被植入恶意逻辑或预留未授权访问通道，原文未披露具体漏洞原理、触发条件及受影响的具体版本号。目前官方建议通过加强AI生成代码安全审计进行缓解，原文未披露官方补丁发布状态。",
+      "tags": [
+        "Claude C",
+        "AI后门",
+        "供应链安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA==&mid=2664264610&idx=5&sn=e60e0136e7dd1d293d2f1c85b2f5983b",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T10:22:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "国内权威机构针对主流AI编程工具发布的风险预警，值得关注。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/567cb1a8cf49f3e2c141d9d8085712f42ffc2fef.xml",
+      "feed_title": "中国信息安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/567cb1a8cf49f3e2c141d9d8085712f42ffc2fef.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA%3D%3D&mid=2664264610&idx=5&sn=e60e0136e7dd1d293d2f1c85b2f5983b",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 5.0,
+        "actionability": 7.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0,
+        "exploitability": 6.0
+      },
+      "dimension_score": 7.0,
+      "final_score": 7.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "黑客伪造学术研讨会资料投放 RokRAT 间谍软件，精准打击安全研究人员",
+      "title_orig": "【安全圈】学术论文变成武器：黑客伪造真实研讨会资料，向研究人员投放 RokRAT",
+      "summary": "攻击者通过伪造真实的学术研讨会邀请函和相关会议资料，利用社会工程学手段向特定研究人员发送包含恶意附件的邮件。一旦受害者下载并打开看似合法的附件，系统将被植入 RokRAT 间谍软件，导致敏感信息被窃取及终端受控。这种利用真实学术背景作为掩护的攻击方式，显著提高了钓鱼攻击的成功率，反映了针对特定高价值目标群体（如科研人员）的定向攻击趋势。",
+      "tags": [
+        "RokRAT",
+        "社会工程学",
+        "定向攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077817&idx=3&sn=ca12b56a5d9434bfa32cebf100eb89a9",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对安全研究群体的精准钓鱼手法，具有警示意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652077817&idx=3&sn=ca12b56a5d9434bfa32cebf100eb89a9",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "actionability": 7.0,
+        "impact_scope": 6.0,
+        "relevance": 8.0,
+        "exploitability": 6.0
+      },
+      "dimension_score": 6.85,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Progress Software 警告 ShareFile 存储区控制器面临外部安全威胁并建议停机",
+      "title_orig": "Progress Software Warns of \"External Security Threat\" to ShareFile",
+      "summary": "Progress Software 发布紧急预警，称其文件共享解决方案 ShareFile 的存储区控制器（Storage Zone Controller）正面临严重的外部安全威胁。官方强烈建议客户立即关闭托管该控制器的服务器，以防止潜在的数据泄露或未授权访问。目前原文未披露漏洞的具体 CVE 编号或攻击利用细节，但强调了采取物理停机措施的紧迫性，相关补丁或进一步缓解方案仍在处理中。",
+      "tags": [
+        "ShareFil",
+        "漏洞预警",
+        "数据安全"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/progress-warns-security-threat/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T12:05:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "知名企业级文件共享工具的紧急预警，涉及核心数据资产安全。",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/progress-warns-security-threat",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 5.0,
+        "actionability": 9.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0,
+        "exploitability": 6.0
+      },
+      "dimension_score": 7.2,
+      "final_score": 7.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

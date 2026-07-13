@@ -1,22 +1,22 @@
 # Source Registry Audit
 
-- generated_for: 2026-07-13
-- dates: 2026-07-13, 2026-07-12, 2026-07-11, 2026-07-10, 2026-07-09, 2026-07-08, 2026-07-07
+- generated_for: 2026-07-14
+- dates: 2026-07-14, 2026-07-13, 2026-07-12, 2026-07-11, 2026-07-10, 2026-07-09, 2026-07-08
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 97 | 14 | 20 | 63 | 0 | 2 | 14 | 43 | 14 |
-| ai_security | 61 | 1 | 0 | 60 | 0 | 6 | 1 | 4 | 23 |
-| finance | 70 | 10 | 0 | 60 | 0 | 12 | 10 | 0 | 0 |
-| security | 105 | 11 | 0 | 93 | 1 | 0 | 11 | 1 | 62 |
+| ai | 97 | 13 | 18 | 66 | 0 | 3 | 13 | 41 | 17 |
+| ai_security | 59 | 1 | 0 | 58 | 0 | 5 | 1 | 4 | 27 |
+| finance | 70 | 13 | 0 | 57 | 0 | 11 | 13 | 0 | 0 |
+| security | 105 | 10 | 0 | 94 | 1 | 0 | 10 | 1 | 58 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `vipread.com` | 1 | security | [WgpSec 发布 Alkaid 智能体框架，探索 AI 在全自主攻防场景的工程化落地](https://vipread.com/library/topic/4153) |
+| `vipread.com` | 1 | security | [WgpSec发布Alkaid智能体框架，探索AI在全自主攻防场景中的工程化落地](https://vipread.com/library/topic/4153) |
 
 ## Review Rule
 
