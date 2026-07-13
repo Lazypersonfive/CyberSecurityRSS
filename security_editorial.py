@@ -143,8 +143,8 @@ def adjust_ai_security_score(entry: Any, score: int) -> int:
 
     Tiering (Direction 2 in tasks/current_state_2026-06-11.md):
     - not about AI at all       -> cap 3 (belongs on the security board)
-    - AI without a mechanism    -> cap 4 (generic AI news, 宁缺毋滥)
-    - AI + concrete mechanism   -> keep the LLM score
+    - AI without security fit   -> cap 3 (generic AI news, below backfill)
+    - AI + security context     -> keep the LLM score
     - strong AI-security signal -> floor at 6 so terse technical posts the
       LLM underrates still reach the candidate pool
     """
@@ -155,9 +155,9 @@ def adjust_ai_security_score(entry: Any, score: int) -> int:
     if not AI_CONTEXT_RE.search(text):
         return min(score, 3)
     if AI_SEC_LOW_VALUE_RE.search(text):
-        return min(score, 4)
+        return min(score, 3)
     if not AI_SEC_CONTEXT_RE.search(text) and not AI_SEC_MECHANISM_RE.search(text):
-        return min(score, 4)
+        return min(score, 3)
     if AI_SEC_STRONG_RE.search(text):
         return max(score, 6)
     return score

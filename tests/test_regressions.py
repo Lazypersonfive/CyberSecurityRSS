@@ -1625,8 +1625,8 @@ class GeminiPipelineTests(unittest.TestCase):
 
         # No AI context at all -> belongs on security board, cap 3
         self.assertEqual(adjust_ai_security_score(not_ai, 8), 3)
-        # AI context but no concrete security mechanism -> cap 4
-        self.assertEqual(adjust_ai_security_score(generic_ai, 8), 4)
+        # AI context but no security relevance -> below the backfill floor.
+        self.assertEqual(adjust_ai_security_score(generic_ai, 8), 3)
         self.assertEqual(adjust_ai_security_score(technical, 8), 8)
         # Broad but genuine AI-security analysis keeps the LLM score; only a
         # concrete mechanism can promote a low score to the floor.
@@ -1676,8 +1676,8 @@ class GeminiPipelineTests(unittest.TestCase):
             "summary": "The dispute concerns commercial claims between two vendors.",
         }
 
-        self.assertEqual(adjust_ai_security_score(marketing, 8), 4)
-        self.assertEqual(adjust_ai_security_score(lawsuit, 8), 4)
+        self.assertEqual(adjust_ai_security_score(marketing, 8), 3)
+        self.assertEqual(adjust_ai_security_score(lawsuit, 8), 3)
 
     def test_finance_editorial_requires_financial_context(self) -> None:
         generic_ai = {
@@ -1738,8 +1738,8 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertGreaterEqual(board["source_policy"]["min_direct"], 4)
         self.assertEqual(board["source_policy"]["max_aggregator"], 5)
         self.assertFalse(board["source_policy"]["relax_aggregate_caps"])
-        self.assertEqual(board["fill_score_floor"], 5)
-        self.assertEqual(board["source_policy"]["min_final_score"], 5.0)
+        self.assertEqual(board["fill_score_floor"], 4)
+        self.assertEqual(board["source_policy"]["min_final_score"], 4.0)
         self.assertTrue(Path(board["opml"]).exists())
 
     def test_board_output_targets_match_current_editorial_policy(self) -> None:

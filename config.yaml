@@ -118,14 +118,14 @@ boards:
     max_per_feed: 8       # Google News AI Security 周产 160+，截最新 8 条足够
     top_n: 10
     score_threshold: 6
-    fill_score_floor: 5  # 5 分技术分析可补位；泛 AI/营销项已被确定性规则压到 4 分以下
+    fill_score_floor: 4  # 4 分 AI 安全分析可补位；泛 AI/营销项由确定性规则压到 3 分
     source_policy:
       min_chinese: 2
       min_direct: 4
       max_google_news: 2
       max_aggregator: 5   # XSignals 最多约半数；Google News 仍单独压低
       max_per_source: 3
-      min_final_score: 5.0
+      min_final_score: 4.0
       allow_cap_relaxation: true
       relax_aggregate_caps: false # 稀疏日可放开单源 cap，但不能突破 Google News / 聚合源上限
     source_caps:
