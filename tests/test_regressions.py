@@ -1313,6 +1313,28 @@ class StoryClusteringTests(unittest.TestCase):
 
         self.assertEqual(len(clustered), 1)
 
+    def test_cluster_merges_same_narrow_product_vulnerability_disclosure(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "从路由器到服务器：潜伏 13 年的 U-Boot 漏洞曝光",
+                    "url": "https://example.cn/uboot-analysis",
+                },
+                9,
+            ),
+            (
+                {
+                    "title": "新发现的 U-Boot 漏洞可导致隐秘固件攻击",
+                    "url": "https://example.com/uboot-flaws",
+                },
+                9,
+            ),
+        ]
+
+        clustered, _merged = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 1)
+
     def test_story_id_prefers_cve_key(self) -> None:
         entry = {
             "title": "Exploit for CVE-2026-12345 released",

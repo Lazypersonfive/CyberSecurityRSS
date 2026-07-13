@@ -28,7 +28,7 @@ STOPWORDS = {
 ANCHOR_TOKENS = {
     "openai", "chatgpt", "gpt", "codex", "anthropic", "claude", "google", "gemini",
     "deepseek", "microsoft", "windows", "apple", "linux", "kernel",
-    "cisco", "fortinet", "ivanti", "palo", "zscaler", "sap", "github",
+    "cisco", "fortinet", "ivanti", "palo", "zscaler", "sap", "github", "u-boot",
     "visa", "mastercard", "stripe", "paypal", "alipay", "wechat",
 }
 SOURCE_KIND_RANK = {
@@ -42,6 +42,8 @@ SOURCE_KIND_RANK = {
     "community": 10,
     "google_news": -20,
 }
+NARROW_PRODUCT_TOKENS = {"u-boot"}
+VULNERABILITY_TOPIC_TOKENS = {"漏洞", "flaw", "flaws", "cve", "zero-day", "0day"}
 
 
 def story_id_for_entry(entry: dict[str, Any]) -> str:
@@ -204,7 +206,7 @@ def _same_title_story(left: set[str], right: set[str]) -> bool:
         return False
     shared = left & right
     if len(shared) < 3:
-        return False
+        return bool(shared & NARROW_PRODUCT_TOKENS and shared & VULNERABILITY_TOPIC_TOKENS)
     shared_anchors = shared & ANCHOR_TOKENS
     if not shared_anchors:
         return False
@@ -212,6 +214,8 @@ def _same_title_story(left: set[str], right: set[str]) -> bool:
     right_without_anchor = right - shared_anchors
     shared_without_anchor = left_without_anchor & right_without_anchor
     if len(shared_without_anchor) < 2:
+        if shared_anchors & NARROW_PRODUCT_TOKENS and shared & VULNERABILITY_TOPIC_TOKENS:
+            return True
         return False
     if len(shared_without_anchor) >= 4:
         return True
