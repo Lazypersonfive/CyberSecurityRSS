@@ -169,19 +169,19 @@
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| Endor Labs | 7/7 | 36 | 4.8 | 14 | 2 |
+| Endor Labs | 7/7 | 36 | 4.8 | 15 | 2 |
 | 安全客 | 7/7 | 33 | 4.2 | 10 | 0 |
 | Seebug Paper | 6/6 | 8 | 7.3 | 7 | 0 |
+| Aikido Security | 7/7 | 16 | 4.1 | 7 | 0 |
 | 先知社区 | 6/6 | 30 | 3.3 | 7 | 1 |
-| Aikido Security | 7/7 | 16 | 4.1 | 6 | 0 |
 | Google News AI Security | 6/6 | 48 | 3.9 | 6 | 1 |
 | X / Johann Rehberger | 4/4 | 6 | 6.0 | 3 | 0 |
 | Snyk Blog | 3/3 | 3 | 4.0 | 3 | 0 |
 | Prompt Security | 4/4 | 4 | 4.0 | 2 | 0 |
-| Simon Willison | 7/7 | 50 | 2.7 | 2 | 1 |
+| Simon Willison | 7/7 | 50 | 2.8 | 2 | 1 |
 | OpenAI News | 6/6 | 29 | 2.3 | 1 | 0 |
 | X / rez0 | 7/7 | 53 | 1.4 | 1 | 0 |
-| Google News 中文 AI安全 | 6/6 | 47 | 4.3 | 0 | 0 |
+| Google News 中文 AI安全 | 6/6 | 47 | 4.7 | 0 | 0 |
 | Trail of Bits | 3/3 | 3 | 3.0 | 0 | 0 |
 | 娜璋AI安全之家 | 3/3 | 3 | 3.0 | 0 | 0 |
 | X / Trail of Bits | 6/6 | 9 | 2.9 | 0 | 0 |
@@ -614,7 +614,7 @@
 - [ai_security] X / rez0：raw=53，avg=1.4，入选=1
 - [ai_security] OpenAI News：raw=29，avg=2.3，入选=1
 - [ai_security] Unit 42：raw=6，avg=2.7，入选=0
-- [ai_security] Simon Willison：raw=50，avg=2.7，入选=2
+- [ai_security] Simon Willison：raw=50，avg=2.8，入选=2
 - [ai_security] X / Trail of Bits：raw=9，avg=2.9，入选=0
 - [security] maurycyz.com：raw=8，avg=0.0，入选=0
 - [security] Xe Iaso：raw=6，avg=0.0，入选=0

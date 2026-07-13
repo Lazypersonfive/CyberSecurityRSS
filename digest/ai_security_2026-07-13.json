@@ -2,19 +2,20 @@
   "board": "ai_security",
   "display_name": "AI 安全",
   "date": "2026-07-13",
-  "generated_at": "2026-07-13T06:17:40.633864Z",
+  "generated_at": "2026-07-13T06:20:44.264310Z",
   "raw_count": 28,
-  "selected_count": 3,
+  "selected_count": 5,
   "selection_stats": {
-    "total": 3,
-    "google_news": 1,
+    "total": 5,
     "aggregator": 2,
-    "tier_t2": 3,
-    "kind_google_news": 1,
+    "tier_t2": 5,
     "kind_expert_x": 1,
+    "google_news": 1,
+    "kind_google_news": 1,
     "chinese": 1,
-    "direct": 1,
-    "kind_cn_expert": 1
+    "direct": 3,
+    "kind_cn_expert": 1,
+    "kind_expert": 2
   },
   "clustering_stats": {
     "deterministic_merged": 0,
@@ -28,20 +29,61 @@
   },
   "items": [
     {
-      "title_zh": "GhostCommit攻击通过在PNG图片中隐藏提示词注入攻击，旨在窃取开发者的敏感凭据",
+      "title_zh": "安全研究员发布 Ghost Font 字体工具，利用视觉差异绕过大语言模型内容识别",
+      "title_orig": "the differential between what humans and bots understand is almost zero now. one i used last year for an exploit was emoji squares to make a QR code. ...",
+      "summary": "研究员 Eric Lu 开发了一种名为 Ghost Font 的特殊字体，旨在利用人类视觉识别与大语言模型文本解析之间的差异实现对抗攻击。该技术通过将字符渲染为人类可读但模型无法正确解码的视觉形式，在 GPT-5.6 Sol Ultra 等模型测试中成功使其无法识别真实内容。这种方法类似于此前利用 Emoji 方块构造 QR 码的思路，揭示了多模态模型在处理非标准字符编码时的安全边界缺陷。",
+      "tags": [
+        "对抗样本",
+        "大模型安全",
+        "绕过技术"
+      ],
+      "url": "https://x.com/rez0__/status/2076288186586661368",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-12T12:50:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用人类与AI感知差异进行对抗攻击的新颖思路。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2076288186586661368",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "security_relevance": 9.0,
+        "actionability": 7.0,
+        "practical_risk": 8.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 8.35,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GhostCommit 攻击利用 PNG 图片隐藏提示词注入，旨在窃取开发者敏感凭据",
       "title_orig": "GhostCommit Attack Hides Prompt Injection in PNG to Steal Developer Secrets - cyberpress.org",
-      "summary": "研究人员发现一种名为GhostCommit的新型攻击方式，攻击者通过在PNG图像文件的元数据或像素数据中嵌入恶意提示词注入指令，并将其提交至代码仓库。当开发者使用集成AI辅助工具的IDE处理这些包含恶意图片的提交记录时，AI模型可能被诱导执行非法指令，从而导致开发者的API密钥、访问令牌等敏感秘密信息被泄露，目前该风险主要影响依赖AI进行代码审查的自动化工作流。",
+      "summary": "GhostCommit 是一种新型攻击手段，攻击者通过在 PNG 图像文件中隐写恶意提示词注入指令，并将其提交至代码仓库。当自动化开发工具或 AI 助手解析这些包含恶意指令的图片时，可能触发非预期的操作，导致开发者的 API 密钥、访问令牌等敏感秘密被泄露。目前该攻击主要针对集成 AI 辅助功能的开发工作流，利用了模型对多媒体附件处理过程中的信任漏洞，原文未披露具体受影响的工具列表。",
       "tags": [
         "提示词注入",
-        "供应链安全",
-        "AI安全"
+        "凭据窃取",
+        "供应链安全"
       ],
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1uYmpKcHNnTDhpQlhibjZ2bzVrSWcweVktRzdPUV9PNEVPRlo5eTZWZGZHbXUtT2ZwVGkwMTA1TUY5R2Y3Y2lzRHZKSnBCcjlLUE1CdXpxYmtOYkVOSW96MnctY3F1RXpqN1pHZ2lqc1MydnM?oc=5",
       "source": "news.google.com",
       "category": "CoverageFallback",
       "published": "2026-07-13T05:41:08+00:00",
       "cve_ids": [],
-      "selection_reason": "揭示了利用多模态数据对AI辅助开发工具进行攻击的新路径。",
+      "selection_reason": "揭示了 AI 辅助开发工具在处理多媒体文件时的隐蔽攻击向量。",
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Security",
       "source_tier": "t2",
@@ -53,14 +95,14 @@
       "related_count": 0,
       "score": 9,
       "score_dimensions": {
-        "practical_risk": 9.0,
-        "technical_depth": 8.0,
-        "agent_model_relevance": 9.0,
+        "technical_depth": 9.0,
         "security_relevance": 10.0,
-        "actionability": 8.0
+        "actionability": 8.0,
+        "practical_risk": 9.0,
+        "agent_model_relevance": 10.0
       },
-      "dimension_score": 8.95,
-      "final_score": 8.05,
+      "dimension_score": 9.35,
+      "final_score": 8.45,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": -1.2,
@@ -69,61 +111,20 @@
       }
     },
     {
-      "title_zh": "安全研究员利用Ghost Font字体和表情符号构造视觉差异，成功绕过大语言模型的文本理解",
-      "title_orig": "the differential between what humans and bots understand is almost zero now. one i used last year for an exploit was emoji squares to make a QR code. ...",
-      "summary": "安全研究员Eric Lu和rez0展示了利用人类与大语言模型（LLM）视觉感知差异进行对抗攻击的技术，包括使用表情符号方块构造人类可识别但模型无法解析的QR码。此外，通过开发名为Ghost Font的特殊字体，研究者成功实现了仅人类可读而GPT等先进模型无法正确解码的文本，这种利用字符渲染差异的手段可被用于规避模型的内容安全过滤机制或执行隐蔽指令注入。",
-      "tags": [
-        "对抗性攻击",
-        "大模型绕过",
-        "视觉欺骗"
-      ],
-      "url": "https://x.com/rez0__/status/2076288186586661368",
-      "source": "x.com",
-      "category": "XSignals",
-      "published": "2026-07-12T12:50:53+00:00",
-      "cve_ids": [],
-      "selection_reason": "展示了利用人类与AI感知差异进行绕过攻击的创新技术点。",
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0",
-      "source_tier": "t2",
-      "source_kind": "expert_x",
-      "source_label": "安全专家 X",
-      "source_key": "x:rez0__",
-      "story_id": "url:x.com/rez0__/status/2076288186586661368",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 7,
-      "score_dimensions": {
-        "practical_risk": 7.0,
-        "technical_depth": 6.0,
-        "agent_model_relevance": 9.0,
-        "security_relevance": 8.0,
-        "actionability": 5.0
-      },
-      "dimension_score": 7.15,
-      "final_score": 7.45,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": 0.2,
-        "freshness_bonus": 0.1,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "安全研究机构发布智能体面临的十大安全风险，涵盖提示词注入与供应链漏洞等核心威胁",
+      "title_zh": "安全专家总结智能体面临的十大安全风险，涵盖提示词注入与数据泄露等核心挑战",
       "title_orig": "智能体面临的十大安全风险问题",
-      "summary": "该报告系统性地梳理了智能体（Agent）在实际应用中面临的十大安全挑战，重点分析了提示词注入、不安全的输出处理、敏感信息泄露以及第三方插件带来的供应链风险。文章详细阐述了智能体因具备自主决策和工具调用能力，在缺乏严格边界控制时可能被攻击者利用执行越权操作或破坏底层系统，并针对性地提出了多层防御架构与输入验证等缓解措施，旨在提升AI自动化系统的鲁棒性。",
+      "summary": "本文系统性地梳理了 AI 智能体（Agent）在实际应用中面临的十种关键安全威胁，重点分析了从底层模型到上层应用的风险传递路径。风险点包括但不限于恶意提示词注入导致的逻辑篡改、敏感数据在交互过程中的非授权泄露，以及智能体在执行自动化任务时的权限失控问题。文章强调了在构建 Agent 架构时需同步建立安全防御机制，但原文未针对每项风险提供具体的代码级修复方案或漏洞实例。",
       "tags": [
         "智能体安全",
         "风险评估",
-        "防御框架"
+        "AI安全"
       ],
       "url": "https://www.anquanke.com/post/id/315781",
       "source": "anquanke.com",
       "category": "Chinese",
       "published": "2026-07-10T20:48:53+00:00",
       "cve_ids": [],
-      "selection_reason": "系统总结了当前AI Agent领域最前沿的安全风险模型。",
+      "selection_reason": "系统性总结了当前 AI Agent 领域最受关注的安全风险框",
       "feed_url": "https://api.anquanke.com/data/v1/rss",
       "feed_title": "安全客",
       "source_tier": "t2",
@@ -135,19 +136,101 @@
       "related_count": 0,
       "score": 6,
       "score_dimensions": {
-        "practical_risk": 6.0,
         "technical_depth": 5.0,
-        "agent_model_relevance": 9.0,
-        "security_relevance": 8.0,
-        "actionability": 4.0
+        "security_relevance": 9.0,
+        "actionability": 5.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 10.0
       },
-      "dimension_score": 6.6,
-      "final_score": 7.2,
+      "dimension_score": 7.35,
+      "final_score": 7.95,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.3,
         "freshness_bonus": 0.0,
         "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Endor Labs 入选 Forrester 智能体开发安全工具景观报告，聚焦 AI 驱动的代码安全",
+      "title_orig": "Endor Labs Recognized in the Forrester Agentic Development Security Tools Landscape | Blog | Endor Labs",
+      "summary": "Endor Labs 近期被 Forrester 纳入智能体开发安全工具（Agentic Development Security Tools）市场研究报告，标志着该领域安全治理进入专业化阶段。该工具主要解决 AI 辅助编程过程中引入的第三方依赖风险及代码合规性问题，通过自动化分析提升开发流程的安全性。原文重点强调了其在行业评估中的地位，未详细披露其底层静态分析算法或针对特定 AI 漏洞的检测逻辑，主要面向企业级安全合规场景。",
+      "tags": [
+        "开发安全",
+        "AI工具链",
+        "行业动态"
+      ],
+      "url": "https://www.endorlabs.com/learn/endor-labs-recognized-in-the-forrester-agentic-development-security-tools-landscape",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-10T19:08:56+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了安全业界对 AI 辅助开发工具安全治理的最新市场趋势。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/endor-labs-recognized-in-the-forrester-agentic-development-security-tools-landscape",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "technical_depth": 4.0,
+        "security_relevance": 7.0,
+        "actionability": 3.0,
+        "practical_risk": 5.0,
+        "agent_model_relevance": 8.0
+      },
+      "dimension_score": 5.6,
+      "final_score": 5.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI 辅助编程下的代码质量维护指南：应对 Vibe Coding 带来的技术债与安全风险",
+      "title_orig": "How to maintain code quality standards with AI code and vibe coding",
+      "summary": "针对当前流行的 Vibe Coding（依赖 AI 快速生成代码）现象，本文探讨了如何在保持开发速度的同时维持代码质量标准。由于 AI 生成的代码往往伴随着审查债务和潜在的安全隐患，文章建议采用基于基准测试和逐条规则的代码质量检查机制，在 PR 阶段实施一致性的自动化审计。这种方法旨在解决 AI 编程中常见的逻辑不一致和安全配置错误，确保在快速交付功能的同时，不会因缺乏人工深度参与而引入系统性漏洞。",
+      "tags": [
+        "代码审计",
+        "AI编程安全",
+        "质量控制"
+      ],
+      "url": "https://www.aikido.dev/blog/code-quality-when-vibe-coding",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-07-13T01:36:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 快速开发模式下如何平衡交付速度与代码安全性。",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/code-quality-when-vibe-coding",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "score_dimensions": {
+        "technical_depth": 4.0,
+        "security_relevance": 5.0,
+        "actionability": 3.0,
+        "practical_risk": 4.0,
+        "agent_model_relevance": 6.0
+      },
+      "dimension_score": 4.5,
+      "final_score": 5.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
       }
     }
   ]
