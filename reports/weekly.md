@@ -192,15 +192,15 @@
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| X / dotey | 7/7 | 45 | 6.8 | 11 | 10 |
-| 量子位官网 | 7/7 | 67 | 6.1 | 11 | 1 |
+| 量子位官网 | 7/7 | 67 | 5.9 | 11 | 1 |
+| X / dotey | 7/7 | 45 | 7.0 | 10 | 10 |
 | X / Hugging Face | 6/6 | 46 | 6.7 | 10 | 0 |
 | NVIDIA Blog | 5/5 | 11 | 6.5 | 7 | 0 |
+| Simon Willison | 7/7 | 39 | 5.9 | 7 | 3 |
 | X / vLLM | 7/7 | 12 | 8.0 | 6 | 1 |
 | The Verge AI | 7/7 | 41 | 6.1 | 6 | 3 |
 | TechCrunch AI | 7/7 | 57 | 6.1 | 4 | 0 |
-| Simon Willison | 7/7 | 39 | 5.7 | 4 | 3 |
-| X / OpenAI Developers | 7/7 | 36 | 7.0 | 3 | 9 |
+| X / OpenAI Developers | 7/7 | 36 | 7.2 | 3 | 9 |
 | Latent Space | 5/5 | 11 | 7.0 | 3 | 2 |
 | arXiv cs.AI recent | 5/5 | 50 | 6.4 | 3 | 0 |
 | 新智元 | 6/6 | 42 | 6.1 | 3 | 1 |
@@ -209,23 +209,24 @@
 | arXiv cs.CL recent | 6/6 | 60 | 7.5 | 2 | 0 |
 | X / Google DeepMind | 3/3 | 3 | 7.3 | 2 | 0 |
 | Hugging Face Blog | 6/6 | 17 | 7.0 | 2 | 0 |
-| Google News 中文 AI | 6/6 | 60 | 6.4 | 2 | 8 |
+| Google News 中文 AI | 6/6 | 60 | 6.3 | 2 | 8 |
 | Ars Technica AI | 6/6 | 26 | 6.1 | 2 | 2 |
-| X / Ollama | 6/6 | 11 | 5.7 | 2 | 0 |
-| X / swyx | 7/7 | 36 | 4.9 | 2 | 1 |
 | X / trq212 | 7/7 | 23 | 4.5 | 2 | 1 |
 | MIT Tech Review AI | 6/6 | 26 | 3.7 | 2 | 0 |
+| Mistral (Google News) | 6/6 | 31 | 8.0 | 1 | 0 |
 | X / ChatGPT | 4/4 | 11 | 7.8 | 1 | 1 |
 | X / Meta AI | 4/4 | 18 | 7.2 | 1 | 9 |
 | Import AI | 2/2 | 2 | 7.0 | 1 | 0 |
-| X / Claude Developers | 7/7 | 16 | 5.9 | 1 | 1 |
+| X / Ollama | 6/6 | 11 | 5.7 | 1 | 0 |
+| X / swyx | 7/7 | 36 | 4.9 | 1 | 1 |
 | X / Google AI | 2/2 | 2 | 7.0 | 0 | 0 |
 | Apple ML Research | 6/6 | 31 | 6.6 | 0 | 0 |
 | X / LlamaIndex | 5/5 | 10 | 6.4 | 0 | 1 |
 | X / Boris Cherny | 4/4 | 7 | 6.3 | 0 | 0 |
+| Anthropic Coverage (Google News) | 6/6 | 60 | 6.0 | 0 | 1 |
 | 机器之心 | 2/2 | 2 | 6.0 | 0 | 0 |
-| Anthropic Coverage (Google News) | 6/6 | 60 | 5.9 | 0 | 1 |
-| X / Simon Willison | 5/5 | 15 | 5.6 | 0 | 3 |
+| X / Simon Willison | 5/5 | 15 | 5.8 | 0 | 3 |
+| X / Claude Developers | 7/7 | 16 | 5.6 | 0 | 1 |
 | OpenAI Blog | 5/5 | 19 | 5.2 | 0 | 0 |
 | Meta AI (Google News) | 6/6 | 60 | 5.0 | 0 | 0 |
 | Interconnects | 1/1 | 1 | 5.0 | 0 | 0 |
@@ -233,7 +234,6 @@
 | X / Mistral AI | 1/1 | 1 | 3.0 | 0 | 0 |
 | arXiv cs.LG recent | 5/5 | 50 | - | 0 | 0 |
 | Anthropic + Claude (first-party) | 5/5 | 32 | - | 0 | 0 |
-| Mistral (Google News) | 6/6 | 31 | - | 0 | 0 |
 | Cohere (Google News) | 6/6 | 21 | - | 0 | 0 |
 | PaperWeekly | 4/4 | 8 | - | 0 | 0 |
 | X / Anthropic | 2/2 | 3 | - | 0 | 0 |
