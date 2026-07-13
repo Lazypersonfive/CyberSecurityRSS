@@ -2,45 +2,47 @@
   "board": "security",
   "display_name": "安全",
   "date": "2026-07-13",
-  "generated_at": "2026-07-13T06:39:18.434869Z",
+  "generated_at": "2026-07-13T06:48:15.746847Z",
   "raw_count": 120,
   "selected_count": 15,
   "selection_stats": {
     "total": 15,
-    "chinese": 9,
+    "chinese": 6,
     "direct": 15,
-    "wechat": 6,
-    "tier_t2": 15,
-    "kind_cn_expert": 9,
-    "kind_media": 4,
-    "kind_expert": 2
+    "wechat": 5,
+    "tier_t2": 14,
+    "kind_cn_expert": 5,
+    "kind_media": 7,
+    "tier_unknown": 1,
+    "kind_expert": 2,
+    "kind_community": 1
   },
   "clustering_stats": {
     "deterministic_merged": 0,
-    "llm_merged": 1,
-    "merged_total": 1
+    "llm_merged": 0,
+    "merged_total": 0
   },
   "delivered_filter_stats": {
-    "url": 6,
-    "story": 2,
-    "total": 8
+    "url": 4,
+    "story": 1,
+    "total": 5
   },
   "items": [
     {
-      "title_zh": "开源引导加载程序 U-Boot 曝出潜伏 13 年的高危漏洞，威胁数百万嵌入式设备固件安全",
+      "title_zh": "Binarly 披露 U-Boot 引导加载程序潜伏 13 年高危漏洞，威胁数百万嵌入式设备安全",
       "title_orig": "【安全圈】从路由器到服务器：潜伏 13 年的 U-Boot 漏洞曝光，威胁数百万设备",
-      "summary": "安全公司Binarly披露了开源引导加载程序U-Boot中潜伏13年的六个安全漏洞，其原理涉及在设备启动阶段绕过安全验证。攻击者在具备物理接触或特定系统权限的触发条件下，可利用漏洞在企业服务器BMC、网络设备及物联网固件中执行恶意代码并植入持久性软件；原文未披露具体漏洞编号及技术细节，目前修复状态需关注官方更新。",
+      "summary": "安全公司 Binarly 披露了广泛使用的开源引导加载程序 U-Boot 中存在潜伏 13 年的严重漏洞。该漏洞源于固件处理逻辑缺陷，攻击者可利用其在受影响的路由器、服务器及嵌入式设备上实现持久化控制并绕过安全启动机制。目前该漏洞已影响数百万台设备，相关厂商正在紧急发布补丁以修复此底层安全隐患。",
       "tags": [
-        "U-Boot",
         "固件安全",
-        "引导加载程序"
+        "U-Boot",
+        "供应链安全"
       ],
       "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077805&idx=3&sn=25c8e82adf36c3d2c1df13e21c11b131",
       "source": "mp.weixin.qq.com",
       "category": "Synthesis",
       "published": "2026-07-12T11:00:00+00:00",
       "cve_ids": [],
-      "selection_reason": "揭示了供应链底层组件的长期安全隐患，对固件安全研究价值极高。",
+      "selection_reason": "揭示了底层固件供应链中长期存在的隐蔽风险。",
       "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
       "feed_title": "安全圈",
       "source_tier": "t2",
@@ -52,10 +54,10 @@
       "related_count": 0,
       "score": 8,
       "score_dimensions": {
-        "impact_scope": 10.0,
         "relevance": 10.0,
-        "exploitability": 8.0,
         "technical_depth": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 10.0,
         "actionability": 9.0
       },
       "dimension_score": 9.25,
@@ -68,95 +70,12 @@
       }
     },
     {
-      "title_zh": "RedHook Android 恶意软件新版本利用无线调试机制获取 Shell 权限并实现远程控制",
-      "title_orig": "RedHook Android 恶意软件新版本利用 Wireless ADB 获取 Shell 访问权限",
-      "summary": "研究人员发现 RedHook Android 恶意软件新版本通过滥用无线调试机制，实现了无需连接电脑即可获取 shell 级权限的技术突破，其功能较 2025 年前的版本有显著扩展。该软件保留了远程访问木马功能，支持屏幕直播、按键记录及自动化 UI 操作，这种利用系统原生调试功能进行提权的新颖方式，对移动安全防护构成了严峻挑战，值得从业者高度关注。",
-      "tags": [
-        "Android",
-        "无线调试",
-        "恶意软件"
-      ],
-      "url": "https://hackernews.cc/post/64455",
-      "source": "hackernews.cc",
-      "category": "Synthesis",
-      "published": "2026-07-13T02:01:00+00:00",
-      "cve_ids": [],
-      "selection_reason": "展示了利用 Android 原生调试机制进行免连接提权的新颖",
-      "feed_url": "http://hackernews.cc/feed",
-      "feed_title": "HackerNews",
-      "source_tier": "t2",
-      "source_kind": "cn_expert",
-      "source_label": "中文安全媒体",
-      "source_key": "hackernews.cc",
-      "story_id": "url:hackernews.cc/post/64455",
-      "related_urls": [
-        "https://www.bleepingcomputer.com/news/security/redhook-android-malware-now-uses-wireless-adb-for-shell-access/"
-      ],
-      "related_count": 1,
-      "score": 9,
-      "score_dimensions": {
-        "impact_scope": 8.0,
-        "relevance": 10.0,
-        "exploitability": 9.0,
-        "technical_depth": 9.0,
-        "actionability": 9.0
-      },
-      "dimension_score": 9.05,
-      "final_score": 9.95,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": 0.3,
-        "freshness_bonus": 0.3,
-        "cn_visibility_bonus": 0.3
-      }
-    },
-    {
-      "title_zh": "开源引导加载程序U-Boot发现六个高危漏洞，攻击者可利用固件攻击绕过安全防护并植入持久恶意软件",
-      "title_orig": "新发现的 U-Boot 漏洞可导致隐秘固件攻击",
-      "summary": "广泛应用于嵌入式Linux设备的U-Boot引导加载程序被发现存在六个安全漏洞，攻击者可利用这些漏洞在操作系统加载前的启动阶段执行恶意代码。该漏洞影响范围涵盖企业服务器基板管理控制器、工业系统及联网设备，通过破坏信任链核心实现隐秘的固件攻击并安装持久性恶意软件；原文未披露漏洞的具体原理、触发条件及修复补丁状态，仅明确了其对固件安全的潜在威胁。",
-      "tags": [
-        "漏洞",
-        "中文源"
-      ],
-      "url": "https://hackernews.cc/post/64456",
-      "source": "hackernews.cc",
-      "category": "Synthesis",
-      "published": "2026-07-13T02:01:00+00:00",
-      "cve_ids": [],
-      "selection_reason": "原始信源高分入选",
-      "feed_url": "http://hackernews.cc/feed",
-      "feed_title": "HackerNews",
-      "source_tier": "t2",
-      "source_kind": "cn_expert",
-      "source_label": "中文安全媒体",
-      "source_key": "hackernews.cc",
-      "story_id": "url:hackernews.cc/post/64456",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 8,
-      "score_dimensions": {
-        "impact_scope": 9.0,
-        "relevance": 10.0,
-        "exploitability": 8.0,
-        "technical_depth": 9.0,
-        "actionability": 9.0
-      },
-      "dimension_score": 9.05,
-      "final_score": 9.95,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": 0.3,
-        "freshness_bonus": 0.3,
-        "cn_visibility_bonus": 0.3
-      }
-    },
-    {
-      "title_zh": "Zimbra 协作平台修复存储型 XSS 漏洞，攻击者可通过特制邮件在用户会话中执行代码",
+      "title_zh": "Zimbra 经典 Web 客户端曝出存储型 XSS 漏洞，攻击者可通过恶意邮件执行任意代码",
       "title_orig": "Critical Zimbra Flaw Could Let Crafted Emails Run Malicious Code in User Sessions",
-      "summary": "Zimbra 官方发布紧急预警，敦促用户尽快更新其 Classic Web Client 以修复一个尚未分配 CVE 编号的严重存储型跨站脚本漏洞。该漏洞允许攻击者通过发送精心构造的电子邮件，在受害者的合法用户会话中秘密执行恶意脚本，进而实现浏览器会话内脚本执行的严重后果，目前官方已发布补丁并强调了升级的紧迫性，以防止用户敏感数据泄露或系统权限被接管。",
+      "summary": "Zimbra官方发布紧急预警，指出其经典Web客户端存在一个严重的存储型跨站脚本漏洞，目前该漏洞尚未被分配CVE编号。攻击者能够通过发送特制的恶意电子邮件，在受害者的用户会话中触发脚本执行，进而导致浏览器会话内脚本执行或敏感数据泄露。官方强烈敦促所有使用该组件的企业和个人用户尽快应用最新的安全更新，以有效缓解这一高危漏洞可能带来的网络安全风险。",
       "tags": [
         "Zimbra",
-        "存储型XSS",
+        "XSS漏洞",
         "代码执行"
       ],
       "url": "https://thehackernews.com/2026/07/critical-zimbra-flaw-could-let-crafted_0483473395.html",
@@ -164,7 +83,7 @@
       "category": "OfficialAdvisories",
       "published": "2026-07-11T06:45:55+00:00",
       "cve_ids": [],
-      "selection_reason": "高流行办公组件的严重漏洞预警，直接影响企业邮件系统安全。",
+      "selection_reason": "高流行邮件系统的严重漏洞，直接威胁企业办公安全。",
       "feed_url": "https://feeds.feedburner.com/TheHackersNews",
       "feed_title": "The Hacker News",
       "source_tier": "t2",
@@ -176,10 +95,10 @@
       "related_count": 0,
       "score": 9,
       "score_dimensions": {
-        "impact_scope": 9.0,
         "relevance": 10.0,
-        "exploitability": 9.0,
         "technical_depth": 8.0,
+        "exploitability": 9.0,
+        "impact_scope": 9.0,
         "actionability": 10.0
       },
       "dimension_score": 9.1,
@@ -192,41 +111,39 @@
       }
     },
     {
-      "title_zh": "威胁行为者利用 GitHub 长期休眠账户滥用 API 进行大规模组织与仓库信息侦察",
-      "title_orig": "幽灵账户滥用 GitHub API 进行大规模侦察活动",
-      "summary": "安全报告显示，攻击者正利用注册于两到五年前的“幽灵账户”网络，通过自动化扫描器滥用 GitHub API 系统性地枚举组织、仓库和用户数据。这些活动将恶意请求混杂在正常流量中，利用泄露的凭证进行持续数月的侦察，虽然针对的是公开数据，但其规模化和协调化的自动化手段为后续针对性攻击提供了情报支撑。",
+      "title_zh": "多国执法机构联合开展“终局行动”，成功摧毁 Amadey 与 StealC 恶意软件犯罪产业链",
+      "title_orig": "【AI复盘】Amadey + StealC 运营覆灭事件",
+      "summary": "欧洲刑警组织近期协调多国执法机构与安全企业，通过“终局行动”成功摧毁了运营时间超过七年的MaaS犯罪产业链。该链条由C++后门Amadey负责初始投递与持久化，并配合StealC窃取器系统性获取浏览器凭证、信用卡及Cookie数据，随后在地下市场变现。此次联合行动通过技术关停与基础设施接管，有效打击了涉及勒索软件入侵、金融欺诈和账户冒名登录的犯罪源头。",
       "tags": [
-        "GitHub",
-        "API滥用",
-        "自动化侦察"
+        "MaaS",
+        "执法行动",
+        "凭证窃取"
       ],
-      "url": "https://hackernews.cc/post/64454",
-      "source": "hackernews.cc",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487809&idx=1&sn=4371eda28ab490e8b5144674d48d76bf",
+      "source": "mp.weixin.qq.com",
       "category": "Synthesis",
-      "published": "2026-07-13T02:01:00+00:00",
+      "published": "2026-07-12T22:06:00+00:00",
       "cve_ids": [],
-      "selection_reason": "揭示了利用平台 API 进行大规模自动化情报搜集的隐蔽攻击手",
-      "feed_url": "http://hackernews.cc/feed",
-      "feed_title": "HackerNews",
+      "selection_reason": "展示了针对恶意软件服务化产业链的全球协同打击成果。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
       "source_tier": "t2",
       "source_kind": "cn_expert",
-      "source_label": "中文安全媒体",
-      "source_key": "hackernews.cc",
-      "story_id": "url:hackernews.cc/post/64454",
-      "related_urls": [
-        "https://www.securityweek.com/ghost-accounts-abuse-github-api-in-mass-recon-campaign/"
-      ],
-      "related_count": 1,
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ%3D%3D&mid=2247487809&idx=1&sn=4371eda28ab490e8b5144674d48d76bf",
+      "related_urls": [],
+      "related_count": 0,
       "score": 8,
       "score_dimensions": {
-        "impact_scope": 8.0,
         "relevance": 9.0,
-        "exploitability": 7.0,
         "technical_depth": 8.0,
-        "actionability": 8.0
+        "exploitability": 6.0,
+        "impact_scope": 8.0,
+        "actionability": 7.0
       },
-      "dimension_score": 8.05,
-      "final_score": 8.95,
+      "dimension_score": 7.75,
+      "final_score": 8.65,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.3,
@@ -235,53 +152,12 @@
       }
     },
     {
-      "title_zh": "提示注入与 AI Agent 安全核心理论梳理：系统分析大模型应用中的攻击方法与防御",
-      "title_orig": "提示注入与Agent安全",
-      "summary": "本文系统性地梳理了提示注入与 AI Agent 安全领域的核心理论，详细分析了针对大语言模型应用在自动化执行任务场景下的各类攻击方法。文章深入探讨了攻击者如何通过操纵输入指令来绕过安全限制，并针对 AI 应用层存在的风险点提供了防御体系构建的技术参考，旨在帮助安全从业者应对日益复杂的生成式人工智能安全威胁，提升系统的整体鲁棒性。",
-      "tags": [
-        "提示注入",
-        "AI安全",
-        "Agent"
-      ],
-      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247496898&idx=1&sn=ea12b7c4021c16705d724bec4c691efd",
-      "source": "mp.weixin.qq.com",
-      "category": "Synthesis",
-      "published": "2026-07-12T12:00:00+00:00",
-      "cve_ids": [],
-      "selection_reason": "系统性总结了当前 AI 安全领域最前沿的提示注入攻击与防御理",
-      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
-      "feed_title": "安全分析与研究",
-      "source_tier": "t2",
-      "source_kind": "cn_expert",
-      "source_label": "中文公众号",
-      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
-      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247496898&idx=1&sn=ea12b7c4021c16705d724bec4c691efd",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 8,
-      "score_dimensions": {
-        "impact_scope": 8.0,
-        "relevance": 9.0,
-        "exploitability": 7.0,
-        "technical_depth": 8.0,
-        "actionability": 7.0
-      },
-      "dimension_score": 7.95,
-      "final_score": 8.65,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": 0.3,
-        "freshness_bonus": 0.1,
-        "cn_visibility_bonus": 0.3
-      }
-    },
-    {
-      "title_zh": "Injective Labs SDK 遭遇供应链攻击，GitHub 仓库被植入加密货币钱包窃取器",
+      "title_zh": "Injective Labs GitHub 仓库遭攻陷，npm 生态 SDK 被植入加密货币钱包窃取器",
       "title_orig": "【安全圈】npm 上的 Injective SDK 被植入加密货币钱包窃取器",
-      "summary": "黑客近期攻陷了 Injective Labs SDK 项目的 GitHub 仓库，并在 npm 托管的官方开发工具包中植入了恶意的加密货币钱包窃取器，导致供应链安全受到严重威胁。该攻击通过污染合法依赖项，诱导开发者在构建应用时引入恶意代码，从而窃取最终用户的加密资产，目前相关恶意版本已被披露，开发者需立即检查项目依赖项的安全性并更新至不受影响的官方版本。",
+      "summary": "黑客通过攻陷Injective Labs的GitHub仓库，向其托管在npm官方仓库中的SDK项目植入恶意代码，利用供应链攻击手段窃取资产。该恶意脚本专门针对Node.js环境下的开发者，能够自动识别并窃取加密货币钱包的私钥及相关敏感凭证，造成严重的财务安全威胁。目前受影响的软件包已被安全团队识别，建议相关开发者立即检查项目依赖项并更新至安全版本，以防资产损失。",
       "tags": [
-        "npm",
         "供应链攻击",
+        "npm",
         "加密货币"
       ],
       "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077792&idx=2&sn=9b78889d6ba5653e90f745bb6288ff69",
@@ -289,7 +165,7 @@
       "category": "Synthesis",
       "published": "2026-07-11T11:00:00+00:00",
       "cve_ids": [],
-      "selection_reason": "典型的开源软件包供应链污染事件，涉及知名区块链项目开发工具。",
+      "selection_reason": "典型的开源仓库劫持事件，对区块链开发者具有警示意义。",
       "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
       "feed_title": "安全圈",
       "source_tier": "t2",
@@ -301,10 +177,10 @@
       "related_count": 0,
       "score": 8,
       "score_dimensions": {
-        "impact_scope": 8.0,
         "relevance": 9.0,
-        "exploitability": 8.0,
         "technical_depth": 7.0,
+        "exploitability": 8.0,
+        "impact_scope": 8.0,
         "actionability": 8.0
       },
       "dimension_score": 8.0,
@@ -317,141 +193,143 @@
       }
     },
     {
-      "title_zh": "npm供应链攻击升级：Zimbra存在远程代码执行漏洞，RedHook安卓恶意软件利用无线调试获取Shell权限",
-      "title_orig": "npm supply-chain attacks escalate; Zimbra RCE, Android malware evolves",
-      "summary": "近期网络安全威胁呈现多维爆发态势，包括 jscrambler npm 包被植入原生信息窃取程序引发的供应链攻击，以及 Zimbra 邮件系统因存储型 XSS 漏洞导致的远程代码执行风险。与此同时，RedHook Android 恶意软件通过滥用无线调试功能获取 shell 权限的进化行为也备受关注，这些事件凸显了从开发组件到移动终端各环节均面临严峻的安全挑战，需采取综合防御措施。",
+      "title_zh": "WgpSec 发布 Alkaid 智能体框架，探索 AI 从辅助驾驶向全自主攻防演进的技术路径",
+      "title_orig": "Agent 攻防应用实战与思考",
+      "summary": "WgpSec团队发布了Alkaid智能体框架，旨在通过架构设计根治AI在攻防场景中存在的状态失忆、知识幻觉及评测失真等三大核心痛点。该框架详细定义了从Level 1辅助生成到Level 3全自主渗透的技术演进路径，实现了给定目标后自动完成侦察、定位与利用的全链路闭环。这标志着安全工具链正从“人指挥AI”向“AI自主求解”跃迁，是2026年最新的工程化落地成果。",
       "tags": [
-        "AI"
+        "AI安全",
+        "自主渗透",
+        "智能体"
       ],
-      "url": "https://defend.network/briefings/npm-supply-chain-zimbra-rce-android-malware-2026-07-13.html",
-      "source": "defend.network",
+      "url": "https://vipread.com/library/topic/4153",
+      "source": "vipread.com",
       "category": "Synthesis",
-      "published": "2026-07-13T06:30:00+00:00",
+      "published": "2026-07-11T09:58:50+00:00",
       "cve_ids": [],
-      "selection_reason": "原始信源高分入选",
-      "feed_url": "https://defend.network/feed.xml",
-      "feed_title": "defend.network",
-      "source_tier": "t2",
+      "selection_reason": "探讨了 AI 在实战攻防中从工具向自主决策演进的前沿技术。",
+      "feed_url": "http://vipread.com/feed",
+      "feed_title": "信息安全知识库",
+      "source_tier": "unknown",
       "source_kind": "media",
-      "source_label": "安全媒体",
-      "source_key": "defend.network",
-      "story_id": "url:defend.network/briefings/npm-supply-chain-zimbra-rce-android-malware-2026-07-13.html",
+      "source_label": "未登记源",
+      "source_key": "vipread.com",
+      "story_id": "url:vipread.com/library/topic/4153",
       "related_urls": [],
       "related_count": 0,
-      "score": 8,
+      "score": 9,
       "score_dimensions": {
-        "impact_scope": 8.0,
-        "relevance": 9.0,
+        "relevance": 10.0,
+        "technical_depth": 9.0,
         "exploitability": 8.0,
-        "technical_depth": 8.0,
-        "actionability": 8.0
+        "impact_scope": 8.0,
+        "actionability": 9.0
       },
-      "dimension_score": 8.25,
+      "dimension_score": 8.85,
       "final_score": 8.55,
       "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": 0.0,
-        "freshness_bonus": 0.3,
-        "cn_visibility_bonus": 0.0
-      }
-    },
-    {
-      "title_zh": "黑客发起代号为 Muck and Load 的大规模 GitHub 投毒攻击",
-      "title_orig": "【安全圈】黑客借 GitHub 撒网投毒",
-      "summary": "安全研究公司 Socket 报告了一起代号为 Muck and Load 的大规模恶意软件投毒事件，黑客利用 GitHub 平台进行撒网式攻击以感染开发者环境。该攻击通过在代码仓库中植入恶意载荷旨在窃取敏感信息，目前相关恶意行为已被安全机构监测并披露，提醒广大开发者在引用外部仓库代码时需加强安全审计与风险防范。",
-      "tags": [
-        "GitHub投毒",
-        "供应链安全",
-        "恶意软件"
-      ],
-      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077805&idx=2&sn=2d0fcf38361964531519a252f575df7b",
-      "source": "mp.weixin.qq.com",
-      "category": "Synthesis",
-      "published": "2026-07-12T11:00:00+00:00",
-      "cve_ids": [],
-      "selection_reason": "揭示了针对开发者生态的大规模供应链投毒趋势。",
-      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
-      "feed_title": "安全圈",
-      "source_tier": "t2",
-      "source_kind": "cn_expert",
-      "source_label": "中文公众号",
-      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
-      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652077805&idx=2&sn=2d0fcf38361964531519a252f575df7b",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 7,
-      "score_dimensions": {
-        "impact_scope": 8.0,
-        "relevance": 9.0,
-        "exploitability": 7.0,
-        "technical_depth": 7.0,
-        "actionability": 7.0
-      },
-      "dimension_score": 7.7,
-      "final_score": 8.4,
-      "score_breakdown": {
-        "source_bonus": 0.0,
-        "kind_bonus": 0.3,
-        "freshness_bonus": 0.1,
-        "cn_visibility_bonus": 0.3
-      }
-    },
-    {
-      "title_zh": "npm 供应链攻击频发：jscrambler 遭植入木马且 Zimbra 存在远程代码执行漏洞",
-      "title_orig": "npm supply-chain attacks: jscrambler infostealer, Injective wallet theft, Zimbra RCE",
-      "summary": "npm 软件包 jscrambler 8.14.0 版本遭到供应链篡改并植入了基于 Rust 编写的窃密木马，可能导致开发者凭证泄露并严重威胁下游应用的安全。同时 Zimbra 协作平台被发现存在关键的 XSS 漏洞，攻击者可利用该缺陷实现远程代码执行，目前相关受影响组件的修复状态需密切关注官方发布的补丁更新，以防止漏洞被黑客进一步利用并造成更大范围的损害。",
-      "tags": [
-        "npm攻击",
-        "供应链安全",
-        "远程代码执行"
-      ],
-      "url": "https://defend.network/briefings/jscrambler-zimbra-injective-npm-supply-chain-2026-07-12.html",
-      "source": "defend.network",
-      "category": "Synthesis",
-      "published": "2026-07-12T06:30:00+00:00",
-      "cve_ids": [],
-      "selection_reason": "涵盖了主流包管理器投毒与高危 RCE 漏洞的复合威胁。",
-      "feed_url": "https://defend.network/feed.xml",
-      "feed_title": "defend.network",
-      "source_tier": "t2",
-      "source_kind": "media",
-      "source_label": "安全媒体",
-      "source_key": "defend.network",
-      "story_id": "url:defend.network/briefings/jscrambler-zimbra-injective-npm-supply-chain-2026-07-12.html",
-      "related_urls": [],
-      "related_count": 0,
-      "score": 8,
-      "score_dimensions": {
-        "impact_scope": 8.0,
-        "relevance": 9.0,
-        "exploitability": 8.0,
-        "technical_depth": 8.0,
-        "actionability": 8.0
-      },
-      "dimension_score": 8.25,
-      "final_score": 8.25,
-      "score_breakdown": {
-        "source_bonus": 0.0,
+        "source_bonus": -0.3,
         "kind_bonus": 0.0,
         "freshness_bonus": 0.0,
         "cn_visibility_bonus": 0.0
       }
     },
     {
-      "title_zh": "GodDamn 勒索软件利用恶意驱动程序 PoisonX 强制关闭安全防护软件",
+      "title_zh": "工信部通报 Claude Code 存在后门风险，阿里等企业已采取全员禁用措施",
+      "title_orig": "工信部通报 Claude Code 后门，阿里全员禁用",
+      "summary": "工信部近期通报了 AI 编程工具 Claude Code 存在安全后门风险，可能导致开发者代码泄露或系统被远程控制。受此影响，阿里巴巴等大型互联网企业已发布内部通知，严禁员工在开发环境中使用该工具。目前关于该后门的具体技术触发机制和影响范围仍在进一步调查中，原文未披露更多底层代码层面的细节。",
+      "tags": [
+        "AI工具安全",
+        "后门风险",
+        "企业安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA==&mid=2247486217&idx=1&sn=7440a3fb9a7b516e2489e18b505f5cd4",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-11T02:01:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了 AI 辅助开发工具在企业环境中的合规与安全挑战。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d5a661c1beccdff18ba1ae018514e4d702feac74.xml",
+      "feed_title": "天黑说嘿话",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d5a661c1beccdff18ba1ae018514e4d702feac74.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA%3D%3D&mid=2247486217&idx=1&sn=7440a3fb9a7b516e2489e18b505f5cd4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 7.0,
+        "exploitability": 6.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Metasploit 更新 FlowiseAI 提示词注入 RCE 漏洞利用模块，关注 AI 软件攻击面",
+      "title_orig": "Weekly Metasploit Update: Exploits for FlowiseAI CSV Agent and MacOS Package Kit",
+      "summary": "Metasploit近期更新集成了针对FlowiseAI CSV Agent的提示词注入远程代码执行漏洞利用模块，该漏洞由安全研究员发现并披露。攻击者可利用该漏洞通过精心构造的提示词绕过限制，在Flowise开源AI编排平台的底层系统执行任意指令，具有极高的破坏性。此外，本次更新还同步包含了针对MacOS Package Kit的漏洞利用程序，旨在进一步扩大渗透测试工具对新软件攻击面的覆盖范围。",
+      "tags": [
+        "Metasplo",
+        "提示词注入",
+        "RCE"
+      ],
+      "url": "https://www.rapid7.com/blog/post/pt-weekly-metasploit-update-exploits-for-flowiseai-csv-agent-and-macos-package-kit",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-11T00:32:34+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注新兴 AI 软件栈的漏洞利用，具有极高的实战参考价值。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "url:rapid7.com/blog/post/pt-weekly-metasploit-update-exploits-for-flowiseai-csv-agent-and-macos-package-kit",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "exploitability": 9.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.25,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GodDamn 勒索软件利用 PoisonX 内核驱动程序禁用安全防护软件实现持久化",
       "title_orig": "New Ransomware Exploits Malicious Driver to Remove Cybersecurity Protections",
-      "summary": "GodDamn勒索软件通过远程桌面应用在网络中横向移动，并投放名为PoisonX的恶意内核驱动程序，利用内核权限强制终止和移除系统中的网络安全防护组件。该攻击利用了自带驱动程序攻击（BYOVD）技术，通过合法的驱动漏洞或恶意签名的驱动获取系统最高控制权，原文未披露受影响的具体系统版本及官方修复状态。",
+      "summary": "GodDamn勒索软件利用远程桌面应用在网络中横向移动，并部署名为PoisonX的恶意内核驱动程序，该驱动通过内核权限强制移除系统中的网络安全防护软件。该攻击链利用恶意驱动对抗安全产品以确保加密流程顺利执行，原文未披露漏洞的具体原理、受影响的操作系统版本、CVE编号以及相关的修复或缓解措施。",
       "tags": [
         "勒索软件",
         "内核驱动",
-        "防御规避"
+        "防御绕过"
       ],
       "url": "https://www.infosecurity-magazine.com/news/ransomware-removes-cybersecurity/",
       "source": "infosecurity-magazine.com",
       "category": "Synthesis",
       "published": "2026-07-10T13:00:00+00:00",
       "cve_ids": [],
-      "selection_reason": "展示了勒索软件利用内核级驱动对抗安全软件的技术手段。",
+      "selection_reason": "分析了勒索软件利用内核级驱动对抗安全软件的进阶战术。",
       "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
       "feed_title": "infosecurity-magazine.com",
       "source_tier": "t2",
@@ -463,10 +341,10 @@
       "related_count": 0,
       "score": 8,
       "score_dimensions": {
-        "impact_scope": 8.0,
         "relevance": 9.0,
-        "exploitability": 8.0,
         "technical_depth": 8.0,
+        "exploitability": 8.0,
+        "impact_scope": 8.0,
         "actionability": 8.0
       },
       "dimension_score": 8.25,
@@ -479,20 +357,20 @@
       }
     },
     {
-      "title_zh": "Squid 代理服务器被曝存在二十九年之久的 Squidbleed 敏感信息泄露漏洞",
+      "title_zh": "Squid 代理服务器被曝存在二十九年之久的 Squidbleed 漏洞可泄露 HTTP 请求",
       "title_orig": "Friday Squid Blogging: “Squidbleed” Vulnerability",
-      "summary": "研究人员在 Squid 代理服务器中发现了一个存在长达 29 年的严重漏洞，该漏洞被命名为 Squidbleed 并可能导致 HTTP 请求泄露。攻击者可以利用该漏洞获取敏感的通信数据，虽然目前该漏洞的详细触发条件和官方补丁状态在原文中未完全展开说明，但这一长周期漏洞的发现再次引发了业界对基础网络组件安全性的广泛讨论。",
+      "summary": "Squid 代理服务器中发现了一个被称为 Squidbleed 的高危漏洞，该漏洞已潜伏长达二十九年之久，其核心原理是由于处理逻辑缺陷导致敏感的 HTTP 请求信息发生泄露。虽然原文未披露具体的触发条件、受影响的详细版本号及补丁状态，但明确指出该漏洞会直接威胁用户通信隐私，目前相关技术细节仍有待进一步公开，建议相关管理员密切关注官方动态。",
       "tags": [
         "Squid",
         "信息泄露",
-        "协议漏洞"
+        "代理安全"
       ],
       "url": "https://www.schneier.com/blog/archives/2026/07/friday-squid-blogging-squidbleed-vulnerability.html",
       "source": "schneier.com",
       "category": "OfficialAdvisories",
       "published": "2026-07-10T21:07:13+00:00",
       "cve_ids": [],
-      "selection_reason": "关注长生命周期的基础网络组件漏洞及其潜在影响。",
+      "selection_reason": "长达29年的老牌软件漏洞，对代理服务器安全性有重要警示。",
       "feed_url": "https://www.schneier.com/feed/atom/",
       "feed_title": "Schneier on Security",
       "source_tier": "t2",
@@ -504,10 +382,10 @@
       "related_count": 0,
       "score": 8,
       "score_dimensions": {
-        "impact_scope": 8.0,
         "relevance": 9.0,
-        "exploitability": 7.0,
         "technical_depth": 8.0,
+        "exploitability": 7.0,
+        "impact_scope": 8.0,
         "actionability": 8.0
       },
       "dimension_score": 8.05,
@@ -520,126 +398,251 @@
       }
     },
     {
-      "title_zh": "安全研究机构推出 Caeruleus 工具以解决低功耗蓝牙安全测试碎片化问题",
-      "title_orig": "Bluetooth Low Energy Security Testing, Consolidated: Introducing Caeruleus",
-      "summary": "针对低功耗蓝牙测试工具链破碎且部分工具过时的问题，Praetorian 推出了集成化工具 Caeruleus，旨在通过整合扫描、枚举、读写及模糊测试等核心功能来显著提升安全审计的效率。该工具能够有效替代 bettercap 和 gatttool 等传统工具，为安全从业者提供更高效的 BLE 协议栈安全审计方案，解决了以往在测试过程中需要频繁切换脚本和工具的痛点。",
+      "title_zh": "RedHook 安卓恶意软件利用无线 ADB 调试机制在无需电脑连接下获取 Shell 权限",
+      "title_orig": "RedHook Android malware now uses Wireless ADB for shell access",
+      "summary": "新版 RedHook 安卓恶意软件采用了一种新颖的攻击手段，通过滥用系统的无线调试机制，在不需要物理连接电脑的情况下即可获取 Shell 级别的高级权限。该恶意软件利用此机制绕过常规权限限制，从而在受感染设备上执行任意命令，目前原文未提供具体的受影响安卓版本范围或官方修复补丁信息，这种利用合法调试功能进行提权的手段增加了移动端设备的安全防护难度。",
       "tags": [
-        "蓝牙安全",
-        "BLE测试",
-        "安全工具"
+        "安卓恶意软件",
+        "ADB",
+        "权限提升"
       ],
-      "url": "https://www.praetorian.com/blog/ble-testing-caeruleus/",
-      "source": "praetorian.com",
-      "category": "WebSecurity",
-      "published": "2026-07-10T20:27:03+00:00",
+      "url": "https://www.bleepingcomputer.com/news/security/redhook-android-malware-now-uses-wireless-adb-for-shell-access/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-12T14:27:32+00:00",
       "cve_ids": [],
-      "selection_reason": "介绍了针对物联网安全测试的集成化新工具，具有实战价值。",
-      "feed_url": "https://www.praetorian.com/blog/feed",
-      "feed_title": "Blog | Praetorian",
+      "selection_reason": "利用无线调试机制获取权限是移动安全中值得关注的新型攻击向量。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
       "source_tier": "t2",
-      "source_kind": "expert",
-      "source_label": "安全研究",
-      "source_key": "praetorian.com",
-      "story_id": "url:praetorian.com/blog/ble-testing-caeruleus",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/redhook-android-malware-now-uses-wireless-adb-for-shell-access",
       "related_urls": [],
       "related_count": 0,
       "score": 8,
       "score_dimensions": {
-        "impact_scope": 6.0,
-        "relevance": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
         "exploitability": 8.0,
-        "technical_depth": 9.0,
-        "actionability": 9.0
+        "impact_scope": 7.0,
+        "actionability": 8.0
       },
-      "dimension_score": 7.95,
+      "dimension_score": 8.05,
       "final_score": 8.15,
       "score_breakdown": {
         "source_bonus": 0.0,
-        "kind_bonus": 0.2,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型 GigaWiper 恶意软件结合后门、勒索加密与多重擦除功能实现系统级破坏",
+      "title_orig": "GigaWiper Combines Multiple Malware for System-Level Sabotage",
+      "summary": "GigaWiper 是一款集成了多种恶意功能的复合型后门程序，旨在进行隐蔽间谍活动的同时执行系统级破坏，对企业和政府机构的数字资产构成严重威胁。该软件包含独立的数据擦除器、勒索软件加密模块以及多重擦除命令，能够对目标系统进行不可逆的破坏，原文未披露其具体的传播途径、受影响的操作系统版本或针对性的防护补丁信息，其多重破坏手段使得受害系统的数据恢复变得极其困难。",
+      "tags": [
+        "数据擦除",
+        "勒索软件",
+        "复合威胁"
+      ],
+      "url": "https://www.securityweek.com/gigawiper-combines-multiple-malware-for-system-level-sabotage/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-07-10T09:12:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "该软件结合了间谍活动与破坏性擦除，展示了恶意软件多功能化的趋",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/gigawiper-combines-multiple-malware-for-system-level-sabotage",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "exploitability": 7.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
         "freshness_bonus": 0.0,
         "cn_visibility_bonus": 0.0
       }
     },
     {
-      "title_zh": "多国执法机构联合开展 Operation Endgame 行动摧毁 Amadey 与 StealC 犯罪链",
-      "title_orig": "【AI复盘】Amadey + StealC 运营覆灭事件",
-      "summary": "Europol 协调多国执法机构及微软等企业实施了 Operation Endgame 行动，成功摧毁了运营超 7 年的 Amadey 与 StealC 恶意软件犯罪产业链。该链条利用后门程序负责持久化并配合窃密工具获取浏览器凭证与信用卡数据，最终通过地下市场变现用于勒索和欺诈，此次联合行动标志着全球在打击恶意软件即服务模式及网络犯罪生态方面取得了阶段性的重大成果。",
+      "title_zh": "微软警告新型 GigaWiper 恶意软件兼具间谍活动与破坏性擦除功能，可实现隐蔽监控与数据清理",
+      "title_orig": "Microsoft Warns New 'GigaWiper' Malware Combines Espionage and Destructive Capabilities",
+      "summary": "微软发布警告称发现了一种名为 GigaWiper 的新型多用途后门程序，该恶意软件能够让网络威胁参与者同时开展隐蔽的间谍活动和具有高度破坏性的数据擦除操作。这种双重能力的结合意味着攻击者可以在窃取敏感信息后，通过擦除系统数据来掩盖行踪或直接瘫痪目标基础设施，目前关于该软件的具体感染路径和受影响范围仍在进一步调查中，其复杂的攻击模式引起了安全专家的广泛关注。",
       "tags": [
-        "MaaS",
-        "执法行动",
-        "僵尸网络"
+        "资讯"
       ],
-      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487809&idx=1&sn=4371eda28ab490e8b5144674d48d76bf",
+      "url": "https://www.infosecurity-magazine.com/news/new-gigawiper-espionage-destructive/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-07-10T15:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/new-gigawiper-espionage-destructive",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "exploitability": 7.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客利用 GitHub 平台发起代号为 Muck and Load 的大规模恶意软件包投毒攻击",
+      "title_orig": "【安全圈】黑客借 GitHub 撒网投毒",
+      "summary": "安全研究公司 Socket 报告了一起名为 Muck and Load 的大规模投毒事件，黑客利用 GitHub 平台分发恶意软件包，通过在开源生态中植入恶意代码来诱导开发者下载。攻击者试图将恶意组件集成到各类开发项目中，从而实现对供应链的深度渗透，原文未详细说明受影响的具体编程语言仓库或恶意代码的技术细节，目前相关风险仍在监测中，此事件再次敲响了开源软件供应链安全的警钟。",
+      "tags": [
+        "GitHub",
+        "供应链攻击",
+        "软件包投毒"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077805&idx=2&sn=2d0fcf38361964531519a252f575df7b",
       "source": "mp.weixin.qq.com",
       "category": "Synthesis",
-      "published": "2026-07-12T22:06:00+00:00",
+      "published": "2026-07-12T11:00:00+00:00",
       "cve_ids": [],
-      "selection_reason": "记录了全球范围内针对成熟恶意软件服务产业链的重大打击行动。",
-      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
-      "feed_title": "我的安全视界观",
+      "selection_reason": "GitHub 投毒是典型的供应链安全威胁，对开发者和企业安全",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
       "source_tier": "t2",
       "source_kind": "cn_expert",
       "source_label": "中文公众号",
-      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
-      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ%3D%3D&mid=2247487809&idx=1&sn=4371eda28ab490e8b5144674d48d76bf",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652077805&idx=2&sn=2d0fcf38361964531519a252f575df7b",
       "related_urls": [],
       "related_count": 0,
       "score": 7,
       "score_dimensions": {
-        "impact_scope": 8.0,
         "relevance": 8.0,
-        "exploitability": 6.0,
-        "technical_depth": 7.0,
-        "actionability": 6.0
+        "technical_depth": 6.0,
+        "exploitability": 7.0,
+        "impact_scope": 7.0,
+        "actionability": 7.0
       },
-      "dimension_score": 7.15,
-      "final_score": 8.05,
+      "dimension_score": 7.0,
+      "final_score": 7.7,
       "score_breakdown": {
         "source_bonus": 0.0,
         "kind_bonus": 0.3,
-        "freshness_bonus": 0.3,
+        "freshness_bonus": 0.1,
         "cn_visibility_bonus": 0.3
       }
     },
     {
-      "title_zh": "工信部通报 Claude Code 存在后门风险，阿里等企业已要求全员禁用",
-      "title_orig": "工信部通报 Claude Code 后门，阿里全员禁用",
-      "summary": "工信部近期通报了 AI 编程工具 Claude Code 存在后门安全隐患，该工具可能在用户不知情的情况下执行恶意操作并威胁代码资产安全。受此影响，阿里巴巴等大型互联网企业已发布内部通知要求全员禁用该工具，以防范潜在的代码泄露或系统入侵风险，尽管原文未披露技术细节，但该事件已引发行业对 AI 工具安全性的深度担忧。",
+      "title_zh": "CISA 披露 AWS GovCloud 敏感凭据在 GitHub 公开仓库泄露后的应急响应细节",
+      "title_orig": "CISA Details Incident Response to Exposed AWS GovCloud Keys",
+      "summary": "美国 CISA 披露了一起针对 AWS GovCloud 敏感凭据泄露事件的应急响应过程，该事件起因是内部数据被错误地暴露在公共 GitHub 仓库中，导致政府云环境面临风险。泄露的信息涉及关键的访问权限，CISA 详细说明了发现泄露后的处置措施及调查流程，原文未明确提及具体的泄露时长及受影响的政府部门范围，目前相关凭据已失效，但此类云端配置疏忽引发的安全隐患仍值得高度警惕。",
       "tags": [
-        "AI安全",
-        "后门漏洞",
-        "企业安全"
+        "云安全",
+        "凭据泄露",
+        "应急响应"
       ],
-      "url": "https://mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA==&mid=2247486217&idx=1&sn=7440a3fb9a7b516e2489e18b505f5cd4",
-      "source": "mp.weixin.qq.com",
+      "url": "https://www.infosecurity-magazine.com/news/cisa-incident-response-exposed-aws/",
+      "source": "infosecurity-magazine.com",
       "category": "Synthesis",
-      "published": "2026-07-11T02:01:00+00:00",
+      "published": "2026-07-10T16:00:00+00:00",
       "cve_ids": [],
-      "selection_reason": "反映了 AI 辅助开发工具在企业环境中的供应链安全风险。",
-      "feed_url": "https://wechat2rss.xlab.app/feed/d5a661c1beccdff18ba1ae018514e4d702feac74.xml",
-      "feed_title": "天黑说嘿话",
+      "selection_reason": "政府云凭据泄露属于重大安全事件，其应急响应流程具有行业学习价",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
       "source_tier": "t2",
-      "source_kind": "cn_expert",
-      "source_label": "中文公众号",
-      "source_key": "https://wechat2rss.xlab.app/feed/d5a661c1beccdff18ba1ae018514e4d702feac74.xml",
-      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA%3D%3D&mid=2247486217&idx=1&sn=7440a3fb9a7b516e2489e18b505f5cd4",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/cisa-incident-response-exposed-aws",
       "related_urls": [],
       "related_count": 0,
-      "score": 7,
+      "score": 8,
       "score_dimensions": {
-        "impact_scope": 8.0,
         "relevance": 9.0,
-        "exploitability": 5.0,
-        "technical_depth": 6.0,
+        "technical_depth": 7.0,
+        "exploitability": 6.0,
+        "impact_scope": 8.0,
         "actionability": 9.0
       },
-      "dimension_score": 7.25,
-      "final_score": 7.85,
+      "dimension_score": 7.7,
+      "final_score": 7.7,
       "score_breakdown": {
         "source_bonus": 0.0,
-        "kind_bonus": 0.3,
+        "kind_bonus": 0.0,
         "freshness_bonus": 0.0,
-        "cn_visibility_bonus": 0.3
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Apache Gravitino 1.2.0 及以下版本 MCP REST 客户端存在 f-string URL 注入漏洞",
+      "title_orig": "CVE-2026-41041 | Apache Gravitino up to 1.2.0 MCP REST Client f-string URL injection",
+      "summary": "Apache Gravitino 1.2.0 及以下版本的 MCP REST 客户端组件被发现存在严重的 URL 注入漏洞，该漏洞已被分配编号为 CVE-2026-41041。漏洞源于 f-string URL 处理程序的输入验证不足，攻击者需在本地网络内发起攻击，通过构造恶意输入实现注入操作，目前尚无公开的利用程序，官方建议用户尽快升级到安全版本以防范潜在风险，该漏洞的发现提醒开发者需加强对内部组件通信协议的安全性校验。",
+      "tags": [
+        "Apache",
+        "URL注入",
+        "漏洞预警"
+      ],
+      "url": "https://vuldb.com/vuln/377904",
+      "source": "vuldb.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T04:37:03+00:00",
+      "cve_ids": [
+        "CVE-2026-41041"
+      ],
+      "selection_reason": "Apache 组件的注入漏洞可能影响大数据基础设施，需关注其",
+      "feed_url": "https://vuldb.com/en/?rss.recent",
+      "feed_title": "VulDB Recent Entries",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "vuldb.com",
+      "story_id": "cve:cve-2026-41041",
+      "related_urls": [
+        "https://vuldb.com/vuln/377905"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "exploitability": 7.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 7.85,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
       }
     }
   ]
