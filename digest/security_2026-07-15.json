@@ -1,0 +1,669 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-15",
+  "generated_at": "2026-07-14T23:36:53.382004Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t2": 14,
+    "kind_expert": 3,
+    "chinese": 6,
+    "wechat": 6,
+    "kind_cn_expert": 6,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "kind_media": 4,
+    "kind_community": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 4,
+    "merged_total": 4
+  },
+  "delivered_filter_stats": {
+    "url": 6,
+    "story": 0,
+    "total": 6
+  },
+  "items": [
+    {
+      "title_zh": "Microsoft SharePoint 身份验证绕过漏洞 CVE-2026-55040 可被利用实现远程代码执行",
+      "title_orig": "CVE-2026-55040: Microsoft SharePoint JWT Token Authentication Bypass (FIXED)",
+      "summary": "Rapid7 披露了 Microsoft SharePoint 中的 JWT 令牌身份验证绕过漏洞 CVE-2026-55040，该漏洞源于对身份验证令牌的验证逻辑存在缺陷。攻击者可利用此漏洞绕过身份验证，并与另一个未披露的漏洞组成利用链，在受影响的 SharePoint 服务器上实现未经身份验证的远程代码执行，目前微软已发布修复补丁以应对此高危风险并防止服务器权限被完全接管。",
+      "tags": [
+        "身份验证绕过",
+        "SharePoi",
+        "RCE利用链"
+      ],
+      "url": "https://www.rapid7.com/blog/post/ve-cve-2026-55040-microsoft-sharepoint-jwt-token-authentication-bypass-fixed",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-14T13:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-55040"
+      ],
+      "selection_reason": "涉及核心办公组件的 0-day 漏洞链，具有极高的实战攻击价",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-55040",
+      "related_urls": [
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-5270?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 10.0,
+        "exploitability": 10.0,
+        "impact_scope": 9.0,
+        "technical_depth": 10.0
+      },
+      "dimension_score": 9.8,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Windows HTTP.sys 整数溢出漏洞 CVE-2026-47291 风险通告及复现分析",
+      "title_orig": "【已复现、利用难度高】Windows HTTP.sys 整数溢出漏洞(CVE-2026-47291)安全风险通告",
+      "summary": "Windows 系统的 HTTP.sys 驱动程序中存在整数溢出漏洞 CVE-2026-47291，该组件负责处理 HTTP 请求，漏洞触发通常涉及构造特定的恶意数据包。虽然该漏洞已被成功复现，但原文指出其利用难度较高，可能导致拒绝服务或潜在的权限提升，目前官方已发布相关安全更新，建议企业级用户及时修补以防范潜在的攻击威胁，确保核心网络驱动程序的运行稳定性。",
+      "tags": [
+        "HTTP.sys",
+        "整数溢出",
+        "内核漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506606&idx=1&sn=623d2ac0057653292d595cf9145bbe3f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-14T06:34:00+00:00",
+      "cve_ids": [
+        "CVE-2026-47291"
+      ],
+      "selection_reason": "HTTP.sys 漏洞通常具有高危害性，复现进展对防御具有指",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "cve:cve-2026-47291",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 9.0,
+        "exploitability": 9.0,
+        "impact_scope": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.25,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "微软披露 ShinyHunters 组织利用 OAuth 滥用攻击 SaaS 应用程序的防御方案",
+      "title_orig": "Defending SaaS-based applications against ShinyHunters OAuth abuse",
+      "summary": "微软威胁情报团队识别出 ShinyHunters 组织针对 SaaS 应用的攻击活动，其技术手段包括语音钓鱼、供应链攻击以及利用配置错误的访客访问权限。攻击者重点通过滥用 OAuth 授权机制获取企业敏感数据，微软为此提供了针对性的防御建议和检测策略，以应对此类针对云端应用生态的凭据滥用威胁并保护受影响的组织安全。",
+      "tags": [
+        "OAuth安全",
+        "SaaS安全",
+        "凭据滥用"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/07/13/defending-saas-based-applications-against-shinyhunters-oauth-abuse/",
+      "source": "microsoft.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T22:02:41+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对 SaaS 生态的现代攻击路径，对云安全防御有参考",
+      "feed_url": "https://www.microsoft.com/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/07/13/defending-saas-based-applications-against-shinyhunters-oauth-abuse",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/07/13/defending-saas-based-applications-against-shinyhunters-oauth-abuse/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 7.0,
+        "impact_scope": 8.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Progress ShareFile 修复导致存储区控制器紧急关闭的高危 0-day 漏洞",
+      "title_orig": "Progress Confirms ShareFile Zero-Day Behind Storage Zone Shutdown, Ships Emergency Patches",
+      "summary": "Progress Software 确认其 ShareFile Storage Zone 控制器存在一个高危 0-day 漏洞，该漏洞允许攻击者在客户服务器上执行读取、写入和映射文件的操作。此前官方曾因该漏洞紧急要求客户关闭相关控制器以规避风险，目前已正式发布紧急补丁，受影响的企业需立即完成更新以防止敏感数据泄露并恢复受影响存储区域的正常运行，确保云存储环境的数据完整性。",
+      "tags": [
+        "0-day",
+        "文件管理",
+        "紧急补丁"
+      ],
+      "url": "https://www.cyberkendra.com/2026/07/progress-confirms-sharefile-zero-day.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-07-14T17:15:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "该漏洞曾导致服务紧急中断，是近期严重的文件系统安全事件。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/07/progress-confirms-sharefile-zero-day.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 10.0,
+        "exploitability": 10.0,
+        "impact_scope": 8.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 9.1,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "SonicWall 警告 SMA1000 系列产品存在两个已被在野利用的 0-day 漏洞",
+      "title_orig": "SonicWall warns of SMA1000 flaws exploited in zero-day attacks, patch now",
+      "summary": "SonicWall警告其SMA1000系列接入网关存在CVE-2026-15409和CVE-2026-15410两个安全漏洞，且已被攻击者用于零日攻击，原文未披露漏洞的具体类型、触发条件及受影响的固件版本。目前官方已发布安全更新，敦促所有使用受影响组件的用户立即安装补丁，以防止攻击者利用这些缺陷入侵企业网络边界，降低因零日漏洞利用导致的业务中断风险。",
+      "tags": [
+        "SonicWal",
+        "0-day利用",
+        "网关安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-14T21:23:24+00:00",
+      "cve_ids": [
+        "CVE-2026-15409",
+        "CVE-2026-15410"
+      ],
+      "selection_reason": "VPN/网关类设备的 0-day 攻击是企业边界安全的最大威",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "cve:cve-2026-15409,cve-2026-15410",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 10.0,
+        "exploitability": 10.0,
+        "impact_scope": 9.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ESET 披露微软认证 UEFI 引导程序存在设计缺陷可绕过安全启动机制",
+      "title_orig": "微软认证的UEFI引导程序，反倒成了绕过安全启动的捷径",
+      "summary": "ESET 研究团队发现了一个潜藏多年的底层安全风险，涉及某些经过微软数字签名的 UEFI 引导程序。攻击者可以利用这些受信任的引导程序作为跳板，绕过系统的安全启动限制，从而在操作系统加载前植入恶意代码；该研究揭示了固件信任链中的薄弱环节，对底层系统安全具有重要警示作用，提醒相关厂商需重新审视数字签名引导程序的安全性。",
+      "tags": [
+        "UEFI",
+        "安全启动",
+        "固件安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187683&idx=1&sn=cd8c616134059f3429e822ca44951d2a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-14T15:22:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及底层信任链的绕过技术，是系统安全研究的高阶领域。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187683&idx=1&sn=cd8c616134059f3429e822ca44951d2a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 7.0,
+        "exploitability": 8.0,
+        "impact_scope": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.35,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "微软 2026 年 7 月补丁日发布 622 个漏洞修复，包含两项在野利用漏洞",
+      "title_orig": "Patch Tuesday - July 2026",
+      "summary": "微软在2026年7月补丁日修复了622个漏洞，其中包含创纪录的416个Windows漏洞，原文未披露这些漏洞的具体技术原理、触发条件及受影响的特定组件版本。微软确认其中两个漏洞已在野外被利用并列入CISA KEV清单，另有一个漏洞已被公开披露，目前所有相关补丁均已发布，建议管理员优先处理已遭利用的高危漏洞，以确保Windows部署环境的安全性。",
+      "tags": [
+        "补丁日",
+        "漏洞统计",
+        "在野利用"
+      ],
+      "url": "https://www.rapid7.com/blog/post/em-patch-tuesday-july-2026",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-14T22:00:26+00:00",
+      "cve_ids": [],
+      "selection_reason": "补丁日汇总提供了全月漏洞趋势的宏观视角，包含关键在野利用信息",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "url:rapid7.com/blog/post/em-patch-tuesday-july-2026",
+      "related_urls": [
+        "https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html",
+        "https://www.bleepingcomputer.com/news/microsoft/microsoft-july-2026-patch-tuesday-fixes-massive-570-flaws-3-zero-days/",
+        "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-windows-10-kb5099539-extended-security-update/"
+      ],
+      "related_count": 3,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 9.0,
+        "exploitability": 9.0,
+        "impact_scope": 10.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 8.7,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "SAP 修复 NetWeaver ABAP 平台 CVSS 9.9 级关键内存损坏漏洞",
+      "title_orig": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
+      "summary": "SAP 在 2026 年 7 月的安全更新中修复了 CVE-2026-44747 漏洞，这是一个存在于 SAP NetWeaver AS ABAP 中的越界写入缺陷，其 CVSS 评分高达 9.9。经过身份验证的攻击者可利用内存管理中的逻辑错误触发内存损坏，进而实现数据篡改或敏感信息泄露，该漏洞影响多个版本的 ABAP 平台，目前官方已提供修复程序，建议所有使用该企业级应用服务器的用户立即执行更新以保护核心业务数据。",
+      "tags": [
+        "SAP",
+        "内存损坏",
+        "越界写入"
+      ],
+      "url": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-14T18:17:57+00:00",
+      "cve_ids": [
+        "CVE-2026-44747"
+      ],
+      "selection_reason": "CVSS 9.9 的极高评分反映了该漏洞对企业 ERP 核心",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-44747",
+      "related_urls": [
+        "https://www.securityweek.com/sap-patches-critical-vulnerabilities-in-netweaver-approuter-commerce-cloud/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 9.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型 macOS 恶意软件 CrashStealer 利用合法开发者 ID 伪装成苹果崩溃报告器窃取数据",
+      "title_orig": "New MacOS Malware Exploits Legitimate Developer ID to Pose as Apple Crash Reporter",
+      "summary": "Jamf Threat Labs 研究人员发现名为 CrashStealer 的新型恶意软件，该软件通过利用合法的 Apple 开发者 ID 签名来规避 macOS 的安全检查，从而在受害者系统中长期潜伏。它在运行时会伪装成系统原生的崩溃报告窗口，诱导用户输入敏感信息，旨在窃取用户的登录密码、加密货币钱包私钥以及其他存储在系统中的机密数据，对广大苹果用户的资产安全构成了严重威胁。",
+      "tags": [
+        "macOS",
+        "恶意软件",
+        "凭据窃取"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/macos-malware-apple-crash-reporter/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-07-14T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了利用合法签名绕过 macOS 安全机制的社工攻击新手段",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/macos-malware-apple-crash-reporter",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 8.0,
+        "impact_scope": 8.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.25,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "MemGhost 攻击利用恶意邮件篡改 AI 助手长期记忆实现远程操控与信息误导",
+      "title_orig": "【安全圈】一封邮件就能让AI\"失忆\"并被操控：MemGhost攻击曝光",
+      "summary": "安全研究人员近期曝光了名为 MemGhost 的新型攻击技术，该技术通过向集成 AI 助手的系统发送特定格式的电子邮件，实现对 AI 长期记忆存储的非法改写与破坏。攻击者可以利用此漏洞让 AI 产生“失忆”效果或植入虚假记忆，从而在后续交互中精准操控 AI 的输出行为，导致用户接收到被误导的信息或执行恶意指令，这揭示了当前大语言模型在记忆管理机制上的安全脆弱性。",
+      "tags": [
+        "AI安全",
+        "提示注入",
+        "MemGhost"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077833&idx=3&sn=f8a9e72e6123467bfc11601e9f3d29c3",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-14T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 长期记忆机制中的安全缺陷，属于前沿 AI 攻防研",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652077833&idx=3&sn=f8a9e72e6123467bfc11601e9f3d29c3",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 6.0,
+        "exploitability": 7.0,
+        "impact_scope": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 7.65,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Trail of Bits 发布 Rust 安全测试指南，涵盖内存安全验证与自动化审计工具链",
+      "title_orig": "Rust-proof your code with our new Testing Handbook chapter",
+      "summary": "Trail of Bits 在其《测试手册》中新增了 Rust 程序安全测试章节，系统性地介绍了用于验证 Rust 代码安全性的专业工具和前沿技术，旨在提升系统级软件的防御能力。该指南详细说明了如何利用静态分析、模糊测试以及形式化验证方法来检测 Rust 程序中的逻辑漏洞和潜在的内存安全风险，为开发者提供了从代码编写到安全审计的全流程指导，助力构建更具鲁棒性的软件生态。",
+      "tags": [
+        "Rust",
+        "安全测试",
+        "代码审计"
+      ],
+      "url": "https://blog.trailofbits.com/2026/07/13/rust-proof-your-code-with-our-new-testing-handbook-chapter/",
+      "source": "blog.trailofbits.com",
+      "category": "WebSecurity",
+      "published": "2026-07-13T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "由顶级安全实验室发布，为 Rust 开发者提供权威的安全工程",
+      "feed_url": "https://blog.trailofbits.com/feed/",
+      "feed_title": "Trail of Bits Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/07/13/rust-proof-your-code-with-our-new-testing-handbook-chapter",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "actionability": 9.0,
+        "exploitability": 7.0,
+        "impact_scope": 7.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Spring Cloud Azure 存在身份验证绕过漏洞 CVE-2026-50338，攻击者可伪造令牌访问资源",
+      "title_orig": "Exploit for CVE-2026-50338",
+      "summary": "CVE-2026-50338 漏洞存在于 Spring Cloud Azure 的 B2C 资源服务器自动配置组件中，其 JwtDecoder 默认信任多个微软官方发行者，导致身份验证机制存在严重缺陷。由于相关代码在处理跨发行者验证时存在逻辑漏洞，攻击者可能利用此漏洞绕过核心身份验证检查，获取对受保护资源的非法访问权限，目前官方建议受影响的用户必须尽快将相关组件更新至安全版本以防范潜在攻击。",
+      "tags": [
+        "身份验证绕过",
+        "SpringCl",
+        "漏洞预警"
+      ],
+      "url": "https://vulners.com/githubexploit/AC8BA49C-6B0C-5FC3-A311-C5C14C8864A6?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-07-14T22:41:54+00:00",
+      "cve_ids": [
+        "CVE-2026-50338"
+      ],
+      "selection_reason": "涉及主流开发框架的身份验证逻辑缺陷，具有较高的实战影响。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-50338",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 9.0,
+        "impact_scope": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.25,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "人工智能时代软件供应链安全风险分析：数据投毒与模型后门成为标准化建设新挑战",
+      "title_orig": "专题·原创 | 人工智能时代软件供应链安全风险与标准化建设",
+      "summary": "随着 AI 技术的深度集成，软件供应链呈现出形态重构的新特征，传统供应链风险与 AI 特有威胁相互叠加。文章指出数据投毒、模型后门及提示注入等新型攻击手段正频繁发生，对现有的安全治理体系提出了挑战，并强调了在 AI 软件开发全生命周期中建立安全标准化建设和风险防控机制的紧迫性。",
+      "tags": [
+        "软件供应链",
+        "AI安全",
+        "安全标准"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA==&mid=2664264647&idx=1&sn=bbc7b5cf9822e24d39e58929fb5b3585",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-14T10:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了 AI 引入后软件供应链安全边界的变化，具有行业指导意",
+      "feed_url": "https://wechat2rss.xlab.app/feed/567cb1a8cf49f3e2c141d9d8085712f42ffc2fef.xml",
+      "feed_title": "中国信息安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/567cb1a8cf49f3e2c141d9d8085712f42ffc2fef.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA%3D%3D&mid=2664264647&idx=1&sn=bbc7b5cf9822e24d39e58929fb5b3585",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "actionability": 5.0,
+        "exploitability": 5.0,
+        "impact_scope": 7.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 6.4,
+      "final_score": 7.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "2026年7月高危漏洞情报：聚焦底层虚拟化逃逸、AI 驱动攻击与重大供应链威胁",
+      "title_orig": "最新高危漏洞与零日威胁（底层与AI层面）",
+      "summary": "该情报汇总了2026年7月上旬的底层与AI安全威胁，重点涉及底层虚拟化环境的逃逸漏洞以及利用AI驱动的新型攻击向量。技术要素涵盖了针对虚拟化层隔离机制的突破手段，以及供应链攻击中针对关键基础设施的渗透路径，原文未披露具体漏洞的CVE编号、触发条件、受影响组件版本及官方补丁修复状态。",
+      "tags": [
+        "漏洞情报",
+        "虚拟化逃逸",
+        "零日威胁"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA==&mid=2247486221&idx=1&sn=a21d8e52aca4ed0fe45e5f3eb149e821",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T01:01:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "汇总了底层架构与 AI 结合的最新高危漏洞，信息密度高。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d5a661c1beccdff18ba1ae018514e4d702feac74.xml",
+      "feed_title": "天黑说嘿话",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d5a661c1beccdff18ba1ae018514e4d702feac74.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA%3D%3D&mid=2247486221&idx=1&sn=a21d8e52aca4ed0fe45e5f3eb149e821",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "actionability": 5.0,
+        "exploitability": 5.0,
+        "impact_scope": 7.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 6.4,
+      "final_score": 7.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "AI 编程助手被指存在代码泄露风险，少量数据传输即可导致大规模代码仓库被窃取",
+      "title_orig": "【安全圈】AI编程助手偷偷把你的代码传走了，12GB仓库只\"需要\"192KB",
+      "summary": "研究发现部分 AI 编程助手在提供代码建议时，可能会在后台将用户的私有代码库上传至远程服务器。实验表明，攻击者或不安全的服务商仅需通过极小的数据传输量（如 192KB），即可实现对 GB 级别代码仓库特征的提取或部分泄露，这为企业知识产权保护和敏感信息防泄露（DLP）带来了严峻的安全审计挑战。",
+      "tags": [
+        "代码泄露",
+        "AI助手",
+        "数据安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077833&idx=2&sn=ab2f095aac52c39d4229cc244ef5aafd",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-14T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 AI 开发工具在便捷性背后的隐私泄露风险，值得开发者",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652077833&idx=2&sn=ab2f095aac52c39d4229cc244ef5aafd",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "actionability": 5.0,
+        "exploitability": 5.0,
+        "impact_scope": 6.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 6.2,
+      "final_score": 6.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
