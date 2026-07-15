@@ -1,0 +1,664 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-16",
+  "generated_at": "2026-07-15T23:44:07.243283Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t1": 3,
+    "kind_official": 3,
+    "chinese": 6,
+    "wechat": 5,
+    "tier_t2": 12,
+    "kind_cn_expert": 6,
+    "kind_expert": 1,
+    "kind_media": 4,
+    "kind_community": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 3,
+    "merged_total": 3
+  },
+  "delivered_filter_stats": {
+    "url": 9,
+    "story": 1,
+    "total": 10
+  },
+  "items": [
+    {
+      "title_zh": "JavaScript 加密库 node-forge 存在 RSA 与 Ed25519 数字签名伪造漏洞",
+      "title_orig": "VU#725167: node-forge Signature Forgery Vulnerabilities in RSA-PKCS and ED25519 Implementations",
+      "summary": "Digital Bazaar 开发的 node-forge 加密库在实现 RSA-PKCS#1 v1.5 和 Ed25519 签名验证逻辑时存在两处严重缺陷，这些漏洞源于验证过程中的不充分检查。攻击者可以利用特定条件伪造合法的数字签名，从而绕过身份验证或完整性校验，直接威胁到 Node.js 及浏览器环境下的各类加密应用安全，目前官方已发布安全通告并建议受影响用户及时更新组件以防范潜在风险。",
+      "tags": [
+        "加密漏洞",
+        "签名伪造",
+        "node-for"
+      ],
+      "url": "https://kb.cert.org/vuls/id/725167",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-07-15T16:07:29+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及基础加密库的逻辑缺陷，对身份验证机制具有通用性威胁。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/725167",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 9.0,
+        "impact_scope": 8.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "和硕 Tdelo64.sys 驱动程序 IOCTL 接口缺陷导致本地权限提升漏洞",
+      "title_orig": "VU#529388: Privilege escalation vulnerability via unprotected IOCTL interface in Pegatron Tdelo64.sys",
+      "summary": "和硕开发的 tdeio64.sys 驱动程序存在受保护不足的 IOCTL 调度例程，未能对用户请求的来源和权限进行有效验证，导致严重的权限提升漏洞。本地无权限的攻击者可以滥用这些暴露的接口执行任意内核内存读取和写入操作，最终获取最高级别的系统权限，该漏洞在内核层面构成了极大的安全风险，需要用户关注驱动程序的安全性。",
+      "tags": [
+        "驱动漏洞",
+        "权限提升",
+        "内核安全"
+      ],
+      "url": "https://kb.cert.org/vuls/id/529388",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-07-15T17:08:59+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的驱动程序 IOCTL 漏洞，可导致本地提权至系统最高权",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/529388",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0,
+        "impact_scope": 7.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "SonicWall 紧急修复已遭 0day 攻击利用的 SMA1000 系列安全网关漏洞",
+      "title_orig": "SonicWall：立即修复已遭0day攻击利用的 SMA1000 漏洞",
+      "summary": "SonicWall 官方发布紧急预警，确认其 SMA1000 系列产品中存在一个已被黑客作为 0day 漏洞进行在野利用的安全缺陷，该漏洞具有极高的安全风险。虽然目前摘要中未详细披露具体的技术细节和 CVE 编号，但官方强烈建议所有使用该系列设备的企业用户必须立即进行固件更新，以修复漏洞并缓解正在发生的网络攻击威胁。",
+      "tags": [
+        "SonicWal",
+        "0day漏洞",
+        "在野利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw==&mid=2247526630&idx=1&sn=3f9411edee6fd9805cd5ac7a7991a3c2",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-15T08:22:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及已在野利用的 0day 漏洞，对企业边界安全具有紧迫威胁",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "feed_title": "代码卫士",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw%3D%3D&mid=2247526630&idx=1&sn=3f9411edee6fd9805cd5ac7a7991a3c2",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 10.0,
+        "technical_depth": 6.0,
+        "impact_scope": 9.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "微软 7 月补丁日修复 570 个安全漏洞，数量创历史新高且受 AI 发现助力",
+      "title_orig": "Microsoft Patches a Record 570 Security Flaws",
+      "summary": "微软在 2026 年 7 月的补丁星期二发布了针对 Windows 操作系统及相关软件的大规模更新，共计修复了至少 570 个安全漏洞。这一数字几乎是上个月记录的三倍，微软将其归功于人工智能技术在漏洞挖掘过程中的辅助作用。虽然单次修复数量惊人，但原文未逐一列出具体的 CVE 详情，重点在于展示 AI 驱动下漏洞发现效率的显著提升。",
+      "tags": [
+        "微软补丁",
+        "漏洞修复",
+        "AI安全"
+      ],
+      "url": "https://krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws/",
+      "source": "krebsonsecurity.com",
+      "category": "AI",
+      "published": "2026-07-14T19:22:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "修复数量创历史纪录，且体现了 AI 在漏洞挖掘领域的工程化应",
+      "feed_url": "https://krebsonsecurity.com/feed/",
+      "feed_title": "Krebs on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全媒体",
+      "source_key": "krebsonsecurity.com",
+      "story_id": "url:krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws",
+      "related_urls": [
+        "https://arstechnica.com/security/2026/07/windows-0-day-drops-the-same-day-microsoft-releases-record-number-of-patches/",
+        "https://www.infosecurity-magazine.com/news/microsoft-570-cves-patch-tuesday/",
+        "https://krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws/",
+        "https://x.com/rez0__/status/2077212331042345116"
+      ],
+      "related_count": 4,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 10.0,
+        "technical_depth": 7.0,
+        "impact_scope": 10.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.25,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于 MCP 协议打造 Android 应用全自动化脱壳与漏洞挖掘分析流水线",
+      "title_orig": "从脱壳到漏洞挖掘：用 MCP 打造全自动化 Android 应用安全分析流水线",
+      "summary": "本文介绍了利用 MCP 协议串联 ADB、Frida、JADX 等工具，构建一套全自动化的 Android 安全分析流程。该技术方案支持一句话指令完成设备连接、自动脱壳、代码审计及风险输出，能够自动识别硬编码凭证、不安全 API 和导出组件风险。这种自动化流水线显著降低了逆向工程的重复劳动成本，为安全研究员在处理大规模移动应用审计时提供了高效的技术支撑。",
+      "tags": [
+        "Android安",
+        "自动化审计",
+        "MCP协议"
+      ],
+      "url": "https://xz.aliyun.com/news/92518",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-07-14T02:00:04+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了如何利用新协议集成多种安全工具，提升逆向分析的自动化水",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92518",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92518"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 9.0,
+        "technical_depth": 9.0,
+        "impact_scope": 8.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "CISA 敦促用户立即修复三个正被积极利用的 SharePoint 安全漏洞",
+      "title_orig": "CISA Urges Immediate Patching of Exploited SharePoint Vulnerabilities",
+      "summary": "美国网络安全和基础设施安全局（CISA）发布预警，指出 Microsoft SharePoint 中的三个安全漏洞正遭到攻击者的积极利用。其中两个漏洞在被发现时已被作为 0day 漏洞进行针对性攻击，可能导致服务器被远程控制或敏感数据泄露。原文未详细列出漏洞的 CVE 编号及技术原理，但强调了受影响组件的广泛性，并要求相关机构必须立即完成补丁安装。",
+      "tags": [
+        "SharePoi",
+        "CISA预警",
+        "漏洞利用"
+      ],
+      "url": "https://www.securityweek.com/cisa-urges-immediate-patching-of-exploited-sharepoint-vulnerabilities/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-07-15T14:07:44+00:00",
+      "cve_ids": [],
+      "selection_reason": "SharePoint 漏洞影响广泛，且 CISA 的预警通常",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/cisa-urges-immediate-patching-of-exploited-sharepoint-vulnerabilities",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-patch-actively-exploited-sharepoint-flaws/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 10.0,
+        "technical_depth": 7.0,
+        "impact_scope": 9.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI 代码编辑器 Cursor 存在未修复 0day 漏洞，可通过恶意 Git 仓库劫持 PC",
+      "title_orig": "Cursor's Unpatched 0-Day Lets a Fake Git Binary Hijack Your Windows PC",
+      "summary": "安全公司 Mindgard 披露了 AI 编辑器 Cursor 存在一个严重的未修复 0day 漏洞，攻击者可利用伪造的 Git 二进制文件实现远程代码执行。当用户在 Windows 机器上打开一个精心构造的恶意仓库时，无需任何点击或确认即可触发漏洞，直接劫持受害者系统。尽管该漏洞已于 2025 年底报告，但在经过多次版本更新后仍未得到有效修复，对开发者环境构成严重威胁。",
+      "tags": [
+        "Cursor",
+        "0day漏洞",
+        "供应链安全"
+      ],
+      "url": "https://www.cyberkendra.com/2026/07/cursors-unpatched-0-day-lets-fake-git.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-07-15T16:12:19+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对流行 AI 开发工具的 0day 漏洞，且处于未修复状态",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/07/cursors-unpatched-0-day-lets-fake-git.html",
+      "related_urls": [
+        "https://www.securityweek.com/unpatched-cursor-vulnerability-exposes-users-to-code-execution/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 9.0,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究员发布 Windows 用户配置文件服务提权漏洞 LegacyHive 的 PoC",
+      "title_orig": "Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday",
+      "summary": "安全研究员 Chaotic Eclipse 在微软补丁日后发布了名为 LegacyHive 的漏洞利用代码，针对 Windows 用户配置文件服务（ProfSvc）。该漏洞属于任意 Hive 加载导致的权限提升漏洞，允许攻击者通过操纵系统核心组件 ProfSvc 提升本地权限。虽然微软已发布相关补丁，但该 PoC 的公开意味着未及时更新的系统面临极高的被攻击风险，原文未披露具体影响的 Windows 版本范围。",
+      "tags": [
+        "Windows提",
+        "PoC",
+        "ProfSvc"
+      ],
+      "url": "https://thehackernews.com/2026/07/researcher-drops-new-windows-zero-day.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-15T11:07:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "补丁日后迅速流出的提权 PoC，对企业内网终端安全具有实战参",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/07/researcher-drops-new-windows-zero-day.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "三星 Android 设备 libimagecodec.quram.so 库曝出越界写入漏洞 PoC",
+      "title_orig": "Exploit for CVE-2026-21045",
+      "summary": "该漏洞主要涉及三星Android设备中广泛使用的Quramsoft图像编解码库，具体涵盖CVE-2026-21045与CVE-2026-21048两个关键编号，其核心风险在于严重的越界写入缺陷。目前GitHub已公开相关的概念验证代码，攻击者可通过构造特定格式的图像文件触发系统异常，官方已紧急发布修复补丁以应对潜在的远程代码执行威胁，建议受影响用户尽快更新系统以保障设备安全。",
+      "tags": [
+        "三星",
+        "越界写入",
+        "PoC"
+      ],
+      "url": "https://vulners.com/githubexploit/8A9331AA-44B0-5CD0-B005-65ECC59161FF?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-07-15T22:22:44+00:00",
+      "cve_ids": [
+        "CVE-2026-21045",
+        "CVE-2026-21048"
+      ],
+      "selection_reason": "涉及主流移动终端底层库的高危漏洞，且 PoC 已公开。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-21045,cve-2026-21048",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 9.0,
+        "technical_depth": 9.0,
+        "impact_scope": 8.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.0,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Mozilla 发布 Firefox 紧急更新修复已遭公开利用的 WebAssembly 关键漏洞",
+      "title_orig": "Firefox, Chrome, Adobe, and VMware Updates Fix Multiple Critical Security Flaws",
+      "summary": "Mozilla官方紧急发布了安全更新，旨在修复Firefox浏览器中两个已公开利用代码的关键漏洞，分别是WebAssembly组件中的无效指针漏洞CVE-2026-15718以及DOM导航组件中的站点隔离漏洞CVE-2026-15719。这些漏洞可能导致远程代码执行或跨站点敏感数据泄露，鉴于攻击代码已在社区流传，官方强烈建议所有用户立即升级至最新版本以有效缓解安全风险并保护个人隐私。",
+      "tags": [
+        "Firefox",
+        "WebAssem",
+        "漏洞修复"
+      ],
+      "url": "https://thehackernews.com/2026/07/firefox-chrome-adobe-and-vmware-updates.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-15T13:18:53+00:00",
+      "cve_ids": [
+        "CVE-2026-15718",
+        "CVE-2026-15719"
+      ],
+      "selection_reason": "浏览器关键组件漏洞且存在公开利用，具有极高修复优先级。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-15718,cve-2026-15719",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "actionability": 9.0,
+        "technical_depth": 6.0,
+        "impact_scope": 10.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.5,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Microsoft Entra ID 将通行密钥设为默认身份验证方式以增强账户安全",
+      "title_orig": "Microsoft Entra ID security updates: Passkeys are the default authentication method in Entra ID",
+      "summary": "微软宣布 Microsoft Entra ID 正式将通行密钥（Passkeys）作为默认登录体验，并为短信和语音验证引入了全新的安全模型。此举旨在通过抗钓鱼的身份验证技术取代传统弱口令，降低凭据被盗风险，虽然原文未披露具体技术实现细节，但强调了企业需为这一身份验证逻辑的转变做好迁移准备，以确保在新的默认安全配置下维持业务访问的连续性。",
+      "tags": [
+        "Entra ID",
+        "通行密钥",
+        "身份认证"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/07/13/microsoft-entra-id-security-updates-passkeys-are-the-default-authentication-method-in-entra-id/",
+      "source": "microsoft.com",
+      "category": "Synthesis",
+      "published": "2026-07-13T17:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "身份认证机制的重大变更，代表了无密码化安全趋势。",
+      "feed_url": "https://www.microsoft.com/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/07/13/microsoft-entra-id-security-updates-passkeys-are-the-default-authentication-method-in-entra-id",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/07/13/microsoft-entra-id-security-updates-passkeys-are-the-default-authentication-method-in-entra-id/"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 6.0,
+        "impact_scope": 9.0,
+        "exploitability": 5.0
+      },
+      "dimension_score": 7.1,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "苹果起诉OpenAI涉嫌窃取商业机密，AI硬件竞争引发法律诉讼；CNVD报告称本周85%漏洞为0day，多款设备存在高危风险。",
+      "title_orig": "Apple起诉OpenAI涉嫌窃取商业机密，AI硬件竞争升级法律战；CNVD周报：本周 85% 收录漏洞为0day，多款CMS、路由设备曝未修复高危漏洞|牛览",
+      "summary": "CNVD周报披露本周收录漏洞中0day占比达85%，涉及多款CMS系统及路由设备，但原文未披露具体漏洞类型、触发条件及受影响的组件版本。这些高危漏洞目前处于未修复状态，原文未披露具体的修复计划或缓解措施。此外，Apple起诉OpenAI涉嫌窃取商业机密，反映了AI硬件领域的法律争端，但原文未披露该诉讼涉及的具体技术细节或核心机密内容。",
+      "tags": [
+        "漏洞",
+        "OpenAI",
+        "AI"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA==&mid=2651141943&idx=2&sn=a18e90a315ed7ae13636468c6d5b369b",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-14T05:48:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "feed_title": "安全牛",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA%3D%3D&mid=2651141943&idx=2&sn=a18e90a315ed7ae13636468c6d5b369b",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 4.0,
+        "impact_scope": 9.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.25,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "国际网安动态：AI代理成为新型攻击面，OAuth滥用威胁企业云安全，埃森哲35GB数据遭窃，英国发布勒索软件应急警告。",
+      "title_orig": "安全 419 | 一周国际网安资讯：AI代理成新攻击面 OAuth滥用席卷企业云",
+      "summary": "本周国际网安资讯聚焦 AI 代理成为新攻击面，MemGhost 攻击者尝试向 AI 代理植入虚假记忆，同时 OAuth 滥用现象正席卷企业云环境。此外，埃森哲公司遭遇 35GB 数据遭窃事件，Salesforce 也面临相关安全挑战，英国 NCSC 警告称勒索软件的应急准备已成为董事会的首要任务，企业必须从管理层高度重视网络防御体系的构建与数据泄露风险的防控。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUyMDQ4OTkyMg==&mid=2247554058&idx=1&sn=0575176be0effd897a5ec18ba416312f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-15T09:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/6f33507162907318fd059fb11977ca352ff55d8e.xml",
+      "feed_title": "安全419",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/6f33507162907318fd059fb11977ca352ff55d8e.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzUyMDQ4OTkyMg%3D%3D&mid=2247554058&idx=1&sn=0575176be0effd897a5ec18ba416312f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "actionability": 6.0,
+        "technical_depth": 5.0,
+        "impact_scope": 7.0,
+        "exploitability": 5.0
+      },
+      "dimension_score": 6.25,
+      "final_score": 6.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "美国财政部制裁VPN提供商1VPNS及加密器卖家，指控其协助勒索软件攻击并导致关键基础设施遭受数十亿美元损失。",
+      "title_orig": "【安全圈】美国财政部制裁 VPN 提供商和 Cryptor 卖家，其背后是数十亿美元的勒索软件损失",
+      "summary": "美国财政部宣布对 VPN 提供商 1VPNS 及一名 Cryptor 卖家实施制裁，指控其为勒索软件攻击者提供关键技术支持，导致全球基础设施遭受了数十亿美元的损失。这些服务商通过提供匿名访问和恶意代码混淆工具，协助犯罪分子绕过安全检测并实施勒索，此次制裁行动体现了美国政府打击勒索软件生态链的决心，旨在通过切断非法技术供应链来遏制日益猖獗的网络犯罪活动。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077847&idx=3&sn=7d6de033b2c394d67973bc97d825e77a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-15T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652077847&idx=3&sn=7d6de033b2c394d67973bc97d825e77a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "relevance": 6.0,
+        "actionability": 5.0,
+        "technical_depth": 3.0,
+        "impact_scope": 7.0,
+        "exploitability": 2.0
+      },
+      "dimension_score": 4.55,
+      "final_score": 5.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "勒索软件攻击呈现不加密仅窃密趋势，某美国政府机构支付百万美元赎金",
+      "title_orig": "勒索最新趋势：不加密只盗窃 一家美国政府机构支付了100万美元赎金",
+      "summary": "根据 Ransom-ISAC 的最新案例研究，一家美国政府机构因担心被盗文件被公开，最终向攻击者支付了约 100 万美元赎金以达成和解。该攻击模式跳过了传统的数据加密环节，转而采用纯数据窃取后的泄密威胁进行勒索，研究人员通过泄露的谈判聊天记录和区块链转账轨迹证实了支付行为，这反映出勒索软件策略正向纯泄密勒索演变，对政府机构的数据保护提出了更严峻的挑战。",
+      "tags": [
+        "勒索软件",
+        "数据窃取",
+        "网络勒索"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxNzA3MTgyNg==&mid=2247543504&idx=1&sn=9c7c1241cde1bf5a559405bbca437022",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-15T08:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了勒索软件攻击策略的演变，对防御侧重点有参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/9da87fba8130d0c2dc52cc45b844f045227e06a7.xml",
+      "feed_title": "数世咨询",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/9da87fba8130d0c2dc52cc45b844f045227e06a7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzkxNzA3MTgyNg%3D%3D&mid=2247543504&idx=1&sn=9c7c1241cde1bf5a559405bbca437022",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "relevance": 6.0,
+        "actionability": 4.0,
+        "technical_depth": 3.0,
+        "impact_scope": 7.0,
+        "exploitability": 2.0
+      },
+      "dimension_score": 4.45,
+      "final_score": 5.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}

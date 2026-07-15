@@ -1,22 +1,22 @@
 # Source Registry Audit
 
-- generated_for: 2026-07-15
-- dates: 2026-07-15, 2026-07-14, 2026-07-13, 2026-07-12, 2026-07-11, 2026-07-10, 2026-07-09
+- generated_for: 2026-07-16
+- dates: 2026-07-16, 2026-07-15, 2026-07-14, 2026-07-13, 2026-07-12, 2026-07-11, 2026-07-10
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 97 | 12 | 20 | 64 | 1 | 6 | 12 | 39 | 16 |
-| ai_security | 53 | 1 | 0 | 52 | 0 | 6 | 1 | 5 | 23 |
-| finance | 70 | 15 | 0 | 55 | 0 | 12 | 15 | 0 | 0 |
-| security | 105 | 10 | 0 | 94 | 1 | 0 | 10 | 1 | 53 |
+| ai | 97 | 12 | 17 | 66 | 2 | 6 | 12 | 39 | 15 |
+| ai_security | 48 | 2 | 0 | 46 | 0 | 6 | 2 | 5 | 19 |
+| finance | 70 | 14 | 0 | 56 | 0 | 14 | 14 | 0 | 0 |
+| security | 105 | 11 | 0 | 93 | 1 | 0 | 11 | 1 | 52 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `machinelearning.apple.com` | 1 | ai | [苹果发布主动型智能体研究环境 PARE：通过模拟活跃用户评估 AI 助手](https://machinelearning.apple.com/research/proactive-agent-research-environment) |
+| `machinelearning.apple.com` | 2 | ai | [苹果研究团队提出 CLaRa 框架，通过连续潜空间推理解决 RAG 长上下文与优化不一致问题](https://machinelearning.apple.com/research/clara-latent-reasoning) |
 | `vipread.com` | 1 | security | [WgpSec发布Alkaid智能体框架，探索AI在全自主攻防场景中的工程化落地](https://vipread.com/library/topic/4153) |
 
 ## Review Rule
