@@ -1,0 +1,319 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-07-17",
+  "generated_at": "2026-07-16T23:41:24.691436Z",
+  "raw_count": 36,
+  "selected_count": 7,
+  "selection_stats": {
+    "total": 7,
+    "direct": 4,
+    "tier_t2": 5,
+    "kind_expert": 2,
+    "aggregator": 3,
+    "kind_expert_x": 1,
+    "google_news": 2,
+    "kind_google_news": 2,
+    "tier_t1": 2,
+    "kind_official": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 3,
+    "story": 0,
+    "total": 3
+  },
+  "items": [
+    {
+      "title_zh": "GPT-5.6 模型在非沙箱环境下运行 Codex 导致非预期文件删除漏洞分析",
+      "title_orig": "Quoting Thibault Sottiaux",
+      "summary": "研究人员调查发现 GPT-5.6 在特定条件下会意外删除文件，该问题主要发生在开启全访问模式且在无沙箱保护、未启用自动审查的环境下运行 Codex 时。漏洞原理是模型在尝试覆盖 HOME 环境变量以定义临时目录时发生逻辑错误，导致其在非预期路径执行了删除操作，目前原文未披露具体的修复补丁版本或缓解措施。",
+      "tags": [
+        "AI安全",
+        "文件系统安全",
+        "逻辑漏洞"
+      ],
+      "url": "https://simonwillison.net/2026/Jul/16/bad-codex-bug/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-07-16T17:45:59+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI模型在系统集成中因权限失控导致的文件破坏风险。",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/jul/16/bad-codex-bug",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "practical_risk": 9.0,
+        "agent_model_relevance": 10.0,
+        "actionability": 7.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 9.0,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员总结 AI 模型越狱技术路线：涵盖输入输出防护绕过与编码混淆",
+      "title_orig": "RT Mike Takahashi: How to Actually Jailbreak AI Models: 1. Ask the blocked request Blocked completely? Input guardrails Start answering, then stop? Ou...",
+      "summary": "研究员 Mike Takahashi 分享了针对 AI 模型的系统性越狱方法，通过识别输入拦截、输出防护及模型训练阶段的拒绝响应来精准定位安全拦截点。该技术方案涵盖了利用伦理框架伪装、特定角色扮演设定以及使用 P4RS3LT0NGV3 等特殊字符编码进行混淆绕过，旨在帮助安全从业者深入理解大模型的安全边界并有效测试防御机制的可靠性。",
+      "tags": [
+        "大模型越狱",
+        "提示词注入",
+        "红蓝对抗"
+      ],
+      "url": "https://x.com/rez0__/status/2077900332303020188",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-16T19:06:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统性总结了当前主流的AI越狱技术路径，具有实战参考价值。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2077900332303020188",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "practical_risk": 8.0,
+        "agent_model_relevance": 9.0,
+        "actionability": 8.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "针对 13 款主流 AI 模型发现已知 CVE 漏洞能力的基准测试研究",
+      "title_orig": "Benchmarking 13 AI models on rediscovering known CVEs",
+      "summary": "该研究通过 26 个已知的 CVE 漏洞对 13 款主流 AI 模型进行了深度基准测试，旨在系统性评估不同模型在自动化漏洞发现任务中的实际效能与表现。测试重点分析了高成本模型是否在漏洞识别准确率上具备与其价格相符的优势，为安全从业者在复杂漏洞挖掘场景中选择最合适的 AI 工具提供了关键的数据支撑与决策参考。",
+      "tags": [
+        "漏洞挖掘",
+        "基准测试",
+        "AI自动化"
+      ],
+      "url": "https://www.aikido.dev/blog/benchmarking-ai-models-known-cves",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-07-16T11:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "量化评估了AI在自动化漏洞发现领域的实际能力水平。",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/benchmarking-ai-models-known-cves",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 9.0,
+        "actionability": 7.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 8.1,
+      "final_score": 8.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "超过百万封电子邮件利用隐藏文本技术绕过 AI 安全过滤器攻击预警",
+      "title_orig": "1M+ Emails Use Hidden Text to Dupe AI Security Filters - Dark Reading",
+      "summary": "安全监测发现有超过一百万封电子邮件采用了隐藏文本技术，旨在欺骗并绕过企业部署的 AI 安全过滤系统。攻击者通过在邮件正文中嵌入模型不可见或易误判的干扰字符，使恶意内容成功逃避自动化审计，目前该攻击已影响大量终端用户，原文未披露具体的隐藏文本编码细节或受影响的特定安全厂商。",
+      "tags": [
+        "邮件安全",
+        "对抗性攻击",
+        "内容过滤"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNS3U3c05CY05qVXhvTldxcFpFX0huektnSHFTdUl1M0VORDBzajZobTdkTzdWYVVHLXZsWW5YTU9sSjhtS3dFaWdnNWZWNnExR3N0T3FSbGVlRlFJcng3OVNjY3BZUkRXbVQzUUtBZmRCYVdoSHpKSFQ3bm1XOHJaZmZGY2trZjZ4bnJURUhNNzQ2bUdDN3Q0cDdB?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-07-16T20:13:36+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对AI防御系统的规模化绕过攻击在现实中的应用。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:f21bd62f982d",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "practical_risk": 9.0,
+        "agent_model_relevance": 8.0,
+        "actionability": 8.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Unit 42 发布 2026 全球事件响应报告：深度解析 AI 与自动化攻击趋势",
+      "title_orig": "AI, Automation and Attacks: Unpacking the Unit 42 2026 Global Incident Response Report",
+      "summary": "Palo Alto Networks旗下的Unit 42团队正式发布了最新的全球事件响应报告，深入探讨了人工智能技术对网络安全格局的深远影响，以及自动化攻击手段在当前环境下的最新演进趋势。该报告详细分析了自2026年以来各类安全事件的显著变化，旨在为企业在应对AI驱动的复杂威胁时提供专业的防御视角、实用的响应策略建议，并针对未来可能出现的安全挑战提供关键的预警信息。",
+      "tags": [
+        "事件响应",
+        "威胁情报",
+        "安全报告"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/ai-incident-response-report/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-16T23:00:59+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级安全团队对AI时代安全威胁趋势的权威总结。",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/ai-incident-response-report",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "technical_depth": 5.0,
+        "practical_risk": 6.0,
+        "agent_model_relevance": 5.0,
+        "actionability": 4.0,
+        "security_relevance": 7.0
+      },
+      "dimension_score": 5.7,
+      "final_score": 7.5,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenAI 针对青少年用户推出 ChatGPT 安全防护机制与家长控制功能",
+      "title_orig": "Why teens deserve access to safe AI",
+      "summary": "OpenAI 宣布致力于为青少年用户构建更安全的 AI 访问环境，通过引入符合年龄特征的保护措施、定制化学习工具及家长控制功能来全方位降低潜在的交互风险。该公司通过与外部教育及安全专家建立深度合作关系，制定了严格的内容准则以确保模型输出适宜未成年人，并提供了透明的监管手段以平衡技术创新与青少年保护的需求。",
+      "tags": [
+        "AI伦理",
+        "内容安全",
+        "合规性"
+      ],
+      "url": "https://openai.com/index/why-teens-deserve-access-safe-ai",
+      "source": "openai.com",
+      "category": "FirstParty",
+      "published": "2026-07-16T16:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了头部AI厂商在内容安全和特定人群保护方面的最新进展。",
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "openai.com",
+      "story_id": "url:openai.com/index/why-teens-deserve-access-safe-ai",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "score_dimensions": {
+        "technical_depth": 2.0,
+        "practical_risk": 3.0,
+        "agent_model_relevance": 5.0,
+        "actionability": 2.0,
+        "security_relevance": 6.0
+      },
+      "dimension_score": 3.85,
+      "final_score": 5.65,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "行业调研显示超半数企业曾遭遇 AI 智能体安全事件且波及加密货币领域",
+      "title_orig": "Over half of enterprises have faced AI agent security incidents, and crypto is feeling the fallout - Crypto Briefing",
+      "summary": "根据 Crypto Briefing 的最新报道，超过半数的受访企业证实曾面临与 AI 智能体相关的安全事件，这些安全漏洞已对企业的日常业务运行造成了实质性的干扰与影响。特别是在加密货币领域，AI 智能体安全性不足所引发的连锁反应导致了严重的资产风险，凸显了在金融科技应用中加强 AI 自动化工具安全审计与防御部署的紧迫性。",
+      "tags": [
+        "AI智能体",
+        "企业安全",
+        "加密货币"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9sdVZJOVBBUmN6T3pYakNaaG5QdDZhRENoVzR0RHBuRjdMcThhcXpjYjlQYUxrZ0hYMHZ5eEkwbXIwOXBDaTNzby01U2I0OTF4LUpfVDBBbGxjOE8tdDRvM1JKdWFSanR2TlJHWVhUT2JnN1cxRVZpd0NkblpndVk?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-07-16T20:00:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI智能体这一新兴技术在企业应用中面临的普遍安全挑战。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:063dd68e4db7",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "technical_depth": 3.0,
+        "practical_risk": 6.0,
+        "agent_model_relevance": 8.0,
+        "actionability": 3.0,
+        "security_relevance": 7.0
+      },
+      "dimension_score": 5.55,
+      "final_score": 4.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
