@@ -1,0 +1,669 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-18",
+  "generated_at": "2026-07-17T23:37:01.214644Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 6,
+    "direct": 13,
+    "wechat": 5,
+    "tier_t2": 15,
+    "kind_cn_expert": 6,
+    "kind_expert": 1,
+    "kind_media": 4,
+    "aggregator": 2,
+    "kind_expert_x": 2,
+    "kind_community": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "delivered_filter_stats": {
+    "url": 9,
+    "story": 1,
+    "total": 10
+  },
+  "items": [
+    {
+      "title_zh": "Windows 管理员至内核权限提升漏洞 CVE-2024-21338 技术原理与绕过分析",
+      "title_orig": "Windows 管理员到内核的权限提升（CVE-2024-21338）",
+      "summary": "该漏洞源于 appid.sys 驱动程序中的 IOCTL 调用处理不当，允许具有管理员权限的攻击者通过令牌模拟获取 LOCAL SERVICE 权限，并利用此权限进一步提升至内核级别。通过破坏内核对象的 PreviousMode 字段，攻击者能成功绕过内核控制流防护 kCFG 和用户模式指令执行保护 SMEP，实现任意内核读写，目前微软已发布 MSRC 官方补丁修复此安全隐患，建议相关管理员及时更新系统以防范风险。",
+      "tags": [
+        "权限提升",
+        "内核安全",
+        "漏洞分析"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496595&idx=1&sn=5486333bbc98122e4adf9d48abd7ef2a",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-07-17T05:50:00+00:00",
+      "cve_ids": [
+        "CVE-2024-21338"
+      ],
+      "selection_reason": "深入分析了 Windows 内核驱动漏洞及现代防御机制的绕过",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "cve:cve-2024-21338",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "actionability": 10.0,
+        "exploitability": 9.0,
+        "technical_depth": 10.0
+      },
+      "dimension_score": 9.6,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Claude for Chrome 浏览器扩展程序存在安全缺陷可导致第三方操纵 AI 执行敏感操作",
+      "title_orig": "Claude扩展的\"信任危机\"：当你的AI助手开始听命于陌生人",
+      "summary": "Anthropic 旗下的 Claude for Chrome 扩展 v1.0.80 版本被发现存在两处尚未修复的安全缺陷，允许第三方在未经用户许可的情况下越权控制 AI 助手执行敏感操作。攻击者可以利用这些漏洞操纵 Claude 执行特定指令或获取用户相关数据，目前该版本仍处于受影响状态，且原文未披露具体的漏洞触发原理细节，建议相关用户关注官方后续的安全更新公告。",
+      "tags": [
+        "AI安全",
+        "浏览器扩展",
+        "越权漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519502&idx=1&sn=6afc8901a6d809e635f359ce0dc8bc08",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-16T07:45:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 助手集成工具的安全性，揭示了扩展程序带来的新型攻",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247519502&idx=1&sn=6afc8901a6d809e635f359ce0dc8bc08",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "exploitability": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.25,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "HTB Fireflow 靶机渗透复盘：从 Langflow RCE 到 Kubernetes 宿主机权限获取",
+      "title_orig": "HTB Fireflow：从 Langflow RCE、MCP JWT 伪造到 Kubernetes Root摘要",
+      "summary": "本文详细展示了针对 AI 工作流平台 Langflow 1.8.2 的多阶段攻击链，利用 CVE-2026-33017 漏洞在未授权状态下通过构造恶意 Python Interpreter 组件实现远程代码执行。攻击者随后通过服务枚举、OpenAPI 信息泄露及 MCP JWT 伪造等手段进一步渗透，最终从容器环境延伸至 Kubernetes 宿主机并获取 Root 权限，揭示了云原生与 AI 基础设施结合环境下的复杂提权路径与安全风险。",
+      "tags": [
+        "渗透测试",
+        "AI工作流",
+        "K8s安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92536",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-07-17T08:15:36+00:00",
+      "cve_ids": [
+        "CVE-2026-33017"
+      ],
+      "selection_reason": "涵盖了从 AI 框架漏洞到云原生集群提权的完整实战攻击链。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-33017",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92536"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "exploitability": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Microsoft SharePoint Server 未授权远程代码执行漏洞 CVE-2026-58644 遭野外利用",
+      "title_orig": "CVE-2026-58644: Microsoft SharePoint Server Unauthenticated Remote Code Execution Vulnerability Exploited in the Wild",
+      "summary": "该漏洞属于不安全的反序列化漏洞（CWE-502），影响本地部署的 Microsoft SharePoint Server 版本，其 CVSS 评分高达 9.8 且被定义为严重级别。远程攻击者无需身份验证即可通过构造恶意数据触发漏洞，从而在服务器上下文中执行任意代码；微软已发布安全公告确认该漏洞已被攻击者在野外利用，强烈建议受影响的组织尽快应用官方发布的补丁程序。",
+      "tags": [
+        "SharePoi",
+        "RCE漏洞",
+        "反序列化"
+      ],
+      "url": "https://www.rapid7.com/blog/post/etr-cve-2026-58644-microsoft-sharepoint-server-unauthenticated-remote-code-execution-vulnerability-exploited-in-the-wild",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-17T18:18:53+00:00",
+      "cve_ids": [
+        "CVE-2026-58644"
+      ],
+      "selection_reason": "高危 RCE 漏洞且已出现野外利用，对企业级应用安全具有重大",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-58644",
+      "related_urls": [
+        "https://www.rapid7.com/blog/post/etr-cve-2026-63030-wp2shell-a-critical-remote-code-execution-vulnerability-in-wordpress-core",
+        "https://mp.weixin.qq.com/s?__biz=MzU3ODM2NTg2Mg==&mid=2247497104&idx=1&sn=8762ad9c1040c82f3d1cb9aef1b80e41"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "exploitability": 10.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 核心组件修复 WP2Shell 严重漏洞并强制推送自动更新以阻止远程代码执行",
+      "title_orig": "WP2Shell: Critical WordPress Flaw Lets Anyone Run Code",
+      "summary": "WordPress 官方于 7 月 17 日紧急发布了 7.0.2 和 6.9.5 版本，旨在修复一个名为 WP2Shell 的预认证远程代码执行漏洞，该漏洞允许任何攻击者在未授权的情况下运行恶意代码。由于该漏洞威胁极大，官方打破了不干预管理员更新选择的惯例，对所有受影响的站点强制推送了自动更新；这一罕见举措反映了漏洞的严重性，尽管原文并未披露具体的技术细节。",
+      "tags": [
+        "WordPres",
+        "RCE漏洞",
+        "强制更新"
+      ],
+      "url": "https://www.cyberkendra.com/2026/07/wp2shell-critical-wordpress-flaw-lets.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-07-17T22:09:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "罕见的官方强制更新事件，凸显了该 WordPress 漏洞的",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/07/wp2shell-critical-wordpress-flaw-lets.html",
+      "related_urls": [
+        "https://thehackernews.com/2026/07/new-wp2shell-wordpress-core-flaw-lets.html"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 10.0,
+        "actionability": 9.0,
+        "exploitability": 10.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 9.4,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenSSL HollowByte 漏洞可被 11 字节 TLS 请求触发导致服务器内存耗尽",
+      "title_orig": "OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests",
+      "summary": "OpenSSL 被曝存在名为 HollowByte 的拒绝服务漏洞，攻击者仅需发送 11 字节的恶意 TLS 请求即可诱导服务器分配高达 131 KB 且无法释放的内存，导致资源耗尽。在 glibc 系统测试中，被占用的内存直至进程重启前都无法回收，可能引发严重的内存泄漏风险，尽管 OpenSSL 已在 6 月修复此问题，但最初未发布 CVE 编号或更新日志，后由 Okta 红队正式披露并命名，提醒运维人员关注补丁状态。",
+      "tags": [
+        "OpenSSL",
+        "拒绝服务",
+        "内存泄漏"
+      ],
+      "url": "https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-17T20:20:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了底层加密库中极小代价触发高影响 DoS 的技术细节。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/hollowbyte-ddos-flaw-bloats-openssl-server-memory-with-11-byte-payload/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "exploitability": 8.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "macOS 终端通过 ANSI 转义码实现间接提示注入与 DNS 带外数据外泄漏洞分析",
+      "title_orig": "Genius",
+      "summary": "研究人员 Johann Rehberger 发现并演示了 macOS 终端的一项安全缺陷，通过 ANSI 转义码结合间接提示注入实现基于 DNS 的数据外泄。该攻击链利用终端对特定字符序列的处理逻辑，在用户不知情的情况下将敏感信息通过 DNS 查询发送至攻击者服务器；目前苹果公司已修复了启用该攻击链的相关行为，原文未披露具体受影响的系统版本号。",
+      "tags": [
+        "macOS",
+        "提示注入",
+        "数据外泄"
+      ],
+      "url": "https://x.com/rez0__/status/2077933819852693539",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-17T01:50:03+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了终端模拟器与 AI 提示注入结合的创新攻击向量。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2077933819852693539",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "exploitability": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux 内核 Dirty Pipe 提权漏洞 CVE-2022-0847 深度原理分析",
+      "title_orig": "CVE-2022-0847 Dirty Pipe 漏洞原理深度分析",
+      "summary": "本文深入探讨了 Linux 内核中著名的 Dirty Pipe 漏洞原理，该漏洞允许非特权用户向只读文件写入数据，从而实现对系统敏感文件的非法篡改。文章详细分析了管道缓冲区标志位未正确初始化导致的内存页共享问题，以及如何利用该特性覆盖敏感系统文件实现提权；该漏洞影响 Linux 5.8 及之后版本，目前各主流发行版均已发布补丁修复，是内核安全研究中的经典案例。",
+      "tags": [
+        "Linux内核",
+        "漏洞原理",
+        "提权"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458617657&idx=1&sn=3610a9f9925a214f6b8918df666db2e6",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-17T10:06:00+00:00",
+      "cve_ids": [
+        "CVE-2022-0847"
+      ],
+      "selection_reason": "经典的内核漏洞深度分析，有助于理解 Linux 内存管理与管",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "cve:cve-2022-0847",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "actionability": 6.0,
+        "exploitability": 8.0,
+        "technical_depth": 10.0
+      },
+      "dimension_score": 8.1,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "恶意 Vite npm 软件包利用四层区块链 C2 基础设施分发远程控制木马",
+      "title_orig": "Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT",
+      "summary": "安全研究人员在 Vite 前端工具生态系统中发现了 7 个恶意 npm 软件包，该攻击活动被命名为 ViteVenom，标志着 ChainVeil 攻击链的进一步扩张。这些恶意包利用基于 Tron 区块链的四层命令与控制基础设施来分发远程控制木马，其前所未有的复杂架构引起了安全社区的高度关注，建议开发者在集成相关依赖时必须加强安全审计以防范此类供应链攻击。",
+      "tags": [
+        "供应链攻击",
+        "区块链C2",
+        "npm恶意包"
+      ],
+      "url": "https://thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-17T18:54:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用区块链技术构建隐蔽 C2 基础设施的新型供应链攻击",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "exploitability": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型 NadMesh 僵尸网络针对暴露的 AI 服务窃取云凭据与 K8s 令牌",
+      "title_orig": "New NadMesh Botnet Hunts Exposed AI Services for Cloud Keys and Kubernetes Tokens",
+      "summary": "名为 NadMesh 的 Go 语言僵尸网络近期被发现专门针对 ComfyUI、Ollama 及 Gradio 等暴露在公网的 AI 服务进行扫描，旨在窃取 AWS 密钥和 Kubernetes 令牌等敏感凭据。该网络利用 Shodan 自动获取目标，其仪表盘显示已窃取超过 3800 个唯一密钥，主要原因是许多团队在快速部署 AI 镜像生成器和工作流工具时忽略了防火墙配置，导致云端资产面临严重的泄露风险。",
+      "tags": [
+        "AI安全",
+        "僵尸网络",
+        "云安全"
+      ],
+      "url": "https://thehackernews.com/2026/07/new-nadmesh-botnet-hunts-exposed-ai.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-17T17:12:23+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对新兴 AI 基础设施配置疏忽的自动化攻击趋势。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/07/new-nadmesh-botnet-hunts-exposed-ai.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "exploitability": 8.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GPT-5.6 意外删除文件事件调查：全访问模式与沙箱缺失导致逻辑错误",
+      "title_orig": "On file deletions. We’ve investigated a handful of reports where GPT-5.6 unexpectedly deleted files. What we have found is that this most commonly oc...",
+      "summary": "针对 GPT-5.6 意外删除文件的报告，调查发现该问题主要发生在启用全访问模式且未开启沙箱保护或自动审查的环境中。当模型尝试覆盖 $HOME 环境变量以定义临时目录，或在执行代码逻辑时出现错误，可能导致非预期的文件删除操作。目前该问题被归类为特定配置下的逻辑误操作，建议用户在使用高级代码执行功能时保持沙箱防护。",
+      "tags": [
+        "大模型安全",
+        "逻辑漏洞",
+        "沙箱逃逸"
+      ],
+      "url": "https://x.com/thsottiaux/status/2077630111499882637",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-16T05:43:13+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注大语言模型在具备系统操作权限时的安全性与潜在风险。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/thsottiaux",
+      "feed_title": "X / Thomas Sottiaux",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:thsottiaux",
+      "story_id": "url:x.com/thsottiaux/status/2077630111499882637",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "exploitability": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "企业级 SaaS API 身份验证彻底失效：未授权攻击者可访问高级功能",
+      "title_orig": "Zero Credentials, Full Access: Inside a Complete Authorization Failure",
+      "summary": "安全研究员在评估某公共企业级 SaaS API 时，发现了一个严重的身份验证与授权崩溃漏洞。通过链式利用多个信任边界失效点，未授权的匿名攻击者能够直接绕过凭据校验，获取原本仅限付费订阅用户使用的高级企业功能。该案例展示了在生产环境中，API 逻辑设计缺陷可能导致整个安全防线的彻底瓦解。",
+      "tags": [
+        "API安全",
+        "越权访问",
+        "身份验证"
+      ],
+      "url": "https://infosecwriteups.com/zero-credentials-full-access-inside-a-complete-authorization-failure-1607f0cf12ca?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-07-17T07:19:36+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的 API 授权失效案例，对 Web 安全开发具有警示意",
+      "feed_url": "https://medium.com/feed/bugbountywriteup/tagged/bug-bounty",
+      "feed_title": "Bug Bounty in InfoSec Write-ups on Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "url:infosecwriteups.com/zero-credentials-full-access-inside-a-complete-authorization-failure-1607f0cf12ca?source=rss----7b722bfd1b8d--bug_bounty",
+      "related_urls": [
+        "https://infosecwriteups.com/zero-credentials-full-access-inside-a-complete-authorization-failure-1607f0cf12ca?source=rss----7b722bfd1b8d---4"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0,
+        "exploitability": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.25,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 插件 Academy LMS 存在 IDOR 漏洞导致测验答案泄露",
+      "title_orig": "How I Found a Cross-Student IDOR in Academy LMS That Leaked Correct Quiz Answers",
+      "summary": "WordPress插件Academy LMS存在跨学生IDOR漏洞，其根源在于插件未对测验结果的访问请求实施严格的权限校验。任何已注册的学生只需通过操纵请求中的ID参数，即可非法读取其他学生的私人测验结果并提取正确答案，该漏洞影响超过2000个活跃安装站点。原文未披露具体受影响的版本号、CVE编号及官方修复状态，目前该漏洞的技术细节已由独立研究员公开披露。",
+      "tags": [
+        "IDOR",
+        "WordPres",
+        "插件漏洞"
+      ],
+      "url": "https://infosecwriteups.com/how-i-found-a-cross-student-idor-in-academy-lms-that-leaked-correct-quiz-answers-c68bfe06f3a0?source=rss----7b722bfd1b8d--bug_bounty",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-07-17T07:19:31+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了教育类软件中常见的逻辑漏洞及其对数据隐私的影响。",
+      "feed_url": "https://medium.com/feed/bugbountywriteup/tagged/bug-bounty",
+      "feed_title": "Bug Bounty in InfoSec Write-ups on Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "url:infosecwriteups.com/how-i-found-a-cross-student-idor-in-academy-lms-that-leaked-correct-quiz-answers-c68bfe06f3a0?source=rss----7b722bfd1b8d--bug_bounty",
+      "related_urls": [
+        "https://infosecwriteups.com/how-i-found-a-cross-student-idor-in-academy-lms-that-leaked-correct-quiz-answers-c68bfe06f3a0?source=rss----7b722bfd1b8d---4"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 6.0,
+        "actionability": 8.0,
+        "exploitability": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "意大利某 NGO 组织发现改装型 4G 窃听器：利用工业芯片实现远程监控",
+      "title_orig": "暗流涌动！某NGO 组织遭遇秘密监视窃听～",
+      "summary": "在意大利罗马某 NGO 组织的内部检测中，专业人员在天花板内发现了一个由工业无线芯片、SIM 卡及外接麦克风组成的改装型 4G 窃听装置，该设备通过室内电线实现长期供电。技术分析表明该装置支持通过环境噪音或远程短信激活，并能利用多种移动网络传输音频，其精心的伪装部署显示出极高的专业水准，目前相关部门仍在对这起具有高度隐蔽性的秘密监视案件进行深入调查。",
+      "tags": [
+        "物理安全",
+        "反窃听",
+        "硬件安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE2OTQyNA==&mid=2648959404&idx=1&sn=399e28c2e2ea4ac63a277091dd8f8fa4",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-16T08:19:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了实物窃听设备的硬件构成分析，具有实战参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d2b0dc03acc579a8a9c7aa45bf1f531ed5563f59.xml",
+      "feed_title": "全频带阻塞干扰",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d2b0dc03acc579a8a9c7aa45bf1f531ed5563f59.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE2OTQyNA%3D%3D&mid=2648959404&idx=1&sn=399e28c2e2ea4ac63a277091dd8f8fa4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 5.0,
+        "actionability": 8.0,
+        "exploitability": 6.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 6.75,
+      "final_score": 7.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "反人工智能字体 Decoy Font：利用空间频率差异对抗 OCR 识别",
+      "title_orig": "关于反人工智能字体 Anti-AI Fonts",
+      "summary": "Decoy Font 是一种旨在保护文本隐私的实验性字体，通过在同一空间内以不同空间频率呈现两个字母来干扰 AI 识别。其原理是利用细轮廓前景与模糊低频背景叠加，使人类能通过调整观察角度或距离阅读，而 AI 系统因近距离读取像素而无法正确解析。这种字体为防止知识产权被 AI 模型抓取提供了一种基于视觉感知差异的新思路。",
+      "tags": [
+        "对抗样本",
+        "隐私保护",
+        "AI安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187717&idx=1&sn=0832812911b2b3a09a39a482e417120e",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-17T15:39:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍了一种新颖的利用人类视觉与 AI 算法差异进行隐私保护的",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187717&idx=1&sn=0832812911b2b3a09a39a482e417120e",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "relevance": 6.0,
+        "impact_scope": 4.0,
+        "actionability": 5.0,
+        "exploitability": 2.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 4.7,
+      "final_score": 5.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}

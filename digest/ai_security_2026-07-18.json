@@ -1,0 +1,111 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-07-18",
+  "generated_at": "2026-07-17T23:37:23.026356Z",
+  "raw_count": 43,
+  "selected_count": 2,
+  "selection_stats": {
+    "total": 2,
+    "chinese": 2,
+    "direct": 2,
+    "tier_t2": 2,
+    "kind_cn_expert": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 5,
+    "story": 0,
+    "total": 5
+  },
+  "items": [
+    {
+      "title_zh": "HTB Fireflow 靶机渗透：从 Langflow RCE 到 Kubernetes 宿主机提权全过程复盘",
+      "title_orig": "HTB Fireflow：从 Langflow RCE、MCP JWT 伪造到 Kubernetes Root摘要",
+      "summary": "本文详细复盘了针对FireFlow靶机的多阶段渗透过程，展示了从AI工作流平台Langflow延伸至Kubernetes宿主机的完整攻击链条，重点分析了OpenAPI信息泄露与CVE-2026-33017漏洞的利用方式。攻击者在未认证状态下通过构造包含恶意Python组件的Flow实现远程代码执行，随后利用MCP JWT伪造技术跨越容器边界，最终成功获取宿主机Root权限并揭示了云原生环境下的严重安全风险。",
+      "tags": [
+        "RCE漏洞",
+        "K8s安全",
+        "AI安全"
+      ],
+      "url": "https://xz.aliyun.com/news/92536",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-07-17T08:15:36+00:00",
+      "cve_ids": [
+        "CVE-2026-33017"
+      ],
+      "selection_reason": "展示了从AI组件漏洞到云原生环境提权的完整实战链路。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-33017",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "score_dimensions": {
+        "practical_risk": 10.0,
+        "actionability": 9.0,
+        "technical_depth": 10.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "GPT-RED 与 AgentCyberRange 框架：探索 AI 智能体在网络安全攻防博弈中的自动化应用",
+      "title_orig": "GPT-RED + AgentCyberRange：AI网络安全进入「自我博弈」时代",
+      "summary": "本文介绍了 GPT-RED 与 AgentCyberRange 框架，探讨了 AI 网络安全进入自动化自我博弈阶段的技术演进，重点分析了基于大语言模型的智能体在模拟攻击与防御对抗中的表现。该研究通过构建自动化的网络靶场环境，验证了 AI 智能体在复杂网络场景下的决策能力与执行效率，为安全从业者提供了关于未来自动化红蓝对抗技术发展的新视角。",
+      "tags": [
+        "AI攻防",
+        "自动化渗透",
+        "安全智能体"
+      ],
+      "url": "https://www.anquanke.com/post/id/315811",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-07-17T14:27:04+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨AI智能体在自动化攻防中的前沿应用与技术框架。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315811",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "practical_risk": 6.0,
+        "actionability": 4.0,
+        "technical_depth": 5.0,
+        "agent_model_relevance": 8.0,
+        "security_relevance": 7.0
+      },
+      "dimension_score": 6.15,
+      "final_score": 7.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
