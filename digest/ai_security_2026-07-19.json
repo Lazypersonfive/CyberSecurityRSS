@@ -1,0 +1,155 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-07-19",
+  "generated_at": "2026-07-18T23:39:30.754685Z",
+  "raw_count": 37,
+  "selected_count": 3,
+  "selection_stats": {
+    "total": 3,
+    "aggregator": 3,
+    "tier_t2": 3,
+    "kind_expert_x": 1,
+    "google_news": 2,
+    "chinese": 1,
+    "kind_google_news": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "delivered_filter_stats": {
+    "url": 5,
+    "story": 0,
+    "total": 5
+  },
+  "items": [
+    {
+      "title_zh": "WordPress 核心组件存在未授权远程代码执行漏洞链，单次匿名请求即可获取服务器权限",
+      "title_orig": "Uhhh I don’t think this is the final step my agent found for RCE… lollll",
+      "summary": "该漏洞链结合了REST批量路由混淆与未授权SQL注入，攻击者通过发送单个匿名HTTP请求即可在默认安装的WordPress核心程序上实现从SQL注入到管理员哈希获取，最终完成远程代码执行。该漏洞涉及CVE-2026-63030和CVE-2026-60137，影响无需任何插件或登录凭据的默认配置环境，目前已有单文件、零依赖的PoC工具发布，引发了安全社区对核心程序安全性的高度关注。",
+      "tags": [
+        "WordPres",
+        "RCE",
+        "漏洞利用"
+      ],
+      "url": "https://x.com/rez0__/status/2078538742776709152",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-18T17:53:48+00:00",
+      "cve_ids": [
+        "CVE-2026-60137",
+        "CVE-2026-63030"
+      ],
+      "selection_reason": "WordPress核心高危漏洞链，单次请求即可RCE，危害极",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "cve:cve-2026-60137,cve-2026-63030",
+      "related_urls": [
+        "https://x.com/rez0__/status/2078517308671033811"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "practical_risk": 10.0,
+        "technical_depth": 9.0,
+        "security_relevance": 10.0,
+        "agent_model_relevance": 7.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "美国政府计划成立专门监管机构以评估人工智能系统的安全性",
+      "title_orig": "美国将成立监管机构评估AI安全 - VOI.id",
+      "summary": "美国政府宣布将成立一个新的监管机构，旨在专门评估人工智能技术的安全性，该机构的主要职责是针对AI系统进行安全审查与风险评估，以应对日益增长的技术安全挑战。尽管这一举措标志着国家层面加强了对新兴技术的监管力度，但目前关于该机构的具体组织架构、评估标准以及正式运行的时间表等详细技术细节在原文中尚未披露，相关政策的后续落地情况仍需进一步观察。",
+      "tags": [
+        "AI安全",
+        "合规监管",
+        "网络政策"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE1ndUkxMzhCVFNpb3FJMHJTa1A1dUNFal95RzQtMmlmRndRT2xfYnhYdjY0dl9uc3ZaLVFQOEx5Vlk1WlE?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-07-18T17:22:59+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映国家级AI安全监管趋势，对行业合规具有参考价值。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:03ab27277ab4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "practical_risk": 5.0,
+        "technical_depth": 3.0,
+        "security_relevance": 7.0,
+        "agent_model_relevance": 6.0,
+        "actionability": 4.0
+      },
+      "dimension_score": 5.15,
+      "final_score": 4.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "美国将成立专门机构评估人工智能安全性，旨在加强AI技术监管与风险防范",
+      "title_orig": "US to Form Agency to Evaluate AI Security - VOI.id",
+      "summary": "美国政府计划成立一个新的专门机构来评估人工智能的安全性，此举旨在通过建立官方监管机制来应对AI技术快速发展带来的潜在风险与安全挑战。该机构将负责对各类AI系统进行系统性的安全审查，虽然目前关于该部门的具体运作模式、评估准则以及正式成立的确切日期等核心细节尚未在报道中明确说明，但这反映了美国在人工智能治理领域加强行政干预的重要趋势。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE1qa0V5MEJRM0lhaW1XSUdwbW1tb0MxR0t0UGI1cnNfaVNGSTNFVjBMMWtIQ0hqbnZBX1dPN0daa25RQnPSAUJBVV95cUxPOVlMT2c3T0hnTFN6VkR5MTc3N3hTejlaaWNtdW1EX3NPUkZQdVRSeE9BbXMzYW54NWNHWE5tN3pkS1E?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-07-18T17:46:52+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚合源补充关键动态",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:c54e52546f9a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "practical_risk": 5.0,
+        "technical_depth": 3.0,
+        "security_relevance": 7.0,
+        "agent_model_relevance": 6.0,
+        "actionability": 4.0
+      },
+      "dimension_score": 5.15,
+      "final_score": 4.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

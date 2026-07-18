@@ -1,0 +1,660 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-19",
+  "generated_at": "2026-07-18T23:39:06.328475Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "aggregator": 1,
+    "tier_t2": 12,
+    "kind_expert_x": 1,
+    "chinese": 6,
+    "direct": 14,
+    "wechat": 5,
+    "kind_cn_expert": 5,
+    "kind_community": 4,
+    "kind_media": 4,
+    "kind_expert": 1,
+    "tier_unknown": 3
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 1,
+    "merged_total": 2
+  },
+  "delivered_filter_stats": {
+    "url": 15,
+    "story": 0,
+    "total": 15
+  },
+  "items": [
+    {
+      "title_zh": "WordPress 路由混淆漏洞可伪造 WP_Post 绕过身份验证并实现远程代码执行",
+      "title_orig": "RT 0xSha: 🐚 wp2shell RCE now needs no cracking. thanks @rez0__ for the nudge. forge a fake WP_Post (route confusion) → it runs a customize_changes...",
+      "summary": "研究者 0xSha 披露了 wp2shell 漏洞的新利用链，通过路由混淆技术伪造 WP_Post 对象，使系统以现有管理员身份运行变更集，从而在无需破解凭据的情况下获取服务器 Shell。攻击者可借此调用 REST API 创建新管理员账户并登录，该漏洞利用了 WordPress 内部对象处理逻辑的缺陷，目前具体受影响版本需参考官方补丁说明以确保系统安全。",
+      "tags": [
+        "WordPres",
+        "路由混淆",
+        "RCE"
+      ],
+      "url": "https://x.com/rez0__/status/2078552264399024246",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-18T18:45:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用路由混淆实现越权和 RCE 的高级利用技巧。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:bleepingcomputer.com/news/security/wordpress-core-wp2shell-rce-flaws-get-public-exploits-patch-now",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/wordpress-core-wp2shell-rce-flaws-get-public-exploits-patch-now/",
+        "https://x.com/rez0__/status/2078538742776709152"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 10.0,
+        "technical_depth": 9.0,
+        "exploitability": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.65,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "xAI Grok Build 存在信任机制绕过漏洞，AI 编程工具权限系统可被项目文件覆写",
+      "title_orig": "xAI Grok Build 开源次日 0day 挖掘：信任机制绕过与 AI 编程工具的安全碎片化",
+      "summary": "该漏洞源于 AI Agent 的权限系统存在设计缺陷，允许项目级配置文件非法覆写全局安全策略，其核心原理是本地项目信任边界校验失效。当用户使用 AI 编程工具打开恶意构造的项目文件时，攻击者可触发该漏洞绕过信任机制并直接获取系统 Shell 权限；原文未披露受影响的具体版本号及官方修复补丁状态，但指出该问题反映了 AI 辅助开发工具在安全碎片化方面的风险。",
+      "tags": [
+        "AI安全",
+        "权限绕过",
+        "供应链安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU4ODQ3NTM2OA==&mid=2247505450&idx=1&sn=ae635e290bb3eae061844bce426261c4",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-18T01:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了新兴 AI 编程工具在权限隔离设计上的典型安全风险。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/9e9c3c70e598266a1ac993e50458a10a6d853eb7.xml",
+      "feed_title": "慢雾科技",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/9e9c3c70e598266a1ac993e50458a10a6d853eb7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU4ODQ3NTM2OA%3D%3D&mid=2247505450&idx=1&sn=ae635e290bb3eae061844bce426261c4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 8.0,
+        "technical_depth": 9.0,
+        "exploitability": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "金融管理门户网站存在未参数化 SQL 注入漏洞，可导致 PostgreSQL 超级用户权限 RCE",
+      "title_orig": "From SQL Injection to Infrastructure-Level RCE: A PostgreSQL Superuser Compromise",
+      "summary": "安全研究员在审计 vsswb 金融门户网站时，发现一个未经过滤的参数存在 SQL 注入漏洞，可直接导致未经身份验证的远程代码执行。通过该漏洞，攻击者能够获取 PostgreSQL 数据库的超级用户权限，进而渗透整个国家基础设施网络。原文指出该漏洞源于代码中缺乏参数化查询，目前相关单位尚未对该漏洞报告做出正式回应。",
+      "tags": [
+        "SQL注入",
+        "PostgreS",
+        "基础设施安全"
+      ],
+      "url": "https://infosecwriteups.com/from-sql-injection-to-infrastructure-level-rce-a-postgresql-superuser-compromise-2e0169207286?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-07-18T09:24:45+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的高危害漏洞链，展示了从 Web 注入到数据库提权的路径",
+      "feed_url": "https://infosecwriteups.com/feed",
+      "feed_title": "InfoSec Write-ups - Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "url:infosecwriteups.com/from-sql-injection-to-infrastructure-level-rce-a-postgresql-superuser-compromise-2e0169207286?source=rss----7b722bfd1b8d---4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "technical_depth": 10.0,
+        "exploitability": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.5,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Bitter（APT-C-08）组织深度分析报告：针对特定目标的长期网络间谍活动分析",
+      "title_orig": "Bitter（APT-C-08）APT组织深度分析报告",
+      "summary": "本报告对长期活跃的 APT 组织 Bitter（蔓灵花）进行了深度技术剖析，涵盖其最新的攻击组件和基础设施演变。该组织主要通过鱼叉式钓鱼邮件分发恶意文档，利用已知漏洞或自研后门程序对目标进行敏感信息窃取。报告详细记录了其攻击链中的技术特征，但未披露具体的新型零日漏洞细节，重点在于其战术手段的持续性分析。",
+      "tags": [
+        "APT攻击",
+        "Bitter组织",
+        "威胁情报"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247496910&idx=2&sn=2f8fd902e19b520e2900c70b241f77df",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-18T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了对成熟 APT 组织战术演进的系统性梳理。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247496910&idx=2&sn=2f8fd902e19b520e2900c70b241f77df",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "technical_depth": 8.0,
+        "exploitability": 7.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "7-Zip 发布 26.02 版本修复远程代码执行漏洞，防范恶意压缩包攻击",
+      "title_orig": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives",
+      "summary": "知名压缩软件 7-Zip 发布了 26.02 正式版本，旨在修复一个严重的远程代码执行漏洞。攻击者可以通过构造特殊的恶意压缩文件，诱导用户打开后在目标系统上执行任意代码。原文未详细说明该漏洞的具体 CVE 编号或底层原理，但明确建议所有用户立即升级到最新版本以规避被攻击风险，目前补丁已正式发布。",
+      "tags": [
+        "7-Zip",
+        "RCE",
+        "软件更新"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/update-now-7-zip-fixes-rce-flaw-exploitable-with-malicious-archives/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-18T19:32:02+00:00",
+      "cve_ids": [],
+      "selection_reason": "高流行度工具的安全更新，对终端安全防护具有重要意义。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/update-now-7-zip-fixes-rce-flaw-exploitable-with-malicious-archives",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 9.0,
+        "technical_depth": 7.0,
+        "exploitability": 8.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "利用微软合法认证页面的设备代码钓鱼攻击：无需密码即可获取访问令牌",
+      "title_orig": "Device Code Phishing: How Attackers Abuse Microsoft’s Legitimate Authentication Page Without…",
+      "summary": "一种新型钓鱼攻击利用了微软合法的设备认证流程，通过诱导用户在官方页面输入设备代码来窃取访问令牌而非密码。攻击者利用该机制绕过传统的 MFA 意识防护，使用户在不知情的情况下授权恶意应用访问其账户。这种攻击方式极具欺骗性，因为它完全发生在微软的信任域名下，目前已成为针对企业云环境的主要威胁之一。",
+      "tags": [
+        "钓鱼攻击",
+        "OAuth",
+        "身份认证"
+      ],
+      "url": "https://infosecwriteups.com/device-code-phishing-how-attackers-abuse-microsofts-legitimate-authentication-page-without-cfa189643f45?source=rss----7b722bfd1b8d---4",
+      "source": "infosecwriteups.com",
+      "category": "WebSecurity",
+      "published": "2026-07-18T09:24:57+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了利用合法认证协议缺陷的新型钓鱼手法，具有实战参考价值。",
+      "feed_url": "https://infosecwriteups.com/feed",
+      "feed_title": "InfoSec Write-ups - Medium",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "安全社区",
+      "source_key": "infosecwriteups.com",
+      "story_id": "url:infosecwriteups.com/device-code-phishing-how-attackers-abuse-microsofts-legitimate-authentication-page-without-cfa189643f45?source=rss----7b722bfd1b8d---4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "technical_depth": 8.0,
+        "exploitability": 9.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.45,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Google Chrome 浏览器 Aura 组件存在 UAF 关键漏洞 CVE-2026-15905",
+      "title_orig": "CVE-2026-15905 | Google Chrome up to 150.0.7871.125 Aura use after free",
+      "summary": "Google Chrome 浏览器被发现存在编号为 CVE-2026-15905 的关键漏洞，受影响版本最高至 150.0.7871.125，该漏洞位于 Aura 组件中且可被远程利用。由于未知功能的处理逻辑缺陷，远程攻击者可通过特定操作触发释放后使用漏洞，虽然目前尚未发现公开的利用程序，但官方强烈建议用户尽快升级浏览器组件，以规避潜在的远程代码执行风险。",
+      "tags": [
+        "Chrome",
+        "UAF漏洞",
+        "浏览器安全"
+      ],
+      "url": "https://vuldb.com/vuln/380093",
+      "source": "vuldb.com",
+      "category": "Synthesis",
+      "published": "2026-07-18T19:24:24+00:00",
+      "cve_ids": [
+        "CVE-2026-15905"
+      ],
+      "selection_reason": "Chrome 核心组件的高危漏洞预警，影响范围极广。",
+      "feed_url": "https://vuldb.com/en/?rss.recent",
+      "feed_title": "VulDB Recent Entries",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "vuldb.com",
+      "story_id": "cve:cve-2026-15905",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 9.0,
+        "technical_depth": 7.0,
+        "exploitability": 7.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Metasploit 更新 HTTP 到 SMB 中继模块并优化有效载荷生成机制",
+      "title_orig": "Metasploit Wrap Up: An HTTP to SMB relay plus Payload Improvements",
+      "summary": "Metasploit 框架在最新的更新中引入了 HTTP 到 SMB 的中继功能并改进了 Payload 生成逻辑，旨在增强复杂网络环境下的渗透能力与工具稳定性。此外，官方宣布将技术周报调整为双周发布频率，以便团队有更充裕的时间制作高质量的功能演示视频，持续为安全从业者提供实战支持，用户需关注后续发布的视频内容以掌握最新渗透测试技术。",
+      "tags": [
+        "Metasplo",
+        "渗透测试",
+        "SMB中继"
+      ],
+      "url": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-an-http-to-smb-relay-plus-payload-improvements",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-17T19:30:44+00:00",
+      "cve_ids": [],
+      "selection_reason": "主流渗透框架的功能更新，直接影响红蓝对抗的技术手段。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "url:rapid7.com/blog/post/pt-metasploit-wrap-up-an-http-to-smb-relay-plus-payload-improvements",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 7.0,
+        "exploitability": 8.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 7.55,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "VulnDesk Pro：一款包含31个挑战的免费Windows厚客户端渗透测试练习靶场",
+      "title_orig": "VulnDesk Pro – A free intentionally vulnerable Windows desktop app for practicing thick-client pentesting (31 challenges)",
+      "summary": "VulnDesk Pro是一款专门针对Windows厚客户端（桌面应用程序）安全设计的免费练习环境，旨在填补该领域实战靶场的匮乏。该工具包含31个精心设计的安全挑战，涵盖了桌面应用渗透测试中常见的各类漏洞场景，为安全研究人员提供了从基础到进阶的动手实践机会。该项目通过模拟真实的桌面软件环境，帮助从业者掌握厚客户端特有的攻击向量与防御技术。",
+      "tags": [
+        "厚客户端安全",
+        "渗透测试靶场",
+        "Windows安"
+      ],
+      "url": "https://www.reddit.com/r/Pentesting/comments/1uz2b50/vulndesk_pro_a_free_intentionally_vulnerable/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-07-17T15:03:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "填补了厚客户端渗透测试练习资源的空白，具有极高实战价值。",
+      "feed_url": "https://www.reddit.com/r/Pentesting/.rss",
+      "feed_title": "Pentesting",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "url:reddit.com/r/pentesting/comments/1uz2b50/vulndesk_pro_a_free_intentionally_vulnerable",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 8.0,
+        "exploitability": 9.0,
+        "actionability": 10.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 7.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "FreeBSD项目在2026年6月发布的安全公告数量创历史新高，AI技术显著提升漏洞发现效率",
+      "title_orig": "FreeBSD Released the Most Security Advisories in Project History in June 2026",
+      "summary": "FreeBSD安全团队在2026年6月发布的安全公告数量达到了项目历史最高水平，打破了以往每月平均仅发布约2份公告的常态。这一增长主要归功于AI技术的应用，早在同年4月发布的8份公告中就有6份是由AI驱动发现的，5月也维持了7份的高位产出。这一趋势表明AI在自动化漏洞挖掘和安全审计流程中正发挥着越来越关键的作用，显著加快了开源操作系统的漏洞修复节奏。",
+      "tags": [
+        "FreeBSD",
+        "AI安全审计",
+        "漏洞公告"
+      ],
+      "url": "https://taosecurity.blogspot.com/2026/07/freebsd-released-most-security.html",
+      "source": "taosecurity.blogspot.com",
+      "category": "RedTeam",
+      "published": "2026-07-17T01:43:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI技术在提升操作系统漏洞挖掘效率方面的显著成果。",
+      "feed_url": "https://taosecurity.blogspot.com/feeds/posts/default?alt=rss",
+      "feed_title": "TaoSecurity Blog",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "taosecurity.blogspot.com",
+      "story_id": "url:taosecurity.blogspot.com/2026/07/freebsd-released-most-security.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "technical_depth": 7.0,
+        "exploitability": 8.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 7.6,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GPT-RED与AgentCyberRange：AI网络安全进入攻防自我博弈的新阶段",
+      "title_orig": "GPT-RED + AgentCyberRange：AI网络安全进入「自我博弈」时代",
+      "summary": "GPT-RED结合AgentCyberRange构建了AI网络安全自我博弈系统，通过智能体在模拟环境中的自动化攻防对抗来提升安全性。该系统利用AI驱动的攻击手段寻找单一漏洞，同时要求防御AI在多次对抗中保持成功，原文未披露具体的漏洞类型、触发条件及受影响的组件版本。目前该技术处于模拟演练阶段，旨在通过高频率自我进化迭代防御策略，原文未披露具体的修复或缓解状态。",
+      "tags": [
+        "AI攻防",
+        "自动化渗透",
+        "安全智能体"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA==&mid=2649790226&idx=1&sn=d99d427ebc0e8d97cca9c3c386f4480f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-17T04:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了AI在网络安全领域从工具化向自主博弈演进的前沿趋势。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA%3D%3D&mid=2649790226&idx=1&sn=d99d427ebc0e8d97cca9c3c386f4480f",
+      "related_urls": [
+        "https://www.anquanke.com/post/id/315811",
+        "https://www.anquanke.com/post/id/315811"
+      ],
+      "related_count": 2,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 7.0,
+        "exploitability": 6.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 6.95,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "无代理Linux EDR技术原理：如何通过SSH连接远程检测系统中的Rootkit",
+      "title_orig": "How Agentless Linux EDR Detects Rootkits Over SSH",
+      "summary": "Sandfly Security详细介绍了无代理Linux EDR如何利用SSH协议在不安装内核模块的情况下检测Rootkit，解决了传统EDR易导致系统崩溃的痛点。该技术通过远程执行取证指令，对比系统调用、文件完整性及进程行为，能够有效识别隐藏的恶意进程和内核篡改。这种方法适用于大规模Linux集群，在保证系统稳定性的同时，提供了对隐蔽后门和Rootkit的高效检测能力。",
+      "tags": [
+        "无代理EDR",
+        "Linux安全",
+        "Rootkit检"
+      ],
+      "url": "https://sandflysecurity.com/blog/how-agentless-linux-edr-detects-rootkits-over-ssh",
+      "source": "sandflysecurity.com",
+      "category": "RedTeam",
+      "published": "2026-07-17T04:16:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍了无代理检测Rootkit的技术方案，对运维安全有重要参",
+      "feed_url": "https://www.sandflysecurity.com/feed/",
+      "feed_title": "Sandfly Security Blog RSS Feed",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "sandflysecurity.com",
+      "story_id": "url:sandflysecurity.com/blog/how-agentless-linux-edr-detects-rootkits-over-ssh",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 9.0,
+        "exploitability": 7.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 7.85,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型僵尸网络专门窃取AI服务API密钥，黑客攻击目标转向人工智能基础设施",
+      "title_orig": "【安全圈】新型僵尸网络专偷AI服务API密钥",
+      "summary": "安全研究人员监测到一种新型僵尸网络，其攻击目标不再局限于传统数据，而是专门针对AI服务的API密钥进行窃取。随着企业对AI集成需求的增加，这些API密钥成为了黑客获取算力资源或敏感数据的关键入口。该僵尸网络通过感染终端设备并扫描配置文件与环境变量，试图获取OpenAI等主流AI平台的访问凭证，反映出黑客攻击重心正向AI基础设施转移。",
+      "tags": [
+        "僵尸网络",
+        "API安全",
+        "AI基础设施"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077891&idx=3&sn=7f9209051bcf1871609e66259b7abaee",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-18T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对AI供应链和基础设施的新型威胁趋势。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652077891&idx=3&sn=7f9209051bcf1871609e66259b7abaee",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 5.0,
+        "exploitability": 6.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 6.45,
+      "final_score": 7.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "每周勒索软件威胁摘要：Securotrop与DragonForce等多个团伙公布新受害者名单",
+      "title_orig": "每周勒索威胁摘要",
+      "summary": "本周勒索软件威胁报告显示，Securotrop、TheGentlemen、Gunra以及DragonForce等多个活跃勒索软件团伙在其泄露网站上更新了受害公司名单。这些团伙持续通过加密数据和威胁泄露敏感信息的“双重勒索”手段向全球企业施压。原文未披露具体的漏洞利用细节或受影响的行业分布，但反映出当前勒索软件生态中多个新兴与已知团伙仍保持着极高的攻击频率。",
+      "tags": [
+        "勒索软件",
+        "威胁情报",
+        "数据泄露"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI5Mzg5MDM3NQ==&mid=2247498625&idx=1&sn=b74665b7c190005a0219fa279cc18f1b",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-17T08:12:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "汇总了当前活跃勒索团伙的动态，有助于企业评估外部威胁环境。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/7874947663d806190d77bdca6f8f6855f65a1b20.xml",
+      "feed_title": "奇安信病毒响应中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/7874947663d806190d77bdca6f8f6855f65a1b20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI5Mzg5MDM3NQ%3D%3D&mid=2247498625&idx=1&sn=b74665b7c190005a0219fa279cc18f1b",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "relevance": 7.0,
+        "impact_scope": 7.0,
+        "technical_depth": 5.0,
+        "exploitability": 4.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 5.8,
+      "final_score": 6.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "腾讯玄武Atuin AI在CyberGym评估中表现升级：基于GLM-5.2的任务通过率达84.8%",
+      "title_orig": "Xuanwu Atuin AI 在 CyberGym 上的表现：GLM-5.2 更新结果",
+      "summary": "腾讯玄武实验室近期对其Atuin AI在CyberGym平台上的表现进行了更新评估，在使用最新的GLM-5.2模型驱动后，其pass@1指标成功提升至84.8%。在总计1507个复杂的网络安全相关任务中，Atuin AI顺利完成了其中的1278个，相较于此前GLM-5.1版本所取得的84.0%成绩有了进一步的优化与突破，充分展示了大型语言模型在自动化安全运营领域的持续进步与应用潜力。",
+      "tags": [
+        "Atuin AI",
+        "CyberGym",
+        "安全大模型"
+      ],
+      "url": "https://xlab.tencent.com/cn/2026/07/17/xuanwu-atuin-cybergym-glm52/",
+      "source": "xlab.tencent.com",
+      "category": "Synthesis",
+      "published": "2026-07-17T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了国产安全大模型在标准化网络安全任务上的最新性能数据。",
+      "feed_url": "https://xlab.tencent.com/cn/feed/",
+      "feed_title": "腾讯安全玄武实验室",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "xlab.tencent.com",
+      "story_id": "url:xlab.tencent.com/cn/2026/07/17/xuanwu-atuin-cybergym-glm52",
+      "related_urls": [
+        "https://xlab.tencent.com/cn/2026/07/17/xuanwu-atuin-cybergym-glm52/",
+        "https://xlab.tencent.com/cn/2026/07/17/xuanwu-atuin-cybergym-glm52/"
+      ],
+      "related_count": 2,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 6.0,
+        "technical_depth": 8.0,
+        "exploitability": 5.0,
+        "actionability": 5.0
+      },
+      "dimension_score": 6.7,
+      "final_score": 6.4,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
