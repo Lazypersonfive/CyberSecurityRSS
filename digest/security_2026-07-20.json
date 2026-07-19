@@ -1,0 +1,664 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-20",
+  "generated_at": "2026-07-19T23:42:42.795339Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t2": 8,
+    "kind_media": 10,
+    "chinese": 6,
+    "tier_unknown": 7,
+    "kind_community": 2,
+    "wechat": 3,
+    "kind_cn_expert": 3
+  },
+  "clustering_stats": {
+    "deterministic_merged": 3,
+    "llm_merged": 4,
+    "merged_total": 7
+  },
+  "delivered_filter_stats": {
+    "url": 20,
+    "story": 0,
+    "total": 20
+  },
+  "items": [
+    {
+      "title_zh": "SonicWall SMA 1000 系列 VPN 设备 0-day 漏洞遭利用，攻击者可获取 Root 权限",
+      "title_orig": "SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access",
+      "summary": "威胁组织 UTA0533 在官方披露前利用 SonicWall SMA 1000 系列 VPN 设备的 0-day 漏洞进行攻击，该行为自 2026 年 6 月 22 日起便已存在。该漏洞允许攻击者在未经授权的情况下获取受影响设备的 Root 访问权限，影响范围涵盖 SMA 1000 系列多个固件版本，网络安全公司 Volexity 在最近的事件响应调查中确认了相关利用行为，并建议用户立即更新官方发布的修复补丁以缓解安全风险。",
+      "tags": [
+        "SonicWal",
+        "0-day",
+        "VPN安全"
+      ],
+      "url": "https://thehackernews.com/2026/07/sonicwall-sma-zero-days-exploited.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-19T13:18:56+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施 VPN 设备的 0-day 实战利用。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/07/sonicwall-sma-zero-days-exploited.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "actionability": 10.0,
+        "impact_scope": 10.0,
+        "technical_depth": 9.0,
+        "relevance": 10.0
+      },
+      "dimension_score": 9.75,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 7.0.2 核心组件存在两个严重漏洞，可导致身份验证前远程代码执行",
+      "title_orig": "WordPress 7.0.2: Two Core Bugs to Pre-Auth RCE",
+      "summary": "WordPress 7.0.2 版本的核心代码中被发现存在两个关键漏洞，组合利用可实现预身份验证的远程代码执行（Pre-Auth RCE）。该漏洞源于核心逻辑处理不当，允许远程攻击者在无需任何凭据的情况下在服务器上执行任意指令，影响大量基于该版本的站点。目前原文未披露具体的漏洞原理细节，建议管理员关注官方补丁发布并及时升级核心程序。",
+      "tags": [
+        "WordPres",
+        "RCE",
+        "核心漏洞"
+      ],
+      "url": "https://govuln.com/news/url/g80P",
+      "source": "govuln.com",
+      "category": "Synthesis",
+      "published": "2026-07-19T14:28:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "WordPress 核心 RCE 漏洞对全球网站安全影响极大",
+      "feed_url": "https://govuln.com/news/feed/",
+      "feed_title": "Sec-News 安全文摘",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "govuln.com",
+      "story_id": "url:govuln.com/news/url/g80p",
+      "related_urls": [
+        "https://www.pwndefend.com/2026/07/18/wp2shell/",
+        "https://www.pwndefend.com/2026/07/19/wp2shell-update/"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "actionability": 9.0,
+        "impact_scope": 10.0,
+        "technical_depth": 9.0,
+        "relevance": 10.0
+      },
+      "dimension_score": 9.65,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Nginx 存在长达 15 年的严重漏洞 CVE-2026-42533，可导致预身份验证 RCE",
+      "title_orig": "15-Year-Old Nginx Vulnerability Exposes Critical RCE Flaw",
+      "summary": "Nginx 被曝存在一个追溯至 2011 年的严重漏洞 CVE-2026-42533，该漏洞属于预身份验证远程代码执行缺陷，其 CVSS v4.0 评分高达 9.2 分且已潜伏长达十五年之久。此漏洞影响 Nginx 开源版 0.9.6 至 1.30.3 稳定版、1.31.2 主线版以及 NGINX Plus R33 至 R36 等多个核心版本，远程攻击者可在无需任何身份验证的情况下直接触发恶意代码执行，目前官方已针对该高危安全威胁发布了紧急修复建议。",
+      "tags": [
+        "Nginx",
+        "RCE",
+        "供应链安全"
+      ],
+      "url": "https://www.cyberkendra.com/2026/07/15-year-old-nginx-vulnerability-exposes.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-07-19T19:24:30+00:00",
+      "cve_ids": [
+        "CVE-2026-42533"
+      ],
+      "selection_reason": "Nginx 广泛使用的基础组件，15 年潜伏漏洞极具威胁。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "cve:cve-2026-42533",
+      "related_urls": [
+        "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
+        "https://govuln.com/news/url/ZNdE"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "actionability": 9.0,
+        "impact_scope": 10.0,
+        "technical_depth": 8.0,
+        "relevance": 10.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Linux Kernel 7.0 DRM 模块释放后使用漏洞 CVE-2026-46215 提权漏洞利用公开",
+      "title_orig": "Linux Kernel 7.0 DRM UAF LPE Exploit",
+      "summary": "Linux 内核 7.0 版本的直接渲染管理器组件中存在释放后使用漏洞，编号为 CVE-2026-46215，被评定为高风险级别。本地攻击者可利用该漏洞实现本地权限提升，从而绕过安全限制获取系统的最高控制权，目前针对该漏洞的完整 Exploit 已在 GitHub 仓库公开，影响多个运行 7.0 内核的发行版，建议相关用户和系统管理员尽快应用最新的内核安全补丁，以防止系统权限被非法提升或滥用。",
+      "tags": [
+        "Linux内核",
+        "UAF",
+        "提权"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026070008",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-07-19T09:35:28+00:00",
+      "cve_ids": [
+        "CVE-2026-46215"
+      ],
+      "selection_reason": "Linux 内核 UAF 漏洞且 Exploit 已公开，风",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "cve:cve-2026-46215",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "actionability": 9.0,
+        "impact_scope": 8.0,
+        "technical_depth": 9.0,
+        "relevance": 10.0
+      },
+      "dimension_score": 9.25,
+      "final_score": 9.05,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Microsoft Edge 浏览器类型混淆漏洞可导致远程代码执行，影响 150.0.4078.48 及以下版本",
+      "title_orig": "Microsoft Edge < = 150.0.4078.48 (Chromium-based) Type Confusion RCE",
+      "summary": "基于 Chromium 的 Microsoft Edge 浏览器在 150.0.4078.48 及更早版本中存在类型混淆漏洞，该漏洞被评定为中等风险。攻击者可以通过诱导用户访问恶意构造的网页，利用该缺陷在目标系统上实现远程代码执行，目前该漏洞的 Python 版利用脚本已在安全社区流传，展示了其潜在的攻击威胁，建议广大用户尽快将 Edge 浏览器更新至官方最新版本，以修复此安全隐患并保护个人系统免受远程攻击。",
+      "tags": [
+        "Edge",
+        "类型混淆",
+        "浏览器安全"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026070009",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-07-19T09:35:56+00:00",
+      "cve_ids": [],
+      "selection_reason": "主流浏览器 RCE 漏洞利用代码公开，需关注客户端安全。",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "url:cxsecurity.com/issue/wlb-2026070009",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "actionability": 8.0,
+        "impact_scope": 9.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.65,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Joomla Page Builder CK 插件存在未授权任意文件上传漏洞，可导致服务器沦陷",
+      "title_orig": "Joomla Page Builder CK < = 3.5.10 - Unauthenticated Arbitrary File Upload (RCE)",
+      "summary": "Joomla 的 Page Builder CK 插件在 3.5.10 及以下版本中存在严重的未授权任意文件上传漏洞，风险等级极高。远程攻击者无需任何登录凭证即可通过特定接口上传恶意脚本文件，从而在 Web 服务器上实现远程代码执行，该漏洞的利用工具及用于定位潜在目标的 Google Dork 搜索语法均已在互联网公开，建议所有使用该插件的 Joomla 站长立即采取行动，将插件升级至官方发布的最新安全版本以防范攻击。",
+      "tags": [
+        "Joomla",
+        "文件上传",
+        "插件漏洞"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026070010",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-07-19T09:36:19+00:00",
+      "cve_ids": [],
+      "selection_reason": "CMS 插件漏洞常被用于批量自动化攻击，利用门槛低。",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "url:cxsecurity.com/issue/wlb-2026070010",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "actionability": 9.0,
+        "impact_scope": 7.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Keras 框架 TorchModuleWrapper 组件反序列化漏洞 CVE-2026-12484 预警",
+      "title_orig": "CVE-2026-12484 | keras-team keras up to 3.15.0 TorchModuleWrapper TorchModuleWrapper.from_config deserialization",
+      "summary": "深度学习框架 Keras 在 3.15.0 及以下版本中存在被标记为严重的反序列化漏洞，编号为 CVE-2026-12484。该漏洞源于 TorchModuleWrapper 组件中的 from_config 函数，攻击者通过构造特定的恶意操作可触发反序列化过程，从而实现远程攻击，虽然目前尚未有公开的 Exploit 可用，但由于该漏洞直接影响 AI 模型加载过程中的安全性，建议开发者在处理不可信的模型配置时保持高度警惕并及时更新组件。",
+      "tags": [
+        "Keras",
+        "反序列化",
+        "AI安全"
+      ],
+      "url": "https://vuldb.com/vuln/380531",
+      "source": "vuldb.com",
+      "category": "Synthesis",
+      "published": "2026-07-19T20:27:08+00:00",
+      "cve_ids": [
+        "CVE-2026-12484"
+      ],
+      "selection_reason": "AI 框架供应链安全漏洞，影响模型部署安全性。",
+      "feed_url": "https://vuldb.com/en/?rss.recent",
+      "feed_title": "VulDB Recent Entries",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "vuldb.com",
+      "story_id": "cve:cve-2026-12484",
+      "related_urls": [
+        "https://vulners.com/euvd/EUVD-2026-45872?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "PraisonAI CodeAgent 存在非沙箱化 LLM 代码执行漏洞，可导致远程代码执行",
+      "title_orig": "PraisonAI CodeAgent < = 1.6.77 Remote Code Execution (RCE) via Unsandboxed LLM Code Execution",
+      "summary": "PraisonAI CodeAgent 1.6.77 及以下版本存在高风险的远程代码执行漏洞，该漏洞源于 LLM 在执行生成的代码时缺乏必要的沙箱隔离保护。攻击者可以通过精心设计的提示词诱导 Agent 执行恶意的系统指令，从而获取服务器的控制权，目前已有 Python 编写的 Exploit 证明了该漏洞的可利用性，建议相关开发者和企业用户立即限制 Agent 的执行权限，或在部署环境中引入严格的沙箱隔离机制以缓解此类安全风险。",
+      "tags": [
+        "AI安全",
+        "LLM",
+        "RCE"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026070005",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-07-19T09:34:40+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的 AI Agent 安全漏洞，展示了非沙箱化执行的风险",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "cve:cve-2026-44359",
+      "related_urls": [
+        "https://cxsecurity.com/issue/WLB-2026070006",
+        "https://cxsecurity.com/issue/WLB-2026070007",
+        "https://vulners.com/cvelist/CVELIST:CVE-2026-44359?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 3,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "actionability": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GitHub发布安全公告GHSA-CFCQ-76GR-62X8，披露相关软件漏洞详情及修复建议",
+      "title_orig": "GHSA-CFCQ-76GR-62X8",
+      "summary": "安全公告GHSA-CFCQ-76GR-62X8于2026年7月19日被监测到发布，该漏洞信息最初源自releaseport等社交媒体平台的实时更新，目前已引起安全社区的广泛关注。该条目详细记录了漏洞被发现的具体时间戳及来源链接，旨在提醒研究人员针对相关组件进行风险排查，尽管目前具体的漏洞类型和受影响范围仍需进一步的技术核实，但其潜在的威胁性不容忽视。",
+      "tags": [
+        "资讯"
+      ],
+      "url": "https://vulners.com/circl/CIRCL:GHSA-CFCQ-76GR-62X8?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-07-19T21:03:21+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "url:vulners.com/circl/circl:ghsa-cfcq-76gr-62x8",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 8.0,
+        "impact_scope": 8.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "实时 SSH 蜜罐遥测数据展示平台上线，支持可视化追踪全球攻击者指令与指纹",
+      "title_orig": "实时 SSH 蜜罐遥测数据展示平台",
+      "summary": "该平台通过部署SSH蜜罐实时捕获并公开显示全球攻击者的连接尝试、执行指令及凭证信息，旨在为安全研究和威胁情报提供直观的教学数据。系统能够详细记录源IP、尝试的账号密码、客户端hassh指纹以及文件下载等关键事件，完整呈现了攻击者从建立连接到尝试下载恶意软件的全过程，目前页面可实时滚动显示最新的25条事件日志。",
+      "tags": [
+        "SSH 蜜罐",
+        "威胁情报",
+        "实时遥测"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187731&idx=1&sn=0e56f44d1cca07eb487ff0231199953c",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-18T14:39:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了直观的攻击行为观察窗口，对研究自动化扫描具有参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187731&idx=1&sn=0e56f44d1cca07eb487ff0231199953c",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 6.0,
+        "actionability": 8.0,
+        "impact_scope": 6.0,
+        "technical_depth": 7.0,
+        "relevance": 8.0
+      },
+      "dimension_score": 6.95,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Hugging Face 遭遇自主 AI 智能体集群攻击，导致部分内部数据集与凭证泄露",
+      "title_orig": "HuggingFace Breached by Autonomous AI Agent Swarm",
+      "summary": "AI平台Hugging Face确认其生产基础设施遭到由自主AI智能体系统策划并执行的端到端入侵，整个过程无人类操作员直接参与，标志着一种新型的自动化攻击威胁。攻击者通过该手段获得了对有限内部数据集和服务器凭证的未经授权访问，目前官方已披露该事件并采取了紧急应对措施，但原文尚未详细说明攻击者利用的具体漏洞链条。",
+      "tags": [
+        "AI 安全",
+        "数据泄露",
+        "自主智能体"
+      ],
+      "url": "https://www.cyberkendra.com/2026/07/huggingface-breached-by-autonomous-ai.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-07-18T15:35:09+00:00",
+      "cve_ids": [],
+      "selection_reason": "首例由 AI 智能体自主完成的平台级入侵事件，具有极高研究价",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/07/huggingface-breached-by-autonomous-ai.html",
+      "related_urls": [
+        "https://x.com/rez0__/status/2078818167846043648"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 7.0,
+        "actionability": 6.0,
+        "impact_scope": 8.0,
+        "technical_depth": 6.0,
+        "relevance": 8.0
+      },
+      "dimension_score": 7.1,
+      "final_score": 7.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "XZ Utils 后门事件纪实书籍《半秒钟》发布，深度复盘供应链攻击与发现过程",
+      "title_orig": "《半秒钟》——XZ 后门启示录",
+      "summary": "本书详细记录了2024年XZ Utils后门事件的全过程，讲述了身份不明的攻击者如何利用两年时间通过社交工程操纵精疲力竭的志愿者，并成功植入隐蔽后门。书中复盘了微软工程师因敏锐察觉半秒钟登录延迟而揭开该供应链攻击的传奇经历，探讨了开源项目维护权移交中的安全风险，该书目前在CC BY-NC-ND 4.0协议下向公众免费提供。",
+      "tags": [
+        "供应链安全",
+        "XZ 后门",
+        "开源安全"
+      ],
+      "url": "https://www.solidot.org/story?sid=84866",
+      "source": "solidot.org",
+      "category": "Synthesis",
+      "published": "2026-07-19T14:57:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "XZ 后门是近年最严重的供应链攻击，该书提供了详尽的复盘视角",
+      "feed_url": "https://www.solidot.org/index.rss",
+      "feed_title": "奇客Solidot–传递最新科技情报",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "solidot.org",
+      "story_id": "url:solidot.org/story?sid=84866",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "exploitability": 4.0,
+        "actionability": 5.0,
+        "impact_scope": 8.0,
+        "technical_depth": 6.0,
+        "relevance": 7.0
+      },
+      "dimension_score": 6.15,
+      "final_score": 6.15,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源报告分析美国全球供应链数据掌控现状，强调构建自主可控数据基础设施的战略紧迫性",
+      "title_orig": "【开源报告】美国全球供应链数据掌控与供应链安全控制分析（改）",
+      "summary": "该开源报告深入分析了美国在全球供应链数据掌控与安全控制方面的策略，指出供应链数据主权的竞争已演变为涉及法律框架、标准制定及基础设施的系统性博弈。报告强调在当前国际形势下，构建自主可控的供应链数据基础设施已成为各国最紧迫的战略任务，旨在通过强化联盟体系和技术手段来保障国家层面的供应链安全与数据主权。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MTE0NTE3Mw==&mid=2651156624&idx=2&sn=5f5f3f6f4a4434739d8dab6027247ead",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-17T22:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/4fad165589ac854de97e576a6dbcfbd8b9f75320.xml",
+      "feed_title": "丁爸情报分析师的工具箱",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/4fad165589ac854de97e576a6dbcfbd8b9f75320.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MTE0NTE3Mw%3D%3D&mid=2651156624&idx=2&sn=5f5f3f6f4a4434739d8dab6027247ead",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "exploitability": 1.0,
+        "actionability": 5.0,
+        "impact_scope": 7.0,
+        "technical_depth": 4.0,
+        "relevance": 7.0
+      },
+      "dimension_score": 4.85,
+      "final_score": 5.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "2026世界人工智能大会在上海开幕，人工智能安全漏洞治理联盟在会上宣布正式成立",
+      "title_orig": "世界人工智能大会|人工智能安全漏洞治理联盟正式成立",
+      "summary": "2026年7月17日世界人工智能大会在上海开幕，会上宣布人工智能安全漏洞治理联盟正式成立，旨在应对AI安全挑战。由于原文仅为会议新闻，未披露具体漏洞类型、触发条件、受影响的组件版本及修复状态等技术要素，该联盟目前侧重于AI漏洞的标准化管理与协同治理，通过整合资源为产业提供技术支撑与制度保障。",
+      "tags": [
+        "漏洞",
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxNzA3MTgyNg==&mid=2247543523&idx=1&sn=2f18d16f6fa17588b26054a6ef367b2a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-18T13:55:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/9da87fba8130d0c2dc52cc45b844f045227e06a7.xml",
+      "feed_title": "数世咨询",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/9da87fba8130d0c2dc52cc45b844f045227e06a7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzkxNzA3MTgyNg%3D%3D&mid=2247543523&idx=1&sn=2f18d16f6fa17588b26054a6ef367b2a",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzAxODY1OTM5OQ==&mid=2651465229&idx=1&sn=2b79c15f07a0d17b28c549bc4c6423d8"
+      ],
+      "related_count": 1,
+      "score": 6,
+      "score_dimensions": {
+        "exploitability": 0.0,
+        "actionability": 5.0,
+        "impact_scope": 7.0,
+        "technical_depth": 3.0,
+        "relevance": 8.0
+      },
+      "dimension_score": 4.65,
+      "final_score": 5.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "大模型持久化记忆研究笔记发布，探索不依赖 RAG 的长上下文知识编写技术",
+      "title_orig": "[2026]大模型持久化记忆研究笔记",
+      "summary": "该研究笔记深入探讨了如何实现不依赖检索增强生成的大模型长上下文记忆系统，重点分析了MEMIT等知识编写技术在QA场景中的实际应用效果。作者分享了在模型持久化记忆方面的实验心得与技术尝试，旨在解决大模型在处理超长对话或特定领域知识时无法有效留存信息的瓶颈问题，为构建具备长期记忆能力的智能体提供了有价值的参考路径。",
+      "tags": [
+        "大模型",
+        "持久化记忆",
+        "MEMIT"
+      ],
+      "url": "https://key08.com/index.php/2026/07/19/3219.html",
+      "source": "key08.com",
+      "category": "Synthesis",
+      "published": "2026-07-19T11:48:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 LLM 记忆机制的前沿优化方向，对 AI 安全与架构",
+      "feed_url": "https://key08.com/index.php/feed",
+      "feed_title": "白帽Wiki - 一个简单的wiki",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "key08.com",
+      "story_id": "url:key08.com/index.php/2026/07/19/3219.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "exploitability": 0.0,
+        "actionability": 5.0,
+        "impact_scope": 4.0,
+        "technical_depth": 7.0,
+        "relevance": 6.0
+      },
+      "dimension_score": 4.55,
+      "final_score": 4.55,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
