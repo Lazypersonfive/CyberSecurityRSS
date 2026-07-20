@@ -1,0 +1,664 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-07-21",
+  "generated_at": "2026-07-20T23:43:09.371981Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 7,
+    "direct": 15,
+    "wechat": 7,
+    "tier_t2": 15,
+    "kind_cn_expert": 7,
+    "kind_media": 6,
+    "kind_community": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 5,
+    "merged_total": 5
+  },
+  "delivered_filter_stats": {
+    "url": 12,
+    "story": 1,
+    "total": 13
+  },
+  "items": [
+    {
+      "title_zh": "Fastjson 1.2.68 至 1.2.83 版本存在远程代码执行漏洞，SafeMode 为唯一有效防御手段",
+      "title_orig": "【漏洞预警】Fastjson 远程代码执行漏洞预警：1.2.68–1.2.83 受影响",
+      "summary": "Fastjson库被曝存在严重的反序列化远程代码执行漏洞，主要影响1.2.68至1.2.83之间的所有版本，攻击者能够通过构造特定的JSON数据绕过AutoType检查机制，从而在目标服务器上执行任意恶意命令。目前官方明确建议受影响用户必须开启SafeMode模式作为唯一的硬防御措施，通过彻底禁用AutoType功能来规避潜在的攻击风险，确保企业级应用系统的核心数据安全。",
+      "tags": [
+        "Fastjson",
+        "反序列化",
+        "代码执行"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI1NDg4MTIxMw==&mid=2247486768&idx=1&sn=9c698e79b089f7118865d81d0ac09e10",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-20T12:43:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "Fastjson 在国内应用广泛，该版本范围的 RCE 漏洞",
+      "feed_url": "https://wechat2rss.xlab.app/feed/fe0f4b4ed13da1bd9296fe819c5770526ae910b0.xml",
+      "feed_title": "猎户攻防实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/fe0f4b4ed13da1bd9296fe819c5770526ae910b0.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI1NDg4MTIxMw%3D%3D&mid=2247486768&idx=1&sn=9c698e79b089f7118865d81d0ac09e10",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 10.0,
+        "actionability": 9.0,
+        "technical_depth": 8.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "WordPress Core 严重远程代码执行漏洞 wp2shell 利用代码已公开，建议立即修补",
+      "title_orig": "【安全圈】WordPress Core \"wp2shell\" RCE 漏洞利用代码已公开，请立即修补",
+      "summary": "WordPress 核心组件中发现名为 wp2shell 的严重远程代码执行漏洞，目前针对该漏洞的 PoC 利用代码已在互联网公开，攻击者可在未授权情况下远程获取服务器控制权并接管站点。该漏洞影响范围涵盖多个核心版本，官方已紧急发布安全补丁，强烈建议所有网站管理员立即检查系统版本并更新至最新补丁，以防止因漏洞暴露导致的服务器被黑风险。",
+      "tags": [
+        "WordPres",
+        "RCE漏洞",
+        "漏洞利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652077928&idx=1&sn=0ef9805dd0a523c60d38ae8873a9d0bd",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-20T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "WordPress 核心 RCE 且 PoC 已公开，对全球",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652077928&idx=1&sn=0ef9805dd0a523c60d38ae8873a9d0bd",
+      "related_urls": [
+        "https://www.cyberkendra.com/2026/07/wp2shell-guide.html",
+        "https://www.infosecurity-magazine.com/news/researchers-wordpress-exploit/",
+        "https://www.pwndefend.com/2026/07/20/using-an-llm-for-assurance-wp2shell/",
+        "https://x.com/rez0__/status/2079158967750582659"
+      ],
+      "related_count": 4,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "actionability": 10.0,
+        "technical_depth": 8.0,
+        "relevance": 10.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.3,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Nginx 核心组件曝光潜伏 15 年的高危漏洞，攻击者无需认证即可远程获取服务器权限",
+      "title_orig": "潜伏15年！Nginx核心漏洞曝光，无需密码即可远程拿下服务器",
+      "summary": "研究人员在 Nginx 核心代码中发现了一个存在长达 15 年的安全漏洞，该漏洞允许攻击者在无需任何身份验证的情况下实现远程代码执行。漏洞触发条件与 Nginx 处理特定请求的底层逻辑有关，成功利用后可直接接管 Web 服务器。目前相关技术细节已公开，受影响版本广泛，建议运维人员关注官方补丁发布并及时升级。",
+      "tags": [
+        "Nginx",
+        "高危漏洞",
+        "远程代码执行"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458617674&idx=2&sn=f646ceb2019b4a6ace17085153503c60",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-20T10:05:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "Nginx 作为基础架构组件，其无需认证的 RCE 漏洞具有",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458617674&idx=2&sn=f646ceb2019b4a6ace17085153503c60",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 10.0,
+        "actionability": 9.0,
+        "technical_depth": 9.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 9.45,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "日产汽车因 Oracle PeopleSoft SSRF 零日漏洞导致员工数据泄露，波及美洲多国员工",
+      "title_orig": "【AI复盘】日产汽车员工数据泄露事件",
+      "summary": "日产汽车披露其员工数据遭 ShinyHunters 组织窃取，起因是攻击者利用 Oracle PeopleSoft 的 SSRF 零日漏洞作为跳板，非法获取了包括银行数据、社会安全号码及税务信息在内的极度敏感信息。此次事件波及美国、加拿大、墨西哥及巴西等地区的员工，标志着供应链攻击进入跳板时代，企业必须警惕第三方系统安全并建立针对零日漏洞的快速响应机制。",
+      "tags": [
+        "SSRF",
+        "数据泄露",
+        "供应链安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487832&idx=1&sn=f64d91959445ffba8dc5b44f9125a806",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-19T22:06:00+00:00",
+      "cve_ids": [
+        "CVE-2026-35273"
+      ],
+      "selection_reason": "展示了 SSRF 漏洞如何作为供应链攻击跳板导致大规模数据泄",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "cve:cve-2026-35273",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.9,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全动态：Citrix 客户端提权漏洞、ELF 文件劫持机制及 AI Agent 记忆注入攻击",
+      "title_orig": "每日安全动态推送(26/7/20)",
+      "summary": "本次动态涵盖三项技术威胁：Citrix Windows客户端存在可提权至SYSTEM级别的严重漏洞，原文未披露其具体漏洞编号与触发原理；ELF文件可通过篡改.note.gnu.property段劫持IFUNC解析顺序，实现底层机制攻击；AI Agent面临自动化隐蔽记忆注入攻击，攻击者仅需发送单封邮件即可实施操控。目前原文未披露上述漏洞的影响版本及官方修复状态。",
+      "tags": [
+        "权限提升",
+        "ELF劫持",
+        "AI安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960524&idx=1&sn=88d44354a757b91b9323397eae71f388",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-07-20T07:49:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖了从底层二进制安全到前沿 AI Agent 安全的多个维",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960524&idx=1&sn=88d44354a757b91b9323397eae71f388",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzU4NjY0NTExNA==&mid=2247489855&idx=1&sn=1eb77290408629b0ec17f7b5dfc8435a"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 9.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.5,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "OpenSSL 修复 HollowByte 拒绝服务漏洞，防止恶意负载耗尽服务器内存",
+      "title_orig": "OpenSSL Silently Fixes ‘HollowByte’ DoS Vulnerability",
+      "summary": "OpenSSL 官方静默修复了一个名为 HollowByte 的拒绝服务漏洞，该漏洞允许攻击者通过发送特定序列的恶意负载触发缓冲区预分配且不释放，从而导致服务器内存耗尽并引发业务中断。目前官方已在最新版本中修正了这一内存管理逻辑缺陷，受影响的服务器若不及时升级将面临严重的可用性威胁，建议相关运维人员尽快完成版本更新以确保核心加密库的运行稳定。",
+      "tags": [
+        "OpenSSL",
+        "拒绝服务",
+        "内存泄漏"
+      ],
+      "url": "https://www.securityweek.com/openssl-silently-fixes-hollowbyte-dos-vulnerability/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-07-20T12:32:40+00:00",
+      "cve_ids": [],
+      "selection_reason": "OpenSSL 是核心加密库，其 DoS 漏洞修复对保障服务",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/openssl-silently-fixes-hollowbyte-dos-vulnerability",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "technical_depth": 8.0,
+        "relevance": 10.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Cursor 及 Gemini CLI 等多款 AI 工具被曝沙箱逃逸漏洞，攻击者可诱导 AI 写入恶意文件",
+      "title_orig": "Cursor, Codex, Gemini CLI, Antigravity hit by sandbox escapes",
+      "summary": "研究人员在 Cursor、Codex 及 Gemini CLI 等主流 AI 代理工具中发现了沙箱逃逸漏洞，攻击者可诱导 AI 编写特定文件并利用宿主机信任工具执行，从而突破隔离环境获取更高权限。目前该系列漏洞已分配多个 CVE 编号且部分厂商已发布补丁，但 Google 对 Antigravity 的部分安全发现进行了降级处理，这反映出当前 AI 应用在沙箱防御与权限隔离方面仍存在复杂的技术挑战。",
+      "tags": [
+        "AI沙箱逃逸",
+        "CVE",
+        "AI代理安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-20T21:14:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了当前流行 AI 开发工具在执行逻辑与宿主机交互中的安全",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "technical_depth": 9.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.6,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Hugging Face AI 模型仓库遭自动化 AI 代理系统攻击，官方已紧急发布修复方案",
+      "title_orig": "全球最大的AI模型仓库 Hugging Face 遭自动化AI代理系统攻陷",
+      "summary": "全球最大的 AI 模型托管平台 Hugging Face 遭到自动化 AI 代理系统的攻击，攻击者尝试利用自动化手段渗透平台基础设施。原文未披露具体的漏洞原理和触发细节，但强调了该攻击的自动化特征。目前平台方已采取紧急修复措施以保护模型资产安全，建议用户关注官方安全公告并检查其托管模型的完整性。",
+      "tags": [
+        "Hugging ",
+        "自动化攻击",
+        "AI平台安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw==&mid=2247526666&idx=1&sn=672db6ddedf12f1416b9b88ddbfd6b44",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-20T08:32:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "AI 基础设施安全事件，反映了针对模型仓库的攻击手段正在演进",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "feed_title": "代码卫士",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw%3D%3D&mid=2247526666&idx=1&sn=672db6ddedf12f1416b9b88ddbfd6b44",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "FakeGit 攻击活动利用 7600 个恶意 GitHub 仓库分发 SmartLoader 恶意软件",
+      "title_orig": "FakeGit Campaign Uses 7,600 GitHub Repositories to Spread SmartLoader Malware",
+      "summary": "网络安全研究人员发现名为 FakeGit 的攻击活动利用约 7600 个恶意 GitHub 仓库传播 SmartLoader 恶意软件，其中 800 多个仓库专门伪装成 AI 技能或 MCP 服务器以吸引开发者。攻击者通过复制合法项目、伪造开发者资料和编写极具迷惑性的 README 文件，诱导用户下载并运行包含恶意代码的 ZIP 压缩包，目前该活动仍在持续进行中且具有极强的欺骗性。",
+      "tags": [
+        "供应链安全",
+        "开源仓库",
+        "恶意软件"
+      ],
+      "url": "https://thehackernews.com/2026/07/fakegit-campaign-uses-7600-github.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-20T18:23:03+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对 AI 开发者生态的新型供应链攻击趋势。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/07/fakegit-campaign-uses-7600-github.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 8.25,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "暴露的服务器揭示 AI 辅助钓鱼工具包利用 WebDAV 协议分发恶意软件",
+      "title_orig": "Exposed Server Reveals AI-Assisted Phishing Toolkit Behind WebDAV Malware Campaign",
+      "summary": "Rapid7 研究人员通过一个暴露的交付服务器获取了包含 1048 个文件的完整钓鱼工具包，涵盖诱饵模板、文件名欺骗测试及执行实验等。该攻击链针对墨西哥 Windows 用户，通过伪造的政府 ID 查询网站并利用 WebDAV 协议分发信息窃取程序，其显著特征是利用 AI 技术辅助生成钓鱼内容和优化攻击流程，目前相关攻击活动仍在活跃中。",
+      "tags": [
+        "AI 威胁",
+        "网络钓鱼",
+        "WebDAV"
+      ],
+      "url": "https://thehackernews.com/2026/07/exposed-server-reveals-ai-assisted.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-20T17:29:50+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 技术在自动化钓鱼攻击中的实际应用案例。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/07/exposed-server-reveals-ai-assisted.html",
+      "related_urls": [
+        "https://www.rapid7.com/blog/post/tr-exposed-webdav-malware-delivery-lab-analysis"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "JadePuffer 自主 AI 代理升级 EncForge 勒索软件专门针对 AI 模型数据",
+      "title_orig": "JadePuffer agentic attacks now target AI model data with ransomware",
+      "summary": "JadePuffer 自主 AI 代理已升级其攻击手段，利用名为 EncForge 的定制恶意软件对 AI 资产进行勒索攻击，专门针对训练数据集、向量数据库和模型检查点进行加密。该攻击旨在破坏或挟持企业的核心 AI 研发成果，虽然原文未详细说明具体的加密算法及受影响的框架版本，但强调了其针对 AI 基础设施的高度专业化与极强的破坏性。",
+      "tags": [
+        "AI 安全",
+        "勒索软件",
+        "数据保护"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/jadepuffer-agentic-attacks-now-target-ai-model-data-with-ransomware/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-07-20T21:08:02+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注针对 AI 基础设施和核心资产的专项勒索威胁。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/jadepuffer-agentic-attacks-now-target-ai-model-data-with-ransomware",
+      "related_urls": [
+        "https://www.infosecurity-magazine.com/news/jadepuffer-ai-model-ransomware/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Google Chrome 浏览器 V8 引擎高危漏洞 CVE-2026-15903 可导致沙箱内代码执行",
+      "title_orig": "CVE-2026-15903",
+      "summary": "Google Chrome 在 150.0.7871.128 之前的版本中存在 V8 引擎越界读写漏洞，编号为 CVE-2026-15903，其 Chromium 安全评级被定为高危级别。远程攻击者可以通过诱导用户访问精心构造的恶意 HTML 页面，在浏览器沙箱内部触发该漏洞并执行任意代码，目前官方已发布更新版本修复此缺陷，建议所有相关用户尽快完成软件升级以防范潜在的远程代码执行风险。",
+      "tags": [
+        "浏览器安全",
+        "V8 引擎",
+        "代码执行"
+      ],
+      "url": "https://vulners.com/nvd/NVD:CVE-2026-15903?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-07-20T23:16:56+00:00",
+      "cve_ids": [
+        "CVE-2026-15903"
+      ],
+      "selection_reason": "Chrome 核心组件的高危漏洞，具有极高的实战影响。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-15903",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型恶意软件利用 Microsoft 365 日历功能构建隐蔽 C2 通信通道",
+      "title_orig": "用 Microsoft365 日历搭建隐蔽 C2 通道的新型恶意软件",
+      "summary": "安全研究发现一种新型恶意软件利用 Microsoft 365 的日历备忘和会议邀请功能作为隐蔽的命令与控制（C2）通道。攻击者通过在日程安排中嵌入指令，利用合法办公软件的流量特征绕过传统网络安全设备的监测，这种技术利用了企业对信任域名的白名单策略，使得恶意通信极难被发现，原文未披露该软件的具体家族名称及受影响的特定组织。",
+      "tags": [
+        "隐蔽通道",
+        "C2 通信",
+        "云安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187748&idx=1&sn=b877f887ce3a482422d53996ecad214e",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-20T15:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "利用合法云服务构建 C2 是红蓝对抗中的高级逃逸技术。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187748&idx=1&sn=b877f887ce3a482422d53996ecad214e",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "actionability": 7.0,
+        "technical_depth": 7.0,
+        "relevance": 8.0,
+        "exploitability": 6.0
+      },
+      "dimension_score": 7.05,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Cruciferra 加密器采用进程幽灵化技术与 90 种自定义算法规避检测",
+      "title_orig": "Cruciferra Crypter Uses Process Ghosting to Evade Detection",
+      "summary": "Cruciferra 加密器被发现利用进程幽灵化（Process Ghosting）技术和 90 种自定义密码算法来隐藏恶意负载。该技术通过在文件被删除后但在其映像被映射前创建进程，从而绕过终端安全软件的静态和动态扫描，目前该加密器已被多个攻击组织用于分发各类恶意软件，原文未明确提及具体的受影响操作系统版本，但强调了其极强的防御规避能力。",
+      "tags": [
+        "防御规避",
+        "进程幽灵化",
+        "加密器"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/cruciferra-crypter-process-ghosting/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-07-20T15:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "进程幽灵化是高级的免杀技术，值得安全研究员关注。",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/cruciferra-crypter-process-ghosting",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 6.0,
+        "actionability": 7.0,
+        "technical_depth": 9.0,
+        "relevance": 8.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.55,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Netty 框架 SPDY 协议 zlib 头部解码漏洞 CVE-2026-55833 可导致资源耗尽",
+      "title_orig": "CVE-2026-55833 Netty SPDY zlib header block continues decoded expansion after maxHeaderSize truncation",
+      "summary": "Netty 网络框架在 4.1.136.Final 和 4.2.16.Final 之前的版本中存在 SPDY 协议头部解码漏洞，当解析器超过最大长度限制并标记帧截断后，zlib 压缩块仍会继续膨胀。这允许远程攻击者通过发送极小的压缩头部块在服务器端触发大规模的内存消耗，从而导致严重的拒绝服务攻击风险，目前官方已发布修复版本，建议受影响的开发者和系统管理员尽快完成框架的升级工作。",
+      "tags": [
+        "协议安全",
+        "拒绝服务",
+        "Netty"
+      ],
+      "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-55833?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-07-20T23:18:07+00:00",
+      "cve_ids": [
+        "CVE-2026-55833"
+      ],
+      "selection_reason": "底层网络框架的协议实现漏洞，影响大量 Java 后端应用。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-55833",
+      "related_urls": [
+        "https://vulners.com/cve/CVE-2026-55833?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 9.0,
+        "relevance": 8.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
