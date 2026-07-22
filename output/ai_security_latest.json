@@ -1,15 +1,15 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-07-22",
-  "fetched_at_utc": "2026-07-21T23:45:00.426628Z",
+  "fetched_at": "2026-07-23",
+  "fetched_at_utc": "2026-07-22T23:44:19.836293Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 57,
-  "entry_count": 32,
+  "raw_entry_count": 71,
+  "entry_count": 39,
   "filter_stats": {
-    "input": 57,
-    "dedup_merged": 1,
-    "output": 56
+    "input": 71,
+    "dedup_merged": 8,
+    "output": 63
   },
   "curation_stats": {
     "dropped_source_cap": 24
@@ -20,7 +20,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 8
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -76,7 +76,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 7
+      "raw_count": 6
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -111,7 +111,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 5
     },
     "https://snyk.io/blog/feed/": {
       "feed_title": "Snyk Blog",
@@ -125,7 +125,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 5
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -146,7 +146,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 8
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -209,7 +209,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 2
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
@@ -242,11 +242,67 @@
   },
   "entries": [
     {
-      "title": "Hugging face got hacked… except it turns out there was no threat actor. It was a new top hacking model at OpenAI trying to cheat on its evals 🤣�...",
-      "url": "https://x.com/rez0__/status/2079694347038007607",
-      "summary": "Hugging face got hacked… except it turns out there was no threat actor. It was a new top hacking model at OpenAI trying to cheat on its evals 🤣😭🤣 You can’t make this stuff up https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "title": "CVE-2026-29172-Craft-Commerce-SQL注入-漏洞复现",
+      "url": "https://xz.aliyun.com/news/92547",
+      "summary": "Craft Commerce 是 Craft CMS 的电商插件。后台订单管理里有个\"可购买商品列表\"接口，前端表格支持按列排序，参数叫 sort，格式是 列名|方向（比如 title|asc）。后端拿到这个字符串，explode('|', $sort) 拆成左右两半，左半截直接塞给 Yii2 Query Builder 的 orderBy()。 问题在 Yii2 的 orderBy() ——它假",
+      "category": "Chinese",
+      "published": "2026-07-21T06:05:26+00:00",
+      "fetch_status": "full",
+      "cve_ids": [
+        "CVE-2026-29172"
+      ],
+      "related_urls": [],
+      "quality_score": 3,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "CVE-2026-9179 漏洞复现文章首发：WP Forms Connector 双重失误——密码校验缺失+ORDER BY SQL注入",
+      "url": "https://xz.aliyun.com/news/92545",
+      "summary": "WP Forms Connector 是一个 Connect Contact Form 7 和外部 API 的 WordPress 插件。2026 年 6 月 24 日，Wordfence 公布了 CVE-2026-9179（CVSS 7.5），一个不需要登录就能打的 SQL 注入。 看了一圈代码，发现这个洞有点意思——它不是那种\"作者完全没做安全\"的低级错误，而是犯了两个恰好互补但都无效的失误。",
+      "category": "Chinese",
+      "published": "2026-07-21T01:35:54+00:00",
+      "fetch_status": "full",
+      "cve_ids": [
+        "CVE-2026-9179"
+      ],
+      "related_urls": [],
+      "quality_score": 3,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "Designing Coding Agent Governance: A New Surface for AI Risk | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/designing-agent-governance-a-new-surface-for-ai-risk",
+      "summary": "How Endor Labs designed Coding Agent Governance, a new product inside the existing platform. A look at three choices that shaped where the product lives, how risk reads, and where policies meet reality.",
+      "category": "AISecurityLabs",
+      "published": "2026-07-22T23:15:49+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Are AI labs pelicanmaxxing?",
+      "url": "https://simonwillison.net/2026/Jul/22/are-ai-labs-pelicanmaxxing/#atom-everything",
+      "summary": "Are AI labs pelicanmaxxing? Excellent piece of work by Dylan Castillo, who took a deep-dive into the frequently pondered question of whether the AI labs have been deliberately training models to draw pelicans riding bicycles in response to my deeply unscientific benchmark . I've been randomly spot-checking this in the past by testing models against other animals riding other types of vehicle, but",
+      "category": "AISecurityLabs",
+      "published": "2026-07-22T23:01:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "RT max.berlin: lol today I learned that you can run a smaller LLM like Gemma 4b in ChatGPTs virtual machine I gave ChatGPT Work the task to run a LLM ...",
+      "url": "https://x.com/rez0__/status/2080043653578301577",
+      "summary": "RT max.berlin lol today I learned that you can run a smaller LLM like Gemma 4b in ChatGPTs virtual machine I gave ChatGPT Work the task to run a LLM in its cloud environment. Network was restricted for the model weight downloads. Well, turns out there is a way. gpt-5.6-sol just deployed its own network proxy through ChatGPT Sites to bypass the network proxy and downloaded gemma 4b and ran it in 14",
       "category": "XSignals",
-      "published": "2026-07-21T22:25:45+00:00",
+      "published": "2026-07-22T15:50:17+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
@@ -307,19 +363,6 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "RT Critical Thinking - Bug Bounty Podcast: - Show Us Your Most Creative Caido + AI Workflow! We're collecting stories about creatively using Caido wit...",
-      "url": "https://x.com/rez0__/status/2079350405759193254",
-      "summary": "RT Critical Thinking - Bug Bounty Podcast - Show Us Your Most Creative Caido + AI Workflow! We're collecting stories about creatively using Caido with AI to discover, investigate, validate, or disprove bugs. The best stories will be featured at DEF CON and earn some prizes from CTBB &amp; @CaidoIO https://forms.gle/kGBLJc166UV8AA226",
-      "category": "XSignals",
-      "published": "2026-07-20T23:36:09+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
       "title": "Autonomous AI Intrusions Are Here: Lessons from the Hugging Face Compromise",
       "url": "https://embracethered.com/blog/posts/2026/ai-intrusion-are-now-real/",
       "summary": "Hugging Face disclosed an intrusion that, according to them, was driven end to end by an autonomous AI agent system. Along similar lines, Sysdig recently published a blog on JADEPUFFER , which it assesses to be an agent-driven ransomware capable of adapting in real time. The report does not identify the victim or fully explain how Sysdig obtained visibility into the operation. The Hugging Face dis",
@@ -333,121 +376,162 @@
       "feed_title": "Embrace The Red"
     },
     {
-      "title": "Talks from Stanford's Real-World AI Security Conference are now on YouTube! Full list is here https://seclab.stanford.edu/RealWorldAIsec/ So many amaz...",
-      "url": "https://x.com/wunderwuzzi23/status/2078872532040712218",
-      "summary": "Talks from Stanford's Real-World AI Security Conference are now on YouTube! Full list is here https://seclab.stanford.edu/RealWorldAIsec/ So many amazing talks, I really liked: 🔹 AI Agents Enable Adaptive Computer Worms, Nicolas Papernot 🔥 🔹 The Road to Hell Is Paved with Helpful Agents, Vitaly Shmatikov 🤯 🔹 Evaluating and Defending Against Prompt Injection Attacks, Edoardo Debenedetti 🐪💥 ...and m",
-      "category": "XSignals",
-      "published": "2026-07-19T16:00:09+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "AI Mania Is Eviscerating Global Decision-Making",
-      "url": "https://simonwillison.net/2026/Jul/19/ai-mania/#atom-everything",
-      "summary": "AI Mania Is Eviscerating Global Decision-Making Here's an entertaining perspective from Nik Suresh on the AI mania that is overwhelming the large companies that he consults with. It's crammed with spicy anecdotes from anonymous sources. In one extreme case, I have seen an executive confess that they had never even used ChatGPT or any AI tool in their life, immediately after producing a technical s",
+      "title": "Introducing Coding Agent Governance: Using Hooks to Bring Visibility to the ADLC | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/introducing-agent-governance-using-hooks-to-bring-visibility-to-ai-coding-agents",
+      "summary": "Learn how hooks turn AI coding agents like Claude Code and Cursor into governed systems with deterministic policy, centralized audit, and defense in depth.",
       "category": "AISecurityLabs",
-      "published": "2026-07-19T05:06:21+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "Capital One open sources VulnHunter, an AI security tool that thinks like a hacker - Finextra Research",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTW05cEdrN0dmeDBvdk5vM2xXWUwzUlNma3RHMGdnX0VwNm9YcFRoMDNYeTZhSXVBaVduX2VyUUZ6Ml9fSS0wejliUnNYd1owZFNTSmxjaHMyLUU3ZWNCakN6TWZCSE82akdsUlNPdHlTbWRMTFk3MXVhNXYyZk8yQmtybEpLbHd6TG9iczdoVFcyN2ZHUDNBbElJdjNwS1NiU1cxa3NLU1hYd2VheXh1ZkpkLWppSVpzWHl1eDFpS2dWQQ?oc=5",
-      "summary": "Capital One open sources VulnHunter, an AI security tool that thinks like a hacker &nbsp;&nbsp; Finextra Research",
-      "category": "CoverageFallback",
-      "published": "2026-07-21T23:04:51+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Salt Security launches Australian base for AI security - SecurityBrief Australia",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNcXFVcmJtLTlGTkNuQUdFRFhVTEhNbmpWLUhmTWg1aWVabzN4NGYzc2dSc2N6bzRobDh6UURLcXkzc1dWeG4yaG9sOUFXTEhWdU1qUnZ6ZFdEM3BmVnpVN0ttcE13M3ZEMUR1LWllS1kwMmNTNDlnZmpmUmthRGRybS1Ick5QTjF1aHdWdkRjQW1VUWc?oc=5",
-      "summary": "Salt Security launches Australian base for AI security &nbsp;&nbsp; SecurityBrief Australia",
-      "category": "CoverageFallback",
-      "published": "2026-07-21T21:30:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "RT Eliezer Yudkowsky: If you break out of your isolation env, get onto the Internet, crack into Huggingface, and steal the answer sheet for your cyber...",
-      "url": "https://x.com/rez0__/status/2079707817292828721",
-      "summary": "RT Eliezer Yudkowsky If you break out of your isolation env, get onto the Internet, crack into Huggingface, and steal the answer sheet for your cybersecurity exam, I, for one, would say that you have passed. elie: this is actually insane, the model broke hugging face prod infrastructure to get access to the eval dataset",
-      "category": "XSignals",
-      "published": "2026-07-21T20:58:06+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT s1r1us (mohan): what the frick! the hugging face attack originated from openai's latest internal model while they were testing a benchmark, probabl...",
-      "url": "https://x.com/rez0__/status/2079692742754447493",
-      "summary": "RT s1r1us (mohan) what the frick! the hugging face attack originated from openai's latest internal model while they were testing a benchmark, probably exploitgym. seems, the models escaped the eval sandbox, compromised hugging face, and pulled the solution data from production to cheat the benchmark. paperclip-maxxing. @allTheYud check it out. OpenAI: We're partnering with @huggingface to investig",
-      "category": "XSignals",
-      "published": "2026-07-21T20:54:32+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Fragmented but converging AI security standards - Federal News Network",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVEpmX2ljUDZ6RERwSHY3WkFuR0ozbDFidUMzY2M4ckU5OFJyVzFkNk4xYnJNMlNRSEhUcERqVTg0SjdWYzB4UVVwUW43bWNUa3FTNmZJd1NZN3RITU5RbXlIR2lMcUlUOGFNZVN1T1RPR2FUZHA0R0wzSVhSUF9qbzlsc3pRYXdlMVNEd0xja3FFeFZtMjdBeTNnNXpaQ3c?oc=5",
-      "summary": "Fragmented but converging AI security standards &nbsp;&nbsp; Federal News Network",
-      "category": "CoverageFallback",
-      "published": "2026-07-21T20:43:45+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "IBM (NYSE:IBM) Launches Team ORION And Expands AI Security And Infrastructure - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQTldnX2ZWUHFmcDM0b0M0UlJKVFpreThhNTRMaUVnZW02VlFHOUJBSm9ST2dXY0FDSFl5TEVGTEhuU0VFRkdhb3Y4b2NEUzJyakk3ZmpfUXRBN0laektCUTBXZXpPdDNhMlhQSTc0QlhuWG5KZ1lEcE84b1JSeXFvaHZQYVIxTTVsNW5qYW9vR2o3MVlVdDQ3dG9Ralh0aVhtMUdTUlNfNDV6MVhReGhsMWpORUU2cUJxU250czBaY05obHpPd0pKSk1jTE9LclR0aTRlZ1BoSWhNWFp2LVM00gHkAUFVX3lxTE5nOWE0TURtdkl1Y1RISmdJenZwQ0M4WDlHNllTZklaejRjZjZ0UHNmYUwwS3NjbjhUQ2hQWWZObEV0RkgycEx4eWIyYlAyQ2ZvMkVua2tTZENVQWM0b0tNX2IwaHpKaEFuRUd1OFJEN0pfV1hSSEVlX0hvVEtDTXg4QVJqY1BFSVYyT3h3bmFldGh5cTVManJDS2o5NHFDbTZHYTg1aUZlQTBkcVV0UHpVX2JVVzRsOVZFNi1ETjZldEgtcHRZUUkxREluSi01dUZadU5zZnAxWUQ2emh1clAwWXpWVQ?oc=5",
-      "summary": "IBM (NYSE:IBM) Launches Team ORION And Expands AI Security And Infrastructure &nbsp;&nbsp; simplywall.st",
-      "category": "CoverageFallback",
-      "published": "2026-07-21T20:37:30+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Beyond MCP: The New Security Playbook for Coding Agents | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/beyond-mcp-the-new-security-playbook-for-coding-agents",
-      "summary": "Beyond MCP: The New Security Playbook for Coding Agents",
-      "category": "AISecurityLabs",
-      "published": "2026-07-21T16:26:22+00:00",
+      "published": "2026-07-22T23:42:33+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://www.endorlabs.com/learn/rss.xml",
       "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Introducing Security for AI Coding Agents and Workstations | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/introducing-security-for-ai-coding-agents-and-workstations",
+      "summary": "AURI secures the code AI agents write. Now, in collaboration with Cursor and Google, it secures the agents themselves.",
+      "category": "AISecurityLabs",
+      "published": "2026-07-22T23:17:32+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://www.endorlabs.com/learn/beyond-mcp-the-new-security-playbook-for-coding-agents"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Is Akamai Technologies (AKAM) Undervalued As AI Security News And Earnings Focus Build? - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPbWFjMXB0c2Z6YlFaQ3EzWFkzMDI1QVhLd1pEbF9oWGhNSnQzTXVHRlNJeEJQR0dCT0RraTRYNnl1U2RHc0dKUk5jWVoyeU9wVGNGZE15VkE5V0VQSkY4ZWRiTmNUckVCR2xIZjBwLXl3QTNpLVFVOFdVMkZOb0NPcW1Ea0hUWGhpNG1KT1AweHVjcFJBSTYwRlpHNnhUZXNVb29TQkNxeUV0NkQyOG5ObEtWMjk4RWs4R1htd0lpT0NqdmVMeDhidHpFQkR1LU45NXpZ0gHYAUFVX3lxTFBsQnZMSU9La0VGbEplelduMDFXWlJCcTE1b0Z4WVVXSURKVDA2SF8xMzFmQ2RQM3luWFljcEREdGJDc2lRMlpIZDJzZEhUN2RwNkdTd2s2MkYwWElQQ1J5Si03dXBnNnlDYmh4TzJvNTdQdHh5MEhhYnNQRWgyZTR4Z1FYSGthaU40SXJpN1EwbTM4dFVPRzhUNzM3N2tldnNRWEF1MmJrVjZVUmJHemRrWjhaYXB6eGZvN2tONWowMGk4NDFsQWZxUVRkV244T2RVMUF4VUd2eA?oc=5",
+      "summary": "Is Akamai Technologies (AKAM) Undervalued As AI Security News And Earnings Focus Build? &nbsp;&nbsp; simplywall.st",
+      "category": "CoverageFallback",
+      "published": "2026-07-22T22:32:15+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "开发者爆料GPT-5.6会失控删除数据文件 AI安全再爆争议 - 新浪网",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5MSlhhenJZN1Y4cV9ndjVKWkFBZXEtN0VZSWV6R0JJanFTeDFfcDM3TGpmbDZqUkFILXhTT0hqMFhDcmp0RHFpWVhGTktKNzl5cmRUc19tTllZSllna2NaaTMtcXBxd05XNmJFaWYzb2tVTGg5WHRfeGlNVl9MckE?oc=5",
+      "summary": "开发者爆料GPT-5.6会失控删除数据文件 AI安全再爆争议 &nbsp;&nbsp; 新浪网",
+      "category": "CoverageFallback",
+      "published": "2026-07-22T21:24:25+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "SentinelOne (S) Founders Launch Neo After $100 Million Raise In AI Security - Yahoo! Finance Canada",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNF9BaWlkZ2ZEc0JWY3drS3FwSEpVY3M1NTdSdXRCcGZGV04wWWlma2tQak9VTkpISkNsbW1XSjZOaDFrekZhR1ZtUDZlOFgzSllQTnpDV0tybng0UmI4ZXc5OTNoaTBZUHRpdXpBMmxOMzZtbFp3aF9JckVsY056QWJQek5CQ25yQUp1OQ?oc=5",
+      "summary": "SentinelOne (S) Founders Launch Neo After $100 Million Raise In AI Security &nbsp;&nbsp; Yahoo! Finance Canada",
+      "category": "CoverageFallback",
+      "published": "2026-07-22T21:09:31+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Startup Focused on Enterprise AI Security Valued at $1.2 billion - AI Business",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNV0Z0bGpHYTF0NjBMVV9DVmZTU2tYZXlMRUpGSlQxOGIxUXBUMVBVckNoX2JCMkdRMUdUNEhfa05qTDdBR09IcXRYcHBfbUJMWHViQ2RzSXQxVTJUWlZuUXI5VkllM1Y2di03a3dZQy1vWW9uVGM5aW1Pb2FCa2JEQ0l1MFlzS3c5eDdlOUNtUGJIRmMzZ1lGcW9n?oc=5",
+      "summary": "Startup Focused on Enterprise AI Security Valued at $1.2 billion &nbsp;&nbsp; AI Business",
+      "category": "CoverageFallback",
+      "published": "2026-07-22T20:51:16+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "RT Joseph Thacker: Re @technolochap sometimes scope issues, sometimes making state changing actions in prod banking databases, sometimes too many supp...",
+      "url": "https://x.com/rez0__/status/2080026094707597634",
+      "summary": "RT Joseph Thacker Re @technolochap sometimes scope issues, sometimes making state changing actions in prod banking databases, sometimes too many support tickets created. you know, basically the old school burp spider problems but mix in llms 😝",
+      "category": "XSignals",
+      "published": "2026-07-22T20:23:57+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "i have actually had to use this excuse more than im willing to admit (and it was also true haha)",
+      "url": "https://x.com/rez0__/status/2079962759861555220",
+      "summary": "i have actually had to use this excuse more than im willing to admit (and it was also true haha) Darshan Yadav: @rez0__ So if my agent hacks huggingface or bank of America, that not my fault at all, Sorry the Agent went rouge.",
+      "category": "XSignals",
+      "published": "2026-07-22T16:12:20+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Building AI infrastructure with the Effingham County community",
+      "url": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community",
+      "summary": "OpenAI announces Project Camellia in Effingham County, Georgia, with commitments to responsible energy, community investment, jobs, and access to Codex.",
+      "category": "FirstParty",
+      "published": "2026-07-22T13:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "How news organizations are using AI to advance their vital missions",
+      "url": "https://openai.com/index/how-news-organizations-are-using-ai",
+      "summary": "News organizations are using AI to strengthen reporting, grow audiences, and improve business operations, with OpenAI tools supporting journalists and publishers worldwide.",
+      "category": "FirstParty",
+      "published": "2026-07-22T13:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "Introducing OpenAI Presence",
+      "url": "https://openai.com/index/introducing-openai-presence",
+      "summary": "Introducing OpenAI Presence, a proven enterprise AI agent platform that helps organizations deploy trusted voice and chat agents for customer and internal workflows.",
+      "category": "FirstParty",
+      "published": "2026-07-22T05:30:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "从一个邮箱修改漏洞到账号接管：校园教务系统移动端API跨场景攻击链分析",
+      "url": "https://xz.aliyun.com/news/92552",
+      "summary": "本文记录了一次针对高校教务系统的跨场景安全测试过程。在PC端发现邮箱修改无验证漏洞后，通过将攻击面拓展至移动端Angular SPA应用，逆向webpack打包产物提取了150+个REST API端点及签名算法，并发现服务端完全不校验API请求签名。在此基础上构造了完整的账号接管攻击链：移动端签名校验缺失 → 无验证修改绑定邮箱 → PC端密码重置 → 账号劫持。同期通过遍历课程学生查询接口的le",
+      "category": "Chinese",
+      "published": "2026-07-22T00:30:07+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "A Fireside Chat with Cat and Thariq from the Claude Code team",
@@ -463,45 +547,6 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "OpenAI and Hugging Face partner to address security incident during model evaluation",
-      "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident",
-      "summary": "OpenAI and Hugging Face share early findings from a security incident during AI model evaluation, highlighting advanced cyber capabilities and lessons for defenders.",
-      "category": "FirstParty",
-      "published": "2026-07-21T07:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
-      "url": "https://openai.com/index/david-velez-robin-vince-join-openai-boards",
-      "summary": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC, bringing global leadership in finance, technology, and governance.",
-      "category": "FirstParty",
-      "published": "2026-07-21T00:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "This is legit how we need to secure gov / public infrastructure. I know it might break stuff blah blah blah but cmon it’s so cool and we should do it...",
-      "url": "https://x.com/rez0__/status/2079251271588954169",
-      "summary": "This is legit how we need to secure gov / public infrastructure. I know it might break stuff blah blah blah but cmon it’s so cool and we should do it okay?! cje: check my work on this, but if you own wordpress site that's vulnerable to #wp2shell, and have a working shell, with permission to modify the wordpress instance: find / -type f -name wp-config.php 2&gt;/dev/null | while read -r cfg; do d=$",
-      "category": "XSignals",
-      "published": "2026-07-20T17:05:08+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
       "title": "Snow secures encrypted connections between machines for Ethereum clients, Polkadot, and 80+ Rust projects. We found 10 issues and validated 8 fixes th...",
       "url": "https://x.com/trailofbits/status/2079159889054605381",
       "summary": "Snow secures encrypted connections between machines for Ethereum clients, Polkadot, and 80+ Rust projects. We found 10 issues and validated 8 fixes that protect against forged packets, malformed PSK indices, and oversized messages. Funded by @1Password. https://1password.com/blog/strengthening-snow-for-the-open-source-community",
@@ -515,56 +560,97 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "RT Patrik Grobshäuser: Today we are releasing the blogpost for @hash_kitten amazing research that ruined all of our weekends. https://slcyber.io/rese...",
-      "url": "https://x.com/rez0__/status/2079158967750582659",
-      "summary": "RT Patrik Grobshäuser Today we are releasing the blogpost for @hash_kitten amazing research that ruined all of our weekends. https://slcyber.io/research-center/exploit-brokers-pay-500000-for-a-wordpress-rce-i-found-one-with-gpt5-6/ #wp2shell #WordPress #RCE #0day #infosec #bugbounty hashkitten: Seems that wp2shell PoCs are now floating around the internet, so we've published our blog post includin",
-      "category": "XSignals",
-      "published": "2026-07-20T08:15:59+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "THEYRE AT WINCHELLS",
-      "url": "https://x.com/rez0__/status/2078943261729734985",
-      "summary": "THEYRE AT WINCHELLS Freddy🇩🇪: A lot of people told us we should stop eating only at fast food chains, so we have tried to more eat local spots during the last days. This was our dinner today in Lexington, Kentucky. It’s also where we’re staying tonight.😊",
-      "category": "XSignals",
-      "published": "2026-07-19T20:41:13+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Did he delete the tweet?",
-      "url": "https://x.com/rez0__/status/2078938626855964802",
-      "summary": "Did he delete the tweet? Joseph Thacker: Alright here’s the plan: 1) tweet 2030 predictions from different random accounts 2) after it is known who is in the final, delete the incorrect ones 3) crypto scam 5) ??? 6) profit?",
-      "category": "XSignals",
-      "published": "2026-07-19T20:22:48+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "The Hugging Face AI intrusion hasn't gotten much attention so far, yet it's a \"milestone\" from multiple perspectives https://youtu.be/JQQYhNK6AyU",
-      "url": "https://x.com/wunderwuzzi23/status/2078715654170104085",
-      "summary": "The Hugging Face AI intrusion hasn't gotten much attention so far, yet it's a \"milestone\" from multiple perspectives https://youtu.be/JQQYhNK6AyU",
-      "category": "XSignals",
-      "published": "2026-07-19T05:36:47+00:00",
+      "title": "Finding eight high-severity vulnerabilities in NodeBB in six hours",
+      "url": "https://www.aikido.dev/blog/eight-high-severity-vulnerabilities-nodebb",
+      "summary": "Eight high-severity NodeBB vulnerabilities, found by our AI Pentest in six hours. Full technical breakdown of the XSS chains, auth bypasses, and post hijacking. Category: Vulnerabilities & Threats",
+      "category": "AISecurityLabs",
+      "published": "2026-07-22T21:44:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
+      "quality_score": 0,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
+      "title": "this is 100% human written fwiw haha",
+      "url": "https://x.com/rez0__/status/2079969978468499775",
+      "summary": "this is 100% human written fwiw haha Joseph Thacker: 🔥 new non-tech post up on my blog. IT'S IMPORTANT TO SAY THINGS https://josephthacker.com/personal/2026/07/22/its-important-to-say-things.html",
+      "category": "XSignals",
+      "published": "2026-07-22T16:41:01+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "RT Joseph Thacker: 🔥 new non-tech post up on my blog. IT'S IMPORTANT TO SAY THINGS https://josephthacker.com/personal/2026/07/22/its-important-to-s...",
+      "url": "https://x.com/rez0__/status/2079979923800760544",
+      "summary": "RT Joseph Thacker 🔥 new non-tech post up on my blog. IT'S IMPORTANT TO SAY THINGS https://josephthacker.com/personal/2026/07/22/its-important-to-say-things.html",
+      "category": "XSignals",
+      "published": "2026-07-22T16:30:51+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://x.com/rez0__/status/2079967420203102445"
+      ],
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "\"you can just do things\" has never been more true.",
+      "url": "https://x.com/rez0__/status/2079962664902513096",
+      "summary": "\"you can just do things\" has never been more true.",
+      "category": "XSignals",
+      "published": "2026-07-22T16:11:57+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "SQL injection isn't dead",
+      "url": "https://www.aikido.dev/blog/sql-injection-isnt-dead",
+      "summary": "The fix for SQL injection is decades old and still works. So why did WordPress core just need an emergency patch for one? The data, and how to defend against it. Category: News",
+      "category": "AISecurityLabs",
+      "published": "2026-07-22T15:03:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
+      "title": "The upgrade trap: when upgrading is the wrong answer to a CVE",
+      "url": "https://www.aikido.dev/blog/cve-upgrade-breaking-changes-open-source",
+      "summary": "Upgrading to fix a CVE sounds straightforward. But the patched version often breaks your app, hasn't shipped yet, or doesn't exist. Here's why, and what actually works. Category: News",
+      "category": "AISecurityLabs",
+      "published": "2026-07-22T09:23:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
+      "title": "随便一个表单就能打穿服务器？n8n 工作流引擎的 5 步攻击链",
+      "url": "https://xz.aliyun.com/news/92554",
+      "summary": "一个公开的 Form 端点,5 步走完整条攻击链:任意文件读取 → 读 encryptionKey → 伪造 JWT 接管 admin → 表达式注入沙箱逃逸 → RCE。从发第一个 POST 到拿到 root,不到 3 秒。本文基于 n8n 1.65.0 真实复现,附完整攻击脚本与检测工具,所有 PoC 已开源。",
+      "category": "Chinese",
+      "published": "2026-07-22T03:08:19+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "Tyro's CISO:  Being the \"Einstein of cybersecurity\" isn't enough if developers don't trust you",
@@ -593,17 +679,32 @@
       "feed_title": "安全客"
     },
     {
-      "title": "Introducing the ChatGPT for small business program",
-      "url": "https://openai.com/index/introducing-chatgpt-small-business-program",
-      "summary": "OpenAI launches the ChatGPT for Small Businesses program, helping entrepreneurs build AI skills, automate work, and grow with ChatGPT Work.",
-      "category": "FirstParty",
-      "published": "2026-07-21T17:00:00+00:00",
+      "title": "Fastjson 1.2.83 file: 协议不出网利用分析",
+      "url": "https://xz.aliyun.com/news/92551",
+      "summary": "Fastjson 1.2.83 file: 协议不出网利用分析",
+      "category": "Chinese",
+      "published": "2026-07-21T11:16:46+00:00",
       "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://xz.aliyun.com/news/92550"
+      ],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "LM01：Prompt Injection",
+      "url": "https://xz.aliyun.com/news/92548",
+      "summary": "衍界AI安全实验室-jake",
+      "category": "Chinese",
+      "published": "2026-07-21T07:10:06+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "What developers need to know about DSPM and data exposure in code",
@@ -619,30 +720,17 @@
       "feed_title": "Aikido Security"
     },
     {
-      "title": "Claude just looked up info about me before answering a question about red teaming... seems a bit creepy.",
-      "url": "https://x.com/wunderwuzzi23/status/2078868130823376942",
-      "summary": "Claude just looked up info about me before answering a question about red teaming... seems a bit creepy.",
+      "title": "RT jason:",
+      "url": "https://x.com/rez0__/status/2080038105239720315",
+      "summary": "RT jason",
       "category": "XSignals",
-      "published": "2026-07-19T15:42:40+00:00",
-      "fetch_status": "rss_only",
+      "published": "2026-07-22T20:50:07+00:00",
+      "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "SleeperGem: RubyGems supply chain attack targets dormant maintainer accounts",
-      "url": "https://www.aikido.dev/blog/sleepergem-rubygems-supply-chain-attack",
-      "summary": "SleeperGem: two dormant RubyGems maintainer accounts were hijacked to inject malware into trusted gems, one with over 500,000 total downloads Category: Vulnerabilities & Threats",
-      "category": "AISecurityLabs",
-      "published": "2026-07-19T08:45:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
+      "quality_score": -1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "你家门口的摄像头，可能正在替俄罗斯情报机构\"站岗\"",
@@ -656,6 +744,19 @@
       "quality_score": -1,
       "feed_url": "https://api.anquanke.com/data/v1/rss",
       "feed_title": "安全客"
+    },
+    {
+      "title": "J-space：大模型安全审计开始从“看输出”走向“看内部”",
+      "url": "https://xz.aliyun.com/news/92544",
+      "summary": "对最近的j-space空间对于AI安全的讨论",
+      "category": "Chinese",
+      "published": "2026-07-20T06:13:08+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": -1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     }
   ]
 }
