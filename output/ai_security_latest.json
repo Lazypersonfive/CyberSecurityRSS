@@ -1,18 +1,18 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-07-23",
-  "fetched_at_utc": "2026-07-22T23:44:19.836293Z",
+  "fetched_at": "2026-07-24",
+  "fetched_at_utc": "2026-07-23T23:41:24.479707Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 71,
-  "entry_count": 39,
+  "raw_entry_count": 81,
+  "entry_count": 49,
   "filter_stats": {
-    "input": 71,
-    "dedup_merged": 8,
-    "output": 63
+    "input": 81,
+    "dedup_merged": 2,
+    "output": 79
   },
   "curation_stats": {
-    "dropped_source_cap": 24
+    "dropped_source_cap": 30
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -41,7 +41,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://portswigger.net/research/rss": {
       "feed_title": "PortSwigger Research",
@@ -69,14 +69,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 8
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -111,7 +111,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 8
     },
     "https://snyk.io/blog/feed/": {
       "feed_title": "Snyk Blog",
@@ -139,14 +139,14 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 5
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 7
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -209,7 +209,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 5
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
@@ -242,6 +242,21 @@
   },
   "entries": [
     {
+      "title": "Linux sandbox escape 🙌 😈 CVE-2026-5674 Earlier this year, with the help of AI, I found a Linux sandbox escape by exploiting PipeWire. Technical ...",
+      "url": "https://x.com/wunderwuzzi23/status/2080407467067081113",
+      "summary": "Linux sandbox escape 🙌 😈 CVE-2026-5674 Earlier this year, with the help of AI, I found a Linux sandbox escape by exploiting PipeWire. Technical write-up to follow... 👨‍💻",
+      "category": "XSignals",
+      "published": "2026-07-23T21:39:26+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [
+        "CVE-2026-5674"
+      ],
+      "related_urls": [],
+      "quality_score": 3,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
+    {
       "title": "CVE-2026-29172-Craft-Commerce-SQL注入-漏洞复现",
       "url": "https://xz.aliyun.com/news/92547",
       "summary": "Craft Commerce 是 Craft CMS 的电商插件。后台订单管理里有个\"可购买商品列表\"接口，前端表格支持按列排序，参数叫 sort，格式是 列名|方向（比如 title|asc）。后端拿到这个字符串，explode('|', $sort) 拆成左右两半，左半截直接塞给 Yii2 Query Builder 的 orderBy()。 问题在 Yii2 的 orderBy() ——它假",
@@ -272,17 +287,69 @@
       "feed_title": "先知社区"
     },
     {
-      "title": "Designing Coding Agent Governance: A New Surface for AI Risk | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/designing-agent-governance-a-new-surface-for-ai-risk",
-      "summary": "How Endor Labs designed Coding Agent Governance, a new product inside the existing platform. A look at three choices that shaped where the product lives, how risk reads, and where policies meet reality.",
+      "title": "The first known runaway AI agent - or a very bad marketing stunt?",
+      "url": "https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent/#atom-everything",
+      "summary": "The first known runaway AI agent - or a very bad marketing stunt? Martin Alderson's commentary on the OpenAI accidental cyberattack against Hugging Face includes a couple of details I hadn't considered. First, Hugging Face offers a truly rich target if you're trying to find potential vulnerabilities that require executing arbitrary code: Hugging Face has an enormous attack surface. They have more",
       "category": "AISecurityLabs",
-      "published": "2026-07-22T23:15:49+00:00",
+      "published": "2026-07-23T22:53:08+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 2,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "RT s1r1us (mohan): OpenAI and Hugging Face probably won’t tell us exactly what happened anytime soon. So I decided to reconstruct the full exploit ch...",
+      "url": "https://x.com/rez0__/status/2080392266309324950",
+      "summary": "RT s1r1us (mohan) OpenAI and Hugging Face probably won’t tell us exactly what happened anytime soon. So I decided to reconstruct the full exploit chain, from escaping OpenAI’s sandbox to compromising Hugging Face production. 🧵 s1r1us (mohan): http://x.com/i/article/2080027726841524224",
+      "category": "XSignals",
+      "published": "2026-07-23T19:48:25+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "RT Mike Takahashi: Excited to finally share this ChatGPT vulnerability with everyone! AgentForger: ChatGPT Cross-Site Agent Forgery 1-Click hijacks Op...",
+      "url": "https://x.com/rez0__/status/2080292211925630985",
+      "summary": "RT Mike Takahashi Excited to finally share this ChatGPT vulnerability with everyone! AgentForger: ChatGPT Cross-Site Agent Forgery 1-Click hijacks OpenAI's ChatGPT Workspace Agents and allows an attacker to forge an autonomous AI agent inside the victim's organization Click link → Creates agent → Connects apps → Removes approvals → Adds persistence → Email C2 → Recon → Data theft → Impersonation →",
+      "category": "XSignals",
+      "published": "2026-07-23T13:50:17+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "RT STÖK ✌️: It’s Thursday, Not bounty thursday but close enough, here’s a live hacking vlog! https://www.youtube.com/watch?v=tJhuAINZWQ0 TLDR : G...",
+      "url": "https://x.com/rez0__/status/2080241589343891724",
+      "summary": "RT STÖK ✌️ It’s Thursday, Not bounty thursday but close enough, here’s a live hacking vlog! https://www.youtube.com/watch?v=tJhuAINZWQ0 TLDR : Google invited me to Seoul for one of the most unique bug bounty events I've ever attended. I joined an invite-only group of security researchers attempting to find vulnerabilities in their flagship AI products. Together we spent several days trying to brea",
+      "category": "XSignals",
+      "published": "2026-07-23T09:23:12+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
+      "url": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-everything",
+      "summary": "This story is wild. The short version: OpenAI were running a cybersecurity test against an unreleased model, with the model's guardrail features turned off. Rather than solve the test, the model broke its way out of OpenAI's sandbox, then found exploits to break in to Hugging Face, all so it could cheat on the test by stealing the answers. Along the way it helped make the strongest case yet for ho",
+      "category": "AISecurityLabs",
+      "published": "2026-07-22T23:51:33+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
       "title": "Are AI labs pelicanmaxxing?",
@@ -298,17 +365,30 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "RT max.berlin: lol today I learned that you can run a smaller LLM like Gemma 4b in ChatGPTs virtual machine I gave ChatGPT Work the task to run a LLM ...",
-      "url": "https://x.com/rez0__/status/2080043653578301577",
-      "summary": "RT max.berlin lol today I learned that you can run a smaller LLM like Gemma 4b in ChatGPTs virtual machine I gave ChatGPT Work the task to run a LLM in its cloud environment. Network was restricted for the model weight downloads. Well, turns out there is a way. gpt-5.6-sol just deployed its own network proxy through ChatGPT Sites to bypass the network proxy and downloaded gemma 4b and ran it in 14",
+      "title": "RT Lisan al Gaib: I let GPT-5.6 Pro analyze all problems that were solved by LLMs in 2026, which field the problem belonged to and how they were solve...",
+      "url": "https://x.com/rez0__/status/2080258578015789373",
+      "summary": "RT Lisan al Gaib I let GPT-5.6 Pro analyze all problems that were solved by LLMs in 2026, which field the problem belonged to and how they were solved then I asked for a list of problems that are most likely solvable I played some league and GPT-5.6-Pro came back for a proof of the \"Two-dimensional Gaussian Moments Conjecture\" i have no clue what I'm talking about, so I let both Fable and another",
       "category": "XSignals",
-      "published": "2026-07-22T15:50:17+00:00",
+      "published": "2026-07-22T20:42:09+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 2,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
+    },
+    {
+      "title": "RT TechCrunch: How an OpenAI’s human mistake led to the AI-powered hack on Hugging Face https://techcrunch.com/2026/07/22/how-an-openais-human-mistak...",
+      "url": "https://x.com/trailofbits/status/2080342265067917793",
+      "summary": "RT TechCrunch How an OpenAI’s human mistake led to the AI-powered hack on Hugging Face https://techcrunch.com/2026/07/22/how-an-openais-human-mistake-led-to-the-ai-powered-hack-on-hugging-face/?utm_source=dlvr.it&amp;utm_medium=twitter",
+      "category": "XSignals",
+      "published": "2026-07-22T19:14:46+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
     },
     {
       "title": "OpenAI had a lab escape and their unreleased AI compromised Hugging Face along the way!",
@@ -337,19 +417,6 @@
       "feed_title": "X / Johann Rehberger"
     },
     {
-      "title": "Nativ: Run AI models locally on your Mac",
-      "url": "https://simonwillison.net/2026/Jul/21/nativ/#atom-everything",
-      "summary": "Nativ: Run AI models locally on your Mac Prince Canuma is the developer behind the excellent MLX-VLM Python library for running vision-LLMs using MLX on a Mac. I'm really excited about his new project, which wraps MLX in a full macOS desktop application. It's similar in shape to LM Studio, providing both a chat interface and a localhost API server for accessing models. The app picked up MLX models",
-      "category": "AISecurityLabs",
-      "published": "2026-07-21T14:22:27+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
       "title": "We audited ExecuTorch, the engine that runs @PyTorch AI models on-device for billions of people across Instagram, WhatsApp, and Messenger. In one mont...",
       "url": "https://x.com/trailofbits/status/2079522279835283936",
       "summary": "We audited ExecuTorch, the engine that runs @PyTorch AI models on-device for billions of people across Instagram, WhatsApp, and Messenger. In one month, we reported 42 issues. 26 came from AI-assisted workflows. Every ExecuTorch model ships as a file that an app opens and runs. @OSTIFofficial asked us to break how ExecuTorch loads, validates, and executes these model files. We first used AI to bui",
@@ -363,104 +430,128 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "Autonomous AI Intrusions Are Here: Lessons from the Hugging Face Compromise",
-      "url": "https://embracethered.com/blog/posts/2026/ai-intrusion-are-now-real/",
-      "summary": "Hugging Face disclosed an intrusion that, according to them, was driven end to end by an autonomous AI agent system. Along similar lines, Sysdig recently published a blog on JADEPUFFER , which it assesses to be an agent-driven ransomware capable of adapting in real time. The report does not identify the victim or fully explain how Sysdig obtained visibility into the operation. The Hugging Face dis",
-      "category": "AISecurityLabs",
-      "published": "2026-07-20T01:00:00+00:00",
+      "title": "TrendAI picks Foodstuffs CISO Richard Harrison as global AI security VP - Reseller News",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZmh1Yk1sQXJwcnJVUmdJazUyYXIxbXVxZEo0SHdUekN0SHBWazlDYm9xSEpqM2RDMFhXc2o1SDVqRC1EMmNjd0dCSG5RZXZhU2RoRlZjOFFSMWkwUW9NY1N5YU56ek5KTDZ5Z0Jwb2dMUHlVblhWbkRRYnUzY1AtYzJlcjJTdWc3am9KQUZiYXBnck1lc21DSkQ3SkFLX1RPSTdpTnZyYWNoUmNtQ2JHT0VKamhIMDVWOEtj?oc=5",
+      "summary": "TrendAI picks Foodstuffs CISO Richard Harrison as global AI security VP &nbsp;&nbsp; Reseller News",
+      "category": "CoverageFallback",
+      "published": "2026-07-23T22:18:42+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "AI security tools can be manipulated into running malware, researchers warn - Digital Journal",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQenNSaFZrb2dQZFJLanYwZHU5X0R4VDNabTg1YmZoUEphMnZEZWxEcWxvS1QwRWstLVkyWUpLQUlNaEFnV001eWVsR1NyRkVoSkRyZF9IUnE3dDdNZ29NUHg5VDJDcVZiTTNjVERuX1BYTU9Sazg0SXhGaXM5cDNNZms4RzZkSFdrYkhDZTdrVXVSQmxNbFJHZzJtb2lSc2FrY2I4YWhXWFdsQl9sQnc0YURaNEI?oc=5",
+      "summary": "AI security tools can be manipulated into running malware, researchers warn &nbsp;&nbsp; Digital Journal",
+      "category": "CoverageFallback",
+      "published": "2026-07-23T21:18:01+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Cyberhaven Extends Data and AI Security Platform with Support for ChatGPT Enterprise and Claude Compliance API Integrations - PR Newswire",
+      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPdWtCT3BmTUNnTHVkMDNMNWNFb25yekRMS3NlUVFFZjRfZEFRRTdnTXI3SUFRZHBwVjREUmtORVdBWVZTek8taGFPZno1cVAwOHdza0tWX0NrZEtSaUtqODRyWWVrVjJTa2FuVzNqd05GMGpNcXJ1RUtGSDdDMTNXWDVMMllEek1xenBwWHlxRzh4Y3VYbjhDR245UzItaURndEpsQ0Jpb1AydzR4NzN6THJqRGU0NnJmS0FHNTFQcUZjTGVvZ3h3UWpIN29WbkR1Q0tIUVBhRVZPYjFGV21IZVBSOXdDWUVMRk1hNV8wcUlYN2pDTmYxTzdFVWIySlhMSjktcFhQd3BrX3M?oc=5",
+      "summary": "Cyberhaven Extends Data and AI Security Platform with Support for ChatGPT Enterprise and Claude Compliance API Integrations &nbsp;&nbsp; PR Newswire",
+      "category": "CoverageFallback",
+      "published": "2026-07-23T20:30:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "NCGA allots $3.2M to Alamance schools for AI security pilot - WUNC News",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNZmVPMU5wSGt3OWNhWGVPSms0WEJfZ2tiOFlwLWM5Y1M3VUM3N3lpM1IybkNxRWx5WVJ5bGNtZDRia2R2dVlwNVNCdXI2RWpTbmRQazhNdUlmRV82TmF3TjdGa21uNExtcndLYVNoYjlUanVSbHhSazBQejVpNDBhclBibjN6QlhWVEdLcnhVS29mM1lO?oc=5",
+      "summary": "NCGA allots $3.2M to Alamance schools for AI security pilot &nbsp;&nbsp; WUNC News",
+      "category": "CoverageFallback",
+      "published": "2026-07-23T20:27:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Classic + Legend! 😀",
+      "url": "https://x.com/wunderwuzzi23/status/2080389090500063404",
+      "summary": "Classic + Legend! 😀 Jürgen Schmidhuber: I support open-source models distilling what commercial companies distilled for free from the entire internet. I published distillation for free in 1991 in Europe - this was copied in the US and in China (https://x.com/SchmidhuberAI/status/1608870559609421831)",
+      "category": "XSignals",
+      "published": "2026-07-23T20:26:25+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://embracethered.com/blog/index.xml",
-      "feed_title": "Embrace The Red"
-    },
-    {
-      "title": "Introducing Coding Agent Governance: Using Hooks to Bring Visibility to the ADLC | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/introducing-agent-governance-using-hooks-to-bring-visibility-to-ai-coding-agents",
-      "summary": "Learn how hooks turn AI coding agents like Claude Code and Cursor into governed systems with deterministic policy, centralized audit, and defense in depth.",
-      "category": "AISecurityLabs",
-      "published": "2026-07-22T23:42:33+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
     },
     {
-      "title": "Introducing Security for AI Coding Agents and Workstations | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/introducing-security-for-ai-coding-agents-and-workstations",
-      "summary": "AURI secures the code AI agents write. Now, in collaboration with Cursor and Google, it secures the agents themselves.",
-      "category": "AISecurityLabs",
-      "published": "2026-07-22T23:17:32+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [
-        "https://www.endorlabs.com/learn/beyond-mcp-the-new-security-playbook-for-coding-agents"
-      ],
-      "quality_score": 1,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Is Akamai Technologies (AKAM) Undervalued As AI Security News And Earnings Focus Build? - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPbWFjMXB0c2Z6YlFaQ3EzWFkzMDI1QVhLd1pEbF9oWGhNSnQzTXVHRlNJeEJQR0dCT0RraTRYNnl1U2RHc0dKUk5jWVoyeU9wVGNGZE15VkE5V0VQSkY4ZWRiTmNUckVCR2xIZjBwLXl3QTNpLVFVOFdVMkZOb0NPcW1Ea0hUWGhpNG1KT1AweHVjcFJBSTYwRlpHNnhUZXNVb29TQkNxeUV0NkQyOG5ObEtWMjk4RWs4R1htd0lpT0NqdmVMeDhidHpFQkR1LU45NXpZ0gHYAUFVX3lxTFBsQnZMSU9La0VGbEplelduMDFXWlJCcTE1b0Z4WVVXSURKVDA2SF8xMzFmQ2RQM3luWFljcEREdGJDc2lRMlpIZDJzZEhUN2RwNkdTd2s2MkYwWElQQ1J5Si03dXBnNnlDYmh4TzJvNTdQdHh5MEhhYnNQRWgyZTR4Z1FYSGthaU40SXJpN1EwbTM4dFVPRzhUNzM3N2tldnNRWEF1MmJrVjZVUmJHemRrWjhaYXB6eGZvN2tONWowMGk4NDFsQWZxUVRkV244T2RVMUF4VUd2eA?oc=5",
-      "summary": "Is Akamai Technologies (AKAM) Undervalued As AI Security News And Earnings Focus Build? &nbsp;&nbsp; simplywall.st",
-      "category": "CoverageFallback",
-      "published": "2026-07-22T22:32:15+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "开发者爆料GPT-5.6会失控删除数据文件 AI安全再爆争议 - 新浪网",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5MSlhhenJZN1Y4cV9ndjVKWkFBZXEtN0VZSWV6R0JJanFTeDFfcDM3TGpmbDZqUkFILXhTT0hqMFhDcmp0RHFpWVhGTktKNzl5cmRUc19tTllZSllna2NaaTMtcXBxd05XNmJFaWYzb2tVTGg5WHRfeGlNVl9MckE?oc=5",
-      "summary": "开发者爆料GPT-5.6会失控删除数据文件 AI安全再爆争议 &nbsp;&nbsp; 新浪网",
-      "category": "CoverageFallback",
-      "published": "2026-07-22T21:24:25+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
-    },
-    {
-      "title": "SentinelOne (S) Founders Launch Neo After $100 Million Raise In AI Security - Yahoo! Finance Canada",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNF9BaWlkZ2ZEc0JWY3drS3FwSEpVY3M1NTdSdXRCcGZGV04wWWlma2tQak9VTkpISkNsbW1XSjZOaDFrekZhR1ZtUDZlOFgzSllQTnpDV0tybng0UmI4ZXc5OTNoaTBZUHRpdXpBMmxOMzZtbFp3aF9JckVsY056QWJQek5CQ25yQUp1OQ?oc=5",
-      "summary": "SentinelOne (S) Founders Launch Neo After $100 Million Raise In AI Security &nbsp;&nbsp; Yahoo! Finance Canada",
-      "category": "CoverageFallback",
-      "published": "2026-07-22T21:09:31+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Startup Focused on Enterprise AI Security Valued at $1.2 billion - AI Business",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNV0Z0bGpHYTF0NjBMVV9DVmZTU2tYZXlMRUpGSlQxOGIxUXBUMVBVckNoX2JCMkdRMUdUNEhfa05qTDdBR09IcXRYcHBfbUJMWHViQ2RzSXQxVTJUWlZuUXI5VkllM1Y2di03a3dZQy1vWW9uVGM5aW1Pb2FCa2JEQ0l1MFlzS3c5eDdlOUNtUGJIRmMzZ1lGcW9n?oc=5",
-      "summary": "Startup Focused on Enterprise AI Security Valued at $1.2 billion &nbsp;&nbsp; AI Business",
-      "category": "CoverageFallback",
-      "published": "2026-07-22T20:51:16+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "RT Joseph Thacker: Re @technolochap sometimes scope issues, sometimes making state changing actions in prod banking databases, sometimes too many supp...",
-      "url": "https://x.com/rez0__/status/2080026094707597634",
-      "summary": "RT Joseph Thacker Re @technolochap sometimes scope issues, sometimes making state changing actions in prod banking databases, sometimes too many support tickets created. you know, basically the old school burp spider problems but mix in llms 😝",
+      "title": "Great research by Mike! I find exploit chains that combine classic vulns with agentic capabilities super interesting. In this case, a CSRF exploit pro...",
+      "url": "https://x.com/wunderwuzzi23/status/2080389053418189155",
+      "summary": "Great research by Mike! I find exploit chains that combine classic vulns with agentic capabilities super interesting. In this case, a CSRF exploit prompts an agent into existence. Mike Takahashi: Excited to finally share this ChatGPT vulnerability with everyone! AgentForger: ChatGPT Cross-Site Agent Forgery 1-Click hijacks OpenAI's ChatGPT Workspace Agents and allows an attacker to forge an autono",
       "category": "XSignals",
-      "published": "2026-07-22T20:23:57+00:00",
+      "published": "2026-07-23T20:26:16+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
+    {
+      "title": "Slopsquatting: When AI Agents Hallucinate Malicious Packages | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/slopsquatting-when-ai-agents-hallucinate-malicious-packages",
+      "summary": "Slopsquatting: When AI Agents Hallucinate Malicious Packages",
+      "category": "AISecurityLabs",
+      "published": "2026-07-23T15:47:58+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "When AI Imports Vulnerable Dependencies: Securing AI-Generated Code | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/when-ai-imports-vulnerable-dependencies-securing-ai-generated-code",
+      "summary": "When AI Imports Vulnerable Dependencies: Securing AI-Generated Code",
+      "category": "AISecurityLabs",
+      "published": "2026-07-23T15:46:03+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Russian Global Webmail Espionage",
+      "url": "https://unit42.paloaltonetworks.com/russian-webmail-espionage/",
+      "summary": "Unit 42 details a Russian cyberespionage campaign targeting Zimbra webmail servers using JavaScript injection to steal credentials. The post Russian Global Webmail Espionage appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-07-23T14:10:53+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "RT Ciarán Cotter: we’re so back",
+      "url": "https://x.com/rez0__/status/2080425758183350735",
+      "summary": "RT Ciarán Cotter we’re so back STÖK ✌️: It’s Thursday, Not bounty thursday but close enough, here’s a live hacking vlog! https://www.youtube.com/watch?v=tJhuAINZWQ0 TLDR : Google invited me to Seoul for one of the most unique bug bounty events I've ever attended. I joined an invite-only group of security researchers attempting to",
+      "category": "XSignals",
+      "published": "2026-07-23T12:39:32+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
@@ -469,11 +560,24 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "i have actually had to use this excuse more than im willing to admit (and it was also true haha)",
-      "url": "https://x.com/rez0__/status/2079962759861555220",
-      "summary": "i have actually had to use this excuse more than im willing to admit (and it was also true haha) Darshan Yadav: @rez0__ So if my agent hacks huggingface or bank of America, that not my fault at all, Sorry the Agent went rouge.",
+      "title": "RT ᴅᴀɴɪᴇʟ ᴍɪᴇssʟᴇʀ 🛡️: I've been saying this for something like eight months now, with varying approaches and volume levels, and no on...",
+      "url": "https://x.com/rez0__/status/2080363981189816585",
+      "summary": "RT ᴅᴀɴɪᴇʟ ᴍɪᴇssʟᴇʀ 🛡️ I've been saying this for something like eight months now, with varying approaches and volume levels, and no one is paying attention yet. This is either because I am way early or my idea isn't one third as good as I think it is. :) But here it goes again: I think we will soon figure out that the entire game for AI is articulation of ideal state. And that all of our conversati",
       "category": "XSignals",
-      "published": "2026-07-22T16:12:20+00:00",
+      "published": "2026-07-23T03:35:26+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "RT Joseph Thacker: Re @technolochap sometimes scope issues, sometimes making state changing actions in prod banking databases, sometimes too many supp...",
+      "url": "https://x.com/rez0__/status/2080026094707597634",
+      "summary": "RT Joseph Thacker Re @technolochap sometimes scope issues, sometimes making state changing actions in prod banking databases, sometimes too many support tickets created. you know, basically the old school burp spider problems but mix in llms 😝",
+      "category": "XSignals",
+      "published": "2026-07-22T20:23:57+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
@@ -534,30 +638,97 @@
       "feed_title": "先知社区"
     },
     {
-      "title": "A Fireside Chat with Cat and Thariq from the Claude Code team",
-      "url": "https://simonwillison.net/2026/Jul/21/cat-and-thariq/#atom-everything",
-      "summary": "Earlier this month I hosted a fireside chat session at the AI Engineer World's Fair with Cat Wu and Thariq Shihipar from Anthropic's Claude Code team. We talked about Claude Code, Claude Tag, Fable, coding agent security, evals, tool design, and how Anthropic use these tools themselves. The full video of the session is now available on YouTube . Below is an edited copy of the transcript, with extr",
+      "title": "Endor Labs Recognized by Gartner® in the 2026 Hype Cycle™ for Application Security | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/endor-labs-recognized-by-gartner-r-in-the-2026-hype-cycle-tm-for-application-security",
+      "summary": "Endor Labs Recognized by Gartner® in the 2026 Hype Cycle™ for Application Security",
       "category": "AISecurityLabs",
-      "published": "2026-07-21T12:54:02+00:00",
-      "fetch_status": "full",
+      "published": "2026-07-23T23:26:16+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
     },
     {
-      "title": "Snow secures encrypted connections between machines for Ethereum clients, Polkadot, and 80+ Rust projects. We found 10 issues and validated 8 fixes th...",
-      "url": "https://x.com/trailofbits/status/2079159889054605381",
-      "summary": "Snow secures encrypted connections between machines for Ethereum clients, Polkadot, and 80+ Rust projects. We found 10 issues and validated 8 fixes that protect against forged packets, malformed PSK indices, and oversized messages. Funded by @1Password. https://1password.com/blog/strengthening-snow-for-the-open-source-community",
-      "category": "XSignals",
-      "published": "2026-07-20T11:02:01+00:00",
-      "fetch_status": "full",
+      "title": "Better generic secrets detection starts with finding non-secrets",
+      "url": "https://www.aikido.dev/blog/better-generic-secrets-detection-non-secrets",
+      "summary": "Some API keys are meant to be public. Betterleaks now removes them from generic secret findings, dropping thousands of false positives per scan. Category: News",
+      "category": "AISecurityLabs",
+      "published": "2026-07-23T16:11:00+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
-      "feed_title": "X / Trail of Bits"
+      "quality_score": 0,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
+      "title": "What Is Software Supply Chain Security? The Complete Guide | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/what-is-software-supply-chain-security-the-complete-guide",
+      "summary": "What Is Software Supply Chain Security? The Complete Guide",
+      "category": "AISecurityLabs",
+      "published": "2026-07-23T16:02:20+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://www.endorlabs.com/learn/what-is-a-software-bill-of-materials-a-practical-guide"
+      ],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Best SBOM Tools in 2026, Compared | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/best-sbom-tools-in-2026-compared",
+      "summary": "Best SBOM Tools in 2026, Compared",
+      "category": "AISecurityLabs",
+      "published": "2026-07-23T15:54:58+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "What Is Malicious Code? Types, Examples & How to Protect Yourself | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/what-is-malicious-code-types-examples-how-to-protect-yourself",
+      "summary": "What Is Malicious Code? Types, Examples & How to Protect Yourself",
+      "category": "AISecurityLabs",
+      "published": "2026-07-23T15:53:24+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Veiled in Trust: Software Supply Chain Attacks Explained | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/veiled-in-trust-software-supply-chain-attacks-explained",
+      "summary": "Veiled in Trust: Software Supply Chain Attacks Explained",
+      "category": "AISecurityLabs",
+      "published": "2026-07-23T15:51:27+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "科技云报到：WAIC观察：机器人“进厂干活”，只差一个通用底座？",
+      "url": "https://www.anquanke.com/post/id/315837",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-07-23T11:37:45+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
     },
     {
       "title": "Finding eight high-severity vulnerabilities in NodeBB in six hours",
@@ -578,34 +749,6 @@
       "summary": "this is 100% human written fwiw haha Joseph Thacker: 🔥 new non-tech post up on my blog. IT'S IMPORTANT TO SAY THINGS https://josephthacker.com/personal/2026/07/22/its-important-to-say-things.html",
       "category": "XSignals",
       "published": "2026-07-22T16:41:01+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT Joseph Thacker: 🔥 new non-tech post up on my blog. IT'S IMPORTANT TO SAY THINGS https://josephthacker.com/personal/2026/07/22/its-important-to-s...",
-      "url": "https://x.com/rez0__/status/2079979923800760544",
-      "summary": "RT Joseph Thacker 🔥 new non-tech post up on my blog. IT'S IMPORTANT TO SAY THINGS https://josephthacker.com/personal/2026/07/22/its-important-to-say-things.html",
-      "category": "XSignals",
-      "published": "2026-07-22T16:30:51+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [
-        "https://x.com/rez0__/status/2079967420203102445"
-      ],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "\"you can just do things\" has never been more true.",
-      "url": "https://x.com/rez0__/status/2079962664902513096",
-      "summary": "\"you can just do things\" has never been more true.",
-      "category": "XSignals",
-      "published": "2026-07-22T16:11:57+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -707,30 +850,30 @@
       "feed_title": "先知社区"
     },
     {
-      "title": "What developers need to know about DSPM and data exposure in code",
-      "url": "https://www.aikido.dev/blog/what-is-dspm",
-      "summary": "Traditional DSPM finds where sensitive data lives. Code-based DSPM finds how it gets exposed, and points to the fix in your code. Category: Guides & Best Practices",
-      "category": "AISecurityLabs",
-      "published": "2026-07-20T16:15:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "RT jason:",
-      "url": "https://x.com/rez0__/status/2080038105239720315",
-      "summary": "RT jason",
-      "category": "XSignals",
-      "published": "2026-07-22T20:50:07+00:00",
+      "title": "Claude 开始自己审自己写的代码了 —— Anthropic 把\"安全研究员\"塞进了终端",
+      "url": "https://www.anquanke.com/post/id/315847",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-07-23T18:53:17+00:00",
       "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": -1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "为了“作弊”拿高分，GPT自己黑了 Hugging Face，GLM分析取证",
+      "url": "https://www.anquanke.com/post/id/315841",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-07-23T11:50:13+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": -1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
     },
     {
       "title": "你家门口的摄像头，可能正在替俄罗斯情报机构\"站岗\"",
@@ -744,19 +887,6 @@
       "quality_score": -1,
       "feed_url": "https://api.anquanke.com/data/v1/rss",
       "feed_title": "安全客"
-    },
-    {
-      "title": "J-space：大模型安全审计开始从“看输出”走向“看内部”",
-      "url": "https://xz.aliyun.com/news/92544",
-      "summary": "对最近的j-space空间对于AI安全的讨论",
-      "category": "Chinese",
-      "published": "2026-07-20T06:13:08+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
     }
   ]
 }

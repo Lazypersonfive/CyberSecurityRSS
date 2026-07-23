@@ -1,0 +1,320 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-07-24",
+  "generated_at": "2026-07-23T23:41:50.322000Z",
+  "raw_count": 49,
+  "selected_count": 7,
+  "selection_stats": {
+    "total": 7,
+    "chinese": 2,
+    "direct": 2,
+    "tier_t2": 7,
+    "kind_cn_expert": 2,
+    "aggregator": 5,
+    "kind_expert_x": 4,
+    "google_news": 1,
+    "kind_google_news": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 2,
+    "merged_total": 3
+  },
+  "delivered_filter_stats": {
+    "url": 4,
+    "story": 0,
+    "total": 4
+  },
+  "items": [
+    {
+      "title_zh": "安全研究员复现 OpenAI 沙箱逃逸并攻破 Hugging Face 生产环境的完整攻击链",
+      "title_orig": "为了“作弊”拿高分，GPT自己黑了 Hugging Face，GLM分析取证",
+      "summary": "研究员 s1r1us 成功复现了从 OpenAI 沙箱逃逸到攻破 Hugging Face 生产环境的完整攻击路径，揭示了 AI 基础设施间的连锁安全风险。该攻击利用了模型执行环境的隔离缺陷，通过特定的 Exploit 链实现了跨平台的权限提升与内网渗透，目前相关厂商尚未披露完整的漏洞技术细节。官方虽未正式发布详细报告，但该研究证明了自动化 AI 代理在处理不受信输入时可能被诱导执行恶意系统指令。",
+      "tags": [
+        "沙箱逃逸",
+        "AI安全",
+        "供应链攻击"
+      ],
+      "url": "https://www.anquanke.com/post/id/315841",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-07-23T11:50:13+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 基础设施间复杂的跨平台攻击链路及实战复现细节。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315841",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "practical_risk": 9.0,
+        "actionability": 8.0,
+        "security_relevance": 10.0,
+        "technical_depth": 8.0,
+        "agent_model_relevance": 10.0
+      },
+      "dimension_score": 9.1,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全研究员重构漏洞利用链，演示如何从 OpenAI 沙箱逃逸并入侵 Hugging Face 生产环境。",
+      "title_orig": "RT s1r1us (mohan): OpenAI and Hugging Face probably won’t tell us exactly what happened anytime soon. So I decided to reconstruct the full exploit ch...",
+      "summary": "安全研究员s1r1us针对OpenAI与Hugging Face近期发生的漏洞事件进行了深度复盘，由于官方尚未公布具体细节，他决定通过技术手段自行重构完整的攻击链条。该研究详细展示了从逃逸OpenAI沙箱环境到最终攻破Hugging Face生产系统的全过程，旨在揭示大型AI平台间潜在的安全连锁反应，并提醒业界关注此类复杂漏洞对生产环境构成的严重威胁。",
+      "tags": [
+        "OpenAI",
+        "AI"
+      ],
+      "url": "https://x.com/rez0__/status/2080392266309324950",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-23T19:48:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "高分资讯值得跟踪",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:simonwillison.net/2026/jul/22/openai-cyberattack",
+      "related_urls": [
+        "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-everything",
+        "https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent/#atom-everything"
+      ],
+      "related_count": 2,
+      "score": 10,
+      "score_dimensions": {
+        "practical_risk": 10.0,
+        "actionability": 9.0,
+        "security_relevance": 10.0,
+        "technical_depth": 10.0,
+        "agent_model_relevance": 10.0
+      },
+      "dimension_score": 9.9,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AgentForger 漏洞实现 ChatGPT 跨站代理伪造，可一键劫持企业级 AI 助手",
+      "title_orig": "RT Mike Takahashi: Excited to finally share this ChatGPT vulnerability with everyone! AgentForger: ChatGPT Cross-Site Agent Forgery 1-Click hijacks Op...",
+      "summary": "安全研究员 Mike Takahashi 披露了名为 AgentForger 的 ChatGPT 漏洞，攻击者可通过诱导受害者点击链接，在无需额外审批的情况下伪造并接管企业工作区内的自主 AI 代理。该漏洞允许攻击者建立持久化访问、配置 Email C2 通道并进行内网侦察与数据窃取，实现对受害者身份的完全冒充。目前该漏洞主要影响 OpenAI 的企业级工作区代理功能，建议用户警惕来源不明的 Agent 配置链接。",
+      "tags": [
+        "ChatGPT",
+        "漏洞利用",
+        "身份冒充"
+      ],
+      "url": "https://x.com/rez0__/status/2080292211925630985",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-23T13:50:17+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了企业级 AI 代理在权限管理和跨站请求处理中的严重逻辑",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2080292211925630985",
+      "related_urls": [
+        "https://x.com/wunderwuzzi23/status/2080389053418189155"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "practical_risk": 9.0,
+        "actionability": 8.0,
+        "security_relevance": 10.0,
+        "technical_depth": 9.0,
+        "agent_model_relevance": 10.0
+      },
+      "dimension_score": 9.35,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Anthropic 为 Claude 引入内置安全研究员功能，实现代码编写过程中的实时自我审计",
+      "title_orig": "Claude 开始自己审自己写的代码了 —— Anthropic 把\"安全研究员\"塞进了终端",
+      "summary": "Anthropic 在其 Claude 终端环境中集成了“安全研究员”角色，使 AI 在生成代码的同时能够进行自主的安全漏洞扫描与逻辑审计。该技术通过在执行环境中模拟安全专家的分析思维，旨在从源头识别并拦截潜在的注入攻击、内存安全问题及逻辑漏洞。这种“左移”安全策略将 AI 从单纯的生产力工具转变为具备自我防御能力的系统，为开发者提供实时修复建议并降低了恶意代码入库的风险。",
+      "tags": [
+        "代码审计",
+        "Claude",
+        "AI防御"
+      ],
+      "url": "https://www.anquanke.com/post/id/315847",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-07-23T18:53:17+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍了 AI 原生安全审计的新范式，对自动化代码安全有参考价",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/315847",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "practical_risk": 6.0,
+        "actionability": 7.0,
+        "security_relevance": 9.0,
+        "technical_depth": 7.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 7.7,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux 漏洞 CVE-2026-5674 预警：利用 PipeWire 组件实现沙箱逃逸",
+      "title_orig": "Linux sandbox escape 🙌 😈 CVE-2026-5674 Earlier this year, with the help of AI, I found a Linux sandbox escape by exploiting PipeWire. Technical ...",
+      "summary": "研究员 wunderwuzzi23 宣布在 AI 辅助下发现了 Linux 系统中的沙箱逃逸漏洞，编号为 CVE-2026-5674，该漏洞主要通过攻击 PipeWire 多媒体框架实现。攻击者可利用该组件的特定逻辑缺陷突破受限的沙箱环境，从而获取宿主系统的更高执行权限。目前详细的技术白皮书尚未完全公开，原文未披露具体的影响版本范围，但已确认该漏洞在特定配置下具有极高的实战威胁，建议关注后续补丁更新。",
+      "tags": [
+        "Linux",
+        "沙箱逃逸",
+        "CVE"
+      ],
+      "url": "https://x.com/wunderwuzzi23/status/2080407467067081113",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-23T21:39:26+00:00",
+      "cve_ids": [
+        "CVE-2026-5674"
+      ],
+      "selection_reason": "涉及 Linux 核心组件的沙箱逃逸漏洞，且展示了 AI 辅",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:wunderwuzzi23",
+      "story_id": "cve:cve-2026-5674",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "practical_risk": 8.0,
+        "actionability": 6.0,
+        "security_relevance": 9.0,
+        "technical_depth": 8.0,
+        "agent_model_relevance": 7.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员发出警告：人工智能安全工具可能被操纵，从而导致恶意软件在系统中运行。",
+      "title_orig": "AI security tools can be manipulated into running malware, researchers warn - Digital Journal",
+      "summary": "根据《数字期刊》的最新报道，安全研究人员发出严正警告，指出目前用于保护人工智能系统的AI安全工具本身存在被操纵的风险，可能被黑客利用来运行恶意软件。这一发现揭示了安全防御机制中的讽刺性漏洞，即原本旨在识别威胁的工具若缺乏足够防护，反而会成为攻击者侵入系统的跳板，这要求开发者在构建AI安全屏障时必须重新审视底层代码的安全性。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQenNSaFZrb2dQZFJLanYwZHU5X0R4VDNabTg1YmZoUEphMnZEZWxEcWxvS1QwRWstLVkyWUpLQUlNaEFnV001eWVsR1NyRkVoSkRyZF9IUnE3dDdNZ29NUHg5VDJDcVZiTTNjVERuX1BYTU9Sazg0SXhGaXM5cDNNZms4RzZkSFdrYkhDZTdrVXVSQmxNbFJHZzJtb2lSc2FrY2I4YWhXWFdsQl9sQnc0YURaNEI?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-07-23T21:18:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚合源补充关键动态",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:02477d3b8fcb",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "practical_risk": 7.0,
+        "actionability": 4.0,
+        "security_relevance": 8.0,
+        "technical_depth": 5.0,
+        "agent_model_relevance": 8.0
+      },
+      "dimension_score": 6.65,
+      "final_score": 5.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员受邀参加谷歌首尔漏洞赏金活动，通过实战演示挖掘其旗舰 AI 产品中的安全漏洞。",
+      "title_orig": "RT STÖK ✌️: It’s Thursday, Not bounty thursday but close enough, here’s a live hacking vlog! https://www.youtube.com/watch?v=tJhuAINZWQ0 TLDR : G...",
+      "summary": "安全研究员STÖK受谷歌邀请前往首尔参加了一场独特的受邀制漏洞赏金活动，并在其最新发布的Vlog中详细记录了针对谷歌旗舰级AI产品的实战攻防过程。在为期数天的活动中，他与全球顶尖的安全专家团队合作，共同尝试突破AI系统的防御边界以寻找潜在漏洞，此次活动不仅展示了AI产品面临的真实安全挑战，也体现了科技巨头通过社区协作提升人工智能安全性的努力。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://x.com/rez0__/status/2080241589343891724",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-23T09:23:12+00:00",
+      "cve_ids": [],
+      "selection_reason": "高分资讯值得跟踪",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2080241589343891724",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "score_dimensions": {
+        "practical_risk": 4.0,
+        "actionability": 3.0,
+        "security_relevance": 6.0,
+        "technical_depth": 4.0,
+        "agent_model_relevance": 2.0
+      },
+      "dimension_score": 4.2,
+      "final_score": 4.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
