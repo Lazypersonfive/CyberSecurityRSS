@@ -1,19 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-07-26",
-  "fetched_at_utc": "2026-07-25T23:45:41.102092Z",
+  "fetched_at": "2026-07-27",
+  "fetched_at_utc": "2026-07-26T23:44:29.793353Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 59,
-  "entry_count": 28,
+  "raw_entry_count": 47,
+  "entry_count": 19,
   "filter_stats": {
-    "input": 59,
-    "dropped_title_blacklist": 1,
-    "dedup_merged": 7,
-    "output": 51
+    "input": 47,
+    "dropped_title_blacklist": 4,
+    "dedup_merged": 8,
+    "output": 35
   },
   "curation_stats": {
-    "dropped_source_cap": 23
+    "dropped_source_cap": 16
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -21,7 +21,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -70,14 +70,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 7
+      "raw_count": 4
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -126,7 +126,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -140,7 +140,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 1
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
@@ -210,7 +210,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 1
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
@@ -243,45 +243,69 @@
   },
   "entries": [
     {
-      "title": "Linux sandbox escape 🙌 😈 CVE-2026-5674 Earlier this year, with the help of AI, I found a Linux sandbox escape by exploiting PipeWire. Technical ...",
-      "url": "https://x.com/wunderwuzzi23/status/2080407467067081113",
-      "summary": "Linux sandbox escape 🙌 😈 CVE-2026-5674 Earlier this year, with the help of AI, I found a Linux sandbox escape by exploiting PipeWire. Technical write-up to follow... 👨‍💻",
-      "category": "XSignals",
-      "published": "2026-07-23T21:39:26+00:00",
+      "title": "An Inside Look at the Relay Market Powering Token Resellers and Fraud",
+      "url": "https://simonwillison.net/2026/Jul/26/relay-market/#atom-everything",
+      "summary": "An Inside Look at the Relay Market Powering Token Resellers and Fraud Fascinating investigation by Matt Lenhard into the market that has grown up around reselling LLM tokens at a discount by pooling API keys from various sources. This looks to be mostly a thing in China. Resellers sell access to an LLM proxy that offers significant discounts on regular API pricing, which they achieve by abusing fr",
+      "category": "AISecurityLabs",
+      "published": "2026-07-26T19:30:54+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Cyberattacks Becoming Faster with AI: Security Firm Pres. - nippon.com",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYTl6R19Vbm1ING9uQlJtZ3YxUzFHQWpFdUdBaUpvNmJsdU5NeHJ2TWN4QTdKRHRKeGF1VGtwTXRsZlp5TU9iM2E5ZVJwTElYTVNYV1VfbEdDdTM5ZXRZZzF1Qjk5VExBY213elJrTkZTSGx4ekdaRWhNcVJfYjM1ZV9oVzhRT0xCYmhTa0w3RHNUTzhKOUFaNkNjdXhvQTdlUVdBMFJqOVlHekdw?oc=5",
+      "summary": "Cyberattacks Becoming Faster with AI: Security Firm Pres. &nbsp;&nbsp; nippon.com",
+      "category": "CoverageFallback",
+      "published": "2026-07-26T15:20:28+00:00",
       "fetch_status": "rss_only",
-      "cve_ids": [
-        "CVE-2026-5674"
-      ],
-      "related_urls": [],
-      "quality_score": 3,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "The first known runaway AI agent - or a very bad marketing stunt?",
-      "url": "https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent/#atom-everything",
-      "summary": "The first known runaway AI agent - or a very bad marketing stunt? Martin Alderson's commentary on the OpenAI accidental cyberattack against Hugging Face includes a couple of details I hadn't considered. First, Hugging Face offers a truly rich target if you're trying to find potential vulnerabilities that require executing arbitrary code: Hugging Face has an enormous attack surface. They have more",
-      "category": "AISecurityLabs",
-      "published": "2026-07-23T22:53:08+00:00",
-      "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
     },
     {
-      "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
-      "url": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-everything",
-      "summary": "This story is wild. The short version: OpenAI were running a cybersecurity test against an unreleased model, with the model's guardrail features turned off. Rather than solve the test, the model broke its way out of OpenAI's sandbox, then found exploits to break in to Hugging Face, all so it could cheat on the test by stealing the answers. Along the way it helped make the strongest case yet for ho",
-      "category": "AISecurityLabs",
-      "published": "2026-07-22T23:51:33+00:00",
-      "fetch_status": "full",
+      "title": "六大行业 AI 安全指导性文件进入征求意见筹备阶段 - 手机新浪网",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1QRkVaTUVhSGJFTnkzVENCVFhCdUk4SnZZVlVYWTdiZ2h6TDlsa3FTb1ZfTUhHTmk1UTJaYnN0X3EwQzJnWTBseVM4RXFsYW5IdkJjbHpWSzNUcFFTZHc4cWVSOFhzUTBfWVZkT3YyNnJOUQ?oc=5",
+      "summary": "六大行业 AI 安全指导性文件进入征求意见筹备阶段 &nbsp;&nbsp; 手机新浪网",
+      "category": "CoverageFallback",
+      "published": "2026-07-26T14:10:50+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "Ivanti CISO Takes on AI Security, Governance and Talent Gap - Cyber Magazine",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNU0NsVUhNTW11OU1kdFk4RUV4T3N3X0pGRVVCWV9tNlZhMlNoRzZuRi1PV3Q1azV0bUVfOGYybHdpRHNpTlB0M3NPS3hvS1FjUV9PWFRQYjBiUXMxN2tQWWF3SjIwM1VPVF95cVJTMUg4enI3VzA2VlZ6ZGU1YXZ2aWtuX3hidUtlT2RqSDM1ZVhvcm8?oc=5",
+      "summary": "Ivanti CISO Takes on AI Security, Governance and Talent Gap &nbsp;&nbsp; Cyber Magazine",
+      "category": "CoverageFallback",
+      "published": "2026-07-26T08:08:10+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "$950 bil. chip partnerships reinforce Korea's place in global AI supply chain - The Korea Times",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPRGEwLUFHUGdUbmRnNHJhaDlSWS1SNWJ4ZlZPQ0RWTDYtckVTczJEanM3YnF1Qklfb3VQd09TZ3UtVldCWk5KMmJpYVlmdGdaMEZ0djBBMmgzUWZPYWtFMGtoNDJqV0poNU9WYkEyY19DU1NvY0FuNEdUbVZUNzdVdVJUU2I1TjZCTEFvcnVzbk9JOEhuamE3dGgzS2VsV1UtbWh2TDB0b2JwMDZGZ3lIS05XaUZEd2JSdVNESWhVOHNfcGtaMEFvMHJPV1XSAdIBQVVfeXFMUF9PQnBia0ZlVEFCNU1BSzc3ckpXbDVTN1ROWmFuYXNPRk1qQWthUS1seUZ2Mlh3UHNFRUdmdk1yUzN5SVpWMFF1QW5IcEZPdE1EZF90cnZwN2gySkpWajVuUkI2S1B4MkJZVTljanJ0RU16OWFTbU1YdFBzbmFublRieEZ2RTcxay01NFZwbTQxWnRObnh0YWNGdzIxVmlvTk9VSkxWeXBCVUtZTUFleHl6VjNXT1ZBVW5XVlBINThSSC1Jb1BEaEdpX2dRczYxX3Zn?oc=5",
+      "summary": "$950 bil. chip partnerships reinforce Korea's place in global AI supply chain &nbsp;&nbsp; The Korea Times",
+      "category": "CoverageFallback",
+      "published": "2026-07-26T07:22:02+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Supply Chain Security"
     },
     {
       "title": "Ruff v0.16.0",
@@ -295,19 +319,6 @@
       "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
-    },
-    {
-      "title": "重写手机AI安全边界！首个MoAI攻防SoK，系统梳理三大安全支柱|Google|Apple|云端大模型|模型|攻击者_手机新浪网 - 新浪财经",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUHVFTm8wTzM5MGN1ZjA0ejZPbVYwMFg1V3lHY09aRXJFRXFwRHJINjJrNmhWMWowWkU0TG4zV2EzdUpHUEdjRGtjZTFIWWE4bFc3b1ZaVFF2QWRrazZqQlJJdkZhZGZJMXpMc3FNeUxRcTB4NUtDX1loUUtWZll0SmpnYUtNdEtJTG9lSDdXbm9tcFZNblg5OWVDQUZTWmlLTVlv?oc=5",
-      "summary": "重写手机AI安全边界！首个MoAI攻防SoK，系统梳理三大安全支柱|Google|Apple|云端大模型|模型|攻击者_手机新浪网 &nbsp;&nbsp; 新浪财经",
-      "category": "CoverageFallback",
-      "published": "2026-07-25T21:41:18+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
     },
     {
       "title": "This tracks",
@@ -349,19 +360,6 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "Fortinet (FTNT) Heads Into Q2 Earnings As AI Security Optimism Meets A Pricey Valuation - Yahoo Finance Singapore",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQMmJ6ek5kRkJLbklTR0hycUhwLWl0TlRUVUtYV0drZ2lFY0tZOWJ4aks0aHZ2b29JMGtOUzM5UUVLUmpRMmRuOV9SQU5vWnhZTWVRTnBLWHlWM0ZiTTYyR1U4NHZLNlJhM3oyU2lWSFBhZnh5QjAwMGhITnhEc2ZLcmpNUDd0Unc?oc=5",
-      "summary": "Fortinet (FTNT) Heads Into Q2 Earnings As AI Security Optimism Meets A Pricey Valuation &nbsp;&nbsp; Yahoo Finance Singapore",
-      "category": "CoverageFallback",
-      "published": "2026-07-25T15:12:04+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
       "title": "Obituaries in 2150 be like: - John Doe, 116 years old - Duolingo streak of 95696 days - WHOOP streak of 41046 days - Screen Time report: 847,000 hours...",
       "url": "https://x.com/rez0__/status/2081014749433598366",
       "summary": "Obituaries in 2150 be like: - John Doe, 116 years old - Duolingo streak of 95696 days - WHOOP streak of 41046 days - Screen Time report: 847,000 hours (down 2% from last week, finally) - Died as he lived: 94% exercise was in Zone 2 - Survived by his wife, three kids, and 1.2 million unopened LinkedIn requests from recruiters - His Spotify Wrapped will be released posthumously - Gmail inbox: 2.4 mi",
@@ -375,43 +373,17 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "This is genius",
-      "url": "https://x.com/rez0__/status/2080996738039492805",
-      "summary": "This is genius Taelin: I now keep a swarm of Opus 5&nbsp;agents emulating Bend2 users. They generate a random app idea and attempt to implement it, plus proofs, in Bend2. If they struggle at any point (language bug, missing feature, bad UI/UX), they root-cause fix it, and post a PR for me to review...",
-      "category": "XSignals",
-      "published": "2026-07-25T12:41:00+00:00",
+      "title": "Quoting Boris Cherny",
+      "url": "https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything",
+      "summary": "More than any of these eval scores, what is most exciting to me is something else: Opus 5 is our least prompt injectable model yet. It is a bit buried in the system card, but across PI evals and red teaming, Opus 5 is very hard to prompt inject successfully. &mdash; Boris Cherny , here's that System Card section , page 73 Tags: prompt-injection , anthropic , claude , generative-ai , ai , llms , bo",
+      "category": "AISecurityLabs",
+      "published": "2026-07-25T00:42:59+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Opus 5 may have solved browser-based prompt injection, the biggest security flaw haunting AI agents - the-decoder.com",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNclNKZWtwYmxVTmpCQ1pIckc0aXY2T1hGcHJtZ2VqbzY0YlE4WWhaZmZrWmF2VEpPbDZGSm55TUtxSWFUcGltd0pCTUZFLXY4c21KRTVQNl9vZnBOVlpjQVcycFJ6ejBTYmU0WWd6U1NWTlVQYUtqdzVrcWhaTTU5UnhaMkplTDdOYmZHYTNMTnF4emJ6THRjUllDb1NxN0VucWNwd3dNSFZrMVVHQTRac291cFFWXzRlRzMyZjhwX0M?oc=5",
-      "summary": "Opus 5 may have solved browser-based prompt injection, the biggest security flaw haunting AI agents &nbsp;&nbsp; the-decoder.com",
-      "category": "CoverageFallback",
-      "published": "2026-07-25T10:47:50+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "AI Security Concerns Put Intapp Stock And Two Compliance Software Names In Focus - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQS0tKOTlDalZ0Mjk0WFFzR25hcU9fTTFKdzJta25WVTJyZlYxR0NuZ0ZDUTlpdXV6Wkc3cTZxNmxQLTMyZlQ2bGlCVzlGdkZSbXRISXJWa1RoNUVVNTRvZmFLMzBUNzZvTTZqMHY2S2pQZVN1aWJjNWwxWWs0MzhLcUMtbXlxR1o3eG9TRmdVVXhRSkFUS2lMaC1ieUhFWG1SbVY2bVNsbjk5UkJwb2FZZm8ybXdQSjlYWExLb1pEYXdOYmfSAcgBQVVfeXFMT3dXWHBkdHdIZ2FfTE8zc19tVDdvcFRxSk1hQ3pvdmdOMktGNUNnRXdPMlNpRFM2ODN6aDNCUldKelJfYXFaV2tRMWNnTzdWUUpfSUl2YWwyazhjUEJNbi1yeXVzNmNZclZxSlY4R2xsZjVIRzhNcjBsR0xlSG5uNW96SEZ4UmdvX3dGWXo5UnBtRi00YzZIR3VpVVAyeDhvTHZEcTNsbzJiU20tMndESG1jdjF2Uk9BUmRwSXJCSzM4ZU0tTHVuU2g?oc=5",
-      "summary": "AI Security Concerns Put Intapp Stock And Two Compliance Software Names In Focus &nbsp;&nbsp; simplywall.st",
-      "category": "CoverageFallback",
-      "published": "2026-07-25T10:39:39+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
     },
     {
       "title": "Top Acunetix alternatives for automated vulnerability scanning",
@@ -440,43 +412,30 @@
       "feed_title": "X / Johann Rehberger"
     },
     {
-      "title": "Classic + Legend! 😀",
-      "url": "https://x.com/wunderwuzzi23/status/2080389090500063404",
-      "summary": "Classic + Legend! 😀 Jürgen Schmidhuber: I support open-source models distilling what commercial companies distilled for free from the entire internet. I published distillation for free in 1991 in Europe - this was copied in the US and in China (https://x.com/SchmidhuberAI/status/1608870559609421831)",
+      "title": "Wowwwww",
+      "url": "https://x.com/rez0__/status/2081519801411743848",
+      "summary": "Wowwwww roon: if we could coordinate a global capabilities slowdown today i would likely press that magic button",
       "category": "XSignals",
-      "published": "2026-07-23T20:26:25+00:00",
-      "fetch_status": "full",
+      "published": "2026-07-26T23:19:28+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
-      "title": "Great research by Mike! I find exploit chains that combine classic vulns with agentic capabilities super interesting. In this case, a CSRF exploit pro...",
-      "url": "https://x.com/wunderwuzzi23/status/2080389053418189155",
-      "summary": "Great research by Mike! I find exploit chains that combine classic vulns with agentic capabilities super interesting. In this case, a CSRF exploit prompts an agent into existence. Mike Takahashi: Excited to finally share this ChatGPT vulnerability with everyone! AgentForger: ChatGPT Cross-Site Agent Forgery 1-Click hijacks OpenAI's ChatGPT Workspace Agents and allows an attacker to forge an autono",
+      "title": "RT Critical Thinking - Bug Bounty Podcast: Ads gave Justin an RCE at a live hacking event... rez0 would be proud, \"give your friends RCE\" :p Episode 1...",
+      "url": "https://x.com/rez0__/status/2081399969802547350",
+      "summary": "RT Critical Thinking - Bug Bounty Podcast Ads gave Justin an RCE at a live hacking event... rez0 would be proud, \"give your friends RCE\" :p Episode 184, part 2!",
       "category": "XSignals",
-      "published": "2026-07-23T20:26:16+00:00",
-      "fetch_status": "full",
+      "published": "2026-07-26T15:14:00+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "Russian Global Webmail Espionage",
-      "url": "https://unit42.paloaltonetworks.com/russian-webmail-espionage/",
-      "summary": "Unit 42 details a Russian cyberespionage campaign targeting Zimbra webmail servers using JavaScript injection to steal credentials. The post Russian Global Webmail Espionage appeared first on Unit 42 .",
-      "category": "AISecurityLabs",
-      "published": "2026-07-23T14:10:53+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
-      "feed_title": "Unit 42"
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
     },
     {
       "title": "I think opus 5 is mostly a huge hit amongst people who were still using 4.8",
@@ -497,19 +456,6 @@
       "summary": "Guys I’m sorry but I’m codex pilled Joseph Thacker: What harness do you use?",
       "category": "XSignals",
       "published": "2026-07-25T13:16:39+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "this is so weird",
-      "url": "https://x.com/rez0__/status/2080803515610333676",
-      "summary": "this is so weird Andrew Carr 🤸: Opus 5 is an incredible model, just don't let it think?",
-      "category": "XSignals",
-      "published": "2026-07-24T23:53:12+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -547,71 +493,6 @@
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 0,
-      "feed_url": "https://api.anquanke.com/data/v1/rss",
-      "feed_title": "安全客"
-    },
-    {
-      "title": "Better generic secrets detection starts with finding non-secrets",
-      "url": "https://www.aikido.dev/blog/better-generic-secrets-detection-non-secrets",
-      "summary": "Some API keys are meant to be public. Betterleaks now removes them from generic secret findings, dropping thousands of false positives per scan. Category: News",
-      "category": "AISecurityLabs",
-      "published": "2026-07-23T16:11:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "科技云报到：WAIC观察：机器人“进厂干活”，只差一个通用底座？",
-      "url": "https://www.anquanke.com/post/id/315837",
-      "summary": "",
-      "category": "Chinese",
-      "published": "2026-07-23T11:37:45+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://api.anquanke.com/data/v1/rss",
-      "feed_title": "安全客"
-    },
-    {
-      "title": "Launching Health in ChatGPT",
-      "url": "https://openai.com/index/health-in-chatgpt",
-      "summary": "Health in ChatGPT now lets eligible U.S. users securely connect medical records and Apple Health to get more personalized insights and better understand their health.",
-      "category": "FirstParty",
-      "published": "2026-07-23T00:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "Claude 开始自己审自己写的代码了 —— Anthropic 把\"安全研究员\"塞进了终端",
-      "url": "https://www.anquanke.com/post/id/315847",
-      "summary": "",
-      "category": "Chinese",
-      "published": "2026-07-23T18:53:17+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://api.anquanke.com/data/v1/rss",
-      "feed_title": "安全客"
-    },
-    {
-      "title": "为了“作弊”拿高分，GPT自己黑了 Hugging Face，GLM分析取证",
-      "url": "https://www.anquanke.com/post/id/315841",
-      "summary": "",
-      "category": "Chinese",
-      "published": "2026-07-23T11:50:13+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
       "feed_url": "https://api.anquanke.com/data/v1/rss",
       "feed_title": "安全客"
     }
