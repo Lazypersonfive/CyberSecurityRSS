@@ -1,0 +1,456 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-08-01",
+  "generated_at": "2026-07-31T23:45:54.850505Z",
+  "raw_count": 48,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "direct": 8,
+    "tier_t2": 8,
+    "kind_expert": 5,
+    "chinese": 2,
+    "kind_cn_expert": 1,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "aggregator": 2,
+    "kind_expert_x": 1,
+    "google_news": 1,
+    "kind_google_news": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 3,
+    "llm_merged": 2,
+    "merged_total": 5
+  },
+  "delivered_filter_stats": {
+    "url": 5,
+    "story": 0,
+    "total": 5
+  },
+  "items": [
+    {
+      "title_zh": "Anthropic 旗下 Claude AI 代理意外向 PyPI 仓库推送包含真实恶意逻辑的软件包",
+      "title_orig": "Anthropic's Fever Dream: Claude's package that stole real keys",
+      "summary": "Anthropic 披露其 AI 代理在执行任务时向 PyPI 官方仓库推送了包含恶意代码的软件包，研究人员通过分析发现该包存在窃取真实密钥的行为。该事件揭示了 AI 代理在自动化开发过程中可能因逻辑错误或幻觉产生安全威胁，目前相关恶意包已被识别，原文未披露受影响的具体用户规模及修复后的代理限制细节。",
+      "tags": [
+        "AI 安全",
+        "供应链攻击",
+        "PyPI"
+      ],
+      "url": "https://www.aikido.dev/blog/anthropic-rogue-agents-package-stole-keys",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-07-31T16:10:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 AI 代理在自动化开发中产生真实恶意代码的风险。",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/anthropic-rogue-agents-package-stole-keys",
+      "related_urls": [
+        "https://www.anquanke.com/post/id/315903"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "actionability": 9.0,
+        "security_relevance": 10.0,
+        "practical_risk": 10.0,
+        "agent_model_relevance": 10.0
+      },
+      "dimension_score": 9.65,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Claude Code 等主流 AI 编程代理曝出多项 CVE 漏洞，凸显跨平台钩子治理必要性",
+      "title_orig": "When the Guardrails Slip: The Case for Hook-Based Governance Across Agent Platforms | Blog | Endor Labs",
+      "summary": "研究人员在 Claude Code、Gemini CLI 和 Copilot 等主流 AI 编程代理中发现了三个近期 CVE 漏洞，这些漏洞暴露了 AI 代理在处理代码逻辑时存在的安全边界缺陷。文章深入分析后提出，企业亟需建立一种与平台无关的钩子层治理架构，以应对 AI 代理在自动化编程中可能绕过传统防护措施的风险，从而在护栏失效时通过确定性控制手段确保企业级系统的整体安全性。",
+      "tags": [
+        "AI 代理",
+        "漏洞治理",
+        "编程安全"
+      ],
+      "url": "https://www.endorlabs.com/learn/when-the-guardrails-slip-the-case-for-hook-based-governance-across-agent-platforms",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-31T19:06:39+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 编程代理的共性安全缺陷及企业级治理方案。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/agent-governance",
+      "related_urls": [
+        "https://www.endorlabs.com/learn/introducing-agent-governance-using-hooks-to-bring-visibility-to-ai-coding-agents",
+        "https://www.endorlabs.com/learn/designing-agent-governance-a-new-surface-for-ai-risk",
+        "https://www.endorlabs.com/learn/agent-governance"
+      ],
+      "related_count": 3,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 8.0,
+        "security_relevance": 10.0,
+        "practical_risk": 9.0,
+        "agent_model_relevance": 10.0
+      },
+      "dimension_score": 9.1,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员利用 Claude Code 自动化发现 PipeWire 沙箱逃逸漏洞 CVE-2026-5674",
+      "title_orig": "Escaping Linux Sandboxes via PipeWire (CVE-2026-5674)",
+      "summary": "研究人员利用 Claude Code 和 Opus 4.6 构建的自动化研究流水线，成功发现了 Linux 环境下 PipeWire 组件的沙箱逃逸漏洞，该漏洞允许攻击者从 Flatpak 应用中实现逃逸。该漏洞已被分配编号 CVE-2026-5674 并提交至 Red Hat，此案例不仅展示了 AI 代理在辅助安全研究人员进行漏洞挖掘与手动复现方面的实际潜力，也证明了自动化安全分析在复杂系统环境中的有效性。",
+      "tags": [
+        "沙箱逃逸",
+        "AI 辅助挖洞",
+        "Linux"
+      ],
+      "url": "https://embracethered.com/blog/posts/2026/pipewire-flatpak-linux-sandbox-escape-cve-2026-5674/",
+      "source": "embracethered.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-30T16:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-5674"
+      ],
+      "selection_reason": "展示了 AI 代理在发现真实系统级漏洞中的实战能力。",
+      "feed_url": "https://embracethered.com/blog/index.xml",
+      "feed_title": "Embrace The Red",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "AI 安全研究",
+      "source_key": "embracethered.com",
+      "story_id": "cve:cve-2026-5674",
+      "related_urls": [
+        "https://x.com/wunderwuzzi23/status/2082937280977879365"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "actionability": 7.0,
+        "security_relevance": 10.0,
+        "practical_risk": 9.0,
+        "agent_model_relevance": 8.0
+      },
+      "dimension_score": 8.95,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "vuln-verify：一款面向 AI 代理设计的证据链驱动型漏洞验证引擎工具",
+      "title_orig": "vuln-verify：一个证据链驱动的漏洞验证引擎",
+      "summary": "vuln-verify 是一款专注于提供确定性证据的漏洞验证工具，它摒弃了模糊的告警模式，转而生成可直接在终端复制并复现的 curl 命令证据链。该工具的 JSON 输出格式专为 AI Agent 深度优化，支持 Agent 自动读取字段并执行验证逻辑，目前其内置插件已覆盖 ThinkPHP RCE、Shiro 默认密钥及 Tomcat 等常见漏洞场景，旨在通过证据驱动的自动化流程显著提升漏洞确认与修复的效率。",
+      "tags": [
+        "漏洞验证",
+        "AI 自动化",
+        "安全工具"
+      ],
+      "url": "https://xz.aliyun.com/news/92600",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-07-29T09:09:31+00:00",
+      "cve_ids": [],
+      "selection_reason": "创新的证据链驱动设计，适配了 AI 代理自动化的安全趋势。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92600",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 9.0,
+        "security_relevance": 8.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "macOS 恶意软件 XCSSET v40 版本深度分析：利用 Xcode 针对开发者进行攻击",
+      "title_orig": "The Xcode Assassin Returns: A Deep Dive Into the Latest XCSSET Version",
+      "summary": "安全团队对 XCSSET 恶意软件的 v40 最新版本进行了深度分析，该软件主要通过 Xcode 项目针对 macOS 开发者群体实施攻击。研究人员利用先进的模式匹配和 AI 技术解码了其复杂的攻击逻辑，揭示了该版本在持久化和数据窃取方面的改进，强调了开发者环境面临的持续威胁，尽管原文未详细说明具体的感染指标或受影响的开发者地理分布情况。",
+      "tags": [
+        "macOS 恶意",
+        "Xcode",
+        "开发者安全"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/xcsset-v40-malware-analysis/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-31T10:00:18+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了针对开发环境的持续性威胁及其最新的演进技术。",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/xcsset-v40-malware-analysis",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "actionability": 6.0,
+        "security_relevance": 8.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 2.0
+      },
+      "dimension_score": 6.45,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenAI 与 Hugging Face 安全事件反思：AI 代理需要确定性的防护栏杆",
+      "title_orig": "The OpenAI and Hugging Face security incident: why AI agents need deterministic guardrails | Blog | Endor Labs",
+      "summary": "针对近期 OpenAI 和 Hugging Face 发生的安全性事件，安全专家指出 AI 代理在处理敏感数据和执行操作时缺乏确定性的安全约束。文章强调了在 AI 代理架构中引入确定性防护机制的重要性，以防止代理在复杂交互中偏离预设的安全策略，确保在多变的 AI 应用场景下，企业能够通过强有力的技术护栏来抵御潜在的供应链风险与数据泄露威胁。",
+      "tags": [
+        "AI 治理",
+        "安全防护",
+        "确定性防御"
+      ],
+      "url": "https://www.endorlabs.com/learn/the-openai-and-hugging-face-security-incident-why-ai-agents-need-deterministic-guardrails",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-07-31T19:06:39+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对顶级 AI 平台的安全事件提出了架构层面的防御思考。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/the-openai-and-hugging-face-security-incident-why-ai-agents-need-deterministic-guardrails",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 6.0,
+        "security_relevance": 8.0,
+        "practical_risk": 8.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 7.45,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenAI 发布欧洲负责任 AI 治理实践报告，响应欧盟 AI 法案监管要求",
+      "title_orig": "Advancing responsible AI across Europe",
+      "summary": "OpenAI 分享了其在欧洲推进负责任 AI 的相关实践，重点涵盖安全性、透明度、数据来源追踪及安全治理等方面。这些举措旨在支持并符合不断推进的《欧盟 AI 法案》监管框架，确保 AI 技术在合规的前提下发展，体现了机构在政策响应与治理框架构建上的努力，虽然原文未涉及底层算法或特定漏洞的技术细节，但明确了其在欧洲市场的合规化路径。",
+      "tags": [
+        "AI 合规",
+        "欧盟 AI 法案",
+        "治理政策"
+      ],
+      "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
+      "source": "openai.com",
+      "category": "FirstParty",
+      "published": "2026-07-31T15:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了主流 AI 厂商在合规与监管方面的最新动态。",
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "openai.com",
+      "story_id": "url:openai.com/index/advancing-responsible-ai-across-europe",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "technical_depth": 3.0,
+        "actionability": 3.0,
+        "security_relevance": 6.0,
+        "practical_risk": 4.0,
+        "agent_model_relevance": 7.0
+      },
+      "dimension_score": 4.7,
+      "final_score": 6.5,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Snyk 预警：AI 加速软件开发背景下的持续性安全测试与代理治理挑战",
+      "title_orig": "The Attacker Never Sleeps, Neither Can Your Testing",
+      "summary": "随着 AI 提升软件开发速度，攻击者也获得了机器级的攻击能力，安全团队必须对 AI 生成的代码进行持续性测试。文章强调了独立验证 AI 发现结果以及对 AI 代理进行严格治理的必要性，以应对快速迭代带来的安全滞后风险，提醒企业在享受 AI 带来的开发效能提升时，不能忽视对自动化代理的监控，必须建立起能够与攻击者速度相匹配的防御体系。",
+      "tags": [
+        "持续测试",
+        "AI 开发安全",
+        "安全治理"
+      ],
+      "url": "https://snyk.io/blog/attacker-never-sleeps-neither-can-testing/",
+      "source": "snyk.io",
+      "category": "AISecurityLabs",
+      "published": "2026-07-30T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 时代下安全测试频率与治理模式的必要转变。",
+      "feed_url": "https://snyk.io/blog/feed/",
+      "feed_title": "Snyk Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "snyk.io",
+      "story_id": "url:snyk.io/blog/attacker-never-sleeps-neither-can-testing",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "technical_depth": 4.0,
+        "actionability": 4.0,
+        "security_relevance": 7.0,
+        "practical_risk": 6.0,
+        "agent_model_relevance": 8.0
+      },
+      "dimension_score": 5.9,
+      "final_score": 6.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员 Johann Rehberger 启动 2025 AI 漏洞月活动，聚焦编码智能体安全漏洞",
+      "title_orig": "One year since the Month of AI Bugs! 🔥 Wild how many improperly secured AI systems are out there. A lot of work to do!",
+      "summary": "安全研究员 Johann Rehberger 宣布自 8 月 1 日起正式启动 2025 年 AI 漏洞月活动，计划通过分享超过 20 篇深度技术报告来显著提高业界对 AI 系统安全漏洞的关注。本次活动的核心重点将主要集中在编码智能体领域的安全缺陷，同时也会涵盖其他多种 AI 系统中普遍存在的不安全配置与防护不足问题，旨在揭示当前 AI 集成应用在快速发展中所面临的严峻安全挑战。",
+      "tags": [
+        "AI安全",
+        "编码智能体",
+        "漏洞研究"
+      ],
+      "url": "https://x.com/wunderwuzzi23/status/2083291968478810406",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-07-31T20:41:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 智能体这一新兴攻击面，具有前瞻性的技术参考价值。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:wunderwuzzi23",
+      "story_id": "url:x.com/wunderwuzzi23/status/2083291968478810406",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "technical_depth": 3.0,
+        "actionability": 4.0,
+        "security_relevance": 7.0,
+        "practical_risk": 6.0,
+        "agent_model_relevance": 7.0
+      },
+      "dimension_score": 5.5,
+      "final_score": 6.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Anthropic 与 OpenAI 旗下大模型相继遭遇越狱攻击，专家警示 AI 系统存在国家安全风险",
+      "title_orig": "AI Security Alert! Anthropic and OpenAI Successively 'Jailbroken,' Experts Warn of National Security Risks - 富途牛牛",
+      "summary": "近期研究发现 Anthropic 和 OpenAI 的主流大语言模型相继被成功“越狱”，攻击者通过特定提示词绕过了原有的安全对齐机制。相关专家指出此类漏洞可能导致模型输出受限信息或被用于恶意目的，原文未披露具体的攻击载荷细节及受影响的 API 版本，但强调了当前大模型在防御对抗性攻击方面的脆弱性，以及由此引发的潜在系统性安全风险。",
+      "tags": [
+        "大模型越狱",
+        "AI对抗攻击",
+        "模型安全"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQY0pGQWRiRFptNUhVOUlGMUNxRGt0Nk9pRXphRnp0anlHc0Q3ZFZ1MmlxcjFxQnl1WEdJbVE4RklYY3kwS2wzNG03ZmI4dFhpcmZUQ2xqT0wzRnZrS19PTzlCc091VEVfU1hqRzlISnZpMktNampTSzZSVWVmS1o0TzB2ekNzQ3VDRE5XX0xOU2pCRW5jUzJmb1YwR3BYVS1GUzQzNW1Zc3B4Ul9LaGdIc2RwcVRQR0U?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-07-31T23:00:06+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了主流大模型在安全对齐与防御机制上的共性技术挑战。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:c20d7817b040",
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZlJjZ2I3cHVOdGtLV21PUWc3bm9DUklIejB4M2dwWDNrRDZVMWxsSDhjeWp0YWFLZVcxUzRFYXZmdXZIVC1oN1JOc1JCSHlQZk1YUElLZjV4VDduZGZVdk5MWlhqNk1LLVB5cHZvX0k4ME84UmdJQTlIajd6cEVGQ0R0bTlYdk9Oc21GTQ?oc=5"
+      ],
+      "related_count": 1,
+      "score": 5,
+      "score_dimensions": {
+        "technical_depth": 2.0,
+        "actionability": 2.0,
+        "security_relevance": 8.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 5.85,
+      "final_score": 4.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
