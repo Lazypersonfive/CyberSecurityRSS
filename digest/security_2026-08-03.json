@@ -1,0 +1,655 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-03",
+  "generated_at": "2026-08-02T23:44:51.349505Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_unknown": 4,
+    "kind_media": 5,
+    "tier_t2": 11,
+    "kind_community": 4,
+    "chinese": 6,
+    "wechat": 6,
+    "kind_cn_expert": 6
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 3,
+    "merged_total": 3
+  },
+  "delivered_filter_stats": {
+    "url": 16,
+    "story": 1,
+    "total": 17
+  },
+  "items": [
+    {
+      "title_zh": "Linux内核 7.0 至 7.0.8 版本存在释放后使用漏洞 CVE-2026-46215 且已有稳定利用脚本",
+      "title_orig": "Linux Kernel  7.0-7.0.8  &  7.0-rc-7.0-rc7 - Use After Free Exploit",
+      "summary": "Linux内核被曝存在编号为CVE-2026-46215的释放后使用漏洞，主要影响7.0至7.0.8版本以及7.0-rc至7.0-rc7预览版，其风险等级被评定为高。攻击者可以利用目前已经公开的Exploit工具，在受影响的系统上实现比以往更稳定且可靠的权限提升或任意代码执行，由于原文尚未披露官方补丁的修复状态，建议相关管理员和用户必须密切关注内核社区的最新安全更新动态。",
+      "tags": [
+        "Linux内核",
+        "UAF漏洞",
+        "权限提升"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026080002",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-08-02T15:17:44+00:00",
+      "cve_ids": [
+        "CVE-2026-46215"
+      ],
+      "selection_reason": "Linux内核高版本UAF漏洞且附带稳定利用脚本，具有极高威",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "cve:cve-2026-46215",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "technical_depth": 9.0,
+        "exploitability": 9.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 9.15,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ArcadeDB 数据库 26.7.2 之前版本存在跨数据库授权绕过漏洞 CVE-2026-67342",
+      "title_orig": "ArcadeDB <  26.7.2 Cross-Database Authorization Bypass (IDOR)",
+      "summary": "ArcadeDB在26.7.2之前的版本中存在编号为CVE-2026-67342的不安全对象直接引用漏洞，该漏洞允许攻击者利用逻辑缺陷实现跨数据库的授权绕过。目前针对该漏洞的Python利用脚本已经公开，攻击者可以在未获授权的情况下非法访问或操作其他数据库实例中的敏感数据，虽然该漏洞风险评级为低，但相关企业仍需警惕数据泄露风险并尽快升级至26.7.2或更高安全版本。",
+      "tags": [
+        "ArcadeDB",
+        "IDOR",
+        "授权绕过"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026080001",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-08-02T15:16:52+00:00",
+      "cve_ids": [
+        "CVE-2026-67342"
+      ],
+      "selection_reason": "涉及数据库跨库授权绕过，且提供了具体的漏洞利用脚本。",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "cve:cve-2026-67342",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 7.0,
+        "technical_depth": 8.0,
+        "exploitability": 8.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "海康威视 Ds-2Cd2032-I 摄像头固件存在身份验证不当漏洞及其利用工具",
+      "title_orig": "Exploit for Improper Authentication in Hikvision Ds-2Cd2032-I_Firmware",
+      "summary": "海康威视Ds-2Cd2032-I型号摄像头的固件被发现存在身份验证不当漏洞，攻击者可借此绕过安全验证机制并获取设备访问权限。该研究旨在通过演示漏洞利用过程，提醒系统管理员关注设备过时带来的安全风险，并强调了及时更新固件以防范潜在攻击的重要性，尽管原文未披露受影响的具体固件版本号及官方补丁的发布进展。",
+      "tags": [
+        "海康威视",
+        "身份验证绕过",
+        "物联网安全"
+      ],
+      "url": "https://vulners.com/githubexploit/0D0B7E03-E67E-5218-BB1B-2CADF8847D68?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-08-02T22:45:59+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对特定型号监控设备的身份验证绕过，对IoT安全维护有参考价",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "url:vulners.com/githubexploit/0d0b7e03-e67e-5218-bb1b-2cadf8847d68",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "technical_depth": 7.0,
+        "exploitability": 9.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "相关部门发布新一批重点防范境外恶意网址和IP，主要涉及美国、德国及荷兰等国家",
+      "title_orig": "关注 | 新一批重点防范境外恶意网址和恶意IP！",
+      "summary": "相关部门发布了新一批需要重点防范的境外恶意网址和恶意IP名单，旨在提醒广大互联网用户和企业加强网络边界的安全防护。这些恶意资源的归属地主要涉及美国、德国、荷兰、挪威、罗马尼亚以及马来西亚等国家，相关单位应及时更新防火墙策略并拦截这些高风险地址，以防止潜在的跨境网络攻击和数据泄露风险。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA==&mid=2664265250&idx=4&sn=33f1cd86c506098686e27a3da87169f2",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-01T07:15:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/567cb1a8cf49f3e2c141d9d8085712f42ffc2fef.xml",
+      "feed_title": "中国信息安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/567cb1a8cf49f3e2c141d9d8085712f42ffc2fef.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA%3D%3D&mid=2664265250&idx=4&sn=33f1cd86c506098686e27a3da87169f2",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "technical_depth": 4.0,
+        "exploitability": 6.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 6.95,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Coldcard 硬件钱包固件缺陷遭利用，攻击者通过三波攻击窃取约 8900 万美元比特币",
+      "title_orig": "Coldcard Sweeps Hit $89M as Attacker Rewrites Playbook",
+      "summary": "由于Coldcard硬件钱包固件存在严重设计缺陷，攻击者近期发起了三波大规模资产转移攻击，导致约4585个地址中的1367枚比特币被盗，损失总额接近8900万美元。值得关注的是，第三波攻击采用了更难追踪的复杂技术手段，显示出攻击者正在重写攻击剧本，这对采取自托管方式的加密货币持有者构成了严峻的安全挑战。",
+      "tags": [
+        "硬件钱包",
+        "固件漏洞",
+        "加密货币"
+      ],
+      "url": "https://www.cyberkendra.com/2026/08/coldcard-sweeps-hit-89m-as-attacker.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-08-02T04:39:31+00:00",
+      "cve_ids": [],
+      "selection_reason": "巨额加密资产被盗事件，涉及硬件钱包固件缺陷及攻击手法演进。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/08/coldcard-sweeps-hit-89m-as-attacker.html",
+      "related_urls": [
+        "https://x.com/IntCyberDigest/status/2084011408107127060",
+        "https://x.com/IntCyberDigest/status/2083918248261644469"
+      ],
+      "related_count": 2,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 9.0,
+        "technical_depth": 6.0,
+        "exploitability": 7.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 7.3,
+      "final_score": 7.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "2026年7月 Linux 补丁日修复超两千个漏洞，Linux 内核与 Chromium 占比最高",
+      "title_orig": "Июльский Linux Patch Wednesday",
+      "summary": "在七月的Linux补丁日中，安全专家共计修复了2017个漏洞，其中包含539个Linux内核漏洞和504个Chromium漏洞，这一总数打破了六月份1888个漏洞的记录并创下历史新高。由于八月补丁日前两周半就已经处理了1704个漏洞，预计下个月的漏洞修复数量将再次刷新纪录，这充分反映出当前软件生态系统面临着日益严峻的安全维护压力以及漏洞频发的严峻态势。",
+      "tags": [
+        "Linux",
+        "漏洞修复",
+        "补丁管理"
+      ],
+      "url": "https://avleonov.com/2026/07/31/i114-ijulskij-linux-patch-wednesday/",
+      "source": "avleonov.com",
+      "category": "Synthesis",
+      "published": "2026-07-31T16:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了当前主流开源组件漏洞爆发的规模与补丁更新的频率。",
+      "feed_url": "https://avleonov.com/feed/",
+      "feed_title": "Alexander V. Leonov",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "avleonov.com",
+      "story_id": "url:avleonov.com/2026/07/31/i114-ijulskij-linux-patch-wednesday",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 9.0,
+        "technical_depth": 7.0,
+        "exploitability": 7.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.65,
+      "final_score": 7.35,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "N-central 2026.3.1 及之前版本因补丁不完整导致身份验证绕过与账户接管",
+      "title_orig": "EUVD-2026-52010",
+      "summary": "N-central 2026.3.1及更早版本中存在编号为EUVD-2026-52010的安全漏洞，该漏洞产生的主要原因是针对旧漏洞CVE-2026-18556所发布的补丁并不完整，导致安全隐患依然存在。攻击者可以利用这一残留的逻辑缺陷轻松绕过系统的身份验证机制，进而实现对目标账户的完全接管，虽然原文未披露不完整补丁的具体技术细节，但受影响用户应立即采取防护措施并寻求官方更新。",
+      "tags": [
+        "N-centra",
+        "补丁绕过",
+        "账户接管"
+      ],
+      "url": "https://vulners.com/euvd/EUVD-2026-52010?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-08-02T22:06:18+00:00",
+      "cve_ids": [
+        "CVE-2026-18556"
+      ],
+      "selection_reason": "补丁不完整导致的二次风险，是漏洞生命周期管理中的典型案例。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-18556",
+      "related_urls": [
+        "https://vuldb.com/vuln/385422"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 7.0,
+        "technical_depth": 6.0,
+        "exploitability": 8.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.45,
+      "final_score": 7.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员发出警告：Anthropic和OpenAI的安全工具可能被滥用并助长网络攻击",
+      "title_orig": "Anthropic 和 OpenAI 安全工具可能助长网络攻击，研究人员发出警告",
+      "summary": "研究人员针对Anthropic和OpenAI旗下的安全工具发出警告，指出这些人工智能工具在提供便利的同时，也可能被不法分子利用以助长网络攻击。研究表明，攻击者可能通过诱导AI绕过安全限制来生成恶意代码或策划复杂的攻击方案，这引发了业界对AI安全工具双刃剑效应的广泛讨论，并敦促相关厂商进一步完善模型的防御机制。",
+      "tags": [
+        "OpenAI",
+        "Anthropic",
+        "AI"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&mid=2247486880&idx=1&sn=ac92c0f86da417ddf9e23e12d0e0e95f",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-08-02T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "feed_title": "安全行者老霍",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/82cb8f76f8e4d0ca29f497944330ef57aa1f22db.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ%3D%3D&mid=2247486880&idx=1&sn=ac92c0f86da417ddf9e23e12d0e0e95f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 5.0,
+        "exploitability": 6.0,
+        "actionability": 5.0
+      },
+      "dimension_score": 6.35,
+      "final_score": 7.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Build-scanner：针对 React 和 Node 应用的零配置自动化静态漏洞扫描工具",
+      "title_orig": "Build-scanner — a zero-config static scanner for SQLi, NoSQLi, CORS, CSP & CSRF in React/Node apps (pre-release)",
+      "summary": "该工具是一款针对现代 React 和 Node.js 应用程序的预发布版静态扫描器，旨在解决快速构建流水线中容易忽略的安全问题。它通过自动化分析源代码，能够识别非参数化查询导致的 SQL/NoSQL 注入、通配符 CORS 配置、不安全的 CSP 策略以及缺乏保护的状态变更路由。该工具支持直接扫描本地文件夹或集成至 GitHub Action 等 CI/CD 流程，为开发者提供零配置的安全审计能力。",
+      "tags": [
+        "代码审计",
+        "静态扫描",
+        "DevSecOp"
+      ],
+      "url": "https://www.reddit.com/r/Pentesting/comments/1vd5sl8/buildscanner_a_zeroconfig_static_scanner_for_sqli/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-08-02T02:26:04+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注现代 Web 开发框架的自动化安全左移工具。",
+      "feed_url": "https://www.reddit.com/r/Pentesting/.rss",
+      "feed_title": "Pentesting",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "url:reddit.com/r/pentesting/comments/1vd5sl8/buildscanner_a_zeroconfig_static_scanner_for_sqli",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 6.0,
+        "technical_depth": 7.0,
+        "exploitability": 8.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 7.35,
+      "final_score": 6.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "网络安全领域中的自动化渗透测试技术与人工智能红队对抗演练研究",
+      "title_orig": "自动化渗透测试与AI红队",
+      "summary": "本文深入探讨了自动化渗透测试与AI红队技术的发展现状，重点分析了如何利用人工智能模型提升漏洞发现效率与攻击模拟的智能化水平。通过引入自动化流程，安全团队能够更快速地识别复杂网络环境中的潜在威胁，同时也面临着AI模型自身安全性及对抗性攻击带来的新挑战，是当前网络安全防御体系演进的重要方向。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247496962&idx=1&sn=f463738e93734913382bc8ec0b95efe9",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-01T14:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247496962&idx=1&sn=f463738e93734913382bc8ec0b95efe9",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 5.0,
+        "technical_depth": 6.0,
+        "exploitability": 6.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 6.3,
+      "final_score": 6.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "MODX 3.2.1 版本 PHPSESSID 会话 Cookie 缺少 Secure 标志导致会话劫持漏洞",
+      "title_orig": "MODX.3.2.1 TLS cookie without secure flag set - COOKIE PHPSESSID HIJACK",
+      "summary": "MODX 3.2.1版本被发现存在中危安全缺陷，其PHPSESSID会话Cookie在通过TLS加密传输时未正确设置Secure标志，导致通信安全性受损并面临被劫持风险。攻击者可利用此配置漏洞在中间人攻击场景下，通过非加密连接诱导浏览器泄露敏感的会话凭据，进而实现非法会话劫持并获取系统访问权限，建议管理员立即检查并手动加固Cookie安全配置或关注官方发布的修复补丁。",
+      "tags": [
+        "会话劫持",
+        "配置缺陷",
+        "Web安全"
+      ],
+      "url": "https://cxsecurity.com/issue/WLB-2026080003",
+      "source": "cxsecurity.com",
+      "category": "Synthesis",
+      "published": "2026-08-02T15:18:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的 Web 会话管理漏洞，具有实际的加固参考价值。",
+      "feed_url": "https://cxsecurity.com/wlb/rss/all/",
+      "feed_title": "CXSecurity: World Laboratory of Bugtraq 2",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "cxsecurity.com",
+      "story_id": "url:cxsecurity.com/issue/wlb-2026080003",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 5.0,
+        "technical_depth": 7.0,
+        "exploitability": 7.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 6.85,
+      "final_score": 6.85,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Wavlink 路由器 adm.cgi 组件存在远程命令注入漏洞 CVE-2026-18590",
+      "title_orig": "CVE-2026-18590 | Wavlink WL-NU516U1 708c073-mt7628 Admin Password adm.cgi set_sys_adm os command injection",
+      "summary": "Wavlink WL-NU516U1路由器的Admin Password处理组件中存在严重的OS命令注入漏洞，该漏洞已被追踪为CVE-2026-18590且目前已公开了具体的利用代码。远程攻击者能够通过操纵adm.cgi文件中的set_sys_adm函数，在未经授权的情况下直接执行任意系统命令并完全控制设备，鉴于该漏洞风险极高且已有活跃利用工具，官方强烈建议受影响用户尽快升级固件以防范潜在攻击。",
+      "tags": [
+        "命令注入",
+        "路由器漏洞",
+        "远程执行"
+      ],
+      "url": "https://vuldb.com/vuln/385418",
+      "source": "vuldb.com",
+      "category": "Synthesis",
+      "published": "2026-08-02T20:39:05+00:00",
+      "cve_ids": [
+        "CVE-2026-18590"
+      ],
+      "selection_reason": "高危 IoT 漏洞且已有 PoC，需提醒相关用户防范。",
+      "feed_url": "https://vuldb.com/en/?rss.recent",
+      "feed_title": "VulDB Recent Entries",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "vuldb.com",
+      "story_id": "cve:cve-2026-18590",
+      "related_urls": [
+        "https://vuldb.com/vuln/385417"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 6.0,
+        "technical_depth": 6.0,
+        "exploitability": 8.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.0,
+      "final_score": 6.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "人工智能威胁盘点：涵盖自动化勒索、测试环境逃逸及软件供应链安全外溢",
+      "title_orig": "AI 正在攻破网络防御吗？从自动化勒索、测试环境逃逸到软件供应链外溢的一次盘点",
+      "summary": "近期网络安全领域对AI技术带来的威胁进行了全面盘点，涵盖了自动化勒索软件、测试环境逃逸以及软件供应链外溢等多个维度的风险演变。随着AI能力的提升，攻击者正利用其加速漏洞挖掘与恶意代码生成，这对传统防御体系构成了严峻挑战，安全专家呼吁业界必须高度关注AI驱动型攻击对全球软件供应链及企业核心基础设施的深远影响。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIxODM0NDU4MQ==&mid=2247508749&idx=1&sn=9c04964562ca68ee6ff9c102c21e4f3a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-31T02:55:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d93b4641ef7b9ab5bb7a2d41d799544d45ace291.xml",
+      "feed_title": "网安寻路人",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d93b4641ef7b9ab5bb7a2d41d799544d45ace291.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIxODM0NDU4MQ%3D%3D&mid=2247508749&idx=1&sn=9c04964562ca68ee6ff9c102c21e4f3a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 5.0,
+        "exploitability": 4.0,
+        "actionability": 4.0
+      },
+      "dimension_score": 5.85,
+      "final_score": 6.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "每周勒索威胁摘要：cmdorganization、shinyhunters及Deadlock团伙公布新受害者",
+      "title_orig": "每周勒索威胁摘要",
+      "summary": "本周勒索威胁动态显示，cmdorganization、shinyhunters以及Deadlock等多个活跃勒索团伙相继公布了其最新的受害公司名单，涉及多个行业的企业敏感数据。这些团伙通过加密关键业务系统并威胁泄露机密信息来索要高额赎金，反映出当前勒索软件攻击依然保持高频态势，企业需加强数据备份与边界防护以应对日益严峻的勒索勒索威胁环境。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI5Mzg5MDM3NQ==&mid=2247498629&idx=1&sn=ef98465337a9df509d4186c6bbb72cd7",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-07-31T03:42:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/7874947663d806190d77bdca6f8f6855f65a1b20.xml",
+      "feed_title": "奇安信病毒响应中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/7874947663d806190d77bdca6f8f6855f65a1b20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI5Mzg5MDM3NQ%3D%3D&mid=2247498629&idx=1&sn=ef98465337a9df509d4186c6bbb72cd7",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 6.0,
+        "technical_depth": 3.0,
+        "exploitability": 4.0,
+        "actionability": 5.0
+      },
+      "dimension_score": 5.25,
+      "final_score": 5.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "人工智能全链路安全风险分析：除模型漏洞外仍存在多项不可见的安全隐患",
+      "title_orig": "不止模型漏洞，AI全链路藏着你看不见的安全风险",
+      "summary": "该资讯指出AI全链路除模型算法外，在数据采集、预处理、训练及部署环节均存在敏感信息泄露或决策被操控的安全风险。由于原文未披露具体的漏洞类型原理、触发条件、受影响组件版本及修复缓解措施，目前仅强调需构建覆盖全生命周期的安全防护框架以应对智能化挑战，技术细节有待进一步公开。",
+      "tags": [
+        "漏洞",
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451187941&idx=1&sn=14e50c7ccb72001cb7bec161f5377cf9",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-01T15:19:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451187941&idx=1&sn=14e50c7ccb72001cb7bec161f5377cf9",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "relevance": 7.0,
+        "impact_scope": 6.0,
+        "technical_depth": 4.0,
+        "exploitability": 4.0,
+        "actionability": 4.0
+      },
+      "dimension_score": 5.15,
+      "final_score": 5.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
