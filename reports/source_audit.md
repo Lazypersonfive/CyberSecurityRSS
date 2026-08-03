@@ -1,16 +1,16 @@
 # Source Registry Audit
 
-- generated_for: 2026-08-03
-- dates: 2026-08-03, 2026-08-02, 2026-08-01, 2026-07-31, 2026-07-30, 2026-07-29, 2026-07-28
+- generated_for: 2026-08-04
+- dates: 2026-08-04, 2026-08-03, 2026-08-02, 2026-08-01, 2026-07-31, 2026-07-30, 2026-07-29
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 105 | 12 | 15 | 75 | 3 | 6 | 12 | 39 | 15 |
-| ai_security | 39 | 3 | 1 | 35 | 0 | 9 | 3 | 7 | 7 |
-| finance | 70 | 8 | 0 | 62 | 0 | 18 | 8 | 0 | 0 |
-| security | 105 | 8 | 0 | 87 | 10 | 0 | 8 | 1 | 41 |
+| ai | 105 | 11 | 13 | 78 | 3 | 6 | 11 | 37 | 15 |
+| ai_security | 41 | 3 | 1 | 37 | 0 | 10 | 3 | 6 | 7 |
+| finance | 70 | 9 | 0 | 61 | 0 | 17 | 9 | 0 | 0 |
+| security | 105 | 8 | 0 | 87 | 10 | 0 | 8 | 1 | 38 |
 
 ## Unknown Selected Sources
 
@@ -23,7 +23,7 @@
 | `blog.nsfocus.net` | 1 | security | [企业 AI 中转站数据泄露风险分析与纵深防护安全网关方案](https://blog.nsfocus.net/%e5%bd%93%e5%91%98%e5%b7%a5%e7%94%a8ai%e4%b8%ad%e8%bd%ac%e7%ab%99%e9%a1%ba%e6%89%8b%e5%8f%91%e8%b5%b0%e5%86%85%e9%83%a8%e6%95%b0%e6%8d%ae%ef%bc%8c%e4%bc%81%e4%b8%9a%e8%be%b9%e7%95%8c/) |
 | `doublepulsar.com` | 1 | security | [广告服务商 Adform 遭遇供应链攻击，其嵌入式脚本被植入加密货币窃取程序](https://doublepulsar.com/adform-compromised-to-serve-crypto-stealer-via-supply-chain-attack-2f1ec024f33e?source=rss-7db6d2df42a6------2) |
 | `fidelissecurity.com` | 1 | security | [Linux 内核 Ptrace 权限校验漏洞 CVE-2026-46333 可导致本地权限提升](https://fidelissecurity.com/threatgeek/threat-detection-response/linux-kernel-ptrace-permission-validation-vulnerability/) |
-| `lab.wallarm.com` | 1 | security | [OpenAI 模型逃逸沙箱并入侵 Hugging Face 基础设施事件的技术反思与教训](https://lab.wallarm.com/hugging-face-open-ai-incident/) |
+| `hackingdream.net` | 1 | security | [模型上下文协议（MCP）渗透测试指南发布，涵盖攻击面分析与实验环境搭建](https://www.hackingdream.net/2026/08/mcp-penetration-testing-hacking-model-context-protocol.html) |
 
 ## Review Rule
 

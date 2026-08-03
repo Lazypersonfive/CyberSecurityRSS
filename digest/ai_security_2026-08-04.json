@@ -1,0 +1,236 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-08-04",
+  "generated_at": "2026-08-03T23:51:22.010220Z",
+  "raw_count": 29,
+  "selected_count": 5,
+  "selection_stats": {
+    "total": 5,
+    "direct": 2,
+    "tier_t2": 5,
+    "kind_expert": 2,
+    "aggregator": 3,
+    "kind_expert_x": 1,
+    "google_news": 2,
+    "kind_google_news": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 3,
+    "story": 0,
+    "total": 3
+  },
+  "items": [
+    {
+      "title_zh": "安全研究员演示通过劫持 LiteLLM 网关实现流量拦截、密钥窃取与工具调用注入",
+      "title_orig": "LLM Heist: Hijacking LiteLLM for Traffic Interception, Key Theft, and Tool-Call Injection",
+      "summary": "LiteLLM 作为统一的 AI 网关，因集成后端大模型提供商密钥而成为高价值攻击目标。研究展示了在后渗透阶段，攻击者可利用特定战术手段持续劫持流量，实现对实时提示词和数据的窃取，甚至通过修改响应内容来注入恶意工具调用。该研究为红队评估提供了针对 AI 基础设施的攻击路径参考，强调了网关层权限管控与完整性校验的重要性。",
+      "tags": [
+        "AI安全",
+        "红队技术",
+        "网关劫持"
+      ],
+      "url": "https://embracethered.com/blog/posts/2026/hijacking-litellm-for-fun-and-profit/",
+      "source": "embracethered.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T16:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI基础设施中网关层的关键风险及后渗透利用链路。",
+      "feed_url": "https://embracethered.com/blog/index.xml",
+      "feed_title": "Embrace The Red",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "AI 安全研究",
+      "source_key": "embracethered.com",
+      "story_id": "url:embracethered.com/blog/posts/2026/hijacking-litellm-for-fun-and-profit",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "practical_risk": 10.0,
+        "actionability": 9.0,
+        "technical_depth": 9.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 9.5,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全专家揭示AI网关漏洞：攻击者可劫持LiteLLM流量以窃取提示词数据、篡改响应并注入恶意工具调用",
+      "title_orig": "Is your companies AI Gateway compromised right now? How would you even know? Are you looking? Post-exploitation, an adversary can continuously hijack ...",
+      "summary": "安全研究人员揭示了名为LLM Heist的新型攻击手段，指出企业若未能妥善保护其AI网关，攻击者在利用漏洞后可利用LiteLLM持续劫持流量并实时窃取用户的提示词与敏感数据。该威胁不仅允许黑客篡改模型响应，还能通过注入恶意工具调用来实施进一步破坏，因此企业必须加强对AI基础设施的监控与审计，以防范此类隐蔽且具有高度持续性的后渗透攻击。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://x.com/wunderwuzzi23/status/2084323868144263410",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-08-03T17:01:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "高分资讯值得跟踪",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:wunderwuzzi23",
+      "story_id": "url:x.com/wunderwuzzi23/status/2084323868144263410",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "practical_risk": 10.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 9.15,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Endor Labs 发布针对开源恶意软件的多代理检测引擎与包防火墙技术报告",
+      "title_orig": "Malware Defense: A multi-agent detection engine and package firewall | Ebook/Report | Endor Labs",
+      "summary": "该报告探讨了在开源生态中应对无 CVE 标识恶意软件的防御策略，重点介绍了多代理检测引擎的技术架构。通过构建包级防火墙，该方案旨在恶意代码进入开发生命周期前进行拦截，而非被动等待漏洞编号发布。文章详细说明了如何利用自动化分析手段识别供应链中的异常行为，为企业构建软件成分安全防御体系提供了技术指导和实施框架。",
+      "tags": [
+        "供应链安全",
+        "恶意软件检测",
+        "开源安全"
+      ],
+      "url": "https://www.endorlabs.com/learn/malware-defense-a-multi-agent-detection-engine-and-package-firewall",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T21:33:19+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了针对开源供应链中非漏洞型威胁的主动防御技术思路。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/malware-defense-a-multi-agent-detection-engine-and-package-firewall",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "practical_risk": 7.0,
+        "actionability": 7.0,
+        "technical_depth": 7.0,
+        "agent_model_relevance": 4.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 6.85,
+      "final_score": 7.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "美国众议院小组委员会就 OpenAI 智能体安全违规事件寻求官方简报",
+      "title_orig": "US House panel seeks briefing on OpenAI’s AI agent security breach By Reuters - Investing.com",
+      "summary": "美国众议院相关面板近期要求就 OpenAI 发生的 AI 智能体安全违规事件进行情况说明。目前原文未披露该违规事件的具体技术细节、受影响的智能体版本或具体的漏洞原理，仅明确了立法机构对 AI 头部企业安全事件的介入调查。此举反映了监管机构对 AI 代理在处理敏感数据时安全性的高度关注，后续可能涉及对 AI 安全标准的进一步审查。",
+      "tags": [
+        "AI安全事故",
+        "合规监管",
+        "OpenAI"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPM1BDc0RtMGhQWnVvRmpvUk0tYk1FZUdGNGdRMUphMUh6WlFHWUxURlowdkZlT1Uzb0ZFS2sxbWJweFBkb2s4TENOQVA0VURONFE0ZjhrOE5wT0EweURvSnRzQkFZNGtKeE8ybm1YYzZXckEzSVBCeHV5T0I0OFEyWVBRalZIQm9Kd3QwcU95ajM5dXZWcjZrSHR0RmE2bDFMMmgwb2cyNGVGYmI2bXlJN1o5TmlINlpWakE?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-08-03T21:43:54+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注头部AI厂商的安全违规事件及其引发的监管连锁反应。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:6db75ec6ab0c",
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZUJ3OG9JQXRfZ2I2Rkp1TjZWbXpOZXRYNFp3Yi1CZW5VczUxOC1LeVJmbUlaTFdkbFB5NVhXV3hvNTFJSy1CMDlIdDlyMFhwaFg3NVhvSHhuVHNTRW1JQmtxcmNLT1VDRGtjSFllRmN2T2lONXFJNDFsZTZqRDhJYkQ2cWdJcHEyd1kzWW9tVkJyVzdqQzJLMV93Qm5KbmZwOVV5THBnNTJNTE9pSnc?oc=5",
+        "https://news.google.com/rss/articles/CBMikwFBVV95cUxOVTRaLXo4YTE5MlZoQ3RNTXEwSHdNSUtDT1RzTnFYb2lRVVNWVzREYWdUU2xOTWxjaDRoWGYwZGpVQTktS3lDVU5PQ0N4SU8ydW00UGhVbUNJRTcwWkw3NUFVV3ZsYVNJVWdmdXdNXzdfUzRGZkd3bllQX2VDVWtvZ2JQN0J6ZWJCdFNRYzlFc0Q2Ulk?oc=5"
+      ],
+      "related_count": 2,
+      "score": 7,
+      "score_dimensions": {
+        "practical_risk": 8.0,
+        "actionability": 4.0,
+        "technical_depth": 4.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 6.75,
+      "final_score": 5.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "IBM 2026 年数据泄露报告指出 92% 的 AI 安全事件源于缺乏访问控制",
+      "title_orig": "IBM’s 2026 Data Breach Report: 92% of AI Incidents Had No Access Controls - Cybersecurity Insiders",
+      "summary": "IBM 发布的最新数据泄露报告显示，在涉及人工智能的安全事件中，高达 92% 的案例存在未部署访问控制措施的问题。报告强调了 AI 系统在快速部署过程中忽视了基础安全配置，导致敏感模型接口或训练数据处于裸奔状态。原文未详细列举具体的漏洞 CVE 编号，但明确指出身份验证缺失是导致 AI 数据泄露的最主要诱因，呼吁企业强化 AI 资产的权限治理。",
+      "tags": [
+        "数据泄露",
+        "访问控制",
+        "AI治理"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNZm1NMHJ3TnUybG1SWjBUQUx0bHdocl90aEEwUjBjZDVaWWk3dE0waXBQSlRwdDBWSHJ5SlVtcExqek9FRVg5aFY2WllFRWdYN19HdDFNdklMNjlybEt3N2pGWUdfaUY4bXRzNm1NTmFTTllPanNUNV8waG90Mlg1bjF6MUZKUQ?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-08-03T18:09:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "通过统计数据揭示了当前AI应用中最为普遍且严重的配置风险。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:11a87a1c3d7b",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "practical_risk": 7.0,
+        "actionability": 5.0,
+        "technical_depth": 4.0,
+        "agent_model_relevance": 6.0,
+        "security_relevance": 7.0
+      },
+      "dimension_score": 5.9,
+      "final_score": 5.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

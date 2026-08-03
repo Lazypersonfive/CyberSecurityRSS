@@ -1,18 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-08-03",
-  "fetched_at_utc": "2026-08-02T23:44:58.342923Z",
+  "fetched_at": "2026-08-04",
+  "fetched_at_utc": "2026-08-03T23:51:02.922256Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 58,
-  "entry_count": 33,
+  "raw_entry_count": 52,
+  "entry_count": 29,
   "filter_stats": {
-    "input": 58,
+    "input": 52,
+    "dropped_title_blacklist": 2,
     "dedup_merged": 2,
-    "output": 56
+    "output": 48
   },
   "curation_stats": {
-    "dropped_source_cap": 23
+    "dropped_source_cap": 19
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -20,7 +21,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 2
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -41,7 +42,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://portswigger.net/research/rss": {
       "feed_title": "PortSwigger Research",
@@ -125,7 +126,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 0
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -139,7 +140,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
@@ -209,7 +210,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
@@ -237,10 +238,36 @@
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 6
     }
   },
   "entries": [
+    {
+      "title": "Is your companies AI Gateway compromised right now? How would you even know? Are you looking? Post-exploitation, an adversary can continuously hijack ...",
+      "url": "https://x.com/wunderwuzzi23/status/2084323868144263410",
+      "summary": "Is your companies AI Gateway compromised right now? How would you even know? Are you looking? Post-exploitation, an adversary can continuously hijack LiteLLM traffic to steal live prompts and data, modify responses, and inject tool calls. I call it LLM Heist. 😈 https://embracethered.com/blog/posts/2026/hijacking-litellm-for-fun-and-profit/",
+      "category": "XSignals",
+      "published": "2026-08-03T17:01:49+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
+    {
+      "title": "LLM Heist: Hijacking LiteLLM for Traffic Interception, Key Theft, and Tool-Call Injection",
+      "url": "https://embracethered.com/blog/posts/2026/hijacking-litellm-for-fun-and-profit/",
+      "summary": "LiteLLM is a popular AI gateway. It provides a unified interface to LLMs and simplifies governance. It also has access to the backend LLM provider keys. All of that makes it a high-value target. Not only for IP and data theft, but also for response modification and tool invocation. This post walks through a set of TTPs that red teams can integrate into authorized operations to demonstrate reroutin",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T16:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://embracethered.com/blog/index.xml",
+      "feed_title": "Embrace The Red"
+    },
     {
       "title": "Open letters about AI development",
       "url": "https://simonwillison.net/2026/Aug/2/open-letters/#atom-everything",
@@ -255,50 +282,11 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "I have investigated my logs and I have experienced instances of AI agents escaping sandboxes testing environments.",
-      "url": "https://x.com/rez0__/status/2083562405053833232",
-      "summary": "I have investigated my logs and I have experienced instances of AI agents escaping sandboxes testing environments. MTS: SITUATION DETECTED: OpenAI has discovered other instances of AI agents escaping sandboxed testing environments while investigating the Hugging Face incident, per Reuters.",
-      "category": "XSignals",
-      "published": "2026-08-01T14:36:02+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)",
-      "url": "https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-everything",
-      "summary": "Tuesday was Stateless MCP day - the rollout of MCP 2.0, or the 2026-07-28 Model Context Protocol specification to use the more formal but less memorable name. This is the most significant change to the MCP spec since it first launched, and has also served to reignite my personal interest in the protocol. For background: MCP is the Model Context Protocol, which describes a standard way to expose ne",
+      "title": "Don't be a meat proxy",
+      "url": "https://simonwillison.net/2026/Aug/3/dont-be-a-meat-proxy/#atom-everything",
+      "summary": "Don&#x27;t be a meat proxy Niklas Gruhn coins an excellent new term - meat proxy - for people who blindly copy and paste the output of AI systems to their peers. By all means, prompt AI. But don't just relay the output. Read it, understand it, validate it, and then write a response in your own words (a decent certificate that you've done the prior steps). Making that effort is value you can add. V",
       "category": "AISecurityLabs",
-      "published": "2026-07-31T23:13:22+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "One year since the Month of AI Bugs! 🔥 Wild how many improperly secured AI systems are out there. A lot of work to do!",
-      "url": "https://x.com/wunderwuzzi23/status/2083291968478810406",
-      "summary": "One year since the Month of AI Bugs! 🔥 Wild how many improperly secured AI systems are out there. A lot of work to do! Johann Rehberger: 👉 Month of AI Bugs 2025 To raise awareness of security vulnerabilities in AI systems I'll be sharing over 20 write-ups starting August 1st. The focus is primarily on coding agents, but there will also be a few other interesting posts.",
-      "category": "XSignals",
-      "published": "2026-07-31T20:41:25+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "condense-json 1.0",
-      "url": "https://simonwillison.net/2026/Aug/2/condense-json/#atom-everything",
-      "summary": "Release: condense-json 1.0 I'm trying to get braver at releasing 1.0 versions. This little library is a year and a half old now - I've applied some sensible and non-disruptive fixes and shipped the big 1.0 for it. Here's an example of what it can do, lifted from the README: { \"foo\" : { \"bar\" : { \"string\" : \" This is a string with foxes in it \" , \"nested\" : { \"more\" : [ \" Here is a string \" , \" ano",
-      "category": "AISecurityLabs",
-      "published": "2026-08-02T22:19:59+00:00",
+      "published": "2026-08-03T23:45:04+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
@@ -307,17 +295,124 @@
       "feed_title": "Simon Willison"
     },
     {
-      "title": "The Massive AI Security Hole Your CISO Doesn’t Know About - Security Boulevard",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZTZwc29nc1N2elhoejN3dFZ0VUJNcDA2OTd2dFE3Mmdfb29haXBXZDJLSUNHUy1mS3h2b3Myd29RY0h4WUdjRjI5Mi1aZXBlZTNjZEIxYWVQbHl4ZnVBbm1BeHVpQ1hTd2pURUNEQ1YxX0psSlBBc08tYUhwcUszdzVYZkQzZGIxanBQdHlNTVFnQmRDb2s0eDVjQQ?oc=5",
-      "summary": "The Massive AI Security Hole Your CISO Doesn’t Know About &nbsp;&nbsp; Security Boulevard",
+      "title": "US tech giants invited to discuss AI security tests at White House - South China Morning Post",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOb0VtOUVnZGpLMGZBaTExOWpZVk16QnczWDRNQThxejlMdndfN1pHYXd4Q0NjZ2dwLUlmYW80UW9nQ2NkTWwtMVFOMllobTR4UDR3WEFCQWI1T3NEN204MVl2bWNjdUJQMVVKS0hxSW51Q0Y1RUx2Y1lZbHE0OWE0NlVfbERudWltWXhRYS1NRjIxSFFNX3JNVkF2eWxXS01tQlM1U01DUkZKQUhnZDFaRWV4Z1JYUdIBtgFBVV95cUxOVXRWeG9hdF9yQUR2MkpnRGdRT19VQk5VdXhjTDVvSm90MGhBaklqV29VX2NObngyMXp5bnNZT2pWT3NaMjQwcUdTdi1fd19NTHl2UXJtVE9PekdnR1o2TE45MnFlMDRnZ0FVUzVIMzNDd0pVV3ZyOW9rRkE1eS1XM094aS1ZZEgyWG5tRkdCd1RuSnFxai1ER0pwVVc0c2NnUzQwVE5jdHpkWkhFTUoxejNyMVZTZw?oc=5",
+      "summary": "US tech giants invited to discuss AI security tests at White House &nbsp;&nbsp; South China Morning Post",
       "category": "CoverageFallback",
-      "published": "2026-08-02T19:30:00+00:00",
+      "published": "2026-08-03T22:25:55+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
       "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "US House panel seeks briefing on OpenAI’s AI agent security breach By Reuters - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPM1BDc0RtMGhQWnVvRmpvUk0tYk1FZUdGNGdRMUphMUh6WlFHWUxURlowdkZlT1Uzb0ZFS2sxbWJweFBkb2s4TENOQVA0VURONFE0ZjhrOE5wT0EweURvSnRzQkFZNGtKeE8ybm1YYzZXckEzSVBCeHV5T0I0OFEyWVBRalZIQm9Kd3QwcU95ajM5dXZWcjZrSHR0RmE2bDFMMmgwb2cyNGVGYmI2bXlJN1o5TmlINlpWakE?oc=5",
+      "summary": "US House panel seeks briefing on OpenAI’s AI agent security breach By Reuters &nbsp;&nbsp; Investing.com",
+      "category": "CoverageFallback",
+      "published": "2026-08-03T21:43:54+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [
+        "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZUJ3OG9JQXRfZ2I2Rkp1TjZWbXpOZXRYNFp3Yi1CZW5VczUxOC1LeVJmbUlaTFdkbFB5NVhXV3hvNTFJSy1CMDlIdDlyMFhwaFg3NVhvSHhuVHNTRW1JQmtxcmNLT1VDRGtjSFllRmN2T2lONXFJNDFsZTZqRDhJYkQ2cWdJcHEyd1kzWW9tVkJyVzdqQzJLMV93Qm5KbmZwOVV5THBnNTJNTE9pSnc?oc=5",
+        "https://news.google.com/rss/articles/CBMikwFBVV95cUxOVTRaLXo4YTE5MlZoQ3RNTXEwSHdNSUtDT1RzTnFYb2lRVVNWVzREYWdUU2xOTWxjaDRoWGYwZGpVQTktS3lDVU5PQ0N4SU8ydW00UGhVbUNJRTcwWkw3NUFVV3ZsYVNJVWdmdXdNXzdfUzRGZkd3bllQX2VDVWtvZ2JQN0J6ZWJCdFNRYzlFc0Q2Ulk?oc=5"
+      ],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "IBM’s 2026 Data Breach Report: 92% of AI Incidents Had No Access Controls - Cybersecurity Insiders",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNZm1NMHJ3TnUybG1SWjBUQUx0bHdocl90aEEwUjBjZDVaWWk3dE0waXBQSlRwdDBWSHJ5SlVtcExqek9FRVg5aFY2WllFRWdYN19HdDFNdklMNjlybEt3N2pGWUdfaUY4bXRzNm1NTmFTTllPanNUNV8waG90Mlg1bjF6MUZKUQ?oc=5",
+      "summary": "IBM’s 2026 Data Breach Report: 92% of AI Incidents Had No Access Controls &nbsp;&nbsp; Cybersecurity Insiders",
+      "category": "CoverageFallback",
+      "published": "2026-08-03T18:09:10+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Aurascape Names Jim Walsh Chief Revenue Officer as Enterprise Demand for AI Security Accelerates - Business Wire",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQc1k5M3pQcldPTlA1N2xtaTdXa0FWamJlNHZXWjcxUnlWeU5LV2doMVJVV3puZnVmS254MWRVaTFoZmFtckp5Zjh4cFA3Y2l0bks5RWpBd2Zub3k5Z3NKd3lCTzVCd3dPa0N6Rm5xa1dGSlloOFdRWjllZ1hEdE5ULTF3X1hPTGRKTHR6T25NSU5XeDZYd1R0bVlPZ1FScEp0R2pRUXNzaWVoOFNianlLQ2ppb0dkVmJ1dnhjYUl0M212eFFyaDBFTFhJbzEzOHhaVEN2RnNfelpYNjIxbFZxNkxBMGpPcXJU?oc=5",
+      "summary": "Aurascape Names Jim Walsh Chief Revenue Officer as Enterprise Demand for AI Security Accelerates &nbsp;&nbsp; Business Wire",
+      "category": "CoverageFallback",
+      "published": "2026-08-03T18:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Quoting David Crawshaw's prompt",
+      "url": "https://simonwillison.net/2026/Aug/3/david-crawshaw/#atom-everything",
+      "summary": "Set up a nightly cron job that executes the prompt: fetch upstream changes to the &lt;software&gt; and rebase all local changes on top of upstream. Check that the software works as intended and replace the current version. &mdash; David Crawshaw&#x27;s prompt , Devtools must be open source Tags: prompt-engineering , coding-agents , generative-ai , ai , llms , open-source",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T16:15:27+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Agentic Remediation vs. Manual Patching: What Changes When AI Fixes Vulnerabilities | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/agentic-remediation-vs-manual-patching",
+      "summary": "Manual patching, automated patching, agentic remediation: see how the three models compare on priority, validation, and speed, and where humans stay in the loop.",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T16:07:31+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "RT Steve Hernandez: The most interesting question isn’t where your program started. It’s what changed. If you completed a BBMF assessment earlier th...",
+      "url": "https://x.com/rez0__/status/2084261380991939014",
+      "summary": "RT Steve Hernandez The most interesting question isn’t where your program started. It’s what changed. If you completed a BBMF assessment earlier this year, retake your assessment here: http://bugbountymaturity.com/recover-token Excited to see how the maturity distribution evolves.",
+      "category": "XSignals",
+      "published": "2026-08-03T12:51:23+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Pass the Passkey: A Novel Attack Surface in Passwordless Authentication",
+      "url": "https://unit42.paloaltonetworks.com/passwordless-authentication-security-risks/",
+      "summary": "Explore how passkey implementation gaps undermine security when relying parties fail to validate the User Verified flag, reducing MFA to a single factor. The post Pass the Passkey: A Novel Attack Surface in Passwordless Authentication appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T10:00:35+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "How we built a realtime system for responsive voice AI in six months",
+      "url": "https://openai.com/index/continuous-voice-interaction-with-gpt-live",
+      "summary": "GPT-Live enables continuous voice interaction with AI, using a turnless speech model and low-latency architecture for faster, more natural conversations.",
+      "category": "FirstParty",
+      "published": "2026-08-03T07:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
     },
     {
       "title": "Request for back payment of a higher sev (or pay the difference to the second reporter)",
@@ -372,32 +467,6 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "Grip AI Security Platform | Identity-First AI Security - Security Boulevard",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPMVRYTHhHT0VYYWJDb2VTb0dRdVZyVzVIeFkzRGFxQkh6a0RaYjRqQ3owODFLS19Ra0xtNmdxT2V0WXFDVHpTb1Y5RzFjdUxOaHNsc1dQVFJ5UXNpTmwtM28zTWZjOGFKT1NMU2lmaENoUUd5bVpBT1BjZDh0dW1yVEJMU1dHMWdvQ25QVTdSM0RRRk9keGc?oc=5",
-      "summary": "Grip AI Security Platform | Identity-First AI Security &nbsp;&nbsp; Security Boulevard",
-      "category": "CoverageFallback",
-      "published": "2026-08-02T13:31:35+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Apple Caps Bug Reports After Surge in Fake AI Security Flaws - iPhone in Canada",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOb291VUZHZTlZSC16VVlOd0JmQ3JpbEI2OUxtbS10dUNzQU9rVkpnQW5tdUF2Sy1zWFJMU2pBLXR6SVFrdHZMQWZJLVg5V3djWS1Bci1pVEhhLXRMU2hNaTUtbUt0QWRfUGIyWk1GMnlJSUVCRENGMUllZlhzQS1IY3ZpOThiUGtVMElDcEF6MHZ0b0FKa2tMeXlVMW5aRmQzRm0ySA?oc=5",
-      "summary": "Apple Caps Bug Reports After Surge in Fake AI Security Flaws &nbsp;&nbsp; iPhone in Canada",
-      "category": "CoverageFallback",
-      "published": "2026-08-02T12:30:03+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
       "title": "Someone should tell him about @mattshumer_’s gauntlet prompt",
       "url": "https://x.com/rez0__/status/2083878696385990684",
       "summary": "Someone should tell him about @mattshumer_’s gauntlet prompt Andrej Karpathy: We're starting to leave the territory where you'd test an LLM by e.g. \"create an svg of pelican on a bicycle\". As one idea to generalize it, I was interested what Opus 5 would do if I gave it the first paragraph of the Lord of the Rings, a 1M token budget (~$10) and asked for",
@@ -409,19 +478,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "Israel’s cyber industry bets identity will become the next AI security battleground - calcalistech.com",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0wQUlRaVczdGhGX2RsZWFDeFdsWXVuT0JaR1JFd1VWYTBHbUpzN3ZwbzU3RnpZb0h2U3U4OXZWQndBQ2s4NkFXb3ExZUNfLUhKY0RWUkgwZy1XZzQ1Y2JKTEp2NUpFY1Ns?oc=5",
-      "summary": "Israel’s cyber industry bets identity will become the next AI security battleground &nbsp;&nbsp; calcalistech.com",
-      "category": "CoverageFallback",
-      "published": "2026-08-02T08:09:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
     },
     {
       "title": "RT Ben Sadeghipour: Private disclosure party 🚨 \"Melting the Frontier Labs\" with @0xLupin. They're dropping some wild research including how they ma...",
@@ -437,69 +493,95 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "Agentic Remediation vs. Manual Patching: What Changes When AI Fixes Vulnerabilities | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/agentic-remediation-vs-manual-patching",
-      "summary": "Manual patching, automated patching, agentic remediation: see how the three models compare on priority, validation, and speed, and where humans stay in the loop.",
+      "title": "Malware Defense: A multi-agent detection engine and package firewall | Ebook/Report | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/malware-defense-a-multi-agent-detection-engine-and-package-firewall",
+      "summary": "Open source malware doesn't wait for a CVE. Neither should your defenses.",
       "category": "AISecurityLabs",
-      "published": "2026-08-01T00:59:13+00:00",
+      "published": "2026-08-03T21:33:19+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "https://www.endorlabs.com/learn/rss.xml",
       "feed_title": "Endor Labs"
     },
     {
-      "title": "Advancing responsible AI across Europe",
-      "url": "https://openai.com/index/advancing-responsible-ai-across-europe",
-      "summary": "OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances.",
-      "category": "FirstParty",
-      "published": "2026-07-31T15:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "The Xcode Assassin Returns: A Deep Dive Into the Latest XCSSET Version",
-      "url": "https://unit42.paloaltonetworks.com/xcsset-v40-malware-analysis/",
-      "summary": "Analysis of XCSSET v40 reveals a macOS malware targeting developers via Xcode. Unit 42 used advanced pattern matching and AI to decode its logic. The post The Xcode Assassin Returns: A Deep Dive Into the Latest XCSSET Version appeared first on Unit 42 .",
+      "title": "Fixed is Better than Found | Upgrades & Remediation | Endor Labs | Solution Brief | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/fixed-is-better-than-found-upgrades-remediation-with-endor-labs",
+      "summary": "At Endor Labs, we believe your application security tooling must go beyond alerting—it should also helpyou fast-track remediation.",
       "category": "AISecurityLabs",
-      "published": "2026-07-31T10:00:18+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
-      "feed_title": "Unit 42"
-    },
-    {
-      "title": "Univé builds an AI-ready workforce",
-      "url": "https://openai.com/index/unive",
-      "summary": "See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale.",
-      "category": "FirstParty",
-      "published": "2026-07-31T07:00:00+00:00",
+      "published": "2026-08-03T21:33:19+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
     },
     {
-      "title": "Wondering how many more places and users had their AI break into other organizations without anyone yet noticing... 🤷‍♂️",
-      "url": "https://x.com/wunderwuzzi23/status/2083005243076558860",
-      "summary": "Wondering how many more places and users had their AI break into other organizations without anyone yet noticing... 🤷‍♂️",
-      "category": "XSignals",
-      "published": "2026-07-31T01:42:04+00:00",
+      "title": "SCA Remediation: A Complete Guide for AppSec Teams | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/sca-remediation",
+      "summary": "SCA remediation done right fixes what matters first. Learn how reachability, safe upgrades, and targeted patches cut the backlog and speed up your fixes.",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T16:07:31+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "What Is Reachability Analysis and Why Does It Matter? | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/reachability-analysis",
+      "summary": "Reachability analysis determines whether vulnerable code can run in your application, cutting false positives. Learn the approaches, the five types, and how to evaluate it.",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T16:07:31+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Mean Time to Remediate (MTTR): How to Measure It and Cut It | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/mean-time-to-remediate-mttr",
+      "summary": "Mean time to remediate (MTTR) measures how fast you fix vulnerabilities. Learn the formula, how to measure it right, what drives it up, and how to cut it with reachability.",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T16:07:31+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "How to Automate Vulnerability Remediation in 2026 | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/vulnerability-remediation-automation",
+      "summary": "Vulnerability remediation automation closes the gap between found and fixed. Learn how it works across the SDLC, what to automate, and what to keep under human review.",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T16:07:31+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Automated Dependency Updates Done Right: A Security-First Guide | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/automated-dependency-updates",
+      "summary": "Automated dependency updates cut manual toil, but blind auto-merge breaks production. Learn how to update at scale using reachability, impact analysis, and patches.",
+      "category": "AISecurityLabs",
+      "published": "2026-08-03T16:07:31+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
     },
     {
       "title": "you can make 5.6 ultra more token efficient",
@@ -515,117 +597,11 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "SCA Remediation: A Complete Guide for AppSec Teams | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/sca-remediation",
-      "summary": "SCA remediation done right fixes what matters first. Learn how reachability, safe upgrades, and targeted patches cut the backlog and speed up your fixes.",
-      "category": "AISecurityLabs",
-      "published": "2026-08-01T01:05:01+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "What Is Reachability Analysis and Why Does It Matter? | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/reachability-analysis",
-      "summary": "Reachability analysis determines whether vulnerable code can run in your application, cutting false positives. Learn the approaches, the five types, and how to evaluate it.",
-      "category": "AISecurityLabs",
-      "published": "2026-08-01T01:01:21+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Mean Time to Remediate (MTTR): How to Measure It and Cut It | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/mean-time-to-remediate-mttr",
-      "summary": "Mean time to remediate (MTTR) measures how fast you fix vulnerabilities. Learn the formula, how to measure it right, what drives it up, and how to cut it with reachability.",
-      "category": "AISecurityLabs",
-      "published": "2026-08-01T01:01:11+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "How to Automate Vulnerability Remediation in 2026 | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/vulnerability-remediation-automation",
-      "summary": "Vulnerability remediation automation closes the gap between found and fixed. Learn how it works across the SDLC, what to automate, and what to keep under human review.",
-      "category": "AISecurityLabs",
-      "published": "2026-08-01T01:01:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [
-        "https://www.endorlabs.com/learn/ai-vulnerability-remediation"
-      ],
-      "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Automated Dependency Updates Done Right: A Security-First Guide | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/automated-dependency-updates",
-      "summary": "Automated dependency updates cut manual toil, but blind auto-merge breaks production. Learn how to update at scale using reachability, impact analysis, and patches.",
-      "category": "AISecurityLabs",
-      "published": "2026-08-01T01:00:44+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Upgrade Impact Analysis: Patch Without Breaking Your Build | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/upgrade-impact-analysis",
-      "summary": "Upgrade impact analysis maps what a dependency upgrade will change before you merge, so you patch vulnerabilities without breaking your build. See how it works.",
-      "category": "AISecurityLabs",
-      "published": "2026-08-01T00:58:13+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Top enterprise SAST tools 2026",
-      "url": "https://www.aikido.dev/blog/top-enterprise-sast-tools",
-      "summary": "Comparing the best enterprise SAST tools on noise reduction, AI remediation, governance, compliance, and cost Category: DevSec Tools & Comparisons",
-      "category": "AISecurityLabs",
-      "published": "2026-07-31T20:05:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "Anthropic's Fever Dream: Claude's package that stole real keys",
-      "url": "https://www.aikido.dev/blog/anthropic-rogue-agents-package-stole-keys",
-      "summary": "Anthropic disclosed an agent that pushed real malware to PyPI. We think we found the package, and every mistake in it points back to the AI. Category: Vulnerabilities & Threats",
-      "category": "AISecurityLabs",
-      "published": "2026-07-31T16:10:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "Building abundant intelligence",
-      "url": "https://openai.com/index/building-abundant-intelligence",
-      "summary": "A full-stack approach to making advanced AI more capable, more affordable, and more widely useful.",
+      "title": "Ten advances in mathematics and theoretical computer science",
+      "url": "https://openai.com/index/ten-advances-in-mathematics",
+      "summary": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.",
       "category": "FirstParty",
-      "published": "2026-07-31T15:00:00+00:00",
+      "published": "2026-08-01T00:00:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -634,37 +610,11 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "Top Astra Security alternatives for automated pentesting in 2026",
-      "url": "https://www.aikido.dev/blog/astra-alternatives",
-      "summary": "Compare Astra Security alternatives for AI pentesting in 2026 on depth, white-box testing, compliance output, and platform breadth Category: DevSec Tools & Comparisons",
-      "category": "AISecurityLabs",
-      "published": "2026-07-31T14:25:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
       "title": "纳米Work企业版正式启动全国各级渠道城市合伙人招募",
       "url": "https://www.anquanke.com/post/id/315908",
       "summary": "",
       "category": "Chinese",
       "published": "2026-08-01T17:28:24+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://api.anquanke.com/data/v1/rss",
-      "feed_title": "安全客"
-    },
-    {
-      "title": "Anthropic 的 Claude 在测试期间攻破 3 家组织，并向 PyPI 上传了恶意软件",
-      "url": "https://www.anquanke.com/post/id/315903",
-      "summary": "",
-      "category": "Chinese",
-      "published": "2026-07-31T13:50:09+00:00",
       "fetch_status": "title_only",
       "cve_ids": [],
       "related_urls": [],
