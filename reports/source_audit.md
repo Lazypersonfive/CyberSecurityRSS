@@ -1,16 +1,16 @@
 # Source Registry Audit
 
-- generated_for: 2026-08-04
-- dates: 2026-08-04, 2026-08-03, 2026-08-02, 2026-08-01, 2026-07-31, 2026-07-30, 2026-07-29
+- generated_for: 2026-08-05
+- dates: 2026-08-05, 2026-08-04, 2026-08-03, 2026-08-02, 2026-08-01, 2026-07-31, 2026-07-30
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 105 | 11 | 13 | 78 | 3 | 6 | 11 | 37 | 15 |
-| ai_security | 41 | 3 | 1 | 37 | 0 | 10 | 3 | 6 | 7 |
-| finance | 70 | 9 | 0 | 61 | 0 | 17 | 9 | 0 | 0 |
-| security | 105 | 8 | 0 | 87 | 10 | 0 | 8 | 1 | 38 |
+| ai | 105 | 13 | 14 | 75 | 3 | 6 | 13 | 38 | 15 |
+| ai_security | 42 | 4 | 1 | 37 | 0 | 10 | 4 | 6 | 4 |
+| finance | 70 | 9 | 0 | 61 | 0 | 16 | 9 | 0 | 0 |
+| security | 105 | 7 | 0 | 87 | 11 | 0 | 7 | 2 | 36 |
 
 ## Unknown Selected Sources
 
@@ -24,6 +24,7 @@
 | `doublepulsar.com` | 1 | security | [广告服务商 Adform 遭遇供应链攻击，其嵌入式脚本被植入加密货币窃取程序](https://doublepulsar.com/adform-compromised-to-serve-crypto-stealer-via-supply-chain-attack-2f1ec024f33e?source=rss-7db6d2df42a6------2) |
 | `fidelissecurity.com` | 1 | security | [Linux 内核 Ptrace 权限校验漏洞 CVE-2026-46333 可导致本地权限提升](https://fidelissecurity.com/threatgeek/threat-detection-response/linux-kernel-ptrace-permission-validation-vulnerability/) |
 | `hackingdream.net` | 1 | security | [模型上下文协议（MCP）渗透测试指南发布，涵盖攻击面分析与实验环境搭建](https://www.hackingdream.net/2026/08/mcp-penetration-testing-hacking-model-context-protocol.html) |
+| `security.tencent.com` | 1 | security | [AI Agent 记忆提取攻击链路解析：Memory Heist 自动化检测技术研究](https://security.tencent.com/index.php/blog/msg/225) |
 
 ## Review Rule
 
