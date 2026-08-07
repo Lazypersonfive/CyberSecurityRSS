@@ -1,0 +1,654 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-08",
+  "generated_at": "2026-08-07T23:20:01.530868Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 13,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "tier_t2": 12,
+    "kind_media": 5,
+    "kind_expert": 1,
+    "aggregator": 2,
+    "kind_expert_x": 2,
+    "chinese": 6,
+    "wechat": 5,
+    "kind_cn_expert": 5,
+    "tier_unknown": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 4,
+    "merged_total": 4
+  },
+  "delivered_filter_stats": {
+    "url": 15,
+    "story": 0,
+    "total": 15
+  },
+  "items": [
+    {
+      "title_zh": "stb_truetype 开源字体库存在堆缓冲区溢出漏洞，可导致拒绝服务或信息泄露",
+      "title_orig": "VU#987105: The nothings stb TrueType library, up to version 1.26, contains a heap buffer overflow vulnerability",
+      "summary": "开源库 stb_truetype 在 1.26 及更早版本中存在堆缓冲区溢出漏洞，该库是由 nothings 开发的单文件公共领域及 MIT 许可库集合。该漏洞源于处理畸形字体数据时的逻辑缺陷，攻击者利用此漏洞不仅会导致受影响的应用程序发生拒绝服务，还可能造成敏感信息泄露，目前官方已发布安全预警并建议开发者及时更新相关依赖组件以防范潜在的恶意字体文件攻击。",
+      "tags": [
+        "堆溢出",
+        "字体解析",
+        "开源库"
+      ],
+      "url": "https://kb.cert.org/vuls/id/987105",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-08-07T14:15:19+00:00",
+      "cve_ids": [],
+      "selection_reason": "stb库被广泛集成在游戏引擎和图形应用中，影响面较广。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/987105",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "exploitability": 8.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Metabase 关键 SQL 注入 0-day 漏洞遭利用，导致多家企业客户数据被窃取",
+      "title_orig": "Metabase SQLi zero-day exploited in customer data-theft attacks",
+      "summary": "Metabase商业智能平台存在一个关键的SQL注入漏洞，该漏洞在零日攻击中被利用，允许攻击者绕过身份验证并从受影响的数据库实例中窃取客户数据。目前已知Framework和Tally等公司受到波及，但原文未披露该漏洞的具体触发原理、受影响的软件版本号以及官方是否已发布修复补丁或缓解措施，仅确认该漏洞正处于活跃利用状态。",
+      "tags": [
+        "SQL注入",
+        "0-day",
+        "数据泄露"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-07T20:14:46+00:00",
+      "cve_ids": [],
+      "selection_reason": "该漏洞已造成实际的数据窃取后果，具有极高的现实威胁。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "exploitability": 10.0,
+        "technical_depth": 9.0,
+        "relevance": 10.0,
+        "actionability": 10.0
+      },
+      "dimension_score": 9.55,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "JetBrains TeamCity 存在不安全反序列化漏洞 CVE-2026-63077，可实现未经身份验证的远程代码执行",
+      "title_orig": "Rapid7 Analysis: Unauthenticated Remote Code Execution in JetBrains TeamCity (CVE-2026-63077)",
+      "summary": "JetBrains TeamCity 持续集成服务器被发现存在严重的不安全反序列化漏洞 CVE-2026-63077，攻击者无需任何凭据即可通过 HTTP 或 HTTPS 协议访问服务器。通过利用代理轮询协议中的漏洞，攻击者能够以 TeamCity 服务器进程的权限执行任意操作系统命令，实现远程代码执行，目前 JetBrains 已发布官方安全公告，强烈建议所有受影响用户立即升级至最新版本以修复此高危安全隐患。",
+      "tags": [
+        "反序列化",
+        "RCE",
+        "TeamCity"
+      ],
+      "url": "https://www.rapid7.com/blog/post/ra-unauthenticated-rce-in-jetbrains-teamcity-cve-2026-63077",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-07T14:32:47+00:00",
+      "cve_ids": [
+        "CVE-2026-63077"
+      ],
+      "selection_reason": "CI/CD工具的RCE漏洞是红蓝对抗中的高价值目标。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-63077",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "exploitability": 9.0,
+        "technical_depth": 9.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.25,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "WordPress 核心组件修复由大模型发现的严重漏洞，可实现预认证 XSS 转远程代码执行",
+      "title_orig": "‼️ BREAKING: A critical WordPress Core vulnerability, which was found with open-weight LLMs, has been patched. It's a pre-auth XSS to remote code ex...",
+      "summary": "研究人员利用开源大语言模型（LLM）发现了 WordPress 核心代码中的一个严重漏洞并已获得修复。该漏洞存在于登录错误消息处理逻辑中，攻击者通过在用户名中构造特定字符和空格，可使 WordPress 将文本误识别为可执行代码输出。此漏洞影响 WordPress 历史上所有版本，支持在未经身份验证的情况下通过 XSS 链条实现远程代码执行。",
+      "tags": [
+        "WordPres",
+        "RCE",
+        "AI安全"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2085735138546122917",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-08-07T14:29:42+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用LLM发现核心框架深层逻辑漏洞的新趋势。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2085735138546122917",
+      "related_urls": [
+        "https://vulners.com/githubexploit/FB2615B4-8EAD-57A1-85A4-8DC9057C2E9A?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 10.0,
+        "exploitability": 9.0,
+        "technical_depth": 8.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "国产 Electron 软件供应链遭 CrossHatch 木马攻击，针对跨境电商实施定向投毒",
+      "title_orig": "【原创】AI时代下的国产Electron软件供应链攻击活动披露",
+      "summary": "奇安信红雨滴团队监测到一种名为 CrossHatch 的新型特种木马，正通过多款国产 Electron 架构软件的供应链进行传播。攻击者利用供应链节点存在的安全漏洞，针对境内及跨境电商从业者实施定向下发和精准打击。种种迹象表明该活动具有较高的技术水平且疑似出于经济目的，相关从业者需警惕常用办公软件的异常更新行为。",
+      "tags": [
+        "供应链攻击",
+        "Electron",
+        "木马"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519723&idx=1&sn=c1ab9a85f341a22dc22c26e30966cc79",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-07T01:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及国产软件供应链安全，对国内企业具有预警意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247519723&idx=1&sn=c1ab9a85f341a22dc22c26e30966cc79",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "exploitability": 8.0,
+        "technical_depth": 8.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "KVM 逃逸漏洞 Zapscape 披露，攻击者可从客户机获取宿主机 Root 权限",
+      "title_orig": "Zapscape KVM Flaw Lets Guest VMs Seize Host Root",
+      "summary": "安全研究员披露了KVM虚拟化逃逸漏洞CVE-2026-64561（Zapscape），该漏洞允许攻击者从客户虚拟机发起攻击，通过完整的端到端攻击链在宿主机上实现Root权限的代码执行。目前已发布可直接在宿主机生成root权限文件的利用代码，但原文未披露该漏洞的具体技术原理、受影响的内核版本或组件范围，也未提及相关的修复补丁状态。",
+      "tags": [
+        "KVM逃逸",
+        "虚拟化安全",
+        "提权"
+      ],
+      "url": "https://www.cyberkendra.com/2026/08/zapscape-kvm-flaw-lets-guest-vms-seize.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-08-06T18:18:35+00:00",
+      "cve_ids": [
+        "CVE-2026-64561"
+      ],
+      "selection_reason": "虚拟化逃逸是底层安全研究的巅峰，PoC的公开极具技术价值。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "cve:cve-2026-64561",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 8.0,
+        "technical_depth": 10.0,
+        "relevance": 9.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 8.65,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "GitHub 扩展恶意软件包预警范围，整合 OpenSSF 数据以强化非 npm 生态供应链安全",
+      "title_orig": "How we took malware advisories beyond npm",
+      "summary": "GitHub 宣布其恶意软件包咨询功能将不再局限于 npm 平台，通过整合 OpenSSF 的恶意软件包数据集，进一步扩大了监测覆盖面。GitHub 构建了一套高可靠性的数据流水线，将多源恶意软件包情报引入其咨询数据库，旨在为开发者提供更全面的供应链风险预警。此举旨在应对日益严峻的跨平台恶意组件投毒威胁，提升开源生态的整体安全性。",
+      "tags": [
+        "供应链安全",
+        "GitHub",
+        "恶意包"
+      ],
+      "url": "https://github.blog/security/supply-chain-security/how-we-took-malware-advisories-beyond-npm/",
+      "source": "github.blog",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-06T16:51:12+00:00",
+      "cve_ids": [],
+      "selection_reason": "GitHub作为核心基础设施，其安全能力的升级影响全球开发者",
+      "feed_url": "https://github.blog/security/feed/",
+      "feed_title": "GitHub Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "github.blog",
+      "story_id": "url:github.blog/security/supply-chain-security/how-we-took-malware-advisories-beyond-npm",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 5.0,
+        "technical_depth": 7.0,
+        "relevance": 8.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.05,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Apple 发布 macOS 紧急带外补丁，修复屏幕共享组件绕过身份验证漏洞 CVE-2026-65400",
+      "title_orig": "❗️ Apple pushed an out-of-band macOS patch: a Screen Sharing vulnerability let an attacker on the network authenticate without valid credentials. Du...",
+      "summary": "苹果公司针对 macOS 紧急发布了带外安全补丁，以修复编号为 CVE-2026-65400 的屏幕共享漏洞，该漏洞允许网络上的攻击者在无需有效凭据的情况下绕过身份验证。目前官方已在 Tahoe 26.6.1、Sequoia 15.7.9 以及 Sonoma 14.8.9 等版本中集成了修复程序，鉴于该漏洞可能导致远程攻击者非法获取系统访问权限，建议所有受影响的 macOS 用户尽快通过系统更新安装最新的安全补丁。",
+      "tags": [
+        "macOS",
+        "身份绕过",
+        "屏幕共享"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2085699752876752993",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-08-07T12:09:06+00:00",
+      "cve_ids": [
+        "CVE-2026-65400"
+      ],
+      "selection_reason": "涉及主流操作系统的身份绕过漏洞，且触发条件相对简单。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "cve:cve-2026-65400",
+      "related_urls": [
+        "https://www.securityweek.com/microsoft-apple-release-fresh-security-updates/"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "exploitability": 8.0,
+        "technical_depth": 6.0,
+        "relevance": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "npm 注册表发现近 800 个恶意软件包，利用拼写劫持分发跨平台远程控制木马",
+      "title_orig": "Nearly 800 Malicious npm Packages Deliver Cross-Platform RAT and Infostealer",
+      "summary": "安全研究员发现 npm 注册表中存在近 800 个恶意软件包，这些包利用 AI 生成或随机生成的拼写错误名称进行劫持，旨在针对 Windows、Mac 和 Linux 系统分发跨平台恶意软件。该攻击活动通过这些伪装包投送功能强大的远程控制木马（RAT）和信息窃取程序，目前相关恶意包已在生态系统中被识别，建议开发者严格校验依赖项名称。",
+      "tags": [
+        "供应链安全",
+        "npm",
+        "恶意软件"
+      ],
+      "url": "https://thehackernews.com/2026/08/nearly-800-malicious-npm-packages.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-07T18:48:17+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 npm 生态中大规模利用拼写劫持进行跨平台攻击的现状",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/08/nearly-800-malicious-npm-packages.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "exploitability": 8.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "ClickFix 攻击活动针对 macOS 用户，通过 Go 语言编写的恶意软件窃取加密货币钱包",
+      "title_orig": "ClickFix Attacks Deliver macOS Stealer That Can Drain Crypto Wallets",
+      "summary": "ClickFix 风格的攻击活动正利用 Go 语言开发的恶意软件针对 macOS 用户，旨在窃取加密货币资产、浏览器密码、iCloud 钥匙串数据及缓存凭据。该感染链首先通过 Shell 脚本对主机进行画像分析，随后根据 CPU 架构下载并执行兼容的恶意负载，目前该攻击主要通过诱导用户执行伪装脚本实现，建议 macOS 用户警惕非官方来源的指令执行。",
+      "tags": [
+        "macOS",
+        "信息窃取",
+        "加密货币"
+      ],
+      "url": "https://thehackernews.com/2026/08/clickfix-attacks-deliver-macos-stealer.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-07T18:29:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注针对 macOS 平台的特定感染链及对加密资产的安全威胁",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/08/clickfix-attacks-deliver-macos-stealer.html",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/08/05/macos-clickfix-campaign-learned-hide/",
+        "https://www.cyberkendra.com/2026/08/mac-malware-checks-your-gpu-before.html"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 8.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "xAI 旗下 Grok Build CLI 工具被曝静默上传代码仓库，包含敏感凭证与 Git 历史记录",
+      "title_orig": "【AI复盘】Grok CLI 静默上传代码仓库事件",
+      "summary": "安全研究员通过抓包发现xAI的Grok Build CLI工具在Beta阶段违反隐私设置，静默将包含API密钥、凭证及已删除Git历史的整个代码仓库打包上传至云端，引发了严重的隐私安全争议。事件曝光后xAI虽紧急修复并开源代码，但此举反映出AI编程工具在本地优先承诺与实际数据流透明度间存在深层矛盾，建议企业立即审计工具清单并加强对Git历史的安全管理。",
+      "tags": [
+        "AI 安全",
+        "隐私泄露",
+        "供应链风险"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487899&idx=1&sn=8017e46acefcb78f72c5cc7812807cd1",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-06T22:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了主流 AI 编程工具在隐私保护方面的实际风险与技术矛盾",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ%3D%3D&mid=2247487899&idx=1&sn=8017e46acefcb78f72c5cc7812807cd1",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "exploitability": 6.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 7.65,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Anthropic、谷歌和OpenAI编程代理存在严重漏洞，可导致远程代码执行及供应链攻击",
+      "title_orig": "Anthropic、谷歌和OpenAI 的编程代理严重漏洞可致RCE和供应链攻击",
+      "summary": "研究发现Anthropic、Google和OpenAI的编程代理存在严重漏洞，其根源在于代理在执行任务时缺乏严格的沙箱隔离，导致恶意代码可逃逸至宿主环境。攻击者通过诱导代理处理特定指令，可在开发者机器上触发远程代码执行（RCE）并实施供应链攻击，受影响组件涵盖上述厂商的主流AI编程辅助工具。目前相关厂商已发布修复补丁，但原文未披露漏洞的具体CVE编号及受影响的精确版本号。",
+      "tags": [
+        "漏洞",
+        "OpenAI",
+        "Anthropic"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw==&mid=2247526840&idx=2&sn=45556dffc35484aa67d144e24667f622",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-07T08:44:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "feed_title": "代码卫士",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw%3D%3D&mid=2247526840&idx=2&sn=45556dffc35484aa67d144e24667f622",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 7.0,
+        "technical_depth": 6.0,
+        "relevance": 9.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.45,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "综合资产收集与指纹识别工具集发布，集成 9000 多个 PoC 联动批量漏洞利用功能",
+      "title_orig": "批量资产信息收集工具+指纹联动poc(9000+)利用工具",
+      "summary": "安全社区发布了一系列批量资产信息收集与漏洞利用工具，涵盖了根据单位名称和备案域名进行资产发现、指纹识别联动批量登录以及集成超过 9000 个 PoC 的自动化扫描功能。该工具集还包含内网资产收集、CDN 绕过找真实 IP、泛解析子域名爆破及二开 frp 等渗透测试常用组件，适用于红蓝对抗中的大规模资产梳理与快速漏洞验证场景。",
+      "tags": [
+        "渗透测试",
+        "资产收集",
+        "漏洞扫描"
+      ],
+      "url": "https://forum.90sec.com/t/topic/2556",
+      "source": "forum.90sec.com",
+      "category": "Synthesis",
+      "published": "2026-08-07T10:58:21+00:00",
+      "cve_ids": [],
+      "selection_reason": "集成了大量 PoC 和自动化功能，对红队实战资产梳理有较高参",
+      "feed_url": "https://forum.90sec.com/latest.rss",
+      "feed_title": "90Sec - 专注于网络空间安全",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "forum.90sec.com",
+      "story_id": "url:forum.90sec.com/t/topic/2556",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 9.0,
+        "technical_depth": 6.0,
+        "relevance": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI渗透测试能力评估研究：探讨系统效果源于复杂架构还是底层模型自身的性能提升",
+      "title_orig": "AI渗透测试被高估了？一篇AI测试能力评估的论文解读",
+      "summary": "随着AI自动化渗透测试系统日益复杂，学术界开始重新评估其核心效能究竟源于复杂的系统架构，还是仅仅依赖于底层大模型本身的强大能力。相关论文深入解读了当前AI在渗透测试中的实际表现，指出目前行业可能高估了AI在复杂攻防场景下的自主决策水平，并强调在追求自动化工具开发的同时，应更关注模型在处理非标准漏洞时的逻辑推理能力，而非盲目堆砌系统组件来提升所谓的测试覆盖率。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg4Nzk3MTg3MA==&mid=2247488757&idx=1&sn=c399ee31d88b6a4169eb4f8450b3f204",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-07T14:03:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/ed8dcc9aa1014eb34c7fd7dc0ef6b96272ed99e0.xml",
+      "feed_title": "洞源实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/ed8dcc9aa1014eb34c7fd7dc0ef6b96272ed99e0.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg4Nzk3MTg3MA%3D%3D&mid=2247488757&idx=1&sn=c399ee31d88b6a4169eb4f8450b3f204",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "impact_scope": 5.0,
+        "exploitability": 4.0,
+        "technical_depth": 7.0,
+        "relevance": 7.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 5.9,
+      "final_score": 6.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "网络安全威胁演进分析：探讨勒索软件从双重勒索向三重勒索模式转变的时代背景",
+      "title_orig": "第4篇-双重勒索与三重勒索时代",
+      "summary": "网络安全领域已正式进入双重勒索与三重勒索并行的时代，攻击者不再满足于单纯的加密数据勒索赎金，而是通过窃取敏感信息并威胁公开，甚至直接对受害者的客户发起攻击来施加多重压力。这种演进后的犯罪模式极大提高了企业的合规成本与品牌声誉风险，迫使组织必须从传统的被动防御转向全生命周期的数据保护策略，通过加强数据加密、访问控制以及应急响应机制，来应对日益猖獗且手段多样的勒索软件威胁。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247496986&idx=1&sn=66186918f9fc6730c4a862907e18cffb",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-07T14:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247496986&idx=1&sn=66186918f9fc6730c4a862907e18cffb",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {},
+      "dimension_score": 5.0,
+      "final_score": 5.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
