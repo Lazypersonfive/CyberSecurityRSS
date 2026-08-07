@@ -1,18 +1,18 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-08-06",
-  "fetched_at_utc": "2026-08-05T23:41:26.514391Z",
+  "fetched_at": "2026-08-07",
+  "fetched_at_utc": "2026-08-07T01:41:10.879520Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 84,
-  "entry_count": 52,
+  "raw_entry_count": 85,
+  "entry_count": 54,
   "filter_stats": {
-    "input": 84,
-    "dedup_merged": 5,
-    "output": 79
+    "input": 85,
+    "dedup_merged": 7,
+    "output": 78
   },
   "curation_stats": {
-    "dropped_source_cap": 27
+    "dropped_source_cap": 24
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -20,7 +20,7 @@
       "category": "FirstParty",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 4
     },
     "https://security.googleblog.com/feeds/posts/default?alt=rss": {
       "feed_title": "Google Security Blog",
@@ -41,14 +41,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://portswigger.net/research/rss": {
       "feed_title": "PortSwigger Research",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 3
     },
     "https://blog.trailofbits.com/index.xml": {
       "feed_title": "Trail of Bits",
@@ -69,7 +69,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 4
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
@@ -89,7 +89,7 @@
       "feed_title": "Prompt Security",
       "category": "AISecurityLabs",
       "attempted": 1,
-      "succeeded": 1,
+      "succeeded": 0,
       "raw_count": 0
     },
     "https://www.hiddenlayer.com/feed": {
@@ -104,7 +104,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://www.endorlabs.com/learn/rss.xml": {
       "feed_title": "Endor Labs",
@@ -146,7 +146,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 5
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -181,14 +181,14 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 0
     },
     "http://127.0.0.1:1200/twitter/user/trailofbits": {
       "feed_title": "X / Trail of Bits",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 6
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -209,7 +209,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 2
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
@@ -242,8 +242,64 @@
   },
   "entries": [
     {
+      "title": "Directus 文件导入 SSRF：官方只修了一半，剩下 4 个盲区",
+      "url": "https://xz.aliyun.com/news/92635",
+      "summary": "这篇文章复盘 Directus 12.x 的 CVE-2026-61835（文件导入 SSRF）。官方在 12.0.0 修了 0.0.0.0 绕过，但只修了一半：私网地址依然放行、redirect 链能中转、editor 低权限账号能用、Flow 路由还能匿名触发以系统身份写库。我在 11.17.0 和 12.2.0 上对比验证，附 import-ssrf-audit.py（双版本 + CVE 自",
+      "category": "Chinese",
+      "published": "2026-08-04T08:51:58+00:00",
+      "fetch_status": "full",
+      "cve_ids": [
+        "CVE-2026-61835"
+      ],
+      "related_urls": [],
+      "quality_score": 3,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "Token Jacking: Cybercriminals Could Be Stealing Your AI Resources",
+      "url": "https://unit42.paloaltonetworks.com/ai-token-jacking/",
+      "summary": "Discover how attackers hijack AI tokens to fuel gray market transfer stations by stealing developer API keys. The post Token Jacking: Cybercriminals Could Be Stealing Your AI Resources appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-08-06T10:00:49+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "An AI model from Meta also hacked another company during testing",
+      "url": "https://simonwillison.net/2026/Aug/6/an-ai-model-from-meta/#atom-everything",
+      "summary": "An AI model from Meta also hacked another company during testing Stop me if you've heard this one before : An AI model from the parent company of Facebook and Instagram hacked into another company’s systems during cybersecurity testing, a spokesperson confirmed on Wednesday. Meta says the breach occurred because of an inadvertent error during testing of the model, similar to previously disclosed i",
+      "category": "AISecurityLabs",
+      "published": "2026-08-06T00:25:27+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Third-party cyber evaluations involving OpenAI models",
+      "url": "https://simonwillison.net/2026/Aug/5/third-party-cyber-evaluations/#atom-everything",
+      "summary": "Third-party cyber evaluations involving OpenAI models And another one . I had to create a accidental-cyberattacks tag to keep track of them all! This post from OpenAI covers both the UK AI Safety Institute attack (see my previous post ) and another attack enabled by Irregular : Irregular, one of our external cybersecurity testing partners, was running Capture-the-Flag-style evaluations intended to",
+      "category": "AISecurityLabs",
+      "published": "2026-08-05T23:45:32+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [
+        "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models"
+      ],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
       "title": "Can AI do novel security research? Meet the HTTP Terminator",
-      "url": "https://portswigger.net/research/http-terminator",
+      "url": "https://portswigger.net/research/can-ai-do-novel-security-research",
       "summary": "Abstract We all know AI can find bugs. After a decade of research, I asked a harder question: can an autonomous system invent new attack techniques, and use them to hack live websites at scale? Buildi",
       "category": "AISecurityLabs",
       "published": "2026-08-05T19:30:00+00:00",
@@ -266,19 +322,6 @@
       "quality_score": 2,
       "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
       "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging",
-      "url": "https://simonwillison.net/2026/Aug/4/new-release-of-llm/#atom-everything",
-      "summary": "I released LLM 0.32 this morning, the most significant new version of LLM since the initial launch of the project. The new version includes support for visible reasoning traces, server-side provider tools, redesigned content-addressable SQLite logs, new models, and new features enabled by the OpenAI Responses API. I also released a new version of the llm-anthropic plugin with substantial updates o",
-      "category": "AISecurityLabs",
-      "published": "2026-08-04T23:58:24+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
     },
     {
       "title": "Both Black Hat keynotes this year are about AI and vulnerability research: \"The End of Rare: Defending When Offense Is Cheap\" and \"Vulnerability Resea...",
@@ -307,37 +350,11 @@
       "feed_title": "Unit 42"
     },
     {
-      "title": "Is your companies AI Gateway compromised right now? How would you even know? Are you looking? Post-exploitation, an adversary can continuously hijack ...",
-      "url": "https://x.com/wunderwuzzi23/status/2084323868144263410",
-      "summary": "Is your companies AI Gateway compromised right now? How would you even know? Are you looking? Post-exploitation, an adversary can continuously hijack LiteLLM traffic to steal live prompts and data, modify responses, and inject tool calls. I call it LLM Heist. 😈 https://embracethered.com/blog/posts/2026/hijacking-litellm-for-fun-and-profit/",
-      "category": "XSignals",
-      "published": "2026-08-03T17:01:49+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
-    },
-    {
-      "title": "LLM Heist: Hijacking LiteLLM for Traffic Interception, Key Theft, and Tool-Call Injection",
-      "url": "https://embracethered.com/blog/posts/2026/hijacking-litellm-for-fun-and-profit/",
-      "summary": "LiteLLM is a popular AI gateway. It provides a unified interface to LLMs and simplifies governance. It also has access to the backend LLM provider keys. All of that makes it a high-value target. Not only for IP and data theft, but also for response modification and tool invocation. This post walks through a set of TTPs that red teams can integrate into authorized operations to demonstrate reroutin",
-      "category": "AISecurityLabs",
-      "published": "2026-08-03T16:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://embracethered.com/blog/index.xml",
-      "feed_title": "Embrace The Red"
-    },
-    {
-      "title": "No Perfect Fix for AI Browser Prompt Injection Flaws - Dark Reading",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWWw3SjRleFBlUU5uZWJ1cWxfUW10WTZOemVzVUNCMVE4azVDU3ZyWEMzSk1DT21pTU5qMWhLa1ZNc2tSMnpkUGN2XzVxcDJHR0pOLWVjZjFqczdTZzh4RnBjQk81bXVsa1FhVmQwOHRaSU9rbTJUMXJjc1pqVHItenpUYXRJaFp3UlBjMmtJOVJhT0VMSENYMEpPMFhiZw?oc=5",
-      "summary": "No Perfect Fix for AI Browser Prompt Injection Flaws &nbsp;&nbsp; Dark Reading",
+      "title": "UK AI Security Institute finds AI agents targeted real people during cyber tests - EdTech Innovation Hub",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOYmRsbXg5TmtzdTE4czhHNENpb215a1ViVzR3bHJ6UFU0cmxOSEFVOVozSlVrMHNfcThfY0p5RFYxVnlKTnhlaUlFUmNJU3JzVlFwMmRVVnRmakcydkJTUTlxUW5CQXZkRUVMSi1DMDd6VHdxbFpkT3ZDQmluWm82dXFsMHpjWUZmd2dtVGxrbTlDbFBndjhrd05vNFRZdmFGSTNnRGMteVZaQXZUbVpIc00tZ280TkZ0VzZiQUtn?oc=5",
+      "summary": "UK AI Security Institute finds AI agents targeted real people during cyber tests &nbsp;&nbsp; EdTech Innovation Hub",
       "category": "CoverageFallback",
-      "published": "2026-08-05T23:33:44+00:00",
+      "published": "2026-08-06T23:49:09+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -346,17 +363,108 @@
       "feed_title": "Google News AI Security"
     },
     {
-      "title": "Incident Report: unsanctioned agent behaviour during cyber testing",
-      "url": "https://simonwillison.net/2026/Aug/5/incident-report/#atom-everything",
-      "summary": "Incident Report: unsanctioned agent behaviour during cyber testing It happened again . This time it was the UK government's AI Security Institute who accidentally attacked other companies while running an evaluation with models with the safety filters turned off. From their technical paper (PDF): During a cyber evaluation, from 25 to 28 July 2026, AI agents engaged in sustained, unsanctioned activ",
+      "title": "ChainDrop: Inside a Self-Propagating npm Worm",
+      "url": "https://unit42.paloaltonetworks.com/chaindrop-npm-worm-analysis/",
+      "summary": "Analysis of ChainDrop, an npm supply chain worm extracting GitHub Actions runner secrets and using Ethereum smart contracts for C2 routing. The post ChainDrop: Inside a Self-Propagating npm Worm appeared first on Unit 42 .",
       "category": "AISecurityLabs",
-      "published": "2026-08-05T23:32:06+00:00",
+      "published": "2026-08-06T22:26:39+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "What Is Prompt Injection? How It Works and Why It's a Growing AI Security Risk - Techloy",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcWozejR6REp0ZFdwd2FDSzdmX1pNaTdqcUtUT3o4LV9zZ3FFWUk2NGx2UWc5dVJfd0ZDWlV0akxhdFFOUF9tOEtiQTVxUTMzd1lwNEVPWHladmdTMFFpeVZ6MlA4TnJRWHVnb1JyY3V5OXJNMjFZYUtZTHY3a0ZhREMteHRMVGFaMVA5WFRrSlJ3TThad1pfRjNJMTltNlV5LTZj?oc=5",
+      "summary": "What Is Prompt Injection? How It Works and Why It's a Growing AI Security Risk &nbsp;&nbsp; Techloy",
+      "category": "CoverageFallback",
+      "published": "2026-08-06T22:19:45+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "CSS:the bomb inside your inbox",
+      "url": "https://portswigger.net/research/css-the-bomb-inside-your-inbox",
+      "summary": "Gareth Heyes - gareth.heyes@portswigger.net - @garethheyes It's quite common for webmail clients to render untrusted CSS in a trusted UI. They attempt to make this safe using CSS sanitization. In this",
+      "category": "AISecurityLabs",
+      "published": "2026-08-06T22:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://portswigger.net/research/rss",
+      "feed_title": "PortSwigger Research"
+    },
+    {
+      "title": "Open Secure AI Alliance Proposes SAFE Framework for AI Security Incidents - Channel Insider",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbzZDSjh2X3phYnpmTm42U1IxNmE5TmtKTXkzamVnb19mQk81cmtfX0RxU1Z4ZGljaW5sTUpPLVROTVpkbGJKRFB4STk4NlprSTRkN0lTWFNQNmp4RUJobzVMWld3M01CMklrb1Fucy1PLXdzZjYxZTlQa25DajE0eVFCTDRkbzBLelBkQw?oc=5",
+      "summary": "Open Secure AI Alliance Proposes SAFE Framework for AI Security Incidents &nbsp;&nbsp; Channel Insider",
+      "category": "CoverageFallback",
+      "published": "2026-08-06T20:41:47+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "AI security skills gap widens across Black Hat USA - SiliconANGLE",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5kdmp3V0VTdVZKY2p2VXlCZi1SVFZfZ0kxcGROSlhTOUVUbVVzR3M1M1NsTUt0QzdDRmV5UnZ1dkFTZ0FtLThzSHpqa1NBWkhsZmhzZ0puR19SY29BS1dtM0MxT09kalJkTkoteTl4Z1ZFeXB3X044?oc=5",
+      "summary": "AI security skills gap widens across Black Hat USA &nbsp;&nbsp; SiliconANGLE",
+      "category": "CoverageFallback",
+      "published": "2026-08-06T20:18:52+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "datasette 1.0a38",
+      "url": "https://simonwillison.net/2026/Aug/6/datasette/#atom-everything",
+      "summary": "Release: datasette 1.0a38 This release fixes a SQL injection security issue that affects Datasette instances that serve a mixture of public and private tables in the same database, with access configured using the Datasette permissions system . Site administrators who serve private tables in this way are advised to disable the execute-sql permission ` on that database to prevent users from accessi",
+      "category": "AISecurityLabs",
+      "published": "2026-08-06T18:24:34+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Working with the American Psychological Association on youth mental health and AI",
+      "url": "https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai",
+      "summary": "OpenAI and the American Psychological Association advance evidence-based guidance, resources, and safeguards for responsible AI use and youth mental health.",
+      "category": "FirstParty",
+      "published": "2026-08-06T06:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "remill spotted in the wild",
+      "url": "https://x.com/trailofbits/status/2085160343442166237",
+      "summary": "remill spotted in the wild 5pider: Finally got around to getting a working PoC of my native object file to LLVM IR lifter. Started this small side-project to see how far can I push my own VM tech and perhaps transpiling existing tradecrafts, executables and post-ex toolings by simply lifting them up to LLVM IR",
+      "category": "XSignals",
+      "published": "2026-08-06T00:25:40+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
     },
     {
       "title": "CRLF-Powered Desync Attacks: Beheading HTTP Streams",
@@ -372,32 +480,6 @@
       "feed_title": "PortSwigger Research"
     },
     {
-      "title": "Elisity launches CLI for customer-run AI security agents - IT Brief New Zealand",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOVEV0OERXWnh2MzRobVJUVFI2ZFJGdWxCNkp3cE9Ncm1WbFhiWG5NRFhXZThDVUZqd1JFdDhPWlNCZ0VqMC1LV2JtS2k4R185TmgtUE5wX2pNUUhuU0c1R1M3TzJnSEVVd3ppb2VEWlIzMExqeGpJM2xpXzJid0JkWl9peTdFSDRxM2RCSg?oc=5",
-      "summary": "Elisity launches CLI for customer-run AI security agents &nbsp;&nbsp; IT Brief New Zealand",
-      "category": "CoverageFallback",
-      "published": "2026-08-05T22:24:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Prompt injection isn't the bug, AI agent frameworks are - The Register",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOYkh3LUI5aEp6Q3RPRGNxWF9La1BjTVZlSHdQc3VlZS1HT1p3N20xMFM4d3dXb0plcUxzZlNfbEpPN2dOR0llbWYyYVk4OGNpT09lMTdlYmNoSW5nLWZsam1sSlJiOUhsMjBmbnRheU4ySDF6Q0IxbExLemtWTndaX2NSd2RFcVlHQzhhcVpnTVBXZkdUcnd3emh5RUdsTkVzalVuNWlla2FBUWFWQUE?oc=5",
-      "summary": "Prompt injection isn't the bug, AI agent frameworks are &nbsp;&nbsp; The Register",
-      "category": "CoverageFallback",
-      "published": "2026-08-05T21:35:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
       "title": "where sol",
       "url": "https://x.com/rez0__/status/2085097200137249271",
       "summary": "where sol Mark Zuckerberg: Releasing Muse Code in beta today. It's a terminal coding agent that takes on complete software engineering tasks across large repos: planning changes, writing code, validating the results. Powered by Muse Spark 1.2, a coding-focused model update.",
@@ -409,32 +491,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "AI Agent Security Reaches a Turning Point: Why Runtime Containment Is Emerging as the New Zero Trust Standard - Security Info Watch",
-      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOV05fMFhDSXlYRG0xMmlpbTVoMUN6V3JpdG8xT3U4bnFhMnBnVEtJdFhHNGotN1BDNWc4YS00SlY5M2NLRXRCYUV5emprdjZhSnQxQm9BekRvc2ZsVFpib3FhWFVOQ2hNOUR1QkNoSXZBRlRPMUsycGlZS3lKZUF2RW5mQnVhbXJmV2lOV19YTkhhV19KQVk1M3RtWHpVMDIwNUNuTGpEbk5HNHZEeE5TQzZXdEZ2LUVoQzNlVEdqSEFpSHJSQVhWSFFkUEpMRmczdUl4NzNaUFRUaE5scTZOdVhLTWhveTFTVGlaY01FeTA3MzZv?oc=5",
-      "summary": "AI Agent Security Reaches a Turning Point: Why Runtime Containment Is Emerging as the New Zero Trust Standard &nbsp;&nbsp; Security Info Watch",
-      "category": "CoverageFallback",
-      "published": "2026-08-05T19:51:39+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "One-shotting a Raccoon Heist game using Claude Fable 5",
-      "url": "https://simonwillison.net/2026/Aug/5/raccoon-heist/#atom-everything",
-      "summary": "Back in 2024 I tweeted screenshots of a game concept generated by GPT-3 and some concept \"art\" created using DALL-E. Today, on the fourth anniversary of that tweet, I decided to see if Claude Fable 5 (running in Claude Code for web ) could build the entire game from the content of that tweet. It did a pretty good job of it! You can play the game here . Here's the GitHub repo , and a short video de",
-      "category": "AISecurityLabs",
-      "published": "2026-08-05T19:42:38+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
     },
     {
       "title": "A malicious host can attack your AWS Nitro Enclave through its connection to KMS. If your enclave talks with KMS, read this before you ship. https://b...",
@@ -515,19 +571,6 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "Third-party cyber evaluations involving OpenAI models",
-      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
-      "summary": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
-      "category": "FirstParty",
-      "published": "2026-08-04T19:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
       "title": "RT Justin Gardner: I was AFK and codex casually hijacked a PS1 file that had a scheduled task associated with it, then triggered the task to priv esc ...",
       "url": "https://x.com/rez0__/status/2084758759167979774",
       "summary": "RT Justin Gardner I was AFK and codex casually hijacked a PS1 file that had a scheduled task associated with it, then triggered the task to priv esc to SYSTEM on my windows machine so that it wouldn't get stuck at the UAC prompt. Didn't tell me a thing. I just noticed no more UACs were popping.",
@@ -539,45 +582,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
       "feed_title": "X / rez0"
-    },
-    {
-      "title": "Re We're back at the stand today with more swag - caps, tees, and Burp AT transfer tattoos. And it's your last chance to enter the raffle for a pair o...",
-      "url": "https://x.com/PortSwigger/status/2084683892133629967",
-      "summary": "Re We're back at the stand today with more swag - caps, tees, and Burp AT transfer tattoos. And it's your last chance to enter the raffle for a pair of Meta x Oakley sunglasses. Winner announced at 3pm today! #BSidesLV #BurpSuite #Pentesting #AppSec #BurpAT",
-      "category": "XSignals",
-      "published": "2026-08-04T16:52:26+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/PortSwigger",
-      "feed_title": "X / PortSwigger Research"
-    },
-    {
-      "title": "Re Big thanks too to everyone who joined the \"Burp but Yours\" workshop. Participants left understanding... 🔧 How to identify and explain Burp's ext...",
-      "url": "https://x.com/PortSwigger/status/2084683890816627163",
-      "summary": "Re Big thanks too to everyone who joined the \"Burp but Yours\" workshop. Participants left understanding... 🔧 How to identify and explain Burp's extensibility 🔧 How to write a functional Bambda 🔧 How to write a functional extension 🔧 How to share your extensions more widely",
-      "category": "XSignals",
-      "published": "2026-08-04T16:52:25+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/PortSwigger",
-      "feed_title": "X / PortSwigger Research"
-    },
-    {
-      "title": "Good morning Vegas 😎 It's day two at @BSidesLV and we're raring to go! Yesterday was a great one - thanks to everyone who stopped by the PortSwigge...",
-      "url": "https://x.com/PortSwigger/status/2084683889080180995",
-      "summary": "Good morning Vegas 😎 It's day two at @BSidesLV and we're raring to go! Yesterday was a great one - thanks to everyone who stopped by the PortSwigger stand, chatted with the team, and got hands-on with Burp AT's new agentic functionality.",
-      "category": "XSignals",
-      "published": "2026-08-04T16:52:25+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/PortSwigger",
-      "feed_title": "X / PortSwigger Research"
     },
     {
       "title": "RT QRL: The Quantum Resistant Ledger: QRL announces @trailofbits has published its independent security assessment of go-qrllib, the cryptographic hea...",
@@ -619,6 +623,19 @@
       "feed_title": "X / Trail of Bits"
     },
     {
+      "title": "【AI安全】Agent 执行时间窗风险：TOCTOU 点击劫持分析",
+      "url": "https://xz.aliyun.com/news/92634",
+      "summary": "如果攻击者能够在Agent“页面观察”与“动作执行”之间改变目标状态，就可能让模型针对正常按钮生成的动作，最终落到已经变化的高风险操作上，这就是 TOCTOU（Time-of-Check to Time-of-Use）状态竞争。",
+      "category": "Chinese",
+      "published": "2026-08-04T04:13:14+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
       "title": "AI Model Risk Intelligence Know Which Models You Can Trust Before You Deploy",
       "url": "https://snyk.io/blog/why-we-rebuilt-evo-ai-model-risk-scoring/",
       "summary": "AI model risk depends on how a model is deployed. Learn how Evo combines adversarial testing, attack impact, and deployment context to help teams compare models and enforce policy.",
@@ -645,56 +662,69 @@
       "feed_title": "Snyk Blog"
     },
     {
-      "title": "RT Antonio Viggiano: Great post by @trailofbits - threat model - /goal fan out - variant analysis - agentflow (Easter egg from Figure 4) https://blog....",
-      "url": "https://x.com/trailofbits/status/2084712183167111289",
-      "summary": "RT Antonio Viggiano Great post by @trailofbits - threat model - /goal fan out - variant analysis - agentflow (Easter egg from Figure 4) https://blog.trailofbits.com/2026/07/28/how-we-use-goal-to-find-bugs-in-patch-the-planet/",
+      "title": "Late addition to DEF CON 34: @ToBScottA presents \"Trailmark and Navigating the Infinite Forest of Possibility\" today, with live demos. Sneak peek: htt...",
+      "url": "https://x.com/trailofbits/status/2085428423820738684",
+      "summary": "Late addition to DEF CON 34: @ToBScottA presents \"Trailmark and Navigating the Infinite Forest of Possibility\" today, with live demos. Sneak peek: https://ai-for-security.com",
       "category": "XSignals",
-      "published": "2026-08-03T23:34:47+00:00",
-      "fetch_status": "full",
+      "published": "2026-08-06T18:10:56+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
+      "quality_score": 0,
       "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "Pass the Passkey: A Novel Attack Surface in Passwordless Authentication",
-      "url": "https://unit42.paloaltonetworks.com/passwordless-authentication-security-risks/",
-      "summary": "Explore how passkey implementation gaps undermine security when relying parties fail to validate the User Verified flag, reducing MFA to a single factor. The post Pass the Passkey: A Novel Attack Surface in Passwordless Authentication appeared first on Unit 42 .",
+      "title": "Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
+      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+      "summary": "ChatGPT introduces improved GPT-5.6 Sol with better accuracy and consistency, plus expanded access for free users and unlimited everyday chats with GPT-5.6 Luna.",
+      "category": "FirstParty",
+      "published": "2026-08-06T10:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "This just in. Google agent broke out of sandbox",
+      "url": "https://x.com/rez0__/status/2085191710582194271",
+      "summary": "This just in. Google agent broke out of sandbox Justin Elze: Google better hurry up and get a press release going or they’re gonna look way behind 😂",
+      "category": "XSignals",
+      "published": "2026-08-06T02:30:19+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "From asking to doing: How the world is putting ChatGPT to work",
+      "url": "https://openai.com/index/how-the-world-is-putting-chatgpt-to-work",
+      "summary": "New OpenAI Signals data shows how people use ChatGPT worldwide, with country-level insights on adoption, usage trends, and evolving behavior.",
+      "category": "FirstParty",
+      "published": "2026-08-06T00:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "Secure Fast, Not Slow: What We Learned Building VibeGuard 2.0",
+      "url": "https://www.legitsecurity.com/blog/secure-fast-not-slow-what-we-learned-building-vibeguard-2.0",
+      "summary": "Why the answer to secure agentic development isn't tighter restrictions -&nbsp;it's better developer tooling.",
       "category": "AISecurityLabs",
-      "published": "2026-08-03T10:00:35+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
-      "feed_title": "Unit 42"
-    },
-    {
-      "title": "How we built a realtime system for responsive voice AI in six months",
-      "url": "https://openai.com/index/continuous-voice-interaction-with-gpt-live",
-      "summary": "GPT-Live enables continuous voice interaction with AI, using a turnless speech model and low-latency architecture for faster, more natural conversations.",
-      "category": "FirstParty",
-      "published": "2026-08-03T07:00:00+00:00",
+      "published": "2026-08-05T23:50:27+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "Circles powers telco personalization with OpenAI technology",
-      "url": "https://openai.com/index/circles",
-      "summary": "Circles uses the OpenAI API and Codex to power AI-native telco experiences, increasing ARPU by 22%, reducing churn by 9%, and improving development efficiency.",
-      "category": "FirstParty",
-      "published": "2026-08-03T00:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
+      "quality_score": 0,
+      "feed_url": "https://www.legitsecurity.com/blog/rss.xml",
+      "feed_title": "Legit Security"
     },
     {
       "title": "Who was behind the attack? Possibly nobody",
@@ -788,19 +818,6 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "was gpt5.6 updated to have more cyber blocks? cant work this morning -.-",
-      "url": "https://x.com/rez0__/status/2084666580151980415",
-      "summary": "was gpt5.6 updated to have more cyber blocks? cant work this morning -.-",
-      "category": "XSignals",
-      "published": "2026-08-04T15:43:38+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
       "title": "Endor Labs for Connected Products | Solution Brief | Endor Labs",
       "url": "https://www.endorlabs.com/learn/endor-labs-for-connected-products",
       "summary": "Endor Labs for Connected Products",
@@ -818,6 +835,32 @@
       "quality_score": 0,
       "feed_url": "https://www.endorlabs.com/learn/rss.xml",
       "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Fastjson1全版本漏洞利用总结",
+      "url": "https://xz.aliyun.com/news/92638",
+      "summary": "整理 Fastjson1 全版本利用要点——反序列化流程、版本/依赖/期望类探测、WAF 绕过，以及 1.2.47 / 68 / 80 / 83 关键绕过与各利用链；并附配套工具，方便复习与落地。",
+      "category": "Chinese",
+      "published": "2026-08-04T12:53:28+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "GOT/PLT 惰性绑定与 setuid 程序导入函数劫持",
+      "url": "https://xz.aliyun.com/news/92637",
+      "summary": "如果一个特权程序存在可控写入缺陷，而导入函数槽所在页面仍然可写，那么后续函数调用就可能被改向。",
+      "category": "Chinese",
+      "published": "2026-08-04T11:48:34+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "Keyv and friends compromised in active Shai-Hulud supply chain attack",
@@ -872,32 +915,6 @@
       "feed_title": "Snyk Blog"
     },
     {
-      "title": "WG-Win-Check 轻量应急辅助工具",
-      "url": "https://xz.aliyun.com/news/92626",
-      "summary": "WG-Win-Check 是一款基于原生 Win32 API 实现的轻量级的 Windows 应急响应辅助工具，目前 64 位版本大小仅 600+ Kb，旨在以轻量便捷的特性，通过多维度的系统常规排查，能够有效帮助安全人员快速识别恶意进程、可疑启动项、异常网络连接等安全风险。",
-      "category": "Chinese",
-      "published": "2026-08-03T11:21:23+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "HTB Certified：Shadow Credentials 与 ESC9 的连环利用",
-      "url": "https://xz.aliyun.com/news/92625",
-      "summary": "本文记录 Hack The Box Certified 靶机的完整渗透过程。目标是一台 Active Directory 域控，初始仅拥有一个普通域用户凭证。通过 BloodHound 分析域内权限关系，发现 WriteOwner 与 GenericWrite 滥用点，进而使用 Shadow Credentials 配合 UnPAC the Hash 逐步接管服务账户。随后利用 AD CS 中的",
-      "category": "Chinese",
-      "published": "2026-08-03T10:43:04+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
       "title": "Vibe Hacking风起云涌：安全圈的门槛正在塌方？",
       "url": "https://www.anquanke.com/post/id/315927",
       "summary": "",
@@ -922,6 +939,19 @@
       "quality_score": -1,
       "feed_url": "https://api.anquanke.com/data/v1/rss",
       "feed_title": "安全客"
+    },
+    {
+      "title": "MariaDB 远程代码执行漏洞分析复现",
+      "url": "https://xz.aliyun.com/news/92636",
+      "summary": "MariaDB 远程代码执行漏洞分析复现",
+      "category": "Chinese",
+      "published": "2026-08-04T09:21:59+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": -1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     }
   ]
 }

@@ -1,0 +1,325 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-08-07",
+  "generated_at": "2026-08-07T01:41:40.824627Z",
+  "raw_count": 54,
+  "selected_count": 7,
+  "selection_stats": {
+    "total": 7,
+    "direct": 5,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "chinese": 1,
+    "tier_t2": 4,
+    "kind_cn_expert": 1,
+    "aggregator": 2,
+    "tier_t1_5": 1,
+    "kind_official_x": 1,
+    "kind_expert": 2,
+    "google_news": 1,
+    "kind_google_news": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "delivered_filter_stats": {
+    "url": 12,
+    "story": 0,
+    "total": 12
+  },
+  "items": [
+    {
+      "title_zh": "PortSwigger 发布 HTTP Terminator：探索 AI 自主发现新型攻击技术并大规模渗透网站的能力",
+      "title_orig": "Can AI do novel security research? Meet the HTTP Terminator",
+      "summary": "该研究深入探讨了AI是否能超越基础漏洞挖掘，实现自主发明新型攻击技术并大规模应用于真实网站渗透，标志着AI从自动化工具向自主研究员的转型。研究者为此构建了名为HTTP Terminator的系统，旨在测试自主代理在复杂网络环境下的创新攻击能力，虽然原文未披露具体漏洞原理，但强调了这种技术潜力对未来网络安全防御体系构成的严峻挑战。",
+      "tags": [
+        "AI 安全研究",
+        "自主渗透",
+        "HTTP 协议"
+      ],
+      "url": "https://portswigger.net/research/can-ai-do-novel-security-research",
+      "source": "portswigger.net",
+      "category": "AISecurityLabs",
+      "published": "2026-08-05T19:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨 AI 在发现未知攻击模式方面的突破性尝试。",
+      "feed_url": "https://portswigger.net/research/rss",
+      "feed_title": "PortSwigger Research",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "安全研究",
+      "source_key": "portswigger.net",
+      "story_id": "url:portswigger.net/research/can-ai-do-novel-security-research",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "agent_model_relevance": 9.0,
+        "actionability": 7.0,
+        "practical_risk": 8.0,
+        "security_relevance": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 8.6,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI Agent 执行时间窗风险分析：利用 TOCTOU 竞争条件实现针对大模型的点击劫持攻击",
+      "title_orig": "【AI安全】Agent 执行时间窗风险：TOCTOU 点击劫持分析",
+      "summary": "该研究详细分析了AI Agent在“页面观察”与“动作执行”之间存在的时间窗风险，即典型的TOCTOU状态竞争漏洞，揭示了自动化代理在逻辑判断上的脆弱性。攻击者若能在Agent决策后、执行前改变目标页面状态，即可诱导模型将针对正常按钮的动作误作用于高风险操作，导致严重的点击劫持后果，该发现指出了当前AI Agent逻辑漏洞的普遍性。",
+      "tags": [
+        "AI Agent",
+        "TOCTOU",
+        "点击劫持"
+      ],
+      "url": "https://xz.aliyun.com/news/92634",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-08-04T04:13:14+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 AI 代理在交互逻辑上的新型安全风险。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92634",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "agent_model_relevance": 10.0,
+        "actionability": 8.0,
+        "practical_risk": 9.0,
+        "security_relevance": 10.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.35,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Unit 42 揭秘 Token Jacking 威胁：网络罪犯通过窃取 API 密钥劫持 AI 资源并转售",
+      "title_orig": "Token Jacking: Cybercriminals Could Be Stealing Your AI Resources",
+      "summary": "网络攻击者正通过窃取开发者的API密钥进行“Token劫持”，旨在非法获取AI模型的使用权限并将其供应给黑市中转站牟利，这已成为AI时代的新型威胁。这种攻击模式不仅会导致受害者面临巨额的账单损失，还可能造成敏感数据泄露，研究强调了AI资产管理中API密钥保护的紧迫性，并建议开发者必须立即加强凭据审计与安全防护。",
+      "tags": [
+        "Token 劫持",
+        "API 安全",
+        "AI 资源盗用"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/ai-token-jacking/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-06T10:00:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了 AI 时代下新型的资源盗取与黑产变现模式。",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/ai-token-jacking",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "agent_model_relevance": 8.0,
+        "actionability": 6.0,
+        "practical_risk": 8.0,
+        "security_relevance": 8.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 7.3,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Trail of Bits 在 DEF CON 34 展示 Trailmark 工具：利用 AI 导航无限可能性森林",
+      "title_orig": "Late addition to DEF CON 34: @ToBScottA presents \"Trailmark and Navigating the Infinite Forest of Possibility\" today, with live demos. Sneak peek: htt...",
+      "summary": "研究员在DEF CON 34现场演示了名为Trailmark的安全工具，该工具旨在利用AI技术辅助安全从业者在复杂的决策空间中进行高效导航与路径探索。通过AI的推理能力，Trailmark能够显著提升处理海量安全数据的效率，为从业者在应对复杂系统漏洞挖掘时提供关键的决策支持，其现场演示的实时性与创新性为AI辅助安全研究提供了重要的实战参考。",
+      "tags": [
+        "DEF CON",
+        "安全工具",
+        "AI 辅助分析"
+      ],
+      "url": "https://x.com/trailofbits/status/2085428423820738684",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-08-06T18:10:56+00:00",
+      "cve_ids": [],
+      "selection_reason": "顶级安全会议发布的 AI 辅助安全分析工具。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits",
+      "source_tier": "t1_5",
+      "source_kind": "official_x",
+      "source_label": "官方 X",
+      "source_key": "x:trailofbits",
+      "story_id": "url:x.com/trailofbits/status/2085428423820738684",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "agent_model_relevance": 8.0,
+        "actionability": 6.0,
+        "practical_risk": 6.0,
+        "security_relevance": 8.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 7.15,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.5,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Legit Security 发布 VibeGuard 2.0：通过优化开发者工具而非限制权限来保障 Agent 开发安全",
+      "title_orig": "Secure Fast, Not Slow: What We Learned Building VibeGuard 2.0",
+      "summary": "文章分享了构建VibeGuard 2.0过程中的核心经验，明确提出保障Agent驱动开发安全的关键不在于施加更严苛的权限限制，而在于为开发者提供更优的底层安全工具。研究强调了在Agent自动化流程中嵌入防护机制的重要性，旨在通过工具化手段在不牺牲开发速度的前提下，有效缓解Agent可能引入的代码注入或逻辑越权风险，从而实现安全与效率的平衡。",
+      "tags": [
+        "Agent 开发",
+        "DevSecOp",
+        "供应链安全"
+      ],
+      "url": "https://www.legitsecurity.com/blog/secure-fast-not-slow-what-we-learned-building-vibeguard-2.0",
+      "source": "legitsecurity.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-05T23:50:27+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了 Agent 自动化开发中平衡安全与效率的工程实践。",
+      "feed_url": "https://www.legitsecurity.com/blog/rss.xml",
+      "feed_title": "Legit Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "legitsecurity.com",
+      "story_id": "url:legitsecurity.com/blog/secure-fast-not-slow-what-we-learned-building-vibeguard-2.0",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "agent_model_relevance": 9.0,
+        "actionability": 7.0,
+        "practical_risk": 7.0,
+        "security_relevance": 8.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 7.35,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenAI 披露第三方网络安全评估细节：应对针对大模型的 CTF 风格攻击测试",
+      "title_orig": "Third-party cyber evaluations involving OpenAI models",
+      "summary": "OpenAI 汇总了包括英国 AI 安全研究所在内的第三方机构对其模型进行的网络安全评估，涵盖了多项 CTF 风格的攻击测试。评估重点在于模型是否会被利用来辅助发起网络攻击，例如 Irregular 团队进行的测试，原文未披露具体的模型漏洞细节，但确认了通过外部红队测试来识别并拦截“意外网络攻击”风险的必要性。",
+      "tags": [
+        "红队测试",
+        "OpenAI",
+        "安全评估"
+      ],
+      "url": "https://simonwillison.net/2026/Aug/5/third-party-cyber-evaluations/#atom-everything",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-08-05T23:45:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了顶级 AI 厂商如何通过外部审计应对安全风险。",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/aug/5/third-party-cyber-evaluations",
+      "related_urls": [
+        "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+        "https://news.google.com/rss/articles/CBMivgFBVV95cUxOYmRsbXg5TmtzdTE4czhHNENpb215a1ViVzR3bHJ6UFU0cmxOSEFVOVozSlVrMHNfcThfY0p5RFYxVnlKTnhlaUlFUmNJU3JzVlFwMmRVVnRmakcydkJTUTlxUW5CQXZkRUVMSi1DMDd6VHdxbFpkT3ZDQmluWm82dXFsMHpjWUZmd2dtVGxrbTlDbFBndjhrd05vNFRZdmFGSTNnRGMteVZaQXZUbVpIc00tZ280TkZ0VzZiQUtn?oc=5"
+      ],
+      "related_count": 2,
+      "score": 7,
+      "score_dimensions": {
+        "agent_model_relevance": 9.0,
+        "actionability": 4.0,
+        "practical_risk": 7.0,
+        "security_relevance": 8.0,
+        "technical_depth": 5.0
+      },
+      "dimension_score": 6.8,
+      "final_score": 7.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Open Secure AI Alliance 提出 SAFE 框架：旨在标准化 AI 安全事件的响应与处置流程",
+      "title_orig": "Open Secure AI Alliance Proposes SAFE Framework for AI Security Incidents - Channel Insider",
+      "summary": "Open Secure AI Alliance正式提议建立名为SAFE的框架，旨在为全球组织提供一套标准化的AI安全事件处理流程与应对指南。该框架涵盖了从事件检测、评估到缓解修复的各个关键阶段，以应对日益增多的针对AI模型和基础设施的恶意攻击，虽然原文未披露具体的技术实现细节，但其侧重于行业标准与治理体系的构建，对提升AI生态系统的整体韧性具有重要意义。",
+      "tags": [
+        "安全框架",
+        "AI 治理",
+        "事件响应"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbzZDSjh2X3phYnpmTm42U1IxNmE5TmtKTXkzamVnb19mQk81cmtfX0RxU1Z4ZGljaW5sTUpPLVROTVpkbGJKRFB4STk4NlprSTRkN0lTWFNQNmp4RUJobzVMWld3M01CMklrb1Fucy1PLXdzZjYxZTlQa25DajE0eVFCTDRkbzBLelBkQw?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-08-06T20:41:47+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍了 AI 安全领域标准化的最新行业进展。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:3f29747af1b2",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "agent_model_relevance": 6.0,
+        "actionability": 5.0,
+        "practical_risk": 4.0,
+        "security_relevance": 7.0,
+        "technical_depth": 4.0
+      },
+      "dimension_score": 5.3,
+      "final_score": 4.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
