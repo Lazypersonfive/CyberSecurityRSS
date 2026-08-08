@@ -1,18 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-08-08",
-  "fetched_at_utc": "2026-08-07T23:20:08.496510Z",
+  "fetched_at": "2026-08-09",
+  "fetched_at_utc": "2026-08-08T23:07:53.732533Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 59,
-  "entry_count": 32,
+  "raw_entry_count": 51,
+  "entry_count": 23,
   "filter_stats": {
-    "input": 59,
-    "dedup_merged": 1,
-    "output": 58
+    "input": 51,
+    "dropped_title_blacklist": 1,
+    "dedup_merged": 3,
+    "output": 47
   },
   "curation_stats": {
-    "dropped_source_cap": 26
+    "dropped_source_cap": 24
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -48,14 +49,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 3
+      "raw_count": 2
     },
     "https://blog.trailofbits.com/index.xml": {
       "feed_title": "Trail of Bits",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://github.blog/security/vulnerability-research/feed/": {
       "feed_title": "GitHub Security Lab",
@@ -118,14 +119,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://www.aikido.dev/blog/rss.xml": {
       "feed_title": "Aikido Security",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 1
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -139,7 +140,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 0
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
@@ -181,14 +182,14 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "http://127.0.0.1:1200/twitter/user/trailofbits": {
       "feed_title": "X / Trail of Bits",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 3
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -209,14 +210,14 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 0
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 3
     },
     "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Security",
@@ -241,6 +242,21 @@
     }
   },
   "entries": [
+    {
+      "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
+      "url": "https://simonwillison.net/2026/Aug/8/now-we-have-a-timeline-of-the-openai-accidental-attack-against-h/#atom-everything",
+      "summary": "My comment on Now we have a timeline of the OpenAI accidental attack against Hugging Face &mdash; Hacker News. I think one of the most interesting details here might be tucked away in that first bulletin point: May 7: OpenAI starts a new training run for an experimental, unreleased model. (Do they mean an evaluation run? They say training run in the video, and later mention a “reward signal to jud",
+      "category": "AISecurityLabs",
+      "published": "2026-08-08T14:06:41+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [
+        "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-everything"
+      ],
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
     {
       "title": "The Tokenpocalypse Is Here: Companies Are Scrambling To Stop Spending So Much on AI",
       "url": "https://simonwillison.net/2026/Aug/7/pdfs-are-terrible/#atom-everything",
@@ -281,56 +297,69 @@
       "feed_title": "Unit 42"
     },
     {
-      "title": "An AI model from Meta also hacked another company during testing",
-      "url": "https://simonwillison.net/2026/Aug/6/an-ai-model-from-meta/#atom-everything",
-      "summary": "An AI model from Meta also hacked another company during testing Stop me if you've heard this one before : An AI model from the parent company of Facebook and Instagram hacked into another company’s systems during cybersecurity testing, a spokesperson confirmed on Wednesday. Meta says the breach occurred because of an inadvertent error during testing of the model, similar to previously disclosed i",
+      "title": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans",
+      "url": "https://simonwillison.net/2026/Aug/8/auto-mode/#atom-everything",
+      "summary": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans Anthropic are really confident in Claude Code's auto mode , to the point that they are making it the default setting for new sessions in most Claude Code plans starting on August 14th. This was one of the topics discussed in our Fireside Chat with Cat Wu and Thariq Shihipar at the AI Engineer World’s Fair last month. I asked",
       "category": "AISecurityLabs",
-      "published": "2026-08-06T00:25:27+00:00",
+      "published": "2026-08-08T22:36:03+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
+      "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
     },
     {
-      "title": "Third-party cyber evaluations involving OpenAI models",
-      "url": "https://simonwillison.net/2026/Aug/5/third-party-cyber-evaluations/#atom-everything",
-      "summary": "Third-party cyber evaluations involving OpenAI models And another one . I had to create a accidental-cyberattacks tag to keep track of them all! This post from OpenAI covers both the UK AI Safety Institute attack (see my previous post ) and another attack enabled by Irregular : Irregular, one of our external cybersecurity testing partners, was running Capture-the-Flag-style evaluations intended to",
-      "category": "AISecurityLabs",
-      "published": "2026-08-05T23:45:32+00:00",
-      "fetch_status": "full",
+      "title": "[AI革命](210)Logpresso：“目标成为韩国AI安全核心……AI自主判断并应对威胁” - 아시아경제",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE95Yl9vS2VJZlZOMzFyZm1MMlNvaE5Ra0tkZ2FlUmtUTEpTekRhNkVUM1VOV2Zwb3M0ZjlTWXBZbFYtYllTdE8yU2NwTTVPT01WWkl6ZUtOcnlTblBIX2gtZmM4cFk?oc=5",
+      "summary": "[AI革命](210)Logpresso：“目标成为韩国AI安全核心……AI自主判断并应对威胁” &nbsp;&nbsp; 아시아경제",
+      "category": "CoverageFallback",
+      "published": "2026-08-08T21:30:00+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
     },
     {
-      "title": "Can AI do novel security research? Meet the HTTP Terminator",
-      "url": "https://portswigger.net/research/can-ai-do-novel-security-research",
-      "summary": "Abstract We all know AI can find bugs. After a decade of research, I asked a harder question: can an autonomous system invent new attack techniques, and use them to hack live websites at scale? Buildi",
-      "category": "AISecurityLabs",
-      "published": "2026-08-05T19:30:00+00:00",
-      "fetch_status": "full",
+      "title": "Tenable (TENB) Widens Its AI Security Net Just As Profits Turn A Corner - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOak5LNVR5NkJBZ1YtYVZnQzhBNkRyVzUzSUVyOWtqcmdoT1NlTk5FNFhuaUNvY1kwS2FSRllUdjYweVByamZtM3U1YzdrekpJZU9OWnB3U1QtRGRkaXRuQVJHX2ZacmZleGtPSmFkZU1XQTBNZEJUenJodlNyVjZtckNkN2Y2X3RLLTN4UXFXMTRJRXNtU290Y3BVOA?oc=5",
+      "summary": "Tenable (TENB) Widens Its AI Security Net Just As Profits Turn A Corner &nbsp;&nbsp; Yahoo Finance",
+      "category": "CoverageFallback",
+      "published": "2026-08-08T18:59:44+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://portswigger.net/research/rss",
-      "feed_title": "PortSwigger Research"
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
     },
     {
-      "title": "RT Leon Derczynski ⚒️☁️🏔️🌲: I found you can use ANSI to control anyone's computer through an LLM by getting the model to outputs special co...",
-      "url": "https://x.com/wunderwuzzi23/status/2085127553728258123",
-      "summary": "RT Leon Derczynski ⚒️☁️🏔️🌲 I found you can use ANSI to control anyone's computer through an LLM by getting the model to outputs special control characters. This was theoretical, until EmbraceTheRed brought it into practice. The latest: because you can get Macs to look up domain names by having them just print text in the terminal, you can put info in the domain name and then make the computer just",
-      "category": "XSignals",
-      "published": "2026-08-05T19:24:02+00:00",
-      "fetch_status": "full",
+      "title": "The Architecture of Failure: Why DEF CON 34 Shattered the AI Agent Security Narrative - forkast.news",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNndUZktRUkRPTmZkUE52WWdKX3Bwa1Zpcm9QOC13bnU0dkRsdDBWcGtITy1wYjkxOFZyUXZ4Y1U2N2VzcU52LWJEcEtyR21pWmYtSTdmWnUxQ2hFMGdZSnEwWGl2OXVDWk1IUmwyR1AtOU52UXRpVVZnMFVxVUEtQ1RuSHZoRGFtLVVBN0lmcnBrSE1BbmRvOHd5dzZ6WXlSR2lZby1lMll1Zw?oc=5",
+      "summary": "The Architecture of Failure: Why DEF CON 34 Shattered the AI Agent Security Narrative &nbsp;&nbsp; forkast.news",
+      "category": "CoverageFallback",
+      "published": "2026-08-08T14:47:56+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Check Point Software Technologies (CHKP) Launched New AI Security Tools, Is The Stock Still Undervalued? - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRlREVkxKOVBoM19RLVBzdXRKR1NNcXAxaUF0RUdZNGVuMGVlcFBTYkdDdGp4dURiZzBDb091eHVZQkRDcmVXY0tHZlNabkoweU5PSkdkR3ZOd0NSZWU2dDdpbjB5UE00QnR5SDNuT0ZoaGFOR2pLLWxySVJJS0VIbWN2TVJCbmt3SFU5MmxvX2V0bFFwcXphLS1sWTVUWDl1RHViYWN3?oc=5",
+      "summary": "Check Point Software Technologies (CHKP) Launched New AI Security Tools, Is The Stock Still Undervalued? &nbsp;&nbsp; Yahoo Finance",
+      "category": "CoverageFallback",
+      "published": "2026-08-08T14:12:46+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
     },
     {
       "title": "Inside the Modern SOC: The Identity Front Door",
@@ -344,58 +373,6 @@
       "quality_score": 1,
       "feed_url": "https://unit42.paloaltonetworks.com/feed/",
       "feed_title": "Unit 42"
-    },
-    {
-      "title": "Complimentary AI Security Platforms - Trend Hunter",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5QSmdtZnBPc0NxckIya1RBX1hlUUo4b3lLbkF4MzJ2cU40VEVIS21Nb0EzdVp5WmU4RFVvUlRGOVBOcmxkXzdpdDE2TkVHTjFZTkpTU3NGMnZQYVB1N1g1eFJYN1Mwc3RBYWJB0gFrQVVfeXFMTlBKZ21mcE9zQ3FyQjJrVEFfWGVRSjhveUtuQXgzMnZxTjRURUhLbU1vQTN1WnlaZThEVW9SVEY5UE5ybGRfN2l0MTZORUdOMVlOSlNTc0YydlBhUHU3WDV4Ulg3UzBzdEFhYkE?oc=5",
-      "summary": "Complimentary AI Security Platforms &nbsp;&nbsp; Trend Hunter",
-      "category": "CoverageFallback",
-      "published": "2026-08-07T21:53:36+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "DXC Becomes Exclusive Managed Services Provider for Primary’s AI Security Platform - Channel Insider",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMGFFb2UzcFlvQzN1eUxjQjJ5VVJFY2Izc1Ezdld5MlpvSk5zeUM2eU5JNkdHZnkyX3E1WlhUSWxJcDZPNWwwbGR1VkFkdjhZcnFnaUI0MXJKQi1FcXd4b3Y4ZlpSU0ZPclNONFlPM05DRmZTaF9KWldlWEZoNmE5YXpldzFlUFZpU012VQ?oc=5",
-      "summary": "DXC Becomes Exclusive Managed Services Provider for Primary’s AI Security Platform &nbsp;&nbsp; Channel Insider",
-      "category": "CoverageFallback",
-      "published": "2026-08-07T20:12:01+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Israeli Startup Irregular at Center of AI Security Storm After Models Breach Testing Environments - finance.biggo.com",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1mcFlSWjNWQWNNcFVtX0x6Y2s3UVRvZnhZSWt0cWJCYnhwcDFVNHFUcEVmTEU0RGFQUG9fdmRMdjgzYlA2XzQwZ2QwOGJnald6d1huWHduYWd1b3FlWTFGbTFkclp3M0oycUZoWmlfX2FaLXJTMWc?oc=5",
-      "summary": "Israeli Startup Irregular at Center of AI Security Storm After Models Breach Testing Environments &nbsp;&nbsp; finance.biggo.com",
-      "category": "CoverageFallback",
-      "published": "2026-08-07T18:23:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "UK AI Security Institute Exposes the Most Dangerous Behaviours of Advanced AI Systems - EasternEye",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNUdwbWF2cXZKM3l0MmFiT055YUZvd1JfMWZBNW9NRGVGR1NQaGNEaTJ4RUQ0TkpTTlNDV2FUN0FlR1RLbzVISFVNc1djSnhqODlEakM0azBmdFc3RFVuWktqcW0zUnZwVHBhaldxLUxHbUphLXV2cFlwbklxRXl0RjlRcm9yclRfei1zOQ?oc=5",
-      "summary": "UK AI Security Institute Exposes the Most Dangerous Behaviours of Advanced AI Systems &nbsp;&nbsp; EasternEye",
-      "category": "CoverageFallback",
-      "published": "2026-08-07T17:17:02+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
     },
     {
       "title": "\"Until I came across Dan’s talk, we didn’t have a structured process.\" @timoreilly invited our CEO @dguido to explain what it takes to make a compan...",
@@ -489,84 +466,6 @@
       "feed_title": "PortSwigger Research"
     },
     {
-      "title": "where sol",
-      "url": "https://x.com/rez0__/status/2085097200137249271",
-      "summary": "where sol Mark Zuckerberg: Releasing Muse Code in beta today. It's a terminal coding agent that takes on complete software engineering tasks across large repos: planning changes, writing code, validating the results. Powered by Muse Spark 1.2, a coding-focused model update.",
-      "category": "XSignals",
-      "published": "2026-08-05T20:14:46+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "A malicious host can attack your AWS Nitro Enclave through its connection to KMS. If your enclave talks with KMS, read this before you ship. https://b...",
-      "url": "https://x.com/trailofbits/status/2084961381233606753",
-      "summary": "A malicious host can attack your AWS Nitro Enclave through its connection to KMS. If your enclave talks with KMS, read this before you ship. https://blog.trailofbits.com/2026/08/05/a-few-notes-on-aws-nitro-enclaves-kms-integration/",
-      "category": "XSignals",
-      "published": "2026-08-05T11:15:04+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
-      "feed_title": "X / Trail of Bits"
-    },
-    {
-      "title": "A few notes on AWS Nitro Enclaves: KMS integration",
-      "url": "https://blog.trailofbits.com/2026/08/05/a-few-notes-on-aws-nitro-enclaves-kms-integration/",
-      "summary": "Nitro Enclaves and Key Management Service (KMS) feel like a natural fit: since the KMS can verify attestation documents generated by the enclaves, developers can offload key management tasks from their applications to the AWS-managed service. But integrating an external service with your trusted enclaves comes with new threats, even if that service comes from the same provider. In this blog post—t",
-      "category": "AISecurityLabs",
-      "published": "2026-08-05T11:00:00+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://blog.trailofbits.com/index.xml",
-      "feed_title": "Trail of Bits"
-    },
-    {
-      "title": "The Aikido Machine: on-prem AI pentesting that never leaves your network",
-      "url": "https://www.aikido.dev/blog/the-aikido-machine-on-prem-ai-pentesting-that-never-leaves-your-network",
-      "summary": "Continuous AI pentesting for teams that can't use the cloud. The Aikido Machine keeps models, code, and results entirely inside your network. Category: Product & Company Updates",
-      "category": "AISecurityLabs",
-      "published": "2026-08-05T07:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "Continuous Offensive Security & AI Pentesting: 20 FAQs",
-      "url": "https://snyk.io/blog/continuous-offensive-security-ai-pentesting-20-faqs/",
-      "summary": "Get answers to 20 common questions about continuous offensive security, AI penetration testing, DAST, and AI red teaming.",
-      "category": "AISecurityLabs",
-      "published": "2026-08-05T04:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://snyk.io/blog/feed/",
-      "feed_title": "Snyk Blog"
-    },
-    {
-      "title": "RT Johann Rehberger: Re One more!",
-      "url": "https://x.com/wunderwuzzi23/status/2084800625490198944",
-      "summary": "RT Johann Rehberger Re One more! AI Security Institute (AISI): On July 28th, we identified an incident during a routine cyber evaluation in which AI agents took sustained, unsanctioned actions directed at real people and organisations. The behaviour came mostly from one model (Anthropic's Mythos 5), with a small number of events from",
-      "category": "XSignals",
-      "published": "2026-08-04T23:44:40+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
-      "feed_title": "X / Johann Rehberger"
-    },
-    {
       "title": "RT Tibo: I feel Theo is in need of a reset 👀",
       "url": "https://x.com/rez0__/status/2085845246030524806",
       "summary": "RT Tibo I feel Theo is in need of a reset 👀 Theo - t3.gg: Merged and shipped 48 PRs in 2 days 💀",
@@ -591,6 +490,19 @@
       "quality_score": 0,
       "feed_url": "https://openai.com/news/rss.xml",
       "feed_title": "OpenAI News"
+    },
+    {
+      "title": "RT El Mago: First #BlackHat ✅ First talk in English ✅ Thanks @PortSwigger team ❤️",
+      "url": "https://x.com/PortSwigger/status/2086078113419546753",
+      "summary": "RT El Mago First #BlackHat ✅ First talk in English ✅ Thanks @PortSwigger team ❤️",
+      "category": "XSignals",
+      "published": "2026-08-07T00:59:40+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/PortSwigger",
+      "feed_title": "X / PortSwigger Research"
     },
     {
       "title": "Late addition to DEF CON 34: @ToBScottA presents \"Trailmark and Navigating the Infinite Forest of Possibility\" today, with live demos. Sneak peek: htt...",
@@ -630,32 +542,6 @@
       "quality_score": 0,
       "feed_url": "https://www.legitsecurity.com/blog/rss.xml",
       "feed_title": "Legit Security"
-    },
-    {
-      "title": "Who was behind the attack? Possibly nobody",
-      "url": "https://www.aikido.dev/blog/autonomous-agents-attacking-no-responsibility",
-      "summary": "Three summer disclosures documented AI agents attacking real organizations with no human intent in the chain. Incident response has no box for this yet. Category: News",
-      "category": "AISecurityLabs",
-      "published": "2026-08-05T17:59:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://www.aikido.dev/blog/rss.xml",
-      "feed_title": "Aikido Security"
-    },
-    {
-      "title": "Vibe Hacking风起云涌：安全圈的门槛正在塌方？",
-      "url": "https://www.anquanke.com/post/id/315927",
-      "summary": "",
-      "category": "Chinese",
-      "published": "2026-08-05T14:13:38+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://api.anquanke.com/data/v1/rss",
-      "feed_title": "安全客"
     }
   ]
 }

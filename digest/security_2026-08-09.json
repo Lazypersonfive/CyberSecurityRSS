@@ -1,0 +1,648 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-09",
+  "generated_at": "2026-08-08T23:07:46.060546Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 6,
+    "direct": 15,
+    "wechat": 6,
+    "tier_t2": 14,
+    "kind_cn_expert": 6,
+    "kind_media": 9,
+    "tier_unknown": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 1,
+    "merged_total": 2
+  },
+  "delivered_filter_stats": {
+    "url": 20,
+    "story": 0,
+    "total": 20
+  },
+  "items": [
+    {
+      "title_zh": "WordPress Core 预认证 XSS 漏洞可导致远程代码执行 (CVE-2026-64638)",
+      "title_orig": "【已复现】WordPress Core XSS2Shell 预认证 XSS 远程代码执行漏洞(CVE-2026-64638)安全风险通告",
+      "summary": "WordPress核心组件被曝存在预认证跨站脚本漏洞CVE-2026-64638，攻击者无需登录即可通过特定向量注入恶意脚本，并能通过XSS2Shell技术实现从脚本执行到服务器端远程代码执行的提权。目前该高危漏洞已被安全团队成功复现，官方已发布安全通告，建议所有企业级用户及个人站长立即关注并更新至最新版本，以防止攻击者利用该漏洞接管服务器并规避潜在的安全风险。",
+      "tags": [
+        "WordPres",
+        "XSS",
+        "RCE"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247506994&idx=1&sn=40b43738c615a5624f431ef45b046b41",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-08T11:46:00+00:00",
+      "cve_ids": [
+        "CVE-2026-64638"
+      ],
+      "selection_reason": "WordPress 核心漏洞影响范围极广，预认证 RCE 具",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "cve:cve-2026-64638",
+      "related_urls": [
+        "https://www.cyberkendra.com/2026/08/public-exploit-lands-for-wordpress.html"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "actionability": 10.0,
+        "relevance": 10.0,
+        "impact_scope": 10.0,
+        "technical_depth": 10.0
+      },
+      "dimension_score": 10.0,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Atlassian Rovo AI 助手存在提示词注入风险，可导致 Jira 和 Confluence 数据泄露",
+      "title_orig": "Atlassian Rovo Can Be Tricked Into Sending Jira and Confluence Data to Attackers",
+      "summary": "Atlassian Rovo AI 助手被发现存在提示词注入漏洞，攻击者可通过受控指令诱导助手收集用户有权访问的 Jira 或 Confluence 数据并发送至外部服务器。PromptArmor 等安全公司证实，攻击者只需在 Rovo 读取的内容或上传的文件中隐藏恶意指令即可触发。目前部分攻击路径已被修复，但仍有路径处于确认状态，暴露了 AI 助手在处理敏感企业数据时的安全边界问题。",
+      "tags": [
+        "AI 安全",
+        "提示词注入",
+        "数据泄露"
+      ],
+      "url": "https://thehackernews.com/2026/08/atlassian-rovo-can-be-tricked-into.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-08T08:54:50+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了企业级 AI 助手在集成敏感办公软件时面临的新型供应链",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:securityweek.com/critical-one-click-vulnerability-in-atlassians-rovo-ai-exposed-enterprise-data",
+      "related_urls": [
+        "https://www.securityweek.com/critical-one-click-vulnerability-in-atlassians-rovo-ai-exposed-enterprise-data/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "actionability": 9.0,
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.25,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Progress Kemp LoadMaster 关键命令注入漏洞 CVE-2026-8037 遭野外利用",
+      "title_orig": "Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts",
+      "summary": "美国CISA将Progress Kemp LoadMaster的命令注入漏洞CVE-2026-8037列入已知利用漏洞目录，该漏洞CVSS评分高达9.6，允许攻击者通过构造请求在负载均衡设备上执行任意代码。监测数据显示目前已有近800次针对该漏洞的活跃攻击尝试，由于该漏洞可导致系统被完全接管，官方强烈建议受影响用户立即应用补丁进行更新，以应对当前严峻的网络安全威胁。",
+      "tags": [
+        "命令注入",
+        "CISA KEV",
+        "负载均衡"
+      ],
+      "url": "https://thehackernews.com/2026/08/progress-kemp-loadmaster-flaw-hits-cisa.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-08T06:52:16+00:00",
+      "cve_ids": [
+        "CVE-2026-8037"
+      ],
+      "selection_reason": "高评分且已被野外大规模利用的边界设备漏洞，具有极高的修复优先",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-8037",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "actionability": 9.0,
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 8.95,
+      "final_score": 9.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型 CSS 攻击技术可突破 Webmail 边界，窃取主流邮箱用户凭据与令牌",
+      "title_orig": "New CSS Attacks Can Break Webmail Defenses to Steal Passwords and Tokens",
+      "summary": "研究人员发现新型CSS注入攻击可使邮件内容逃逸边界并干扰Webmail界面，影响Outlook、Gmail及Proton Mail等主流服务，导致密码被窃、令牌泄露及第三方账户被接管。该技术通过操纵样式渲染逻辑劫持受信任的UI操作，甚至能干扰读取邮件的AI工具，揭示了CSS在现代Web安全防御中被严重低估的威胁能力，提醒各大邮件服务商需重新评估其内容隔离机制。",
+      "tags": [
+        "CSS 注入",
+        "Webmail",
+        "凭据窃取"
+      ],
+      "url": "https://thehackernews.com/2026/08/new-css-attacks-can-break-webmail.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-08T08:03:57+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了传统 CSS 攻击在现代复杂 Web 应用中的新型利用",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/08/new-css-attacks-can-break-webmail.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 8.0,
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 8.95,
+      "final_score": 9.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "TrueConf 视频会议服务器遭黑客入侵，客户端安装包被植入后门",
+      "title_orig": "Hackers breach TrueConf to trojanize client installers with backdoors",
+      "summary": "黑客组织 Head Mare 利用未修复的 TrueConf 视频会议服务器漏洞获取了系统权限，并篡改了客户端安装程序。攻击者将恶意后门植入安装包中，导致下载并安装该软件的用户终端被感染。这种针对视频会议基础设施的供应链攻击旨在实现持久化控制，目前建议 TrueConf 管理员立即检查服务器完整性并更新至安全版本。",
+      "tags": [
+        "供应链攻击",
+        "TrueConf",
+        "后门"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-breach-trueconf-to-trojanize-client-installers-with-backdoors/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-08T14:16:23+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的软件供应链攻击案例，通过控制分发服务器实现大规模感染。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/hackers-breach-trueconf-to-trojanize-client-installers-with-backdoors",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "actionability": 9.0,
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.55,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "2026 攻防演练新变量：Cast Attack 绕过 WAF 实现后端代码执行",
+      "title_orig": "hvv 2026 -  今年攻防演练的新变量：WAF 看不见，后端却执行了",
+      "summary": "在 Black Hat Asia 披露的技术中，Cast Attack 成为今年攻防演练的关注重点，其核心在于利用类型转换差异绕过 WAF 防护。该技术利用了 WAF 检查层与后端应用解析层对特定数据类型处理的不一致性，使得恶意载荷在 WAF 看来是安全的，但在后端执行时被还原为攻击指令。这种“看不见”的攻击挑战了现有的边界防御体系，值得安全从业者研究其协议解析差异。",
+      "tags": [
+        "WAF 绕过",
+        "攻防演练",
+        "Cast Att"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA==&mid=2247486344&idx=1&sn=96ca8c8b2f31e0c963882434778c4fcd",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-08T02:19:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "聚焦于协议解析差异导致的 WAF 绕过，是实战攻防中极具价值",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d5a661c1beccdff18ba1ae018514e4d702feac74.xml",
+      "feed_title": "天黑说嘿话",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d5a661c1beccdff18ba1ae018514e4d702feac74.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA%3D%3D&mid=2247486344&idx=1&sn=96ca8c8b2f31e0c963882434778c4fcd",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 7.0,
+        "actionability": 7.0,
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "卡车制动控制器安全召回事件中隐藏远程代码执行与 DoS 漏洞修复",
+      "title_orig": "Truck Brake Controller’s Safety Recall Doubled as Hidden Security Fix",
+      "summary": "NMFTA研究发现Bendix EC80卡车制动控制器在安全召回中修复了远程代码执行与拒绝服务漏洞，该漏洞源于J1939车载网络协议在处理诊断消息时缺乏身份验证，允许攻击者通过发送恶意数据包触发。受影响组件为Bendix EC80制动控制器，原文未披露具体受影响的固件版本号，但确认相关漏洞已通过召回后的固件更新得到修复。",
+      "tags": [
+        "车载安全",
+        "RCE",
+        "固件安全"
+      ],
+      "url": "https://www.securityweek.com/truck-brake-controllers-safety-recall-doubled-as-hidden-security-fix/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-07T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及关键基础设施与交通安全，展示了嵌入式设备漏洞可能导致的物",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/truck-brake-controllers-safety-recall-doubled-as-hidden-security-fix",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 9.0,
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 8.6,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Metabase 零日漏洞导致 Framework 与 Tally 客户数据泄露",
+      "title_orig": "Metabase Zero-Day Exposes Framework, Tally Customer Data",
+      "summary": "开源商业智能工具 Metabase 的一个零日漏洞被利用，导致 Laptop 制造商 Framework 和表单构建商 Tally 的客户记录被窃取。攻击者通过暴露在互联网上的分析仪表盘直接访问了后端生产数据库，而无需直接入侵公司内网。此事件表明，第三方数据分析工具的配置不当或零日漏洞已成为企业数据泄露的重要风险点，目前相关厂商已发布预警并采取补救措施。",
+      "tags": [
+        "零日漏洞",
+        "数据泄露",
+        "Metabase"
+      ],
+      "url": "https://www.cyberkendra.com/2026/08/metabase-zero-day-exposes-framework.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-08-08T17:24:02+00:00",
+      "cve_ids": [],
+      "selection_reason": "零日漏洞导致多家知名公司数据泄露，体现了供应链中分析组件的脆",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/08/metabase-zero-day-exposes-framework.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "actionability": 7.0,
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 8.1,
+      "final_score": 8.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Gen 发布 2026 年上半年威胁报告：披露银行木马与剪贴板劫持两类支付攻击链",
+      "title_orig": "Real emails, hijacked payments: Two H1 2026 attack chains",
+      "summary": "该报告详细分析了两类针对支付环节的攻击链，第一类利用受损的企业邮箱配合浏览器操纵技术，在银行木马活动中实施欺诈。第二类则通过剪贴板劫持技术，在用户进行加密货币转账时实时篡改收款地址，从而重定向资金流向。这些攻击展示了攻击者如何通过操纵终端用户环境和通信渠道，绕过传统身份验证并直接窃取资产。",
+      "tags": [
+        "攻击链分析",
+        "银行木马",
+        "剪贴板劫持"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/real-emails-hijacked-payments-two-h1-2026-attack-chains/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-07T14:00:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对金融支付环节的复合型攻击手法。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/real-emails-hijacked-payments-two-h1-2026-attack-chains",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 7.0,
+        "relevance": 9.0,
+        "impact_scope": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员通过购买企业弃用的 No-Reply 占位域名获取大量敏感内部邮件数据",
+      "title_orig": "Researchers Buy 'No Reply' Domains and Get Company Data",
+      "summary": "两名安全研究员仅花费约 15 美元购买了企业系统在地址停用或发送警报时默认回退使用的占位域名，成功收集到数十万封发送错误的内部邮件。研究表明，许多企业系统在处理未送达邮件或自动化通知时存在逻辑缺陷，会将敏感信息发送至这些未注册的占位域名。目前扫描发现仍有数百个类似的潜在域名可被利用，暴露了企业在域名资产管理和自动化系统配置上的严重疏漏。",
+      "tags": [
+        "域名劫持",
+        "数据泄露",
+        "资产管理"
+      ],
+      "url": "https://www.cyberkendra.com/2026/08/researchers-buy-no-reply-domains-and.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-08-08T17:37:46+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了低成本获取企业敏感数据的非传统攻击面。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/08/researchers-buy-no-reply-domains-and.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 6.0,
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 7.35,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "2025-2026年度主流勒索软件家族技术深度分析报告第五篇",
+      "title_orig": "第5篇-2025-2026主流勒索家族技术分析",
+      "summary": "该报告深入剖析了2025至2026年间全球主流勒索软件家族的技术演进，重点关注其在加密算法升级、多重勒索手段及针对关键基础设施的攻击策略变化。通过对这些活跃家族的深度技术拆解，安全专家旨在为企业提供前瞻性的防御指南，帮助组织识别潜在的渗透风险并构建更具韧性的网络安全防护体系，以应对日益严峻的勒索威胁。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247496990&idx=1&sn=09d4357d546a93261ec65ed692c789d0",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-08T14:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247496990&idx=1&sn=09d4357d546a93261ec65ed692c789d0",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "exploitability": 5.0,
+        "actionability": 4.0,
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 6.55,
+      "final_score": 7.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "通过加强云凭据全生命周期管理，有效切断因泄露导致的攻击链条",
+      "title_orig": "Breaking the attack chain created by exposed cloud secrets",
+      "summary": "云端机密信息在创建、存储、检索、使用及更换的完整生命周期中均面临泄露风险，攻击者常利用暴露的凭据打破安全防线并渗透系统。为了有效阻断这一攻击链条，企业必须加强对机密流转路径的全程监控，确保凭据不会在任何环节以明文形式出现，从而提升云环境下的身份验证安全性并降低因机密外泄导致的敏感数据被非法访问的概率。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://www.pentestpartners.com/security-blog/breaking-the-attack-chain-created-by-exposed-cloud-secrets/",
+      "source": "pentestpartners.com",
+      "category": "IoTSecurity",
+      "published": "2026-08-07T11:38:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://www.pentestpartners.com/feed/",
+      "feed_title": "Pen Test Partners",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "pentestpartners.com",
+      "story_id": "url:pentestpartners.com/security-blog/breaking-the-attack-chain-created-by-exposed-cloud-secrets",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 7.0,
+        "actionability": 7.0,
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 7.5,
+      "final_score": 7.2,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "2026年8月3日至8月7日人工智能与云安全事件案例分析周报",
+      "title_orig": "AI与云安全事件案例分析周报｜2026.08.03 - 2026.08.07",
+      "summary": "本周报详细汇总了2026年8月3日至8月7日期间全球范围内发生的AI与云安全典型事件，通过对具体案例的深入分析揭示了当前云原生环境下的新兴安全挑战。报告旨在帮助安全从业者及时掌握最新的攻击趋势与防御漏洞，通过复盘真实发生的违规与入侵事件，为企业优化AI模型安全防护及云基础设施的合规性管理提供关键的实践参考与预警建议。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIyODYzNTU2OA==&mid=2247500141&idx=1&sn=93cac38922f8ab0da9c2da0af5151907",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-07T12:35:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/21b46d78e363b85d6927970267ecea4904f06bc8.xml",
+      "feed_title": "绿盟科技研究通讯",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/21b46d78e363b85d6927970267ecea4904f06bc8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIyODYzNTU2OA%3D%3D&mid=2247500141&idx=1&sn=93cac38922f8ab0da9c2da0af5151907",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "exploitability": 5.0,
+        "actionability": 7.0,
+        "relevance": 8.0,
+        "impact_scope": 6.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 6.4,
+      "final_score": 7.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "开发者推出 ShieldFont 混淆字体工具：通过字符映射差异对抗 AI 爬虫抓取",
+      "title_orig": "【安全圈】有人发明了一款字体，专门骗 AI 爬虫",
+      "summary": "两名开发者开发了一款名为 ShieldFont 的网络字体工具，旨在保护网页内容不被 AI 爬虫非法抓取。该技术利用自定义字体映射原理，使得人类用户在浏览器中能正常阅读文章，但 AI 爬虫抓取到的文本却是乱码或无意义字符。这种基于前端渲染差异的对抗手段，为内容创作者提供了一种低成本且直接的隐私保护方案，值得关注数据安全与反爬虫技术的从业者参考。",
+      "tags": [
+        "反爬虫",
+        "字体混淆",
+        "数据隐私"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078186&idx=2&sn=3c16974d12483f416ace8ed5935c526a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-07T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "利用前端技术对抗 AI 抓取，思路新颖且具实操性。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078186&idx=2&sn=3c16974d12483f416ace8ed5935c526a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "exploitability": 6.0,
+        "actionability": 6.0,
+        "relevance": 7.0,
+        "impact_scope": 5.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 6.05,
+      "final_score": 6.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "公安部发布《公安机关网络空间安全监督检查办法》并于 2026 年 10 月起施行",
+      "title_orig": "公安部发布《公安机关网络空间安全监督检查办法》（附全文）",
+      "summary": "公安部于 2026 年 8 月 7 日正式发布《公安机关网络空间安全监督检查办法》，明确了公安机关在网络安全监管方面的职责与程序。该办法旨在规范网络空间安全监督检查行为，提升国家网络安全保障能力，并定于 2026 年 10 月 1 日起正式施行。原文未披露具体的检查细则、技术标准或针对特定行业的合规要求，重点在于法律框架的确立与施行时间节点的公布。",
+      "tags": [
+        "网络安全法",
+        "合规监管",
+        "公安部"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA==&mid=2664265454&idx=1&sn=6bc797c701d0297f85f58b3307dd76de",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-08T04:26:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "国家级网络安全监管政策，对企业合规具有指导意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/567cb1a8cf49f3e2c141d9d8085712f42ffc2fef.xml",
+      "feed_title": "中国信息安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/567cb1a8cf49f3e2c141d9d8085712f42ffc2fef.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA%3D%3D&mid=2664265454&idx=1&sn=6bc797c701d0297f85f58b3307dd76de",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "exploitability": 1.0,
+        "actionability": 7.0,
+        "relevance": 8.0,
+        "impact_scope": 8.0,
+        "technical_depth": 3.0
+      },
+      "dimension_score": 5.25,
+      "final_score": 5.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
