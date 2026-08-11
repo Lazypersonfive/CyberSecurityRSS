@@ -1,19 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-08-11",
-  "fetched_at_utc": "2026-08-10T23:21:30.383080Z",
+  "fetched_at": "2026-08-12",
+  "fetched_at_utc": "2026-08-11T23:26:51.282496Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 45,
-  "entry_count": 21,
+  "raw_entry_count": 63,
+  "entry_count": 36,
   "filter_stats": {
-    "input": 45,
+    "input": 63,
     "dropped_title_blacklist": 1,
     "dedup_merged": 1,
-    "output": 43
+    "output": 61
   },
   "curation_stats": {
-    "dropped_source_cap": 22
+    "dropped_source_cap": 25
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -56,7 +56,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://github.blog/security/vulnerability-research/feed/": {
       "feed_title": "GitHub Security Lab",
@@ -70,14 +70,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 8
+      "raw_count": 6
     },
     "https://protectai.com/blog/rss.xml": {
       "feed_title": "Protect AI",
@@ -112,7 +112,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 3
     },
     "https://snyk.io/blog/feed/": {
       "feed_title": "Snyk Blog",
@@ -140,14 +140,14 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 4
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 8
     },
     "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml": {
       "feed_title": "娜璋AI安全之家",
@@ -189,7 +189,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 5
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -238,24 +238,35 @@
       "category": "CoverageFallback",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 7
     }
   },
   "entries": [
     {
-      "title": "Windows11 0day内核提权漏洞分析与利用（CVE-2026-62737）",
-      "url": "https://xz.aliyun.com/news/92658",
-      "summary": "本文分析了 Windows 11 ExecutionContext.sys 驱动中存在的任意内核代码执行漏洞，攻击者可通过 NDIS KLoader 代理路径绕过 ACL 限制，利用任务队列机制中缺乏有效校验的回调指针实现 RIP 劫持。文章详细阐述了从用户态可达入口发现到构造 ROP 链完成本地提权。",
-      "category": "Chinese",
-      "published": "2026-08-09T01:47:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [
-        "CVE-2026-62737"
-      ],
+      "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
+      "url": "https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/#atom-everything",
+      "summary": "Stealing Reasoning Traces from Proprietary LLM APIs A vanity domain name ( stolen-thoughts.com ) for a neat paper : Anthropic, OpenAI, and Google return encrypted chain-of-thought blocks to clients that can be replayed across sessions, users, and models. We take a trace produced by a frontier model, replay it into a weaker sibling, jailbreak the weaker model, and recover the stronger model’s hidde",
+      "category": "AISecurityLabs",
+      "published": "2026-08-11T22:40:45+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
       "related_urls": [],
-      "quality_score": 4,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
+      "quality_score": 2,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "RT Paul Miller: We’ve engaged @trailofbits, in collaboration with OpenAI, to audit noble-curves. No severe issues were found. A new release v2.3 is o...",
+      "url": "https://x.com/trailofbits/status/2087288867573633197",
+      "summary": "RT Paul Miller We’ve engaged @trailofbits, in collaboration with OpenAI, to audit noble-curves. No severe issues were found. A new release v2.3 is out. Pretty cool that auditors are sending patches now! More info: https://trailofbits.com/patch-the-planet/dashboard",
+      "category": "XSignals",
+      "published": "2026-08-11T18:42:24+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
     },
     {
       "title": "RT AI at Meta: Introducing Muse Glimmer, an open-weight 30B-parameter model optimized for local, always-on agent workflows. Muse Glimmer delivers stro...",
@@ -271,17 +282,171 @@
       "feed_title": "X / Johann Rehberger"
     },
     {
-      "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
-      "url": "https://simonwillison.net/2026/Aug/8/now-we-have-a-timeline-of-the-openai-accidental-attack-against-h/#atom-everything",
-      "summary": "My comment on Now we have a timeline of the OpenAI accidental attack against Hugging Face &mdash; Hacker News. I think one of the most interesting details here might be tucked away in that first bulletin point: May 7: OpenAI starts a new training run for an experimental, unreleased model. (Do they mean an evaluation run? They say training run in the video, and later mention a “reward signal to jud",
+      "title": "CISO's Guide: Build vs Buy AI Code Security | Ebook/Report | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/cisos-guide-build-vs-buy-ai-code-security",
+      "summary": "CISO's Guide: Build vs Buy AI Code Security",
       "category": "AISecurityLabs",
-      "published": "2026-08-08T14:06:41+00:00",
+      "published": "2026-08-11T23:06:06+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "AI Security Moves From Experiment to Production - BankInfoSecurity",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPLTctd1VPN05BZWpYNHh2VkEweE14UDVDall3UEh5MjJwT21aRXd6SDFWdGJxeUZjWjZWdWxTMzF0bHRJVUhiX3pMYVprb3hqVGFHUkpwNTNxQ2pVa3c1Sl96VTVMcHhlMlVhOWpsRjlSRGlwRnlZSmtsbi1zYjRRRlBsUUlPeWhjYXdUTnp2alo4Zw?oc=5",
+      "summary": "AI Security Moves From Experiment to Production &nbsp;&nbsp; BankInfoSecurity",
+      "category": "CoverageFallback",
+      "published": "2026-08-11T22:18:46+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Why Critical Infrastructure Needs OT-Focused AI Security - GovInfoSecurity",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNd1BZRWEyQ0QtNmdwcHBTWDBETVpoZTd1cEMwdmUtRldPOFFBb0JLVTNzRVZ3TU5TQWxYMzRldHNTSVR0bWEtSE9pb0g4RUxrcWlxV2FTc05yRWVPempxa2NBNzhaM1lmM0R2N2JtVXhJVjB3c0lrempFMy13cXRjaWZYU0tQXzl6ck1ITWszR3c0TUgwUE5V?oc=5",
+      "summary": "Why Critical Infrastructure Needs OT-Focused AI Security &nbsp;&nbsp; GovInfoSecurity",
+      "category": "CoverageFallback",
+      "published": "2026-08-11T20:49:43+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "Tech giants are pushing for a new AI agent incident reporting framework - Axios",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5uT2ZYRHdaSXB3X2JDYlA2OUhuWG0teC1HV095b1VxazJTWWtZS2pUakI2UW1pZGpGdmFuRXdMY2ZGOG05TXBSakltVEk0WHZkSnFfRXNVSGZzWEpoN0VCZGIxY0d1cjBEREViT0dxSFdoTDgyellMTHJQRU0?oc=5",
+      "summary": "Tech giants are pushing for a new AI agent incident reporting framework &nbsp;&nbsp; Axios",
+      "category": "CoverageFallback",
+      "published": "2026-08-11T18:26:42+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "We're a day-one auditor for @signalapp's new Automatic Key Verification, which depends on external auditors to confirm everyone sees the same keys. We...",
+      "url": "https://x.com/trailofbits/status/2087232590017155289",
+      "summary": "We're a day-one auditor for @signalapp's new Automatic Key Verification, which depends on external auditors to confirm everyone sees the same keys. We built our auditing software from scratch, open-sourced it, and run it as a public good. https://blog.trailofbits.com/2026/08/11/how-trail-of-bits-helps-verify-the-integrity-of-your-signal-chats",
+      "category": "XSignals",
+      "published": "2026-08-11T17:40:03+00:00",
       "fetch_status": "full",
       "cve_ids": [],
-      "related_urls": [
-        "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-everything"
-      ],
-      "quality_score": 2,
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
+    {
+      "title": "How Trail of Bits helps verify the integrity of your Signal chats",
+      "url": "https://blog.trailofbits.com/2026/08/11/how-trail-of-bits-helps-verify-the-integrity-of-your-signal-chats/",
+      "summary": "Every Signal chat starts the same way: the client asks the Signal server for the public key associated with your contact’s phone number. But how do you know the server gave you the right key? A compromised server could provide a false public key, allowing the client to encrypt messages to an attacker rather than the intended recipient. Until now, the only way to detect such malfeasance was to veri",
+      "category": "AISecurityLabs",
+      "published": "2026-08-11T17:30:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://blog.trailofbits.com/index.xml",
+      "feed_title": "Trail of Bits"
+    },
+    {
+      "title": "RT Signal: Introducing Automatic Key Verification! Complementing the existing safety number system, automatic key verification provides an additional,...",
+      "url": "https://x.com/trailofbits/status/2087239912903122983",
+      "summary": "RT Signal Introducing Automatic Key Verification! Complementing the existing safety number system, automatic key verification provides an additional, streamlined way to confirm the privacy of your chats. Read our announcement here: https://signal.org/blog/automatic-key-verification Thanks to @Cloudflare and @trailofbits for serving as the independent auditors for our system 💙 🙏",
+      "category": "XSignals",
+      "published": "2026-08-11T16:58:54+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
+    {
+      "title": "Zscaler Accused of Patent Infringement Over AI Security Feature - Bloomberg Law News",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNaHJkbkQtaXlCMFJmdFFDeUlvTjFZZ0tRdEFZcGlkOEc3Y0UxRW5rREctajB4ZU5ibzZoRWFqWlk1RzdIMndicTQ1LWlRS2xNMzRjTWRfU0dINm9lZ0ZhZnMwcU1GYVZyMlFrMHRPSXNocTYzUk5NYzBrUlg1ZUQ0djFfWUM0bWpEUXJ6VWtmSnZvQ2hackFmWTM4NEVIR3NEQ2d5TmdDUjZzZnh2NEtENWNLekU?oc=5",
+      "summary": "Zscaler Accused of Patent Infringement Over AI Security Feature &nbsp;&nbsp; Bloomberg Law News",
+      "category": "CoverageFallback",
+      "published": "2026-08-11T16:11:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "这次真不是吓你：搞勒索的，一个判了16年，一个要蹲32年",
+      "url": "https://www.anquanke.com/post/id/315956",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-08-11T13:04:35+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "你的代码里，藏着黑客埋的\"毒\"：1300个 npm 包遭供应链投毒",
+      "url": "https://www.anquanke.com/post/id/315949",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-08-11T10:55:59+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "Kimwolf v7: An Evolution of the Kimwolf Botnet",
+      "url": "https://unit42.paloaltonetworks.com/kimwolf-v7-botnet-malware/",
+      "summary": "Discover how Kimwolf v7 targets Android IoT devices with HTTP/2 DDoS fingerprinting, Ethereum ENS C2 resolution and Tor backup routing. The post Kimwolf v7: An Evolution of the Kimwolf Botnet appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-08-11T10:00:16+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
+    },
+    {
+      "title": "Hugging Face Agent 入侵复盘：当局部缺陷被 AI 串成系统性入侵",
+      "url": "https://xz.aliyun.com/news/92671",
+      "summary": "详细讲解和分析最近的Hugging FaceAgent 入侵事件",
+      "category": "Chinese",
+      "published": "2026-08-11T05:59:01+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "Introducing Muse Glimmer",
+      "url": "https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/#atom-everything",
+      "summary": "Introducing Muse Glimmer Meta are back in the open weights game! Muse Glimmer is a brand new 30B model under a clean Apache 2.0 license (a step up from the janky Llama licenses of old). They claim to have optimized it for exactly the kind of things I'm looking for in a local model: End-to-end Agentic Task Completion. Muse Glimmer achieves strong success rates on full-task benchmarks including Deep",
+      "category": "AISecurityLabs",
+      "published": "2026-08-10T23:56:03+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
     },
@@ -297,58 +462,6 @@
       "quality_score": 1,
       "feed_url": "https://unit42.paloaltonetworks.com/feed/",
       "feed_title": "Unit 42"
-    },
-    {
-      "title": "AWS Continuum integrates with OpenAI Codex and Anthropic Claude Code in major AI security push - VentureBeat",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNWE9YZmluV0VTOEs0WlV1UDhfZGF4SXRKRkUyZWx5SVRqQ01ld2g5blVyYVo3ckdOUWhhcHNtVDE2OFBKQzZDOS14TnRVUk5qaUVQaHpSUEtKUW44bl8zdXNweTVNU1ZMNlV0bVR0QlUtMnNKZzhmVnBlQzdLdWt5Tkt0YzRBeVVPUTgtNW4zSXdJYUE3N0FtcThveTBXLVFZZWVKd0JhVHlOc2d5Sm1XVUxPaHpza0lmUnBIdThKVzd4eE5YTEE?oc=5",
-      "summary": "AWS Continuum integrates with OpenAI Codex and Anthropic Claude Code in major AI security push &nbsp;&nbsp; VentureBeat",
-      "category": "CoverageFallback",
-      "published": "2026-08-10T20:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "Rubrik Stock Climbs As CSA Names It AI Security Vanguard - StocksToTrade",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE10N3R0VzZZOGVBNzhWTWpYcGc2SGllbExIYjJyaFlOVm9CVEU1a21XZmRqOG5OR3VtelNKbEprd1R3aENxQUhkbW1sUFVzaENsa0JZYVdaQXp3WnhRMDJWQVNKaG4xM1FST3NuQzlDWVY?oc=5",
-      "summary": "Rubrik Stock Climbs As CSA Names It AI Security Vanguard &nbsp;&nbsp; StocksToTrade",
-      "category": "CoverageFallback",
-      "published": "2026-08-10T19:06:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
-    },
-    {
-      "title": "AI安全监管：为何建筑安全系统仍需人工判断? - 千家网",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1LNUJaRkpuVF9iVW1paHh1V0pOWE5fMzNrT2lQZkN2VDFFWElyd1VIOGhhVTRlM0l2QUZMUVplVlhLTk5aWUNmTWJvc1dDd29ZNWRHS1lvMjlzcHU5N0MwRA?oc=5",
-      "summary": "AI安全监管：为何建筑安全系统仍需人工判断? &nbsp;&nbsp; 千家网",
-      "category": "CoverageFallback",
-      "published": "2026-08-10T17:21:24+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
-    },
-    {
-      "title": "Who is the Israeli startup behind the AI security testing breach involving OpenAI, Anthropic and Meta? - The American Bazaar",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcG5LeURwQUZjSF9wLWdaRDY2dWpOQ3NfdUlqaE1icU1UZHJlaWtQOEtpZ3M4eGZNb1BpSzF0M0h6RGdTMTdvcVBkRWdSRmJsVzFTMnFfYkhVNUxvMFFsVWZRdGpaOGZfdGh3MUlWV3JHV0Vqa3FGU1hhY0VjM24wX1BDd3JkTU90SGVvNEhXazMyWU1kWlhTODlUNGdJcFg2X09SakQwVWNZejdYNHpnUUdlckszZHc?oc=5",
-      "summary": "Who is the Israeli startup behind the AI security testing breach involving OpenAI, Anthropic and Meta? &nbsp;&nbsp; The American Bazaar",
-      "category": "CoverageFallback",
-      "published": "2026-08-10T17:09:29+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
     },
     {
       "title": "What building an AI-native finance function taught me",
@@ -377,24 +490,24 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "Quoting OpenClaw",
-      "url": "https://simonwillison.net/2026/Aug/10/openclaw/#atom-everything",
-      "summary": "The API has zero authorisations checks on cancelling other people's reservations … I tested this with the person in waitlist position #1 — and it actually went through. So you've moved from #4 to #3 already. &mdash; OpenClaw , hacking an Australian gym-booking website Tags: ai-ethics , generative-ai , openclaw , ai , ai-security-research , llms",
-      "category": "AISecurityLabs",
-      "published": "2026-08-10T02:05:16+00:00",
+      "title": "HTB-Zero：一个 .htaccess 撬开的 Root 之路",
+      "url": "https://xz.aliyun.com/news/92665",
+      "summary": "本文记录 Hack The Box Zero 靶机的完整渗透过程。目标仅开放 SSH 与 HTTP 服务，初始突破口来自一个支持 SFTP 上传的静态主页系统。通过注册获取 SFTP 凭据后，利用可覆盖的 .htaccess 配置 Apache ErrorDocument 404，实现任意文件读取，并从 Web 源码中泄露数据库凭据，成功拿到普通用户 Shell。随后通过 pspy 捕获 root",
+      "category": "Chinese",
+      "published": "2026-08-10T13:33:32+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
-      "title": "Quoting Claude Opus 5 system prompt",
-      "url": "https://simonwillison.net/2026/Aug/9/claude-opus-5-system-prompt/#atom-everything",
-      "summary": "Claude Fable 5 and Claude Mythos 5 were first released on June 9, 2026. On June 12, 2026, Anthropic suspended access to both models to comply with U.S. Department of Commerce export controls; the Department lifted those controls on June 30, 2026, and Anthropic restored access on July 1, 2026 (Anthropic's statement: https://www.anthropic.com/news/fable-mythos-access ). These events are after Claude",
+      "title": "Quoting OpenClaw (running Opus 4.6)",
+      "url": "https://simonwillison.net/2026/Aug/10/openclaw/#atom-everything",
+      "summary": "The API has zero authorisations checks on cancelling other people's reservations … I tested this with the person in waitlist position #1 — and it actually went through. So you've moved from #4 to #3 already. &mdash; OpenClaw (running Opus 4.6) , hacking an Australian gym-booking website Tags: ai-ethics , generative-ai , openclaw , ai , ai-security-research , llms",
       "category": "AISecurityLabs",
-      "published": "2026-08-09T23:31:39+00:00",
+      "published": "2026-08-10T02:05:16+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
@@ -416,17 +529,108 @@
       "feed_title": "X / Johann Rehberger"
     },
     {
-      "title": "Best in Class, Novel in Method: Opus 5 and the Recall-Then-Diverge Pattern | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/best-in-class-novel-in-method-opus-5-and-the-recall-then-diverge-pattern",
-      "summary": "Claude Code with Opus 5 takes first in the leaderboard with 73.7% functional code and 32.4% secure code, plus 9 unique security solves.",
+      "title": "npm Now Scans for Malware at Publish, Not Install | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/the-registry-just-became-a-checkpoint-it-still-isnt-your-perimeter",
+      "summary": "GitHub scans every npm package for malware before publish. Here's why that's not enough, and why install-time enforcement is still on you.",
       "category": "AISecurityLabs",
-      "published": "2026-08-10T23:21:12+00:00",
+      "published": "2026-08-11T21:27:55+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 0,
       "feed_url": "https://www.endorlabs.com/learn/rss.xml",
       "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Best in Class, Novel in Method: Opus 5 and the Recall-Then-Diverge Pattern | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/best-in-class-novel-in-method-opus-5-and-the-recall-then-diverge-pattern",
+      "summary": "Claude Code with Opus 5 takes first in the leaderboard with 73.7% functional code and 32.4% secure code, plus 9 unique security solves.",
+      "category": "AISecurityLabs",
+      "published": "2026-08-11T18:40:13+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Testing ads in ChatGPT",
+      "url": "https://openai.com/index/testing-ads-in-chatgpt",
+      "summary": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.",
+      "category": "FirstParty",
+      "published": "2026-08-11T10:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "SpringBoot Actuator 泄露挖掘实战：从 /env 到 heapdump",
+      "url": "https://xz.aliyun.com/news/92675",
+      "summary": "一个只暴露静态页面的服务，因为默认配置开启了 Actuator，最终翻出了云厂商的 AccessKey 和注册中心的明文密码。这篇记录完整的挖掘链路，以及过程中踩过的几个关键坑。",
+      "category": "Chinese",
+      "published": "2026-08-11T07:07:03+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "从 85% 假阳性到 0：子域名枚举踩坑实录",
+      "url": "https://xz.aliyun.com/news/92673",
+      "summary": "资产测绘实战踩坑：580 个子域名结果 85% 是假阳性，从 grep -qv '^$' 空应答误判、泛解析、UDP 53 被墙到裸域漏验，逐个排坑后沉淀出\"预筛 + 多轮枚举\"两阶段方案，误报率降至 0。代码已开源。",
+      "category": "Chinese",
+      "published": "2026-08-11T06:36:14+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "Linux 栈溢出利用 ret2dlresolve 技术原理与多场景实战",
+      "url": "https://xz.aliyun.com/news/92670",
+      "summary": "本文详细梳理了ret2dlresolve的核心底层原理，从延迟绑定、PLT/GOT表结构到_dl_fixup查表流程进行了深度剖析，并针对No RELRO、Partial RELRO等不同保护机制，给出了32 位/64位的攻击利用思路与经典例题实战",
+      "category": "Chinese",
+      "published": "2026-08-11T05:48:51+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "记一次 HIS 系统垂直越权挖掘：从弱口令登录到垂直越权导致全量信息泄露",
+      "url": "https://xz.aliyun.com/news/92669",
+      "summary": "一次攻防对抗项目中对某医院 HIS 系统的渗透，目标是验证登录用户权限边界并扩大战果。整个链路走下来很有意思：看似处处有鉴权，实则令牌签名可逆向，最终用一个低权限账号拿到了全量用户数据。",
+      "category": "Chinese",
+      "published": "2026-08-11T04:59:02+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "AGFlow 三洞审计：补丁追着漏洞跑，有个版本掉队了",
+      "url": "https://xz.aliyun.com/news/92668",
+      "summary": "RAGFlow v0.24.0 用户裸奔了 2.5 个月——SSTI 沙箱补丁 3 月才合入、4 月才发版。三个 CVE（SSTI/Zip Slip/API key 推导）都是普通账号起步直接 root，核心问题是\"用户输入没边界检查就进了危险函数\"。配套开源了 ragflow-audit.py，ssti/zipslip/apikey 三子命令实测复现。",
+      "category": "Chinese",
+      "published": "2026-08-11T04:10:05+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "8000人围观、9位安全大佬激辩：AI来袭，白帽生态与网安行业路在何方？",
@@ -442,30 +646,17 @@
       "feed_title": "安全客"
     },
     {
-      "title": "npm Now Scans for Malware at Publish, Not Install | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/the-registry-just-became-a-checkpoint-it-still-isnt-your-perimeter",
-      "summary": "GitHub scans every npm package for malware before publish. Here's why that's not enough, and why install-time enforcement is still on you.",
-      "category": "AISecurityLabs",
-      "published": "2026-08-10T17:34:15+00:00",
+      "title": "HTB-Timelapse：一张证书打开域控大门",
+      "url": "https://xz.aliyun.com/news/92664",
+      "summary": "本文记录 Hack The Box Timelapse 靶机的完整渗透过程。目标是一台 Windows Active Directory 域控，初始信息来自 SMB 匿名可访问的 Shares 共享。通过下载并破解 winrm_backup.zip 与其中的 legacyy_dev_auth.pfx 证书文件，成功获取客户端证书与私钥，并利用 WinRM over HTTPS 的证书认证拿到初始",
+      "category": "Chinese",
+      "published": "2026-08-10T13:28:36+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 0,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
-      "title": "Model ML completes finance work more efficiently with GPT-5.6 Sol",
-      "url": "https://openai.com/index/model-ml",
-      "summary": "Model ML uses GPT-5.6 Sol to carry finance work from research and analysis through editable, traceable PowerPoint decks and Excel workbooks.",
-      "category": "FirstParty",
-      "published": "2026-08-10T12:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 0,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "Show, Don't Tell: What Evo Continuous Offensive Security Found in a Real Enterprise SaaS",
@@ -494,6 +685,19 @@
       "feed_title": "X / Trail of Bits"
     },
     {
+      "title": "See you next year.",
+      "url": "https://x.com/trailofbits/status/2087132447494344848",
+      "summary": "See you next year.",
+      "category": "XSignals",
+      "published": "2026-08-11T11:02:07+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": -1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
+    {
       "title": "1755枚比特币一夜蒸发：1.1亿美元\"冷存储\"神话，碎在一个不随机的随机数上",
       "url": "https://www.anquanke.com/post/id/315945",
       "summary": "",
@@ -505,19 +709,6 @@
       "quality_score": -1,
       "feed_url": "https://api.anquanke.com/data/v1/rss",
       "feed_title": "安全客"
-    },
-    {
-      "title": "基于 Tai-e 构建 Java 白盒审计工具与污点分析优化实践",
-      "url": "https://xz.aliyun.com/news/92657",
-      "summary": "基于太阿构建一个真实项目可用的静态分析工具",
-      "category": "Chinese",
-      "published": "2026-08-08T09:02:01+00:00",
-      "fetch_status": "title_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": -1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
     }
   ]
 }

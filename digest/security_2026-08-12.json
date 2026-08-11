@@ -1,0 +1,671 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-12",
+  "generated_at": "2026-08-11T23:26:43.815742Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 7,
+    "direct": 15,
+    "wechat": 3,
+    "tier_t2": 10,
+    "kind_cn_expert": 4,
+    "kind_expert": 1,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "kind_media": 9,
+    "tier_unknown": 4
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 4,
+    "merged_total": 4
+  },
+  "delivered_filter_stats": {
+    "url": 12,
+    "story": 1,
+    "total": 13
+  },
+  "items": [
+    {
+      "title_zh": "Docker 容器到主机任意文件写入漏洞 CVE-2026-17106 安全风险通告",
+      "title_orig": "【已复现】Docker cp 容器到主机任意文件写入漏洞(CVE-2026-17106)安全风险通告",
+      "summary": "该漏洞源于 Docker cp 命令在处理容器与主机间文件拷贝时的逻辑缺陷，允许攻击者通过精心构造的容器镜像或运行环境实现路径穿越。受影响版本涉及 Docker 多个主流发行版，攻击者可借此在宿主机任意路径写入恶意文件，从而获取主机控制权。目前官方已发布安全补丁，建议用户尽快升级至最新版本以规避风险。",
+      "tags": [
+        "Docker",
+        "文件写入",
+        "容器安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247507043&idx=2&sn=d63e9983c803ce4c3e5462036277f481",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-11T11:35:00+00:00",
+      "cve_ids": [
+        "CVE-2026-17106"
+      ],
+      "selection_reason": "Docker 核心组件漏洞，直接威胁宿主机安全，影响面广。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "cve:cve-2026-17106",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247507002&idx=1&sn=97e9f830d318a051a7e4e4acda250c68"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "technical_depth": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 9.15,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Microsoft SharePoint JWT 令牌身份验证绕过漏洞 CVE-2026-55040 技术分析与 PoC",
+      "title_orig": "Rapid7 Analysis: Microsoft SharePoint JWT Token Authentication Bypass (CVE-2026-55040)",
+      "summary": "Rapid7与微软联合披露了SharePoint身份验证绕过漏洞CVE-2026-55040，该漏洞源于JWT令牌验证逻辑缺陷，允许远程未授权攻击者通过伪造凭据绕过安全检查。目前详细的技术分析报告及验证脚本PoC已公开发布，攻击者可借此非法访问敏感数据并影响多个服务器版本，建议系统管理员务必尽快应用官方发布的修复补丁，以防范潜在的大规模远程攻击威胁并确保数据安全。",
+      "tags": [
+        "SharePoi",
+        "身份绕过",
+        "JWT"
+      ],
+      "url": "https://www.rapid7.com/blog/post/ra-microsoft-sharepoint-jwt-token-authentication-bypass-cve-2026-55040",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-11T13:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-55040"
+      ],
+      "selection_reason": "披露了关键办公组件的验证绕过细节及 PoC，实战价值高。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-55040",
+      "related_urls": [
+        "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
+        "https://www.rapid7.com/blog/post/etr-cve-2026-63520-microsoft-sharepoint-remote-code-execution-fixed"
+      ],
+      "related_count": 2,
+      "score": 10,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "technical_depth": 10.0,
+        "impact_scope": 9.0,
+        "actionability": 10.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.8,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "TCG TPM 2.0 参考实现存在信息泄露与 RSA OAEP 解密计时侧信道漏洞",
+      "title_orig": "VU#431093: TCG TPM 2.0 reference code found vulnerable to information leakage and timing side-channel attacks",
+      "summary": "TPM 2.0参考代码被发现存在CVE-2026-6726信息泄露和CVE-2026-6727计时侧信道攻击漏洞，主要涉及伪造密钥及RSA OAEP解密过程中的安全缺陷。拥有特权访问权限的攻击者能通过发送精心构造的指令，利用执行时间差异等手段提取敏感加密信息，受影响的硬件供应商需根据安全建议及时更新其固件实现，以防止攻击者通过侧信道手段获取受保护的机密数据。",
+      "tags": [
+        "TPM",
+        "侧信道攻击",
+        "硬件安全"
+      ],
+      "url": "https://kb.cert.org/vuls/id/431093",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-08-11T15:12:29+00:00",
+      "cve_ids": [
+        "CVE-2026-6726",
+        "CVE-2026-6727"
+      ],
+      "selection_reason": "涉及硬件信任根 TPM 的底层漏洞，对系统底层安全影响深远。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "cve:cve-2026-6726,cve-2026-6727",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 7.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软 2026 年 8 月补丁日修复 421 个漏洞，包含已遭利用的内核模式驱动 0-day",
+      "title_orig": "August 2026 Patch Tuesday: Microsoft Fixes 421 CVEs, One Exploited Zero-Day",
+      "summary": "微软在2026年8月补丁日修复了Windows内核模式驱动程序afd.sys中存在的一个释放后重用（UAF）漏洞，该漏洞已被确认为在野利用的零日漏洞。攻击者可利用该漏洞在本地触发异常，从而将权限提升至SYSTEM级别，原文未披露受影响的具体Windows版本范围及其他420个漏洞的技术细节，目前官方已发布安全补丁修复了此项关键风险。",
+      "tags": [
+        "微软",
+        "补丁日",
+        "0-day"
+      ],
+      "url": "https://www.securityweek.com/august-2026-patch-tuesday-microsoft-fixes-421-cves-one-exploited-zero-day/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-11T18:46:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "补丁数量巨大且包含在野利用 0-day，是企业运维的重点。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/august-2026-patch-tuesday-microsoft-fixes-421-cves-one-exploited-zero-day",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/microsoft/microsoft-august-2026-patch-tuesday-fixes-400-flaws-3-zero-days/",
+        "https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html",
+        "https://krebsonsecurity.com/2026/08/microsoft-plugs-nearly-400-security-holes/",
+        "https://www.rapid7.com/blog/post/em-patch-tuesday-august-2026"
+      ],
+      "related_count": 4,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "technical_depth": 8.0,
+        "impact_scope": 10.0,
+        "actionability": 9.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.4,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "思科警告 ASA 与 FTD 防火墙 VPN 拒绝服务漏洞正遭受大规模在野攻击",
+      "title_orig": "Cisco warns of ASA and FTD VPN flaw exploited to crash devices",
+      "summary": "思科发布预警称，其 Secure Firewall ASA 和 FTD 软件中的一个高危拒绝服务漏洞正被攻击者利用，旨在远程导致设备崩溃。该漏洞存在于 VPN 处理逻辑中，攻击者通过发送特制的流量即可触发系统重启或服务中断，影响企业网络边界的稳定性。目前思科已提供修复方案或缓解措施，建议受影响用户尽快检查设备日志并升级。",
+      "tags": [
+        "思科",
+        "防火墙",
+        "DoS攻击"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-asa-and-ftd-vpn-flaw-exploited-to-crash-devices/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-11T19:45:31+00:00",
+      "cve_ids": [],
+      "selection_reason": "关键网络基础设施漏洞且正被积极利用，具有极高预警价值。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/cisco-warns-of-asa-and-ftd-vpn-flaw-exploited-to-crash-devices",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Hugging Face Agent 入侵事件复盘：AI 局部缺陷引发的系统性安全风险分析",
+      "title_orig": "Hugging Face Agent 入侵复盘：当局部缺陷被 AI 串成系统性入侵",
+      "summary": "本文详细复盘了 Hugging Face Agent 遭受入侵的过程，展示了攻击者如何利用 AI 代理在处理任务时的局部逻辑缺陷串联成系统性攻击路径。文章重点分析了 AI 模型与外部环境交互时的权限控制失效问题，以及在自动化流程中缺乏输入验证的危害。该案例为安全从业者理解 AI 应用层面的新型攻击向量提供了重要的实战参考。",
+      "tags": [
+        "AI安全",
+        "入侵复盘",
+        "Agent"
+      ],
+      "url": "https://xz.aliyun.com/news/92671",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-08-11T05:59:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对新兴 AI Agent 架构的实战入侵分析，代表了前沿安",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92671",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92671"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 10.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.75,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Zoom 修复零点击远程代码执行漏洞，会议参与者可遭远程控制",
+      "title_orig": "Zoom Patches Zero-Click Code Execution Vulnerability",
+      "summary": "Zoom 官方修复了一个存在于注释功能中的零点击远程代码执行漏洞，该漏洞允许会议参与者在无需目标交互的情况下在对方机器执行代码。漏洞原理涉及注释组件对特制数据包的处理不当，影响 Windows 及 macOS 等多个平台的客户端版本。目前官方已发布安全更新，用户需确保客户端升级至最新版本以防止被恶意利用。",
+      "tags": [
+        "Zoom",
+        "零点击",
+        "RCE"
+      ],
+      "url": "https://www.securityweek.com/zoom-patches-zero-click-code-execution-vulnerability/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-11T15:49:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "零点击 RCE 属于最高威胁等级漏洞，且涉及常用办公软件。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/zoom-patches-zero-click-code-execution-vulnerability",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "technical_depth": 8.0,
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.0,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "“Sorry”勒索病毒爆发导致多服务器沦陷，相关防御报告与 IOC 已发布",
+      "title_orig": "“Sorry”勒索病毒爆发,多个服务器沦陷!奇安信数字专家 T+1 交付防御报告、 IOC 全网共享",
+      "summary": "近期“Sorry”勒索病毒呈现爆发态势，已导致多个企业服务器被加密并索要赎金。该病毒主要通过暴力破解和已知漏洞利用进行传播，入侵后会迅速加密关键业务数据并修改文件后缀。奇安信等安全机构已发布针对该病毒的 T+1 防御报告及全网共享的 IOC 指标，建议运维人员加强口令强度并及时排查内网异常连接。",
+      "tags": [
+        "勒索病毒",
+        "服务器安全",
+        "IOC"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247507043&idx=1&sn=aeafd255cc29a13f87d364089c6a9285",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-11T11:35:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "突发性勒索病毒事件，提供 IOC 指标有助于企业快速自查。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ%3D%3D&mid=2247507043&idx=1&sn=aeafd255cc29a13f87d364089c6a9285",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "technical_depth": 7.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 8.35,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "TeamPcp 高阶蠕虫再次袭击 npm 供应链，相关恶意包月下载量已超过 20 亿次",
+      "title_orig": "月下载量超20亿次！TeamPcp高阶蠕虫再袭npm供应链",
+      "summary": "TeamPcp 组织近期针对 npm 生态系统发起大规模供应链攻击，通过发布包含恶意脚本的自动化包进行传播。该蠕虫利用 npm 的安装钩子在开发者环境中执行，旨在窃取敏感凭据并进一步感染其他项目，目前受影响的恶意包累计下载量已突破 20 亿次。原文未披露具体的漏洞编号，但强调了供应链投毒的自动化趋势及对开发者环境的持续威胁。",
+      "tags": [
+        "供应链安全",
+        "npm 投毒",
+        "恶意软件"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3NjYzMDM1Mg==&mid=2247536435&idx=1&sn=e20bc599f5c418d902bc27722eea9af1",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-11T09:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了大规模 npm 供应链攻击的现状与危害。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/e6da68c95a8f1e2fb40f6691d0ce9addc51a7532.xml",
+      "feed_title": "火绒安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/e6da68c95a8f1e2fb40f6691d0ce9addc51a7532.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI3NjYzMDM1Mg%3D%3D&mid=2247536435&idx=1&sn=e20bc599f5c418d902bc27722eea9af1",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "actionability": 7.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.35,
+      "final_score": 9.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "模型上下文协议 MCP 渗透测试备忘录发布，涵盖所有可能的攻击模式与测试流程",
+      "title_orig": "MCP Penetration Testing Cheatsheet - All Possible Attack Patterns",
+      "summary": "该备忘录详细介绍了针对模型上下文协议（MCP）的渗透测试技术，涵盖了从流量捕获到漏洞利用的完整攻击矩阵。技术点包括如何将 MCP 流量导入 Burp Suite、区分现代与传统 MCP 协议指纹、枚举资源以及捕获 stdio 流量。这对于安全从业者理解 AI 代理通信协议的安全风险，并在新兴的 AI 基础设施中执行合规的安全性评估具有极高的参考价值。",
+      "tags": [
+        "MCP 协议",
+        "渗透测试",
+        "AI 安全"
+      ],
+      "url": "https://www.hackingdream.net/2026/08/mcp-penetration-testing-cheatsheet-all.html",
+      "source": "hackingdream.net",
+      "category": "RedTeam",
+      "published": "2026-08-10T11:35:59+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对新兴 AI 协议的渗透测试指南，极具前瞻性。",
+      "feed_url": "https://www.hackingdream.net/feeds/posts/default?alt=rss",
+      "feed_title": "Hacking Dream",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "hackingdream.net",
+      "story_id": "url:hackingdream.net/2026/08/mcp-penetration-testing-cheatsheet-all.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 10.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.1,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Microsoft Edge 浏览器远程代码执行漏洞 CVE-2026-58289 漏洞利用代码公开",
+      "title_orig": "Microsoft Edge 150.0.4078.48 - RCE",
+      "summary": "安全研究员公开了针对 Microsoft Edge 浏览器 150.0.4078.48 版本的远程代码执行漏洞利用程序，该高危漏洞编号为 CVE-2026-58289。攻击者可利用此漏洞在目标系统上执行任意代码，虽然原文未详细披露底层内存损坏的具体原理，但已确认该版本存在严重安全风险，建议广大用户密切关注官方补丁发布状态并及时更新以防范潜在攻击。",
+      "tags": [
+        "Edge 浏览器",
+        "RCE 漏洞",
+        "漏洞利用"
+      ],
+      "url": "http://www.expku.com/local/56489.html",
+      "source": "expku.com",
+      "category": "Synthesis",
+      "published": "2026-08-10T00:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-58289"
+      ],
+      "selection_reason": "主流浏览器的高危 RCE 漏洞利用代码公开。",
+      "feed_url": "http://www.expku.com/rss/rss.xml",
+      "feed_title": "exp库-打造中文最大exploit库",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "expku.com",
+      "story_id": "cve:cve-2026-58289",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "actionability": 10.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Joomla 2.9.99.4 版本存在未经身份验证的远程代码执行漏洞及其利用脚本",
+      "title_orig": "Joomla 2.9.99.4 - Unauthenticated Remote Code Execution",
+      "summary": "Joomla 2.9.99.4 版本被发现存在一个未经身份验证的远程代码执行漏洞，攻击者无需登录即可在受影响的 Web 服务器上执行指令。该漏洞与 JCE 扩展组件相关，利用脚本已由安全研究员公开，可直接导致服务器权限沦陷。目前原文未提供具体的漏洞成因分析，但明确了受影响版本及攻击路径，建议管理员立即检查并升级相关组件。",
+      "tags": [
+        "Joomla",
+        "未授权 RCE",
+        "Web 安全"
+      ],
+      "url": "http://www.expku.com/web/56487.html",
+      "source": "expku.com",
+      "category": "Synthesis",
+      "published": "2026-08-10T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "CMS 系统的未授权 RCE 漏洞，威胁等级极高。",
+      "feed_url": "http://www.expku.com/rss/rss.xml",
+      "feed_title": "exp库-打造中文最大exploit库",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "expku.com",
+      "story_id": "url:expku.com/web/56487.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 8.95,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "SAP 发布安全更新修复多个关键漏洞，涉及代码注入与内存损坏等高危风险",
+      "title_orig": "SAP Patches Critical Code Injection, Memory Corruption Vulnerabilities",
+      "summary": "SAP 官方发布了 28 项新的及 2 项更新的安全说明，重点修复了 4 个关键级别的安全漏洞。这些漏洞类型涵盖了代码注入和内存损坏，可能导致攻击者完全控制受影响的企业级应用系统。原文未逐一列出所有 CVE 编号，但强调了漏洞的严重性及修复的紧迫性，建议企业用户尽快应用官方提供的安全补丁以缓解潜在的攻击风险。",
+      "tags": [
+        "SAP",
+        "代码注入",
+        "补丁更新"
+      ],
+      "url": "https://www.securityweek.com/sap-patches-critical-code-injection-memory-corruption-vulnerabilities/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-11T14:14:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "企业级 ERP 系统的关键漏洞修复，影响范围广。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/sap-patches-critical-code-injection-memory-corruption-vulnerabilities",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 7.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OrkesConductor 3.30.2 未经身份验证远程代码执行漏洞 CVE-2026-58138 预警",
+      "title_orig": "OrkesConductor 3.30.2 - Unauthenticated Remote Code Execution",
+      "summary": "OrkesConductor 3.30.2 版本存在编号为 CVE-2026-58138 的高危漏洞，允许未经身份验证的远程攻击者执行任意代码。该漏洞的 Python 利用脚本已被公开，攻击者可以通过构造特定的网络请求直接触发漏洞。原文未详细说明漏洞的具体触发逻辑，但已确认受影响组件版本，相关组织应立即采取缓解措施或升级至安全版本以防范自动化攻击。",
+      "tags": [
+        "OrkesCon",
+        "CVE-2026",
+        "RCE"
+      ],
+      "url": "http://www.expku.com/web/56490.html",
+      "source": "expku.com",
+      "category": "Synthesis",
+      "published": "2026-08-10T00:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-58138"
+      ],
+      "selection_reason": "特定中间件的未授权 RCE 漏洞，且 PoC 已公开。",
+      "feed_url": "http://www.expku.com/rss/rss.xml",
+      "feed_title": "exp库-打造中文最大exploit库",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "expku.com",
+      "story_id": "cve:cve-2026-58138",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 8.0,
+        "actionability": 10.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 8.85,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Adobe 紧急修复 ColdFusion 与 Campaign Classic 中的关键远程代码执行漏洞",
+      "title_orig": "Adobe Urges Immediate Patching of Critical ColdFusion, Campaign Classic Flaws",
+      "summary": "Adobe发布安全更新修复了ColdFusion和Campaign Classic中的关键漏洞，这些缺陷主要涉及任意代码执行和拒绝服务攻击。漏洞的具体技术原理、触发条件以及受影响的软件版本在原文中均未披露，但官方强调攻击者可利用这些缺陷完全控制受影响的系统。目前Adobe已发布相关补丁，原文未披露具体的CVE编号，仅敦促用户通过安装最新补丁进行修复。",
+      "tags": [
+        "Adobe",
+        "ColdFusi",
+        "漏洞修复"
+      ],
+      "url": "https://www.securityweek.com/adobe-urges-immediate-patching-of-critical-coldfusion-campaign-classic-flaws/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-11T16:50:19+00:00",
+      "cve_ids": [],
+      "selection_reason": "Adobe 关键组件的 RCE 漏洞修复，涉及重要企业应用。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/adobe-urges-immediate-patching-of-critical-coldfusion-campaign-classic-flaws",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "technical_depth": 7.0,
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.1,
+      "final_score": 8.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
