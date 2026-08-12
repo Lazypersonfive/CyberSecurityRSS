@@ -1,11 +1,11 @@
 # Offline Strategy Eval
 
-- generated_for: 2026-08-12
-- dates: 2026-08-12, 2026-08-11, 2026-08-10, 2026-08-09, 2026-08-08, 2026-08-07, 2026-08-06
+- generated_for: 2026-08-13
+- dates: 2026-08-13, 2026-08-12, 2026-08-11, 2026-08-10, 2026-08-09, 2026-08-08, 2026-08-07
 
 ## Top Issues
 
-- [ai_security] 7/7 天未满额，累计缺口约 41 条。
+- [ai_security] 7/7 天未满额，累计缺口约 43 条。
 - [finance] 1/7 天未满额，累计缺口约 2 条。
 - [ai] 1/7 天未满额，累计缺口约 1 条。
 - [ai_security] 中文目标 0/7 天达成。
@@ -16,21 +16,23 @@
 | Board | Name | Days | Avg Selected | Target | Full Days | Avg CN | CN Target | Obs Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | ai | AI 前沿 | 7 | 14.9 | 15 | 6/7 | 5.3 | 5 | 3 | 5/7 | 0.7 | 3 | 2 | 8.4 | 33 |
-| ai_security | AI 安全 | 7 | 4.1 | 10 | 0/7 | 0.3 | 2 | 0 | 0/7 | 1.4 | 2 | 0 | 7.3 | 3 |
+| ai_security | AI 安全 | 7 | 3.9 | 10 | 0/7 | 0.3 | 2 | 0 | 0/7 | 1.4 | 2 | 0 | 7.5 | 1 |
 | finance | 金融科技 | 7 | 9.7 | 10 | 6/7 | 2.0 | 1 | 1 | 7/7 | 2.1 | 4 | 0 | 7.2 | 2 |
-| security | 安全 | 7 | 15.0 | 15 | 7/7 | 6.7 | 6 | 6 | 7/7 | 0.0 | 1 | 11 | 8.8 | 21 |
+| security | 安全 | 7 | 15.0 | 15 | 7/7 | 6.7 | 6 | 6 | 7/7 | 0.0 | 1 | 11 | 8.8 | 20 |
 
 ## Source Mix
 
 | Board | T1 | T1.5 | T2 | Unknown | Official | X | Google News | CN Expert | Community |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 12 | 17 | 73 | 2 | 12 | 44 | 5 | 18 | 1 |
-| ai_security | 4 | 1 | 24 | 0 | 4 | 4 | 10 | 1 | 0 |
-| finance | 1 | 0 | 67 | 0 | 1 | 0 | 15 | 0 | 0 |
-| security | 11 | 0 | 83 | 11 | 11 | 5 | 0 | 42 | 5 |
+| ai | 14 | 15 | 73 | 2 | 14 | 44 | 5 | 18 | 1 |
+| ai_security | 3 | 1 | 23 | 0 | 3 | 4 | 10 | 1 | 0 |
+| finance | 2 | 0 | 66 | 0 | 2 | 0 | 15 | 0 | 0 |
+| security | 9 | 0 | 85 | 11 | 9 | 4 | 0 | 41 | 5 |
 
 ## Target Misses
 
+- 2026-08-13 security：selected 15/15，中文 6/6，unknown 1
+- 2026-08-13 ai_security：selected 5/10，中文 0/2
 - 2026-08-12 security：selected 15/15，中文 7/6，unknown 4
 - 2026-08-12 ai_security：selected 2/10，中文 0/2
 - 2026-08-11 security：selected 15/15，中文 9/6，unknown 1
@@ -46,8 +48,6 @@
 - 2026-08-08 ai：selected 15/15，中文 3/5，unknown 2
 - 2026-08-07 ai_security：selected 7/10，中文 1/2
 - 2026-08-07 ai：selected 15/15，中文 4/5
-- 2026-08-06 security：selected 15/15，中文 6/6，unknown 1
-- 2026-08-06 ai_security：selected 7/10，中文 0/2
 
 ## Read This
 
