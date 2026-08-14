@@ -1,0 +1,664 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-15",
+  "generated_at": "2026-08-14T23:02:27.739979Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 6,
+    "direct": 15,
+    "tier_t2": 15,
+    "kind_cn_expert": 6,
+    "wechat": 5,
+    "kind_media": 5,
+    "kind_expert": 1,
+    "kind_community": 3
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 1,
+    "merged_total": 2
+  },
+  "delivered_filter_stats": {
+    "url": 9,
+    "story": 0,
+    "total": 9
+  },
+  "items": [
+    {
+      "title_zh": "LobeChat 修复补丁存在盲区，攻击者可利用 SSRF 漏洞扫描内网及获取云元数据",
+      "title_orig": "从修复 diff 到第五个洞：LobeChat SSRF 盲区审计",
+      "summary": "研究人员发现 LobeChat 在修复 SSRF 漏洞时存在盲区，其 bot 平台的四个发送附件接口在 v2.2.9 至最新版本中仍存在裸 fetch 调用。攻击者通过注册账号并伪造机器人凭证，仅需简单指令即可触发漏洞，实现内网扫描或攻击云元数据服务，目前已有配套的开源审计工具 lobechat-audit 发布供安全人员使用，该工具可帮助开发者检测并修复此类潜在的安全隐患。",
+      "tags": [
+        "SSRF",
+        "代码审计",
+        "内网渗透"
+      ],
+      "url": "https://xz.aliyun.com/news/92685",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-08-13T02:22:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了补丁绕过审计的典型案例及云原生组件的安全风险。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92685",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92685"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "score_dimensions": {
+        "technical_depth": 10.0,
+        "actionability": 10.0,
+        "relevance": 10.0,
+        "exploitability": 10.0,
+        "impact_scope": 9.0
+      },
+      "dimension_score": 9.8,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "开源地图服务器 GeoServer 曝出严重零日漏洞，全球范围内正遭受大规模利用",
+      "title_orig": "【安全圈】开源地图服务器曝零日漏洞，全球遭疯狂利用",
+      "summary": "广泛应用于政府和企业环境的开源地理空间数据服务器 GeoServer 被曝出严重的零日漏洞，目前该漏洞正处于活跃的野外利用状态并引发全球关注。虽然原文未披露漏洞的具体技术原理、触发条件及受影响的确切版本号，但强调了其在全球范围内的广泛影响，建议相关用户及组织务必关注官方后续发布的补丁更新与安全建议。",
+      "tags": [
+        "GeoServe",
+        "零日漏洞",
+        "地理信息系统"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078279&idx=2&sn=985d79e8e4b1f31fb20e1e8561712d9a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "GeoServer 在政企应用广泛，其 0day 漏洞具有极",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078279&idx=2&sn=985d79e8e4b1f31fb20e1e8561712d9a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 9.0,
+        "relevance": 10.0,
+        "exploitability": 10.0,
+        "impact_scope": 9.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "微软修复 SharePoint 远程代码执行漏洞 CVE-2026-63520，可实现未经身份验证的攻击",
+      "title_orig": "CVE-2026-63520: SharePoint RCE Patched by Microsoft",
+      "summary": "微软在 8 月更新中修复了 SharePoint 的远程代码执行漏洞 CVE-2026-63520，该漏洞由 Rapid7 研究员利用 AI 代理工作流发现。该漏洞 CVSS 评分为 8.1，可作为 Pwn2Own 竞赛中构建的未经身份验证攻击链的关键环节，允许远程攻击者在目标服务器上执行任意代码，对企业内网安全构成严重威胁，建议所有受影响的企业用户尽快应用官方发布的补丁程序。",
+      "tags": [
+        "SharePoi",
+        "RCE",
+        "漏洞修复"
+      ],
+      "url": "https://www.cyberkendra.com/2026/08/cve-2026-63520-sharepoint-rce-patched.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-08-13T02:05:54+00:00",
+      "cve_ids": [
+        "CVE-2026-63520"
+      ],
+      "selection_reason": "涉及高价值目标 SharePoint 的 RCE 漏洞及 A",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "cve:cve-2026-63520",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247507107&idx=2&sn=0caeee931a490818e294cc4bea6227d4",
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247507089&idx=1&sn=738a25f378623a67d8bc4f5dfa6ef085",
+        "https://thehackernews.com/2026/08/attackers-exploit-sharepoint.html"
+      ],
+      "related_count": 3,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "actionability": 9.0,
+        "relevance": 10.0,
+        "exploitability": 10.0,
+        "impact_scope": 10.0
+      },
+      "dimension_score": 9.65,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "首个针对 AI 模型文件的勒索软件 ENCFORGE 出现，利用 Langflow 漏洞入侵加密资产",
+      "title_orig": "【AI复盘】首个瞄准AI模型文件的勒索软件",
+      "summary": "ENCFORGE 是首个专门针对 AI 模型文件的勒索软件，它通过 Langflow 的未授权 RCE 漏洞入侵并利用 Docker 逃逸访问宿主机。该软件不窃取数据，而是精准加密 PyTorch、SafeTensors 等模型文件及向量库，导致单模型恢复成本高达 50 万美元，标志着勒索攻击已从通用工具进化为针对 AI 资产的定向武器，迫使安全从业者重新审视传统的资产隔离与防护策略。",
+      "tags": [
+        "AI安全",
+        "勒索软件",
+        "容器逃逸"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487929&idx=1&sn=7b5535789ce5868295c4c97361fde8f1",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-13T23:59:00+00:00",
+      "cve_ids": [
+        "CVE-2025-3248"
+      ],
+      "selection_reason": "揭示了针对 AI 资产的新型勒索范式，具有极强的行业前瞻性。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "cve:cve-2025-3248",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 9.0,
+        "relevance": 10.0,
+        "exploitability": 9.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全研究员成功复现 Zilliqa Ledger 硬件钱包 EC-Schnorr 签名算法攻击",
+      "title_orig": "G.O.S.S.I.P 阅读推荐 2026-08-14 Zilliqa Ledger EC-Schnorr 签名攻击复现",
+      "summary": "研究人员针对 Zilliqa Ledger 硬件钱包中使用的 EC-Schnorr 签名算法进行了攻击复现实验，揭示了该算法在实际应用中的安全风险。该技术点主要涉及密码学实现中的安全缺陷，通过特定的攻击手段可能导致签名私钥泄露或非法交易签署，虽然原文未详细展开数学推导，但为区块链安全从业者提供了重要的算法实现参考。",
+      "tags": [
+        "硬件钱包",
+        "密码学攻击",
+        "区块链安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg5ODUxMzg0Ng==&mid=2247501980&idx=1&sn=3e0bee47895f3d70f1dd32d4d73a70de",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T13:50:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及硬件钱包底层算法安全，对加密货币安全研究有参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/ac4004481c5b78892663e13bb3af8422d4ebeb68.xml",
+      "feed_title": "安全研究GoSSIP",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/ac4004481c5b78892663e13bb3af8422d4ebeb68.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg5ODUxMzg0Ng%3D%3D&mid=2247501980&idx=1&sn=3e0bee47895f3d70f1dd32d4d73a70de",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 10.0,
+        "actionability": 8.0,
+        "relevance": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 8.55,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "黑客利用 macOS 屏幕共享身份验证绕过漏洞部署门罗币挖矿程序",
+      "title_orig": "Hackers exploit macOS Screen Sharing flaw to deploy Monero miner",
+      "summary": "荷兰国家网络安全中心预警，黑客正利用 macOS 屏幕共享功能中的身份验证绕过漏洞进行攻击，在公开利用代码发布后，攻击活动呈现上升趋势。攻击者通过该漏洞非法侵入系统并部署门罗币挖矿软件，目前官方已发布相关预警，建议用户尽快检查系统配置并更新至最新安全版本，以缓解因身份验证失效带来的系统被控风险。",
+      "tags": [
+        "macOS",
+        "身份绕过",
+        "挖矿木马"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-macos-screen-sharing-flaw-to-deploy-monero-miner/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-14T14:59:55+00:00",
+      "cve_ids": [],
+      "selection_reason": "macOS 认证绕过漏洞的野外利用事件，提醒桌面端安全防护。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/hackers-exploit-macos-screen-sharing-flaw-to-deploy-monero-miner",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 9.0,
+        "relevance": 10.0,
+        "exploitability": 9.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Metasploit 更新发布 13 个新模块，涵盖 Linux 内核提权及多个主流框架 RCE",
+      "title_orig": "Metasploit Wrap Up: Lot of summer shells and fit http profiles",
+      "summary": "Metasploit近期发布更新并新增了13个渗透测试模块，重点涵盖了针对Linux内核Fragnesia本地提权漏洞CVE-2026-46300的利用工具，以及WordPress、Ghost CMS、Joomla和Ray Dashboard等多个热门组件的远程代码执行模块。此外，该版本还对HTTP配置文件功能进行了优化升级，旨在通过更全面的漏洞验证手段提升框架的实战攻击能力，帮助安全研究人员更高效地识别并修复各类系统及应用中的安全隐患。",
+      "tags": [
+        "Metasplo",
+        "渗透工具",
+        "内核提权"
+      ],
+      "url": "https://www.rapid7.com/blog/post/pt-metasploit-wrap-up-lot-of-summer-shells-and-fit-http-profiles",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-14T21:27:45+00:00",
+      "cve_ids": [
+        "CVE-2026-46300"
+      ],
+      "selection_reason": "汇总了近期主流漏洞的利用工具化进展，安全从业者需关注。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-46300",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "actionability": 9.0,
+        "relevance": 9.0,
+        "exploitability": 9.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CNNVD 发布关于 Fortinet FortiWeb Web 应用防火墙授权问题漏洞通报",
+      "title_orig": "CNNVD关于Fortinet FortiWeb授权问题漏洞的通报",
+      "summary": "国家信息安全漏洞库针对 Fortinet FortiWeb 存在的授权问题漏洞发布了安全通报，该漏洞编号为 CVE-2026-26035。该漏洞可能导致攻击者绕过权限控制执行未授权操作，严重威胁特定版本 FortiWeb 产品的安全性，目前官方已收到相关情况报送，建议受影响的企业用户及时关注官方补丁发布动态，并尽快完成系统修复工作，以防止潜在的越权攻击导致敏感数据泄露。",
+      "tags": [
+        "Fortinet",
+        "授权绕过",
+        "WAF安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODY1OTM5OQ==&mid=2651465335&idx=1&sn=0649b556cc7bf089715a7c120199e3a6",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T06:33:00+00:00",
+      "cve_ids": [
+        "CVE-2026-26035"
+      ],
+      "selection_reason": "关键网络基础设施 WAF 的安全漏洞通报，具有高优先级。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/899e0eaf0e3ea7abac0211b3db9bb39c616e3255.xml",
+      "feed_title": "CNNVD安全动态",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/899e0eaf0e3ea7abac0211b3db9bb39c616e3255.xml",
+      "story_id": "cve:cve-2026-26035",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 9.0,
+        "relevance": 9.0,
+        "exploitability": 7.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 7.65,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "苹果向 110 个国家/地区用户发送雇佣兵间谍软件攻击预警并启用锁屏推送提醒",
+      "title_orig": "Apple Warns iPhone Users of Mercenary Spyware Attacks",
+      "summary": "苹果公司向全球110个国家的用户发出了新一轮雇佣兵间谍软件威胁通知，旨在提醒用户可能正受到针对性极强的攻击，苹果官方已同步更新支持页面说明该机制。此次预警首次采用iPhone锁屏界面弹窗推送的新交付方式，取代了以往可能被忽略的电子邮件通知，以确保受影响用户能第一时间察觉并采取安全防护措施。",
+      "tags": [
+        "苹果",
+        "间谍软件",
+        "威胁预警"
+      ],
+      "url": "https://www.cyberkendra.com/2026/08/apple-threat-notification-mercenary-spyware.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T03:53:36+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了顶级厂商在应对针对性攻击时的预警机制演进。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/08/apple-threat-notification-mercenary-spyware.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 8.0,
+        "relevance": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 9.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究团队利用 AI 渗透测试引擎通过提示词注入成功获取生产环境 AI 智能体系统提示词",
+      "title_orig": "Our AI pentesting engine talked a production AI agent's prompt-injection guardrail into handing over its entire system prompt on its second attempt.",
+      "summary": "Escape安全工程团队利用其Cascade AI渗透测试引擎，通过将攻击指令伪装成文档索取请求，在第二次尝试时成功诱导生产环境AI智能体绕过防护机制并获取其核心机密。该智能体随后泄露了完整的系统提示词、工具列表、调用规则、引用格式及会话ID，充分展示了当前AI护栏在处理复杂语境和欺骗性指令时的严重脆弱性。",
+      "tags": [
+        "AI 安全",
+        "提示词注入",
+        "渗透测试"
+      ],
+      "url": "https://www.reddit.com/r/Pentesting/comments/1vocpk8/our_ai_pentesting_engine_talked_a_production_ai/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-08-14T16:53:16+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对生产级 AI 应用的实战化提示词注入攻击技术。",
+      "feed_url": "https://www.reddit.com/r/Pentesting/.rss",
+      "feed_title": "Pentesting",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "url:reddit.com/r/pentesting/comments/1vocpk8/our_ai_pentesting_engine_talked_a_production_ai",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 8.0,
+        "relevance": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Laravel Socialite 5.28.x 及以下版本 Facebook 提供程序组件存在授权不当漏洞",
+      "title_orig": "CVE-2026-73683 | Laravel Socialite up to 5.28.x Facebook Provider FacebookProvider.php getUserByOIDCToken improper authorization",
+      "summary": "Laravel Socialite扩展包在5.28.x及以下版本中存在一个被归类为严重的授权不当漏洞，该漏洞编号为CVE-2026-73683，主要影响Facebook Provider组件中相关文件的函数。远程攻击者可利用此缺陷绕过授权机制，虽然目前尚未发现公开的利用代码，但由于该漏洞涉及身份验证核心逻辑，建议所有受影响的开发者和运维人员尽快检查系统版本并关注官方补丁以防范潜在风险。",
+      "tags": [
+        "Laravel",
+        "身份验证",
+        "漏洞预警"
+      ],
+      "url": "https://vuldb.com/vuln/390133",
+      "source": "vuldb.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T21:49:17+00:00",
+      "cve_ids": [
+        "CVE-2026-73683"
+      ],
+      "selection_reason": "主流框架扩展包的严重授权漏洞，影响 Web 应用安全。",
+      "feed_url": "https://vuldb.com/en/?rss.recent",
+      "feed_title": "VulDB Recent Entries",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "vuldb.com",
+      "story_id": "cve:cve-2026-73683",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 8.0,
+        "relevance": 8.0,
+        "exploitability": 8.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 7.8,
+      "final_score": 7.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Semaphore 2.18.20 之前版本存在 OS 命令注入漏洞可导致远程代码执行",
+      "title_orig": "CVE-2026-73682 Semaphore prior to version 2.18.20 OS Command Injection via git_url Repository Handling",
+      "summary": "Semaphore在2.18.20之前的版本中存在严重的OS命令注入漏洞，该漏洞编号为CVE-2026-73682，源于系统在处理存储库git_url时未能有效过滤恶意参数。具有项目管理员或所有者权限的身份验证用户，可以通过构造包含特定上传包选项的恶意URL值，在服务器主机上执行任意shell命令并实现远程代码执行，目前官方已发布修复版本，受影响用户应立即升级以确保系统环境的安全。",
+      "tags": [
+        "命令注入",
+        "RCE",
+        "代码托管"
+      ],
+      "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-73682?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T21:06:36+00:00",
+      "cve_ids": [
+        "CVE-2026-73682"
+      ],
+      "selection_reason": "涉及权限提升与远程代码执行，是高风险的配置管理工具漏洞。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-73682",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 8.0,
+        "relevance": 8.0,
+        "exploitability": 8.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 7.8,
+      "final_score": 7.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究发现 2500 家机构遭入侵的根源在于 Trivy 漏洞而非 LiteLLM 恶意包",
+      "title_orig": "Trivy, Not LiteLLM Behind the 2,500 Org Compromise",
+      "summary": "针对近期2500家机构受损的大规模安全事件，最新调查显示超过95%的受影响公司在恶意LiteLLM软件包发布之前就已经处于暴露状态，这推翻了此前的初步判断。研究确认真正的攻击入口源于Trivy相关的安全问题而非供应链投毒，这一发现对于业界准确归因该入侵事件并制定针对性的修复策略具有至关重要的参考价值。",
+      "tags": [
+        "供应链安全",
+        "漏洞分析",
+        "入侵溯源"
+      ],
+      "url": "https://www.securityweek.com/trivy-not-litellm-behind-the-2500-org-compromise/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T11:35:23+00:00",
+      "cve_ids": [],
+      "selection_reason": "纠正了重大安全事件的归因误区，对供应链防护有参考价值。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/trivy-not-litellm-behind-the-2500-org-compromise",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "actionability": 7.0,
+        "relevance": 8.0,
+        "exploitability": 6.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 7.25,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Beacon CRM 因 AWS 访问密钥在公开 JavaScript 构建产物中泄露导致千余家慈善机构数据被窃",
+      "title_orig": "Over 1,000 Charities Hit by Beacon CRM Data Breach",
+      "summary": "超过1000家慈善机构因Beacon CRM的数据泄露事件受到严重影响，导致大量敏感信息面临外泄风险，引发了公益行业的广泛关注。调查发现事故根源在于一个受损的AWS访问密钥，该密钥被错误地暴露在可公开访问的JavaScript构建产物中，攻击者利用此凭据非法获取了云端存储权限，目前相关机构正在评估具体的数据损失情况。",
+      "tags": [
+        "凭据泄露",
+        "云安全",
+        "数据泄露"
+      ],
+      "url": "https://www.securityweek.com/over-1000-charities-hit-by-beacon-crm-data-breach/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T09:20:28+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的开发失误导致的大规模云端数据泄露案例。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/over-1000-charities-hit-by-beacon-crm-data-breach",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 7.0,
+        "relevance": 8.0,
+        "exploitability": 8.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 7.2,
+      "final_score": 7.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型勒索病毒 Sorry 针对 Linux 服务器发起攻击，利用加密手段勒索赎金",
+      "title_orig": "警惕新型勒索病毒来袭！“Sorry” 病毒瞄准Linux服务器发起攻击",
+      "summary": "近期出现一种名为“Sorry”的新型勒索病毒，该病毒专门针对Linux服务器系统发起定向攻击，通过加密关键业务数据并留下勒索信息来索要高额赎金。虽然目前原文尚未披露其具体的传播途径和利用的漏洞编号，但鉴于其对企业数据安全的严重威胁，建议Linux系统管理员立即加强权限管理，并定期执行异地备份以确保数据可恢复性。",
+      "tags": [
+        "勒索病毒",
+        "Linux 安全",
+        "恶意软件"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3NjYzMDM1Mg==&mid=2247536515&idx=1&sn=da17e84bf134fa72ca1217d7bb1c0741",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T08:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对 Linux 生产环境的新型勒索威胁，具有较强的实战警示",
+      "feed_url": "https://wechat2rss.xlab.app/feed/e6da68c95a8f1e2fb40f6691d0ce9addc51a7532.xml",
+      "feed_title": "火绒安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/e6da68c95a8f1e2fb40f6691d0ce9addc51a7532.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI3NjYzMDM1Mg%3D%3D&mid=2247536515&idx=1&sn=da17e84bf134fa72ca1217d7bb1c0741",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "technical_depth": 5.0,
+        "actionability": 6.0,
+        "relevance": 8.0,
+        "exploitability": 6.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 6.45,
+      "final_score": 7.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
