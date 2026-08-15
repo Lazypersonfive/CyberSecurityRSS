@@ -1,0 +1,653 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-16",
+  "generated_at": "2026-08-15T23:01:59.641403Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 10,
+    "direct": 15,
+    "wechat": 9,
+    "tier_t2": 14,
+    "kind_cn_expert": 10,
+    "kind_community": 1,
+    "kind_media": 3,
+    "tier_t1": 1,
+    "kind_official": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 0,
+    "merged_total": 1
+  },
+  "delivered_filter_stats": {
+    "url": 15,
+    "story": 0,
+    "total": 15
+  },
+  "items": [
+    {
+      "title_zh": "Firefox 浏览器 SpiderMonkey JIT 编译器 MObjectToIterator 指令别名集不健全漏洞",
+      "title_orig": "IonStack 第一部分：Ion 编译器中不健全的 IonBanana 香蕉皮——穿透 Firefox 的 SpiderMonkey JIT",
+      "summary": "Nebula Security 发现 Firefox 的 SpiderMonkey IonMonkey JIT 编译器中 MObjectToIterator 指令别名集存在不健全设计，导致标量替换和 GVN 优化过程中产生释放后使用漏洞。攻击者可借此在 Firefox 渲染器进程中实现任意代码执行，该研究通过 IonBanana 案例揭示了 JIT 编译器在处理复杂指令别名时的深层安全风险，目前相关技术细节已完整披露并引起了安全社区对浏览器引擎底层逻辑漏洞的高度关注。",
+      "tags": [
+        "浏览器安全",
+        "JIT漏洞",
+        "UAF"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496883&idx=1&sn=c6a4bd77e37fc79e8ed764154916655f",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-08-15T09:26:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入分析了 JIT 编译器优化阶段的逻辑漏洞，具有极高技术深",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496883&idx=1&sn=c6a4bd77e37fc79e8ed764154916655f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "technical_depth": 10.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 9.4,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux 内核 rtmutex 组件存在 15 年之久的栈释放后使用漏洞可导致容器逃逸",
+      "title_orig": "IonStack 第二部分：GhostLock——一个在所有 Linux 发行版中存在了 15 年的栈 UAF",
+      "summary": "研究人员在 Linux 内核 rtmutex 组件中发现一个存在超过 15 年的逻辑错误，remove_waiter 函数在代理路径下错误地清除了当前阻塞指针而非目标任务指针。该漏洞会导致稳定的栈释放后使用，攻击者可利用此缺陷构建高可靠性的本地提权攻击并实现容器逃逸，由于该代码路径长期存在，几乎所有主流 Linux 发行版均受此安全威胁影响。",
+      "tags": [
+        "Linux内核",
+        "提权",
+        "容器逃逸"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496883&idx=2&sn=910970483c00efd7b61264b381e5fd04",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-08-15T09:26:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了内核核心同步机制中长期存在的隐蔽漏洞，影响范围极广。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496883&idx=2&sn=910970483c00efd7b61264b381e5fd04",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "score_dimensions": {
+        "impact_scope": 10.0,
+        "technical_depth": 10.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.7,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "针对 AI 智能体入侵事件的 Agent 安全边界工程化设计与控制链路研究",
+      "title_orig": "从 OpenAI 智能体入侵 Hugging Face 事件，看 Agent 安全边界的工程化设计",
+      "summary": "本文结合 XBOW 安全架构，探讨了 AI Agent 在规划偏离或路径越界时的安全控制逻辑，涵盖任务范围锁定、统一网络出口、独立动作审查、人工审批及异常暂停等关键环节。文章提出了一套与执行方式无关的控制链路设计，旨在通过结构化审计机制，确保 Agent 在外部依赖失效时能被及时阻断、可靠恢复并实现完整的行为追溯。",
+      "tags": [
+        "AI安全",
+        "Agent",
+        "安全架构"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUyMDgzMDMyMg==&mid=2247484728&idx=1&sn=cf08152ad2e10da931a363e488f203fd",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-08-15T13:21:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对新兴 AI Agent 风险提供了系统性的工程化防御思路",
+      "feed_url": "https://wechat2rss.xlab.app/feed/e4a8e7ce5182a107ed90452e8738155534dd297a.xml",
+      "feed_title": "RedTeaming",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/e4a8e7ce5182a107ed90452e8738155534dd297a.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzUyMDgzMDMyMg%3D%3D&mid=2247484728&idx=1&sn=cf08152ad2e10da931a363e488f203fd",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "technical_depth": 9.0,
+        "exploitability": 8.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "SAP Commerce Cloud 云端高危漏洞补丁发布后遭大规模主动利用",
+      "title_orig": "【安全圈】SAP云端漏洞评分满分，补丁发布3天就被利用",
+      "summary": "一个影响 SAP Commerce Cloud 的最高严重级漏洞在官方补丁发布仅三天后即遭到大规模主动利用，该漏洞在 CVSS 评分中获得满分。这意味着其触发门槛极低且破坏力巨大，攻击者可利用该云端漏洞进行未授权操作，目前官方已发布补丁，建议受影响的云端用户立即检查系统日志并完成更新，以防范持续的恶意攻击活动。",
+      "tags": [
+        "SAP",
+        "云安全",
+        "漏洞利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078290&idx=3&sn=197f827e1231607636b09c2de8831b96",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-15T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "满分漏洞且已被在野利用，具有极高的预警价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078290&idx=3&sn=197f827e1231607636b09c2de8831b96",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "technical_depth": 7.0,
+        "exploitability": 10.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 8.95,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "PostgreSQL 数据库 to_char 函数存在堆溢出漏洞可导致远程代码执行",
+      "title_orig": "原创漏洞 | PostgreSQL to_char 堆溢出远程代码执行漏洞",
+      "summary": "PostgreSQL 数据库的 to_char 函数被发现存在堆溢出漏洞，该漏洞源于对格式化字符串处理不当，可能导致远程攻击者在受影响的数据库服务器上执行任意代码。虽然目前原文未披露具体的影响版本范围及修复补丁编号，但该漏洞具有较高的安全风险，建议数据库管理员密切关注官方后续的安全更新公告，并及时采取必要的防护措施。",
+      "tags": [
+        "PostgreS",
+        "堆溢出",
+        "RCE"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg5MTc3ODY4Mw==&mid=2247508837&idx=1&sn=2e5abbda66328021e1a15edcefdbf874",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T11:24:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "主流数据库组件的远程代码执行漏洞，对企业数据安全威胁巨大。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/ac64c385ebcdb17fee8df733eb620a22b979928c.xml",
+      "feed_title": "微步在线研究响应中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/ac64c385ebcdb17fee8df733eb620a22b979928c.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg5MTc3ODY4Mw%3D%3D&mid=2247508837&idx=1&sn=2e5abbda66328021e1a15edcefdbf874",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "technical_depth": 9.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "OpenMed 1.5.2 版本 PII 模型加载过程存在未经身份验证的远程代码执行漏洞",
+      "title_orig": "Exploit for CVE-2026-47117",
+      "summary": "严重漏洞 CVE-2026-47117 影响 OpenMed 1.5.2 版本，其成因在于 PII 模型加载过程中存在代码注入缺陷，导致未经身份验证的远程攻击者能够通过网络直接执行任意代码。该漏洞 CVSS 3.1 评分高达 9.8 且被归类为 CWE-94 类型，目前官方已在 1.5.2 修复版本中解决了此问题，鉴于其极高的破坏力与潜在的医疗数据泄露风险，建议所有受影响的医疗软件用户务必立即执行系统升级以确保环境安全。",
+      "tags": [
+        "代码注入",
+        "RCE",
+        "CVE"
+      ],
+      "url": "https://vulners.com/githubexploit/2973A9FF-B27F-533D-AF4F-B6F550A435A6?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-08-15T20:23:48+00:00",
+      "cve_ids": [
+        "CVE-2026-47117"
+      ],
+      "selection_reason": "高评分 RCE 漏洞，且已有公开 Exploit，需引起相关",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-47117",
+      "related_urls": [
+        "https://vulners.com/githubexploit/C946FC2B-AB27-5636-AB9C-0AE6E9C6A4FE?utm_source=rss&utm_medium=rss&utm_campaign=rss"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "technical_depth": 8.0,
+        "exploitability": 10.0,
+        "relevance": 10.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 9.1,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "macOS 屏幕共享组件安全漏洞遭黑客利用并植入门罗币挖矿程序",
+      "title_orig": "【安全圈】macOS屏幕共享漏洞遭利用，被植入门罗币挖矿程序",
+      "summary": "荷兰国家网络安全中心发出预警，一个近期修复的 macOS 屏幕共享组件漏洞正被攻击者利用，攻击者通过该漏洞侵入系统后会在受害者设备上植入门罗币挖矿程序。这种恶意利用行为会消耗大量系统资源并影响设备性能，目前苹果官方已发布相关修复补丁，建议所有 macOS 用户尽快升级系统至最新版本，以缓解此类针对屏幕共享功能的攻击风险。",
+      "tags": [
+        "macOS",
+        "挖矿木马",
+        "漏洞利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078290&idx=1&sn=4b5441fb275403e73cf04d21dc5c6dbe",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-15T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了桌面操作系统漏洞从披露到被黑产快速利用的典型案例。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078290&idx=1&sn=4b5441fb275403e73cf04d21dc5c6dbe",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "technical_depth": 6.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 7.55,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "跨国犯罪团伙利用服务商漏洞实施三千万欧元银行欺诈案被破获",
+      "title_orig": "Hackers arrested over €30M bank fraud exploiting service provider flaw",
+      "summary": "多名网络犯罪分子因利用一家服务提供商的安全漏洞被捕，该漏洞允许攻击者非法访问并提取德国商业银行客户账户资金，涉案金额达3000万欧元。原文未披露该漏洞的技术原理、触发条件、具体组件名称及受影响的版本信息，目前相关嫌疑人已在巴西和欧洲被起诉，但关于该服务提供商漏洞的修复状态在原文中并未明确说明。",
+      "tags": [
+        "银行欺诈",
+        "供应链安全",
+        "网络犯罪"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-arrested-over-30m-bank-fraud-exploiting-service-provider-flaw/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-14T18:04:26+00:00",
+      "cve_ids": [],
+      "selection_reason": "典型的利用供应链/服务商漏洞实施金融犯罪的案例，涉案金额巨大",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/hackers-arrested-over-30m-bank-fraud-exploiting-service-provider-flaw",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "technical_depth": 7.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客利用12KB微型后门将C2域名隐藏在系统配置文件空白字符中实现隐蔽通信",
+      "title_orig": "肉眼看不见的窃密通道：一款12KB后门把C2信息藏进空白空格",
+      "summary": "该攻击通过一个仅12KB的后门程序，将远程控制服务器的完整域名编码并隐藏在看似空白的系统配置文件中，利用不可见的空格字符进行隐写。这种手段能有效绕过常规文本审计和肉眼检查，使管理员在打开记事本时只能看到一片空白，从而实现极高隐蔽性的通信，目前原文尚未披露具体受影响的系统版本或漏洞编号。",
+      "tags": [
+        "隐写术",
+        "后门分析",
+        "持久化"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451188103&idx=1&sn=b4c0fe5ff7fb1c189608de7406e80a5f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-15T15:17:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了极简后门利用空白字符隐写的实战技巧。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451188103&idx=1&sn=b4c0fe5ff7fb1c189608de7406e80a5f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 6.0,
+        "technical_depth": 7.0,
+        "exploitability": 6.0,
+        "relevance": 8.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 6.85,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全研究人员揭示Google Workspace现代攻击链中OAuth令牌窃取的安全风险",
+      "title_orig": "The Modern Attack Chain: Rethinking Google Workspace Security in the Age of AI",
+      "summary": "研究指出Google Workspace的攻击不再局限于传统的网络钓鱼，攻击者正转向利用被盗的OAuth令牌获取Gmail、Drive及已连接业务系统的访问权限，从而绕过传统防御体系。Material Security强调在AI时代背景下，组织必须针对整个攻击链重新思考防御策略，通过构建覆盖全路径的安全防线来应对日益复杂的现代安全威胁，确保核心云端资产与敏感数据的整体安全性。",
+      "tags": [
+        "OAuth安全",
+        "云安全",
+        "身份认证"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/the-modern-attack-chain-rethinking-google-workspace-security-in-the-age-of-ai/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-14T14:00:10+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了云办公环境从钓鱼转向令牌窃取的趋势。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/the-modern-attack-chain-rethinking-google-workspace-security-in-the-age-of-ai",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "technical_depth": 7.0,
+        "exploitability": 7.0,
+        "relevance": 8.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.45,
+      "final_score": 7.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于Mirai框架的新型Linux僵尸网络Evooo1Bot将受感染边缘设备转为持久代理",
+      "title_orig": "New Mirai-Based Linux Botnet ‘Evooo1Bot’ Turns Victims Into Proxies",
+      "summary": "Evooo1Bot是一款基于Mirai框架开发的新型Linux僵尸网络，其核心功能是将受感染的边缘设备转化为持久化的代理服务器，具备更先进的通信特征。该木马主要针对Linux系统及物联网设备进行渗透，虽然原文未披露其利用的具体漏洞编号，但强调了其在代理转发方面的威胁，可能导致受害设备成为攻击者的跳板。",
+      "tags": [
+        "僵尸网络",
+        "Mirai变种",
+        "物联网安全"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/new-linux-botnet-evooo1bot-victims/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T13:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "Mirai变种的新动向，关注其代理化功能演进。",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/new-linux-botnet-evooo1bot-victims",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "technical_depth": 7.0,
+        "exploitability": 7.0,
+        "relevance": 8.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.45,
+      "final_score": 7.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "SDPCSEC热身赛逆向工程部分技术解析涉及字符串搜索与Base64解码技巧",
+      "title_orig": "SDPCSEC热身赛re部分",
+      "summary": "本文详细介绍了SDPCSEC热身赛中逆向工程题目的解题思路，涵盖了利用IDA Pro搜索特定字符串、对可疑字符进行Base64解码以及通过设置断点观察flag变量等核心实战技巧。针对ezida、debugme及class文件等不同类型的题目，作者演示了如何通过静态分析与动态调试相结合的方法快速获取内存中的关键信息，旨在帮助初学者掌握CTF逆向分析的基本操作流程与常用工具的使用方法。",
+      "tags": [
+        "CTF",
+        "逆向工程",
+        "IDA调试"
+      ],
+      "url": "https://xz.aliyun.com/news/92686",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-08-13T06:41:24+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了基础逆向工程的实战操作路径。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92686",
+      "related_urls": [
+        "https://xz.aliyun.com/news/92686"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 4.0,
+        "technical_depth": 8.0,
+        "exploitability": 7.0,
+        "relevance": 8.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 6.8,
+      "final_score": 7.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "GitHub发布50个开源项目利用AI辅助工作流提升软件供应链安全的研究报告",
+      "title_orig": "What 50 open source projects taught us about security in the AI era",
+      "summary": "GitHub通过对50个开源项目的观察，总结了在AI时代结合AI辅助工作流、维护者经验及安全工具提升项目安全性的方法，展示了资金与专家指导的协同效应。研究重点在于如何利用AI进行代码审查和漏洞修复，虽然原文未涉及具体漏洞细节，但深入探讨了AI在开源安全治理中的实际应用效果与未来安全防御的演进方向。",
+      "tags": [
+        "开源安全",
+        "AI安全",
+        "供应链安全"
+      ],
+      "url": "https://github.blog/open-source/maintainers/what-50-open-source-projects-taught-us-about-security-in-the-ai-era/",
+      "source": "github.blog",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-13T16:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了AI在开源社区安全治理中的最新应用现状。",
+      "feed_url": "https://github.blog/security/feed/",
+      "feed_title": "GitHub Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "github.blog",
+      "story_id": "url:github.blog/open-source/maintainers/what-50-open-source-projects-taught-us-about-security-in-the-ai-era",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "impact_scope": 6.0,
+        "technical_depth": 6.0,
+        "exploitability": 4.0,
+        "relevance": 7.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 5.85,
+      "final_score": 7.35,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "基于Codex Security动态构建AI代码审计证据链的实战方法与流程分享",
+      "title_orig": "AI 会找漏洞后，我给它加了一条“证据链”",
+      "summary": "该方案针对AI代码审计结果不可信的问题，通过收窄分析范围、索取函数调用路径、验证补丁有效性及渐进式接入流程，构建了一套可复核的漏洞证据链。原文未披露具体漏洞类型、原理及受影响的组件版本，重点在于利用Codex Security动态提出的自动化安全检测实战方法，旨在通过逻辑链条使安全人员能高效验证AI发现的潜在风险，而非针对特定已知漏洞的修复。",
+      "tags": [
+        "AI审计",
+        "代码安全",
+        "漏洞验证"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA==&mid=2247486351&idx=1&sn=6c29bd5eb0d4c46805caca8fd190c0ec",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-13T05:31:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提出了解决AI代码审计幻觉问题的实战证据链方法。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d5a661c1beccdff18ba1ae018514e4d702feac74.xml",
+      "feed_title": "天黑说嘿话",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d5a661c1beccdff18ba1ae018514e4d702feac74.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI5NTQ5MTAzMA%3D%3D&mid=2247486351&idx=1&sn=6c29bd5eb0d4c46805caca8fd190c0ec",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "impact_scope": 6.0,
+        "technical_depth": 7.0,
+        "exploitability": 5.0,
+        "relevance": 8.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 6.65,
+      "final_score": 7.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "新型Rust语言编写的AmnesiaStealer木马通过伪造GitHub页面攻击macOS用户",
+      "title_orig": "【安全圈】macOS窃密木马横行，一键接管你的浏览器",
+      "summary": "一种名为AmnesiaStealer的新型窃密木马正针对macOS用户，该木马采用Rust语言编写，主要通过伪造的GitHub下载页面进行诱导分发。其核心功能是接管受害者的浏览器并窃取各类敏感信息，虽然原文未披露具体的系统漏洞利用细节，但特别强调了其利用跨平台语言编写的隐蔽性，提醒广大用户警惕来源不明的软件下载。",
+      "tags": [
+        "macOS木马",
+        "Rust开发",
+        "信息窃取"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078279&idx=1&sn=f4a1e091ca8d0b4779258c57116b8577",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-14T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注Rust编写的macOS新型窃密木马及其传播手段。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078279&idx=1&sn=f4a1e091ca8d0b4779258c57116b8577",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "impact_scope": 6.0,
+        "technical_depth": 5.0,
+        "exploitability": 7.0,
+        "relevance": 8.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 6.55,
+      "final_score": 7.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}

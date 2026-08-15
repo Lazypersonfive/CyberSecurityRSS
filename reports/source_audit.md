@@ -1,16 +1,16 @@
 # Source Registry Audit
 
-- generated_for: 2026-08-15
-- dates: 2026-08-15, 2026-08-14, 2026-08-13, 2026-08-12, 2026-08-11, 2026-08-10, 2026-08-09
+- generated_for: 2026-08-16
+- dates: 2026-08-16, 2026-08-15, 2026-08-14, 2026-08-13, 2026-08-12, 2026-08-11, 2026-08-10
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 104 | 18 | 15 | 71 | 0 | 7 | 18 | 40 | 21 |
-| ai_security | 19 | 0 | 0 | 19 | 0 | 8 | 0 | 2 | 0 |
-| finance | 68 | 3 | 0 | 65 | 0 | 18 | 3 | 0 | 0 |
-| security | 105 | 4 | 0 | 89 | 12 | 0 | 4 | 0 | 42 |
+| ai | 104 | 17 | 14 | 73 | 0 | 7 | 17 | 40 | 20 |
+| ai_security | 18 | 0 | 0 | 18 | 0 | 8 | 0 | 2 | 0 |
+| finance | 66 | 3 | 0 | 63 | 0 | 16 | 3 | 0 | 0 |
+| security | 105 | 5 | 0 | 89 | 11 | 0 | 5 | 0 | 46 |
 
 ## Unknown Selected Sources
 
@@ -23,7 +23,6 @@
 | `github.security.telekom.com` | 1 | security | [Red Hat 发行版 ABRTraryRoot 漏洞链：本地普通用户可提权至 Root](https://github.security.telekom.com/2026/08/ABRTraryRoot-local-privilege-escalation.html) |
 | `hackingdream.net` | 1 | security | [模型上下文协议 MCP 渗透测试备忘录发布，涵盖所有可能的攻击模式与测试流程](https://www.hackingdream.net/2026/08/mcp-penetration-testing-cheatsheet-all.html) |
 | `key08.com` | 1 | security | [基于模型注意力机制构建高效 Web CTF 自动化 Agent 技术研究](https://key08.com/index.php/2026/08/10/3275.html) |
-| `pentestpartners.com` | 1 | security | [通过加强云凭据全生命周期管理，有效切断因泄露导致的攻击链条](https://www.pentestpartners.com/security-blog/breaking-the-attack-chain-created-by-exposed-cloud-secrets/) |
 
 ## Review Rule
 
