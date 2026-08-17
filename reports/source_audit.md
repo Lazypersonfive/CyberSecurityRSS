@@ -1,16 +1,16 @@
 # Source Registry Audit
 
-- generated_for: 2026-08-17
-- dates: 2026-08-17, 2026-08-16, 2026-08-15, 2026-08-14, 2026-08-13, 2026-08-12, 2026-08-11
+- generated_for: 2026-08-18
+- dates: 2026-08-18, 2026-08-17, 2026-08-16, 2026-08-15, 2026-08-14, 2026-08-13, 2026-08-12
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 104 | 17 | 14 | 73 | 0 | 6 | 17 | 41 | 20 |
-| ai_security | 17 | 0 | 0 | 17 | 0 | 8 | 0 | 1 | 0 |
-| finance | 68 | 3 | 0 | 65 | 0 | 17 | 3 | 0 | 0 |
-| security | 105 | 4 | 0 | 93 | 8 | 0 | 4 | 0 | 48 |
+| ai | 105 | 21 | 12 | 72 | 0 | 5 | 21 | 40 | 19 |
+| ai_security | 16 | 1 | 0 | 15 | 0 | 6 | 1 | 1 | 1 |
+| finance | 68 | 5 | 0 | 63 | 0 | 17 | 5 | 0 | 0 |
+| security | 105 | 2 | 0 | 96 | 7 | 0 | 2 | 0 | 46 |
 
 ## Unknown Selected Sources
 
@@ -19,7 +19,6 @@
 | `expku.com` | 4 | security | [Apache Gravitino 1.2.1 版本存在服务端请求伪造漏洞，攻击者可利用该漏洞发起 SSRF 攻击](http://www.expku.com/web/56497.html) |
 | `avleonov.com` | 1 | security | [微软 8 月补丁日修复 401 项漏洞，Windows WinSock 提权漏洞已遭利用](https://avleonov.com/2026/08/12/i125-august-microsoft-patch-tuesday/) |
 | `cxsecurity.com` | 1 | security | [iOS 蓝牙个人局域网零成本以太网网关漏洞可利用 62078 端口进行攻击](https://cxsecurity.com/issue/WLB-2026080005) |
-| `github.security.telekom.com` | 1 | security | [Red Hat 发行版 ABRTraryRoot 漏洞链：本地普通用户可提权至 Root](https://github.security.telekom.com/2026/08/ABRTraryRoot-local-privilege-escalation.html) |
 | `hackingdream.net` | 1 | security | [模型上下文协议 MCP 渗透测试备忘录发布，涵盖所有可能的攻击模式与测试流程](https://www.hackingdream.net/2026/08/mcp-penetration-testing-cheatsheet-all.html) |
 
 ## Review Rule
