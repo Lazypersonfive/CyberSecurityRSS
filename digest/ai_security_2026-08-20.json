@@ -1,0 +1,279 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-08-20",
+  "generated_at": "2026-08-19T23:03:58.739551Z",
+  "raw_count": 31,
+  "selected_count": 6,
+  "selection_stats": {
+    "total": 6,
+    "direct": 4,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "tier_t2": 5,
+    "kind_expert": 3,
+    "google_news": 2,
+    "aggregator": 2,
+    "kind_google_news": 2
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 5,
+    "story": 0,
+    "total": 5
+  },
+  "items": [
+    {
+      "title_zh": "OpenAI 为前沿模型 API 推出零数据保留政策及私有安全处理预览版",
+      "title_orig": "Offering Zero Data Retention for frontier models",
+      "summary": "OpenAI 针对符合条件的 API 客户重申了零数据保留政策，确保用户输入和输出不会被用于模型训练或持久化存储。同时，官方推出了私有安全处理技术的预览版，旨在不牺牲数据隐私的前提下，为先进 AI 模型提供安全过滤与合规性检查。该举措主要面向对数据隐私有极高要求的企业级用户，通过技术手段平衡了前沿模型性能与敏感数据保护的需求。",
+      "tags": [
+        "数据隐私",
+        "OpenAI",
+        "API安全"
+      ],
+      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "source": "openai.com",
+      "category": "FirstParty",
+      "published": "2026-08-19T19:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "OpenAI 官方发布的隐私保护新规，对企业级 AI 应用安",
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "openai.com",
+      "story_id": "url:openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "security_relevance": 9.0,
+        "technical_depth": 6.0,
+        "actionability": 8.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 7.75,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源 Git 服务 Gogs 修复 CVE-2026-52813 路径穿越漏洞及远程代码执行风险",
+      "title_orig": "Yet another RCE in Gogs, but it's fixed this time!",
+      "summary": "安全研究人员在 Gogs 中发现了一个严重的路径穿越漏洞，编号为 CVE-2026-52813，并成功将其利用链升级为完全的远程代码执行。该漏洞允许攻击者通过构造恶意请求访问服务器敏感文件或执行任意指令，影响 0.14.3 之前的版本。目前官方已在 0.14.3 版本中修复了包括该漏洞在内的三个安全缺陷，建议所有受影响用户立即完成版本升级以规避风险。",
+      "tags": [
+        "RCE",
+        "Gogs",
+        "漏洞修复"
+      ],
+      "url": "https://www.aikido.dev/blog/fixed-rce-gogs-cve-2026-52813",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-08-19T12:08:00+00:00",
+      "cve_ids": [
+        "CVE-2026-52813"
+      ],
+      "selection_reason": "涉及流行开源 Git 服务的 RCE 漏洞，具有较高的实战攻",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "cve:cve-2026-52813",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "score_dimensions": {
+        "security_relevance": 9.0,
+        "technical_depth": 8.0,
+        "actionability": 7.0,
+        "practical_risk": 8.0,
+        "agent_model_relevance": 2.0
+      },
+      "dimension_score": 7.3,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Endor Labs 详解 AI 编程智能体安全治理框架及其在开发流程中的应用",
+      "title_orig": "What is a security harness for AI coding agents? | Blog | Endor Labs",
+      "summary": "本文介绍了针对 AI 编程智能体的安全治理框架，重点讨论了如何在不降低开发效率的前提下，通过治理访问权限、代码生成质量和第三方依赖来保障智能体安全。该框架旨在解决 AI 自动编写代码时可能引入的恶意逻辑或不安全依赖问题，为企业集成 AI 辅助开发工具提供了安全准则。对于关注 AI 自动化工具链安全的安全从业者而言，该技术方案提供了系统化的治理思路。",
+      "tags": [
+        "AI安全",
+        "编程智能体",
+        "供应链安全"
+      ],
+      "url": "https://www.endorlabs.com/learn/what-is-a-security-harness-for-ai-coding-agents",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-19T15:00:12+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 编程智能体这一新兴领域的安全治理架构，具有前瞻",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/what-is-a-security-harness-for-ai-coding-agents",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "security_relevance": 8.0,
+        "technical_depth": 6.0,
+        "actionability": 6.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 7.25,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "OpenAI 在 Hugging Face 安全事件后详细说明其增强型 AI 安全防护措施",
+      "title_orig": "OpenAI Details New AI Security Measures After Hugging Face Hack - PCMag",
+      "summary": "针对近期发生的 Hugging Face 平台安全风险，OpenAI 详细披露了其采取的一系列新型 AI 安全增强措施。这些措施侧重于加强模型访问控制、提升基础设施的防御能力以及优化针对供应链攻击的响应机制，旨在防止类似凭据泄露或未授权访问事件影响其核心模型服务。原文未披露具体的技术架构细节，但强调了在多云和协作环境下加强身份验证与数据隔离的重要性。",
+      "tags": [
+        "AI安全",
+        "防御增强",
+        "供应链安全"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQOG9POGtXTWJBZDNVM3J2YXFZZ0MwQ21kdmJyaGNlMjA0WDlLS2Z2MTh1eC1aVm5FMUlFaEdCWHFub2hoSUUzeDEyQV9HaFNlUGhoeFZYbzdRNUxOZDJKR3JFRk5jUEpaYVVNZzZOTWFNU3gzejQ2aG5DeXFyalpVOWY1MldFWU55Ym9yb0N4T1phVm5C?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-08-19T16:12:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了顶级 AI 厂商针对近期行业安全事件的防御策略调整。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:6b27de3a30d5",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "security_relevance": 10.0,
+        "technical_depth": 7.0,
+        "actionability": 8.0,
+        "practical_risk": 8.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 8.5,
+      "final_score": 7.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Endor Labs 推出支持 C 语言的 AI 静态分析工具以提升漏洞检测效率",
+      "title_orig": "Why Endor Labs AI SAST for C finds what other tools miss | Blog | Endor Labs",
+      "summary": "Endor Labs 发布了支持 C 语言的 AI SAST 工具，该工具可直接集成在 IDE 和拉取请求流程中，利用 AI 技术识别传统工具易漏掉的复杂漏洞。其技术核心在于通过 AI 增强的上下文理解能力，在代码提交阶段捕捉潜在的安全缺陷，特别适用于开发节奏快、传统人工审计难以覆盖的 C 语言项目。该工具为安全团队提供了一种在高性能编程环境下实现自动化安全左移的技术手段。",
+      "tags": [
+        "SAST",
+        "AI安全工具",
+        "C语言"
+      ],
+      "url": "https://www.endorlabs.com/learn/why-endor-labs-ai-sast-for-c-finds-what-other-tools-miss",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-19T16:57:28+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 技术在传统静态代码分析领域的应用落地与效能提升",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/why-endor-labs-ai-sast-for-c-finds-what-other-tools-miss",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "security_relevance": 7.0,
+        "technical_depth": 6.0,
+        "actionability": 6.0,
+        "practical_risk": 5.0,
+        "agent_model_relevance": 6.0
+      },
+      "dimension_score": 6.1,
+      "final_score": 6.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Fabraix 开放 Nyx AI 安全红队智能体公共访问权限以支持自动化渗透测试",
+      "title_orig": "Fabraix opens public access for Nyx AI security red team agent - testingcatalog.com",
+      "summary": "Fabraix 宣布正式开放其 Nyx AI 安全红队智能体的公共访问权限，该工具旨在通过 AI 驱动的自动化流程模拟攻击者行为。Nyx 能够协助安全团队进行自动化的漏洞发现与渗透测试任务，提升红队评估的覆盖面与效率。作为一款新兴的 AI 攻防工具，它展示了智能体技术在模拟复杂攻击场景中的应用潜力，值得关注自动化攻防演练的安全从业者进行技术调研。",
+      "tags": [
+        "红队工具",
+        "AI攻防",
+        "自动化渗透"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPR2l4TXVtTEt2emcxeGpPcWxYYVViZFlXQ3VXX2IwUkJNNVBGenZ2eVVWX3lya3ZFV21Rb2V1VGtqc0VyNXVIVG11cG5URzQyT1AtVGNjMWpiVjM1YkxXVEFZaWhLcG5reUd4Q2hNZmhoZDBmWFJlVkhuMFZXejhOeGRmUmxEclQzNzlzVllEMkQ5bGZXRzFkMHhB?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-08-19T18:52:34+00:00",
+      "cve_ids": [],
+      "selection_reason": "AI 驱动的红队自动化工具发布，代表了攻防对抗技术的新趋势。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:fdad13dae3c2",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "security_relevance": 8.0,
+        "technical_depth": 6.0,
+        "actionability": 8.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 7.45,
+      "final_score": 6.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

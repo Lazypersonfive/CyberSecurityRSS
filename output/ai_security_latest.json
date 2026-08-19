@@ -1,17 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-08-19",
-  "fetched_at_utc": "2026-08-18T23:03:15.782689Z",
+  "fetched_at": "2026-08-20",
+  "fetched_at_utc": "2026-08-19T23:03:41.479797Z",
   "hours": 72,
   "total_feeds": 32,
-  "raw_entry_count": 30,
-  "entry_count": 22,
+  "raw_entry_count": 58,
+  "entry_count": 31,
   "filter_stats": {
-    "input": 30,
-    "output": 30
+    "input": 58,
+    "dropped_title_blacklist": 1,
+    "dedup_merged": 1,
+    "output": 56
   },
   "curation_stats": {
-    "dropped_source_cap": 8
+    "dropped_source_cap": 25
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -110,7 +112,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 6
+      "raw_count": 8
     },
     "https://snyk.io/blog/feed/": {
       "feed_title": "Snyk Blog",
@@ -124,7 +126,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 0
+      "raw_count": 1
     },
     "https://www.freebuf.com/feed": {
       "feed_title": "FreeBuf AI安全",
@@ -138,7 +140,7 @@
       "category": "Chinese",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 5
+      "raw_count": 6
     },
     "https://xz.aliyun.com/feed": {
       "feed_title": "先知社区",
@@ -187,7 +189,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 3
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -221,25 +223,53 @@
       "feed_title": "Google News AI Security",
       "category": "CoverageFallback",
       "attempted": 1,
-      "succeeded": 0,
-      "raw_count": 0
+      "succeeded": 1,
+      "raw_count": 8
     },
     "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans": {
       "feed_title": "Google News 中文 AI安全",
       "category": "CoverageFallback",
       "attempted": 1,
-      "succeeded": 0,
-      "raw_count": 0
+      "succeeded": 1,
+      "raw_count": 8
     },
     "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en": {
       "feed_title": "Google News AI Supply Chain Security",
       "category": "CoverageFallback",
       "attempted": 1,
-      "succeeded": 0,
-      "raw_count": 0
+      "succeeded": 1,
+      "raw_count": 7
     }
   },
   "entries": [
+    {
+      "title": "Yet another RCE in Gogs, but it's fixed this time!",
+      "url": "https://www.aikido.dev/blog/fixed-rce-gogs-cve-2026-52813",
+      "summary": "CVE-2026-52813 | An Aikido pentesting agent flagged a path traversal in Gogs. We escalated it to full RCE and reported two more bugs, all fixed in 0.14.3. Category: Vulnerabilities & Threats",
+      "category": "AISecurityLabs",
+      "published": "2026-08-19T12:08:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [
+        "CVE-2026-52813"
+      ],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
+      "title": "RT QuendCon: Another shoutout, this time to our Bronze sponsors! @kududyn @Nightwing_usa @trailofbits @OpenAI @Battelle @redballoonsec See you next we...",
+      "url": "https://x.com/trailofbits/status/2090105852573503734",
+      "summary": "RT QuendCon Another shoutout, this time to our Bronze sponsors! @kududyn @Nightwing_usa @trailofbits @OpenAI @Battelle @redballoonsec See you next weekend in NYC for a great CTF and fun lightning talks!",
+      "category": "XSignals",
+      "published": "2026-08-18T18:41:02+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
     {
       "title": "We Tracked a Shipment of Rare Books. It Ended at an Amazon AI Training Facility",
       "url": "https://simonwillison.net/2026/Aug/17/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-tra/",
@@ -280,17 +310,121 @@
       "feed_title": "Embrace The Red"
     },
     {
-      "title": "Mojo🔥 is now open source",
-      "url": "https://simonwillison.net/2026/Aug/18/mojo-is-now-open-source/",
-      "summary": "Mojo🔥 is now open source Mojo🔥 is now open source The Mojo programming language has been promising an open source release since May 2023 . Last week they shipped their 1.0 and today they have followed through on that original promise, releasing the compiler and toolchain under an Apache 2 license. When Mojo first launched the stated goal was to produce a superset of Python, so existing Python code",
+      "title": "Quoting Jeremy Morrell",
+      "url": "https://simonwillison.net/2026/Aug/19/jeremy-morrell/",
+      "summary": "My hypothesis is that there is a new opportunity for Extensible Software on the web . LLMs radically lower the cost of authoring extensions, and modern sandbox primitives lower the deployment cost and provide good security boundaries. We can build our app as a solid, accountable core, and allow users to safely extend it in many directions by having LLMs fill in the missing pieces. We can give our",
       "category": "AISecurityLabs",
-      "published": "2026-08-18T21:39:20+00:00",
+      "published": "2026-08-19T22:56:31+00:00",
       "fetch_status": "full",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Conceptual integrity and counting lines of code",
+      "url": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/",
+      "summary": "Last week I recorded an episode of the Talking Postgres podcast with Claire Giordano on the subject of \"How AI is changing software development\". We had a really great conversation. Here are a couple of my highlights from a lightly edited transcript (prompt to Claude: \"very minor edits to remove disfluencies\"). This is the latest version of an argument I've been trying to build about why sometimes",
+      "category": "AISecurityLabs",
+      "published": "2026-08-19T22:46:07+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Google’s $12.2 Billion Marvell Deal Deepens Ties Across AI Supply Chain - PYMNTS.com",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbWlSMHROc0lmekNyeWRlamw0SzlCZ09pWFN0SzBFRlFCTnZCMzcxSmNfWng3LXlsWUZjUWN6cXk3N3VEYy12ajltaWF6dXBKLXdRWVhBckJDRWU4N0d1WUUyU0ZrOWZfN2Noc0J3NUdNRUNUbHdydzJwRDBPRXlaZDFZcGJSVkEzbDNQWm13YlZnYmM5bFhtbS1SSjNOcU1RQkplQWNB?oc=5",
+      "summary": "Google’s $12.2 Billion Marvell Deal Deepens Ties Across AI Supply Chain &nbsp;&nbsp; PYMNTS.com",
+      "category": "CoverageFallback",
+      "published": "2026-08-19T18:53:28+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Supply Chain Security"
+    },
+    {
+      "title": "Fabraix opens public access for Nyx AI security red team agent - testingcatalog.com",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPR2l4TXVtTEt2emcxeGpPcWxYYVViZFlXQ3VXX2IwUkJNNVBGenZ2eVVWX3lya3ZFV21Rb2V1VGtqc0VyNXVIVG11cG5URzQyT1AtVGNjMWpiVjM1YkxXVEFZaWhLcG5reUd4Q2hNZmhoZDBmWFJlVkhuMFZXejhOeGRmUmxEclQzNzlzVllEMkQ5bGZXRzFkMHhB?oc=5",
+      "summary": "Fabraix opens public access for Nyx AI security red team agent &nbsp;&nbsp; testingcatalog.com",
+      "category": "CoverageFallback",
+      "published": "2026-08-19T18:52:34+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "不打招呼直接锁死服务器：Sorry勒索病毒国内多点爆发，专挑中小企业下手",
+      "url": "https://www.anquanke.com/post/id/315994",
+      "summary": "",
+      "category": "Chinese",
+      "published": "2026-08-19T17:58:48+00:00",
+      "fetch_status": "title_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客"
+    },
+    {
+      "title": "Why Endor Labs AI SAST for C finds what other tools miss | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/why-endor-labs-ai-sast-for-c-finds-what-other-tools-miss",
+      "summary": "Endor Labs AI SAST now fully supports C. Scans run in the IDE and on the PR, catching vulnerabilities before code ships, for teams writing C faster than release-gated review can keep up.",
+      "category": "AISecurityLabs",
+      "published": "2026-08-19T16:57:28+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Proofpoint launches AI security engineering centre in India - Computer Weekly",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbWVWSVVIVDRNa2I3VUdLXzkxVEcwX3licUhSZWQyaDRiLWo0YUhNRy04R3liY0J6akJESmVzdXJVUW9XdHJxVHRsOVQwZ3p0N3ROdWs3eF9GcTFYQjYxaVQ1bkkzLTY1S0VOOEUxSEpiSTBiRWxHRE5aOWowbkN0T3JscjZ1amtZNU1LeXhyVmp2eHJZVHQxTi1wTHFFbm1qZmZCcFhoa3A?oc=5",
+      "summary": "Proofpoint launches AI security engineering centre in India &nbsp;&nbsp; Computer Weekly",
+      "category": "CoverageFallback",
+      "published": "2026-08-19T16:19:36+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "OpenAI Details New AI Security Measures After Hugging Face Hack - PCMag",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQOG9POGtXTWJBZDNVM3J2YXFZZ0MwQ21kdmJyaGNlMjA0WDlLS2Z2MTh1eC1aVm5FMUlFaEdCWHFub2hoSUUzeDEyQV9HaFNlUGhoeFZYbzdRNUxOZDJKR3JFRk5jUEpaYVVNZzZOTWFNU3gzejQ2aG5DeXFyalpVOWY1MldFWU55Ym9yb0N4T1phVm5C?oc=5",
+      "summary": "OpenAI Details New AI Security Measures After Hugging Face Hack &nbsp;&nbsp; PCMag",
+      "category": "CoverageFallback",
+      "published": "2026-08-19T16:12:07+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "What is a security harness for AI coding agents? | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/what-is-a-security-harness-for-ai-coding-agents",
+      "summary": "Learn how a security harness keeps AI coding agents safe by governing access, code, and dependencies without slowing developers down",
+      "category": "AISecurityLabs",
+      "published": "2026-08-19T15:00:12+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
     },
     {
       "title": "Threat Brief: Mitigating Large-Scale Credential Attacks (Updated August 18)",
@@ -371,19 +505,6 @@
       "feed_title": "Snyk Blog"
     },
     {
-      "title": "Qwen 3.8 27B scores 52 on the Artificial Analysis Intelligence Index",
-      "url": "https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52/",
-      "summary": "Qwen 3.8 27B scores 52 on the Artificial Analysis Intelligence Index That's the same score as GPT-5.6 Luna (max), and just one point behind GLM-5.2 (max) and DeepSeek V4 Pro 0813 (max) - that GLM is 753B and that DeepSeek is 1.7T parameters , and Luna is size unknown but presumably a whole lot bigger than 27B. Qwen 3.8 27B is a truly astonishing model . Via Hacker News Tags: ai , generative-ai , l",
-      "category": "AISecurityLabs",
-      "published": "2026-08-17T23:58:14+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
       "title": "RT MAGIC Grants: MAGIC Grants recently had @trailofbits, a leading cybersecurity and research firm, audit certain cryptography for Monero's forthcomin...",
       "url": "https://x.com/trailofbits/status/2089389211107594391",
       "summary": "RT MAGIC Grants MAGIC Grants recently had @trailofbits, a leading cybersecurity and research firm, audit certain cryptography for Monero's forthcoming FCMP++ upgrade. This upgrade will substantially increase the privacy of Monero transactions. Read more: https://magicgrants.org/2026/08/17/Monero-FCMP-Cryptography-Implementation-ToB",
@@ -395,19 +516,6 @@
       "quality_score": 1,
       "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
       "feed_title": "X / Trail of Bits"
-    },
-    {
-      "title": "Harness engineering: how to make AI coding agents reliable and secure | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/harness-engineering-how-to-make-ai-coding-agents-reliable-and-secure",
-      "summary": "Learn how harness engineering makes AI coding agents reliable and secure with guides, sensors, and built-in security checks",
-      "category": "AISecurityLabs",
-      "published": "2026-08-17T15:00:02+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
     },
     {
       "title": "RT Greg Brockman: defenders can see the future, and have a narrow window to uplevel their cybersecurity practices now. key is to uplevel fundamentals ...",
@@ -423,24 +531,11 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "OpenAI joins PORTS-Pike project",
-      "url": "https://openai.com/index/openai-joins-ports-pike-project",
-      "summary": "OpenAI joins PORTS-Pike project, expanding community investment and supporting thousands of Southern Ohio jobs",
+      "title": "Offering Zero Data Retention for frontier models",
+      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "summary": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy.",
       "category": "FirstParty",
-      "published": "2026-08-17T05:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "Strengthening democratic oversight in national security",
-      "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
-      "summary": "OpenAI launches an initiative to strengthen democratic oversight of AI in national security, supporting government institutions with tools, training, and expertise.",
-      "category": "FirstParty",
-      "published": "2026-08-18T19:00:00+00:00",
+      "published": "2026-08-19T19:00:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -449,11 +544,11 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "What are agentic workflows? A practical guide to building and securing them | Blog | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/what-are-agentic-workflows-a-practical-guide-to-building-and-securing-them",
-      "summary": "Learn what agentic workflows are, how they work, where teams use them, and how to secure them with practical guardrails and real examples",
+      "title": "Why C Has Always Broken Static Analysis | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/why-c-has-always-broken-static-analysis",
+      "summary": "C is the language SAST serves worst: the preprocessor, pointers, pattern rules, and no frameworks. Now AI agents are writing C faster than review can keep up.",
       "category": "AISecurityLabs",
-      "published": "2026-08-18T15:00:01+00:00",
+      "published": "2026-08-19T16:58:38+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -465,6 +560,32 @@
       "title": "When you can't upgrade: open source examples of Endor Patches | Blog | Endor Labs",
       "url": "https://www.endorlabs.com/learn/when-you-cant-upgrade-open-source-examples-of-endor-patches",
       "summary": "When you can't upgrade: open source examples of Endor Patches",
+      "category": "AISecurityLabs",
+      "published": "2026-08-19T16:56:44+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "Replit expands access to software creation with GPT-5.6 Luna",
+      "url": "https://openai.com/index/replit",
+      "summary": "Replit introduces Free Mode, powered by GPT-5.6 Luna, so anyone can turn ideas into working software without worrying about token costs.",
+      "category": "FirstParty",
+      "published": "2026-08-19T07:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "What are agentic workflows? A practical guide to building and securing them | Blog | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/what-are-agentic-workflows-a-practical-guide-to-building-and-securing-them",
+      "summary": "Learn what agentic workflows are, how they work, where teams use them, and how to secure them with practical guardrails and real examples",
       "category": "AISecurityLabs",
       "published": "2026-08-18T15:00:01+00:00",
       "fetch_status": "rss_only",

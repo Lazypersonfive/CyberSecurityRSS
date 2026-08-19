@@ -1,0 +1,662 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-20",
+  "generated_at": "2026-08-19T23:03:34.338133Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 8,
+    "direct": 15,
+    "wechat": 7,
+    "tier_t2": 13,
+    "kind_cn_expert": 7,
+    "kind_expert": 1,
+    "kind_media": 4,
+    "tier_t1": 2,
+    "kind_official": 1,
+    "kind_cn_official": 1,
+    "kind_community": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 8,
+    "story": 1,
+    "total": 9
+  },
+  "items": [
+    {
+      "title_zh": "Redis 远程代码执行漏洞 CVE-2026-23479 预警，因补丁修复不完整导致多版本受影响",
+      "title_orig": "Redis RCE 漏洞预警：CVE-2026-23479 修复不完整再现新漏洞",
+      "summary": "该漏洞源于 Redis 对此前漏洞的补丁修复不完整，属于高危远程代码执行类漏洞，经身份认证的攻击者可利用该缺陷在目标服务器上执行任意命令。目前该漏洞的 PoC 已在互联网公开，受影响范围涵盖 Redis 7.2.x 至 8.10.x 之间的多个主流版本，官方已发布紧急更新建议用户立即升级至安全版本以规避被黑客利用的风险。",
+      "tags": [
+        "Redis",
+        "RCE",
+        "漏洞预警"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU3ODAyMjg4OQ==&mid=2247497900&idx=1&sn=b111fbf25f84d17b0f0e736eeb9ee274",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-19T06:54:00+00:00",
+      "cve_ids": [
+        "CVE-2026-23479"
+      ],
+      "selection_reason": "Redis 核心组件的高危 RCE 且 PoC 已公开。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d762fbf5f8f256afb63bcfe9a362184072338819.xml",
+      "feed_title": "云鼎实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d762fbf5f8f256afb63bcfe9a362184072338819.xml",
+      "story_id": "cve:cve-2026-23479",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247507148&idx=1&sn=ab4a29b67662e66d96b9a389b874869b",
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247507128&idx=1&sn=5a09999ea6e550e3265d69024d1d4a15"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "actionability": 10.0,
+        "impact_scope": 9.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 9.35,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "ClamAV 漏洞 CVE-2026-20217 技术解析：通过 RTF 改写回调实现从文件投递到 RCE",
+      "title_orig": "从文件投递到 RCE——CVE-2026-20217",
+      "summary": "攻击者利用ZendTo公开上传令牌投递恶意归档文件，通过ClamAV的CVE-2026-20217漏洞实施堆块伪造，并结合RTF与SIS改写回调函数，从而在目标系统上实现远程代码执行。该技术巧妙地将生产特征库作为一比特oracle来破解4比特ASLR保护，最终能以clamav身份执行命令并取回输出，且在特定条件下存在进一步提权至root权限的攻击路径，对系统安全构成严重威胁。",
+      "tags": [
+        "ClamAV",
+        "漏洞分析",
+        "RCE"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496912&idx=1&sn=aaa7113d9dd3d8dc99150520f9211b05",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-08-19T02:26:00+00:00",
+      "cve_ids": [
+        "CVE-2026-20217"
+      ],
+      "selection_reason": "详细展示了复杂漏洞链的利用过程，具有极高技术参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "cve:cve-2026-20217",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 10.0,
+        "actionability": 9.0,
+        "impact_scope": 8.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 9.3,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "WordPress 核心登录页高危漏洞 CVE-2026-64638 遭大规模自动化攻击",
+      "title_orig": "1.1万个网站正被围攻！WordPress登录页惊现XSS2Shell漏洞，无需账号就能摸到服务器",
+      "summary": "WordPress核心登录页面被曝出高危漏洞CVE-2026-64638，攻击者无需任何账号凭据即可触发XSS2Shell攻击，并能直接渗透至服务器底层执行操作。目前全球已有超过67个国家的1.1万个网站正面临大规模自动化攻击的威胁，安全形势极其严峻，官方已紧急发布7.0.3修复版本，强烈建议所有受影响的网站管理员立即完成升级以防止服务器被非法入侵。",
+      "tags": [
+        "WordPres",
+        "XSS2Shel",
+        "在野攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA==&mid=2649790383&idx=1&sn=ec0014e8946a4142e1473376f84b7b90",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-19T00:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-64638"
+      ],
+      "selection_reason": "WordPress 核心漏洞且正面临大规模在野自动化攻击。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "story_id": "cve:cve-2026-64638",
+      "related_urls": [
+        "https://www.anquanke.com/post/id/315980",
+        "https://www.anquanke.com/post/id/315980"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 10.0,
+        "impact_scope": 9.0,
+        "relevance": 10.0,
+        "exploitability": 10.0
+      },
+      "dimension_score": 9.3,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Citrix NetScaler ADC 与 Gateway 身份验证绕过漏洞 CVE-2026-19490 预警",
+      "title_orig": "CVE-2026-19490: Critical Vulnerability Affecting Citrix NetScaler ADC and NetScaler Gateway",
+      "summary": "Citrix NetScaler ADC与NetScaler Gateway被披露存在编号为CVE-2026-19490的严重身份验证绕过漏洞，该漏洞的CVSS v4.0基础评分高达9.3分。未经身份验证的远程攻击者可以在无需任何用户交互或提升权限的情况下，通过网络直接利用此漏洞绕过安全认证机制，目前官方已发布安全公告，建议相关管理员针对受影响的组件实施紧急加固或安装最新的补丁程序。",
+      "tags": [
+        "Citrix",
+        "身份绕过",
+        "高危漏洞"
+      ],
+      "url": "https://www.rapid7.com/blog/post/etr-cve-2026-19490-critical-vulnerability-affecting-citrix-netscaler-adc-and-netscaler-gateway",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-19T16:46:06+00:00",
+      "cve_ids": [
+        "CVE-2026-19490"
+      ],
+      "selection_reason": "关键基础设施组件的严重身份绕过漏洞，风险等级极高。",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-19490",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 9.0,
+        "impact_scope": 10.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "美国警告针对西门子 S7 系列 PLC 关键基础设施的 AI 驱动脚本攻击",
+      "title_orig": "US warns of AI-powered attacks on Siemens PLCs in critical infrastructure",
+      "summary": "美国网络安全机构发布预警，监测到威胁者正利用 AI 生成的脚本攻击部署在美国关键基础设施中的西门子 S7 系列可编程逻辑控制器（PLC）。攻击者试图通过自动化脚本探测并利用工业控制系统中的安全漏洞。原文未披露具体的漏洞编号或详细的技术利用代码，但强调了 AI 技术在提升工控系统攻击效率方面的潜在威胁。",
+      "tags": [
+        "工控安全",
+        "AI攻击",
+        "西门子"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/us-warns-of-ai-powered-attacks-on-siemens-plcs-in-critical-infrastructure/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-19T17:50:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "关注 AI 技术在工控系统攻击中的实际应用趋势。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/us-warns-of-ai-powered-attacks-on-siemens-plcs-in-critical-infrastructure",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 9.0,
+        "impact_scope": 10.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Deadbugz 供应链攻击深度解析：利用 MCP 服务器针对 AI 智能体窃取凭据",
+      "title_orig": "三次调用之后才\"变脸\"：正在活跃中的 MCP 供应链攻击活动 Deadbugz 深度解析",
+      "summary": "Deadbugz 是一项针对 MCP 供应链的活跃攻击活动，攻击者将恶意服务器伪装成看似无害的“文本格式化与摘要”工具，并在被调用三次后触发“变脸”机制。该恶意服务器会悄悄修改返回给 AI 智能体的指令说明书，其核心目的是诱导智能体在用户完全不知情的情况下，搜寻并窃取 SSH 私钥、AWS 凭据及 Kubernetes 配置文件等核心敏感资产。",
+      "tags": [
+        "供应链攻击",
+        "AI安全",
+        "凭据窃取"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519875&idx=1&sn=3b1a002975f42029be1aa3510a4dac7a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-18T08:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "新型 AI 基础设施（MCP）供应链攻击，技术手法新颖。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247519875&idx=1&sn=3b1a002975f42029be1aa3510a4dac7a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 10.0,
+        "actionability": 9.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.85,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "CISA 紧急通报微软 IKE 及 SharePoint 等四项高危在野利用漏洞",
+      "title_orig": "【安全圈】CISA紧急通报四项高危在野利用漏洞要求严查",
+      "summary": "美国网络安全和基础设施安全局（CISA）近日发布紧急通报，将四项高危漏洞加入已知被利用漏洞目录。受影响组件包括微软 IKE 协议、SharePoint 协作平台以及 VMware 相关产品，这些漏洞均已发现在野利用行为。CISA 要求相关机构立即开展排查工作，并在规定时间内完成补丁修复，以防止攻击者利用这些已知弱点渗透网络。",
+      "tags": [
+        "CISA",
+        "在野利用",
+        "漏洞修复"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078343&idx=3&sn=d22a51f0f51c4bf79eeb278f77bb5830",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-19T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "权威机构确认的在野利用漏洞，具有极高的修复优先级。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078343&idx=3&sn=d22a51f0f51c4bf79eeb278f77bb5830",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 10.0,
+        "impact_scope": 9.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.6,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "RDK-B WebUI 存在内存损坏与身份验证绕过等多个安全漏洞",
+      "title_orig": "VU#874418: RDK-B WebUI contains multiple vulnerabilities",
+      "summary": "RDK Central 的 RDK-B WebUI 组件被发现存在涉及内存损坏、身份验证不当、竞态条件及输入验证不足的多个安全漏洞，受影响版本为 rdkb-2025q4-kirkstone。具备网络访问权限的攻击者可利用这些漏洞绕过认证获取管理权限，或导致系统拒绝服务及底层资源内存损坏，目前相关漏洞详情已由 CERT 披露，受影响设备需密切关注官方发布的固件更新状态。",
+      "tags": [
+        "物联网安全",
+        "内存损坏",
+        "身份绕过"
+      ],
+      "url": "https://kb.cert.org/vuls/id/874418",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-08-19T19:28:37+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及广泛使用的开源宽带软件堆栈 RDK-B 的多个底层漏洞。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/874418",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "actionability": 7.0,
+        "impact_scope": 8.0,
+        "relevance": 8.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.45,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员披露针对 Cloudflare Workers 的远程 Spectre 攻击可泄露同驻 JWT 令牌",
+      "title_orig": "Cloudflare Workers Spectre Attack Leaks JWT From Co-Located Worker at 12 Bits/Second",
+      "summary": "安全研究人员披露了针对 Cloudflare Workers 生产环境的远程 Spectre 侧信道攻击，通过利用推测执行漏洞从同驻的受害者 Worker 中成功提取了 JSON Web Token 敏感数据。该攻击在端到端实验中实现了每秒 12 比特的泄露速率，其数据窃取效率比 2021 年展示的同类攻击提高了 360 倍，充分证明了多租户云端隔离环境在防御此类硬件漏洞时依然面临着严峻的安全挑战。",
+      "tags": [
+        "Spectre",
+        "侧信道攻击",
+        "云安全"
+      ],
+      "url": "https://thehackernews.com/2026/08/cloudflare-workers-spectre-attack-leaks.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-19T19:02:40+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了侧信道攻击在现代 Serverless 环境中的实际威",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/08/cloudflare-workers-spectre-attack-leaks.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 10.0,
+        "actionability": 8.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.75,
+      "final_score": 9.05,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客利用旧漏洞与默认口令攻击美国水务系统导致 12 个州基础设施受损",
+      "title_orig": "【AI复盘】伊朗黑客组织攻击美国水务系统",
+      "summary": "攻击者利用暴露在公网的Rockwell MicroLogix PLC设备，通过出厂默认口令及CVE-2021-22681认证绕过漏洞，对美国12个州的供水系统实施远程攻击。该漏洞允许攻击者绕过身份验证逻辑，实现远程锁死设备、篡改配置、禁用安全逻辑并回传虚假读数，导致运营方失去查看与控制能力，目前相关厂商已发布补丁，但受影响机构存在长期未修补的情况。",
+      "tags": [
+        "工控安全",
+        "关键基础设施",
+        "漏洞利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI3Njk2OTIzOQ==&mid=2247487954&idx=1&sn=20acd12e14e3b105fcc6fd519dc5504e",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-18T22:06:00+00:00",
+      "cve_ids": [
+        "CVE-2021-22681"
+      ],
+      "selection_reason": "典型工控安全事件，强调了基础安全配置和补丁管理在 OT 环境",
+      "feed_url": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "feed_title": "我的安全视界观",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/956e0bcbfd7dc0ca5274a3489bd2cc03cda26907.xml",
+      "story_id": "cve:cve-2021-22681",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "actionability": 7.0,
+        "impact_scope": 9.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.1,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "CISA 敦促立即修补已被利用的微软、VMware 和苹果漏洞，防止远程代码执行及设备接管",
+      "title_orig": "CISA Urges Immediate Patching of Exploited Microsoft, VMware, Apple Vulnerabilities",
+      "summary": "CISA警告微软、VMware及苹果产品中存在已被积极利用的安全漏洞，这些漏洞涵盖远程代码执行、身份验证绕过及设备接管等多种类型。原文未披露具体的漏洞编号、受影响的组件版本及技术原理细节，但明确指出这些缺陷可导致攻击者完全控制受影响设备，目前CISA已要求相关组织立即完成补丁修复以缓解风险，原文未披露具体的修复方案细节。",
+      "tags": [
+        "资讯"
+      ],
+      "url": "https://www.securityweek.com/cisa-urges-immediate-patching-of-exploited-microsoft-vmware-apple-vulnerabilities/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-19T10:37:31+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/cisa-urges-immediate-patching-of-exploited-microsoft-vmware-apple-vulnerabilities",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 10.0,
+        "impact_scope": 9.0,
+        "relevance": 10.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.6,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "甲骨文发布 2026 年 8 月安全更新，推出 943 个补丁以修复逾千个漏洞及远程攻击风险",
+      "title_orig": "943 Patches Rolled Out With Oracle’s August 2026 Security Update",
+      "summary": "甲骨文公司在 2026 年 8 月的安全更新中推出了 943 个补丁，旨在解决分布在二十多个产品系列中的 1000 多个安全漏洞，以提升整体系统的防御能力。此次更新涵盖了超过 460 个可被远程利用的漏洞，这些漏洞允许攻击者在无需身份验证的情况下通过网络发起攻击，建议所有受影响的用户尽快应用相关补丁，以修复这些可能导致系统被非法入侵或控制的严重安全隐患。",
+      "tags": [
+        "资讯"
+      ],
+      "url": "https://www.securityweek.com/943-patches-rolled-out-with-oracles-august-2026-security-update/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-19T09:14:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/943-patches-rolled-out-with-oracles-august-2026-security-update",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 9.0,
+        "impact_scope": 10.0,
+        "relevance": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.25,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "网络安全专题研究第 14 篇：深入探讨云环境与容器环境下的勒索软件攻击威胁",
+      "title_orig": "第14篇-云环境与容器环境勒索攻击",
+      "summary": "本文深入探讨了云环境与容器环境下的勒索攻击态势，分析了攻击者如何利用云原生架构的特性进行横向移动与数据加密，从而对企业核心资产造成严重威胁。针对此类日益增长的威胁，文章详细阐述了云端勒索软件的攻击路径与防御策略，强调了加强容器镜像安全、访问控制以及实时监控的重要性，旨在帮助安全从业者构建更具韧性的云安全防护体系。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247497031&idx=1&sn=b9f2fe8b8a05a37f0107466d5b998541",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-19T14:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247497031&idx=1&sn=b9f2fe8b8a05a37f0107466d5b998541",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "actionability": 6.0,
+        "impact_scope": 7.0,
+        "relevance": 8.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.4,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "360 威情中心发布 AI 安全专题周报，涵盖 2026 年 8 月 8 日至 14 日全球人工智能安全态势",
+      "title_orig": "AI安全专题周报(20260814)",
+      "summary": "360 威胁情报中心发布了 2026 年 8 月 8 日至 14 日的 AI 安全专题周报，报告编号为 TIC-202608-AI01，全面概述了该周期内全球人工智能领域的安全态势。该报告持续监测并分析了针对 AI 模型、算法及应用系统的最新威胁动态，为行业提供了关键的风险预警与情报支持，旨在帮助相关机构及时应对人工智能技术在快速发展过程中所伴随的各类新型网络安全挑战。",
+      "tags": [
+        "AI",
+        "中文源"
+      ],
+      "url": "https://blog.netlab.360.com/aian-quan-zhuan-ti-zhou-bao-2/",
+      "source": "blog.netlab.360.com",
+      "category": "WebSecurity",
+      "published": "2026-08-18T08:16:54+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://blog.netlab.360.com/rss/",
+      "feed_title": "360 Netlab Blog - Network Security Research Lab at 360",
+      "source_tier": "t1",
+      "source_kind": "cn_official",
+      "source_label": "中文安全实验室",
+      "source_key": "blog.netlab.360.com",
+      "story_id": "url:blog.netlab.360.com/aian-quan-zhuan-ti-zhou-bao-2",
+      "related_urls": [
+        "https://blog.netlab.360.com/aian-quan-zhuan-ti-zhou-bao-2/"
+      ],
+      "related_count": 1,
+      "score": 6,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 6.0,
+        "impact_scope": 7.0,
+        "relevance": 8.0,
+        "exploitability": 5.0
+      },
+      "dimension_score": 6.5,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Netty 框架修复 CVE-2026-75595 漏洞：分段 TLS 握手可绕过 SNI 路由选择",
+      "title_orig": "CVE-2026-75595 Netty: SNI Routing Bypass via Fragmented TLS ClientHello Causing Fallback to Default SslContext",
+      "summary": "异步网络框架 Netty 存在 SNI 路由绕过漏洞，由于其处理组件在解码时对 TLS 握手头偏移量检查错误，导致分段的 ClientHello 报文会触发数组越界异常。该异常会使系统错误地回退至默认的 SslContext 而非预期的特定上下文，影响 4.1.137.Final 和 4.2.17.Final 之前的版本，目前官方已发布修复版本以解决这一可能导致加密通信被错误路由的安全风险。",
+      "tags": [
+        "Netty",
+        "协议实现",
+        "漏洞修复"
+      ],
+      "url": "https://vulners.com/cvelist/CVELIST:CVE-2026-75595?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-08-19T21:00:27+00:00",
+      "cve_ids": [
+        "CVE-2026-75595"
+      ],
+      "selection_reason": "Netty 是 Java 生态核心组件，该漏洞涉及 TLS",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-75595",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "actionability": 8.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

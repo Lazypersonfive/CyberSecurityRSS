@@ -1,24 +1,24 @@
 # Source Registry Audit
 
-- generated_for: 2026-08-19
-- dates: 2026-08-19, 2026-08-18, 2026-08-17, 2026-08-16, 2026-08-15, 2026-08-14, 2026-08-13
+- generated_for: 2026-08-20
+- dates: 2026-08-20, 2026-08-19, 2026-08-18, 2026-08-17, 2026-08-16, 2026-08-15, 2026-08-14
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 105 | 20 | 14 | 71 | 0 | 4 | 20 | 41 | 21 |
-| ai_security | 19 | 2 | 0 | 17 | 0 | 6 | 2 | 1 | 1 |
-| finance | 68 | 5 | 0 | 63 | 0 | 15 | 5 | 0 | 0 |
-| security | 105 | 2 | 0 | 99 | 4 | 0 | 2 | 0 | 49 |
+| ai | 105 | 20 | 13 | 72 | 0 | 2 | 20 | 42 | 21 |
+| ai_security | 20 | 3 | 0 | 17 | 0 | 6 | 3 | 0 | 1 |
+| finance | 68 | 6 | 0 | 62 | 0 | 15 | 6 | 0 | 0 |
+| security | 105 | 4 | 0 | 98 | 3 | 0 | 3 | 0 | 51 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `expku.com` | 2 | security | [Nmap 7.99 版本存在扩展头整数下溢漏洞 CVE-2026-58058 可导致拒绝服务](http://www.expku.com/dos/56503.html) |
 | `avleonov.com` | 1 | security | [微软 8 月补丁日修复 401 项漏洞，Windows WinSock 提权漏洞已遭利用](https://avleonov.com/2026/08/12/i125-august-microsoft-patch-tuesday/) |
 | `cxsecurity.com` | 1 | security | [iOS 蓝牙个人局域网零成本以太网网关漏洞可利用 62078 端口进行攻击](https://cxsecurity.com/issue/WLB-2026080005) |
+| `expku.com` | 1 | security | [Nmap 7.99 版本存在扩展头整数下溢漏洞 CVE-2026-58058 可导致拒绝服务](http://www.expku.com/dos/56503.html) |
 
 ## Review Rule
 
