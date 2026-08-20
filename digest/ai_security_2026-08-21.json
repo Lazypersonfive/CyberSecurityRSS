@@ -1,0 +1,234 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-08-21",
+  "generated_at": "2026-08-20T23:05:13.055098Z",
+  "raw_count": 31,
+  "selected_count": 5,
+  "selection_stats": {
+    "total": 5,
+    "direct": 4,
+    "tier_t2": 5,
+    "kind_expert": 4,
+    "google_news": 1,
+    "aggregator": 1,
+    "kind_google_news": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 5,
+    "story": 0,
+    "total": 5
+  },
+  "items": [
+    {
+      "title_zh": "主流 AI 项目使用的 isolated-vm 沙箱被发现存在严重类型混淆漏洞，可导致沙箱逃逸和控制流劫持",
+      "title_orig": "We discovered a critical vulnerability in isolated-vm a sandbox that is widely used in popular AI-related projects | Blog | Endor Labs",
+      "summary": "研究人员在每周下载量超百万次的 isolated-vm 沙箱中发现了一个严重的类型混淆漏洞，该组件被 n8n 和 Mastra AI 等知名 AI 项目广泛采用。攻击者可以利用该漏洞实现控制流劫持并最终逃逸沙箱环境，从而在宿主机上执行任意代码；目前相关漏洞已在 GitHub 发布安全公告，建议受影响的开发者尽快更新至修复版本以规避风险。",
+      "tags": [
+        "沙箱逃逸",
+        "类型混淆",
+        "AI安全"
+      ],
+      "url": "https://www.endorlabs.com/learn/ghsa-864f-rcv7-6rh4-critical-type-confusion-vulnerability-in-isolated-vm",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-20T13:19:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "该漏洞影响广泛使用的底层沙箱组件，对AI应用安全具有重大意义",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/ghsa-864f-rcv7-6rh4-critical-type-confusion-vulnerability-in-isolated-vm",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "actionability": 9.0,
+        "practical_risk": 10.0,
+        "security_relevance": 10.0,
+        "agent_model_relevance": 8.0
+      },
+      "dimension_score": 9.35,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI 渗透测试供应商评估清单发布，涵盖验证机制、代码访问权限及范围控制等关键评估维度",
+      "title_orig": "AI pentesting evaluation checklist: What to look for in an AI pentesting vendor",
+      "summary": "该清单为企业提供了评估 AI 渗透测试供应商的标准化评分框架，重点关注验证过程、代码访问深度、测试范围控制以及结果的可靠性。文章详细列出了区分真实安全平台与演示型产品的关键特征，旨在帮助安全从业者识别供应商在处理复杂 AI 模型漏洞时的实际技术能力，确保渗透测试能够真实反映 AI 系统的安全水位。",
+      "tags": [
+        "AI渗透测试",
+        "合规评估",
+        "供应商管理"
+      ],
+      "url": "https://www.aikido.dev/blog/ai-pentesting-vendor-checklist",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-08-20T01:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "为安全团队评估第三方AI安全服务提供了实用的技术参考框架。",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/ai-pentesting-vendor-checklist",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "actionability": 8.0,
+        "practical_risk": 6.0,
+        "security_relevance": 9.0,
+        "agent_model_relevance": 8.0
+      },
+      "dimension_score": 7.4,
+      "final_score": 7.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Snyk 详解修复代理技术原理，通过安全情报与可破坏性分析实现漏洞自动修复与验证",
+      "title_orig": "Remediation Agents, Demystified: Why Fixing Beats Finding",
+      "summary": "Snyk 介绍了其修复代理的工作机制，该技术结合了安全情报、可破坏性分析和自动化验证，旨在将发现的漏洞直接转化为可合并的拉取请求。通过对代码上下文的深度理解，该代理不仅能识别风险，还能生成经过验证的修复补丁，从而缩短从漏洞发现到修复的周期，提升开发与安全团队在处理大规模漏洞时的协作效率。",
+      "tags": [
+        "自动化修复",
+        "DevSecOp",
+        "漏洞管理"
+      ],
+      "url": "https://snyk.io/blog/remediation-agents-demystified/",
+      "source": "snyk.io",
+      "category": "AISecurityLabs",
+      "published": "2026-08-19T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用AI和自动化技术解决漏洞修复痛点的技术路径。",
+      "feed_url": "https://snyk.io/blog/feed/",
+      "feed_title": "Snyk Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "snyk.io",
+      "story_id": "url:snyk.io/blog/remediation-agents-demystified",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "actionability": 6.0,
+        "practical_risk": 6.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 7.3,
+      "final_score": 7.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI 智能体技能扩展带来的信任挑战分析，探讨如何确保新增能力的安全性与可靠性",
+      "title_orig": "Your AI Agent Has New Skills. Can You Trust Them?",
+      "summary": "随着 AI 智能体不断获得新的插件和操作技能，其信任边界变得模糊，文章探讨了在赋予智能体更多权限时可能引入的安全风险。核心关注点在于如何验证这些新增技能的来源可靠性以及执行过程中的权限隔离，原文强调了在动态扩展 AI 能力的同时，必须建立相应的监控和信任评估机制，以防止恶意指令通过合法技能造成损害。",
+      "tags": [
+        "AI智能体",
+        "信任模型",
+        "权限控制"
+      ],
+      "url": "https://www.legitsecurity.com/blog/your-ai-agent-has-new-skills.-can-you-trust-them",
+      "source": "legitsecurity.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-20T22:30:08+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了AI Agent架构中新兴的技能扩展安全风险。",
+      "feed_url": "https://www.legitsecurity.com/blog/rss.xml",
+      "feed_title": "Legit Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "legitsecurity.com",
+      "story_id": "url:legitsecurity.com/blog/your-ai-agent-has-new-skills.-can-you-trust-them",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "technical_depth": 3.0,
+        "actionability": 2.0,
+        "practical_risk": 6.0,
+        "security_relevance": 7.0,
+        "agent_model_relevance": 9.0
+      },
+      "dimension_score": 5.6,
+      "final_score": 6.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI 提示词注入攻击引发法律界关注，相关案例已进入法庭审理阶段标志着安全风险法律化",
+      "title_orig": "AI Prompt Injection Has Entered The Courtroom - Above the Law",
+      "summary": "提示词注入攻击作为一种针对大语言模型的典型攻击手段，目前已正式出现在法律诉讼案件中，标志着该技术风险已从实验室环境演变为现实世界的法律责任问题。文章指出法庭开始审理涉及 AI 操纵和注入攻击的案件，这要求安全从业者不仅要关注技术防御，还需了解提示词注入在法律合规、证据留存及责任判定方面的最新进展。",
+      "tags": [
+        "提示词注入",
+        "法律合规",
+        "AI风险"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOZkV4d1ppV0x3TlI5MzFMM1loODNHUFpobU5HdnpEUGEyS3kxSUlrQ05QUUt6Z2F2YURZLXFrS1VYOFBHT1labUNYUnptNi1OU0NiNmN2VThiZnI2NTBtQklHXzdobUxJZzNZWlhSZmRlNkNBdkthdXVETTN3TGRqSzBrVEY?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-08-20T20:04:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提示词注入从技术攻击演变为法律案例，反映了AI安全影响力的扩",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:1fcdd0fdf3e4",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "technical_depth": 4.0,
+        "actionability": 3.0,
+        "practical_risk": 7.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 8.0
+      },
+      "dimension_score": 6.3,
+      "final_score": 5.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

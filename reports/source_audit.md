@@ -1,24 +1,24 @@
 # Source Registry Audit
 
-- generated_for: 2026-08-20
-- dates: 2026-08-20, 2026-08-19, 2026-08-18, 2026-08-17, 2026-08-16, 2026-08-15, 2026-08-14
+- generated_for: 2026-08-21
+- dates: 2026-08-21, 2026-08-20, 2026-08-19, 2026-08-18, 2026-08-17, 2026-08-16, 2026-08-15
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 105 | 20 | 13 | 72 | 0 | 2 | 20 | 42 | 21 |
-| ai_security | 20 | 3 | 0 | 17 | 0 | 6 | 3 | 0 | 1 |
-| finance | 68 | 6 | 0 | 62 | 0 | 15 | 6 | 0 | 0 |
-| security | 105 | 4 | 0 | 98 | 3 | 0 | 3 | 0 | 51 |
+| ai | 105 | 18 | 12 | 74 | 1 | 2 | 18 | 44 | 19 |
+| ai_security | 24 | 3 | 0 | 21 | 0 | 7 | 3 | 0 | 1 |
+| finance | 68 | 6 | 0 | 62 | 0 | 13 | 6 | 0 | 0 |
+| security | 105 | 4 | 0 | 99 | 2 | 0 | 3 | 0 | 51 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
-| `avleonov.com` | 1 | security | [微软 8 月补丁日修复 401 项漏洞，Windows WinSock 提权漏洞已遭利用](https://avleonov.com/2026/08/12/i125-august-microsoft-patch-tuesday/) |
-| `cxsecurity.com` | 1 | security | [iOS 蓝牙个人局域网零成本以太网网关漏洞可利用 62078 端口进行攻击](https://cxsecurity.com/issue/WLB-2026080005) |
 | `expku.com` | 1 | security | [Nmap 7.99 版本存在扩展头整数下溢漏洞 CVE-2026-58058 可导致拒绝服务](http://www.expku.com/dos/56503.html) |
+| `fidelissecurity.com` | 1 | security | [解析 WordPress REST API 安全：wp2shell 攻击链揭示的利用风险与防御](https://fidelissecurity.com/threatgeek/threat-detection-response/wordpress-rest-api-security-wp2shell-attack-chain/) |
+| `machinelearning.apple.com` | 1 | ai | [苹果发布数据受限下的混合预训练缩放定律研究：优化稀缺专业领域数据利用率](https://machinelearning.apple.com/research/scaling-laws-mixture-pretraining) |
 
 ## Review Rule
 

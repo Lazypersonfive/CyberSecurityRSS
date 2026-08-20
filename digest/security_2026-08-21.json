@@ -1,0 +1,657 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-21",
+  "generated_at": "2026-08-20T23:04:49.970916Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 6,
+    "direct": 15,
+    "wechat": 6,
+    "tier_t2": 14,
+    "kind_cn_expert": 6,
+    "kind_media": 9,
+    "tier_unknown": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 3,
+    "merged_total": 3
+  },
+  "delivered_filter_stats": {
+    "url": 11,
+    "story": 0,
+    "total": 11
+  },
+  "items": [
+    {
+      "title_zh": "TrickDump 工具实现无 Minidump 文件落盘的 LSASS 内存转储与 API 挂钩绕过",
+      "title_orig": "TrickDump——不生成 Minidump 文件即可转储 lsass",
+      "summary": "TrickDump工具通过Lock、Shock和Barrel三个独立程序分阶段执行转储任务，仅在本地生成JSON和zip碎片文件，随后在攻击机端重组为完整的Minidump镜像。这种创新的分步处理方式实现了全程无有效转储文件落盘，并支持通过覆写ntdll的.text节区来绕过安全软件的API挂钩监控，从而在不触发警报的情况下极其隐蔽地获取lsass进程中的敏感凭据信息。",
+      "tags": [
+        "凭据窃取",
+        "免杀技术",
+        "内网渗透"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496942&idx=2&sn=9ecfb35212a139da73926bb16e2f1699",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-08-20T12:26:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍了一种创新的无文件内存转储方案，具有极强的对抗性。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496942&idx=2&sn=9ecfb35212a139da73926bb16e2f1699",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 10.0,
+        "impact_scope": 8.0,
+        "exploitability": 9.0,
+        "relevance": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Sorry 勒索病毒利用 cPanel 漏洞在国内中小企业服务器中多点爆发",
+      "title_orig": "不打招呼直接锁死服务器：Sorry勒索病毒国内多点爆发，专挑中小企业下手",
+      "summary": "国家计算机病毒应急处理中心预警显示，该勒索病毒通过 cPanel 漏洞直接入侵服务器，并伪装成 sshd 进程以躲避检测。攻击者在加密前会先窃取敏感数据，目前已导致国内多家中小企业服务器被锁死，由于该病毒具有极强的隐蔽性和破坏性，相关单位需警惕此类针对性攻击，尽管原文未披露具体的漏洞编号及详细的修复补丁信息，但企业应加强对服务器进程的监控。",
+      "tags": [
+        "勒索病毒",
+        "服务器安全",
+        "漏洞利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA==&mid=2649790393&idx=1&sn=6981729b0c19403787fe35e1a20c94f3",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-20T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对国内企业的勒索预警，提醒关注 cPanel 组件安全。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA%3D%3D&mid=2649790393&idx=1&sn=6981729b0c19403787fe35e1a20c94f3",
+      "related_urls": [
+        "https://www.anquanke.com/post/id/315994",
+        "https://www.anquanke.com/post/id/315994"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "actionability": 10.0
+      },
+      "dimension_score": 9.1,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "NachoMDM 武器化利用 Windows MDM 机制实现无提示 UAC 绕过与系统权限执行",
+      "title_orig": "NachoMDM——武器化 Windows MDM:利用恶意注册实现 UAC 绕过与 SYSTEM 代码执行",
+      "summary": "该技术通过诱骗本地管理员组成员点击特定的深层链接，将设备注册到恶意的 MDM 服务器，随后利用 SyncML 协议推送恶意 MSI 安装包。此过程可在无 UAC 弹窗提示的情况下静默获得 SYSTEM 执行权限，尽管 MSRC 判定其为非漏洞，但该攻击路径在红蓝对抗中具有极高利用价值，能够利用 Windows 合规管理机制实现权限提升，对企业内网安全构成严重威胁。",
+      "tags": [
+        "权限提升",
+        "MDM利用",
+        "UAC绕过"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247496942&idx=1&sn=0787a0f99f39943672cc416eb40b8cea",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-08-20T12:26:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了利用合法管理机制进行提权的新颖攻击面。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247496942&idx=1&sn=0787a0f99f39943672cc416eb40b8cea",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "impact_scope": 8.0,
+        "exploitability": 9.0,
+        "relevance": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Rust 生态系统遭遇供应链攻击，恶意 Crates 库通过构建脚本执行远程负载",
+      "title_orig": "Rust Supply Chain Attack Puts Build-Time Malware in Crates with 245 Million Downloads",
+      "summary": "Rust 官方从 crates.io 删除了 arrayref、internment 和 append-only-vec 三个流行库的恶意版本，这些版本由被盗的维护者账号发布。恶意版本引入了仿冒域名的依赖项，在编译过程中通过构建脚本下载并执行远程攻击载荷，受影响的库累计下载量已超过 2.45 亿次，这标志着针对 Rust 生态系统的供应链攻击正在升级，开发者需严格审查依赖项的安全性。",
+      "tags": [
+        "供应链攻击",
+        "Rust",
+        "恶意包"
+      ],
+      "url": "https://thehackernews.com/2026/08/rust-supply-chain-attack-puts-build.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-20T20:22:35+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及数亿次下载量的顶级供应链安全事件，技术细节典型。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/08/rust-supply-chain-attack-puts-build.html",
+      "related_urls": [
+        "https://www.bleepingcomputer.com/news/security/hackers-poison-arrayref-rust-crate-to-push-infostealer-malware/"
+      ],
+      "related_count": 1,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "impact_scope": 10.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 警告 MLflow 开源 AI 工程平台关键漏洞正遭受黑客野外利用",
+      "title_orig": "CISA warns of hackers exploiting critical MLflow vulnerability",
+      "summary": "美国网络安全与基础设施安全局将 MLflow 平台的一个关键漏洞加入已知利用漏洞清单，并要求联邦机构限期修复。该漏洞存在于开源 AI 工程平台中，允许攻击者在特定条件下执行恶意操作，由于该平台在人工智能开发领域应用广泛，漏洞的野外利用可能导致敏感模型数据泄露或系统权限被夺取，原文未详细披露漏洞的具体原理、触发条件及受影响的确切版本号。",
+      "tags": [
+        "AI安全",
+        "漏洞利用",
+        "CISA预警"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-mlflow-vulnerability/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-20T11:06:14+00:00",
+      "cve_ids": [],
+      "selection_reason": "AI 基础设施安全漏洞进入野外利用阶段，具有风向标意义。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-mlflow-vulnerability",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "impact_scope": 9.0,
+        "exploitability": 10.0,
+        "relevance": 10.0,
+        "actionability": 10.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Elementor Pro 插件存在 RCE 漏洞 CVE-2026-32475，允许通过表单上传执行 PHP",
+      "title_orig": "Elementor Pro RCE Flaw CVE-2026-32475 Hits Form Uploads",
+      "summary": "Elementor Pro插件被曝存在编号为CVE-2026-32475的高危漏洞，未经身份验证的访问者可通过普通联系表单上传恶意PHP文件并在服务器上执行远程代码。该漏洞CVSS评分高达9.0，影响4.2.1及更早版本，官方已于2026年8月19日发布4.2.2版本进行修复，鉴于该插件在WordPress站点中应用广泛，建议全球受影响用户立即更新以规避被黑客接管服务器的风险。",
+      "tags": [
+        "远程代码执行",
+        "WordPres",
+        "文件上传"
+      ],
+      "url": "https://www.cyberkendra.com/2026/08/elementor-pro-rce-flaw-cve-2026-32475.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-08-20T02:30:37+00:00",
+      "cve_ids": [
+        "CVE-2026-32475"
+      ],
+      "selection_reason": "高流行度插件的高危 RCE 漏洞，影响大量 Web 站点。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "cve:cve-2026-32475",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "exploitability": 10.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "CISA 发布紧急通告警告 macOS 与微软组件多项 0day 漏洞遭野外利用",
+      "title_orig": "【安全圈】CISA警告多项0day遭野外利用：涵盖macOS与微软组件",
+      "summary": "美国网络安全与基础设施安全局正式确认多项涵盖 macOS 系统及微软相关组件的漏洞正被黑客团伙活跃利用。通告要求相关机构立即采取补救措施以应对潜在的安全威胁，这些漏洞的在野利用表明攻击者正针对主流操作系统进行多维度渗透，虽然原文未明确列出具体的 CVE 编号或技术细节，但 CISA 的紧急预警强调了及时更新补丁和加强系统组件监控的紧迫性。",
+      "tags": [
+        "0day漏洞",
+        "在野利用",
+        "系统安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078369&idx=2&sn=f702826e48d6e844afeb49bad9a1f7e9",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-20T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "权威机构发布的在野利用预警，涉及主流操作系统底层组件。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078369&idx=2&sn=f702826e48d6e844afeb49bad9a1f7e9",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 5.0,
+        "impact_scope": 10.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 8.45,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "美国政府警告 AI 生成的攻击脚本正针对西门子 S7 系列 PLC 关键基础设施",
+      "title_orig": "AI-Generated Exploit Scripts Target Siemens S7 PLCs in U.S. Critical Infrastructure",
+      "summary": "攻击者利用 AI 生成的恶意脚本针对西门子 S7 系列可编程逻辑控制器进行侦察和能力开发，这些脚本被伪装成合法的监控工具。该活动主要针对美国关键基础设施组织，标志着 AI 技术已被武器化用于工业控制系统攻击，这种新型威胁手段增加了防御方识别恶意行为的难度，尽管原文未披露具体的脚本代码细节，但美国政府已将其列为针对关键设施的活跃威胁。",
+      "tags": [
+        "工控安全",
+        "AI攻击",
+        "关键基础设施"
+      ],
+      "url": "https://thehackernews.com/2026/08/ai-generated-exploit-scripts-target.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-20T16:59:44+00:00",
+      "cve_ids": [],
+      "selection_reason": "AI 辅助攻击从理论走向实战，且目标为敏感的工控系统。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/08/ai-generated-exploit-scripts-target.html",
+      "related_urls": [
+        "https://www.infosecurity-magazine.com/news/ics-ai-attacks-siemens/",
+        "https://x.com/IntCyberDigest/status/2090393921104834654"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "impact_scope": 10.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.85,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "开源机器学习平台 MLflow 严重漏洞遭利用，攻击者可窃取云端凭据",
+      "title_orig": "MLflow Vulnerability Exploited for Cloud Credential Theft",
+      "summary": "开源机器学习平台 MLflow 存在一个严重级别的安全漏洞，该漏洞允许攻击者向内部端点发送恶意 HTTP 请求。通过利用此漏洞，攻击者能够从受影响的系统中提取敏感信息，包括云服务凭据等关键数据，目前已有实际攻击案例发生。原文未明确披露该漏洞的具体 CVE 编号、受影响的精确版本号以及官方补丁的发布状态。",
+      "tags": [
+        "MLflow",
+        "凭据窃取",
+        "云安全"
+      ],
+      "url": "https://www.securityweek.com/mlflow-vulnerability-exploited-for-cloud-credential-theft/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-20T12:05:55+00:00",
+      "cve_ids": [],
+      "selection_reason": "机器学习基础设施安全是当前云安全防御的新重点。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/mlflow-vulnerability-exploited-for-cloud-credential-theft",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "impact_scope": 8.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Zimbra 协作服务器漏洞 CVE-2026-73570 遭到黑客组织活跃利用",
+      "title_orig": "Hackers Target Zimbra Servers in Active Exploitation Campaign",
+      "summary": "波兰国家网络安全应急响应中心CERT Polska监测到黑客组织正活跃利用Zimbra Collaboration协作平台中的CVE-2026-73570漏洞，该漏洞已被证实正处于大规模攻击活动中。由于该漏洞直接针对企业级邮件服务器，建议相关系统管理员立即关注官方发布的更新动态，并采取必要的安全加固措施以防范潜在的未授权访问或数据泄露风险，确保组织通信环境的安全稳定。",
+      "tags": [
+        "Zimbra",
+        "漏洞利用",
+        "邮件安全"
+      ],
+      "url": "https://www.securityweek.com/hackers-target-zimbra-servers-in-active-exploitation-campaign/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-20T14:50:49+00:00",
+      "cve_ids": [
+        "CVE-2026-73570"
+      ],
+      "selection_reason": "高价值协作平台的在途攻击预警，具有极高防御优先级。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "cve:cve-2026-73570",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "impact_scope": 9.0,
+        "exploitability": 10.0,
+        "relevance": 10.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 8.7,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "JFrog Artifactory 存在严重漏洞，可导致软件供应链投毒攻击",
+      "title_orig": "JFrog Artifactory Flaws Enable Software Supply Chain Attacks",
+      "summary": "安全研究人员在 JFrog Artifactory 中发现了两个安全漏洞，这些漏洞允许攻击者篡改软件仓库中的软件包元数据。通过这种方式，攻击者可以在软件分发过程中注入恶意内容，从而实现针对下游用户的供应链投毒。原文未披露漏洞的具体 CVE 编号、技术原理细节及受影响的版本，但强调了其对软件供应链安全的潜在破坏性影响。",
+      "tags": [
+        "Artifact",
+        "供应链安全",
+        "元数据投毒"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/jfrog-flaws-software-supply-chain/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-08-20T14:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "供应链投毒是目前最难防御且影响范围最广的攻击向量之一。",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/jfrog-flaws-software-supply-chain",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.45,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "解析 WordPress REST API 安全：wp2shell 攻击链揭示的利用风险与防御",
+      "title_orig": "WordPress REST API Security: What the wp2shell Attack Chain Teaches Us",
+      "summary": "本文通过对wp2shell攻击链的深入剖析，揭示了WordPress REST API在权限管理与数据交互中存在的安全风险，详细展示了攻击者如何利用该接口实现从漏洞触发到后渗透活动的完整过程。该研究强调了针对Web API进行安全审计的重要性，并为安全从业者提供了优化威胁检测、增强WordPress站点防御能力的具体建议，旨在帮助用户有效抵御针对API接口的复杂网络攻击。",
+      "tags": [
+        "WordPres",
+        "REST API",
+        "渗透测试"
+      ],
+      "url": "https://fidelissecurity.com/threatgeek/threat-detection-response/wordpress-rest-api-security-wp2shell-attack-chain/",
+      "source": "fidelissecurity.com",
+      "category": "Synthesis",
+      "published": "2026-08-20T18:07:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入分析了 CMS 系统的 API 攻击链，对防御实战有指导",
+      "feed_url": "https://fidelissecurity.com/feed/",
+      "feed_title": "Fidelis Security",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "fidelissecurity.com",
+      "story_id": "url:fidelissecurity.com/threatgeek/threat-detection-response/wordpress-rest-api-security-wp2shell-attack-chain",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "impact_scope": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.25,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "本周威胁综述：Gogs 10.0 远程代码执行漏洞及 AI 辅助漏洞研究趋势",
+      "title_orig": "ThreatsDay: Gogs 10.0 RCE, n8n Workflow-to-RCE, $10M Reward, GLM-5.3 AI Exploit and More",
+      "summary": "本周安全动态聚焦于多个高危漏洞，包括 Gogs 10.0 的远程代码执行（RCE）漏洞以及 n8n 工作流触发的 RCE 风险。报告指出，攻击者正利用签名驱动程序绕过防御，并借助弱请求头校验实现代码执行，同时 AI 辅助的漏洞研究正在降低攻击门槛。原文未详细列出每个漏洞的 CVE 编号，但强调了信任机制被滥用和暴露系统面临的持续威胁。",
+      "tags": [
+        "RCE",
+        "AI安全",
+        "漏洞综述"
+      ],
+      "url": "https://thehackernews.com/2026/08/threatsday-gogs-100-rce-n8n-workflow-to.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-20T17:23:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖了从代码托管平台到 AI 辅助攻击的多个前沿安全热点。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/08/threatsday-gogs-100-rce-n8n-workflow-to.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "impact_scope": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Windows 域环境下的勒索软件攻击路径深度剖析",
+      "title_orig": "第13篇-Windows域环境中的勒索攻击路径",
+      "summary": "本文系统性地梳理了在 Windows 域环境中勒索软件常见的渗透与扩散路径，涵盖了从初始访问到横向移动的关键技术点。文章重点分析了域控权限获取、凭据窃取以及如何利用域策略分发勒索载荷的实战场景，旨在帮助红蓝对抗人员理解域安全边界。这对于安全从业者构建企业级内网防御体系、识别域内异常行为具有极高的实战参考价值。",
+      "tags": [
+        "内网渗透",
+        "域安全",
+        "勒索软件"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247497027&idx=1&sn=07a91ea8d32a6b2954e9b3115add71c3",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-18T14:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "域安全是企业防御的核心，分析勒索路径有助于完善防御纵深。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247497027&idx=1&sn=07a91ea8d32a6b2954e9b3115add71c3",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "impact_scope": 7.0,
+        "exploitability": 7.0,
+        "relevance": 8.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 7.15,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "XCon2026 议题预览：构建 AI 驱动的 Web 漏洞自动化挖掘与验证工程",
+      "title_orig": "XCon2026议题||从发现到复现：AI 驱动的 Web 漏洞挖掘验证工程",
+      "summary": "该议题探讨构建AI驱动的Web漏洞挖掘验证工程，旨在利用AI模型实现从漏洞发现到PoC自动生成的全流程自动化，以解决低质量漏洞堆砌问题。原文未披露该工程针对的具体漏洞类型、触发条件或特定组件版本，重点在于展示如何通过AI技术提高漏洞验证的准确性并减少无效告警，原文未涉及具体修复或缓解状态的说明。",
+      "tags": [
+        "AI安全",
+        "漏洞挖掘",
+        "自动化"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI0MDY1MDU4MQ==&mid=2247587798&idx=1&sn=f0a8f2f643c8c75a764a60ad04c37238",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-19T02:36:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨了 AI 在漏洞工程化领域的实际应用，代表了行业技术趋势",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d351be711510e0b7ccbcb275cdfab5c4c7e3e839.xml",
+      "feed_title": "嘶吼专业版",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d351be711510e0b7ccbcb275cdfab5c4c7e3e839.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI0MDY1MDU4MQ%3D%3D&mid=2247587798&idx=1&sn=f0a8f2f643c8c75a764a60ad04c37238",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "impact_scope": 7.0,
+        "exploitability": 6.0,
+        "relevance": 8.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.05,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
