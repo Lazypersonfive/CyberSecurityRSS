@@ -1,0 +1,656 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-25",
+  "generated_at": "2026-08-24T23:04:32.833613Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "aggregator": 1,
+    "tier_t2": 13,
+    "kind_expert_x": 1,
+    "direct": 14,
+    "kind_media": 4,
+    "chinese": 8,
+    "wechat": 8,
+    "kind_cn_expert": 8,
+    "kind_expert": 1,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "tier_unknown": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 0,
+    "merged_total": 1
+  },
+  "delivered_filter_stats": {
+    "url": 6,
+    "story": 0,
+    "total": 6
+  },
+  "items": [
+    {
+      "title_zh": "WordPress 强制更新 Pods 插件以修复可导致站点接管的严重账户接管漏洞",
+      "title_orig": "❗️Wordpress is force-updating 100,000+ websites over a critical flaw in Pods, a WordPress plugin, that lets unauthenticated attackers overwrite any ...",
+      "summary": "WordPress 官方正强制为超过 10 万个网站更新 Pods 插件，以修复编号为 CVE-2026-19598 且 CVSS 评分高达 9.8 的严重漏洞。该漏洞允许未经身份验证的攻击者重写包括站点所有者在内的任何账户密码，从而实现对网站的完全接管，目前插件供应商已与 WordPress 团队合作推送补丁版本，建议所有受影响用户立即确认更新状态以缓解这一极高风险的威胁。",
+      "tags": [
+        "WordPres",
+        "账户接管",
+        "强制更新"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2091982627930779913",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-08-24T20:15:00+00:00",
+      "cve_ids": [
+        "CVE-2026-19598"
+      ],
+      "selection_reason": "涉及大规模强制更新及高危账户接管漏洞，影响范围极广。",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "cve:cve-2026-18963,cve-2026-19598",
+      "related_urls": [
+        "https://thehackernews.com/2026/08/critical-keycloak-password-reset-flaw.html"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "actionability": 10.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "relevance": 10.0
+      },
+      "dimension_score": 9.3,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客利用 miniOrange SSO 插件漏洞对 WordPress 网站发起身份验证绕过攻击",
+      "title_orig": "Hackers target WordPress sites in miniOrange auth bypass attacks",
+      "summary": "该漏洞涉及WordPress的miniOrange SAML 2.0 Single Sign On插件，其核心原理是攻击者可利用两个关键的身份验证绕过缺陷来伪造SAML响应。触发条件为攻击者向受影响站点发送构造的响应，从而以管理员身份非法登录，原文未披露具体受影响的版本号。目前该漏洞已被观察到活跃的野外利用行为，原文未披露官方修复补丁的具体发布版本或缓解措施细节。",
+      "tags": [
+        "身份绕过",
+        "SAML",
+        "插件安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-target-wordpress-sites-in-miniorange-auth-bypass-attacks/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-24T19:26:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "身份验证绕过是高价值攻击路径，且已有野外利用案例。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/hackers-target-wordpress-sites-in-miniorange-auth-bypass-attacks",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "actionability": 10.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "relevance": 10.0
+      },
+      "dimension_score": 9.3,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "利用 BOF 与 TGT 委派在 Cobalt Strike 中实现隐蔽的 Kerberos 权限持久化",
+      "title_orig": "监控 Cobalt Strike Beacon 的 Windows 令牌并获取 Kerberos 持久化",
+      "summary": "本文介绍了一种通过 Beacon 对象文件枚举包括 LSASS 在内的 Windows 令牌并存入内存的技术，利用 tgtdeleg 为不同用户生成 TGT 票据以实现权限维持。该方法结合 Python 脚本在后台定时监控，即使在目标用户注销后也能确保持久的 Kerberos 访问权限，且在 Elastic EDR 环境下测试显示为零告警，为红队在受限环境下的隐蔽持久化操作提供了极具参考价值的新思路。",
+      "tags": [
+        "红蓝对抗",
+        "权限维持",
+        "EDR绕过"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ==&mid=2247497016&idx=1&sn=42185c5315ef500f2c2fe11c3cae1e19",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-08-24T08:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对现代 EDR 的隐蔽持久化技巧，具有实战参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "feed_title": "securitainment",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8dd9857e540441b90ee86986df74b5e1a96d2abb.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxODM5ODQzNQ%3D%3D&mid=2247497016&idx=1&sn=42185c5315ef500f2c2fe11c3cae1e19",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "actionability": 9.0,
+        "technical_depth": 10.0,
+        "impact_scope": 7.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.85,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Anthropic 研究揭示思维病毒在多智能体 LLM 系统间的跨会话传播与注入风险",
+      "title_orig": "AI安全案例分析 | 思维病毒在AI智能体间的跨会话传播与持久化注入",
+      "summary": "Anthropic 与瑞士洛桑联邦理工学院联合发布了关于“思维病毒”的研究论文，探讨了自传播思想在多智能体大模型系统中的风险。研究指出，此类恶意指令或思想可以在 AI 智能体之间实现跨会话传播与持久化注入，从而影响系统的决策一致性。该研究为 AI 安全领域提供了关于智能体交互安全的新视角，揭示了未来自动化 AI 生态中潜在的供应链威胁。",
+      "tags": [
+        "AI安全",
+        "大模型",
+        "思维病毒"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkyMTI0NjA3OA==&mid=2247495432&idx=1&sn=4d662e5c062b0f0455efa4dcd4a1a8d0",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-24T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "前瞻性的 AI 安全研究，探讨了智能体生态系统的新型威胁模型",
+      "feed_url": "https://wechat2rss.xlab.app/feed/059ae07ca76f11c6e9f9fad7698ab205b3b039c8.xml",
+      "feed_title": "M01NTeam",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/059ae07ca76f11c6e9f9fad7698ab205b3b039c8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzkyMTI0NjA3OA%3D%3D&mid=2247495432&idx=1&sn=4d662e5c062b0f0455efa4dcd4a1a8d0",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 10.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.65,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Rapid7 发布 Microsoft SharePoint 远程代码执行漏洞 CVE-2026-63520 分析",
+      "title_orig": "Rapid7 Analysis: Microsoft SharePoint Remote Code Execution (CVE-2026-63520)",
+      "summary": "Rapid7 发布了针对 Microsoft SharePoint 远程代码执行漏洞 CVE-2026-63520 的深度技术分析，指出该漏洞允许攻击者在受影响的服务器上执行任意代码。虽然原文摘要未详细展开具体的触发路径，但明确该漏洞通常涉及反序列化或输入验证不当等安全缺陷，目前微软已发布相关补丁，建议企业用户尽快评估其 SharePoint 环境的安全状态并完成更新以防范潜在的远程攻击。",
+      "tags": [
+        "SharePoi",
+        "RCE漏洞",
+        "漏洞分析"
+      ],
+      "url": "https://www.rapid7.com/blog/post/ra-microsoft-sharepoint-remote-code-execution-cve-2026-63520",
+      "source": "rapid7.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-24T16:18:05+00:00",
+      "cve_ids": [
+        "CVE-2026-63520"
+      ],
+      "selection_reason": "SharePoint RCE 属于高价值漏洞，Rapid7",
+      "feed_url": "https://blog.rapid7.com/rss/",
+      "feed_title": "Rapid7 Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "rapid7.com",
+      "story_id": "cve:cve-2026-63520",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "relevance": 10.0
+      },
+      "dimension_score": 8.7,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "2026 KCTF 丑寅同墟·星海抉择题目设计思路与解题实战解析",
+      "title_orig": "2026 KCTF | 《第九题：丑寅同墟·星海抉择》设计思路及解析",
+      "summary": "本文详细解析了 2026 KCTF 第九题《丑寅同墟·星海抉择》的设计思路，涵盖了题目构建中的技术难点、核心考点以及复杂的逻辑陷阱。在实际比赛过程中，F1ux 战队展现出极强的逆向分析实力，仅用时 1 分 25 秒便成功拿下该题目的“一血”首杀，文章通过深入探讨解题细节，为安全从业者和 CTF 爱好者提供了关于复杂漏洞挖掘、利用以及高难度题目破解的实战参考经验。",
+      "tags": [
+        "CTF",
+        "漏洞挖掘",
+        "逆向工程"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458618893&idx=1&sn=efa7ac8d77b3f8038f3dbfaad6e4f49f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-24T09:59:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "KCTF 题目解析提供了高质量的逆向与攻防技术细节。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458618893&idx=1&sn=efa7ac8d77b3f8038f3dbfaad6e4f49f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 10.0,
+        "impact_scope": 6.0,
+        "relevance": 8.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "科乐美《合金装备 Online 3》存在堆溢出漏洞可导致远程代码执行",
+      "title_orig": "VU#728712: Konami's Metal Gear Online 3 contains a heap-based buffer overflow",
+      "summary": "Konami 开发的《合金装备 Online 3》被发现存在基于堆的缓冲区溢出漏洞，编号为 VU#728712。该漏洞源于输入验证不足，允许比赛主机通过精心构造的数据包在游说大厅成员的机器上远程执行任意代码。该游戏使用 Steam Matchmaking 处理多人对战，目前建议玩家关注官方补丁发布情况，避免加入不受信任的游戏房间以降低受攻击风险。",
+      "tags": [
+        "堆溢出",
+        "远程代码执行",
+        "游戏安全"
+      ],
+      "url": "https://kb.cert.org/vuls/id/728712",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-08-24T14:57:41+00:00",
+      "cve_ids": [],
+      "selection_reason": "游戏客户端 RCE 漏洞较为罕见，且影响大量终端用户安全。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/728712",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 6.0,
+        "technical_depth": 8.0,
+        "impact_scope": 5.0,
+        "relevance": 8.0
+      },
+      "dimension_score": 7.2,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "软件供应链攻击进入蠕虫时代：攻击重心转向 CI/CD 流水线与开发者终端",
+      "title_orig": "每 3 天一起投毒：软件供应链攻击正式进入「蠕虫时代」",
+      "summary": "软件供应链攻击呈现蠕虫化趋势，攻击原理从利用成品软件漏洞转向直接渗透软件构建环境，包括开发者终端、CI/CD流水线及相关凭证。触发条件通常涉及在构建环节植入恶意代码或窃取访问权限，导致投毒事件平均每3天发生一起。原文未披露特定受影响的组件名称或版本号，亦未提供具体的修复补丁信息，仅强调了攻击目标向开发基础设施转移的现状。",
+      "tags": [
+        "供应链安全",
+        "CI/CD",
+        "投毒攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519978&idx=1&sn=c3c6d5c7e21f72e966ef1702af707af7",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-24T07:22:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了供应链攻击模式的重大转变，对企业防御策略有指导意义。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247519978&idx=1&sn=c3c6d5c7e21f72e966ef1702af707af7",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 7.0,
+        "actionability": 7.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "微软MSRC内部数据曝光：AI辅助下漏洞利用开发成本骤降且响应速度面临严峻挑战",
+      "title_orig": "3.61美元一个PoC，21分钟出利用：微软MSRC内部数据曝光，漏洞响应团队正在失效\"",
+      "summary": "该资讯披露了微软MSRC内部数据，指出在AI辅助下生成漏洞PoC的平均成本仅为3.61美元，且部分利用代码可在21分钟内完成，反映出自动化攻击对响应机制的挑战。原文未披露具体漏洞编号、漏洞类型原理及受影响的组件版本，仅强调防御逻辑需从追赶攻击结果转向减少攻击成立的前提，目前相关修复或缓解状态在文中亦未明确说明。",
+      "tags": [
+        "漏洞响应",
+        "AI安全",
+        "MSRC"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA==&mid=2651142427&idx=1&sn=159c96e993d96b605c5352d82a0647ae",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-24T04:15:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI对漏洞利用效率的量化提升及对防御体系的冲击。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "feed_title": "安全牛",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA%3D%3D&mid=2651142427&idx=1&sn=159c96e993d96b605c5352d82a0647ae",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 8.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "安全研究员通过逆向工程将Linux设备伪装成苹果设备并成功获取Find My共享位置数据",
+      "title_orig": "把Linux伪装成苹果设备也可拿到Find My的共享位置数据",
+      "summary": "安全研究员Zerotistic发布了一项针对苹果Find My网络的逆向工程研究，通过将普通Linux机器伪装并注册进该生态系统，实现了位置数据的非法获取。该技术利用了苹果协议中的认证逻辑漏洞，使得非苹果硬件也能接入其私有定位网络。目前该研究展示了跨平台协议模拟的技术可行性，原文未提及苹果官方是否已发布针对性补丁。",
+      "tags": [
+        "逆向工程",
+        "Find My",
+        "协议安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451188227&idx=1&sn=0173111153eacfab13f8975dabda356b",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-24T15:28:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了针对封闭生态协议的深度逆向与伪装接入技术。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451188227&idx=1&sn=0173111153eacfab13f8975dabda356b",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 8.0,
+        "impact_scope": 7.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "CDN Tsunami攻击利用HTTP协议转换实现350倍放大倍数的DoS拒绝服务攻击",
+      "title_orig": "每日安全动态推送(26/8/24)",
+      "summary": "研究人员近期披露了一种名为CDN Tsunami的新型攻击方式，该漏洞利用HTTP/3到HTTP/1.1协议转换过程中的缺陷，能够实现高达350倍的DoS流量放大效果，对网络基础设施构成严重威胁。此外，安全动态还涵盖了针对Grok大模型的零点击加密提示注入攻击，以及NERO R-ONE智能摄像头中存在的后门漏洞，提醒相关厂商和用户关注协议转换安全、AI模型注入及物联网硬件防护。",
+      "tags": [
+        "DoS攻击",
+        "协议转换",
+        "提示注入"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA==&mid=2651960530&idx=1&sn=73d95434c985f03aeb7ac547dd8e8975",
+      "source": "mp.weixin.qq.com",
+      "category": "CN_News",
+      "published": "2026-08-24T11:12:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖了协议放大攻击及AI模型注入等高价值技术动态。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "feed_title": "腾讯玄武实验室公众号",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/923c0e2f33b6d39c8a826a90f185725f0edb10e8.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5NDYyNDI0MA%3D%3D&mid=2651960530&idx=1&sn=73d95434c985f03aeb7ac547dd8e8975",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 7.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Calix家用路由器存在未修复漏洞允许攻击者绕过NAT并将内部网络设备暴露至公网",
+      "title_orig": "Unpatched Calix flaw lets hackers bypass NAT to expose internal devices",
+      "summary": "Calix GS7 XGS (GS5239XG) 型号路由器存在一个未修复的安全漏洞，远程且未经身份验证的攻击者可利用该漏洞创建端口转发规则。通过绕过NAT机制，攻击者能够将原本位于局域网内的私有设备直接暴露在互联网中，增加了内网资产受攻击的风险。目前该漏洞尚无官方补丁，受影响设备被美国多家宽带运营商广泛采用，建议用户关注缓解措施。",
+      "tags": [
+        "路由器漏洞",
+        "NAT绕过",
+        "固件安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/unpatched-calix-flaw-lets-hackers-bypass-nat-to-expose-internal-devices/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-24T21:14:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及广泛使用的网络基础设施漏洞，具有较高的实战危害性。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/unpatched-calix-flaw-lets-hackers-bypass-nat-to-expose-internal-devices",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 7.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "勒索软件解密技术原理深度解析与自动化解密工具实战应用指南",
+      "title_orig": "第19篇-勒索软件解密技术原理与工具实战",
+      "summary": "本文深入探讨了勒索软件的加密逻辑与解密技术原理，重点分析了如何通过逆向分析获取密钥或利用加密算法实现缺陷进行数据恢复。文章结合实际案例介绍了多种解密工具的实战用法，旨在帮助安全从业者在应对勒索攻击时掌握主动权。该技术点对于应急响应人员理解加密文件结构及评估数据可恢复性具有重要的参考价值。",
+      "tags": [
+        "勒索软件",
+        "数据解密",
+        "逆向分析"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&mid=2247497051&idx=1&sn=8a16fc1132d731afb4a8e692306e7581",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-24T14:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了勒索软件对抗中关键的解密技术细节与实战工具。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "feed_title": "安全分析与研究",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/62ba31603ffe26b5a8eca9ddaa434ea612445c10.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ%3D%3D&mid=2247497051&idx=1&sn=8a16fc1132d731afb4a8e692306e7581",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 6.0,
+        "actionability": 7.0,
+        "technical_depth": 8.0,
+        "impact_scope": 7.0,
+        "relevance": 8.0
+      },
+      "dimension_score": 7.3,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Doubloon Dredger攻击活动滥用Notion平台与恶意PDF文件窃取微软身份验证令牌",
+      "title_orig": "Doubloon Dredger Abuses Notion to Harvest Authentication Tokens",
+      "summary": "安全研究发现名为Doubloon Dredger的攻击活动利用Notion平台的合法性，配合恶意PDF文件实施钓鱼攻击以窃取Microsoft身份验证令牌。攻击者通过在Notion页面中嵌入恶意链接，诱导用户下载并执行脚本，从而绕过传统邮件安全网关的检测。这种滥用SaaS服务进行凭据收割的方法显著提高了攻击的成功率，原文未披露具体的漏洞编号。",
+      "tags": [
+        "凭据窃取",
+        "SaaS滥用",
+        "钓鱼攻击"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/doubloon-dredger-notion/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-08-24T13:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了利用合法云平台进行社会工程学攻击的新型链路。",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/doubloon-dredger-notion",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 7.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "研究人员通过单一SSID配置缺陷成功突破工业控制系统OT与IT环境的物理隔离",
+      "title_orig": "One SSID To Rule Them All",
+      "summary": "安全研究员在对OT环境进行渗透测试时发现，通过利用单一SSID的配置不当，可以在无需复杂操作的情况下彻底打破IT与OT之间的网络分段隔离。该技术点主要涉及无线网络架构设计中的逻辑缺陷，导致攻击者能从低安全级别的办公网渗透至高安全级别的控制室网络。此案例强调了在工业互联网中，无线信号覆盖与认证策略对物理隔离有效性的关键影响。",
+      "tags": [
+        "IT/OT隔离",
+        "无线安全",
+        "网络分段"
+      ],
+      "url": "https://www.pentestpartners.com/security-blog/one-ssid-to-rule-them-all/",
+      "source": "pentestpartners.com",
+      "category": "IoTSecurity",
+      "published": "2026-08-24T13:26:20+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了在关键基础设施中通过无线配置缺陷突破隔离的实战案例。",
+      "feed_url": "https://www.pentestpartners.com/feed/",
+      "feed_title": "Pen Test Partners",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "pentestpartners.com",
+      "story_id": "url:pentestpartners.com/security-blog/one-ssid-to-rule-them-all",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 8.0,
+        "impact_scope": 8.0,
+        "relevance": 9.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}
