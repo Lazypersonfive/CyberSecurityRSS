@@ -1,0 +1,652 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-26",
+  "generated_at": "2026-08-25T23:05:54.478835Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "chinese": 6,
+    "wechat": 5,
+    "tier_t2": 12,
+    "kind_cn_expert": 5,
+    "kind_media": 6,
+    "tier_unknown": 1,
+    "kind_expert": 1,
+    "kind_community": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 9,
+    "story": 1,
+    "total": 10
+  },
+  "items": [
+    {
+      "title_zh": "Kaltura HTML5 播放器库存在不安全反序列化漏洞，可导致远程代码执行和任意文件读取",
+      "title_orig": "VU#308749: Remote Code Execution and Arbitrary File Read Vulnerabilities in Kaltura Servers",
+      "summary": "Kaltura HTML5 Player库中的mwEmbedLoader.php端点存在严重的不安全反序列化缺陷，攻击者可利用该漏洞实现远程代码执行或读取服务器上的任意敏感文件，直接威胁到受影响服务器的数据安全。受影响版本涵盖html5lib v2.45、v2.103及更早的v2.x版本，由于目前官方补丁尚未发布，建议相关用户密切关注供应商更新并采取必要的缓解措施以防范潜在的安全风险。",
+      "tags": [
+        "反序列化",
+        "远程代码执行",
+        "Kaltura"
+      ],
+      "url": "https://kb.cert.org/vuls/id/308749",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-08-25T16:11:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及主流多媒体库的高危漏洞，具有文件读取和RCE双重风险。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/308749",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.25,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "攻击者利用伪造 Claude AI 越狱工具投毒，通过四阶段脱壳植入窃密木马",
+      "title_orig": "当新纳粹开始写代码：一起 AI 社工投毒背后的极端主义数字指纹",
+      "summary": "攻击者在GitHub发布虚假的AI越狱工具，诱导用户在终端执行PowerShell命令，通过四阶段层层脱壳技术最终植入经VMProtect加壳的远程访问木马，并根据需要下发Stealer窃密模块以窃取敏感信息。安全研究通过VT Intelligence扩线发现19个同族变体，揭示该攻击者同时运营AI越狱与黑产工具两条投毒线，其数字指纹显示出明显的新纳粹极端主义色彩。",
+      "tags": [
+        "供应链攻击",
+        "AI安全",
+        "木马分析"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247519987&idx=1&sn=99ae2175bd62fc70d21f4623f71e7982",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-25T07:38:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了针对AI开发者和爱好者的社会工程学投毒链路，具有警示意",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247519987&idx=1&sn=99ae2175bd62fc70d21f4623f71e7982",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "exploitability": 8.0,
+        "relevance": 10.0,
+        "technical_depth": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "WordPress插件miniOrange曝出身份认证绕过漏洞，攻击者可免密获取管理员权限",
+      "title_orig": "【安全圈】WordPress插件曝认证绕过：黑客免密直取管理员权限",
+      "summary": "全球企业广泛使用的知名WordPress插件miniOra被曝存在严重的认证绕过漏洞，网络安全机构已针对此情况发布紧急安全通报。该漏洞允许黑客在无需输入密码的情况下直接获取目标网站的管理员权限，从而实现对企业内部协作平台或文档管理系统的完全控制，目前相关机构正敦促受影响的企业用户尽快采取安全加固措施以防止数据泄露。",
+      "tags": [
+        "漏洞",
+        "中文源"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078437&idx=2&sn=f59c49dd5437dac84c6537020ffc63dc",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-25T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "中文信源高分入选",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078437&idx=2&sn=f59c49dd5437dac84c6537020ffc63dc",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "technical_depth": 8.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.0,
+      "final_score": 9.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "澳大利亚警告TeamCity服务器关键漏洞正遭积极利用，敦促用户尽快修复以防攻击",
+      "title_orig": "Australia Warns of Active Exploitation of Critical TeamCity Server Flaw",
+      "summary": "澳大利亚官方警告TeamCity服务器存在一个正被积极利用的关键漏洞，该漏洞允许攻击者在未经身份验证的情况下远程执行代码并完全控制受影响的服务器。原文未披露该漏洞的具体CVE编号、技术原理及受影响的确切版本号，但强调该漏洞已在野外被利用。目前官方已发布安全补丁，建议所有使用TeamCity持续集成平台的客户立即更新至最新版本以缓解风险。",
+      "tags": [
+        "资讯"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/australia-exploitation-teamcity/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-08-25T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/australia-exploitation-teamcity",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "exploitability": 10.0,
+        "relevance": 10.0,
+        "technical_depth": 8.0,
+        "actionability": 10.0
+      },
+      "dimension_score": 9.3,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软SharePoint曝出多个高危安全漏洞，企业协作平台面临内部文件泄露风险",
+      "title_orig": "【漏洞预警】Microsoft SharePoint CVE-2026-55040+63520...",
+      "summary": "Microsoft SharePoint协作平台存在CVE-2026-55040和CVE-2026-63520组合漏洞，攻击者可能利用这些漏洞绕过安全限制并访问内部敏感文件。原文未披露漏洞的具体触发条件、技术实现原理以及受影响的软件版本范围，仅明确该漏洞威胁到企业内部文档管理系统的安全性。目前相关修复状态在原文中未明确说明，建议管理部门关注官方补丁发布情况以进行安全加固。",
+      "tags": [
+        "漏洞",
+        "中文源"
+      ],
+      "url": "https://nosec.org/home/detail/5975.html",
+      "source": "nosec.org",
+      "category": "Synthesis",
+      "published": "2026-08-25T06:44:21+00:00",
+      "cve_ids": [
+        "CVE-2026-55040"
+      ],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://rsshub.zhengjim.com/nosec/hole",
+      "feed_title": "NOSEC 安全讯息平台 - 漏洞预警",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "nosec.org",
+      "story_id": "cve:cve-2026-55040",
+      "related_urls": [
+        "https://www.rapid7.com/blog/post/ra-microsoft-sharepoint-remote-code-execution-cve-2026-63520"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "technical_depth": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.25,
+      "final_score": 9.05,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Provenance 区块链状态分歧漏洞分析：攻击者可无须代币获取 Marker 账户管理权限",
+      "title_orig": "State divergence enables unauthorized access",
+      "summary": "基于Cosmos SDK构建的Provenance公链被发现存在状态分歧漏洞，允许任何用户在不持有任何代币的情况下，非法获取Marker账户的管理员控制权。该漏洞直接影响了82个涉及链上代币化贷款、私募股权代币、桥接资产及资产注册的活跃Marker，研究人员已向官方报告该缺陷，旨在防止这些关键金融资产在公共权益证明链上被恶意操控。",
+      "tags": [
+        "区块链安全",
+        "权限绕过",
+        "Cosmos"
+      ],
+      "url": "https://blog.trailofbits.com/2026/08/25/state-divergence-enables-unauthorized-access/",
+      "source": "blog.trailofbits.com",
+      "category": "WebSecurity",
+      "published": "2026-08-25T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入分析了公链架构中的状态分歧问题，对Web3安全研究有重要",
+      "feed_url": "https://blog.trailofbits.com/feed/",
+      "feed_title": "Trail of Bits Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/08/25/state-divergence-enables-unauthorized-access",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 9.0,
+        "relevance": 9.0,
+        "technical_depth": 9.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.7,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "TrueConf Server 存在沙箱逃逸与代码注入漏洞，攻击者可实现远程非授权代码执行",
+      "title_orig": "Exploit for Code Injection in Trueconf Trueconf_Server",
+      "summary": "TrueConf Server被曝存在编号为CVE-2026-72530的关键漏洞，该漏洞涉及代码注入与沙箱逃逸技术，允许远程且未授权的攻击者突破环境限制。攻击者利用此缺陷可在目标服务器上执行任意恶意代码，目前GitHub上已公开相关的PoC演示，用于展示该漏洞的检测与缓解方案，尽管原文未明确受影响版本，但其潜在的服务器控制风险极高。",
+      "tags": [
+        "沙箱逃逸",
+        "代码注入",
+        "PoC"
+      ],
+      "url": "https://vulners.com/githubexploit/FBC252EC-7637-572E-BD74-EFAFEEA27ADB?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-08-25T21:14:20+00:00",
+      "cve_ids": [
+        "CVE-2026-72530"
+      ],
+      "selection_reason": "关键组件的沙箱逃逸漏洞，且已有公开PoC，威胁程度较高。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-72530",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "technical_depth": 9.0,
+        "actionability": 9.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "安全研究员探索HTML标签命名规则，发现JavaScript在特定字符处理中的潜在特性",
+      "title_orig": "What's in a tag name? JavaScript, apparently",
+      "summary": "研究人员在探索HTML标签命名规范时，发现JavaScript在标签名处理中存在非预期的行为，并深入探讨了除首字母必须为英文字母外其他允许出现的字符规则。这项研究源于对浏览器解析机制的好奇，通过对标签名中特殊字符的测试，揭示了前端解析逻辑中可能被忽视的细节，为理解Web浏览器如何处理非标准HTML标签提供了技术参考与实践见解。",
+      "tags": [
+        "Web安全"
+      ],
+      "url": "https://portswigger.net/research/whats-in-a-tag-name-javascript-apparently",
+      "source": "portswigger.net",
+      "category": "WebSecurity",
+      "published": "2026-08-25T14:24:32+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://portswigger.net/research/rss",
+      "feed_title": "PortSwigger Research",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "安全研究",
+      "source_key": "portswigger.net",
+      "story_id": "url:portswigger.net/research/whats-in-a-tag-name-javascript-apparently",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 5.0,
+        "exploitability": 7.0,
+        "relevance": 8.0,
+        "technical_depth": 8.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 7.0,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客组织UAT-10147利用AI技术部署隐蔽Rootkit进行全球网络攻击",
+      "title_orig": "【安全圈】黑客组织利用AI扩大攻击：部署隐蔽Rootkit横扫全球",
+      "summary": "思科Talos威胁情报团队披露了高度活跃的犯罪团伙UAT-10147，该组织正利用先进的AI技术辅助开发并部署高度隐蔽的Rootkit工具。攻击者通过复杂的感染链在全球范围内渗透目标系统，旨在实现持久化控制与敏感数据窃取，目前相关技术细节显示其具备极强的规避检测能力，对全球网络安全构成了严峻挑战。",
+      "tags": [
+        "Rootkit",
+        "AI攻击",
+        "威胁情报"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078426&idx=2&sn=7a7d480d930b44060995ef1a81884671",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-24T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI技术在恶意软件开发和隐蔽性增强中的实际应用。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078426&idx=2&sn=7a7d480d930b44060995ef1a81884671",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 7.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 8.1,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "WordPress插件MiniOrange存在身份验证绕过漏洞并遭受活跃攻击",
+      "title_orig": "WordPress Websites Targeted via MiniOrange Plugin Vulnerabilities",
+      "summary": "WordPress平台的MiniOrange SAML 2.0 SSO插件近期被曝存在CVE-2026-61979和CVE-2026-15981两个高危身份验证绕过漏洞，导致大量网站面临被接管的严重威胁。攻击者能够利用这些漏洞在未经授权的情况下直接获取目标站点的管理权限，目前已有针对性的攻击活动在进行中，安全专家强烈建议所有受影响的用户必须立即将该插件更新至官方发布的最新版本以规避风险。",
+      "tags": [
+        "WordPres",
+        "身份验证绕过",
+        "插件漏洞"
+      ],
+      "url": "https://www.securityweek.com/wordpress-websites-targeted-via-miniorange-plugin-vulnerabilities/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-25T13:33:12+00:00",
+      "cve_ids": [
+        "CVE-2026-15981",
+        "CVE-2026-61979"
+      ],
+      "selection_reason": "针对流行CMS插件的活跃攻击，具有较高的实战防御参考价值。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "cve:cve-2026-15981,cve-2026-61979",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 9.0,
+        "relevance": 9.0,
+        "technical_depth": 7.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "NVIDIA NemoClaw存在安全缺陷可导致本地Ollama实例被远程接管",
+      "title_orig": "A Malicious Webpage Could Poison Your Local AI Model Behind NVIDIA NemoClaw",
+      "summary": "安全公司Oasis Security披露了NVIDIA NemoClaw中存在的一项严重安全弱点，该漏洞允许攻击者通过恶意网页在未经身份验证的情况下，远程接管为AI代理提供服务的本地Ollama实例。攻击者能够借此在模型内部植入隐藏指令并操纵其输出行为，研究人员已在正式发布该发现前将相关细节报告给了NVIDIA产品安全事件响应团队，旨在通过紧急修复来保护本地AI模型的运行安全。",
+      "tags": [
+        "AI安全",
+        "NVIDIA",
+        "模型投毒"
+      ],
+      "url": "https://thehackernews.com/2026/08/a-malicious-webpage-could-poison-your.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-25T14:07:37+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI代理架构中的新型攻击面，涉及本地模型控制权安全。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/08/a-malicious-webpage-could-poison-your.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Marimo Notebook修复高危漏洞，防止在编辑模式下执行恶意MCP命令",
+      "title_orig": "Marimo Notebook Flaw Could Run MCP Commands Before Cells Execute in Edit Mode",
+      "summary": "Marimo修复了其笔记本软件中一个允许攻击者执行恶意模型上下文协议命令的高危漏洞，该漏洞由VulnCheck的CNA记录追踪。当用户在编辑模式下打开特制笔记本时，恶意命令会作为本地子进程在单元格执行前运行，从而导致严重的远程代码执行风险，目前官方已发布安全补丁，建议所有使用该软件的用户尽快完成升级。",
+      "tags": [
+        "代码执行",
+        "MCP协议",
+        "漏洞修复"
+      ],
+      "url": "https://thehackernews.com/2026/08/marimo-notebook-flaw-could-run-mcp.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-25T12:43:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及AI开发工具的供应链安全，对使用Notebook的开发者",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/08/marimo-notebook-flaw-could-run-mcp.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "actionability": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "卡巴斯基发现首个专门针对汽车车机系统的恶意软件并关联BadBox僵尸网络",
+      "title_orig": "First Malware Built Specifically for Car Head Units Fuels Botnet",
+      "summary": "卡巴斯基研究人员发现了一款专门针对汽车车载信息娱乐系统定制的恶意软件，该软件已被证实与臭名昭著的BadBox僵尸网络存在关联。该恶意软件利用车机系统的安卓底层漏洞进行感染，目前已在全球范围内影响了数百万台设备，标志着僵尸网络攻击范围正从传统终端向智能交通工具领域进一步扩张，威胁到车主的数据安全。",
+      "tags": [
+        "车联网安全",
+        "僵尸网络",
+        "恶意软件"
+      ],
+      "url": "https://www.securityweek.com/first-malware-built-specifically-for-car-head-units-fuels-botnet/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-08-25T11:18:22+00:00",
+      "cve_ids": [],
+      "selection_reason": "首次发现针对车机定制的恶意软件，预示着IoT安全威胁的新趋势",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/first-malware-built-specifically-for-car-head-units-fuels-botnet",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 7.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Weedhack木马通过SEO投毒和YouTube伪装游戏客户端劫持用户电脑",
+      "title_orig": "【安全圈】Weedhack木马伪装游戏客户端：SEO投毒劫持电脑",
+      "summary": "威胁情报团队通报黑客组织正利用搜索引擎优化投毒和YouTube视频传播伪装成游戏客户端的Weedhack木马，以此诱导用户下载虚假软件。该木马通过劫持受害者电脑进行非法活动，虽然原文未详细披露具体的后门功能或受影响的系统版本，但其传播手段显示出极高的欺骗性，提醒广大游戏玩家在下载客户端时务必保持警惕。",
+      "tags": [
+        "SEO投毒",
+        "木马病毒",
+        "社会工程学"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078437&idx=3&sn=36d2256bc6a7af19fa430e14691fef3a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-25T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "分析了传统攻击手段与社交媒体结合的最新分发策略。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078437&idx=3&sn=36d2256bc6a7af19fa430e14691fef3a",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "exploitability": 7.0,
+        "relevance": 8.0,
+        "technical_depth": 7.0,
+        "actionability": 7.0
+      },
+      "dimension_score": 7.25,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "360图龙锋实验室发现Codex及Claude Code等主流AI模型高价值漏洞",
+      "title_orig": "360图龙锋发现Codex、Claude Code等高价值漏洞，入选工信部CAIVD最高级技术支撑单位",
+      "summary": "360图龙锋实验室在Codex和Claude Code等国际主流AI模型中发现了多个高价值安全漏洞，原文未披露漏洞的具体类型、触发原理及受影响的组件版本。该漏洞发现促使360入选工信部CAIVD最高级技术支撑单位，但原文未披露漏洞的具体修复状态或缓解措施。目前相关技术细节仍处于保密状态，仅明确涉及AI大模型领域的逻辑缺陷与接口安全问题。",
+      "tags": [
+        "AI漏洞",
+        "漏洞挖掘",
+        "大模型安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4MTg0MDQ4Nw==&mid=2247586769&idx=1&sn=0f567809a7e466240fcbd55ccd89b615",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-25T09:03:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了当前安全研究的前沿方向，即针对主流AI辅助编程工具的审",
+      "feed_url": "https://wechat2rss.xlab.app/feed/85e7bf4fe192ded1a15f130aa43ac306d227f61b.xml",
+      "feed_title": "360数字安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/85e7bf4fe192ded1a15f130aa43ac306d227f61b.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4MTg0MDQ4Nw%3D%3D&mid=2247586769&idx=1&sn=0f567809a7e466240fcbd55ccd89b615",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "exploitability": 6.0,
+        "relevance": 8.0,
+        "technical_depth": 6.0,
+        "actionability": 6.0
+      },
+      "dimension_score": 6.9,
+      "final_score": 7.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
