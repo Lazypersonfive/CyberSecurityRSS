@@ -1,0 +1,421 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-08-27",
+  "generated_at": "2026-08-27T03:37:49.635546Z",
+  "raw_count": 41,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "aggregator": 2,
+    "tier_t1_5": 1,
+    "kind_official_x": 1,
+    "chinese": 2,
+    "direct": 8,
+    "tier_t2": 9,
+    "kind_cn_expert": 2,
+    "kind_expert": 6,
+    "google_news": 1,
+    "kind_google_news": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "delivered_filter_stats": {
+    "url": 6,
+    "story": 0,
+    "total": 6
+  },
+  "items": [
+    {
+      "title_zh": "Trail of Bits 研究显示 GPT 5.6-Cyber 能够自主发现并利用三个零日漏洞逃逸虚拟机沙箱",
+      "title_orig": "We asked GPT 5.6-Cyber to escape a VM used to sandbox agents. It broke out three times. In its final escape, the agent found three 0-days on its own a...",
+      "summary": "安全机构 Trail of Bits 对 GPT 5.6-Cyber 模型进行了沙箱逃逸测试，该模型在实验中成功实现了三次突破。在最终的逃逸尝试中，该 AI 代理自主发现了三个此前未知的零日漏洞，并将其串联成一个完整的漏洞利用链，从而彻底摆脱了用于隔离代理的虚拟机环境。这一研究结果表明，传统的虚拟机沙箱可能无法有效约束具备网络攻击能力的 AI 代理。",
+      "tags": [
+        "AI 安全",
+        "沙箱逃逸",
+        "零日漏洞"
+      ],
+      "url": "https://x.com/trailofbits/status/2092571523450114277",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-08-26T11:15:03+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 代理自主发现并利用 0-day 漏洞的实战能力",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits",
+      "source_tier": "t1_5",
+      "source_kind": "official_x",
+      "source_label": "官方 X",
+      "source_key": "x:trailofbits",
+      "story_id": "url:x.com/trailofbits/status/2092571523450114277",
+      "related_urls": [
+        "https://x.com/trailofbits/status/2092646763022917744"
+      ],
+      "related_count": 1,
+      "score": 10,
+      "score_dimensions": {
+        "security_relevance": 10.0,
+        "agent_model_relevance": 10.0,
+        "actionability": 9.0,
+        "practical_risk": 10.0,
+        "technical_depth": 10.0
+      },
+      "dimension_score": 9.9,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.5,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "NVIDIA NeMo 框架存在 NemoClaw 缺陷，攻击者可通过恶意网页实现对 AI 大模型的远程操控",
+      "title_orig": "一张网页就能投毒你的AI大模型：NVIDIA NemoClaw缺陷曝光，沙箱挡得住黑客，挡不住\"夺舍\"",
+      "summary": "研究人员在 NVIDIA NeMo 框架中发现名为 NemoClaw 的安全缺陷，该漏洞允许攻击者通过诱导受害者访问特定网页来影响大模型。虽然传统的沙箱机制可以阻断部分恶意行为，但该缺陷使得攻击者能够绕过防御实现对模型的“夺舍”控制，从而操纵模型的输出或执行非授权指令。目前原文未披露具体的漏洞编号及详细的技术补丁状态，但强调了模型交互层面的安全风险。",
+      "tags": [
+        "NVIDIA",
+        "模型投毒",
+        "AI 框架安全"
+      ],
+      "url": "https://www.anquanke.com/post/id/316021",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-08-26T10:28:49+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了主流 AI 框架在处理外部输入时的逻辑漏洞风险。",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/316021",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "security_relevance": 10.0,
+        "agent_model_relevance": 9.0,
+        "actionability": 8.0,
+        "practical_risk": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.95,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Endor Labs 发布报告揭示 AI 编排平台在设计上存在的远程代码执行风险及其防御挑战",
+      "title_orig": "How AI orchestration platforms ship RCE by design | Ebook/Report | Endor Labs",
+      "summary": "Endor Labs 的最新研究报告探讨了 AI 编排平台如何因设计缺陷而引入远程代码执行漏洞。报告指出，这些平台在集成多种工具和代理时，往往缺乏对执行环境的严格限制，导致攻击者可以通过精心构造的指令触发底层系统的 RCE。该研究分析了 AI 工作流中的信任边界问题，并为安全从业者提供了识别和缓解此类设计级安全风险的技术建议。",
+      "tags": [
+        "RCE 漏洞",
+        "AI 编排平台",
+        "供应链安全"
+      ],
+      "url": "https://www.endorlabs.com/learn/how-ai-orchestration-platforms-ship-rce-by-design",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-26T16:38:35+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入分析了 AI 基础设施层面的架构安全与 RCE 风险。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/how-ai-orchestration-platforms-ship-rce-by-design",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "security_relevance": 10.0,
+        "agent_model_relevance": 9.0,
+        "actionability": 8.0,
+        "practical_risk": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.95,
+      "final_score": 9.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Endor Labs发布AI SAST白皮书，结合程序分析与代理推理技术修复AI生成的代码缺陷",
+      "title_orig": "AI SAST: Code Security for the Agentic SDLC | Ebook/Report | Endor Labs",
+      "summary": "Endor Labs发布的电子书详细介绍了其AI SAST技术，该技术通过结合程序分析、代理推理和确定性工程，旨在精准识别并修复AI生成代码中的关键安全漏洞。随着代理式软件开发生命周期的普及，该方案能有效解决传统工具难以应对的复杂代码缺陷，帮助开发者在保障安全的前提下充分利用人工智能的编程潜力。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://www.endorlabs.com/learn/ai-sast-code-security-for-the-agentic-sdlc",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-24T12:27:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/ai-sast-code-security-for-the-agentic-sdlc",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "security_relevance": 9.0,
+        "agent_model_relevance": 9.0,
+        "actionability": 7.0,
+        "practical_risk": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Endor Labs推出多代理检测引擎与包防火墙，旨在针对开源恶意软件提供主动防御",
+      "title_orig": "Malware Defense: A multi-agent detection engine and package firewall | Ebook/Report | Endor Labs",
+      "summary": "针对开源恶意软件不依赖已知漏洞编号即可发起攻击的现状，Endor Labs推出了多代理检测引擎和软件包防火墙，强调防御机制必须领先于威胁出现。该报告阐述了如何通过主动监测和多层防护体系拦截恶意代码，确保企业在开源生态中能够实时抵御潜在的安全风险，而不必被动等待官方漏洞库的更新通知。",
+      "tags": [
+        "AI"
+      ],
+      "url": "https://www.endorlabs.com/learn/malware-defense-a-multi-agent-detection-engine-and-package-firewall",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-08-26T16:38:35+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/malware-defense-a-multi-agent-detection-engine-and-package-firewall",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "security_relevance": 8.0,
+        "agent_model_relevance": 7.0,
+        "actionability": 6.0,
+        "practical_risk": 8.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 7.4,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Aikido 推出针对 Android 应用程序及其后端服务的 AI 代理自动化白盒渗透测试工具",
+      "title_orig": "Aikido launches agentic pentesting for Android apps",
+      "summary": "Aikido 推出了一款基于 AI 代理的 Android 应用渗透测试方案，支持对移动端及其后端接口进行统一的白盒评估。该工具能够生成可复现的漏洞发现报告，并提供自动修复建议以及针对每个问题的回归测试功能。这种 Agentic 渗透测试模式利用 AI 的推理能力来模拟复杂的攻击路径，旨在提高移动应用开发生命周期中的漏洞检测效率和修复准确性。",
+      "tags": [
+        "渗透测试",
+        "Android ",
+        "AI 工具"
+      ],
+      "url": "https://www.aikido.dev/blog/aikido-launches-agentic-pentesting-for-android-apps",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-08-26T10:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI Agent 在自动化渗透测试领域的工程化应用。",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/aikido-launches-agentic-pentesting-for-android-apps",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "security_relevance": 8.0,
+        "agent_model_relevance": 9.0,
+        "actionability": 7.0,
+        "practical_risk": 7.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 7.35,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Snyk 分析 AI 应用安全暴露面：跨模型、工具与业务流的链式攻击如何绕过传统扫描",
+      "title_orig": "Why Your AI Application Is Exposed Snyk",
+      "summary": "Snyk 的研究指出，即使 AI 应用程序通过了常规的安全扫描，仍可能因模型、插件工具、数据源和业务逻辑之间的链式调用而存在被利用的风险。文章强调了端到端风险评估的重要性，建议结合动态应用安全测试、AI 专项渗透测试和红蓝对抗演练来发现隐藏的漏洞。这种复杂的攻击向量通常利用了组件间交互的信任漏洞，而非单一组件的已知 CVE 缺陷。",
+      "tags": [
+        "AI 应用安全",
+        "红蓝对抗",
+        "链式攻击"
+      ],
+      "url": "https://snyk.io/blog/why-your-ai-application-is-exposed/",
+      "source": "snyk.io",
+      "category": "AISecurityLabs",
+      "published": "2026-08-26T04:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提出了针对 AI 复杂生态系统的多维度防御与评估思路。",
+      "feed_url": "https://snyk.io/blog/feed/",
+      "feed_title": "Snyk Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "snyk.io",
+      "story_id": "url:snyk.io/blog/why-your-ai-application-is-exposed",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "security_relevance": 8.0,
+        "agent_model_relevance": 8.0,
+        "actionability": 7.0,
+        "practical_risk": 7.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 7.2,
+      "final_score": 7.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "众安天下凭借人工智能安全技术荣获CCIA 2026网络安全优秀创新成果大赛优胜奖",
+      "title_orig": "众安天下获CCIA “2026网络安全优秀创新成果大赛”人工智能赛道优胜奖",
+      "summary": "众安天下在CCIA举办的“2026网络安全优秀创新成果大赛”中脱颖而出，凭借其在人工智能赛道的卓越技术表现和创新应用能力，最终荣获了该项赛事的优胜奖。这一荣誉不仅肯定了众安天下在AI安全领域的深厚技术积淀，也展示了其创新成果在推动网络安全行业智能化转型方面的重要价值，进一步巩固了其市场领先地位。",
+      "tags": [
+        "中文源"
+      ],
+      "url": "https://www.anquanke.com/post/id/316008",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-08-24T14:09:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "原始信源高分入选",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/316008",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {},
+      "dimension_score": 5.0,
+      "final_score": 5.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Aikido Security 获得 ISO 42001:2023 人工智能治理体系认证",
+      "title_orig": "Aikido Security achieves ISO 42001:2023 certification for AI governance",
+      "summary": "Aikido Security 宣布已正式获得 ISO 42001:2023 全球人工智能治理标准认证，该认证范围全面覆盖了其 AI 渗透测试、代码安全审计以及深度 PR 审查等核心业务流程。通过此项国际权威认证，该公司证明了其在开发 AI 驱动的安全工具时，能够严格遵循风险管理、数据伦理及透明度规范，确保其 AI 治理框架在合规性与安全性方面均达到国际领先水平。",
+      "tags": [
+        "AI治理",
+        "合规认证",
+        "安全审计"
+      ],
+      "url": "https://www.aikido.dev/blog/aikido-iso-42001-certification",
+      "source": "aikido.dev",
+      "category": "AISecurityLabs",
+      "published": "2026-08-26T10:10:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 安全工具在合规性与治理标准方面的最新进展。",
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "aikido.dev",
+      "story_id": "url:aikido.dev/blog/aikido-iso-42001-certification",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {},
+      "dimension_score": 5.0,
+      "final_score": 5.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Okta 第二季度业绩增长强劲，AI 安全产品在企业市场初见成效",
+      "title_orig": "OKTA: Record Q2 bookings and strong enterprise growth, with AI security products gaining early traction - TradingView",
+      "summary": "身份管理巨头 Okta 在第二季度财报中披露其预订量创下历史新高，并强调了 AI 安全产品在企业级市场的早期增长势头。尽管原文未详细说明具体产品的技术架构，但指出 AI 驱动的身份安全解决方案正成为推动业务增长的关键因素，反映出企业对自动化身份防御和智能化安全管理的需求正在持续上升。",
+      "tags": [
+        "身份安全",
+        "AI安全产品",
+        "企业安全"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQUWhlRl83czl3aXJDZDhsTjhRZ0djbzBPN0FJSm9ZTG1RQXpGbks3QjBJakRTNEZKX3FIVHo0Q1JZNzF4YmNIYUhZaFdMZTNxbG9FUVZNNFVJNWE2dk9OVEd6T3BWaTZKUVdXSVkzWF9FZEl1U0VJWDBoWGpXTmtDSGM1OVRyQ1dENHhPWVpjNXFsblowU2s2R1NFbTladmM3Nkwyd2VoSzRyRnNDRUo0TG00dS1CM3E5U0JqMERaOTJpN252Nmt0YWNGU295NFJfcXlWXzFSTVRVN25VSmpQYUVhNklxV2dBcFFZVGlFbzk2Tzg5LUlESGRNZVRoaVVnZEQ3VXlWMTFBYzU1LUotc2tIZUpORWc?oc=5",
+      "source": "news.google.com",
+      "category": "CoverageFallback",
+      "published": "2026-08-26T23:44:26+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了 AI 安全技术在身份认证领域的商业化落地趋势。",
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security",
+      "source_tier": "t2",
+      "source_kind": "google_news",
+      "source_label": "Google News",
+      "source_key": "news.google.com",
+      "story_id": "title:adfc54c31328",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {},
+      "dimension_score": 5.0,
+      "final_score": 4.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -1.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    }
+  ]
+}

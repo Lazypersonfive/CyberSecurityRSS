@@ -1,0 +1,674 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-08-27",
+  "generated_at": "2026-08-27T03:37:19.703352Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 6,
+    "direct": 15,
+    "wechat": 6,
+    "tier_t2": 14,
+    "kind_cn_expert": 6,
+    "kind_media": 5,
+    "kind_community": 3,
+    "tier_t1": 1,
+    "kind_official": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 4,
+    "llm_merged": 0,
+    "merged_total": 4
+  },
+  "delivered_filter_stats": {
+    "url": 5,
+    "story": 0,
+    "total": 5
+  },
+  "items": [
+    {
+      "title_zh": "IBM Db2 JDBC/SQLJ 驱动程序存在代码执行漏洞 CVE-2026-9762，攻击者可通过可控 JDBC URL 实现 RCE",
+      "title_orig": "【已复现】JDBC URL 可控导致RCE——IBM Db2 JDBC/SQLJ 代码执行漏洞（CVE-2026-9762）",
+      "summary": "该漏洞源于 IBM Db2 的 JDBC 或 SQLJ 驱动程序在处理连接请求时，未能对 JDBC URL 参数进行严格校验，导致攻击者可以构造恶意的连接字符串。当应用程序尝试连接受控的恶意数据库地址时，可触发远程代码执行，目前该漏洞已被安全团队复现。原文未披露具体受影响的驱动版本号及官方补丁状态，建议相关用户关注官方更新并限制不可信的数据库连接请求。",
+      "tags": [
+        "JDBC反序列化",
+        "代码执行",
+        "IBM Db2"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIwMDk1MjMyMg==&mid=2247493328&idx=1&sn=abff7a2585997a7bb92ac435c2dffc2f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-26T09:59:00+00:00",
+      "cve_ids": [
+        "CVE-2026-9762"
+      ],
+      "selection_reason": "JDBC URL 注入是经典的高风险 RCE 攻击向量。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/ae5cf9ab99ae03269527af0f7a6c05ff14d5863c.xml",
+      "feed_title": "长亭安全课堂",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/ae5cf9ab99ae03269527af0f7a6c05ff14d5863c.xml",
+      "story_id": "cve:cve-2026-9762",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzU0MzkzOTYzOQ==&mid=2247490110&idx=1&sn=59dde9cce58f5a962b6a57678853607d"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "actionability": 10.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 9.1,
+      "final_score": 9.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Linux 内核 CVE-2026-53361 漏洞 PoC 公开，利用 AF_UNIX 竞态条件可实现容器逃逸",
+      "title_orig": "CVE-2026-53361: PoC Exploit Enables AF_UNIX Container Escape",
+      "summary": "该漏洞是 Linux 内核中 AF_UNIX 协议栈存在的一个竞态条件缺陷，本地攻击者可以通过特定的系统调用序列触发该漏洞。目前公开的 PoC 证明了攻击者能够利用此缺陷从受限的容器环境逃逸到宿主机系统，获取更高权限。原文未明确列出受影响的具体内核版本，但强调了该漏洞在 Linux 容器安全场景下的严重威胁，建议管理员及时关注内核安全补丁。",
+      "tags": [
+        "容器逃逸",
+        "内核漏洞",
+        "竞态条件"
+      ],
+      "url": "https://securityonline.info/cve-2026-53361-container-escape/",
+      "source": "securityonline.info",
+      "category": "Synthesis",
+      "published": "2026-08-27T00:39:15+00:00",
+      "cve_ids": [
+        "CVE-2026-5336",
+        "CVE-2026-53361",
+        "CVE-2026-70419"
+      ],
+      "selection_reason": "容器逃逸漏洞对云原生安全具有极高的实战研究价值。",
+      "feed_url": "https://securityonline.info/feed/",
+      "feed_title": "Cybersecurity News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityonline.info",
+      "story_id": "cve:cve-2026-24170,cve-2026-24262,cve-2026-5336,cve-2026-53361,cve-2026-70419,cve-2026-76784,cve-2026-8452",
+      "related_urls": [
+        "https://securityonline.info/cisa-kev-six-exploited-vulnerabilities/",
+        "https://securityonline.info/dell-cloud-disaster-recovery-vulnerabilities/",
+        "https://securityonline.info/nvidia-security-updates-ufm-dgx/",
+        "https://securityonline.info/tp-link-kasa-vulnerability-cve-2026-76784/"
+      ],
+      "related_count": 4,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "relevance": 10.0,
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.25,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "NVIDIA NemoClaw 存在 DNS 重绑定缺陷，恶意网页可接管本地 Ollama 并“夺舍”AI 模型",
+      "title_orig": "一张网页就能投毒你的AI大模型：NVIDIA NemoClaw缺陷曝光，沙箱挡得住黑客，挡不住\"夺舍\"",
+      "summary": "Oasis Security 披露了 NVIDIA NemoClaw 的安全缺陷，攻击者可通过 DNS 重绑定技术绕过同源策略，接管用户本地运行的 Ollama 服务。该漏洞允许恶意网页在用户毫无感知的情况下，向本地 AI 模型植入隐藏指令或篡改输出，实现对 AI 逻辑的“夺舍”。尽管沙箱机制可能存在，但此类针对 AI 基础设施控制点的攻击绕过了传统防御，原文未披露具体的修复版本信息。",
+      "tags": [
+        "AI安全",
+        "DNS重绑定",
+        "NVIDIA"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA==&mid=2649790413&idx=1&sn=90417d7293b02753215573e8115015ea",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-26T01:50:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了 AI 基础设施在本地部署场景下的新型攻击面。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA%3D%3D&mid=2649790413&idx=1&sn=90417d7293b02753215573e8115015ea",
+      "related_urls": [
+        "https://www.anquanke.com/post/id/316021",
+        "https://www.anquanke.com/post/id/316021"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "Oracle HTTP Server 存在 URI 规范化不一致漏洞 CVE-2026-21962，可绕过访问控制",
+      "title_orig": "Exploit for Improper Access Control in Oracle Http_Server",
+      "summary": "该漏洞是CVSS评分满分10.0的严重缺陷，源于Oracle HTTP Server与WebLogic Server代理插件在URI规范化处理上存在不一致，导致攻击者能绕过访问控制策略并非法访问后端受保护资源。目前该漏洞已在OHS 12.2.1.4.0和14.1.2.0.0等版本上通过实战验证，且独立复现的利用代码已公开，建议相关企业用户立即排查并应用官方安全补丁以防范潜在的远程攻击风险。",
+      "tags": [
+        "权限绕过",
+        "Oracle",
+        "WebLogic"
+      ],
+      "url": "https://vulners.com/githubexploit/80EF438C-7999-55A4-AE0A-09D77D7CE590?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-08-27T02:59:01+00:00",
+      "cve_ids": [
+        "CVE-2026-21962"
+      ],
+      "selection_reason": "CVSS 10.0 满分漏洞，且涉及广泛使用的中间件。",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2026-21962",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.45,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Signal 联系人发现服务存在 Intel SGX 飞地漏洞，攻击者可提取私钥并执行代码",
+      "title_orig": "Signal Contact Discovery Enclave Flaws Allow Code Execution",
+      "summary": "研究机构 V12 披露了 Signal 联系人发现服务中的两个漏洞，允许不受信任的服务器主机突破 Intel SGX 飞地的安全隔离。研究员 Nihal 在与生产环境相同的硬件上演示了攻击过程，成功提取了飞地的私钥并破坏了用户通讯录的机密性保证。这些漏洞直接威胁到 Signal 宣称的隐私保护机制，原文未说明 Signal 官方是否已完成服务端组件的加固或硬件迁移。",
+      "tags": [
+        "可信计算",
+        "SGX漏洞",
+        "隐私保护"
+      ],
+      "url": "https://www.cyberkendra.com/2026/08/signal-contact-discovery-enclave-flaws.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-08-26T19:23:29+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对硬件级加密隔离的突破，对隐私计算研究意义重大。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/08/signal-contact-discovery-enclave-flaws.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "relevance": 10.0,
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 8.85,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "微软发布 AI 基础设施安全报告，警示 LiteLLM 网关暴露导致凭据泄露与挖矿风险",
+      "title_orig": "When AI infrastructure becomes the target: Securing gateways and control points",
+      "summary": "微软威胁情报中心分析了针对暴露在公网的 AI 工作负载的攻击，重点涉及对 LiteLLM 网关的漏洞利用、凭据窃取、持久化及加密货币挖矿活动。该报告详细阐述了攻击者如何将 AI 基础设施控制点作为目标，通过利用网关漏洞获取权限并部署恶意程序；原文未披露特定漏洞的 CVE 编号、触发条件、受影响的具体版本号以及官方的修复补丁状态。",
+      "tags": [
+        "AI基础设施",
+        "威胁情报",
+        "网关安全"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points/",
+      "source": "microsoft.com",
+      "category": "Synthesis",
+      "published": "2026-08-26T16:43:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了当前黑客攻击 AI 业务链条的真实路径和动机。",
+      "feed_url": "https://www.microsoft.com/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points",
+      "related_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/08/26/when-ai-infrastructure-becomes-target-securing-gateways-control-points/"
+      ],
+      "related_count": 1,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 6.0,
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "actionability": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 7.3,
+      "final_score": 9.1,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Cisco ISE 身份服务引擎存在未授权 RCE 漏洞 CVE-2025-20281，PoC 已在 GitHub 公开",
+      "title_orig": "CVE-2025-20281-2-Cisco-ISE-RCE",
+      "summary": "该漏洞存在于Cisco ISE的ERS API接口中，允许未经身份验证的远程攻击者通过在InternalUser功能组件中注入恶意shell命令，从而在目标系统上实现任意代码执行。目前GitHub已公开基于Python编写的最小化PoC工具，鉴于该漏洞可导致系统控制权完全沦陷，建议管理员立即检查API暴露情况并针对受影响的活跃分支版本部署官方修复程序。",
+      "tags": [
+        "Cisco",
+        "未授权RCE",
+        "API安全"
+      ],
+      "url": "https://vulners.com/kitploit/KITPLOIT:TOOLS-GITHUB-ABREWER251-CVE-2025-20281-2-CISCO-ISE-RCE?utm_source=rss&utm_medium=rss&utm_campaign=rss",
+      "source": "vulners.com",
+      "category": "Synthesis",
+      "published": "2026-08-27T02:35:30+00:00",
+      "cve_ids": [
+        "CVE-2025-20281"
+      ],
+      "selection_reason": "关键网络基础设施的未授权 RCE，且 PoC 已公开，风险极",
+      "feed_url": "https://vulners.com/rss.xml",
+      "feed_title": "Vulners.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞聚合",
+      "source_key": "vulners.com",
+      "story_id": "cve:cve-2025-20281",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客利用 Microsoft SharePoint 远程代码执行漏洞链进行攻击，已有公开 PoC 释出",
+      "title_orig": "Hackers target Microsoft SharePoint RCE chain with PoC exploit",
+      "summary": "威胁情报公司 Defused 监测到攻击者正利用由两个漏洞组成的攻击链，针对未打补丁的 Microsoft SharePoint 服务器实施远程代码执行。该漏洞链允许攻击者在目标服务器上执行任意指令，目前相关的技术细节和 PoC 已经公开。原文未明确标注具体的 CVE 编号，但确认了该攻击活动正在活跃进行中，建议 SharePoint 管理员尽快完成系统更新以防范潜在的入侵风险。",
+      "tags": [
+        "SharePoi",
+        "漏洞链",
+        "RCE攻击"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-sharepoint-rce-chain-with-poc-exploit/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-26T14:47:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "针对企业级协作平台的活跃攻击链，具有极高的防御优先级。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/hackers-target-microsoft-sharepoint-rce-chain-with-poc-exploit",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 9.0,
+        "relevance": 10.0,
+        "impact_scope": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 8.65,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "AI 驱动的 Windows 内核漏洞挖掘实战：打通审计、Fuzzing 与崩溃分析的标准化闭环",
+      "title_orig": "可验证·可复现·可规模化：AI驱动的Windows内核漏洞挖掘与Fuzzing实战",
+      "summary": "该研究展示了利用AI驱动的自动化流程进行Windows内核漏洞挖掘的技术方案，涵盖了从代码审计、Fuzzing、崩溃分析到补丁研究的标准化闭环。原文未披露具体的漏洞类型、触发条件及受影响的内核组件版本，仅强调通过AI能力解决传统人工挖掘成本高与复现难的问题，实现了漏洞研究的可验证与规模化，目前修复状态处于研究实战阶段。",
+      "tags": [
+        "内核安全",
+        "漏洞挖掘",
+        "人工智能"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458618948&idx=1&sn=548b24b927eb278a51ff44ea8c176b54",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-26T10:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了 AI 在复杂内核漏洞挖掘全生命周期的工程化应用。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458618948&idx=1&sn=548b24b927eb278a51ff44ea8c176b54",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 6.0,
+        "relevance": 9.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "ProFTPD mod_sql 模块身份验证后 SQL 注入漏洞可导致远程代码执行",
+      "title_orig": "[remote] CVE-2026-42167 - ProFTPD mod_sql post-authentication SQLi - RCE",
+      "summary": "漏洞 CVE-2026-42167 存在于 ProFTPD 的 mod_sql 模块中，属于身份验证后的 SQL 注入漏洞，攻击者在通过身份验证后可向数据库注入恶意指令。该漏洞最终可导致在目标服务器上实现远程代码执行（RCE），目前 Exploit-DB 已公开相关漏洞利用代码，尽管受影响版本及官方补丁状态尚未明确，但其潜在的服务器控制风险极高，建议相关管理员密切关注官方更新。",
+      "tags": [
+        "SQL注入",
+        "远程代码执行",
+        "ProFTPD"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52658",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-08-25T00:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-42167"
+      ],
+      "selection_reason": "该漏洞涉及常用 FTP 服务组件，且已公开 RCE 利用代码",
+      "feed_url": "https://www.exploit-db.com/rss.xml",
+      "feed_title": "Exploit-DB.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "exploit-db.com",
+      "story_id": "cve:cve-2026-42167",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 10.0,
+        "relevance": 10.0,
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 9.0,
+      "final_score": 8.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Kaltura mwEmbed 库存在未修复反序列化漏洞，可导致远程任意文件读取与代码执行",
+      "title_orig": "Unpatched Kaltura mwEmbed Flaws Could Let Remote Attackers Read Files and Run Code",
+      "summary": "CERT/CC 披露了 Kaltura HTML5 视频播放器库 mwEmbed 中的两个高危未修复漏洞，分别被追踪为 CVE-2026-19913 和 CVE-2026-19912。这两个漏洞均源于 mwEmbedLoader.php 端点存在不安全的反序列化处理，远程未经身份验证的攻击者可借此读取服务器上的任意敏感文件并执行恶意代码，目前这些漏洞仍处于未补丁状态，对所有集成该组件的系统构成了严重的远程安全威胁。",
+      "tags": [
+        "反序列化",
+        "任意文件读取",
+        "0day"
+      ],
+      "url": "https://thehackernews.com/2026/08/unpatched-kaltura-mwembed-flaws-could.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-08-26T11:55:00+00:00",
+      "cve_ids": [
+        "CVE-2026-19912",
+        "CVE-2026-19913"
+      ],
+      "selection_reason": "涉及广泛使用的视频库组件，且目前处于未修复的 0day 状态",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-19912,cve-2026-19913",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "impact_scope": 7.0,
+        "actionability": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "Apache Log4j 2 发现反序列化过滤器绕过漏洞，可利用 MarshalledObject 走私对象",
+      "title_orig": "Log4j Deserialization Bypass Is Real but Not Log4Shell",
+      "summary": "安全研究员 U-Sec 发现 Apache Log4j 2 的 FilteredObjectInputStream 白名单机制存在反序列化绕过风险，攻击者可利用 java.rmi.MarshalledObject 封装并走私任意对象。尽管该漏洞报告在发布后不久被撤回并关闭，但其揭示了 Log4j 框架在类检查防御逻辑上的潜在缺陷，这种绕过手段可能使现有的安全过滤机制失效，提醒开发者在处理复杂对象反序列化时需加强对过滤严密性的审查。",
+      "tags": [
+        "Log4j",
+        "反序列化绕过",
+        "安全研究"
+      ],
+      "url": "https://www.cyberkendra.com/2026/08/log4j-bug-report-pulled-researcher.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-08-26T14:07:09+00:00",
+      "cve_ids": [],
+      "selection_reason": "Log4j 的安全性备受关注，此研究揭示了其防御机制的潜在弱",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "url:cyberkendra.com/2026/08/log4j-bug-report-pulled-researcher.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "exploitability": 7.0,
+        "relevance": 9.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 8.1,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0
+      }
+    },
+    {
+      "title_zh": "新型僵尸网络利用凭据喷射攻击全球近 20 国，已控制超过 1300 台服务器",
+      "title_orig": "360 AI安全专家独立发现全新僵尸网络，攻击目标遍及全球近20国",
+      "summary": "安全专家发现一个全新的僵尸网络，该网络已针对全球至少 1311 台服务器发起了大规模的凭据喷射攻击。攻击范围波及全球近 20 个国家和地区，旨在通过暴力破解手段获取服务器控制权；目前该僵尸网络的具体技术特征和利用的特定漏洞细节在简报中未详细展开，但其规模化攻击态势已引起安全机构的预警。",
+      "tags": [
+        "僵尸网络",
+        "凭据喷射",
+        "威胁情报"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4MTg0MDQ4Nw==&mid=2247586790&idx=1&sn=91a100edaf11a34a57d85f3a42982621",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-26T09:50:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "该僵尸网络攻击范围广且处于活跃期，具有较高的预警价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/85e7bf4fe192ded1a15f130aa43ac306d227f61b.xml",
+      "feed_title": "360数字安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/85e7bf4fe192ded1a15f130aa43ac306d227f61b.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA4MTg0MDQ4Nw%3D%3D&mid=2247586790&idx=1&sn=91a100edaf11a34a57d85f3a42982621",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 6.0,
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 7.25,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "新型钓鱼平台 AnonyMo 曝光：黑客利用 AI 语音克隆技术精准套取苹果用户凭据",
+      "title_orig": "【安全圈】黑客利用 AI 语音冒充苹果客服：精准套取被盗 iPhone 锁屏密码与双重验证码",
+      "summary": "安全机构 SOCRadar 曝光了名为 AnonyMo 的新型钓鱼即服务平台，黑客正利用该平台结合 AI 语音伪造技术，通过冒充苹果客服拨打电话来实施精准诈骗。攻击者旨在诱导受害者提供被盗 iPhone 的锁屏密码及双重验证码，这种将社会工程学与 AI 语音技术深度结合的攻击手段，显著提升了针对特定品牌用户凭据窃取的成功率，反映出当前网络钓鱼威胁正向智能化和专业化方向演进。",
+      "tags": [
+        "AI钓鱼",
+        "社会工程学",
+        "身份窃取"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078451&idx=1&sn=ed847a40dcaff125fbad613d71abd580",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-26T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "反映了 AI 技术在新型钓鱼攻击中降低门槛并提高成功率的趋势",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078451&idx=1&sn=ed847a40dcaff125fbad613d71abd580",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 7.0,
+        "relevance": 8.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 7.1,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    },
+    {
+      "title_zh": "工信部通报 26 款违规收集信息 App，CNVD 周报显示 0day 漏洞占比达 92%",
+      "title_orig": "工信部通报 26 款 APP 及 SDK，存在违规收集个人信息问题；CNVD周报：单周收录693个漏洞，0day占比高达92%| 牛览",
+      "summary": "工信部通报了26款APP及SDK存在违规收集个人信息的合规问题，同时CNVD周报显示单周收录的693个漏洞中0day占比高达92%。原文未披露这些漏洞的具体技术原理、触发条件或涉及的具体组件版本，仅通过数据指出当前网络空间中未知威胁比例显著增加，相关漏洞的修复与缓解状态在通报中未做详细说明，重点在于行业态势监控。",
+      "tags": [
+        "合规治理",
+        "CNVD",
+        "0day漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA==&mid=2651142461&idx=2&sn=ce7a9d73f4f94d9fdbf35a7199cd8def",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-08-26T04:08:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提供了权威机构的合规通报及漏洞分布统计，具有行业参考价值。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "feed_title": "安全牛",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA%3D%3D&mid=2651142461&idx=2&sn=ce7a9d73f4f94d9fdbf35a7199cd8def",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "exploitability": 6.0,
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 5.0
+      },
+      "dimension_score": 7.1,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3
+      }
+    }
+  ]
+}
