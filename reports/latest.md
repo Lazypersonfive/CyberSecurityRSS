@@ -249,22 +249,23 @@
 
 | Feed | 抓取 | 条目 | LLM 均分 | 低分占比 | 入选 | 去重被合并 |
 |---|---:|---:|---:|---:|---:|---:|
-| Finextra Headlines | 1/1 | 10 -> 3 | 5.0 · 5 | 0% | 3 | 0 |
-| The Fintech Times | 1/1 | 3 -> 3 | 5.0 · 5 | 0% | 3 | 0 |
-| Google News 中文金融科技 | 1/1 | 10 -> 4 | 5.0 · 5 | 0% | 1 | 0 |
-| PayPal Newsroom | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 1 | 0 |
-| X / Mastercard | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 1 | 0 |
-| PYMNTS | 1/1 | 7 -> 3 | 3.7 · 3 | 67% | 1 | 0 |
-| Alipay / Ant Group (Google News) | 1/1 | 2 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
+| Finextra Headlines | 1/1 | 10 -> 3 | 7.0 · 6 | 0% | 3 | 0 |
+| The Fintech Times | 1/1 | 3 -> 3 | 3.7 · 4 | 100% | 2 | 0 |
+| Alipay / Ant Group (Google News) | 1/1 | 2 -> 1 | 8.0 · 8 | 0% | 1 | 0 |
+| X / Mastercard | 1/1 | 1 -> 1 | 8.0 · 8 | 0% | 1 | 0 |
+| PayPal Newsroom | 1/1 | 1 -> 1 | 7.0 · 7 | 0% | 1 | 0 |
+| Google News 中文金融科技 | 1/1 | 10 -> 4 | 4.8 · 4.5 | 50% | 1 | 0 |
+| PYMNTS | 1/1 | 7 -> 3 | 4.0 · 3 | 67% | 1 | 0 |
 | JCB (Google News) | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| WeChat Pay / Tenpay (Google News) | 1/1 | 8 -> 0 | - | - | 0 | 0 |
+| WeChat Pay / Tenpay (Google News) | 1/1 | 9 -> 0 | - | - | 0 | 0 |
 
 另有 8 个源今日 0 条目（8/8 抓取成功）。
 
 ## 入选理由摘录
-- **Finextra Headlines**：*为什么入选：原始信源高分入选*
-- **The Fintech Times**：*为什么入选：原始信源高分入选*
-- **Google News 中文金融科技**：*为什么入选：聚合源补充关键动态*
-- **PayPal Newsroom**：*为什么入选：原始信源高分入选*
-- **X / Mastercard**：*为什么入选：高分资讯值得跟踪*
-- **PYMNTS**：*为什么入选：原始信源高分入选*
+- **Finextra Headlines**：*为什么入选：传统金融巨头与支付巨头合作探索稳定币及AI支付应用。*
+- **The Fintech Times**：*为什么入选：展示中东金融科技枢纽的崛起与国际合作新动向。*
+- **Alipay / Ant Group (Google News)**：*为什么入选：支付宝高管阐述稳定币与AI结合的未来支付趋势，具行业风向标意*
+- **X / Mastercard**：*为什么入选：基于40+机构访谈的区块链评估框架，反映主流金融上链趋势。*
+- **PayPal Newsroom**：*为什么入选：数字钱包拓展至学费支付这一高额刚需场景，提升用户黏性。*
+- **Google News 中文金融科技**：*为什么入选：央行高层权威解读高达208万亿美元规模的跨境支付市场趋势。*
+- **PYMNTS**：*为什么入选：打通稳定币入金与法医结算，提升企业跨境资金流动效率。*

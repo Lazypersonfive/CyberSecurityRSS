@@ -249,20 +249,20 @@
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| Google News 中文金融科技 | 7/7 | 70 | 6.0 | 16 | 0 |
-| The Fintech Times | 7/7 | 26 | 5.5 | 16 | 0 |
-| Finextra Headlines | 7/7 | 70 | 5.8 | 11 | 0 |
+| Google News 中文金融科技 | 7/7 | 70 | 5.9 | 16 | 0 |
+| The Fintech Times | 7/7 | 26 | 5.4 | 15 | 0 |
+| Finextra Headlines | 7/7 | 70 | 6.1 | 11 | 0 |
 | Payments Dive | 5/5 | 10 | 6.5 | 8 | 0 |
 | Finance Magnates Fintech | 5/5 | 19 | 5.4 | 7 | 0 |
 | European Central Bank Releases | 6/6 | 7 | 8.8 | 4 | 0 |
-| PYMNTS | 7/7 | 64 | 3.4 | 4 | 0 |
-| Alipay / Ant Group (Google News) | 5/5 | 7 | 6.0 | 1 | 0 |
+| PYMNTS | 7/7 | 64 | 3.5 | 4 | 0 |
+| Alipay / Ant Group (Google News) | 5/5 | 7 | 7.5 | 2 | 0 |
+| X / Mastercard | 1/1 | 1 | 8.0 | 1 | 0 |
+| PayPal Newsroom | 1/1 | 1 | 7.0 | 1 | 0 |
 | Stripe Blog | 3/3 | 3 | 6.0 | 1 | 0 |
-| PayPal Newsroom | 1/1 | 1 | 5.0 | 1 | 0 |
-| X / Mastercard | 1/1 | 1 | 5.0 | 1 | 0 |
 | American Express Investor Press | 2/2 | 2 | 3.5 | 0 | 0 |
 | Federal Reserve Press Releases | 3/3 | 6 | 3.0 | 0 | 0 |
-| WeChat Pay / Tenpay (Google News) | 7/7 | 65 | - | 0 | 0 |
+| WeChat Pay / Tenpay (Google News) | 7/7 | 66 | - | 0 | 0 |
 | JCB (Google News) | 7/7 | 15 | - | 0 | 0 |
 
 ## ⚠️ 建议人工 review（不自动删）
@@ -625,10 +625,3 @@
 - [security] NVIDIA AI Blog：raw=24，avg=2.3，入选=0
 - [security] 信安之路：raw=5，avg=2.5，入选=0
 - [security] 丁爸情报分析师的工具箱：raw=21，avg=2.7，入选=0
-
-
-<!-- feedback-summary:start -->
-## 人工反馈（最近 14 天）
-
-- 暂无反馈；可在站点点击“有用 / 不想看 / 摘要有问题”后导出 JSONL，每期至少导入 5 条。
-<!-- feedback-summary:end -->
