@@ -68,7 +68,7 @@ class GeminiBackend:
             max_output_tokens=max_output_tokens,
             response_mime_type="application/json",
             thinking_config=types.ThinkingConfig(
-                thinking_level=types.ThinkingLevel.MINIMAL,
+                thinking_level=types.ThinkingLevel.LOW,
             ),
         )
         last_exc: Exception | None = None

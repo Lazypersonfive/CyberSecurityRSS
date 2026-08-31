@@ -2001,6 +2001,11 @@ class GeminiPipelineTests(unittest.TestCase):
                 [{"title": "CVE analysis", "summary": "technical details"}],
             )
 
+    def test_summarize_uses_single_item_batches_to_prevent_cross_item_leakage(self) -> None:
+        from digest_pipeline_gemini import SUMMARIZE_BATCH_SIZE
+
+        self.assertEqual(SUMMARIZE_BATCH_SIZE, 1)
+
     def test_score_prompts_include_language_fairness(self) -> None:
         for prompt in BOARD_SCORE_SYSTEM.values():
             self.assertRegex(prompt, r"评分只看(新闻|技术)价值")
@@ -3034,7 +3039,7 @@ class LLMBackendTests(unittest.TestCase):
         )
 
         config = captured["config"]
-        self.assertEqual(config.thinking_config.thinking_level, types.ThinkingLevel.MINIMAL)
+        self.assertEqual(config.thinking_config.thinking_level, types.ThinkingLevel.LOW)
         self.assertIsNone(config.thinking_config.thinking_budget)
         self.assertIsNone(config.temperature)
 

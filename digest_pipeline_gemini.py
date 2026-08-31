@@ -66,7 +66,8 @@ ANTHROPIC_TOKEN = "anth" + "ropic"
 CLAUDE_TOKEN = "cla" + "ude"
 
 SCORE_BATCH_SIZE = 40
-SUMMARIZE_BATCH_SIZE = 8
+# One item per request prevents Gemini from leaking facts between adjacent cards.
+SUMMARIZE_BATCH_SIZE = 1
 SCORE_DIMENSIONS = {
     "security": ["relevance", "technical_depth", "exploitability", "impact_scope", "actionability"],
     "ai_security": [
