@@ -15,23 +15,24 @@
 
 | Board | Name | Days | Avg Selected | Target | Full Days | Avg CN | CN Target | Obs Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | AI 前沿 | 7 | 15.0 | 15 | 7/7 | 4.9 | 5 | 4 | 5/7 | 0.9 | 3 | 3 | 8.2 | 28 |
-| ai_security | AI 安全 | 7 | 4.9 | 10 | 2/7 | 1.6 | 2 | 0 | 3/7 | 1.0 | 2 | 0 | 7.3 | 2 |
-| finance | 金融科技 | 7 | 10.0 | 10 | 7/7 | 2.3 | 1 | 1 | 7/7 | 2.4 | 4 | 0 | 7.1 | 0 |
+| ai | AI 前沿 | 7 | 15.0 | 15 | 7/7 | 4.9 | 5 | 4 | 5/7 | 1.1 | 3 | 3 | 8.4 | 29 |
+| ai_security | AI 安全 | 7 | 4.9 | 10 | 2/7 | 1.1 | 2 | 0 | 3/7 | 1.0 | 2 | 1 | 7.8 | 3 |
+| finance | 金融科技 | 7 | 10.0 | 10 | 7/7 | 2.4 | 1 | 1 | 7/7 | 2.7 | 4 | 0 | 7.4 | 0 |
 | security | 安全 | 7 | 15.0 | 15 | 7/7 | 7.0 | 6 | 6 | 7/7 | 0.0 | 1 | 7 | 8.1 | 14 |
 
 ## Source Mix
 
 | Board | T1 | T1.5 | T2 | Unknown | Official | X | Google News | CN Expert | Community |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 16 | 24 | 62 | 3 | 16 | 36 | 6 | 20 | 1 |
-| ai_security | 4 | 1 | 29 | 0 | 4 | 3 | 7 | 10 | 0 |
-| finance | 6 | 1 | 63 | 0 | 6 | 1 | 17 | 0 | 0 |
+| ai | 15 | 25 | 62 | 3 | 15 | 38 | 8 | 20 | 1 |
+| ai_security | 4 | 1 | 28 | 1 | 4 | 3 | 7 | 7 | 1 |
+| finance | 6 | 1 | 63 | 0 | 6 | 1 | 19 | 0 | 0 |
 | security | 7 | 0 | 91 | 7 | 6 | 2 | 0 | 47 | 9 |
 
 ## Target Misses
 
 - 2026-08-31 security：selected 15/15，中文 8/6，unknown 1
+- 2026-08-31 ai_security：selected 10/10，中文 3/2，unknown 1
 - 2026-08-30 security：selected 15/15，中文 6/6，unknown 2
 - 2026-08-30 ai_security：selected 0/10，中文 0/2
 - 2026-08-29 security：selected 15/15，中文 6/6，unknown 1

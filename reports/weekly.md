@@ -171,53 +171,52 @@
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| Google News AI Security | 7/7 | 56 | 4.8 | 6 | 0 |
-| 安全客 | 7/7 | 33 | 3.1 | 5 | 0 |
+| Google News AI Security | 7/7 | 56 | 4.3 | 6 | 0 |
 | Aikido Security | 7/7 | 33 | 3.6 | 4 | 0 |
+| 安全客 | 7/7 | 33 | 2.9 | 4 | 0 |
 | Endor Labs | 7/7 | 27 | 3.9 | 3 | 0 |
 | Unit 42 | 6/6 | 6 | 8.5 | 2 | 0 |
-| 娜璋AI安全之家 | 4/4 | 5 | 4.7 | 2 | 0 |
-| Microsoft Security Blog | 1/1 | 3 | 4.3 | 2 | 0 |
+| Microsoft Security Blog | 1/1 | 3 | 6.3 | 2 | 0 |
 | X / Johann Rehberger | 7/7 | 7 | 10.0 | 1 | 0 |
 | Snyk Blog | 3/3 | 3 | 7.0 | 1 | 0 |
-| Cisco Security Blog | 1/1 | 2 | 4.0 | 1 | 0 |
+| Cisco Security Blog | 1/1 | 2 | 4.5 | 1 | 0 |
 | X / Trail of Bits | 6/6 | 19 | 3.9 | 1 | 1 |
-| Simon Willison | 7/7 | 34 | 3.1 | 1 | 0 |
-| Google News 中文 AI安全 | 7/7 | 56 | 2.9 | 1 | 0 |
+| Simon Willison | 7/7 | 34 | 3.0 | 1 | 0 |
+| 娜璋AI安全之家 | 4/4 | 5 | 3.0 | 1 | 0 |
+| Google News 中文 AI安全 | 7/7 | 56 | 2.5 | 1 | 0 |
 | Legit Security | 3/3 | 3 | 6.0 | 0 | 1 |
 | Trail of Bits | 5/5 | 7 | 3.0 | 0 | 0 |
 | X / PortSwigger Research | 3/3 | 3 | 3.0 | 0 | 0 |
 | 墨菲安全 | 1/1 | 1 | 3.0 | 0 | 0 |
 | X / rez0 | 3/3 | 3 | 2.7 | 0 | 0 |
 | PortSwigger Research | 3/3 | 3 | 2.3 | 0 | 0 |
-| OpenAI News | 7/7 | 38 | 2.1 | 0 | 0 |
-| Google News AI Supply Chain Security | 7/7 | 35 | - | 0 | 0 |
+| OpenAI News | 7/7 | 38 | 1.7 | 0 | 0 |
+| Google News AI Supply Chain Security | 7/7 | 35 | 1.0 | 0 | 0 |
 | Embrace The Red | 4/4 | 4 | - | 0 | 0 |
 
 ## AI 前沿
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| 量子位官网 | 7/7 | 70 | 5.9 | 16 | 0 |
-| X / Hugging Face | 7/7 | 58 | 6.2 | 10 | 4 |
-| X / dotey | 7/7 | 35 | 5.0 | 8 | 1 |
-| Ars Technica AI | 7/7 | 44 | 6.3 | 7 | 0 |
-| Google News 中文 AI | 7/7 | 70 | 6.3 | 6 | 2 |
-| OpenAI Blog | 7/7 | 27 | 6.6 | 5 | 1 |
-| TechCrunch AI | 7/7 | 68 | 6.3 | 5 | 1 |
-| X / OpenAI Developers | 6/6 | 35 | 5.8 | 5 | 3 |
-| Simon Willison | 7/7 | 23 | 5.5 | 5 | 0 |
+| 量子位官网 | 7/7 | 70 | 6.0 | 16 | 0 |
+| X / Hugging Face | 7/7 | 58 | 6.1 | 11 | 4 |
+| Ars Technica AI | 7/7 | 44 | 6.4 | 8 | 0 |
+| Google News 中文 AI | 7/7 | 70 | 6.5 | 7 | 3 |
+| X / dotey | 7/7 | 35 | 5.0 | 7 | 1 |
+| Simon Willison | 7/7 | 23 | 5.6 | 5 | 0 |
+| X / OpenAI Developers | 6/6 | 34 | 5.6 | 5 | 3 |
 | NVIDIA Blog | 6/6 | 17 | 6.8 | 4 | 1 |
+| OpenAI Blog | 7/7 | 27 | 6.6 | 4 | 1 |
 | arXiv cs.AI recent | 6/6 | 60 | 6.5 | 4 | 0 |
 | 新智元 | 6/6 | 45 | 6.4 | 4 | 0 |
 | Apple ML Research | 6/6 | 12 | 7.2 | 3 | 0 |
 | X / Claude Developers | 7/7 | 10 | 7.0 | 3 | 0 |
-| The Verge AI | 6/6 | 40 | 6.1 | 3 | 0 |
-| Latent Space | 6/6 | 18 | 6.1 | 2 | 1 |
-| X / vLLM | 6/6 | 34 | 6.0 | 2 | 2 |
-| arXiv cs.CL recent | 6/6 | 60 | 5.0 | 2 | 0 |
+| TechCrunch AI | 7/7 | 68 | 6.2 | 3 | 1 |
+| X / vLLM | 6/6 | 32 | 6.1 | 3 | 2 |
+| The Verge AI | 6/6 | 40 | 6.2 | 2 | 0 |
+| arXiv cs.CL recent | 6/6 | 60 | 6.0 | 2 | 0 |
 | X / Google DeepMind | 4/4 | 6 | 8.7 | 1 | 2 |
-| X / Anthropic | 1/1 | 5 | 8.2 | 1 | 4 |
+| X / Anthropic | 2/2 | 10 | 8.2 | 1 | 4 |
 | X / Boris Cherny | 4/4 | 4 | 8.0 | 1 | 1 |
 | X / OpenAI | 6/6 | 12 | 7.5 | 1 | 3 |
 | X / Meta AI | 5/5 | 5 | 7.5 | 1 | 0 |
@@ -225,23 +224,24 @@
 | Google DeepMind Blog | 4/4 | 9 | 7.0 | 1 | 0 |
 | X / Claude | 3/3 | 3 | 7.0 | 1 | 0 |
 | X / Ollama | 7/7 | 13 | 6.8 | 1 | 0 |
+| Latent Space | 6/6 | 18 | 6.2 | 1 | 1 |
+| One Useful Thing | 1/1 | 1 | 6.0 | 1 | 0 |
+| Meta AI (Google News) | 7/7 | 69 | 5.7 | 1 | 0 |
 | X / Google AI | 5/5 | 5 | 5.7 | 1 | 0 |
-| One Useful Thing | 1/1 | 1 | 5.0 | 1 | 0 |
+| X / trq212 | 6/6 | 19 | 5.5 | 1 | 1 |
 | PaperWeekly | 5/5 | 8 | 7.0 | 0 | 0 |
 | Anthropic Coverage (Google News) | 7/7 | 70 | 6.0 | 0 | 0 |
 | Import AI | 2/2 | 2 | 6.0 | 0 | 0 |
 | xAI (Google News) | 7/7 | 70 | 5.9 | 0 | 1 |
 | X / LlamaIndex | 7/7 | 16 | 5.7 | 0 | 0 |
-| VentureBeat AI | 4/4 | 9 | 5.5 | 0 | 0 |
-| Meta AI (Google News) | 7/7 | 69 | 5.4 | 0 | 0 |
-| X / trq212 | 6/6 | 20 | 5.4 | 0 | 1 |
+| VentureBeat AI | 4/4 | 9 | 5.4 | 0 | 0 |
 | Mistral (Google News) | 5/5 | 8 | 5.0 | 0 | 0 |
 | 机器之心 | 2/2 | 4 | 5.0 | 0 | 0 |
-| X / Simon Willison | 4/4 | 9 | 4.4 | 0 | 0 |
 | Cohere (Google News) | 6/6 | 17 | 4.0 | 0 | 0 |
+| X / Simon Willison | 4/4 | 9 | 4.0 | 0 | 0 |
 | Google AI Blog | 5/5 | 5 | 4.0 | 0 | 0 |
-| X / swyx | 5/5 | 12 | 3.9 | 0 | 0 |
-| MIT Tech Review AI | 7/7 | 47 | 3.6 | 0 | 0 |
+| X / swyx | 5/5 | 11 | 3.7 | 0 | 0 |
+| MIT Tech Review AI | 7/7 | 47 | 3.5 | 0 | 0 |
 | arXiv cs.LG recent | 6/6 | 60 | - | 0 | 0 |
 | Anthropic + Claude (first-party) | 7/7 | 54 | - | 0 | 0 |
 
@@ -249,13 +249,13 @@
 
 | Feed | 抓取 | Raw | LLM 均分 | 入选总数 | 合并总数 |
 |---|---:|---:|---:|---:|---:|
-| Google News 中文金融科技 | 7/7 | 70 | 5.9 | 16 | 0 |
-| The Fintech Times | 7/7 | 26 | 5.4 | 15 | 0 |
-| Finextra Headlines | 7/7 | 70 | 6.1 | 11 | 0 |
+| Google News 中文金融科技 | 7/7 | 70 | 6.0 | 17 | 0 |
+| The Fintech Times | 7/7 | 26 | 5.3 | 14 | 0 |
+| Finextra Headlines | 7/7 | 70 | 6.0 | 11 | 0 |
 | Payments Dive | 5/5 | 10 | 6.5 | 8 | 0 |
 | Finance Magnates Fintech | 5/5 | 19 | 5.4 | 7 | 0 |
 | European Central Bank Releases | 6/6 | 7 | 8.8 | 4 | 0 |
-| PYMNTS | 7/7 | 64 | 3.5 | 4 | 0 |
+| PYMNTS | 7/7 | 64 | 3.4 | 4 | 0 |
 | Alipay / Ant Group (Google News) | 5/5 | 7 | 7.5 | 2 | 0 |
 | X / Mastercard | 1/1 | 1 | 8.0 | 1 | 0 |
 | PayPal Newsroom | 1/1 | 1 | 7.0 | 1 | 0 |
@@ -608,8 +608,10 @@
 
 ### 持续低质源（avg_score < 3.0 且 raw ≥ 5）
 
-- [ai_security] OpenAI News：raw=38，avg=2.1，入选=0
-- [ai_security] Google News 中文 AI安全：raw=56，avg=2.9，入选=1
+- [ai_security] Google News AI Supply Chain Security：raw=35，avg=1.0，入选=0
+- [ai_security] OpenAI News：raw=38，avg=1.7，入选=0
+- [ai_security] Google News 中文 AI安全：raw=56，avg=2.5，入选=1
+- [ai_security] 安全客：raw=33，avg=2.9，入选=4
 - [security] Google AI Blog：raw=7，avg=0.0，入选=0
 - [security] MIT Technology Review：raw=38，avg=1.0，入选=0
 - [security] Product Hunt：raw=42，avg=1.1，入选=0
@@ -625,3 +627,10 @@
 - [security] NVIDIA AI Blog：raw=24，avg=2.3，入选=0
 - [security] 信安之路：raw=5，avg=2.5，入选=0
 - [security] 丁爸情报分析师的工具箱：raw=21，avg=2.7，入选=0
+
+
+<!-- feedback-summary:start -->
+## 人工反馈（最近 14 天）
+
+- 暂无反馈；可在站点点击“有用 / 不想看 / 摘要有问题”后导出 JSONL，每期至少导入 5 条。
+<!-- feedback-summary:end -->
