@@ -1646,6 +1646,133 @@ class StoryClusteringTests(unittest.TestCase):
         self.assertEqual(len(clustered), 2)
         self.assertEqual(merged_urls, [])
 
+    def test_cluster_does_not_merge_different_openai_events_from_same_x_account(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "OpenAI models serve about 5% of global traffic",
+                    "url": "https://x.com/IntCyberDigest/status/1",
+                    "feed_url": "https://rsshub.app/twitter/user/IntCyberDigest",
+                    "published": "2026-08-30T08:00:00+00:00",
+                },
+                8,
+            ),
+            (
+                {
+                    "title": "OpenAI cuts ties with Cursor over model access",
+                    "url": "https://x.com/IntCyberDigest/status/2",
+                    "feed_url": "https://rsshub.app/twitter/user/IntCyberDigest",
+                    "published": "2026-08-30T09:00:00+00:00",
+                },
+                8,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 2)
+        self.assertEqual(merged_urls, [])
+
+    def test_cluster_does_not_merge_news_roundups_on_generic_chinese_words(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "OpenAI 终止与 Cursor 合作；华纳与索尼起诉 Anthropic",
+                    "url": "https://example.cn/morning-1",
+                },
+                7,
+            ),
+            (
+                {
+                    "title": "Anthropic 将发招股书；腾讯发布新模型；游戏展失窃",
+                    "url": "https://example.cn/morning-2",
+                },
+                7,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 2)
+        self.assertEqual(merged_urls, [])
+
+    def test_cluster_does_not_fold_multi_story_roundup_into_single_story(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "OpenAI 终止与 Cursor 合作；华纳与索尼起诉 Anthropic",
+                    "url": "https://example.cn/morning-roundup",
+                },
+                8,
+            ),
+            (
+                {
+                    "title": "索尼与华纳起诉 Anthropic 侵犯音乐版权",
+                    "url": "https://example.com/anthropic-lawsuit",
+                },
+                8,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 2)
+        self.assertEqual(merged_urls, [])
+
+    def test_cluster_does_not_merge_unrelated_posts_from_same_wechat_feed(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "宇树人形机器人曝 Root 漏洞可蓝牙近场劫持",
+                    "url": "https://mp.weixin.qq.com/s/robot",
+                    "feed_url": "https://wechat2rss.xlab.app/feed/security.xml",
+                    "published": "2026-08-30T08:00:00+00:00",
+                },
+                8,
+            ),
+            (
+                {
+                    "title": "ServiceNow 曝三个满分漏洞可未授权 RCE",
+                    "url": "https://mp.weixin.qq.com/s/servicenow",
+                    "feed_url": "https://wechat2rss.xlab.app/feed/security.xml",
+                    "published": "2026-08-30T10:00:00+00:00",
+                },
+                8,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 2)
+        self.assertEqual(merged_urls, [])
+
+    def test_cluster_does_not_merge_unrelated_finance_items_from_same_feed(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "支付宝发布可信 Agent 支付方案",
+                    "url": "https://news.google.com/rss/articles/alipay",
+                    "feed_url": "https://news.google.com/rss/search?q=fintech",
+                    "published": "2026-08-30T08:00:00+00:00",
+                },
+                8,
+            ),
+            (
+                {
+                    "title": "欧洲数字货币形成公私双轨竞争",
+                    "url": "https://news.google.com/rss/articles/euro",
+                    "feed_url": "https://news.google.com/rss/search?q=fintech",
+                    "published": "2026-08-30T09:00:00+00:00",
+                },
+                8,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 2)
+        self.assertEqual(merged_urls, [])
+
     def test_cluster_merges_silverfox_governance_articles(self) -> None:
         candidates = [
             (
@@ -3329,12 +3456,27 @@ class BoardSharingTests(unittest.TestCase):
             "title": "AI security startup sues competitor over hallucinated report",
             "summary": "The dispute concerns commercial claims between two vendors.",
         }
+        recruitment = {
+            "title": "人工智能安全漏洞治理联盟第二批成员单位招募通知",
+            "summary": "联盟面向行业单位公开招募成员。",
+        }
+        career = {
+            "title": "我该如何驾驭 AI，让自己不可替代？",
+            "summary": "恶意样本增长使攻防人员面临效率压力。",
+        }
+        vendor_list = {
+            "title": "360 入选工信部六大 AI 漏洞专业库技术支撑单位",
+            "summary": "厂商公布入选名单。",
+        }
 
         self.assertTrue(is_strong_ai_security_candidate(technical))
         self.assertTrue(is_strong_ai_security_candidate(agent_guidance))
         self.assertFalse(is_strong_ai_security_candidate(generic_ai))
         self.assertFalse(is_strong_ai_security_candidate(generic_supply_chain))
         self.assertFalse(is_strong_ai_security_candidate(commercial))
+        self.assertFalse(is_strong_ai_security_candidate(recruitment))
+        self.assertFalse(is_strong_ai_security_candidate(career))
+        self.assertFalse(is_strong_ai_security_candidate(vendor_list))
 
     def test_ai_security_shares_same_date_security_items_inside_window(self) -> None:
         with TemporaryDirectory() as tmpdir:

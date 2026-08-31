@@ -115,6 +115,15 @@ AI_SEC_SHARE_EXTRA_RE = re.compile(
     re.IGNORECASE,
 )
 
+AI_SEC_SHARE_LOW_VALUE_RE = re.compile(
+    r"成员单位.{0,8}招募|招募.{0,8}成员单位"
+    r"|入选.{0,24}(技术支撑|单位|名单|专业库)"
+    r"|如何.{0,24}(AI|人工智能).{0,24}不可替代"
+    r"|国家安全部|外交部"
+    r"|呼吁.{0,30}(AI|人工智能).{0,16}(风险|威胁)",
+    re.IGNORECASE,
+)
+
 ROUNDUP_TITLE_RE = re.compile(
     r"周报|月报|盘点|每周.{0,8}推送"
     r"|本周.{0,10}(汇总|回顾|热点)"
@@ -176,13 +185,18 @@ def is_security_roundup(entry: Any) -> bool:
 
 def is_strong_ai_security_candidate(entry: Any) -> bool:
     """Hard gate for sharing a security-board item into ai_security."""
+    title = " ".join(_get(entry, key) for key in ("title", "title_orig"))
     text = " ".join(
         _get(entry, key)
         for key in ("title", "summary", "title_orig", "category", "feed_title")
     )
-    if GEO_ATTRIBUTION_RE.search(text) or AI_SEC_LOW_VALUE_RE.search(text):
+    if (
+        GEO_ATTRIBUTION_RE.search(text)
+        or AI_SEC_LOW_VALUE_RE.search(text)
+        or AI_SEC_SHARE_LOW_VALUE_RE.search(title)
+    ):
         return False
-    if not AI_CONTEXT_RE.search(text):
+    if not AI_CONTEXT_RE.search(title):
         return False
     return bool(AI_SEC_MECHANISM_RE.search(text) or AI_SEC_SHARE_EXTRA_RE.search(text))
 

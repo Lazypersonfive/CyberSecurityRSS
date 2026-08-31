@@ -23,6 +23,8 @@ TRACKING_PARAMS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_
 # Only strip short " - source" tails. Do not treat Chinese "导语 | 正文" as a suffix.
 TITLE_SUFFIX_RE = re.compile(r"\s[-–—]\s[^-–—]{1,24}$")
 RT_PREFIX_RE = re.compile(r"^rt\s+[^:]{1,80}:\s*", re.IGNORECASE)
+QUOTED_CJK_ENTITY_RE = re.compile(r"[“「『](?P<entity>[\u3400-\u9fffA-Za-z0-9_-]{2,24})[”」』]")
+MULTI_STORY_TITLE_RE = re.compile(r"[；;]")
 SAME_SOURCE_WINDOW = timedelta(hours=36)
 PRODUCT_JOIN_MIN = 8
 STOPWORDS = {
@@ -54,7 +56,7 @@ DYNAMIC_ANCHOR_STOPWORDS = {
     "attackers", "developers", "framework", "malicious", "malware",
     "ransomware", "researchers", "software", "technology",
 }
-GENERIC_PRODUCT_WORDS = STOPWORDS | DYNAMIC_ANCHOR_STOPWORDS | {
+GENERIC_PRODUCT_WORDS = STOPWORDS | DYNAMIC_ANCHOR_STOPWORDS | ANCHOR_TOKENS | {
     "open", "source", "official", "beta", "today", "first", "live",
     "coding", "agent", "guess", "whose", "simulator", "accurate",
     "enough", "walk", "way", "model", "startup", "gateway",
@@ -129,9 +131,10 @@ def cluster_scored_candidates(
                 continue
             left_entry, _left_score = items[i]
             right_entry, _right_score = items[j]
-            if _same_title_story(tokens[i], tokens[j]) or _same_source_product_story(
-                left_entry, right_entry
-            ):
+            same_title = not (
+                _is_multi_story_title(left_entry) or _is_multi_story_title(right_entry)
+            ) and _same_title_story(tokens[i], tokens[j])
+            if same_title or _same_source_product_story(left_entry, right_entry):
                 uf.union(i, j)
 
     for idx in range(len(items)):
@@ -210,6 +213,7 @@ def _title_tokens(entry: dict[str, Any]) -> set[str]:
     title = str(entry.get("title") or entry.get("title_orig") or "")
     title = TITLE_SUFFIX_RE.sub("", title).lower()
     tokens = _tokens_from_text(title)
+    tokens.update(_quoted_cjk_entities(title))
     tokens.update(_extract_cves(entry))
     return tokens
 
@@ -227,7 +231,14 @@ def _tokens_from_text(text: str) -> set[str]:
         if token in STOPWORDS:
             continue
         if re.fullmatch(r"[\u3400-\u9fff]+", token):
-            tokens.update(token[idx:idx + 2] for idx in range(len(token) - 1))
+            tokens.update(
+                bigram
+                for idx in range(len(token) - 1)
+                if (
+                    (bigram := token[idx:idx + 2]) not in CJK_GENERIC_TOKENS
+                    or bigram in VULNERABILITY_TOPIC_TOKENS
+                )
+            )
         else:
             tokens.add(token)
     return tokens
@@ -270,13 +281,8 @@ def _shared_anchor_tokens(shared: set[str]) -> set[str]:
         and len(token) >= 8
         and token not in DYNAMIC_ANCHOR_STOPWORDS
     }
-    cjk_dynamic = {
-        token
-        for token in shared
-        if re.fullmatch(r"[\u3400-\u9fff]{2}", token)
-        and token not in CJK_GENERIC_TOKENS
-    }
-    return (shared & ANCHOR_TOKENS) | dynamic | cjk_dynamic
+    named_entities = {token for token in shared if token.startswith("entity:")}
+    return (shared & ANCHOR_TOKENS) | dynamic | named_entities
 
 
 def _vendor_and_specific_product(shared: set[str]) -> bool:
@@ -293,17 +299,19 @@ def _same_source_product_story(left: dict[str, Any], right: dict[str, Any]) -> b
         return False
     identity = _source_identity_tokens(left) | _source_identity_tokens(right)
     shared = (_product_tokens(left) & _product_tokens(right)) - identity
-    return bool(shared)
+    explicit_products = (
+        _joined_product_tokens(left)
+        | _joined_product_tokens(right)
+        | {token for token in shared if token.startswith("entity:")}
+    )
+    return bool(shared & explicit_products)
 
 
 def _source_cluster_key(entry: dict[str, Any]) -> str:
     profile = source_profile(entry)
     if profile.x_handle:
         return f"x:{profile.x_handle.lower()}"
-    feed_url = str(entry.get("feed_url") or "").strip()
-    if feed_url:
-        return f"feed:{feed_url}"
-    return f"source:{profile.source_key}" if profile.source_key else ""
+    return ""
 
 
 def _source_identity_tokens(entry: dict[str, Any]) -> set[str]:
@@ -327,9 +335,17 @@ def _product_tokens(entry: dict[str, Any]) -> set[str]:
     for token in tokens:
         if _is_specific_product_token(token):
             products.add(token)
-        if re.fullmatch(r"[\u3400-\u9fff]{2}", token) and token not in CJK_GENERIC_TOKENS:
-            products.add(token)
+    products.update(_quoted_cjk_entities(title))
+    products.update(_joined_product_tokens(entry))
+    return products
+
+
+def _joined_product_tokens(entry: dict[str, Any]) -> set[str]:
+    title = str(entry.get("title") or entry.get("title_orig") or "")
+    title = TITLE_SUFFIX_RE.sub("", title)
+    title = RT_PREFIX_RE.sub("", title).lower()
     words = [token.lower() for token in TOKEN_RE.findall(title) if token.lower() not in STOPWORDS]
+    products: set[str] = set()
     for idx in range(len(words) - 1):
         left, right = words[idx], words[idx + 1]
         if not left.isascii() or not right.isascii():
@@ -340,6 +356,18 @@ def _product_tokens(entry: dict[str, Any]) -> set[str]:
         if len(joined) >= PRODUCT_JOIN_MIN:
             products.add(joined)
     return products
+
+
+def _quoted_cjk_entities(title: str) -> set[str]:
+    return {
+        f"entity:{match.group('entity').lower()}"
+        for match in QUOTED_CJK_ENTITY_RE.finditer(title)
+    }
+
+
+def _is_multi_story_title(entry: dict[str, Any]) -> bool:
+    title = str(entry.get("title") or entry.get("title_orig") or "")
+    return bool(MULTI_STORY_TITLE_RE.search(title))
 
 
 def _is_specific_product_token(token: str) -> bool:
