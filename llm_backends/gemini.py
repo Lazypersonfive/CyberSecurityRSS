@@ -65,10 +65,11 @@ class GeminiBackend:
     ) -> str:
         cfg = types.GenerateContentConfig(
             system_instruction=system,
-            temperature=0.2,
             max_output_tokens=max_output_tokens,
             response_mime_type="application/json",
-            thinking_config=types.ThinkingConfig(thinking_budget=0),
+            thinking_config=types.ThinkingConfig(
+                thinking_level=types.ThinkingLevel.MINIMAL,
+            ),
         )
         last_exc: Exception | None = None
         for attempt in range(MAX_RETRIES):

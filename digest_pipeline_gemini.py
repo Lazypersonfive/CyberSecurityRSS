@@ -262,6 +262,7 @@ def _score_entries(
 ) -> list[int]:
     system = _score_system_for_board(board)
     scores: list[int] = [0] * len(entries)
+    failed_batches: list[int] = []
     for i in range(0, len(entries), SCORE_BATCH_SIZE):
         batch = entries[i : i + SCORE_BATCH_SIZE]
         items = [
@@ -290,6 +291,7 @@ def _score_entries(
                     dimension_map[idx] = dimensions
         except Exception as exc:
             logger.warning("score parse failed (batch %d): %s", i, exc)
+            failed_batches.append(i)
             smap = {}
             dimension_map = {}
         for j in range(len(batch)):
@@ -303,6 +305,10 @@ def _score_entries(
             elif board == "finance":
                 score = adjust_finance_score(batch[j], score)
             scores[i + j] = score
+    if failed_batches:
+        raise RuntimeError(
+            f"LLM scoring failed for {len(failed_batches)} batch(es): {failed_batches}"
+        )
     return scores
 
 
@@ -365,6 +371,9 @@ def _summarize(
                 break
             except Exception as exc:
                 logger.warning("summarize parse failed (batch %d, retry %d): %s", i, retry, exc)
+
+        if not smap:
+            raise RuntimeError(f"LLM summarization failed for batch starting at {i}")
 
         repaired_summaries = _repair_summaries(backend, batch, smap)
         if board == "security":

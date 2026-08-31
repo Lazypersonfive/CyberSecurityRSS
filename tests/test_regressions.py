@@ -1967,6 +1967,40 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(scores, [8])
         self.assertEqual(entries[0]["score_dimensions"]["technical_depth"], 8)
 
+    def test_score_entries_fails_board_when_a_batch_exhausts_llm_calls(self) -> None:
+        class FailingBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summary"
+
+            def generate_json(self, model, system, user_prompt, max_output_tokens):
+                raise RuntimeError("invalid model request")
+
+        with self.assertRaisesRegex(RuntimeError, "LLM scoring failed"):
+            _score_entries(
+                FailingBackend(),
+                "security",
+                [{"title": "CVE analysis", "summary": "technical details"}],
+            )
+
+    def test_summarize_fails_board_instead_of_publishing_all_fallbacks(self) -> None:
+        from digest_pipeline_gemini import _summarize
+
+        class FailingBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summary"
+
+            def generate_json(self, model, system, user_prompt, max_output_tokens):
+                raise RuntimeError("invalid model request")
+
+        with self.assertRaisesRegex(RuntimeError, "LLM summarization failed"):
+            _summarize(
+                FailingBackend(),
+                "security",
+                [{"title": "CVE analysis", "summary": "technical details"}],
+            )
+
     def test_score_prompts_include_language_fairness(self) -> None:
         for prompt in BOARD_SCORE_SYSTEM.values():
             self.assertRegex(prompt, r"评分只看(新闻|技术)价值")
@@ -2974,6 +3008,35 @@ class LLMBackendTests(unittest.TestCase):
         self.assertEqual(backend.client.http_options.timeout, 12000)
         self.assertEqual(backend.score_model, "gemini-3.6-flash")
         self.assertEqual(backend.summarize_model, "gemini-3.6-flash")
+
+    def test_gemini_36_uses_thinking_level_without_legacy_budget_or_temperature(self) -> None:
+        from llm_backends.gemini import GeminiBackend, types
+
+        captured = {}
+
+        class Response:
+            text = '[{"idx":0,"score":8}]'
+
+        class Models:
+            def generate_content(self, **kwargs):
+                captured.update(kwargs)
+                return Response()
+
+        class Client:
+            models = Models()
+
+        backend = GeminiBackend(client=Client())
+        backend.generate_json(
+            "gemini-3.6-flash",
+            "system",
+            "user",
+            256,
+        )
+
+        config = captured["config"]
+        self.assertEqual(config.thinking_config.thinking_level, types.ThinkingLevel.MINIMAL)
+        self.assertIsNone(config.thinking_config.thinking_budget)
+        self.assertIsNone(config.temperature)
 
 
 class SourceAuditTests(unittest.TestCase):
