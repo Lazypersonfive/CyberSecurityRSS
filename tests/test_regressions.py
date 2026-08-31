@@ -24,6 +24,7 @@ from digest_pipeline_gemini import (
     _llm_dedupe,
     _score_entries,
     _score_candidates_for_selection,
+    _summarize,
     _selection_reason,
     _sanitize_vulnerability_claims,
 )
@@ -796,7 +797,14 @@ class SiteBuilderTests(unittest.TestCase):
         workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
 
         self.assertIn("name: Build site", workflow)
-        self.assertIn("if: env.BOARD_SELECTION == 'all'", workflow)
+        self.assertIn("if: success() && env.BOARD_SELECTION == 'all'", workflow)
+
+    def test_daily_workflow_aborts_publish_when_any_board_fails(self) -> None:
+        workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
+
+        self.assertIn("Skipping site publish because one or more boards failed.", workflow)
+        self.assertIn('if [ "$failed" -ne 0 ]; then', workflow)
+        self.assertIn("if: success()", workflow)
 
     def test_daily_workflow_uses_pinned_requirements(self) -> None:
         workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
@@ -1392,6 +1400,18 @@ class StoryClusteringTests(unittest.TestCase):
         }
 
         self.assertTrue(probable_same_story(official, chinese))
+
+    def test_llm_duplicate_gate_rejects_same_vendor_generic_launch_pair(self) -> None:
+        product = {
+            "title": "OpenAI launches GPT-6 model for developers",
+            "url": "https://openai.com/news/gpt-6",
+        }
+        privacy = {
+            "title": "OpenAI launches enterprise privacy controls",
+            "url": "https://openai.com/news/privacy",
+        }
+
+        self.assertFalse(probable_same_story(product, privacy))
 
     def test_llm_duplicate_gate_uses_excerpt_for_short_commentary_title(self) -> None:
         official = {
@@ -2026,6 +2046,82 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(backend.calls, 2)
         self.assertEqual(scores, [8])
 
+    def test_score_entries_fails_when_batch_indexes_are_incomplete(self) -> None:
+        class PartialBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summary"
+
+            def generate_json(self, model, system, user_prompt, max_output_tokens):
+                return json.dumps(
+                    [
+                        {
+                            "idx": 0,
+                            "score": 8,
+                            "score_dimensions": {
+                                "relevance": 8,
+                                "technical_depth": 8,
+                                "exploitability": 7,
+                                "impact_scope": 8,
+                                "actionability": 6,
+                            },
+                        }
+                    ]
+                )
+
+        with self.assertRaisesRegex(RuntimeError, "LLM scoring failed"):
+            _score_entries(
+                PartialBackend(),
+                "security",
+                [
+                    {"title": "CVE analysis", "summary": "technical details"},
+                    {"title": "Second advisory", "summary": "another issue"},
+                ],
+            )
+
+    def test_summarize_fails_when_batch_indexes_are_incomplete(self) -> None:
+        class PartialBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summary"
+
+            def generate_json(self, model, system, user_prompt, max_output_tokens):
+                return json.dumps(
+                    [{"idx": 1, "title_zh": "错位摘要", "summary": "x" * 130, "tags": ["漏洞"]}]
+                )
+
+        with patch("digest_pipeline_gemini.SUMMARIZE_BATCH_SIZE", 2):
+            with self.assertRaisesRegex(RuntimeError, "LLM summarization failed"):
+                _summarize(
+                    PartialBackend(),
+                    "security",
+                    [
+                        {"title": "First advisory", "summary": "technical details"},
+                        {"title": "Second advisory", "summary": "another issue"},
+                    ],
+                )
+
+    def test_finalize_strips_primary_url_from_related_urls(self) -> None:
+        item = _finalize_digest_item(
+            {
+                "title": "Primary advisory",
+                "url": "https://example.com/primary",
+                "related_urls": [
+                    "https://example.com/primary",
+                    "https://example.com/related",
+                ],
+            },
+            {
+                "title_zh": "主条漏洞通告需要完整标题",
+                "summary": "该通告说明了漏洞类型、触发条件和影响范围，并给出了修复建议。",
+                "tags": ["漏洞"],
+            },
+        )
+
+        self.assertEqual(item["url"], "https://example.com/primary")
+        self.assertEqual(item["related_urls"], ["https://example.com/related"])
+        self.assertEqual(item["related_count"], 1)
+
     def test_summarize_fails_board_instead_of_publishing_all_fallbacks(self) -> None:
         from digest_pipeline_gemini import _summarize
 
@@ -2150,6 +2246,19 @@ class GeminiPipelineTests(unittest.TestCase):
         }
 
         self.assertEqual(adjust_security_score(entry, 9), 4)
+
+    def test_security_editorial_caps_listed_company_earnings(self) -> None:
+        earnings = {
+            "title": "18家网络安全上市公司半年报：AI收入到底有多少了？",
+            "summary": "梳理网安公司上半年营收和AI业务占比。",
+        }
+        vuln = {
+            "title": "Nacos 认证绕过漏洞——分析与复现报告",
+            "summary": "管理接口漏标权限，构造三个请求即可完成认证绕过并接管配置中心。",
+        }
+
+        self.assertEqual(adjust_security_score(earnings, 8), 3)
+        self.assertEqual(adjust_security_score(vuln, 8), 8)
 
     def test_ai_security_editorial_caps_generic_ai_news(self) -> None:
         not_ai = {
@@ -2318,6 +2427,7 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(security["source_policy"]["min_chinese"], 6)
         self.assertEqual(security["source_policy"]["min_direct"], 12)
         self.assertEqual(security["fetch_hours"], 120)
+        self.assertEqual(security["fill_score_floor"], 6)
         self.assertEqual(security["source_policy"]["max_roundup"], 1)
         self.assertLessEqual(security["source_policy"]["max_google_news"], 1)
         self.assertEqual(security["source_policy"]["max_aggregator"], 7)

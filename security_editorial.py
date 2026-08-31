@@ -124,6 +124,19 @@ AI_SEC_SHARE_LOW_VALUE_RE = re.compile(
     re.IGNORECASE,
 )
 
+INDUSTRY_EARNINGS_RE = re.compile(
+    r"半年报|年报|季报|营收|净利润|上市公司"
+    r"|AI收入|网络安全公司.{0,12}(收入|营收|财报)"
+    r"|"
+    + _ascii_terms(
+        r"earnings",
+        r"revenue",
+        r"h1\s+results",
+        r"listed\s+cybersecurity",
+    ),
+    re.IGNORECASE,
+)
+
 ROUNDUP_TITLE_RE = re.compile(
     r"周报|月报|盘点|每周.{0,8}推送"
     r"|本周.{0,10}(汇总|回顾|热点)"
@@ -170,6 +183,8 @@ def adjust_security_score(entry: Any, score: int) -> int:
     text = " ".join(_get(entry, key) for key in ("title", "summary", "title_orig"))
     if GEO_ATTRIBUTION_RE.search(text):
         return min(score, 4)
+    if INDUSTRY_EARNINGS_RE.search(text) and not VULN_MECHANISM_RE.search(text):
+        return min(score, 3)
     if is_security_roundup(entry):
         return min(score, 6)
     if VULN_CONTEXT_RE.search(text) and not VULN_MECHANISM_RE.search(text):

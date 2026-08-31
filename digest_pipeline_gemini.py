@@ -303,10 +303,14 @@ def _score_entries(
                     dimensions = _score_dimensions_from_response(board, r)
                     if dimensions:
                         next_dimensions[idx] = dimensions
-                if not next_smap:
-                    raise RuntimeError("empty score payload")
+                next_smap = {
+                    idx: score for idx, score in next_smap.items() if 0 <= idx < len(batch)
+                }
+                _require_complete_indexes(next_smap, len(batch), "score")
                 smap = next_smap
-                dimension_map = next_dimensions
+                dimension_map = {
+                    idx: dims for idx, dims in next_dimensions.items() if idx in next_smap
+                }
                 parsed_ok = True
                 break
             except Exception as exc:
@@ -317,7 +321,7 @@ def _score_entries(
         for j in range(len(batch)):
             if j in dimension_map:
                 entries[i + j]["score_dimensions"] = dimension_map[j]
-            score = smap.get(j, 5)
+            score = smap[j]
             if board == "security":
                 score = adjust_security_score(batch[j], score)
             elif board == "ai_security":
@@ -387,7 +391,13 @@ def _summarize(
             try:
                 text = backend.generate_json(backend.summarize_model, system_prompt, user_prompt, 6000)
                 parsed = _parse_llm_json(text)
-                smap = {int(r["idx"]): r for r in parsed}
+                next_smap = {
+                    int(r["idx"]): r
+                    for r in parsed
+                    if 0 <= int(r["idx"]) < len(batch)
+                }
+                _require_complete_indexes(next_smap, len(batch), "summarize")
+                smap = next_smap
                 break
             except Exception as exc:
                 logger.warning("summarize parse failed (batch %d, retry %d): %s", i, retry, exc)
@@ -452,7 +462,10 @@ def _finalize_digest_item(entry: dict[str, Any], item: dict[str, Any]) -> dict[s
     finalized["source_label"] = profile.source_label
     finalized["source_key"] = profile.source_key
     finalized["story_id"] = entry.get("story_id", finalized.get("story_id", ""))
-    finalized["related_urls"] = entry.get("related_urls", finalized.get("related_urls", [])) or []
+    finalized["related_urls"] = _related_urls_excluding_primary(
+        entry.get("related_urls", finalized.get("related_urls", [])) or [],
+        finalized["url"],
+    )
     finalized["related_count"] = len(finalized["related_urls"])
     return finalized
 
@@ -886,16 +899,21 @@ def _llm_dedupe(
         if not members:
             continue
         best = max(members, key=lambda i: (candidates[i][1], source_priority(candidates[i][0])))
+        primary_url = str(candidates[best][0].get("url") or "")
         related_urls = [
-            candidates[i][0].get("url", "")
+            str(candidates[i][0].get("url") or "")
             for i in members
             if i != best and candidates[i][0].get("url")
         ]
+        related_urls = _related_urls_excluding_primary(related_urls, primary_url)
         merged_urls.extend(related_urls)
         if related_urls:
             best_entry = deepcopy(candidates[best][0])
-            existing = [url for url in best_entry.get("related_urls") or [] if url]
-            best_entry["related_urls"] = _dedupe_urls(existing + related_urls)
+            existing = best_entry.get("related_urls") or []
+            best_entry["related_urls"] = _related_urls_excluding_primary(
+                list(existing) + related_urls,
+                primary_url,
+            )
             best_entry["related_count"] = len(best_entry["related_urls"])
             candidates[best] = (best_entry, candidates[best][1])
         seen.update(members)
@@ -933,6 +951,21 @@ def _validate_llm_clusters(
         included.update(members)
     validated.extend([[idx] for idx in range(len(candidates)) if idx not in included])
     return validated
+
+
+def _require_complete_indexes(index_map: dict[int, Any], batch_size: int, label: str) -> None:
+    expected = set(range(batch_size))
+    got = set(index_map)
+    if got != expected:
+        raise RuntimeError(
+            f"{label} indexes {sorted(got)} != expected {sorted(expected)}"
+        )
+
+
+def _related_urls_excluding_primary(urls: list[str], primary: str) -> list[str]:
+    primary_url = str(primary or "").strip()
+    cleaned = [str(url or "").strip() for url in urls]
+    return _dedupe_urls([url for url in cleaned if url and url != primary_url])
 
 
 def _dedupe_urls(urls: list[str]) -> list[str]:

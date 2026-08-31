@@ -97,11 +97,13 @@ def probable_same_story(left: dict[str, Any], right: dict[str, Any]) -> bool:
         return True
     shared = left_tokens & right_tokens
     union = left_tokens | right_tokens
-    # LLM-proposed cross-language pairs often retain only the entity and one
-    # product/release token (for example Claude + Fable). That is enough as a
-    # validation gate, but not enough for deterministic clustering on its own.
+    # Cross-language pairs like Claude + Fable should pass, but one vendor
+    # name plus a generic verb such as "launches" must not.
+    if _vendor_and_specific_product(shared):
+        return True
     shared_anchors = _shared_anchor_tokens(shared)
-    if shared_anchors and shared - shared_anchors:
+    extra = shared - shared_anchors
+    if shared_anchors and len(extra) >= 2:
         return True
     return len(shared) >= 5 and bool(union) and len(shared) / len(union) >= 0.70
 
@@ -150,15 +152,20 @@ def cluster_scored_candidates(
             continue
         best_idx = max(idxs, key=lambda i: _primary_rank(items[i]))
         best_entry, best_score = items[best_idx]
+        primary_url = str(best_entry.get("url") or "")
         related = []
         for i in idxs:
             if i == best_idx:
                 continue
             url = str(items[i][0].get("url") or "")
-            if url:
+            if url and url != primary_url:
                 related.append(url)
                 merged_urls.append(url)
-        existing_related = [url for url in best_entry.get("related_urls") or [] if url]
+        existing_related = [
+            url
+            for url in best_entry.get("related_urls") or []
+            if url and url != primary_url
+        ]
         best_entry["related_urls"] = _dedupe_preserve_order(existing_related + related)
         best_entry["related_count"] = len(best_entry["related_urls"])
         best_entry["story_id"] = _shared_story_id([items[i][0] for i in idxs])

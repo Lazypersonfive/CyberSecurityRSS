@@ -122,24 +122,29 @@ jobs:
             fi
           done
           echo "PIPELINE_FAILED=$failed" >> "$GITHUB_ENV"
+          if [ "$failed" -ne 0 ]; then
+            echo "::error::Skipping site publish because one or more boards failed."
+            exit 1
+          fi
 
       - name: Build site
-        if: env.BOARD_SELECTION == 'all'
+        if: success() && env.BOARD_SELECTION == 'all'
         run: python site_builder.py
 
       - name: Build source audit
-        if: env.BOARD_SELECTION == 'all'
+        if: success() && env.BOARD_SELECTION == 'all'
         run: python source_audit.py
 
       - name: Build offline eval
-        if: env.BOARD_SELECTION == 'all'
+        if: success() && env.BOARD_SELECTION == 'all'
         run: python eval_strategy.py
 
       - name: Build feedback eval
-        if: env.BOARD_SELECTION == 'all'
+        if: success() && env.BOARD_SELECTION == 'all'
         run: python feedback_eval.py --days 14
 
       - name: Commit and push
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
