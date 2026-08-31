@@ -38,8 +38,10 @@ GEO_ATTRIBUTION_RE = re.compile(
 AI_CONTEXT_RE = re.compile(
     _ascii_terms(r"ai", r"llm", r"gpt-?\d*", r"chatgpt", r"claude", r"gemini",
                  r"copilot", r"mcp", r"agentic", r"agents?", r"deepseek",
-                 r"openai", r"anthropic")
-    + r"|大模型|语言模型|智能体|提示词|人工智能|生成式",
+                 r"openai", r"anthropic", r"claude\s+code", r"codex",
+                 r"cursor\s+agent", r"cursor\s+ai", r"github\s+copilot",
+                 r"windsurf", r"ai\s+coding")
+    + r"|大模型|语言模型|智能体|提示词|人工智能|生成式|AI编程|编程助手|代码助手",
     re.IGNORECASE,
 )
 
@@ -106,6 +108,29 @@ VULN_MECHANISM_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Extra mechanisms used only when borrowing security-board items into
+# ai_security. Bare "security"/"风险" is still not enough.
+AI_SEC_SHARE_EXTRA_RE = re.compile(
+    r"沙箱|模型供应链|提示注入|越权|护栏",
+    re.IGNORECASE,
+)
+
+ROUNDUP_TITLE_RE = re.compile(
+    r"周报|月报|盘点|每周.{0,8}推送"
+    r"|本周.{0,10}(汇总|回顾|热点)"
+    r"|一周.{0,8}(汇总|回顾)"
+    r"|"
+    + _ascii_terms(
+        r"weekly\s+roundup",
+        r"weekly\s+recap",
+        r"this\s+week\s+in",
+        r"week\s+in\s+review",
+        r"monthly\s+roundup",
+        r"weekly\s+brief",
+    ),
+    re.IGNORECASE,
+)
+
 FINANCE_CONTEXT_RE = re.compile(
     _ascii_terms(
         r"fintech", r"financial", r"finance", r"bank\w*", r"payments?", r"card\s+network",
@@ -136,9 +161,30 @@ def adjust_security_score(entry: Any, score: int) -> int:
     text = " ".join(_get(entry, key) for key in ("title", "summary", "title_orig"))
     if GEO_ATTRIBUTION_RE.search(text):
         return min(score, 4)
+    if is_security_roundup(entry):
+        return min(score, 6)
     if VULN_CONTEXT_RE.search(text) and not VULN_MECHANISM_RE.search(text):
         return min(score, 8)
     return score
+
+
+def is_security_roundup(entry: Any) -> bool:
+    """True for weekly/monthly recap titles, not a one-off 汇总 of a single bug."""
+    title = " ".join(_get(entry, key) for key in ("title", "title_orig"))
+    return bool(ROUNDUP_TITLE_RE.search(title))
+
+
+def is_strong_ai_security_candidate(entry: Any) -> bool:
+    """Hard gate for sharing a security-board item into ai_security."""
+    text = " ".join(
+        _get(entry, key)
+        for key in ("title", "summary", "title_orig", "category", "feed_title")
+    )
+    if GEO_ATTRIBUTION_RE.search(text) or AI_SEC_LOW_VALUE_RE.search(text):
+        return False
+    if not AI_CONTEXT_RE.search(text):
+        return False
+    return bool(AI_SEC_MECHANISM_RE.search(text) or AI_SEC_SHARE_EXTRA_RE.search(text))
 
 
 def adjust_ai_security_score(entry: Any, score: int) -> int:

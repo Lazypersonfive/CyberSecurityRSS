@@ -15,6 +15,8 @@ from llm_backends.base import backend_name_from_env, get_backend
 from eval_strategy import build_offline_eval, render_offline_eval
 from digest_pipeline_gemini import (
     BOARD_SCORE_SYSTEM,
+    SECURITY_SUMMARIZE_SYSTEM,
+    SUMMARIZE_SYSTEM,
     _attach_final_scores,
     _candidate_pool,
     _finalize_digest_item,
@@ -33,9 +35,16 @@ from filter_entries import FilteredEntry, filter_and_dedup
 from feedback_cli import add_feedback, import_feedback_file
 from feedback_eval import build_report, classify_feedback, sync_weekly_feedback
 from rss_curation import curate_entries
+from board_sharing import merge_ai_security_from_security, trim_llm_candidates
 from source_policy import select_with_source_policy, source_mix_stats, source_profile
 from scoring_policy import compute_dimension_score, compute_final_score
-from security_editorial import adjust_ai_security_score, adjust_finance_score, adjust_security_score
+from security_editorial import (
+    adjust_ai_security_score,
+    adjust_finance_score,
+    adjust_security_score,
+    is_security_roundup,
+    is_strong_ai_security_candidate,
+)
 from story_clustering import cluster_scored_candidates, probable_same_story, story_id_for_entry
 from source_audit import build_source_audit, render_source_audit
 from source_reports import refresh_latest_report, refresh_weekly_report, render_source_report
@@ -281,11 +290,13 @@ class FetchOpmlTests(unittest.TestCase):
         ai_security_feeds = fetch_opml("feeds/ai_security.opml")
         flat = {url for urls in ai_security_feeds.values() for url in urls}
 
-        self.assertIn("https://www.hiddenlayer.com/feed", flat)
+        self.assertIn("https://www.promptfoo.dev/blog/rss.xml", flat)
+        self.assertIn("https://www.microsoft.com/en-us/security/blog/feed/", flat)
+        self.assertIn("https://blogs.cisco.com/security/feed", flat)
         self.assertIn("https://github.blog/security/vulnerability-research/feed/", flat)
         self.assertIn("https://www.legitsecurity.com/blog/rss.xml", flat)
         self.assertIn("https://www.endorlabs.com/learn/rss.xml", flat)
-        self.assertIn("https://paper.seebug.org/rss/", flat)
+        self.assertIn("https://wechat2rss.xlab.app/feed/be2795d741304af2370cbf8d31d1e5d3675f8e85.xml", flat)
         self.assertIn("https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml", flat)
         self.assertTrue(any("AI+supply+chain" in url for url in flat))
 
@@ -802,6 +813,14 @@ class SiteBuilderTests(unittest.TestCase):
         self.assertIn("diygod/rsshub:chromium-bundled", workflow)
         self.assertIn("RSSHUB_BASE_URL=http://127.0.0.1:1200", workflow)
 
+    def test_daily_workflow_runs_monday_thursday_beijing_morning(self) -> None:
+        workflow = Path(".github/workflows/daily.yml").read_text(encoding="utf-8")
+
+        self.assertIn('cron: "45 22 * * 0,3"', workflow)
+        self.assertIn("workflow_dispatch:", workflow)
+        self.assertNotIn('cron: "45 22 * * *"', workflow)
+        self.assertNotIn('cron: "45 22 * * 1,4"', workflow)
+
 
 class FetchAndSaveTests(unittest.TestCase):
     def test_board_output_includes_full_utc_batch_timestamp(self) -> None:
@@ -1265,6 +1284,101 @@ class ScoringPolicyTests(unittest.TestCase):
         self.assertEqual(high["final_score"], 10.0)
         self.assertEqual(low["final_score"], 0.0)
 
+    def test_scoring_config_caps_ranking_adjustments(self) -> None:
+        import yaml
+
+        scoring = yaml.safe_load(Path("config.yaml").read_text(encoding="utf-8"))["scoring"]
+        self.assertEqual(scoring["default"]["ranking_adjustment_cap"], 0.74)
+
+    def test_ranking_does_not_let_source_bonus_reverse_large_dimension_gap(self) -> None:
+        now = datetime(2026, 8, 31, 12, tzinfo=timezone.utc)
+        dimensions_low = {
+            "relevance": 7,
+            "novelty": 7,
+            "entity_importance": 7,
+            "developer_relevance": 7,
+            "ecosystem_impact": 7,
+        }
+        dimensions_high = {
+            "relevance": 9,
+            "novelty": 9,
+            "entity_importance": 9,
+            "developer_relevance": 9,
+            "ecosystem_impact": 9,
+        }
+        official_demo = {
+            "title": "Hugging Face official X demo",
+            "url": "https://x.com/huggingface/status/1",
+            "feed_url": "https://rsshub.app/twitter/user/huggingface",
+            "published": "2026-08-31T10:00:00Z",
+            "score_dimensions": dimensions_low,
+        }
+        google_event = {
+            "title": "Anthropic browser agent generally available",
+            "url": "https://news.google.com/rss/articles/major-event",
+            "feed_url": "https://news.google.com/rss/search?q=AI",
+            "published": "2026-08-31T10:00:00Z",
+            "score_dimensions": dimensions_high,
+        }
+
+        official_score = compute_final_score("ai", official_demo, now=now)
+        google_score = compute_final_score("ai", google_event, now=now)
+        ranked = _score_candidates_for_selection(
+            "ai",
+            [(official_demo, 7), (google_event, 9)],
+            {
+                official_demo["url"]: 7,
+                google_event["url"]: 9,
+            },
+            None,
+        )
+
+        self.assertGreaterEqual(
+            google_score["dimension_score"] - official_score["dimension_score"],
+            1.5,
+        )
+        self.assertLessEqual(abs(official_score["applied_adjustment"]), 0.74)
+        self.assertLessEqual(abs(google_score["applied_adjustment"]), 0.74)
+        self.assertGreater(google_score["final_score"], official_score["final_score"])
+        self.assertEqual(ranked[0][0]["url"], google_event["url"])
+
+    def test_ranking_still_allows_source_nudge_when_dimension_gap_is_small(self) -> None:
+        now = datetime(2026, 8, 31, 12, tzinfo=timezone.utc)
+        official = {
+            "title": "OpenAI official update",
+            "url": "https://openai.com/news/model-update",
+            "published": "2026-08-31T10:00:00Z",
+            "score_dimensions": {
+                "relevance": 7,
+                "novelty": 7,
+                "entity_importance": 7,
+                "developer_relevance": 7,
+                "ecosystem_impact": 7,
+            },
+        }
+        google = {
+            "title": "OpenAI update via Google News",
+            "url": "https://news.google.com/rss/articles/model-update",
+            "feed_url": "https://news.google.com/rss/search?q=OpenAI",
+            "published": "2026-08-31T10:00:00Z",
+            "score_dimensions": {
+                "relevance": 8,
+                "novelty": 8,
+                "entity_importance": 8,
+                "developer_relevance": 8,
+                "ecosystem_impact": 8,
+            },
+        }
+
+        official_score = compute_final_score("ai", official, now=now)
+        google_score = compute_final_score("ai", google, now=now)
+
+        self.assertLess(
+            google_score["dimension_score"] - official_score["dimension_score"],
+            1.5,
+        )
+        self.assertGreater(official_score["final_score"], google_score["final_score"])
+
 
 class StoryClusteringTests(unittest.TestCase):
     def test_llm_duplicate_gate_accepts_cross_language_entity_product_pair(self) -> None:
@@ -1444,6 +1558,145 @@ class StoryClusteringTests(unittest.TestCase):
             clustered[0][0]["url"],
             "https://simonwillison.net/2026/May/11/openai-agent-deployment-analysis/",
         )
+
+    def test_cluster_merges_same_account_micro_duck_reposts(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "RT Brian Roemmele: The open source @huggingface Micro Duck is the way.",
+                    "url": "https://x.com/huggingface/status/2094173748161073577",
+                    "feed_url": "https://rsshub.app/twitter/user/huggingface",
+                    "feed_title": "X / Hugging Face",
+                    "published": "2026-08-30T13:08:51+00:00",
+                },
+                7,
+            ),
+            (
+                {
+                    "title": "RT kache: Guess whose simulator is accurate enough for the microduck to walk",
+                    "url": "https://x.com/huggingface/status/2094173781421965470",
+                    "feed_url": "https://rsshub.app/twitter/user/huggingface",
+                    "feed_title": "X / Hugging Face",
+                    "published": "2026-08-29T18:36:29+00:00",
+                },
+                7,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 1)
+        self.assertEqual(len(clustered[0][0]["related_urls"]), 1)
+        self.assertEqual(len(merged_urls), 1)
+
+    def test_cluster_merges_same_account_muse_code_reposts(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "RT Mark Zuckerberg: Releasing Muse Code in beta today.",
+                    "url": "https://x.com/AIatMeta/status/2085091442666381774",
+                    "feed_url": "https://rsshub.app/twitter/user/AIatMeta",
+                    "feed_title": "X / Meta AI",
+                    "published": "2026-08-05T19:09:24+00:00",
+                },
+                9,
+            ),
+            (
+                {
+                    "title": "RT Alexandr Wang: muse code in beta is live. first coding agent from msl",
+                    "url": "https://x.com/AIatMeta/status/2085087760054886572",
+                    "feed_url": "https://rsshub.app/twitter/user/AIatMeta",
+                    "feed_title": "X / Meta AI",
+                    "published": "2026-08-05T19:13:42+00:00",
+                },
+                9,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 1)
+        self.assertEqual(clustered[0][0]["related_urls"], merged_urls)
+        self.assertEqual(len(merged_urls), 1)
+
+    def test_cluster_does_not_merge_same_vendor_different_products(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "Meta releases Muse Code in beta today",
+                    "url": "https://x.com/AIatMeta/status/1",
+                    "feed_url": "https://rsshub.app/twitter/user/AIatMeta",
+                    "published": "2026-08-05T19:09:24+00:00",
+                },
+                8,
+            ),
+            (
+                {
+                    "title": "Meta launches Llama 5 preview for researchers",
+                    "url": "https://x.com/AIatMeta/status/2",
+                    "feed_url": "https://rsshub.app/twitter/user/AIatMeta",
+                    "published": "2026-08-05T19:20:00+00:00",
+                },
+                8,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 2)
+        self.assertEqual(merged_urls, [])
+
+    def test_cluster_merges_silverfox_governance_articles(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "CNCERT“银狐”木马专项：恶意域名及恶意IP（一）",
+                    "url": "https://mp.weixin.qq.com/s?__biz=MzI4NDY2MDMwMw==&mid=1",
+                    "feed_url": "https://wechat2rss.xlab.app/feed/a.xml",
+                    "published": "2026-08-28T10:15:00+00:00",
+                },
+                8,
+            ),
+            (
+                {
+                    "title": "关注 | 一批“银狐”木马相关恶意域名及恶意IP公布",
+                    "url": "https://mp.weixin.qq.com/s?__biz=MzIwNDk0MDgxMw==&mid=2",
+                    "feed_url": "https://wechat2rss.xlab.app/feed/b.xml",
+                    "published": "2026-08-28T11:00:00+00:00",
+                },
+                8,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 1)
+        self.assertEqual(len(merged_urls), 1)
+
+    def test_cluster_merges_stripe_openrouter_coverage(self) -> None:
+        candidates = [
+            (
+                {
+                    "title": "Stripe will reportedly acquire AI gateway startup OpenRouter for $7B+",
+                    "url": "https://techcrunch.com/2026/08/17/stripe-openrouter/",
+                    "published": "2026-08-17T10:00:00+00:00",
+                },
+                8,
+            ),
+            (
+                {
+                    "title": "Stripe, OpenRouter finally strike a deal",
+                    "url": "https://www.pymnts.com/news/stripe-openrouter-deal/",
+                    "published": "2026-08-20T10:00:00+00:00",
+                },
+                8,
+            ),
+        ]
+
+        clustered, merged_urls = cluster_scored_candidates(candidates)
+
+        self.assertEqual(len(clustered), 1)
+        self.assertEqual(len(merged_urls), 1)
 
 
 class DeliveredHistoryTests(unittest.TestCase):
@@ -1799,6 +2052,52 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(adjust_security_score(vague, 10), 8)
         self.assertEqual(adjust_security_score(technical, 10), 10)
 
+    def test_security_editorial_caps_generic_weekly_roundups(self) -> None:
+        weekly = {
+            "title": "每周蓝军技术推送（2026.8.22-8.28）",
+            "summary": "本周蓝军技术研究重点关注高级攻防对抗热点。",
+        }
+        monthly = {
+            "title": "AI安全专题周报",
+            "summary": "系统梳理一周公开网络安全素材。",
+        }
+        vuln_writeup = {
+            "title": "Nacos 认证绕过漏洞——分析与复现报告",
+            "summary": "管理接口漏标权限，构造三个请求即可完成认证绕过并接管配置中心。",
+        }
+        project_catalog = {
+            "title": "一梳理汇总Windows内核驱动漏洞数据的项目",
+            "summary": "开源项目梳理了 156 条 CVE 记录和高频被攻击驱动。",
+        }
+
+        self.assertTrue(is_security_roundup(weekly))
+        self.assertTrue(is_security_roundup(monthly))
+        self.assertFalse(is_security_roundup(vuln_writeup))
+        self.assertFalse(is_security_roundup(project_catalog))
+        self.assertEqual(adjust_security_score(weekly, 9), 6)
+        self.assertEqual(adjust_security_score(vuln_writeup, 9), 9)
+
+    def test_security_selection_limits_roundups_without_cutting_chinese_quota(self) -> None:
+        import yaml
+
+        security = yaml.safe_load(Path("config.yaml").read_text(encoding="utf-8"))["boards"]["security"]
+        self.assertEqual(security["source_policy"]["max_roundup"], 1)
+        self.assertEqual(security["source_policy"]["min_chinese"], 6)
+
+        candidates = [
+            ({"title": "每周蓝军技术推送（一）", "url": "https://mp.weixin.qq.com/s/a"}, 9),
+            ({"title": "AI安全专题周报", "url": "https://mp.weixin.qq.com/s/b"}, 8),
+            ({"title": "Nacos 认证绕过漏洞分析", "url": "https://mp.weixin.qq.com/s/c"}, 8),
+        ]
+        selected = select_with_source_policy(
+            candidates,
+            top_n=3,
+            policy={"max_roundup": 1, "min_chinese": 1},
+        )
+        titles = [entry["title"] for entry, _score in selected]
+        self.assertEqual(sum(1 for title in titles if is_security_roundup({"title": title})), 1)
+        self.assertIn("Nacos 认证绕过漏洞分析", titles)
+
     def test_security_config_targets_chinese_technical_sources(self) -> None:
         import yaml
 
@@ -1809,6 +2108,8 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertGreaterEqual(security["llm_max_entries"], 100)
         self.assertEqual(security["source_policy"]["min_chinese"], 6)
         self.assertEqual(security["source_policy"]["min_direct"], 12)
+        self.assertEqual(security["fetch_hours"], 120)
+        self.assertEqual(security["source_policy"]["max_roundup"], 1)
         self.assertLessEqual(security["source_policy"]["max_google_news"], 1)
         self.assertEqual(security["source_policy"]["max_aggregator"], 7)
         self.assertLessEqual(security["source_caps"]["bleepingcomputer.com"], 3)
@@ -1840,7 +2141,9 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(boards["security"]["source_policy"]["min_chinese"], 6)
         self.assertEqual(boards["ai_security"]["top_n"], 10)
         self.assertEqual(boards["ai"]["top_n"], 15)
-        self.assertGreaterEqual(boards["ai"]["fetch_hours"], 48)
+        self.assertEqual(boards["ai"]["fetch_hours"], 120)
+        self.assertEqual(boards["ai_security"]["fetch_hours"], 120)
+        self.assertEqual(boards["finance"]["fetch_hours"], 336)
         self.assertEqual(boards["ai"]["dedup_lookback_days"], 0)
         self.assertEqual(boards["ai"]["fill_score_floor"], 4)
         self.assertEqual(boards["ai"]["source_policy"]["min_chinese"], 5)
@@ -1857,26 +2160,69 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertIn("跨境支付", body)
         self.assertIn("Finextra Headlines", body)
         self.assertIn("The Fintech Times", body)
+        self.assertIn("https://newsroom.paypal-corp.com/news?pagetemplate=rss", body)
+        self.assertIn("https://rsshub.app/twitter/user/Visa", body)
+        self.assertIn("https://rsshub.app/twitter/user/Mastercard", body)
+        self.assertNotIn("investor.visa.com/rss/PressRelease.aspx", body)
+        self.assertNotIn("investor.pypl.com/rss/PressRelease.aspx", body)
+
+    def test_finance_official_x_and_paypal_newsroom_are_registered(self) -> None:
+        visa_x = source_profile(
+            {
+                "title": "Visa product update",
+                "url": "https://x.com/Visa/status/1",
+                "feed_url": "https://rsshub.app/twitter/user/Visa",
+                "feed_title": "X / Visa",
+            }
+        )
+        mastercard_x = source_profile(
+            {
+                "title": "Mastercard product update",
+                "url": "https://x.com/Mastercard/status/1",
+                "feed_url": "https://rsshub.app/twitter/user/Mastercard",
+                "feed_title": "X / Mastercard",
+            }
+        )
+        paypal = source_profile(
+            {
+                "title": "PayPal Newsroom update",
+                "url": "https://newsroom.paypal-corp.com/2026-08-19-tuition",
+            }
+        )
+
+        self.assertEqual(visa_x.source_tier, "t1_5")
+        self.assertEqual(visa_x.source_kind, "official_x")
+        self.assertEqual(mastercard_x.source_kind, "official_x")
+        self.assertEqual(paypal.source_tier, "t1")
+        self.assertEqual(paypal.source_kind, "official")
 
     def test_ai_security_opml_has_dedicated_ai_security_labs(self) -> None:
         body = Path("feeds/ai_security.opml").read_text(encoding="utf-8")
 
-        self.assertIn("Protect AI", body)
-        self.assertIn("Prompt Security", body)
-        self.assertIn("HiddenLayer Blog", body)
+        self.assertIn("Promptfoo Blog", body)
+        self.assertIn("Microsoft Security Blog", body)
+        self.assertIn("Cisco Security Blog", body)
         self.assertIn("GitHub Security Lab", body)
         self.assertIn("Legit Security", body)
         self.assertIn("Endor Labs", body)
         self.assertIn("娜璋AI安全之家", body)
-        self.assertIn("Seebug Paper", body)
+        self.assertIn("Seebug漏洞平台", body)
+        self.assertIn("墨菲安全", body)
+        self.assertIn("嘶吼专业版", body)
+        self.assertNotIn("protectai.com/blog/rss.xml", body)
+        self.assertNotIn("prompt.security/blog/rss.xml", body)
+        self.assertNotIn("hiddenlayer.com/feed", body)
+        self.assertNotIn("freebuf.com/feed", body)
+        self.assertNotIn("paper.seebug.org/rss/", body)
+        self.assertNotIn("seebug.org/rss/new", body)
 
     def test_gemini_prompts_encode_current_board_targets(self) -> None:
-        self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["security"])
+        self.assertIn("每期 15 条", BOARD_SCORE_SYSTEM["security"])
         self.assertIn("至少 6 条", BOARD_SCORE_SYSTEM["security"])
-        self.assertIn("每日 10 条", BOARD_SCORE_SYSTEM["ai_security"])
-        self.assertIn("每日 15 条", BOARD_SCORE_SYSTEM["ai"])
+        self.assertIn("每期 10 条", BOARD_SCORE_SYSTEM["ai_security"])
+        self.assertIn("每期 15 条", BOARD_SCORE_SYSTEM["ai"])
         self.assertIn("至少 5 条中文", BOARD_SCORE_SYSTEM["ai"])
-        self.assertIn("每日 10 条", BOARD_SCORE_SYSTEM["finance"])
+        self.assertIn("每期 10 条", BOARD_SCORE_SYSTEM["finance"])
         self.assertIn("Google News 只做补充", BOARD_SCORE_SYSTEM["security"])
         self.assertIn("优先于 Google News", BOARD_SCORE_SYSTEM["ai"])
         self.assertIn("顶级开发者 X 动态", BOARD_SCORE_SYSTEM["ai"])
@@ -1915,6 +2261,8 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(item["score"], 8)
         self.assertGreater(item["final_score"], 8)
         self.assertIn("source_bonus", item["score_breakdown"])
+        self.assertIn("applied_adjustment", item["score_breakdown"])
+        self.assertLessEqual(abs(item["score_breakdown"]["applied_adjustment"]), 0.74)
         self.assertEqual(item["score_dimensions"]["novelty"], 8)
 
     def test_xss_summary_does_not_claim_system_level_arbitrary_code_execution(self) -> None:
@@ -2397,6 +2745,8 @@ class SourceReportTests(unittest.TestCase):
         self.assertIn("DEEPSEEK_API_KEY", body)
         self.assertIn("deepseek-v4-flash", body)
         self.assertIn("GEMINI_REQUEST_TIMEOUT_SEC", body)
+        self.assertIn("gemini-3.6-flash", body)
+        self.assertIn("chore(digest): refresh digest", body)
         self.assertIn("timeout 15m python digest_pipeline_gemini.py", body)
         self.assertIn("Fail if any board failed", body)
 
@@ -2495,8 +2845,8 @@ class LLMBackendTests(unittest.TestCase):
 
         self.assertEqual(backend.request_timeout_sec, 12)
         self.assertEqual(backend.client.http_options.timeout, 12000)
-        self.assertEqual(backend.score_model, "gemini-3-flash-preview")
-        self.assertEqual(backend.summarize_model, "gemini-3-flash-preview")
+        self.assertEqual(backend.score_model, "gemini-3.6-flash")
+        self.assertEqual(backend.summarize_model, "gemini-3.6-flash")
 
 
 class SourceAuditTests(unittest.TestCase):
@@ -2910,6 +3260,17 @@ class FeedbackLoopTests(unittest.TestCase):
         self.assertEqual((imported, skipped), (1, 1))
         self.assertIn("ai_security", records)
 
+    def test_feedback_eval_flags_below_period_baseline(self) -> None:
+        markdown = build_report(
+            [
+                {"date": "2026-08-31", "board": "security", "url": "https://example.com/a", "action": "upvote"},
+                {"date": "2026-08-31", "board": "ai", "url": "https://example.com/b", "action": "downvote"},
+            ]
+        )
+
+        self.assertIn("低于每期 5 条评估基线", markdown)
+        self.assertIn("不自动调权", markdown)
+
     def test_feedback_summary_is_written_into_weekly_report(self) -> None:
         with TemporaryDirectory() as tmpdir:
             weekly = Path(tmpdir) / "weekly.md"
@@ -2944,6 +3305,220 @@ class FeedbackLoopTests(unittest.TestCase):
 
         self.assertIn("good.example", markdown)
         self.assertIn("收到 3 次正反馈", markdown)
+
+
+class BoardSharingTests(unittest.TestCase):
+    def test_strong_ai_security_share_gate_keeps_technical_and_drops_noise(self) -> None:
+        technical = {
+            "title": "MCP 仓库在 README 藏投毒并走 postinstall 执行",
+            "summary": "Claude Code 工作流可被供应链攻击，提示词注入可外带密钥。",
+        }
+        agent_guidance = {
+            "title": "管理智能体 AI(Agentic AI)的网络安全风险",
+            "summary": "NCSC 提出威胁建模、沙箱隔离、日志审计与紧急停机。",
+        }
+        generic_ai = {
+            "title": "OpenAI expands ChatGPT Plus training program in Malta",
+            "summary": "The company announced broader access and education programs.",
+        }
+        generic_supply_chain = {
+            "title": "Geopolitical supply chain attack tensions hit chipmakers",
+            "summary": "Trade limits reshape email and domain infrastructure markets.",
+        }
+        commercial = {
+            "title": "AI security startup sues competitor over hallucinated report",
+            "summary": "The dispute concerns commercial claims between two vendors.",
+        }
+
+        self.assertTrue(is_strong_ai_security_candidate(technical))
+        self.assertTrue(is_strong_ai_security_candidate(agent_guidance))
+        self.assertFalse(is_strong_ai_security_candidate(generic_ai))
+        self.assertFalse(is_strong_ai_security_candidate(generic_supply_chain))
+        self.assertFalse(is_strong_ai_security_candidate(commercial))
+
+    def test_ai_security_shares_same_date_security_items_inside_window(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            security_path = Path(tmpdir) / "security_latest.json"
+            security_path.write_text(
+                json.dumps(
+                    {
+                        "board": "security",
+                        "fetched_at": "2026-08-31",
+                        "entries": [
+                            {
+                                "title": "MCP 仓库藏 README 投毒，postinstall 可打穿 Claude Code",
+                                "summary": "该供应链攻击依赖提示词注入把密钥带走。",
+                                "url": "https://mp.weixin.qq.com/s/mcp-poison",
+                                "published": "2026-08-30T08:00:00+00:00",
+                            },
+                            {
+                                "title": "OpenAI 发布 ChatGPT 教育培训计划",
+                                "summary": "公司扩大了课程覆盖范围，没有安全机制细节。",
+                                "url": "https://mp.weixin.qq.com/s/generic-ai",
+                                "published": "2026-08-30T08:00:00+00:00",
+                            },
+                            {
+                                "title": "Geopolitical supply chain attack tensions hit chipmakers",
+                                "summary": "Trade limits reshape ordinary software vendor markets.",
+                                "url": "https://example.com/chips",
+                                "published": "2026-08-30T08:00:00+00:00",
+                            },
+                            {
+                                "title": "MCP 仓库藏 README 投毒，postinstall 可打穿 Claude Code",
+                                "summary": "重复 URL 不应再并入。",
+                                "url": "https://mp.weixin.qq.com/s/already",
+                                "published": "2026-08-30T08:00:00+00:00",
+                            },
+                            {
+                                "title": "过期的智能体提示词注入案例",
+                                "summary": "这篇文章在抓取窗口之外。",
+                                "url": "https://mp.weixin.qq.com/s/old",
+                                "published": "2026-08-20T08:00:00+00:00",
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            existing = [
+                {
+                    "title": "已有条目",
+                    "url": "https://mp.weixin.qq.com/s/already",
+                    "published": "2026-08-30T09:00:00+00:00",
+                }
+            ]
+            merged, stats = merge_ai_security_from_security(
+                existing,
+                security_path=security_path,
+                as_of=date(2026, 8, 31),
+                fetch_hours=120,
+                now=datetime(2026, 8, 31, 12, tzinfo=timezone.utc),
+            )
+
+        urls = [entry["url"] for entry in merged]
+        self.assertEqual(stats["shared"], 1)
+        self.assertIn("https://mp.weixin.qq.com/s/mcp-poison", urls)
+        self.assertNotIn("https://mp.weixin.qq.com/s/generic-ai", urls)
+        self.assertNotIn("https://example.com/chips", urls)
+        self.assertNotIn("https://mp.weixin.qq.com/s/old", urls)
+        self.assertEqual(urls.count("https://mp.weixin.qq.com/s/already"), 1)
+        self.assertEqual(merged[-1]["shared_from"], "security")
+
+    def test_ai_security_share_requires_same_shanghai_date(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            security_path = Path(tmpdir) / "security_latest.json"
+            security_path.write_text(
+                json.dumps(
+                    {
+                        "board": "security",
+                        "fetched_at": "2026-08-30",
+                        "entries": [
+                            {
+                                "title": "MCP 提示词注入漏洞",
+                                "summary": "攻击者可窃取密钥。",
+                                "url": "https://mp.weixin.qq.com/s/mcp",
+                                "published": "2026-08-30T08:00:00+00:00",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            merged, stats = merge_ai_security_from_security(
+                [],
+                security_path=security_path,
+                as_of=date(2026, 8, 31),
+                fetch_hours=120,
+            )
+
+        self.assertEqual(merged, [])
+        self.assertEqual(stats["skipped_date"], 1)
+        self.assertEqual(stats["shared"], 0)
+
+    def test_ai_security_pipeline_calls_security_share(self) -> None:
+        body = Path("digest_pipeline_gemini.py").read_text(encoding="utf-8")
+        self.assertIn("merge_ai_security_from_security", body)
+        self.assertIn("trim_llm_candidates", body)
+        self.assertIn('board == "ai_security"', body)
+        self.assertLess(
+            body.find("merge_ai_security_from_security"),
+            body.find("filter_delivered_candidates(entries, delivered_history)"),
+        )
+        self.assertLess(
+            body.find("filter_delivered_candidates(entries, delivered_history)"),
+            body.find("trim_llm_candidates(entries, max_llm_entries)"),
+        )
+
+    def test_shared_ai_security_items_still_go_through_delivered_history(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            security_path = Path(tmpdir) / "security_latest.json"
+            security_path.write_text(
+                json.dumps(
+                    {
+                        "board": "security",
+                        "fetched_at": "2026-08-31",
+                        "entries": [
+                            {
+                                "title": "MCP 仓库藏 README 投毒，postinstall 可打穿 Claude Code",
+                                "summary": "该供应链攻击依赖提示词注入把密钥带走。",
+                                "url": "https://mp.weixin.qq.com/s/already-shown",
+                                "published": "2026-08-30T08:00:00+00:00",
+                            },
+                            {
+                                "title": "新的智能体沙箱逃逸案例",
+                                "summary": "提示词注入可外带密钥。",
+                                "url": "https://mp.weixin.qq.com/s/fresh-share",
+                                "published": "2026-08-30T08:00:00+00:00",
+                            },
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            merged, stats = merge_ai_security_from_security(
+                [],
+                security_path=security_path,
+                as_of=date(2026, 8, 31),
+                fetch_hours=120,
+                now=datetime(2026, 8, 31, 12, tzinfo=timezone.utc),
+            )
+            kept, filter_stats = filter_delivered_candidates(
+                merged,
+                DeliveredHistory(urls={"https://mp.weixin.qq.com/s/already-shown"}, story_ids=set()),
+            )
+
+        urls = [entry["url"] for entry in kept]
+        self.assertEqual(stats["shared"], 2)
+        self.assertEqual(filter_stats["url"], 1)
+        self.assertNotIn("https://mp.weixin.qq.com/s/already-shown", urls)
+        self.assertIn("https://mp.weixin.qq.com/s/fresh-share", urls)
+
+    def test_trim_llm_candidates_reserves_shared_slots(self) -> None:
+        native = [
+            {"title": f"native {idx}", "url": f"https://native.example/{idx}"}
+            for idx in range(8)
+        ]
+        shared = [
+            {
+                "title": f"shared {idx}",
+                "url": f"https://shared.example/{idx}",
+                "shared_from": "security",
+            }
+            for idx in range(6)
+        ]
+
+        trimmed = trim_llm_candidates(native + shared, 9)
+        shared_kept = [entry for entry in trimmed if entry.get("shared_from") == "security"]
+        native_kept = [entry for entry in trimmed if entry.get("shared_from") != "security"]
+
+        self.assertEqual(len(trimmed), 9)
+        self.assertEqual(len(shared_kept), 3)
+        self.assertEqual(len(native_kept), 6)
+
+    def test_summarize_prompts_forbid_adjacent_item_bleed(self) -> None:
+        marker = "禁止把相邻条目的数字、规格或技术细节写进当前卡片"
+        self.assertIn(marker, SUMMARIZE_SYSTEM)
+        self.assertIn(marker, SECURITY_SUMMARIZE_SYSTEM)
 
 
 class DigestClockTests(unittest.TestCase):

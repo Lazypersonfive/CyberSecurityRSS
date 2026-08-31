@@ -199,12 +199,13 @@
 | `feeds/ai.opml` | AI 前沿（OpenAI/DeepMind/DeepSeek/开发者 X/评论博客/中文AI号） |
 | `feeds/finance.opml` | 金融科技（Visa/Mastercard/Stripe/JPM/Finextra/中文金融号） |
 | `digest_pipeline_gemini.py` | 当前生产 digest pipeline，按 `LLM_BACKEND` 选择 Gemini 或预留 DeepSeek backend |
+| `board_sharing.py` | 把同一轮 `security_latest` 中的强语义 AI 安全条目并入 AI 安全候选，并在 LLM 上限内保留共享席位 |
 | `digest_pipeline.py` | 旧兼容入口，转到当前生产 pipeline |
 | `llm_backends/` | Gemini / DeepSeek backend adapter |
 | `site_builder.py` | 读 `digest/*.json` 渲染 `docs/index.html` + `feed_<date>.json` |
 | `templates/index.html.j2` | 站点模板：Tailwind 单页，三 tab，日期下拉，暗色模式 |
 | `run_daily.sh` | 一键跑所有板块（本地调试用；需要 API key） |
-| `.github/workflows/daily.yml` | 每日 01:00 UTC 自动跑，产出推回 `docs/` |
+| `.github/workflows/daily.yml` | 每周一、周四北京时间 06:45 自动跑，产出推回 `docs/`；文件名保留用于兼容手动触发 |
 | `config.yaml` | 配置项，含 `boards` 段 |
 | `output/<board>_latest.json` | 最新抓取的原始条目（按板块） |
 | `digest/<board>_<date>.json` | LLM 精选 + 摘要后的成品（站点数据源） |
@@ -243,4 +244,3 @@
 UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 curl -sH "User-Agent: $UA" "https://aihot.virxact.com/api/public/items?mode=selected&take=50"
 ```
-

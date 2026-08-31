@@ -54,26 +54,22 @@
    - 详细设计见 `tasks/feedback_loop_plan.md`。
 
 ## Board Targets
-- `security`: 每日 15 条，候选足够时至少 6 条中文；漏洞摘要优先写原理、触发条件、影响范围和修复状态。
-- `ai_security`: 每日 10 条，宁缺毋滥，聚焦 AI 安全技术。
-- `ai`: 每日 15 条，约三分之一中文；arXiv 最多 2 条；XSignals 可占重要比例，但由 `final_score + source kind` 控制。
-- `finance`: 每日 10 条，优先官网、监管和机构源，Google News 只补覆盖；当前中文 fallback 已接入，长期需要中文直采源。
+- `security`: 每期 15 条，候选足够时至少 6 条中文；漏洞摘要优先写原理、触发条件、影响范围和修复状态。
+- `ai_security`: 每期 10 条，宁缺毋滥，聚焦 AI 安全技术。
+- `ai`: 每期 15 条，约三分之一中文；arXiv 最多 2 条；XSignals 可占重要比例，但由 `final_score + source kind` 控制。
+- `finance`: 每期 10 条，优先官网、监管和机构源，Google News 只补覆盖；当前中文 fallback 已接入，长期需要中文直采源。
 
-## Current Production Status (2026-07-13)
-- Backend: Gemini 主生产；DeepSeek 预留；Anthropic 已下线。
-- Source registry/final score/story clustering: v1 已上线。
+## Current Production Status (2026-08-31)
+- Backend: Gemini 主生产，默认 `gemini-3.6-flash`，可通过 `GEMINI_MODEL` 覆盖；DeepSeek 预留；Anthropic 已下线。
+- Source registry/final score/story clustering: v1 已上线，并补了同账号短窗产品聚类、来源加权不得逆转内容分差距 `>=1.5` 的排序约束。
+- 调度：GitHub Actions 改为每周一、周四北京时间 06:45（UTC 周日、周三 22:45）；`workflow_dispatch` 保留。最长间隔约 96 小时，因此 `security` / `ai_security` / `ai` 的 `fetch_hours` 扩到 120 小时，`finance` 仍为 336 小时。
+- `ai_security` 2026-08-06 至 08-31 日均约 3.42 条。已替换长期失效的 Protect AI / Prompt Security / HiddenLayer blog / FreeBuf / Seebug RSS；运行该板块时会把同一上海日期、且落在抓取窗口内的 `security_latest` 强语义 AI 安全条目并入候选（先过已发布历史过滤，LLM 上限内为共享条目保留最多约三分之一席位，宁缺毋滥，`min_final_score` 不变）。
+- `security` 对“周报/月报/盘点/汇总”做分数封顶和每期 1 条上限，避免泛周报挤进前五；中文技术源配额和漏洞/官方通告优先级不降。
+- `finance`：Visa/Mastercard/PayPal 旧 IR RSS 已 403。PayPal 换成可抓的 Newsroom RSS；Visa/Mastercard 改为官方 X RSSHub，并登记为 `t1_5/official_x`。Google News 仍只补覆盖。
 - Site search: 支持跨日期搜索。
-- Site ordering: 站点卡片按 `final_score` 优先展示，`source_tier/source_kind` 作为兜底排序。
+- Site ordering: 站点卡片按 `final_score` 优先展示；不同事件的展示顺序先看内容维，来源只做同事件主条选择和有限修正。
 - GitHub Actions RSSHub: workflow 可启动临时 RSSHub 容器使用 `TWITTER_AUTH_TOKEN`，XSignals 以 Actions 结果为准。
-- 过去 7 天 daily workflow 全成功，产出 `archive/`、`digest/`、`docs/feed_*.json` 和 `reports/`。
-- 2026-07-07 至 2026-07-13 的 daily workflow 全部成功，四板块产出均值分别为 `15/15`、`9.7/10`、`13.9/15`、`10/10`。
-- `security` 中文均值 `8.4`，连续 `7/7` 天达到至少 6 条；但一周内重复 URL 槽位占 `30.5%`，已新增按板块回看已发布 URL/CVE/story_id 的跨日过滤。
-- `ai_security` 一周内重复 URL 槽位占 `45.6%`，且有厂商排名、诉讼和泛安全内容填充；已设 `min_final_score=6.0`并加入确定性低价值上限。
-- `ai` 中文均值 `4.1`，有 `4/7` 天达到 5 条；已为 LLM dedupe 增加保守事件校验和大幅折叠拒绝逻辑。
-- `finance` 条数稳定，但 Finextra + PYMNTS 占一周入选的约 `66%`；已限制两源每日各 3 条，增加 Fed/ECB/BIS/Stripe 直采源，并预留至少 2 条官方条目。
-- 漏洞摘要将技术要素要求从 2 项提高到 3 项，拒绝把 stored XSS 夸大为主机任意代码执行；修复 pass 输出结构化拒绝原因。
-- 后续 digest 持久化 `score_dimensions` 和 `delivered_filter_stats`，便于周报直接审计模型评分与跨日拦截效果。
-- Feedback loop P1 从 CLI 扩展到站点卡片：可标记“有用/不想看/摘要有问题”、导出 JSONL，导入后由 daily workflow 写入周报；仍不自动调权。
+- Feedback loop P1 从 CLI 扩展到站点卡片：可标记“有用/不想看/摘要有问题”、导出 JSONL，导入后由周一/周四 workflow 写入周报；每期评估基线 5 条，不足则只提示缺口，仍不自动调权。
 
 
 ## AIHOT Methodology Constraints

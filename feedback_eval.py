@@ -18,6 +18,7 @@ OUTPUT_DIR = PROJECT_DIR / "output"
 REPORTS_DIR = PROJECT_DIR / "reports"
 WEEKLY_START = "<!-- feedback-summary:start -->"
 WEEKLY_END = "<!-- feedback-summary:end -->"
+MIN_PERIOD_FEEDBACK = 5
 
 
 def load_feedback(days: int = 14) -> list[dict[str, Any]]:
@@ -57,9 +58,14 @@ def build_report(records: list[dict[str, Any]]) -> str:
         lines.extend([
             "最近窗口内没有人工反馈。",
             "",
-            "建议先用 `python feedback_cli.py add ...` 记录 3-5 条明确反馈，再调整源权重或策略。",
+            f"每期评估基线是 {MIN_PERIOD_FEEDBACK} 条人工反馈；先用 `python feedback_cli.py import` 导入站点导出的 JSONL，只更新 offline eval，不自动调权。",
         ])
         return "\n".join(lines) + "\n"
+    if len(records) < MIN_PERIOD_FEEDBACK:
+        lines.extend([
+            f"⚠️ 最近窗口仅 {len(records)} 条人工反馈，低于每期 {MIN_PERIOD_FEEDBACK} 条评估基线。本周只更新 offline eval，不自动调权。",
+            "",
+        ])
 
     by_action = Counter(str(r.get("action") or "") for r in records)
     by_board = Counter(str(r.get("board") or "") for r in records)
@@ -133,11 +139,15 @@ def sync_weekly_feedback(records: list[dict[str, Any]], weekly_path: Path) -> No
         "",
     ]
     if not records:
-        lines.append("- 暂无反馈；可在站点点击“有用 / 不想看 / 摘要有问题”后导出 JSONL。")
+        lines.append("- 暂无反馈；可在站点点击“有用 / 不想看 / 摘要有问题”后导出 JSONL，每期至少导入 5 条。")
     else:
         lines.append(f"- 总计：{len(records)} 条")
         lines.append("- 动作：" + "，".join(f"{key}={value}" for key, value in sorted(actions.items())))
         lines.append("- 板块：" + "，".join(f"{key}={value}" for key, value in sorted(boards.items())))
+        if len(records) < MIN_PERIOD_FEEDBACK:
+            lines.append(
+                f"- ⚠️ 低于每期 {MIN_PERIOD_FEEDBACK} 条评估基线。只更新 offline eval，不自动调权。"
+            )
     lines.extend([WEEKLY_END, ""])
     weekly_path.write_text("\n".join(lines), encoding="utf-8")
 

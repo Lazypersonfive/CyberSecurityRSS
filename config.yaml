@@ -35,6 +35,8 @@ scoring:
       bonus: 0.3
       kinds: [cn_official, cn_expert]
       tiers: [t1, t1_5, t2]
+    # 来源、类型、新鲜度和中文可见性合计只作有限修正；内容维度差 1.5 分时不得翻盘。
+    ranking_adjustment_cap: 0.74
   boards:
     security:
       dimension_weights:
@@ -78,7 +80,7 @@ boards:
   security:
     display_name: "安全"
     opml: feeds/security.opml
-    fetch_hours: 72       # 覆盖国内公众号/官方通告的前两日发布，避免中文漏洞分析错过候选池
+    fetch_hours: 120      # 周一/周四调度最长间隔约 96h，留余量覆盖公众号与官方通告
     dedup_lookback_days: 0 # 质量优先：72h 窗口内昨天抓过但未入选的中文技术文不能提前过滤
     delivered_lookback_days: 7 # 已展示条目单独去重；不影响昨日未入选候选继续参选
     max_entries: 120      # 安全板块中文源多且更新分散，需保留更大候选池
@@ -97,6 +99,7 @@ boards:
       max_google_news: 1
       max_aggregator: 7   # XSignals 可占到约一半；Google News 仍单独压低
       max_per_source: 4
+      max_roundup: 1      # 泛周报最多 1 条，且分数已在编辑规则中封顶，避免挤进前五
     source_caps:
       bleepingcomputer.com: 3
       thehackernews.com: 3
@@ -110,7 +113,7 @@ boards:
   ai_security:
     display_name: "AI 安全"
     opml: feeds/ai_security.opml
-    fetch_hours: 72
+    fetch_hours: 120
     dedup_lookback_days: 0 # 稀疏板块不做跨日 raw 去重，避免候选池被 archive 吃空
     delivered_lookback_days: 7
     max_entries: 90
@@ -136,8 +139,8 @@ boards:
   ai:
     display_name: "AI 前沿"
     opml: feeds/ai.opml
-    fetch_hours: 48  # AI 前沿源更新抖动大；48h 保证稀疏日仍能满额
-    dedup_lookback_days: 0 # 48h 质量窗口内不要被前日 archive 吃掉高价值 X/官网候选
+    fetch_hours: 120  # 与周一/周四调度对齐；覆盖最长约 96h 间隔
+    dedup_lookback_days: 0 # 质量窗口内不要被前日 archive 吃掉高价值 X/官网候选
     delivered_lookback_days: 7
     max_entries: 80
     llm_max_entries: 80
@@ -189,6 +192,6 @@ boards:
 
 # Site
 site:
-  title: "每日科技情报"
-  subtitle: "安全 · AI安全 · AI · 金融科技 — LLM 精选日报"
+  title: "科技情报"
+  subtitle: "安全 · AI安全 · AI · 金融科技 — 每周一、周四更新"
   lookback_days: 7

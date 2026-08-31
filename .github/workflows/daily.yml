@@ -1,9 +1,10 @@
-name: daily-digest
+name: twice-weekly-digest
 
 on:
   schedule:
-    # 22:45 UTC = 06:45 CST; GitHub schedule queue usually lands around 07:00-07:30 CST.
-    - cron: "45 22 * * *"
+    # Monday/Thursday 06:45 CST = Sunday/Wednesday 22:45 UTC.
+    # GitHub schedule queue usually lands around 07:00-07:30 CST.
+    - cron: "45 22 * * 0,3"
   workflow_dispatch:
     inputs:
       board:
@@ -22,7 +23,7 @@ permissions:
   contents: write  # needed to push docs/ + digest/ back to main
 
 concurrency:
-  group: daily-digest
+  group: twice-weekly-digest
   cancel-in-progress: false
 
 jobs:
@@ -35,6 +36,7 @@ jobs:
       DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' }}
       DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
       LLM_BACKEND: ${{ vars.LLM_BACKEND || 'gemini' }}
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.6-flash' }}
       # Optional: point RSSHub XSignals at a private instance configured with
       # TWITTER_AUTH_TOKEN. Empty means keep the OPML default (rsshub.app).
       RSSHUB_BASE_URL: ${{ vars.RSSHUB_BASE_URL }}
@@ -148,7 +150,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore(daily): refresh digest for $DIGEST_DATE"
+            git commit -m "chore(digest): refresh digest for $DIGEST_DATE"
             git push
           fi
 

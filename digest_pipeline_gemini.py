@@ -25,6 +25,7 @@ from typing import Any
 
 import yaml
 
+from board_sharing import merge_ai_security_from_security, trim_llm_candidates
 from digest_clock import digest_today
 from delivered_history import filter_delivered_candidates, load_delivered_history
 from llm_backends import LLMBackend, get_backend
@@ -87,7 +88,7 @@ SCORE_DIMENSIONS = {
 
 # Per-board scoring rubric
 BOARD_SCORE_SYSTEM = {
-    "security": """你是资深网安编辑，对传统安全资讯做 0-10 打分。目标是每日 15 条技术安全日报；候选足够时，至少 6 条来自中文媒体 / 国内官方 / 中文安全厂商源。
+    "security": """你是资深网安编辑，对传统安全资讯做 0-10 打分。目标是每期 15 条技术安全日报；候选足够时，至少 6 条来自中文媒体 / 国内官方 / 中文安全厂商源。
 编辑目标：优先让读者看到最新热门 CVE、0day、在野利用、漏洞原理、官方通告、国内安全动向、CTF/攻防竞赛和高质量漏洞分析；不要把安全日报做成泛政治或泛科技新闻。
 评分标准：
 - 9-10: 最新热门 CVE / 0day / 在野利用，且能说明漏洞原理、触发条件、影响版本、利用方式或修复缓解；国内官方预警、厂商 CERT/实验室首发、CTF/攻防竞赛高质量技术复盘。仅有高危结论、没有机制或触发条件的漏洞资讯不得进入此档
@@ -97,7 +98,7 @@ BOARD_SCORE_SYSTEM = {
 来源偏好：中文漏洞分析、国内官方源、厂商 CERT/安全实验室、CTF/攻防社区首发，权重等同或高于英文媒体；Google News 只做补充，不因聚合来源自动加分。
 评分只看技术价值，不因语言、来源篇幅长短打折扣。
 只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
-    "ai_security": """你是 AI 安全编辑，对 AI 安全资讯做 0-10 打分。目标是每日 10 条 AI 安全日报；宁缺毋滥，不收泛 AI 动态。
+    "ai_security": """你是 AI 安全编辑，对 AI 安全资讯做 0-10 打分。目标是每期 10 条 AI 安全日报；宁缺毋滥，不收泛 AI 动态。
 编辑目标：覆盖 LLM/Agent 漏洞、提示词注入、越狱攻防、模型供应链、AI 代码执行/数据泄露、模型评测安全、AI 基础设施安全和厂商安全公告。
 评分标准：
 - 9-10: LLM/Agent 漏洞、提示词注入、模型供应链、AI 代码执行/数据泄露、越狱攻防、模型安全评测或一线厂商安全公告，且有技术机制或可操作影响
@@ -107,7 +108,7 @@ BOARD_SCORE_SYSTEM = {
 来源偏好：官方博客、研究团队、中文一线安全源、厂商安全团队和顶级安全研究者 X 动态优先；Google News 只做补充，X/RSSHub 可作为一手早期信号。
 评分只看技术价值，不因语言、来源篇幅长短打折扣。
 只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
-    "ai": """你是 AI 产业观察者，对 AI 动态资讯做 0-10 打分。目标是每日 15 条 AI 动态；候选足够时，至少 5 条中文来源，约占三分之一。
+    "ai": """你是 AI 产业观察者，对 AI 动态资讯做 0-10 打分。目标是每期 15 条 AI 动态；候选足够时，至少 5 条中文来源，约占三分之一。
 编辑目标：覆盖主流实验室、模型发布、Agent 能力、重要产品、开源项目、算力/生态/监管变化；避免让 Google News 或 X/RSSHub 信号盖掉官方博客、论文/项目页或中文一线媒体首发。
 评分标准：
 - 9-10: 主流实验室（Anthropic/OpenAI/Google/Meta/DeepSeek 等）重大模型发布、里程碑论文、Agentic 能力突破、产业格局级新闻
@@ -117,7 +118,7 @@ BOARD_SCORE_SYSTEM = {
 来源偏好：官方博客、论文/项目页、开发者公告、顶级开发者 X 动态、中文一线媒体或官方源首发，优先于 Google News 聚合转述；X/RSSHub 可作为一手早期信号。
 评分只看新闻价值，不因语言、来源篇幅长短打折扣。
 只返回 JSON 数组，形如 [{"idx":0,"score":8}]。""",
-    "finance": """你是金融科技观察者，对金融科技资讯做 0-10 打分。目标是每日 10 条，关注金融机构、支付网络、卡组织、监管与真实技术落地。
+    "finance": """你是金融科技观察者，对金融科技资讯做 0-10 打分。目标是每期 10 条，关注金融机构、支付网络、卡组织、监管与真实技术落地。
 编辑目标：优先选择头部银行、Visa/Mastercard/Stripe/PayPal/中国顶级银行、监管机构和一线行业媒体的直接消息；Google News 只补覆盖，不压过官网和高质量直采源。
 评分标准：
 - 9-10: 大行核心系统升级、支付网络战略动作、监管拐点、CBDC / 稳定币关键进展、金融 AI / 风控 / 支付基础设施的关键落地
@@ -138,7 +139,8 @@ SUMMARIZE_SYSTEM = """你是一位科技资讯编辑。你的任务是把给定�
 5. 如果原文来自 Google News 或其他聚合源，摘要不得写成“某媒体报道”；如果来自顶级开发者 X 动态，可直接归因该开发者或项目，但不得编造原文没有的来源细节。
 6. tags 给 1-3 个中文关键词，每个不超过 6 字。
 7. tags 和 selection_reason 不得为空；selection_reason 用不超过 30 个中文字符说明这条新闻为何值得关注。
-8. 严格按 JSON 数组返回，不要解释、不要 Markdown 包裹。
+8. 输入会包含多条候选。第 idx 条的标题和摘要只能使用该条原文，禁止把相邻条目的数字、规格或技术细节写进当前卡片。
+9. 严格按 JSON 数组返回，不要解释、不要 Markdown 包裹。
 输出格式：[{"idx":0,"title_zh":"...","summary":"...","tags":["..."],"selection_reason":"..."}]"""
 
 SECURITY_SUMMARIZE_SYSTEM = """你是一位偏技术的安全日报编辑。你的任务是把安全资讯加工成中文摘要卡片。
@@ -152,7 +154,8 @@ SECURITY_SUMMARIZE_SYSTEM = """你是一位偏技术的安全日报编辑。你�
 7. 不要把地缘政治归因当成重点；没有技术细节的 APT/黑客组织新闻应写得很弱，不得拔高。
 8. 如果原文来自 Google News 或其他聚合源，摘要不得写成“某媒体报道”；如果来自顶级安全研究者 X 动态，可直接归因该研究者或项目，但不得编造原文没有的技术细节。
 9. tags 给 1-3 个中文关键词，每个不超过 6 字；selection_reason 不得为空，用不超过 30 个中文字符说明技术价值。
-10. 严格按 JSON 数组返回，不要解释、不要 Markdown 包裹。
+10. 输入会包含多条候选。第 idx 条的标题和摘要只能使用该条原文，禁止把相邻条目的数字、规格或技术细节写进当前卡片。
+11. 严格按 JSON 数组返回，不要解释、不要 Markdown 包裹。
 输出格式：[{"idx":0,"title_zh":"...","summary":"...","tags":["..."],"selection_reason":"..."}]"""
 
 
@@ -982,6 +985,16 @@ def run(board: str, as_of: date | None = None) -> Path:
 
     data = _load_input(board)
     entries = data.get("entries", [])
+    share_stats: dict[str, int] = {}
+    if board == "ai_security":
+        entries, share_stats = merge_ai_security_from_security(
+            entries,
+            security_path=OUTPUT_DIR / "security_latest.json",
+            as_of=as_of,
+            fetch_hours=int(bcfg.get("fetch_hours", 24) or 24),
+        )
+        if share_stats.get("shared"):
+            logger.info("[%s] candidate share stats=%s", board, share_stats)
     delivered_lookback_days = int(bcfg.get("delivered_lookback_days", 7) or 0)
     delivered_history = load_delivered_history(
         board,
@@ -1002,7 +1015,7 @@ def run(board: str, as_of: date | None = None) -> Path:
     max_llm_entries = int(bcfg.get("llm_max_entries", 0) or 0)
     if max_llm_entries > 0 and len(entries) > max_llm_entries:
         logger.info("[%s] trim LLM scoring set: %d -> %d", board, len(entries), max_llm_entries)
-        entries = entries[:max_llm_entries]
+        entries = trim_llm_candidates(entries, max_llm_entries)
     if not entries:
         logger.warning("[%s] no entries to digest", board)
 
@@ -1074,6 +1087,7 @@ def run(board: str, as_of: date | None = None) -> Path:
             "merged_total": len(merged_urls),
         },
         "delivered_filter_stats": delivered_filter_stats,
+        "candidate_share_stats": share_stats,
         "items": items,
     }
     out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
@@ -1161,6 +1175,8 @@ def _attach_final_scores(
             "kind_bonus": breakdown["kind_bonus"],
             "freshness_bonus": breakdown["freshness_bonus"],
             "cn_visibility_bonus": breakdown["cn_visibility_bonus"],
+            "raw_adjustment": breakdown["raw_adjustment"],
+            "applied_adjustment": breakdown["applied_adjustment"],
         }
         enriched.append(updated)
     return enriched

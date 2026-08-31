@@ -195,7 +195,7 @@ def build(lookback_days: int = 7) -> None:
     )
     tmpl = env.get_template("index.html.j2")
     html = tmpl.render(
-        title=site.get("title", "每日科技情报"),
+        title=site.get("title", "科技情报"),
         subtitle=site.get("subtitle", ""),
         boards_json=json.dumps(
             {b: {"display_name": bc.get("display_name", b)} for b, bc in boards.items()},

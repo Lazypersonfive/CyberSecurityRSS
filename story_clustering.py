@@ -12,13 +12,19 @@ from collections import defaultdict
 from typing import Any, Iterable
 from urllib.parse import parse_qsl, urlencode, urlparse
 
+from datetime import datetime, timedelta, timezone
+
 from source_policy import source_priority, source_profile
 
 
 CVE_RE = re.compile(r"CVE[-–—]\d{4}[-–—]\d{4,7}", re.IGNORECASE)
 TOKEN_RE = re.compile(r"[a-zA-Z][a-zA-Z0-9_+-]{2,}|\d{1,7}|[\u3400-\u9fff]{2,}")
 TRACKING_PARAMS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid", "gclid"}
-TITLE_SUFFIX_RE = re.compile(r"\s[-–—|]\s[^-–—|]+$")
+# Only strip short " - source" tails. Do not treat Chinese "导语 | 正文" as a suffix.
+TITLE_SUFFIX_RE = re.compile(r"\s[-–—]\s[^-–—]{1,24}$")
+RT_PREFIX_RE = re.compile(r"^rt\s+[^:]{1,80}:\s*", re.IGNORECASE)
+SAME_SOURCE_WINDOW = timedelta(hours=36)
+PRODUCT_JOIN_MIN = 8
 STOPWORDS = {
     "the", "and", "for", "with", "from", "that", "this", "into", "over",
     "new", "news", "update", "updates", "launch", "launches", "release",
@@ -47,6 +53,23 @@ VULNERABILITY_TOPIC_TOKENS = {"漏洞", "flaw", "flaws", "cve", "zero-day", "0da
 DYNAMIC_ANCHOR_STOPWORDS = {
     "attackers", "developers", "framework", "malicious", "malware",
     "ransomware", "researchers", "software", "technology",
+}
+GENERIC_PRODUCT_WORDS = STOPWORDS | DYNAMIC_ANCHOR_STOPWORDS | {
+    "open", "source", "official", "beta", "today", "first", "live",
+    "coding", "agent", "guess", "whose", "simulator", "accurate",
+    "enough", "walk", "way", "model", "startup", "gateway",
+    "finally", "strike", "deal", "acquire", "reportedly", "will",
+    "releasing", "preview", "researchers", "support", "using",
+}
+CJK_GENERIC_TOKENS = {
+    "安全", "漏洞", "攻击", "研究", "分析", "发布", "报告", "技术", "网络",
+    "数据", "恶意", "关注", "一批", "相关", "公布", "资讯", "动态", "威胁",
+    "情报", "防护", "检测", "更新", "补丁", "系统", "用户", "企业", "国内",
+    "国际", "最新", "重要", "重大", "近日", "本周", "今日", "通过", "进行",
+    "针对", "关于", "以及", "组织", "行动", "打击", "启动", "披露", "首批",
+    "规模", "最大", "木马", "域名", "地址", "专项", "治理", "文章", "内容",
+    "平台", "模型", "智能", "人工", "产品", "公司", "官方", "媒体", "新闻",
+    "事件", "问题", "风险", "防御", "利用", "绕过", "提权", "一批",
 }
 
 
@@ -104,7 +127,11 @@ def cluster_scored_candidates(
         for j in range(i + 1, len(items)):
             if uf.find(i) == uf.find(j):
                 continue
-            if _same_title_story(tokens[i], tokens[j]):
+            left_entry, _left_score = items[i]
+            right_entry, _right_score = items[j]
+            if _same_title_story(tokens[i], tokens[j]) or _same_source_product_story(
+                left_entry, right_entry
+            ):
                 uf.union(i, j)
 
     for idx in range(len(items)):
@@ -211,7 +238,9 @@ def _same_title_story(left: set[str], right: set[str]) -> bool:
         return False
     shared = left & right
     if len(shared) < 3:
-        return bool(shared & NARROW_PRODUCT_TOKENS and shared & VULNERABILITY_TOPIC_TOKENS)
+        if shared & NARROW_PRODUCT_TOKENS and shared & VULNERABILITY_TOPIC_TOKENS:
+            return True
+        return _vendor_and_specific_product(shared)
     shared_anchors = _shared_anchor_tokens(shared)
     if not shared_anchors:
         return False
@@ -221,7 +250,7 @@ def _same_title_story(left: set[str], right: set[str]) -> bool:
     if len(shared_without_anchor) < 2:
         if shared_anchors & NARROW_PRODUCT_TOKENS and shared & VULNERABILITY_TOPIC_TOKENS:
             return True
-        return False
+        return _vendor_and_specific_product(shared)
     if shared_anchors - ANCHOR_TOKENS:
         return True
     if len(shared_without_anchor) >= 4:
@@ -241,7 +270,111 @@ def _shared_anchor_tokens(shared: set[str]) -> set[str]:
         and len(token) >= 8
         and token not in DYNAMIC_ANCHOR_STOPWORDS
     }
-    return (shared & ANCHOR_TOKENS) | dynamic
+    cjk_dynamic = {
+        token
+        for token in shared
+        if re.fullmatch(r"[\u3400-\u9fff]{2}", token)
+        and token not in CJK_GENERIC_TOKENS
+    }
+    return (shared & ANCHOR_TOKENS) | dynamic | cjk_dynamic
+
+
+def _vendor_and_specific_product(shared: set[str]) -> bool:
+    anchors = _shared_anchor_tokens(shared)
+    return bool((anchors - ANCHOR_TOKENS) and (anchors & ANCHOR_TOKENS))
+
+
+def _same_source_product_story(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    """Merge same-feed bursts that share a specific product, not a vendor name."""
+    source_key = _source_cluster_key(left)
+    if not source_key or source_key != _source_cluster_key(right):
+        return False
+    if not _within_hours(left, right, SAME_SOURCE_WINDOW):
+        return False
+    identity = _source_identity_tokens(left) | _source_identity_tokens(right)
+    shared = (_product_tokens(left) & _product_tokens(right)) - identity
+    return bool(shared)
+
+
+def _source_cluster_key(entry: dict[str, Any]) -> str:
+    profile = source_profile(entry)
+    if profile.x_handle:
+        return f"x:{profile.x_handle.lower()}"
+    feed_url = str(entry.get("feed_url") or "").strip()
+    if feed_url:
+        return f"feed:{feed_url}"
+    return f"source:{profile.source_key}" if profile.source_key else ""
+
+
+def _source_identity_tokens(entry: dict[str, Any]) -> set[str]:
+    profile = source_profile(entry)
+    tokens = set(_tokens_from_text(str(entry.get("feed_title") or "").lower()))
+    if profile.x_handle:
+        handle = profile.x_handle.lower()
+        tokens.add(handle)
+        tokens.update(_tokens_from_text(handle))
+    host = (profile.host or profile.feed_host or "").split(".")
+    tokens.update(part for part in host if len(part) >= 3 and part not in {"com", "net", "org", "app"})
+    return tokens
+
+
+def _product_tokens(entry: dict[str, Any]) -> set[str]:
+    title = str(entry.get("title") or entry.get("title_orig") or "")
+    title = TITLE_SUFFIX_RE.sub("", title)
+    title = RT_PREFIX_RE.sub("", title).lower()
+    tokens = _tokens_from_text(title)
+    products: set[str] = set()
+    for token in tokens:
+        if _is_specific_product_token(token):
+            products.add(token)
+        if re.fullmatch(r"[\u3400-\u9fff]{2}", token) and token not in CJK_GENERIC_TOKENS:
+            products.add(token)
+    words = [token.lower() for token in TOKEN_RE.findall(title) if token.lower() not in STOPWORDS]
+    for idx in range(len(words) - 1):
+        left, right = words[idx], words[idx + 1]
+        if not left.isascii() or not right.isascii():
+            continue
+        if left in GENERIC_PRODUCT_WORDS and right in GENERIC_PRODUCT_WORDS:
+            continue
+        joined = re.sub(r"[^a-z0-9]", "", left + right)
+        if len(joined) >= PRODUCT_JOIN_MIN:
+            products.add(joined)
+    return products
+
+
+def _is_specific_product_token(token: str) -> bool:
+    if token in GENERIC_PRODUCT_WORDS or token in DYNAMIC_ANCHOR_STOPWORDS:
+        return False
+    return _is_long_product_token(token)
+
+
+def _is_long_product_token(token: str) -> bool:
+    compact = token.replace("-", "").replace(" ", "")
+    return compact.isascii() and compact.isalnum() and len(compact) >= 6
+
+
+def _within_hours(left: dict[str, Any], right: dict[str, Any], window: timedelta) -> bool:
+    left_at = _parse_datetime(left.get("published"))
+    right_at = _parse_datetime(right.get("published"))
+    if left_at is None or right_at is None:
+        return False
+    return abs(left_at - right_at) <= window
+
+
+def _parse_datetime(value: Any) -> datetime | None:
+    if isinstance(value, datetime):
+        parsed = value
+    elif isinstance(value, str) and value.strip():
+        text = value.strip().replace("Z", "+00:00")
+        try:
+            parsed = datetime.fromisoformat(text)
+        except ValueError:
+            return None
+    else:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
 
 
 def _primary_rank(item: tuple[dict[str, Any], float]) -> tuple[int, float, int]:

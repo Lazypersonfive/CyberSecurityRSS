@@ -12,6 +12,7 @@ from dataclasses import dataclass
 from typing import Any, Iterable
 from urllib.parse import urlparse
 
+from security_editorial import is_security_roundup
 from source_registry import registry_match, x_handle_from_urls
 
 
@@ -190,6 +191,7 @@ def select_with_source_policy(
     max_google_news = _optional_int(policy.get("max_google_news"), top_n)
     max_aggregator = _optional_int(policy.get("max_aggregator"), top_n)
     max_per_source = _optional_int(policy.get("max_per_source"), top_n)
+    max_roundup = _optional_int(policy.get("max_roundup"), None)
     allow_cap_relaxation = bool(policy.get("allow_cap_relaxation", False))
     relax_aggregate_caps = bool(policy.get("relax_aggregate_caps", allow_cap_relaxation))
 
@@ -198,6 +200,7 @@ def select_with_source_policy(
     source_counts: Counter[str] = Counter()
     google_count = 0
     aggregator_count = 0
+    roundup_count = 0
 
     def identity(entry: dict[str, Any]) -> str:
         return str(entry.get("url") or id(entry))
@@ -232,10 +235,12 @@ def select_with_source_policy(
                 and aggregator_count >= max_aggregator
             ):
                 return False
+        if max_roundup is not None and is_security_roundup(entry) and roundup_count >= max_roundup:
+            return False
         return True
 
     def add(item: tuple[dict[str, Any], int]) -> None:
-        nonlocal google_count, aggregator_count
+        nonlocal google_count, aggregator_count, roundup_count
         entry, _score = item
         profile = source_profile(entry)
         selected.append(item)
@@ -245,6 +250,8 @@ def select_with_source_policy(
             google_count += 1
         if profile.is_aggregator:
             aggregator_count += 1
+        if is_security_roundup(entry):
+            roundup_count += 1
 
     def reserve(predicate, count: int) -> None:
         if count <= 0:

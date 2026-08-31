@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Run the daily multi-board pipeline locally. Pass one or more board names to
-# only process a subset, e.g. ./run_daily.sh ai_security  or  ./run_daily.sh security ai.
+# Run the multi-board digest pipeline locally. Production schedule is Monday
+# and Thursday; this script is the manual equivalent. Pass one or more board
+# names to only process a subset, e.g. ./run_daily.sh ai_security.
 # With no args, runs all configured boards.
 #
 # Backend selection (env var):

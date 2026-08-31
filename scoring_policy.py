@@ -40,6 +40,7 @@ DEFAULT_SCORING_CONFIG: dict[str, Any] = {
             "kinds": ["cn_official", "cn_expert"],
             "tiers": ["t1", "t1_5", "t2"],
         },
+        "ranking_adjustment_cap": 0.74,
     },
     "boards": {
         "security": {
@@ -154,13 +155,23 @@ def compute_final_score(
     freshness_bonus = _freshness_bonus(entry.get("published"), defaults.get("freshness_bonus") or {}, now)
     cn_visibility_bonus = _cn_visibility_bonus(profile, defaults.get("cn_visibility_bonus") or {})
 
-    final = _clamp(dimension + source_bonus + kind_bonus + freshness_bonus + cn_visibility_bonus)
+    raw_adjustment = source_bonus + kind_bonus + freshness_bonus + cn_visibility_bonus
+    adjustment_cap = abs(float(
+        board_config.get(
+            "ranking_adjustment_cap",
+            defaults.get("ranking_adjustment_cap", 0.74),
+        )
+    ))
+    applied_adjustment = _clamp(raw_adjustment, -adjustment_cap, adjustment_cap)
+    final = _clamp(dimension + applied_adjustment)
     return {
         "dimension_score": round(dimension, 2),
         "source_bonus": round(source_bonus, 2),
         "kind_bonus": round(kind_bonus, 2),
         "freshness_bonus": round(freshness_bonus, 2),
         "cn_visibility_bonus": round(cn_visibility_bonus, 2),
+        "raw_adjustment": round(raw_adjustment, 2),
+        "applied_adjustment": round(applied_adjustment, 2),
         "final_score": round(final, 2),
     }
 

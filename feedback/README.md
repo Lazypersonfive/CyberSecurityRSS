@@ -20,6 +20,8 @@ python feedback_cli.py import --file ~/Downloads/feedback_2026-07-13.jsonl
 python feedback_eval.py --days 14
 ```
 
-站点卡片提供“有用 / 不想看 / 摘要有问题”按钮，反馈只保存在浏览器本地；点击侧栏“导出反馈”后，用上述 `import` 命令导入仓库。每日 workflow 会刷新 `reports/feedback_eval.md`，并把最近 14 天汇总写入 `reports/weekly.md`。
+站点卡片提供“有用 / 不想看 / 摘要有问题”按钮，反馈只保存在浏览器本地；点击侧栏“导出反馈”后，用上述 `import` 命令导入仓库。周一/周四 workflow 会刷新 `reports/feedback_eval.md`，并把最近 14 天汇总写入 `reports/weekly.md`。
+
+每期评估基线是 5 条人工反馈。不足 5 条时周报只提示缺口，不自动学习、不改权重。
 
 规则：反馈只生成评估建议，任何生产策略变化仍走人工 review + git diff。
