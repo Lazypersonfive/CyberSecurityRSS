@@ -1983,6 +1983,49 @@ class GeminiPipelineTests(unittest.TestCase):
                 [{"title": "CVE analysis", "summary": "technical details"}],
             )
 
+    def test_score_batches_are_small_enough_for_gemini_thinking_output(self) -> None:
+        from digest_pipeline_gemini import SCORE_BATCH_SIZE, SCORE_MAX_OUTPUT_TOKENS
+
+        self.assertLessEqual(SCORE_BATCH_SIZE, 12)
+        self.assertGreaterEqual(SCORE_MAX_OUTPUT_TOKENS, 8000)
+
+    def test_score_entries_retries_truncated_json_then_succeeds(self) -> None:
+        class FlakyBackend:
+            name = "fake"
+            score_model = "fake-score"
+            summarize_model = "fake-summary"
+            calls = 0
+
+            def generate_json(self, model, system, user_prompt, max_output_tokens):
+                self.calls += 1
+                if self.calls == 1:
+                    return '{"idx":0,"score":8'
+                return json.dumps(
+                    [
+                        {
+                            "idx": 0,
+                            "score": 8,
+                            "score_dimensions": {
+                                "relevance": 8,
+                                "technical_depth": 8,
+                                "exploitability": 7,
+                                "impact_scope": 8,
+                                "actionability": 6,
+                            },
+                        }
+                    ]
+                )
+
+        backend = FlakyBackend()
+        scores = _score_entries(
+            backend,
+            "security",
+            [{"title": "CVE analysis", "summary": "technical details"}],
+        )
+
+        self.assertEqual(backend.calls, 2)
+        self.assertEqual(scores, [8])
+
     def test_summarize_fails_board_instead_of_publishing_all_fallbacks(self) -> None:
         from digest_pipeline_gemini import _summarize
 

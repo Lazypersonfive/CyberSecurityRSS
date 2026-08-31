@@ -65,7 +65,11 @@ TITLE_HARD_MAX_CHARS = 80
 ANTHROPIC_TOKEN = "anth" + "ropic"
 CLAUDE_TOKEN = "cla" + "ude"
 
-SCORE_BATCH_SIZE = 40
+# Gemini 3.x thinking tokens share the output budget. 40-item batches with
+# score_dimensions truncated under thinking_level=LOW and max_output_tokens=4000.
+SCORE_BATCH_SIZE = 10
+SCORE_MAX_OUTPUT_TOKENS = 8192
+SCORE_PARSE_RETRIES = 2
 # One item per request prevents Gemini from leaking facts between adjacent cards.
 SUMMARIZE_BATCH_SIZE = 1
 SCORE_DIMENSIONS = {
@@ -279,22 +283,37 @@ def _score_entries(
             "对以下条目逐一打分。\n"
             f"条目：\n{json.dumps(items, ensure_ascii=False)}"
         )
-        try:
-            text = backend.generate_json(backend.score_model, system, user_prompt, 4000)
-            parsed = _parse_llm_json(text)
-            smap: dict[int, int] = {}
-            dimension_map: dict[int, dict[str, float]] = {}
-            for r in parsed:
-                idx = int(r["idx"])
-                smap[idx] = int(r["score"])
-                dimensions = _score_dimensions_from_response(board, r)
-                if dimensions:
-                    dimension_map[idx] = dimensions
-        except Exception as exc:
-            logger.warning("score parse failed (batch %d): %s", i, exc)
+        smap: dict[int, int] = {}
+        dimension_map: dict[int, dict[str, float]] = {}
+        parsed_ok = False
+        for retry in range(SCORE_PARSE_RETRIES):
+            try:
+                text = backend.generate_json(
+                    backend.score_model,
+                    system,
+                    user_prompt,
+                    SCORE_MAX_OUTPUT_TOKENS,
+                )
+                parsed = _parse_llm_json(text)
+                next_smap: dict[int, int] = {}
+                next_dimensions: dict[int, dict[str, float]] = {}
+                for r in parsed:
+                    idx = int(r["idx"])
+                    next_smap[idx] = int(r["score"])
+                    dimensions = _score_dimensions_from_response(board, r)
+                    if dimensions:
+                        next_dimensions[idx] = dimensions
+                if not next_smap:
+                    raise RuntimeError("empty score payload")
+                smap = next_smap
+                dimension_map = next_dimensions
+                parsed_ok = True
+                break
+            except Exception as exc:
+                logger.warning("score parse failed (batch %d, retry %d): %s", i, retry, exc)
+        if not parsed_ok:
             failed_batches.append(i)
-            smap = {}
-            dimension_map = {}
+            continue
         for j in range(len(batch)):
             if j in dimension_map:
                 entries[i + j]["score_dimensions"] = dimension_map[j]
