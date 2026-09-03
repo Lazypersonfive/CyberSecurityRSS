@@ -31,6 +31,7 @@ CHINESE_HOSTS = {
     "anquanke.com",
     "freebuf.com",
     "seebug.org",
+    "weiyangx.com",
 }
 
 

@@ -220,6 +220,19 @@ class FetchOpmlTests(unittest.TestCase):
         self.assertEqual(metadata["https://example.com/rss.xml"]["feed_title"], "Anthropic News")
         self.assertEqual(metadata["https://example.com/rss.xml"]["category"], "Labs")
 
+    def test_board_opml_files_are_well_formed_xml(self) -> None:
+        import xml.etree.ElementTree as ET
+
+        for path in (
+            "feeds/security.opml",
+            "feeds/ai_security.opml",
+            "feeds/ai.opml",
+            "feeds/finance.opml",
+        ):
+            root = ET.parse(path).getroot()
+            feeds = [node.get("xmlUrl") for node in root.findall(".//outline") if node.get("xmlUrl")]
+            self.assertTrue(feeds, path)
+
     def test_security_opml_includes_domestic_vulnerability_sources(self) -> None:
         body = Path("feeds/security.opml").read_text(encoding="utf-8")
 
@@ -258,10 +271,33 @@ class FetchOpmlTests(unittest.TestCase):
             "美团技术团队",
             "青衣十三楼飞花堂",
             "体验盒子",
+            "Product Hunt",
+            "Dwarkesh Patel",
+            "IEEE Spectrum",
+            "MIT Technology Review",
+            "NVIDIA AI Blog",
+            "Google DeepMind Blog",
+            "LangChain Blog",
+            "Hugging Face Blog",
+            "r/MachineLearning",
+            "Ben's Bites",
+            "freebuf.com/feed",
+            "outflank.nl/blog/feed",
+            "blog.pentesteracademy.com/feed",
+            "key08.com/index.php/feed",
+            "xmsec.cc/rss",
+            "lfysec.top/atom.xml",
+            "solidot.org/index.rss",
+            "medium.com/feed/adyen",
         ):
             self.assertNotIn(text, security)
+        self.assertIn("Wiz Blog", security)
+        self.assertIn("Qualys Security Blog", security)
         self.assertIn("Simon Willison", ai_security)
         self.assertNotIn("X / Simon Willison", ai_security)
+        self.assertIn("Wiz Blog", ai_security)
+        self.assertNotIn("Qualys Security Blog", ai_security)
+        self.assertNotIn("blog.qualys.com/feed", ai_security)
 
     def test_opml_includes_rsshub_x_signal_feeds(self) -> None:
         ai_feeds = fetch_opml("feeds/ai.opml")
@@ -292,6 +328,8 @@ class FetchOpmlTests(unittest.TestCase):
         flat = {url for urls in ai_security_feeds.values() for url in urls}
 
         self.assertIn("https://www.promptfoo.dev/blog/rss.xml", flat)
+        self.assertIn("https://www.wiz.io/feed/rss.xml", flat)
+        self.assertNotIn("https://blog.qualys.com/feed", flat)
         self.assertIn("https://www.microsoft.com/en-us/security/blog/feed/", flat)
         self.assertIn("https://blogs.cisco.com/security/feed", flat)
         self.assertIn("https://github.blog/security/vulnerability-research/feed/", flat)
@@ -977,6 +1015,31 @@ class SourcePolicyTests(unittest.TestCase):
         self.assertTrue(wechat.is_wechat)
         self.assertTrue(wechat.is_chinese)
         self.assertTrue(wechat.is_direct)
+
+    def test_weiyangx_counts_as_chinese_but_qwen_blog_does_not(self) -> None:
+        weiyangx = source_profile(
+            {
+                "title": "Stripe acquires OpenRouter",
+                "url": "https://www.weiyangx.com/477918.html",
+                "feed_url": "https://www.weiyangx.com/feed",
+                "feed_title": "未央网",
+            }
+        )
+        qwen = source_profile(
+            {
+                "title": "Qwen3.5-Omni: Native Audio-Visual Interleaved Model",
+                "url": "https://qwenlm.github.io/blog/qwen3.5-omni/",
+                "feed_url": "https://qwenlm.github.io/blog/index.xml",
+                "feed_title": "Qwen Blog",
+            }
+        )
+
+        self.assertTrue(weiyangx.is_chinese)
+        self.assertEqual(weiyangx.source_tier, "t2")
+        self.assertEqual(weiyangx.source_kind, "cn_media")
+        self.assertFalse(qwen.is_chinese)
+        self.assertEqual(qwen.source_tier, "t1")
+        self.assertEqual(qwen.source_kind, "official")
 
     def test_source_profile_classifies_rsshub_x_signal_as_aggregator(self) -> None:
         profile = source_profile(
@@ -2463,6 +2526,10 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertEqual(boards["ai"]["fetch_hours"], 120)
         self.assertEqual(boards["ai_security"]["fetch_hours"], 120)
         self.assertEqual(boards["finance"]["fetch_hours"], 336)
+        self.assertEqual(boards["finance"]["source_policy"]["min_chinese"], 2)
+        self.assertLessEqual(boards["finance"]["source_policy"]["max_google_news"], 3)
+        self.assertLessEqual(boards["finance"]["source_caps"]["thefintechtimes.com"], 3)
+        self.assertLessEqual(boards["finance"]["source_caps"]["fintechnews.sg"], 2)
         self.assertEqual(boards["ai"]["dedup_lookback_days"], 0)
         self.assertEqual(boards["ai"]["fill_score_floor"], 4)
         self.assertEqual(boards["ai"]["source_policy"]["min_chinese"], 5)
@@ -2480,10 +2547,17 @@ class GeminiPipelineTests(unittest.TestCase):
         self.assertIn("Finextra Headlines", body)
         self.assertIn("The Fintech Times", body)
         self.assertIn("https://newsroom.paypal-corp.com/news?pagetemplate=rss", body)
+        self.assertIn("https://stripe.com/blog/feed.rss", body)
+        self.assertIn("https://www.weiyangx.com/feed", body)
+        self.assertIn("https://fintechnews.sg/feed/", body)
+        self.assertIn("https://qwenlm.github.io/blog/index.xml", Path("feeds/ai.opml").read_text(encoding="utf-8"))
         self.assertIn("https://rsshub.app/twitter/user/Visa", body)
         self.assertIn("https://rsshub.app/twitter/user/Mastercard", body)
         self.assertNotIn("investor.visa.com/rss/PressRelease.aspx", body)
         self.assertNotIn("investor.pypl.com/rss/PressRelease.aspx", body)
+        self.assertNotIn("medium.com/feed/adyen", body)
+        self.assertNotIn("developer.squareup.com/blog/rss.xml", body)
+        self.assertNotIn("github.com/vllm-project/vllm/releases.atom", Path("feeds/ai.opml").read_text(encoding="utf-8"))
 
     def test_finance_official_x_and_paypal_newsroom_are_registered(self) -> None:
         visa_x = source_profile(
@@ -2519,6 +2593,8 @@ class GeminiPipelineTests(unittest.TestCase):
         body = Path("feeds/ai_security.opml").read_text(encoding="utf-8")
 
         self.assertIn("Promptfoo Blog", body)
+        self.assertIn("Wiz Blog", body)
+        self.assertNotIn("Qualys Security Blog", body)
         self.assertIn("Microsoft Security Blog", body)
         self.assertIn("Cisco Security Blog", body)
         self.assertIn("GitHub Security Lab", body)
