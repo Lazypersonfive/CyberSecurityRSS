@@ -1,23 +1,23 @@
 # Source Registry Audit
 
-- generated_for: 2026-09-07
-- dates: 2026-09-07, 2026-09-03, 2026-08-31, 2026-08-30, 2026-08-29, 2026-08-28, 2026-08-27
+- generated_for: 2026-09-10
+- dates: 2026-09-10, 2026-09-07, 2026-09-03, 2026-08-31, 2026-08-30, 2026-08-29, 2026-08-28
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 102 | 13 | 20 | 66 | 3 | 11 | 13 | 38 | 13 |
-| ai_security | 46 | 9 | 2 | 33 | 2 | 4 | 9 | 5 | 13 |
-| finance | 70 | 5 | 1 | 64 | 0 | 16 | 5 | 1 | 0 |
-| security | 105 | 8 | 0 | 90 | 7 | 0 | 7 | 2 | 45 |
+| ai | 102 | 12 | 19 | 68 | 3 | 8 | 12 | 41 | 13 |
+| ai_security | 46 | 12 | 1 | 30 | 3 | 3 | 11 | 5 | 13 |
+| finance | 70 | 5 | 2 | 63 | 0 | 14 | 5 | 2 | 0 |
+| security | 105 | 10 | 0 | 88 | 7 | 0 | 8 | 2 | 47 |
 
 ## Unknown Selected Sources
 
 | Source | Count | Boards | Latest Example |
 |---|---:|---|---|
+| `aws.amazon.com` | 3 | ai_security, security | [AWS发布安全领域AI应用现状评估：重点关注减少误报以建立信任](https://aws.amazon.com/blogs/security/the-state-of-ai-for-security-measuring-what-matters-most-for-building-trust/) |
 | `machinelearning.apple.com` | 3 | ai | [苹果提出REFACTOR-VLA框架：通过无监督库学习构建分层类型化运动程序](https://machinelearning.apple.com/research/refactor-vla-motor-programs) |
-| `aws.amazon.com` | 2 | ai_security, security | [使用 Strands Agents SDK 将 Amazon Bedrock Guardrails 扩展至工具交互环节](https://aws.amazon.com/blogs/security/extend-amazon-bedrock-guardrails-to-tool-interactions-using-the-strands-agents-sdk/) |
 | `paddo.dev` | 2 | ai_security, security | [GitSpawn漏洞致多款AI代码 Agent打开恶意项目文件夹即可执行代码](https://paddo.dev/blog/gitspawn-opening-the-folder/) |
 | `cxsecurity.com` | 1 | security | [ProFTPD mod_sql 认证后 SQL 注入导致远程代码执行漏洞细节及 PoC 分析](https://cxsecurity.com/issue/WLB-2026090006) |
 | `guidepointsecurity.com` | 1 | security | [企业内网权限提升风险：利用 Active Directory 证书服务数据库进行威胁狩猎与检测](https://www.guidepointsecurity.com/blog/detecting-privilege-escalaction-through-adcs/) |
