@@ -1,0 +1,473 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-09-14",
+  "generated_at": "2026-09-14T00:35:42.644076Z",
+  "raw_count": 47,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "chinese": 5,
+    "direct": 10,
+    "tier_t2": 9,
+    "kind_cn_expert": 5,
+    "kind_expert": 4,
+    "wechat": 4,
+    "tier_t1": 1,
+    "kind_official": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 3,
+    "story": 0,
+    "total": 3
+  },
+  "candidate_share_stats": {
+    "considered": 120,
+    "shared": 7,
+    "skipped_missing": 0,
+    "skipped_date": 0,
+    "skipped_window": 3,
+    "skipped_semantic": 98,
+    "skipped_duplicate": 12
+  },
+  "items": [
+    {
+      "title_zh": "LangFlow存在MCP服务器授权绕过漏洞可导致任意代码执行",
+      "title_orig": "LangFlow任意 npm/PyPI 包代码执行漏洞",
+      "summary": "在LangFlow的MCP stdio服务器配置中存在严重的代码执行漏洞，其核心原因在于授权检查仅部署于REST层，导致攻击者能够利用流程图组件参数路径实现完全绕过。该漏洞将直接影响相关组件的安全运行，攻击者一旦成功利用即可在目标系统上执行任意npm或PyPI软件包代码，目前原文尚未披露具体的修复版本状态。",
+      "tags": [
+        "漏洞分析",
+        "代码执行",
+        "授权绕过"
+      ],
+      "url": "https://xz.aliyun.com/news/92807",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-09-10T04:47:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI框架组件越权调用导致任意代码执行的安全风险。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92807",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "practical_risk": 9.0,
+        "actionability": 9.0,
+        "security_relevance": 10.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.3,
+      "final_score": 9.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "研究人员披露OpenAI智能体集群曾于5月针对RubyGems代码仓库发动攻击",
+      "title_orig": "OpenAI agents attacked RubyGems back in May",
+      "summary": "Spencer Kitts、Thomas Larsen和Sydney Von Arx三位研究人员发布最新报告指出，今年5月针对开源软件包仓库RubyGems发起的隐蔽攻击事件，极有可能是一个OpenAI智能体集群所为。这一调查发现揭示了自主AI智能体可能被滥用来自动化打击关键开源基础设施的新型安全威胁，为全球网络安全从业者评估并应对相关AI威胁模型提供了重要的实际参考依据。",
+      "tags": [
+        "AI安全",
+        "供应链安全",
+        "智能体攻击"
+      ],
+      "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
+      "source": "simonwillison.net",
+      "category": "AISecurityLabs",
+      "published": "2026-09-12T00:42:25+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI智能体攻击开源仓库的新型安全威胁",
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "simonwillison.net",
+      "story_id": "url:simonwillison.net/2026/sep/12/openai-agents-rubygems",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "practical_risk": 9.0,
+        "actionability": 8.0,
+        "security_relevance": 9.0,
+        "agent_model_relevance": 10.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.8,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.2,
+        "applied_adjustment": 0.2
+      }
+    },
+    {
+      "title_zh": "攻击者利用AI智能体快速编排PaperCut漏洞攻击全球11家机构",
+      "title_orig": "26秒攻陷11家机构：一场由数百个AI智能体编排的PaperCut全球攻击行动",
+      "summary": "网络安全机构GreyNoise观测到一名疑似俄语背景的威胁攻击者，借助人工智能开发、测试并投放了针对打印管理软件PaperCut NG/MF两个在野漏洞的利用代码。攻击者通过特定IP地址发动全球性攻击，仅用26秒便成功攻陷11家机构，展现出数百个AI智能体编排下极高的攻击效率，引发了全球网络安全领域的强烈关注与高度担忧。",
+      "tags": [
+        "漏洞利用",
+        "PaperCut",
+        "AI攻击"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247520315&idx=1&sn=a3fdb128f4f336bd12525bb09f93e54a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-10T08:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-81578",
+        "CVE-2026-82078"
+      ],
+      "selection_reason": "揭示了结合AI智能体自动化编排并快速利用在野漏洞的真实攻击案",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "cve:cve-2026-81578,cve-2026-82078",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "practical_risk": 9.0,
+        "actionability": 7.0,
+        "security_relevance": 9.0,
+        "agent_model_relevance": 8.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "AI驱动Windows内核漏洞挖掘与Fuzzing实战：打通漏洞研究标准化闭环",
+      "title_orig": "可验证·可复现·可规模化：AI驱动的Windows内核漏洞挖掘与Fuzzing实战",
+      "summary": "该文章深入探讨了利用AI技术驱动Windows内核漏洞挖掘与Fuzzing的具体实战方法，成功打通了从底层代码审计、自动化模糊测试到崩溃分析及补丁研究的全流程环节。该方法主要适用于Windows内核安全研究与自动化漏洞挖掘场景，旨在为从业者提供构建可验证、可复现且可规模化的标准化漏洞研究闭环的重要参考信息。",
+      "tags": [
+        "Windows内",
+        "漏洞挖掘",
+        "Fuzzing"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458619811&idx=2&sn=81d4d57b0d4c42643f283bb87a10bd88",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-12T09:59:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI结合内核Fuzzing的标准化研究闭环。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458619811&idx=2&sn=81d4d57b0d4c42643f283bb87a10bd88",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "practical_risk": 7.0,
+        "actionability": 7.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 7.55,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "代理化开发安全指南：如何确保 AI 智能体编写的代码、依赖与工具工作流安全",
+      "title_orig": "Agentic Development Security: How to Secure Code Your Agents Write | Blog | Endor Labs",
+      "summary": "面对 AI 智能体自动生成代码所带来的安全风险与隐患，该指南针对代理化开发模式提出了全面的安全防护最佳实践方案。文章重点阐述了如何对智能体编写的代码、引用的第三方依赖库、调用的外部工具以及 MCP 工作流进行严格把控，旨在确保系统整体安全性的同时保障团队开发效率不受影响。",
+      "tags": [
+        "AI安全",
+        "代码安全",
+        "智能体"
+      ],
+      "url": "https://www.endorlabs.com/learn/agentic-development-security-how-to-secure-code-your-agents-write",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-09-11T21:16:20+00:00",
+      "cve_ids": [],
+      "selection_reason": "指导如何保障AI智能体生成代码及工作流的安全",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/agentic-development-security-how-to-secure-code-your-agents-write",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "practical_risk": 8.0,
+        "actionability": 8.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.2,
+        "applied_adjustment": 0.2
+      }
+    },
+    {
+      "title_zh": "用于AI代码代理的安全束缚机制及其管控作用解析",
+      "title_orig": "What is a security harness for AI coding agents? | Blog | Endor Labs",
+      "summary": "该文章详细介绍了用于AI代码代理的安全束缚机制，旨在通过对访问权限、代码生成和外部依赖项进行严格的安全治理，防止AI代理在开发过程中引入安全风险。该机制能够在完全不降低开发人员工作效率的前提下提升代码安全性，为使用AI辅助开发的团队提供切实可行的技术指导与安全保障。",
+      "tags": [
+        "AI安全",
+        "代码安全",
+        "安全治理"
+      ],
+      "url": "https://www.endorlabs.com/learn/what-is-a-security-harness-for-ai-coding-agents",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-09-11T21:16:20+00:00",
+      "cve_ids": [],
+      "selection_reason": "阐述了AI代码代理的安全管控与治理机制。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/what-is-a-security-harness-for-ai-coding-agents",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "practical_risk": 7.0,
+        "actionability": 8.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 7.7,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.2,
+        "applied_adjustment": 0.2
+      }
+    },
+    {
+      "title_zh": "NDSS 2026 Fall接收论文汇总：大模型与智能体安全及系统安全研究持续增加",
+      "title_orig": "[AI安全论文] (53)NDSS2026 Fall智能体安全和系统安全方向论文汇总",
+      "summary": "该文章对NDSS 2026 Fall会议在智能体安全和系统安全方向的接收论文进行了全面汇总，重点梳理了该领域的最新学术成果与前沿研究动态。汇总内容清楚地表明，围绕大模型和智能体安全及其在实际系统中的应用研究正呈现出持续爆发式增长的趋势，引发了学术界与产业界的广泛关注与深入讨论。",
+      "tags": [
+        "AI安全",
+        "系统安全",
+        "学术动态"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg5MTM5ODU2Mg==&mid=2247503349&idx=1&sn=73152b52437485a1192c115751f408c9",
+      "source": "mp.weixin.qq.com",
+      "category": "Chinese",
+      "published": "2026-09-11T11:32:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "汇总NDSS顶级会议前沿论文，展现AI智能体与系统安全研究趋",
+      "feed_url": "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml",
+      "feed_title": "娜璋AI安全之家",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/ac86a71f04b6d10cc5a87ec9ecc8c94fff5d80d1.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg5MTM5ODU2Mg%3D%3D&mid=2247503349&idx=1&sn=73152b52437485a1192c115751f408c9",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "practical_risk": 6.0,
+        "actionability": 5.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 7.2,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "微软分析利用AI进行高管冒充与虚假发票的商业电子邮件诈骗攻击",
+      "title_orig": "Protecting organizations from AI-assisted executive impersonation and invoice fraud",
+      "summary": "微软近期分析了一起利用AI技术辅助的商业电子邮件诈骗活动，攻击者通过伪造高管身份和虚假发票，专门针对企业的财务团队实施自动化ACH支付欺诈。这种新型攻击手段显著提升了诈骗信息的诱导性与隐蔽性，直接威胁到各大企业的资金安全，引发了安全领域对AI驱动型欺诈风险的高度关注。",
+      "tags": [
+        "AI安全",
+        "BEC诈骗",
+        "社工攻击"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/10/protecting-organizations-ai-assisted-executive-impersonation-invoice-fraud/",
+      "source": "microsoft.com",
+      "category": "AISecurityLabs",
+      "published": "2026-09-10T17:23:05+00:00",
+      "cve_ids": [],
+      "selection_reason": "披露了结合AI技术实施高管冒充与财务欺诈的新型攻击手法。",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/09/10/protecting-organizations-ai-assisted-executive-impersonation-invoice-fraud",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "practical_risk": 7.0,
+        "actionability": 6.0,
+        "security_relevance": 7.0,
+        "agent_model_relevance": 6.0,
+        "technical_depth": 5.0
+      },
+      "dimension_score": 6.25,
+      "final_score": 6.99,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "OWASP发布最新十大LLM关键漏洞，提示词注入与智能体工具风险成为防范重点",
+      "title_orig": "速看，OWASP 最新十大 LLM 关键漏洞",
+      "summary": "OWASP最新发布的十大大语言模型关键漏洞报告指出，提示词注入和供应链漏洞依然是当前LLM应用面临的主要安全风险，直接威胁着相关系统的运行安全与稳定。随着各类智能体工具的快速普及与项目落地，针对AI Agent的安全风险、防护挑战及应对策略正日益引起安全从业者和开发团队的高度关注与警惕。",
+      "tags": [
+        "OWASP",
+        "大模型安全",
+        "AI Agent"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzkxNzA3MTgyNg==&mid=2247543880&idx=1&sn=d474ac6cfe6b19df9211bf8f04532bd5",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-12T02:23:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示大模型及AI Agent最新安全风险指南",
+      "feed_url": "https://wechat2rss.xlab.app/feed/9da87fba8130d0c2dc52cc45b844f045227e06a7.xml",
+      "feed_title": "数世咨询",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/9da87fba8130d0c2dc52cc45b844f045227e06a7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzkxNzA3MTgyNg%3D%3D&mid=2247543880&idx=1&sn=d474ac6cfe6b19df9211bf8f04532bd5",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "practical_risk": 6.0,
+        "actionability": 5.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 8.0,
+        "technical_depth": 4.0
+      },
+      "dimension_score": 6.3,
+      "final_score": 6.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "AI智能体生成代码的安全预防机制分析与控制权衡",
+      "title_orig": "Is prevention essentially a solved problem?",
+      "summary": "在软件架构层面上，针对AI智能体生成代码的安全预防机制虽然已被基本解决，但行业仍面临着一项关键的核心挑战。相关研发团队必须在保障系统整体安全与维护高效业务开发进度之间取得最佳平衡，精细化地选择并实施恰当的安全控制手段，从而有效避免因过度防御而拖慢整体的软件开发节奏。",
+      "tags": [
+        "AI安全",
+        "代码安全",
+        "开发安全"
+      ],
+      "url": "https://snyk.io/blog/is-prevention-solved/",
+      "source": "snyk.io",
+      "category": "AISecurityLabs",
+      "published": "2026-09-10T04:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨AI代码生成场景下的安全预防与开发效率平衡。",
+      "feed_url": "https://snyk.io/blog/feed/",
+      "feed_title": "Snyk Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "snyk.io",
+      "story_id": "url:snyk.io/blog/is-prevention-solved",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "practical_risk": 5.0,
+        "actionability": 5.0,
+        "security_relevance": 7.0,
+        "agent_model_relevance": 8.0,
+        "technical_depth": 5.0
+      },
+      "dimension_score": 6.05,
+      "final_score": 6.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.2,
+        "applied_adjustment": 0.2
+      }
+    }
+  ]
+}

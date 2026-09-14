@@ -1,0 +1,705 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-09-14",
+  "generated_at": "2026-09-14T00:34:05.653021Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "direct": 15,
+    "tier_t1": 2,
+    "kind_expert": 1,
+    "tier_t2": 13,
+    "kind_media": 4,
+    "chinese": 8,
+    "wechat": 7,
+    "kind_cn_expert": 8,
+    "kind_official": 1,
+    "kind_community": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 2,
+    "llm_merged": 0,
+    "merged_total": 2
+  },
+  "delivered_filter_stats": {
+    "url": 1,
+    "story": 0,
+    "total": 1
+  },
+  "candidate_share_stats": {},
+  "items": [
+    {
+      "title_zh": "JFrog Artifactory高危漏洞组合拳遭遇野外利用：攻击者可绕过身份验证并获取管理员权限",
+      "title_orig": "Artifactory Under Attack: In-the-Wild Exploitation of CVE-2026-42016, CVE-2026-42018 & CVE-2026-82329",
+      "summary": "安全研究机构Wiz Research最新研究发现，网络攻击者正在野外积极利用JFrog Artifactory软件中存在的CVE-2026-42016、CVE-2026-42018以及CVE-2026-82329这三个严重与高危级别的安全漏洞。恶意攻击者通过将这些安全漏洞进行组合链式利用，能够成功绕过系统的身份验证机制，从而彻底获取该软件的最高管理员控制权限，严重威胁企业供应链安全。",
+      "tags": [
+        "漏洞利用",
+        "身份绕过",
+        "权限提升"
+      ],
+      "url": "https://www.wiz.io/blog/artifactory-under-attack-in-the-wild-exploitation-of-cve-2026-42016-cve-2026-4201",
+      "source": "wiz.io",
+      "category": "OfficialAdvisories",
+      "published": "2026-09-10T19:04:00+00:00",
+      "cve_ids": [
+        "CVE-2026-42016",
+        "CVE-2026-42018",
+        "CVE-2026-82329"
+      ],
+      "selection_reason": "揭示严重组件野外组合利用漏洞，提醒管理员防范。",
+      "feed_url": "https://www.wiz.io/feed/rss.xml",
+      "feed_title": "Wiz Blog",
+      "source_tier": "t1",
+      "source_kind": "expert",
+      "source_label": "研究团队",
+      "source_key": "wiz.io",
+      "story_id": "cve:cve-2026-42016,cve-2026-42018,cve-2026-82329",
+      "related_urls": [
+        "https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0,
+        "actionability": 9.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.75,
+      "final_score": 9.49,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.2,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "BlueMoon利用工具包级联近期Chrome与Windows零日漏洞用于网络间谍活动",
+      "title_orig": "BlueMoon Exploit Kit Chains Recent Chrome, Windows Zero-Days",
+      "summary": "多起具备间谍动机的威胁攻击者已开始采用名为BlueMoon的利用工具包，并在机会主义的攻击行动中进行了紧急且频繁的部署。该工具包主要通过链式组合利用最近发现的Google Chrome与微软Windows系统零日漏洞对目标发起网络攻击，不过目前相关原文中尚未披露具体的漏洞类型、CVE编号、受影响的具体软件版本以及官方的修复补丁状态。",
+      "tags": [
+        "利用工具包",
+        "零日漏洞",
+        "网络间谍"
+      ],
+      "url": "https://www.securityweek.com/bluemoon-exploit-kit-chains-recent-chrome-windows-zero-days/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-09-12T11:10:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示利用工具包组合Chrome与Windows零日的最新威胁",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/bluemoon-exploit-kit-chains-recent-chrome-windows-zero-days",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "technical_depth": 8.0,
+        "relevance": 10.0,
+        "actionability": 8.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.9,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.0,
+        "applied_adjustment": 0.0
+      }
+    },
+    {
+      "title_zh": "Palo Alto Networks PAN-OS存在缓冲区错误漏洞风险通报",
+      "title_orig": "CNNVD | 关于Palo Alto Networks PAN-OS缓冲区错误漏洞的通报",
+      "summary": "国家信息安全漏洞库近期收到了关于Palo Alto Networks公司PAN-OS缓冲区错误漏洞的情况报送，该漏洞对应的编号分别为CNNVD-2026-74694972与CVE-2026-0310。尽管相关部门已对此漏洞发布了正式通报，但目前公布的通报信息中尚未公开披露其具体的触发条件、受影响的软件版本、可能造成的危害及防护措施。 Palo Alto Networks PAN-OS存在缓冲区错误漏洞风险通报。",
+      "tags": [
+        "漏洞预警",
+        "PAN-OS",
+        "缓冲区错误"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5MzE5MDAzOA==&mid=2664266562&idx=2&sn=4be5b4728efa49b3e4d3ca4f630ccc53",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-11T10:25:00+00:00",
+      "cve_ids": [
+        "CVE-2026-0310"
+      ],
+      "selection_reason": "官方通报网络设备操作系统关键漏洞。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/567cb1a8cf49f3e2c141d9d8085712f42ffc2fef.xml",
+      "feed_title": "中国信息安全",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/567cb1a8cf49f3e2c141d9d8085712f42ffc2fef.xml",
+      "story_id": "cve:cve-2026-0310",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "AOMEI Backupper驱动程序amwrtdrv.sys存在权限分配错误漏洞可导致本地特权提升与任意磁盘写入",
+      "title_orig": "VU#687587: AOMEI Backupper amwrtdrv.sys local privilege escalation vulnerability allows arbitrary writes to physical disks",
+      "summary": "AOMEI Backupper 8.4.0版本所包含的amwrtdrv.sys内核驱动程序存在严重的权限分配错误漏洞，使得未授权的本地用户能够直接向计算机物理磁盘执行任意写入操作。当系统禁用安全启动时，攻击者可进一步利用该漏洞在操作系统加载前执行任意UEFI级别的恶意代码，从而彻底绕过操作系统层面的安全防护机制体系，目前原文尚未披露具体的修复状态。",
+      "tags": [
+        "本地特权提升",
+        "驱动漏洞",
+        "UEFI安全"
+      ],
+      "url": "https://kb.cert.org/vuls/id/687587",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-09-10T17:46:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "内核驱动权限配置缺陷可被本地利用绕过OS安全控制",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/687587",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.79,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "Dify 1.16.1版本存在未授权SSRF与代码沙箱命令执行漏洞",
+      "title_orig": "Dify1.6.1版本：未授权SSRF及代码沙箱",
+      "summary": "安全研究人员在Dify 1.16.1版本中发现了未授权SSRF漏洞，该问题与先前的CVE-2025-29720及CVE-2025-56520漏洞位于同一地址，反映出相关问题在修补后依然在后续版本中反复出现。同时系统还存在代码沙箱的网络访问漏洞，攻击者仅需直接创建节点即可进行SSRF攻击并成功实现命令执行，目前公网上尚未出现关于该情况的详细分析报告。",
+      "tags": [
+        "Dify",
+        "SSRF",
+        "命令执行"
+      ],
+      "url": "https://xz.aliyun.com/news/92812",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-09-11T01:40:56+00:00",
+      "cve_ids": [
+        "CVE-2025-29720",
+        "CVE-2025-56520"
+      ],
+      "selection_reason": "揭示AI应用框架历史漏洞修复不彻底及沙箱绕过风险。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2025-29720,cve-2025-56520",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0,
+        "actionability": 7.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "基于AI驱动的Windows内核漏洞挖掘与Fuzzing实战闭环研究",
+      "title_orig": "可验证·可复现·可规模化：AI驱动的Windows内核漏洞挖掘与Fuzzing实战",
+      "summary": "该方案针对Windows内核组件，利用人工智能技术打通了代码审计、自动化Fuzzing测试、崩溃分析及补丁研究等关键环节，构建出标准化、可验证且可规模化的漏洞研究闭环。由于该内容侧重于漏洞挖掘方法论与研究流程的实现，原文未披露具体漏洞的类型原理、触发条件、受影响的内核版本以及相关修复或缓解状态。",
+      "tags": [
+        "Windows内",
+        "漏洞挖掘",
+        "Fuzzing"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458619811&idx=2&sn=81d4d57b0d4c42643f283bb87a10bd88",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-12T09:59:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI与Fuzzing结合的内核漏洞研究闭环。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458619811&idx=2&sn=81d4d57b0d4c42643f283bb87a10bd88",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "technical_depth": 9.0,
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 8.1,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "针对内网渗透中浏览器保存Cookie与账号密码的免杀提取及还原技术研究",
+      "title_orig": "针对浏览器Cookie和密码提取的免杀研究",
+      "summary": "在内网渗透场景中，面对无法使用远程桌面服务且安装了终端防护软件的目标主机，攻击者难以直接操控鼠标提取敏感数据。该研究深入探讨了如何在不引发目标警觉的情况下，绕过杀毒软件监测并无痕提取与还原浏览器内保存的Cookie及账号密码，以此帮助安全从业者有效评估终端数据防护与凭据安全。",
+      "tags": [
+        "内网渗透",
+        "凭据提取",
+        "免杀技术"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg4NTY0MDg1Mg==&mid=2247486017&idx=1&sn=f6d8da61a24972020e858cedc9b4ab21",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-12T08:57:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "深入探讨终端凭据无痕提取与免杀机制",
+      "feed_url": "https://wechat2rss.xlab.app/feed/21b0fdc5197bc18c5d0a0c4a5a557a98ae4c01c7.xml",
+      "feed_title": "渊龙Sec安全团队",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/21b0fdc5197bc18c5d0a0c4a5a557a98ae4c01c7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=Mzg4NTY0MDg1Mg%3D%3D&mid=2247486017&idx=1&sn=f6d8da61a24972020e858cedc9b4ab21",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "攻击者利用AI智能体编排针对PaperCut漏洞的全球大规模攻击行动",
+      "title_orig": "26秒攻陷11家机构：一场由数百个AI智能体编排的PaperCut全球攻击行动",
+      "summary": "网络安全机构GreyNoise观测到，一名具有疑似俄语背景的网络攻击者利用IP地址45.142.193.132，借助人工智能技术成功进行开发、测试并投放了针对打印管理软件PaperCut NG/MF的漏洞利用代码。这场全球性的大规模攻击行动完全由数百个AI智能体协同编排控制，在仅26秒的时间内快速攻陷了全球11家机构，涉及CVE-2026-81578与CVE-2026-82078这两个在野漏洞，从而引发了对自动化威胁的深度关注与警惕。",
+      "tags": [
+        "PaperCut",
+        "AI攻击",
+        "漏洞利用"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247520315&idx=1&sn=a3fdb128f4f336bd12525bb09f93e54a",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-10T08:00:00+00:00",
+      "cve_ids": [
+        "CVE-2026-81578",
+        "CVE-2026-82078"
+      ],
+      "selection_reason": "揭示了AI智能体被用于自动化大规模漏洞利用的新型威胁模式。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "cve:cve-2026-81578,cve-2026-82078",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0,
+        "actionability": 7.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "开发者基于历史样本重构并开源震网Stuxnet蠕虫病毒代码工程",
+      "title_orig": "震网Stuxnet蠕虫病毒重构源码公开",
+      "summary": "GitHub近期上线公开项目发布了基于2010年原始样本与社区逆向工程成果重构的震网病毒源码，定位为纯学术研究用途。该代码严格复刻了原版通过USB漏洞、局域网漏洞及P2P三种传播路径，专门针对物理隔离的工控内网设计，并内置精准检测逻辑，可扫描西门子工控软件与特定PLC设备，在非目标环境下会自动休眠或自销毁。",
+      "tags": [
+        "工控安全",
+        "震网病毒",
+        "代码重构"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451188559&idx=1&sn=8c947d1088a5dd699cd60d0fbefc5d6b",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-10T15:37:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "开源重构的工控武器源码对研究复杂蠕虫机制具有极高学术价值",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "feed_title": "黑鸟",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f22e132bbbc4e8070cd51c0a84802f940e131a20.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA%3D%3D&mid=2451188559&idx=1&sn=8c947d1088a5dd699cd60d0fbefc5d6b",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "technical_depth": 9.0,
+        "relevance": 9.0,
+        "actionability": 6.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.5,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "APT-C-55组织利用伪装安装包与恶意LNK文件植入远控木马分析",
+      "title_orig": "APT-C-55（Kimsuky）组织利用伪装安装包植入远控木马的攻击链分析",
+      "summary": "360近期捕获到网络安全高级威胁APT-C-55即Kimsuky组织的新一轮攻击活动，该组织主要通过恶意LNK文件与PowerShell手段向目标投递威胁载荷。攻击者在完成系统环境检测与内存加载载荷后，会利用伪装成Chrome浏览器更新的计划任务来实现持久化驻留，以此达到对受害目标主机进行长期控制的攻击目的。 APT-C-55组织利用伪装安装包与恶意LNK文件植入远控木马分析。",
+      "tags": [
+        "APT攻击",
+        "木马分析",
+        "网络安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUyMjk4NzExMA==&mid=2247508878&idx=1&sn=d67dbc1305acff320756e665c0c923de",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-10T09:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了APT组织利用伪装更新实现持久化控制的技术细节。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/920f171e3dae0c8eeb4c97b366b229ba19807732.xml",
+      "feed_title": "360威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/920f171e3dae0c8eeb4c97b366b229ba19807732.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzUyMjk4NzExMA%3D%3D&mid=2247508878&idx=1&sn=d67dbc1305acff320756e665c0c923de",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 7.0,
+        "technical_depth": 8.0,
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.85,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "GitLab修复CVSS 10分路径遍历漏洞CVE-2026-85706且遭野外探测",
+      "title_orig": "GitLab CVSS 10 File-Read Flaw Draws In-the-Wild Probes After Disclosure",
+      "summary": "GitLab公司已正式发布了安全补丁以修复系统中的多项安全缺陷，其中包括严重程度达到最高级别且CVSS风险评分高达满分10.0分的漏洞CVE-2026-85706。该漏洞属于GitLab仓库提交API内部的路径遍历安全问题，能够允许未经身份验证的远程用户读取GitLab服务器上的任意文件，且在细节公开披露后的数小时内便已出现了野外探测活动。",
+      "tags": [
+        "GitLab",
+        "漏洞修复",
+        "路径遍历"
+      ],
+      "url": "https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-09-11T16:30:18+00:00",
+      "cve_ids": [
+        "CVE-2026-85706"
+      ],
+      "selection_reason": "GitLab最高危漏洞且已现野外探测，需关注",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-85706",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzIwMDk1MjMyMg==&mid=2247493379&idx=1&sn=38e19e19fa7201f09eee02ec06296d11",
+        "https://www.securityweek.com/gitlab-vulnerability-exploited-one-day-after-disclosure/"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.4,
+      "final_score": 8.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.0,
+        "applied_adjustment": 0.0
+      }
+    },
+    {
+      "title_zh": "黑客利用腾讯搜狗输入法高危漏洞部署GrayRabbit后门程序",
+      "title_orig": "Hackers exploit Tencent app flaw to deploy GrayRabbit malware",
+      "summary": "攻击者正在利用腾讯Windows版搜狗输入法中的高危漏洞部署名为GrayRabbit的后门程序，该漏洞使攻击者能够提升特权并在受害者系统上实现远程代码执行与获取系统权限。目前该安全漏洞主要影响特定版本的Windows客户端，且原文中并未披露具体的软件修复版本与相关的缓解措施，相关用户需要持续关注官方安全提示。",
+      "tags": [
+        "漏洞利用",
+        "搜狗输入法",
+        "后门程序"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-tencent-app-flaw-to-deploy-grayrabbit-malware/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-09-13T14:26:32+00:00",
+      "cve_ids": [
+        "CVE-2026-51990"
+      ],
+      "selection_reason": "披露流行软件高危漏洞及供应链后门利用",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "cve:cve-2026-51990",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.3,
+        "applied_adjustment": 0.3
+      }
+    },
+    {
+      "title_zh": "微软发布9月安全补丁更新修补973个漏洞，其中3个已被实现在野利用",
+      "title_orig": "【安全圈】微软9月补丁日！973个漏洞3个已在野利用",
+      "summary": "微软官方正式发布了9月安全更新补丁，本次更新累计修复了高达973个安全漏洞，其中有3个已知漏洞在官方发布补丁前就已经遭到了野外攻击利用。尽管原文未披露漏洞的具体类型、触发条件及受影响的具体组件版本等详细技术信息，相关系统管理员仍需高度重视并尽快完成安全更新与补丁安装，以全面防范潜在的已知安全风险。",
+      "tags": [
+        "微软",
+        "补丁更新",
+        "漏洞修复"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652078887&idx=3&sn=215aae05d6856f35530102d5d20892aa",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-13T09:56:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涵盖微软月度补丁发布及在野利用漏洞预警。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652078887&idx=3&sn=215aae05d6856f35530102d5d20892aa",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "impact_scope": 9.0,
+        "technical_depth": 4.0,
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 7.45,
+      "final_score": 8.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "安全研究员测试 rust-openssl 漏洞修复补丁时发现绕过路径并规避堆溢出风险（CVE-2026-45784）",
+      "title_orig": "I tested a rust-openssl security fix and found a missed path to attacker-controlled heap corruption - CVE-2026-45784",
+      "summary": "安全研究人员在验证CVE-2026-44662的相关修复方案时，发现rust-openssl的安全接口CipherCtxRef::cipher_update_inplace中仍存在易受攻击的输出尺寸假定缺陷。当带填充的AES密钥封装算法处理长度不能被8整除的输入时，系统分配的缓冲区会小于OpenSSL实际产生的输出，进而引发攻击者可控的堆损坏风险。该漏洞已被追踪记录为编号CVE-2026-45784。新建漏洞的发现表明此前安全修复并不彻底，需引起相关开发者高度关注。",
+      "tags": [
+        "漏洞分析",
+        "堆溢出",
+        "Rust"
+      ],
+      "url": "https://www.reddit.com/r/Pentesting/comments/1wf1wd4/i_tested_a_rustopenssl_security_fix_and_found_a/",
+      "source": "reddit.com",
+      "category": "RedTeam",
+      "published": "2026-09-13T08:21:00+00:00",
+      "cve_ids": [
+        "CVE-2026-44662",
+        "CVE-2026-45784"
+      ],
+      "selection_reason": "揭示了安全补丁绕过及 Rust 封装底层 C 库时的缓冲区溢",
+      "feed_url": "https://www.reddit.com/r/Pentesting/.rss",
+      "feed_title": "Pentesting",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "社区",
+      "source_key": "reddit.com",
+      "story_id": "cve:cve-2026-44662,cve-2026-45784",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "technical_depth": 9.0,
+        "relevance": 9.0,
+        "actionability": 8.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.5,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": -0.4,
+        "applied_adjustment": -0.4
+      }
+    },
+    {
+      "title_zh": "荷兰NCSC预警Check Point VPN高危漏洞CVE-2026-85102与CVE-2026-85103面临被利用风险",
+      "title_orig": "Dutch NCSC: Critical Check Point VPN flaws exploitation is imminent",
+      "summary": "荷兰国家网络安全中心（NCSC）紧急发出警告，指出 Check Point VPN 中编号为 CVE-2026-85102 和 CVE-2026-85103 的两个关键严重漏洞即将遭到攻击者的大规模利用。官方提醒各相关机构务必提高警惕并提前加强安全防护，不过目前公布的预警中并未披露这两个关键漏洞的具体技术原理、触发条件、受影响的具体组件版本以及官方修复措施的具体细节。",
+      "tags": [
+        "漏洞预警",
+        "VPN安全"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/dutch-ncsc-critical-check-point-vpn-flaws-exploitation-is-imminent/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-09-12T14:14:32+00:00",
+      "cve_ids": [
+        "CVE-2026-85102",
+        "CVE-2026-85103"
+      ],
+      "selection_reason": "官方预警关键VPN高危漏洞即将被利用，具备较高防范价值。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "cve:cve-2026-85102,cve-2026-85103",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "impact_scope": 8.0,
+        "technical_depth": 7.0,
+        "relevance": 9.0,
+        "actionability": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.1,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.0,
+        "applied_adjustment": 0.0
+      }
+    }
+  ]
+}
