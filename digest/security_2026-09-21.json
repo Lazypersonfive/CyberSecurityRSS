@@ -1,0 +1,688 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-09-21",
+  "generated_at": "2026-09-21T00:37:52.669277Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 10,
+    "direct": 15,
+    "tier_t2": 14,
+    "kind_cn_expert": 10,
+    "wechat": 7,
+    "kind_media": 4,
+    "tier_t1": 1,
+    "kind_official": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 2,
+    "merged_total": 2
+  },
+  "delivered_filter_stats": {
+    "url": 1,
+    "story": 0,
+    "total": 1
+  },
+  "candidate_share_stats": {},
+  "items": [
+    {
+      "title_zh": "AI Agent Skill与MCP生态供应链攻击面分析与运行监测防御方案",
+      "title_orig": "Agentic Skills 供应链攻击与运行监测防御范式",
+      "summary": "文章深入剖析了智能体Skill与MCP生态供应链风险，揭示了使用自然语言即可驱动全权限智能体引发的信任根因，并详细解析了十五类投毒手段、五个注入面以及五条攻击链与验证代码。针对实测中混淆算子使安全检出率从百分之九十九骤降至百分之十的严峻现状，研究提出了基于聚合检测、SkillSieve与eBPF等技术的运行时监测防御范式，并提供攻击指标与可复现代码。",
+      "tags": [
+        "AI安全",
+        "供应链攻击",
+        "运行监测"
+      ],
+      "url": "https://xz.aliyun.com/news/92855",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-09-19T15:17:24+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI Agent生态供应链漏洞并提供可复现防御方案",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92855",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "exploitability": 9.0,
+        "impact_scope": 9.0,
+        "actionability": 10.0,
+        "technical_depth": 10.0
+      },
+      "dimension_score": 9.6,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "Vendure 存在跨渠道 IDOR 漏洞：管理端 Mutation 缺失父订单归属检查（GHSA-7qvr-c5vf-xxfh）",
+      "title_orig": "当授权边界住在父订单里：Vendure GHSA-7qvr-c5vf-xxfh 跨渠道 IDOR 的源码级复盘",
+      "summary": "Vendure的渠道租户边界依赖逐调用点的代码约定，其订单子实体因不自带渠道归属而完全依赖父订单进行隔离。由于受影响版本中的多条Admin mutation会按ID全局加载子实体且未回查父订单渠道，导致退款等路径存在跨渠道IDOR越权漏洞，攻击者可借此绕过权限隔离并执行非法操作，开发人员需高度警惕相关安全风险。",
+      "tags": [
+        "漏洞复盘",
+        "越权漏洞",
+        "代码审计"
+      ],
+      "url": "https://xz.aliyun.com/news/92859",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-09-20T02:51:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了多租户架构中子实体校验缺失导致的跨渠道越权问题。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92859",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "exploitability": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 10.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "思科身份服务引擎存在满分认证绕过漏洞CVE-2025-20120且已被活跃利用",
+      "title_orig": "思科：ISE 认证绕过满分 0day 已遭活跃利用",
+      "summary": "思科官方针对其身份服务引擎发布紧急预警，指出存在一个CVSS评分达10分满分的认证绕过0day漏洞CVE-2025-20120，且该漏洞已在外部被黑客活跃利用。未经身份验证的远程攻击者可借此绕过安全认证机制并获取系统最高权限，由于该问题影响多个版本的关键组件，官方已紧急发布安全更新补丁并强烈建议相关用户立即完成修复。",
+      "tags": [
+        "思科",
+        "0day漏洞",
+        "认证绕过"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw==&mid=2247527173&idx=1&sn=1ae52540af18bbb2b176b85380e718cc",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-18T09:11:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "CVE-2025-20120为满分0day漏洞且已被在野利用",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "feed_title": "代码卫士",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw%3D%3D&mid=2247527173&idx=1&sn=1ae52540af18bbb2b176b85380e718cc",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "exploitability": 10.0,
+        "impact_scope": 10.0,
+        "actionability": 9.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 9.15,
+      "final_score": 9.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "Docker 发布紧急通告披露 AI 智能体沙箱逃逸漏洞，攻击者可穿透虚拟机读写宿主文件",
+      "title_orig": "【安全圈】AI 智能体打穿沙箱！Docker 曝 9.4 分逃逸漏洞：穿透虚拟机读写宿主",
+      "summary": "Docker官方紧急通告披露其专为AI编码智能体设计的沙箱环境中存在CVSS评分高达9.4分的严重沙箱逃逸漏洞，攻击者可利用该漏洞穿透虚拟机限制并实现对宿主系统的任意文件读写操作。针对该漏洞的具体触发条件、受影响的具体软件版本以及官方目前提供的修复或缓解状态，原文均未披露相关细节信息。",
+      "tags": [
+        "Docker",
+        "沙箱逃逸",
+        "安全漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079007&idx=3&sn=f573fda0930936118a001a7d0985e466",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-18T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及 AI 编码智能体沙箱的高危逃逸漏洞，技术威胁严重。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652079007&idx=3&sn=f573fda0930936118a001a7d0985e466",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "exploitability": 9.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "研究人员利用libheif图像库漏洞链成功在OpenAI等多个平台上实现远程代码执行",
+      "title_orig": "Researchers Used Claude to Hack OpenAI Through an Image Flaw",
+      "summary": "研究人员最新披露了名为HEIF Heist的严重漏洞攻击链，该方法通过利用Libheif图像处理库中包括CVE-2026-32882在内的多个缺陷，成功在目标系统上实现了高危的远程代码执行。这一漏洞链广泛影响到OpenAI、Slack、Meta、Discourse、Next.js以及GitHub Enterprise等多款主流平台与关键服务，目前已引发业界对相关图像解析安全的密切关注。",
+      "tags": [
+        "远程代码执行",
+        "图像库漏洞",
+        "SupplyCh"
+      ],
+      "url": "https://www.cyberkendra.com/2026/09/researchers-used-claude-to-hack-openai-through-an-image-flaw.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-09-18T20:23:34+00:00",
+      "cve_ids": [
+        "CVE-2026-32882"
+      ],
+      "selection_reason": "揭示主流图像库漏洞对多个头部平台引发的RCE连锁影响。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "cve:cve-2026-32882",
+      "related_urls": [
+        "https://thehackernews.com/2026/09/claude-opus-5-helped-researchers-take.html",
+        "https://www.securityweek.com/ai-built-exploit-and-sign-in-flaw-opened-path-to-internal-openai-code/"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "exploitability": 9.0,
+        "impact_scope": 10.0,
+        "actionability": 8.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.35,
+      "final_score": 9.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.0,
+        "applied_adjustment": 0.0
+      }
+    },
+    {
+      "title_zh": "FomoPeek 应用被揭露植入恶意模块并具备 iOS 内核利用与数据采集能力",
+      "title_orig": "威胁情报｜FomoPeek App Store 投毒与 iOS 内核利用分析",
+      "summary": "根据最新威胁情报分析显示，知名应用 FomoPeek 在 App Store 发布的 1.1 至 1.2 版本已被证实被成功植入恶意模块，属于典型的应用商店投毒安全事件。该恶意程序具备利用 iOS 系统内核漏洞的越权能力，能够对设备进行跨应用数据采集，进而对广大受影响设备及其敏感数据安全构成了极其严重的风险威胁与安全隐患。",
+      "tags": [
+        "iOS安全",
+        "恶意软件",
+        "威胁情报"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU4ODQ3NTM2OA==&mid=2247506141&idx=1&sn=1c78b33f87575f53b34850e3d6f96651",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-20T08:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示App Store应用投毒及iOS内核利用手段",
+      "feed_url": "https://wechat2rss.xlab.app/feed/9e9c3c70e598266a1ac993e50458a10a6d853eb7.xml",
+      "feed_title": "慢雾科技",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/9e9c3c70e598266a1ac993e50458a10a6d853eb7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU4ODQ3NTM2OA%3D%3D&mid=2247506141&idx=1&sn=1c78b33f87575f53b34850e3d6f96651",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 8.5,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "Orkes Conductor工作流平台曝出高危预认证远程代码执行漏洞CVE-2026-58138并遭野外利用",
+      "title_orig": "Critical Pre-Auth RCE in Orkes Conductor Workflow Platform Exploited in the Wild",
+      "summary": "网络安全公司Fortinet发出警告，指出Orkes Conductor工作流平台正遭受野外积极利用的高危漏洞攻击，攻击者无需经过身份验证即可在系统中实现远程代码执行。该关键漏洞编号为CVE-2026-58138，其CVSS v3.1评分为9.8分而CVSS v4评分为9.3分，主要波及3.21.21至3.30.2之间的版本，对相关平台安全构成严重威胁。",
+      "tags": [
+        "漏洞预警",
+        "RCE",
+        "野外利用"
+      ],
+      "url": "https://thehackernews.com/2026/09/critical-pre-auth-rce-in-orkes.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-09-19T08:18:54+00:00",
+      "cve_ids": [
+        "CVE-2026-58138"
+      ],
+      "selection_reason": "披露高危预认证RCE及野外利用状态，具紧急修补价值。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-58138",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "exploitability": 10.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.0,
+        "applied_adjustment": 0.0
+      }
+    },
+    {
+      "title_zh": "基于Qoder与自研MCP技术实现针对VMP壳的自动化脱壳方案",
+      "title_orig": "AI逆向：基于Qoder与自研MCP实现VMP壳自动化脱壳",
+      "summary": "该研究提出了一种结合联网宿主机的Qoder与断网虚拟机自研OD-mcp组件的自动化脱壳架构，通过双机协作机制成功实现了对复杂VMP保护壳的智能分析与自动脱壳。该技术的成功应用不仅展示了生成式AI与MCP协议在逆向工程中的落地能力，还为软件安全分析和恶意代码对抗领域提供了全新的技术思路与实用解决方案。",
+      "tags": [
+        "AI逆向",
+        "自动化脱壳",
+        "MCP协议"
+      ],
+      "url": "https://xz.aliyun.com/news/92856",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-09-20T01:01:13+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示AI与MCP协议在复杂VMP脱壳中的实际应用",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92856",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 9.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "开源平台Dokploy在备份创建与恢复过程中存在OS命令注入漏洞",
+      "title_orig": "VU#280377: Dokploy is vulnerable to OS command injection",
+      "summary": "安全漏洞报告指出，开源平台Dokploy在0.29.8与0.29.11版本以及canary分支的24b02f5提交中被发现存在严重的操作系统命令注入漏洞。该安全漏洞主要是由于系统在执行数据备份创建和恢复流程的过程中，未能对Shell命令的构造进行有效的清理，导致恶意攻击者能够借此在受影响的系统设备上提升操作权限，进而可能导致整个目标设备面临被攻击者完全控制的严重风险。",
+      "tags": [
+        "漏洞预警",
+        "命令注入",
+        "权限提升"
+      ],
+      "url": "https://kb.cert.org/vuls/id/280377",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-09-17T15:02:59+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示开源平台严重命令注入漏洞及提权风险",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/280377",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.79,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "攻击者通过HEIC图片漏洞入侵OpenAI论坛并控制员工账号",
+      "title_orig": "3000 美元、3 个人、72 小时：AI 把 OpenAI 的论坛打穿了",
+      "summary": "攻击者利用一张HEIC格式图片中的安全漏洞成功打穿OpenAI论坛，并顺手接管了相关员工的ChatGPT与Codex账号。整个网络攻击行动仅由一个三人团队在短短72小时内快速完成，且全程耗费的总成本不到3000美元，虽然该事件引发了外界的广泛关注，但原文并未披露此漏洞的具体技术原理、影响版本以及后续的修复状态。",
+      "tags": [
+        "漏洞利用",
+        "账号接管",
+        "AI安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA==&mid=2649790496&idx=1&sn=36c4c96154b3e68efee24e175e0c5c75",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-20T00:16:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展现低成本攻破知名AI平台论坛及账号的真实风险",
+      "feed_url": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/7fc9f5344f14228ba49208282d844349f8afdee7.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzA5ODA0NDE2MA%3D%3D&mid=2649790496&idx=1&sn=36c4c96154b3e68efee24e175e0c5c75",
+      "related_urls": [
+        "https://www.anquanke.com/post/id/316124"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "Brevo遭遇供应链攻击导致客户网站被注入ClickFix恶意脚本",
+      "title_orig": "Brevo 供应链攻击将 ClickFix 脚本注入客户网站",
+      "summary": "邮件营销平台Brevo遭遇严重的供应链攻击，导致恶意的ClickFix脚本被非法注入到其众多客户的网站中，对相关企业网站及访问者的网络安全构成了直接威胁。攻击者通过利用该供应链漏洞诱导访客执行恶意代码，目前官方建议所有受影响的企业和网站管理员密切关注事件动态并立即采取措施完成系统修复。",
+      "tags": [
+        "供应链攻击",
+        "恶意脚本",
+        "安全事件"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw==&mid=2247527173&idx=2&sn=925116097a06747f1ebf65484314fe58",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-18T09:11:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "提示 Brevo 供应链被注入恶意脚本的风险",
+      "feed_url": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "feed_title": "代码卫士",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/77cfc87fa0e7200d7ef74c8956eca2e44fd6a4ec.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2NTg4OTc5Nw%3D%3D&mid=2247527173&idx=2&sn=925116097a06747f1ebf65484314fe58",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "新型安卓高级木马RatHat被披露，被卸载后仍可常驻Shell并实现AI控机",
+      "title_orig": "【安全圈】AI 控机还杀不死！新型安卓木马曝光：卸载仍常驻 Shell",
+      "summary": "移动安全实验室Zimperium最新披露了一款名为RatHat的新型安卓高级木马，该木马具有极强的攻击性与安全隐患。即便受害用户手动将木马应用本身彻底卸载，它依然能够利用底层Shell机制实现设备的持久化常驻，并持续借助AI技术对受害者的安卓系统实施远程控制，引发了行业对移动端安全防护的深度关注。",
+      "tags": [
+        "安卓木马",
+        "移动安全",
+        "持久化"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079007&idx=2&sn=1de45fa1e0c91b7f0ce3601436604bef",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-18T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示新型安卓木马卸载后常驻Shell的技术风险。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652079007&idx=2&sn=1de45fa1e0c91b7f0ce3601436604bef",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 7.0,
+        "actionability": 7.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "恶意npm软件包在运行时规避安装脚本防御机制",
+      "title_orig": "Malicious npm packages evade install-script defenses at runtime",
+      "summary": "在名为indexed-btree的npm恶意软件包活动中，攻击者通过将恶意代码隐蔽嵌入至软件包的正常运行时行为里，成功绕过了传统的安装脚本阶段监控与供应链安全防御机制。这种新型威胁手段表明仅依赖安装审计已无法保障系统安全，警示开发者和安全团队必须将防护重点进一步扩展至软件的动态运行时监测。",
+      "tags": [
+        "npm",
+        "供应链安全",
+        "恶意代码"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/malicious-npm-packages-evade-install-script-defenses-at-runtime/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-09-20T14:11:21+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示绕过安装脚本检测的npm供应链攻击新手法",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/malicious-npm-packages-evade-install-script-defenses-at-runtime",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "exploitability": 8.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.3,
+        "applied_adjustment": 0.3
+      }
+    },
+    {
+      "title_zh": "SolarWinds修复ARM硬编码密钥高危漏洞，可导致未授权远程代码执行",
+      "title_orig": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE",
+      "summary": "软件厂商SolarWinds已针对旗下Access Rights Manager安全软件发布紧急更新，用以修复一个威胁等级较高的硬编码密钥漏洞。该漏洞代号为CVE-2026-28326且CVSS评分达到8.8分，影响ARM 2026.2及所有早期版本，未经身份验证的攻击者可利用其在受影响系统上实现远程代码执行，因此官方呼吁相关用户尽快安装补丁以防范安全威胁。 SolarWinds修复ARM硬编码密钥高危漏洞，可导致未授权远程代码执行。",
+      "tags": [
+        "SolarWin",
+        "代码执行",
+        "漏洞修复"
+      ],
+      "url": "https://thehackernews.com/2026/09/solarwinds-patches-arm-hard-coded-key.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-09-19T09:31:17+00:00",
+      "cve_ids": [
+        "CVE-2026-28326"
+      ],
+      "selection_reason": "官方修复ARM高危硬编码密钥RCE漏洞",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-28326",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "exploitability": 8.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 8.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.0,
+        "applied_adjustment": 0.0
+      }
+    },
+    {
+      "title_zh": "LockBit勒索软件攻击链细节揭示：文件加密前存在关键防御阻断窗口",
+      "title_orig": "别再等加密告警了！LockBit攻击链揭示：真正的阻断窗口在文件变密文之前",
+      "summary": "作为全球最活跃的勒索软件即服务体系之一，LockBit的网络攻击已波及包括中国在内的大量组织机构。攻击者从初始入侵到最终实施文件加密通常会在受害网络中潜伏活动数天甚至数周时间，因此防守方决不能被动等待加密告警出现，而必须将阻断攻击的关键防御窗口提前置于文件被变密文之前。",
+      "tags": [
+        "LockBit",
+        "勒索软件",
+        "攻击链"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA==&mid=2651142785&idx=1&sn=e9c605768257387bb1277723fcfd690e",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-20T04:29:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示LockBit潜伏周期与加密前阻断的关键窗口",
+      "feed_url": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "feed_title": "安全牛",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA%3D%3D&mid=2651142785&idx=1&sn=e9c605768257387bb1277723fcfd690e",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "exploitability": 6.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 7.15,
+      "final_score": 7.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    }
+  ]
+}

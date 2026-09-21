@@ -1,0 +1,475 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-09-21",
+  "generated_at": "2026-09-21T00:40:25.720218Z",
+  "raw_count": 42,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "chinese": 6,
+    "direct": 9,
+    "tier_t2": 8,
+    "kind_cn_expert": 6,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "wechat": 3,
+    "kind_media": 2,
+    "aggregator": 1,
+    "tier_t1_5": 1,
+    "kind_official_x": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 1,
+    "story": 0,
+    "total": 1
+  },
+  "candidate_share_stats": {
+    "considered": 120,
+    "shared": 11,
+    "skipped_missing": 0,
+    "skipped_date": 0,
+    "skipped_window": 1,
+    "skipped_semantic": 97,
+    "skipped_duplicate": 11
+  },
+  "items": [
+    {
+      "title_zh": "Agentic Skills供应链投毒与注入攻击分析及运行监测防御范式",
+      "title_orig": "Agentic Skills 供应链攻击与运行监测防御范式",
+      "summary": "该文章深入解析了AI Agent在Skill与MCP生态下面临的供应链失控危机，指出攻击者仅凭自然语言即可驱动全权限Agent，并揭示了信任根因、15类投毒手法与5个注入面，实测发现混淆算子能使检出率从99%大幅降至10%。针对相关威胁，作者不仅提供了五条攻击链与可复现的PoC代码，还提出了涵盖聚合检测、SkillSieve及eBPF等关键技术的运行监测防御方案与IoC。",
+      "tags": [
+        "AI安全",
+        "供应链攻击",
+        "运行监测"
+      ],
+      "url": "https://xz.aliyun.com/news/92855",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-09-19T15:17:24+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI Agent供应链攻击面并提供可复现PoC与防御",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92855",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 10,
+      "score_dimensions": {
+        "technical_depth": 10.0,
+        "practical_risk": 10.0,
+        "actionability": 10.0,
+        "agent_model_relevance": 10.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 10.0,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "AWS AgentCore Harness默认配置存在提示词注入风险可致凭据泄露",
+      "title_orig": "A Vault with a Heap-View: The Uncomfortable Space Between AgentCore Harness and Identity",
+      "summary": "研究人员分析指出，AWS AgentCore Harness 的默认配置存在严重安全缺陷，导致攻击者能够通过提示词注入技术直接绕过系统隔离机制并非法窃取敏感凭据。为了帮助运维人员与开发团队有效应对该风险，文章详细阐述了配置缺陷的触发条件和潜在危害，并提出了针对 AI 智能体关键组件的具体加固方案与安全防御步骤。",
+      "tags": [
+        "AWS",
+        "提示词注入",
+        "凭据泄露"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-09-18T10:00:36+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI Harness默认配置缺陷及凭据防窃取加固方案。",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/securing-aws-agentcore-harness-credentials",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "practical_risk": 9.0,
+        "actionability": 9.0,
+        "agent_model_relevance": 10.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 9.45,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "Docker官方发布AI编码智能体沙箱高危逃逸漏洞预警",
+      "title_orig": "【安全圈】AI 智能体打穿沙箱！Docker 曝 9.4 分逃逸漏洞：穿透虚拟机读写宿主",
+      "summary": "Docker官方针对专为AI编码智能体设计的容器沙箱环境紧急发布了高危漏洞通告，该逃逸漏洞的CVSS安全评分高达9.4分。攻击者可利用此漏洞轻松穿透虚拟机隔离限制，进而直接实现对宿主系统的任意文件读写操作，目前官方已紧急发布安全修复指引并呼吁所有相关用户和开发者高度关注并及时采取防御措施。",
+      "tags": [
+        "Docker",
+        "容器逃逸",
+        "安全漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079007&idx=3&sn=f573fda0930936118a001a7d0985e466",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-18T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "Docker AI沙箱高危逃逸漏洞严重影响宿主机安全。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652079007&idx=3&sn=f573fda0930936118a001a7d0985e466",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "practical_risk": 9.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 8.95,
+      "final_score": 9.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "LLM供应链中恶意中间人攻击实测研究：揭示API中转站安全风险与防御",
+      "title_orig": "你的智能体归我：LLM 供应链中恶意中间人攻击的实测研究",
+      "summary": "这篇名为《你的智能体归我：LLM 供应链中恶意中间人攻击的实测研究》的论文，将大语言模型API中转站的安全问题，从大家都知道但没人系统研究的状态，成功转化为有实测数据与分类方法的完整研究。该研究团队不仅系统剖析了大语言模型供应链中面临的恶意中间人攻击，还研发出了相关分析工具并提出了针对性的安全防御方案，填补了该领域长期缺乏系统性研究的空白。",
+      "tags": [
+        "LLM安全",
+        "中间人攻击",
+        "供应链安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5MTM5MTQ2MA==&mid=2247495942&idx=1&sn=daf851538f72f5b732a6ca33136ecac6",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-18T10:30:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统研究大模型API中转站安全并提供防御方案",
+      "feed_url": "https://wechat2rss.xlab.app/feed/8c5d5f0004e7231abeb01dac49cac5da4ec6933d.xml",
+      "feed_title": "安全学术圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/8c5d5f0004e7231abeb01dac49cac5da4ec6933d.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU5MTM5MTQ2MA%3D%3D&mid=2247495942&idx=1&sn=daf851538f72f5b732a6ca33136ecac6",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "practical_risk": 9.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.65,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "AI工具层安全风险凸显：单月新增68个CVE且超九成未配置OAuth认证机制",
+      "title_orig": "一个月 68 个 CVE、91.8% 没有 OAuth：你的 AI 工具层正在裸奔",
+      "summary": "研究人员在一个月内监测到AI工具层新增68个CVE漏洞，且高达91.8%的工具完全未部署OAuth等基础身份验证机制。这一严重的安全缺陷导致AI工具层普遍处于没有任何权限防护的裸奔状态，使相关应用与组件面临极高的未经授权访问及恶意攻击风险，不过目前原文尚未披露具体的漏洞修复进度或缓解措施。",
+      "tags": [
+        "AI安全",
+        "漏洞分析",
+        "身份验证"
+      ],
+      "url": "https://www.anquanke.com/post/id/316121",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-09-19T10:55:18+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI工具层严重缺乏认证机制的安全现状",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/316121",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "practical_risk": 9.0,
+        "actionability": 7.0,
+        "agent_model_relevance": 8.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "安全研究人员利用libheif图像漏洞链实现针对OpenAI等多平台的远程代码执行",
+      "title_orig": "Researchers Used Claude to Hack OpenAI Through an Image Flaw",
+      "summary": "研究人员成功利用名为HEIF Heist的攻击链，通过组合图像处理库libheif组件中包含CVE-2026-32882在内的多个安全漏洞，在OpenAI、Slack、Meta、Discourse、Next.js以及GitHub Enterprise等多个知名平台与服务中成功实现了远程代码执行。由于这一严重漏洞链影响了众多主流科技企业与系统服务，且目前公开报道中尚未披露具体的漏洞修复或缓解措施细节，因而引发了网络安全领域的持续高度关注。",
+      "tags": [
+        "漏洞利用",
+        "远程代码执行",
+        "图像处理"
+      ],
+      "url": "https://www.cyberkendra.com/2026/09/researchers-used-claude-to-hack-openai-through-an-image-flaw.html",
+      "source": "cyberkendra.com",
+      "category": "Synthesis",
+      "published": "2026-09-18T20:23:34+00:00",
+      "cve_ids": [
+        "CVE-2026-32882"
+      ],
+      "selection_reason": "揭示主流平台通用依赖库的严重RCE漏洞链。",
+      "feed_url": "https://www.cyberkendra.com/feeds/posts/default",
+      "feed_title": "Cyber Kendra",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "cyberkendra.com",
+      "story_id": "cve:cve-2026-32882",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "practical_risk": 9.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 8.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.75,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.0,
+        "applied_adjustment": 0.0
+      }
+    },
+    {
+      "title_zh": "HostTraceAI通过权限分级与系统接入实现AI安全接管主机应急响应与溯源",
+      "title_orig": "让 AI 安全接管做主机溯源：HostTraceAI 的权限分级与接入实践",
+      "summary": "应急响应中的主机溯源长期停留在手工敲命令、截图及翻看终端历史的状态，排查被植入木马或WebShell的服务器时需依次查看进程、服务、启动项、计划任务、网络连接、文件变更和登录活动并将零散发现串成时间线，过程重复易漏且难复现。HostTraceAI尝试将AI Agent引入该流程，在回答如何安全操作生产主机的前提下，详细介绍了其权限分级与接入实践。",
+      "tags": [
+        "AI安全",
+        "主机溯源",
+        "应急响应"
+      ],
+      "url": "https://xz.aliyun.com/news/92857",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-09-20T01:27:01+00:00",
+      "cve_ids": [],
+      "selection_reason": "探讨AI Agent在主机溯源中的权限控制与实践",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/92857",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "practical_risk": 7.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "SkillScan智能体技能安全扫描最佳实践及其在多业务场景中的准入应用",
+      "title_orig": "一文了解｜SkillScan 智能体技能安全扫描最佳实践",
+      "summary": "SkillScan致力于为智能体技能生态提供全方位的安全保障，通过建立多层检测能力与持续的安全运营机制，全面构建起可靠的安全防护体系。该方案目前已成功为火山SkillHub以及字节云SkillHub等多个业务场景提供关键的安全准入支撑，切实保障了相关生态与业务系统的运行安全。新建的安全屏障有效地应对了潜在风险，成为智能体应用落地过程中不可或缺的坚实保障。",
+      "tags": [
+        "智能体安全",
+        "安全扫描",
+        "安全准入"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUzMzcyMDYzMw==&mid=2247496381&idx=1&sn=012b12d8082f3763f8311722ac1f2e57",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-09-20T04:05:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍了智能体技能安全扫描与准入保障的最佳实践",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f4087ff02b808a1a995e2ba930219ada5b82425d.xml",
+      "feed_title": "字节跳动安全中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f4087ff02b808a1a995e2ba930219ada5b82425d.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzUzMzcyMDYzMw%3D%3D&mid=2247496381&idx=1&sn=012b12d8082f3763f8311722ac1f2e57",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "practical_risk": 8.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "OpenAI登录逻辑漏洞及AI编写的利用代码可致内部代码泄露",
+      "title_orig": "AI-Built Exploit and Sign-In Flaw Opened Path to Internal OpenAI Code",
+      "summary": "网络安全公司Hacktron的研究人员利用人工智能构建的漏洞利用代码和登录环节缺陷，成功演示了对OpenAI员工账户的访问权限，并因此获得了漏洞赏金。该安全漏洞为攻击者获取OpenAI内部代码库的访问权限打开了通道，但原报道中并未进一步披露具体的漏洞类型、受影响系统版本以及最终的修复状态等细节信息。",
+      "tags": [
+        "漏洞利用",
+        "OpenAI",
+        "身份验证"
+      ],
+      "url": "https://www.securityweek.com/ai-built-exploit-and-sign-in-flaw-opened-path-to-internal-openai-code/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-09-18T12:45:24+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了AI生成Exploit及登录缺陷的实际威胁",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/ai-built-exploit-and-sign-in-flaw-opened-path-to-internal-openai-code",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "practical_risk": 9.0,
+        "actionability": 6.0,
+        "agent_model_relevance": 7.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 7.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.0,
+        "applied_adjustment": 0.0
+      }
+    },
+    {
+      "title_zh": "Trail of Bits质疑1Password评估报告，指出AI模型仅26%概率生成有效安全修复程序",
+      "title_orig": "RT msuiche: Pretty impressive track record",
+      "summary": "针对1Password先前发布的研究报告，安全机构Trail of Bits提出了明确异议，该报告曾声称人工智能模型在修复安全漏洞时仅有26%的概率能产生无瑕疵的解决方案。研究人员特别提示网络安全防御人员切勿盲目采信此项评估数据，这一争议也引发了整个行业对人工智能辅助代码修复能力的真实效果以及相关安全评估标准的广泛讨论与深度关注。",
+      "tags": [
+        "AI安全",
+        "代码修复",
+        "安全评估"
+      ],
+      "url": "https://x.com/trailofbits/status/2100663865507770636",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-09-17T18:52:46+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI生成安全修复代码的实际有效性争议",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits",
+      "source_tier": "t1_5",
+      "source_kind": "official_x",
+      "source_label": "官方 X",
+      "source_key": "x:trailofbits",
+      "story_id": "url:x.com/trailofbits/status/2100663865507770636",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "practical_risk": 6.0,
+        "actionability": 6.0,
+        "agent_model_relevance": 8.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 7.15,
+      "final_score": 7.89,
+      "score_breakdown": {
+        "source_bonus": 0.5,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.8,
+        "applied_adjustment": 0.74
+      }
+    }
+  ]
+}
