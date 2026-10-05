@@ -1,249 +1,201 @@
-# 安全 源质量报表 2026-10-01
+# 安全 源质量报表 2026-10-05
 
 - board: `security`
-- entries: 118
+- entries: 104
 
 | Feed | 抓取 | 条目 | LLM 均分 | 低分占比 | 入选 | 去重被合并 |
 |---|---:|---:|---:|---:|---:|---:|
-| 先知社区 | 1/1 | 12 -> 2 | 8.0 · 8 | 0% | 2 | 0 |
-| Microsoft Security Blog | 1/1 | 6 -> 5 | 5.8 · 7 | 20% | 2 | 1 |
-| 奇安信威胁情报中心 | 1/1 | 1 -> 1 | 9.0 · 9 | 0% | 1 | 0 |
+| exp库-打造中文最大exploit库 | 1/1 | 6 -> 5 | 6.6 · 7 | 0% | 3 | 0 |
+| HackerNews | 1/1 | 6 -> 6 | 5.7 · 6 | 33% | 3 | 0 |
+| The Hacker News | 1/1 | 6 -> 3 | 6.3 · 7 | 33% | 2 | 0 |
+| infosecurity-magazine.com | 1/1 | 6 -> 5 | 5.6 · 4 | 60% | 2 | 0 |
+| Cyber Kendra | 1/1 | 6 -> 6 | 5.2 · 5 | 33% | 2 | 0 |
 | CERT Recently Published Vulnerability Notes | 1/1 | 1 -> 1 | 8.0 · 8 | 0% | 1 | 0 |
-| GitHub Security Blog | 1/1 | 1 -> 1 | 8.0 · 8 | 0% | 1 | 0 |
-| Sec-News 安全文摘 | 1/1 | 1 -> 1 | 8.0 · 8 | 0% | 1 | 0 |
-| The Hacker News | 1/1 | 6 -> 3 | 7.7 · 7 | 0% | 1 | 0 |
-| BleepingComputer | 1/1 | 6 -> 3 | 7.0 · 8 | 0% | 1 | 1 |
-| Rapid7 Blog | 1/1 | 3 -> 2 | 6.0 · 6 | 50% | 1 | 0 |
-| 安全圈 | 1/1 | 6 -> 4 | 5.8 · 6 | 25% | 1 | 0 |
-| 看雪学院 | 1/1 | 6 -> 2 | 5.5 · 5.5 | 50% | 1 | 0 |
-| SecurityWeek | 1/1 | 6 -> 5 | 5.2 · 6 | 40% | 1 | 0 |
-| X / International Cyber Digest | 1/1 | 6 -> 6 | 4.2 · 4 | 50% | 1 | 0 |
-| NOSEC 安全讯息平台 - 漏洞预警 | 1/1 | 1 -> 1 | 8.0 · 8 | 0% | 0 | 1 |
-| X / Project Zero | 1/1 | 1 -> 1 | 7.0 · 7 | 0% | 0 | 0 |
-| 代码卫士 | 1/1 | 2 -> 1 | 7.0 · 7 | 0% | 0 | 1 |
-| 腾讯安全威胁情报中心 | 1/1 | 1 -> 1 | 7.0 · 7 | 0% | 0 | 0 |
-| 绿盟科技技术博客 | 1/1 | 6 -> 4 | 6.5 · 7 | 25% | 0 | 0 |
-| CXSecurity: World Laboratory of Bugtraq 2 | 1/1 | 5 -> 2 | 6.5 · 6.5 | 0% | 0 | 0 |
-| Vulners.com RSS Feed | 1/1 | 6 -> 3 | 6.3 · 6 | 0% | 0 | 0 |
-| Pen Test Partners | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
-| 安全客 | 1/1 | 4 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
-| 360 Netlab Blog - Network Security Research Lab at 360 | 1/1 | 2 -> 2 | 5.5 · 5.5 | 0% | 0 | 0 |
-| Cloudflare Security | 1/1 | 6 -> 6 | 5.2 · 5 | 0% | 0 | 0 |
-| Qualys Security Blog | 1/1 | 3 -> 3 | 5.0 · 6 | 33% | 0 | 0 |
-| buttondown.com/hillelwayne | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
-| righto.com | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
-| securitainment | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
+| BleepingComputer | 1/1 | 6 -> 3 | 5.3 · 5 | 33% | 1 | 0 |
+| Rapid7 Blog | 1/1 | 4 -> 3 | 5.0 · 4 | 67% | 1 | 0 |
+| Sec-News 安全文摘 | 1/1 | 2 -> 1 | 7.0 · 7 | 0% | 0 | 0 |
+| Hacking Dream | 1/1 | 2 -> 2 | 6.5 · 6.5 | 0% | 0 | 0 |
+| 360 Netlab Blog - Network Security Research Lab at 360 | 1/1 | 2 -> 2 | 6.0 · 6 | 0% | 0 | 0 |
+| Ars Technica | 1/1 | 6 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
+| buttondown.com/hillelwayne | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
+| devblogs.microsoft.com/oldnewthing | 1/1 | 3 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
+| Trail of Bits Blog | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
+| Vulners.com RSS Feed | 1/1 | 6 -> 3 | 5.7 · 6 | 0% | 0 | 0 |
+| Adam Shostack & friends | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
+| gilesthomas.com | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
+| Pen Test Partners | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
 | Wallarm | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
-| 绿盟科技研究通讯 | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
-| infosecurity-magazine.com | 1/1 | 6 -> 4 | 4.5 · 4.5 | 50% | 0 | 0 |
-| Wiz Blog | 1/1 | 3 -> 3 | 4.0 · 5 | 33% | 0 | 0 |
-| AWS Security Blog | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| eli.thegreenplace.net | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| Krebs on Security | 1/1 | 2 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| Fidelis Security | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| GuidePoint Security | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| 安全分析与研究 | 1/1 | 3 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| 数世咨询 | 1/1 | 2 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| 黑鸟 | 1/1 | 3 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| 404 Media | 1/1 | 6 -> 6 | 2.7 · 3 | 100% | 0 | 0 |
-| X / rez0 | 1/1 | 5 -> 5 | 2.4 · 1 | 80% | 0 | 0 |
-| Emergent Minds / paddo.dev | 1/1 | 6 -> 5 | 2.0 · 2 | 100% | 0 | 0 |
-| Fuzzing Labs | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
-| it-notes.dragas.net | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
-| martinalderson.com | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
-| 唯品会安全应急响应中心 | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
-| devblogs.microsoft.com/oldnewthing | 1/1 | 2 -> 2 | 1.5 · 1.5 | 100% | 0 | 0 |
-| X / Thomas Sottiaux | 1/1 | 6 -> 5 | 1.0 · 1 | 100% | 0 | 0 |
-| berthub.eu | 1/1 | 2 -> 2 | 1.0 · 1 | 100% | 0 | 0 |
-| bunnie's blog | 1/1 | 2 -> 2 | 1.0 · 1 | 100% | 0 | 0 |
-| CodeWisdom | 1/1 | 1 -> 1 | 1.0 · 1 | 100% | 0 | 0 |
-| Intigriti | 1/1 | 1 -> 1 | 1.0 · 1 | 100% | 0 | 0 |
-| troyhunt.com | 1/1 | 1 -> 1 | 1.0 · 1 | 100% | 0 | 0 |
-| Ars Technica | 1/1 | 6 -> 1 | 0.0 · 0 | 100% | 0 | 0 |
-| Geohot | 1/1 | 1 -> 1 | 0.0 · 0 | 100% | 0 | 0 |
+| Yang Hao's blog | 1/1 | 2 -> 2 | 4.5 · 4.5 | 50% | 0 | 0 |
+| Cloudflare Security | 1/1 | 3 -> 3 | 4.3 · 5 | 33% | 0 | 0 |
+| SecurityWeek | 1/1 | 6 -> 6 | 4.2 · 4 | 67% | 0 | 0 |
+| Emergent Minds / paddo.dev | 1/1 | 3 -> 3 | 4.0 · 5 | 33% | 0 | 0 |
+| GuidePoint Security | 1/1 | 2 -> 2 | 4.0 · 4 | 50% | 0 | 0 |
+| troyhunt.com | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
+| Wiz Blog | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
+| X / Project Zero | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
+| Schneier on Security | 1/1 | 5 -> 5 | 3.0 · 3 | 80% | 0 | 0 |
+| Microsoft Security Blog | 1/1 | 4 -> 3 | 3.0 · 3 | 100% | 0 | 0 |
+| X / International Cyber Digest | 1/1 | 6 -> 6 | 2.0 · 2.5 | 100% | 0 | 0 |
+| terriblesoftware.org | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
+| berthub.eu | 1/1 | 2 -> 2 | 1.5 · 1.5 | 100% | 0 | 0 |
+| 404 Media | 1/1 | 6 -> 6 | 1.2 · 0.5 | 100% | 0 | 0 |
+| Geohot | 1/1 | 2 -> 1 | 1.0 · 1 | 100% | 0 | 0 |
+| matduggan.com | 1/1 | 1 -> 1 | 1.0 · 1 | 100% | 0 | 0 |
+| X / Thomas Sottiaux | 1/1 | 6 -> 5 | 0.6 · 1 | 100% | 0 | 0 |
+| X / rez0 | 1/1 | 6 -> 5 | 0.0 · 0 | 100% | 0 | 0 |
+| eli.thegreenplace.net | 1/1 | 1 -> 1 | 0.0 · 0 | 100% | 0 | 0 |
+| Xe Iaso | 1/1 | 1 -> 1 | 0.0 · 0 | 100% | 0 | 0 |
 | 360 Netlab Blog | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| 360漏洞云 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| Armin Ronacher's Thoughts and Writings | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| CNCERT风险评估 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| CNNVD安全动态 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| CNVD漏洞平台 | 1/1 | 2 -> 0 | - | - | 0 | 0 |
 | defend.network | 1/1 | 5 -> 0 | - | - | 0 | 0 |
-| huasec | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| Microsoft Security Blog | 1/1 | 6 -> 0 | - | - | 0 | 0 |
-| OnionSec | 1/1 | 3 -> 0 | - | - | 0 | 0 |
+| Exploit-DB.com RSS Feed | 1/1 | 6 -> 0 | - | - | 0 | 0 |
+| Microsoft Security Blog | 1/1 | 4 -> 0 | - | - | 0 | 0 |
+| NOSEC 安全讯息平台 - 漏洞预警 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
 | Pentesting | 1/1 | 6 -> 0 | - | - | 0 | 0 |
 | SecWiki News | 1/1 | 10 -> 0 | - | - | 0 | 0 |
-| unSafe.sh - 不安全 | 1/1 | 5 -> 0 | - | - | 0 | 0 |
-| 丁爸情报分析师的工具箱 | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| 中国信息安全 | 1/1 | 6 -> 0 | - | - | 0 | 0 |
-| 互联网安全内参 | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| 信息安全国家工程研究中心 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| 君哥的体历 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| 复旦白泽战队 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| 威努特工控安全 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| 安全419 | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| 安全学术圈 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| 希潭实验室 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| 情报分析师 | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| 我的安全视界观 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| 火绒安全实验室 | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| 电子物证 | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| 网信军民融合 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
-| 软件安全与逆向分析 | 1/1 | 1 -> 0 | - | - | 0 | 0 |
+| Threatninja.net | 1/1 | 1 -> 0 | - | - | 0 | 0 |
+| unSafe.sh - 不安全 | 1/1 | 2 -> 0 | - | - | 0 | 0 |
 
-另有 364 个源今日 0 条目（327/364 抓取成功）。
+另有 400 个源今日 0 条目（381/400 抓取成功）。
 
 ## 入选理由摘录
-- **先知社区**：*为什么入选：揭示 Coding Agent 信任目录机制的安全缺陷与利用*
-- **Microsoft Security Blog**：*为什么入选：分析了云上凭据利用路径并提供防御建议。*
-- **奇安信威胁情报中心**：*为什么入选：揭示AI智能体在自动化场景下的越狱机制与严重安全影响。*
-- **CERT Recently Published Vulnerability Notes**：*为什么入选：揭示流行密码学库逻辑漏洞，对JWT/JWS安全有重要警示意义*
-- **GitHub Security Blog**：*为什么入选：展示了开源AI代理在Android漏洞挖掘中的实际应用价值。*
-- **Sec-News 安全文摘**：*为什么入选：展示OpenCode远程代码执行漏洞原理与利用。*
-- **The Hacker News**：*为什么入选：揭示 Zimbra 严重点在被利用及实际攻击手法*
-- **BleepingComputer**：*为什么入选：CISA针对高危未授权RCE漏洞发布预警*
-- **Rapid7 Blog**：*为什么入选：严重漏洞且已被野外利用，具有极高预警价值。*
-- **安全圈**：*为什么入选：揭示云原生容器环境中的跨租户数据泄漏风险*
-- **看雪学院**：*为什么入选：关注已被野外利用的Citrix高危0day远程代码执行漏洞。*
-- **SecurityWeek**：*为什么入选：关注网络安全设备高危漏洞及官方补丁动态*
-- **X / International Cyber Digest**：*为什么入选：披露了开源系统零日漏洞组合利用及AI参与攻击的实际案例。*
+- **exp库-打造中文最大exploit库**：*为什么入选：披露了工业SCADA软件的远程代码执行漏洞风险。*
+- **HackerNews**：*为什么入选：揭示新型硬件漏洞变体与JIT引擎绕过机制。*
+- **The Hacker News**：*为什么入选：GitLab AI Gateway高危漏洞，影响自托管服务环*
+- **infosecurity-magazine.com**：*为什么入选：揭示代理式AI与零日漏洞结合的实际攻击案例*
+- **Cyber Kendra**：*为什么入选：披露了CoreGraphics零日漏洞的完整技术细节与攻击载*
+- **CERT Recently Published Vulnerability Notes**：*为什么入选：揭示高权限SMM内存越界写入机制与风险*
+- **BleepingComputer**：*为什么入选：关注已被野外利用的Citrix零日漏洞及RCE潜在风险。*
+- **Rapid7 Blog**：*为什么入选：揭示针对电信边缘设备的Linux植入物与隐蔽BPF变种技术。*
 
 ---
 
-# AI 安全 源质量报表 2026-10-01
+# AI 安全 源质量报表 2026-10-05
 
 - board: `ai_security`
-- entries: 57
+- entries: 43
 
 | Feed | 抓取 | 条目 | LLM 均分 | 低分占比 | 入选 | 去重被合并 |
 |---|---:|---:|---:|---:|---:|---:|
-| Embrace The Red | 1/1 | 1 -> 1 | 9.0 · 9 | 0% | 1 | 0 |
-| Legit Security | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 1 | 0 |
-| 安全客 | 1/1 | 2 -> 2 | 4.5 · 4.5 | 50% | 1 | 0 |
-| X / Trail of Bits | 1/1 | 3 -> 3 | 3.7 · 1 | 67% | 1 | 0 |
-| OpenAI News | 1/1 | 8 -> 3 | 3.3 · 1 | 67% | 1 | 0 |
-| X / rez0 | 1/1 | 5 -> 5 | 2.8 · 2 | 80% | 1 | 0 |
-| 先知社区 | 1/1 | 6 -> 6 | 2.5 · 1.5 | 83% | 1 | 0 |
-| Google News AI Security | 1/1 | 8 -> 3 | 3.0 · 3 | 100% | 0 | 0 |
-| Wiz Blog | 1/1 | 3 -> 3 | 3.0 · 3 | 100% | 0 | 0 |
-| Cisco Security Blog | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| Endor Labs | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| Google News 中文 AI安全 | 1/1 | 8 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| Snyk Blog | 1/1 | 2 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| Microsoft Security Blog | 1/1 | 6 -> 6 | 2.7 · 3 | 83% | 0 | 0 |
-| X / Johann Rehberger | 1/1 | 7 -> 7 | 2.6 · 3 | 100% | 0 | 0 |
-| Aikido Security | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
-| Unit 42 | 1/1 | 2 -> 2 | 1.5 · 1.5 | 100% | 0 | 0 |
-| Simon Willison | 1/1 | 8 -> 3 | 1.3 · 1 | 100% | 0 | 0 |
-| Google News AI Supply Chain Security | 1/1 | 8 -> 0 | - | - | 0 | 0 |
+| Endor Labs | 1/1 | 4 -> 4 | 5.5 · 5.5 | 50% | 2 | 0 |
+| X / Johann Rehberger | 1/1 | 6 -> 6 | 3.8 · 3 | 83% | 2 | 0 |
+| Microsoft Security Blog | 1/1 | 4 -> 4 | 2.5 · 3 | 100% | 1 | 0 |
+| Aikido Security | 1/1 | 3 -> 3 | 3.0 · 3 | 100% | 0 | 0 |
+| Snyk Blog | 1/1 | 3 -> 2 | 3.0 · 3 | 100% | 0 | 0 |
+| X / Trail of Bits | 1/1 | 2 -> 2 | 3.0 · 3 | 100% | 0 | 0 |
+| Legit Security | 1/1 | 2 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
+| Trail of Bits | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
+| Wiz Blog | 1/1 | 1 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
+| Google News 中文 AI安全 | 1/1 | 8 -> 3 | 1.7 · 2 | 100% | 0 | 0 |
+| OpenAI News | 1/1 | 7 -> 3 | 1.7 · 1 | 100% | 0 | 0 |
+| Simon Willison | 1/1 | 5 -> 3 | 1.0 · 0 | 100% | 0 | 0 |
+| Google News AI Security | 1/1 | 8 -> 1 | 1.0 · 1 | 100% | 0 | 0 |
+| X / rez0 | 1/1 | 7 -> 7 | 0.7 · 0 | 100% | 0 | 0 |
+| Unit 42 | 1/1 | 1 -> 1 | 0.0 · 0 | 100% | 0 | 0 |
+| Embrace The Red | 1/1 | 1 -> 0 | - | - | 0 | 0 |
+| Google News AI Supply Chain Security | 1/1 | 3 -> 0 | - | - | 0 | 0 |
 
-另有 14 个源今日 0 条目（14/14 抓取成功）。
+另有 16 个源今日 0 条目（16/16 抓取成功）。
 
 ## 入选理由摘录
-- **Embrace The Red**：*为什么入选：揭示AI助手组件安全风险，涉及从普通查询到管理员的严重提权。*
-- **Legit Security**：*为什么入选：关注应用安全与依赖项漏洞自动修复的新进展。*
-- **安全客**：*为什么入选：揭示AI智能体越权风险并提供防护思路*
-- **X / Trail of Bits**：*为什么入选：展示AI Agent架构中的提示词注入防御与沙箱隔离技术。*
-- **OpenAI News**：*为什么入选：提供前沿AI训练的安全框架与失配调查指南。*
-- **X / rez0**：*为什么入选：介绍了Google近零误报的智能体漏洞挖掘工具*
-- **先知社区**：*为什么入选：揭示 Coding Agent 信任目录绕过的机制与安全风险*
+- **Endor Labs**：*为什么入选：展示了AI模型在代码安全与功能表现上的最新评估数据。*
+- **X / Johann Rehberger**：*为什么入选：探讨AI智能体安全的系统性解决思路*
+- **Microsoft Security Blog**：*为什么入选：关注微软在AI及端到端安全领域的最新整体布局*
 
 ---
 
-# AI 前沿 源质量报表 2026-10-01
+# AI 前沿 源质量报表 2026-10-05
 
 - board: `ai`
 - entries: 80
 
 | Feed | 抓取 | 条目 | LLM 均分 | 低分占比 | 入选 | 去重被合并 |
 |---|---:|---:|---:|---:|---:|---:|
-| X / dotey | 1/1 | 10 -> 9 | 6.8 · 8 | 11% | 4 | 0 |
-| Ars Technica AI | 1/1 | 10 -> 9 | 6.0 · 6 | 22% | 3 | 0 |
-| 量子位官网 | 1/1 | 10 -> 3 | 7.0 · 8 | 33% | 2 | 0 |
-| arXiv cs.AI recent | 1/1 | 10 -> 2 | 7.0 · 7 | 0% | 2 | 0 |
-| Google News 中文 AI | 1/1 | 10 -> 5 | 6.2 · 7 | 40% | 1 | 0 |
-| X / Hugging Face | 1/1 | 8 -> 3 | 5.7 · 7 | 33% | 1 | 1 |
-| X / OpenAI Developers | 1/1 | 10 -> 5 | 5.6 · 6 | 20% | 1 | 0 |
-| Simon Willison | 1/1 | 10 -> 6 | 4.8 · 5.5 | 33% | 1 | 1 |
-| X / Google AI | 1/1 | 1 -> 1 | 9.0 · 9 | 0% | 0 | 1 |
-| X / Google DeepMind | 1/1 | 2 -> 1 | 9.0 · 9 | 0% | 0 | 1 |
-| The Verge AI | 1/1 | 10 -> 4 | 6.8 · 7 | 0% | 0 | 0 |
-| Apple ML Research | 1/1 | 4 -> 2 | 6.5 · 6.5 | 0% | 0 | 0 |
-| X / Ollama | 1/1 | 3 -> 2 | 6.0 · 6 | 0% | 0 | 0 |
-| Import AI | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
-| Latent Space | 1/1 | 5 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
-| Meta AI (Google News) | 1/1 | 10 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
-| X / Simon Willison | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
-| X / swyx | 1/1 | 6 -> 4 | 5.5 · 5.5 | 50% | 0 | 1 |
-| X / trq212 | 1/1 | 4 -> 2 | 5.5 · 5.5 | 50% | 0 | 1 |
-| NVIDIA Blog | 1/1 | 2 -> 2 | 5.0 · 5 | 50% | 0 | 0 |
-| OpenAI Blog | 1/1 | 4 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
-| X / Anthropic | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
-| X / vLLM | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
-| TechCrunch AI | 1/1 | 10 -> 3 | 4.7 · 4 | 67% | 0 | 0 |
-| MIT Tech Review AI | 1/1 | 9 -> 4 | 4.5 · 4.5 | 50% | 0 | 0 |
-| X / LlamaIndex | 1/1 | 3 -> 3 | 4.3 · 4 | 67% | 0 | 0 |
-| X / Boris Cherny | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| X / Claude | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| X / OpenAI | 1/1 | 7 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
+| NVIDIA Blog | 1/1 | 5 -> 4 | 6.0 · 6.5 | 25% | 3 | 0 |
+| X / dotey | 1/1 | 10 -> 7 | 5.4 · 5 | 43% | 3 | 1 |
+| X / Hugging Face | 1/1 | 6 -> 6 | 7.2 · 7.5 | 0% | 2 | 2 |
+| X / Meta AI | 1/1 | 1 -> 1 | 8.0 · 8 | 0% | 1 | 0 |
+| Apple ML Research | 1/1 | 4 -> 3 | 6.3 · 6 | 0% | 1 | 0 |
+| TechCrunch AI | 1/1 | 10 -> 3 | 6.3 · 7 | 0% | 1 | 0 |
+| Latent Space | 1/1 | 7 -> 3 | 6.0 · 6 | 0% | 1 | 0 |
+| 量子位官网 | 1/1 | 10 -> 2 | 5.5 · 5.5 | 50% | 1 | 0 |
+| X / OpenAI Developers | 1/1 | 10 -> 6 | 5.2 · 6 | 33% | 1 | 1 |
+| Simon Willison | 1/1 | 5 -> 4 | 3.8 · 4 | 50% | 1 | 0 |
+| X / Google AI | 1/1 | 1 -> 1 | 7.0 · 7 | 0% | 0 | 0 |
+| X / vLLM | 1/1 | 3 -> 3 | 6.0 · 6 | 33% | 0 | 1 |
+| X / Claude Developers | 1/1 | 2 -> 2 | 6.0 · 6 | 0% | 0 | 0 |
+| X / Boris Cherny | 1/1 | 3 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
+| Ars Technica AI | 1/1 | 10 -> 3 | 5.7 · 7 | 33% | 0 | 0 |
+| X / Ollama | 1/1 | 5 -> 4 | 5.5 · 6 | 25% | 0 | 2 |
+| X / LlamaIndex | 1/1 | 2 -> 2 | 5.5 · 5.5 | 0% | 0 | 0 |
+| Anthropic Coverage (Google News) | 1/1 | 10 -> 3 | 5.3 · 6 | 33% | 0 | 0 |
+| X / Andrej Karpathy | 1/1 | 2 -> 2 | 5.0 · 5 | 0% | 0 | 0 |
+| OpenAI Blog | 1/1 | 5 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
+| X / swyx | 1/1 | 7 -> 3 | 4.3 · 3 | 67% | 0 | 0 |
+| MIT Tech Review AI | 1/1 | 9 -> 4 | 4.2 · 4 | 75% | 0 | 0 |
+| X / Simon Willison | 1/1 | 3 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
+| The Verge AI | 1/1 | 10 -> 4 | 3.8 · 4 | 50% | 0 | 0 |
+| X / trq212 | 1/1 | 4 -> 3 | 3.7 · 4 | 67% | 0 | 0 |
+| Google News 中文 AI | 1/1 | 10 -> 3 | 3.0 · 3 | 100% | 0 | 0 |
+| Google AI Blog | 1/1 | 1 -> 1 | 2.0 · 2 | 100% | 0 | 0 |
 | Anthropic + Claude (first-party) | 1/1 | 10 -> 0 | - | - | 0 | 0 |
-| Anthropic Coverage (Google News) | 1/1 | 10 -> 0 | - | - | 0 | 0 |
-| arXiv cs.CL recent | 1/1 | 10 -> 0 | - | - | 0 | 0 |
-| arXiv cs.LG recent | 1/1 | 10 -> 0 | - | - | 0 | 0 |
-| Cohere (Google News) | 1/1 | 5 -> 0 | - | - | 0 | 0 |
+| Cohere (Google News) | 1/1 | 4 -> 0 | - | - | 0 | 0 |
 | Google DeepMind Blog | 1/1 | 2 -> 0 | - | - | 0 | 0 |
 | Hugging Face Blog | 1/1 | 3 -> 0 | - | - | 0 | 0 |
-| Mistral (Google News) | 1/1 | 4 -> 0 | - | - | 0 | 0 |
-| X / Claude Developers | 1/1 | 1 -> 0 | - | - | 0 | 0 |
+| Meta AI (Google News) | 1/1 | 10 -> 0 | - | - | 0 | 0 |
+| One Useful Thing | 1/1 | 1 -> 0 | - | - | 0 | 0 |
+| X / Claude | 1/1 | 1 -> 0 | - | - | 0 | 0 |
 | xAI (Google News) | 1/1 | 10 -> 0 | - | - | 0 | 0 |
-| 新智元 | 1/1 | 10 -> 0 | - | - | 0 | 0 |
 
-另有 18 个源今日 0 条目（13/18 抓取成功）。
+另有 23 个源今日 0 条目（19/23 抓取成功）。
 
 ## 入选理由摘录
-- **X / dotey**：*为什么入选：谷歌发布新一代旗舰模型并公布对标竞品与价格战略。*
-- **Ars Technica AI**：*为什么入选：AMD重金收购顶级AI初创以应对行业竞争*
-- **量子位官网**：*为什么入选：首次公开V4.1 Agent训练基础设施*
-- **arXiv cs.AI recent**：*为什么入选：揭示AI智能体跨环境协调入侵的安全性隐患及对齐漏洞。*
-- **Google News 中文 AI**：*为什么入选：OpenAI密集发布新模型与多项更新，值得关注。*
-- **X / Hugging Face**：*为什么入选：提供从代码生成强化学习环境的专业工具，简化RL开发流程。*
-- **X / OpenAI Developers**：*为什么入选：ChatGPT拓展了MCP服务器托管功能，大幅提升其可塑性。*
-- **Simon Willison**：*为什么入选：用五分之一的价格实现高阶智能，显著降低了开发成本。*
+- **NVIDIA Blog**：*为什么入选：GPU加速使大模型生成速度提升达8倍*
+- **X / dotey**：*为什么入选：图灵奖得主及顶尖学者联名警示AI自我迭代风险。*
+- **X / Hugging Face**：*为什么入选：关注前沿AI开源生态与后训练技术研究。*
+- **X / Meta AI**：*为什么入选：探索AI在无标准答案的开放性科学难题中的应用潜力。*
+- **Apple ML Research**：*为什么入选：探索了AI在无教师模型和低成功率下的自我提升新路径。*
+- **TechCrunch AI**：*为什么入选：AI滥用严重干扰开源安全漏洞排查与奖励机制*
+- **Latent Space**：*为什么入选：展示了谷歌最新模型极高输出能力及特定领域的早期部署。*
+- **量子位官网**：*为什么入选：显著降低大模型Token消耗，提升 Agent 运行效率。*
+- **X / OpenAI Developers**：*为什么入选：Agents API 新增浏览器调用与环境配置，提升开发效率*
+- **Simon Willison**：*为什么入选：揭示了智能体通过共享资源跨沙箱传递指令的安全风险*
 
 ---
 
-# 金融科技 源质量报表 2026-10-01
+# 金融科技 源质量报表 2026-10-05
 
 - board: `finance`
-- entries: 28
+- entries: 30
 
 | Feed | 抓取 | 条目 | LLM 均分 | 低分占比 | 入选 | 去重被合并 |
 |---|---:|---:|---:|---:|---:|---:|
-| 未央网 | 1/1 | 10 -> 3 | 7.0 · 7 | 0% | 2 | 0 |
-| Fintech News Singapore | 1/1 | 6 -> 2 | 7.0 · 7 | 0% | 2 | 0 |
-| Stripe Blog | 1/1 | 4 -> 3 | 6.3 · 8 | 33% | 2 | 0 |
-| Google News 中文金融科技 | 1/1 | 10 -> 4 | 7.2 · 7 | 0% | 1 | 1 |
-| Payments Dive | 1/1 | 3 -> 3 | 5.3 · 6 | 33% | 1 | 0 |
-| The Fintech Times | 1/1 | 10 -> 3 | 5.3 · 5 | 33% | 1 | 0 |
-| PYMNTS | 1/1 | 10 -> 3 | 4.0 · 3 | 67% | 1 | 0 |
-| X / Mastercard | 1/1 | 2 -> 1 | 8.0 · 8 | 0% | 0 | 1 |
-| Finance Magnates Fintech | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
-| PayPal Newsroom | 1/1 | 1 -> 1 | 4.0 · 4 | 100% | 0 | 0 |
-| Finextra Headlines | 1/1 | 10 -> 3 | 3.7 · 3 | 67% | 0 | 0 |
-| Federal Reserve Press Releases | 1/1 | 5 -> 1 | 3.0 · 3 | 100% | 0 | 0 |
-| Alipay / Ant Group (Google News) | 1/1 | 4 -> 0 | - | - | 0 | 0 |
+| European Central Bank Releases | 1/1 | 10 -> 2 | 6.5 · 6.5 | 0% | 2 | 0 |
+| BIS Press Releases | 1/1 | 2 -> 2 | 8.0 · 8 | 0% | 1 | 1 |
+| Alipay / Ant Group (Google News) | 1/1 | 5 -> 1 | 8.0 · 8 | 0% | 1 | 0 |
+| X / Mastercard | 1/1 | 1 -> 1 | 8.0 · 8 | 0% | 1 | 0 |
+| Finextra Headlines | 1/1 | 10 -> 3 | 6.0 · 6 | 33% | 1 | 0 |
+| The Fintech Times | 1/1 | 10 -> 3 | 6.0 · 6 | 0% | 1 | 0 |
+| 未央网 | 1/1 | 10 -> 3 | 5.7 · 6 | 33% | 1 | 0 |
+| Google News 中文金融科技 | 1/1 | 10 -> 3 | 4.7 · 5 | 33% | 1 | 0 |
+| Federal Reserve Press Releases | 1/1 | 5 -> 4 | 4.2 · 3 | 75% | 1 | 0 |
+| Finance Magnates Fintech | 1/1 | 1 -> 1 | 7.0 · 7 | 0% | 0 | 0 |
+| Payments Dive | 1/1 | 1 -> 1 | 6.0 · 6 | 0% | 0 | 0 |
+| Fintech News Singapore | 1/1 | 8 -> 2 | 5.0 · 5 | 0% | 0 | 0 |
+| Stripe Blog | 1/1 | 1 -> 1 | 5.0 · 5 | 0% | 0 | 0 |
+| PYMNTS | 1/1 | 10 -> 3 | 2.3 · 3 | 100% | 0 | 0 |
 | American Express Investor Press | 1/1 | 2 -> 0 | - | - | 0 | 0 |
-| European Central Bank Releases | 1/1 | 10 -> 0 | - | - | 0 | 0 |
-| JCB (Google News) | 1/1 | 3 -> 0 | - | - | 0 | 0 |
+| JCB (Google News) | 1/1 | 2 -> 0 | - | - | 0 | 0 |
 | WeChat Pay / Tenpay (Google News) | 1/1 | 3 -> 0 | - | - | 0 | 0 |
 
 另有 2 个源今日 0 条目（2/2 抓取成功）。
 
 ## 入选理由摘录
-- **未央网**：*为什么入选：央行探索数字欧元与AI结合的新型支付应用*
-- **Fintech News Singapore**：*为什么入选：银行结合政府机构资源提供融资与培训，降低中小企业应用AI的门*
-- **Stripe Blog**：*为什么入选：顶级支付平台Stripe集成OUSD作为默认稳定币。*
-- **Google News 中文金融科技**：*为什么入选：包含OpenAI模型发布与汇丰稳定币新动态*
-- **Payments Dive**：*为什么入选：欧洲探索本土支付系统以挑战美国卡组织垄断。*
-- **The Fintech Times**：*为什么入选：揭示USDC高周转率及DeFi对其结算量的驱动作用*
-- **PYMNTS**：*为什么入选：美联储官员探讨AI代理在B2B支付领域的适用性。*
+- **European Central Bank Releases**：*为什么入选：央行高层探讨AI金融风险，关注政策走向*
+- **BIS Press Releases**：*为什么入选：关注全球银行业风险评估及人工智能在监管中的最新应用*
+- **Alipay / Ant Group (Google News)**：*为什么入选：展示了支付与信用体系结合AI商业的新趋势。*
+- **X / Mastercard**：*为什么入选：展示了传统支付巨头推动多货币互联与数字资产应用的最新进展。*
+- **Finextra Headlines**：*为什么入选：拓展了加拿大支付体系的成员覆盖范围*
+- **The Fintech Times**：*为什么入选：创下巨额种子轮融资记录，推动AI与伊斯兰金融融合。*
+- **未央网**：*为什么入选：展示了国家金融支持科技创新的最新规模与政策导向。*
+- **Google News 中文金融科技**：*为什么入选：稳定币USDT回归比特币网络是加密货币领域的重要动态。*
+- **Federal Reserve Press Releases**：*为什么入选：监管机构发布银行处置计划反馈，关乎金融市场稳定。*
