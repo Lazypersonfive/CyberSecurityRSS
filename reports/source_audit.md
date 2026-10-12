@@ -1,16 +1,16 @@
 # Source Registry Audit
 
-- generated_for: 2026-10-08
-- dates: 2026-10-08, 2026-10-05, 2026-10-01, 2026-09-28, 2026-09-21, 2026-09-17, 2026-09-14
+- generated_for: 2026-10-12
+- dates: 2026-10-12, 2026-10-08, 2026-10-05, 2026-10-01, 2026-09-28, 2026-09-21, 2026-09-17
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 105 | 12 | 21 | 70 | 2 | 8 | 12 | 41 | 9 |
-| ai_security | 66 | 8 | 6 | 51 | 1 | 0 | 7 | 11 | 28 |
-| finance | 70 | 18 | 2 | 50 | 0 | 9 | 18 | 2 | 0 |
-| security | 105 | 16 | 0 | 83 | 6 | 0 | 13 | 3 | 43 |
+| ai | 105 | 11 | 21 | 71 | 2 | 6 | 11 | 43 | 9 |
+| ai_security | 66 | 8 | 7 | 49 | 2 | 0 | 7 | 12 | 29 |
+| finance | 70 | 18 | 2 | 50 | 0 | 6 | 18 | 2 | 0 |
+| security | 105 | 14 | 0 | 85 | 6 | 0 | 12 | 3 | 46 |
 
 ## Unknown Selected Sources
 
@@ -21,6 +21,7 @@
 | `machinelearning.apple.com` | 2 | ai | [苹果推出RLTL;DR研究：通过内化自生成反馈实现AI模型的自我提升](https://machinelearning.apple.com/research/rltl-dr-self-improvement) |
 | `aws.amazon.com` | 1 | ai_security | [配置AI漏洞处置测试套件第二部分：转向文件的设计与实践](https://aws.amazon.com/blogs/security/configuring-your-ai-vulnerability-harness-part-2-the-steering-file/) |
 | `paddo.dev` | 1 | security | [Vite安全漏洞CVE-2026-39364被用于针对云端与容器开发环境的路径穿越攻击](https://paddo.dev/blog/dev-server-left-the-laptop/) |
+| `pentestpartners.com` | 1 | ai_security | [分析生成式AI中的提示词注入威胁及其安全防护界限](https://www.pentestpartners.com/security-blog/your-ai-can-access-it-can-an-attacker/) |
 
 ## Review Rule
 
