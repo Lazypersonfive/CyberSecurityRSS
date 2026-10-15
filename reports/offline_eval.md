@@ -1,33 +1,33 @@
 # Offline Strategy Eval
 
-- generated_for: 2026-10-12
-- dates: 2026-10-12, 2026-10-08, 2026-10-05, 2026-10-01, 2026-09-28, 2026-09-21, 2026-09-17
+- generated_for: 2026-10-15
+- dates: 2026-10-15, 2026-10-12, 2026-10-08, 2026-10-05, 2026-10-01, 2026-09-28, 2026-09-21
 
 ## Top Issues
 
 - [ai_security] 1/7 天未满额，累计缺口约 4 条。
 - [ai_security] 中文目标 6/7 天达成。
 - [ai] 中文目标 6/7 天达成。
-- [security] 入选 unknown source 6 条，需登记或降权。
+- [security] 入选 unknown source 5 条，需登记或降权。
 - [ai_security] 入选 unknown source 2 条，需登记或降权。
 
 ## Board Health
 
 | Board | Name | Days | Avg Selected | Target | Full Days | Avg CN | CN Target | Obs Min CN | CN OK Days | Avg GN | Max GN | Unknown | Avg Final | Merged |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | AI 前沿 | 7 | 15.0 | 15 | 7/7 | 5.1 | 5 | 4 | 6/7 | 0.9 | 3 | 2 | 8.0 | 28 |
-| ai_security | AI 安全 | 7 | 9.4 | 10 | 6/7 | 4.1 | 2 | 0 | 6/7 | 0.0 | 2 | 2 | 8.3 | 5 |
-| finance | 金融科技 | 7 | 10.0 | 10 | 7/7 | 2.4 | 2 | 2 | 7/7 | 0.9 | 3 | 0 | 7.9 | 4 |
-| security | 安全 | 7 | 15.0 | 15 | 7/7 | 7.4 | 6 | 6 | 7/7 | 0.0 | 1 | 6 | 8.5 | 12 |
+| ai | AI 前沿 | 7 | 15.0 | 15 | 7/7 | 5.1 | 5 | 4 | 6/7 | 0.9 | 3 | 2 | 8.0 | 25 |
+| ai_security | AI 安全 | 7 | 9.4 | 10 | 6/7 | 3.7 | 2 | 0 | 6/7 | 0.0 | 2 | 2 | 8.1 | 4 |
+| finance | 金融科技 | 7 | 10.0 | 10 | 7/7 | 2.3 | 2 | 2 | 7/7 | 1.0 | 3 | 0 | 7.8 | 4 |
+| security | 安全 | 7 | 15.0 | 15 | 7/7 | 7.4 | 6 | 6 | 7/7 | 0.0 | 1 | 5 | 8.6 | 12 |
 
 ## Source Mix
 
 | Board | T1 | T1.5 | T2 | Unknown | Official | X | Google News | CN Expert | Community |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 11 | 21 | 71 | 2 | 11 | 43 | 6 | 9 | 0 |
-| ai_security | 8 | 7 | 49 | 2 | 7 | 12 | 0 | 29 | 0 |
-| finance | 18 | 2 | 50 | 0 | 18 | 2 | 6 | 0 | 0 |
-| security | 14 | 0 | 85 | 6 | 12 | 3 | 0 | 46 | 0 |
+| ai | 10 | 19 | 74 | 2 | 10 | 43 | 6 | 8 | 0 |
+| ai_security | 10 | 6 | 48 | 2 | 9 | 12 | 0 | 26 | 0 |
+| finance | 17 | 2 | 51 | 0 | 17 | 2 | 7 | 0 | 0 |
+| security | 14 | 0 | 86 | 5 | 13 | 3 | 0 | 47 | 0 |
 
 ## Target Misses
 
@@ -39,7 +39,6 @@
 - 2026-10-01 security：selected 15/15，中文 6/6，unknown 1
 - 2026-09-28 security：selected 15/15，中文 6/6，unknown 1
 - 2026-09-21 ai：selected 15/15，中文 5/5，unknown 1
-- 2026-09-17 security：selected 15/15，中文 6/6，unknown 1
 
 ## Read This
 
