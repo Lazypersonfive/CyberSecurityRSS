@@ -1,0 +1,690 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-10-29",
+  "generated_at": "2026-10-29T02:03:24.465935Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 6,
+    "direct": 15,
+    "tier_t2": 10,
+    "kind_cn_expert": 6,
+    "tier_t1": 5,
+    "kind_expert": 1,
+    "kind_official": 4,
+    "wechat": 2,
+    "kind_media": 4
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "delivered_filter_stats": {
+    "url": 3,
+    "story": 4,
+    "total": 7
+  },
+  "candidate_share_stats": {},
+  "items": [
+    {
+      "title_zh": "CVE-2025-41242代码审计与复现：利用Java字符高位截断突破Spring路径穿越防线",
+      "title_orig": "CVE-2025-41242 代码审计与复现：利用“幽灵比特”突破 Spring 路径穿越防线",
+      "summary": "CVE-2025-41242是Spring Framework的高危路径穿越漏洞，其原理是利用Java字符高位截断特性构造特殊Unicode字符并生成畸形编码，从而造成跨组件解析不一致以绕过Spring的路径黑名单校验。攻击者可借助Jetty底层还原出目录穿越符号来读取服务器敏感文件，目前已有从代码审计、漏洞复现到补丁验证的完整漏洞复盘分析以及相应的安全防御方案。",
+      "tags": [
+        "漏洞复现",
+        "代码审计",
+        "路径穿越"
+      ],
+      "url": "https://xz.aliyun.com/news/93038",
+      "source": "xz.aliyun.com",
+      "category": "CN_News",
+      "published": "2026-10-25T07:23:16+00:00",
+      "cve_ids": [
+        "CVE-2025-41242"
+      ],
+      "selection_reason": "深入分析Spring漏洞利用链与底层解析差异",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2025-41242",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "actionability": 9.0,
+        "exploitability": 9.0,
+        "relevance": 9.0,
+        "technical_depth": 10.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "Wiz监测PHP2Shell漏洞利用尝试及修复趋势",
+      "title_orig": "PHP2Shell: Exploitation Attempts and Remediation Trends",
+      "summary": "Wiz研究团队对PHP2Shell漏洞的实际利用尝试展开了持续监测与深入分析，确认目前所有观察到的攻击手段均未取得成功。该研究详细探讨了攻击者采用的具体技术手法，阐述了阻止攻击完成的关键防御机制，并全面展示了自该漏洞公开披露以来，相关系统的受攻击暴露面变化以及整体修复趋势的最新动态。",
+      "tags": [
+        "漏洞利用",
+        "安全监测",
+        "缓解措施"
+      ],
+      "url": "https://www.wiz.io/blog/php2shell-exploitation-so-far",
+      "source": "wiz.io",
+      "category": "OfficialAdvisories",
+      "published": "2026-10-27T13:21:45+00:00",
+      "cve_ids": [],
+      "selection_reason": "评估漏洞真实利用风险与防范成效",
+      "feed_url": "https://www.wiz.io/feed/rss.xml",
+      "feed_title": "Wiz Blog",
+      "source_tier": "t1",
+      "source_kind": "expert",
+      "source_label": "研究团队",
+      "source_key": "wiz.io",
+      "story_id": "url:wiz.io/blog/php2shell-exploitation-so-far",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 8.25,
+      "final_score": 8.99,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.2,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "苹果为旧款iPhone和iPad补丁回溯修复CoreGraphics越界写入漏洞",
+      "title_orig": "Apple 将已遭利用的 CoreGraphics 漏洞修复回溯至旧款 iPhone 和 iPad",
+      "summary": "苹果公司于周一正式将一项已经在真实网络攻击中被利用的高危安全漏洞修复回溯推送至旧款iPhone和iPad设备，该漏洞的追踪编号为CVE-2026-86950且CVSS评分高达8.8分。该漏洞属于影响CoreGraphics组件的越界写入缺陷，在处理恶意构造的文件时可能导致任意代码执行，苹果公司在上个月已通过iOS 26.7.1、iPadOS 26.7.1及macOS Tahoe 26.7.1等系统版本发布了修复补丁。",
+      "tags": [
+        "苹果漏洞",
+        "越界写入",
+        "代码执行"
+      ],
+      "url": "https://hackernews.cc/post/64840",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-10-28T02:48:00+00:00",
+      "cve_ids": [
+        "CVE-2026-86950"
+      ],
+      "selection_reason": "关注已遭野外利用的苹果核心组件高危漏洞",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "cve:cve-2026-86950",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "exploitability": 9.0,
+        "relevance": 9.0,
+        "technical_depth": 7.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "Fireblocks mpc-lib 算法库存在硬化派生失效漏洞可导致高阶密钥泄露",
+      "title_orig": "VU#701544: Retraction of mpc-lib hardened derivation fails to protect ancestor isolation",
+      "summary": "Fireblocks的mpc-lib库在缺少私有父密钥的情况下，其BIP32硬化派生实现存在失败开放漏洞。该漏洞直接破坏了硬化派生的祖先隔离特性，导致掌握受损低阶签名者分片的攻击者能够反向恢复出衍生该分片的高阶分片，进而严重威胁整体密钥体系的安全，目前原文尚未披露受影响的具体版本及相应修复状态。",
+      "tags": [
+        "漏洞预警",
+        "密码安全",
+        "BIP32"
+      ],
+      "url": "https://kb.cert.org/vuls/id/701544",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-10-26T22:45:54+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了MPC密码库实现漏洞对密钥隔离性的直接威胁。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/701544",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.79,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "Cloudflare修补Workers AI中GLM-5.3模型的跨请求KV缓存泄漏漏洞",
+      "title_orig": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang",
+      "summary": "Cloudflare Workers AI平台上的GLM-5.3模型因配置不匹配，触发了底层SGLang推理框架中的逻辑漏洞，进而导致不同用户请求之间的KV缓存页面发生跨请求泄露问题。官方在收到相关安全报告后迅速完成了针对性修复与系统补丁部署，目前该潜在的数据泄露隐患已被全面消除，服务安全性得到全面保障与持续提升。 Cloudflare修补Workers AI中GLM-5.3模型的跨请求KV缓存泄漏漏洞。",
+      "tags": [
+        "漏洞修复",
+        "AI安全",
+        "缓存泄露"
+      ],
+      "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+      "source": "blog.cloudflare.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-10-26T22:01:23+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示大模型推理框架中的缓存隔离漏洞与修复方案。",
+      "feed_url": "https://blog.cloudflare.com/tag/security/rss/",
+      "feed_title": "Cloudflare Security",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "blog.cloudflare.com",
+      "story_id": "url:blog.cloudflare.com/kv-cache-exposure-remediation",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "exploitability": 7.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.79,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "COVESA vsomeip通信中间件存在过度内存分配漏洞（CVE未披露）",
+      "title_orig": "VU#128947: COVESA vsomeip excessive memory allocation in reliable (TCP) endpoint buffer handling",
+      "summary": "COVESA开源车用通信中间件vsomeip在3.7.3及以下版本中存在内存分配漏洞，其可靠TCP端点会在校验实际接收字节前，直接将接收缓冲区扩大至攻击者声明的消息大小。远程未经身份验证的对等节点可利用该机制分配巨额内存并保持连接，从而引发拒绝服务状态；目前原文未披露具体的修复补丁或官方缓解状态。",
+      "tags": [
+        "内存分配漏洞",
+        "拒绝服务",
+        "车联网安全"
+      ],
+      "url": "https://kb.cert.org/vuls/id/128947",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-10-26T19:07:02+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示车载通信中间件的拒绝服务漏洞风险",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/128947",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.79,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "GoAhead嵌入式服务器TLS缺陷导致已吊销客户端证书仍可被验证通过",
+      "title_orig": "GoAhead TLS 缺陷允许已吊销的客户端证书并使会话可被解密",
+      "summary": "GoAhead嵌入式Web服务器在启用双向TLS及OpenSSL后端的特定配置下，虽然加载了证书吊销列表却未开启吊销检查，导致已被吊销的客户端证书仍能成功通过身份验证并可能使会话被解密。该缺陷主要影响主动配置了吊销列表以阻止失效证书的安全场景，目前厂商已发布修复补丁，建议相关用户及时更新代码或重新编译以修复校验逻辑。",
+      "tags": [
+        "漏洞",
+        "TLS",
+        "GoAhead"
+      ],
+      "url": "https://hackernews.cc/post/64839",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-10-28T02:43:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "嵌入式服务器TLS实现缺陷，影响双向认证安全性。",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "url:hackernews.cc/post/64839",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "医疗机构Web服务器遭AI辅助攻击事件深度复盘与节点取证分析",
+      "title_orig": "【原创】当 AI 盯上医院：四小时攻击链与两处独立节点的深度取证",
+      "summary": "在一次针对某医院Web服务器的入侵事件中，攻击者通过Webshell在四小时内连续完成了环境侦察、提权代码迭代、远控植入、IIS模块持久化以及定向清痕等一系列攻击操作。该事件深度还原了AI技术用于提升攻击效率与隐蔽性的真实演练过程，对蓝队应急响应和红蓝对抗中的深度取证工作具有极高的参考价值。",
+      "tags": [
+        "应急响应",
+        "红蓝对抗",
+        "持久化"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247521038&idx=1&sn=190318e18c61bd4dd02492fecd43a7c6",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-10-27T03:34:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI辅助攻击的实战细节，具取证指导意义",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247521038&idx=1&sn=190318e18c61bd4dd02492fecd43a7c6",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "Linux Kernel存在POSIX CPU定时器释放后重用本地提权漏洞（CVE-2026-98260）",
+      "title_orig": "【漏洞通告】Linux exec POSIX CPU 定时器 UAF本地提权漏洞(CVE-2026-98260)",
+      "summary": "2026年10月27日，深瞳漏洞实验室监测到Linux Kernel组件中存在高危权限提升漏洞，漏洞编号为CVE-2026-98260。该漏洞主要是由于POSIX CPU定时器存在释放后重用（UAF）缺陷导致的，拥有本地普通用户权限的攻击者可通过巧妙利用该漏洞触发系统内存异常，进而成功实现本地权限提升，但目前官方及原文尚未披露该漏洞的具体影响版本与修复状态。",
+      "tags": [
+        "Linux",
+        "UAF漏洞",
+        "本地提权"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&mid=2247526322&idx=1&sn=6214d1e2d21d46a9dc149f6b21030930",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-10-27T09:47:00+00:00",
+      "cve_ids": [
+        "CVE-2026-98260"
+      ],
+      "selection_reason": "关注Linux内核高危UAF本地提权漏洞及其安全风险。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "feed_title": "深信服千里目安全实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/027c7f3b98d9d0f2db84513f0cb94f02e9a8a3d7.xml",
+      "story_id": "cve:cve-2026-98260",
+      "related_urls": [
+        "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247507953&idx=1&sn=63d387c07e7193fafec342f7cbbe8b80"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 7.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "Volt Typhoon利用Silent Train隐蔽网络发动4起零日漏洞攻击",
+      "title_orig": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns",
+      "summary": "网络间谍组织Volt Typhoon被指利用名为Silent Train的隐蔽访问网络发起了四起零日漏洞利用攻击，该网络自2023年底首次被发现，主要通过轮换使用受感染的SOHO、物联网及企业基础设施链条来获取战略访问权限。目前该隐蔽网络已被成功摧毁，但关于攻击涉及的技术细节，原文未披露具体的漏洞类型、漏洞原理、触发条件以及受影响的组件与版本信息。",
+      "tags": [
+        "网络攻击",
+        "零日漏洞",
+        "隐蔽网络"
+      ],
+      "url": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-10-28T18:08:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示利用基础设施轮换链隐藏零日攻击的隐蔽网络机制",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "url:thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 7.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.3,
+        "applied_adjustment": 0.3
+      }
+    },
+    {
+      "title_zh": "黑客在安全补丁发布数日后针对 Oracle E-Business Suite 严重远程代码执行漏洞展开探测",
+      "title_orig": "Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch",
+      "summary": "根据威胁情报公司Defused Cyber的最新预警，黑客正针对Oracle E-Business Suite中刚修复的严重安全漏洞CVE-2026-101767展开探测活动。该漏洞存在于Oracle Application Object Library组件中，由于身份验证不当导致CVSS评分高达9.8分，尽管官方已于上周发布紧急补丁修复，但用户仍需密切关注潜在风险。",
+      "tags": [
+        "Oracle",
+        "身份验证漏洞",
+        "漏洞预警"
+      ],
+      "url": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-10-28T12:48:03+00:00",
+      "cve_ids": [
+        "CVE-2026-101767"
+      ],
+      "selection_reason": "揭示关键企业级系统漏洞补丁发布后的真实威胁与探测风险。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-101767",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "exploitability": 8.0,
+        "relevance": 9.0,
+        "technical_depth": 7.0,
+        "impact_scope": 9.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.1,
+        "applied_adjustment": 0.1
+      }
+    },
+    {
+      "title_zh": "InfraTrust警告PHP漏洞威胁防火墙与VPN等关键网络设备",
+      "title_orig": "InfraTrust report warns of exploited flaws in critical network infrastructure",
+      "summary": "InfraTrust最新报告发出警示，指出攻击者正积极利用关键网络基础设施中的已知漏洞，其中被称为PHP2Shell的PHP缺陷使防火墙、VPN及应用交付控制器等设备的Web管理界面面临严重威胁。攻击者可借此控制关键网络组件，虽然原文并未披露具体的受影响版本与官方修复补丁状态，但相关风险已引发社会对网络安全的广泛关注。",
+      "tags": [
+        "网络安全",
+        "漏洞预警",
+        "基础设施"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/infratrust-report-warns-of-exploited-flaws-in-critical-network-infrastructure/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-10-28T14:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示关键网络设备Web界面存在的重大PHP安全威胁",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/infratrust-report-warns-of-exploited-flaws-in-critical-network-infrastructure",
+      "related_urls": [
+        "https://x.com/IntCyberDigest/status/2115576845777183090"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "exploitability": 9.0,
+        "relevance": 9.0,
+        "technical_depth": 7.0,
+        "impact_scope": 8.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.1,
+        "applied_adjustment": 0.1
+      }
+    },
+    {
+      "title_zh": "Project Zero对比传统模糊测试工具Fuzzilli与AI漏洞挖掘系统BigSleep在V8引擎上的表现",
+      "title_orig": "Fuzzers vs. AI: Comparing Fuzzilli and BigSleep on JavaScript Engines",
+      "summary": "谷歌Project Zero团队对谷歌定期用于挖掘Chrome浏览器V8 JavaScript引擎安全漏洞的两款自动化检测工具进行了全面对比评估，这两款工具分别是生成式JavaScript引擎模糊测试工具Fuzzilli，以及基于大语言模型的漏洞查找系统BigSleep。",
+      "tags": [
+        "漏洞挖掘",
+        "模糊测试",
+        "人工智能"
+      ],
+      "url": "https://projectzero.google/2026/10/fuzzing-v-AI.html",
+      "source": "projectzero.google",
+      "category": "OfficialAdvisories",
+      "published": "2026-10-27T07:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "评估AI与传统Fuzzing在V8引擎上的补位效果",
+      "feed_url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+      "feed_title": "Project Zero",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "研究团队",
+      "source_key": "projectzero.google",
+      "story_id": "url:projectzero.google/2026/10/fuzzing-v-ai.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 7.0,
+        "exploitability": 6.0,
+        "relevance": 8.0,
+        "technical_depth": 9.0,
+        "impact_scope": 7.0
+      },
+      "dimension_score": 7.55,
+      "final_score": 8.29,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "针对LLM智能体的跨会话残留攻击基准评测研究",
+      "title_orig": "攻击者离场之后：面向 LLM 智能体的跨会话残留攻击基准评测",
+      "summary": "该研究针对LLM智能体通过长期记忆文件与定时任务实现跨会话持久化的特点，提出了跨会话残留攻击的评估基准。攻击者利用一次性间接提示注入生成残留载荷，导致攻击者离开后恶意行为仍被后续会话触发。该研究填补了LLM智能体在长期记忆与自动化任务场景下的持久化安全评估空白，对智能体安全防御具有重要技术参考价值。",
+      "tags": [
+        "LLM安全",
+        "智能体",
+        "提示注入"
+      ],
+      "url": "https://paper.seebug.org/3530",
+      "source": "paper.seebug.org",
+      "category": "Synthesis",
+      "published": "2026-10-28T09:23:26+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了LLM智能体跨会话残留攻击的新风险与评估基准。",
+      "feed_url": "https://paper.seebug.org/rss/",
+      "feed_title": "Seebug Paper",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "paper.seebug.org",
+      "story_id": "url:paper.seebug.org/3530",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 7.0,
+        "exploitability": 7.0,
+        "relevance": 8.0,
+        "technical_depth": 9.0,
+        "impact_scope": 6.0
+      },
+      "dimension_score": 7.55,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "嵌入式Web服务器GoAhead曝出TLS漏洞，或导致撤销证书被放行及加密会话泄露",
+      "title_orig": "TLS Flaws Found in GoAhead Web Server Used in Hundreds of Millions of Devices",
+      "summary": "安全机构FoxIO披露了嵌入式Web服务器GoAhead中存在的三个TLS漏洞，这些漏洞可能导致已撤销的证书绕过校验被错误放行，或者使部分加密会话暴露给网络监听者。由于该组件被广泛应用于数以亿计的各类设备中，其协议层缺陷严重威胁设备通信安全，但原始摘要未进一步披露受影响的具体版本及官方修复状态。",
+      "tags": [
+        "漏洞",
+        "TLS",
+        "GoAhead"
+      ],
+      "url": "https://www.securityweek.com/tls-flaws-found-in-goahead-web-server-used-in-hundreds-of-millions-of-devices/",
+      "source": "securityweek.com",
+      "category": "Synthesis",
+      "published": "2026-10-28T13:10:34+00:00",
+      "cve_ids": [],
+      "selection_reason": "基础组件TLS协议实现漏洞，影响极广。",
+      "feed_url": "https://www.securityweek.com/feed/",
+      "feed_title": "SecurityWeek",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "securityweek.com",
+      "story_id": "url:securityweek.com/tls-flaws-found-in-goahead-web-server-used-in-hundreds-of-millions-of-devices",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 7.0,
+        "exploitability": 7.0,
+        "relevance": 9.0,
+        "technical_depth": 8.0,
+        "impact_scope": 9.0
+      },
+      "dimension_score": 8.15,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.1,
+        "applied_adjustment": 0.1
+      }
+    }
+  ]
+}

@@ -1,0 +1,478 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-10-29",
+  "generated_at": "2026-10-29T02:05:15.059823Z",
+  "raw_count": 58,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "direct": 10,
+    "tier_t2": 8,
+    "kind_expert": 5,
+    "tier_t1": 1,
+    "kind_official": 1,
+    "chinese": 3,
+    "wechat": 2,
+    "kind_cn_expert": 3,
+    "tier_unknown": 1,
+    "kind_media": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 2,
+    "llm_merged": 0,
+    "merged_total": 2
+  },
+  "delivered_filter_stats": {
+    "url": 0,
+    "story": 0,
+    "total": 0
+  },
+  "candidate_share_stats": {
+    "considered": 120,
+    "shared": 10,
+    "skipped_missing": 0,
+    "skipped_date": 0,
+    "skipped_window": 1,
+    "skipped_semantic": 95,
+    "skipped_duplicate": 14
+  },
+  "items": [
+    {
+      "title_zh": "研究表明AI模型可通过嵌入加密神经网络隐蔽任意潜在能力",
+      "title_orig": "Hiding Capabilities in AI Models",
+      "summary": "最新研究表明，AI模型在对抗条件下可以通过嵌入加密神经网络的后门攻击手段，成功隐藏其任意危险能力。这种隐蔽攻击使得模型在常规安全评估测试中无法被触发潜在功能，证明了依赖现有检测手段来发现安全风险的传统假设并不成立，给未来的模型部署与安全监管带来了重大挑战。",
+      "tags": [
+        "AI安全",
+        "后门攻击",
+        "模型评估"
+      ],
+      "url": "https://www.schneier.com/blog/archives/2026/10/hiding-capabilities-in-ai-models.html",
+      "source": "schneier.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-10-27T11:01:26+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI模型能力隐蔽的技术原理与评估缺陷",
+      "feed_url": "https://www.schneier.com/feed/atom/",
+      "feed_title": "Schneier on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "schneier.com",
+      "story_id": "url:schneier.com/blog/archives/2026/10/hiding-capabilities-in-ai-models.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "security_relevance": 10.0,
+        "technical_depth": 9.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 9.0,
+        "practical_risk": 9.0
+      },
+      "dimension_score": 9.2,
+      "final_score": 9.4,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.2,
+        "applied_adjustment": 0.2
+      }
+    },
+    {
+      "title_zh": "谷歌评估JavaScript引擎漏洞挖掘工具：比较传统模糊测试工具Fuzzilli与AI系统BigSleep的实战表现",
+      "title_orig": "Fuzzers vs. AI: Comparing Fuzzilli and BigSleep on JavaScript Engines",
+      "summary": "谷歌Project Zero对用于Chrome的V8 JavaScript引擎漏洞挖掘的生成式模糊测试工具Fuzzilli与基于大语言模型的BigSleep进行了对比评估。在过去六个月的常规测试中，BigSleep共计发现了45个漏洞，在数量上超越了Fuzzilli发现的37个漏洞，且两者报告的具体漏洞重合度仅为25%，这表明基于大语言模型的安全工具在自动化漏洞挖掘领域展现出了独特优势与补充价值。",
+      "tags": [
+        "漏洞挖掘",
+        "模糊测试",
+        "人工智能"
+      ],
+      "url": "https://projectzero.google/2026/10/fuzzing-v-AI.html",
+      "source": "projectzero.google",
+      "category": "FirstParty",
+      "published": "2026-10-27T07:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "评估AI与传统Fuzzer在V8引擎漏洞挖掘中的实际成效",
+      "feed_url": "https://googleprojectzero.blogspot.com/feeds/posts/default",
+      "feed_title": "Google Project Zero",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "研究团队",
+      "source_key": "projectzero.google",
+      "story_id": "url:projectzero.google/2026/10/fuzzing-v-ai.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "security_relevance": 8.0,
+        "technical_depth": 9.0,
+        "actionability": 7.0,
+        "agent_model_relevance": 8.0,
+        "practical_risk": 7.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.69,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "大型语言模型提示词注入漏洞的原理与利用技术解析",
+      "title_orig": "Exploiting LLM prompt injection vulnerabilities",
+      "summary": "大型语言模型正在迅速成为现代 Web 应用的标准组件，广泛应用于客户支持聊天机器人及内部知识助手等场景，但这也引入了全新的安全攻击面。本文专门针对提示词注入这一最具影响力的漏洞类型展开深入探讨，旨在帮助安全研究人员全面理解并有效探索针对 LLM 应用的新型攻击技术与潜在安全风险。",
+      "tags": [
+        "LLM安全",
+        "提示词注入",
+        "Web安全"
+      ],
+      "url": "https://www.intigriti.com/researchers/blog/hacking-tools/exploiting-advanced-llm-prompt-injection-vulnerabilities",
+      "source": "intigriti.com",
+      "category": "WebSecurity",
+      "published": "2026-10-28T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍了热门的大模型应用安全与提示词注入利用技术。",
+      "feed_url": "https://blog.intigriti.com/feed/",
+      "feed_title": "Intigriti",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "漏洞研究",
+      "source_key": "intigriti.com",
+      "story_id": "url:intigriti.com/researchers/blog/hacking-tools/exploiting-advanced-llm-prompt-injection-vulnerabilities",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "security_relevance": 9.0,
+        "technical_depth": 8.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 9.0,
+        "practical_risk": 8.0
+      },
+      "dimension_score": 8.45,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.2,
+        "applied_adjustment": 0.2
+      }
+    },
+    {
+      "title_zh": "代理式开发生命周期合规指南：映射NIST SSDF、OWASP与欧盟AI法案",
+      "title_orig": "ADLC compliance: Mapping agentic development to NIST SSDF, OWASP, and the EU AI Act | Endor Labs",
+      "summary": "该研究针对智能体开发生命周期，提出了与NIST SSDF、OWASP LLM及代理式Top 10风险以及欧盟AI法案合规要求的逐阶段映射关系。文章详细梳理了各个安全控制环节所需的具体审计证据，为开发者提供了明确且系统的合规指引，旨在帮助相关机构有效应对人工智能安全风险，并确保软件开发全流程符合严苛的国际监管法规要求。",
+      "tags": [
+        "AI安全",
+        "软件供应链",
+        "合规审计"
+      ],
+      "url": "https://www.endorlabs.com/learn/adlc-compliance",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-10-28T03:56:18+00:00",
+      "cve_ids": [],
+      "selection_reason": "梳理了AI Agent开发到三大合规标准的映射路径",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/adlc-compliance",
+      "related_urls": [
+        "https://www.endorlabs.com/learn/the-secure-agentic-development-lifecycle-adlc-explained",
+        "https://www.endorlabs.com/learn/adlc-maturity-model"
+      ],
+      "related_count": 2,
+      "score": 8,
+      "score_dimensions": {
+        "security_relevance": 9.0,
+        "technical_depth": 7.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 9.0,
+        "practical_risk": 7.0
+      },
+      "dimension_score": 8.0,
+      "final_score": 8.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.3,
+        "applied_adjustment": 0.3
+      }
+    },
+    {
+      "title_zh": "Endor Labs发布针对编码Agent与MCP服务器的代理开发生命周期安全最佳实践",
+      "title_orig": "ADLC Security Best Practices for Teams Shipping with Coding Agents | Endor Labs",
+      "summary": "针对应用安全与平台团队在引入AI编码Agent时面临的全新安全威胁，Endor Labs提出了全面的代理开发生命周期安全最佳实践指南。该指南明确要求相关团队必须全面盘点Agent与MCP服务器，对Agent的具体行为实施严格的策略约束，并在安装时审查依赖包，以全面保障Agent本身及所生成代码的安全性与合规性。 Endor Labs发布针对编码Agent与MCP服务器的代理开发生命周期安全最佳实践。",
+      "tags": [
+        "AI安全",
+        "Agent安全",
+        "安全最佳实践"
+      ],
+      "url": "https://www.endorlabs.com/learn/adlc-security-best-practices",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-10-28T03:04:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "指导团队规范编码Agent与MCP的安全管控",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/adlc-security-best-practices",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "security_relevance": 8.0,
+        "technical_depth": 7.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 9.0,
+        "practical_risk": 8.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.3,
+        "applied_adjustment": 0.3
+      }
+    },
+    {
+      "title_zh": "SDC2026议题回顾：从代码漏洞到Agent失控的AI安全攻击面演进与防御",
+      "title_orig": "SDC2026议题回顾 | 从 LLM 到 Agent：AI 安全攻击面的过去、现在与未来",
+      "summary": "本文回顾了SDC2026关于从大语言模型到Agent的AI安全攻击面演进议题，系统梳理了从传统代码漏洞过渡至Agent自主失控的技术风险与潜在隐患。文章针对不同演进阶段的攻击场景展开了深入的实战防御探讨，旨在帮助安全从业者全面评估大模型应用与Agent架构所面临的整体安全威胁并制定有效的安全应对策略。",
+      "tags": [
+        "AI安全",
+        "LLM",
+        "Agent安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458623168&idx=1&sn=c067079a13953815453d84054be125f5",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-10-27T10:07:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统梳理从LLM到Agent的攻击面演进",
+      "feed_url": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "feed_title": "看雪学院",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/0e026637254d450ae84c59f87d4e4fb4616651ca.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw%3D%3D&mid=2458623168&idx=1&sn=c067079a13953815453d84054be125f5",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "security_relevance": 8.0,
+        "technical_depth": 7.0,
+        "actionability": 6.0,
+        "agent_model_relevance": 8.0,
+        "practical_risk": 7.0
+      },
+      "dimension_score": 7.35,
+      "final_score": 7.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "俄罗斯黑客推出Phantom自动化勒索框架 利用AI实现脚本生成与目标筛选",
+      "title_orig": "AI自己写勒索脚本、自己挑目标、自己搞钱：俄罗斯黑客的Phantom框架，把勒索软件玩成了自动化流水线",
+      "summary": "这篇文章详细介绍了名为Phantom的自动化勒索软件框架，该框架借助人工智能技术实现了勒索脚本的自动编写、目标受害者的精准筛选以及后续资金索取等全流程自动化流水线作业。这种新型攻击模式的核心机制在于利用AI显著降低了网络攻击的技术门槛并大幅提升作业效率，不过原文目前尚未披露其所涉及的具体漏洞CVE编号、受影响的组件版本以及相关的安全修复状态。",
+      "tags": [
+        "勒索软件",
+        "人工智能",
+        "网络攻击"
+      ],
+      "url": "https://www.anquanke.com/post/id/316346",
+      "source": "anquanke.com",
+      "category": "Chinese",
+      "published": "2026-10-26T12:02:03+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI技术被黑客用于构建自动化勒索流水线的安全威胁",
+      "feed_url": "https://api.anquanke.com/data/v1/rss",
+      "feed_title": "安全客",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "anquanke.com",
+      "story_id": "url:anquanke.com/post/id/316346",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "security_relevance": 8.0,
+        "technical_depth": 6.0,
+        "actionability": 5.0,
+        "agent_model_relevance": 8.0,
+        "practical_risk": 8.0
+      },
+      "dimension_score": 7.2,
+      "final_score": 7.8,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "AI代理无需利用漏洞即可产生风险，安全防护需超出终端范围扩展至权限管理",
+      "title_orig": "AI Agents Don’t Stop at the Device. Your Security Program Shouldn’t Either.",
+      "summary": "AI代理无需利用技术漏洞即可造成严重损害，其核心安全风险在于直接继承了过高的执行权限与访问凭证，使得传统防御机制难以有效应对。为了妥善应对这种超越传统终端界限的自动化安全威胁，安全团队必须迅速将防护策略从单纯的终端监控全面扩展至对AI代理的身份认证、权限范围及全流程行为审计。",
+      "tags": [
+        "AI安全",
+        "权限管理",
+        "安全策略"
+      ],
+      "url": "https://www.guidepointsecurity.com/blog/ai-agent-security-beyond-the-endpoint/",
+      "source": "guidepointsecurity.com",
+      "category": "RedTeam",
+      "published": "2026-10-26T12:06:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI代理特权滥用风险，提醒安全策略须向身份与权限审计演进",
+      "feed_url": "https://www.guidepointsecurity.com/feed/",
+      "feed_title": "GuidePoint Security",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "guidepointsecurity.com",
+      "story_id": "url:guidepointsecurity.com/blog/ai-agent-security-beyond-the-endpoint",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "security_relevance": 8.0,
+        "technical_depth": 6.0,
+        "actionability": 6.0,
+        "agent_model_relevance": 9.0,
+        "practical_risk": 8.0
+      },
+      "dimension_score": 7.45,
+      "final_score": 7.15,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": -0.3,
+        "applied_adjustment": -0.3
+      }
+    },
+    {
+      "title_zh": "CodeBuddy Security通过结合白盒代码审计与黑盒验证实现AI代码审计的可利用性闭环",
+      "title_orig": "白盒发现，黑盒验证：CodeBuddy Security打造AI代码审计的\"可利用性闭环\"",
+      "summary": "CodeBuddy Security创新性地提出了融合白盒代码审计与黑盒验证的技术方案，旨在对生成的每个潜在漏洞结论进行实际测试与检验。该工具主要适用于自动化代码安全审计与漏洞利用验证等核心场景，能够通过实弹检验有效降低误报率，为安全从业者提供了全面提升漏洞挖掘效率与验证准确性的全新思路与参考依据。",
+      "tags": [
+        "代码审计",
+        "漏洞验证",
+        "AI安全"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU3ODAyMjg4OQ==&mid=2247498047&idx=1&sn=1fe4defcd852bbfa72cbb3d31ce020df",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-10-27T03:31:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示白黑盒结合的AI自动化审计与验证思路。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d762fbf5f8f256afb63bcfe9a362184072338819.xml",
+      "feed_title": "云鼎实验室",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d762fbf5f8f256afb63bcfe9a362184072338819.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzU3ODAyMjg4OQ%3D%3D&mid=2247498047&idx=1&sn=1fe4defcd852bbfa72cbb3d31ce020df",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "security_relevance": 7.0,
+        "technical_depth": 6.0,
+        "actionability": 6.0,
+        "agent_model_relevance": 6.0,
+        "practical_risk": 5.0
+      },
+      "dimension_score": 6.1,
+      "final_score": 6.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "Endor Labs通过AI SAST发现Apache Kafka两个无限制内存分配零日漏洞",
+      "title_orig": "Endor Labs AI SAST Finds Two Apache Kafka Zero-Days: Unbounded Memory Allocation from Brokers to Kafka Streams | Endor Labs",
+      "summary": "Endor Labs利用其AI SAST工具在开源项目Apache Kafka中成功扫描并发现了攻击者可控尺寸字段流入内存分配逻辑的零日漏洞，该风险可能导致无限制的内存分配及系统安全隐患。这一漏洞涉及范围广泛，直接影响到Broker日志压缩、消费者以及Kafka Streams等三个核心模块，目前相关问题已被官方确认并正式赋予了CVE-2026-114349和CVE-2026-111551两个CVE编号。",
+      "tags": [
+        "漏洞",
+        "Apache K",
+        "SAST"
+      ],
+      "url": "https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-two-apache-kafka-zero-days-unbounded-memory-allocation-from-brokers-to-kafka-streams",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-10-28T19:30:14+00:00",
+      "cve_ids": [
+        "CVE-2026-111551",
+        "CVE-2026-114349"
+      ],
+      "selection_reason": "展示了AI SAST在大型开源项目中发现高危内存分配零日漏洞",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "cve:cve-2026-111551,cve-2026-114349",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "security_relevance": 7.0,
+        "technical_depth": 6.0,
+        "actionability": 6.0,
+        "agent_model_relevance": 5.0,
+        "practical_risk": 5.0
+      },
+      "dimension_score": 5.95,
+      "final_score": 6.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.5,
+        "applied_adjustment": 0.5
+      }
+    }
+  ]
+}
