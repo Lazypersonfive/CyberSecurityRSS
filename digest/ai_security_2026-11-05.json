@@ -1,0 +1,477 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-11-05",
+  "generated_at": "2026-11-05T02:55:41.822424Z",
+  "raw_count": 53,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "direct": 10,
+    "tier_t2": 7,
+    "kind_expert": 6,
+    "chinese": 2,
+    "kind_cn_expert": 1,
+    "tier_unknown": 1,
+    "kind_media": 2,
+    "tier_t1": 2,
+    "kind_official": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 1,
+    "merged_total": 1
+  },
+  "delivered_filter_stats": {
+    "url": 0,
+    "story": 0,
+    "total": 0
+  },
+  "candidate_share_stats": {
+    "considered": 120,
+    "shared": 5,
+    "skipped_missing": 0,
+    "skipped_date": 0,
+    "skipped_window": 1,
+    "skipped_semantic": 98,
+    "skipped_duplicate": 16
+  },
+  "items": [
+    {
+      "title_zh": "Docker Sandboxes存在路径穿越漏洞CVE-2026-103916，AI代理可绕过限制读取宿主机敏感文件",
+      "title_orig": "Docker Sandboxes vulnerability lets AI agents access sensitive files outside their sandbox (CVE-2026-103916) | Endor Labs",
+      "summary": "安全研究人员在Docker Sandboxes中发现编号为CVE-2026-103916的严重安全漏洞，该漏洞会导致AI编程代理在执行常规复制命令时直接绕过既定的隔离与文件访问限制。这一缺陷将使AI代理能够非法跨界访问并读取开发者计算机上的云凭证等关键敏感文件，极大地增加了云端资产泄露的风险，但目前原文尚未公布具体修复版本与缓解措施。",
+      "tags": [
+        "Docker",
+        "漏洞",
+        "AI安全"
+      ],
+      "url": "https://www.endorlabs.com/learn/docker-sandboxes-vulnerability-lets-ai-agents-access-sensitive-files-outside-their-sandbox-cve-2026-103916",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-11-04T15:24:48+00:00",
+      "cve_ids": [
+        "CVE-2026-103916"
+      ],
+      "selection_reason": "揭示AI代理在隔离沙盒中的突破风险及敏感凭证泄露危害。",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "cve:cve-2026-103916",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "practical_risk": 9.0,
+        "actionability": 8.0,
+        "security_relevance": 10.0,
+        "agent_model_relevance": 10.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.35,
+      "final_score": 9.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.5,
+        "applied_adjustment": 0.5
+      }
+    },
+    {
+      "title_zh": "FastGPT v4.14.11 及更早版本默认配置下存在服务端请求伪造漏洞CVE-2026-42345",
+      "title_orig": "CVE-2026-42345 深度剖析：FastGPT 默认配置下的 SSRF 绕过与防御范式反思",
+      "summary": "在AI大模型与Agent蓬勃发展的背景下，FastGPT v4.14.11及更早版本被暴露存在CVSS评分高达7.7的高危SSRF漏洞CVE-2026-42345。尽管系统代码中已设置校验函数并硬编码了云厂商元数据地址，但由于字符串信任危机与默认配置失效，其黑名单防御机制仍被轻易击穿，该剖析从代码审计与动态复现切入，揭示了系统在处理用户自定义工作流出站网络请求时的防御崩塌原因。",
+      "tags": [
+        "SSRF漏洞",
+        "代码审计",
+        "AI应用安全"
+      ],
+      "url": "https://xz.aliyun.com/news/93078",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-10-31T11:29:39+00:00",
+      "cve_ids": [
+        "CVE-2026-42345"
+      ],
+      "selection_reason": "剖析AI工作流平台SSRF绕过成因与防御失效细节。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-42345",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "practical_risk": 9.0,
+        "actionability": 9.0,
+        "security_relevance": 9.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 9.0
+      },
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "解密 AI Agent 软件开发生命周期架构及 MCP、Skills 与 Hooks 等核心组件的安全防护机制",
+      "title_orig": "MCP, Skills, Hooks & Harnesses Explained for AppSec | Endor Labs",
+      "summary": "本文针对现代AI Agent软件开发生命周期，清晰定义了Agent、Harness、MCP服务器、Skills、Hooks以及插件等关键架构概念，并明确了各组件在整个系统中的具体位置。文章深入剖析了这些核心要素在Agentic SDLC中的实际运行机制与相互作用，重点阐述了它们对应用程序安全产生的深远影响，为安全人员评估并保障相关软件安全提供了重要参考。",
+      "tags": [
+        "AI安全",
+        "应用安全",
+        "架构分析"
+      ],
+      "url": "https://www.endorlabs.com/learn/decoding-the-agent-stack",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-11-04T18:47:36+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统化梳理AI Agent架构及AppSec安全机制",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/decoding-the-agent-stack",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "practical_risk": 7.0,
+        "actionability": 8.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.5,
+        "applied_adjustment": 0.5
+      }
+    },
+    {
+      "title_zh": "Meta的Muse Wonder模型在Agent Security League评估中获得最高FuncPass但安全排名中等",
+      "title_orig": "Mets Muse Wonder. evaluated against the Endor Labs Agent Security League | Endor Labs",
+      "summary": "在Endor Labs推出的Agent Security League AI代理安全基准评估中，Meta的Muse Code配合Wonder模型展现出极高实用功能，并成功创下了最高的FuncPass功能通过率纪录。然而在该基准的安全评估维度中，该模型组合的SecPass安全成绩仅处于中游水平，这清晰地表明其卓越的功能表现与安全防护能力之间仍存在着明显差距。",
+      "tags": [
+        "AI安全",
+        "大模型安全",
+        "安全评估"
+      ],
+      "url": "https://www.endorlabs.com/learn/metas-new-muse-wonder-record-funcpass-but-mid-table-secpass",
+      "source": "endorlabs.com",
+      "category": "AISecurityLabs",
+      "published": "2026-11-04T15:24:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了大语言模型在功能表现与安全能力之间的失衡。回",
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "供应链安全",
+      "source_key": "endorlabs.com",
+      "story_id": "url:endorlabs.com/learn/metas-new-muse-wonder-record-funcpass-but-mid-table-secpass",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "practical_risk": 7.0,
+        "actionability": 7.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 7.0
+      },
+      "dimension_score": 7.6,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.5,
+        "applied_adjustment": 0.5
+      }
+    },
+    {
+      "title_zh": "Trail of Bits通过Codex大模型实现Linux内核及发行版安全补丁的大规模自动化回移植",
+      "title_orig": "Backporting security fixes at scale with Codex",
+      "summary": "由于安全补丁的回移植过程极其耗时且繁重，导致诸多Linux稳定版本普遍缺乏已有的关键安全修复。为了解决这一痛点，相关项目团队利用Codex工具将每个补丁的回移植处理时间从几天大幅缩短至数小时，从而有力地辅助人工审核人员为Ubuntu LTS、Fedora以及Linux内核等关键软件快速提交安全修复，截至10月29日该项目已成功协助交付了149个修复。",
+      "tags": [
+        "大模型安全",
+        "Linux内核",
+        "补丁回移植"
+      ],
+      "url": "https://blog.trailofbits.com/2026/11/02/backporting-security-fixes-at-scale-with-codex/",
+      "source": "blog.trailofbits.com",
+      "category": "AISecurityLabs",
+      "published": "2026-11-02T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示大模型在加速Linux安全补丁回移植中的工程落地实践",
+      "feed_url": "https://blog.trailofbits.com/index.xml",
+      "feed_title": "Trail of Bits",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全研究",
+      "source_key": "blog.trailofbits.com",
+      "story_id": "url:blog.trailofbits.com/2026/11/02/backporting-security-fixes-at-scale-with-codex",
+      "related_urls": [
+        "https://x.com/trailofbits/status/2117229048749228374"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "practical_risk": 7.0,
+        "actionability": 8.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 8.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 7.8,
+      "final_score": 8.0,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.2,
+        "applied_adjustment": 0.2
+      }
+    },
+    {
+      "title_zh": "ZeroMDASH：基于领域自适应的Agent-Native通用漏洞挖掘工程实践",
+      "title_orig": "议题分享： ZeroMDASH：领域自适应的Agent-Native 通用漏洞挖掘工程",
+      "summary": "本文详细介绍了ZeroMDASH系统的全新设计与具体实现过程，该工程旨在通过Agent-Native架构与领域自适应技术，有效解决通用漏洞挖掘中长期存在的自动化水平不足与精准度缺陷难题。该项研究成功展示了如何深度融合大语言模型与特定安全领域知识来显著提升漏洞发现效率，为自动化安全审计与代码缺陷挖掘领域提供了极具创新性的技术路线与实践参考价值。",
+      "tags": [
+        "漏洞挖掘",
+        "人工智能",
+        "自动化审计"
+      ],
+      "url": "https://bestwing.me/zeromdash-agent-native-vulnerability-mining.html",
+      "source": "bestwing.me",
+      "category": "WebSecurity",
+      "published": "2026-10-31T16:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "探索AI Agent在通用漏洞挖掘中的工程实践",
+      "feed_url": "https://bestwing.me/atom.xml",
+      "feed_title": "Swing'Blog 有恨无人省",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "bestwing.me",
+      "story_id": "url:bestwing.me/zeromdash-agent-native-vulnerability-mining.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "practical_risk": 7.0,
+        "actionability": 7.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 8.0
+      },
+      "dimension_score": 7.85,
+      "final_score": 7.55,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": -0.3,
+        "applied_adjustment": -0.3
+      }
+    },
+    {
+      "title_zh": "英国学校遭受3AM勒索软件攻击：攻击者采用人机混合策略窃取财务数据",
+      "title_orig": "3AM Ransomware Used Human-AI Hybrid Tactics in UK School Estate Compromise",
+      "summary": "网络安全机构Bitdefender揭示了2024年9月英国某学校机构遭受攻击的典型案例，攻击者在入侵过程中创新性地采用了人机混合的独特策略。该起3AM勒索软件安全事件最终导致学校关键的财务敏感数据被攻击者成功外泄，尽管原文未披露具体的漏洞类型或修复状态，但这种新型攻击手段已引发了教育行业的广泛关注。",
+      "tags": [
+        "勒索软件",
+        "网络攻击",
+        "数据泄露"
+      ],
+      "url": "https://www.infosecurity-magazine.com/news/3am-ransomware-hybrid-ai-uk-school/",
+      "source": "infosecurity-magazine.com",
+      "category": "Synthesis",
+      "published": "2026-11-04T12:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示勒索软件结合AI技术的攻击新趋势",
+      "feed_url": "http://www.infosecurity-magazine.com/rss/news/",
+      "feed_title": "infosecurity-magazine.com",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "infosecurity-magazine.com",
+      "story_id": "url:infosecurity-magazine.com/news/3am-ransomware-hybrid-ai-uk-school",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "practical_risk": 8.0,
+        "actionability": 6.0,
+        "security_relevance": 8.0,
+        "agent_model_relevance": 6.0,
+        "technical_depth": 6.0
+      },
+      "dimension_score": 7.0,
+      "final_score": 7.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.1,
+        "applied_adjustment": 0.1
+      }
+    },
+    {
+      "title_zh": "AI辅助漏洞挖掘导致历史严重安全缺陷数量在一个月内激增",
+      "title_orig": "AI Vulnerability Finding",
+      "summary": "有评论指出，在整个历史记录的所有严重软件安全漏洞中，竟有高达百分之三是在刚刚过去的这一个月内被集中发现的。如果按照当前这种惊人的增长速度继续发展，今年仅凭一年时间就将额外发现约十万个漏洞，这将使全球历史漏洞总数直接增加约百分之二十六，标志着全新的安全挑战时代已经到来。",
+      "tags": [
+        "漏洞挖掘",
+        "AI安全",
+        "安全态势"
+      ],
+      "url": "https://www.schneier.com/blog/archives/2026/11/ai-vulnerability-finding-2.html",
+      "source": "schneier.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-11-02T12:02:34+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI技术对漏洞挖掘量级带来的颠覆性变化。",
+      "feed_url": "https://www.schneier.com/feed/atom/",
+      "feed_title": "Schneier on Security",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "专家博客",
+      "source_key": "schneier.com",
+      "story_id": "url:schneier.com/blog/archives/2026/11/ai-vulnerability-finding-2.html",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 6,
+      "score_dimensions": {
+        "practical_risk": 6.0,
+        "actionability": 4.0,
+        "security_relevance": 7.0,
+        "agent_model_relevance": 7.0,
+        "technical_depth": 4.0
+      },
+      "dimension_score": 5.75,
+      "final_score": 5.95,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.2,
+        "applied_adjustment": 0.2
+      }
+    },
+    {
+      "title_zh": "Wiz推出Red和Blue AI代理：分别用于验证侵入前预警与自动化响应活跃威胁",
+      "title_orig": "From Reactive to Proactive: Empowering SOC Teams with the Wiz Red and Blue Agents",
+      "summary": "网络安全公司Wiz正式推出了创新型的Red Agent与Blue Agent两款AI代理工具，旨在全面帮助SOC团队从传统的被动响应模式转向主动防御模式，以从容应对AI时代日益复杂的安全威胁。其中Red Agent专注于提供经过验证的侵入前预警，而Blue Agent则能以极高的机器速度调查活跃威胁，两者深度结合将大幅提升团队的响应效率。 Wiz推出Red和Blue AI代理：分别用于验证侵入前预警与自动化响应活跃威胁。",
+      "tags": [
+        "人工智能安全",
+        "SOC",
+        "自动化防御"
+      ],
+      "url": "https://www.wiz.io/blog/soc-alerts-red-and-blue-agents",
+      "source": "wiz.io",
+      "category": "AISecurityLabs",
+      "published": "2026-11-02T13:13:46+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍了利用AI代理提升SOC自动化验证与威胁调查能力的最新实",
+      "feed_url": "https://www.wiz.io/feed/rss.xml",
+      "feed_title": "Wiz Blog",
+      "source_tier": "t1",
+      "source_kind": "expert",
+      "source_label": "研究团队",
+      "source_key": "wiz.io",
+      "story_id": "url:wiz.io/blog/soc-alerts-red-and-blue-agents",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 5,
+      "score_dimensions": {
+        "practical_risk": 4.0,
+        "actionability": 4.0,
+        "security_relevance": 6.0,
+        "agent_model_relevance": 6.0,
+        "technical_depth": 4.0
+      },
+      "dimension_score": 4.9,
+      "final_score": 5.64,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.2,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "Unit 42发布威胁情报摘要：涵盖网络谍报、金融勒索及AI在攻击工作流中的快速应用",
+      "title_orig": "Unit 42 Threat Intelligence Highlights - Nov. 2, 2026",
+      "summary": "Unit 42发布的最新威胁情报报告重点揭示了网络谍报活动与金融勒索威胁的最新发展态势，并深入剖析了黑客组织的攻击手段。报告特别强调了威胁行为者正在其各类攻击工作流程中快速引入与应用AI技术，尽管原文并未透露具体漏洞细节或受影响组件，这一涉及AI进攻性应用的趋势依然引发了网络安全领域的广泛关注。",
+      "tags": [
+        "威胁情报",
+        "网络谍报",
+        "AI安全"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/u42-threat-intelligence-highlights-oct-2026/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-11-02T23:00:45+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了威胁行为者将AI引入攻击工作流的最新趋势。",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/u42-threat-intelligence-highlights-oct-2026",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 4,
+      "score_dimensions": {
+        "practical_risk": 5.0,
+        "actionability": 2.0,
+        "security_relevance": 6.0,
+        "agent_model_relevance": 4.0,
+        "technical_depth": 3.0
+      },
+      "dimension_score": 4.35,
+      "final_score": 5.09,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    }
+  ]
+}
