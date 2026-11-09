@@ -1,16 +1,16 @@
 # Source Registry Audit
 
-- generated_for: 2026-11-05
-- dates: 2026-11-05, 2026-11-02, 2026-10-29, 2026-10-26, 2026-10-22, 2026-10-19, 2026-10-15
+- generated_for: 2026-11-09
+- dates: 2026-11-09, 2026-11-05, 2026-11-02, 2026-10-29, 2026-10-26, 2026-10-22, 2026-10-19
 
 ## Board Coverage
 
 | Board | Items | T1 | T1.5 | T2 | Unknown | Google News | Official | X | CN Expert |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ai | 102 | 18 | 13 | 70 | 1 | 10 | 18 | 39 | 3 |
-| ai_security | 70 | 16 | 1 | 50 | 3 | 1 | 10 | 6 | 23 |
-| finance | 70 | 15 | 4 | 50 | 1 | 6 | 15 | 4 | 0 |
-| security | 105 | 18 | 0 | 85 | 2 | 0 | 14 | 5 | 48 |
+| ai | 102 | 20 | 14 | 67 | 1 | 11 | 20 | 38 | 2 |
+| ai_security | 70 | 17 | 1 | 48 | 4 | 1 | 11 | 5 | 21 |
+| finance | 70 | 16 | 4 | 49 | 1 | 5 | 16 | 4 | 0 |
+| security | 105 | 15 | 0 | 87 | 3 | 0 | 11 | 7 | 51 |
 
 ## Unknown Selected Sources
 
@@ -22,6 +22,8 @@
 | `guidepointsecurity.com` | 1 | ai_security | [AI代理无需利用漏洞即可产生风险，安全防护需超出终端范围扩展至权限管理](https://www.guidepointsecurity.com/blog/ai-agent-security-beyond-the-endpoint/) |
 | `ir.americanexpress.com` | 1 | finance | [美国运通发布2026年第三季度财务业绩报告](https://ir.americanexpress.com/news/investor-relations-news/investor-relations-news-details/2026/American-Express-Reports-Third-Quarter-2026-Financial-Results/default.aspx) |
 | `machinelearning.apple.com` | 1 | ai | [苹果开源框架MLX支持Mac Studio通过RDMA实现本地与分布式大模型推理](https://machinelearning.apple.com/research/mlx-distributed-inference) |
+| `paddo.dev` | 1 | ai_security | [AI推动漏洞挖掘成本降低：CVE数量由1月的4302个飙升至10月的17052个](https://paddo.dev/blog/the-haystack-tripled/) |
+| `shubs.io` | 1 | security | [研究人员发现某知名汽车品牌遥控解锁机制漏洞，可导致全球多款车型被远程任意解锁](https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/) |
 | `threatninja.net` | 1 | security | [针对 PHP 8.4 会话上传进度处理与内存损坏漏洞（CVE-2026-109618 等）的技术分析](https://threatninja.net/dark-embargo-technical-analysis-of-a-php-8-4-vulnerability/) |
 
 ## Review Rule
