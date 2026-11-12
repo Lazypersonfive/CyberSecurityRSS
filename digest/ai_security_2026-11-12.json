@@ -1,0 +1,475 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-11-12",
+  "generated_at": "2026-11-12T03:30:21.108545Z",
+  "raw_count": 51,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "chinese": 4,
+    "direct": 8,
+    "tier_t2": 8,
+    "kind_cn_expert": 4,
+    "aggregator": 2,
+    "kind_expert_x": 2,
+    "tier_t1": 2,
+    "kind_official": 2,
+    "wechat": 1,
+    "kind_community": 1,
+    "kind_expert": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 2,
+    "story": 0,
+    "total": 2
+  },
+  "candidate_share_stats": {
+    "considered": 120,
+    "shared": 9,
+    "skipped_missing": 0,
+    "skipped_date": 0,
+    "skipped_window": 0,
+    "skipped_semantic": 93,
+    "skipped_duplicate": 18
+  },
+  "items": [
+    {
+      "title_zh": "Notion披露第三方AI服务提供商Fireworks安全漏洞导致部分客户AI聊天记录泄露事件",
+      "title_orig": "Notion 称 Fireworks 入侵暴露客户 AI 聊天记录",
+      "summary": "数字工作区平台Notion披露其AI基础设施提供商Fireworks AI发生安全漏洞，导致少数工作区中的Notion AI聊天记录遭到意外暴露。据了解攻击者于10月23日通过第三方云提供商访问了Fireworks的开发环境，并入侵了部分客户的资源元数据、计费信息、模型权重和数据集等关键信息，引发了广大用户对AI平台数据安全与隐私保护的密切关注。",
+      "tags": [
+        "供应链安全",
+        "数据泄露",
+        "AI安全"
+      ],
+      "url": "https://hackernews.cc/post/64896",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-11-12T02:41:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI基础设施供应链漏洞对上层应用数据隐私的影响",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "url:hackernews.cc/post/64896",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "practical_risk": 10.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 8.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 9.15,
+      "final_score": 9.89,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.9,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "分析Agent文件写入中路径检查通过后仍发生越界的TOCTOU漏洞原理",
+      "title_orig": "【AI安全】Agent 写文件时，路径检查通过后为什么还会越界？",
+      "summary": "该研究围绕Claude Code公开的CVE-2026-103435漏洞展开，揭示了Agent在文件写入时权限检查与实际写入操作之间存在的时间差问题。当Agent仅对路径字符串进行检查通过后，共享工作区中的其他进程可能替换目录项，导致内核解析到项目目录外的对象并造成越界写入；文中针对此竞争条件深入剖析了OpenClaw与OpenShell的相关写入与同步实现。",
+      "tags": [
+        "AI安全",
+        "TOCTOU",
+        "越界写入"
+      ],
+      "url": "https://xz.aliyun.com/news/93227",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-11-09T12:30:29+00:00",
+      "cve_ids": [
+        "CVE-2026-103435"
+      ],
+      "selection_reason": "揭示了Agent文件操作中竞态条件导致的越界风险",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-103435",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "practical_risk": 9.0,
+        "agent_model_relevance": 10.0,
+        "technical_depth": 9.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 9.05,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "研究人员通过提示词注入与沙箱逃逸成功沦陷最新版OpenAI Codex并威胁供应链",
+      "title_orig": "RT Depi: 🚨👾First post → Awesome research. We compromised the latest version of OpenAI Codex. We prompt injected. We escaped a sandbox. We exfil...",
+      "summary": "安全研究人员最新披露了针对 OpenAI Codex 的深度漏洞研究，证实通过提示词注入技术成功突破了系统安全限制并实现沙箱逃逸。随后，攻击者利用远程代码执行手段窃取了关键机密数据，最终甚至取得了对官方 npm 软件包的发布控制权，这一从提示词注入到供应链攻破的过程构成了极其严重的网络安全威胁。",
+      "tags": [
+        "提示词注入",
+        "沙箱逃逸",
+        "供应链安全"
+      ],
+      "url": "https://x.com/rez0__/status/2120539095206363184",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-11-11T15:20:16+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示了从LLM提示词注入到沙箱逃逸及npm供应链控制的完整攻",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2120539095206363184",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "practical_risk": 9.0,
+        "agent_model_relevance": 10.0,
+        "technical_depth": 9.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 9.35,
+      "final_score": 9.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.3,
+        "applied_adjustment": 0.3
+      }
+    },
+    {
+      "title_zh": "微软研究院揭示通过编辑少量神经元植入AI潜伏代理漏洞及前沿模型的检测方法",
+      "title_orig": "Detecting sleeper agents hiding in AI model neurons",
+      "summary": "微软研究院发布最新的威胁研究指出，攻击者仅需通过编辑不到十个神经元并注入一段较短的有效载荷，就能将具备能力的代理模型转化为危险的潜伏代理。不过该研究同时强调此种安全威胁具备可检测性，前沿代理模型能够精准识别出这些异常的权重编辑，从而帮助研发人员及时发现并防范潜在风险。",
+      "tags": [
+        "AI安全",
+        "模型安全",
+        "威胁检测"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons/",
+      "source": "microsoft.com",
+      "category": "AISecurityLabs",
+      "published": "2026-11-10T23:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了编辑神经元植入AI潜伏代理的技术路径及检测可能性。",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/11/10/detecting-sleeper-agents-hiding-in-ai-model-neurons",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "practical_risk": 8.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 9.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.7,
+      "final_score": 9.44,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "Railway平台遭AI代理穿透致10万工作区泄密并烧掉74万美元",
+      "title_orig": "【安全圈】Railway遭AI代理穿透！10万工作区泄密烧掉74万美元",
+      "summary": "由于AI代理穿透Railway平台引发了严重安全事件，不仅导致多达10万个工作区的数据遭遇泄漏，还产生了高达74万美元的账单损失。在这一背景之下，OpenAI发布了专门为漏洞挖掘设计的GPT-6 Cyber模型，该模型将漏洞挖掘成本显著降至千美元级别，并已成功在Linux内核中发现了948个本地提权漏洞。 Railway平台遭AI代理穿透致10万工作区泄密并烧掉74万美元。",
+      "tags": [
+        "AI安全",
+        "漏洞挖掘",
+        "提权漏洞"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&mid=2652079834&idx=2&sn=f9a3ec5c78818d7d7509c38d4e00528b",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-11-11T11:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI代理安全风险及AI在内核漏洞挖掘中的新进展。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "feed_title": "安全圈",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/d568d6fca93d750898111f09cc3c551e7a62f7ab.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ%3D%3D&mid=2652079834&idx=2&sn=f9a3ec5c78818d7d7509c38d4e00528b",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 6.0,
+        "practical_risk": 9.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 8.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.45,
+      "final_score": 9.15,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "Anthropic通过API隐藏注入提醒文本导致Fable模型出现异常并触发拦截",
+      "title_orig": "this is peak guardrail content",
+      "summary": "研究人员在社交网络平台披露，Anthropic在通过API调用的Fable 5.2模型对话轮次中隐藏注入了名为ip_reminder的提示标签，导致模型对此标签产生过度关注与异常反应。随后系统直接以防止逆向工程为由拦截了相关请求，此举引发了业内对大模型安全护栏防护机制、拦截逻辑合理性以及API透明度的广泛关注与讨论。 Anthropic通过API隐藏注入提醒文本导致Fable模型出现异常并触发拦截。",
+      "tags": [
+        "安全防护",
+        "API安全",
+        "模型安全"
+      ],
+      "url": "https://x.com/rez0__/status/2120181467032805443",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-11-10T15:47:07+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示了AI厂商Guardrail防护机制的实际表现与拦截逻辑",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:rez0__",
+      "story_id": "url:x.com/rez0__/status/2120181467032805443",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "actionability": 7.0,
+        "practical_risk": 8.0,
+        "agent_model_relevance": 10.0,
+        "technical_depth": 8.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.5,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.2,
+        "applied_adjustment": 0.2
+      }
+    },
+    {
+      "title_zh": "分析AI模型对抗样本的可迁移性：从FGSM、PGD到黑盒攻击的技术梳理",
+      "title_orig": "对模型“可迁移性”现象的分析：从FGSM、PGD到黑盒攻击的再梳理",
+      "summary": "本文梳理了AI模型在白盒、迁移及黑盒攻击场景下的威胁模型与算法选择，揭示了攻击者在无内部信息或查询受限条件下利用对抗样本迁移性实施攻击的机制。文章强调从白盒暴露脆弱点到黑盒评估现实风险的技术路径，帮助从业者建立涵盖威胁模型、攻击目标与防御评估的系统化安全认知。",
+      "tags": [
+        "人工智能安全",
+        "对抗样本",
+        "黑盒攻击"
+      ],
+      "url": "https://xz.aliyun.com/news/93225",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-11-11T11:53:51+00:00",
+      "cve_ids": [],
+      "selection_reason": "系统梳理对抗样本迁移性与黑盒攻击机制。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/93225",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 6.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 8.0,
+        "technical_depth": 8.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "微软FORGE实验室利用智能体工具挖掘Rust核心库内存安全漏洞",
+      "title_orig": "FORGE Lab uses agentic tools to identify memory safety issues in Rust",
+      "summary": "微软FORGE实验室研究人员利用智能体分析工具Hyenas，在Rust语言的core与std核心标准库中成功发现了能够导致Safe代码触发未定义行为的内存安全漏洞。该项研究深入剖析了Unsafe代码中存在的三类不当信任模式，揭示了当前Rust安全保证机制所面临的边界问题，并展示了智能体工具在提升系统级编程语言安全性方面的巨大潜力。",
+      "tags": [
+        "Rust安全",
+        "AI安全",
+        "漏洞挖掘"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/09/forge-lab-uses-agentic-tools-to-identify-memory-safety-issues-in-rust/",
+      "source": "microsoft.com",
+      "category": "AISecurityLabs",
+      "published": "2026-11-09T20:17:31+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示AI智能体在底层核心库内存安全审计中的实用价值",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/11/09/forge-lab-uses-agentic-tools-to-identify-memory-safety-issues-in-rust",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 7.0,
+        "practical_risk": 7.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 8.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 7.85,
+      "final_score": 8.59,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "Ruflo MCP Bridge 3.16.2 版本存在远程代码执行漏洞",
+      "title_orig": "[remote] Ruflo MCP Bridge  3.16.2 - Remote Code Execution",
+      "summary": "Ruflo MCP Bridge 3.16.2版本被披露存在严重的高危远程代码执行漏洞，该安全问题直接影响到部署了该组件的系统及相关网络环境。恶意攻击者可利用此漏洞绕过防护并在受影响的系统上远程执行任意代码，虽然原文未披露具体的漏洞原理、触发条件及修复状态，但相关系统管理员仍需对此引起高度警惕并防范风险。",
+      "tags": [
+        "远程代码执行",
+        "漏洞预警",
+        "Web安全"
+      ],
+      "url": "https://www.exploit-db.com/exploits/52705",
+      "source": "exploit-db.com",
+      "category": "WebSecurity",
+      "published": "2026-11-11T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "披露了Ruflo MCP Bridge的远程代码执行漏洞",
+      "feed_url": "https://www.exploit-db.com/rss.xml",
+      "feed_title": "Exploit-DB.com RSS Feed",
+      "source_tier": "t2",
+      "source_kind": "community",
+      "source_label": "漏洞库",
+      "source_key": "exploit-db.com",
+      "story_id": "url:exploit-db.com/exploits/52705",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "actionability": 9.0,
+        "practical_risk": 10.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 8.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.95,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": -0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": -0.5,
+        "applied_adjustment": -0.5
+      }
+    },
+    {
+      "title_zh": "使用 Evo ADS 安全管控 AI 编码 Agent 与 MCP 服务连接指南",
+      "title_orig": "Say Yes To MCP, Safely A Guide For Governing AI Coding Agents With Evo ADS",
+      "summary": "这份指南详细介绍了企业如何利用 Evo ADS 系统全面发现与清点 MCP 服务器资产，深入评估潜在安全风险并持续监测安全策略的落地效果。该系统能够在完全不影响开发者日常工作流程的前提下，精准拦截各类高风险连接，帮助管理团队建立充足信心，安全且高效地实现对 AI 编码 Agent 的规范化治理与风险管控。",
+      "tags": [
+        "AI安全",
+        "安全治理",
+        "MCP"
+      ],
+      "url": "https://snyk.io/blog/governing-ai-coding-agents-evo-ads/",
+      "source": "snyk.io",
+      "category": "AISecurityLabs",
+      "published": "2026-11-09T00:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "介绍如何安全治理与管控 AI 编码 Agent 及 MCP",
+      "feed_url": "https://snyk.io/blog/feed/",
+      "feed_title": "Snyk Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "应用安全",
+      "source_key": "snyk.io",
+      "story_id": "url:snyk.io/blog/governing-ai-coding-agents-evo-ads",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "actionability": 8.0,
+        "practical_risk": 8.0,
+        "agent_model_relevance": 9.0,
+        "technical_depth": 7.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 7.9,
+      "final_score": 8.1,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.2,
+        "applied_adjustment": 0.2
+      }
+    }
+  ]
+}
