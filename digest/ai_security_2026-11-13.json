@@ -1,0 +1,474 @@
+{
+  "board": "ai_security",
+  "display_name": "AI 安全",
+  "date": "2026-11-13",
+  "generated_at": "2026-11-13T02:22:01.425626Z",
+  "raw_count": 59,
+  "selected_count": 10,
+  "selection_stats": {
+    "total": 10,
+    "direct": 9,
+    "tier_t1": 3,
+    "kind_official": 3,
+    "chinese": 5,
+    "tier_t2": 7,
+    "kind_cn_expert": 5,
+    "wechat": 3,
+    "aggregator": 1,
+    "kind_expert_x": 1,
+    "kind_expert": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 0,
+    "llm_merged": 0,
+    "merged_total": 0
+  },
+  "delivered_filter_stats": {
+    "url": 9,
+    "story": 0,
+    "total": 9
+  },
+  "candidate_share_stats": {
+    "considered": 120,
+    "shared": 12,
+    "skipped_missing": 0,
+    "skipped_date": 0,
+    "skipped_window": 0,
+    "skipped_semantic": 89,
+    "skipped_duplicate": 19
+  },
+  "items": [
+    {
+      "title_zh": "微软研究团队揭示后训练供应链攻击如何通过投毒数据集和模型检查点劫持编程智能体",
+      "title_orig": "Trained to betray: How post-training supply chain attacks hijack coding agents",
+      "summary": "微软 Defender 研究团队与 AI 红队发布文章，探讨了针对编程智能体的后训练供应链攻击手法，指出攻击者可利用投毒数据集与投毒模型检查点对智能体进行劫持。该研究指出，此类后训练阶段的供应链投毒能够触发远程代码执行及其他恶意活动，但原文摘要未披露具体的技术实现细节、受影响组件版本或相关缓解措施。",
+      "tags": [
+        "AI安全",
+        "供应链攻击",
+        "模型投毒"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/",
+      "source": "microsoft.com",
+      "category": "AISecurityLabs",
+      "published": "2026-11-12T17:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示AI编程智能体后训练阶段的供应链投毒与RCE风险。",
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "practical_risk": 9.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 10.0,
+        "security_relevance": 10.0
+      },
+      "dimension_score": 9.35,
+      "final_score": 10.0,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.8,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "Dify 沙箱模块因默认硬编码 API 密钥存在未授权代码执行风险",
+      "title_orig": "基于默认配置的 Dify 沙箱 RCE 利用链分析与加固探讨",
+      "summary": "开源 LLM 应用平台 Dify 的 dify-sandbox 沙箱组件在默认配置中存在硬编码通信凭证与默认 API 密钥，当服务端口暴露于公网或攻击者可访问其内部网络时，可利用 X-Api-Key: dify 请求头绕过 middleware.Auth() 鉴权并执行任意 Python 代码，从而获取底层系统信息。尽管官方团队基于开发者体验考量认为该设计属于预设功能并无缺陷，但该风险仍威胁自托管环境安全，文章为此还原了完整攻击链并从企业自托管运维视角给出了纵深防御建议。",
+      "tags": [
+        "Dify",
+        "硬编码密钥",
+        "代码执行"
+      ],
+      "url": "https://xz.aliyun.com/news/93260",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-11-11T18:02:06+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示开源 LLM 平台沙箱组件的默认配置安全风险及防御思路",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/93260",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "practical_risk": 9.0,
+        "actionability": 9.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 9.0,
+      "final_score": 9.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "攻击者利用开源 Cairn 自主 AI 框架针对半导体、国防及民间组织发起入侵",
+      "title_orig": "Attackers Use Autonomous AI to Target Semiconductor, Defense and Civil Society Sectors",
+      "summary": "安全研究团队Unit 42发布最新分析报告披露，攻击者正利用开源的Cairn自主AI智能体框架，针对半导体、国防以及民间社会组织等关键领域目标实施自动化网络入侵活动。尽管原文未进一步披露该攻击活动的具体漏洞利用细节、受影响组件版本以及完整的安全缓解措施，但这一发现充分揭示了开源自主AI工具在实战化网络攻击中的滥用趋势，值得上述受影响行业与安全团队高度关注并加强防御。",
+      "tags": [
+        "AI安全",
+        "自主攻击",
+        "Cairn框架"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-11-12T15:00:31+00:00",
+      "cve_ids": [],
+      "selection_reason": "披露开源AI智能体框架被用于实战化网络攻击的案例",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "practical_risk": 9.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.65,
+      "final_score": 9.39,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.8,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "GPT Academic 存在软链接解析缺陷导致任意文件读取漏洞",
+      "title_orig": "CVE-2025-25185 深度解析：GPT Academic 软链接解析缺陷导致任意文件读取",
+      "summary": "开源学术优化工具 GPT Academic（受影响版本 ≤ 3.91）被披露存在任意文件读取漏洞（CVE-2025-25185），其成因是服务端在处理“上传论文/代码压缩包进行智能解析”功能时，解压环节存在软链接解析缺陷。攻击者可通过上传构造了恶意软链接的归档文件触发该漏洞，从而实现服务器上的任意文件读取，但原文未披露具体的修复版本或官方缓解措施。",
+      "tags": [
+        "任意文件读取",
+        "软链接",
+        "代码审计"
+      ],
+      "url": "https://xz.aliyun.com/news/93253",
+      "source": "xz.aliyun.com",
+      "category": "Chinese",
+      "published": "2026-11-11T12:26:24+00:00",
+      "cve_ids": [
+        "CVE-2025-25185"
+      ],
+      "selection_reason": "分析压缩包解压软链接解析漏洞的完整利用链与防御思路。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2025-25185",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "technical_depth": 9.0,
+        "practical_risk": 8.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.7,
+      "final_score": 9.3,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "AI 自主入侵实战案例：自定义智能体实现侦察至横向移动及四次被拦截后自动绕过",
+      "title_orig": "四次阻断，四次改道：AI 自主入侵已经走到哪一步",
+      "summary": "一名中文操作者通过自定义智能体框架，将侦察、漏洞利用、权限提升、横向移动以及数据获取等大量复杂的渗透测试技术工作交由 AI 自主执行。在连续遭遇四次防御阻断与拦截后，该 AI 智能体不仅能够自行分析受阻的具体原因，还能动态替换攻击路径并完成最终结果验证，充分展现出当前 AI 自主入侵技术已具备高度的自适应能力。",
+      "tags": [
+        "AI安全",
+        "自动化渗透",
+        "智能体框架"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247521340&idx=1&sn=d86adafc458a77cf2854f7e3ea8aef5f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-11-12T06:23:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示AI在渗透测试中自主绕过防御的实战能力",
+      "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "feed_title": "奇安信威胁情报中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247521340&idx=1&sn=d86adafc458a77cf2854f7e3ea8aef5f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "practical_risk": 9.0,
+        "actionability": 7.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.55,
+      "final_score": 9.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "微软研究人员利用 AI 系统在 Linux 内核中发现 59 个安全漏洞",
+      "title_orig": "‼️ One Microsoft researcher and an intern used AI to find 59 security bugs in the Linux kernel. One had gone unnoticed for at least 21 years. Micros...",
+      "summary": "微软一名研究人员与实习生利用智能体系统 MDASH 在约两周内对 Linux 内核进行扫描，共标记出 26,502 个潜在缺陷，其中 621 个附带了证明，团队最终上报了 59 个安全漏洞，其中最久的一个已存在至少 21 年。这些漏洞中有 33 个获得了 CVE 编号，24 个被评为高危，团队还在实验室中为其中 8 个构建了可将普通用户提权至 root 的有效利用代码，但原文未披露具体漏洞类型、影响版本及修复状态。",
+      "tags": [
+        "Linux内核",
+        "AI挖洞",
+        "提权漏洞"
+      ],
+      "url": "https://x.com/IntCyberDigest/status/2121041604790370757",
+      "source": "x.com",
+      "category": "XSignals",
+      "published": "2026-11-13T00:45:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "展示AI智能体在大型内核代码库中自动化挖掘高危提权漏洞的实战",
+      "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+      "feed_title": "X / International Cyber Digest",
+      "source_tier": "t2",
+      "source_kind": "expert_x",
+      "source_label": "安全专家 X",
+      "source_key": "x:intcyberdigest",
+      "story_id": "url:x.com/intcyberdigest/status/2121041604790370757",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "practical_risk": 8.0,
+        "actionability": 7.0,
+        "agent_model_relevance": 9.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.35,
+      "final_score": 8.85,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.5,
+        "applied_adjustment": 0.5
+      }
+    },
+    {
+      "title_zh": "Unit 42 分析 ARTEX 与 AI 驱动红队工具的攻击利用及防御缓解措施",
+      "title_orig": "ARTEX and AI-Powered Red Teaming Tools: What Defenders Need to Know",
+      "summary": "Unit 42 近期发布了关于 ARTEX 及人工智能驱动红队工具的专题文章，重点揭示了攻击者利用此类人工智能红队工具发起攻击的最新发现，指出了防御者需要关注的核心安全问题。该内容主要面向企业安全防御与红蓝对抗场景，旨在帮助安全从业者了解如何有效缓解此类人工智能赋能的攻击行为，为防御者提供了切实的应对建议与思路，但原文摘要尚未披露具体的技术细节。",
+      "tags": [
+        "AI安全",
+        "红队工具",
+        "防御缓解"
+      ],
+      "url": "https://unit42.paloaltonetworks.com/artex-and-ai-powered-red-teaming-tools/",
+      "source": "unit42.paloaltonetworks.com",
+      "category": "AISecurityLabs",
+      "published": "2026-11-11T23:00:53+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示攻击者滥用AI红队工具的趋势并提供防御缓解思路。",
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "unit42.paloaltonetworks.com",
+      "story_id": "url:unit42.paloaltonetworks.com/artex-and-ai-powered-red-teaming-tools",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 7.0,
+        "practical_risk": 8.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 8.0,
+        "security_relevance": 9.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.79,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.5,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "PHP2Shell高危漏洞复盘：探讨AI如何将复杂内存漏洞转化为远程代码执行",
+      "title_orig": "PHP2Shell高危漏洞复盘：AI如何让复杂内存漏洞变成远程代码执行？",
+      "summary": "该文章复盘了PHP2Shell高危漏洞，重点探讨AI如何将复杂的内存漏洞转化为远程代码执行，但原文未披露该漏洞的具体触发条件、受影响版本及组件细节。针对此类安全风险，原文未披露具体的补丁或缓解措施，仅指出安全能力必须贯穿软件完整生命周期，涵盖代码安全、运行环境、漏洞发现与修复验证以及技术生态的联合治理。",
+      "tags": [
+        "漏洞复盘",
+        "AI安全",
+        "远程代码执行"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA==&mid=2651143209&idx=1&sn=a8a29fa75367d1aea1773dede4332ecd",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-11-11T04:07:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "复盘AI辅助内存漏洞转化为RCE的思路及全生命周期安全治理。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "feed_title": "安全牛",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA%3D%3D&mid=2651143209&idx=1&sn=a8a29fa75367d1aea1773dede4332ecd",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "technical_depth": 8.0,
+        "practical_risk": 8.0,
+        "actionability": 7.0,
+        "agent_model_relevance": 7.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 7.75,
+      "final_score": 8.35,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "ByteSRC发布《AI 辅助安全测试 AGENTS.md》指引及违规白帽处罚公告",
+      "title_orig": "ByteSRC发布《AI 辅助安全测试 AGENTS.md》指引及违规白帽处罚公告",
+      "summary": "ByteSRC近期正式发布了《AI 辅助安全测试 AGENTS.md》指引文件及针对违规白帽的处罚公告，旨在进一步规范安全测试过程中的操作准则与合规边界。公告明确指出手工测试与 AI Agent 测试适用同一准则，要求所有测试活动必须仅在授权范围内开展，严格坚持最小必要验证原则并专注于发现漏洞而不是利用漏洞，不过原文未披露具体的违规处罚案例及指引详细条款。",
+      "tags": [
+        "AI安全测试",
+        "漏洞赏金",
+        "合规指引"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzUzMzcyMDYzMw==&mid=2247496405&idx=1&sn=b989bdc2a075e3a46abfda036a16bb1f",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-11-12T11:51:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "明确AI Agent参与安全测试的授权边界与最小必要验证准则",
+      "feed_url": "https://wechat2rss.xlab.app/feed/f4087ff02b808a1a995e2ba930219ada5b82425d.xml",
+      "feed_title": "字节跳动安全中心",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/f4087ff02b808a1a995e2ba930219ada5b82425d.xml",
+      "story_id": "url:mp.weixin.qq.com/s?__biz=MzUzMzcyMDYzMw%3D%3D&mid=2247496405&idx=1&sn=b989bdc2a075e3a46abfda036a16bb1f",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 5.0,
+        "practical_risk": 7.0,
+        "actionability": 8.0,
+        "agent_model_relevance": 8.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 7.05,
+      "final_score": 7.75,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "Mandiant与GTIG发布2026年报告：攻击者正将代理型AI用于入侵并缩短漏洞修复窗口",
+      "title_orig": "AI Didn’t Create a New Kind of Risk. It Removed the Time You Had to Fix the Old One.",
+      "summary": "Mandiant与谷歌威胁情报组（GTIG）于九月联合发布了《2026年AI风险与韧性》报告，明确指出当前网络攻击者正在整个入侵流程中积极部署并实际运用代理型AI技术。该报告同时强调，漏洞利用依然是攻击者侵入目标系统的最主要途径，而AI技术的广泛应用并未创造出全新的风险类型，只是大幅压缩了防御方及时修复既有安全漏洞的时间窗口，导致留给防御方的修复时间正在不断收窄。",
+      "tags": [
+        "代理型AI",
+        "漏洞利用",
+        "威胁情报"
+      ],
+      "url": "https://blog.qualys.com/category/product-tech",
+      "source": "blog.qualys.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-11-13T01:37:30+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示代理型AI在入侵中的实际应用及对漏洞修复窗口的影响。",
+      "feed_url": "https://blog.qualys.com/feed",
+      "feed_title": "Qualys Security Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "blog.qualys.com",
+      "story_id": "url:blog.qualys.com/category/product-tech",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 7,
+      "score_dimensions": {
+        "technical_depth": 6.0,
+        "practical_risk": 8.0,
+        "actionability": 6.0,
+        "agent_model_relevance": 7.0,
+        "security_relevance": 8.0
+      },
+      "dimension_score": 7.15,
+      "final_score": 7.65,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.5,
+        "applied_adjustment": 0.5
+      }
+    }
+  ]
+}

@@ -1,0 +1,2313 @@
+{
+  "date": "2026-11-13",
+  "boards": {
+    "security": {
+      "display_name": "安全",
+      "items": [
+        {
+          "title_zh": "CVE-2026-118660：happy-dom 服务端 SSRF 漏洞成因与全链路分析",
+          "title_orig": "CVE-2026-118660：happy-dom 服务端 SSRF 全链路分析",
+          "summary": "CVE-2026-118660 是存在于 JavaScript DOM 运行时 happy-dom 中的服务端请求伪造（SSRF）漏洞，当该工具被用于测试环境、服务端预渲染、HTML 转换或爬虫等场景，并处理用户评论、富文本、第三方页面或上传模板等不可信 HTML 时，服务器进程会直接发起资源加载请求。由于服务器进程通常位于内网环境中且握有云凭证，这一行为可能导致其访问内网服务、泄露云凭证或触及仅监听 localhost 的管理接口，但原文未披露具体受影响版本及修复状态。",
+          "tags": [
+            "服务端请求伪造",
+            "漏洞分析",
+            "前端安全"
+          ],
+          "url": "https://xz.aliyun.com/news/93265",
+          "source": "xz.aliyun.com",
+          "category": "Synthesis",
+          "published": "2026-11-12T04:31:16+00:00",
+          "cve_ids": [
+            "CVE-2026-118660"
+          ],
+          "selection_reason": "剖析服务端 DOM 运行时解析不可信 HTML 引发的 SS",
+          "feed_url": "https://xz.aliyun.com/feed",
+          "feed_title": "先知社区",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "xz.aliyun.com",
+          "story_id": "cve:cve-2026-118660",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 8.0,
+            "actionability": 8.0,
+            "technical_depth": 9.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 8.5,
+          "final_score": 9.2,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.7,
+            "applied_adjustment": 0.7
+          }
+        },
+        {
+          "title_zh": "Dify 沙箱模块默认配置存在硬编码凭证，特定部署条件下可致未授权远程代码执行",
+          "title_orig": "基于默认配置的 Dify 沙箱 RCE 利用链分析与加固探讨",
+          "summary": "开源 LLM 应用平台 Dify 的 dify-sandbox 组件在默认配置下存在硬编码默认 API 密钥“dify”，当端口暴露于公网或攻击者可访问内部网络时，可利用 X-Api-Key 请求头绕过鉴权并执行任意 Python 代码。原文详细复现了从鉴权绕过到获取底层系统信息的完整攻击链，官方团队基于开发者体验考量认为该设计属于预设功能并无缺陷，安全研究人员针对企业自托管运维视角给出了切实可行的纵深防御加固建议。",
+          "tags": [
+            "Dify",
+            "硬编码凭证",
+            "远程代码执行"
+          ],
+          "url": "https://xz.aliyun.com/news/93260",
+          "source": "xz.aliyun.com",
+          "category": "Synthesis",
+          "published": "2026-11-11T18:02:06+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示 Dify 沙箱默认配置风险，提供自托管纵深防御思路。",
+          "feed_url": "https://xz.aliyun.com/feed",
+          "feed_title": "先知社区",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "xz.aliyun.com",
+          "story_id": "url:xz.aliyun.com/news/93260",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 8.0,
+            "actionability": 9.0,
+            "technical_depth": 9.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 8.6,
+          "final_score": 9.2,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.6,
+            "applied_adjustment": 0.6
+          }
+        },
+        {
+          "title_zh": "CVE-2025-25185：GPT Academic 软链接解析缺陷致任意文件读取",
+          "title_orig": "CVE-2025-25185 深度解析：GPT Academic 软链接解析缺陷导致任意文件读取",
+          "summary": "深受科研人员喜爱的开源学术优化工具 GPT Academic（受影响版本为 3.91 及以下）存在任意文件读取漏洞（CVE-2025-25185），该漏洞源于服务端在处理用户上传的论文或代码压缩包解压逻辑时存在软链接解析缺陷。攻击者可通过构造恶意归档文件并结合 Web 交互触发任意文件读取，相关分析从核心源码拆解、恶意 Payload 构造到实战利用进行了完整还原，旨在为安全从业者提供压缩包解压场景的深度思考与防御思路。",
+          "tags": [
+            "任意文件读取",
+            "软链接解析",
+            "代码审计"
+          ],
+          "url": "https://xz.aliyun.com/news/93253",
+          "source": "xz.aliyun.com",
+          "category": "Synthesis",
+          "published": "2026-11-11T12:26:24+00:00",
+          "cve_ids": [
+            "CVE-2025-25185"
+          ],
+          "selection_reason": "压缩包解压软链接缺陷的源码级审计与利用分析",
+          "feed_url": "https://xz.aliyun.com/feed",
+          "feed_title": "先知社区",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "xz.aliyun.com",
+          "story_id": "cve:cve-2025-25185",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 7.0,
+            "actionability": 9.0,
+            "technical_depth": 9.0,
+            "exploitability": 9.0
+          },
+          "dimension_score": 8.6,
+          "final_score": 9.2,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.6,
+            "applied_adjustment": 0.6
+          }
+        },
+        {
+          "title_zh": "ImageMagick 默认配置存在多处任意文件读写漏洞（ImageTragick2）",
+          "title_orig": "VU#580079: Arbitrary file read/write vulnerability in ImageMagick-based applications with default configuration",
+          "summary": "安全公告 VU#580079 披露，在采用默认配置或安全策略限制不足的基于 ImageMagick 的相关应用中，存在多处统称为 ImageTragick2 的任意文件读写漏洞，当这些应用利用默认配置或应用自带配置所允许的危险编码器或委托，解析处理由攻击者控制的 SVG 或 PostScript 内容时即可触发。这些安全漏洞会使受影响的应用程序面临严重任意文件读取与写入风险，但现有概要信息尚未披露具体受影响版本及官方修复或缓解状态。",
+          "tags": [
+            "任意文件读写",
+            "图像处理",
+            "默认配置"
+          ],
+          "url": "https://kb.cert.org/vuls/id/580079",
+          "source": "kb.cert.org",
+          "category": "Synthesis",
+          "published": "2026-11-12T18:12:09+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及广泛使用的图像处理组件默认配置下的高危文件读写漏洞。",
+          "feed_url": "http://www.kb.cert.org/vulfeed",
+          "feed_title": "CERT Recently Published Vulnerability Notes",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官方通告",
+          "source_key": "kb.cert.org",
+          "story_id": "url:kb.cert.org/vuls/id/580079",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 8.0,
+            "actionability": 8.0,
+            "technical_depth": 8.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 8.25,
+          "final_score": 8.99,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.8,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "7-Zip LZX 解码器存在堆越界写入漏洞（CVE-2026-125742）已复现",
+          "title_orig": "【已复现】7-Zip LZX 解码器堆越界写入漏洞(CVE-2026-125742)安全风险通告",
+          "summary": "近期发布的安全风险通告显示，7-Zip 软件的 LZX 解码器组件存在一处堆越界写入漏洞（漏洞编号为 CVE-2026-125742），目前该漏洞已成功复现，相关情报机构正致力于第一时间为企业级用户提供权威漏洞情报与有效解决方案。不过，当前通告原文尚未披露该漏洞的具体触发条件、受影响的具体软件版本范围、可能造成的实际安全影响以及官方目前的修复或缓解措施状态，企业级用户需持续关注后续安全动态以防范潜在风险。",
+          "tags": [
+            "7-Zip",
+            "堆越界写入",
+            "漏洞通告"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247508100&idx=1&sn=6f81d45d46dee8d85c4f8d85dcb07891",
+          "source": "mp.weixin.qq.com",
+          "category": "Synthesis",
+          "published": "2026-11-12T08:54:00+00:00",
+          "cve_ids": [
+            "CVE-2026-125742"
+          ],
+          "selection_reason": "涉及常用压缩软件内存破坏漏洞且已复现，需关注后续补丁。",
+          "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+          "feed_title": "奇安信CERT",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+          "story_id": "cve:cve-2026-125742",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 9.0,
+            "actionability": 8.0,
+            "technical_depth": 7.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 8.2,
+          "final_score": 8.9,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.7,
+            "applied_adjustment": 0.7
+          }
+        },
+        {
+          "title_zh": "TightVNC与UltraVNC客户端Tight JPEG解码组件存在堆缓冲区溢出漏洞",
+          "title_orig": "VU#644655: TightVNC and UltraVNC Viewer contains a heap-based buffer overflow",
+          "summary": "根据漏洞编号VU#644655披露的信息，TightVNC Windows客户端1.3.10版本以及受影响的UltraVNC Windows客户端中的Tight JPEG解码组件存在堆缓冲区溢出漏洞，当攻击者控制恶意的VNC服务器并向客户端发送经过特制的屏幕更新数据时，即可触发内存损坏问题。一旦攻击者成功利用该漏洞，不仅会导致用户的查看器客户端直接崩溃，还可能进一步允许攻击者在受影响设备上执行任意代码，因此使用上述版本软件的用户和管理员需要高度关注此安全风险。",
+          "tags": [
+            "堆缓冲区溢出",
+            "VNC漏洞",
+            "远程代码执行"
+          ],
+          "url": "https://kb.cert.org/vuls/id/644655",
+          "source": "kb.cert.org",
+          "category": "Synthesis",
+          "published": "2026-11-13T00:08:48+00:00",
+          "cve_ids": [],
+          "selection_reason": "常用远程桌面客户端高危内存损坏漏洞，存在代码执行风险。",
+          "feed_url": "http://www.kb.cert.org/vulfeed",
+          "feed_title": "CERT Recently Published Vulnerability Notes",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官方通告",
+          "source_key": "kb.cert.org",
+          "story_id": "url:kb.cert.org/vuls/id/644655",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 7.0,
+            "actionability": 8.0,
+            "technical_depth": 8.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 8.05,
+          "final_score": 8.79,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.8,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "npm库promzard存在上下文键代码注入漏洞可致远程代码执行",
+          "title_orig": "VU#685399: PromZard context key code injection leads to remote code execution",
+          "summary": "安全公告VU#685399披露，Node.js配置工作流自动化npm库promzard的4.0.0及更早版本存在远程代码执行漏洞，其原因是程序直接对上下文对象键进行字符串插值，从而允许注入未经净化的JavaScript代码。该库主要通过评估模板模块和交互式提示来生成数据对象以实现配置自动化，受影响的项目需警惕潜在的远程代码执行风险，但当前给定原文未披露具体的漏洞触发条件细节及官方修复或缓解状态。",
+          "tags": [
+            "代码注入",
+            "远程代码执行",
+            "npm组件"
+          ],
+          "url": "https://kb.cert.org/vuls/id/685399",
+          "source": "kb.cert.org",
+          "category": "Synthesis",
+          "published": "2026-11-12T15:09:39+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及常用Node.js配置库的代码注入与远程代码执行风险。",
+          "feed_url": "http://www.kb.cert.org/vulfeed",
+          "feed_title": "CERT Recently Published Vulnerability Notes",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官方通告",
+          "source_key": "kb.cert.org",
+          "story_id": "url:cxsecurity.com/issue/wlb-2026110001",
+          "related_urls": [
+            "https://cxsecurity.com/issue/WLB-2026110001"
+          ],
+          "related_count": 1,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 7.0,
+            "actionability": 8.0,
+            "technical_depth": 8.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 8.05,
+          "final_score": 8.79,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.8,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "N-able N-central 零日漏洞 4EverAble2Shell 在 PoC 公开数小时后遭在野利用",
+          "title_orig": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
+          "summary": "安全研究人员披露 N-able N-central 存在名为“4EverAble2Shell”的新零日漏洞，原文未说明具体漏洞类型、触发条件及受影响版本号，但报告至少已有二十一台系统受影响，其中包括十九台已安装该公司最新安全更新的服务器。攻击者在概念验证代码公开数小时后便展开活跃的在野利用，通过该漏洞入侵目标服务器并部署加密货币挖矿程序，目前原文尚未提及官方修复补丁或缓解措施的进展情况。",
+          "tags": [
+            "零日漏洞",
+            "在野利用",
+            "挖矿木马"
+          ],
+          "url": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+          "source": "bleepingcomputer.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-11-12T19:51:16+00:00",
+          "cve_ids": [],
+          "selection_reason": "最新安全更新版本仍受零日漏洞在野利用影响，具备高危预警价值。",
+          "feed_url": "https://www.bleepingcomputer.com/feed/",
+          "feed_title": "BleepingComputer",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "bleepingcomputer.com",
+          "story_id": "url:bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 9.0,
+            "actionability": 8.0,
+            "technical_depth": 7.0,
+            "exploitability": 9.0
+          },
+          "dimension_score": 8.4,
+          "final_score": 8.7,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "SSHole漏洞分析：Alpine Linux系统OpenSSH密码认证绕过",
+          "title_orig": "SSHole: Alpine SSH Password Authentication Bypass",
+          "summary": "研究人员出于教育与研究目的，通过动手实验测试深入分析了名为SSHole的漏洞，该漏洞主要影响Alpine Linux系统上的OpenSSH密码认证绕过机制，重点探究了超长密码输入如何与musl libc及OpenSSH认证逻辑产生交互异常。不过，该研究材料目前仅聚焦于对认证绕过原理的技术探索与演示，原文中并未披露具体的漏洞触发条件、受影响的系统或软件版本号、实际危害后果以及相关的修复缓解状态。",
+          "tags": [
+            "OpenSSH",
+            "认证绕过",
+            "Alpine"
+          ],
+          "url": "https://threatninja.net/sshole-alpine-ssh-password-authentication-bypass/",
+          "source": "threatninja.net",
+          "category": "RedTeam",
+          "published": "2026-11-09T14:55:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "剖析musl libc与OpenSSH交互导致的认证绕过机制",
+          "feed_url": "https://threatninja.net/feed/",
+          "feed_title": "Threatninja.net",
+          "source_tier": "unknown",
+          "source_kind": "media",
+          "source_label": "未登记源",
+          "source_key": "threatninja.net",
+          "story_id": "url:threatninja.net/sshole-alpine-ssh-password-authentication-bypass",
+          "related_urls": [
+            "https://threatninja.net/sshole-cve-2026-123158-blue-team-detection-response/",
+            "https://www.schneier.com/blog/archives/2026/11/new-openssh-vulnerability.html"
+          ],
+          "related_count": 2,
+          "score": 9,
+          "score_dimensions": {
+            "relevance": 10.0,
+            "impact_scope": 8.0,
+            "actionability": 8.0,
+            "technical_depth": 9.0,
+            "exploitability": 9.0
+          },
+          "dimension_score": 8.95,
+          "final_score": 8.65,
+          "score_breakdown": {
+            "source_bonus": -0.3,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": -0.3,
+            "applied_adjustment": -0.3
+          }
+        },
+        {
+          "title_zh": "PHP 与 Node.js 运行时曝出 PHP2Shell 及 Node2Shell 漏洞，官方已发布修复版本",
+          "title_orig": "PHP2Shell and Node2Shell: Find, Fix, and Verify Across Your Web Apps and APIs",
+          "summary": "针对 Web 应用和 API 的 PHP2Shell（CVE-2026-109618、CVE-2026-109619）与 Node2Shell（CVE-2026-111497）漏洞均位于运行时环境中而非应用代码本身，这意味着所有运行在受影响运行时版本上的应用程序和接口都会直接继承这些潜在的安全风险，因此需要引起高度重视。",
+          "tags": [
+            "运行时漏洞",
+            "PHP",
+            "Node.js"
+          ],
+          "url": "https://blog.qualys.com/category/qualys-insights",
+          "source": "blog.qualys.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-11-12T09:15:32+00:00",
+          "cve_ids": [
+            "CVE-2026-109618",
+            "CVE-2026-109619",
+            "CVE-2026-111497"
+          ],
+          "selection_reason": "涉及主流运行时且已被列入CISA KEV，需及时升级。",
+          "feed_url": "https://blog.qualys.com/feed",
+          "feed_title": "Qualys Security Blog",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "安全厂商",
+          "source_key": "blog.qualys.com",
+          "story_id": "cve:cve-2026-109618,cve-2026-109619,cve-2026-111497",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 2,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 9.0,
+            "actionability": 9.0,
+            "technical_depth": 7.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 8.3,
+          "final_score": 8.6,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "N-able发布针对N-central平台零日漏洞的安全热修复补丁",
+          "title_orig": "N-able 发布针对零日漏洞的安全热修复补丁",
+          "summary": "N-able公司发布了安全热修复补丁，专门用于修复影响其N-central远程监控与管理（RMM）平台的零日缺陷，因为这些缺陷已于周末被公开披露，迫使该公司采取紧急措施。在此之前，为防范野外针对这些零日缺陷的潜在攻击，N-able决定将美洲、欧洲和亚太地区的所有存在漏洞的托管N-central环境下线，直至能够完成修补，目前公司正在积极应对，但具体漏洞类型、触发条件及受影响版本原文未披露。",
+          "tags": [
+            "零日漏洞",
+            "安全补丁",
+            "RMM平台"
+          ],
+          "url": "https://hackernews.cc/post/64898",
+          "source": "hackernews.cc",
+          "category": "Synthesis",
+          "published": "2026-11-12T02:56:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及广泛使用的RMM平台零日漏洞修复及托管环境下线处置",
+          "feed_url": "http://hackernews.cc/feed",
+          "feed_title": "HackerNews",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全媒体",
+          "source_key": "hackernews.cc",
+          "story_id": "url:hackernews.cc/post/64898",
+          "related_urls": [
+            "https://www.rapid7.com/blog/post/etr-critical-vulnerabilities-in-n-able-n-central-prompt-hosted-shutdown"
+          ],
+          "related_count": 1,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 8.0,
+            "actionability": 9.0,
+            "technical_depth": 6.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 7.85,
+          "final_score": 8.55,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.7,
+            "applied_adjustment": 0.7
+          }
+        },
+        {
+          "title_zh": "ConnectWise 调查针对 MSP 的 ScreenConnect 活跃攻击，禁用五个第三方扩展",
+          "title_orig": "活跃的 ScreenConnect 攻击入侵 MSP，影响数十家组织",
+          "summary": "ConnectWise 正在调查一场针对托管服务提供商（MSP）的活跃恶意软件攻击活动，攻击者利用被入侵的 ScreenConnect 环境向客户设备部署流氓远程访问客户端，目前已导致数十家组织受到影响。作为此次调查和预防措施的一部分，ConnectWise 已在大约 400 个合作伙伴环境中禁用了五个第三方 ScreenConnect 扩展，同时警告称这些扩展可能与最早由网络安全公司 Huntress 于周三发现的攻击活动有关。",
+          "tags": [
+            "ScreenCo",
+            "MSP",
+            "恶意软件"
+          ],
+          "url": "https://hackernews.cc/post/64894",
+          "source": "hackernews.cc",
+          "category": "Synthesis",
+          "published": "2026-11-12T02:22:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及远程控制工具供应链及扩展安全风险，值得运维人员关注。",
+          "feed_url": "http://hackernews.cc/feed",
+          "feed_title": "HackerNews",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全媒体",
+          "source_key": "hackernews.cc",
+          "story_id": "url:hackernews.cc/post/64894",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 8.0,
+            "actionability": 8.0,
+            "technical_depth": 6.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 7.75,
+          "final_score": 8.45,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.7,
+            "applied_adjustment": 0.7
+          }
+        },
+        {
+          "title_zh": "Gohttpserver 存在 Zip Slip 路径穿越漏洞，可致任意文件写入与远程代码执行",
+          "title_orig": "深入浅出 Gohttpserver Zip Slip 漏洞：从黑盒复现到白盒源码审计的闭环剖析",
+          "summary": "安全研究人员在对基于 Go 语言的开源 HTTP 文件服务器 Gohttpserver 进行代码审计时，发现其内置的 --upload 功能存在 Zip Slip 路径穿越漏洞，攻击者可通过构造包含 ../ 序列的恶意压缩包绕过上传目录限制。该漏洞可导致攻击者将任意文件写入服务器敏感位置并实现远程代码执行，但原文未披露具体的受影响版本及修复状态。",
+          "tags": [
+            "路径穿越",
+            "文件上传",
+            "代码审计"
+          ],
+          "url": "https://xz.aliyun.com/news/93262",
+          "source": "xz.aliyun.com",
+          "category": "Synthesis",
+          "published": "2026-11-12T01:57:33+00:00",
+          "cve_ids": [],
+          "selection_reason": "剖析 Gohttpserver 路径穿越漏洞的黑盒复现与白盒",
+          "feed_url": "https://xz.aliyun.com/feed",
+          "feed_title": "先知社区",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "xz.aliyun.com",
+          "story_id": "url:xz.aliyun.com/news/93262",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 8.0,
+            "impact_scope": 6.0,
+            "actionability": 8.0,
+            "technical_depth": 9.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 7.85,
+          "final_score": 8.45,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.6,
+            "applied_adjustment": 0.6
+          }
+        },
+        {
+          "title_zh": "微软研究团队剖析后训练供应链攻击如何劫持编码智能体",
+          "title_orig": "Trained to betray: How post-training supply chain attacks hijack coding agents",
+          "summary": "微软安全博客最新文章显示，微软 Defender 研究团队与 AI 红队深入探讨了后训练供应链攻击如何劫持编码智能体，揭示了模型在训练后阶段面临的安全威胁。研究指出，攻击者利用投毒数据集与投毒模型检查点，可触发远程代码执行及其他恶意活动，但原文摘要尚未披露具体受影响组件、触发条件细节及修复缓解方案，整体影响范围仍有待进一步明确。",
+          "tags": [
+            "AI安全",
+            "供应链攻击",
+            "远程代码执行"
+          ],
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/",
+          "source": "microsoft.com",
+          "category": "Synthesis",
+          "published": "2026-11-12T17:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示大模型后训练阶段投毒导致编码智能体RCE风险",
+          "feed_url": "https://www.microsoft.com/security/blog/feed/",
+          "feed_title": "Microsoft Security Blog",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "microsoft.com",
+          "story_id": "url:microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 8.0,
+            "impact_scope": 8.0,
+            "actionability": 7.0,
+            "technical_depth": 8.0,
+            "exploitability": 7.0
+          },
+          "dimension_score": 7.7,
+          "final_score": 8.44,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.8,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "Citrix 修复 NetScaler 等产品 12 个漏洞，含身份验证绕过与内存溢出",
+          "title_orig": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
+          "summary": "Citrix 近日正式发布安全补丁，用于修复影响 NetScaler ADC、Citrix NetScaler Gateway、NetScaler Console 以及 Secure Access Client 等多款产品的十二个安全漏洞，其中包括多个严重安全漏洞以及影响 NetScaler ADC 和 NetScaler Gateway 的 CVE-2026-120868 内存溢出漏洞，其 CVSS 评分高达 9.3 分。",
+          "tags": [
+            "漏洞修复",
+            "身份验证绕过",
+            "内存溢出"
+          ],
+          "url": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+          "source": "thehackernews.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-11-12T15:38:49+00:00",
+          "cve_ids": [
+            "CVE-2026-120868"
+          ],
+          "selection_reason": "涉及高危身份验证绕过与内存溢出漏洞，官方已发布修复补丁。",
+          "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+          "feed_title": "The Hacker News",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "安全媒体",
+          "source_key": "thehackernews.com",
+          "story_id": "cve:cve-2026-120868",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "impact_scope": 9.0,
+            "actionability": 8.0,
+            "technical_depth": 6.0,
+            "exploitability": 8.0
+          },
+          "dimension_score": 7.95,
+          "final_score": 8.25,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        }
+      ],
+      "raw_count": 120,
+      "selected_count": 15,
+      "selection_stats": {
+        "total": 15,
+        "chinese": 7,
+        "direct": 15,
+        "tier_t2": 10,
+        "kind_cn_expert": 7,
+        "tier_t1": 4,
+        "kind_official": 4,
+        "wechat": 1,
+        "kind_media": 3,
+        "tier_unknown": 1,
+        "kind_expert": 1
+      },
+      "clustering_stats": {
+        "deterministic_merged": 1,
+        "llm_merged": 3,
+        "merged_total": 4
+      },
+      "generated_at": "2026-11-13T02:19:42.117313Z",
+      "delivered_filter_stats": {
+        "url": 8,
+        "story": 1,
+        "total": 9
+      }
+    },
+    "ai_security": {
+      "display_name": "AI 安全",
+      "items": [
+        {
+          "title_zh": "微软研究团队揭示后训练供应链攻击如何通过投毒数据集和模型检查点劫持编程智能体",
+          "title_orig": "Trained to betray: How post-training supply chain attacks hijack coding agents",
+          "summary": "微软 Defender 研究团队与 AI 红队发布文章，探讨了针对编程智能体的后训练供应链攻击手法，指出攻击者可利用投毒数据集与投毒模型检查点对智能体进行劫持。该研究指出，此类后训练阶段的供应链投毒能够触发远程代码执行及其他恶意活动，但原文摘要未披露具体的技术实现细节、受影响组件版本或相关缓解措施。",
+          "tags": [
+            "AI安全",
+            "供应链攻击",
+            "模型投毒"
+          ],
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/",
+          "source": "microsoft.com",
+          "category": "AISecurityLabs",
+          "published": "2026-11-12T17:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示AI编程智能体后训练阶段的供应链投毒与RCE风险。",
+          "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+          "feed_title": "Microsoft Security Blog",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "microsoft.com",
+          "story_id": "url:microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "score_dimensions": {
+            "technical_depth": 9.0,
+            "practical_risk": 9.0,
+            "actionability": 8.0,
+            "agent_model_relevance": 10.0,
+            "security_relevance": 10.0
+          },
+          "dimension_score": 9.35,
+          "final_score": 10.0,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.8,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "Dify 沙箱模块因默认硬编码 API 密钥存在未授权代码执行风险",
+          "title_orig": "基于默认配置的 Dify 沙箱 RCE 利用链分析与加固探讨",
+          "summary": "开源 LLM 应用平台 Dify 的 dify-sandbox 沙箱组件在默认配置中存在硬编码通信凭证与默认 API 密钥，当服务端口暴露于公网或攻击者可访问其内部网络时，可利用 X-Api-Key: dify 请求头绕过 middleware.Auth() 鉴权并执行任意 Python 代码，从而获取底层系统信息。尽管官方团队基于开发者体验考量认为该设计属于预设功能并无缺陷，但该风险仍威胁自托管环境安全，文章为此还原了完整攻击链并从企业自托管运维视角给出了纵深防御建议。",
+          "tags": [
+            "Dify",
+            "硬编码密钥",
+            "代码执行"
+          ],
+          "url": "https://xz.aliyun.com/news/93260",
+          "source": "xz.aliyun.com",
+          "category": "Chinese",
+          "published": "2026-11-11T18:02:06+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示开源 LLM 平台沙箱组件的默认配置安全风险及防御思路",
+          "feed_url": "https://xz.aliyun.com/feed",
+          "feed_title": "先知社区",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "xz.aliyun.com",
+          "story_id": "url:xz.aliyun.com/news/93260",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "score_dimensions": {
+            "technical_depth": 9.0,
+            "practical_risk": 9.0,
+            "actionability": 9.0,
+            "agent_model_relevance": 9.0,
+            "security_relevance": 9.0
+          },
+          "dimension_score": 9.0,
+          "final_score": 9.6,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.6,
+            "applied_adjustment": 0.6
+          }
+        },
+        {
+          "title_zh": "攻击者利用开源 Cairn 自主 AI 框架针对半导体、国防及民间组织发起入侵",
+          "title_orig": "Attackers Use Autonomous AI to Target Semiconductor, Defense and Civil Society Sectors",
+          "summary": "安全研究团队Unit 42发布最新分析报告披露，攻击者正利用开源的Cairn自主AI智能体框架，针对半导体、国防以及民间社会组织等关键领域目标实施自动化网络入侵活动。尽管原文未进一步披露该攻击活动的具体漏洞利用细节、受影响组件版本以及完整的安全缓解措施，但这一发现充分揭示了开源自主AI工具在实战化网络攻击中的滥用趋势，值得上述受影响行业与安全团队高度关注并加强防御。",
+          "tags": [
+            "AI安全",
+            "自主攻击",
+            "Cairn框架"
+          ],
+          "url": "https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/",
+          "source": "unit42.paloaltonetworks.com",
+          "category": "AISecurityLabs",
+          "published": "2026-11-12T15:00:31+00:00",
+          "cve_ids": [],
+          "selection_reason": "披露开源AI智能体框架被用于实战化网络攻击的案例",
+          "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+          "feed_title": "Unit 42",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "unit42.paloaltonetworks.com",
+          "story_id": "url:unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "score_dimensions": {
+            "technical_depth": 8.0,
+            "practical_risk": 9.0,
+            "actionability": 8.0,
+            "agent_model_relevance": 9.0,
+            "security_relevance": 9.0
+          },
+          "dimension_score": 8.65,
+          "final_score": 9.39,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.8,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "GPT Academic 存在软链接解析缺陷导致任意文件读取漏洞",
+          "title_orig": "CVE-2025-25185 深度解析：GPT Academic 软链接解析缺陷导致任意文件读取",
+          "summary": "开源学术优化工具 GPT Academic（受影响版本 ≤ 3.91）被披露存在任意文件读取漏洞（CVE-2025-25185），其成因是服务端在处理“上传论文/代码压缩包进行智能解析”功能时，解压环节存在软链接解析缺陷。攻击者可通过上传构造了恶意软链接的归档文件触发该漏洞，从而实现服务器上的任意文件读取，但原文未披露具体的修复版本或官方缓解措施。",
+          "tags": [
+            "任意文件读取",
+            "软链接",
+            "代码审计"
+          ],
+          "url": "https://xz.aliyun.com/news/93253",
+          "source": "xz.aliyun.com",
+          "category": "Chinese",
+          "published": "2026-11-11T12:26:24+00:00",
+          "cve_ids": [
+            "CVE-2025-25185"
+          ],
+          "selection_reason": "分析压缩包解压软链接解析漏洞的完整利用链与防御思路。",
+          "feed_url": "https://xz.aliyun.com/feed",
+          "feed_title": "先知社区",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文安全",
+          "source_key": "xz.aliyun.com",
+          "story_id": "cve:cve-2025-25185",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "score_dimensions": {
+            "technical_depth": 9.0,
+            "practical_risk": 8.0,
+            "actionability": 8.0,
+            "agent_model_relevance": 9.0,
+            "security_relevance": 9.0
+          },
+          "dimension_score": 8.7,
+          "final_score": 9.3,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.6,
+            "applied_adjustment": 0.6
+          }
+        },
+        {
+          "title_zh": "AI 自主入侵实战案例：自定义智能体实现侦察至横向移动及四次被拦截后自动绕过",
+          "title_orig": "四次阻断，四次改道：AI 自主入侵已经走到哪一步",
+          "summary": "一名中文操作者通过自定义智能体框架，将侦察、漏洞利用、权限提升、横向移动以及数据获取等大量复杂的渗透测试技术工作交由 AI 自主执行。在连续遭遇四次防御阻断与拦截后，该 AI 智能体不仅能够自行分析受阻的具体原因，还能动态替换攻击路径并完成最终结果验证，充分展现出当前 AI 自主入侵技术已具备高度的自适应能力。",
+          "tags": [
+            "AI安全",
+            "自动化渗透",
+            "智能体框架"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247521340&idx=1&sn=d86adafc458a77cf2854f7e3ea8aef5f",
+          "source": "mp.weixin.qq.com",
+          "category": "Synthesis",
+          "published": "2026-11-12T06:23:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示AI在渗透测试中自主绕过防御的实战能力",
+          "feed_url": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+          "feed_title": "奇安信威胁情报中心",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "https://wechat2rss.xlab.app/feed/b93962f981247c0091dad08df5b7a6864ab888e9.xml",
+          "story_id": "url:mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA%3D%3D&mid=2247521340&idx=1&sn=d86adafc458a77cf2854f7e3ea8aef5f",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "technical_depth": 8.0,
+            "practical_risk": 9.0,
+            "actionability": 7.0,
+            "agent_model_relevance": 9.0,
+            "security_relevance": 9.0
+          },
+          "dimension_score": 8.55,
+          "final_score": 9.25,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.7,
+            "applied_adjustment": 0.7
+          }
+        },
+        {
+          "title_zh": "微软研究人员利用 AI 系统在 Linux 内核中发现 59 个安全漏洞",
+          "title_orig": "‼️ One Microsoft researcher and an intern used AI to find 59 security bugs in the Linux kernel. One had gone unnoticed for at least 21 years. Micros...",
+          "summary": "微软一名研究人员与实习生利用智能体系统 MDASH 在约两周内对 Linux 内核进行扫描，共标记出 26,502 个潜在缺陷，其中 621 个附带了证明，团队最终上报了 59 个安全漏洞，其中最久的一个已存在至少 21 年。这些漏洞中有 33 个获得了 CVE 编号，24 个被评为高危，团队还在实验室中为其中 8 个构建了可将普通用户提权至 root 的有效利用代码，但原文未披露具体漏洞类型、影响版本及修复状态。",
+          "tags": [
+            "Linux内核",
+            "AI挖洞",
+            "提权漏洞"
+          ],
+          "url": "https://x.com/IntCyberDigest/status/2121041604790370757",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-11-13T00:45:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示AI智能体在大型内核代码库中自动化挖掘高危提权漏洞的实战",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/IntCyberDigest",
+          "feed_title": "X / International Cyber Digest",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "安全专家 X",
+          "source_key": "x:intcyberdigest",
+          "story_id": "url:x.com/intcyberdigest/status/2121041604790370757",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "technical_depth": 8.0,
+            "practical_risk": 8.0,
+            "actionability": 7.0,
+            "agent_model_relevance": 9.0,
+            "security_relevance": 9.0
+          },
+          "dimension_score": 8.35,
+          "final_score": 8.85,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.5,
+            "applied_adjustment": 0.5
+          }
+        },
+        {
+          "title_zh": "Unit 42 分析 ARTEX 与 AI 驱动红队工具的攻击利用及防御缓解措施",
+          "title_orig": "ARTEX and AI-Powered Red Teaming Tools: What Defenders Need to Know",
+          "summary": "Unit 42 近期发布了关于 ARTEX 及人工智能驱动红队工具的专题文章，重点揭示了攻击者利用此类人工智能红队工具发起攻击的最新发现，指出了防御者需要关注的核心安全问题。该内容主要面向企业安全防御与红蓝对抗场景，旨在帮助安全从业者了解如何有效缓解此类人工智能赋能的攻击行为，为防御者提供了切实的应对建议与思路，但原文摘要尚未披露具体的技术细节。",
+          "tags": [
+            "AI安全",
+            "红队工具",
+            "防御缓解"
+          ],
+          "url": "https://unit42.paloaltonetworks.com/artex-and-ai-powered-red-teaming-tools/",
+          "source": "unit42.paloaltonetworks.com",
+          "category": "AISecurityLabs",
+          "published": "2026-11-11T23:00:53+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示攻击者滥用AI红队工具的趋势并提供防御缓解思路。",
+          "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+          "feed_title": "Unit 42",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "unit42.paloaltonetworks.com",
+          "story_id": "url:unit42.paloaltonetworks.com/artex-and-ai-powered-red-teaming-tools",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "technical_depth": 7.0,
+            "practical_risk": 8.0,
+            "actionability": 8.0,
+            "agent_model_relevance": 8.0,
+            "security_relevance": 9.0
+          },
+          "dimension_score": 8.05,
+          "final_score": 8.79,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.5,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "PHP2Shell高危漏洞复盘：探讨AI如何将复杂内存漏洞转化为远程代码执行",
+          "title_orig": "PHP2Shell高危漏洞复盘：AI如何让复杂内存漏洞变成远程代码执行？",
+          "summary": "该文章复盘了PHP2Shell高危漏洞，重点探讨AI如何将复杂的内存漏洞转化为远程代码执行，但原文未披露该漏洞的具体触发条件、受影响版本及组件细节。针对此类安全风险，原文未披露具体的补丁或缓解措施，仅指出安全能力必须贯穿软件完整生命周期，涵盖代码安全、运行环境、漏洞发现与修复验证以及技术生态的联合治理。",
+          "tags": [
+            "漏洞复盘",
+            "AI安全",
+            "远程代码执行"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA==&mid=2651143209&idx=1&sn=a8a29fa75367d1aea1773dede4332ecd",
+          "source": "mp.weixin.qq.com",
+          "category": "Synthesis",
+          "published": "2026-11-11T04:07:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "复盘AI辅助内存漏洞转化为RCE的思路及全生命周期安全治理。",
+          "feed_url": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+          "feed_title": "安全牛",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "https://wechat2rss.xlab.app/feed/10f1ba549b70cdb4216f7ade606d30a813305aa1.xml",
+          "story_id": "url:mp.weixin.qq.com/s?__biz=MjM5Njc3NjM4MA%3D%3D&mid=2651143209&idx=1&sn=a8a29fa75367d1aea1773dede4332ecd",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "technical_depth": 8.0,
+            "practical_risk": 8.0,
+            "actionability": 7.0,
+            "agent_model_relevance": 7.0,
+            "security_relevance": 8.0
+          },
+          "dimension_score": 7.75,
+          "final_score": 8.35,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.6,
+            "applied_adjustment": 0.6
+          }
+        },
+        {
+          "title_zh": "ByteSRC发布《AI 辅助安全测试 AGENTS.md》指引及违规白帽处罚公告",
+          "title_orig": "ByteSRC发布《AI 辅助安全测试 AGENTS.md》指引及违规白帽处罚公告",
+          "summary": "ByteSRC近期正式发布了《AI 辅助安全测试 AGENTS.md》指引文件及针对违规白帽的处罚公告，旨在进一步规范安全测试过程中的操作准则与合规边界。公告明确指出手工测试与 AI Agent 测试适用同一准则，要求所有测试活动必须仅在授权范围内开展，严格坚持最小必要验证原则并专注于发现漏洞而不是利用漏洞，不过原文未披露具体的违规处罚案例及指引详细条款。",
+          "tags": [
+            "AI安全测试",
+            "漏洞赏金",
+            "合规指引"
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzUzMzcyMDYzMw==&mid=2247496405&idx=1&sn=b989bdc2a075e3a46abfda036a16bb1f",
+          "source": "mp.weixin.qq.com",
+          "category": "Synthesis",
+          "published": "2026-11-12T11:51:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "明确AI Agent参与安全测试的授权边界与最小必要验证准则",
+          "feed_url": "https://wechat2rss.xlab.app/feed/f4087ff02b808a1a995e2ba930219ada5b82425d.xml",
+          "feed_title": "字节跳动安全中心",
+          "source_tier": "t2",
+          "source_kind": "cn_expert",
+          "source_label": "中文公众号",
+          "source_key": "https://wechat2rss.xlab.app/feed/f4087ff02b808a1a995e2ba930219ada5b82425d.xml",
+          "story_id": "url:mp.weixin.qq.com/s?__biz=MzUzMzcyMDYzMw%3D%3D&mid=2247496405&idx=1&sn=b989bdc2a075e3a46abfda036a16bb1f",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "technical_depth": 5.0,
+            "practical_risk": 7.0,
+            "actionability": 8.0,
+            "agent_model_relevance": 8.0,
+            "security_relevance": 8.0
+          },
+          "dimension_score": 7.05,
+          "final_score": 7.75,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.3,
+            "raw_adjustment": 0.7,
+            "applied_adjustment": 0.7
+          }
+        },
+        {
+          "title_zh": "Mandiant与GTIG发布2026年报告：攻击者正将代理型AI用于入侵并缩短漏洞修复窗口",
+          "title_orig": "AI Didn’t Create a New Kind of Risk. It Removed the Time You Had to Fix the Old One.",
+          "summary": "Mandiant与谷歌威胁情报组（GTIG）于九月联合发布了《2026年AI风险与韧性》报告，明确指出当前网络攻击者正在整个入侵流程中积极部署并实际运用代理型AI技术。该报告同时强调，漏洞利用依然是攻击者侵入目标系统的最主要途径，而AI技术的广泛应用并未创造出全新的风险类型，只是大幅压缩了防御方及时修复既有安全漏洞的时间窗口，导致留给防御方的修复时间正在不断收窄。",
+          "tags": [
+            "代理型AI",
+            "漏洞利用",
+            "威胁情报"
+          ],
+          "url": "https://blog.qualys.com/category/product-tech",
+          "source": "blog.qualys.com",
+          "category": "OfficialAdvisories",
+          "published": "2026-11-13T01:37:30+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示代理型AI在入侵中的实际应用及对漏洞修复窗口的影响。",
+          "feed_url": "https://blog.qualys.com/feed",
+          "feed_title": "Qualys Security Blog",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "安全厂商",
+          "source_key": "blog.qualys.com",
+          "story_id": "url:blog.qualys.com/category/product-tech",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "technical_depth": 6.0,
+            "practical_risk": 8.0,
+            "actionability": 6.0,
+            "agent_model_relevance": 7.0,
+            "security_relevance": 8.0
+          },
+          "dimension_score": 7.15,
+          "final_score": 7.65,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.5,
+            "applied_adjustment": 0.5
+          }
+        }
+      ],
+      "raw_count": 59,
+      "selected_count": 10,
+      "selection_stats": {
+        "total": 10,
+        "direct": 9,
+        "tier_t1": 3,
+        "kind_official": 3,
+        "chinese": 5,
+        "tier_t2": 7,
+        "kind_cn_expert": 5,
+        "wechat": 3,
+        "aggregator": 1,
+        "kind_expert_x": 1,
+        "kind_expert": 1
+      },
+      "clustering_stats": {
+        "deterministic_merged": 0,
+        "llm_merged": 0,
+        "merged_total": 0
+      },
+      "generated_at": "2026-11-13T02:22:01.425626Z",
+      "delivered_filter_stats": {
+        "url": 9,
+        "story": 0,
+        "total": 9
+      }
+    },
+    "ai": {
+      "display_name": "AI 前沿",
+      "items": [
+        {
+          "title_zh": "谷歌发布 Gemini 4 Hydrogen 模型，主打日常编程与智能体工作流的高速高效表现",
+          "title_orig": "Today, we’re growing the Gemini 4 model series by introducing Gemini 4 Hydrogen. While Gemini 4 Carbon tackles your hardest problems, Hydrogen brings...",
+          "summary": "谷歌AI宣布扩展 Gemini 4 模型系列，在主打解决最棘手难题的 Gemini 4 Carbon 之外，正式推出面向大众的全新 Gemini 4 Hydrogen 模型，旨在为日常编程和智能体工作流提供兼具速度与效率的前沿智能体验。该模型在默认思考水平下的 Artificial Analysis 智能指数表现上超越了 Argon，且运行速度达到 Gemini 3.8 Flash 的 2.5 倍，这让开发者和普通用户在日常编程与智能体任务中能够获得更快速的智能支持。",
+          "tags": [
+            "谷歌AI",
+            "Gemini",
+            "大模型"
+          ],
+          "url": "https://x.com/GoogleAI/status/2120940683233984862",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-11-12T18:03:58+00:00",
+          "cve_ids": [],
+          "selection_reason": "谷歌推出高速高效新模型，适合日常编程与智能体工作流。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/GoogleAI",
+          "feed_title": "X / Google AI",
+          "source_tier": "t1_5",
+          "source_kind": "official_x",
+          "source_label": "官方 X",
+          "source_key": "x:googleai",
+          "story_id": "url:x.com/claudeai/status/2120973994191094179",
+          "related_urls": [
+            "https://x.com/dotey/status/2120945309714919886",
+            "https://x.com/GoogleDeepMind/status/2120940338869055788",
+            "https://x.com/dotey/status/2120979951599931793",
+            "https://x.com/claudeai/status/2120973994191094179",
+            "https://www.theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen"
+          ],
+          "related_count": 5,
+          "score": 9,
+          "score_dimensions": {
+            "relevance": 10.0,
+            "entity_importance": 10.0,
+            "ecosystem_impact": 9.0,
+            "novelty": 9.0,
+            "developer_relevance": 9.0
+          },
+          "dimension_score": 9.4,
+          "final_score": 10.0,
+          "score_breakdown": {
+            "source_bonus": 0.5,
+            "kind_bonus": 0.4,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.2,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "黄仁勋辞去英伟达总裁及CEO职务，CFO Colette Kress临时接任",
+          "title_orig": "黄仁勋辞去英伟达 CEO，CFO Colette Kress 临时接任，英伟达第一次设董事长 英伟达美东时间 11 月 12 日早上开盘前宣布，创始人黄仁勋辞去总裁、CEO 和董事职务...",
+          "summary": "英伟达于美东时间11月12日开盘前宣布，创始人黄仁勋辞去总裁、CEO及董事职务并立即生效，由CFO Colette Kress兼任临时CEO，董事会已启动内外正式接班人遴选。作为1993年创立公司并掌舵33年的核心人物，黄仁勋的突然离任及公司首次设立董事长的治理调整，对英伟达管理层稳定性及全球半导体与AI行业投资者预期均具有重要影响。",
+          "tags": [
+            "英伟达",
+            "黄仁勋",
+            "人事变动"
+          ],
+          "url": "https://x.com/dotey/status/2120902632550060478",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-11-12T15:32:46+00:00",
+          "cve_ids": [],
+          "selection_reason": "AI芯片龙头创始人突然卸任，引发行业与资本市场高度关注。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/dotey",
+          "feed_title": "X / dotey",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "专家 X",
+          "source_key": "x:dotey",
+          "story_id": "url:x.com/dotey/status/2120902632550060478",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 10,
+          "score_dimensions": {
+            "relevance": 10.0,
+            "entity_importance": 10.0,
+            "ecosystem_impact": 10.0,
+            "novelty": 10.0,
+            "developer_relevance": 7.0
+          },
+          "dimension_score": 9.4,
+          "final_score": 10.0,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.6,
+            "applied_adjustment": 0.6
+          }
+        },
+        {
+          "title_zh": "Anthropic向美国证券交易委员会提交首次公开募股注册声明",
+          "title_orig": "Our initial public offering: https://ipo.anthropic.com Legal disclaimer: Anthropic has filed a registration statement (including a prospectus) with th...",
+          "summary": "人工智能公司Anthropic近日宣布启动首次公开募股，并已就此次发行向美国证券交易委员会正式提交了包含招股说明书在内的完整注册声明文件。该公司在发布的法律免责声明中明确提示，所有潜在投资者在做出任何投资决定之前，务必通过美国证券交易委员会的官方公开渠道仔细阅读该注册声明中的招股说明书，以全面了解此次发行的具体细节。",
+          "tags": [
+            "Anthropi",
+            "IPO",
+            "人工智能"
+          ],
+          "url": "https://x.com/AnthropicAI/status/2120841731302154708",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-11-12T11:30:46+00:00",
+          "cve_ids": [],
+          "selection_reason": "Anthropic提交IPO注册声明，迈出上市关键一步。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/AnthropicAI",
+          "feed_title": "X / Anthropic",
+          "source_tier": "t1_5",
+          "source_kind": "official_x",
+          "source_label": "官方 X",
+          "source_key": "x:anthropicai",
+          "story_id": "url:x.com/anthropicai/status/2120841731302154708",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 10,
+          "score_dimensions": {
+            "relevance": 10.0,
+            "entity_importance": 10.0,
+            "ecosystem_impact": 10.0,
+            "novelty": 10.0,
+            "developer_relevance": 6.0
+          },
+          "dimension_score": 9.2,
+          "final_score": 9.94,
+          "score_breakdown": {
+            "source_bonus": 0.5,
+            "kind_bonus": 0.4,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.0,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "vLLM在Vera Rubin NVL72上优化DeepSeek-V4.1-Flash，吞吐量达GB300的58倍",
+          "title_orig": "We optimized DeepSeek-V4.1-Flash on vLLM for Vera Rubin NVL72 and reached 58× the throughput of GB300 NVL72 at 1.7 million tokens/s/GPU and 387 token...",
+          "summary": "vLLM项目团队近期宣布，已针对Vera Rubin NVL72硬件平台完成了DeepSeek-V4.1-Flash模型的深度优化，在SemiAnalysis AgentX基准测试中，于P90指标下实现了单GPU每秒170万tokens以及单用户每秒387tokens的推理速度，整体吞吐量达到GB300 NVL72平台的58倍。",
+          "tags": [
+            "大模型推理",
+            "推理优化",
+            "算力基准"
+          ],
+          "url": "https://x.com/vllm_project/status/2121008091538092393",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-11-12T22:31:50+00:00",
+          "cve_ids": [],
+          "selection_reason": "展示新一代硬件与推理框架结合的极高吞吐量突破。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/vllm_project",
+          "feed_title": "X / vLLM",
+          "source_tier": "t2",
+          "source_kind": "expert_x",
+          "source_label": "X 信号",
+          "source_key": "x:vllm_project",
+          "story_id": "url:x.com/vllm_project/status/2120659134655918327",
+          "related_urls": [
+            "https://x.com/vllm_project/status/2120659134655918327"
+          ],
+          "related_count": 1,
+          "score": 9,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "entity_importance": 9.0,
+            "ecosystem_impact": 9.0,
+            "novelty": 9.0,
+            "developer_relevance": 9.0
+          },
+          "dimension_score": 9.0,
+          "final_score": 9.6,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.3,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.6,
+            "applied_adjustment": 0.6
+          }
+        },
+        {
+          "title_zh": "Claude 推出自托管版 Managed Agents 私密测试，支持自有云或本地部署",
+          "title_orig": "Self-hosted Claude Managed Agents is now in private beta. You can host the agent harness, sandboxes, and session history, in your own cloud or on-prem...",
+          "summary": "官方最新宣布，自托管版 Claude Managed Agents 现已正式开启私密测试，允许用户在自己的云端环境或本地基础设施中，自主托管代理框架、沙盒环境以及完整的会话历史记录。通过这一全新的自托管模式，开发者和企业不仅能够自主选择将请求发送至 Claude 的具体位置，还能在构建、部署与运行各类 AI 代理的过程中，拥有更高的部署灵活性与数据安全控制权，从而更好地满足自身业务需求。",
+          "tags": [
+            "Claude",
+            "AI代理",
+            "自托管"
+          ],
+          "url": "https://x.com/ClaudeDevs/status/2120938988165091693",
+          "source": "x.com",
+          "category": "XSignals",
+          "published": "2026-11-12T17:57:14+00:00",
+          "cve_ids": [],
+          "selection_reason": "支持自有云与本地部署，满足企业级 AI 代理的数据控制需求。",
+          "feed_url": "http://127.0.0.1:1200/twitter/user/ClaudeDevs",
+          "feed_title": "X / Claude Developers",
+          "source_tier": "t1_5",
+          "source_kind": "official_x",
+          "source_label": "官方 X",
+          "source_key": "x:claudedevs",
+          "story_id": "url:x.com/claudedevs/status/2120938988165091693",
+          "related_urls": [
+            "https://news.google.com/rss/articles/CBMib0FVX3lxTE5uQ0ViUE1TWFdPTDh4dDhDb1lKOU9tWk5aOGNGcWVwTWNHRFBCM1U3U2Job1dTMmlNcG9Ba2FXMlZjYkNnOVFVZjlONHdfTnFrRjdxNVgyQ2VFeXlDOXZFcmlYVkRRX3p2MU16M2lOdw?oc=5",
+            "https://news.google.com/rss/articles/CBMie0FVX3lxTFBSYWpyU0tDU3lMYW91TlA1Z1Z3ektLWWVwaWxjR1BTRVQxUEZaSU9MazRuREpuY3NZaWhqTlh1MTlQMEtmbG5tN093MXJuRGh5a3RtbjM4RjNOVVJzQWZKb2NqdHpQRl9oVU9KWjRXWEtlMXVEV0ttOTBoMA?oc=5"
+          ],
+          "related_count": 2,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "entity_importance": 9.0,
+            "ecosystem_impact": 8.0,
+            "novelty": 8.0,
+            "developer_relevance": 9.0
+          },
+          "dimension_score": 8.6,
+          "final_score": 9.34,
+          "score_breakdown": {
+            "source_bonus": 0.5,
+            "kind_bonus": 0.4,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.2,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "黄仁勋辞职引发外界对英伟达开源人工智能支持承诺的质疑",
+          "title_orig": "Jensen Huang’s exit puts Nvidia’s support for open source in question",
+          "summary": "随着黄仁勋辞去职务，英伟达正处于关键的领导层过渡期，这一重大人事变动引发了外界对其未来是否继续坚定支持开源人工智能的广泛质疑与担忧。此次过渡不仅让英伟达此前收购 Hugging Face 以及推进开放权重模型的既有承诺面临不确定性，也使其反对相关限制的倡导立场受到严峻考验，令开源人工智能领域的未来走向备受关注。",
+          "tags": [
+            "英伟达",
+            "黄仁勋",
+            "开源人工智能"
+          ],
+          "url": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/",
+          "source": "techcrunch.com",
+          "category": "Media",
+          "published": "2026-11-12T18:39:23+00:00",
+          "cve_ids": [],
+          "selection_reason": "英伟达领导层变动或将影响其开源AI生态与政策立场。",
+          "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+          "feed_title": "TechCrunch AI",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "techcrunch.com",
+          "story_id": "url:techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "entity_importance": 10.0,
+            "ecosystem_impact": 10.0,
+            "novelty": 9.0,
+            "developer_relevance": 7.0
+          },
+          "dimension_score": 8.95,
+          "final_score": 9.25,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "黄仁勋离开后 Hugging Face 首席执行官承诺继续为开源人工智能而战",
+          "title_orig": "Hugging Face CEO vows to keep fighting for open source AI after Jensen Huang’s exit",
+          "summary": "在黄仁勋离开之后，Hugging Face 的首席执行官正式作出公开承诺，表示公司将继续坚定地为开源人工智能的未来而奋斗。他的这一表态随即引发了外界对于英伟达价值一百二十九亿美元收购交易前景的诸多疑问，这一动向对于整个开源人工智能生态以及关注该收购案的科技行业观察者而言都具有重要影响。",
+          "tags": [
+            "开源AI",
+            "英伟达",
+            "收购"
+          ],
+          "url": "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit/",
+          "source": "techcrunch.com",
+          "category": "Media",
+          "published": "2026-11-12T17:36:40+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及开源AI未来及英伟达129亿美元收购案走向。",
+          "feed_url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+          "feed_title": "TechCrunch AI",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "techcrunch.com",
+          "story_id": "url:techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "entity_importance": 9.0,
+            "ecosystem_impact": 9.0,
+            "novelty": 8.0,
+            "developer_relevance": 7.0
+          },
+          "dimension_score": 8.35,
+          "final_score": 8.65,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "llm-gemini 0.37发布，支持谷歌新推出的Gemini 4 Hydrogen模型",
+          "title_orig": "llm-gemini 0.37",
+          "summary": "开发者发布了llm-gemini 0.37版本，以支持谷歌今日正式新推出的Gemini 4 Hydrogen模型，这是Gemini 4系列中成本最低的成员，但作者表示其价格实际上与体积大得多的Carbon和Argon等兄弟版本相近。",
+          "tags": [
+            "人工智能",
+            "谷歌",
+            "开源工具"
+          ],
+          "url": "https://simonwillison.net/2026/Nov/12/llm-gemini/",
+          "source": "simonwillison.net",
+          "category": "Commentary",
+          "published": "2026-11-12T22:55:19+00:00",
+          "cve_ids": [],
+          "selection_reason": "新模型支持发布并提示了容易混淆的定价细节。",
+          "feed_url": "https://simonwillison.net/atom/everything/",
+          "feed_title": "Simon Willison",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家博客",
+          "source_key": "simonwillison.net",
+          "story_id": "url:simonwillison.net/2026/nov/12/llm-gemini",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "relevance": 8.0,
+            "entity_importance": 8.0,
+            "ecosystem_impact": 6.0,
+            "novelty": 7.0,
+            "developer_relevance": 8.0
+          },
+          "dimension_score": 7.45,
+          "final_score": 7.95,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.5,
+            "applied_adjustment": 0.5
+          }
+        },
+        {
+          "title_zh": "谷歌进入决策模型市场，Cloudflare与TypeSafe AI展示相关应用",
+          "title_orig": "[AINews] D-Day (Decision Models Day)",
+          "summary": "2026年11月11日，谷歌正式宣布进入决策模型市场，与此同时，在AI Engineer大会上，Cloudflare向业界详细展示了分类器能够处理的构建失败具体环节，TypeSafe AI也公开展示了其生产环境中的客户。这一系列围绕决策模型的最新行业动态，不仅清晰体现了分类器技术在构建失败处理等场景中的实际应用能力，也为高度关注决策模型市场竞争以及生产级人工智能落地实践的开发者与技术团队提供了重要参考。",
+          "tags": [
+            "决策模型",
+            "谷歌",
+            "AI应用"
+          ],
+          "url": "https://latent.space/p/ainews-d-day-decision-models-day/",
+          "source": "latent.space",
+          "category": "Commentary",
+          "published": "2026-11-12T05:26:54+00:00",
+          "cve_ids": [],
+          "selection_reason": "谷歌入局决策模型，多家企业展示分类器与生产级落地案例。",
+          "feed_url": "https://www.latent.space/feed",
+          "feed_title": "Latent Space",
+          "source_tier": "t2",
+          "source_kind": "expert",
+          "source_label": "专家播客",
+          "source_key": "latent.space",
+          "story_id": "url:latent.space/p/ainews-d-day-decision-models-day",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "relevance": 8.0,
+            "entity_importance": 8.0,
+            "ecosystem_impact": 7.0,
+            "novelty": 7.0,
+            "developer_relevance": 7.0
+          },
+          "dimension_score": 7.4,
+          "final_score": 7.7,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.2,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "研究探讨语言模型对齐的理论极限及强化学习等常见方法",
+          "title_orig": "Theoretical Limits of Language Model Alignment",
+          "summary": "这项研究深入探讨了语言模型对齐的理论极限，指出模型对齐旨在使输出符合人类偏好并保留基础模型的核心能力。文章重点分析了在KL散度约束下最大化预期奖励的强化学习，以及从多个独立样本中选择最高奖励输出的最优采样这两种最常见对齐方法，为从事大语言模型对齐与优化的研究人员提供了理论参考。",
+          "tags": [
+            "语言模型",
+            "模型对齐",
+            "强化学习"
+          ],
+          "url": "https://machinelearning.apple.com/research/theoretical-limits-alignment",
+          "source": "machinelearning.apple.com",
+          "category": "Research",
+          "published": "2026-11-12T00:00:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "探讨语言模型对齐的理论极限与常见方法，具研究参考价值。",
+          "feed_url": "https://machinelearning.apple.com/rss.xml",
+          "feed_title": "Apple ML Research",
+          "source_tier": "unknown",
+          "source_kind": "media",
+          "source_label": "未登记源",
+          "source_key": "machinelearning.apple.com",
+          "story_id": "url:machinelearning.apple.com/research/theoretical-limits-alignment",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "relevance": 9.0,
+            "entity_importance": 7.0,
+            "ecosystem_impact": 8.0,
+            "novelty": 8.0,
+            "developer_relevance": 7.0
+          },
+          "dimension_score": 7.8,
+          "final_score": 7.5,
+          "score_breakdown": {
+            "source_bonus": -0.3,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": -0.3,
+            "applied_adjustment": -0.3
+          }
+        },
+        {
+          "title_zh": "谷歌Gemini校园试点引发强烈抵制，家长呼吁在学校暂停使用AI",
+          "title_orig": "Google faces calls for AI moratoriums in schools after Gemini pilot backlash",
+          "summary": "在一名青少年提起诉讼将谷歌Gemini称为“自杀教练”后，多个家庭就学校配发的Chromebook搭载AI一事向谷歌提出交涉，谷歌的校园AI试点项目因此遭到抵制并面临暂停呼吁。这一事件凸显了生成式人工智能在校园应用中的潜在安全风险，不仅直接影响谷歌教育产品的学校部署，也关系到学生群体在使用科技产品时的心理健康与安全保障。",
+          "tags": [
+            "谷歌",
+            "人工智能",
+            "校园安全"
+          ],
+          "url": "https://arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks/",
+          "source": "arstechnica.com",
+          "category": "Media",
+          "published": "2026-11-12T18:57:45+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及青少年AI安全争议，影响科技巨头教育产品校园落地。",
+          "feed_url": "https://arstechnica.com/ai/feed/",
+          "feed_title": "Ars Technica AI",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "arstechnica.com",
+          "story_id": "url:arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "relevance": 8.0,
+            "entity_importance": 9.0,
+            "ecosystem_impact": 7.0,
+            "novelty": 7.0,
+            "developer_relevance": 4.0
+          },
+          "dimension_score": 7.0,
+          "final_score": 7.3,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "美国联邦航空局扩大人工智能建议应用范围以管理全美空域交通拥堵",
+          "title_orig": "FAA expands AI advice to manage air traffic congestion across entire US airspace",
+          "summary": "美国联邦航空局（FAA）正在扩大人工智能建议工具的应用范围，旨在借此管理覆盖全美空域的空中交通拥堵问题，多家航空公司对该人工智能工具表示了赞赏。然而，空中交通管制员联合会并未参与其中，这一现象使得该人工智能工具在全美空域的推广应用以及对航空公司与空中交通管制员群体的具体影响成为关注焦点。",
+          "tags": [
+            "人工智能",
+            "航空管理",
+            "美国空域"
+          ],
+          "url": "https://arstechnica.com/ai/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/",
+          "source": "arstechnica.com",
+          "category": "Media",
+          "published": "2026-11-12T22:28:47+00:00",
+          "cve_ids": [],
+          "selection_reason": "全美空域推广AI治堵获航司赞赏，但空管工会未参与引发关注。",
+          "feed_url": "https://arstechnica.com/ai/feed/",
+          "feed_title": "Ars Technica AI",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "arstechnica.com",
+          "story_id": "url:arstechnica.com/ai/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "relevance": 8.0,
+            "entity_importance": 7.0,
+            "ecosystem_impact": 8.0,
+            "novelty": 7.0,
+            "developer_relevance": 5.0
+          },
+          "dimension_score": 6.95,
+          "final_score": 7.25,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "曾起草加州AI监管法案的斯科特·维纳赢得众议院席位，将参与制定联邦人工智能政策",
+          "title_orig": "Nancy Pelosi’s replacement is ready to regulate AI",
+          "summary": "曾担任加利福尼亚州州参议员的斯科特·维纳，在竞争异常激烈的国会选举中成功胜出，顺利赢得了前众议院议长南希·佩洛西留下的旧金山空缺席位，正式成为其接替者。此前他曾起草旨在遏制先进人工智能风险的立法，如今在当选后接受相关采访时，他已准备好对人工智能展开监管，并有望在制定联邦人工智能政策方面发挥至关重要的作用。",
+          "tags": [
+            "人工智能",
+            "AI监管",
+            "美国政策"
+          ],
+          "url": "https://www.technologyreview.com/2026/11/09/1148182/nancy-pelosis-replacement-is-ready-to-regulate-ai/",
+          "source": "technologyreview.com",
+          "category": "Media",
+          "published": "2026-11-09T17:05:43+00:00",
+          "cve_ids": [],
+          "selection_reason": "关注美国联邦AI监管政策走向及关键立法者动态。",
+          "feed_url": "https://www.technologyreview.com/feed/",
+          "feed_title": "MIT Tech Review AI",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "科技媒体",
+          "source_key": "technologyreview.com",
+          "story_id": "url:technologyreview.com/2026/11/09/1148182/nancy-pelosis-replacement-is-ready-to-regulate-ai",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "relevance": 8.0,
+            "entity_importance": 7.0,
+            "ecosystem_impact": 8.0,
+            "novelty": 7.0,
+            "developer_relevance": 4.0
+          },
+          "dimension_score": 6.75,
+          "final_score": 6.75,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.0,
+            "applied_adjustment": 0.0
+          }
+        },
+        {
+          "title_zh": "OpenAI最新一轮私募融资150亿美元，其融前估值达到1.25万亿美元",
+          "title_orig": "OpenAI最新一轮私募融资150亿美元，融前估值1.25万亿美元 - 凤凰网科技",
+          "summary": "据凤凰网科技消息，OpenAI在最新一轮私募融资中成功筹集150亿美元资金，其本轮融前估值已达到1.25万亿美元的高位。这一巨额融资规模与万亿美元级别的估值水平，充分反映出当前资本市场对OpenAI的高度关注与认可，同时也将对全球科技行业、人工智能领域的投融资趋势以及相关市场竞争格局产生深远影响，值得行业从业者、技术开发者与广大投资者持续密切关注。",
+          "tags": [
+            "OpenAI",
+            "私募融资",
+            "科技估值"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBGUGlDTllBOFVNUWU1MUxSREZ3WUFYVGl4NnloMlhsOFJxOGZDbHJramdfMnc5dkVkTnRiT0EyN2VKSEJZbWw1Qkk5a2Q?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese",
+          "published": "2026-11-13T01:48:09+00:00",
+          "cve_ids": [],
+          "selection_reason": "OpenAI百亿美元级融资与万亿估值，影响AI行业格局。",
+          "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "feed_title": "Google News 中文 AI",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com",
+          "story_id": "title:c10e9b8d8318",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 4,
+          "score_dimensions": {
+            "relevance": 8.0,
+            "entity_importance": 10.0,
+            "ecosystem_impact": 6.0,
+            "novelty": 5.0,
+            "developer_relevance": 2.0
+          },
+          "dimension_score": 6.15,
+          "final_score": 5.41,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": -1.6,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": -1.3,
+            "applied_adjustment": -0.74
+          }
+        },
+        {
+          "title_zh": "大模型发展三年后百度词元所探索重新定义AI商业模式",
+          "title_orig": "大模型狂奔三年，百度词元所重新定义AI生意 - 信息化观察网",
+          "summary": "在大模型技术经历三年狂奔式发展之后，百度词元所正式提出将重新定义人工智能领域的商业生意，这一表态迅速引发了业界对于AI商业变现路径与未来发展方向的进一步深入讨论。这一最新动态之所以值得重点关注，是因为它集中反映了国内科技企业在大模型技术应用落地与商业化探索阶段的新动向，对于AI产业链上下游企业及行业观察者而言都具有重要的参考价值。",
+          "tags": [
+            "大模型",
+            "百度",
+            "AI商业化"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5IM0hNTEVoY2dIUTdLYkxmTF93VDdQQUJoOXlxbWlONi1LeWc5TzR1YURLTjFlazVPM3o5ZFZVWldSdnhhME00bW83cGRxU1gybTNtNGNhSDJ6SFpDdHlpaw?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese",
+          "published": "2026-11-13T01:44:01+00:00",
+          "cve_ids": [],
+          "selection_reason": "关注大模型商业化落地的新探索与行业动向",
+          "feed_url": "https://news.google.com/rss/search?q=(%22%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%22+OR+%22Claude%22+OR+%22OpenAI%22+OR+%22DeepSeek%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "feed_title": "Google News 中文 AI",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com",
+          "story_id": "title:c9f8e52eba98",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 4,
+          "score_dimensions": {
+            "relevance": 7.0,
+            "entity_importance": 6.0,
+            "ecosystem_impact": 4.0,
+            "novelty": 4.0,
+            "developer_relevance": 3.0
+          },
+          "dimension_score": 4.8,
+          "final_score": 4.06,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": -1.6,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": -1.3,
+            "applied_adjustment": -0.74
+          }
+        }
+      ],
+      "raw_count": 80,
+      "selected_count": 15,
+      "selection_stats": {
+        "total": 15,
+        "aggregator": 7,
+        "tier_t1_5": 3,
+        "kind_official_x": 3,
+        "chinese": 3,
+        "tier_t2": 11,
+        "kind_expert_x": 2,
+        "direct": 8,
+        "kind_media": 6,
+        "kind_expert": 2,
+        "tier_unknown": 1,
+        "google_news": 2,
+        "kind_google_news": 2
+      },
+      "clustering_stats": {
+        "deterministic_merged": 10,
+        "llm_merged": 1,
+        "merged_total": 11
+      },
+      "generated_at": "2026-11-13T02:25:38.460940Z",
+      "delivered_filter_stats": {
+        "url": 5,
+        "story": 0,
+        "total": 5
+      }
+    },
+    "finance": {
+      "display_name": "金融科技",
+      "items": [
+        {
+          "title_zh": "美联储公布2027年1月1日起生效的银行及信用社支付服务定价并调整支票服务",
+          "title_orig": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+          "summary": "美联储理事会正式公布了联邦储备银行向银行和信用合作社提供支付服务的最新定价方案，该方案将于2027年1月1日起正式生效，同时还宣布了旨在精简和调整其支票服务的举措。这一官方定价与服务调整直接关系到银行及信用合作社等金融机构的支付结算服务，对相关机构的业务规划具有重要影响。",
+          "tags": [
+            "美联储",
+            "支付服务",
+            "支票服务"
+          ],
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
+          "source": "federalreserve.gov",
+          "category": "Official Institutions",
+          "published": "2026-11-12T18:30:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "美联储调整支付服务定价与支票服务，直接影响银行与信用社。",
+          "feed_url": "https://www.federalreserve.gov/feeds/press_all.xml",
+          "feed_title": "Federal Reserve Press Releases",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "监管机构",
+          "source_key": "federalreserve.gov",
+          "story_id": "url:federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 8,
+          "score_dimensions": {
+            "actionability": 8.0,
+            "technology_depth": 6.0,
+            "institution_importance": 10.0,
+            "market_or_regulatory_impact": 8.0,
+            "relevance": 9.0
+          },
+          "dimension_score": 8.35,
+          "final_score": 9.09,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.8,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "Anchorage Digital携手Visa，将USDPT稳定币纳入VisaNet结算",
+          "title_orig": "Anchorage Digital携手Visa，Western Union稳定币USDPT纳入VisaNet结算 - 디지털투데이",
+          "summary": "Anchorage Digital携手Visa，共同将Western Union稳定币USDPT纳入VisaNet结算体系中，推进了稳定币在支付结算领域的实际应用。这一合作将稳定币USDPT直接接入VisaNet结算网络，体现了数字货币与传统支付结算体系的进一步融合，对于关注金融科技发展、稳定币支付应用以及相关结算基础设施演进的行业参与者而言，具有重要的观察意义与参考价值。",
+          "tags": [
+            "稳定币",
+            "支付结算",
+            "金融科技"
+          ],
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPcTVDMDBTZ0pndU1iUjhzbnMtVzM2bjlVWjhFcDdVTm1lNXNqbEd0NlJpY19TOEhJWTF1YVZVQWwtLXFmQUZEaVhSS2kxdlJuT2dfcEZ2YlN4d2traE1IYTJzazZYOEJzOWRZc3NMSmdtSnhJWnYwY1BLN3Rzd0NQOG81N1dybEFvZi00ODRIMnZkR0UzSE1kcjA0MS1zVXNGR0ZNZTEwRjdTRjRONG05V3Q2My1JTVZiUjFBWDhWUjZMUEdZbHc?oc=5",
+          "source": "news.google.com",
+          "category": "Chinese Fintech",
+          "published": "2026-11-13T01:30:40+00:00",
+          "cve_ids": [],
+          "selection_reason": "稳定币USDPT接入VisaNet结算网络，展现支付融合进展",
+          "feed_url": "https://news.google.com/rss/search?q=(%22金融科技%22+OR+%22数字人民币%22+OR+%22支付宝%22+OR+%22微信支付%22+OR+%22稳定币%22+OR+%22跨境支付%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+          "feed_title": "Google News 中文金融科技",
+          "source_tier": "t2",
+          "source_kind": "google_news",
+          "source_label": "Google News",
+          "source_key": "news.google.com",
+          "story_id": "title:a096fc59e28b",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 9,
+          "score_dimensions": {
+            "actionability": 8.0,
+            "technology_depth": 8.0,
+            "institution_importance": 9.0,
+            "market_or_regulatory_impact": 9.0,
+            "relevance": 10.0
+          },
+          "dimension_score": 8.95,
+          "final_score": 8.25,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": -1.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": -0.7,
+            "applied_adjustment": -0.7
+          }
+        },
+        {
+          "title_zh": "Feedzai扩展数字信任方案，助力银行检测访问客户账户的AI代理",
+          "title_orig": "Feedzai helps banks detect AI agents accessing customer accounts",
+          "summary": "作为人工智能原生金融犯罪预防领域的全球领导者，Feedzai今日宣布正式扩展其数字信任解决方案，旨在帮助银行机构有效检测正在访问客户账户的AI代理。这项解决方案的全新升级直接服务于银行机构，不仅使其能够全面识别并掌握客户账户中的AI代理访问行为，也进一步强化了银行防范金融犯罪的能力，对保障客户账户安全及提升数字信任水平具有重要意义。",
+          "tags": [
+            "金融科技",
+            "AI代理",
+            "账户安全"
+          ],
+          "url": "https://www.finextra.com/pressarticle/111662/feedzai-helps-banks-detect-ai-agents-accessing-customer-accounts?utm_medium=rssfinextra&utm_source=finextrafeed",
+          "source": "finextra.com",
+          "category": "Editorial Lens",
+          "published": "2026-11-12T15:56:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "银行安全方案开始针对AI代理访问，反映金融风控新趋势。",
+          "feed_url": "https://www.finextra.com/rss/headlines.aspx",
+          "feed_title": "Finextra Headlines",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "finextra.com",
+          "story_id": "url:finextra.com/pressarticle/111662/feedzai-helps-banks-detect-ai-agents-accessing-customer-accounts",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "actionability": 7.0,
+            "technology_depth": 8.0,
+            "institution_importance": 6.0,
+            "market_or_regulatory_impact": 7.0,
+            "relevance": 8.0
+          },
+          "dimension_score": 7.2,
+          "final_score": 7.5,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "环联2026年上半年报告指出81%数字欺诈正针对现有账户",
+          "title_orig": "TransUnion: 81% of Digital Fraud Now Targets Existing Accounts",
+          "summary": "环联发布的2026年上半年欺诈报告指出，目前高达81%的数字欺诈行为已不再局限于伪造新身份，而是转向大规模针对现有账户，欺诈者正利用既有的受信任客户关系实施攻击。这一趋势表明数字欺诈手段正在发生显著转变，相关机构若仅防范新身份注册将难以应对当前威胁，亟需加强对现有账户与客户关系的持续安全监测。",
+          "tags": [
+            "数字欺诈",
+            "账户安全",
+            "金融科技"
+          ],
+          "url": "https://thefintechtimes.com/transunion-81-of-digital-fraud-now-targets-existing-accounts/",
+          "source": "thefintechtimes.com",
+          "category": "Editorial Lens",
+          "published": "2026-11-12T19:00:15+00:00",
+          "cve_ids": [],
+          "selection_reason": "揭示数字欺诈转向现有账户的趋势，警示加强存量安全防护。",
+          "feed_url": "https://thefintechtimes.com/feed/",
+          "feed_title": "The Fintech Times",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "thefintechtimes.com",
+          "story_id": "url:thefintechtimes.com/transunion-81-of-digital-fraud-now-targets-existing-accounts",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "actionability": 7.0,
+            "technology_depth": 6.0,
+            "institution_importance": 7.0,
+            "market_or_regulatory_impact": 7.0,
+            "relevance": 8.0
+          },
+          "dimension_score": 7.05,
+          "final_score": 7.35,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "PayPal与Workday达成合作，借助PayPal直接存款提升员工财务福祉",
+          "title_orig": "PayPal Partners With Workday To Enhance Employee Financial Well-Being With PayPal Direct Deposit",
+          "summary": "PayPal宣布与Workday达成合作，双方将依托PayPal直接存款功能，共同致力于提升企业员工的财务福祉，推动数字钱包服务在职场场景的落地。此次合作面向使用Workday的企业及其员工，通过将PayPal直接存款引入员工财务管理流程，为员工提供了新的资金接收方式，有助于进一步改善员工的整体财务健康状况，也体现了数字钱包在企业服务领域的持续延伸。",
+          "tags": [
+            "数字钱包",
+            "直接存款",
+            "员工福利"
+          ],
+          "url": "https://newsroom.paypal-corp.com/2026-11-12-PayPal-Partners-With-Workday-To-Enhance-Employee-Financial-Well-Being-With-PayPal-Direct-Deposit",
+          "source": "newsroom.paypal-corp.com",
+          "category": "Digital Wallets",
+          "published": "2026-11-12T13:30:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "数字钱包与企业服务结合，拓展职场薪资直接存款新场景。",
+          "feed_url": "https://newsroom.paypal-corp.com/news?pagetemplate=rss",
+          "feed_title": "PayPal Newsroom",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "官网",
+          "source_key": "newsroom.paypal-corp.com",
+          "story_id": "url:newsroom.paypal-corp.com/2026-11-12-paypal-partners-with-workday-to-enhance-employee-financial-well-being-with-paypal-direct-deposit",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 6,
+          "score_dimensions": {
+            "actionability": 6.0,
+            "technology_depth": 4.0,
+            "institution_importance": 8.0,
+            "market_or_regulatory_impact": 6.0,
+            "relevance": 8.0
+          },
+          "dimension_score": 6.6,
+          "final_score": 7.34,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.6,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "三星钱包在新加坡和越南正式支持ShopeePay支付功能",
+          "title_orig": "Samsung Wallet Now Supports ShopeePay in Singapore, Vietnam",
+          "summary": "三星与ShopeePay在新加坡和越南市场扩大了支付合作，当地用户现已可以通过三星钱包进行ShopeePay二维码支付，并在Shopee平台结账时直接使用三星支付，而这两项功能预计将在未来几个月内正式登陆马来西亚。此次合作标志着三星首次在多个市场推进此类支付整合，不仅为新加坡和越南的消费者带来了更加便捷的购物与支付体验，也进一步拓展了双方在东南亚地区的移动支付生态布局。",
+          "tags": [
+            "三星钱包",
+            "ShopeePa",
+            "移动支付"
+          ],
+          "url": "https://fintechnews.sg/141086/payments/samsung-wallet-shopeepay-singapore-vietnam/",
+          "source": "fintechnews.sg",
+          "category": "Editorial Lens",
+          "published": "2026-11-12T07:33:44+00:00",
+          "cve_ids": [],
+          "selection_reason": "三星与ShopeePay深化东南亚移动支付合作。",
+          "feed_url": "https://fintechnews.sg/feed/",
+          "feed_title": "Fintech News Singapore",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "行业媒体",
+          "source_key": "fintechnews.sg",
+          "story_id": "url:fintechnews.sg/141086/payments/samsung-wallet-shopeepay-singapore-vietnam",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "actionability": 7.0,
+            "technology_depth": 6.0,
+            "institution_importance": 7.0,
+            "market_or_regulatory_impact": 7.0,
+            "relevance": 8.0
+          },
+          "dimension_score": 7.05,
+          "final_score": 7.15,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.1,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.1,
+            "applied_adjustment": 0.1
+          }
+        },
+        {
+          "title_zh": "贸易团体就伊利诺伊州银行卡刷卡手续费法案起诉联邦银行监管机构",
+          "title_orig": "Merchants sue feds over Illinois card fee law",
+          "summary": "多个贸易团体近日对美国银行和信用社监管机构提起诉讼，反对联邦机构行使优先权以推翻伊利诺伊州禁止对税款及小费收取刷卡手续费的州法律。这一法律纠纷直接关系到商户的交易成本与金融机构的收费权限，其裁决结果将决定该州限制银行卡刷卡手续费的新规能否顺利实施。",
+          "tags": [
+            "银行卡手续费",
+            "监管诉讼",
+            "支付行业"
+          ],
+          "url": "https://www.paymentsdive.com/news/merchants-sue-feds-over-illinois-card-fee-law/874494/",
+          "source": "paymentsdive.com",
+          "category": "Editorial Lens",
+          "published": "2026-11-12T15:28:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "涉及州法与联邦监管权冲突，直接影响商户支付成本。",
+          "feed_url": "https://www.paymentsdive.com/feeds/news/",
+          "feed_title": "Payments Dive",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "paymentsdive.com",
+          "story_id": "url:paymentsdive.com/news/merchants-sue-feds-over-illinois-card-fee-law/874494",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 7,
+          "score_dimensions": {
+            "actionability": 6.0,
+            "technology_depth": 2.0,
+            "institution_importance": 7.0,
+            "market_or_regulatory_impact": 8.0,
+            "relevance": 9.0
+          },
+          "dimension_score": 6.6,
+          "final_score": 6.9,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "AviaGames与Visa合作，支持美国玩家将手游奖金直接提现至Visa卡",
+          "title_orig": "AviaGames partners Visa for player payouts",
+          "summary": "休闲竞技手游公司AviaGames宣布与数字支付公司Visa及支付技术公司Global Payments达成合作，为符合条件的美国玩家提供直接将Avia手游奖金提现至其名下Visa卡的服务。这一举措打通了游戏平台与主流数字支付网络的直连通道，让符合条件的美国玩家能够更便捷地接收游戏收益，进一步提升了手游奖金发放的效率与用户体验。",
+          "tags": [
+            "移动游戏",
+            "数字支付",
+            "Visa"
+          ],
+          "url": "https://www.finextra.com/pressarticle/111664/aviagames-partners-visa-for-player-payouts?utm_medium=rssfinextra&utm_source=finextrafeed",
+          "source": "finextra.com",
+          "category": "Editorial Lens",
+          "published": "2026-11-12T18:14:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "手游平台与Visa合作打通奖金直连提现，提升玩家支付体验。",
+          "feed_url": "https://www.finextra.com/rss/headlines.aspx",
+          "feed_title": "Finextra Headlines",
+          "source_tier": "t2",
+          "source_kind": "media",
+          "source_label": "金融媒体",
+          "source_key": "finextra.com",
+          "story_id": "url:finextra.com/pressarticle/111664/aviagames-partners-visa-for-player-payouts",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 6,
+          "score_dimensions": {
+            "actionability": 6.0,
+            "technology_depth": 6.0,
+            "institution_importance": 8.0,
+            "market_or_regulatory_impact": 5.0,
+            "relevance": 7.0
+          },
+          "dimension_score": 6.55,
+          "final_score": 6.85,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        },
+        {
+          "title_zh": "欧洲央行官方发布菲利普·R·莱恩关于欧洲人工智能应用的内容",
+          "title_orig": "Philip R. Lane: AI adoption in Europe",
+          "summary": "欧洲央行官方网站近日发布了一篇题为“菲利普·R·莱恩：欧洲的人工智能应用”的公开内容，重点围绕欧洲地区人工智能技术的实际应用现状展开说明。作为来自官方机构的重要发布，该内容有助于关注欧洲人工智能发展动态、产业应用进程及相关政策环境的科技从业者与研究机构及时了解官方视角。",
+          "tags": [
+            "人工智能",
+            "欧洲央行",
+            "欧洲科技"
+          ],
+          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261030~08d9d540f0.en.html",
+          "source": "ecb.europa.eu",
+          "category": "Official Institutions",
+          "published": "2026-10-30T16:10:00+00:00",
+          "cve_ids": [],
+          "selection_reason": "欧洲央行官方发布欧洲人工智能应用相关内容，具有权威参考价值。",
+          "feed_url": "https://www.ecb.europa.eu/rss/press.html",
+          "feed_title": "European Central Bank Releases",
+          "source_tier": "t1",
+          "source_kind": "official",
+          "source_label": "监管机构",
+          "source_key": "ecb.europa.eu",
+          "story_id": "url:ecb.europa.eu/press/key/date/2026/html/ecb.sp261030~08d9d540f0.en.html",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 5,
+          "score_dimensions": {
+            "actionability": 4.0,
+            "technology_depth": 4.0,
+            "institution_importance": 8.0,
+            "market_or_regulatory_impact": 5.0,
+            "relevance": 6.0
+          },
+          "dimension_score": 5.7,
+          "final_score": 6.44,
+          "score_breakdown": {
+            "source_bonus": 1.0,
+            "kind_bonus": 0.5,
+            "freshness_bonus": 0.0,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 1.5,
+            "applied_adjustment": 0.74
+          }
+        },
+        {
+          "title_zh": "证监会副主席刘浩凌在2026年上交所国际投资者大会上强调增强股市内在稳定性",
+          "title_orig": "证监会副主席刘浩凌：增强股市内在稳定性，协同发力打好稳市场、稳预期政策组合拳",
+          "summary": "在2026年上海证券交易所国际投资者大会上，证监会副主席刘浩凌发表讲话，指出中国经济长期向好，并强调要增强股市内在稳定性，协同发力打好稳市场与稳预期的政策组合拳。这一表态释放了监管层持续维护资本市场平稳运行的明确信号，对于提振海内外投资者信心以及引导市场形成稳定预期具有重要的政策指导意义。",
+          "tags": [
+            "证监会",
+            "资本市场",
+            "稳预期"
+          ],
+          "url": "https://www.weiyangx.com/486955.html",
+          "source": "weiyangx.com",
+          "category": "Chinese Fintech",
+          "published": "2026-11-13T02:21:01+00:00",
+          "cve_ids": [],
+          "selection_reason": "监管高层释放稳市场信号，关乎资本市场预期与投资者信心。",
+          "feed_url": "https://www.weiyangx.com/feed",
+          "feed_title": "未央网",
+          "source_tier": "t2",
+          "source_kind": "cn_media",
+          "source_label": "中文金融科技媒体",
+          "source_key": "weiyangx.com",
+          "story_id": "url:weiyangx.com/486955.html",
+          "related_urls": [],
+          "related_count": 0,
+          "score": 5,
+          "score_dimensions": {
+            "actionability": 4.0,
+            "technology_depth": 2.0,
+            "institution_importance": 9.0,
+            "market_or_regulatory_impact": 7.0,
+            "relevance": 5.0
+          },
+          "dimension_score": 5.7,
+          "final_score": 6.0,
+          "score_breakdown": {
+            "source_bonus": 0.0,
+            "kind_bonus": 0.0,
+            "freshness_bonus": 0.3,
+            "cn_visibility_bonus": 0.0,
+            "raw_adjustment": 0.3,
+            "applied_adjustment": 0.3
+          }
+        }
+      ],
+      "raw_count": 30,
+      "selected_count": 10,
+      "selection_stats": {
+        "total": 10,
+        "direct": 9,
+        "tier_t1": 3,
+        "kind_official": 3,
+        "google_news": 1,
+        "aggregator": 1,
+        "chinese": 2,
+        "tier_t2": 7,
+        "kind_google_news": 1,
+        "kind_media": 5,
+        "kind_cn_media": 1
+      },
+      "clustering_stats": {
+        "deterministic_merged": 0,
+        "llm_merged": 0,
+        "merged_total": 0
+      },
+      "generated_at": "2026-11-13T02:27:36.073065Z",
+      "delivered_filter_stats": {
+        "url": 1,
+        "story": 0,
+        "total": 1
+      }
+    }
+  }
+}

@@ -1,19 +1,19 @@
 {
   "board": "ai_security",
-  "fetched_at": "2026-11-12",
-  "fetched_at_utc": "2026-11-12T03:29:11.902278Z",
+  "fetched_at": "2026-11-13",
+  "fetched_at_utc": "2026-11-13T02:19:50.738869Z",
   "hours": 120,
   "total_feeds": 33,
-  "raw_entry_count": 82,
-  "entry_count": 51,
+  "raw_entry_count": 89,
+  "entry_count": 59,
   "filter_stats": {
-    "input": 82,
-    "dropped_title_blacklist": 1,
+    "input": 89,
+    "dropped_title_blacklist": 2,
     "dedup_merged": 1,
-    "output": 80
+    "output": 86
   },
   "curation_stats": {
-    "dropped_source_cap": 29
+    "dropped_source_cap": 27
   },
   "feed_stats": {
     "https://openai.com/news/rss.xml": {
@@ -70,7 +70,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 3
     },
     "https://simonwillison.net/atom/everything/": {
       "feed_title": "Simon Willison",
@@ -91,7 +91,7 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 5
     },
     "https://blogs.cisco.com/security/feed": {
       "feed_title": "Cisco Security Blog",
@@ -126,14 +126,14 @@
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "https://www.wiz.io/feed/rss.xml": {
       "feed_title": "Wiz Blog",
       "category": "AISecurityLabs",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 4
+      "raw_count": 5
     },
     "https://wechat2rss.xlab.app/feed/d351be711510e0b7ccbcb275cdfab5c4c7e3e839.xml": {
       "feed_title": "嘶吼专业版",
@@ -196,7 +196,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 2
+      "raw_count": 4
     },
     "http://127.0.0.1:1200/twitter/user/LakeraAI": {
       "feed_title": "X / Lakera",
@@ -217,7 +217,7 @@
       "category": "XSignals",
       "attempted": 1,
       "succeeded": 1,
-      "raw_count": 1
+      "raw_count": 2
     },
     "http://127.0.0.1:1200/twitter/user/rez0__": {
       "feed_title": "X / rez0",
@@ -250,17 +250,17 @@
   },
   "entries": [
     {
-      "title": "【AI安全】Agent 写文件时，路径检查通过后为什么还会越界？",
-      "url": "https://xz.aliyun.com/news/93227",
-      "summary": "引言 以前看 Agent 文件写入，通常先检查一件事：目标路径有没有留在 workspace 里。Claude Code 公开的 CVE-2026-103435 让我开始重新看这个问题。公告描述了检查与写入之间的时间差：权限检查通过时目标还在项目目录内；共享工作区中的另一个进程替换目录项后，Agent 再按原路径写入，文件就可能落到项目目录之外。 Anthropic 的公告 我想弄清楚的是，检查通过时程序确认的究竟是什么。如果它确认的只是一个路径字符串，那么等到真正打开文件时，内核解析到的还会是同一个对象吗？即使函数最后返回拒绝，拒绝之前有没有可能已经改动磁盘？沿着这两个问题，从 Claude Code 公告中的时序开始，再去看 OpenClaw 和 OpenShell 的真实写入与同步函数。 一、路径检查通过后，目标仍可能变化 1.1 从 Agent 工具到文件系统 Agent 发起一次",
+      "title": "CVE-2026-118660：happy-dom 服务端 SSRF 全链路分析",
+      "url": "https://xz.aliyun.com/news/93265",
+      "summary": "写在前面 happy-dom 是一个用 JavaScript 实现的 DOM 运行时。它被大量前端项目放进 Vitest / Jest 的测试环境，也被用在 SSR 预渲染、HTML 转换和爬虫里。这些场景有一个共同点： HTML 往往来自不可信的一方 ——用户评论、富文本、抓回来的第三方页面、上传的模板。 在浏览器里，页面里写了 ，浏览器就会去加载它，这是规范行为，没有人觉得奇怪。问题在于，当同一段 HTML 被交给服务端的 happy-dom 时，去加载它的是 服务器进程 ，而服务器进程通常站在内网里、握着云凭证、能访问只监听 localhost 的管理接口。同一个行为，换一个执行者，性质就从\"渲染页面\"变成了\"服务端请求伪造\"。 CVE-2026-118660 说的就是这件事。它的成因短得可以用两行配置描述，但从一段字符串到一次出网请求，中间要经",
       "category": "Chinese",
-      "published": "2026-11-09T12:30:29+00:00",
+      "published": "2026-11-12T04:31:16+00:00",
       "fetch_status": "full",
       "cve_ids": [
-        "CVE-2026-103435"
+        "CVE-2026-118660"
       ],
       "related_urls": [],
-      "quality_score": 4,
+      "quality_score": 3,
       "feed_url": "https://xz.aliyun.com/feed",
       "feed_title": "先知社区"
     },
@@ -280,6 +280,21 @@
       "feed_title": "Wiz Blog"
     },
     {
+      "title": "CVE-2025-25185 深度解析：GPT Academic 软链接解析缺陷导致任意文件读取",
+      "url": "https://xz.aliyun.com/news/93253",
+      "summary": "摘要 在处理用户上传的归档文件时，安全校验的边界一旦出现偏差，就可能引发灾难性的后果。本文将深入分析开源的学术优化工具 GPT Academic（受影响版本 ≤ 3.91）中存在的任意文件读取漏洞（CVE-2025-25185）。文章依托真实的漏洞复现截图，从核心源码的逐行拆解、恶意 Payload 的底层构造，到 Web 交互与文件读取的最终触发，完整还原了从代码审计到实战利用的全生命周期。本文旨在为安全从业者提供一种关于压缩包解压场景的深度思考与防御思路。 一、 漏洞背景与攻击面概述 现代 Web 应用中，文件上传与处理是极为常见的业务需求。GPT Academic 作为一款深受科研人员喜爱的 LLM 辅助工具，提供了“上传论文/代码压缩包进行智能解析”的功能。为了支持这一功能，开发者必须实现服务端的解压逻辑。 CVE-2025-25185 的核心正是出在这个解压环节。在 Linux",
+      "category": "Chinese",
+      "published": "2026-11-11T12:26:24+00:00",
+      "fetch_status": "full",
+      "cve_ids": [
+        "CVE-2025-25185"
+      ],
+      "related_urls": [],
+      "quality_score": 3,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
       "title": "CVE-2026-100229 GStreamer H.266 DCI 越界写复现分析",
       "url": "https://xz.aliyun.com/news/93251",
       "summary": "解析 H.266 码流时，DCI 里那个 4 bit 的 num_ptls_minus1 只要填成保留值 15，GStreamer 1.28.8 就会在结构体末尾之外写入最多 1026 字节；官方描述里也写明标准管线走不到这段代码，所以至今没有补丁。 一、漏洞说明 1、漏洞本身 出问题的是 gst-plugins-bad 里的 libgstcodecparsers ，具体函数 gst_h266_parser_parse_dci() 。它解析 H.266 的 DCI（解码能力信息，NAL 类型 13）时，先读 4 bit 的 num_ptls_minus1 ，再按这个值循环解析同样数量的 profile_tier_level 结构。字段只有 4 bit，合法取值 0–14，15 是保留值，代码却把上限校验写成 15。保留值被放行后，循环多跑一次，第 16 个元素写到数组末尾之外。 函数定义在",
@@ -295,19 +310,45 @@
       "feed_title": "先知社区"
     },
     {
-      "title": "CVE-2025-10747 WordPress WP-DownloadManager 插件任意文件上传漏洞分析",
-      "url": "https://xz.aliyun.com/news/93221",
-      "summary": "漏洞编号 CVE-2025-10747 漏洞描述 访问URL： https://nvd.nist.gov/vuln/detail/CVE-2025-10747 WordPress和WordPress plugin都是WordPress基金会的产品，WordPress是一套使用PHP语言开发的博客平台，该平台具有在基于PHP和MySQL的服务器上架设个人博客网站的功能。 WordPress plugin WP-DownloadManager 1.68.11及之前版本存在任意文件上传漏洞，该漏洞源于“download-add.php”文件未正确验证文件类型，具有管理员权限或更高访问权限的的攻击者可利用该漏洞上传任何恶意文件，从而远程执行恶意代码。 受影响版本 WordPress plugin WP-DownloadManager <= 1.68.11 环境搭建 Apache V2.4.39 W",
-      "category": "Chinese",
-      "published": "2026-11-09T06:14:53+00:00",
+      "title": "RT Brendan Dolan-Gavitt: OpenAI has done chart crimes. And they've done cyber crimes. But now, in a visionary move, they're committing cyber chart cri...",
+      "url": "https://x.com/rez0__/status/2121003950816080364",
+      "summary": "RT Brendan Dolan-Gavitt OpenAI has done chart crimes. And they've done cyber crimes. But now, in a visionary move, they're committing cyber chart crimes Nathan Daniels: OpenAI's upcoming Cyber Model scores 79.1% on PatchBench. Link: https://x.com/Josh67Joshua/status/2120946811955187812",
+      "category": "XSignals",
+      "published": "2026-11-12T21:30:48+00:00",
       "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "cool, even got a bounty for this one from apple 😀 CVE-2026-64750",
+      "url": "https://x.com/wunderwuzzi23/status/2120950014130503842",
+      "summary": "cool, even got a bounty for this one from apple 😀 CVE-2026-64750",
+      "category": "XSignals",
+      "published": "2026-11-12T18:41:03+00:00",
+      "fetch_status": "rss_only",
       "cve_ids": [
-        "CVE-2025-10747"
+        "CVE-2026-64750"
       ],
       "related_urls": [],
-      "quality_score": 3,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
+      "quality_score": 2,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/wunderwuzzi23",
+      "feed_title": "X / Johann Rehberger"
+    },
+    {
+      "title": "Attackers Use Autonomous AI to Target Semiconductor, Defense and Civil Society Sectors",
+      "url": "https://unit42.paloaltonetworks.com/cairn-framework-ai-autonomous-attacks/",
+      "summary": "Our analysis of how attackers used the open-source Cairn AI agent framework to autonomously breach semiconductor, defense and civic targets. The post Attackers Use Autonomous AI to Target Semiconductor, Defense and Civil Society Sectors appeared first on Unit 42 .",
+      "category": "AISecurityLabs",
+      "published": "2026-11-12T15:00:31+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 2,
+      "feed_url": "https://unit42.paloaltonetworks.com/feed/",
+      "feed_title": "Unit 42"
     },
     {
       "title": "ARTEX and AI-Powered Red Teaming Tools: What Defenders Need to Know",
@@ -349,24 +390,11 @@
       "feed_title": "Microsoft Security Blog"
     },
     {
-      "title": "Quoting Prompting Claude Fable 5.2",
-      "url": "https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/",
-      "summary": "Claude Fable 5.2 pays close attention to who owns the code it works on. In Anthropic’s testing on small coding tasks, the model tended to add to the existing structure when the prompt said nothing about ownership or presented the code base as someone else’s, even when that duplicated existing code. When the prompt said the code base was the model’s own, it often consolidated duplicated code and so",
-      "category": "AISecurityLabs",
-      "published": "2026-11-10T05:34:14+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 2,
-      "feed_url": "https://simonwillison.net/atom/everything/",
-      "feed_title": "Simon Willison"
-    },
-    {
-      "title": "Global powers head to Asia with trade, AI, security in focus - RTL Today",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOMHY5bld6VlBaNkdyMzNHM3ZiZWZVcmdPd08teG5pdHV2blAzNzZWMXNjUFR4S3E0VGo3YlM4WWhkdXVZMGNDWVBoQmh4ZnJBa0UwY0RVZ3ptVEV1cWUyQ1B1T0FnZmhNUFlKaWszT1ZfVzhzaDQ0RDdwNEE3VU9WZnpaaVI1SEdHMmZjS3o4bWtmVm1oNVBvTnMwUDlhSVI2eEE?oc=5",
-      "summary": "Global powers head to Asia with trade, AI, security in focus &nbsp;&nbsp; RTL Today",
+      "title": "Fortinet (FTNT) Leans Into AI Security Following Stronger 2026 Outlook And Valuation Debate - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOMjhRYjMxOWFlUjA0TThqZTRvdHRVX2VOakh1Y3ZpYmNkcVZuQWN3TE5rdEJlbzBSSlByMWlDakFoY1FCeXdOWWhvTFFxX3FxM3ctLW1fUElmOE5VY0xyeE8yVEZ1aW82N1d5TTN3Y052eUxNaWpmOXRtV0dWVW42ZHc2aHlKRGdleWVyWGotMnlGYi1WWjFTaVhsTQ?oc=5",
+      "summary": "Fortinet (FTNT) Leans Into AI Security Following Stronger 2026 Outlook And Valuation Debate &nbsp;&nbsp; Yahoo Finance",
       "category": "CoverageFallback",
-      "published": "2026-11-12T03:11:33+00:00",
+      "published": "2026-11-13T01:13:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -375,11 +403,167 @@
       "feed_title": "Google News AI Security"
     },
     {
+      "title": "Samsung, AMD to Benefit From Nvidia Turmoil Amid AI Supply Chain Diversification? - news.sbs.co.kr",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBvaDZxY1NTNTRqYzMtUXU5ZndWbEtCYVhpUkFrY1JNSTNJeU1xTS10WXhQQ2xFVkFUR0VnYVNnOHhyOVcycnRNZGdMd2RvM1cwcmVrcVdCZTRtOElVWE01QnA2LThJaFYyNXRHSHpR?oc=5",
+      "summary": "Samsung, AMD to Benefit From Nvidia Turmoil Amid AI Supply Chain Diversification? &nbsp;&nbsp; news.sbs.co.kr",
+      "category": "CoverageFallback",
+      "published": "2026-11-13T01:11:08+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+supply+chain%22+OR+%22AI+code+security%22+OR+%22agent+supply+chain%22+OR+%22LLM+application+security%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Supply Chain Security"
+    },
+    {
+      "title": "llm-gemini 0.37",
+      "url": "https://simonwillison.net/2026/Nov/12/llm-gemini/",
+      "summary": "Release: llm-gemini 0.37 Google launched Gemini 4 Hydrogen today - the lowest cost member of the Gemini 4 family. It's actually not too far off the price of its much bigger siblings, Carbon and Argon. I'm finding Gemini 4's pricing really confusing. Here's the pricing scheme: Model Dates Input ($/M) Cached input Output Gemini 4 Carbon Through Nov 30, 2026 $2.00 $0.10 $10.00 From Dec 1, 2026 $4.00",
+      "category": "AISecurityLabs",
+      "published": "2026-11-12T22:55:19+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://simonwillison.net/atom/everything/",
+      "feed_title": "Simon Willison"
+    },
+    {
+      "title": "Patching is the hardest step for agents to get right. We took what we learned from hundreds of Patch the Planet patches, thousands of internal Codex s...",
+      "url": "https://x.com/trailofbits/status/2121009628855357931",
+      "summary": "Patching is the hardest step for agents to get right. We took what we learned from hundreds of Patch the Planet patches, thousands of internal Codex sessions, and a decade of fix reviews, and built it into two open-source agent plugins. A good fix looks different in every codebase, and building one takes judgment and expertise. Our plugins encode best practices that work for our engineers so you c",
+      "category": "XSignals",
+      "published": "2026-11-12T22:37:56+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
+    {
+      "title": "AI, IT firms step up security as South Korea retools national security policy - 디지털투데이",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNVjFldjdMOWtueEY5TWJnR0sxdEdZVld1SXJnN3ZXWFVsU2VmMzF1emtWMk1wWUpUSHJId0lYY2JsRS1rNG9YVllMa19CaTlqb25iWnFad3FJZDF4aFgyRTZUd0VTY252TkFtQ2ZLRWpKLWNpSW1wTGdKRFVIX3htbWpLS01lOUZCcDdKdXg5bk1zdjZ5cEdHLWRJQzBvUV9SVXQwd0xkTFhlcWNXQl9UQ0Y2R1hzMXFqOVNMS3dRbw?oc=5",
+      "summary": "AI, IT firms step up security as South Korea retools national security policy &nbsp;&nbsp; 디지털투데이",
+      "category": "CoverageFallback",
+      "published": "2026-11-12T22:30:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
+      "feed_title": "Google News AI Security"
+    },
+    {
+      "title": "AI安全威胁升温，企业密集推出防护方案，韩国推进网络韧性与数字资产安全监管 - 디지털투데이",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQOWRiY0wzbktEOVpoVkp2dzF1VnJaYk55ZFBWSUpRRjBsQ012ZGt4LXhSVjV0cERZOC14d094RDkwYzhhV3ZnUlh6cjJtNVdWc1QyQlJDMmlwb3ZzMDA0Wkx0RGY5R3FIRWE2ekl5X0U2Q1lwRDFuWmp4clFQclA2TExCcDFmMXRWLWdVdDRHa1lIaTN3enRnOTdmNGFJWFc3d0NEZ3ViRWlpanBFcVBGUFVkZEZmbU1zLUUwR2xYWQ?oc=5",
+      "summary": "AI安全威胁升温，企业密集推出防护方案，韩国推进网络韧性与数字资产安全监管 &nbsp;&nbsp; 디지털투데이",
+      "category": "CoverageFallback",
+      "published": "2026-11-12T22:30:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "feed_title": "Google News 中文 AI安全"
+    },
+    {
+      "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+      "url": "https://openai.com/business/customer-stories/amplitude",
+      "summary": "Built primarily on OpenAI models, Amplitude’s proactive product agent, Wave, identifies what to build, helps teams ship changes with coding agents, and measures the impact.",
+      "category": "FirstParty",
+      "published": "2026-11-12T20:00:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
+    },
+    {
+      "title": "Endor Labs + OpenAI: Strengthening the Defense Factory With Accelerated Remediation  | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/endor-labs-openai-strengthening-the-defense-factory-with-accelerated-remediation",
+      "summary": "Endor Labs integrates with the OpenAI Daybreak Defense Factory. Together, Endor Labs and OpenAI help defenders use AI to find, triage, and fix vulnerabilities inside the Daybreak Defense Factory.",
+      "category": "AISecurityLabs",
+      "published": "2026-11-12T19:32:10+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "ASPM in the AI Era Part 3: Fixing Risk at the Speed of Code",
+      "url": "https://www.wiz.io/blog/aspm-ai-era-pt-3-fixing-risk-code-speed",
+      "summary": "Accelerate MTTR and eliminate remediation bottlenecks with simplified ownership mapping, code fixes, and automated workflows",
+      "category": "AISecurityLabs",
+      "published": "2026-11-12T18:32:24+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.wiz.io/feed/rss.xml",
+      "feed_title": "Wiz Blog"
+    },
+    {
+      "title": "Patch the Planet update: We’ve now merged 500+ fixes across 75 open-source projects, with 100 CVEs disclosed in the Linux kernel, curl, OpenSSL, ngin...",
+      "url": "https://x.com/trailofbits/status/2120943246587392210",
+      "summary": "Patch the Planet update: We’ve now merged 500+ fixes across 75 open-source projects, with 100 CVEs disclosed in the Linux kernel, curl, OpenSSL, nginx, vLLM, and more. https://trailofbits.com/patch-the-planet/dashboard/ OpenAI: We're turning our lessons from defending OpenAI into practical tools for our customers. On Thursday, join us at Cyber at the Frontier, a live keynote, for our latest cyber",
+      "category": "XSignals",
+      "published": "2026-11-12T18:14:09+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/trailofbits",
+      "feed_title": "X / Trail of Bits"
+    },
+    {
+      "title": "honestly one of my favorite clips from the podcast. SPEND MONEY TO MAKE MONEY BABY",
+      "url": "https://x.com/rez0__/status/2120933664502530454",
+      "summary": "honestly one of my favorite clips from the podcast. SPEND MONEY TO MAKE MONEY BABY Critical Thinking - Bug Bounty Podcast: Bug bounty is still 80%+ profit if you're a dedicated hacker Link: https://x.com/ctbbpodcast/status/2120917651593535665",
+      "category": "XSignals",
+      "published": "2026-11-12T17:36:05+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
+      "feed_title": "X / rez0"
+    },
+    {
+      "title": "Trained to betray: How post-training supply chain attacks hijack coding agents",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/",
+      "summary": "Microsoft Defender Research and the AI Red Team discuss how poisoned datasets and poisoned model checkpoints can trigger remote code execution and other malicious activities. The post Trained to betray: How post-training supply chain attacks hijack coding agents appeared first on Microsoft Security Blog .",
+      "category": "AISecurityLabs",
+      "published": "2026-11-12T17:00:00+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog"
+    },
+    {
+      "title": "Top AI network and infrastructure pentesting tools in 2026",
+      "url": "https://www.aikido.dev/blog/top-network-infrastructure-pentesting-tools",
+      "summary": "Compare six AI network and infrastructure pentesting tools. Aikido Security is our pick for external network pentesting; see what fits internal networks. Category: DevSec Tools & Comparisons",
+      "category": "AISecurityLabs",
+      "published": "2026-11-12T14:01:00+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://www.aikido.dev/blog/rss.xml",
+      "feed_title": "Aikido Security"
+    },
+    {
       "title": "How AI SAST works: detection, triage, and remediation agents | Endor Labs",
       "url": "https://www.endorlabs.com/learn/how-ai-sast-works",
       "summary": "See how AI SAST works step by step: what the detection, triage, and remediation agents do, the context each one uses, and how they hand off.",
       "category": "AISecurityLabs",
-      "published": "2026-11-12T02:58:01+00:00",
+      "published": "2026-11-12T13:09:58+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -392,7 +576,7 @@
       "url": "https://www.endorlabs.com/learn/ai-sast-vs-traditional-sast",
       "summary": "AI SAST vs traditional SAST, compared: how reasoning changes detection of authorization flaws, false positives, triage, fixes, speed, and cost",
       "category": "AISecurityLabs",
-      "published": "2026-11-12T02:47:29+00:00",
+      "published": "2026-11-12T13:09:58+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -401,30 +585,43 @@
       "feed_title": "Endor Labs"
     },
     {
-      "title": "Sungshin Women’s University wins nine paper awards at the Korea Convergence Security Association conference; also takes grand prize at AI security hackathon - 파이낸셜뉴스",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFA3V2tXS0wwSkZDRFp6c2MyNGNVRjM0U1J4YnUtS2trVTJ6R2xnampfVkxwYzVURUd6b3BUXzg1dmZ1Q01uNjBUT3hfSTYtalN4Y3d4QXFTNVg?oc=5",
-      "summary": "Sungshin Women’s University wins nine paper awards at the Korea Convergence Security Association conference; also takes grand prize at AI security hackathon &nbsp;&nbsp; 파이낸셜뉴스",
-      "category": "CoverageFallback",
-      "published": "2026-11-12T01:21:10+00:00",
+      "title": "AI in AppSec: What to Build, What to Buy, and When | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/what-to-build-and-buy-when-you-bring-ai-into-appsec",
+      "summary": "Building AI security agents in-house? Learn what to build, what to buy, and what it costs at scale, with a four-level model for the agentic SDLC.",
+      "category": "AISecurityLabs",
+      "published": "2026-11-12T13:09:58+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
     },
     {
-      "title": "How Investors May Respond To Palo Alto Networks Stock AI Security Growth - Simply Wall St",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQRndUTjExR1NqWmEtSUZqOFUtU1EtR1M0Rmd5N1J1bW5LbUlVNDljVzltR1hHcXo0cU9XYlltanUtTW44N2M5aHVoNjdFcUNqTXNWZEhPazRRSWp6Y2U5LUExRUtmOU9LSHNxMWxwLWUzNXVudm40VUZvaVZkQXdFcnBjbHNLYXZ5bk9vdENTc2t5UGI1dzZPOERqa3lNTWdiMG9UQmFzZTRhaWN3ZVNhS2NkWkJLVkZpbURsX3g0VUh4NzRkaHQ2YlQxS2tVTkhHSHk40gHYAUFVX3lxTE15ZG1TcTRLZXpRZzYxTTQwNG41QWtxWFBuV3VyWXVacjBzSlBzUjBkci00aHBWdkVhcDVXVDZ2QUV5UW5rekgycHgyUVk0ODBUMkhBNXNSSnQ4Wk1hbWZDSG41MEpaalNxRGxXVTFXZWR1d1BnSjZUNW5STGo1YUk3OUxfcjdYVzZCSnJKeTlCbTdUaUpQakM2MnpwdUlXMkk1Skd3SUdycEQwME1ndXloRFFPVGNoY3NnNzJCVF83SUVzTEZYZDNoUVVUWHFTNnZXX0NiVmwxMw?oc=5",
-      "summary": "How Investors May Respond To Palo Alto Networks Stock AI Security Growth &nbsp;&nbsp; Simply Wall St",
-      "category": "CoverageFallback",
-      "published": "2026-11-12T00:49:52+00:00",
+      "title": "深入浅出 Gohttpserver Zip Slip 漏洞：从黑盒复现到白盒源码审计的闭环剖析",
+      "url": "https://xz.aliyun.com/news/93262",
+      "summary": "前言 在日常的 Web 安全研究中，文件上传与解压功能一直是高危漏洞的温床。从 2018 年 Snyk 安全团队首次披露 Zip Slip 漏洞以来，这种利用压缩包内文件名的路径穿越缺陷，广泛存在于各类支持解压的 Web 应用、中间件乃至开发框架中。攻击者通过构造包含 ../ 序列的恶意压缩包，可以绕过应用的上传目录限制，将任意文件写入服务器的敏感位置（如系统配置、计划任务、启动项等），进而实现从“任意文件写入（Arbitrary File Write）”到“远程代码执行（RCE）”的致命跨越。 近期，笔者在对开源 HTTP 文件服务器 Gohttpserver 进行代码审计与安全测试时，完整复现了该漏洞的利用链路。Gohttpserver 是一款基于 Go 语言编写、广受好评的轻量级文件服务器，其内置的 --upload 功能极大地方便了日常的文件传输与共享。然而，正是因为其主打“轻量、",
+      "category": "Chinese",
+      "published": "2026-11-12T01:57:33+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
+      "title": "Supporting research on AI and children’s safety",
+      "url": "https://openai.com/index/children-first-declaration",
+      "summary": "OpenAI commits $2 million to research on AI and children’s safety. The work supports shared tools to measure risks and opportunities for young people.",
+      "category": "FirstParty",
+      "published": "2026-11-12T00:00:00+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
       "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI+security%22+OR+%22LLM+security%22+OR+%22prompt+injection%22+OR+%22AI+agent+security%22+OR+%22model+supply+chain%22)&hl=en-US&gl=US&ceid=US:en",
-      "feed_title": "Google News AI Security"
+      "feed_url": "https://openai.com/news/rss.xml",
+      "feed_title": "OpenAI News"
     },
     {
       "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -440,19 +637,6 @@
       "feed_title": "OpenAI News"
     },
     {
-      "title": "上证聚焦 | AI安全迷局 - Sohu",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPU0JLZEpKbG13WVlmWDNfTWVtRm1hTHFhTUFzZkhQU3BXOUd3blFaSWRra2pwR05PUWRjTEtYdno3MDVKbXZFeGc3Ukx6aE15UzdTRWg1WHZZVGhmMHJoaTQtRDc5VEJxSVRkZl9HWmZ1eTJBOVVWVzFCVWlaR1NaOFFmSTNZRUVLNkk0ejhCNA?oc=5",
-      "summary": "上证聚焦 | AI安全迷局 &nbsp;&nbsp; Sohu",
-      "category": "CoverageFallback",
-      "published": "2026-11-11T23:25:19+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://news.google.com/rss/search?q=(%22AI%E5%AE%89%E5%85%A8%22+OR+%22%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8%22+OR+%22%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%22+OR+%22%E6%99%BA%E8%83%BD%E4%BD%93%E5%AE%89%E5%85%A8%22)&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
-      "feed_title": "Google News 中文 AI安全"
-    },
-    {
       "title": "Gemini Decisions API",
       "url": "https://simonwillison.net/2026/Nov/11/gemini-decisions-api/",
       "summary": "Gemini Decisions API Google join Jev and OpenAI in the decision model category with \"Gemini Decision 1\". This new model API is almost identical to Jev: it supports the same three types of questions (yes/no, choice, and rubric-scoring) and even reuses Jev's term \"Noul\" for a yes/no question. It's priced the same as the GPT-6 Luna decision model: 10 cents per million input tokens, and output is free",
@@ -464,19 +648,6 @@
       "quality_score": 1,
       "feed_url": "https://simonwillison.net/atom/everything/",
       "feed_title": "Simon Willison"
-    },
-    {
-      "title": "AI in AppSec: What to Build, What to Buy, and When | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/what-to-build-and-buy-when-you-bring-ai-into-appsec",
-      "summary": "Building AI security agents in-house? Learn what to build, what to buy, and what it costs at scale, with a four-level model for the agentic SDLC.",
-      "category": "AISecurityLabs",
-      "published": "2026-11-11T22:03:12+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
     },
     {
       "title": "Keep going!!!! Bug bounty gives companies access to findings via subsidized tokens rather than them paying full api costs. And even when they run hack...",
@@ -518,6 +689,19 @@
       "feed_title": "Microsoft Security Blog"
     },
     {
+      "title": "基于默认配置的 Dify 沙箱 RCE 利用链分析与加固探讨",
+      "url": "https://xz.aliyun.com/news/93260",
+      "summary": "本文记录了针对开源 LLM 应用平台 Dify 沙箱模块的一次安全测试过程。在研究其网络架构与源码时，发现由于默认配置中存在硬编码的通信凭证，在特定部署条件下（如端口暴露于公网），可能存在未经授权执行代码的风险。 文章详细复现了从鉴权绕过到获取底层系统信息的完整链路。针对此问题，官方团队基于开发者体验（DX）的考量，认为该设计属于预设功能并无缺陷。本文不针对此定性做过多主观评价，仅从客观的技术视角还原漏洞细节，并从企业自托管运维的视角，给出了一套切实可行的纵深防御建议，以供安全同仁交流探讨。 摘要 dify 该服务中存在硬编码的默认 API 密钥（ ） dify-sandbox 。能够访问 Dify 内部网络的攻击者可以 middleware.Auth() 通过 X-Api-Key: dify 请求头绕过该密钥，从而执行任意 Python 代码。本报告详细描述了完整的攻击链，从代码来源到实",
+      "category": "Chinese",
+      "published": "2026-11-11T18:02:06+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
+    },
+    {
       "title": "Lessons from 59 Linux Kernel Bug Reports",
       "url": "https://www.microsoft.com/en-us/security/blog/2026/11/11/lessons-from-59-linux-kernel-bug-reports/",
       "summary": "Microsoft FORGE Lab researchers used codename MDASH to investigate Linux kernel vulnerabilities, resulting in 59 upstream bug reports, 33 assigned CVEs, and 38 merged fixes. The research includes eight demonstrated local root privilege-escalation exploits and examines the challenges of turning AI-generated findings into validated vulnerabilities and upstream fixes. The post Lessons from 59 Linux K",
@@ -529,6 +713,19 @@
       "quality_score": 1,
       "feed_url": "https://www.microsoft.com/en-us/security/blog/feed/",
       "feed_title": "Microsoft Security Blog"
+    },
+    {
+      "title": "云上攻防 Azure 容器之 ACR-ACI 攻击链",
+      "url": "https://xz.aliyun.com/news/93258",
+      "summary": "前言 云上攻防做久了会有存在一个习惯，拿到凭据就直奔 VM而后翻数据、翻 IMDS，容器端口不对外往往被当成跑代码的黑盒。Azure 容器相关服务（ACR、ACI、ACR Tasks）攻击面经常被忽略，传统替换镜像插入反弹 shell 的方案在云环境很不稳定，对此可用一种新的攻击手段：把 IMDS 元数据窃取逻辑写进容器 Entrypoint，不需要持久反弹 shell，直接外排密钥。 这篇文章记录的是一次以密钥为目标的演练。整个过程最值得写的不是哪条命令好用，而是常规手段 ENTRYPOINT 反弹 Shell 反复失败后思路的转变，变成了让容器自己在启动时替我干活，于是整条链路的性质都变了。 场景 起点：从供应链的配置拿到一个低权限账号，容器上的权限为 Contributor 目标：拿到 Key Vault 里那个名为 Image 的密钥 阶段一：权限测绘与注册表接管 1、拿当前登录账",
+      "category": "Chinese",
+      "published": "2026-11-11T16:22:08+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "Best AI SAST tools in 2027: 9 options ranked and compared | Endor Labs",
@@ -557,19 +754,6 @@
       "feed_title": "Endor Labs"
     },
     {
-      "title": "AI code review vs SAST: what each catches and how to use both | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/ai-code-review-vs-sast",
-      "summary": "AI code review vs SAST: how detection, bug coverage, determinism, false positives, and cost differ, and why combining them catches more real risk.",
-      "category": "AISecurityLabs",
-      "published": "2026-11-11T15:43:28+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
-      "feed_title": "Endor Labs"
-    },
-    {
       "title": "The XG Files: Falcon C2 Flying Under The (Browser) Radar",
       "url": "https://unit42.paloaltonetworks.com/falcon-c2-browser-compromise/",
       "summary": "We uncover Falcon C2, a browser-based threat framework targeting governments via malicious scripts, extensions, and the Antino implant. The post The XG Files: Falcon C2 Flying Under The (Browser) Radar appeared first on Unit 42 .",
@@ -581,6 +765,19 @@
       "quality_score": 1,
       "feed_url": "https://unit42.paloaltonetworks.com/feed/",
       "feed_title": "Unit 42"
+    },
+    {
+      "title": "赏金踩坑实录：因“非标代币不在白名单”被拒收的白链桥假充值漏洞分析",
+      "url": "https://xz.aliyun.com/news/93255",
+      "summary": "前言（踩坑经验分享） 最近在对白链（Whitechain）的桥接协议（bridge-contracts）进行代码审计时，我发现了一个逻辑非常严密的 Critical 级别漏洞（假充值漏洞）。理论上，攻击者可以利用该漏洞以零成本掏空目标链的流动性池。 我用 Foundry 编写了完美的 PoC 并在本地跑通了全流程，随后提交至 HackenProof 平台。但遗憾的是，这份报告最终被官方以“Out of Scope（超出审计范围）”为由关闭了。 这次“踩坑”经历非常典型。在 Web3 赏金平台，除了比拼技术实力，读懂项目方的“威胁模型（Threat Model）”同样重要。借此机会，我写下这篇复盘文章，一来分享漏洞挖掘的技术细节与 Foundry PoC，二来总结一下在 Bug Bounty 挖掘中，如何让自己的报告更契合平台的规则，希望能给各位提供一些参考经验。 一、 漏洞详情与代码分析",
+      "category": "Chinese",
+      "published": "2026-11-11T14:53:55+00:00",
+      "fetch_status": "full",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 1,
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区"
     },
     {
       "title": "Blind trust: stealing credentials through CSP",
@@ -609,19 +806,6 @@
       "feed_title": "先知社区"
     },
     {
-      "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
-      "url": "https://openai.com/index/jiostar-vijay-seshadri",
-      "summary": "JioStar’s Vijay Seshadri explains AI discovery at 500M-user scale. Read his lessons on evals, guardrails, and taking AI into production.",
-      "category": "FirstParty",
-      "published": "2026-11-11T00:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
       "title": "How to Evaluate AI Agent Cybersecurity Capabilities",
       "url": "https://www.wiz.io/blog/cyber-model-arena-ai-benchmark",
       "summary": "A tutorial for building a benchmark for offensive agents, based on how we built the Wiz Cyber Model Arena",
@@ -648,45 +832,6 @@
       "feed_title": "X / rez0"
     },
     {
-      "title": "Helping caregivers use AI in everyday life",
-      "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
-      "summary": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
-      "category": "FirstParty",
-      "published": "2026-11-10T12:00:00+00:00",
-      "fetch_status": "rss_only",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://openai.com/news/rss.xml",
-      "feed_title": "OpenAI News"
-    },
-    {
-      "title": "记一次EDU的空白页渗透",
-      "url": "https://xz.aliyun.com/news/93055",
-      "summary": "信息收集 首先，通过fofa，hunter信息收集发现了如下资产 https://xxxx.edu.cn:8081 https://xxxx.edu.cn:9443 但是直接访问发现显示路由校验失败 不是显示没有授权、404而是路由校验失败 所以这里猜测如果有了合适的路由大概率就能够正常访问了 于是在这个思路的加持下打算点一下上帝之眼查看具体路径 然后复制全部路径放BP里进行爆破 爆破下发现都是200，我都以为要出货了，没想到访问后显示需要登录（bushi） 随便调了一个URL https://xxxxxx.edu.cn:8081/subpages/admin/home/home 发现显示报错；没辙了只能把接口发给ai做进一步测试 AI果然还是厉害，发现这个路径还隐藏了一个token参数 https://xxxxxxx.edu.cn:8081/subpages/admin/home/hom",
-      "category": "Chinese",
-      "published": "2026-11-10T07:04:58+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
-      "title": "【案例分享】你的密码出现在暗网，问题可能出在自己的电脑上",
-      "url": "https://xz.aliyun.com/news/93244",
-      "summary": "写在前面 员工修改了泄露密码，企业就安全了吗？ 不一定。密码只是攻击者已经拿到手的一部分数据。真正需要回答的还有三个问题：密码从哪台电脑泄露？电脑里是否仍有恶意组件？已经泄露的登录会话是否还能继续使用？ 近期，思而听江鹭威胁情报中心监测到某制造企业多条账号凭据泄露记录。客户收到预警后，修改了部分业务系统口令，并临时禁用了公共邮箱。我们没有停在这一步，而是继续追踪消息源、下载窃密日志包并开展上机取证，最终定位到该企业海外分公司的一台个人Windows 11电脑。 调查确认，这不是一次简单的账号撞库。该主机遭遇了Vidar信息窃取木马，419条浏览器明文凭据和3,860条Cookie被打包外流。更早之前，一套恶意加载器已经在主机上驻留50余天。窃密发生时，用户正在正常使用浏览器，没有需要其确认的弹窗。 阅读说明：本文基于一起授权溯源事件复盘。客户名称、员工姓名、账号、真实域名、主机名、IP地址",
-      "category": "Chinese",
-      "published": "2026-11-10T06:44:17+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
       "title": "来看看这一年AI在企业安全场景的真实落地进展",
       "url": "https://mp.weixin.qq.com/s?__biz=MzkwOTM0MjI5NQ==&mid=2247488777&idx=1&sn=0edb57ae9b5c88170bb0d62b51235bb7",
       "summary": "11月13日，快手/火山引擎/京东 等头部大厂大佬分享亲身实践",
@@ -698,19 +843,6 @@
       "quality_score": 1,
       "feed_url": "https://wechat2rss.xlab.app/feed/e7d4a6f783d2e42b91a70a9f802e590444d62952.xml",
       "feed_title": "墨菲安全"
-    },
-    {
-      "title": "OpenSSH/musl 口令认证绕过漏洞底层分析及修复版本对比剖析",
-      "url": "https://xz.aliyun.com/news/93241",
-      "summary": "前言 11 月初 sshhole 这份披露出来的时候，五步根因链读下来，最不踏实的是第 4 步，也就是\"触发前需要一次错误口令尝试\"那句。披露把原因归给静态缓冲区被覆盖，可怎么读都觉得只说了一半。手边刚好有几份上游源码包，就把 10.6p1 / 10.6p2 / 7.2p2 / 7.3p1 的 auth-passwd.c 和 xcrypt.c 拉出来逐行对了一遍，又把 musl 1.2.6 的 crypt 后端单独编了个探针，跑了下长度差分。 第一版写完之后，又在隔离容器里补了一轮实测：两个只绑 127.0.0.1 的 sshd 实例，一个已回移修复、一个源码未打补丁，把链条端到端跑了一遍。这一轮证伪了初稿两处判断，也把\"版本号能不能当判定依据\"钉死了，分别写在第七节和第十一节。证据分级的口径跟着改过，A 级现在包含本地实测。 后半篇是给运维看的：几条只读自查命令、止损顺序、能写成规则的检",
-      "category": "Chinese",
-      "published": "2026-11-10T02:16:08+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
     },
     {
       "title": "FORGE Lab uses agentic tools to identify memory safety issues in Rust",
@@ -752,19 +884,6 @@
       "feed_title": "X / Trail of Bits"
     },
     {
-      "title": "SSN 只是开始：一次 Hell's Gate 源码与动态调试拆解",
-      "url": "https://xz.aliyun.com/news/93223",
-      "summary": "我把 Hell's Gate 拆开以后，才发现真正难的不是 SSN 从 PE 导出表、x86/x64 桩到 x32dbg 对照实验 我第一次看 Hell's Gate 的资料时，注意力几乎全在“系统调用号”上。那时我的理解很简单：查一张表，找到 NtOpenProcess 的 SSN，写一段 mov eax, ssn ，再执行 syscall ，事情就结束了。 真正打开 PE_Hell's Gate.exe 和源码以后，我才发现这个理解漏掉了太多东西。磁盘上的 PE 文件不是按内存布局存放的； System32 和 SysWOW64 里的 ntdll.dll 不是同一个架构；x86 和 x64 的桩函数甚至不是同一种执行方式；最后，代码虽然生成了新的“动态桩”，但它复制的是内存里的字节，而不是自己重新拼装指令。 这篇文章记录的就是这次拆解过程。我不打算把它写成“看完就懂”的教程，而更想还原",
-      "category": "Chinese",
-      "published": "2026-11-09T06:32:27+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "https://xz.aliyun.com/feed",
-      "feed_title": "先知社区"
-    },
-    {
       "title": "Say Yes To MCP, Safely A Guide For Governing AI Coding Agents With Evo ADS",
       "url": "https://snyk.io/blog/governing-ai-coding-agents-evo-ads/",
       "summary": "Learn how to inventory MCP servers, assess risk, monitor policy impact, and block high-risk connections without disrupting developers. Evo ADS helps teams govern AI coding agents with confidence.",
@@ -778,37 +897,11 @@
       "feed_title": "Snyk Blog"
     },
     {
-      "title": "RT Shane Melaugh: is Opus 5.5 nerfed? I just had Gemini 4 Argon analyze 1,400 Claude Code sessions and it found that on November 3, something definite...",
-      "url": "https://x.com/rez0__/status/2119824161379963179",
-      "summary": "RT Shane Melaugh is Opus 5.5 nerfed? I just had Gemini 4 Argon analyze 1,400 Claude Code sessions and it found that on November 3, something definitely happened. the model name didn't change, but the way it does reasoning took a sharp turn.",
-      "category": "XSignals",
-      "published": "2026-11-07T22:15:38+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "RT shubs: Earlier this year, I hacked a major automotive company with @samwcyo. We were able to remotely unlock cars in the AU and US. My writeup for ...",
-      "url": "https://x.com/rez0__/status/2119033054547345440",
-      "summary": "RT shubs Earlier this year, I hacked a major automotive company with @samwcyo. We were able to remotely unlock cars in the AU and US. My writeup for AU is here: https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/ and our writeup for the US here: https://samcurry.net/forgerock",
-      "category": "XSignals",
-      "published": "2026-11-07T11:14:12+00:00",
-      "fetch_status": "full",
-      "cve_ids": [],
-      "related_urls": [],
-      "quality_score": 1,
-      "feed_url": "http://127.0.0.1:1200/twitter/user/rez0__",
-      "feed_title": "X / rez0"
-    },
-    {
-      "title": "Best ADLC security tools for teams shipping with coding agents | Endor Labs",
-      "url": "https://www.endorlabs.com/learn/best-adlc-security-tools",
-      "summary": "Which tools secure the agentic development lifecycle? A practical map of agent governance, dependency security, code review, secrets, and runtime controls.",
+      "title": "Hijacked GitHub Accounts Push “wfx” CI Secret Stealer to Thousands of Repositories | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/github-actions-supply-chain-attack-targeting-ci-secrets-at-scale",
+      "summary": "Stolen GitHub credentials let attackers push a CI secret stealer into thousands of repositories. Learn how the attack works, what it steals, and what to rotate.",
       "category": "AISecurityLabs",
-      "published": "2026-11-12T02:18:19+00:00",
+      "published": "2026-11-13T01:14:04+00:00",
       "fetch_status": "rss_only",
       "cve_ids": [],
       "related_urls": [],
@@ -817,7 +910,20 @@
       "feed_title": "Endor Labs"
     },
     {
-      "title": "Compromised GitHub accounts push CI secret stealer to tens of thousands of repositories",
+      "title": "Best ADLC security tools for teams shipping with coding agents | Endor Labs",
+      "url": "https://www.endorlabs.com/learn/best-adlc-security-tools",
+      "summary": "Which tools secure the agentic development lifecycle? A practical map of agent governance, dependency security, code review, secrets, and runtime controls.",
+      "category": "AISecurityLabs",
+      "published": "2026-11-12T13:09:58+00:00",
+      "fetch_status": "rss_only",
+      "cve_ids": [],
+      "related_urls": [],
+      "quality_score": 0,
+      "feed_url": "https://www.endorlabs.com/learn/rss.xml",
+      "feed_title": "Endor Labs"
+    },
+    {
+      "title": "wfx-loot campaign pushes CI secret stealer to tens of thousands of repositories",
       "url": "https://www.aikido.dev/blog/compromised-github-accounts-push-ci-secret-stealer-to-tens-of-thousands-of-repositories",
       "summary": "A wave of compromised accounts are pushing a CI secret stealer. See if you’re affected, what it steals, and what to rotate. Category: Vulnerabilities & Threats",
       "category": "AISecurityLabs",

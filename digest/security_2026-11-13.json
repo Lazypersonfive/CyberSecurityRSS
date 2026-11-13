@@ -1,0 +1,698 @@
+{
+  "board": "security",
+  "display_name": "安全",
+  "date": "2026-11-13",
+  "generated_at": "2026-11-13T02:19:42.117313Z",
+  "raw_count": 120,
+  "selected_count": 15,
+  "selection_stats": {
+    "total": 15,
+    "chinese": 7,
+    "direct": 15,
+    "tier_t2": 10,
+    "kind_cn_expert": 7,
+    "tier_t1": 4,
+    "kind_official": 4,
+    "wechat": 1,
+    "kind_media": 3,
+    "tier_unknown": 1,
+    "kind_expert": 1
+  },
+  "clustering_stats": {
+    "deterministic_merged": 1,
+    "llm_merged": 3,
+    "merged_total": 4
+  },
+  "delivered_filter_stats": {
+    "url": 8,
+    "story": 1,
+    "total": 9
+  },
+  "candidate_share_stats": {},
+  "items": [
+    {
+      "title_zh": "CVE-2026-118660：happy-dom 服务端 SSRF 漏洞成因与全链路分析",
+      "title_orig": "CVE-2026-118660：happy-dom 服务端 SSRF 全链路分析",
+      "summary": "CVE-2026-118660 是存在于 JavaScript DOM 运行时 happy-dom 中的服务端请求伪造（SSRF）漏洞，当该工具被用于测试环境、服务端预渲染、HTML 转换或爬虫等场景，并处理用户评论、富文本、第三方页面或上传模板等不可信 HTML 时，服务器进程会直接发起资源加载请求。由于服务器进程通常位于内网环境中且握有云凭证，这一行为可能导致其访问内网服务、泄露云凭证或触及仅监听 localhost 的管理接口，但原文未披露具体受影响版本及修复状态。",
+      "tags": [
+        "服务端请求伪造",
+        "漏洞分析",
+        "前端安全"
+      ],
+      "url": "https://xz.aliyun.com/news/93265",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-11-12T04:31:16+00:00",
+      "cve_ids": [
+        "CVE-2026-118660"
+      ],
+      "selection_reason": "剖析服务端 DOM 运行时解析不可信 HTML 引发的 SS",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2026-118660",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.5,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "Dify 沙箱模块默认配置存在硬编码凭证，特定部署条件下可致未授权远程代码执行",
+      "title_orig": "基于默认配置的 Dify 沙箱 RCE 利用链分析与加固探讨",
+      "summary": "开源 LLM 应用平台 Dify 的 dify-sandbox 组件在默认配置下存在硬编码默认 API 密钥“dify”，当端口暴露于公网或攻击者可访问内部网络时，可利用 X-Api-Key 请求头绕过鉴权并执行任意 Python 代码。原文详细复现了从鉴权绕过到获取底层系统信息的完整攻击链，官方团队基于开发者体验考量认为该设计属于预设功能并无缺陷，安全研究人员针对企业自托管运维视角给出了切实可行的纵深防御加固建议。",
+      "tags": [
+        "Dify",
+        "硬编码凭证",
+        "远程代码执行"
+      ],
+      "url": "https://xz.aliyun.com/news/93260",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-11-11T18:02:06+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示 Dify 沙箱默认配置风险，提供自托管纵深防御思路。",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/93260",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "technical_depth": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.6,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "CVE-2025-25185：GPT Academic 软链接解析缺陷致任意文件读取",
+      "title_orig": "CVE-2025-25185 深度解析：GPT Academic 软链接解析缺陷导致任意文件读取",
+      "summary": "深受科研人员喜爱的开源学术优化工具 GPT Academic（受影响版本为 3.91 及以下）存在任意文件读取漏洞（CVE-2025-25185），该漏洞源于服务端在处理用户上传的论文或代码压缩包解压逻辑时存在软链接解析缺陷。攻击者可通过构造恶意归档文件并结合 Web 交互触发任意文件读取，相关分析从核心源码拆解、恶意 Payload 构造到实战利用进行了完整还原，旨在为安全从业者提供压缩包解压场景的深度思考与防御思路。",
+      "tags": [
+        "任意文件读取",
+        "软链接解析",
+        "代码审计"
+      ],
+      "url": "https://xz.aliyun.com/news/93253",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-11-11T12:26:24+00:00",
+      "cve_ids": [
+        "CVE-2025-25185"
+      ],
+      "selection_reason": "压缩包解压软链接缺陷的源码级审计与利用分析",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "cve:cve-2025-25185",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 7.0,
+        "actionability": 9.0,
+        "technical_depth": 9.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.6,
+      "final_score": 9.2,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "ImageMagick 默认配置存在多处任意文件读写漏洞（ImageTragick2）",
+      "title_orig": "VU#580079: Arbitrary file read/write vulnerability in ImageMagick-based applications with default configuration",
+      "summary": "安全公告 VU#580079 披露，在采用默认配置或安全策略限制不足的基于 ImageMagick 的相关应用中，存在多处统称为 ImageTragick2 的任意文件读写漏洞，当这些应用利用默认配置或应用自带配置所允许的危险编码器或委托，解析处理由攻击者控制的 SVG 或 PostScript 内容时即可触发。这些安全漏洞会使受影响的应用程序面临严重任意文件读取与写入风险，但现有概要信息尚未披露具体受影响版本及官方修复或缓解状态。",
+      "tags": [
+        "任意文件读写",
+        "图像处理",
+        "默认配置"
+      ],
+      "url": "https://kb.cert.org/vuls/id/580079",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-11-12T18:12:09+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及广泛使用的图像处理组件默认配置下的高危文件读写漏洞。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/580079",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.25,
+      "final_score": 8.99,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.8,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "7-Zip LZX 解码器存在堆越界写入漏洞（CVE-2026-125742）已复现",
+      "title_orig": "【已复现】7-Zip LZX 解码器堆越界写入漏洞(CVE-2026-125742)安全风险通告",
+      "summary": "近期发布的安全风险通告显示，7-Zip 软件的 LZX 解码器组件存在一处堆越界写入漏洞（漏洞编号为 CVE-2026-125742），目前该漏洞已成功复现，相关情报机构正致力于第一时间为企业级用户提供权威漏洞情报与有效解决方案。不过，当前通告原文尚未披露该漏洞的具体触发条件、受影响的具体软件版本范围、可能造成的实际安全影响以及官方目前的修复或缓解措施状态，企业级用户需持续关注后续安全动态以防范潜在风险。",
+      "tags": [
+        "7-Zip",
+        "堆越界写入",
+        "漏洞通告"
+      ],
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU5NDgxODU1MQ==&mid=2247508100&idx=1&sn=6f81d45d46dee8d85c4f8d85dcb07891",
+      "source": "mp.weixin.qq.com",
+      "category": "Synthesis",
+      "published": "2026-11-12T08:54:00+00:00",
+      "cve_ids": [
+        "CVE-2026-125742"
+      ],
+      "selection_reason": "涉及常用压缩软件内存破坏漏洞且已复现，需关注后续补丁。",
+      "feed_url": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "feed_title": "奇安信CERT",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文公众号",
+      "source_key": "https://wechat2rss.xlab.app/feed/981c000a01bbdc1f128d260cc91c15d3a6afb530.xml",
+      "story_id": "cve:cve-2026-125742",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 7.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.2,
+      "final_score": 8.9,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "TightVNC与UltraVNC客户端Tight JPEG解码组件存在堆缓冲区溢出漏洞",
+      "title_orig": "VU#644655: TightVNC and UltraVNC Viewer contains a heap-based buffer overflow",
+      "summary": "根据漏洞编号VU#644655披露的信息，TightVNC Windows客户端1.3.10版本以及受影响的UltraVNC Windows客户端中的Tight JPEG解码组件存在堆缓冲区溢出漏洞，当攻击者控制恶意的VNC服务器并向客户端发送经过特制的屏幕更新数据时，即可触发内存损坏问题。一旦攻击者成功利用该漏洞，不仅会导致用户的查看器客户端直接崩溃，还可能进一步允许攻击者在受影响设备上执行任意代码，因此使用上述版本软件的用户和管理员需要高度关注此安全风险。",
+      "tags": [
+        "堆缓冲区溢出",
+        "VNC漏洞",
+        "远程代码执行"
+      ],
+      "url": "https://kb.cert.org/vuls/id/644655",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-11-13T00:08:48+00:00",
+      "cve_ids": [],
+      "selection_reason": "常用远程桌面客户端高危内存损坏漏洞，存在代码执行风险。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:kb.cert.org/vuls/id/644655",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.79,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.8,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "npm库promzard存在上下文键代码注入漏洞可致远程代码执行",
+      "title_orig": "VU#685399: PromZard context key code injection leads to remote code execution",
+      "summary": "安全公告VU#685399披露，Node.js配置工作流自动化npm库promzard的4.0.0及更早版本存在远程代码执行漏洞，其原因是程序直接对上下文对象键进行字符串插值，从而允许注入未经净化的JavaScript代码。该库主要通过评估模板模块和交互式提示来生成数据对象以实现配置自动化，受影响的项目需警惕潜在的远程代码执行风险，但当前给定原文未披露具体的漏洞触发条件细节及官方修复或缓解状态。",
+      "tags": [
+        "代码注入",
+        "远程代码执行",
+        "npm组件"
+      ],
+      "url": "https://kb.cert.org/vuls/id/685399",
+      "source": "kb.cert.org",
+      "category": "Synthesis",
+      "published": "2026-11-12T15:09:39+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及常用Node.js配置库的代码注入与远程代码执行风险。",
+      "feed_url": "http://www.kb.cert.org/vulfeed",
+      "feed_title": "CERT Recently Published Vulnerability Notes",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官方通告",
+      "source_key": "kb.cert.org",
+      "story_id": "url:cxsecurity.com/issue/wlb-2026110001",
+      "related_urls": [
+        "https://cxsecurity.com/issue/WLB-2026110001"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 7.0,
+        "actionability": 8.0,
+        "technical_depth": 8.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.05,
+      "final_score": 8.79,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.8,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "N-able N-central 零日漏洞 4EverAble2Shell 在 PoC 公开数小时后遭在野利用",
+      "title_orig": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
+      "summary": "安全研究人员披露 N-able N-central 存在名为“4EverAble2Shell”的新零日漏洞，原文未说明具体漏洞类型、触发条件及受影响版本号，但报告至少已有二十一台系统受影响，其中包括十九台已安装该公司最新安全更新的服务器。攻击者在概念验证代码公开数小时后便展开活跃的在野利用，通过该漏洞入侵目标服务器并部署加密货币挖矿程序，目前原文尚未提及官方修复补丁或缓解措施的进展情况。",
+      "tags": [
+        "零日漏洞",
+        "在野利用",
+        "挖矿木马"
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+      "source": "bleepingcomputer.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-11-12T19:51:16+00:00",
+      "cve_ids": [],
+      "selection_reason": "最新安全更新版本仍受零日漏洞在野利用影响，具备高危预警价值。",
+      "feed_url": "https://www.bleepingcomputer.com/feed/",
+      "feed_title": "BleepingComputer",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "bleepingcomputer.com",
+      "story_id": "url:bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 7.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.4,
+      "final_score": 8.7,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.3,
+        "applied_adjustment": 0.3
+      }
+    },
+    {
+      "title_zh": "SSHole漏洞分析：Alpine Linux系统OpenSSH密码认证绕过",
+      "title_orig": "SSHole: Alpine SSH Password Authentication Bypass",
+      "summary": "研究人员出于教育与研究目的，通过动手实验测试深入分析了名为SSHole的漏洞，该漏洞主要影响Alpine Linux系统上的OpenSSH密码认证绕过机制，重点探究了超长密码输入如何与musl libc及OpenSSH认证逻辑产生交互异常。不过，该研究材料目前仅聚焦于对认证绕过原理的技术探索与演示，原文中并未披露具体的漏洞触发条件、受影响的系统或软件版本号、实际危害后果以及相关的修复缓解状态。",
+      "tags": [
+        "OpenSSH",
+        "认证绕过",
+        "Alpine"
+      ],
+      "url": "https://threatninja.net/sshole-alpine-ssh-password-authentication-bypass/",
+      "source": "threatninja.net",
+      "category": "RedTeam",
+      "published": "2026-11-09T14:55:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "剖析musl libc与OpenSSH交互导致的认证绕过机制",
+      "feed_url": "https://threatninja.net/feed/",
+      "feed_title": "Threatninja.net",
+      "source_tier": "unknown",
+      "source_kind": "media",
+      "source_label": "未登记源",
+      "source_key": "threatninja.net",
+      "story_id": "url:threatninja.net/sshole-alpine-ssh-password-authentication-bypass",
+      "related_urls": [
+        "https://threatninja.net/sshole-cve-2026-123158-blue-team-detection-response/",
+        "https://www.schneier.com/blog/archives/2026/11/new-openssh-vulnerability.html"
+      ],
+      "related_count": 2,
+      "score": 9,
+      "score_dimensions": {
+        "relevance": 10.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 9.0,
+        "exploitability": 9.0
+      },
+      "dimension_score": 8.95,
+      "final_score": 8.65,
+      "score_breakdown": {
+        "source_bonus": -0.3,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": -0.3,
+        "applied_adjustment": -0.3
+      }
+    },
+    {
+      "title_zh": "PHP 与 Node.js 运行时曝出 PHP2Shell 及 Node2Shell 漏洞，官方已发布修复版本",
+      "title_orig": "PHP2Shell and Node2Shell: Find, Fix, and Verify Across Your Web Apps and APIs",
+      "summary": "针对 Web 应用和 API 的 PHP2Shell（CVE-2026-109618、CVE-2026-109619）与 Node2Shell（CVE-2026-111497）漏洞均位于运行时环境中而非应用代码本身，这意味着所有运行在受影响运行时版本上的应用程序和接口都会直接继承这些潜在的安全风险，因此需要引起高度重视。",
+      "tags": [
+        "运行时漏洞",
+        "PHP",
+        "Node.js"
+      ],
+      "url": "https://blog.qualys.com/category/qualys-insights",
+      "source": "blog.qualys.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-11-12T09:15:32+00:00",
+      "cve_ids": [
+        "CVE-2026-109618",
+        "CVE-2026-109619",
+        "CVE-2026-111497"
+      ],
+      "selection_reason": "涉及主流运行时且已被列入CISA KEV，需及时升级。",
+      "feed_url": "https://blog.qualys.com/feed",
+      "feed_title": "Qualys Security Blog",
+      "source_tier": "t2",
+      "source_kind": "expert",
+      "source_label": "安全厂商",
+      "source_key": "blog.qualys.com",
+      "story_id": "cve:cve-2026-109618,cve-2026-109619,cve-2026-111497",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 2,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 9.0,
+        "actionability": 9.0,
+        "technical_depth": 7.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 8.3,
+      "final_score": 8.6,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.2,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.3,
+        "applied_adjustment": 0.3
+      }
+    },
+    {
+      "title_zh": "N-able发布针对N-central平台零日漏洞的安全热修复补丁",
+      "title_orig": "N-able 发布针对零日漏洞的安全热修复补丁",
+      "summary": "N-able公司发布了安全热修复补丁，专门用于修复影响其N-central远程监控与管理（RMM）平台的零日缺陷，因为这些缺陷已于周末被公开披露，迫使该公司采取紧急措施。在此之前，为防范野外针对这些零日缺陷的潜在攻击，N-able决定将美洲、欧洲和亚太地区的所有存在漏洞的托管N-central环境下线，直至能够完成修补，目前公司正在积极应对，但具体漏洞类型、触发条件及受影响版本原文未披露。",
+      "tags": [
+        "零日漏洞",
+        "安全补丁",
+        "RMM平台"
+      ],
+      "url": "https://hackernews.cc/post/64898",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-11-12T02:56:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及广泛使用的RMM平台零日漏洞修复及托管环境下线处置",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "url:hackernews.cc/post/64898",
+      "related_urls": [
+        "https://www.rapid7.com/blog/post/etr-critical-vulnerabilities-in-n-able-n-central-prompt-hosted-shutdown"
+      ],
+      "related_count": 1,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 9.0,
+        "technical_depth": 6.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 7.85,
+      "final_score": 8.55,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "ConnectWise 调查针对 MSP 的 ScreenConnect 活跃攻击，禁用五个第三方扩展",
+      "title_orig": "活跃的 ScreenConnect 攻击入侵 MSP，影响数十家组织",
+      "summary": "ConnectWise 正在调查一场针对托管服务提供商（MSP）的活跃恶意软件攻击活动，攻击者利用被入侵的 ScreenConnect 环境向客户设备部署流氓远程访问客户端，目前已导致数十家组织受到影响。作为此次调查和预防措施的一部分，ConnectWise 已在大约 400 个合作伙伴环境中禁用了五个第三方 ScreenConnect 扩展，同时警告称这些扩展可能与最早由网络安全公司 Huntress 于周三发现的攻击活动有关。",
+      "tags": [
+        "ScreenCo",
+        "MSP",
+        "恶意软件"
+      ],
+      "url": "https://hackernews.cc/post/64894",
+      "source": "hackernews.cc",
+      "category": "Synthesis",
+      "published": "2026-11-12T02:22:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "涉及远程控制工具供应链及扩展安全风险，值得运维人员关注。",
+      "feed_url": "http://hackernews.cc/feed",
+      "feed_title": "HackerNews",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全媒体",
+      "source_key": "hackernews.cc",
+      "story_id": "url:hackernews.cc/post/64894",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 8.0,
+        "actionability": 8.0,
+        "technical_depth": 6.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 7.75,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.1,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.7,
+        "applied_adjustment": 0.7
+      }
+    },
+    {
+      "title_zh": "Gohttpserver 存在 Zip Slip 路径穿越漏洞，可致任意文件写入与远程代码执行",
+      "title_orig": "深入浅出 Gohttpserver Zip Slip 漏洞：从黑盒复现到白盒源码审计的闭环剖析",
+      "summary": "安全研究人员在对基于 Go 语言的开源 HTTP 文件服务器 Gohttpserver 进行代码审计时，发现其内置的 --upload 功能存在 Zip Slip 路径穿越漏洞，攻击者可通过构造包含 ../ 序列的恶意压缩包绕过上传目录限制。该漏洞可导致攻击者将任意文件写入服务器敏感位置并实现远程代码执行，但原文未披露具体的受影响版本及修复状态。",
+      "tags": [
+        "路径穿越",
+        "文件上传",
+        "代码审计"
+      ],
+      "url": "https://xz.aliyun.com/news/93262",
+      "source": "xz.aliyun.com",
+      "category": "Synthesis",
+      "published": "2026-11-12T01:57:33+00:00",
+      "cve_ids": [],
+      "selection_reason": "剖析 Gohttpserver 路径穿越漏洞的黑盒复现与白盒",
+      "feed_url": "https://xz.aliyun.com/feed",
+      "feed_title": "先知社区",
+      "source_tier": "t2",
+      "source_kind": "cn_expert",
+      "source_label": "中文安全",
+      "source_key": "xz.aliyun.com",
+      "story_id": "url:xz.aliyun.com/news/93262",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 6.0,
+        "actionability": 8.0,
+        "technical_depth": 9.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 7.85,
+      "final_score": 8.45,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.3,
+        "freshness_bonus": 0.0,
+        "cn_visibility_bonus": 0.3,
+        "raw_adjustment": 0.6,
+        "applied_adjustment": 0.6
+      }
+    },
+    {
+      "title_zh": "微软研究团队剖析后训练供应链攻击如何劫持编码智能体",
+      "title_orig": "Trained to betray: How post-training supply chain attacks hijack coding agents",
+      "summary": "微软安全博客最新文章显示，微软 Defender 研究团队与 AI 红队深入探讨了后训练供应链攻击如何劫持编码智能体，揭示了模型在训练后阶段面临的安全威胁。研究指出，攻击者利用投毒数据集与投毒模型检查点，可触发远程代码执行及其他恶意活动，但原文摘要尚未披露具体受影响组件、触发条件细节及修复缓解方案，整体影响范围仍有待进一步明确。",
+      "tags": [
+        "AI安全",
+        "供应链攻击",
+        "远程代码执行"
+      ],
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents/",
+      "source": "microsoft.com",
+      "category": "Synthesis",
+      "published": "2026-11-12T17:00:00+00:00",
+      "cve_ids": [],
+      "selection_reason": "揭示大模型后训练阶段投毒导致编码智能体RCE风险",
+      "feed_url": "https://www.microsoft.com/security/blog/feed/",
+      "feed_title": "Microsoft Security Blog",
+      "source_tier": "t1",
+      "source_kind": "official",
+      "source_label": "官网",
+      "source_key": "microsoft.com",
+      "story_id": "url:microsoft.com/en-us/security/blog/2026/11/12/trained-to-betray-how-post-training-supply-chain-attacks-hijack-coding-agents",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 8.0,
+        "impact_scope": 8.0,
+        "actionability": 7.0,
+        "technical_depth": 8.0,
+        "exploitability": 7.0
+      },
+      "dimension_score": 7.7,
+      "final_score": 8.44,
+      "score_breakdown": {
+        "source_bonus": 1.0,
+        "kind_bonus": 0.5,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 1.8,
+        "applied_adjustment": 0.74
+      }
+    },
+    {
+      "title_zh": "Citrix 修复 NetScaler 等产品 12 个漏洞，含身份验证绕过与内存溢出",
+      "title_orig": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
+      "summary": "Citrix 近日正式发布安全补丁，用于修复影响 NetScaler ADC、Citrix NetScaler Gateway、NetScaler Console 以及 Secure Access Client 等多款产品的十二个安全漏洞，其中包括多个严重安全漏洞以及影响 NetScaler ADC 和 NetScaler Gateway 的 CVE-2026-120868 内存溢出漏洞，其 CVSS 评分高达 9.3 分。",
+      "tags": [
+        "漏洞修复",
+        "身份验证绕过",
+        "内存溢出"
+      ],
+      "url": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+      "source": "thehackernews.com",
+      "category": "OfficialAdvisories",
+      "published": "2026-11-12T15:38:49+00:00",
+      "cve_ids": [
+        "CVE-2026-120868"
+      ],
+      "selection_reason": "涉及高危身份验证绕过与内存溢出漏洞，官方已发布修复补丁。",
+      "feed_url": "https://feeds.feedburner.com/TheHackersNews",
+      "feed_title": "The Hacker News",
+      "source_tier": "t2",
+      "source_kind": "media",
+      "source_label": "安全媒体",
+      "source_key": "thehackernews.com",
+      "story_id": "cve:cve-2026-120868",
+      "related_urls": [],
+      "related_count": 0,
+      "score": 8,
+      "score_dimensions": {
+        "relevance": 9.0,
+        "impact_scope": 9.0,
+        "actionability": 8.0,
+        "technical_depth": 6.0,
+        "exploitability": 8.0
+      },
+      "dimension_score": 7.95,
+      "final_score": 8.25,
+      "score_breakdown": {
+        "source_bonus": 0.0,
+        "kind_bonus": 0.0,
+        "freshness_bonus": 0.3,
+        "cn_visibility_bonus": 0.0,
+        "raw_adjustment": 0.3,
+        "applied_adjustment": 0.3
+      }
+    }
+  ]
+}
