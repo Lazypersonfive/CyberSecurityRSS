@@ -3140,7 +3140,7 @@ class SourceReportTests(unittest.TestCase):
         self.assertIn("DEEPSEEK_API_KEY", body)
         self.assertIn("deepseek-v4-flash", body)
         self.assertIn("GEMINI_REQUEST_TIMEOUT_SEC", body)
-        self.assertIn("gemini-3.6-flash", body)
+        self.assertIn("gemini-4-hydrogen", body)
         self.assertIn("chore(digest): refresh digest", body)
         self.assertIn("timeout 15m python digest_pipeline_gemini.py", body)
         self.assertIn("Fail if any board failed", body)
@@ -3240,8 +3240,8 @@ class LLMBackendTests(unittest.TestCase):
 
         self.assertEqual(backend.request_timeout_sec, 12)
         self.assertEqual(backend.client.http_options.timeout, 12000)
-        self.assertEqual(backend.score_model, "gemini-3.6-flash")
-        self.assertEqual(backend.summarize_model, "gemini-3.6-flash")
+        self.assertEqual(backend.score_model, "gemini-4-hydrogen")
+        self.assertEqual(backend.summarize_model, "gemini-4-hydrogen")
 
     def test_gemini_36_uses_thinking_level_without_legacy_budget_or_temperature(self) -> None:
         from llm_backends.gemini import GeminiBackend, types
